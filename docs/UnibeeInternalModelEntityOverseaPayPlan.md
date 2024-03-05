@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Currency** | Pointer to **string** | currency | [optional] 
 **Description** | Pointer to **string** | description | [optional] 
+**ExtraMetricData** | Pointer to **string** |  | [optional] 
 **GatewayProductDescription** | Pointer to **string** | gateway product description | [optional] 
 **GatewayProductName** | Pointer to **string** | gateway product name | [optional] 
 **GmtCreate** | Pointer to **string** | create time | [optional] 
@@ -196,6 +197,31 @@ SetDescription sets Description field to given value.
 `func (o *UnibeeInternalModelEntityOverseaPayPlan) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetExtraMetricData
+
+`func (o *UnibeeInternalModelEntityOverseaPayPlan) GetExtraMetricData() string`
+
+GetExtraMetricData returns the ExtraMetricData field if non-nil, zero value otherwise.
+
+### GetExtraMetricDataOk
+
+`func (o *UnibeeInternalModelEntityOverseaPayPlan) GetExtraMetricDataOk() (*string, bool)`
+
+GetExtraMetricDataOk returns a tuple with the ExtraMetricData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExtraMetricData
+
+`func (o *UnibeeInternalModelEntityOverseaPayPlan) SetExtraMetricData(v string)`
+
+SetExtraMetricData sets ExtraMetricData field to given value.
+
+### HasExtraMetricData
+
+`func (o *UnibeeInternalModelEntityOverseaPayPlan) HasExtraMetricData() bool`
+
+HasExtraMetricData returns a boolean if a field has been set.
 
 ### GetGatewayProductDescription
 

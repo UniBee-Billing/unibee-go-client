@@ -1034,7 +1034,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/_merchant_metric_user_stat_get_200_response'
           description: ""
-      summary: User Merchant Metric Stat
+      summary: Query User Metric Stat
       tags:
       - Merchant-Metric
     post:
@@ -1051,7 +1051,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/_merchant_metric_user_stat_get_200_response'
           description: ""
-      summary: User Merchant Metric Stat
+      summary: Query User Metric Stat
       tags:
       - Merchant-Metric
   /merchant/oss/file:
@@ -3632,13 +3632,8 @@ components:
       type: object
     unibee.api.merchant.metric.UserStatRes:
       properties:
-        userMerchantMetricStats:
-          description: UserMerchantMetricStats
-          format: "[]*metric_event.UserMerchantMetricStat"
-          items:
-            $ref: '#/components/schemas/unibee.internal.logic.metric_event.UserMerchantMetricStat'
-          properties: {}
-          type: array
+        userMetricStat:
+          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.UserMetricStat'
       type: object
     unibee.api.merchant.oss.FileUploadReq:
       properties:
@@ -5880,9 +5875,9 @@ components:
       example:
         firstName: firstName
         lastName: lastName
-        createTime: 6
-        merchantId: 2
-        id: 1
+        createTime: 7
+        merchantId: 3
+        id: 9
         email: email
       properties:
         createTime:
@@ -6040,6 +6035,104 @@ components:
           properties: {}
           type: integer
       type: object
+    unibee.internal.logic.gateway.ro.MetricLimitVo:
+      example:
+        MetricId: 7
+        TotalLimit: 0
+        aggregationType: 6
+        aggregationProperty: aggregationProperty
+        code: code
+        metricName: metricName
+        UserId: 7
+        MerchantId: 3
+        type: 0
+        PlanLimits:
+        - gmtModify: 1
+          metricId: 2
+          createTime: 6
+          merchantId: 5
+          merchantMetricVo:
+            aggregationType: 6
+            aggregationProperty: aggregationProperty
+            code: code
+            metricDescription: metricDescription
+            metricName: metricName
+            gmtModify: 5
+            createTime: 1
+            merchantId: 2
+            id: 5
+            type: 7
+          planId: 9
+          id: 5
+          metricLimit: 7
+        - gmtModify: 1
+          metricId: 2
+          createTime: 6
+          merchantId: 5
+          merchantMetricVo:
+            aggregationType: 6
+            aggregationProperty: aggregationProperty
+            code: code
+            metricDescription: metricDescription
+            metricName: metricName
+            gmtModify: 5
+            createTime: 1
+            merchantId: 2
+            id: 5
+            type: 7
+          planId: 9
+          id: 5
+          metricLimit: 7
+      properties:
+        MerchantId:
+          format: uint64
+          properties: {}
+          type: integer
+        MetricId:
+          format: int64
+          properties: {}
+          type: integer
+        PlanLimits:
+          format: "[]*ro.MerchantMetricPlanLimitVo"
+          items:
+            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.MerchantMetricPlanLimitVo'
+          properties: {}
+          type: array
+        TotalLimit:
+          format: uint64
+          properties: {}
+          type: integer
+        UserId:
+          format: int64
+          properties: {}
+          type: integer
+        aggregationProperty:
+          description: aggregation property
+          format: string
+          properties: {}
+          type: string
+        aggregationType:
+          description: "0-count，1-count unique, 2-latest, 3-max, 4-sum"
+          format: int
+          properties: {}
+          type: integer
+        code:
+          description: code
+          format: string
+          properties: {}
+          type: string
+        metricName:
+          description: metric name
+          format: string
+          properties: {}
+          type: string
+        type:
+          description: "1-limit_metered，2-charge_metered(come later),3-charge_recurring(come\
+            \ later)"
+          format: int
+          properties: {}
+          type: integer
+      type: object
     unibee.internal.logic.gateway.ro.PaymentMethod:
       properties:
         data:
@@ -6056,9 +6149,10 @@ components:
       type: object
     unibee.internal.logic.gateway.ro.PlanAddonVo:
       example:
-        quantity: 6
+        quantity: 4
         addonPlan:
           amount: 6
+          extraMetricData: extraMetricData
           bindingAddonIds: bindingAddonIds
           intervalUnit: intervalUnit
           description: description
@@ -6089,6 +6183,7 @@ components:
       example:
         addons:
         - amount: 6
+          extraMetricData: extraMetricData
           bindingAddonIds: bindingAddonIds
           intervalUnit: intervalUnit
           description: description
@@ -6107,6 +6202,7 @@ components:
           publishStatus: 7
           status: 9
         - amount: 6
+          extraMetricData: extraMetricData
           bindingAddonIds: bindingAddonIds
           intervalUnit: intervalUnit
           description: description
@@ -6129,6 +6225,7 @@ components:
         - 6
         plan:
           amount: 6
+          extraMetricData: extraMetricData
           bindingAddonIds: bindingAddonIds
           intervalUnit: intervalUnit
           description: description
@@ -6213,6 +6310,7 @@ components:
     unibee.internal.logic.gateway.ro.PlanSimplify:
       example:
         amount: 6
+        extraMetricData: extraMetricData
         bindingAddonIds: bindingAddonIds
         intervalUnit: intervalUnit
         description: description
@@ -6253,6 +6351,10 @@ components:
           type: string
         description:
           description: description
+          format: string
+          properties: {}
+          type: string
+        extraMetricData:
           format: string
           properties: {}
           type: string
@@ -6328,9 +6430,10 @@ components:
           gmtModify: gmtModify
           updateAddonData: updateAddonData
           addons:
-          - quantity: 6
+          - quantity: 4
             addonPlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -6348,9 +6451,10 @@ components:
               productDescription: productDescription
               publishStatus: 7
               status: 9
-          - quantity: 6
+          - quantity: 4
             addonPlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -6371,6 +6475,7 @@ components:
           link: link
           updatePlan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -6388,11 +6493,12 @@ components:
             productDescription: productDescription
             publishStatus: 7
             status: 9
-          effectImmediate: 8
+          effectImmediate: 1
           updateAddons:
-          - quantity: 6
+          - quantity: 4
             addonPlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -6410,9 +6516,10 @@ components:
               productDescription: productDescription
               publishStatus: 7
               status: 9
-          - quantity: 6
+          - quantity: 4
             addonPlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -6431,13 +6538,14 @@ components:
               publishStatus: 7
               status: 9
           updateCurrency: updateCurrency
-          updatePlanId: 7
-          merchantId: 3
-          updateAmount: 3
+          updatePlanId: 6
+          merchantId: 2
+          updateAmount: 1
           currency: currency
-          planId: 6
+          planId: 4
           plan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -6457,33 +6565,34 @@ components:
             status: 9
           addonData: addonData
           amount: 6
-          quantity: 6
+          quantity: 1
           gmtCreate: gmtCreate
-          userId: 7
+          userId: 1
           merchantMember:
             firstName: firstName
             lastName: lastName
-            createTime: 6
-            merchantId: 2
-            id: 1
+            createTime: 7
+            merchantId: 3
+            id: 9
             email: email
           updateSubscriptionId: updateSubscriptionId
-          updateQuantity: 0
-          prorationAmount: 5
-          paid: 6
-          effectTime: 9
+          updateQuantity: 7
+          prorationAmount: 7
+          paid: 2
+          effectTime: 5
           subscriptionId: subscriptionId
-          gatewayId: 6
-          status: 3
+          gatewayId: 5
+          status: 1
         addonParams:
         - addonPlanId: 6
           quantity: 1
         - addonPlanId: 6
           quantity: 1
         addons:
-        - quantity: 6
+        - quantity: 4
           addonPlan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -6501,9 +6610,10 @@ components:
             productDescription: productDescription
             publishStatus: 7
             status: 9
-        - quantity: 6
+        - quantity: 4
           addonPlan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -6523,40 +6633,41 @@ components:
             status: 9
         subscription:
           gatewayItemData: gatewayItemData
-          testClock: 4
-          currentPeriodEnd: 7
+          testClock: 6
+          currentPeriodEnd: 6
           link: link
-          type: 9
-          firstPaidTime: 2
-          merchantId: 1
-          taxScale: 1
+          type: 2
+          firstPaidTime: 4
+          merchantId: 6
+          taxScale: 3
           countryCode: countryCode
-          dunningTime: 3
+          dunningTime: 1
           currency: currency
-          planId: 1
-          id: 7
+          planId: 8
+          id: 9
           cancelReason: cancelReason
           returnUrl: returnUrl
           gatewayStatus: gatewayStatus
           addonData: addonData
-          billingCycleAnchor: 5
-          currentPeriodStart: 9
-          trialEnd: 5
-          amount: 1
-          quantity: 6
-          userId: 9
-          createTime: 2
+          billingCycleAnchor: 1
+          currentPeriodStart: 7
+          trialEnd: 1
+          amount: 7
+          quantity: 9
+          userId: 6
+          createTime: 1
           latestInvoiceId: latestInvoiceId
-          cancelAtPeriodEnd: 5
+          cancelAtPeriodEnd: 1
           subscriptionId: subscriptionId
-          gatewayId: 4
-          lastUpdateTime: 1
+          gatewayId: 5
+          lastUpdateTime: 9
           pendingUpdateId: pendingUpdateId
-          status: 7
+          status: 6
           taskTime: taskTime
           vatNumber: vatNumber
         plan:
           amount: 6
+          extraMetricData: extraMetricData
           bindingAddonIds: bindingAddonIds
           intervalUnit: intervalUnit
           description: description
@@ -6580,8 +6691,8 @@ components:
           address: address
           createTime: 6
           externalUserId: externalUserId
-          merchantId: 4
-          id: 0
+          merchantId: 6
+          id: 5
           email: email
         gateway:
           gatewayName: gatewayName
@@ -6619,9 +6730,10 @@ components:
         gmtModify: gmtModify
         updateAddonData: updateAddonData
         addons:
-        - quantity: 6
+        - quantity: 4
           addonPlan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -6639,9 +6751,10 @@ components:
             productDescription: productDescription
             publishStatus: 7
             status: 9
-        - quantity: 6
+        - quantity: 4
           addonPlan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -6662,6 +6775,7 @@ components:
         link: link
         updatePlan:
           amount: 6
+          extraMetricData: extraMetricData
           bindingAddonIds: bindingAddonIds
           intervalUnit: intervalUnit
           description: description
@@ -6679,11 +6793,12 @@ components:
           productDescription: productDescription
           publishStatus: 7
           status: 9
-        effectImmediate: 8
+        effectImmediate: 1
         updateAddons:
-        - quantity: 6
+        - quantity: 4
           addonPlan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -6701,9 +6816,10 @@ components:
             productDescription: productDescription
             publishStatus: 7
             status: 9
-        - quantity: 6
+        - quantity: 4
           addonPlan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -6722,13 +6838,14 @@ components:
             publishStatus: 7
             status: 9
         updateCurrency: updateCurrency
-        updatePlanId: 7
-        merchantId: 3
-        updateAmount: 3
+        updatePlanId: 6
+        merchantId: 2
+        updateAmount: 1
         currency: currency
-        planId: 6
+        planId: 4
         plan:
           amount: 6
+          extraMetricData: extraMetricData
           bindingAddonIds: bindingAddonIds
           intervalUnit: intervalUnit
           description: description
@@ -6748,24 +6865,24 @@ components:
           status: 9
         addonData: addonData
         amount: 6
-        quantity: 6
+        quantity: 1
         gmtCreate: gmtCreate
-        userId: 7
+        userId: 1
         merchantMember:
           firstName: firstName
           lastName: lastName
-          createTime: 6
-          merchantId: 2
-          id: 1
+          createTime: 7
+          merchantId: 3
+          id: 9
           email: email
         updateSubscriptionId: updateSubscriptionId
-        updateQuantity: 0
-        prorationAmount: 5
-        paid: 6
-        effectTime: 9
+        updateQuantity: 7
+        prorationAmount: 7
+        paid: 2
+        effectTime: 5
         subscriptionId: subscriptionId
-        gatewayId: 6
-        status: 3
+        gatewayId: 5
+        status: 1
       properties:
         addonData:
           description: plan addon json data
@@ -6927,36 +7044,36 @@ components:
     unibee.internal.logic.gateway.ro.SubscriptionSimplify:
       example:
         gatewayItemData: gatewayItemData
-        testClock: 4
-        currentPeriodEnd: 7
+        testClock: 6
+        currentPeriodEnd: 6
         link: link
-        type: 9
-        firstPaidTime: 2
-        merchantId: 1
-        taxScale: 1
+        type: 2
+        firstPaidTime: 4
+        merchantId: 6
+        taxScale: 3
         countryCode: countryCode
-        dunningTime: 3
+        dunningTime: 1
         currency: currency
-        planId: 1
-        id: 7
+        planId: 8
+        id: 9
         cancelReason: cancelReason
         returnUrl: returnUrl
         gatewayStatus: gatewayStatus
         addonData: addonData
-        billingCycleAnchor: 5
-        currentPeriodStart: 9
-        trialEnd: 5
-        amount: 1
-        quantity: 6
-        userId: 9
-        createTime: 2
+        billingCycleAnchor: 1
+        currentPeriodStart: 7
+        trialEnd: 1
+        amount: 7
+        quantity: 9
+        userId: 6
+        createTime: 1
         latestInvoiceId: latestInvoiceId
-        cancelAtPeriodEnd: 5
+        cancelAtPeriodEnd: 1
         subscriptionId: subscriptionId
-        gatewayId: 4
-        lastUpdateTime: 1
+        gatewayId: 5
+        lastUpdateTime: 9
         pendingUpdateId: pendingUpdateId
-        status: 7
+        status: 6
         taskTime: taskTime
         vatNumber: vatNumber
       properties:
@@ -7124,9 +7241,10 @@ components:
       example:
         quantity: 9
         addons:
-        - quantity: 6
+        - quantity: 4
           addonPlan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -7144,9 +7262,10 @@ components:
             productDescription: productDescription
             publishStatus: 7
             status: 9
-        - quantity: 6
+        - quantity: 4
           addonPlan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -7176,6 +7295,7 @@ components:
         periodStart: 2
         plan:
           amount: 6
+          extraMetricData: extraMetricData
           bindingAddonIds: bindingAddonIds
           intervalUnit: intervalUnit
           description: description
@@ -7284,8 +7404,8 @@ components:
         address: address
         createTime: 6
         externalUserId: externalUserId
-        merchantId: 4
-        id: 0
+        merchantId: 6
+        id: 5
         email: email
       properties:
         address:
@@ -7328,6 +7448,297 @@ components:
           format: uint64
           properties: {}
           type: integer
+      type: object
+    unibee.internal.logic.gateway.ro.UserMerchantMetricStat:
+      example:
+        MetricLimit:
+          MetricId: 7
+          TotalLimit: 0
+          aggregationType: 6
+          aggregationProperty: aggregationProperty
+          code: code
+          metricName: metricName
+          UserId: 7
+          MerchantId: 3
+          type: 0
+          PlanLimits:
+          - gmtModify: 1
+            metricId: 2
+            createTime: 6
+            merchantId: 5
+            merchantMetricVo:
+              aggregationType: 6
+              aggregationProperty: aggregationProperty
+              code: code
+              metricDescription: metricDescription
+              metricName: metricName
+              gmtModify: 5
+              createTime: 1
+              merchantId: 2
+              id: 5
+              type: 7
+            planId: 9
+            id: 5
+            metricLimit: 7
+          - gmtModify: 1
+            metricId: 2
+            createTime: 6
+            merchantId: 5
+            merchantMetricVo:
+              aggregationType: 6
+              aggregationProperty: aggregationProperty
+              code: code
+              metricDescription: metricDescription
+              metricName: metricName
+              gmtModify: 5
+              createTime: 1
+              merchantId: 2
+              id: 5
+              type: 7
+            planId: 9
+            id: 5
+            metricLimit: 7
+        CurrentUseValue: 3
+      properties:
+        CurrentUseValue:
+          format: uint64
+          properties: {}
+          type: integer
+        MetricLimit:
+          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.MetricLimitVo'
+      type: object
+    unibee.internal.logic.gateway.ro.UserMetricStat:
+      example:
+        isPaid: true
+        userMerchantMetricStats:
+        - MetricLimit:
+            MetricId: 7
+            TotalLimit: 0
+            aggregationType: 6
+            aggregationProperty: aggregationProperty
+            code: code
+            metricName: metricName
+            UserId: 7
+            MerchantId: 3
+            type: 0
+            PlanLimits:
+            - gmtModify: 1
+              metricId: 2
+              createTime: 6
+              merchantId: 5
+              merchantMetricVo:
+                aggregationType: 6
+                aggregationProperty: aggregationProperty
+                code: code
+                metricDescription: metricDescription
+                metricName: metricName
+                gmtModify: 5
+                createTime: 1
+                merchantId: 2
+                id: 5
+                type: 7
+              planId: 9
+              id: 5
+              metricLimit: 7
+            - gmtModify: 1
+              metricId: 2
+              createTime: 6
+              merchantId: 5
+              merchantMetricVo:
+                aggregationType: 6
+                aggregationProperty: aggregationProperty
+                code: code
+                metricDescription: metricDescription
+                metricName: metricName
+                gmtModify: 5
+                createTime: 1
+                merchantId: 2
+                id: 5
+                type: 7
+              planId: 9
+              id: 5
+              metricLimit: 7
+          CurrentUseValue: 3
+        - MetricLimit:
+            MetricId: 7
+            TotalLimit: 0
+            aggregationType: 6
+            aggregationProperty: aggregationProperty
+            code: code
+            metricName: metricName
+            UserId: 7
+            MerchantId: 3
+            type: 0
+            PlanLimits:
+            - gmtModify: 1
+              metricId: 2
+              createTime: 6
+              merchantId: 5
+              merchantMetricVo:
+                aggregationType: 6
+                aggregationProperty: aggregationProperty
+                code: code
+                metricDescription: metricDescription
+                metricName: metricName
+                gmtModify: 5
+                createTime: 1
+                merchantId: 2
+                id: 5
+                type: 7
+              planId: 9
+              id: 5
+              metricLimit: 7
+            - gmtModify: 1
+              metricId: 2
+              createTime: 6
+              merchantId: 5
+              merchantMetricVo:
+                aggregationType: 6
+                aggregationProperty: aggregationProperty
+                code: code
+                metricDescription: metricDescription
+                metricName: metricName
+                gmtModify: 5
+                createTime: 1
+                merchantId: 2
+                id: 5
+                type: 7
+              planId: 9
+              id: 5
+              metricLimit: 7
+          CurrentUseValue: 3
+        addons:
+        - quantity: 4
+          addonPlan:
+            amount: 6
+            extraMetricData: extraMetricData
+            bindingAddonIds: bindingAddonIds
+            intervalUnit: intervalUnit
+            description: description
+            planName: planName
+            type: 2
+            productName: productName
+            homeUrl: homeUrl
+            createTime: 1
+            merchantId: 2
+            taxScale: 3
+            imageUrl: imageUrl
+            intervalCount: 5
+            currency: currency
+            id: 5
+            productDescription: productDescription
+            publishStatus: 7
+            status: 9
+        - quantity: 4
+          addonPlan:
+            amount: 6
+            extraMetricData: extraMetricData
+            bindingAddonIds: bindingAddonIds
+            intervalUnit: intervalUnit
+            description: description
+            planName: planName
+            type: 2
+            productName: productName
+            homeUrl: homeUrl
+            createTime: 1
+            merchantId: 2
+            taxScale: 3
+            imageUrl: imageUrl
+            intervalCount: 5
+            currency: currency
+            id: 5
+            productDescription: productDescription
+            publishStatus: 7
+            status: 9
+        subscription:
+          gatewayItemData: gatewayItemData
+          testClock: 6
+          currentPeriodEnd: 6
+          link: link
+          type: 2
+          firstPaidTime: 4
+          merchantId: 6
+          taxScale: 3
+          countryCode: countryCode
+          dunningTime: 1
+          currency: currency
+          planId: 8
+          id: 9
+          cancelReason: cancelReason
+          returnUrl: returnUrl
+          gatewayStatus: gatewayStatus
+          addonData: addonData
+          billingCycleAnchor: 1
+          currentPeriodStart: 7
+          trialEnd: 1
+          amount: 7
+          quantity: 9
+          userId: 6
+          createTime: 1
+          latestInvoiceId: latestInvoiceId
+          cancelAtPeriodEnd: 1
+          subscriptionId: subscriptionId
+          gatewayId: 5
+          lastUpdateTime: 9
+          pendingUpdateId: pendingUpdateId
+          status: 6
+          taskTime: taskTime
+          vatNumber: vatNumber
+        plan:
+          amount: 6
+          extraMetricData: extraMetricData
+          bindingAddonIds: bindingAddonIds
+          intervalUnit: intervalUnit
+          description: description
+          planName: planName
+          type: 2
+          productName: productName
+          homeUrl: homeUrl
+          createTime: 1
+          merchantId: 2
+          taxScale: 3
+          imageUrl: imageUrl
+          intervalCount: 5
+          currency: currency
+          id: 5
+          productDescription: productDescription
+          publishStatus: 7
+          status: 9
+        user:
+          firstName: firstName
+          lastName: lastName
+          address: address
+          createTime: 6
+          externalUserId: externalUserId
+          merchantId: 6
+          id: 5
+          email: email
+      properties:
+        addons:
+          description: Addon
+          format: "[]*ro.PlanAddonVo"
+          items:
+            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PlanAddonVo'
+          properties: {}
+          type: array
+        isPaid:
+          description: IsPaid
+          format: bool
+          properties: {}
+          type: boolean
+        plan:
+          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PlanSimplify'
+        subscription:
+          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.SubscriptionSimplify'
+        user:
+          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.UserAccountSimplify'
+        userMerchantMetricStats:
+          description: UserMerchantMetricStats
+          format: "[]*ro.UserMerchantMetricStat"
+          items:
+            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.UserMerchantMetricStat'
+          properties: {}
+          type: array
       type: object
     unibee.internal.logic.gateway.ro.ValidResult:
       properties:
@@ -7392,162 +7803,6 @@ components:
           format: bool
           properties: {}
           type: boolean
-      type: object
-    unibee.internal.logic.metric_event.MetricLimitVo:
-      example:
-        MetricId: 5
-        TotalLimit: 5
-        aggregationType: 7
-        aggregationProperty: aggregationProperty
-        code: code
-        metricName: metricName
-        UserId: 2
-        MerchantId: 1
-        type: 9
-        PlanLimits:
-        - gmtModify: 1
-          metricId: 2
-          createTime: 6
-          merchantId: 5
-          merchantMetricVo:
-            aggregationType: 6
-            aggregationProperty: aggregationProperty
-            code: code
-            metricDescription: metricDescription
-            metricName: metricName
-            gmtModify: 5
-            createTime: 1
-            merchantId: 2
-            id: 5
-            type: 7
-          planId: 9
-          id: 5
-          metricLimit: 7
-        - gmtModify: 1
-          metricId: 2
-          createTime: 6
-          merchantId: 5
-          merchantMetricVo:
-            aggregationType: 6
-            aggregationProperty: aggregationProperty
-            code: code
-            metricDescription: metricDescription
-            metricName: metricName
-            gmtModify: 5
-            createTime: 1
-            merchantId: 2
-            id: 5
-            type: 7
-          planId: 9
-          id: 5
-          metricLimit: 7
-      properties:
-        MerchantId:
-          format: uint64
-          properties: {}
-          type: integer
-        MetricId:
-          format: int64
-          properties: {}
-          type: integer
-        PlanLimits:
-          format: "[]*ro.MerchantMetricPlanLimitVo"
-          items:
-            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.MerchantMetricPlanLimitVo'
-          properties: {}
-          type: array
-        TotalLimit:
-          format: uint64
-          properties: {}
-          type: integer
-        UserId:
-          format: int64
-          properties: {}
-          type: integer
-        aggregationProperty:
-          description: aggregation property
-          format: string
-          properties: {}
-          type: string
-        aggregationType:
-          description: "0-count，1-count unique, 2-latest, 3-max, 4-sum"
-          format: int
-          properties: {}
-          type: integer
-        code:
-          description: code
-          format: string
-          properties: {}
-          type: string
-        metricName:
-          description: metric name
-          format: string
-          properties: {}
-          type: string
-        type:
-          description: "1-limit_metered，2-charge_metered(come later),3-charge_recurring(come\
-            \ later)"
-          format: int
-          properties: {}
-          type: integer
-      type: object
-    unibee.internal.logic.metric_event.UserMerchantMetricStat:
-      example:
-        MetricLimit:
-          MetricId: 5
-          TotalLimit: 5
-          aggregationType: 7
-          aggregationProperty: aggregationProperty
-          code: code
-          metricName: metricName
-          UserId: 2
-          MerchantId: 1
-          type: 9
-          PlanLimits:
-          - gmtModify: 1
-            metricId: 2
-            createTime: 6
-            merchantId: 5
-            merchantMetricVo:
-              aggregationType: 6
-              aggregationProperty: aggregationProperty
-              code: code
-              metricDescription: metricDescription
-              metricName: metricName
-              gmtModify: 5
-              createTime: 1
-              merchantId: 2
-              id: 5
-              type: 7
-            planId: 9
-            id: 5
-            metricLimit: 7
-          - gmtModify: 1
-            metricId: 2
-            createTime: 6
-            merchantId: 5
-            merchantMetricVo:
-              aggregationType: 6
-              aggregationProperty: aggregationProperty
-              code: code
-              metricDescription: metricDescription
-              metricName: metricName
-              gmtModify: 5
-              createTime: 1
-              merchantId: 2
-              id: 5
-              type: 7
-            planId: 9
-            id: 5
-            metricLimit: 7
-        CurrentUseValue: 6
-      properties:
-        CurrentUseValue:
-          format: uint64
-          properties: {}
-          type: integer
-        MetricLimit:
-          $ref: '#/components/schemas/unibee.internal.logic.metric_event.MetricLimitVo'
       type: object
     unibee.internal.logic.webhook.MerchantWebhookEndpointVo:
       example:
@@ -8630,6 +8885,10 @@ components:
           type: string
         description:
           description: description
+          format: string
+          properties: {}
+          type: string
+        extraMetricData:
           format: string
           properties: {}
           type: string
@@ -12276,214 +12535,425 @@ components:
       type: object
     _merchant_metric_user_stat_get_200_response_data:
       example:
-        userMerchantMetricStats:
-        - MetricLimit:
-            MetricId: 5
-            TotalLimit: 5
-            aggregationType: 7
-            aggregationProperty: aggregationProperty
-            code: code
-            metricName: metricName
-            UserId: 2
-            MerchantId: 1
-            type: 9
-            PlanLimits:
-            - gmtModify: 1
-              metricId: 2
-              createTime: 6
-              merchantId: 5
-              merchantMetricVo:
-                aggregationType: 6
-                aggregationProperty: aggregationProperty
-                code: code
-                metricDescription: metricDescription
-                metricName: metricName
-                gmtModify: 5
-                createTime: 1
-                merchantId: 2
+        userMetricStat:
+          isPaid: true
+          userMerchantMetricStats:
+          - MetricLimit:
+              MetricId: 7
+              TotalLimit: 0
+              aggregationType: 6
+              aggregationProperty: aggregationProperty
+              code: code
+              metricName: metricName
+              UserId: 7
+              MerchantId: 3
+              type: 0
+              PlanLimits:
+              - gmtModify: 1
+                metricId: 2
+                createTime: 6
+                merchantId: 5
+                merchantMetricVo:
+                  aggregationType: 6
+                  aggregationProperty: aggregationProperty
+                  code: code
+                  metricDescription: metricDescription
+                  metricName: metricName
+                  gmtModify: 5
+                  createTime: 1
+                  merchantId: 2
+                  id: 5
+                  type: 7
+                planId: 9
                 id: 5
-                type: 7
-              planId: 9
-              id: 5
-              metricLimit: 7
-            - gmtModify: 1
-              metricId: 2
-              createTime: 6
-              merchantId: 5
-              merchantMetricVo:
-                aggregationType: 6
-                aggregationProperty: aggregationProperty
-                code: code
-                metricDescription: metricDescription
-                metricName: metricName
-                gmtModify: 5
-                createTime: 1
-                merchantId: 2
+                metricLimit: 7
+              - gmtModify: 1
+                metricId: 2
+                createTime: 6
+                merchantId: 5
+                merchantMetricVo:
+                  aggregationType: 6
+                  aggregationProperty: aggregationProperty
+                  code: code
+                  metricDescription: metricDescription
+                  metricName: metricName
+                  gmtModify: 5
+                  createTime: 1
+                  merchantId: 2
+                  id: 5
+                  type: 7
+                planId: 9
                 id: 5
-                type: 7
-              planId: 9
-              id: 5
-              metricLimit: 7
-          CurrentUseValue: 6
-        - MetricLimit:
-            MetricId: 5
-            TotalLimit: 5
-            aggregationType: 7
-            aggregationProperty: aggregationProperty
-            code: code
-            metricName: metricName
-            UserId: 2
-            MerchantId: 1
-            type: 9
-            PlanLimits:
-            - gmtModify: 1
-              metricId: 2
-              createTime: 6
-              merchantId: 5
-              merchantMetricVo:
-                aggregationType: 6
-                aggregationProperty: aggregationProperty
-                code: code
-                metricDescription: metricDescription
-                metricName: metricName
-                gmtModify: 5
-                createTime: 1
-                merchantId: 2
+                metricLimit: 7
+            CurrentUseValue: 3
+          - MetricLimit:
+              MetricId: 7
+              TotalLimit: 0
+              aggregationType: 6
+              aggregationProperty: aggregationProperty
+              code: code
+              metricName: metricName
+              UserId: 7
+              MerchantId: 3
+              type: 0
+              PlanLimits:
+              - gmtModify: 1
+                metricId: 2
+                createTime: 6
+                merchantId: 5
+                merchantMetricVo:
+                  aggregationType: 6
+                  aggregationProperty: aggregationProperty
+                  code: code
+                  metricDescription: metricDescription
+                  metricName: metricName
+                  gmtModify: 5
+                  createTime: 1
+                  merchantId: 2
+                  id: 5
+                  type: 7
+                planId: 9
                 id: 5
-                type: 7
-              planId: 9
-              id: 5
-              metricLimit: 7
-            - gmtModify: 1
-              metricId: 2
-              createTime: 6
-              merchantId: 5
-              merchantMetricVo:
-                aggregationType: 6
-                aggregationProperty: aggregationProperty
-                code: code
-                metricDescription: metricDescription
-                metricName: metricName
-                gmtModify: 5
-                createTime: 1
-                merchantId: 2
+                metricLimit: 7
+              - gmtModify: 1
+                metricId: 2
+                createTime: 6
+                merchantId: 5
+                merchantMetricVo:
+                  aggregationType: 6
+                  aggregationProperty: aggregationProperty
+                  code: code
+                  metricDescription: metricDescription
+                  metricName: metricName
+                  gmtModify: 5
+                  createTime: 1
+                  merchantId: 2
+                  id: 5
+                  type: 7
+                planId: 9
                 id: 5
-                type: 7
-              planId: 9
+                metricLimit: 7
+            CurrentUseValue: 3
+          addons:
+          - quantity: 4
+            addonPlan:
+              amount: 6
+              extraMetricData: extraMetricData
+              bindingAddonIds: bindingAddonIds
+              intervalUnit: intervalUnit
+              description: description
+              planName: planName
+              type: 2
+              productName: productName
+              homeUrl: homeUrl
+              createTime: 1
+              merchantId: 2
+              taxScale: 3
+              imageUrl: imageUrl
+              intervalCount: 5
+              currency: currency
               id: 5
-              metricLimit: 7
-          CurrentUseValue: 6
+              productDescription: productDescription
+              publishStatus: 7
+              status: 9
+          - quantity: 4
+            addonPlan:
+              amount: 6
+              extraMetricData: extraMetricData
+              bindingAddonIds: bindingAddonIds
+              intervalUnit: intervalUnit
+              description: description
+              planName: planName
+              type: 2
+              productName: productName
+              homeUrl: homeUrl
+              createTime: 1
+              merchantId: 2
+              taxScale: 3
+              imageUrl: imageUrl
+              intervalCount: 5
+              currency: currency
+              id: 5
+              productDescription: productDescription
+              publishStatus: 7
+              status: 9
+          subscription:
+            gatewayItemData: gatewayItemData
+            testClock: 6
+            currentPeriodEnd: 6
+            link: link
+            type: 2
+            firstPaidTime: 4
+            merchantId: 6
+            taxScale: 3
+            countryCode: countryCode
+            dunningTime: 1
+            currency: currency
+            planId: 8
+            id: 9
+            cancelReason: cancelReason
+            returnUrl: returnUrl
+            gatewayStatus: gatewayStatus
+            addonData: addonData
+            billingCycleAnchor: 1
+            currentPeriodStart: 7
+            trialEnd: 1
+            amount: 7
+            quantity: 9
+            userId: 6
+            createTime: 1
+            latestInvoiceId: latestInvoiceId
+            cancelAtPeriodEnd: 1
+            subscriptionId: subscriptionId
+            gatewayId: 5
+            lastUpdateTime: 9
+            pendingUpdateId: pendingUpdateId
+            status: 6
+            taskTime: taskTime
+            vatNumber: vatNumber
+          plan:
+            amount: 6
+            extraMetricData: extraMetricData
+            bindingAddonIds: bindingAddonIds
+            intervalUnit: intervalUnit
+            description: description
+            planName: planName
+            type: 2
+            productName: productName
+            homeUrl: homeUrl
+            createTime: 1
+            merchantId: 2
+            taxScale: 3
+            imageUrl: imageUrl
+            intervalCount: 5
+            currency: currency
+            id: 5
+            productDescription: productDescription
+            publishStatus: 7
+            status: 9
+          user:
+            firstName: firstName
+            lastName: lastName
+            address: address
+            createTime: 6
+            externalUserId: externalUserId
+            merchantId: 6
+            id: 5
+            email: email
       properties:
-        userMerchantMetricStats:
-          description: UserMerchantMetricStats
-          format: "[]*metric_event.UserMerchantMetricStat"
-          items:
-            $ref: '#/components/schemas/unibee.internal.logic.metric_event.UserMerchantMetricStat'
-          properties: {}
-          type: array
+        userMetricStat:
+          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.UserMetricStat'
       type: object
     _merchant_metric_user_stat_get_200_response:
       example:
         redirect: redirect
         code: 0
         data:
-          userMerchantMetricStats:
-          - MetricLimit:
-              MetricId: 5
-              TotalLimit: 5
-              aggregationType: 7
-              aggregationProperty: aggregationProperty
-              code: code
-              metricName: metricName
-              UserId: 2
-              MerchantId: 1
-              type: 9
-              PlanLimits:
-              - gmtModify: 1
-                metricId: 2
-                createTime: 6
-                merchantId: 5
-                merchantMetricVo:
-                  aggregationType: 6
-                  aggregationProperty: aggregationProperty
-                  code: code
-                  metricDescription: metricDescription
-                  metricName: metricName
-                  gmtModify: 5
-                  createTime: 1
-                  merchantId: 2
+          userMetricStat:
+            isPaid: true
+            userMerchantMetricStats:
+            - MetricLimit:
+                MetricId: 7
+                TotalLimit: 0
+                aggregationType: 6
+                aggregationProperty: aggregationProperty
+                code: code
+                metricName: metricName
+                UserId: 7
+                MerchantId: 3
+                type: 0
+                PlanLimits:
+                - gmtModify: 1
+                  metricId: 2
+                  createTime: 6
+                  merchantId: 5
+                  merchantMetricVo:
+                    aggregationType: 6
+                    aggregationProperty: aggregationProperty
+                    code: code
+                    metricDescription: metricDescription
+                    metricName: metricName
+                    gmtModify: 5
+                    createTime: 1
+                    merchantId: 2
+                    id: 5
+                    type: 7
+                  planId: 9
                   id: 5
-                  type: 7
-                planId: 9
-                id: 5
-                metricLimit: 7
-              - gmtModify: 1
-                metricId: 2
-                createTime: 6
-                merchantId: 5
-                merchantMetricVo:
-                  aggregationType: 6
-                  aggregationProperty: aggregationProperty
-                  code: code
-                  metricDescription: metricDescription
-                  metricName: metricName
-                  gmtModify: 5
-                  createTime: 1
-                  merchantId: 2
+                  metricLimit: 7
+                - gmtModify: 1
+                  metricId: 2
+                  createTime: 6
+                  merchantId: 5
+                  merchantMetricVo:
+                    aggregationType: 6
+                    aggregationProperty: aggregationProperty
+                    code: code
+                    metricDescription: metricDescription
+                    metricName: metricName
+                    gmtModify: 5
+                    createTime: 1
+                    merchantId: 2
+                    id: 5
+                    type: 7
+                  planId: 9
                   id: 5
-                  type: 7
-                planId: 9
-                id: 5
-                metricLimit: 7
-            CurrentUseValue: 6
-          - MetricLimit:
-              MetricId: 5
-              TotalLimit: 5
-              aggregationType: 7
-              aggregationProperty: aggregationProperty
-              code: code
-              metricName: metricName
-              UserId: 2
-              MerchantId: 1
-              type: 9
-              PlanLimits:
-              - gmtModify: 1
-                metricId: 2
-                createTime: 6
-                merchantId: 5
-                merchantMetricVo:
-                  aggregationType: 6
-                  aggregationProperty: aggregationProperty
-                  code: code
-                  metricDescription: metricDescription
-                  metricName: metricName
-                  gmtModify: 5
-                  createTime: 1
-                  merchantId: 2
+                  metricLimit: 7
+              CurrentUseValue: 3
+            - MetricLimit:
+                MetricId: 7
+                TotalLimit: 0
+                aggregationType: 6
+                aggregationProperty: aggregationProperty
+                code: code
+                metricName: metricName
+                UserId: 7
+                MerchantId: 3
+                type: 0
+                PlanLimits:
+                - gmtModify: 1
+                  metricId: 2
+                  createTime: 6
+                  merchantId: 5
+                  merchantMetricVo:
+                    aggregationType: 6
+                    aggregationProperty: aggregationProperty
+                    code: code
+                    metricDescription: metricDescription
+                    metricName: metricName
+                    gmtModify: 5
+                    createTime: 1
+                    merchantId: 2
+                    id: 5
+                    type: 7
+                  planId: 9
                   id: 5
-                  type: 7
-                planId: 9
-                id: 5
-                metricLimit: 7
-              - gmtModify: 1
-                metricId: 2
-                createTime: 6
-                merchantId: 5
-                merchantMetricVo:
-                  aggregationType: 6
-                  aggregationProperty: aggregationProperty
-                  code: code
-                  metricDescription: metricDescription
-                  metricName: metricName
-                  gmtModify: 5
-                  createTime: 1
-                  merchantId: 2
+                  metricLimit: 7
+                - gmtModify: 1
+                  metricId: 2
+                  createTime: 6
+                  merchantId: 5
+                  merchantMetricVo:
+                    aggregationType: 6
+                    aggregationProperty: aggregationProperty
+                    code: code
+                    metricDescription: metricDescription
+                    metricName: metricName
+                    gmtModify: 5
+                    createTime: 1
+                    merchantId: 2
+                    id: 5
+                    type: 7
+                  planId: 9
                   id: 5
-                  type: 7
-                planId: 9
+                  metricLimit: 7
+              CurrentUseValue: 3
+            addons:
+            - quantity: 4
+              addonPlan:
+                amount: 6
+                extraMetricData: extraMetricData
+                bindingAddonIds: bindingAddonIds
+                intervalUnit: intervalUnit
+                description: description
+                planName: planName
+                type: 2
+                productName: productName
+                homeUrl: homeUrl
+                createTime: 1
+                merchantId: 2
+                taxScale: 3
+                imageUrl: imageUrl
+                intervalCount: 5
+                currency: currency
                 id: 5
-                metricLimit: 7
-            CurrentUseValue: 6
+                productDescription: productDescription
+                publishStatus: 7
+                status: 9
+            - quantity: 4
+              addonPlan:
+                amount: 6
+                extraMetricData: extraMetricData
+                bindingAddonIds: bindingAddonIds
+                intervalUnit: intervalUnit
+                description: description
+                planName: planName
+                type: 2
+                productName: productName
+                homeUrl: homeUrl
+                createTime: 1
+                merchantId: 2
+                taxScale: 3
+                imageUrl: imageUrl
+                intervalCount: 5
+                currency: currency
+                id: 5
+                productDescription: productDescription
+                publishStatus: 7
+                status: 9
+            subscription:
+              gatewayItemData: gatewayItemData
+              testClock: 6
+              currentPeriodEnd: 6
+              link: link
+              type: 2
+              firstPaidTime: 4
+              merchantId: 6
+              taxScale: 3
+              countryCode: countryCode
+              dunningTime: 1
+              currency: currency
+              planId: 8
+              id: 9
+              cancelReason: cancelReason
+              returnUrl: returnUrl
+              gatewayStatus: gatewayStatus
+              addonData: addonData
+              billingCycleAnchor: 1
+              currentPeriodStart: 7
+              trialEnd: 1
+              amount: 7
+              quantity: 9
+              userId: 6
+              createTime: 1
+              latestInvoiceId: latestInvoiceId
+              cancelAtPeriodEnd: 1
+              subscriptionId: subscriptionId
+              gatewayId: 5
+              lastUpdateTime: 9
+              pendingUpdateId: pendingUpdateId
+              status: 6
+              taskTime: taskTime
+              vatNumber: vatNumber
+            plan:
+              amount: 6
+              extraMetricData: extraMetricData
+              bindingAddonIds: bindingAddonIds
+              intervalUnit: intervalUnit
+              description: description
+              planName: planName
+              type: 2
+              productName: productName
+              homeUrl: homeUrl
+              createTime: 1
+              merchantId: 2
+              taxScale: 3
+              imageUrl: imageUrl
+              intervalCount: 5
+              currency: currency
+              id: 5
+              productDescription: productDescription
+              publishStatus: 7
+              status: 9
+            user:
+              firstName: firstName
+              lastName: lastName
+              address: address
+              createTime: 6
+              externalUserId: externalUserId
+              merchantId: 6
+              id: 5
+              email: email
         requestId: requestId
         message: message
       properties:
@@ -12652,6 +13122,7 @@ components:
       example:
         plan:
           amount: 6
+          extraMetricData: extraMetricData
           bindingAddonIds: bindingAddonIds
           intervalUnit: intervalUnit
           description: description
@@ -12680,6 +13151,7 @@ components:
         data:
           plan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -12724,6 +13196,7 @@ components:
         plan:
           addons:
           - amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -12742,6 +13215,7 @@ components:
             publishStatus: 7
             status: 9
           - amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -12764,6 +13238,7 @@ components:
           - 6
           plan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -12830,6 +13305,7 @@ components:
           plan:
             addons:
             - amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -12848,6 +13324,7 @@ components:
               publishStatus: 7
               status: 9
             - amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -12870,6 +13347,7 @@ components:
             - 6
             plan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -12951,6 +13429,7 @@ components:
         plans:
         - addons:
           - amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -12969,6 +13448,7 @@ components:
             publishStatus: 7
             status: 9
           - amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -12991,6 +13471,7 @@ components:
           - 6
           plan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -13047,6 +13528,7 @@ components:
             metricLimit: 7
         - addons:
           - amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -13065,6 +13547,7 @@ components:
             publishStatus: 7
             status: 9
           - amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -13087,6 +13570,7 @@ components:
           - 6
           plan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -13158,6 +13642,7 @@ components:
           plans:
           - addons:
             - amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -13176,6 +13661,7 @@ components:
               publishStatus: 7
               status: 9
             - amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -13198,6 +13684,7 @@ components:
             - 6
             plan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -13254,6 +13741,7 @@ components:
               metricLimit: 7
           - addons:
             - amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -13272,6 +13760,7 @@ components:
               publishStatus: 7
               status: 9
             - amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -13294,6 +13783,7 @@ components:
             - 6
             plan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -13917,9 +14407,10 @@ components:
           gmtModify: gmtModify
           updateAddonData: updateAddonData
           addons:
-          - quantity: 6
+          - quantity: 4
             addonPlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -13937,9 +14428,10 @@ components:
               productDescription: productDescription
               publishStatus: 7
               status: 9
-          - quantity: 6
+          - quantity: 4
             addonPlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -13960,6 +14452,7 @@ components:
           link: link
           updatePlan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -13977,11 +14470,12 @@ components:
             productDescription: productDescription
             publishStatus: 7
             status: 9
-          effectImmediate: 8
+          effectImmediate: 1
           updateAddons:
-          - quantity: 6
+          - quantity: 4
             addonPlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -13999,9 +14493,10 @@ components:
               productDescription: productDescription
               publishStatus: 7
               status: 9
-          - quantity: 6
+          - quantity: 4
             addonPlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -14020,13 +14515,14 @@ components:
               publishStatus: 7
               status: 9
           updateCurrency: updateCurrency
-          updatePlanId: 7
-          merchantId: 3
-          updateAmount: 3
+          updatePlanId: 6
+          merchantId: 2
+          updateAmount: 1
           currency: currency
-          planId: 6
+          planId: 4
           plan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -14046,28 +14542,29 @@ components:
             status: 9
           addonData: addonData
           amount: 6
-          quantity: 6
+          quantity: 1
           gmtCreate: gmtCreate
-          userId: 7
+          userId: 1
           merchantMember:
             firstName: firstName
             lastName: lastName
-            createTime: 6
-            merchantId: 2
-            id: 1
+            createTime: 7
+            merchantId: 3
+            id: 9
             email: email
           updateSubscriptionId: updateSubscriptionId
-          updateQuantity: 0
-          prorationAmount: 5
-          paid: 6
-          effectTime: 9
+          updateQuantity: 7
+          prorationAmount: 7
+          paid: 2
+          effectTime: 5
           subscriptionId: subscriptionId
-          gatewayId: 6
-          status: 3
+          gatewayId: 5
+          status: 1
         addons:
-        - quantity: 6
+        - quantity: 4
           addonPlan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -14085,9 +14582,10 @@ components:
             productDescription: productDescription
             publishStatus: 7
             status: 9
-        - quantity: 6
+        - quantity: 4
           addonPlan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -14107,40 +14605,41 @@ components:
             status: 9
         subscription:
           gatewayItemData: gatewayItemData
-          testClock: 4
-          currentPeriodEnd: 7
+          testClock: 6
+          currentPeriodEnd: 6
           link: link
-          type: 9
-          firstPaidTime: 2
-          merchantId: 1
-          taxScale: 1
+          type: 2
+          firstPaidTime: 4
+          merchantId: 6
+          taxScale: 3
           countryCode: countryCode
-          dunningTime: 3
+          dunningTime: 1
           currency: currency
-          planId: 1
-          id: 7
+          planId: 8
+          id: 9
           cancelReason: cancelReason
           returnUrl: returnUrl
           gatewayStatus: gatewayStatus
           addonData: addonData
-          billingCycleAnchor: 5
-          currentPeriodStart: 9
-          trialEnd: 5
-          amount: 1
-          quantity: 6
-          userId: 9
-          createTime: 2
+          billingCycleAnchor: 1
+          currentPeriodStart: 7
+          trialEnd: 1
+          amount: 7
+          quantity: 9
+          userId: 6
+          createTime: 1
           latestInvoiceId: latestInvoiceId
-          cancelAtPeriodEnd: 5
+          cancelAtPeriodEnd: 1
           subscriptionId: subscriptionId
-          gatewayId: 4
-          lastUpdateTime: 1
+          gatewayId: 5
+          lastUpdateTime: 9
           pendingUpdateId: pendingUpdateId
-          status: 7
+          status: 6
           taskTime: taskTime
           vatNumber: vatNumber
         plan:
           amount: 6
+          extraMetricData: extraMetricData
           bindingAddonIds: bindingAddonIds
           intervalUnit: intervalUnit
           description: description
@@ -14164,8 +14663,8 @@ components:
           address: address
           createTime: 6
           externalUserId: externalUserId
-          merchantId: 4
-          id: 0
+          merchantId: 6
+          id: 5
           email: email
         gateway:
           gatewayName: gatewayName
@@ -14200,9 +14699,10 @@ components:
             gmtModify: gmtModify
             updateAddonData: updateAddonData
             addons:
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -14220,9 +14720,10 @@ components:
                 productDescription: productDescription
                 publishStatus: 7
                 status: 9
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -14243,6 +14744,7 @@ components:
             link: link
             updatePlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -14260,11 +14762,12 @@ components:
               productDescription: productDescription
               publishStatus: 7
               status: 9
-            effectImmediate: 8
+            effectImmediate: 1
             updateAddons:
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -14282,9 +14785,10 @@ components:
                 productDescription: productDescription
                 publishStatus: 7
                 status: 9
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -14303,13 +14807,14 @@ components:
                 publishStatus: 7
                 status: 9
             updateCurrency: updateCurrency
-            updatePlanId: 7
-            merchantId: 3
-            updateAmount: 3
+            updatePlanId: 6
+            merchantId: 2
+            updateAmount: 1
             currency: currency
-            planId: 6
+            planId: 4
             plan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -14329,28 +14834,29 @@ components:
               status: 9
             addonData: addonData
             amount: 6
-            quantity: 6
+            quantity: 1
             gmtCreate: gmtCreate
-            userId: 7
+            userId: 1
             merchantMember:
               firstName: firstName
               lastName: lastName
-              createTime: 6
-              merchantId: 2
-              id: 1
+              createTime: 7
+              merchantId: 3
+              id: 9
               email: email
             updateSubscriptionId: updateSubscriptionId
-            updateQuantity: 0
-            prorationAmount: 5
-            paid: 6
-            effectTime: 9
+            updateQuantity: 7
+            prorationAmount: 7
+            paid: 2
+            effectTime: 5
             subscriptionId: subscriptionId
-            gatewayId: 6
-            status: 3
+            gatewayId: 5
+            status: 1
           addons:
-          - quantity: 6
+          - quantity: 4
             addonPlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -14368,9 +14874,10 @@ components:
               productDescription: productDescription
               publishStatus: 7
               status: 9
-          - quantity: 6
+          - quantity: 4
             addonPlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -14390,40 +14897,41 @@ components:
               status: 9
           subscription:
             gatewayItemData: gatewayItemData
-            testClock: 4
-            currentPeriodEnd: 7
+            testClock: 6
+            currentPeriodEnd: 6
             link: link
-            type: 9
-            firstPaidTime: 2
-            merchantId: 1
-            taxScale: 1
+            type: 2
+            firstPaidTime: 4
+            merchantId: 6
+            taxScale: 3
             countryCode: countryCode
-            dunningTime: 3
+            dunningTime: 1
             currency: currency
-            planId: 1
-            id: 7
+            planId: 8
+            id: 9
             cancelReason: cancelReason
             returnUrl: returnUrl
             gatewayStatus: gatewayStatus
             addonData: addonData
-            billingCycleAnchor: 5
-            currentPeriodStart: 9
-            trialEnd: 5
-            amount: 1
-            quantity: 6
-            userId: 9
-            createTime: 2
+            billingCycleAnchor: 1
+            currentPeriodStart: 7
+            trialEnd: 1
+            amount: 7
+            quantity: 9
+            userId: 6
+            createTime: 1
             latestInvoiceId: latestInvoiceId
-            cancelAtPeriodEnd: 5
+            cancelAtPeriodEnd: 1
             subscriptionId: subscriptionId
-            gatewayId: 4
-            lastUpdateTime: 1
+            gatewayId: 5
+            lastUpdateTime: 9
             pendingUpdateId: pendingUpdateId
-            status: 7
+            status: 6
             taskTime: taskTime
             vatNumber: vatNumber
           plan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -14447,8 +14955,8 @@ components:
             address: address
             createTime: 6
             externalUserId: externalUserId
-            merchantId: 4
-            id: 0
+            merchantId: 6
+            id: 5
             email: email
           gateway:
             gatewayName: gatewayName
@@ -14484,9 +14992,10 @@ components:
             gmtModify: gmtModify
             updateAddonData: updateAddonData
             addons:
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -14504,9 +15013,10 @@ components:
                 productDescription: productDescription
                 publishStatus: 7
                 status: 9
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -14527,6 +15037,7 @@ components:
             link: link
             updatePlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -14544,11 +15055,12 @@ components:
               productDescription: productDescription
               publishStatus: 7
               status: 9
-            effectImmediate: 8
+            effectImmediate: 1
             updateAddons:
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -14566,9 +15078,10 @@ components:
                 productDescription: productDescription
                 publishStatus: 7
                 status: 9
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -14587,13 +15100,14 @@ components:
                 publishStatus: 7
                 status: 9
             updateCurrency: updateCurrency
-            updatePlanId: 7
-            merchantId: 3
-            updateAmount: 3
+            updatePlanId: 6
+            merchantId: 2
+            updateAmount: 1
             currency: currency
-            planId: 6
+            planId: 4
             plan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -14613,33 +15127,34 @@ components:
               status: 9
             addonData: addonData
             amount: 6
-            quantity: 6
+            quantity: 1
             gmtCreate: gmtCreate
-            userId: 7
+            userId: 1
             merchantMember:
               firstName: firstName
               lastName: lastName
-              createTime: 6
-              merchantId: 2
-              id: 1
+              createTime: 7
+              merchantId: 3
+              id: 9
               email: email
             updateSubscriptionId: updateSubscriptionId
-            updateQuantity: 0
-            prorationAmount: 5
-            paid: 6
-            effectTime: 9
+            updateQuantity: 7
+            prorationAmount: 7
+            paid: 2
+            effectTime: 5
             subscriptionId: subscriptionId
-            gatewayId: 6
-            status: 3
+            gatewayId: 5
+            status: 1
           addonParams:
           - addonPlanId: 6
             quantity: 1
           - addonPlanId: 6
             quantity: 1
           addons:
-          - quantity: 6
+          - quantity: 4
             addonPlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -14657,9 +15172,10 @@ components:
               productDescription: productDescription
               publishStatus: 7
               status: 9
-          - quantity: 6
+          - quantity: 4
             addonPlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -14679,40 +15195,41 @@ components:
               status: 9
           subscription:
             gatewayItemData: gatewayItemData
-            testClock: 4
-            currentPeriodEnd: 7
+            testClock: 6
+            currentPeriodEnd: 6
             link: link
-            type: 9
-            firstPaidTime: 2
-            merchantId: 1
-            taxScale: 1
+            type: 2
+            firstPaidTime: 4
+            merchantId: 6
+            taxScale: 3
             countryCode: countryCode
-            dunningTime: 3
+            dunningTime: 1
             currency: currency
-            planId: 1
-            id: 7
+            planId: 8
+            id: 9
             cancelReason: cancelReason
             returnUrl: returnUrl
             gatewayStatus: gatewayStatus
             addonData: addonData
-            billingCycleAnchor: 5
-            currentPeriodStart: 9
-            trialEnd: 5
-            amount: 1
-            quantity: 6
-            userId: 9
-            createTime: 2
+            billingCycleAnchor: 1
+            currentPeriodStart: 7
+            trialEnd: 1
+            amount: 7
+            quantity: 9
+            userId: 6
+            createTime: 1
             latestInvoiceId: latestInvoiceId
-            cancelAtPeriodEnd: 5
+            cancelAtPeriodEnd: 1
             subscriptionId: subscriptionId
-            gatewayId: 4
-            lastUpdateTime: 1
+            gatewayId: 5
+            lastUpdateTime: 9
             pendingUpdateId: pendingUpdateId
-            status: 7
+            status: 6
             taskTime: taskTime
             vatNumber: vatNumber
           plan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -14736,8 +15253,8 @@ components:
             address: address
             createTime: 6
             externalUserId: externalUserId
-            merchantId: 4
-            id: 0
+            merchantId: 6
+            id: 5
             email: email
           gateway:
             gatewayName: gatewayName
@@ -14748,9 +15265,10 @@ components:
             gmtModify: gmtModify
             updateAddonData: updateAddonData
             addons:
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -14768,9 +15286,10 @@ components:
                 productDescription: productDescription
                 publishStatus: 7
                 status: 9
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -14791,6 +15310,7 @@ components:
             link: link
             updatePlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -14808,11 +15328,12 @@ components:
               productDescription: productDescription
               publishStatus: 7
               status: 9
-            effectImmediate: 8
+            effectImmediate: 1
             updateAddons:
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -14830,9 +15351,10 @@ components:
                 productDescription: productDescription
                 publishStatus: 7
                 status: 9
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -14851,13 +15373,14 @@ components:
                 publishStatus: 7
                 status: 9
             updateCurrency: updateCurrency
-            updatePlanId: 7
-            merchantId: 3
-            updateAmount: 3
+            updatePlanId: 6
+            merchantId: 2
+            updateAmount: 1
             currency: currency
-            planId: 6
+            planId: 4
             plan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -14877,33 +15400,34 @@ components:
               status: 9
             addonData: addonData
             amount: 6
-            quantity: 6
+            quantity: 1
             gmtCreate: gmtCreate
-            userId: 7
+            userId: 1
             merchantMember:
               firstName: firstName
               lastName: lastName
-              createTime: 6
-              merchantId: 2
-              id: 1
+              createTime: 7
+              merchantId: 3
+              id: 9
               email: email
             updateSubscriptionId: updateSubscriptionId
-            updateQuantity: 0
-            prorationAmount: 5
-            paid: 6
-            effectTime: 9
+            updateQuantity: 7
+            prorationAmount: 7
+            paid: 2
+            effectTime: 5
             subscriptionId: subscriptionId
-            gatewayId: 6
-            status: 3
+            gatewayId: 5
+            status: 1
           addonParams:
           - addonPlanId: 6
             quantity: 1
           - addonPlanId: 6
             quantity: 1
           addons:
-          - quantity: 6
+          - quantity: 4
             addonPlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -14921,9 +15445,10 @@ components:
               productDescription: productDescription
               publishStatus: 7
               status: 9
-          - quantity: 6
+          - quantity: 4
             addonPlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -14943,40 +15468,41 @@ components:
               status: 9
           subscription:
             gatewayItemData: gatewayItemData
-            testClock: 4
-            currentPeriodEnd: 7
+            testClock: 6
+            currentPeriodEnd: 6
             link: link
-            type: 9
-            firstPaidTime: 2
-            merchantId: 1
-            taxScale: 1
+            type: 2
+            firstPaidTime: 4
+            merchantId: 6
+            taxScale: 3
             countryCode: countryCode
-            dunningTime: 3
+            dunningTime: 1
             currency: currency
-            planId: 1
-            id: 7
+            planId: 8
+            id: 9
             cancelReason: cancelReason
             returnUrl: returnUrl
             gatewayStatus: gatewayStatus
             addonData: addonData
-            billingCycleAnchor: 5
-            currentPeriodStart: 9
-            trialEnd: 5
-            amount: 1
-            quantity: 6
-            userId: 9
-            createTime: 2
+            billingCycleAnchor: 1
+            currentPeriodStart: 7
+            trialEnd: 1
+            amount: 7
+            quantity: 9
+            userId: 6
+            createTime: 1
             latestInvoiceId: latestInvoiceId
-            cancelAtPeriodEnd: 5
+            cancelAtPeriodEnd: 1
             subscriptionId: subscriptionId
-            gatewayId: 4
-            lastUpdateTime: 1
+            gatewayId: 5
+            lastUpdateTime: 9
             pendingUpdateId: pendingUpdateId
-            status: 7
+            status: 6
             taskTime: taskTime
             vatNumber: vatNumber
           plan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -15000,8 +15526,8 @@ components:
             address: address
             createTime: 6
             externalUserId: externalUserId
-            merchantId: 4
-            id: 0
+            merchantId: 6
+            id: 5
             email: email
           gateway:
             gatewayName: gatewayName
@@ -15027,9 +15553,10 @@ components:
               gmtModify: gmtModify
               updateAddonData: updateAddonData
               addons:
-              - quantity: 6
+              - quantity: 4
                 addonPlan:
                   amount: 6
+                  extraMetricData: extraMetricData
                   bindingAddonIds: bindingAddonIds
                   intervalUnit: intervalUnit
                   description: description
@@ -15047,9 +15574,10 @@ components:
                   productDescription: productDescription
                   publishStatus: 7
                   status: 9
-              - quantity: 6
+              - quantity: 4
                 addonPlan:
                   amount: 6
+                  extraMetricData: extraMetricData
                   bindingAddonIds: bindingAddonIds
                   intervalUnit: intervalUnit
                   description: description
@@ -15070,6 +15598,7 @@ components:
               link: link
               updatePlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -15087,11 +15616,12 @@ components:
                 productDescription: productDescription
                 publishStatus: 7
                 status: 9
-              effectImmediate: 8
+              effectImmediate: 1
               updateAddons:
-              - quantity: 6
+              - quantity: 4
                 addonPlan:
                   amount: 6
+                  extraMetricData: extraMetricData
                   bindingAddonIds: bindingAddonIds
                   intervalUnit: intervalUnit
                   description: description
@@ -15109,9 +15639,10 @@ components:
                   productDescription: productDescription
                   publishStatus: 7
                   status: 9
-              - quantity: 6
+              - quantity: 4
                 addonPlan:
                   amount: 6
+                  extraMetricData: extraMetricData
                   bindingAddonIds: bindingAddonIds
                   intervalUnit: intervalUnit
                   description: description
@@ -15130,13 +15661,14 @@ components:
                   publishStatus: 7
                   status: 9
               updateCurrency: updateCurrency
-              updatePlanId: 7
-              merchantId: 3
-              updateAmount: 3
+              updatePlanId: 6
+              merchantId: 2
+              updateAmount: 1
               currency: currency
-              planId: 6
+              planId: 4
               plan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -15156,33 +15688,34 @@ components:
                 status: 9
               addonData: addonData
               amount: 6
-              quantity: 6
+              quantity: 1
               gmtCreate: gmtCreate
-              userId: 7
+              userId: 1
               merchantMember:
                 firstName: firstName
                 lastName: lastName
-                createTime: 6
-                merchantId: 2
-                id: 1
+                createTime: 7
+                merchantId: 3
+                id: 9
                 email: email
               updateSubscriptionId: updateSubscriptionId
-              updateQuantity: 0
-              prorationAmount: 5
-              paid: 6
-              effectTime: 9
+              updateQuantity: 7
+              prorationAmount: 7
+              paid: 2
+              effectTime: 5
               subscriptionId: subscriptionId
-              gatewayId: 6
-              status: 3
+              gatewayId: 5
+              status: 1
             addonParams:
             - addonPlanId: 6
               quantity: 1
             - addonPlanId: 6
               quantity: 1
             addons:
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -15200,9 +15733,10 @@ components:
                 productDescription: productDescription
                 publishStatus: 7
                 status: 9
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -15222,40 +15756,41 @@ components:
                 status: 9
             subscription:
               gatewayItemData: gatewayItemData
-              testClock: 4
-              currentPeriodEnd: 7
+              testClock: 6
+              currentPeriodEnd: 6
               link: link
-              type: 9
-              firstPaidTime: 2
-              merchantId: 1
-              taxScale: 1
+              type: 2
+              firstPaidTime: 4
+              merchantId: 6
+              taxScale: 3
               countryCode: countryCode
-              dunningTime: 3
+              dunningTime: 1
               currency: currency
-              planId: 1
-              id: 7
+              planId: 8
+              id: 9
               cancelReason: cancelReason
               returnUrl: returnUrl
               gatewayStatus: gatewayStatus
               addonData: addonData
-              billingCycleAnchor: 5
-              currentPeriodStart: 9
-              trialEnd: 5
-              amount: 1
-              quantity: 6
-              userId: 9
-              createTime: 2
+              billingCycleAnchor: 1
+              currentPeriodStart: 7
+              trialEnd: 1
+              amount: 7
+              quantity: 9
+              userId: 6
+              createTime: 1
               latestInvoiceId: latestInvoiceId
-              cancelAtPeriodEnd: 5
+              cancelAtPeriodEnd: 1
               subscriptionId: subscriptionId
-              gatewayId: 4
-              lastUpdateTime: 1
+              gatewayId: 5
+              lastUpdateTime: 9
               pendingUpdateId: pendingUpdateId
-              status: 7
+              status: 6
               taskTime: taskTime
               vatNumber: vatNumber
             plan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -15279,8 +15814,8 @@ components:
               address: address
               createTime: 6
               externalUserId: externalUserId
-              merchantId: 4
-              id: 0
+              merchantId: 6
+              id: 5
               email: email
             gateway:
               gatewayName: gatewayName
@@ -15291,9 +15826,10 @@ components:
               gmtModify: gmtModify
               updateAddonData: updateAddonData
               addons:
-              - quantity: 6
+              - quantity: 4
                 addonPlan:
                   amount: 6
+                  extraMetricData: extraMetricData
                   bindingAddonIds: bindingAddonIds
                   intervalUnit: intervalUnit
                   description: description
@@ -15311,9 +15847,10 @@ components:
                   productDescription: productDescription
                   publishStatus: 7
                   status: 9
-              - quantity: 6
+              - quantity: 4
                 addonPlan:
                   amount: 6
+                  extraMetricData: extraMetricData
                   bindingAddonIds: bindingAddonIds
                   intervalUnit: intervalUnit
                   description: description
@@ -15334,6 +15871,7 @@ components:
               link: link
               updatePlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -15351,11 +15889,12 @@ components:
                 productDescription: productDescription
                 publishStatus: 7
                 status: 9
-              effectImmediate: 8
+              effectImmediate: 1
               updateAddons:
-              - quantity: 6
+              - quantity: 4
                 addonPlan:
                   amount: 6
+                  extraMetricData: extraMetricData
                   bindingAddonIds: bindingAddonIds
                   intervalUnit: intervalUnit
                   description: description
@@ -15373,9 +15912,10 @@ components:
                   productDescription: productDescription
                   publishStatus: 7
                   status: 9
-              - quantity: 6
+              - quantity: 4
                 addonPlan:
                   amount: 6
+                  extraMetricData: extraMetricData
                   bindingAddonIds: bindingAddonIds
                   intervalUnit: intervalUnit
                   description: description
@@ -15394,13 +15934,14 @@ components:
                   publishStatus: 7
                   status: 9
               updateCurrency: updateCurrency
-              updatePlanId: 7
-              merchantId: 3
-              updateAmount: 3
+              updatePlanId: 6
+              merchantId: 2
+              updateAmount: 1
               currency: currency
-              planId: 6
+              planId: 4
               plan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -15420,33 +15961,34 @@ components:
                 status: 9
               addonData: addonData
               amount: 6
-              quantity: 6
+              quantity: 1
               gmtCreate: gmtCreate
-              userId: 7
+              userId: 1
               merchantMember:
                 firstName: firstName
                 lastName: lastName
-                createTime: 6
-                merchantId: 2
-                id: 1
+                createTime: 7
+                merchantId: 3
+                id: 9
                 email: email
               updateSubscriptionId: updateSubscriptionId
-              updateQuantity: 0
-              prorationAmount: 5
-              paid: 6
-              effectTime: 9
+              updateQuantity: 7
+              prorationAmount: 7
+              paid: 2
+              effectTime: 5
               subscriptionId: subscriptionId
-              gatewayId: 6
-              status: 3
+              gatewayId: 5
+              status: 1
             addonParams:
             - addonPlanId: 6
               quantity: 1
             - addonPlanId: 6
               quantity: 1
             addons:
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -15464,9 +16006,10 @@ components:
                 productDescription: productDescription
                 publishStatus: 7
                 status: 9
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -15486,40 +16029,41 @@ components:
                 status: 9
             subscription:
               gatewayItemData: gatewayItemData
-              testClock: 4
-              currentPeriodEnd: 7
+              testClock: 6
+              currentPeriodEnd: 6
               link: link
-              type: 9
-              firstPaidTime: 2
-              merchantId: 1
-              taxScale: 1
+              type: 2
+              firstPaidTime: 4
+              merchantId: 6
+              taxScale: 3
               countryCode: countryCode
-              dunningTime: 3
+              dunningTime: 1
               currency: currency
-              planId: 1
-              id: 7
+              planId: 8
+              id: 9
               cancelReason: cancelReason
               returnUrl: returnUrl
               gatewayStatus: gatewayStatus
               addonData: addonData
-              billingCycleAnchor: 5
-              currentPeriodStart: 9
-              trialEnd: 5
-              amount: 1
-              quantity: 6
-              userId: 9
-              createTime: 2
+              billingCycleAnchor: 1
+              currentPeriodStart: 7
+              trialEnd: 1
+              amount: 7
+              quantity: 9
+              userId: 6
+              createTime: 1
               latestInvoiceId: latestInvoiceId
-              cancelAtPeriodEnd: 5
+              cancelAtPeriodEnd: 1
               subscriptionId: subscriptionId
-              gatewayId: 4
-              lastUpdateTime: 1
+              gatewayId: 5
+              lastUpdateTime: 9
               pendingUpdateId: pendingUpdateId
-              status: 7
+              status: 6
               taskTime: taskTime
               vatNumber: vatNumber
             plan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -15543,8 +16087,8 @@ components:
               address: address
               createTime: 6
               externalUserId: externalUserId
-              merchantId: 4
-              id: 0
+              merchantId: 6
+              id: 5
               email: email
             gateway:
               gatewayName: gatewayName
@@ -15579,9 +16123,10 @@ components:
           gmtModify: gmtModify
           updateAddonData: updateAddonData
           addons:
-          - quantity: 6
+          - quantity: 4
             addonPlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -15599,9 +16144,10 @@ components:
               productDescription: productDescription
               publishStatus: 7
               status: 9
-          - quantity: 6
+          - quantity: 4
             addonPlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -15622,6 +16168,7 @@ components:
           link: link
           updatePlan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -15639,11 +16186,12 @@ components:
             productDescription: productDescription
             publishStatus: 7
             status: 9
-          effectImmediate: 8
+          effectImmediate: 1
           updateAddons:
-          - quantity: 6
+          - quantity: 4
             addonPlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -15661,9 +16209,10 @@ components:
               productDescription: productDescription
               publishStatus: 7
               status: 9
-          - quantity: 6
+          - quantity: 4
             addonPlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -15682,13 +16231,14 @@ components:
               publishStatus: 7
               status: 9
           updateCurrency: updateCurrency
-          updatePlanId: 7
-          merchantId: 3
-          updateAmount: 3
+          updatePlanId: 6
+          merchantId: 2
+          updateAmount: 1
           currency: currency
-          planId: 6
+          planId: 4
           plan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -15708,31 +16258,32 @@ components:
             status: 9
           addonData: addonData
           amount: 6
-          quantity: 6
+          quantity: 1
           gmtCreate: gmtCreate
-          userId: 7
+          userId: 1
           merchantMember:
             firstName: firstName
             lastName: lastName
-            createTime: 6
-            merchantId: 2
-            id: 1
+            createTime: 7
+            merchantId: 3
+            id: 9
             email: email
           updateSubscriptionId: updateSubscriptionId
-          updateQuantity: 0
-          prorationAmount: 5
-          paid: 6
-          effectTime: 9
+          updateQuantity: 7
+          prorationAmount: 7
+          paid: 2
+          effectTime: 5
           subscriptionId: subscriptionId
-          gatewayId: 6
-          status: 3
+          gatewayId: 5
+          status: 1
         - note: note
           gmtModify: gmtModify
           updateAddonData: updateAddonData
           addons:
-          - quantity: 6
+          - quantity: 4
             addonPlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -15750,9 +16301,10 @@ components:
               productDescription: productDescription
               publishStatus: 7
               status: 9
-          - quantity: 6
+          - quantity: 4
             addonPlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -15773,6 +16325,7 @@ components:
           link: link
           updatePlan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -15790,11 +16343,12 @@ components:
             productDescription: productDescription
             publishStatus: 7
             status: 9
-          effectImmediate: 8
+          effectImmediate: 1
           updateAddons:
-          - quantity: 6
+          - quantity: 4
             addonPlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -15812,9 +16366,10 @@ components:
               productDescription: productDescription
               publishStatus: 7
               status: 9
-          - quantity: 6
+          - quantity: 4
             addonPlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -15833,13 +16388,14 @@ components:
               publishStatus: 7
               status: 9
           updateCurrency: updateCurrency
-          updatePlanId: 7
-          merchantId: 3
-          updateAmount: 3
+          updatePlanId: 6
+          merchantId: 2
+          updateAmount: 1
           currency: currency
-          planId: 6
+          planId: 4
           plan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -15859,24 +16415,24 @@ components:
             status: 9
           addonData: addonData
           amount: 6
-          quantity: 6
+          quantity: 1
           gmtCreate: gmtCreate
-          userId: 7
+          userId: 1
           merchantMember:
             firstName: firstName
             lastName: lastName
-            createTime: 6
-            merchantId: 2
-            id: 1
+            createTime: 7
+            merchantId: 3
+            id: 9
             email: email
           updateSubscriptionId: updateSubscriptionId
-          updateQuantity: 0
-          prorationAmount: 5
-          paid: 6
-          effectTime: 9
+          updateQuantity: 7
+          prorationAmount: 7
+          paid: 2
+          effectTime: 5
           subscriptionId: subscriptionId
-          gatewayId: 6
-          status: 3
+          gatewayId: 5
+          status: 1
       properties:
         subscriptionPendingUpdateDetails:
           description: SubscriptionPendingUpdateDetails
@@ -15896,9 +16452,10 @@ components:
             gmtModify: gmtModify
             updateAddonData: updateAddonData
             addons:
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -15916,9 +16473,10 @@ components:
                 productDescription: productDescription
                 publishStatus: 7
                 status: 9
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -15939,6 +16497,7 @@ components:
             link: link
             updatePlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -15956,11 +16515,12 @@ components:
               productDescription: productDescription
               publishStatus: 7
               status: 9
-            effectImmediate: 8
+            effectImmediate: 1
             updateAddons:
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -15978,9 +16538,10 @@ components:
                 productDescription: productDescription
                 publishStatus: 7
                 status: 9
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -15999,13 +16560,14 @@ components:
                 publishStatus: 7
                 status: 9
             updateCurrency: updateCurrency
-            updatePlanId: 7
-            merchantId: 3
-            updateAmount: 3
+            updatePlanId: 6
+            merchantId: 2
+            updateAmount: 1
             currency: currency
-            planId: 6
+            planId: 4
             plan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -16025,31 +16587,32 @@ components:
               status: 9
             addonData: addonData
             amount: 6
-            quantity: 6
+            quantity: 1
             gmtCreate: gmtCreate
-            userId: 7
+            userId: 1
             merchantMember:
               firstName: firstName
               lastName: lastName
-              createTime: 6
-              merchantId: 2
-              id: 1
+              createTime: 7
+              merchantId: 3
+              id: 9
               email: email
             updateSubscriptionId: updateSubscriptionId
-            updateQuantity: 0
-            prorationAmount: 5
-            paid: 6
-            effectTime: 9
+            updateQuantity: 7
+            prorationAmount: 7
+            paid: 2
+            effectTime: 5
             subscriptionId: subscriptionId
-            gatewayId: 6
-            status: 3
+            gatewayId: 5
+            status: 1
           - note: note
             gmtModify: gmtModify
             updateAddonData: updateAddonData
             addons:
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -16067,9 +16630,10 @@ components:
                 productDescription: productDescription
                 publishStatus: 7
                 status: 9
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -16090,6 +16654,7 @@ components:
             link: link
             updatePlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -16107,11 +16672,12 @@ components:
               productDescription: productDescription
               publishStatus: 7
               status: 9
-            effectImmediate: 8
+            effectImmediate: 1
             updateAddons:
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -16129,9 +16695,10 @@ components:
                 productDescription: productDescription
                 publishStatus: 7
                 status: 9
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -16150,13 +16717,14 @@ components:
                 publishStatus: 7
                 status: 9
             updateCurrency: updateCurrency
-            updatePlanId: 7
-            merchantId: 3
-            updateAmount: 3
+            updatePlanId: 6
+            merchantId: 2
+            updateAmount: 1
             currency: currency
-            planId: 6
+            planId: 4
             plan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -16176,24 +16744,24 @@ components:
               status: 9
             addonData: addonData
             amount: 6
-            quantity: 6
+            quantity: 1
             gmtCreate: gmtCreate
-            userId: 7
+            userId: 1
             merchantMember:
               firstName: firstName
               lastName: lastName
-              createTime: 6
-              merchantId: 2
-              id: 1
+              createTime: 7
+              merchantId: 3
+              id: 9
               email: email
             updateSubscriptionId: updateSubscriptionId
-            updateQuantity: 0
-            prorationAmount: 5
-            paid: 6
-            effectTime: 9
+            updateQuantity: 7
+            prorationAmount: 7
+            paid: 2
+            effectTime: 5
             subscriptionId: subscriptionId
-            gatewayId: 6
-            status: 3
+            gatewayId: 5
+            status: 1
         requestId: requestId
         message: message
       properties:
@@ -16221,9 +16789,10 @@ components:
         subscriptionTimeLines:
         - quantity: 9
           addons:
-          - quantity: 6
+          - quantity: 4
             addonPlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -16241,9 +16810,10 @@ components:
               productDescription: productDescription
               publishStatus: 7
               status: 9
-          - quantity: 6
+          - quantity: 4
             addonPlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -16273,6 +16843,7 @@ components:
           periodStart: 2
           plan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -16295,9 +16866,10 @@ components:
           periodEnd: 5
         - quantity: 9
           addons:
-          - quantity: 6
+          - quantity: 4
             addonPlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -16315,9 +16887,10 @@ components:
               productDescription: productDescription
               publishStatus: 7
               status: 9
-          - quantity: 6
+          - quantity: 4
             addonPlan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -16347,6 +16920,7 @@ components:
           periodStart: 2
           plan:
             amount: 6
+            extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
             description: description
@@ -16384,9 +16958,10 @@ components:
           subscriptionTimeLines:
           - quantity: 9
             addons:
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -16404,9 +16979,10 @@ components:
                 productDescription: productDescription
                 publishStatus: 7
                 status: 9
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -16436,6 +17012,7 @@ components:
             periodStart: 2
             plan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description
@@ -16458,9 +17035,10 @@ components:
             periodEnd: 5
           - quantity: 9
             addons:
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -16478,9 +17056,10 @@ components:
                 productDescription: productDescription
                 publishStatus: 7
                 status: 9
-            - quantity: 6
+            - quantity: 4
               addonPlan:
                 amount: 6
+                extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
                 description: description
@@ -16510,6 +17089,7 @@ components:
             periodStart: 2
             plan:
               amount: 6
+              extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
               description: description

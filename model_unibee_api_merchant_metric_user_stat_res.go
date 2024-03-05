@@ -19,8 +19,7 @@ var _ MappedNullable = &UnibeeApiMerchantMetricUserStatRes{}
 
 // UnibeeApiMerchantMetricUserStatRes struct for UnibeeApiMerchantMetricUserStatRes
 type UnibeeApiMerchantMetricUserStatRes struct {
-	// UserMerchantMetricStats
-	UserMerchantMetricStats []UnibeeInternalLogicMetricEventUserMerchantMetricStat `json:"userMerchantMetricStats,omitempty"`
+	UserMetricStat *UnibeeInternalLogicGatewayRoUserMetricStat `json:"userMetricStat,omitempty"`
 }
 
 // NewUnibeeApiMerchantMetricUserStatRes instantiates a new UnibeeApiMerchantMetricUserStatRes object
@@ -40,36 +39,36 @@ func NewUnibeeApiMerchantMetricUserStatResWithDefaults() *UnibeeApiMerchantMetri
 	return &this
 }
 
-// GetUserMerchantMetricStats returns the UserMerchantMetricStats field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantMetricUserStatRes) GetUserMerchantMetricStats() []UnibeeInternalLogicMetricEventUserMerchantMetricStat {
-	if o == nil || IsNil(o.UserMerchantMetricStats) {
-		var ret []UnibeeInternalLogicMetricEventUserMerchantMetricStat
+// GetUserMetricStat returns the UserMetricStat field value if set, zero value otherwise.
+func (o *UnibeeApiMerchantMetricUserStatRes) GetUserMetricStat() UnibeeInternalLogicGatewayRoUserMetricStat {
+	if o == nil || IsNil(o.UserMetricStat) {
+		var ret UnibeeInternalLogicGatewayRoUserMetricStat
 		return ret
 	}
-	return o.UserMerchantMetricStats
+	return *o.UserMetricStat
 }
 
-// GetUserMerchantMetricStatsOk returns a tuple with the UserMerchantMetricStats field value if set, nil otherwise
+// GetUserMetricStatOk returns a tuple with the UserMetricStat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantMetricUserStatRes) GetUserMerchantMetricStatsOk() ([]UnibeeInternalLogicMetricEventUserMerchantMetricStat, bool) {
-	if o == nil || IsNil(o.UserMerchantMetricStats) {
+func (o *UnibeeApiMerchantMetricUserStatRes) GetUserMetricStatOk() (*UnibeeInternalLogicGatewayRoUserMetricStat, bool) {
+	if o == nil || IsNil(o.UserMetricStat) {
 		return nil, false
 	}
-	return o.UserMerchantMetricStats, true
+	return o.UserMetricStat, true
 }
 
-// HasUserMerchantMetricStats returns a boolean if a field has been set.
-func (o *UnibeeApiMerchantMetricUserStatRes) HasUserMerchantMetricStats() bool {
-	if o != nil && !IsNil(o.UserMerchantMetricStats) {
+// HasUserMetricStat returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantMetricUserStatRes) HasUserMetricStat() bool {
+	if o != nil && !IsNil(o.UserMetricStat) {
 		return true
 	}
 
 	return false
 }
 
-// SetUserMerchantMetricStats gets a reference to the given []UnibeeInternalLogicMetricEventUserMerchantMetricStat and assigns it to the UserMerchantMetricStats field.
-func (o *UnibeeApiMerchantMetricUserStatRes) SetUserMerchantMetricStats(v []UnibeeInternalLogicMetricEventUserMerchantMetricStat) {
-	o.UserMerchantMetricStats = v
+// SetUserMetricStat gets a reference to the given UnibeeInternalLogicGatewayRoUserMetricStat and assigns it to the UserMetricStat field.
+func (o *UnibeeApiMerchantMetricUserStatRes) SetUserMetricStat(v UnibeeInternalLogicGatewayRoUserMetricStat) {
+	o.UserMetricStat = &v
 }
 
 func (o UnibeeApiMerchantMetricUserStatRes) MarshalJSON() ([]byte, error) {
@@ -82,8 +81,8 @@ func (o UnibeeApiMerchantMetricUserStatRes) MarshalJSON() ([]byte, error) {
 
 func (o UnibeeApiMerchantMetricUserStatRes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UserMerchantMetricStats) {
-		toSerialize["userMerchantMetricStats"] = o.UserMerchantMetricStats
+	if !IsNil(o.UserMetricStat) {
+		toSerialize["userMetricStat"] = o.UserMetricStat
 	}
 	return toSerialize, nil
 }

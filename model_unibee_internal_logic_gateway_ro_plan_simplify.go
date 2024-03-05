@@ -29,6 +29,7 @@ type UnibeeInternalLogicGatewayRoPlanSimplify struct {
 	Currency *string `json:"currency,omitempty"`
 	// description
 	Description *string `json:"description,omitempty"`
+	ExtraMetricData *string `json:"extraMetricData,omitempty"`
 	// home_url
 	HomeUrl *string `json:"homeUrl,omitempty"`
 	Id *int32 `json:"id,omitempty"`
@@ -231,6 +232,38 @@ func (o *UnibeeInternalLogicGatewayRoPlanSimplify) HasDescription() bool {
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *UnibeeInternalLogicGatewayRoPlanSimplify) SetDescription(v string) {
 	o.Description = &v
+}
+
+// GetExtraMetricData returns the ExtraMetricData field value if set, zero value otherwise.
+func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetExtraMetricData() string {
+	if o == nil || IsNil(o.ExtraMetricData) {
+		var ret string
+		return ret
+	}
+	return *o.ExtraMetricData
+}
+
+// GetExtraMetricDataOk returns a tuple with the ExtraMetricData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetExtraMetricDataOk() (*string, bool) {
+	if o == nil || IsNil(o.ExtraMetricData) {
+		return nil, false
+	}
+	return o.ExtraMetricData, true
+}
+
+// HasExtraMetricData returns a boolean if a field has been set.
+func (o *UnibeeInternalLogicGatewayRoPlanSimplify) HasExtraMetricData() bool {
+	if o != nil && !IsNil(o.ExtraMetricData) {
+		return true
+	}
+
+	return false
+}
+
+// SetExtraMetricData gets a reference to the given string and assigns it to the ExtraMetricData field.
+func (o *UnibeeInternalLogicGatewayRoPlanSimplify) SetExtraMetricData(v string) {
+	o.ExtraMetricData = &v
 }
 
 // GetHomeUrl returns the HomeUrl field value if set, zero value otherwise.
@@ -673,6 +706,9 @@ func (o UnibeeInternalLogicGatewayRoPlanSimplify) ToMap() (map[string]interface{
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.ExtraMetricData) {
+		toSerialize["extraMetricData"] = o.ExtraMetricData
 	}
 	if !IsNil(o.HomeUrl) {
 		toSerialize["homeUrl"] = o.HomeUrl

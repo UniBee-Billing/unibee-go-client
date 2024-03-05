@@ -14,8 +14,8 @@ Method | HTTP request | Description
 [**MerchantMetricPlanLimitDeletePost**](MerchantMetricAPI.md#MerchantMetricPlanLimitDeletePost) | **Post** /merchant/metric/plan/limit/delete | Delete Merchant Metric Plan TotalLimit
 [**MerchantMetricPlanLimitEditPost**](MerchantMetricAPI.md#MerchantMetricPlanLimitEditPost) | **Post** /merchant/metric/plan/limit/edit | Edit Merchant Metric Plan TotalLimit
 [**MerchantMetricPlanLimitNewPost**](MerchantMetricAPI.md#MerchantMetricPlanLimitNewPost) | **Post** /merchant/metric/plan/limit/new | New Merchant Metric Plan TotalLimit
-[**MerchantMetricUserStatGet**](MerchantMetricAPI.md#MerchantMetricUserStatGet) | **Get** /merchant/metric/user/stat | User Merchant Metric Stat
-[**MerchantMetricUserStatPost**](MerchantMetricAPI.md#MerchantMetricUserStatPost) | **Post** /merchant/metric/user/stat | User Merchant Metric Stat
+[**MerchantMetricUserStatGet**](MerchantMetricAPI.md#MerchantMetricUserStatGet) | **Get** /merchant/metric/user/stat | Query User Metric Stat
+[**MerchantMetricUserStatPost**](MerchantMetricAPI.md#MerchantMetricUserStatPost) | **Post** /merchant/metric/user/stat | Query User Metric Stat
 
 
 
@@ -658,7 +658,7 @@ No authorization required
 
 > MerchantMetricUserStatGet200Response MerchantMetricUserStatGet(ctx).UserId(userId).ExternalUserId(externalUserId).Execute()
 
-User Merchant Metric Stat
+Query User Metric Stat
 
 ### Example
 
@@ -724,7 +724,7 @@ No authorization required
 
 > MerchantMetricUserStatGet200Response MerchantMetricUserStatPost(ctx).UnibeeApiMerchantMetricUserStatReq(unibeeApiMerchantMetricUserStatReq).Execute()
 
-User Merchant Metric Stat
+Query User Metric Stat
 
 ### Example
 

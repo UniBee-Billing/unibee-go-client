@@ -126,8 +126,8 @@ Class | Method | HTTP request | Description
 *MerchantMetricAPI* | [**MerchantMetricPlanLimitDeletePost**](docs/MerchantMetricAPI.md#merchantmetricplanlimitdeletepost) | **Post** /merchant/metric/plan/limit/delete | Delete Merchant Metric Plan TotalLimit
 *MerchantMetricAPI* | [**MerchantMetricPlanLimitEditPost**](docs/MerchantMetricAPI.md#merchantmetricplanlimiteditpost) | **Post** /merchant/metric/plan/limit/edit | Edit Merchant Metric Plan TotalLimit
 *MerchantMetricAPI* | [**MerchantMetricPlanLimitNewPost**](docs/MerchantMetricAPI.md#merchantmetricplanlimitnewpost) | **Post** /merchant/metric/plan/limit/new | New Merchant Metric Plan TotalLimit
-*MerchantMetricAPI* | [**MerchantMetricUserStatGet**](docs/MerchantMetricAPI.md#merchantmetricuserstatget) | **Get** /merchant/metric/user/stat | User Merchant Metric Stat
-*MerchantMetricAPI* | [**MerchantMetricUserStatPost**](docs/MerchantMetricAPI.md#merchantmetricuserstatpost) | **Post** /merchant/metric/user/stat | User Merchant Metric Stat
+*MerchantMetricAPI* | [**MerchantMetricUserStatGet**](docs/MerchantMetricAPI.md#merchantmetricuserstatget) | **Get** /merchant/metric/user/stat | Query User Metric Stat
+*MerchantMetricAPI* | [**MerchantMetricUserStatPost**](docs/MerchantMetricAPI.md#merchantmetricuserstatpost) | **Post** /merchant/metric/user/stat | Query User Metric Stat
 *MerchantPaymentTimelineAPI* | [**MerchantPaymentPaymentTimelineListGet**](docs/MerchantPaymentTimelineAPI.md#merchantpaymentpaymenttimelinelistget) | **Get** /merchant/payment/payment_timeline_list | Payment TimeLine List
 *MerchantPaymentTimelineAPI* | [**MerchantPaymentPaymentTimelineListPost**](docs/MerchantPaymentTimelineAPI.md#merchantpaymentpaymenttimelinelistpost) | **Post** /merchant/payment/payment_timeline_list | Payment TimeLine List
 *MerchantPlanAPI* | [**MerchantPlanActivatePost**](docs/MerchantPlanAPI.md#merchantplanactivatepost) | **Post** /merchant/plan/activate | Plan Sync To Gateway And Activate
@@ -410,6 +410,7 @@ Class | Method | HTTP request | Description
  - [UnibeeInternalLogicGatewayRoMerchantMemberSimplify](docs/UnibeeInternalLogicGatewayRoMerchantMemberSimplify.md)
  - [UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo](docs/UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo.md)
  - [UnibeeInternalLogicGatewayRoMerchantMetricVo](docs/UnibeeInternalLogicGatewayRoMerchantMetricVo.md)
+ - [UnibeeInternalLogicGatewayRoMetricLimitVo](docs/UnibeeInternalLogicGatewayRoMetricLimitVo.md)
  - [UnibeeInternalLogicGatewayRoPaymentMethod](docs/UnibeeInternalLogicGatewayRoPaymentMethod.md)
  - [UnibeeInternalLogicGatewayRoPlanAddonVo](docs/UnibeeInternalLogicGatewayRoPlanAddonVo.md)
  - [UnibeeInternalLogicGatewayRoPlanDetailRo](docs/UnibeeInternalLogicGatewayRoPlanDetailRo.md)
@@ -420,10 +421,10 @@ Class | Method | HTTP request | Description
  - [UnibeeInternalLogicGatewayRoSubscriptionSimplify](docs/UnibeeInternalLogicGatewayRoSubscriptionSimplify.md)
  - [UnibeeInternalLogicGatewayRoSubscriptionTimeLineDetailVo](docs/UnibeeInternalLogicGatewayRoSubscriptionTimeLineDetailVo.md)
  - [UnibeeInternalLogicGatewayRoUserAccountSimplify](docs/UnibeeInternalLogicGatewayRoUserAccountSimplify.md)
+ - [UnibeeInternalLogicGatewayRoUserMerchantMetricStat](docs/UnibeeInternalLogicGatewayRoUserMerchantMetricStat.md)
+ - [UnibeeInternalLogicGatewayRoUserMetricStat](docs/UnibeeInternalLogicGatewayRoUserMetricStat.md)
  - [UnibeeInternalLogicGatewayRoValidResult](docs/UnibeeInternalLogicGatewayRoValidResult.md)
  - [UnibeeInternalLogicGatewayRoVatCountryRate](docs/UnibeeInternalLogicGatewayRoVatCountryRate.md)
- - [UnibeeInternalLogicMetricEventMetricLimitVo](docs/UnibeeInternalLogicMetricEventMetricLimitVo.md)
- - [UnibeeInternalLogicMetricEventUserMerchantMetricStat](docs/UnibeeInternalLogicMetricEventUserMerchantMetricStat.md)
  - [UnibeeInternalLogicWebhookMerchantWebhookEndpointVo](docs/UnibeeInternalLogicWebhookMerchantWebhookEndpointVo.md)
  - [UnibeeInternalModelEntityOverseaPayInvoice](docs/UnibeeInternalModelEntityOverseaPayInvoice.md)
  - [UnibeeInternalModelEntityOverseaPayMerchant](docs/UnibeeInternalModelEntityOverseaPayMerchant.md)

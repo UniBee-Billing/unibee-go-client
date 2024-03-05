@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Currency** | Pointer to **string** | currency | [optional] 
 **Description** | Pointer to **string** | description | [optional] 
+**ExtraMetricData** | Pointer to **string** |  | [optional] 
 **HomeUrl** | Pointer to **string** | home_url | [optional] 
 **Id** | Pointer to **int32** |  | [optional] 
 **ImageUrl** | Pointer to **string** | image_url | [optional] 
@@ -166,6 +167,31 @@ SetDescription sets Description field to given value.
 `func (o *UnibeeInternalLogicGatewayRoPlanSimplify) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetExtraMetricData
+
+`func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetExtraMetricData() string`
+
+GetExtraMetricData returns the ExtraMetricData field if non-nil, zero value otherwise.
+
+### GetExtraMetricDataOk
+
+`func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetExtraMetricDataOk() (*string, bool)`
+
+GetExtraMetricDataOk returns a tuple with the ExtraMetricData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExtraMetricData
+
+`func (o *UnibeeInternalLogicGatewayRoPlanSimplify) SetExtraMetricData(v string)`
+
+SetExtraMetricData sets ExtraMetricData field to given value.
+
+### HasExtraMetricData
+
+`func (o *UnibeeInternalLogicGatewayRoPlanSimplify) HasExtraMetricData() bool`
+
+HasExtraMetricData returns a boolean if a field has been set.
 
 ### GetHomeUrl
 

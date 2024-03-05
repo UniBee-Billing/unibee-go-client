@@ -1115,7 +1115,7 @@ func (r MerchantMetricAPIMerchantMetricUserStatGetRequest) Execute() (*MerchantM
 }
 
 /*
-MerchantMetricUserStatGet User Merchant Metric Stat
+MerchantMetricUserStatGet Query User Metric Stat
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return MerchantMetricAPIMerchantMetricUserStatGetRequest
@@ -1224,7 +1224,7 @@ func (r MerchantMetricAPIMerchantMetricUserStatPostRequest) Execute() (*Merchant
 }
 
 /*
-MerchantMetricUserStatPost User Merchant Metric Stat
+MerchantMetricUserStatPost Query User Metric Stat
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return MerchantMetricAPIMerchantMetricUserStatPostRequest

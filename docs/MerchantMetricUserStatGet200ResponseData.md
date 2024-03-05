@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UserMerchantMetricStats** | Pointer to [**[]UnibeeInternalLogicMetricEventUserMerchantMetricStat**](UnibeeInternalLogicMetricEventUserMerchantMetricStat.md) | UserMerchantMetricStats | [optional] 
+**UserMetricStat** | Pointer to [**UnibeeInternalLogicGatewayRoUserMetricStat**](UnibeeInternalLogicGatewayRoUserMetricStat.md) |  | [optional] 
 
 ## Methods
 
@@ -25,30 +25,30 @@ NewMerchantMetricUserStatGet200ResponseDataWithDefaults instantiates a new Merch
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetUserMerchantMetricStats
+### GetUserMetricStat
 
-`func (o *MerchantMetricUserStatGet200ResponseData) GetUserMerchantMetricStats() []UnibeeInternalLogicMetricEventUserMerchantMetricStat`
+`func (o *MerchantMetricUserStatGet200ResponseData) GetUserMetricStat() UnibeeInternalLogicGatewayRoUserMetricStat`
 
-GetUserMerchantMetricStats returns the UserMerchantMetricStats field if non-nil, zero value otherwise.
+GetUserMetricStat returns the UserMetricStat field if non-nil, zero value otherwise.
 
-### GetUserMerchantMetricStatsOk
+### GetUserMetricStatOk
 
-`func (o *MerchantMetricUserStatGet200ResponseData) GetUserMerchantMetricStatsOk() (*[]UnibeeInternalLogicMetricEventUserMerchantMetricStat, bool)`
+`func (o *MerchantMetricUserStatGet200ResponseData) GetUserMetricStatOk() (*UnibeeInternalLogicGatewayRoUserMetricStat, bool)`
 
-GetUserMerchantMetricStatsOk returns a tuple with the UserMerchantMetricStats field if it's non-nil, zero value otherwise
+GetUserMetricStatOk returns a tuple with the UserMetricStat field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUserMerchantMetricStats
+### SetUserMetricStat
 
-`func (o *MerchantMetricUserStatGet200ResponseData) SetUserMerchantMetricStats(v []UnibeeInternalLogicMetricEventUserMerchantMetricStat)`
+`func (o *MerchantMetricUserStatGet200ResponseData) SetUserMetricStat(v UnibeeInternalLogicGatewayRoUserMetricStat)`
 
-SetUserMerchantMetricStats sets UserMerchantMetricStats field to given value.
+SetUserMetricStat sets UserMetricStat field to given value.
 
-### HasUserMerchantMetricStats
+### HasUserMetricStat
 
-`func (o *MerchantMetricUserStatGet200ResponseData) HasUserMerchantMetricStats() bool`
+`func (o *MerchantMetricUserStatGet200ResponseData) HasUserMetricStat() bool`
 
-HasUserMerchantMetricStats returns a boolean if a field has been set.
+HasUserMetricStat returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -31,6 +31,7 @@ type UnibeeInternalModelEntityOverseaPayPlan struct {
 	Currency *string `json:"currency,omitempty"`
 	// description
 	Description *string `json:"description,omitempty"`
+	ExtraMetricData *string `json:"extraMetricData,omitempty"`
 	// gateway product description
 	GatewayProductDescription *string `json:"gatewayProductDescription,omitempty"`
 	// gateway product name
@@ -273,6 +274,38 @@ func (o *UnibeeInternalModelEntityOverseaPayPlan) HasDescription() bool {
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *UnibeeInternalModelEntityOverseaPayPlan) SetDescription(v string) {
 	o.Description = &v
+}
+
+// GetExtraMetricData returns the ExtraMetricData field value if set, zero value otherwise.
+func (o *UnibeeInternalModelEntityOverseaPayPlan) GetExtraMetricData() string {
+	if o == nil || IsNil(o.ExtraMetricData) {
+		var ret string
+		return ret
+	}
+	return *o.ExtraMetricData
+}
+
+// GetExtraMetricDataOk returns a tuple with the ExtraMetricData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeInternalModelEntityOverseaPayPlan) GetExtraMetricDataOk() (*string, bool) {
+	if o == nil || IsNil(o.ExtraMetricData) {
+		return nil, false
+	}
+	return o.ExtraMetricData, true
+}
+
+// HasExtraMetricData returns a boolean if a field has been set.
+func (o *UnibeeInternalModelEntityOverseaPayPlan) HasExtraMetricData() bool {
+	if o != nil && !IsNil(o.ExtraMetricData) {
+		return true
+	}
+
+	return false
+}
+
+// SetExtraMetricData gets a reference to the given string and assigns it to the ExtraMetricData field.
+func (o *UnibeeInternalModelEntityOverseaPayPlan) SetExtraMetricData(v string) {
+	o.ExtraMetricData = &v
 }
 
 // GetGatewayProductDescription returns the GatewayProductDescription field value if set, zero value otherwise.
@@ -846,6 +879,9 @@ func (o UnibeeInternalModelEntityOverseaPayPlan) ToMap() (map[string]interface{}
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.ExtraMetricData) {
+		toSerialize["extraMetricData"] = o.ExtraMetricData
 	}
 	if !IsNil(o.GatewayProductDescription) {
 		toSerialize["gatewayProductDescription"] = o.GatewayProductDescription
