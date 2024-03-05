@@ -1,0 +1,108 @@
+# UnibeeApiMerchantSubscriptionUpdateRes
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Link** | Pointer to **string** |  | [optional] 
+**Paid** | Pointer to **bool** |  | [optional] 
+**SubscriptionPendingUpdate** | Pointer to [**UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate**](UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate.md) |  | [optional] 
+
+## Methods
+
+### NewUnibeeApiMerchantSubscriptionUpdateRes
+
+`func NewUnibeeApiMerchantSubscriptionUpdateRes() *UnibeeApiMerchantSubscriptionUpdateRes`
+
+NewUnibeeApiMerchantSubscriptionUpdateRes instantiates a new UnibeeApiMerchantSubscriptionUpdateRes object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewUnibeeApiMerchantSubscriptionUpdateResWithDefaults
+
+`func NewUnibeeApiMerchantSubscriptionUpdateResWithDefaults() *UnibeeApiMerchantSubscriptionUpdateRes`
+
+NewUnibeeApiMerchantSubscriptionUpdateResWithDefaults instantiates a new UnibeeApiMerchantSubscriptionUpdateRes object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetLink
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) GetLink() string`
+
+GetLink returns the Link field if non-nil, zero value otherwise.
+
+### GetLinkOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) GetLinkOk() (*string, bool)`
+
+GetLinkOk returns a tuple with the Link field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLink
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) SetLink(v string)`
+
+SetLink sets Link field to given value.
+
+### HasLink
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) HasLink() bool`
+
+HasLink returns a boolean if a field has been set.
+
+### GetPaid
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) GetPaid() bool`
+
+GetPaid returns the Paid field if non-nil, zero value otherwise.
+
+### GetPaidOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) GetPaidOk() (*bool, bool)`
+
+GetPaidOk returns a tuple with the Paid field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaid
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) SetPaid(v bool)`
+
+SetPaid sets Paid field to given value.
+
+### HasPaid
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) HasPaid() bool`
+
+HasPaid returns a boolean if a field has been set.
+
+### GetSubscriptionPendingUpdate
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) GetSubscriptionPendingUpdate() UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate`
+
+GetSubscriptionPendingUpdate returns the SubscriptionPendingUpdate field if non-nil, zero value otherwise.
+
+### GetSubscriptionPendingUpdateOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) GetSubscriptionPendingUpdateOk() (*UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate, bool)`
+
+GetSubscriptionPendingUpdateOk returns a tuple with the SubscriptionPendingUpdate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubscriptionPendingUpdate
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) SetSubscriptionPendingUpdate(v UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate)`
+
+SetSubscriptionPendingUpdate sets SubscriptionPendingUpdate field to given value.
+
+### HasSubscriptionPendingUpdate
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) HasSubscriptionPendingUpdate() bool`
+
+HasSubscriptionPendingUpdate returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
