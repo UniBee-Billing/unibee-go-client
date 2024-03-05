@@ -22,21 +22,21 @@ Name | Type | Description | Notes
 **DunningTime** | Pointer to **int64** | dunning_time, utc time | [optional] 
 **FirstPaidTime** | Pointer to **int64** | first success payment time | [optional] 
 **GatewayDefaultPaymentMethod** | Pointer to **string** |  | [optional] 
-**GatewayId** | Pointer to **int32** | gateway_id | [optional] 
+**GatewayId** | Pointer to **int64** | gateway_id | [optional] 
 **GatewayItemData** | Pointer to **string** | gateway_item_data | [optional] 
 **GatewayLatestInvoiceId** | Pointer to **string** | gateway latest invoice id | [optional] 
 **GatewayStatus** | Pointer to **string** | gateway status，Stripe：https://stripe.com/docs/billing/subscriptions/webhooks  Paypal：https://developer.paypal.com/docs/api/subscriptions/v1/#subscriptions_get | [optional] 
 **GatewaySubscriptionId** | Pointer to **string** | gateway subscription id | [optional] 
 **GmtCreate** | Pointer to **string** | create time | [optional] 
 **GmtModify** | Pointer to **string** | update time | [optional] 
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **IsDeleted** | Pointer to **int32** | 0-UnDeleted，1-Deleted | [optional] 
 **LastUpdateTime** | Pointer to **int64** |  | [optional] 
 **LatestInvoiceId** | Pointer to **string** | latest_invoice_id | [optional] 
 **Link** | Pointer to **string** |  | [optional] 
-**MerchantId** | Pointer to **int32** | merchant id | [optional] 
+**MerchantId** | Pointer to **int64** | merchant id | [optional] 
 **PendingUpdateId** | Pointer to **string** |  | [optional] 
-**PlanId** | Pointer to **int32** | plan id | [optional] 
+**PlanId** | Pointer to **int64** | plan id | [optional] 
 **Quantity** | Pointer to **int64** | quantity | [optional] 
 **ResponseData** | Pointer to **string** |  | [optional] 
 **ReturnUrl** | Pointer to **string** |  | [optional] 
@@ -522,20 +522,20 @@ HasGatewayDefaultPaymentMethod returns a boolean if a field has been set.
 
 ### GetGatewayId
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscription) GetGatewayId() int32`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscription) GetGatewayId() int64`
 
 GetGatewayId returns the GatewayId field if non-nil, zero value otherwise.
 
 ### GetGatewayIdOk
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscription) GetGatewayIdOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscription) GetGatewayIdOk() (*int64, bool)`
 
 GetGatewayIdOk returns a tuple with the GatewayId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGatewayId
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscription) SetGatewayId(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscription) SetGatewayId(v int64)`
 
 SetGatewayId sets GatewayId field to given value.
 
@@ -697,20 +697,20 @@ HasGmtModify returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscription) GetId() int32`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscription) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscription) GetIdOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscription) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscription) SetId(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscription) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -822,20 +822,20 @@ HasLink returns a boolean if a field has been set.
 
 ### GetMerchantId
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscription) GetMerchantId() int32`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscription) GetMerchantId() int64`
 
 GetMerchantId returns the MerchantId field if non-nil, zero value otherwise.
 
 ### GetMerchantIdOk
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscription) GetMerchantIdOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscription) GetMerchantIdOk() (*int64, bool)`
 
 GetMerchantIdOk returns a tuple with the MerchantId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantId
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscription) SetMerchantId(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscription) SetMerchantId(v int64)`
 
 SetMerchantId sets MerchantId field to given value.
 
@@ -872,20 +872,20 @@ HasPendingUpdateId returns a boolean if a field has been set.
 
 ### GetPlanId
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscription) GetPlanId() int32`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscription) GetPlanId() int64`
 
 GetPlanId returns the PlanId field if non-nil, zero value otherwise.
 
 ### GetPlanIdOk
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscription) GetPlanIdOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscription) GetPlanIdOk() (*int64, bool)`
 
 GetPlanIdOk returns a tuple with the PlanId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlanId
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscription) SetPlanId(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscription) SetPlanId(v int64)`
 
 SetPlanId sets PlanId field to given value.
 

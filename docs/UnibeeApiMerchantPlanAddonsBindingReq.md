@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Action** | **int64** | Action Type，0-override,1-add，2-delete | 
 **AddonIds** | **[]int64** | Plan Ids Of Addon Type | 
-**PlanId** | **int32** | PlanID | 
+**PlanId** | **int64** | PlanID | 
 
 ## Methods
 
 ### NewUnibeeApiMerchantPlanAddonsBindingReq
 
-`func NewUnibeeApiMerchantPlanAddonsBindingReq(action int64, addonIds []int64, planId int32, ) *UnibeeApiMerchantPlanAddonsBindingReq`
+`func NewUnibeeApiMerchantPlanAddonsBindingReq(action int64, addonIds []int64, planId int64, ) *UnibeeApiMerchantPlanAddonsBindingReq`
 
 NewUnibeeApiMerchantPlanAddonsBindingReq instantiates a new UnibeeApiMerchantPlanAddonsBindingReq object
 This constructor will assign default values to properties that have it defined,
@@ -69,20 +69,20 @@ SetAddonIds sets AddonIds field to given value.
 
 ### GetPlanId
 
-`func (o *UnibeeApiMerchantPlanAddonsBindingReq) GetPlanId() int32`
+`func (o *UnibeeApiMerchantPlanAddonsBindingReq) GetPlanId() int64`
 
 GetPlanId returns the PlanId field if non-nil, zero value otherwise.
 
 ### GetPlanIdOk
 
-`func (o *UnibeeApiMerchantPlanAddonsBindingReq) GetPlanIdOk() (*int32, bool)`
+`func (o *UnibeeApiMerchantPlanAddonsBindingReq) GetPlanIdOk() (*int64, bool)`
 
 GetPlanIdOk returns a tuple with the PlanId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlanId
 
-`func (o *UnibeeApiMerchantPlanAddonsBindingReq) SetPlanId(v int32)`
+`func (o *UnibeeApiMerchantPlanAddonsBindingReq) SetPlanId(v int64)`
 
 SetPlanId sets PlanId field to given value.
 

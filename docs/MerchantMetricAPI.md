@@ -14,8 +14,6 @@ Method | HTTP request | Description
 [**MerchantMetricPlanLimitDeletePost**](MerchantMetricAPI.md#MerchantMetricPlanLimitDeletePost) | **Post** /merchant/metric/plan/limit/delete | Delete Merchant Metric Plan TotalLimit
 [**MerchantMetricPlanLimitEditPost**](MerchantMetricAPI.md#MerchantMetricPlanLimitEditPost) | **Post** /merchant/metric/plan/limit/edit | Edit Merchant Metric Plan TotalLimit
 [**MerchantMetricPlanLimitNewPost**](MerchantMetricAPI.md#MerchantMetricPlanLimitNewPost) | **Post** /merchant/metric/plan/limit/new | New Merchant Metric Plan TotalLimit
-[**MerchantMetricUserStatGet**](MerchantMetricAPI.md#MerchantMetricUserStatGet) | **Get** /merchant/metric/user/stat | Query User Metric Stat
-[**MerchantMetricUserStatPost**](MerchantMetricAPI.md#MerchantMetricUserStatPost) | **Post** /merchant/metric/user/stat | Query User Metric Stat
 
 
 
@@ -34,7 +32,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
@@ -98,11 +96,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
-	unibeeApiMerchantMetricDetailReq := *openapiclient.NewUnibeeApiMerchantMetricDetailReq(int32(123)) // UnibeeApiMerchantMetricDetailReq | 
+	unibeeApiMerchantMetricDetailReq := *openapiclient.NewUnibeeApiMerchantMetricDetailReq(int64(123)) // UnibeeApiMerchantMetricDetailReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -162,7 +160,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
@@ -226,7 +224,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
@@ -290,7 +288,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
@@ -354,7 +352,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
@@ -413,7 +411,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
@@ -477,7 +475,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
@@ -541,11 +539,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
-	unibeeApiMerchantMetricEditPlanLimitReq := *openapiclient.NewUnibeeApiMerchantMetricEditPlanLimitReq(int32(123), int64(123)) // UnibeeApiMerchantMetricEditPlanLimitReq | 
+	unibeeApiMerchantMetricEditPlanLimitReq := *openapiclient.NewUnibeeApiMerchantMetricEditPlanLimitReq(int64(123), int64(123)) // UnibeeApiMerchantMetricEditPlanLimitReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -605,11 +603,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
-	unibeeApiMerchantMetricNewPlanLimitReq := *openapiclient.NewUnibeeApiMerchantMetricNewPlanLimitReq(int64(123), int32(123), int32(123)) // UnibeeApiMerchantMetricNewPlanLimitReq | 
+	unibeeApiMerchantMetricNewPlanLimitReq := *openapiclient.NewUnibeeApiMerchantMetricNewPlanLimitReq(int64(123), int64(123), int64(123)) // UnibeeApiMerchantMetricNewPlanLimitReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -639,136 +637,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantMetricPlanLimitDeletePost200Response**](MerchantMetricPlanLimitDeletePost200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## MerchantMetricUserStatGet
-
-> MerchantMetricUserStatGet200Response MerchantMetricUserStatGet(ctx).UserId(userId).ExternalUserId(externalUserId).Execute()
-
-Query User Metric Stat
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	userId := int64(789) // int64 | UserId, One Of UserId|ExternalUserId Needed (optional)
-	externalUserId := "externalUserId_example" // string | ExternalUserId, One Of UserId|ExternalUserId Needed (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MerchantMetricAPI.MerchantMetricUserStatGet(context.Background()).UserId(userId).ExternalUserId(externalUserId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MerchantMetricAPI.MerchantMetricUserStatGet``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `MerchantMetricUserStatGet`: MerchantMetricUserStatGet200Response
-	fmt.Fprintf(os.Stdout, "Response from `MerchantMetricAPI.MerchantMetricUserStatGet`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiMerchantMetricUserStatGetRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userId** | **int64** | UserId, One Of UserId|ExternalUserId Needed | 
- **externalUserId** | **string** | ExternalUserId, One Of UserId|ExternalUserId Needed | 
-
-### Return type
-
-[**MerchantMetricUserStatGet200Response**](MerchantMetricUserStatGet200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## MerchantMetricUserStatPost
-
-> MerchantMetricUserStatGet200Response MerchantMetricUserStatPost(ctx).UnibeeApiMerchantMetricUserStatReq(unibeeApiMerchantMetricUserStatReq).Execute()
-
-Query User Metric Stat
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	unibeeApiMerchantMetricUserStatReq := *openapiclient.NewUnibeeApiMerchantMetricUserStatReq() // UnibeeApiMerchantMetricUserStatReq | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MerchantMetricAPI.MerchantMetricUserStatPost(context.Background()).UnibeeApiMerchantMetricUserStatReq(unibeeApiMerchantMetricUserStatReq).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MerchantMetricAPI.MerchantMetricUserStatPost``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `MerchantMetricUserStatPost`: MerchantMetricUserStatGet200Response
-	fmt.Fprintf(os.Stdout, "Response from `MerchantMetricAPI.MerchantMetricUserStatPost`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiMerchantMetricUserStatPostRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **unibeeApiMerchantMetricUserStatReq** | [**UnibeeApiMerchantMetricUserStatReq**](UnibeeApiMerchantMetricUserStatReq.md) |  | 
-
-### Return type
-
-[**MerchantMetricUserStatGet200Response**](MerchantMetricUserStatGet200Response.md)
 
 ### Authorization
 

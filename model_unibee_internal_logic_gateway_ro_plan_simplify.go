@@ -32,7 +32,7 @@ type UnibeeInternalLogicGatewayRoPlanSimplify struct {
 	ExtraMetricData *string `json:"extraMetricData,omitempty"`
 	// home_url
 	HomeUrl *string `json:"homeUrl,omitempty"`
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// image_url
 	ImageUrl *string `json:"imageUrl,omitempty"`
 	// period unit count
@@ -40,7 +40,7 @@ type UnibeeInternalLogicGatewayRoPlanSimplify struct {
 	// period unit,day|month|year|week
 	IntervalUnit *string `json:"intervalUnit,omitempty"`
 	// merchant id
-	MerchantId *int32 `json:"merchantId,omitempty"`
+	MerchantId *int64 `json:"merchantId,omitempty"`
 	// PlanName
 	PlanName *string `json:"planName,omitempty"`
 	// product description
@@ -299,9 +299,9 @@ func (o *UnibeeInternalLogicGatewayRoPlanSimplify) SetHomeUrl(v string) {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetId() int32 {
+func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -309,7 +309,7 @@ func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetIdOk() (*int32, bool) {
+func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -325,8 +325,8 @@ func (o *UnibeeInternalLogicGatewayRoPlanSimplify) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *UnibeeInternalLogicGatewayRoPlanSimplify) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *UnibeeInternalLogicGatewayRoPlanSimplify) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -427,9 +427,9 @@ func (o *UnibeeInternalLogicGatewayRoPlanSimplify) SetIntervalUnit(v string) {
 }
 
 // GetMerchantId returns the MerchantId field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetMerchantId() int32 {
+func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetMerchantId() int64 {
 	if o == nil || IsNil(o.MerchantId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MerchantId
@@ -437,7 +437,7 @@ func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetMerchantId() int32 {
 
 // GetMerchantIdOk returns a tuple with the MerchantId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetMerchantIdOk() (*int32, bool) {
+func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetMerchantIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.MerchantId) {
 		return nil, false
 	}
@@ -453,8 +453,8 @@ func (o *UnibeeInternalLogicGatewayRoPlanSimplify) HasMerchantId() bool {
 	return false
 }
 
-// SetMerchantId gets a reference to the given int32 and assigns it to the MerchantId field.
-func (o *UnibeeInternalLogicGatewayRoPlanSimplify) SetMerchantId(v int32) {
+// SetMerchantId gets a reference to the given int64 and assigns it to the MerchantId field.
+func (o *UnibeeInternalLogicGatewayRoPlanSimplify) SetMerchantId(v int64) {
 	o.MerchantId = &v
 }
 

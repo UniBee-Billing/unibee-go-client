@@ -14,7 +14,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func Test_openapi_MerchantMetricAPIService(t *testing.T) {
@@ -135,30 +135,6 @@ func Test_openapi_MerchantMetricAPIService(t *testing.T) {
 		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.MerchantMetricAPI.MerchantMetricPlanLimitNewPost(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test MerchantMetricAPIService MerchantMetricUserStatGet", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.MerchantMetricAPI.MerchantMetricUserStatGet(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test MerchantMetricAPIService MerchantMetricUserStatPost", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.MerchantMetricAPI.MerchantMetricUserStatPost(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

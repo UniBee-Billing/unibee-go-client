@@ -28,7 +28,7 @@ type UnibeeApiMerchantSubscriptionUpdateReq struct {
 	// TotalAmount To Be Confirmed，Get From Preview
 	ConfirmTotalAmount int64 `json:"confirmTotalAmount"`
 	// New PlanId
-	NewPlanId int32 `json:"newPlanId"`
+	NewPlanId int64 `json:"newPlanId"`
 	// prorationDate date to start Proration，Get From Preview
 	ProrationDate int64 `json:"prorationDate"`
 	// Quantity，Default 1
@@ -45,7 +45,7 @@ type _UnibeeApiMerchantSubscriptionUpdateReq UnibeeApiMerchantSubscriptionUpdate
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiMerchantSubscriptionUpdateReq(confirmCurrency string, confirmTotalAmount int64, newPlanId int32, prorationDate int64, subscriptionId string) *UnibeeApiMerchantSubscriptionUpdateReq {
+func NewUnibeeApiMerchantSubscriptionUpdateReq(confirmCurrency string, confirmTotalAmount int64, newPlanId int64, prorationDate int64, subscriptionId string) *UnibeeApiMerchantSubscriptionUpdateReq {
 	this := UnibeeApiMerchantSubscriptionUpdateReq{}
 	this.ConfirmCurrency = confirmCurrency
 	this.ConfirmTotalAmount = confirmTotalAmount
@@ -144,9 +144,9 @@ func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetConfirmTotalAmount(v int64) 
 }
 
 // GetNewPlanId returns the NewPlanId field value
-func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetNewPlanId() int32 {
+func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetNewPlanId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -155,7 +155,7 @@ func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetNewPlanId() int32 {
 
 // GetNewPlanIdOk returns a tuple with the NewPlanId field value
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetNewPlanIdOk() (*int32, bool) {
+func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetNewPlanIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -163,7 +163,7 @@ func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetNewPlanIdOk() (*int32, bool)
 }
 
 // SetNewPlanId sets field value
-func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetNewPlanId(v int32) {
+func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetNewPlanId(v int64) {
 	o.NewPlanId = v
 }
 

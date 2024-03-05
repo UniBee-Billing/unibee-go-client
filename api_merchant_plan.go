@@ -23,18 +23,18 @@ import (
 // MerchantPlanAPIService MerchantPlanAPI service
 type MerchantPlanAPIService service
 
-type MerchantPlanAPIMerchantPlanActivatePostRequest struct {
+type ApiMerchantPlanActivatePostRequest struct {
 	ctx context.Context
 	ApiService *MerchantPlanAPIService
 	unibeeApiMerchantPlanActivateReq *UnibeeApiMerchantPlanActivateReq
 }
 
-func (r MerchantPlanAPIMerchantPlanActivatePostRequest) UnibeeApiMerchantPlanActivateReq(unibeeApiMerchantPlanActivateReq UnibeeApiMerchantPlanActivateReq) MerchantPlanAPIMerchantPlanActivatePostRequest {
+func (r ApiMerchantPlanActivatePostRequest) UnibeeApiMerchantPlanActivateReq(unibeeApiMerchantPlanActivateReq UnibeeApiMerchantPlanActivateReq) ApiMerchantPlanActivatePostRequest {
 	r.unibeeApiMerchantPlanActivateReq = &unibeeApiMerchantPlanActivateReq
 	return r
 }
 
-func (r MerchantPlanAPIMerchantPlanActivatePostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantPlanActivatePostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantPlanActivatePostExecute(r)
 }
 
@@ -42,10 +42,10 @@ func (r MerchantPlanAPIMerchantPlanActivatePostRequest) Execute() (*MerchantAuth
 MerchantPlanActivatePost Plan Sync To Gateway And Activate
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantPlanAPIMerchantPlanActivatePostRequest
+ @return ApiMerchantPlanActivatePostRequest
 */
-func (a *MerchantPlanAPIService) MerchantPlanActivatePost(ctx context.Context) MerchantPlanAPIMerchantPlanActivatePostRequest {
-	return MerchantPlanAPIMerchantPlanActivatePostRequest{
+func (a *MerchantPlanAPIService) MerchantPlanActivatePost(ctx context.Context) ApiMerchantPlanActivatePostRequest {
+	return ApiMerchantPlanActivatePostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -53,7 +53,7 @@ func (a *MerchantPlanAPIService) MerchantPlanActivatePost(ctx context.Context) M
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantPlanAPIService) MerchantPlanActivatePostExecute(r MerchantPlanAPIMerchantPlanActivatePostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantPlanAPIService) MerchantPlanActivatePostExecute(r ApiMerchantPlanActivatePostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -131,18 +131,18 @@ func (a *MerchantPlanAPIService) MerchantPlanActivatePostExecute(r MerchantPlanA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantPlanAPIMerchantPlanAddonsBindingPostRequest struct {
+type ApiMerchantPlanAddonsBindingPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantPlanAPIService
 	unibeeApiMerchantPlanAddonsBindingReq *UnibeeApiMerchantPlanAddonsBindingReq
 }
 
-func (r MerchantPlanAPIMerchantPlanAddonsBindingPostRequest) UnibeeApiMerchantPlanAddonsBindingReq(unibeeApiMerchantPlanAddonsBindingReq UnibeeApiMerchantPlanAddonsBindingReq) MerchantPlanAPIMerchantPlanAddonsBindingPostRequest {
+func (r ApiMerchantPlanAddonsBindingPostRequest) UnibeeApiMerchantPlanAddonsBindingReq(unibeeApiMerchantPlanAddonsBindingReq UnibeeApiMerchantPlanAddonsBindingReq) ApiMerchantPlanAddonsBindingPostRequest {
 	r.unibeeApiMerchantPlanAddonsBindingReq = &unibeeApiMerchantPlanAddonsBindingReq
 	return r
 }
 
-func (r MerchantPlanAPIMerchantPlanAddonsBindingPostRequest) Execute() (*MerchantPlanAddonsBindingPost200Response, *http.Response, error) {
+func (r ApiMerchantPlanAddonsBindingPostRequest) Execute() (*MerchantPlanAddonsBindingPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantPlanAddonsBindingPostExecute(r)
 }
 
@@ -150,10 +150,10 @@ func (r MerchantPlanAPIMerchantPlanAddonsBindingPostRequest) Execute() (*Merchan
 MerchantPlanAddonsBindingPost Plan Binding Addons
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantPlanAPIMerchantPlanAddonsBindingPostRequest
+ @return ApiMerchantPlanAddonsBindingPostRequest
 */
-func (a *MerchantPlanAPIService) MerchantPlanAddonsBindingPost(ctx context.Context) MerchantPlanAPIMerchantPlanAddonsBindingPostRequest {
-	return MerchantPlanAPIMerchantPlanAddonsBindingPostRequest{
+func (a *MerchantPlanAPIService) MerchantPlanAddonsBindingPost(ctx context.Context) ApiMerchantPlanAddonsBindingPostRequest {
+	return ApiMerchantPlanAddonsBindingPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -161,7 +161,7 @@ func (a *MerchantPlanAPIService) MerchantPlanAddonsBindingPost(ctx context.Conte
 
 // Execute executes the request
 //  @return MerchantPlanAddonsBindingPost200Response
-func (a *MerchantPlanAPIService) MerchantPlanAddonsBindingPostExecute(r MerchantPlanAPIMerchantPlanAddonsBindingPostRequest) (*MerchantPlanAddonsBindingPost200Response, *http.Response, error) {
+func (a *MerchantPlanAPIService) MerchantPlanAddonsBindingPostExecute(r ApiMerchantPlanAddonsBindingPostRequest) (*MerchantPlanAddonsBindingPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -239,18 +239,18 @@ func (a *MerchantPlanAPIService) MerchantPlanAddonsBindingPostExecute(r Merchant
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantPlanAPIMerchantPlanDeletePostRequest struct {
+type ApiMerchantPlanDeletePostRequest struct {
 	ctx context.Context
 	ApiService *MerchantPlanAPIService
 	unibeeApiMerchantPlanDeleteReq *UnibeeApiMerchantPlanDeleteReq
 }
 
-func (r MerchantPlanAPIMerchantPlanDeletePostRequest) UnibeeApiMerchantPlanDeleteReq(unibeeApiMerchantPlanDeleteReq UnibeeApiMerchantPlanDeleteReq) MerchantPlanAPIMerchantPlanDeletePostRequest {
+func (r ApiMerchantPlanDeletePostRequest) UnibeeApiMerchantPlanDeleteReq(unibeeApiMerchantPlanDeleteReq UnibeeApiMerchantPlanDeleteReq) ApiMerchantPlanDeletePostRequest {
 	r.unibeeApiMerchantPlanDeleteReq = &unibeeApiMerchantPlanDeleteReq
 	return r
 }
 
-func (r MerchantPlanAPIMerchantPlanDeletePostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantPlanDeletePostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantPlanDeletePostExecute(r)
 }
 
@@ -258,10 +258,10 @@ func (r MerchantPlanAPIMerchantPlanDeletePostRequest) Execute() (*MerchantAuthSs
 MerchantPlanDeletePost Delete A Plan Before Activate
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantPlanAPIMerchantPlanDeletePostRequest
+ @return ApiMerchantPlanDeletePostRequest
 */
-func (a *MerchantPlanAPIService) MerchantPlanDeletePost(ctx context.Context) MerchantPlanAPIMerchantPlanDeletePostRequest {
-	return MerchantPlanAPIMerchantPlanDeletePostRequest{
+func (a *MerchantPlanAPIService) MerchantPlanDeletePost(ctx context.Context) ApiMerchantPlanDeletePostRequest {
+	return ApiMerchantPlanDeletePostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -269,7 +269,7 @@ func (a *MerchantPlanAPIService) MerchantPlanDeletePost(ctx context.Context) Mer
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantPlanAPIService) MerchantPlanDeletePostExecute(r MerchantPlanAPIMerchantPlanDeletePostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantPlanAPIService) MerchantPlanDeletePostExecute(r ApiMerchantPlanDeletePostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -347,19 +347,19 @@ func (a *MerchantPlanAPIService) MerchantPlanDeletePostExecute(r MerchantPlanAPI
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantPlanAPIMerchantPlanDetailGetRequest struct {
+type ApiMerchantPlanDetailGetRequest struct {
 	ctx context.Context
 	ApiService *MerchantPlanAPIService
-	planId *int32
+	planId *int64
 }
 
 // PlanId
-func (r MerchantPlanAPIMerchantPlanDetailGetRequest) PlanId(planId int32) MerchantPlanAPIMerchantPlanDetailGetRequest {
+func (r ApiMerchantPlanDetailGetRequest) PlanId(planId int64) ApiMerchantPlanDetailGetRequest {
 	r.planId = &planId
 	return r
 }
 
-func (r MerchantPlanAPIMerchantPlanDetailGetRequest) Execute() (*MerchantPlanDetailGet200Response, *http.Response, error) {
+func (r ApiMerchantPlanDetailGetRequest) Execute() (*MerchantPlanDetailGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantPlanDetailGetExecute(r)
 }
 
@@ -367,10 +367,10 @@ func (r MerchantPlanAPIMerchantPlanDetailGetRequest) Execute() (*MerchantPlanDet
 MerchantPlanDetailGet Plan Detail
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantPlanAPIMerchantPlanDetailGetRequest
+ @return ApiMerchantPlanDetailGetRequest
 */
-func (a *MerchantPlanAPIService) MerchantPlanDetailGet(ctx context.Context) MerchantPlanAPIMerchantPlanDetailGetRequest {
-	return MerchantPlanAPIMerchantPlanDetailGetRequest{
+func (a *MerchantPlanAPIService) MerchantPlanDetailGet(ctx context.Context) ApiMerchantPlanDetailGetRequest {
+	return ApiMerchantPlanDetailGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -378,7 +378,7 @@ func (a *MerchantPlanAPIService) MerchantPlanDetailGet(ctx context.Context) Merc
 
 // Execute executes the request
 //  @return MerchantPlanDetailGet200Response
-func (a *MerchantPlanAPIService) MerchantPlanDetailGetExecute(r MerchantPlanAPIMerchantPlanDetailGetRequest) (*MerchantPlanDetailGet200Response, *http.Response, error) {
+func (a *MerchantPlanAPIService) MerchantPlanDetailGetExecute(r ApiMerchantPlanDetailGetRequest) (*MerchantPlanDetailGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -455,18 +455,18 @@ func (a *MerchantPlanAPIService) MerchantPlanDetailGetExecute(r MerchantPlanAPIM
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantPlanAPIMerchantPlanDetailPostRequest struct {
+type ApiMerchantPlanDetailPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantPlanAPIService
 	unibeeApiMerchantPlanDetailReq *UnibeeApiMerchantPlanDetailReq
 }
 
-func (r MerchantPlanAPIMerchantPlanDetailPostRequest) UnibeeApiMerchantPlanDetailReq(unibeeApiMerchantPlanDetailReq UnibeeApiMerchantPlanDetailReq) MerchantPlanAPIMerchantPlanDetailPostRequest {
+func (r ApiMerchantPlanDetailPostRequest) UnibeeApiMerchantPlanDetailReq(unibeeApiMerchantPlanDetailReq UnibeeApiMerchantPlanDetailReq) ApiMerchantPlanDetailPostRequest {
 	r.unibeeApiMerchantPlanDetailReq = &unibeeApiMerchantPlanDetailReq
 	return r
 }
 
-func (r MerchantPlanAPIMerchantPlanDetailPostRequest) Execute() (*MerchantPlanDetailGet200Response, *http.Response, error) {
+func (r ApiMerchantPlanDetailPostRequest) Execute() (*MerchantPlanDetailGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantPlanDetailPostExecute(r)
 }
 
@@ -474,10 +474,10 @@ func (r MerchantPlanAPIMerchantPlanDetailPostRequest) Execute() (*MerchantPlanDe
 MerchantPlanDetailPost Plan Detail
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantPlanAPIMerchantPlanDetailPostRequest
+ @return ApiMerchantPlanDetailPostRequest
 */
-func (a *MerchantPlanAPIService) MerchantPlanDetailPost(ctx context.Context) MerchantPlanAPIMerchantPlanDetailPostRequest {
-	return MerchantPlanAPIMerchantPlanDetailPostRequest{
+func (a *MerchantPlanAPIService) MerchantPlanDetailPost(ctx context.Context) ApiMerchantPlanDetailPostRequest {
+	return ApiMerchantPlanDetailPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -485,7 +485,7 @@ func (a *MerchantPlanAPIService) MerchantPlanDetailPost(ctx context.Context) Mer
 
 // Execute executes the request
 //  @return MerchantPlanDetailGet200Response
-func (a *MerchantPlanAPIService) MerchantPlanDetailPostExecute(r MerchantPlanAPIMerchantPlanDetailPostRequest) (*MerchantPlanDetailGet200Response, *http.Response, error) {
+func (a *MerchantPlanAPIService) MerchantPlanDetailPostExecute(r ApiMerchantPlanDetailPostRequest) (*MerchantPlanDetailGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -563,18 +563,18 @@ func (a *MerchantPlanAPIService) MerchantPlanDetailPostExecute(r MerchantPlanAPI
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantPlanAPIMerchantPlanEditPostRequest struct {
+type ApiMerchantPlanEditPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantPlanAPIService
 	unibeeApiMerchantPlanEditReq *UnibeeApiMerchantPlanEditReq
 }
 
-func (r MerchantPlanAPIMerchantPlanEditPostRequest) UnibeeApiMerchantPlanEditReq(unibeeApiMerchantPlanEditReq UnibeeApiMerchantPlanEditReq) MerchantPlanAPIMerchantPlanEditPostRequest {
+func (r ApiMerchantPlanEditPostRequest) UnibeeApiMerchantPlanEditReq(unibeeApiMerchantPlanEditReq UnibeeApiMerchantPlanEditReq) ApiMerchantPlanEditPostRequest {
 	r.unibeeApiMerchantPlanEditReq = &unibeeApiMerchantPlanEditReq
 	return r
 }
 
-func (r MerchantPlanAPIMerchantPlanEditPostRequest) Execute() (*MerchantPlanAddonsBindingPost200Response, *http.Response, error) {
+func (r ApiMerchantPlanEditPostRequest) Execute() (*MerchantPlanAddonsBindingPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantPlanEditPostExecute(r)
 }
 
@@ -582,10 +582,10 @@ func (r MerchantPlanAPIMerchantPlanEditPostRequest) Execute() (*MerchantPlanAddo
 MerchantPlanEditPost Edit Plan
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantPlanAPIMerchantPlanEditPostRequest
+ @return ApiMerchantPlanEditPostRequest
 */
-func (a *MerchantPlanAPIService) MerchantPlanEditPost(ctx context.Context) MerchantPlanAPIMerchantPlanEditPostRequest {
-	return MerchantPlanAPIMerchantPlanEditPostRequest{
+func (a *MerchantPlanAPIService) MerchantPlanEditPost(ctx context.Context) ApiMerchantPlanEditPostRequest {
+	return ApiMerchantPlanEditPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -593,7 +593,7 @@ func (a *MerchantPlanAPIService) MerchantPlanEditPost(ctx context.Context) Merch
 
 // Execute executes the request
 //  @return MerchantPlanAddonsBindingPost200Response
-func (a *MerchantPlanAPIService) MerchantPlanEditPostExecute(r MerchantPlanAPIMerchantPlanEditPostRequest) (*MerchantPlanAddonsBindingPost200Response, *http.Response, error) {
+func (a *MerchantPlanAPIService) MerchantPlanEditPostExecute(r ApiMerchantPlanEditPostRequest) (*MerchantPlanAddonsBindingPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -671,18 +671,18 @@ func (a *MerchantPlanAPIService) MerchantPlanEditPostExecute(r MerchantPlanAPIMe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantPlanAPIMerchantPlanExpirePostRequest struct {
+type ApiMerchantPlanExpirePostRequest struct {
 	ctx context.Context
 	ApiService *MerchantPlanAPIService
 	unibeeApiMerchantPlanExpireReq *UnibeeApiMerchantPlanExpireReq
 }
 
-func (r MerchantPlanAPIMerchantPlanExpirePostRequest) UnibeeApiMerchantPlanExpireReq(unibeeApiMerchantPlanExpireReq UnibeeApiMerchantPlanExpireReq) MerchantPlanAPIMerchantPlanExpirePostRequest {
+func (r ApiMerchantPlanExpirePostRequest) UnibeeApiMerchantPlanExpireReq(unibeeApiMerchantPlanExpireReq UnibeeApiMerchantPlanExpireReq) ApiMerchantPlanExpirePostRequest {
 	r.unibeeApiMerchantPlanExpireReq = &unibeeApiMerchantPlanExpireReq
 	return r
 }
 
-func (r MerchantPlanAPIMerchantPlanExpirePostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantPlanExpirePostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantPlanExpirePostExecute(r)
 }
 
@@ -690,10 +690,10 @@ func (r MerchantPlanAPIMerchantPlanExpirePostRequest) Execute() (*MerchantAuthSs
 MerchantPlanExpirePost Expire A Plan
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantPlanAPIMerchantPlanExpirePostRequest
+ @return ApiMerchantPlanExpirePostRequest
 */
-func (a *MerchantPlanAPIService) MerchantPlanExpirePost(ctx context.Context) MerchantPlanAPIMerchantPlanExpirePostRequest {
-	return MerchantPlanAPIMerchantPlanExpirePostRequest{
+func (a *MerchantPlanAPIService) MerchantPlanExpirePost(ctx context.Context) ApiMerchantPlanExpirePostRequest {
+	return ApiMerchantPlanExpirePostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -701,7 +701,7 @@ func (a *MerchantPlanAPIService) MerchantPlanExpirePost(ctx context.Context) Mer
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantPlanAPIService) MerchantPlanExpirePostExecute(r MerchantPlanAPIMerchantPlanExpirePostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantPlanAPIService) MerchantPlanExpirePostExecute(r ApiMerchantPlanExpirePostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -779,7 +779,7 @@ func (a *MerchantPlanAPIService) MerchantPlanExpirePostExecute(r MerchantPlanAPI
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantPlanAPIMerchantPlanListGetRequest struct {
+type ApiMerchantPlanListGetRequest struct {
 	ctx context.Context
 	ApiService *MerchantPlanAPIService
 	type_ *[]int32
@@ -793,54 +793,54 @@ type MerchantPlanAPIMerchantPlanListGetRequest struct {
 }
 
 // 1-main plan，2-addon plan
-func (r MerchantPlanAPIMerchantPlanListGetRequest) Type_(type_ []int32) MerchantPlanAPIMerchantPlanListGetRequest {
+func (r ApiMerchantPlanListGetRequest) Type_(type_ []int32) ApiMerchantPlanListGetRequest {
 	r.type_ = &type_
 	return r
 }
 
 // Filter, Default All，,Status，1-Editing，2-Active，3-InActive，4-Expired
-func (r MerchantPlanAPIMerchantPlanListGetRequest) Status(status []int32) MerchantPlanAPIMerchantPlanListGetRequest {
+func (r ApiMerchantPlanListGetRequest) Status(status []int32) ApiMerchantPlanListGetRequest {
 	r.status = &status
 	return r
 }
 
 // Filter, Default All，PublishStatus，1-UnPublished，2-Published
-func (r MerchantPlanAPIMerchantPlanListGetRequest) PublishStatus(publishStatus int32) MerchantPlanAPIMerchantPlanListGetRequest {
+func (r ApiMerchantPlanListGetRequest) PublishStatus(publishStatus int32) ApiMerchantPlanListGetRequest {
 	r.publishStatus = &publishStatus
 	return r
 }
 
 // Filter Currency
-func (r MerchantPlanAPIMerchantPlanListGetRequest) Currency(currency string) MerchantPlanAPIMerchantPlanListGetRequest {
+func (r ApiMerchantPlanListGetRequest) Currency(currency string) ApiMerchantPlanListGetRequest {
 	r.currency = &currency
 	return r
 }
 
 // Sort Field，gmt_create|gmt_modify，Default gmt_modify
-func (r MerchantPlanAPIMerchantPlanListGetRequest) SortField(sortField string) MerchantPlanAPIMerchantPlanListGetRequest {
+func (r ApiMerchantPlanListGetRequest) SortField(sortField string) ApiMerchantPlanListGetRequest {
 	r.sortField = &sortField
 	return r
 }
 
 // Sort Type，asc|desc，Default desc
-func (r MerchantPlanAPIMerchantPlanListGetRequest) SortType(sortType string) MerchantPlanAPIMerchantPlanListGetRequest {
+func (r ApiMerchantPlanListGetRequest) SortType(sortType string) ApiMerchantPlanListGetRequest {
 	r.sortType = &sortType
 	return r
 }
 
 // Page, Start 0
-func (r MerchantPlanAPIMerchantPlanListGetRequest) Page(page int32) MerchantPlanAPIMerchantPlanListGetRequest {
+func (r ApiMerchantPlanListGetRequest) Page(page int32) ApiMerchantPlanListGetRequest {
 	r.page = &page
 	return r
 }
 
 // Count Of Per Page
-func (r MerchantPlanAPIMerchantPlanListGetRequest) Count(count int32) MerchantPlanAPIMerchantPlanListGetRequest {
+func (r ApiMerchantPlanListGetRequest) Count(count int32) ApiMerchantPlanListGetRequest {
 	r.count = &count
 	return r
 }
 
-func (r MerchantPlanAPIMerchantPlanListGetRequest) Execute() (*MerchantPlanListGet200Response, *http.Response, error) {
+func (r ApiMerchantPlanListGetRequest) Execute() (*MerchantPlanListGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantPlanListGetExecute(r)
 }
 
@@ -848,10 +848,10 @@ func (r MerchantPlanAPIMerchantPlanListGetRequest) Execute() (*MerchantPlanListG
 MerchantPlanListGet Plan List
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantPlanAPIMerchantPlanListGetRequest
+ @return ApiMerchantPlanListGetRequest
 */
-func (a *MerchantPlanAPIService) MerchantPlanListGet(ctx context.Context) MerchantPlanAPIMerchantPlanListGetRequest {
-	return MerchantPlanAPIMerchantPlanListGetRequest{
+func (a *MerchantPlanAPIService) MerchantPlanListGet(ctx context.Context) ApiMerchantPlanListGetRequest {
+	return ApiMerchantPlanListGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -859,7 +859,7 @@ func (a *MerchantPlanAPIService) MerchantPlanListGet(ctx context.Context) Mercha
 
 // Execute executes the request
 //  @return MerchantPlanListGet200Response
-func (a *MerchantPlanAPIService) MerchantPlanListGetExecute(r MerchantPlanAPIMerchantPlanListGetRequest) (*MerchantPlanListGet200Response, *http.Response, error) {
+func (a *MerchantPlanAPIService) MerchantPlanListGetExecute(r ApiMerchantPlanListGetRequest) (*MerchantPlanListGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -972,18 +972,18 @@ func (a *MerchantPlanAPIService) MerchantPlanListGetExecute(r MerchantPlanAPIMer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantPlanAPIMerchantPlanListPostRequest struct {
+type ApiMerchantPlanListPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantPlanAPIService
 	unibeeApiMerchantPlanListReq *UnibeeApiMerchantPlanListReq
 }
 
-func (r MerchantPlanAPIMerchantPlanListPostRequest) UnibeeApiMerchantPlanListReq(unibeeApiMerchantPlanListReq UnibeeApiMerchantPlanListReq) MerchantPlanAPIMerchantPlanListPostRequest {
+func (r ApiMerchantPlanListPostRequest) UnibeeApiMerchantPlanListReq(unibeeApiMerchantPlanListReq UnibeeApiMerchantPlanListReq) ApiMerchantPlanListPostRequest {
 	r.unibeeApiMerchantPlanListReq = &unibeeApiMerchantPlanListReq
 	return r
 }
 
-func (r MerchantPlanAPIMerchantPlanListPostRequest) Execute() (*MerchantPlanListGet200Response, *http.Response, error) {
+func (r ApiMerchantPlanListPostRequest) Execute() (*MerchantPlanListGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantPlanListPostExecute(r)
 }
 
@@ -991,10 +991,10 @@ func (r MerchantPlanAPIMerchantPlanListPostRequest) Execute() (*MerchantPlanList
 MerchantPlanListPost Plan List
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantPlanAPIMerchantPlanListPostRequest
+ @return ApiMerchantPlanListPostRequest
 */
-func (a *MerchantPlanAPIService) MerchantPlanListPost(ctx context.Context) MerchantPlanAPIMerchantPlanListPostRequest {
-	return MerchantPlanAPIMerchantPlanListPostRequest{
+func (a *MerchantPlanAPIService) MerchantPlanListPost(ctx context.Context) ApiMerchantPlanListPostRequest {
+	return ApiMerchantPlanListPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1002,7 +1002,7 @@ func (a *MerchantPlanAPIService) MerchantPlanListPost(ctx context.Context) Merch
 
 // Execute executes the request
 //  @return MerchantPlanListGet200Response
-func (a *MerchantPlanAPIService) MerchantPlanListPostExecute(r MerchantPlanAPIMerchantPlanListPostRequest) (*MerchantPlanListGet200Response, *http.Response, error) {
+func (a *MerchantPlanAPIService) MerchantPlanListPostExecute(r ApiMerchantPlanListPostRequest) (*MerchantPlanListGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1080,18 +1080,18 @@ func (a *MerchantPlanAPIService) MerchantPlanListPostExecute(r MerchantPlanAPIMe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantPlanAPIMerchantPlanNewPostRequest struct {
+type ApiMerchantPlanNewPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantPlanAPIService
 	unibeeApiMerchantPlanNewReq *UnibeeApiMerchantPlanNewReq
 }
 
-func (r MerchantPlanAPIMerchantPlanNewPostRequest) UnibeeApiMerchantPlanNewReq(unibeeApiMerchantPlanNewReq UnibeeApiMerchantPlanNewReq) MerchantPlanAPIMerchantPlanNewPostRequest {
+func (r ApiMerchantPlanNewPostRequest) UnibeeApiMerchantPlanNewReq(unibeeApiMerchantPlanNewReq UnibeeApiMerchantPlanNewReq) ApiMerchantPlanNewPostRequest {
 	r.unibeeApiMerchantPlanNewReq = &unibeeApiMerchantPlanNewReq
 	return r
 }
 
-func (r MerchantPlanAPIMerchantPlanNewPostRequest) Execute() (*MerchantPlanAddonsBindingPost200Response, *http.Response, error) {
+func (r ApiMerchantPlanNewPostRequest) Execute() (*MerchantPlanAddonsBindingPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantPlanNewPostExecute(r)
 }
 
@@ -1099,10 +1099,10 @@ func (r MerchantPlanAPIMerchantPlanNewPostRequest) Execute() (*MerchantPlanAddon
 MerchantPlanNewPost Create Plan
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantPlanAPIMerchantPlanNewPostRequest
+ @return ApiMerchantPlanNewPostRequest
 */
-func (a *MerchantPlanAPIService) MerchantPlanNewPost(ctx context.Context) MerchantPlanAPIMerchantPlanNewPostRequest {
-	return MerchantPlanAPIMerchantPlanNewPostRequest{
+func (a *MerchantPlanAPIService) MerchantPlanNewPost(ctx context.Context) ApiMerchantPlanNewPostRequest {
+	return ApiMerchantPlanNewPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1110,7 +1110,7 @@ func (a *MerchantPlanAPIService) MerchantPlanNewPost(ctx context.Context) Mercha
 
 // Execute executes the request
 //  @return MerchantPlanAddonsBindingPost200Response
-func (a *MerchantPlanAPIService) MerchantPlanNewPostExecute(r MerchantPlanAPIMerchantPlanNewPostRequest) (*MerchantPlanAddonsBindingPost200Response, *http.Response, error) {
+func (a *MerchantPlanAPIService) MerchantPlanNewPostExecute(r ApiMerchantPlanNewPostRequest) (*MerchantPlanAddonsBindingPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1188,18 +1188,18 @@ func (a *MerchantPlanAPIService) MerchantPlanNewPostExecute(r MerchantPlanAPIMer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantPlanAPIMerchantPlanPublishPostRequest struct {
+type ApiMerchantPlanPublishPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantPlanAPIService
 	unibeeApiMerchantPlanPublishReq *UnibeeApiMerchantPlanPublishReq
 }
 
-func (r MerchantPlanAPIMerchantPlanPublishPostRequest) UnibeeApiMerchantPlanPublishReq(unibeeApiMerchantPlanPublishReq UnibeeApiMerchantPlanPublishReq) MerchantPlanAPIMerchantPlanPublishPostRequest {
+func (r ApiMerchantPlanPublishPostRequest) UnibeeApiMerchantPlanPublishReq(unibeeApiMerchantPlanPublishReq UnibeeApiMerchantPlanPublishReq) ApiMerchantPlanPublishPostRequest {
 	r.unibeeApiMerchantPlanPublishReq = &unibeeApiMerchantPlanPublishReq
 	return r
 }
 
-func (r MerchantPlanAPIMerchantPlanPublishPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantPlanPublishPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantPlanPublishPostExecute(r)
 }
 
@@ -1207,10 +1207,10 @@ func (r MerchantPlanAPIMerchantPlanPublishPostRequest) Execute() (*MerchantAuthS
 MerchantPlanPublishPost Publish Plan，Will Be Visible To UserPortal
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantPlanAPIMerchantPlanPublishPostRequest
+ @return ApiMerchantPlanPublishPostRequest
 */
-func (a *MerchantPlanAPIService) MerchantPlanPublishPost(ctx context.Context) MerchantPlanAPIMerchantPlanPublishPostRequest {
-	return MerchantPlanAPIMerchantPlanPublishPostRequest{
+func (a *MerchantPlanAPIService) MerchantPlanPublishPost(ctx context.Context) ApiMerchantPlanPublishPostRequest {
+	return ApiMerchantPlanPublishPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1218,7 +1218,7 @@ func (a *MerchantPlanAPIService) MerchantPlanPublishPost(ctx context.Context) Me
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantPlanAPIService) MerchantPlanPublishPostExecute(r MerchantPlanAPIMerchantPlanPublishPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantPlanAPIService) MerchantPlanPublishPostExecute(r ApiMerchantPlanPublishPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1296,18 +1296,18 @@ func (a *MerchantPlanAPIService) MerchantPlanPublishPostExecute(r MerchantPlanAP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantPlanAPIMerchantPlanUnpublishedPostRequest struct {
+type ApiMerchantPlanUnpublishedPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantPlanAPIService
 	unibeeApiMerchantPlanUnPublishReq *UnibeeApiMerchantPlanUnPublishReq
 }
 
-func (r MerchantPlanAPIMerchantPlanUnpublishedPostRequest) UnibeeApiMerchantPlanUnPublishReq(unibeeApiMerchantPlanUnPublishReq UnibeeApiMerchantPlanUnPublishReq) MerchantPlanAPIMerchantPlanUnpublishedPostRequest {
+func (r ApiMerchantPlanUnpublishedPostRequest) UnibeeApiMerchantPlanUnPublishReq(unibeeApiMerchantPlanUnPublishReq UnibeeApiMerchantPlanUnPublishReq) ApiMerchantPlanUnpublishedPostRequest {
 	r.unibeeApiMerchantPlanUnPublishReq = &unibeeApiMerchantPlanUnPublishReq
 	return r
 }
 
-func (r MerchantPlanAPIMerchantPlanUnpublishedPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantPlanUnpublishedPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantPlanUnpublishedPostExecute(r)
 }
 
@@ -1315,10 +1315,10 @@ func (r MerchantPlanAPIMerchantPlanUnpublishedPostRequest) Execute() (*MerchantA
 MerchantPlanUnpublishedPost UnPublish Plan
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantPlanAPIMerchantPlanUnpublishedPostRequest
+ @return ApiMerchantPlanUnpublishedPostRequest
 */
-func (a *MerchantPlanAPIService) MerchantPlanUnpublishedPost(ctx context.Context) MerchantPlanAPIMerchantPlanUnpublishedPostRequest {
-	return MerchantPlanAPIMerchantPlanUnpublishedPostRequest{
+func (a *MerchantPlanAPIService) MerchantPlanUnpublishedPost(ctx context.Context) ApiMerchantPlanUnpublishedPostRequest {
+	return ApiMerchantPlanUnpublishedPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1326,7 +1326,7 @@ func (a *MerchantPlanAPIService) MerchantPlanUnpublishedPost(ctx context.Context
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantPlanAPIService) MerchantPlanUnpublishedPostExecute(r MerchantPlanAPIMerchantPlanUnpublishedPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantPlanAPIService) MerchantPlanUnpublishedPostExecute(r ApiMerchantPlanUnpublishedPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

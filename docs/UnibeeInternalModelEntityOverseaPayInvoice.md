@@ -8,20 +8,20 @@ Name | Type | Description | Notes
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Currency** | Pointer to **string** | currency | [optional] 
 **Data** | Pointer to **string** | data (json) | [optional] 
-**GatewayId** | Pointer to **int32** | gateway_id | [optional] 
+**GatewayId** | Pointer to **int64** | gateway_id | [optional] 
 **GatewayInvoiceId** | Pointer to **string** |  | [optional] 
 **GatewayInvoicePdf** | Pointer to **string** |  | [optional] 
 **GatewayPaymentId** | Pointer to **string** |  | [optional] 
 **GatewayStatus** | Pointer to **string** |  | [optional] 
 **GmtCreate** | Pointer to **string** | create time | [optional] 
 **GmtModify** | Pointer to **string** | update time | [optional] 
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **InvoiceId** | Pointer to **string** | invoice_id | [optional] 
 **InvoiceName** | Pointer to **string** | invoice name | [optional] 
 **IsDeleted** | Pointer to **int32** | 0-UnDeleted，1-Deleted | [optional] 
 **Lines** | Pointer to **string** | lines( json) | [optional] 
 **Link** | Pointer to **string** | invoice link | [optional] 
-**MerchantId** | Pointer to **int32** | merchant_id | [optional] 
+**MerchantId** | Pointer to **int64** | merchant_id | [optional] 
 **PaymentId** | Pointer to **string** | paymentId | [optional] 
 **PaymentLink** | Pointer to **string** | invoice payment link | [optional] 
 **PeriodEnd** | Pointer to **int64** | period_end utc time | [optional] 
@@ -166,20 +166,20 @@ HasData returns a boolean if a field has been set.
 
 ### GetGatewayId
 
-`func (o *UnibeeInternalModelEntityOverseaPayInvoice) GetGatewayId() int32`
+`func (o *UnibeeInternalModelEntityOverseaPayInvoice) GetGatewayId() int64`
 
 GetGatewayId returns the GatewayId field if non-nil, zero value otherwise.
 
 ### GetGatewayIdOk
 
-`func (o *UnibeeInternalModelEntityOverseaPayInvoice) GetGatewayIdOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPayInvoice) GetGatewayIdOk() (*int64, bool)`
 
 GetGatewayIdOk returns a tuple with the GatewayId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGatewayId
 
-`func (o *UnibeeInternalModelEntityOverseaPayInvoice) SetGatewayId(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPayInvoice) SetGatewayId(v int64)`
 
 SetGatewayId sets GatewayId field to given value.
 
@@ -341,20 +341,20 @@ HasGmtModify returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *UnibeeInternalModelEntityOverseaPayInvoice) GetId() int32`
+`func (o *UnibeeInternalModelEntityOverseaPayInvoice) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *UnibeeInternalModelEntityOverseaPayInvoice) GetIdOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPayInvoice) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *UnibeeInternalModelEntityOverseaPayInvoice) SetId(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPayInvoice) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -491,20 +491,20 @@ HasLink returns a boolean if a field has been set.
 
 ### GetMerchantId
 
-`func (o *UnibeeInternalModelEntityOverseaPayInvoice) GetMerchantId() int32`
+`func (o *UnibeeInternalModelEntityOverseaPayInvoice) GetMerchantId() int64`
 
 GetMerchantId returns the MerchantId field if non-nil, zero value otherwise.
 
 ### GetMerchantIdOk
 
-`func (o *UnibeeInternalModelEntityOverseaPayInvoice) GetMerchantIdOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPayInvoice) GetMerchantIdOk() (*int64, bool)`
 
 GetMerchantIdOk returns a tuple with the MerchantId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantId
 
-`func (o *UnibeeInternalModelEntityOverseaPayInvoice) SetMerchantId(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPayInvoice) SetMerchantId(v int64)`
 
 SetMerchantId sets MerchantId field to given value.
 

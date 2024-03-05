@@ -22,7 +22,7 @@ import (
 // MerchantSubscriptionTimelineAPIService MerchantSubscriptionTimelineAPI service
 type MerchantSubscriptionTimelineAPIService service
 
-type MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListGetRequest struct {
+type ApiMerchantSubscriptionTimelineListGetRequest struct {
 	ctx context.Context
 	ApiService *MerchantSubscriptionTimelineAPIService
 	userId *int32
@@ -33,36 +33,36 @@ type MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListGetRequest s
 }
 
 // Filter UserId, Default All 
-func (r MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListGetRequest) UserId(userId int32) MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListGetRequest {
+func (r ApiMerchantSubscriptionTimelineListGetRequest) UserId(userId int32) ApiMerchantSubscriptionTimelineListGetRequest {
 	r.userId = &userId
 	return r
 }
 
 // Sort Field，gmt_create|gmt_modify，Default gmt_modify
-func (r MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListGetRequest) SortField(sortField string) MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListGetRequest {
+func (r ApiMerchantSubscriptionTimelineListGetRequest) SortField(sortField string) ApiMerchantSubscriptionTimelineListGetRequest {
 	r.sortField = &sortField
 	return r
 }
 
 // Sort Type，asc|desc，Default desc
-func (r MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListGetRequest) SortType(sortType string) MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListGetRequest {
+func (r ApiMerchantSubscriptionTimelineListGetRequest) SortType(sortType string) ApiMerchantSubscriptionTimelineListGetRequest {
 	r.sortType = &sortType
 	return r
 }
 
 // Page, Start WIth 0
-func (r MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListGetRequest) Page(page int32) MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListGetRequest {
+func (r ApiMerchantSubscriptionTimelineListGetRequest) Page(page int32) ApiMerchantSubscriptionTimelineListGetRequest {
 	r.page = &page
 	return r
 }
 
 // Count Of Page
-func (r MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListGetRequest) Count(count int32) MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListGetRequest {
+func (r ApiMerchantSubscriptionTimelineListGetRequest) Count(count int32) ApiMerchantSubscriptionTimelineListGetRequest {
 	r.count = &count
 	return r
 }
 
-func (r MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListGetRequest) Execute() (*MerchantSubscriptionTimelineListGet200Response, *http.Response, error) {
+func (r ApiMerchantSubscriptionTimelineListGetRequest) Execute() (*MerchantSubscriptionTimelineListGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantSubscriptionTimelineListGetExecute(r)
 }
 
@@ -70,10 +70,10 @@ func (r MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListGetReques
 MerchantSubscriptionTimelineListGet Merchant Subscription TimeLine List
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListGetRequest
+ @return ApiMerchantSubscriptionTimelineListGetRequest
 */
-func (a *MerchantSubscriptionTimelineAPIService) MerchantSubscriptionTimelineListGet(ctx context.Context) MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListGetRequest {
-	return MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListGetRequest{
+func (a *MerchantSubscriptionTimelineAPIService) MerchantSubscriptionTimelineListGet(ctx context.Context) ApiMerchantSubscriptionTimelineListGetRequest {
+	return ApiMerchantSubscriptionTimelineListGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -81,7 +81,7 @@ func (a *MerchantSubscriptionTimelineAPIService) MerchantSubscriptionTimelineLis
 
 // Execute executes the request
 //  @return MerchantSubscriptionTimelineListGet200Response
-func (a *MerchantSubscriptionTimelineAPIService) MerchantSubscriptionTimelineListGetExecute(r MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListGetRequest) (*MerchantSubscriptionTimelineListGet200Response, *http.Response, error) {
+func (a *MerchantSubscriptionTimelineAPIService) MerchantSubscriptionTimelineListGetExecute(r ApiMerchantSubscriptionTimelineListGetRequest) (*MerchantSubscriptionTimelineListGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -169,18 +169,18 @@ func (a *MerchantSubscriptionTimelineAPIService) MerchantSubscriptionTimelineLis
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListPostRequest struct {
+type ApiMerchantSubscriptionTimelineListPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantSubscriptionTimelineAPIService
 	unibeeApiMerchantSubscriptionTimeLineListReq *UnibeeApiMerchantSubscriptionTimeLineListReq
 }
 
-func (r MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListPostRequest) UnibeeApiMerchantSubscriptionTimeLineListReq(unibeeApiMerchantSubscriptionTimeLineListReq UnibeeApiMerchantSubscriptionTimeLineListReq) MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListPostRequest {
+func (r ApiMerchantSubscriptionTimelineListPostRequest) UnibeeApiMerchantSubscriptionTimeLineListReq(unibeeApiMerchantSubscriptionTimeLineListReq UnibeeApiMerchantSubscriptionTimeLineListReq) ApiMerchantSubscriptionTimelineListPostRequest {
 	r.unibeeApiMerchantSubscriptionTimeLineListReq = &unibeeApiMerchantSubscriptionTimeLineListReq
 	return r
 }
 
-func (r MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListPostRequest) Execute() (*MerchantSubscriptionTimelineListGet200Response, *http.Response, error) {
+func (r ApiMerchantSubscriptionTimelineListPostRequest) Execute() (*MerchantSubscriptionTimelineListGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantSubscriptionTimelineListPostExecute(r)
 }
 
@@ -188,10 +188,10 @@ func (r MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListPostReque
 MerchantSubscriptionTimelineListPost Merchant Subscription TimeLine List
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListPostRequest
+ @return ApiMerchantSubscriptionTimelineListPostRequest
 */
-func (a *MerchantSubscriptionTimelineAPIService) MerchantSubscriptionTimelineListPost(ctx context.Context) MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListPostRequest {
-	return MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListPostRequest{
+func (a *MerchantSubscriptionTimelineAPIService) MerchantSubscriptionTimelineListPost(ctx context.Context) ApiMerchantSubscriptionTimelineListPostRequest {
+	return ApiMerchantSubscriptionTimelineListPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -199,7 +199,7 @@ func (a *MerchantSubscriptionTimelineAPIService) MerchantSubscriptionTimelineLis
 
 // Execute executes the request
 //  @return MerchantSubscriptionTimelineListGet200Response
-func (a *MerchantSubscriptionTimelineAPIService) MerchantSubscriptionTimelineListPostExecute(r MerchantSubscriptionTimelineAPIMerchantSubscriptionTimelineListPostRequest) (*MerchantSubscriptionTimelineListGet200Response, *http.Response, error) {
+func (a *MerchantSubscriptionTimelineAPIService) MerchantSubscriptionTimelineListPostExecute(r ApiMerchantSubscriptionTimelineListPostRequest) (*MerchantSubscriptionTimelineListGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

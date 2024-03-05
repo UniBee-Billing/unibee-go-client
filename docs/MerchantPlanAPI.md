@@ -34,11 +34,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
-	unibeeApiMerchantPlanActivateReq := *openapiclient.NewUnibeeApiMerchantPlanActivateReq(int32(123)) // UnibeeApiMerchantPlanActivateReq | 
+	unibeeApiMerchantPlanActivateReq := *openapiclient.NewUnibeeApiMerchantPlanActivateReq(int64(123)) // UnibeeApiMerchantPlanActivateReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -98,11 +98,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
-	unibeeApiMerchantPlanAddonsBindingReq := *openapiclient.NewUnibeeApiMerchantPlanAddonsBindingReq(int64(123), []int64{int64(123)}, int32(123)) // UnibeeApiMerchantPlanAddonsBindingReq | 
+	unibeeApiMerchantPlanAddonsBindingReq := *openapiclient.NewUnibeeApiMerchantPlanAddonsBindingReq(int64(123), []int64{int64(123)}, int64(123)) // UnibeeApiMerchantPlanAddonsBindingReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -162,11 +162,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
-	unibeeApiMerchantPlanDeleteReq := *openapiclient.NewUnibeeApiMerchantPlanDeleteReq(int32(123)) // UnibeeApiMerchantPlanDeleteReq | 
+	unibeeApiMerchantPlanDeleteReq := *openapiclient.NewUnibeeApiMerchantPlanDeleteReq(int64(123)) // UnibeeApiMerchantPlanDeleteReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -226,11 +226,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
-	planId := int32(56) // int32 | PlanId
+	planId := int64(789) // int64 | PlanId
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -255,7 +255,7 @@ Other parameters are passed through a pointer to a apiMerchantPlanDetailGetReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **planId** | **int32** | PlanId | 
+ **planId** | **int64** | PlanId | 
 
 ### Return type
 
@@ -290,11 +290,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
-	unibeeApiMerchantPlanDetailReq := *openapiclient.NewUnibeeApiMerchantPlanDetailReq(int32(123)) // UnibeeApiMerchantPlanDetailReq | 
+	unibeeApiMerchantPlanDetailReq := *openapiclient.NewUnibeeApiMerchantPlanDetailReq(int64(123)) // UnibeeApiMerchantPlanDetailReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -354,11 +354,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
-	unibeeApiMerchantPlanEditReq := *openapiclient.NewUnibeeApiMerchantPlanEditReq(int64(123), "Currency_example", "IntervalUnit_example", int32(123), "PlanName_example") // UnibeeApiMerchantPlanEditReq | 
+	unibeeApiMerchantPlanEditReq := *openapiclient.NewUnibeeApiMerchantPlanEditReq(int64(123), "Currency_example", "IntervalUnit_example", int64(123), "PlanName_example") // UnibeeApiMerchantPlanEditReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -418,11 +418,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
-	unibeeApiMerchantPlanExpireReq := *openapiclient.NewUnibeeApiMerchantPlanExpireReq(int64(123), int32(123)) // UnibeeApiMerchantPlanExpireReq | 
+	unibeeApiMerchantPlanExpireReq := *openapiclient.NewUnibeeApiMerchantPlanExpireReq(int64(123), int64(123)) // UnibeeApiMerchantPlanExpireReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -482,7 +482,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
@@ -560,7 +560,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
@@ -624,7 +624,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
@@ -688,11 +688,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
-	unibeeApiMerchantPlanPublishReq := *openapiclient.NewUnibeeApiMerchantPlanPublishReq(int32(123)) // UnibeeApiMerchantPlanPublishReq | 
+	unibeeApiMerchantPlanPublishReq := *openapiclient.NewUnibeeApiMerchantPlanPublishReq(int64(123)) // UnibeeApiMerchantPlanPublishReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -752,11 +752,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
-	unibeeApiMerchantPlanUnPublishReq := *openapiclient.NewUnibeeApiMerchantPlanUnPublishReq(int32(123)) // UnibeeApiMerchantPlanUnPublishReq | 
+	unibeeApiMerchantPlanUnPublishReq := *openapiclient.NewUnibeeApiMerchantPlanUnPublishReq(int64(123)) // UnibeeApiMerchantPlanUnPublishReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**GatewayId** | **int32** | GatewayId | 
+**GatewayId** | **int64** | GatewayId | 
 
 ## Methods
 
 ### NewUnibeeApiMerchantGatewaySetupWebhookReq
 
-`func NewUnibeeApiMerchantGatewaySetupWebhookReq(gatewayId int32, ) *UnibeeApiMerchantGatewaySetupWebhookReq`
+`func NewUnibeeApiMerchantGatewaySetupWebhookReq(gatewayId int64, ) *UnibeeApiMerchantGatewaySetupWebhookReq`
 
 NewUnibeeApiMerchantGatewaySetupWebhookReq instantiates a new UnibeeApiMerchantGatewaySetupWebhookReq object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetGatewayId
 
-`func (o *UnibeeApiMerchantGatewaySetupWebhookReq) GetGatewayId() int32`
+`func (o *UnibeeApiMerchantGatewaySetupWebhookReq) GetGatewayId() int64`
 
 GetGatewayId returns the GatewayId field if non-nil, zero value otherwise.
 
 ### GetGatewayIdOk
 
-`func (o *UnibeeApiMerchantGatewaySetupWebhookReq) GetGatewayIdOk() (*int32, bool)`
+`func (o *UnibeeApiMerchantGatewaySetupWebhookReq) GetGatewayIdOk() (*int64, bool)`
 
 GetGatewayIdOk returns a tuple with the GatewayId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGatewayId
 
-`func (o *UnibeeApiMerchantGatewaySetupWebhookReq) SetGatewayId(v int32)`
+`func (o *UnibeeApiMerchantGatewaySetupWebhookReq) SetGatewayId(v int64)`
 
 SetGatewayId sets GatewayId field to given value.
 

@@ -22,18 +22,18 @@ import (
 // MerchantMemberProfileAPIService MerchantMemberProfileAPI service
 type MerchantMemberProfileAPIService service
 
-type MerchantMemberProfileAPIMerchantMemberLogoutPostRequest struct {
+type ApiMerchantMemberLogoutPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantMemberProfileAPIService
 	body *map[string]interface{}
 }
 
-func (r MerchantMemberProfileAPIMerchantMemberLogoutPostRequest) Body(body map[string]interface{}) MerchantMemberProfileAPIMerchantMemberLogoutPostRequest {
+func (r ApiMerchantMemberLogoutPostRequest) Body(body map[string]interface{}) ApiMerchantMemberLogoutPostRequest {
 	r.body = &body
 	return r
 }
 
-func (r MerchantMemberProfileAPIMerchantMemberLogoutPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantMemberLogoutPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantMemberLogoutPostExecute(r)
 }
 
@@ -41,10 +41,10 @@ func (r MerchantMemberProfileAPIMerchantMemberLogoutPostRequest) Execute() (*Mer
 MerchantMemberLogoutPost Merchant Member Logout
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantMemberProfileAPIMerchantMemberLogoutPostRequest
+ @return ApiMerchantMemberLogoutPostRequest
 */
-func (a *MerchantMemberProfileAPIService) MerchantMemberLogoutPost(ctx context.Context) MerchantMemberProfileAPIMerchantMemberLogoutPostRequest {
-	return MerchantMemberProfileAPIMerchantMemberLogoutPostRequest{
+func (a *MerchantMemberProfileAPIService) MerchantMemberLogoutPost(ctx context.Context) ApiMerchantMemberLogoutPostRequest {
+	return ApiMerchantMemberLogoutPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -52,7 +52,7 @@ func (a *MerchantMemberProfileAPIService) MerchantMemberLogoutPost(ctx context.C
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantMemberProfileAPIService) MerchantMemberLogoutPostExecute(r MerchantMemberProfileAPIMerchantMemberLogoutPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantMemberProfileAPIService) MerchantMemberLogoutPostExecute(r ApiMerchantMemberLogoutPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -130,18 +130,18 @@ func (a *MerchantMemberProfileAPIService) MerchantMemberLogoutPostExecute(r Merc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantMemberProfileAPIMerchantMemberPasswordResetPostRequest struct {
+type ApiMerchantMemberPasswordResetPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantMemberProfileAPIService
 	unibeeApiMerchantMemberPasswordResetReq *UnibeeApiMerchantMemberPasswordResetReq
 }
 
-func (r MerchantMemberProfileAPIMerchantMemberPasswordResetPostRequest) UnibeeApiMerchantMemberPasswordResetReq(unibeeApiMerchantMemberPasswordResetReq UnibeeApiMerchantMemberPasswordResetReq) MerchantMemberProfileAPIMerchantMemberPasswordResetPostRequest {
+func (r ApiMerchantMemberPasswordResetPostRequest) UnibeeApiMerchantMemberPasswordResetReq(unibeeApiMerchantMemberPasswordResetReq UnibeeApiMerchantMemberPasswordResetReq) ApiMerchantMemberPasswordResetPostRequest {
 	r.unibeeApiMerchantMemberPasswordResetReq = &unibeeApiMerchantMemberPasswordResetReq
 	return r
 }
 
-func (r MerchantMemberProfileAPIMerchantMemberPasswordResetPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantMemberPasswordResetPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantMemberPasswordResetPostExecute(r)
 }
 
@@ -149,10 +149,10 @@ func (r MerchantMemberProfileAPIMerchantMemberPasswordResetPostRequest) Execute(
 MerchantMemberPasswordResetPost Merchant Member Reset Password
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantMemberProfileAPIMerchantMemberPasswordResetPostRequest
+ @return ApiMerchantMemberPasswordResetPostRequest
 */
-func (a *MerchantMemberProfileAPIService) MerchantMemberPasswordResetPost(ctx context.Context) MerchantMemberProfileAPIMerchantMemberPasswordResetPostRequest {
-	return MerchantMemberProfileAPIMerchantMemberPasswordResetPostRequest{
+func (a *MerchantMemberProfileAPIService) MerchantMemberPasswordResetPost(ctx context.Context) ApiMerchantMemberPasswordResetPostRequest {
+	return ApiMerchantMemberPasswordResetPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -160,7 +160,7 @@ func (a *MerchantMemberProfileAPIService) MerchantMemberPasswordResetPost(ctx co
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantMemberProfileAPIService) MerchantMemberPasswordResetPostExecute(r MerchantMemberProfileAPIMerchantMemberPasswordResetPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantMemberProfileAPIService) MerchantMemberPasswordResetPostExecute(r ApiMerchantMemberPasswordResetPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -238,12 +238,12 @@ func (a *MerchantMemberProfileAPIService) MerchantMemberPasswordResetPostExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantMemberProfileAPIMerchantMemberProfileGetRequest struct {
+type ApiMerchantMemberProfileGetRequest struct {
 	ctx context.Context
 	ApiService *MerchantMemberProfileAPIService
 }
 
-func (r MerchantMemberProfileAPIMerchantMemberProfileGetRequest) Execute() (*MerchantAuthSsoRegisterVerifyPost200Response, *http.Response, error) {
+func (r ApiMerchantMemberProfileGetRequest) Execute() (*MerchantAuthSsoRegisterVerifyPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantMemberProfileGetExecute(r)
 }
 
@@ -251,10 +251,10 @@ func (r MerchantMemberProfileAPIMerchantMemberProfileGetRequest) Execute() (*Mer
 MerchantMemberProfileGet Get Merchant Member Profile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantMemberProfileAPIMerchantMemberProfileGetRequest
+ @return ApiMerchantMemberProfileGetRequest
 */
-func (a *MerchantMemberProfileAPIService) MerchantMemberProfileGet(ctx context.Context) MerchantMemberProfileAPIMerchantMemberProfileGetRequest {
-	return MerchantMemberProfileAPIMerchantMemberProfileGetRequest{
+func (a *MerchantMemberProfileAPIService) MerchantMemberProfileGet(ctx context.Context) ApiMerchantMemberProfileGetRequest {
+	return ApiMerchantMemberProfileGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -262,7 +262,7 @@ func (a *MerchantMemberProfileAPIService) MerchantMemberProfileGet(ctx context.C
 
 // Execute executes the request
 //  @return MerchantAuthSsoRegisterVerifyPost200Response
-func (a *MerchantMemberProfileAPIService) MerchantMemberProfileGetExecute(r MerchantMemberProfileAPIMerchantMemberProfileGetRequest) (*MerchantAuthSsoRegisterVerifyPost200Response, *http.Response, error) {
+func (a *MerchantMemberProfileAPIService) MerchantMemberProfileGetExecute(r ApiMerchantMemberProfileGetRequest) (*MerchantAuthSsoRegisterVerifyPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

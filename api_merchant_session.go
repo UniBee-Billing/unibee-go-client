@@ -22,18 +22,18 @@ import (
 // MerchantSessionAPIService MerchantSessionAPI service
 type MerchantSessionAPIService service
 
-type MerchantSessionAPIMerchantSessionNewSessionPostRequest struct {
+type ApiMerchantSessionNewSessionPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantSessionAPIService
 	unibeeApiMerchantSessionNewReq *UnibeeApiMerchantSessionNewReq
 }
 
-func (r MerchantSessionAPIMerchantSessionNewSessionPostRequest) UnibeeApiMerchantSessionNewReq(unibeeApiMerchantSessionNewReq UnibeeApiMerchantSessionNewReq) MerchantSessionAPIMerchantSessionNewSessionPostRequest {
+func (r ApiMerchantSessionNewSessionPostRequest) UnibeeApiMerchantSessionNewReq(unibeeApiMerchantSessionNewReq UnibeeApiMerchantSessionNewReq) ApiMerchantSessionNewSessionPostRequest {
 	r.unibeeApiMerchantSessionNewReq = &unibeeApiMerchantSessionNewReq
 	return r
 }
 
-func (r MerchantSessionAPIMerchantSessionNewSessionPostRequest) Execute() (*MerchantSessionNewSessionPost200Response, *http.Response, error) {
+func (r ApiMerchantSessionNewSessionPostRequest) Execute() (*MerchantSessionNewSessionPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantSessionNewSessionPostExecute(r)
 }
 
@@ -41,10 +41,10 @@ func (r MerchantSessionAPIMerchantSessionNewSessionPostRequest) Execute() (*Merc
 MerchantSessionNewSessionPost New User Portal Session
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantSessionAPIMerchantSessionNewSessionPostRequest
+ @return ApiMerchantSessionNewSessionPostRequest
 */
-func (a *MerchantSessionAPIService) MerchantSessionNewSessionPost(ctx context.Context) MerchantSessionAPIMerchantSessionNewSessionPostRequest {
-	return MerchantSessionAPIMerchantSessionNewSessionPostRequest{
+func (a *MerchantSessionAPIService) MerchantSessionNewSessionPost(ctx context.Context) ApiMerchantSessionNewSessionPostRequest {
+	return ApiMerchantSessionNewSessionPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -52,7 +52,7 @@ func (a *MerchantSessionAPIService) MerchantSessionNewSessionPost(ctx context.Co
 
 // Execute executes the request
 //  @return MerchantSessionNewSessionPost200Response
-func (a *MerchantSessionAPIService) MerchantSessionNewSessionPostExecute(r MerchantSessionAPIMerchantSessionNewSessionPostRequest) (*MerchantSessionNewSessionPost200Response, *http.Response, error) {
+func (a *MerchantSessionAPIService) MerchantSessionNewSessionPostExecute(r ApiMerchantSessionNewSessionPostRequest) (*MerchantSessionNewSessionPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

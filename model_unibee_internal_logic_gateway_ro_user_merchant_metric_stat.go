@@ -19,7 +19,7 @@ var _ MappedNullable = &UnibeeInternalLogicGatewayRoUserMerchantMetricStat{}
 
 // UnibeeInternalLogicGatewayRoUserMerchantMetricStat struct for UnibeeInternalLogicGatewayRoUserMerchantMetricStat
 type UnibeeInternalLogicGatewayRoUserMerchantMetricStat struct {
-	CurrentUseValue *int32 `json:"CurrentUseValue,omitempty"`
+	CurrentUseValue *int64 `json:"CurrentUseValue,omitempty"`
 	MetricLimit *UnibeeInternalLogicGatewayRoMetricLimitVo `json:"MetricLimit,omitempty"`
 }
 
@@ -41,9 +41,9 @@ func NewUnibeeInternalLogicGatewayRoUserMerchantMetricStatWithDefaults() *Unibee
 }
 
 // GetCurrentUseValue returns the CurrentUseValue field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoUserMerchantMetricStat) GetCurrentUseValue() int32 {
+func (o *UnibeeInternalLogicGatewayRoUserMerchantMetricStat) GetCurrentUseValue() int64 {
 	if o == nil || IsNil(o.CurrentUseValue) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.CurrentUseValue
@@ -51,7 +51,7 @@ func (o *UnibeeInternalLogicGatewayRoUserMerchantMetricStat) GetCurrentUseValue(
 
 // GetCurrentUseValueOk returns a tuple with the CurrentUseValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoUserMerchantMetricStat) GetCurrentUseValueOk() (*int32, bool) {
+func (o *UnibeeInternalLogicGatewayRoUserMerchantMetricStat) GetCurrentUseValueOk() (*int64, bool) {
 	if o == nil || IsNil(o.CurrentUseValue) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *UnibeeInternalLogicGatewayRoUserMerchantMetricStat) HasCurrentUseValue(
 	return false
 }
 
-// SetCurrentUseValue gets a reference to the given int32 and assigns it to the CurrentUseValue field.
-func (o *UnibeeInternalLogicGatewayRoUserMerchantMetricStat) SetCurrentUseValue(v int32) {
+// SetCurrentUseValue gets a reference to the given int64 and assigns it to the CurrentUseValue field.
+func (o *UnibeeInternalLogicGatewayRoUserMerchantMetricStat) SetCurrentUseValue(v int64) {
 	o.CurrentUseValue = &v
 }
 

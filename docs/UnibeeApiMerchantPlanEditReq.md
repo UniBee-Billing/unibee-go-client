@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **IntervalCount** | Pointer to **int32** | Default 1，Number Of IntervalUnit | [optional] [default to 1]
 **IntervalUnit** | **string** | Plan Interval Unit，em: day|month|year|week | 
 **MetricLimits** | Pointer to [**[]UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam**](UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam.md) | Plan&#39;s MetricLimit List | [optional] 
-**PlanId** | **int32** | PlanId | 
+**PlanId** | **int64** | PlanId | 
 **PlanName** | **string** | Plan Name | 
 **ProductDescription** | Pointer to **string** | Default Copy Description | [optional] 
 **ProductName** | Pointer to **string** | Default Copy PlanName | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewUnibeeApiMerchantPlanEditReq
 
-`func NewUnibeeApiMerchantPlanEditReq(amount int64, currency string, intervalUnit string, planId int32, planName string, ) *UnibeeApiMerchantPlanEditReq`
+`func NewUnibeeApiMerchantPlanEditReq(amount int64, currency string, intervalUnit string, planId int64, planName string, ) *UnibeeApiMerchantPlanEditReq`
 
 NewUnibeeApiMerchantPlanEditReq instantiates a new UnibeeApiMerchantPlanEditReq object
 This constructor will assign default values to properties that have it defined,
@@ -249,20 +249,20 @@ HasMetricLimits returns a boolean if a field has been set.
 
 ### GetPlanId
 
-`func (o *UnibeeApiMerchantPlanEditReq) GetPlanId() int32`
+`func (o *UnibeeApiMerchantPlanEditReq) GetPlanId() int64`
 
 GetPlanId returns the PlanId field if non-nil, zero value otherwise.
 
 ### GetPlanIdOk
 
-`func (o *UnibeeApiMerchantPlanEditReq) GetPlanIdOk() (*int32, bool)`
+`func (o *UnibeeApiMerchantPlanEditReq) GetPlanIdOk() (*int64, bool)`
 
 GetPlanIdOk returns a tuple with the PlanId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlanId
 
-`func (o *UnibeeApiMerchantPlanEditReq) SetPlanId(v int32)`
+`func (o *UnibeeApiMerchantPlanEditReq) SetPlanId(v int64)`
 
 SetPlanId sets PlanId field to given value.
 

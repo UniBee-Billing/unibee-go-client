@@ -22,19 +22,19 @@ import (
 // MerchantSearchAPIService MerchantSearchAPI service
 type MerchantSearchAPIService service
 
-type MerchantSearchAPIMerchantSearchKeySearchGetRequest struct {
+type ApiMerchantSearchKeySearchGetRequest struct {
 	ctx context.Context
 	ApiService *MerchantSearchAPIService
 	searchKey *string
 }
 
 // SearchKey, Will Search UserId|Email|UserName|CompanyName|SubscriptionId|VatNumber|InvoiceId||PaymentId
-func (r MerchantSearchAPIMerchantSearchKeySearchGetRequest) SearchKey(searchKey string) MerchantSearchAPIMerchantSearchKeySearchGetRequest {
+func (r ApiMerchantSearchKeySearchGetRequest) SearchKey(searchKey string) ApiMerchantSearchKeySearchGetRequest {
 	r.searchKey = &searchKey
 	return r
 }
 
-func (r MerchantSearchAPIMerchantSearchKeySearchGetRequest) Execute() (*MerchantSearchKeySearchGet200Response, *http.Response, error) {
+func (r ApiMerchantSearchKeySearchGetRequest) Execute() (*MerchantSearchKeySearchGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantSearchKeySearchGetExecute(r)
 }
 
@@ -42,10 +42,10 @@ func (r MerchantSearchAPIMerchantSearchKeySearchGetRequest) Execute() (*Merchant
 MerchantSearchKeySearchGet Merchant Search
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantSearchAPIMerchantSearchKeySearchGetRequest
+ @return ApiMerchantSearchKeySearchGetRequest
 */
-func (a *MerchantSearchAPIService) MerchantSearchKeySearchGet(ctx context.Context) MerchantSearchAPIMerchantSearchKeySearchGetRequest {
-	return MerchantSearchAPIMerchantSearchKeySearchGetRequest{
+func (a *MerchantSearchAPIService) MerchantSearchKeySearchGet(ctx context.Context) ApiMerchantSearchKeySearchGetRequest {
+	return ApiMerchantSearchKeySearchGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -53,7 +53,7 @@ func (a *MerchantSearchAPIService) MerchantSearchKeySearchGet(ctx context.Contex
 
 // Execute executes the request
 //  @return MerchantSearchKeySearchGet200Response
-func (a *MerchantSearchAPIService) MerchantSearchKeySearchGetExecute(r MerchantSearchAPIMerchantSearchKeySearchGetRequest) (*MerchantSearchKeySearchGet200Response, *http.Response, error) {
+func (a *MerchantSearchAPIService) MerchantSearchKeySearchGetExecute(r ApiMerchantSearchKeySearchGetRequest) (*MerchantSearchKeySearchGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -129,18 +129,18 @@ func (a *MerchantSearchAPIService) MerchantSearchKeySearchGetExecute(r MerchantS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantSearchAPIMerchantSearchKeySearchPostRequest struct {
+type ApiMerchantSearchKeySearchPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantSearchAPIService
 	unibeeApiMerchantSearchSearchReq *UnibeeApiMerchantSearchSearchReq
 }
 
-func (r MerchantSearchAPIMerchantSearchKeySearchPostRequest) UnibeeApiMerchantSearchSearchReq(unibeeApiMerchantSearchSearchReq UnibeeApiMerchantSearchSearchReq) MerchantSearchAPIMerchantSearchKeySearchPostRequest {
+func (r ApiMerchantSearchKeySearchPostRequest) UnibeeApiMerchantSearchSearchReq(unibeeApiMerchantSearchSearchReq UnibeeApiMerchantSearchSearchReq) ApiMerchantSearchKeySearchPostRequest {
 	r.unibeeApiMerchantSearchSearchReq = &unibeeApiMerchantSearchSearchReq
 	return r
 }
 
-func (r MerchantSearchAPIMerchantSearchKeySearchPostRequest) Execute() (*MerchantSearchKeySearchGet200Response, *http.Response, error) {
+func (r ApiMerchantSearchKeySearchPostRequest) Execute() (*MerchantSearchKeySearchGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantSearchKeySearchPostExecute(r)
 }
 
@@ -148,10 +148,10 @@ func (r MerchantSearchAPIMerchantSearchKeySearchPostRequest) Execute() (*Merchan
 MerchantSearchKeySearchPost Merchant Search
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantSearchAPIMerchantSearchKeySearchPostRequest
+ @return ApiMerchantSearchKeySearchPostRequest
 */
-func (a *MerchantSearchAPIService) MerchantSearchKeySearchPost(ctx context.Context) MerchantSearchAPIMerchantSearchKeySearchPostRequest {
-	return MerchantSearchAPIMerchantSearchKeySearchPostRequest{
+func (a *MerchantSearchAPIService) MerchantSearchKeySearchPost(ctx context.Context) ApiMerchantSearchKeySearchPostRequest {
+	return ApiMerchantSearchKeySearchPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -159,7 +159,7 @@ func (a *MerchantSearchAPIService) MerchantSearchKeySearchPost(ctx context.Conte
 
 // Execute executes the request
 //  @return MerchantSearchKeySearchGet200Response
-func (a *MerchantSearchAPIService) MerchantSearchKeySearchPostExecute(r MerchantSearchAPIMerchantSearchKeySearchPostRequest) (*MerchantSearchKeySearchGet200Response, *http.Response, error) {
+func (a *MerchantSearchAPIService) MerchantSearchKeySearchPostExecute(r ApiMerchantSearchKeySearchPostRequest) (*MerchantSearchKeySearchGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

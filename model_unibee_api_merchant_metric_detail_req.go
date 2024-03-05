@@ -22,7 +22,7 @@ var _ MappedNullable = &UnibeeApiMerchantMetricDetailReq{}
 // UnibeeApiMerchantMetricDetailReq struct for UnibeeApiMerchantMetricDetailReq
 type UnibeeApiMerchantMetricDetailReq struct {
 	// MetricId
-	MetricId int32 `json:"metricId"`
+	MetricId int64 `json:"metricId"`
 }
 
 type _UnibeeApiMerchantMetricDetailReq UnibeeApiMerchantMetricDetailReq
@@ -31,7 +31,7 @@ type _UnibeeApiMerchantMetricDetailReq UnibeeApiMerchantMetricDetailReq
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiMerchantMetricDetailReq(metricId int32) *UnibeeApiMerchantMetricDetailReq {
+func NewUnibeeApiMerchantMetricDetailReq(metricId int64) *UnibeeApiMerchantMetricDetailReq {
 	this := UnibeeApiMerchantMetricDetailReq{}
 	this.MetricId = metricId
 	return &this
@@ -46,9 +46,9 @@ func NewUnibeeApiMerchantMetricDetailReqWithDefaults() *UnibeeApiMerchantMetricD
 }
 
 // GetMetricId returns the MetricId field value
-func (o *UnibeeApiMerchantMetricDetailReq) GetMetricId() int32 {
+func (o *UnibeeApiMerchantMetricDetailReq) GetMetricId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -57,7 +57,7 @@ func (o *UnibeeApiMerchantMetricDetailReq) GetMetricId() int32 {
 
 // GetMetricIdOk returns a tuple with the MetricId field value
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantMetricDetailReq) GetMetricIdOk() (*int32, bool) {
+func (o *UnibeeApiMerchantMetricDetailReq) GetMetricIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -65,7 +65,7 @@ func (o *UnibeeApiMerchantMetricDetailReq) GetMetricIdOk() (*int32, bool) {
 }
 
 // SetMetricId sets field value
-func (o *UnibeeApiMerchantMetricDetailReq) SetMetricId(v int32) {
+func (o *UnibeeApiMerchantMetricDetailReq) SetMetricId(v int64) {
 	o.MetricId = v
 }
 

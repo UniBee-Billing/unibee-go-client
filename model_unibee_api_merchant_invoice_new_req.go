@@ -25,7 +25,7 @@ type UnibeeApiMerchantInvoiceNewReq struct {
 	Currency string `json:"currency"`
 	Finish *bool `json:"finish,omitempty"`
 	// Gateway Id
-	GatewayId int32 `json:"gatewayId"`
+	GatewayId int64 `json:"gatewayId"`
 	Lines []UnibeeApiMerchantInvoiceNewInvoiceItemParam `json:"lines,omitempty"`
 	// Name
 	Name *string `json:"name,omitempty"`
@@ -41,7 +41,7 @@ type _UnibeeApiMerchantInvoiceNewReq UnibeeApiMerchantInvoiceNewReq
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiMerchantInvoiceNewReq(currency string, gatewayId int32, taxScale int64, userId int64) *UnibeeApiMerchantInvoiceNewReq {
+func NewUnibeeApiMerchantInvoiceNewReq(currency string, gatewayId int64, taxScale int64, userId int64) *UnibeeApiMerchantInvoiceNewReq {
 	this := UnibeeApiMerchantInvoiceNewReq{}
 	this.Currency = currency
 	this.GatewayId = gatewayId
@@ -115,9 +115,9 @@ func (o *UnibeeApiMerchantInvoiceNewReq) SetFinish(v bool) {
 }
 
 // GetGatewayId returns the GatewayId field value
-func (o *UnibeeApiMerchantInvoiceNewReq) GetGatewayId() int32 {
+func (o *UnibeeApiMerchantInvoiceNewReq) GetGatewayId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -126,7 +126,7 @@ func (o *UnibeeApiMerchantInvoiceNewReq) GetGatewayId() int32 {
 
 // GetGatewayIdOk returns a tuple with the GatewayId field value
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantInvoiceNewReq) GetGatewayIdOk() (*int32, bool) {
+func (o *UnibeeApiMerchantInvoiceNewReq) GetGatewayIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -134,7 +134,7 @@ func (o *UnibeeApiMerchantInvoiceNewReq) GetGatewayIdOk() (*int32, bool) {
 }
 
 // SetGatewayId sets field value
-func (o *UnibeeApiMerchantInvoiceNewReq) SetGatewayId(v int32) {
+func (o *UnibeeApiMerchantInvoiceNewReq) SetGatewayId(v int64) {
 	o.GatewayId = v
 }
 

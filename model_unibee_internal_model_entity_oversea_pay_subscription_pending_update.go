@@ -33,7 +33,7 @@ type UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate struct {
 	// effect_immediate=0, effect time, utc_time
 	EffectTime *int64 `json:"effectTime,omitempty"`
 	// gateway_id
-	GatewayId *int32 `json:"gatewayId,omitempty"`
+	GatewayId *int64 `json:"gatewayId,omitempty"`
 	// gateway status
 	GatewayStatus *string `json:"gatewayStatus,omitempty"`
 	// create time
@@ -41,7 +41,7 @@ type UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate struct {
 	// update time
 	GmtModify *string `json:"gmtModify,omitempty"`
 	// id
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// gateway update payment id assosiate to this update, use payment.paymentId
 	InvoiceId *string `json:"invoiceId,omitempty"`
 	// 0-UnDeleted，1-Deleted
@@ -49,7 +49,7 @@ type UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate struct {
 	// payment link
 	Link *string `json:"link,omitempty"`
 	// merchant id
-	MerchantId *int32 `json:"merchantId,omitempty"`
+	MerchantId *int64 `json:"merchantId,omitempty"`
 	// merchant_user_id
 	MerchantMemberId *int64 `json:"merchantMemberId,omitempty"`
 	// name
@@ -59,7 +59,7 @@ type UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate struct {
 	// paid，0-no，1-yes
 	Paid *int32 `json:"paid,omitempty"`
 	// the plan id of this period
-	PlanId *int32 `json:"planId,omitempty"`
+	PlanId *int64 `json:"planId,omitempty"`
 	// proration amount of this pending update , cent
 	ProrationAmount *int64 `json:"prorationAmount,omitempty"`
 	// merchant_user_id
@@ -78,7 +78,7 @@ type UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate struct {
 	// the currency after update
 	UpdateCurrency *string `json:"updateCurrency,omitempty"`
 	// the plan id after update
-	UpdatePlanId *int32 `json:"updatePlanId,omitempty"`
+	UpdatePlanId *int64 `json:"updatePlanId,omitempty"`
 	// quantity after update
 	UpdateQuantity *int64 `json:"updateQuantity,omitempty"`
 	// pending update unique id
@@ -329,9 +329,9 @@ func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) SetEffect
 }
 
 // GetGatewayId returns the GatewayId field value if set, zero value otherwise.
-func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetGatewayId() int32 {
+func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetGatewayId() int64 {
 	if o == nil || IsNil(o.GatewayId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.GatewayId
@@ -339,7 +339,7 @@ func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetGatewa
 
 // GetGatewayIdOk returns a tuple with the GatewayId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetGatewayIdOk() (*int32, bool) {
+func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetGatewayIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.GatewayId) {
 		return nil, false
 	}
@@ -355,8 +355,8 @@ func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) HasGatewa
 	return false
 }
 
-// SetGatewayId gets a reference to the given int32 and assigns it to the GatewayId field.
-func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) SetGatewayId(v int32) {
+// SetGatewayId gets a reference to the given int64 and assigns it to the GatewayId field.
+func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) SetGatewayId(v int64) {
 	o.GatewayId = &v
 }
 
@@ -457,9 +457,9 @@ func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) SetGmtMod
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetId() int32 {
+func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -467,7 +467,7 @@ func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetId() i
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetIdOk() (*int32, bool) {
+func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -483,8 +483,8 @@ func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) HasId() b
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -585,9 +585,9 @@ func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) SetLink(v
 }
 
 // GetMerchantId returns the MerchantId field value if set, zero value otherwise.
-func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetMerchantId() int32 {
+func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetMerchantId() int64 {
 	if o == nil || IsNil(o.MerchantId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MerchantId
@@ -595,7 +595,7 @@ func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetMercha
 
 // GetMerchantIdOk returns a tuple with the MerchantId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetMerchantIdOk() (*int32, bool) {
+func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetMerchantIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.MerchantId) {
 		return nil, false
 	}
@@ -611,8 +611,8 @@ func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) HasMercha
 	return false
 }
 
-// SetMerchantId gets a reference to the given int32 and assigns it to the MerchantId field.
-func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) SetMerchantId(v int32) {
+// SetMerchantId gets a reference to the given int64 and assigns it to the MerchantId field.
+func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) SetMerchantId(v int64) {
 	o.MerchantId = &v
 }
 
@@ -745,9 +745,9 @@ func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) SetPaid(v
 }
 
 // GetPlanId returns the PlanId field value if set, zero value otherwise.
-func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetPlanId() int32 {
+func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetPlanId() int64 {
 	if o == nil || IsNil(o.PlanId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.PlanId
@@ -755,7 +755,7 @@ func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetPlanId
 
 // GetPlanIdOk returns a tuple with the PlanId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetPlanIdOk() (*int32, bool) {
+func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetPlanIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.PlanId) {
 		return nil, false
 	}
@@ -771,8 +771,8 @@ func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) HasPlanId
 	return false
 }
 
-// SetPlanId gets a reference to the given int32 and assigns it to the PlanId field.
-func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) SetPlanId(v int32) {
+// SetPlanId gets a reference to the given int64 and assigns it to the PlanId field.
+func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) SetPlanId(v int64) {
 	o.PlanId = &v
 }
 
@@ -1065,9 +1065,9 @@ func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) SetUpdate
 }
 
 // GetUpdatePlanId returns the UpdatePlanId field value if set, zero value otherwise.
-func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetUpdatePlanId() int32 {
+func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetUpdatePlanId() int64 {
 	if o == nil || IsNil(o.UpdatePlanId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.UpdatePlanId
@@ -1075,7 +1075,7 @@ func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetUpdate
 
 // GetUpdatePlanIdOk returns a tuple with the UpdatePlanId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetUpdatePlanIdOk() (*int32, bool) {
+func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetUpdatePlanIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.UpdatePlanId) {
 		return nil, false
 	}
@@ -1091,8 +1091,8 @@ func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) HasUpdate
 	return false
 }
 
-// SetUpdatePlanId gets a reference to the given int32 and assigns it to the UpdatePlanId field.
-func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) SetUpdatePlanId(v int32) {
+// SetUpdatePlanId gets a reference to the given int64 and assigns it to the UpdatePlanId field.
+func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) SetUpdatePlanId(v int64) {
 	o.UpdatePlanId = &v
 }
 

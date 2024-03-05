@@ -10,16 +10,16 @@ Name | Type | Description | Notes
 **Currency** | Pointer to **string** | Currency | [optional] 
 **EffectImmediate** | Pointer to **int32** | EffectImmediate | [optional] 
 **EffectTime** | Pointer to **int64** | effect_immediate&#x3D;0, EffectTime unit_time | [optional] 
-**GatewayId** | Pointer to **int32** | Id | [optional] 
+**GatewayId** | Pointer to **int64** | Id | [optional] 
 **GmtCreate** | Pointer to **string** | GmtCreate | [optional] 
 **GmtModify** | Pointer to **string** | GmtModify | [optional] 
 **Link** | Pointer to **string** | Link | [optional] 
-**MerchantId** | Pointer to **int32** | MerchantId | [optional] 
+**MerchantId** | Pointer to **int64** | MerchantId | [optional] 
 **MerchantMember** | Pointer to [**UnibeeInternalLogicGatewayRoMerchantMemberSimplify**](UnibeeInternalLogicGatewayRoMerchantMemberSimplify.md) |  | [optional] 
 **Note** | Pointer to **string** | Update Note | [optional] 
 **Paid** | Pointer to **int32** | Paid | [optional] 
 **Plan** | Pointer to [**UnibeeInternalLogicGatewayRoPlanSimplify**](UnibeeInternalLogicGatewayRoPlanSimplify.md) |  | [optional] 
-**PlanId** | Pointer to **int32** | PlanId | [optional] 
+**PlanId** | Pointer to **int64** | PlanId | [optional] 
 **ProrationAmount** | Pointer to **int64** | ProrationAmount,Cents | [optional] 
 **Quantity** | Pointer to **int64** | quantity | [optional] 
 **Status** | Pointer to **int32** | Status，0-Init | 1-Create｜2-Finished｜3-Cancelled | [optional] 
@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **UpdateAmount** | Pointer to **int64** | UpdateAmount, Cents | [optional] 
 **UpdateCurrency** | Pointer to **string** | UpdateCurrency | [optional] 
 **UpdatePlan** | Pointer to [**UnibeeInternalLogicGatewayRoPlanSimplify**](UnibeeInternalLogicGatewayRoPlanSimplify.md) |  | [optional] 
-**UpdatePlanId** | Pointer to **int32** | UpdatePlanId | [optional] 
+**UpdatePlanId** | Pointer to **int64** | UpdatePlanId | [optional] 
 **UpdateQuantity** | Pointer to **int64** | UpdateQuantity | [optional] 
 **UpdateSubscriptionId** | Pointer to **string** | UpdateSubscriptionId | [optional] 
 **UserId** | Pointer to **int64** | UserId | [optional] 
@@ -205,20 +205,20 @@ HasEffectTime returns a boolean if a field has been set.
 
 ### GetGatewayId
 
-`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetGatewayId() int32`
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetGatewayId() int64`
 
 GetGatewayId returns the GatewayId field if non-nil, zero value otherwise.
 
 ### GetGatewayIdOk
 
-`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetGatewayIdOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetGatewayIdOk() (*int64, bool)`
 
 GetGatewayIdOk returns a tuple with the GatewayId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGatewayId
 
-`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) SetGatewayId(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) SetGatewayId(v int64)`
 
 SetGatewayId sets GatewayId field to given value.
 
@@ -305,20 +305,20 @@ HasLink returns a boolean if a field has been set.
 
 ### GetMerchantId
 
-`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetMerchantId() int32`
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetMerchantId() int64`
 
 GetMerchantId returns the MerchantId field if non-nil, zero value otherwise.
 
 ### GetMerchantIdOk
 
-`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetMerchantIdOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetMerchantIdOk() (*int64, bool)`
 
 GetMerchantIdOk returns a tuple with the MerchantId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantId
 
-`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) SetMerchantId(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) SetMerchantId(v int64)`
 
 SetMerchantId sets MerchantId field to given value.
 
@@ -430,20 +430,20 @@ HasPlan returns a boolean if a field has been set.
 
 ### GetPlanId
 
-`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetPlanId() int32`
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetPlanId() int64`
 
 GetPlanId returns the PlanId field if non-nil, zero value otherwise.
 
 ### GetPlanIdOk
 
-`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetPlanIdOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetPlanIdOk() (*int64, bool)`
 
 GetPlanIdOk returns a tuple with the PlanId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlanId
 
-`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) SetPlanId(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) SetPlanId(v int64)`
 
 SetPlanId sets PlanId field to given value.
 
@@ -680,20 +680,20 @@ HasUpdatePlan returns a boolean if a field has been set.
 
 ### GetUpdatePlanId
 
-`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetUpdatePlanId() int32`
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetUpdatePlanId() int64`
 
 GetUpdatePlanId returns the UpdatePlanId field if non-nil, zero value otherwise.
 
 ### GetUpdatePlanIdOk
 
-`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetUpdatePlanIdOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetUpdatePlanIdOk() (*int64, bool)`
 
 GetUpdatePlanIdOk returns a tuple with the UpdatePlanId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdatePlanId
 
-`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) SetUpdatePlanId(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) SetUpdatePlanId(v int64)`
 
 SetUpdatePlanId sets UpdatePlanId field to given value.
 

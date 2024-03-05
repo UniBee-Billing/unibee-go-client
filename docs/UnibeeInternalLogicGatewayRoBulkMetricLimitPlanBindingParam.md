@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MetricId** | **int64** | MetricId | 
-**MetricLimit** | **int32** | MetricLimit | 
+**MetricLimit** | **int64** | MetricLimit | 
 
 ## Methods
 
 ### NewUnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam
 
-`func NewUnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam(metricId int64, metricLimit int32, ) *UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam`
+`func NewUnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam(metricId int64, metricLimit int64, ) *UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam`
 
 NewUnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam instantiates a new UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam object
 This constructor will assign default values to properties that have it defined,
@@ -48,20 +48,20 @@ SetMetricId sets MetricId field to given value.
 
 ### GetMetricLimit
 
-`func (o *UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam) GetMetricLimit() int32`
+`func (o *UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam) GetMetricLimit() int64`
 
 GetMetricLimit returns the MetricLimit field if non-nil, zero value otherwise.
 
 ### GetMetricLimitOk
 
-`func (o *UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam) GetMetricLimitOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam) GetMetricLimitOk() (*int64, bool)`
 
 GetMetricLimitOk returns a tuple with the MetricLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetricLimit
 
-`func (o *UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam) SetMetricLimit(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam) SetMetricLimit(v int64)`
 
 SetMetricLimit sets MetricLimit field to given value.
 

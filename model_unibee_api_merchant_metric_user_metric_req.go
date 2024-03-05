@@ -14,36 +14,36 @@ import (
 	"encoding/json"
 )
 
-// checks if the UnibeeApiMerchantMetricUserStatReq type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &UnibeeApiMerchantMetricUserStatReq{}
+// checks if the UnibeeApiMerchantMetricUserMetricReq type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &UnibeeApiMerchantMetricUserMetricReq{}
 
-// UnibeeApiMerchantMetricUserStatReq struct for UnibeeApiMerchantMetricUserStatReq
-type UnibeeApiMerchantMetricUserStatReq struct {
+// UnibeeApiMerchantMetricUserMetricReq struct for UnibeeApiMerchantMetricUserMetricReq
+type UnibeeApiMerchantMetricUserMetricReq struct {
 	// ExternalUserId, One Of UserId|ExternalUserId Needed
 	ExternalUserId *string `json:"externalUserId,omitempty"`
 	// UserId, One Of UserId|ExternalUserId Needed
 	UserId *int64 `json:"userId,omitempty"`
 }
 
-// NewUnibeeApiMerchantMetricUserStatReq instantiates a new UnibeeApiMerchantMetricUserStatReq object
+// NewUnibeeApiMerchantMetricUserMetricReq instantiates a new UnibeeApiMerchantMetricUserMetricReq object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiMerchantMetricUserStatReq() *UnibeeApiMerchantMetricUserStatReq {
-	this := UnibeeApiMerchantMetricUserStatReq{}
+func NewUnibeeApiMerchantMetricUserMetricReq() *UnibeeApiMerchantMetricUserMetricReq {
+	this := UnibeeApiMerchantMetricUserMetricReq{}
 	return &this
 }
 
-// NewUnibeeApiMerchantMetricUserStatReqWithDefaults instantiates a new UnibeeApiMerchantMetricUserStatReq object
+// NewUnibeeApiMerchantMetricUserMetricReqWithDefaults instantiates a new UnibeeApiMerchantMetricUserMetricReq object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewUnibeeApiMerchantMetricUserStatReqWithDefaults() *UnibeeApiMerchantMetricUserStatReq {
-	this := UnibeeApiMerchantMetricUserStatReq{}
+func NewUnibeeApiMerchantMetricUserMetricReqWithDefaults() *UnibeeApiMerchantMetricUserMetricReq {
+	this := UnibeeApiMerchantMetricUserMetricReq{}
 	return &this
 }
 
 // GetExternalUserId returns the ExternalUserId field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantMetricUserStatReq) GetExternalUserId() string {
+func (o *UnibeeApiMerchantMetricUserMetricReq) GetExternalUserId() string {
 	if o == nil || IsNil(o.ExternalUserId) {
 		var ret string
 		return ret
@@ -53,7 +53,7 @@ func (o *UnibeeApiMerchantMetricUserStatReq) GetExternalUserId() string {
 
 // GetExternalUserIdOk returns a tuple with the ExternalUserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantMetricUserStatReq) GetExternalUserIdOk() (*string, bool) {
+func (o *UnibeeApiMerchantMetricUserMetricReq) GetExternalUserIdOk() (*string, bool) {
 	if o == nil || IsNil(o.ExternalUserId) {
 		return nil, false
 	}
@@ -61,7 +61,7 @@ func (o *UnibeeApiMerchantMetricUserStatReq) GetExternalUserIdOk() (*string, boo
 }
 
 // HasExternalUserId returns a boolean if a field has been set.
-func (o *UnibeeApiMerchantMetricUserStatReq) HasExternalUserId() bool {
+func (o *UnibeeApiMerchantMetricUserMetricReq) HasExternalUserId() bool {
 	if o != nil && !IsNil(o.ExternalUserId) {
 		return true
 	}
@@ -70,12 +70,12 @@ func (o *UnibeeApiMerchantMetricUserStatReq) HasExternalUserId() bool {
 }
 
 // SetExternalUserId gets a reference to the given string and assigns it to the ExternalUserId field.
-func (o *UnibeeApiMerchantMetricUserStatReq) SetExternalUserId(v string) {
+func (o *UnibeeApiMerchantMetricUserMetricReq) SetExternalUserId(v string) {
 	o.ExternalUserId = &v
 }
 
 // GetUserId returns the UserId field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantMetricUserStatReq) GetUserId() int64 {
+func (o *UnibeeApiMerchantMetricUserMetricReq) GetUserId() int64 {
 	if o == nil || IsNil(o.UserId) {
 		var ret int64
 		return ret
@@ -85,7 +85,7 @@ func (o *UnibeeApiMerchantMetricUserStatReq) GetUserId() int64 {
 
 // GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantMetricUserStatReq) GetUserIdOk() (*int64, bool) {
+func (o *UnibeeApiMerchantMetricUserMetricReq) GetUserIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.UserId) {
 		return nil, false
 	}
@@ -93,7 +93,7 @@ func (o *UnibeeApiMerchantMetricUserStatReq) GetUserIdOk() (*int64, bool) {
 }
 
 // HasUserId returns a boolean if a field has been set.
-func (o *UnibeeApiMerchantMetricUserStatReq) HasUserId() bool {
+func (o *UnibeeApiMerchantMetricUserMetricReq) HasUserId() bool {
 	if o != nil && !IsNil(o.UserId) {
 		return true
 	}
@@ -102,11 +102,11 @@ func (o *UnibeeApiMerchantMetricUserStatReq) HasUserId() bool {
 }
 
 // SetUserId gets a reference to the given int64 and assigns it to the UserId field.
-func (o *UnibeeApiMerchantMetricUserStatReq) SetUserId(v int64) {
+func (o *UnibeeApiMerchantMetricUserMetricReq) SetUserId(v int64) {
 	o.UserId = &v
 }
 
-func (o UnibeeApiMerchantMetricUserStatReq) MarshalJSON() ([]byte, error) {
+func (o UnibeeApiMerchantMetricUserMetricReq) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -114,7 +114,7 @@ func (o UnibeeApiMerchantMetricUserStatReq) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o UnibeeApiMerchantMetricUserStatReq) ToMap() (map[string]interface{}, error) {
+func (o UnibeeApiMerchantMetricUserMetricReq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.ExternalUserId) {
 		toSerialize["externalUserId"] = o.ExternalUserId
@@ -125,38 +125,38 @@ func (o UnibeeApiMerchantMetricUserStatReq) ToMap() (map[string]interface{}, err
 	return toSerialize, nil
 }
 
-type NullableUnibeeApiMerchantMetricUserStatReq struct {
-	value *UnibeeApiMerchantMetricUserStatReq
+type NullableUnibeeApiMerchantMetricUserMetricReq struct {
+	value *UnibeeApiMerchantMetricUserMetricReq
 	isSet bool
 }
 
-func (v NullableUnibeeApiMerchantMetricUserStatReq) Get() *UnibeeApiMerchantMetricUserStatReq {
+func (v NullableUnibeeApiMerchantMetricUserMetricReq) Get() *UnibeeApiMerchantMetricUserMetricReq {
 	return v.value
 }
 
-func (v *NullableUnibeeApiMerchantMetricUserStatReq) Set(val *UnibeeApiMerchantMetricUserStatReq) {
+func (v *NullableUnibeeApiMerchantMetricUserMetricReq) Set(val *UnibeeApiMerchantMetricUserMetricReq) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableUnibeeApiMerchantMetricUserStatReq) IsSet() bool {
+func (v NullableUnibeeApiMerchantMetricUserMetricReq) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableUnibeeApiMerchantMetricUserStatReq) Unset() {
+func (v *NullableUnibeeApiMerchantMetricUserMetricReq) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableUnibeeApiMerchantMetricUserStatReq(val *UnibeeApiMerchantMetricUserStatReq) *NullableUnibeeApiMerchantMetricUserStatReq {
-	return &NullableUnibeeApiMerchantMetricUserStatReq{value: val, isSet: true}
+func NewNullableUnibeeApiMerchantMetricUserMetricReq(val *UnibeeApiMerchantMetricUserMetricReq) *NullableUnibeeApiMerchantMetricUserMetricReq {
+	return &NullableUnibeeApiMerchantMetricUserMetricReq{value: val, isSet: true}
 }
 
-func (v NullableUnibeeApiMerchantMetricUserStatReq) MarshalJSON() ([]byte, error) {
+func (v NullableUnibeeApiMerchantMetricUserMetricReq) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableUnibeeApiMerchantMetricUserStatReq) UnmarshalJSON(src []byte) error {
+func (v *NullableUnibeeApiMerchantMetricUserMetricReq) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

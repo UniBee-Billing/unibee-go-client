@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **GmtModify** | Pointer to **int64** | update time | [optional] 
-**Id** | Pointer to **int32** | id | [optional] 
-**MerchantId** | Pointer to **int32** | webhook url | [optional] 
+**Id** | Pointer to **int64** | id | [optional] 
+**MerchantId** | Pointer to **int64** | webhook url | [optional] 
 **WebhookEvents** | Pointer to **[]string** | webhook_events,split dot | [optional] 
 **WebhookUrl** | Pointer to **string** | webhook url | [optional] 
 
@@ -82,20 +82,20 @@ HasGmtModify returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) GetId() int32`
+`func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) GetIdOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) SetId(v int32)`
+`func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -107,20 +107,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetMerchantId
 
-`func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) GetMerchantId() int32`
+`func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) GetMerchantId() int64`
 
 GetMerchantId returns the MerchantId field if non-nil, zero value otherwise.
 
 ### GetMerchantIdOk
 
-`func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) GetMerchantIdOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) GetMerchantIdOk() (*int64, bool)`
 
 GetMerchantIdOk returns a tuple with the MerchantId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantId
 
-`func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) SetMerchantId(v int32)`
+`func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) SetMerchantId(v int64)`
 
 SetMerchantId sets MerchantId field to given value.
 

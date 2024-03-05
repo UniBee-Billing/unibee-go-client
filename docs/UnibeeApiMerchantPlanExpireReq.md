@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **EmailCode** | **int64** | Code From Email | 
-**PlanId** | **int32** | PlanId | 
+**PlanId** | **int64** | PlanId | 
 
 ## Methods
 
 ### NewUnibeeApiMerchantPlanExpireReq
 
-`func NewUnibeeApiMerchantPlanExpireReq(emailCode int64, planId int32, ) *UnibeeApiMerchantPlanExpireReq`
+`func NewUnibeeApiMerchantPlanExpireReq(emailCode int64, planId int64, ) *UnibeeApiMerchantPlanExpireReq`
 
 NewUnibeeApiMerchantPlanExpireReq instantiates a new UnibeeApiMerchantPlanExpireReq object
 This constructor will assign default values to properties that have it defined,
@@ -48,20 +48,20 @@ SetEmailCode sets EmailCode field to given value.
 
 ### GetPlanId
 
-`func (o *UnibeeApiMerchantPlanExpireReq) GetPlanId() int32`
+`func (o *UnibeeApiMerchantPlanExpireReq) GetPlanId() int64`
 
 GetPlanId returns the PlanId field if non-nil, zero value otherwise.
 
 ### GetPlanIdOk
 
-`func (o *UnibeeApiMerchantPlanExpireReq) GetPlanIdOk() (*int32, bool)`
+`func (o *UnibeeApiMerchantPlanExpireReq) GetPlanIdOk() (*int64, bool)`
 
 GetPlanIdOk returns a tuple with the PlanId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlanId
 
-`func (o *UnibeeApiMerchantPlanExpireReq) SetPlanId(v int32)`
+`func (o *UnibeeApiMerchantPlanExpireReq) SetPlanId(v int64)`
 
 SetPlanId sets PlanId field to given value.
 

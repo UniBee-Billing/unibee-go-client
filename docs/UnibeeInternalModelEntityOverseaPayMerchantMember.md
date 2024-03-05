@@ -9,10 +9,10 @@ Name | Type | Description | Notes
 **FirstName** | Pointer to **string** | first name | [optional] 
 **GmtCreate** | Pointer to **string** | create time | [optional] 
 **GmtModify** | Pointer to **string** | update time | [optional] 
-**Id** | Pointer to **int32** | userId | [optional] 
+**Id** | Pointer to **int64** | userId | [optional] 
 **IsDeleted** | Pointer to **int32** | 0-UnDeleted，1-Deleted | [optional] 
 **LastName** | Pointer to **string** | last name | [optional] 
-**MerchantId** | Pointer to **int32** | merchant id | [optional] 
+**MerchantId** | Pointer to **int64** | merchant id | [optional] 
 **Mobile** | Pointer to **string** | mobile | [optional] 
 **Password** | Pointer to **string** | password | [optional] 
 **UserName** | Pointer to **string** | user name | [optional] 
@@ -163,20 +163,20 @@ HasGmtModify returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *UnibeeInternalModelEntityOverseaPayMerchantMember) GetId() int32`
+`func (o *UnibeeInternalModelEntityOverseaPayMerchantMember) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *UnibeeInternalModelEntityOverseaPayMerchantMember) GetIdOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPayMerchantMember) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *UnibeeInternalModelEntityOverseaPayMerchantMember) SetId(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPayMerchantMember) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -238,20 +238,20 @@ HasLastName returns a boolean if a field has been set.
 
 ### GetMerchantId
 
-`func (o *UnibeeInternalModelEntityOverseaPayMerchantMember) GetMerchantId() int32`
+`func (o *UnibeeInternalModelEntityOverseaPayMerchantMember) GetMerchantId() int64`
 
 GetMerchantId returns the MerchantId field if non-nil, zero value otherwise.
 
 ### GetMerchantIdOk
 
-`func (o *UnibeeInternalModelEntityOverseaPayMerchantMember) GetMerchantIdOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPayMerchantMember) GetMerchantIdOk() (*int64, bool)`
 
 GetMerchantIdOk returns a tuple with the MerchantId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantId
 
-`func (o *UnibeeInternalModelEntityOverseaPayMerchantMember) SetMerchantId(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPayMerchantMember) SetMerchantId(v int64)`
 
 SetMerchantId sets MerchantId field to given value.
 

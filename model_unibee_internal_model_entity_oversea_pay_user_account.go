@@ -54,7 +54,7 @@ type UnibeeInternalModelEntityOverseaPayUserAccount struct {
 	// update time
 	GmtModify *string `json:"gmtModify,omitempty"`
 	// userId
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// 0-UnDeleted，1-Deleted
 	IsDeleted *int32 `json:"isDeleted,omitempty"`
 	// is risk account (deperated)
@@ -68,7 +68,7 @@ type UnibeeInternalModelEntityOverseaPayUserAccount struct {
 	// linkedin
 	LinkedIn *string `json:"linkedIn,omitempty"`
 	// merchant_id
-	MerchantId *int32 `json:"merchantId,omitempty"`
+	MerchantId *int64 `json:"merchantId,omitempty"`
 	// mobile
 	Mobile *string `json:"mobile,omitempty"`
 	OtherSocialInfo *string `json:"otherSocialInfo,omitempty"`
@@ -672,9 +672,9 @@ func (o *UnibeeInternalModelEntityOverseaPayUserAccount) SetGmtModify(v string) 
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *UnibeeInternalModelEntityOverseaPayUserAccount) GetId() int32 {
+func (o *UnibeeInternalModelEntityOverseaPayUserAccount) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -682,7 +682,7 @@ func (o *UnibeeInternalModelEntityOverseaPayUserAccount) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalModelEntityOverseaPayUserAccount) GetIdOk() (*int32, bool) {
+func (o *UnibeeInternalModelEntityOverseaPayUserAccount) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -698,8 +698,8 @@ func (o *UnibeeInternalModelEntityOverseaPayUserAccount) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *UnibeeInternalModelEntityOverseaPayUserAccount) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *UnibeeInternalModelEntityOverseaPayUserAccount) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -896,9 +896,9 @@ func (o *UnibeeInternalModelEntityOverseaPayUserAccount) SetLinkedIn(v string) {
 }
 
 // GetMerchantId returns the MerchantId field value if set, zero value otherwise.
-func (o *UnibeeInternalModelEntityOverseaPayUserAccount) GetMerchantId() int32 {
+func (o *UnibeeInternalModelEntityOverseaPayUserAccount) GetMerchantId() int64 {
 	if o == nil || IsNil(o.MerchantId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MerchantId
@@ -906,7 +906,7 @@ func (o *UnibeeInternalModelEntityOverseaPayUserAccount) GetMerchantId() int32 {
 
 // GetMerchantIdOk returns a tuple with the MerchantId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalModelEntityOverseaPayUserAccount) GetMerchantIdOk() (*int32, bool) {
+func (o *UnibeeInternalModelEntityOverseaPayUserAccount) GetMerchantIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.MerchantId) {
 		return nil, false
 	}
@@ -922,8 +922,8 @@ func (o *UnibeeInternalModelEntityOverseaPayUserAccount) HasMerchantId() bool {
 	return false
 }
 
-// SetMerchantId gets a reference to the given int32 and assigns it to the MerchantId field.
-func (o *UnibeeInternalModelEntityOverseaPayUserAccount) SetMerchantId(v int32) {
+// SetMerchantId gets a reference to the given int64 and assigns it to the MerchantId field.
+func (o *UnibeeInternalModelEntityOverseaPayUserAccount) SetMerchantId(v int64) {
 	o.MerchantId = &v
 }
 

@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**GatewayId** | **int32** | gatewayId | 
+**GatewayId** | **int64** | gatewayId | 
 **UserId** | **int64** | userId | 
 
 ## Methods
 
 ### NewUnibeeApiMerchantBalanceUserDetailQueryReq
 
-`func NewUnibeeApiMerchantBalanceUserDetailQueryReq(gatewayId int32, userId int64, ) *UnibeeApiMerchantBalanceUserDetailQueryReq`
+`func NewUnibeeApiMerchantBalanceUserDetailQueryReq(gatewayId int64, userId int64, ) *UnibeeApiMerchantBalanceUserDetailQueryReq`
 
 NewUnibeeApiMerchantBalanceUserDetailQueryReq instantiates a new UnibeeApiMerchantBalanceUserDetailQueryReq object
 This constructor will assign default values to properties that have it defined,
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetGatewayId
 
-`func (o *UnibeeApiMerchantBalanceUserDetailQueryReq) GetGatewayId() int32`
+`func (o *UnibeeApiMerchantBalanceUserDetailQueryReq) GetGatewayId() int64`
 
 GetGatewayId returns the GatewayId field if non-nil, zero value otherwise.
 
 ### GetGatewayIdOk
 
-`func (o *UnibeeApiMerchantBalanceUserDetailQueryReq) GetGatewayIdOk() (*int32, bool)`
+`func (o *UnibeeApiMerchantBalanceUserDetailQueryReq) GetGatewayIdOk() (*int64, bool)`
 
 GetGatewayIdOk returns a tuple with the GatewayId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGatewayId
 
-`func (o *UnibeeApiMerchantBalanceUserDetailQueryReq) SetGatewayId(v int32)`
+`func (o *UnibeeApiMerchantBalanceUserDetailQueryReq) SetGatewayId(v int64)`
 
 SetGatewayId sets GatewayId field to given value.
 

@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Currency** | Pointer to **string** | currency | [optional] 
-**GatewayId** | Pointer to **int32** | gateway id | [optional] 
+**GatewayId** | Pointer to **int64** | gateway id | [optional] 
 **GmtCreate** | Pointer to **string** | create time | [optional] 
 **GmtModify** | Pointer to **string** | update time | [optional] 
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **InvoiceId** | Pointer to **string** | invoice id | [optional] 
 **IsDeleted** | Pointer to **int32** | 0-UnDeleted，1-Deleted | [optional] 
-**MerchantId** | Pointer to **int32** | merchant id | [optional] 
+**MerchantId** | Pointer to **int64** | merchant id | [optional] 
 **PaymentId** | Pointer to **string** | PaymentId | [optional] 
 **Status** | Pointer to **int32** | 0-pending, 1-success, 2-failure | [optional] 
 **SubscriptionId** | Pointer to **string** | subscription id | [optional] 
@@ -92,20 +92,20 @@ HasCurrency returns a boolean if a field has been set.
 
 ### GetGatewayId
 
-`func (o *UnibeeInternalModelEntityOverseaPayPaymentTimeline) GetGatewayId() int32`
+`func (o *UnibeeInternalModelEntityOverseaPayPaymentTimeline) GetGatewayId() int64`
 
 GetGatewayId returns the GatewayId field if non-nil, zero value otherwise.
 
 ### GetGatewayIdOk
 
-`func (o *UnibeeInternalModelEntityOverseaPayPaymentTimeline) GetGatewayIdOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPayPaymentTimeline) GetGatewayIdOk() (*int64, bool)`
 
 GetGatewayIdOk returns a tuple with the GatewayId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGatewayId
 
-`func (o *UnibeeInternalModelEntityOverseaPayPaymentTimeline) SetGatewayId(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPayPaymentTimeline) SetGatewayId(v int64)`
 
 SetGatewayId sets GatewayId field to given value.
 
@@ -167,20 +167,20 @@ HasGmtModify returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *UnibeeInternalModelEntityOverseaPayPaymentTimeline) GetId() int32`
+`func (o *UnibeeInternalModelEntityOverseaPayPaymentTimeline) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *UnibeeInternalModelEntityOverseaPayPaymentTimeline) GetIdOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPayPaymentTimeline) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *UnibeeInternalModelEntityOverseaPayPaymentTimeline) SetId(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPayPaymentTimeline) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -242,20 +242,20 @@ HasIsDeleted returns a boolean if a field has been set.
 
 ### GetMerchantId
 
-`func (o *UnibeeInternalModelEntityOverseaPayPaymentTimeline) GetMerchantId() int32`
+`func (o *UnibeeInternalModelEntityOverseaPayPaymentTimeline) GetMerchantId() int64`
 
 GetMerchantId returns the MerchantId field if non-nil, zero value otherwise.
 
 ### GetMerchantIdOk
 
-`func (o *UnibeeInternalModelEntityOverseaPayPaymentTimeline) GetMerchantIdOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPayPaymentTimeline) GetMerchantIdOk() (*int64, bool)`
 
 GetMerchantIdOk returns a tuple with the MerchantId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantId
 
-`func (o *UnibeeInternalModelEntityOverseaPayPaymentTimeline) SetMerchantId(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPayPaymentTimeline) SetMerchantId(v int64)`
 
 SetMerchantId sets MerchantId field to given value.
 

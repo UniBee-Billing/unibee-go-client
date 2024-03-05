@@ -22,7 +22,7 @@ import (
 // MerchantSubscriptionPendingUpdateAPIService MerchantSubscriptionPendingUpdateAPI service
 type MerchantSubscriptionPendingUpdateAPIService service
 
-type MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateListGetRequest struct {
+type ApiMerchantSubscriptionPendingUpdateListGetRequest struct {
 	ctx context.Context
 	ApiService *MerchantSubscriptionPendingUpdateAPIService
 	subscriptionId *string
@@ -33,36 +33,36 @@ type MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateListGe
 }
 
 // SubscriptionId
-func (r MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateListGetRequest) SubscriptionId(subscriptionId string) MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateListGetRequest {
+func (r ApiMerchantSubscriptionPendingUpdateListGetRequest) SubscriptionId(subscriptionId string) ApiMerchantSubscriptionPendingUpdateListGetRequest {
 	r.subscriptionId = &subscriptionId
 	return r
 }
 
 // Sort Field，gmt_create|gmt_modify，Default gmt_modify
-func (r MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateListGetRequest) SortField(sortField string) MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateListGetRequest {
+func (r ApiMerchantSubscriptionPendingUpdateListGetRequest) SortField(sortField string) ApiMerchantSubscriptionPendingUpdateListGetRequest {
 	r.sortField = &sortField
 	return r
 }
 
 // Sort Type，asc|desc，Default desc
-func (r MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateListGetRequest) SortType(sortType string) MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateListGetRequest {
+func (r ApiMerchantSubscriptionPendingUpdateListGetRequest) SortType(sortType string) ApiMerchantSubscriptionPendingUpdateListGetRequest {
 	r.sortType = &sortType
 	return r
 }
 
 // Page, Start WIth 0
-func (r MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateListGetRequest) Page(page int32) MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateListGetRequest {
+func (r ApiMerchantSubscriptionPendingUpdateListGetRequest) Page(page int32) ApiMerchantSubscriptionPendingUpdateListGetRequest {
 	r.page = &page
 	return r
 }
 
 // Count Of Page
-func (r MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateListGetRequest) Count(count int32) MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateListGetRequest {
+func (r ApiMerchantSubscriptionPendingUpdateListGetRequest) Count(count int32) ApiMerchantSubscriptionPendingUpdateListGetRequest {
 	r.count = &count
 	return r
 }
 
-func (r MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateListGetRequest) Execute() (*MerchantSubscriptionPendingUpdateListGet200Response, *http.Response, error) {
+func (r ApiMerchantSubscriptionPendingUpdateListGetRequest) Execute() (*MerchantSubscriptionPendingUpdateListGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantSubscriptionPendingUpdateListGetExecute(r)
 }
 
@@ -70,10 +70,10 @@ func (r MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateLis
 MerchantSubscriptionPendingUpdateListGet Merchant SubscriptionPendingUpdate List
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateListGetRequest
+ @return ApiMerchantSubscriptionPendingUpdateListGetRequest
 */
-func (a *MerchantSubscriptionPendingUpdateAPIService) MerchantSubscriptionPendingUpdateListGet(ctx context.Context) MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateListGetRequest {
-	return MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateListGetRequest{
+func (a *MerchantSubscriptionPendingUpdateAPIService) MerchantSubscriptionPendingUpdateListGet(ctx context.Context) ApiMerchantSubscriptionPendingUpdateListGetRequest {
+	return ApiMerchantSubscriptionPendingUpdateListGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -81,7 +81,7 @@ func (a *MerchantSubscriptionPendingUpdateAPIService) MerchantSubscriptionPendin
 
 // Execute executes the request
 //  @return MerchantSubscriptionPendingUpdateListGet200Response
-func (a *MerchantSubscriptionPendingUpdateAPIService) MerchantSubscriptionPendingUpdateListGetExecute(r MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateListGetRequest) (*MerchantSubscriptionPendingUpdateListGet200Response, *http.Response, error) {
+func (a *MerchantSubscriptionPendingUpdateAPIService) MerchantSubscriptionPendingUpdateListGetExecute(r ApiMerchantSubscriptionPendingUpdateListGetRequest) (*MerchantSubscriptionPendingUpdateListGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -170,18 +170,18 @@ func (a *MerchantSubscriptionPendingUpdateAPIService) MerchantSubscriptionPendin
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateListPostRequest struct {
+type ApiMerchantSubscriptionPendingUpdateListPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantSubscriptionPendingUpdateAPIService
 	unibeeApiMerchantSubscriptionPendingUpdateListReq *UnibeeApiMerchantSubscriptionPendingUpdateListReq
 }
 
-func (r MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateListPostRequest) UnibeeApiMerchantSubscriptionPendingUpdateListReq(unibeeApiMerchantSubscriptionPendingUpdateListReq UnibeeApiMerchantSubscriptionPendingUpdateListReq) MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateListPostRequest {
+func (r ApiMerchantSubscriptionPendingUpdateListPostRequest) UnibeeApiMerchantSubscriptionPendingUpdateListReq(unibeeApiMerchantSubscriptionPendingUpdateListReq UnibeeApiMerchantSubscriptionPendingUpdateListReq) ApiMerchantSubscriptionPendingUpdateListPostRequest {
 	r.unibeeApiMerchantSubscriptionPendingUpdateListReq = &unibeeApiMerchantSubscriptionPendingUpdateListReq
 	return r
 }
 
-func (r MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateListPostRequest) Execute() (*MerchantSubscriptionPendingUpdateListGet200Response, *http.Response, error) {
+func (r ApiMerchantSubscriptionPendingUpdateListPostRequest) Execute() (*MerchantSubscriptionPendingUpdateListGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantSubscriptionPendingUpdateListPostExecute(r)
 }
 
@@ -189,10 +189,10 @@ func (r MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateLis
 MerchantSubscriptionPendingUpdateListPost Merchant SubscriptionPendingUpdate List
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateListPostRequest
+ @return ApiMerchantSubscriptionPendingUpdateListPostRequest
 */
-func (a *MerchantSubscriptionPendingUpdateAPIService) MerchantSubscriptionPendingUpdateListPost(ctx context.Context) MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateListPostRequest {
-	return MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateListPostRequest{
+func (a *MerchantSubscriptionPendingUpdateAPIService) MerchantSubscriptionPendingUpdateListPost(ctx context.Context) ApiMerchantSubscriptionPendingUpdateListPostRequest {
+	return ApiMerchantSubscriptionPendingUpdateListPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -200,7 +200,7 @@ func (a *MerchantSubscriptionPendingUpdateAPIService) MerchantSubscriptionPendin
 
 // Execute executes the request
 //  @return MerchantSubscriptionPendingUpdateListGet200Response
-func (a *MerchantSubscriptionPendingUpdateAPIService) MerchantSubscriptionPendingUpdateListPostExecute(r MerchantSubscriptionPendingUpdateAPIMerchantSubscriptionPendingUpdateListPostRequest) (*MerchantSubscriptionPendingUpdateListGet200Response, *http.Response, error) {
+func (a *MerchantSubscriptionPendingUpdateAPIService) MerchantSubscriptionPendingUpdateListPostExecute(r ApiMerchantSubscriptionPendingUpdateListPostRequest) (*MerchantSubscriptionPendingUpdateListGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

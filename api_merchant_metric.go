@@ -22,18 +22,18 @@ import (
 // MerchantMetricAPIService MerchantMetricAPI service
 type MerchantMetricAPIService service
 
-type MerchantMetricAPIMerchantMetricDeletePostRequest struct {
+type ApiMerchantMetricDeletePostRequest struct {
 	ctx context.Context
 	ApiService *MerchantMetricAPIService
 	unibeeApiMerchantMetricDeleteReq *UnibeeApiMerchantMetricDeleteReq
 }
 
-func (r MerchantMetricAPIMerchantMetricDeletePostRequest) UnibeeApiMerchantMetricDeleteReq(unibeeApiMerchantMetricDeleteReq UnibeeApiMerchantMetricDeleteReq) MerchantMetricAPIMerchantMetricDeletePostRequest {
+func (r ApiMerchantMetricDeletePostRequest) UnibeeApiMerchantMetricDeleteReq(unibeeApiMerchantMetricDeleteReq UnibeeApiMerchantMetricDeleteReq) ApiMerchantMetricDeletePostRequest {
 	r.unibeeApiMerchantMetricDeleteReq = &unibeeApiMerchantMetricDeleteReq
 	return r
 }
 
-func (r MerchantMetricAPIMerchantMetricDeletePostRequest) Execute() (*MerchantMetricDeletePost200Response, *http.Response, error) {
+func (r ApiMerchantMetricDeletePostRequest) Execute() (*MerchantMetricDeletePost200Response, *http.Response, error) {
 	return r.ApiService.MerchantMetricDeletePostExecute(r)
 }
 
@@ -41,10 +41,10 @@ func (r MerchantMetricAPIMerchantMetricDeletePostRequest) Execute() (*MerchantMe
 MerchantMetricDeletePost Delete Merchant Metric
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantMetricAPIMerchantMetricDeletePostRequest
+ @return ApiMerchantMetricDeletePostRequest
 */
-func (a *MerchantMetricAPIService) MerchantMetricDeletePost(ctx context.Context) MerchantMetricAPIMerchantMetricDeletePostRequest {
-	return MerchantMetricAPIMerchantMetricDeletePostRequest{
+func (a *MerchantMetricAPIService) MerchantMetricDeletePost(ctx context.Context) ApiMerchantMetricDeletePostRequest {
+	return ApiMerchantMetricDeletePostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -52,7 +52,7 @@ func (a *MerchantMetricAPIService) MerchantMetricDeletePost(ctx context.Context)
 
 // Execute executes the request
 //  @return MerchantMetricDeletePost200Response
-func (a *MerchantMetricAPIService) MerchantMetricDeletePostExecute(r MerchantMetricAPIMerchantMetricDeletePostRequest) (*MerchantMetricDeletePost200Response, *http.Response, error) {
+func (a *MerchantMetricAPIService) MerchantMetricDeletePostExecute(r ApiMerchantMetricDeletePostRequest) (*MerchantMetricDeletePost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -130,18 +130,18 @@ func (a *MerchantMetricAPIService) MerchantMetricDeletePostExecute(r MerchantMet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantMetricAPIMerchantMetricDetailPostRequest struct {
+type ApiMerchantMetricDetailPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantMetricAPIService
 	unibeeApiMerchantMetricDetailReq *UnibeeApiMerchantMetricDetailReq
 }
 
-func (r MerchantMetricAPIMerchantMetricDetailPostRequest) UnibeeApiMerchantMetricDetailReq(unibeeApiMerchantMetricDetailReq UnibeeApiMerchantMetricDetailReq) MerchantMetricAPIMerchantMetricDetailPostRequest {
+func (r ApiMerchantMetricDetailPostRequest) UnibeeApiMerchantMetricDetailReq(unibeeApiMerchantMetricDetailReq UnibeeApiMerchantMetricDetailReq) ApiMerchantMetricDetailPostRequest {
 	r.unibeeApiMerchantMetricDetailReq = &unibeeApiMerchantMetricDetailReq
 	return r
 }
 
-func (r MerchantMetricAPIMerchantMetricDetailPostRequest) Execute() (*MerchantMetricDeletePost200Response, *http.Response, error) {
+func (r ApiMerchantMetricDetailPostRequest) Execute() (*MerchantMetricDeletePost200Response, *http.Response, error) {
 	return r.ApiService.MerchantMetricDetailPostExecute(r)
 }
 
@@ -149,10 +149,10 @@ func (r MerchantMetricAPIMerchantMetricDetailPostRequest) Execute() (*MerchantMe
 MerchantMetricDetailPost Merchant Metric Detail
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantMetricAPIMerchantMetricDetailPostRequest
+ @return ApiMerchantMetricDetailPostRequest
 */
-func (a *MerchantMetricAPIService) MerchantMetricDetailPost(ctx context.Context) MerchantMetricAPIMerchantMetricDetailPostRequest {
-	return MerchantMetricAPIMerchantMetricDetailPostRequest{
+func (a *MerchantMetricAPIService) MerchantMetricDetailPost(ctx context.Context) ApiMerchantMetricDetailPostRequest {
+	return ApiMerchantMetricDetailPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -160,7 +160,7 @@ func (a *MerchantMetricAPIService) MerchantMetricDetailPost(ctx context.Context)
 
 // Execute executes the request
 //  @return MerchantMetricDeletePost200Response
-func (a *MerchantMetricAPIService) MerchantMetricDetailPostExecute(r MerchantMetricAPIMerchantMetricDetailPostRequest) (*MerchantMetricDeletePost200Response, *http.Response, error) {
+func (a *MerchantMetricAPIService) MerchantMetricDetailPostExecute(r ApiMerchantMetricDetailPostRequest) (*MerchantMetricDeletePost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -238,18 +238,18 @@ func (a *MerchantMetricAPIService) MerchantMetricDetailPostExecute(r MerchantMet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantMetricAPIMerchantMetricEditPostRequest struct {
+type ApiMerchantMetricEditPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantMetricAPIService
 	unibeeApiMerchantMetricEditReq *UnibeeApiMerchantMetricEditReq
 }
 
-func (r MerchantMetricAPIMerchantMetricEditPostRequest) UnibeeApiMerchantMetricEditReq(unibeeApiMerchantMetricEditReq UnibeeApiMerchantMetricEditReq) MerchantMetricAPIMerchantMetricEditPostRequest {
+func (r ApiMerchantMetricEditPostRequest) UnibeeApiMerchantMetricEditReq(unibeeApiMerchantMetricEditReq UnibeeApiMerchantMetricEditReq) ApiMerchantMetricEditPostRequest {
 	r.unibeeApiMerchantMetricEditReq = &unibeeApiMerchantMetricEditReq
 	return r
 }
 
-func (r MerchantMetricAPIMerchantMetricEditPostRequest) Execute() (*MerchantMetricDeletePost200Response, *http.Response, error) {
+func (r ApiMerchantMetricEditPostRequest) Execute() (*MerchantMetricDeletePost200Response, *http.Response, error) {
 	return r.ApiService.MerchantMetricEditPostExecute(r)
 }
 
@@ -257,10 +257,10 @@ func (r MerchantMetricAPIMerchantMetricEditPostRequest) Execute() (*MerchantMetr
 MerchantMetricEditPost Edit Merchant Metric
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantMetricAPIMerchantMetricEditPostRequest
+ @return ApiMerchantMetricEditPostRequest
 */
-func (a *MerchantMetricAPIService) MerchantMetricEditPost(ctx context.Context) MerchantMetricAPIMerchantMetricEditPostRequest {
-	return MerchantMetricAPIMerchantMetricEditPostRequest{
+func (a *MerchantMetricAPIService) MerchantMetricEditPost(ctx context.Context) ApiMerchantMetricEditPostRequest {
+	return ApiMerchantMetricEditPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -268,7 +268,7 @@ func (a *MerchantMetricAPIService) MerchantMetricEditPost(ctx context.Context) M
 
 // Execute executes the request
 //  @return MerchantMetricDeletePost200Response
-func (a *MerchantMetricAPIService) MerchantMetricEditPostExecute(r MerchantMetricAPIMerchantMetricEditPostRequest) (*MerchantMetricDeletePost200Response, *http.Response, error) {
+func (a *MerchantMetricAPIService) MerchantMetricEditPostExecute(r ApiMerchantMetricEditPostRequest) (*MerchantMetricDeletePost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -346,18 +346,18 @@ func (a *MerchantMetricAPIService) MerchantMetricEditPostExecute(r MerchantMetri
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantMetricAPIMerchantMetricEventDeletePostRequest struct {
+type ApiMerchantMetricEventDeletePostRequest struct {
 	ctx context.Context
 	ApiService *MerchantMetricAPIService
 	unibeeApiMerchantMetricDeleteEventReq *UnibeeApiMerchantMetricDeleteEventReq
 }
 
-func (r MerchantMetricAPIMerchantMetricEventDeletePostRequest) UnibeeApiMerchantMetricDeleteEventReq(unibeeApiMerchantMetricDeleteEventReq UnibeeApiMerchantMetricDeleteEventReq) MerchantMetricAPIMerchantMetricEventDeletePostRequest {
+func (r ApiMerchantMetricEventDeletePostRequest) UnibeeApiMerchantMetricDeleteEventReq(unibeeApiMerchantMetricDeleteEventReq UnibeeApiMerchantMetricDeleteEventReq) ApiMerchantMetricEventDeletePostRequest {
 	r.unibeeApiMerchantMetricDeleteEventReq = &unibeeApiMerchantMetricDeleteEventReq
 	return r
 }
 
-func (r MerchantMetricAPIMerchantMetricEventDeletePostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantMetricEventDeletePostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantMetricEventDeletePostExecute(r)
 }
 
@@ -365,10 +365,10 @@ func (r MerchantMetricAPIMerchantMetricEventDeletePostRequest) Execute() (*Merch
 MerchantMetricEventDeletePost Del Merchant Metric Event
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantMetricAPIMerchantMetricEventDeletePostRequest
+ @return ApiMerchantMetricEventDeletePostRequest
 */
-func (a *MerchantMetricAPIService) MerchantMetricEventDeletePost(ctx context.Context) MerchantMetricAPIMerchantMetricEventDeletePostRequest {
-	return MerchantMetricAPIMerchantMetricEventDeletePostRequest{
+func (a *MerchantMetricAPIService) MerchantMetricEventDeletePost(ctx context.Context) ApiMerchantMetricEventDeletePostRequest {
+	return ApiMerchantMetricEventDeletePostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -376,7 +376,7 @@ func (a *MerchantMetricAPIService) MerchantMetricEventDeletePost(ctx context.Con
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantMetricAPIService) MerchantMetricEventDeletePostExecute(r MerchantMetricAPIMerchantMetricEventDeletePostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantMetricAPIService) MerchantMetricEventDeletePostExecute(r ApiMerchantMetricEventDeletePostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -454,18 +454,18 @@ func (a *MerchantMetricAPIService) MerchantMetricEventDeletePostExecute(r Mercha
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantMetricAPIMerchantMetricEventNewPostRequest struct {
+type ApiMerchantMetricEventNewPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantMetricAPIService
 	unibeeApiMerchantMetricNewEventReq *UnibeeApiMerchantMetricNewEventReq
 }
 
-func (r MerchantMetricAPIMerchantMetricEventNewPostRequest) UnibeeApiMerchantMetricNewEventReq(unibeeApiMerchantMetricNewEventReq UnibeeApiMerchantMetricNewEventReq) MerchantMetricAPIMerchantMetricEventNewPostRequest {
+func (r ApiMerchantMetricEventNewPostRequest) UnibeeApiMerchantMetricNewEventReq(unibeeApiMerchantMetricNewEventReq UnibeeApiMerchantMetricNewEventReq) ApiMerchantMetricEventNewPostRequest {
 	r.unibeeApiMerchantMetricNewEventReq = &unibeeApiMerchantMetricNewEventReq
 	return r
 }
 
-func (r MerchantMetricAPIMerchantMetricEventNewPostRequest) Execute() (*MerchantMetricEventNewPost200Response, *http.Response, error) {
+func (r ApiMerchantMetricEventNewPostRequest) Execute() (*MerchantMetricEventNewPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantMetricEventNewPostExecute(r)
 }
 
@@ -473,10 +473,10 @@ func (r MerchantMetricAPIMerchantMetricEventNewPostRequest) Execute() (*Merchant
 MerchantMetricEventNewPost Merchant Metric Event
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantMetricAPIMerchantMetricEventNewPostRequest
+ @return ApiMerchantMetricEventNewPostRequest
 */
-func (a *MerchantMetricAPIService) MerchantMetricEventNewPost(ctx context.Context) MerchantMetricAPIMerchantMetricEventNewPostRequest {
-	return MerchantMetricAPIMerchantMetricEventNewPostRequest{
+func (a *MerchantMetricAPIService) MerchantMetricEventNewPost(ctx context.Context) ApiMerchantMetricEventNewPostRequest {
+	return ApiMerchantMetricEventNewPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -484,7 +484,7 @@ func (a *MerchantMetricAPIService) MerchantMetricEventNewPost(ctx context.Contex
 
 // Execute executes the request
 //  @return MerchantMetricEventNewPost200Response
-func (a *MerchantMetricAPIService) MerchantMetricEventNewPostExecute(r MerchantMetricAPIMerchantMetricEventNewPostRequest) (*MerchantMetricEventNewPost200Response, *http.Response, error) {
+func (a *MerchantMetricAPIService) MerchantMetricEventNewPostExecute(r ApiMerchantMetricEventNewPostRequest) (*MerchantMetricEventNewPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -562,12 +562,12 @@ func (a *MerchantMetricAPIService) MerchantMetricEventNewPostExecute(r MerchantM
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantMetricAPIMerchantMetricListGetRequest struct {
+type ApiMerchantMetricListGetRequest struct {
 	ctx context.Context
 	ApiService *MerchantMetricAPIService
 }
 
-func (r MerchantMetricAPIMerchantMetricListGetRequest) Execute() (*MerchantMetricListGet200Response, *http.Response, error) {
+func (r ApiMerchantMetricListGetRequest) Execute() (*MerchantMetricListGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantMetricListGetExecute(r)
 }
 
@@ -575,10 +575,10 @@ func (r MerchantMetricAPIMerchantMetricListGetRequest) Execute() (*MerchantMetri
 MerchantMetricListGet Merchant Metric list
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantMetricAPIMerchantMetricListGetRequest
+ @return ApiMerchantMetricListGetRequest
 */
-func (a *MerchantMetricAPIService) MerchantMetricListGet(ctx context.Context) MerchantMetricAPIMerchantMetricListGetRequest {
-	return MerchantMetricAPIMerchantMetricListGetRequest{
+func (a *MerchantMetricAPIService) MerchantMetricListGet(ctx context.Context) ApiMerchantMetricListGetRequest {
+	return ApiMerchantMetricListGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -586,7 +586,7 @@ func (a *MerchantMetricAPIService) MerchantMetricListGet(ctx context.Context) Me
 
 // Execute executes the request
 //  @return MerchantMetricListGet200Response
-func (a *MerchantMetricAPIService) MerchantMetricListGetExecute(r MerchantMetricAPIMerchantMetricListGetRequest) (*MerchantMetricListGet200Response, *http.Response, error) {
+func (a *MerchantMetricAPIService) MerchantMetricListGetExecute(r ApiMerchantMetricListGetRequest) (*MerchantMetricListGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -659,18 +659,18 @@ func (a *MerchantMetricAPIService) MerchantMetricListGetExecute(r MerchantMetric
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantMetricAPIMerchantMetricNewPostRequest struct {
+type ApiMerchantMetricNewPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantMetricAPIService
 	unibeeApiMerchantMetricNewReq *UnibeeApiMerchantMetricNewReq
 }
 
-func (r MerchantMetricAPIMerchantMetricNewPostRequest) UnibeeApiMerchantMetricNewReq(unibeeApiMerchantMetricNewReq UnibeeApiMerchantMetricNewReq) MerchantMetricAPIMerchantMetricNewPostRequest {
+func (r ApiMerchantMetricNewPostRequest) UnibeeApiMerchantMetricNewReq(unibeeApiMerchantMetricNewReq UnibeeApiMerchantMetricNewReq) ApiMerchantMetricNewPostRequest {
 	r.unibeeApiMerchantMetricNewReq = &unibeeApiMerchantMetricNewReq
 	return r
 }
 
-func (r MerchantMetricAPIMerchantMetricNewPostRequest) Execute() (*MerchantMetricDeletePost200Response, *http.Response, error) {
+func (r ApiMerchantMetricNewPostRequest) Execute() (*MerchantMetricDeletePost200Response, *http.Response, error) {
 	return r.ApiService.MerchantMetricNewPostExecute(r)
 }
 
@@ -678,10 +678,10 @@ func (r MerchantMetricAPIMerchantMetricNewPostRequest) Execute() (*MerchantMetri
 MerchantMetricNewPost New Merchant Metric
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantMetricAPIMerchantMetricNewPostRequest
+ @return ApiMerchantMetricNewPostRequest
 */
-func (a *MerchantMetricAPIService) MerchantMetricNewPost(ctx context.Context) MerchantMetricAPIMerchantMetricNewPostRequest {
-	return MerchantMetricAPIMerchantMetricNewPostRequest{
+func (a *MerchantMetricAPIService) MerchantMetricNewPost(ctx context.Context) ApiMerchantMetricNewPostRequest {
+	return ApiMerchantMetricNewPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -689,7 +689,7 @@ func (a *MerchantMetricAPIService) MerchantMetricNewPost(ctx context.Context) Me
 
 // Execute executes the request
 //  @return MerchantMetricDeletePost200Response
-func (a *MerchantMetricAPIService) MerchantMetricNewPostExecute(r MerchantMetricAPIMerchantMetricNewPostRequest) (*MerchantMetricDeletePost200Response, *http.Response, error) {
+func (a *MerchantMetricAPIService) MerchantMetricNewPostExecute(r ApiMerchantMetricNewPostRequest) (*MerchantMetricDeletePost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -767,18 +767,18 @@ func (a *MerchantMetricAPIService) MerchantMetricNewPostExecute(r MerchantMetric
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantMetricAPIMerchantMetricPlanLimitDeletePostRequest struct {
+type ApiMerchantMetricPlanLimitDeletePostRequest struct {
 	ctx context.Context
 	ApiService *MerchantMetricAPIService
 	unibeeApiMerchantMetricDeletePlanLimitReq *UnibeeApiMerchantMetricDeletePlanLimitReq
 }
 
-func (r MerchantMetricAPIMerchantMetricPlanLimitDeletePostRequest) UnibeeApiMerchantMetricDeletePlanLimitReq(unibeeApiMerchantMetricDeletePlanLimitReq UnibeeApiMerchantMetricDeletePlanLimitReq) MerchantMetricAPIMerchantMetricPlanLimitDeletePostRequest {
+func (r ApiMerchantMetricPlanLimitDeletePostRequest) UnibeeApiMerchantMetricDeletePlanLimitReq(unibeeApiMerchantMetricDeletePlanLimitReq UnibeeApiMerchantMetricDeletePlanLimitReq) ApiMerchantMetricPlanLimitDeletePostRequest {
 	r.unibeeApiMerchantMetricDeletePlanLimitReq = &unibeeApiMerchantMetricDeletePlanLimitReq
 	return r
 }
 
-func (r MerchantMetricAPIMerchantMetricPlanLimitDeletePostRequest) Execute() (*MerchantMetricPlanLimitDeletePost200Response, *http.Response, error) {
+func (r ApiMerchantMetricPlanLimitDeletePostRequest) Execute() (*MerchantMetricPlanLimitDeletePost200Response, *http.Response, error) {
 	return r.ApiService.MerchantMetricPlanLimitDeletePostExecute(r)
 }
 
@@ -786,10 +786,10 @@ func (r MerchantMetricAPIMerchantMetricPlanLimitDeletePostRequest) Execute() (*M
 MerchantMetricPlanLimitDeletePost Delete Merchant Metric Plan TotalLimit
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantMetricAPIMerchantMetricPlanLimitDeletePostRequest
+ @return ApiMerchantMetricPlanLimitDeletePostRequest
 */
-func (a *MerchantMetricAPIService) MerchantMetricPlanLimitDeletePost(ctx context.Context) MerchantMetricAPIMerchantMetricPlanLimitDeletePostRequest {
-	return MerchantMetricAPIMerchantMetricPlanLimitDeletePostRequest{
+func (a *MerchantMetricAPIService) MerchantMetricPlanLimitDeletePost(ctx context.Context) ApiMerchantMetricPlanLimitDeletePostRequest {
+	return ApiMerchantMetricPlanLimitDeletePostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -797,7 +797,7 @@ func (a *MerchantMetricAPIService) MerchantMetricPlanLimitDeletePost(ctx context
 
 // Execute executes the request
 //  @return MerchantMetricPlanLimitDeletePost200Response
-func (a *MerchantMetricAPIService) MerchantMetricPlanLimitDeletePostExecute(r MerchantMetricAPIMerchantMetricPlanLimitDeletePostRequest) (*MerchantMetricPlanLimitDeletePost200Response, *http.Response, error) {
+func (a *MerchantMetricAPIService) MerchantMetricPlanLimitDeletePostExecute(r ApiMerchantMetricPlanLimitDeletePostRequest) (*MerchantMetricPlanLimitDeletePost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -875,18 +875,18 @@ func (a *MerchantMetricAPIService) MerchantMetricPlanLimitDeletePostExecute(r Me
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantMetricAPIMerchantMetricPlanLimitEditPostRequest struct {
+type ApiMerchantMetricPlanLimitEditPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantMetricAPIService
 	unibeeApiMerchantMetricEditPlanLimitReq *UnibeeApiMerchantMetricEditPlanLimitReq
 }
 
-func (r MerchantMetricAPIMerchantMetricPlanLimitEditPostRequest) UnibeeApiMerchantMetricEditPlanLimitReq(unibeeApiMerchantMetricEditPlanLimitReq UnibeeApiMerchantMetricEditPlanLimitReq) MerchantMetricAPIMerchantMetricPlanLimitEditPostRequest {
+func (r ApiMerchantMetricPlanLimitEditPostRequest) UnibeeApiMerchantMetricEditPlanLimitReq(unibeeApiMerchantMetricEditPlanLimitReq UnibeeApiMerchantMetricEditPlanLimitReq) ApiMerchantMetricPlanLimitEditPostRequest {
 	r.unibeeApiMerchantMetricEditPlanLimitReq = &unibeeApiMerchantMetricEditPlanLimitReq
 	return r
 }
 
-func (r MerchantMetricAPIMerchantMetricPlanLimitEditPostRequest) Execute() (*MerchantMetricPlanLimitDeletePost200Response, *http.Response, error) {
+func (r ApiMerchantMetricPlanLimitEditPostRequest) Execute() (*MerchantMetricPlanLimitDeletePost200Response, *http.Response, error) {
 	return r.ApiService.MerchantMetricPlanLimitEditPostExecute(r)
 }
 
@@ -894,10 +894,10 @@ func (r MerchantMetricAPIMerchantMetricPlanLimitEditPostRequest) Execute() (*Mer
 MerchantMetricPlanLimitEditPost Edit Merchant Metric Plan TotalLimit
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantMetricAPIMerchantMetricPlanLimitEditPostRequest
+ @return ApiMerchantMetricPlanLimitEditPostRequest
 */
-func (a *MerchantMetricAPIService) MerchantMetricPlanLimitEditPost(ctx context.Context) MerchantMetricAPIMerchantMetricPlanLimitEditPostRequest {
-	return MerchantMetricAPIMerchantMetricPlanLimitEditPostRequest{
+func (a *MerchantMetricAPIService) MerchantMetricPlanLimitEditPost(ctx context.Context) ApiMerchantMetricPlanLimitEditPostRequest {
+	return ApiMerchantMetricPlanLimitEditPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -905,7 +905,7 @@ func (a *MerchantMetricAPIService) MerchantMetricPlanLimitEditPost(ctx context.C
 
 // Execute executes the request
 //  @return MerchantMetricPlanLimitDeletePost200Response
-func (a *MerchantMetricAPIService) MerchantMetricPlanLimitEditPostExecute(r MerchantMetricAPIMerchantMetricPlanLimitEditPostRequest) (*MerchantMetricPlanLimitDeletePost200Response, *http.Response, error) {
+func (a *MerchantMetricAPIService) MerchantMetricPlanLimitEditPostExecute(r ApiMerchantMetricPlanLimitEditPostRequest) (*MerchantMetricPlanLimitDeletePost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -983,18 +983,18 @@ func (a *MerchantMetricAPIService) MerchantMetricPlanLimitEditPostExecute(r Merc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantMetricAPIMerchantMetricPlanLimitNewPostRequest struct {
+type ApiMerchantMetricPlanLimitNewPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantMetricAPIService
 	unibeeApiMerchantMetricNewPlanLimitReq *UnibeeApiMerchantMetricNewPlanLimitReq
 }
 
-func (r MerchantMetricAPIMerchantMetricPlanLimitNewPostRequest) UnibeeApiMerchantMetricNewPlanLimitReq(unibeeApiMerchantMetricNewPlanLimitReq UnibeeApiMerchantMetricNewPlanLimitReq) MerchantMetricAPIMerchantMetricPlanLimitNewPostRequest {
+func (r ApiMerchantMetricPlanLimitNewPostRequest) UnibeeApiMerchantMetricNewPlanLimitReq(unibeeApiMerchantMetricNewPlanLimitReq UnibeeApiMerchantMetricNewPlanLimitReq) ApiMerchantMetricPlanLimitNewPostRequest {
 	r.unibeeApiMerchantMetricNewPlanLimitReq = &unibeeApiMerchantMetricNewPlanLimitReq
 	return r
 }
 
-func (r MerchantMetricAPIMerchantMetricPlanLimitNewPostRequest) Execute() (*MerchantMetricPlanLimitDeletePost200Response, *http.Response, error) {
+func (r ApiMerchantMetricPlanLimitNewPostRequest) Execute() (*MerchantMetricPlanLimitDeletePost200Response, *http.Response, error) {
 	return r.ApiService.MerchantMetricPlanLimitNewPostExecute(r)
 }
 
@@ -1002,10 +1002,10 @@ func (r MerchantMetricAPIMerchantMetricPlanLimitNewPostRequest) Execute() (*Merc
 MerchantMetricPlanLimitNewPost New Merchant Metric Plan TotalLimit
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantMetricAPIMerchantMetricPlanLimitNewPostRequest
+ @return ApiMerchantMetricPlanLimitNewPostRequest
 */
-func (a *MerchantMetricAPIService) MerchantMetricPlanLimitNewPost(ctx context.Context) MerchantMetricAPIMerchantMetricPlanLimitNewPostRequest {
-	return MerchantMetricAPIMerchantMetricPlanLimitNewPostRequest{
+func (a *MerchantMetricAPIService) MerchantMetricPlanLimitNewPost(ctx context.Context) ApiMerchantMetricPlanLimitNewPostRequest {
+	return ApiMerchantMetricPlanLimitNewPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1013,7 +1013,7 @@ func (a *MerchantMetricAPIService) MerchantMetricPlanLimitNewPost(ctx context.Co
 
 // Execute executes the request
 //  @return MerchantMetricPlanLimitDeletePost200Response
-func (a *MerchantMetricAPIService) MerchantMetricPlanLimitNewPostExecute(r MerchantMetricAPIMerchantMetricPlanLimitNewPostRequest) (*MerchantMetricPlanLimitDeletePost200Response, *http.Response, error) {
+func (a *MerchantMetricAPIService) MerchantMetricPlanLimitNewPostExecute(r ApiMerchantMetricPlanLimitNewPostRequest) (*MerchantMetricPlanLimitDeletePost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1054,231 +1054,6 @@ func (a *MerchantMetricAPIService) MerchantMetricPlanLimitNewPostExecute(r Merch
 	}
 	// body params
 	localVarPostBody = r.unibeeApiMerchantMetricNewPlanLimitReq
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type MerchantMetricAPIMerchantMetricUserStatGetRequest struct {
-	ctx context.Context
-	ApiService *MerchantMetricAPIService
-	userId *int64
-	externalUserId *string
-}
-
-// UserId, One Of UserId|ExternalUserId Needed
-func (r MerchantMetricAPIMerchantMetricUserStatGetRequest) UserId(userId int64) MerchantMetricAPIMerchantMetricUserStatGetRequest {
-	r.userId = &userId
-	return r
-}
-
-// ExternalUserId, One Of UserId|ExternalUserId Needed
-func (r MerchantMetricAPIMerchantMetricUserStatGetRequest) ExternalUserId(externalUserId string) MerchantMetricAPIMerchantMetricUserStatGetRequest {
-	r.externalUserId = &externalUserId
-	return r
-}
-
-func (r MerchantMetricAPIMerchantMetricUserStatGetRequest) Execute() (*MerchantMetricUserStatGet200Response, *http.Response, error) {
-	return r.ApiService.MerchantMetricUserStatGetExecute(r)
-}
-
-/*
-MerchantMetricUserStatGet Query User Metric Stat
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantMetricAPIMerchantMetricUserStatGetRequest
-*/
-func (a *MerchantMetricAPIService) MerchantMetricUserStatGet(ctx context.Context) MerchantMetricAPIMerchantMetricUserStatGetRequest {
-	return MerchantMetricAPIMerchantMetricUserStatGetRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return MerchantMetricUserStatGet200Response
-func (a *MerchantMetricAPIService) MerchantMetricUserStatGetExecute(r MerchantMetricAPIMerchantMetricUserStatGetRequest) (*MerchantMetricUserStatGet200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MerchantMetricUserStatGet200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MerchantMetricAPIService.MerchantMetricUserStatGet")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/merchant/metric/user/stat"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	if r.userId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "userId", r.userId, "")
-	}
-	if r.externalUserId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "externalUserId", r.externalUserId, "")
-	}
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type MerchantMetricAPIMerchantMetricUserStatPostRequest struct {
-	ctx context.Context
-	ApiService *MerchantMetricAPIService
-	unibeeApiMerchantMetricUserStatReq *UnibeeApiMerchantMetricUserStatReq
-}
-
-func (r MerchantMetricAPIMerchantMetricUserStatPostRequest) UnibeeApiMerchantMetricUserStatReq(unibeeApiMerchantMetricUserStatReq UnibeeApiMerchantMetricUserStatReq) MerchantMetricAPIMerchantMetricUserStatPostRequest {
-	r.unibeeApiMerchantMetricUserStatReq = &unibeeApiMerchantMetricUserStatReq
-	return r
-}
-
-func (r MerchantMetricAPIMerchantMetricUserStatPostRequest) Execute() (*MerchantMetricUserStatGet200Response, *http.Response, error) {
-	return r.ApiService.MerchantMetricUserStatPostExecute(r)
-}
-
-/*
-MerchantMetricUserStatPost Query User Metric Stat
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantMetricAPIMerchantMetricUserStatPostRequest
-*/
-func (a *MerchantMetricAPIService) MerchantMetricUserStatPost(ctx context.Context) MerchantMetricAPIMerchantMetricUserStatPostRequest {
-	return MerchantMetricAPIMerchantMetricUserStatPostRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return MerchantMetricUserStatGet200Response
-func (a *MerchantMetricAPIService) MerchantMetricUserStatPostExecute(r MerchantMetricAPIMerchantMetricUserStatPostRequest) (*MerchantMetricUserStatGet200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MerchantMetricUserStatGet200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MerchantMetricAPIService.MerchantMetricUserStatPost")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/merchant/metric/user/stat"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	if r.unibeeApiMerchantMetricUserStatReq == nil {
-		return localVarReturnValue, nil, reportError("unibeeApiMerchantMetricUserStatReq is required and must be specified")
-	}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.unibeeApiMerchantMetricUserStatReq
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

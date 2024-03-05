@@ -22,12 +22,12 @@ import (
 // MerchantInfoAPIService MerchantInfoAPI service
 type MerchantInfoAPIService service
 
-type MerchantInfoAPIMerchantGetGetRequest struct {
+type ApiMerchantGetGetRequest struct {
 	ctx context.Context
 	ApiService *MerchantInfoAPIService
 }
 
-func (r MerchantInfoAPIMerchantGetGetRequest) Execute() (*MerchantGetGet200Response, *http.Response, error) {
+func (r ApiMerchantGetGetRequest) Execute() (*MerchantGetGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantGetGetExecute(r)
 }
 
@@ -35,10 +35,10 @@ func (r MerchantInfoAPIMerchantGetGetRequest) Execute() (*MerchantGetGet200Respo
 MerchantGetGet Get Merchant Info
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantInfoAPIMerchantGetGetRequest
+ @return ApiMerchantGetGetRequest
 */
-func (a *MerchantInfoAPIService) MerchantGetGet(ctx context.Context) MerchantInfoAPIMerchantGetGetRequest {
-	return MerchantInfoAPIMerchantGetGetRequest{
+func (a *MerchantInfoAPIService) MerchantGetGet(ctx context.Context) ApiMerchantGetGetRequest {
+	return ApiMerchantGetGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -46,7 +46,7 @@ func (a *MerchantInfoAPIService) MerchantGetGet(ctx context.Context) MerchantInf
 
 // Execute executes the request
 //  @return MerchantGetGet200Response
-func (a *MerchantInfoAPIService) MerchantGetGetExecute(r MerchantInfoAPIMerchantGetGetRequest) (*MerchantGetGet200Response, *http.Response, error) {
+func (a *MerchantInfoAPIService) MerchantGetGetExecute(r ApiMerchantGetGetRequest) (*MerchantGetGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -119,18 +119,18 @@ func (a *MerchantInfoAPIService) MerchantGetGetExecute(r MerchantInfoAPIMerchant
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantInfoAPIMerchantUpdatePostRequest struct {
+type ApiMerchantUpdatePostRequest struct {
 	ctx context.Context
 	ApiService *MerchantInfoAPIService
 	unibeeApiMerchantInfoUpdateReq *UnibeeApiMerchantInfoUpdateReq
 }
 
-func (r MerchantInfoAPIMerchantUpdatePostRequest) UnibeeApiMerchantInfoUpdateReq(unibeeApiMerchantInfoUpdateReq UnibeeApiMerchantInfoUpdateReq) MerchantInfoAPIMerchantUpdatePostRequest {
+func (r ApiMerchantUpdatePostRequest) UnibeeApiMerchantInfoUpdateReq(unibeeApiMerchantInfoUpdateReq UnibeeApiMerchantInfoUpdateReq) ApiMerchantUpdatePostRequest {
 	r.unibeeApiMerchantInfoUpdateReq = &unibeeApiMerchantInfoUpdateReq
 	return r
 }
 
-func (r MerchantInfoAPIMerchantUpdatePostRequest) Execute() (*MerchantGetGet200Response, *http.Response, error) {
+func (r ApiMerchantUpdatePostRequest) Execute() (*MerchantGetGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantUpdatePostExecute(r)
 }
 
@@ -138,10 +138,10 @@ func (r MerchantInfoAPIMerchantUpdatePostRequest) Execute() (*MerchantGetGet200R
 MerchantUpdatePost Update Merchant Info
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantInfoAPIMerchantUpdatePostRequest
+ @return ApiMerchantUpdatePostRequest
 */
-func (a *MerchantInfoAPIService) MerchantUpdatePost(ctx context.Context) MerchantInfoAPIMerchantUpdatePostRequest {
-	return MerchantInfoAPIMerchantUpdatePostRequest{
+func (a *MerchantInfoAPIService) MerchantUpdatePost(ctx context.Context) ApiMerchantUpdatePostRequest {
+	return ApiMerchantUpdatePostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -149,7 +149,7 @@ func (a *MerchantInfoAPIService) MerchantUpdatePost(ctx context.Context) Merchan
 
 // Execute executes the request
 //  @return MerchantGetGet200Response
-func (a *MerchantInfoAPIService) MerchantUpdatePostExecute(r MerchantInfoAPIMerchantUpdatePostRequest) (*MerchantGetGet200Response, *http.Response, error) {
+func (a *MerchantInfoAPIService) MerchantUpdatePostExecute(r ApiMerchantUpdatePostRequest) (*MerchantGetGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

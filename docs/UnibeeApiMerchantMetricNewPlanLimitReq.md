@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MetricId** | **int64** | MetricId | 
-**MetricLimit** | **int32** | MetricLimit | 
-**PlanId** | **int32** | PlanId | 
+**MetricLimit** | **int64** | MetricLimit | 
+**PlanId** | **int64** | PlanId | 
 
 ## Methods
 
 ### NewUnibeeApiMerchantMetricNewPlanLimitReq
 
-`func NewUnibeeApiMerchantMetricNewPlanLimitReq(metricId int64, metricLimit int32, planId int32, ) *UnibeeApiMerchantMetricNewPlanLimitReq`
+`func NewUnibeeApiMerchantMetricNewPlanLimitReq(metricId int64, metricLimit int64, planId int64, ) *UnibeeApiMerchantMetricNewPlanLimitReq`
 
 NewUnibeeApiMerchantMetricNewPlanLimitReq instantiates a new UnibeeApiMerchantMetricNewPlanLimitReq object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetMetricId sets MetricId field to given value.
 
 ### GetMetricLimit
 
-`func (o *UnibeeApiMerchantMetricNewPlanLimitReq) GetMetricLimit() int32`
+`func (o *UnibeeApiMerchantMetricNewPlanLimitReq) GetMetricLimit() int64`
 
 GetMetricLimit returns the MetricLimit field if non-nil, zero value otherwise.
 
 ### GetMetricLimitOk
 
-`func (o *UnibeeApiMerchantMetricNewPlanLimitReq) GetMetricLimitOk() (*int32, bool)`
+`func (o *UnibeeApiMerchantMetricNewPlanLimitReq) GetMetricLimitOk() (*int64, bool)`
 
 GetMetricLimitOk returns a tuple with the MetricLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetricLimit
 
-`func (o *UnibeeApiMerchantMetricNewPlanLimitReq) SetMetricLimit(v int32)`
+`func (o *UnibeeApiMerchantMetricNewPlanLimitReq) SetMetricLimit(v int64)`
 
 SetMetricLimit sets MetricLimit field to given value.
 
 
 ### GetPlanId
 
-`func (o *UnibeeApiMerchantMetricNewPlanLimitReq) GetPlanId() int32`
+`func (o *UnibeeApiMerchantMetricNewPlanLimitReq) GetPlanId() int64`
 
 GetPlanId returns the PlanId field if non-nil, zero value otherwise.
 
 ### GetPlanIdOk
 
-`func (o *UnibeeApiMerchantMetricNewPlanLimitReq) GetPlanIdOk() (*int32, bool)`
+`func (o *UnibeeApiMerchantMetricNewPlanLimitReq) GetPlanIdOk() (*int64, bool)`
 
 GetPlanIdOk returns a tuple with the PlanId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlanId
 
-`func (o *UnibeeApiMerchantMetricNewPlanLimitReq) SetPlanId(v int32)`
+`func (o *UnibeeApiMerchantMetricNewPlanLimitReq) SetPlanId(v int64)`
 
 SetPlanId sets PlanId field to given value.
 

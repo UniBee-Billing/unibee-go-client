@@ -26,11 +26,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
-	gatewayId := int32(56) // int32 | gatewayId
+	gatewayId := int64(789) // int64 | gatewayId
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -55,7 +55,7 @@ Other parameters are passed through a pointer to a apiMerchantBalanceMerchantBal
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **gatewayId** | **int32** | gatewayId | 
+ **gatewayId** | **int64** | gatewayId | 
 
 ### Return type
 
@@ -90,11 +90,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
-	unibeeApiMerchantBalanceDetailQueryReq := *openapiclient.NewUnibeeApiMerchantBalanceDetailQueryReq(int32(123)) // UnibeeApiMerchantBalanceDetailQueryReq | 
+	unibeeApiMerchantBalanceDetailQueryReq := *openapiclient.NewUnibeeApiMerchantBalanceDetailQueryReq(int64(123)) // UnibeeApiMerchantBalanceDetailQueryReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -154,12 +154,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
 	userId := int64(789) // int64 | userId
-	gatewayId := int32(56) // int32 | gatewayId
+	gatewayId := int64(789) // int64 | gatewayId
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -185,7 +185,7 @@ Other parameters are passed through a pointer to a apiMerchantBalanceUserBalance
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int64** | userId | 
- **gatewayId** | **int32** | gatewayId | 
+ **gatewayId** | **int64** | gatewayId | 
 
 ### Return type
 
@@ -220,11 +220,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
-	unibeeApiMerchantBalanceUserDetailQueryReq := *openapiclient.NewUnibeeApiMerchantBalanceUserDetailQueryReq(int32(123), int64(123)) // UnibeeApiMerchantBalanceUserDetailQueryReq | 
+	unibeeApiMerchantBalanceUserDetailQueryReq := *openapiclient.NewUnibeeApiMerchantBalanceUserDetailQueryReq(int64(123), int64(123)) // UnibeeApiMerchantBalanceUserDetailQueryReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

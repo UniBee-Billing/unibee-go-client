@@ -11,11 +11,11 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | description | [optional] 
 **ExtraMetricData** | Pointer to **string** |  | [optional] 
 **HomeUrl** | Pointer to **string** | home_url | [optional] 
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **ImageUrl** | Pointer to **string** | image_url | [optional] 
 **IntervalCount** | Pointer to **int32** | period unit count | [optional] 
 **IntervalUnit** | Pointer to **string** | period unit,day|month|year|week | [optional] 
-**MerchantId** | Pointer to **int32** | merchant id | [optional] 
+**MerchantId** | Pointer to **int64** | merchant id | [optional] 
 **PlanName** | Pointer to **string** | PlanName | [optional] 
 **ProductDescription** | Pointer to **string** | product description | [optional] 
 **ProductName** | Pointer to **string** | product name | [optional] 
@@ -220,20 +220,20 @@ HasHomeUrl returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetId() int32`
+`func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetIdOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *UnibeeInternalLogicGatewayRoPlanSimplify) SetId(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoPlanSimplify) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -320,20 +320,20 @@ HasIntervalUnit returns a boolean if a field has been set.
 
 ### GetMerchantId
 
-`func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetMerchantId() int32`
+`func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetMerchantId() int64`
 
 GetMerchantId returns the MerchantId field if non-nil, zero value otherwise.
 
 ### GetMerchantIdOk
 
-`func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetMerchantIdOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetMerchantIdOk() (*int64, bool)`
 
 GetMerchantIdOk returns a tuple with the MerchantId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantId
 
-`func (o *UnibeeInternalLogicGatewayRoPlanSimplify) SetMerchantId(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoPlanSimplify) SetMerchantId(v int64)`
 
 SetMerchantId sets MerchantId field to given value.
 

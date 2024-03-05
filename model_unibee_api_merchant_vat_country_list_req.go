@@ -22,7 +22,7 @@ var _ MappedNullable = &UnibeeApiMerchantVatCountryListReq{}
 // UnibeeApiMerchantVatCountryListReq struct for UnibeeApiMerchantVatCountryListReq
 type UnibeeApiMerchantVatCountryListReq struct {
 	// MerchantId
-	MerchantId int32 `json:"merchantId"`
+	MerchantId int64 `json:"merchantId"`
 }
 
 type _UnibeeApiMerchantVatCountryListReq UnibeeApiMerchantVatCountryListReq
@@ -31,7 +31,7 @@ type _UnibeeApiMerchantVatCountryListReq UnibeeApiMerchantVatCountryListReq
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiMerchantVatCountryListReq(merchantId int32) *UnibeeApiMerchantVatCountryListReq {
+func NewUnibeeApiMerchantVatCountryListReq(merchantId int64) *UnibeeApiMerchantVatCountryListReq {
 	this := UnibeeApiMerchantVatCountryListReq{}
 	this.MerchantId = merchantId
 	return &this
@@ -46,9 +46,9 @@ func NewUnibeeApiMerchantVatCountryListReqWithDefaults() *UnibeeApiMerchantVatCo
 }
 
 // GetMerchantId returns the MerchantId field value
-func (o *UnibeeApiMerchantVatCountryListReq) GetMerchantId() int32 {
+func (o *UnibeeApiMerchantVatCountryListReq) GetMerchantId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -57,7 +57,7 @@ func (o *UnibeeApiMerchantVatCountryListReq) GetMerchantId() int32 {
 
 // GetMerchantIdOk returns a tuple with the MerchantId field value
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantVatCountryListReq) GetMerchantIdOk() (*int32, bool) {
+func (o *UnibeeApiMerchantVatCountryListReq) GetMerchantIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -65,7 +65,7 @@ func (o *UnibeeApiMerchantVatCountryListReq) GetMerchantIdOk() (*int32, bool) {
 }
 
 // SetMerchantId sets field value
-func (o *UnibeeApiMerchantVatCountryListReq) SetMerchantId(v int32) {
+func (o *UnibeeApiMerchantVatCountryListReq) SetMerchantId(v int64) {
 	o.MerchantId = v
 }
 

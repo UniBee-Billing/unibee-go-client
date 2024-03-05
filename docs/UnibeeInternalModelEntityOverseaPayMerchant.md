@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **GmtModify** | Pointer to **string** | update_time | [optional] 
 **HomeUrl** | Pointer to **string** |  | [optional] 
 **Host** | Pointer to **string** | merchant user portal host | [optional] 
-**Id** | Pointer to **int32** | merchant_id | [optional] 
+**Id** | Pointer to **int64** | merchant_id | [optional] 
 **Idcard** | Pointer to **string** | idcard | [optional] 
 **IsDeleted** | Pointer to **int32** | 0-UnDeleted，1-Deleted | [optional] 
 **Location** | Pointer to **string** | location | [optional] 
@@ -347,20 +347,20 @@ HasHost returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *UnibeeInternalModelEntityOverseaPayMerchant) GetId() int32`
+`func (o *UnibeeInternalModelEntityOverseaPayMerchant) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *UnibeeInternalModelEntityOverseaPayMerchant) GetIdOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPayMerchant) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *UnibeeInternalModelEntityOverseaPayMerchant) SetId(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPayMerchant) SetId(v int64)`
 
 SetId sets Id field to given value.
 

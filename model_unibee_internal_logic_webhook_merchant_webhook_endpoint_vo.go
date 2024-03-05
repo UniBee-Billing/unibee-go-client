@@ -24,9 +24,9 @@ type UnibeeInternalLogicWebhookMerchantWebhookEndpointVo struct {
 	// update time
 	GmtModify *int64 `json:"gmtModify,omitempty"`
 	// id
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// webhook url
-	MerchantId *int32 `json:"merchantId,omitempty"`
+	MerchantId *int64 `json:"merchantId,omitempty"`
 	// webhook_events,split dot
 	WebhookEvents []string `json:"webhookEvents,omitempty"`
 	// webhook url
@@ -115,9 +115,9 @@ func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) SetGmtModify(v int
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) GetId() int32 {
+func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -125,7 +125,7 @@ func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) GetIdOk() (*int32, bool) {
+func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -141,15 +141,15 @@ func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) SetId(v int64) {
 	o.Id = &v
 }
 
 // GetMerchantId returns the MerchantId field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) GetMerchantId() int32 {
+func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) GetMerchantId() int64 {
 	if o == nil || IsNil(o.MerchantId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MerchantId
@@ -157,7 +157,7 @@ func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) GetMerchantId() in
 
 // GetMerchantIdOk returns a tuple with the MerchantId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) GetMerchantIdOk() (*int32, bool) {
+func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) GetMerchantIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.MerchantId) {
 		return nil, false
 	}
@@ -173,8 +173,8 @@ func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) HasMerchantId() bo
 	return false
 }
 
-// SetMerchantId gets a reference to the given int32 and assigns it to the MerchantId field.
-func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) SetMerchantId(v int32) {
+// SetMerchantId gets a reference to the given int64 and assigns it to the MerchantId field.
+func (o *UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) SetMerchantId(v int64) {
 	o.MerchantId = &v
 }
 

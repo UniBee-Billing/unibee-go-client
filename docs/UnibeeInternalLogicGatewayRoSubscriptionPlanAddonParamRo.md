@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AddonPlanId** | Pointer to **int32** | AddonPlanId | [optional] 
+**AddonPlanId** | Pointer to **int64** | AddonPlanId | [optional] 
 **Quantity** | Pointer to **int64** | Quantity，Default 1 | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAddonPlanId
 
-`func (o *UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo) GetAddonPlanId() int32`
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo) GetAddonPlanId() int64`
 
 GetAddonPlanId returns the AddonPlanId field if non-nil, zero value otherwise.
 
 ### GetAddonPlanIdOk
 
-`func (o *UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo) GetAddonPlanIdOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo) GetAddonPlanIdOk() (*int64, bool)`
 
 GetAddonPlanIdOk returns a tuple with the AddonPlanId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddonPlanId
 
-`func (o *UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo) SetAddonPlanId(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo) SetAddonPlanId(v int64)`
 
 SetAddonPlanId sets AddonPlanId field to given value.
 

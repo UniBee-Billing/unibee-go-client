@@ -50,7 +50,7 @@ type UnibeeApiMerchantUserUpdateReq struct {
 	// Tiktok
 	Tiktok *string `json:"tiktok,omitempty"`
 	// User Id
-	UserId int32 `json:"userId"`
+	UserId int64 `json:"userId"`
 	// VAT Number
 	VATNumber *string `json:"vATNumber,omitempty"`
 	// WeChat
@@ -65,7 +65,7 @@ type _UnibeeApiMerchantUserUpdateReq UnibeeApiMerchantUserUpdateReq
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiMerchantUserUpdateReq(address string, countryCode string, countryName string, email string, firstName string, lastName string, userId int32) *UnibeeApiMerchantUserUpdateReq {
+func NewUnibeeApiMerchantUserUpdateReq(address string, countryCode string, countryName string, email string, firstName string, lastName string, userId int64) *UnibeeApiMerchantUserUpdateReq {
 	this := UnibeeApiMerchantUserUpdateReq{}
 	this.Address = address
 	this.CountryCode = countryCode
@@ -486,9 +486,9 @@ func (o *UnibeeApiMerchantUserUpdateReq) SetTiktok(v string) {
 }
 
 // GetUserId returns the UserId field value
-func (o *UnibeeApiMerchantUserUpdateReq) GetUserId() int32 {
+func (o *UnibeeApiMerchantUserUpdateReq) GetUserId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -497,7 +497,7 @@ func (o *UnibeeApiMerchantUserUpdateReq) GetUserId() int32 {
 
 // GetUserIdOk returns a tuple with the UserId field value
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantUserUpdateReq) GetUserIdOk() (*int32, bool) {
+func (o *UnibeeApiMerchantUserUpdateReq) GetUserIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -505,7 +505,7 @@ func (o *UnibeeApiMerchantUserUpdateReq) GetUserIdOk() (*int32, bool) {
 }
 
 // SetUserId sets field value
-func (o *UnibeeApiMerchantUserUpdateReq) SetUserId(v int32) {
+func (o *UnibeeApiMerchantUserUpdateReq) SetUserId(v int64) {
 	o.UserId = v
 }
 

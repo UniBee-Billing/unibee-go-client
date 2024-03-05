@@ -22,19 +22,19 @@ import (
 // MerchantVatAPIService MerchantVatAPI service
 type MerchantVatAPIService service
 
-type MerchantVatAPIMerchantVatCountryListGetRequest struct {
+type ApiMerchantVatCountryListGetRequest struct {
 	ctx context.Context
 	ApiService *MerchantVatAPIService
-	merchantId *int32
+	merchantId *int64
 }
 
 // MerchantId
-func (r MerchantVatAPIMerchantVatCountryListGetRequest) MerchantId(merchantId int32) MerchantVatAPIMerchantVatCountryListGetRequest {
+func (r ApiMerchantVatCountryListGetRequest) MerchantId(merchantId int64) ApiMerchantVatCountryListGetRequest {
 	r.merchantId = &merchantId
 	return r
 }
 
-func (r MerchantVatAPIMerchantVatCountryListGetRequest) Execute() (*MerchantVatCountryListGet200Response, *http.Response, error) {
+func (r ApiMerchantVatCountryListGetRequest) Execute() (*MerchantVatCountryListGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantVatCountryListGetExecute(r)
 }
 
@@ -42,10 +42,10 @@ func (r MerchantVatAPIMerchantVatCountryListGetRequest) Execute() (*MerchantVatC
 MerchantVatCountryListGet Vat Country List
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantVatAPIMerchantVatCountryListGetRequest
+ @return ApiMerchantVatCountryListGetRequest
 */
-func (a *MerchantVatAPIService) MerchantVatCountryListGet(ctx context.Context) MerchantVatAPIMerchantVatCountryListGetRequest {
-	return MerchantVatAPIMerchantVatCountryListGetRequest{
+func (a *MerchantVatAPIService) MerchantVatCountryListGet(ctx context.Context) ApiMerchantVatCountryListGetRequest {
+	return ApiMerchantVatCountryListGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -53,7 +53,7 @@ func (a *MerchantVatAPIService) MerchantVatCountryListGet(ctx context.Context) M
 
 // Execute executes the request
 //  @return MerchantVatCountryListGet200Response
-func (a *MerchantVatAPIService) MerchantVatCountryListGetExecute(r MerchantVatAPIMerchantVatCountryListGetRequest) (*MerchantVatCountryListGet200Response, *http.Response, error) {
+func (a *MerchantVatAPIService) MerchantVatCountryListGetExecute(r ApiMerchantVatCountryListGetRequest) (*MerchantVatCountryListGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -130,18 +130,18 @@ func (a *MerchantVatAPIService) MerchantVatCountryListGetExecute(r MerchantVatAP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantVatAPIMerchantVatCountryListPostRequest struct {
+type ApiMerchantVatCountryListPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantVatAPIService
 	unibeeApiMerchantVatCountryListReq *UnibeeApiMerchantVatCountryListReq
 }
 
-func (r MerchantVatAPIMerchantVatCountryListPostRequest) UnibeeApiMerchantVatCountryListReq(unibeeApiMerchantVatCountryListReq UnibeeApiMerchantVatCountryListReq) MerchantVatAPIMerchantVatCountryListPostRequest {
+func (r ApiMerchantVatCountryListPostRequest) UnibeeApiMerchantVatCountryListReq(unibeeApiMerchantVatCountryListReq UnibeeApiMerchantVatCountryListReq) ApiMerchantVatCountryListPostRequest {
 	r.unibeeApiMerchantVatCountryListReq = &unibeeApiMerchantVatCountryListReq
 	return r
 }
 
-func (r MerchantVatAPIMerchantVatCountryListPostRequest) Execute() (*MerchantVatCountryListGet200Response, *http.Response, error) {
+func (r ApiMerchantVatCountryListPostRequest) Execute() (*MerchantVatCountryListGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantVatCountryListPostExecute(r)
 }
 
@@ -149,10 +149,10 @@ func (r MerchantVatAPIMerchantVatCountryListPostRequest) Execute() (*MerchantVat
 MerchantVatCountryListPost Vat Country List
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantVatAPIMerchantVatCountryListPostRequest
+ @return ApiMerchantVatCountryListPostRequest
 */
-func (a *MerchantVatAPIService) MerchantVatCountryListPost(ctx context.Context) MerchantVatAPIMerchantVatCountryListPostRequest {
-	return MerchantVatAPIMerchantVatCountryListPostRequest{
+func (a *MerchantVatAPIService) MerchantVatCountryListPost(ctx context.Context) ApiMerchantVatCountryListPostRequest {
+	return ApiMerchantVatCountryListPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -160,7 +160,7 @@ func (a *MerchantVatAPIService) MerchantVatCountryListPost(ctx context.Context) 
 
 // Execute executes the request
 //  @return MerchantVatCountryListGet200Response
-func (a *MerchantVatAPIService) MerchantVatCountryListPostExecute(r MerchantVatAPIMerchantVatCountryListPostRequest) (*MerchantVatCountryListGet200Response, *http.Response, error) {
+func (a *MerchantVatAPIService) MerchantVatCountryListPostExecute(r ApiMerchantVatCountryListPostRequest) (*MerchantVatCountryListGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -238,18 +238,18 @@ func (a *MerchantVatAPIService) MerchantVatCountryListPostExecute(r MerchantVatA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantVatAPIMerchantVatSetupGatewayPostRequest struct {
+type ApiMerchantVatSetupGatewayPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantVatAPIService
 	unibeeApiMerchantVatSetupGatewayReq *UnibeeApiMerchantVatSetupGatewayReq
 }
 
-func (r MerchantVatAPIMerchantVatSetupGatewayPostRequest) UnibeeApiMerchantVatSetupGatewayReq(unibeeApiMerchantVatSetupGatewayReq UnibeeApiMerchantVatSetupGatewayReq) MerchantVatAPIMerchantVatSetupGatewayPostRequest {
+func (r ApiMerchantVatSetupGatewayPostRequest) UnibeeApiMerchantVatSetupGatewayReq(unibeeApiMerchantVatSetupGatewayReq UnibeeApiMerchantVatSetupGatewayReq) ApiMerchantVatSetupGatewayPostRequest {
 	r.unibeeApiMerchantVatSetupGatewayReq = &unibeeApiMerchantVatSetupGatewayReq
 	return r
 }
 
-func (r MerchantVatAPIMerchantVatSetupGatewayPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantVatSetupGatewayPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantVatSetupGatewayPostExecute(r)
 }
 
@@ -257,10 +257,10 @@ func (r MerchantVatAPIMerchantVatSetupGatewayPostRequest) Execute() (*MerchantAu
 MerchantVatSetupGatewayPost Vat Gateway Setup
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantVatAPIMerchantVatSetupGatewayPostRequest
+ @return ApiMerchantVatSetupGatewayPostRequest
 */
-func (a *MerchantVatAPIService) MerchantVatSetupGatewayPost(ctx context.Context) MerchantVatAPIMerchantVatSetupGatewayPostRequest {
-	return MerchantVatAPIMerchantVatSetupGatewayPostRequest{
+func (a *MerchantVatAPIService) MerchantVatSetupGatewayPost(ctx context.Context) ApiMerchantVatSetupGatewayPostRequest {
+	return ApiMerchantVatSetupGatewayPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -268,7 +268,7 @@ func (a *MerchantVatAPIService) MerchantVatSetupGatewayPost(ctx context.Context)
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantVatAPIService) MerchantVatSetupGatewayPostExecute(r MerchantVatAPIMerchantVatSetupGatewayPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantVatAPIService) MerchantVatSetupGatewayPostExecute(r ApiMerchantVatSetupGatewayPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

@@ -22,7 +22,7 @@ type UnibeeInternalModelEntityOverseaPayMerchantMetricEvent struct {
 	// aggregation property data (Json)
 	AggregationPropertyData *string `json:"aggregationPropertyData,omitempty"`
 	// aggregation property int, use for metric of max|sum type
-	AggregationPropertyInt *int32 `json:"aggregationPropertyInt,omitempty"`
+	AggregationPropertyInt *int64 `json:"aggregationPropertyInt,omitempty"`
 	// aggregation property string, use for metric of count|count_unique type
 	AggregationPropertyString *string `json:"aggregationPropertyString,omitempty"`
 	AggregationPropertyUniqueId *string `json:"aggregationPropertyUniqueId,omitempty"`
@@ -35,20 +35,20 @@ type UnibeeInternalModelEntityOverseaPayMerchantMetricEvent struct {
 	// update time
 	GmtModify *string `json:"gmtModify,omitempty"`
 	// Id
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// 0-UnDeleted，1-Deleted
 	IsDeleted *int32 `json:"isDeleted,omitempty"`
 	// merchantId
-	MerchantId *int32 `json:"merchantId,omitempty"`
+	MerchantId *int64 `json:"merchantId,omitempty"`
 	// metric_id
 	MetricId *int64 `json:"metricId,omitempty"`
-	MetricLimit *int32 `json:"metricLimit,omitempty"`
+	MetricLimit *int64 `json:"metricLimit,omitempty"`
 	SubscriptionIds *string `json:"subscriptionIds,omitempty"`
 	// matched subscription's current_period_end
 	SubscriptionPeriodEnd *int64 `json:"subscriptionPeriodEnd,omitempty"`
 	// matched subscription's current_period_start
 	SubscriptionPeriodStart *int64 `json:"subscriptionPeriodStart,omitempty"`
-	Used *int32 `json:"used,omitempty"`
+	Used *int64 `json:"used,omitempty"`
 	// user_id
 	UserId *int64 `json:"userId,omitempty"`
 }
@@ -103,9 +103,9 @@ func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) SetAggregationP
 }
 
 // GetAggregationPropertyInt returns the AggregationPropertyInt field value if set, zero value otherwise.
-func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetAggregationPropertyInt() int32 {
+func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetAggregationPropertyInt() int64 {
 	if o == nil || IsNil(o.AggregationPropertyInt) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AggregationPropertyInt
@@ -113,7 +113,7 @@ func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetAggregationP
 
 // GetAggregationPropertyIntOk returns a tuple with the AggregationPropertyInt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetAggregationPropertyIntOk() (*int32, bool) {
+func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetAggregationPropertyIntOk() (*int64, bool) {
 	if o == nil || IsNil(o.AggregationPropertyInt) {
 		return nil, false
 	}
@@ -129,8 +129,8 @@ func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) HasAggregationP
 	return false
 }
 
-// SetAggregationPropertyInt gets a reference to the given int32 and assigns it to the AggregationPropertyInt field.
-func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) SetAggregationPropertyInt(v int32) {
+// SetAggregationPropertyInt gets a reference to the given int64 and assigns it to the AggregationPropertyInt field.
+func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) SetAggregationPropertyInt(v int64) {
 	o.AggregationPropertyInt = &v
 }
 
@@ -327,9 +327,9 @@ func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) SetGmtModify(v 
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetId() int32 {
+func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -337,7 +337,7 @@ func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetIdOk() (*int32, bool) {
+func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -353,8 +353,8 @@ func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -391,9 +391,9 @@ func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) SetIsDeleted(v 
 }
 
 // GetMerchantId returns the MerchantId field value if set, zero value otherwise.
-func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetMerchantId() int32 {
+func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetMerchantId() int64 {
 	if o == nil || IsNil(o.MerchantId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MerchantId
@@ -401,7 +401,7 @@ func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetMerchantId()
 
 // GetMerchantIdOk returns a tuple with the MerchantId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetMerchantIdOk() (*int32, bool) {
+func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetMerchantIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.MerchantId) {
 		return nil, false
 	}
@@ -417,8 +417,8 @@ func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) HasMerchantId()
 	return false
 }
 
-// SetMerchantId gets a reference to the given int32 and assigns it to the MerchantId field.
-func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) SetMerchantId(v int32) {
+// SetMerchantId gets a reference to the given int64 and assigns it to the MerchantId field.
+func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) SetMerchantId(v int64) {
 	o.MerchantId = &v
 }
 
@@ -455,9 +455,9 @@ func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) SetMetricId(v i
 }
 
 // GetMetricLimit returns the MetricLimit field value if set, zero value otherwise.
-func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetMetricLimit() int32 {
+func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetMetricLimit() int64 {
 	if o == nil || IsNil(o.MetricLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MetricLimit
@@ -465,7 +465,7 @@ func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetMetricLimit(
 
 // GetMetricLimitOk returns a tuple with the MetricLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetMetricLimitOk() (*int32, bool) {
+func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetMetricLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.MetricLimit) {
 		return nil, false
 	}
@@ -481,8 +481,8 @@ func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) HasMetricLimit(
 	return false
 }
 
-// SetMetricLimit gets a reference to the given int32 and assigns it to the MetricLimit field.
-func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) SetMetricLimit(v int32) {
+// SetMetricLimit gets a reference to the given int64 and assigns it to the MetricLimit field.
+func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) SetMetricLimit(v int64) {
 	o.MetricLimit = &v
 }
 
@@ -583,9 +583,9 @@ func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) SetSubscription
 }
 
 // GetUsed returns the Used field value if set, zero value otherwise.
-func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetUsed() int32 {
+func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetUsed() int64 {
 	if o == nil || IsNil(o.Used) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Used
@@ -593,7 +593,7 @@ func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetUsed() int32
 
 // GetUsedOk returns a tuple with the Used field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetUsedOk() (*int32, bool) {
+func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetUsedOk() (*int64, bool) {
 	if o == nil || IsNil(o.Used) {
 		return nil, false
 	}
@@ -609,8 +609,8 @@ func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) HasUsed() bool 
 	return false
 }
 
-// SetUsed gets a reference to the given int32 and assigns it to the Used field.
-func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) SetUsed(v int32) {
+// SetUsed gets a reference to the given int64 and assigns it to the Used field.
+func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) SetUsed(v int64) {
 	o.Used = &v
 }
 

@@ -23,19 +23,19 @@ import (
 // FileAPIService FileAPI service
 type FileAPIService service
 
-type FileAPIMerchantOssFilePostRequest struct {
+type ApiMerchantOssFilePostRequest struct {
 	ctx context.Context
 	ApiService *FileAPIService
 	file **os.File
 }
 
 // File To Upload
-func (r FileAPIMerchantOssFilePostRequest) File(file *os.File) FileAPIMerchantOssFilePostRequest {
+func (r ApiMerchantOssFilePostRequest) File(file *os.File) ApiMerchantOssFilePostRequest {
 	r.file = &file
 	return r
 }
 
-func (r FileAPIMerchantOssFilePostRequest) Execute() (*MerchantOssFilePost200Response, *http.Response, error) {
+func (r ApiMerchantOssFilePostRequest) Execute() (*MerchantOssFilePost200Response, *http.Response, error) {
 	return r.ApiService.MerchantOssFilePostExecute(r)
 }
 
@@ -43,10 +43,10 @@ func (r FileAPIMerchantOssFilePostRequest) Execute() (*MerchantOssFilePost200Res
 MerchantOssFilePost Upload File
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return FileAPIMerchantOssFilePostRequest
+ @return ApiMerchantOssFilePostRequest
 */
-func (a *FileAPIService) MerchantOssFilePost(ctx context.Context) FileAPIMerchantOssFilePostRequest {
-	return FileAPIMerchantOssFilePostRequest{
+func (a *FileAPIService) MerchantOssFilePost(ctx context.Context) ApiMerchantOssFilePostRequest {
+	return ApiMerchantOssFilePostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -54,7 +54,7 @@ func (a *FileAPIService) MerchantOssFilePost(ctx context.Context) FileAPIMerchan
 
 // Execute executes the request
 //  @return MerchantOssFilePost200Response
-func (a *FileAPIService) MerchantOssFilePostExecute(r FileAPIMerchantOssFilePostRequest) (*MerchantOssFilePost200Response, *http.Response, error) {
+func (a *FileAPIService) MerchantOssFilePostExecute(r ApiMerchantOssFilePostRequest) (*MerchantOssFilePost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

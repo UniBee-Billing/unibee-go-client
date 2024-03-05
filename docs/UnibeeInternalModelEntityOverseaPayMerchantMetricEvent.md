@@ -5,22 +5,22 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AggregationPropertyData** | Pointer to **string** | aggregation property data (Json) | [optional] 
-**AggregationPropertyInt** | Pointer to **int32** | aggregation property int, use for metric of max|sum type | [optional] 
+**AggregationPropertyInt** | Pointer to **int64** | aggregation property int, use for metric of max|sum type | [optional] 
 **AggregationPropertyString** | Pointer to **string** | aggregation property string, use for metric of count|count_unique type | [optional] 
 **AggregationPropertyUniqueId** | Pointer to **string** |  | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **ExternalEventId** | Pointer to **string** | external_event_id, should be unique | [optional] 
 **GmtCreate** | Pointer to **string** | create time | [optional] 
 **GmtModify** | Pointer to **string** | update time | [optional] 
-**Id** | Pointer to **int32** | Id | [optional] 
+**Id** | Pointer to **int64** | Id | [optional] 
 **IsDeleted** | Pointer to **int32** | 0-UnDeleted，1-Deleted | [optional] 
-**MerchantId** | Pointer to **int32** | merchantId | [optional] 
+**MerchantId** | Pointer to **int64** | merchantId | [optional] 
 **MetricId** | Pointer to **int64** | metric_id | [optional] 
-**MetricLimit** | Pointer to **int32** |  | [optional] 
+**MetricLimit** | Pointer to **int64** |  | [optional] 
 **SubscriptionIds** | Pointer to **string** |  | [optional] 
 **SubscriptionPeriodEnd** | Pointer to **int64** | matched subscription&#39;s current_period_end | [optional] 
 **SubscriptionPeriodStart** | Pointer to **int64** | matched subscription&#39;s current_period_start | [optional] 
-**Used** | Pointer to **int32** |  | [optional] 
+**Used** | Pointer to **int64** |  | [optional] 
 **UserId** | Pointer to **int64** | user_id | [optional] 
 
 ## Methods
@@ -69,20 +69,20 @@ HasAggregationPropertyData returns a boolean if a field has been set.
 
 ### GetAggregationPropertyInt
 
-`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetAggregationPropertyInt() int32`
+`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetAggregationPropertyInt() int64`
 
 GetAggregationPropertyInt returns the AggregationPropertyInt field if non-nil, zero value otherwise.
 
 ### GetAggregationPropertyIntOk
 
-`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetAggregationPropertyIntOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetAggregationPropertyIntOk() (*int64, bool)`
 
 GetAggregationPropertyIntOk returns a tuple with the AggregationPropertyInt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAggregationPropertyInt
 
-`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) SetAggregationPropertyInt(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) SetAggregationPropertyInt(v int64)`
 
 SetAggregationPropertyInt sets AggregationPropertyInt field to given value.
 
@@ -244,20 +244,20 @@ HasGmtModify returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetId() int32`
+`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetIdOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) SetId(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -294,20 +294,20 @@ HasIsDeleted returns a boolean if a field has been set.
 
 ### GetMerchantId
 
-`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetMerchantId() int32`
+`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetMerchantId() int64`
 
 GetMerchantId returns the MerchantId field if non-nil, zero value otherwise.
 
 ### GetMerchantIdOk
 
-`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetMerchantIdOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetMerchantIdOk() (*int64, bool)`
 
 GetMerchantIdOk returns a tuple with the MerchantId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantId
 
-`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) SetMerchantId(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) SetMerchantId(v int64)`
 
 SetMerchantId sets MerchantId field to given value.
 
@@ -344,20 +344,20 @@ HasMetricId returns a boolean if a field has been set.
 
 ### GetMetricLimit
 
-`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetMetricLimit() int32`
+`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetMetricLimit() int64`
 
 GetMetricLimit returns the MetricLimit field if non-nil, zero value otherwise.
 
 ### GetMetricLimitOk
 
-`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetMetricLimitOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetMetricLimitOk() (*int64, bool)`
 
 GetMetricLimitOk returns a tuple with the MetricLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetricLimit
 
-`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) SetMetricLimit(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) SetMetricLimit(v int64)`
 
 SetMetricLimit sets MetricLimit field to given value.
 
@@ -444,20 +444,20 @@ HasSubscriptionPeriodStart returns a boolean if a field has been set.
 
 ### GetUsed
 
-`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetUsed() int32`
+`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetUsed() int64`
 
 GetUsed returns the Used field if non-nil, zero value otherwise.
 
 ### GetUsedOk
 
-`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetUsedOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) GetUsedOk() (*int64, bool)`
 
 GetUsedOk returns a tuple with the Used field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUsed
 
-`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) SetUsed(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) SetUsed(v int64)`
 
 SetUsed sets Used field to given value.
 

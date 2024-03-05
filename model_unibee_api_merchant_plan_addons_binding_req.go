@@ -26,7 +26,7 @@ type UnibeeApiMerchantPlanAddonsBindingReq struct {
 	// Plan Ids Of Addon Type
 	AddonIds []int64 `json:"addonIds"`
 	// PlanID
-	PlanId int32 `json:"planId"`
+	PlanId int64 `json:"planId"`
 }
 
 type _UnibeeApiMerchantPlanAddonsBindingReq UnibeeApiMerchantPlanAddonsBindingReq
@@ -35,7 +35,7 @@ type _UnibeeApiMerchantPlanAddonsBindingReq UnibeeApiMerchantPlanAddonsBindingRe
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiMerchantPlanAddonsBindingReq(action int64, addonIds []int64, planId int32) *UnibeeApiMerchantPlanAddonsBindingReq {
+func NewUnibeeApiMerchantPlanAddonsBindingReq(action int64, addonIds []int64, planId int64) *UnibeeApiMerchantPlanAddonsBindingReq {
 	this := UnibeeApiMerchantPlanAddonsBindingReq{}
 	this.Action = action
 	this.AddonIds = addonIds
@@ -100,9 +100,9 @@ func (o *UnibeeApiMerchantPlanAddonsBindingReq) SetAddonIds(v []int64) {
 }
 
 // GetPlanId returns the PlanId field value
-func (o *UnibeeApiMerchantPlanAddonsBindingReq) GetPlanId() int32 {
+func (o *UnibeeApiMerchantPlanAddonsBindingReq) GetPlanId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -111,7 +111,7 @@ func (o *UnibeeApiMerchantPlanAddonsBindingReq) GetPlanId() int32 {
 
 // GetPlanIdOk returns a tuple with the PlanId field value
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantPlanAddonsBindingReq) GetPlanIdOk() (*int32, bool) {
+func (o *UnibeeApiMerchantPlanAddonsBindingReq) GetPlanIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -119,7 +119,7 @@ func (o *UnibeeApiMerchantPlanAddonsBindingReq) GetPlanIdOk() (*int32, bool) {
 }
 
 // SetPlanId sets field value
-func (o *UnibeeApiMerchantPlanAddonsBindingReq) SetPlanId(v int32) {
+func (o *UnibeeApiMerchantPlanAddonsBindingReq) SetPlanId(v int64) {
 	o.PlanId = v
 }
 

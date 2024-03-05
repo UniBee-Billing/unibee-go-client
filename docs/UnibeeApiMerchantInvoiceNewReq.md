@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Currency** | **string** | Currency | 
 **Finish** | Pointer to **bool** |  | [optional] 
-**GatewayId** | **int32** | Gateway Id | 
+**GatewayId** | **int64** | Gateway Id | 
 **Lines** | Pointer to [**[]UnibeeApiMerchantInvoiceNewInvoiceItemParam**](UnibeeApiMerchantInvoiceNewInvoiceItemParam.md) |  | [optional] 
 **Name** | Pointer to **string** | Name | [optional] 
 **TaxScale** | **int64** | TaxScale，1000 represent 10% | 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewUnibeeApiMerchantInvoiceNewReq
 
-`func NewUnibeeApiMerchantInvoiceNewReq(currency string, gatewayId int32, taxScale int64, userId int64, ) *UnibeeApiMerchantInvoiceNewReq`
+`func NewUnibeeApiMerchantInvoiceNewReq(currency string, gatewayId int64, taxScale int64, userId int64, ) *UnibeeApiMerchantInvoiceNewReq`
 
 NewUnibeeApiMerchantInvoiceNewReq instantiates a new UnibeeApiMerchantInvoiceNewReq object
 This constructor will assign default values to properties that have it defined,
@@ -78,20 +78,20 @@ HasFinish returns a boolean if a field has been set.
 
 ### GetGatewayId
 
-`func (o *UnibeeApiMerchantInvoiceNewReq) GetGatewayId() int32`
+`func (o *UnibeeApiMerchantInvoiceNewReq) GetGatewayId() int64`
 
 GetGatewayId returns the GatewayId field if non-nil, zero value otherwise.
 
 ### GetGatewayIdOk
 
-`func (o *UnibeeApiMerchantInvoiceNewReq) GetGatewayIdOk() (*int32, bool)`
+`func (o *UnibeeApiMerchantInvoiceNewReq) GetGatewayIdOk() (*int64, bool)`
 
 GetGatewayIdOk returns a tuple with the GatewayId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGatewayId
 
-`func (o *UnibeeApiMerchantInvoiceNewReq) SetGatewayId(v int32)`
+`func (o *UnibeeApiMerchantInvoiceNewReq) SetGatewayId(v int64)`
 
 SetGatewayId sets GatewayId field to given value.
 

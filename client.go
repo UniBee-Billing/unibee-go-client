@@ -87,6 +87,8 @@ type APIClient struct {
 
 	MerchantUserAPI *MerchantUserAPIService
 
+	MerchantUserMetricAPI *MerchantUserMetricAPIService
+
 	MerchantVatAPI *MerchantVatAPIService
 
 	MerchantWebhookAPI *MerchantWebhookAPIService
@@ -127,6 +129,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.MerchantSubscriptionPendingUpdateAPI = (*MerchantSubscriptionPendingUpdateAPIService)(&c.common)
 	c.MerchantSubscriptionTimelineAPI = (*MerchantSubscriptionTimelineAPIService)(&c.common)
 	c.MerchantUserAPI = (*MerchantUserAPIService)(&c.common)
+	c.MerchantUserMetricAPI = (*MerchantUserMetricAPIService)(&c.common)
 	c.MerchantVatAPI = (*MerchantVatAPIService)(&c.common)
 	c.MerchantWebhookAPI = (*MerchantWebhookAPIService)(&c.common)
 

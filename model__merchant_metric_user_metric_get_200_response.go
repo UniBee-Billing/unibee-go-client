@@ -14,37 +14,37 @@ import (
 	"encoding/json"
 )
 
-// checks if the MerchantMetricUserStatGet200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &MerchantMetricUserStatGet200Response{}
+// checks if the MerchantMetricUserMetricGet200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MerchantMetricUserMetricGet200Response{}
 
-// MerchantMetricUserStatGet200Response struct for MerchantMetricUserStatGet200Response
-type MerchantMetricUserStatGet200Response struct {
+// MerchantMetricUserMetricGet200Response struct for MerchantMetricUserMetricGet200Response
+type MerchantMetricUserMetricGet200Response struct {
 	Code *int32 `json:"code,omitempty"`
-	Data *MerchantMetricUserStatGet200ResponseData `json:"data,omitempty"`
+	Data *MerchantMetricUserMetricGet200ResponseData `json:"data,omitempty"`
 	Message *string `json:"message,omitempty"`
 	Redirect *string `json:"redirect,omitempty"`
 	RequestId *string `json:"requestId,omitempty"`
 }
 
-// NewMerchantMetricUserStatGet200Response instantiates a new MerchantMetricUserStatGet200Response object
+// NewMerchantMetricUserMetricGet200Response instantiates a new MerchantMetricUserMetricGet200Response object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMerchantMetricUserStatGet200Response() *MerchantMetricUserStatGet200Response {
-	this := MerchantMetricUserStatGet200Response{}
+func NewMerchantMetricUserMetricGet200Response() *MerchantMetricUserMetricGet200Response {
+	this := MerchantMetricUserMetricGet200Response{}
 	return &this
 }
 
-// NewMerchantMetricUserStatGet200ResponseWithDefaults instantiates a new MerchantMetricUserStatGet200Response object
+// NewMerchantMetricUserMetricGet200ResponseWithDefaults instantiates a new MerchantMetricUserMetricGet200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewMerchantMetricUserStatGet200ResponseWithDefaults() *MerchantMetricUserStatGet200Response {
-	this := MerchantMetricUserStatGet200Response{}
+func NewMerchantMetricUserMetricGet200ResponseWithDefaults() *MerchantMetricUserMetricGet200Response {
+	this := MerchantMetricUserMetricGet200Response{}
 	return &this
 }
 
 // GetCode returns the Code field value if set, zero value otherwise.
-func (o *MerchantMetricUserStatGet200Response) GetCode() int32 {
+func (o *MerchantMetricUserMetricGet200Response) GetCode() int32 {
 	if o == nil || IsNil(o.Code) {
 		var ret int32
 		return ret
@@ -54,7 +54,7 @@ func (o *MerchantMetricUserStatGet200Response) GetCode() int32 {
 
 // GetCodeOk returns a tuple with the Code field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantMetricUserStatGet200Response) GetCodeOk() (*int32, bool) {
+func (o *MerchantMetricUserMetricGet200Response) GetCodeOk() (*int32, bool) {
 	if o == nil || IsNil(o.Code) {
 		return nil, false
 	}
@@ -62,7 +62,7 @@ func (o *MerchantMetricUserStatGet200Response) GetCodeOk() (*int32, bool) {
 }
 
 // HasCode returns a boolean if a field has been set.
-func (o *MerchantMetricUserStatGet200Response) HasCode() bool {
+func (o *MerchantMetricUserMetricGet200Response) HasCode() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -71,14 +71,14 @@ func (o *MerchantMetricUserStatGet200Response) HasCode() bool {
 }
 
 // SetCode gets a reference to the given int32 and assigns it to the Code field.
-func (o *MerchantMetricUserStatGet200Response) SetCode(v int32) {
+func (o *MerchantMetricUserMetricGet200Response) SetCode(v int32) {
 	o.Code = &v
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *MerchantMetricUserStatGet200Response) GetData() MerchantMetricUserStatGet200ResponseData {
+func (o *MerchantMetricUserMetricGet200Response) GetData() MerchantMetricUserMetricGet200ResponseData {
 	if o == nil || IsNil(o.Data) {
-		var ret MerchantMetricUserStatGet200ResponseData
+		var ret MerchantMetricUserMetricGet200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -86,7 +86,7 @@ func (o *MerchantMetricUserStatGet200Response) GetData() MerchantMetricUserStatG
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantMetricUserStatGet200Response) GetDataOk() (*MerchantMetricUserStatGet200ResponseData, bool) {
+func (o *MerchantMetricUserMetricGet200Response) GetDataOk() (*MerchantMetricUserMetricGet200ResponseData, bool) {
 	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
@@ -94,7 +94,7 @@ func (o *MerchantMetricUserStatGet200Response) GetDataOk() (*MerchantMetricUserS
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *MerchantMetricUserStatGet200Response) HasData() bool {
+func (o *MerchantMetricUserMetricGet200Response) HasData() bool {
 	if o != nil && !IsNil(o.Data) {
 		return true
 	}
@@ -102,13 +102,13 @@ func (o *MerchantMetricUserStatGet200Response) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given MerchantMetricUserStatGet200ResponseData and assigns it to the Data field.
-func (o *MerchantMetricUserStatGet200Response) SetData(v MerchantMetricUserStatGet200ResponseData) {
+// SetData gets a reference to the given MerchantMetricUserMetricGet200ResponseData and assigns it to the Data field.
+func (o *MerchantMetricUserMetricGet200Response) SetData(v MerchantMetricUserMetricGet200ResponseData) {
 	o.Data = &v
 }
 
 // GetMessage returns the Message field value if set, zero value otherwise.
-func (o *MerchantMetricUserStatGet200Response) GetMessage() string {
+func (o *MerchantMetricUserMetricGet200Response) GetMessage() string {
 	if o == nil || IsNil(o.Message) {
 		var ret string
 		return ret
@@ -118,7 +118,7 @@ func (o *MerchantMetricUserStatGet200Response) GetMessage() string {
 
 // GetMessageOk returns a tuple with the Message field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantMetricUserStatGet200Response) GetMessageOk() (*string, bool) {
+func (o *MerchantMetricUserMetricGet200Response) GetMessageOk() (*string, bool) {
 	if o == nil || IsNil(o.Message) {
 		return nil, false
 	}
@@ -126,7 +126,7 @@ func (o *MerchantMetricUserStatGet200Response) GetMessageOk() (*string, bool) {
 }
 
 // HasMessage returns a boolean if a field has been set.
-func (o *MerchantMetricUserStatGet200Response) HasMessage() bool {
+func (o *MerchantMetricUserMetricGet200Response) HasMessage() bool {
 	if o != nil && !IsNil(o.Message) {
 		return true
 	}
@@ -135,12 +135,12 @@ func (o *MerchantMetricUserStatGet200Response) HasMessage() bool {
 }
 
 // SetMessage gets a reference to the given string and assigns it to the Message field.
-func (o *MerchantMetricUserStatGet200Response) SetMessage(v string) {
+func (o *MerchantMetricUserMetricGet200Response) SetMessage(v string) {
 	o.Message = &v
 }
 
 // GetRedirect returns the Redirect field value if set, zero value otherwise.
-func (o *MerchantMetricUserStatGet200Response) GetRedirect() string {
+func (o *MerchantMetricUserMetricGet200Response) GetRedirect() string {
 	if o == nil || IsNil(o.Redirect) {
 		var ret string
 		return ret
@@ -150,7 +150,7 @@ func (o *MerchantMetricUserStatGet200Response) GetRedirect() string {
 
 // GetRedirectOk returns a tuple with the Redirect field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantMetricUserStatGet200Response) GetRedirectOk() (*string, bool) {
+func (o *MerchantMetricUserMetricGet200Response) GetRedirectOk() (*string, bool) {
 	if o == nil || IsNil(o.Redirect) {
 		return nil, false
 	}
@@ -158,7 +158,7 @@ func (o *MerchantMetricUserStatGet200Response) GetRedirectOk() (*string, bool) {
 }
 
 // HasRedirect returns a boolean if a field has been set.
-func (o *MerchantMetricUserStatGet200Response) HasRedirect() bool {
+func (o *MerchantMetricUserMetricGet200Response) HasRedirect() bool {
 	if o != nil && !IsNil(o.Redirect) {
 		return true
 	}
@@ -167,12 +167,12 @@ func (o *MerchantMetricUserStatGet200Response) HasRedirect() bool {
 }
 
 // SetRedirect gets a reference to the given string and assigns it to the Redirect field.
-func (o *MerchantMetricUserStatGet200Response) SetRedirect(v string) {
+func (o *MerchantMetricUserMetricGet200Response) SetRedirect(v string) {
 	o.Redirect = &v
 }
 
 // GetRequestId returns the RequestId field value if set, zero value otherwise.
-func (o *MerchantMetricUserStatGet200Response) GetRequestId() string {
+func (o *MerchantMetricUserMetricGet200Response) GetRequestId() string {
 	if o == nil || IsNil(o.RequestId) {
 		var ret string
 		return ret
@@ -182,7 +182,7 @@ func (o *MerchantMetricUserStatGet200Response) GetRequestId() string {
 
 // GetRequestIdOk returns a tuple with the RequestId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantMetricUserStatGet200Response) GetRequestIdOk() (*string, bool) {
+func (o *MerchantMetricUserMetricGet200Response) GetRequestIdOk() (*string, bool) {
 	if o == nil || IsNil(o.RequestId) {
 		return nil, false
 	}
@@ -190,7 +190,7 @@ func (o *MerchantMetricUserStatGet200Response) GetRequestIdOk() (*string, bool) 
 }
 
 // HasRequestId returns a boolean if a field has been set.
-func (o *MerchantMetricUserStatGet200Response) HasRequestId() bool {
+func (o *MerchantMetricUserMetricGet200Response) HasRequestId() bool {
 	if o != nil && !IsNil(o.RequestId) {
 		return true
 	}
@@ -199,11 +199,11 @@ func (o *MerchantMetricUserStatGet200Response) HasRequestId() bool {
 }
 
 // SetRequestId gets a reference to the given string and assigns it to the RequestId field.
-func (o *MerchantMetricUserStatGet200Response) SetRequestId(v string) {
+func (o *MerchantMetricUserMetricGet200Response) SetRequestId(v string) {
 	o.RequestId = &v
 }
 
-func (o MerchantMetricUserStatGet200Response) MarshalJSON() ([]byte, error) {
+func (o MerchantMetricUserMetricGet200Response) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -211,7 +211,7 @@ func (o MerchantMetricUserStatGet200Response) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o MerchantMetricUserStatGet200Response) ToMap() (map[string]interface{}, error) {
+func (o MerchantMetricUserMetricGet200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
@@ -231,38 +231,38 @@ func (o MerchantMetricUserStatGet200Response) ToMap() (map[string]interface{}, e
 	return toSerialize, nil
 }
 
-type NullableMerchantMetricUserStatGet200Response struct {
-	value *MerchantMetricUserStatGet200Response
+type NullableMerchantMetricUserMetricGet200Response struct {
+	value *MerchantMetricUserMetricGet200Response
 	isSet bool
 }
 
-func (v NullableMerchantMetricUserStatGet200Response) Get() *MerchantMetricUserStatGet200Response {
+func (v NullableMerchantMetricUserMetricGet200Response) Get() *MerchantMetricUserMetricGet200Response {
 	return v.value
 }
 
-func (v *NullableMerchantMetricUserStatGet200Response) Set(val *MerchantMetricUserStatGet200Response) {
+func (v *NullableMerchantMetricUserMetricGet200Response) Set(val *MerchantMetricUserMetricGet200Response) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableMerchantMetricUserStatGet200Response) IsSet() bool {
+func (v NullableMerchantMetricUserMetricGet200Response) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableMerchantMetricUserStatGet200Response) Unset() {
+func (v *NullableMerchantMetricUserMetricGet200Response) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableMerchantMetricUserStatGet200Response(val *MerchantMetricUserStatGet200Response) *NullableMerchantMetricUserStatGet200Response {
-	return &NullableMerchantMetricUserStatGet200Response{value: val, isSet: true}
+func NewNullableMerchantMetricUserMetricGet200Response(val *MerchantMetricUserMetricGet200Response) *NullableMerchantMetricUserMetricGet200Response {
+	return &NullableMerchantMetricUserMetricGet200Response{value: val, isSet: true}
 }
 
-func (v NullableMerchantMetricUserStatGet200Response) MarshalJSON() ([]byte, error) {
+func (v NullableMerchantMetricUserMetricGet200Response) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableMerchantMetricUserStatGet200Response) UnmarshalJSON(src []byte) error {
+func (v *NullableMerchantMetricUserMetricGet200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

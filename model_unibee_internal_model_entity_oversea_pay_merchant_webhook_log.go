@@ -29,11 +29,11 @@ type UnibeeInternalModelEntityOverseaPayMerchantWebhookLog struct {
 	// update time
 	GmtModify *string `json:"gmtModify,omitempty"`
 	// id
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// mamo
 	Mamo *string `json:"mamo,omitempty"`
 	// webhook url
-	MerchantId *int32 `json:"merchantId,omitempty"`
+	MerchantId *int64 `json:"merchantId,omitempty"`
 	ReconsumeCount *int32 `json:"reconsumeCount,omitempty"`
 	// request_id
 	RequestId *string `json:"requestId,omitempty"`
@@ -223,9 +223,9 @@ func (o *UnibeeInternalModelEntityOverseaPayMerchantWebhookLog) SetGmtModify(v s
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *UnibeeInternalModelEntityOverseaPayMerchantWebhookLog) GetId() int32 {
+func (o *UnibeeInternalModelEntityOverseaPayMerchantWebhookLog) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -233,7 +233,7 @@ func (o *UnibeeInternalModelEntityOverseaPayMerchantWebhookLog) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalModelEntityOverseaPayMerchantWebhookLog) GetIdOk() (*int32, bool) {
+func (o *UnibeeInternalModelEntityOverseaPayMerchantWebhookLog) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -249,8 +249,8 @@ func (o *UnibeeInternalModelEntityOverseaPayMerchantWebhookLog) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *UnibeeInternalModelEntityOverseaPayMerchantWebhookLog) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *UnibeeInternalModelEntityOverseaPayMerchantWebhookLog) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -287,9 +287,9 @@ func (o *UnibeeInternalModelEntityOverseaPayMerchantWebhookLog) SetMamo(v string
 }
 
 // GetMerchantId returns the MerchantId field value if set, zero value otherwise.
-func (o *UnibeeInternalModelEntityOverseaPayMerchantWebhookLog) GetMerchantId() int32 {
+func (o *UnibeeInternalModelEntityOverseaPayMerchantWebhookLog) GetMerchantId() int64 {
 	if o == nil || IsNil(o.MerchantId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MerchantId
@@ -297,7 +297,7 @@ func (o *UnibeeInternalModelEntityOverseaPayMerchantWebhookLog) GetMerchantId() 
 
 // GetMerchantIdOk returns a tuple with the MerchantId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalModelEntityOverseaPayMerchantWebhookLog) GetMerchantIdOk() (*int32, bool) {
+func (o *UnibeeInternalModelEntityOverseaPayMerchantWebhookLog) GetMerchantIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.MerchantId) {
 		return nil, false
 	}
@@ -313,8 +313,8 @@ func (o *UnibeeInternalModelEntityOverseaPayMerchantWebhookLog) HasMerchantId() 
 	return false
 }
 
-// SetMerchantId gets a reference to the given int32 and assigns it to the MerchantId field.
-func (o *UnibeeInternalModelEntityOverseaPayMerchantWebhookLog) SetMerchantId(v int32) {
+// SetMerchantId gets a reference to the given int64 and assigns it to the MerchantId field.
+func (o *UnibeeInternalModelEntityOverseaPayMerchantWebhookLog) SetMerchantId(v int64) {
 	o.MerchantId = &v
 }
 

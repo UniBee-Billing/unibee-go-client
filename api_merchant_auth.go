@@ -22,18 +22,18 @@ import (
 // MerchantAuthAPIService MerchantAuthAPI service
 type MerchantAuthAPIService service
 
-type MerchantAuthAPIMerchantAuthSsoLoginOTPPostRequest struct {
+type ApiMerchantAuthSsoLoginOTPPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantAuthAPIService
 	unibeeApiMerchantAuthLoginOtpReq *UnibeeApiMerchantAuthLoginOtpReq
 }
 
-func (r MerchantAuthAPIMerchantAuthSsoLoginOTPPostRequest) UnibeeApiMerchantAuthLoginOtpReq(unibeeApiMerchantAuthLoginOtpReq UnibeeApiMerchantAuthLoginOtpReq) MerchantAuthAPIMerchantAuthSsoLoginOTPPostRequest {
+func (r ApiMerchantAuthSsoLoginOTPPostRequest) UnibeeApiMerchantAuthLoginOtpReq(unibeeApiMerchantAuthLoginOtpReq UnibeeApiMerchantAuthLoginOtpReq) ApiMerchantAuthSsoLoginOTPPostRequest {
 	r.unibeeApiMerchantAuthLoginOtpReq = &unibeeApiMerchantAuthLoginOtpReq
 	return r
 }
 
-func (r MerchantAuthAPIMerchantAuthSsoLoginOTPPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantAuthSsoLoginOTPPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantAuthSsoLoginOTPPostExecute(r)
 }
 
@@ -41,10 +41,10 @@ func (r MerchantAuthAPIMerchantAuthSsoLoginOTPPostRequest) Execute() (*MerchantA
 MerchantAuthSsoLoginOTPPost Login OTP
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantAuthAPIMerchantAuthSsoLoginOTPPostRequest
+ @return ApiMerchantAuthSsoLoginOTPPostRequest
 */
-func (a *MerchantAuthAPIService) MerchantAuthSsoLoginOTPPost(ctx context.Context) MerchantAuthAPIMerchantAuthSsoLoginOTPPostRequest {
-	return MerchantAuthAPIMerchantAuthSsoLoginOTPPostRequest{
+func (a *MerchantAuthAPIService) MerchantAuthSsoLoginOTPPost(ctx context.Context) ApiMerchantAuthSsoLoginOTPPostRequest {
+	return ApiMerchantAuthSsoLoginOTPPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -52,7 +52,7 @@ func (a *MerchantAuthAPIService) MerchantAuthSsoLoginOTPPost(ctx context.Context
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantAuthAPIService) MerchantAuthSsoLoginOTPPostExecute(r MerchantAuthAPIMerchantAuthSsoLoginOTPPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantAuthAPIService) MerchantAuthSsoLoginOTPPostExecute(r ApiMerchantAuthSsoLoginOTPPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -130,18 +130,18 @@ func (a *MerchantAuthAPIService) MerchantAuthSsoLoginOTPPostExecute(r MerchantAu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantAuthAPIMerchantAuthSsoLoginOTPVerifyPostRequest struct {
+type ApiMerchantAuthSsoLoginOTPVerifyPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantAuthAPIService
 	unibeeApiMerchantAuthLoginOtpVerifyReq *UnibeeApiMerchantAuthLoginOtpVerifyReq
 }
 
-func (r MerchantAuthAPIMerchantAuthSsoLoginOTPVerifyPostRequest) UnibeeApiMerchantAuthLoginOtpVerifyReq(unibeeApiMerchantAuthLoginOtpVerifyReq UnibeeApiMerchantAuthLoginOtpVerifyReq) MerchantAuthAPIMerchantAuthSsoLoginOTPVerifyPostRequest {
+func (r ApiMerchantAuthSsoLoginOTPVerifyPostRequest) UnibeeApiMerchantAuthLoginOtpVerifyReq(unibeeApiMerchantAuthLoginOtpVerifyReq UnibeeApiMerchantAuthLoginOtpVerifyReq) ApiMerchantAuthSsoLoginOTPVerifyPostRequest {
 	r.unibeeApiMerchantAuthLoginOtpVerifyReq = &unibeeApiMerchantAuthLoginOtpVerifyReq
 	return r
 }
 
-func (r MerchantAuthAPIMerchantAuthSsoLoginOTPVerifyPostRequest) Execute() (*MerchantAuthSsoLoginPost200Response, *http.Response, error) {
+func (r ApiMerchantAuthSsoLoginOTPVerifyPostRequest) Execute() (*MerchantAuthSsoLoginPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantAuthSsoLoginOTPVerifyPostExecute(r)
 }
 
@@ -149,10 +149,10 @@ func (r MerchantAuthAPIMerchantAuthSsoLoginOTPVerifyPostRequest) Execute() (*Mer
 MerchantAuthSsoLoginOTPVerifyPost Merchant User OTP Login Verify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantAuthAPIMerchantAuthSsoLoginOTPVerifyPostRequest
+ @return ApiMerchantAuthSsoLoginOTPVerifyPostRequest
 */
-func (a *MerchantAuthAPIService) MerchantAuthSsoLoginOTPVerifyPost(ctx context.Context) MerchantAuthAPIMerchantAuthSsoLoginOTPVerifyPostRequest {
-	return MerchantAuthAPIMerchantAuthSsoLoginOTPVerifyPostRequest{
+func (a *MerchantAuthAPIService) MerchantAuthSsoLoginOTPVerifyPost(ctx context.Context) ApiMerchantAuthSsoLoginOTPVerifyPostRequest {
+	return ApiMerchantAuthSsoLoginOTPVerifyPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -160,7 +160,7 @@ func (a *MerchantAuthAPIService) MerchantAuthSsoLoginOTPVerifyPost(ctx context.C
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginPost200Response
-func (a *MerchantAuthAPIService) MerchantAuthSsoLoginOTPVerifyPostExecute(r MerchantAuthAPIMerchantAuthSsoLoginOTPVerifyPostRequest) (*MerchantAuthSsoLoginPost200Response, *http.Response, error) {
+func (a *MerchantAuthAPIService) MerchantAuthSsoLoginOTPVerifyPostExecute(r ApiMerchantAuthSsoLoginOTPVerifyPostRequest) (*MerchantAuthSsoLoginPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -238,18 +238,18 @@ func (a *MerchantAuthAPIService) MerchantAuthSsoLoginOTPVerifyPostExecute(r Merc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantAuthAPIMerchantAuthSsoLoginPostRequest struct {
+type ApiMerchantAuthSsoLoginPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantAuthAPIService
 	unibeeApiMerchantAuthLoginReq *UnibeeApiMerchantAuthLoginReq
 }
 
-func (r MerchantAuthAPIMerchantAuthSsoLoginPostRequest) UnibeeApiMerchantAuthLoginReq(unibeeApiMerchantAuthLoginReq UnibeeApiMerchantAuthLoginReq) MerchantAuthAPIMerchantAuthSsoLoginPostRequest {
+func (r ApiMerchantAuthSsoLoginPostRequest) UnibeeApiMerchantAuthLoginReq(unibeeApiMerchantAuthLoginReq UnibeeApiMerchantAuthLoginReq) ApiMerchantAuthSsoLoginPostRequest {
 	r.unibeeApiMerchantAuthLoginReq = &unibeeApiMerchantAuthLoginReq
 	return r
 }
 
-func (r MerchantAuthAPIMerchantAuthSsoLoginPostRequest) Execute() (*MerchantAuthSsoLoginPost200Response, *http.Response, error) {
+func (r ApiMerchantAuthSsoLoginPostRequest) Execute() (*MerchantAuthSsoLoginPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantAuthSsoLoginPostExecute(r)
 }
 
@@ -257,10 +257,10 @@ func (r MerchantAuthAPIMerchantAuthSsoLoginPostRequest) Execute() (*MerchantAuth
 MerchantAuthSsoLoginPost Login
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantAuthAPIMerchantAuthSsoLoginPostRequest
+ @return ApiMerchantAuthSsoLoginPostRequest
 */
-func (a *MerchantAuthAPIService) MerchantAuthSsoLoginPost(ctx context.Context) MerchantAuthAPIMerchantAuthSsoLoginPostRequest {
-	return MerchantAuthAPIMerchantAuthSsoLoginPostRequest{
+func (a *MerchantAuthAPIService) MerchantAuthSsoLoginPost(ctx context.Context) ApiMerchantAuthSsoLoginPostRequest {
+	return ApiMerchantAuthSsoLoginPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -268,7 +268,7 @@ func (a *MerchantAuthAPIService) MerchantAuthSsoLoginPost(ctx context.Context) M
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginPost200Response
-func (a *MerchantAuthAPIService) MerchantAuthSsoLoginPostExecute(r MerchantAuthAPIMerchantAuthSsoLoginPostRequest) (*MerchantAuthSsoLoginPost200Response, *http.Response, error) {
+func (a *MerchantAuthAPIService) MerchantAuthSsoLoginPostExecute(r ApiMerchantAuthSsoLoginPostRequest) (*MerchantAuthSsoLoginPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -346,18 +346,18 @@ func (a *MerchantAuthAPIService) MerchantAuthSsoLoginPostExecute(r MerchantAuthA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantAuthAPIMerchantAuthSsoPasswordForgetOTPPostRequest struct {
+type ApiMerchantAuthSsoPasswordForgetOTPPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantAuthAPIService
 	unibeeApiMerchantAuthPasswordForgetOtpReq *UnibeeApiMerchantAuthPasswordForgetOtpReq
 }
 
-func (r MerchantAuthAPIMerchantAuthSsoPasswordForgetOTPPostRequest) UnibeeApiMerchantAuthPasswordForgetOtpReq(unibeeApiMerchantAuthPasswordForgetOtpReq UnibeeApiMerchantAuthPasswordForgetOtpReq) MerchantAuthAPIMerchantAuthSsoPasswordForgetOTPPostRequest {
+func (r ApiMerchantAuthSsoPasswordForgetOTPPostRequest) UnibeeApiMerchantAuthPasswordForgetOtpReq(unibeeApiMerchantAuthPasswordForgetOtpReq UnibeeApiMerchantAuthPasswordForgetOtpReq) ApiMerchantAuthSsoPasswordForgetOTPPostRequest {
 	r.unibeeApiMerchantAuthPasswordForgetOtpReq = &unibeeApiMerchantAuthPasswordForgetOtpReq
 	return r
 }
 
-func (r MerchantAuthAPIMerchantAuthSsoPasswordForgetOTPPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantAuthSsoPasswordForgetOTPPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantAuthSsoPasswordForgetOTPPostExecute(r)
 }
 
@@ -365,10 +365,10 @@ func (r MerchantAuthAPIMerchantAuthSsoPasswordForgetOTPPostRequest) Execute() (*
 MerchantAuthSsoPasswordForgetOTPPost Merchant Password Forget OTP
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantAuthAPIMerchantAuthSsoPasswordForgetOTPPostRequest
+ @return ApiMerchantAuthSsoPasswordForgetOTPPostRequest
 */
-func (a *MerchantAuthAPIService) MerchantAuthSsoPasswordForgetOTPPost(ctx context.Context) MerchantAuthAPIMerchantAuthSsoPasswordForgetOTPPostRequest {
-	return MerchantAuthAPIMerchantAuthSsoPasswordForgetOTPPostRequest{
+func (a *MerchantAuthAPIService) MerchantAuthSsoPasswordForgetOTPPost(ctx context.Context) ApiMerchantAuthSsoPasswordForgetOTPPostRequest {
+	return ApiMerchantAuthSsoPasswordForgetOTPPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -376,7 +376,7 @@ func (a *MerchantAuthAPIService) MerchantAuthSsoPasswordForgetOTPPost(ctx contex
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantAuthAPIService) MerchantAuthSsoPasswordForgetOTPPostExecute(r MerchantAuthAPIMerchantAuthSsoPasswordForgetOTPPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantAuthAPIService) MerchantAuthSsoPasswordForgetOTPPostExecute(r ApiMerchantAuthSsoPasswordForgetOTPPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -454,18 +454,18 @@ func (a *MerchantAuthAPIService) MerchantAuthSsoPasswordForgetOTPPostExecute(r M
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantAuthAPIMerchantAuthSsoPasswordForgetOTPVerifyPostRequest struct {
+type ApiMerchantAuthSsoPasswordForgetOTPVerifyPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantAuthAPIService
 	unibeeApiMerchantAuthPasswordForgetOtpVerifyReq *UnibeeApiMerchantAuthPasswordForgetOtpVerifyReq
 }
 
-func (r MerchantAuthAPIMerchantAuthSsoPasswordForgetOTPVerifyPostRequest) UnibeeApiMerchantAuthPasswordForgetOtpVerifyReq(unibeeApiMerchantAuthPasswordForgetOtpVerifyReq UnibeeApiMerchantAuthPasswordForgetOtpVerifyReq) MerchantAuthAPIMerchantAuthSsoPasswordForgetOTPVerifyPostRequest {
+func (r ApiMerchantAuthSsoPasswordForgetOTPVerifyPostRequest) UnibeeApiMerchantAuthPasswordForgetOtpVerifyReq(unibeeApiMerchantAuthPasswordForgetOtpVerifyReq UnibeeApiMerchantAuthPasswordForgetOtpVerifyReq) ApiMerchantAuthSsoPasswordForgetOTPVerifyPostRequest {
 	r.unibeeApiMerchantAuthPasswordForgetOtpVerifyReq = &unibeeApiMerchantAuthPasswordForgetOtpVerifyReq
 	return r
 }
 
-func (r MerchantAuthAPIMerchantAuthSsoPasswordForgetOTPVerifyPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantAuthSsoPasswordForgetOTPVerifyPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantAuthSsoPasswordForgetOTPVerifyPostExecute(r)
 }
 
@@ -473,10 +473,10 @@ func (r MerchantAuthAPIMerchantAuthSsoPasswordForgetOTPVerifyPostRequest) Execut
 MerchantAuthSsoPasswordForgetOTPVerifyPost Merchant Password Forget OTP Verify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantAuthAPIMerchantAuthSsoPasswordForgetOTPVerifyPostRequest
+ @return ApiMerchantAuthSsoPasswordForgetOTPVerifyPostRequest
 */
-func (a *MerchantAuthAPIService) MerchantAuthSsoPasswordForgetOTPVerifyPost(ctx context.Context) MerchantAuthAPIMerchantAuthSsoPasswordForgetOTPVerifyPostRequest {
-	return MerchantAuthAPIMerchantAuthSsoPasswordForgetOTPVerifyPostRequest{
+func (a *MerchantAuthAPIService) MerchantAuthSsoPasswordForgetOTPVerifyPost(ctx context.Context) ApiMerchantAuthSsoPasswordForgetOTPVerifyPostRequest {
+	return ApiMerchantAuthSsoPasswordForgetOTPVerifyPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -484,7 +484,7 @@ func (a *MerchantAuthAPIService) MerchantAuthSsoPasswordForgetOTPVerifyPost(ctx 
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantAuthAPIService) MerchantAuthSsoPasswordForgetOTPVerifyPostExecute(r MerchantAuthAPIMerchantAuthSsoPasswordForgetOTPVerifyPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantAuthAPIService) MerchantAuthSsoPasswordForgetOTPVerifyPostExecute(r ApiMerchantAuthSsoPasswordForgetOTPVerifyPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -562,18 +562,18 @@ func (a *MerchantAuthAPIService) MerchantAuthSsoPasswordForgetOTPVerifyPostExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantAuthAPIMerchantAuthSsoRegisterPostRequest struct {
+type ApiMerchantAuthSsoRegisterPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantAuthAPIService
 	unibeeApiMerchantAuthRegisterReq *UnibeeApiMerchantAuthRegisterReq
 }
 
-func (r MerchantAuthAPIMerchantAuthSsoRegisterPostRequest) UnibeeApiMerchantAuthRegisterReq(unibeeApiMerchantAuthRegisterReq UnibeeApiMerchantAuthRegisterReq) MerchantAuthAPIMerchantAuthSsoRegisterPostRequest {
+func (r ApiMerchantAuthSsoRegisterPostRequest) UnibeeApiMerchantAuthRegisterReq(unibeeApiMerchantAuthRegisterReq UnibeeApiMerchantAuthRegisterReq) ApiMerchantAuthSsoRegisterPostRequest {
 	r.unibeeApiMerchantAuthRegisterReq = &unibeeApiMerchantAuthRegisterReq
 	return r
 }
 
-func (r MerchantAuthAPIMerchantAuthSsoRegisterPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantAuthSsoRegisterPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantAuthSsoRegisterPostExecute(r)
 }
 
@@ -581,10 +581,10 @@ func (r MerchantAuthAPIMerchantAuthSsoRegisterPostRequest) Execute() (*MerchantA
 MerchantAuthSsoRegisterPost Merchant Register
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantAuthAPIMerchantAuthSsoRegisterPostRequest
+ @return ApiMerchantAuthSsoRegisterPostRequest
 */
-func (a *MerchantAuthAPIService) MerchantAuthSsoRegisterPost(ctx context.Context) MerchantAuthAPIMerchantAuthSsoRegisterPostRequest {
-	return MerchantAuthAPIMerchantAuthSsoRegisterPostRequest{
+func (a *MerchantAuthAPIService) MerchantAuthSsoRegisterPost(ctx context.Context) ApiMerchantAuthSsoRegisterPostRequest {
+	return ApiMerchantAuthSsoRegisterPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -592,7 +592,7 @@ func (a *MerchantAuthAPIService) MerchantAuthSsoRegisterPost(ctx context.Context
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantAuthAPIService) MerchantAuthSsoRegisterPostExecute(r MerchantAuthAPIMerchantAuthSsoRegisterPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantAuthAPIService) MerchantAuthSsoRegisterPostExecute(r ApiMerchantAuthSsoRegisterPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -670,18 +670,18 @@ func (a *MerchantAuthAPIService) MerchantAuthSsoRegisterPostExecute(r MerchantAu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantAuthAPIMerchantAuthSsoRegisterVerifyPostRequest struct {
+type ApiMerchantAuthSsoRegisterVerifyPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantAuthAPIService
 	unibeeApiMerchantAuthRegisterVerifyReq *UnibeeApiMerchantAuthRegisterVerifyReq
 }
 
-func (r MerchantAuthAPIMerchantAuthSsoRegisterVerifyPostRequest) UnibeeApiMerchantAuthRegisterVerifyReq(unibeeApiMerchantAuthRegisterVerifyReq UnibeeApiMerchantAuthRegisterVerifyReq) MerchantAuthAPIMerchantAuthSsoRegisterVerifyPostRequest {
+func (r ApiMerchantAuthSsoRegisterVerifyPostRequest) UnibeeApiMerchantAuthRegisterVerifyReq(unibeeApiMerchantAuthRegisterVerifyReq UnibeeApiMerchantAuthRegisterVerifyReq) ApiMerchantAuthSsoRegisterVerifyPostRequest {
 	r.unibeeApiMerchantAuthRegisterVerifyReq = &unibeeApiMerchantAuthRegisterVerifyReq
 	return r
 }
 
-func (r MerchantAuthAPIMerchantAuthSsoRegisterVerifyPostRequest) Execute() (*MerchantAuthSsoRegisterVerifyPost200Response, *http.Response, error) {
+func (r ApiMerchantAuthSsoRegisterVerifyPostRequest) Execute() (*MerchantAuthSsoRegisterVerifyPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantAuthSsoRegisterVerifyPostExecute(r)
 }
 
@@ -689,10 +689,10 @@ func (r MerchantAuthAPIMerchantAuthSsoRegisterVerifyPostRequest) Execute() (*Mer
 MerchantAuthSsoRegisterVerifyPost Merchant Register Verify
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantAuthAPIMerchantAuthSsoRegisterVerifyPostRequest
+ @return ApiMerchantAuthSsoRegisterVerifyPostRequest
 */
-func (a *MerchantAuthAPIService) MerchantAuthSsoRegisterVerifyPost(ctx context.Context) MerchantAuthAPIMerchantAuthSsoRegisterVerifyPostRequest {
-	return MerchantAuthAPIMerchantAuthSsoRegisterVerifyPostRequest{
+func (a *MerchantAuthAPIService) MerchantAuthSsoRegisterVerifyPost(ctx context.Context) ApiMerchantAuthSsoRegisterVerifyPostRequest {
+	return ApiMerchantAuthSsoRegisterVerifyPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -700,7 +700,7 @@ func (a *MerchantAuthAPIService) MerchantAuthSsoRegisterVerifyPost(ctx context.C
 
 // Execute executes the request
 //  @return MerchantAuthSsoRegisterVerifyPost200Response
-func (a *MerchantAuthAPIService) MerchantAuthSsoRegisterVerifyPostExecute(r MerchantAuthAPIMerchantAuthSsoRegisterVerifyPostRequest) (*MerchantAuthSsoRegisterVerifyPost200Response, *http.Response, error) {
+func (a *MerchantAuthAPIService) MerchantAuthSsoRegisterVerifyPostExecute(r ApiMerchantAuthSsoRegisterVerifyPostRequest) (*MerchantAuthSsoRegisterVerifyPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

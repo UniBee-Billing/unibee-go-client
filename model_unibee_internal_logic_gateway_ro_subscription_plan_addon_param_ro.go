@@ -20,7 +20,7 @@ var _ MappedNullable = &UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo
 // UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo struct for UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo
 type UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo struct {
 	// AddonPlanId
-	AddonPlanId *int32 `json:"addonPlanId,omitempty"`
+	AddonPlanId *int64 `json:"addonPlanId,omitempty"`
 	// Quantity，Default 1
 	Quantity *int64 `json:"quantity,omitempty"`
 }
@@ -43,9 +43,9 @@ func NewUnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRoWithDefaults() *
 }
 
 // GetAddonPlanId returns the AddonPlanId field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo) GetAddonPlanId() int32 {
+func (o *UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo) GetAddonPlanId() int64 {
 	if o == nil || IsNil(o.AddonPlanId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AddonPlanId
@@ -53,7 +53,7 @@ func (o *UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo) GetAddonPlanI
 
 // GetAddonPlanIdOk returns a tuple with the AddonPlanId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo) GetAddonPlanIdOk() (*int32, bool) {
+func (o *UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo) GetAddonPlanIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.AddonPlanId) {
 		return nil, false
 	}
@@ -69,8 +69,8 @@ func (o *UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo) HasAddonPlanI
 	return false
 }
 
-// SetAddonPlanId gets a reference to the given int32 and assigns it to the AddonPlanId field.
-func (o *UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo) SetAddonPlanId(v int32) {
+// SetAddonPlanId gets a reference to the given int64 and assigns it to the AddonPlanId field.
+func (o *UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo) SetAddonPlanId(v int64) {
 	o.AddonPlanId = &v
 }
 

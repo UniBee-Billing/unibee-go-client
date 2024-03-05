@@ -24,7 +24,7 @@ type UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam struct {
 	// MetricId
 	MetricId int64 `json:"metricId"`
 	// MetricLimit
-	MetricLimit int32 `json:"metricLimit"`
+	MetricLimit int64 `json:"metricLimit"`
 }
 
 type _UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam
@@ -33,7 +33,7 @@ type _UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam UnibeeInternal
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam(metricId int64, metricLimit int32) *UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam {
+func NewUnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam(metricId int64, metricLimit int64) *UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam {
 	this := UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam{}
 	this.MetricId = metricId
 	this.MetricLimit = metricLimit
@@ -73,9 +73,9 @@ func (o *UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam) SetMetricI
 }
 
 // GetMetricLimit returns the MetricLimit field value
-func (o *UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam) GetMetricLimit() int32 {
+func (o *UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam) GetMetricLimit() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -84,7 +84,7 @@ func (o *UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam) GetMetricL
 
 // GetMetricLimitOk returns a tuple with the MetricLimit field value
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam) GetMetricLimitOk() (*int32, bool) {
+func (o *UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam) GetMetricLimitOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -92,7 +92,7 @@ func (o *UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam) GetMetricL
 }
 
 // SetMetricLimit sets field value
-func (o *UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam) SetMetricLimit(v int32) {
+func (o *UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam) SetMetricLimit(v int64) {
 	o.MetricLimit = v
 }
 

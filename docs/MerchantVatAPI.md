@@ -25,11 +25,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
-	merchantId := int32(56) // int32 | MerchantId
+	merchantId := int64(789) // int64 | MerchantId
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -54,7 +54,7 @@ Other parameters are passed through a pointer to a apiMerchantVatCountryListGetR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchantId** | **int32** | MerchantId | 
+ **merchantId** | **int64** | MerchantId | 
 
 ### Return type
 
@@ -89,11 +89,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {
-	unibeeApiMerchantVatCountryListReq := *openapiclient.NewUnibeeApiMerchantVatCountryListReq(int32(123)) // UnibeeApiMerchantVatCountryListReq | 
+	unibeeApiMerchantVatCountryListReq := *openapiclient.NewUnibeeApiMerchantVatCountryListReq(int64(123)) // UnibeeApiMerchantVatCountryListReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -153,7 +153,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func main() {

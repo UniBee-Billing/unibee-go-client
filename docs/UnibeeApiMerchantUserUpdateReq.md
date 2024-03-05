@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **Phone** | Pointer to **string** | Phone | [optional] 
 **Telegram** | Pointer to **string** | Telegram | [optional] 
 **Tiktok** | Pointer to **string** | Tiktok | [optional] 
-**UserId** | **int32** | User Id | 
+**UserId** | **int64** | User Id | 
 **VATNumber** | Pointer to **string** | VAT Number | [optional] 
 **WeChat** | Pointer to **string** | WeChat | [optional] 
 **WhatsApp** | Pointer to **string** | WhatsApp | [optional] 
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 
 ### NewUnibeeApiMerchantUserUpdateReq
 
-`func NewUnibeeApiMerchantUserUpdateReq(address string, countryCode string, countryName string, email string, firstName string, lastName string, userId int32, ) *UnibeeApiMerchantUserUpdateReq`
+`func NewUnibeeApiMerchantUserUpdateReq(address string, countryCode string, countryName string, email string, firstName string, lastName string, userId int64, ) *UnibeeApiMerchantUserUpdateReq`
 
 NewUnibeeApiMerchantUserUpdateReq instantiates a new UnibeeApiMerchantUserUpdateReq object
 This constructor will assign default values to properties that have it defined,
@@ -364,20 +364,20 @@ HasTiktok returns a boolean if a field has been set.
 
 ### GetUserId
 
-`func (o *UnibeeApiMerchantUserUpdateReq) GetUserId() int32`
+`func (o *UnibeeApiMerchantUserUpdateReq) GetUserId() int64`
 
 GetUserId returns the UserId field if non-nil, zero value otherwise.
 
 ### GetUserIdOk
 
-`func (o *UnibeeApiMerchantUserUpdateReq) GetUserIdOk() (*int32, bool)`
+`func (o *UnibeeApiMerchantUserUpdateReq) GetUserIdOk() (*int64, bool)`
 
 GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserId
 
-`func (o *UnibeeApiMerchantUserUpdateReq) SetUserId(v int32)`
+`func (o *UnibeeApiMerchantUserUpdateReq) SetUserId(v int64)`
 
 SetUserId sets UserId field to given value.
 

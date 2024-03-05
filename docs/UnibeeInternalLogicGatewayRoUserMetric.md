@@ -1,4 +1,4 @@
-# UnibeeInternalLogicGatewayRoUserMetricStat
+# UnibeeInternalLogicGatewayRoUserMetric
 
 ## Properties
 
@@ -13,170 +13,170 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewUnibeeInternalLogicGatewayRoUserMetricStat
+### NewUnibeeInternalLogicGatewayRoUserMetric
 
-`func NewUnibeeInternalLogicGatewayRoUserMetricStat() *UnibeeInternalLogicGatewayRoUserMetricStat`
+`func NewUnibeeInternalLogicGatewayRoUserMetric() *UnibeeInternalLogicGatewayRoUserMetric`
 
-NewUnibeeInternalLogicGatewayRoUserMetricStat instantiates a new UnibeeInternalLogicGatewayRoUserMetricStat object
+NewUnibeeInternalLogicGatewayRoUserMetric instantiates a new UnibeeInternalLogicGatewayRoUserMetric object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUnibeeInternalLogicGatewayRoUserMetricStatWithDefaults
+### NewUnibeeInternalLogicGatewayRoUserMetricWithDefaults
 
-`func NewUnibeeInternalLogicGatewayRoUserMetricStatWithDefaults() *UnibeeInternalLogicGatewayRoUserMetricStat`
+`func NewUnibeeInternalLogicGatewayRoUserMetricWithDefaults() *UnibeeInternalLogicGatewayRoUserMetric`
 
-NewUnibeeInternalLogicGatewayRoUserMetricStatWithDefaults instantiates a new UnibeeInternalLogicGatewayRoUserMetricStat object
+NewUnibeeInternalLogicGatewayRoUserMetricWithDefaults instantiates a new UnibeeInternalLogicGatewayRoUserMetric object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetAddons
 
-`func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetAddons() []UnibeeInternalLogicGatewayRoPlanAddonVo`
+`func (o *UnibeeInternalLogicGatewayRoUserMetric) GetAddons() []UnibeeInternalLogicGatewayRoPlanAddonVo`
 
 GetAddons returns the Addons field if non-nil, zero value otherwise.
 
 ### GetAddonsOk
 
-`func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetAddonsOk() (*[]UnibeeInternalLogicGatewayRoPlanAddonVo, bool)`
+`func (o *UnibeeInternalLogicGatewayRoUserMetric) GetAddonsOk() (*[]UnibeeInternalLogicGatewayRoPlanAddonVo, bool)`
 
 GetAddonsOk returns a tuple with the Addons field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddons
 
-`func (o *UnibeeInternalLogicGatewayRoUserMetricStat) SetAddons(v []UnibeeInternalLogicGatewayRoPlanAddonVo)`
+`func (o *UnibeeInternalLogicGatewayRoUserMetric) SetAddons(v []UnibeeInternalLogicGatewayRoPlanAddonVo)`
 
 SetAddons sets Addons field to given value.
 
 ### HasAddons
 
-`func (o *UnibeeInternalLogicGatewayRoUserMetricStat) HasAddons() bool`
+`func (o *UnibeeInternalLogicGatewayRoUserMetric) HasAddons() bool`
 
 HasAddons returns a boolean if a field has been set.
 
 ### GetIsPaid
 
-`func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetIsPaid() bool`
+`func (o *UnibeeInternalLogicGatewayRoUserMetric) GetIsPaid() bool`
 
 GetIsPaid returns the IsPaid field if non-nil, zero value otherwise.
 
 ### GetIsPaidOk
 
-`func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetIsPaidOk() (*bool, bool)`
+`func (o *UnibeeInternalLogicGatewayRoUserMetric) GetIsPaidOk() (*bool, bool)`
 
 GetIsPaidOk returns a tuple with the IsPaid field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIsPaid
 
-`func (o *UnibeeInternalLogicGatewayRoUserMetricStat) SetIsPaid(v bool)`
+`func (o *UnibeeInternalLogicGatewayRoUserMetric) SetIsPaid(v bool)`
 
 SetIsPaid sets IsPaid field to given value.
 
 ### HasIsPaid
 
-`func (o *UnibeeInternalLogicGatewayRoUserMetricStat) HasIsPaid() bool`
+`func (o *UnibeeInternalLogicGatewayRoUserMetric) HasIsPaid() bool`
 
 HasIsPaid returns a boolean if a field has been set.
 
 ### GetPlan
 
-`func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetPlan() UnibeeInternalLogicGatewayRoPlanSimplify`
+`func (o *UnibeeInternalLogicGatewayRoUserMetric) GetPlan() UnibeeInternalLogicGatewayRoPlanSimplify`
 
 GetPlan returns the Plan field if non-nil, zero value otherwise.
 
 ### GetPlanOk
 
-`func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetPlanOk() (*UnibeeInternalLogicGatewayRoPlanSimplify, bool)`
+`func (o *UnibeeInternalLogicGatewayRoUserMetric) GetPlanOk() (*UnibeeInternalLogicGatewayRoPlanSimplify, bool)`
 
 GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlan
 
-`func (o *UnibeeInternalLogicGatewayRoUserMetricStat) SetPlan(v UnibeeInternalLogicGatewayRoPlanSimplify)`
+`func (o *UnibeeInternalLogicGatewayRoUserMetric) SetPlan(v UnibeeInternalLogicGatewayRoPlanSimplify)`
 
 SetPlan sets Plan field to given value.
 
 ### HasPlan
 
-`func (o *UnibeeInternalLogicGatewayRoUserMetricStat) HasPlan() bool`
+`func (o *UnibeeInternalLogicGatewayRoUserMetric) HasPlan() bool`
 
 HasPlan returns a boolean if a field has been set.
 
 ### GetSubscription
 
-`func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetSubscription() UnibeeInternalLogicGatewayRoSubscriptionSimplify`
+`func (o *UnibeeInternalLogicGatewayRoUserMetric) GetSubscription() UnibeeInternalLogicGatewayRoSubscriptionSimplify`
 
 GetSubscription returns the Subscription field if non-nil, zero value otherwise.
 
 ### GetSubscriptionOk
 
-`func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetSubscriptionOk() (*UnibeeInternalLogicGatewayRoSubscriptionSimplify, bool)`
+`func (o *UnibeeInternalLogicGatewayRoUserMetric) GetSubscriptionOk() (*UnibeeInternalLogicGatewayRoSubscriptionSimplify, bool)`
 
 GetSubscriptionOk returns a tuple with the Subscription field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubscription
 
-`func (o *UnibeeInternalLogicGatewayRoUserMetricStat) SetSubscription(v UnibeeInternalLogicGatewayRoSubscriptionSimplify)`
+`func (o *UnibeeInternalLogicGatewayRoUserMetric) SetSubscription(v UnibeeInternalLogicGatewayRoSubscriptionSimplify)`
 
 SetSubscription sets Subscription field to given value.
 
 ### HasSubscription
 
-`func (o *UnibeeInternalLogicGatewayRoUserMetricStat) HasSubscription() bool`
+`func (o *UnibeeInternalLogicGatewayRoUserMetric) HasSubscription() bool`
 
 HasSubscription returns a boolean if a field has been set.
 
 ### GetUser
 
-`func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetUser() UnibeeInternalLogicGatewayRoUserAccountSimplify`
+`func (o *UnibeeInternalLogicGatewayRoUserMetric) GetUser() UnibeeInternalLogicGatewayRoUserAccountSimplify`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetUserOk() (*UnibeeInternalLogicGatewayRoUserAccountSimplify, bool)`
+`func (o *UnibeeInternalLogicGatewayRoUserMetric) GetUserOk() (*UnibeeInternalLogicGatewayRoUserAccountSimplify, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *UnibeeInternalLogicGatewayRoUserMetricStat) SetUser(v UnibeeInternalLogicGatewayRoUserAccountSimplify)`
+`func (o *UnibeeInternalLogicGatewayRoUserMetric) SetUser(v UnibeeInternalLogicGatewayRoUserAccountSimplify)`
 
 SetUser sets User field to given value.
 
 ### HasUser
 
-`func (o *UnibeeInternalLogicGatewayRoUserMetricStat) HasUser() bool`
+`func (o *UnibeeInternalLogicGatewayRoUserMetric) HasUser() bool`
 
 HasUser returns a boolean if a field has been set.
 
 ### GetUserMerchantMetricStats
 
-`func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetUserMerchantMetricStats() []UnibeeInternalLogicGatewayRoUserMerchantMetricStat`
+`func (o *UnibeeInternalLogicGatewayRoUserMetric) GetUserMerchantMetricStats() []UnibeeInternalLogicGatewayRoUserMerchantMetricStat`
 
 GetUserMerchantMetricStats returns the UserMerchantMetricStats field if non-nil, zero value otherwise.
 
 ### GetUserMerchantMetricStatsOk
 
-`func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetUserMerchantMetricStatsOk() (*[]UnibeeInternalLogicGatewayRoUserMerchantMetricStat, bool)`
+`func (o *UnibeeInternalLogicGatewayRoUserMetric) GetUserMerchantMetricStatsOk() (*[]UnibeeInternalLogicGatewayRoUserMerchantMetricStat, bool)`
 
 GetUserMerchantMetricStatsOk returns a tuple with the UserMerchantMetricStats field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserMerchantMetricStats
 
-`func (o *UnibeeInternalLogicGatewayRoUserMetricStat) SetUserMerchantMetricStats(v []UnibeeInternalLogicGatewayRoUserMerchantMetricStat)`
+`func (o *UnibeeInternalLogicGatewayRoUserMetric) SetUserMerchantMetricStats(v []UnibeeInternalLogicGatewayRoUserMerchantMetricStat)`
 
 SetUserMerchantMetricStats sets UserMerchantMetricStats field to given value.
 
 ### HasUserMerchantMetricStats
 
-`func (o *UnibeeInternalLogicGatewayRoUserMetricStat) HasUserMerchantMetricStats() bool`
+`func (o *UnibeeInternalLogicGatewayRoUserMetric) HasUserMerchantMetricStats() bool`
 
 HasUserMerchantMetricStats returns a boolean if a field has been set.
 

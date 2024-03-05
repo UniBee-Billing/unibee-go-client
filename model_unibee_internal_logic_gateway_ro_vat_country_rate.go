@@ -23,7 +23,7 @@ type UnibeeInternalLogicGatewayRoVatCountryRate struct {
 	CountryName *string `json:"countryName,omitempty"`
 	Gateway *string `json:"gateway,omitempty"`
 	// TaxId
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// Tax税率，万分位，1000 表示 10%
 	StandardTaxPercentage *int64 `json:"standardTaxPercentage,omitempty"`
 	// vat support,true or false
@@ -144,9 +144,9 @@ func (o *UnibeeInternalLogicGatewayRoVatCountryRate) SetGateway(v string) {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoVatCountryRate) GetId() int32 {
+func (o *UnibeeInternalLogicGatewayRoVatCountryRate) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -154,7 +154,7 @@ func (o *UnibeeInternalLogicGatewayRoVatCountryRate) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoVatCountryRate) GetIdOk() (*int32, bool) {
+func (o *UnibeeInternalLogicGatewayRoVatCountryRate) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -170,8 +170,8 @@ func (o *UnibeeInternalLogicGatewayRoVatCountryRate) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *UnibeeInternalLogicGatewayRoVatCountryRate) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *UnibeeInternalLogicGatewayRoVatCountryRate) SetId(v int64) {
 	o.Id = &v
 }
 

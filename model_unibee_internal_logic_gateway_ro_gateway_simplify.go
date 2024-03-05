@@ -19,7 +19,7 @@ var _ MappedNullable = &UnibeeInternalLogicGatewayRoGatewaySimplify{}
 
 // UnibeeInternalLogicGatewayRoGatewaySimplify struct for UnibeeInternalLogicGatewayRoGatewaySimplify
 type UnibeeInternalLogicGatewayRoGatewaySimplify struct {
-	GatewayId *int32 `json:"gatewayId,omitempty"`
+	GatewayId *int64 `json:"gatewayId,omitempty"`
 	GatewayLogo *string `json:"gatewayLogo,omitempty"`
 	GatewayName *string `json:"gatewayName,omitempty"`
 }
@@ -42,9 +42,9 @@ func NewUnibeeInternalLogicGatewayRoGatewaySimplifyWithDefaults() *UnibeeInterna
 }
 
 // GetGatewayId returns the GatewayId field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoGatewaySimplify) GetGatewayId() int32 {
+func (o *UnibeeInternalLogicGatewayRoGatewaySimplify) GetGatewayId() int64 {
 	if o == nil || IsNil(o.GatewayId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.GatewayId
@@ -52,7 +52,7 @@ func (o *UnibeeInternalLogicGatewayRoGatewaySimplify) GetGatewayId() int32 {
 
 // GetGatewayIdOk returns a tuple with the GatewayId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoGatewaySimplify) GetGatewayIdOk() (*int32, bool) {
+func (o *UnibeeInternalLogicGatewayRoGatewaySimplify) GetGatewayIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.GatewayId) {
 		return nil, false
 	}
@@ -68,8 +68,8 @@ func (o *UnibeeInternalLogicGatewayRoGatewaySimplify) HasGatewayId() bool {
 	return false
 }
 
-// SetGatewayId gets a reference to the given int32 and assigns it to the GatewayId field.
-func (o *UnibeeInternalLogicGatewayRoGatewaySimplify) SetGatewayId(v int32) {
+// SetGatewayId gets a reference to the given int64 and assigns it to the GatewayId field.
+func (o *UnibeeInternalLogicGatewayRoGatewaySimplify) SetGatewayId(v int64) {
 	o.GatewayId = &v
 }
 

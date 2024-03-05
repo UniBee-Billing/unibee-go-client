@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PlanId** | **int32** | PlanId | 
+**PlanId** | **int64** | PlanId | 
 
 ## Methods
 
 ### NewUnibeeApiMerchantPlanPublishReq
 
-`func NewUnibeeApiMerchantPlanPublishReq(planId int32, ) *UnibeeApiMerchantPlanPublishReq`
+`func NewUnibeeApiMerchantPlanPublishReq(planId int64, ) *UnibeeApiMerchantPlanPublishReq`
 
 NewUnibeeApiMerchantPlanPublishReq instantiates a new UnibeeApiMerchantPlanPublishReq object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPlanId
 
-`func (o *UnibeeApiMerchantPlanPublishReq) GetPlanId() int32`
+`func (o *UnibeeApiMerchantPlanPublishReq) GetPlanId() int64`
 
 GetPlanId returns the PlanId field if non-nil, zero value otherwise.
 
 ### GetPlanIdOk
 
-`func (o *UnibeeApiMerchantPlanPublishReq) GetPlanIdOk() (*int32, bool)`
+`func (o *UnibeeApiMerchantPlanPublishReq) GetPlanIdOk() (*int64, bool)`
 
 GetPlanIdOk returns a tuple with the PlanId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlanId
 
-`func (o *UnibeeApiMerchantPlanPublishReq) SetPlanId(v int32)`
+`func (o *UnibeeApiMerchantPlanPublishReq) SetPlanId(v int64)`
 
 SetPlanId sets PlanId field to given value.
 

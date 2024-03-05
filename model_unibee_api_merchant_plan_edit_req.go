@@ -40,7 +40,7 @@ type UnibeeApiMerchantPlanEditReq struct {
 	// Plan's MetricLimit List
 	MetricLimits []UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam `json:"metricLimits,omitempty"`
 	// PlanId
-	PlanId int32 `json:"planId"`
+	PlanId int64 `json:"planId"`
 	// Plan Name
 	PlanName string `json:"planName"`
 	// Default Copy Description
@@ -55,7 +55,7 @@ type _UnibeeApiMerchantPlanEditReq UnibeeApiMerchantPlanEditReq
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiMerchantPlanEditReq(amount int64, currency string, intervalUnit string, planId int32, planName string) *UnibeeApiMerchantPlanEditReq {
+func NewUnibeeApiMerchantPlanEditReq(amount int64, currency string, intervalUnit string, planId int64, planName string) *UnibeeApiMerchantPlanEditReq {
 	this := UnibeeApiMerchantPlanEditReq{}
 	this.Amount = amount
 	this.Currency = currency
@@ -342,9 +342,9 @@ func (o *UnibeeApiMerchantPlanEditReq) SetMetricLimits(v []UnibeeInternalLogicGa
 }
 
 // GetPlanId returns the PlanId field value
-func (o *UnibeeApiMerchantPlanEditReq) GetPlanId() int32 {
+func (o *UnibeeApiMerchantPlanEditReq) GetPlanId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -353,7 +353,7 @@ func (o *UnibeeApiMerchantPlanEditReq) GetPlanId() int32 {
 
 // GetPlanIdOk returns a tuple with the PlanId field value
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantPlanEditReq) GetPlanIdOk() (*int32, bool) {
+func (o *UnibeeApiMerchantPlanEditReq) GetPlanIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -361,7 +361,7 @@ func (o *UnibeeApiMerchantPlanEditReq) GetPlanIdOk() (*int32, bool) {
 }
 
 // SetPlanId sets field value
-func (o *UnibeeApiMerchantPlanEditReq) SetPlanId(v int32) {
+func (o *UnibeeApiMerchantPlanEditReq) SetPlanId(v int64) {
 	o.PlanId = v
 }
 

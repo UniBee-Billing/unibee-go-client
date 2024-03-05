@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CurrentUseValue** | Pointer to **int32** |  | [optional] 
+**CurrentUseValue** | Pointer to **int64** |  | [optional] 
 **MetricLimit** | Pointer to [**UnibeeInternalLogicGatewayRoMetricLimitVo**](UnibeeInternalLogicGatewayRoMetricLimitVo.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCurrentUseValue
 
-`func (o *UnibeeInternalLogicGatewayRoUserMerchantMetricStat) GetCurrentUseValue() int32`
+`func (o *UnibeeInternalLogicGatewayRoUserMerchantMetricStat) GetCurrentUseValue() int64`
 
 GetCurrentUseValue returns the CurrentUseValue field if non-nil, zero value otherwise.
 
 ### GetCurrentUseValueOk
 
-`func (o *UnibeeInternalLogicGatewayRoUserMerchantMetricStat) GetCurrentUseValueOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoUserMerchantMetricStat) GetCurrentUseValueOk() (*int64, bool)`
 
 GetCurrentUseValueOk returns a tuple with the CurrentUseValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCurrentUseValue
 
-`func (o *UnibeeInternalLogicGatewayRoUserMerchantMetricStat) SetCurrentUseValue(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoUserMerchantMetricStat) SetCurrentUseValue(v int64)`
 
 SetCurrentUseValue sets CurrentUseValue field to given value.
 

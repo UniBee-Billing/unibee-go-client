@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **AddonParams** | Pointer to [**[]UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo**](UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo.md) | addonParams | [optional] 
 **ConfirmCurrency** | **string** | Currency To Be Confirmed，Get From Preview | 
 **ConfirmTotalAmount** | **int64** | TotalAmount To Be Confirmed，Get From Preview | 
-**NewPlanId** | **int32** | New PlanId | 
+**NewPlanId** | **int64** | New PlanId | 
 **ProrationDate** | **int64** | prorationDate date to start Proration，Get From Preview | 
 **Quantity** | Pointer to **int64** | Quantity，Default 1 | [optional] 
 **SubscriptionId** | **string** | SubscriptionId | 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewUnibeeApiMerchantSubscriptionUpdateReq
 
-`func NewUnibeeApiMerchantSubscriptionUpdateReq(confirmCurrency string, confirmTotalAmount int64, newPlanId int32, prorationDate int64, subscriptionId string, ) *UnibeeApiMerchantSubscriptionUpdateReq`
+`func NewUnibeeApiMerchantSubscriptionUpdateReq(confirmCurrency string, confirmTotalAmount int64, newPlanId int64, prorationDate int64, subscriptionId string, ) *UnibeeApiMerchantSubscriptionUpdateReq`
 
 NewUnibeeApiMerchantSubscriptionUpdateReq instantiates a new UnibeeApiMerchantSubscriptionUpdateReq object
 This constructor will assign default values to properties that have it defined,
@@ -99,20 +99,20 @@ SetConfirmTotalAmount sets ConfirmTotalAmount field to given value.
 
 ### GetNewPlanId
 
-`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetNewPlanId() int32`
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetNewPlanId() int64`
 
 GetNewPlanId returns the NewPlanId field if non-nil, zero value otherwise.
 
 ### GetNewPlanIdOk
 
-`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetNewPlanIdOk() (*int32, bool)`
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetNewPlanIdOk() (*int64, bool)`
 
 GetNewPlanIdOk returns a tuple with the NewPlanId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNewPlanId
 
-`func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetNewPlanId(v int32)`
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetNewPlanId(v int64)`
 
 SetNewPlanId sets NewPlanId field to given value.
 

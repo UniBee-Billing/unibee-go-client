@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MetricId** | **int32** | MetricId | 
+**MetricId** | **int64** | MetricId | 
 
 ## Methods
 
 ### NewUnibeeApiMerchantMetricDetailReq
 
-`func NewUnibeeApiMerchantMetricDetailReq(metricId int32, ) *UnibeeApiMerchantMetricDetailReq`
+`func NewUnibeeApiMerchantMetricDetailReq(metricId int64, ) *UnibeeApiMerchantMetricDetailReq`
 
 NewUnibeeApiMerchantMetricDetailReq instantiates a new UnibeeApiMerchantMetricDetailReq object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMetricId
 
-`func (o *UnibeeApiMerchantMetricDetailReq) GetMetricId() int32`
+`func (o *UnibeeApiMerchantMetricDetailReq) GetMetricId() int64`
 
 GetMetricId returns the MetricId field if non-nil, zero value otherwise.
 
 ### GetMetricIdOk
 
-`func (o *UnibeeApiMerchantMetricDetailReq) GetMetricIdOk() (*int32, bool)`
+`func (o *UnibeeApiMerchantMetricDetailReq) GetMetricIdOk() (*int64, bool)`
 
 GetMetricIdOk returns a tuple with the MetricId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetricId
 
-`func (o *UnibeeApiMerchantMetricDetailReq) SetMetricId(v int32)`
+`func (o *UnibeeApiMerchantMetricDetailReq) SetMetricId(v int64)`
 
 SetMetricId sets MetricId field to given value.
 

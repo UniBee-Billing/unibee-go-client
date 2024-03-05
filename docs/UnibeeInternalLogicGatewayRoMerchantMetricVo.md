@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **Code** | Pointer to **string** | code | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **GmtModify** | Pointer to **int64** | update time | [optional] 
-**Id** | Pointer to **int32** | id | [optional] 
-**MerchantId** | Pointer to **int32** | merchantId | [optional] 
+**Id** | Pointer to **int64** | id | [optional] 
+**MerchantId** | Pointer to **int64** | merchantId | [optional] 
 **MetricDescription** | Pointer to **string** | metric description | [optional] 
 **MetricName** | Pointer to **string** | metric name | [optional] 
 **Type** | Pointer to **int32** | 1-limit_metered，2-charge_metered(come later),3-charge_recurring(come later) | [optional] 
@@ -161,20 +161,20 @@ HasGmtModify returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *UnibeeInternalLogicGatewayRoMerchantMetricVo) GetId() int32`
+`func (o *UnibeeInternalLogicGatewayRoMerchantMetricVo) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *UnibeeInternalLogicGatewayRoMerchantMetricVo) GetIdOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoMerchantMetricVo) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *UnibeeInternalLogicGatewayRoMerchantMetricVo) SetId(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoMerchantMetricVo) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -186,20 +186,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetMerchantId
 
-`func (o *UnibeeInternalLogicGatewayRoMerchantMetricVo) GetMerchantId() int32`
+`func (o *UnibeeInternalLogicGatewayRoMerchantMetricVo) GetMerchantId() int64`
 
 GetMerchantId returns the MerchantId field if non-nil, zero value otherwise.
 
 ### GetMerchantIdOk
 
-`func (o *UnibeeInternalLogicGatewayRoMerchantMetricVo) GetMerchantIdOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoMerchantMetricVo) GetMerchantIdOk() (*int64, bool)`
 
 GetMerchantIdOk returns a tuple with the MerchantId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantId
 
-`func (o *UnibeeInternalLogicGatewayRoMerchantMetricVo) SetMerchantId(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoMerchantMetricVo) SetMerchantId(v int64)`
 
 SetMerchantId sets MerchantId field to given value.
 

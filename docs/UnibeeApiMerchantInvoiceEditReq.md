@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Currency** | Pointer to **string** | Currency | [optional] 
 **Finish** | Pointer to **bool** |  | [optional] 
-**GatewayId** | Pointer to **int32** | Gateway Id | [optional] 
+**GatewayId** | Pointer to **int64** | Gateway Id | [optional] 
 **InvoiceId** | **string** | InvoiceId | 
 **Lines** | Pointer to [**[]UnibeeApiMerchantInvoiceNewInvoiceItemParam**](UnibeeApiMerchantInvoiceNewInvoiceItemParam.md) |  | [optional] 
 **Name** | Pointer to **string** | Name | [optional] 
@@ -83,20 +83,20 @@ HasFinish returns a boolean if a field has been set.
 
 ### GetGatewayId
 
-`func (o *UnibeeApiMerchantInvoiceEditReq) GetGatewayId() int32`
+`func (o *UnibeeApiMerchantInvoiceEditReq) GetGatewayId() int64`
 
 GetGatewayId returns the GatewayId field if non-nil, zero value otherwise.
 
 ### GetGatewayIdOk
 
-`func (o *UnibeeApiMerchantInvoiceEditReq) GetGatewayIdOk() (*int32, bool)`
+`func (o *UnibeeApiMerchantInvoiceEditReq) GetGatewayIdOk() (*int64, bool)`
 
 GetGatewayIdOk returns a tuple with the GatewayId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGatewayId
 
-`func (o *UnibeeApiMerchantInvoiceEditReq) SetGatewayId(v int32)`
+`func (o *UnibeeApiMerchantInvoiceEditReq) SetGatewayId(v int64)`
 
 SetGatewayId sets GatewayId field to given value.
 

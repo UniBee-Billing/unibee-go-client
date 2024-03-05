@@ -22,7 +22,7 @@ var _ MappedNullable = &UnibeeApiMerchantPlanUnPublishReq{}
 // UnibeeApiMerchantPlanUnPublishReq struct for UnibeeApiMerchantPlanUnPublishReq
 type UnibeeApiMerchantPlanUnPublishReq struct {
 	// PlanId
-	PlanId int32 `json:"planId"`
+	PlanId int64 `json:"planId"`
 }
 
 type _UnibeeApiMerchantPlanUnPublishReq UnibeeApiMerchantPlanUnPublishReq
@@ -31,7 +31,7 @@ type _UnibeeApiMerchantPlanUnPublishReq UnibeeApiMerchantPlanUnPublishReq
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiMerchantPlanUnPublishReq(planId int32) *UnibeeApiMerchantPlanUnPublishReq {
+func NewUnibeeApiMerchantPlanUnPublishReq(planId int64) *UnibeeApiMerchantPlanUnPublishReq {
 	this := UnibeeApiMerchantPlanUnPublishReq{}
 	this.PlanId = planId
 	return &this
@@ -46,9 +46,9 @@ func NewUnibeeApiMerchantPlanUnPublishReqWithDefaults() *UnibeeApiMerchantPlanUn
 }
 
 // GetPlanId returns the PlanId field value
-func (o *UnibeeApiMerchantPlanUnPublishReq) GetPlanId() int32 {
+func (o *UnibeeApiMerchantPlanUnPublishReq) GetPlanId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -57,7 +57,7 @@ func (o *UnibeeApiMerchantPlanUnPublishReq) GetPlanId() int32 {
 
 // GetPlanIdOk returns a tuple with the PlanId field value
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantPlanUnPublishReq) GetPlanIdOk() (*int32, bool) {
+func (o *UnibeeApiMerchantPlanUnPublishReq) GetPlanIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -65,7 +65,7 @@ func (o *UnibeeApiMerchantPlanUnPublishReq) GetPlanIdOk() (*int32, bool) {
 }
 
 // SetPlanId sets field value
-func (o *UnibeeApiMerchantPlanUnPublishReq) SetPlanId(v int32) {
+func (o *UnibeeApiMerchantPlanUnPublishReq) SetPlanId(v int64) {
 	o.PlanId = v
 }
 

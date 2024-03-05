@@ -22,7 +22,7 @@ import (
 // MerchantSubscriptionNoteAPIService MerchantSubscriptionNoteAPI service
 type MerchantSubscriptionNoteAPIService service
 
-type MerchantSubscriptionNoteAPIMerchantSubscriptionAdminNoteListGetRequest struct {
+type ApiMerchantSubscriptionAdminNoteListGetRequest struct {
 	ctx context.Context
 	ApiService *MerchantSubscriptionNoteAPIService
 	subscriptionId *string
@@ -31,24 +31,24 @@ type MerchantSubscriptionNoteAPIMerchantSubscriptionAdminNoteListGetRequest stru
 }
 
 // SubscriptionId
-func (r MerchantSubscriptionNoteAPIMerchantSubscriptionAdminNoteListGetRequest) SubscriptionId(subscriptionId string) MerchantSubscriptionNoteAPIMerchantSubscriptionAdminNoteListGetRequest {
+func (r ApiMerchantSubscriptionAdminNoteListGetRequest) SubscriptionId(subscriptionId string) ApiMerchantSubscriptionAdminNoteListGetRequest {
 	r.subscriptionId = &subscriptionId
 	return r
 }
 
 // Page, Start WIth 0
-func (r MerchantSubscriptionNoteAPIMerchantSubscriptionAdminNoteListGetRequest) Page(page int32) MerchantSubscriptionNoteAPIMerchantSubscriptionAdminNoteListGetRequest {
+func (r ApiMerchantSubscriptionAdminNoteListGetRequest) Page(page int32) ApiMerchantSubscriptionAdminNoteListGetRequest {
 	r.page = &page
 	return r
 }
 
 // Count Of Page
-func (r MerchantSubscriptionNoteAPIMerchantSubscriptionAdminNoteListGetRequest) Count(count int32) MerchantSubscriptionNoteAPIMerchantSubscriptionAdminNoteListGetRequest {
+func (r ApiMerchantSubscriptionAdminNoteListGetRequest) Count(count int32) ApiMerchantSubscriptionAdminNoteListGetRequest {
 	r.count = &count
 	return r
 }
 
-func (r MerchantSubscriptionNoteAPIMerchantSubscriptionAdminNoteListGetRequest) Execute() (*MerchantSubscriptionAdminNoteListGet200Response, *http.Response, error) {
+func (r ApiMerchantSubscriptionAdminNoteListGetRequest) Execute() (*MerchantSubscriptionAdminNoteListGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantSubscriptionAdminNoteListGetExecute(r)
 }
 
@@ -56,10 +56,10 @@ func (r MerchantSubscriptionNoteAPIMerchantSubscriptionAdminNoteListGetRequest) 
 MerchantSubscriptionAdminNoteListGet Merchant Subscription Note List
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantSubscriptionNoteAPIMerchantSubscriptionAdminNoteListGetRequest
+ @return ApiMerchantSubscriptionAdminNoteListGetRequest
 */
-func (a *MerchantSubscriptionNoteAPIService) MerchantSubscriptionAdminNoteListGet(ctx context.Context) MerchantSubscriptionNoteAPIMerchantSubscriptionAdminNoteListGetRequest {
-	return MerchantSubscriptionNoteAPIMerchantSubscriptionAdminNoteListGetRequest{
+func (a *MerchantSubscriptionNoteAPIService) MerchantSubscriptionAdminNoteListGet(ctx context.Context) ApiMerchantSubscriptionAdminNoteListGetRequest {
+	return ApiMerchantSubscriptionAdminNoteListGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -67,7 +67,7 @@ func (a *MerchantSubscriptionNoteAPIService) MerchantSubscriptionAdminNoteListGe
 
 // Execute executes the request
 //  @return MerchantSubscriptionAdminNoteListGet200Response
-func (a *MerchantSubscriptionNoteAPIService) MerchantSubscriptionAdminNoteListGetExecute(r MerchantSubscriptionNoteAPIMerchantSubscriptionAdminNoteListGetRequest) (*MerchantSubscriptionAdminNoteListGet200Response, *http.Response, error) {
+func (a *MerchantSubscriptionNoteAPIService) MerchantSubscriptionAdminNoteListGetExecute(r ApiMerchantSubscriptionAdminNoteListGetRequest) (*MerchantSubscriptionAdminNoteListGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -150,18 +150,18 @@ func (a *MerchantSubscriptionNoteAPIService) MerchantSubscriptionAdminNoteListGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantSubscriptionNoteAPIMerchantSubscriptionAdminNoteListPostRequest struct {
+type ApiMerchantSubscriptionAdminNoteListPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantSubscriptionNoteAPIService
 	unibeeApiMerchantSubscriptionAdminNoteListReq *UnibeeApiMerchantSubscriptionAdminNoteListReq
 }
 
-func (r MerchantSubscriptionNoteAPIMerchantSubscriptionAdminNoteListPostRequest) UnibeeApiMerchantSubscriptionAdminNoteListReq(unibeeApiMerchantSubscriptionAdminNoteListReq UnibeeApiMerchantSubscriptionAdminNoteListReq) MerchantSubscriptionNoteAPIMerchantSubscriptionAdminNoteListPostRequest {
+func (r ApiMerchantSubscriptionAdminNoteListPostRequest) UnibeeApiMerchantSubscriptionAdminNoteListReq(unibeeApiMerchantSubscriptionAdminNoteListReq UnibeeApiMerchantSubscriptionAdminNoteListReq) ApiMerchantSubscriptionAdminNoteListPostRequest {
 	r.unibeeApiMerchantSubscriptionAdminNoteListReq = &unibeeApiMerchantSubscriptionAdminNoteListReq
 	return r
 }
 
-func (r MerchantSubscriptionNoteAPIMerchantSubscriptionAdminNoteListPostRequest) Execute() (*MerchantSubscriptionAdminNoteListGet200Response, *http.Response, error) {
+func (r ApiMerchantSubscriptionAdminNoteListPostRequest) Execute() (*MerchantSubscriptionAdminNoteListGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantSubscriptionAdminNoteListPostExecute(r)
 }
 
@@ -169,10 +169,10 @@ func (r MerchantSubscriptionNoteAPIMerchantSubscriptionAdminNoteListPostRequest)
 MerchantSubscriptionAdminNoteListPost Merchant Subscription Note List
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantSubscriptionNoteAPIMerchantSubscriptionAdminNoteListPostRequest
+ @return ApiMerchantSubscriptionAdminNoteListPostRequest
 */
-func (a *MerchantSubscriptionNoteAPIService) MerchantSubscriptionAdminNoteListPost(ctx context.Context) MerchantSubscriptionNoteAPIMerchantSubscriptionAdminNoteListPostRequest {
-	return MerchantSubscriptionNoteAPIMerchantSubscriptionAdminNoteListPostRequest{
+func (a *MerchantSubscriptionNoteAPIService) MerchantSubscriptionAdminNoteListPost(ctx context.Context) ApiMerchantSubscriptionAdminNoteListPostRequest {
+	return ApiMerchantSubscriptionAdminNoteListPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -180,7 +180,7 @@ func (a *MerchantSubscriptionNoteAPIService) MerchantSubscriptionAdminNoteListPo
 
 // Execute executes the request
 //  @return MerchantSubscriptionAdminNoteListGet200Response
-func (a *MerchantSubscriptionNoteAPIService) MerchantSubscriptionAdminNoteListPostExecute(r MerchantSubscriptionNoteAPIMerchantSubscriptionAdminNoteListPostRequest) (*MerchantSubscriptionAdminNoteListGet200Response, *http.Response, error) {
+func (a *MerchantSubscriptionNoteAPIService) MerchantSubscriptionAdminNoteListPostExecute(r ApiMerchantSubscriptionAdminNoteListPostRequest) (*MerchantSubscriptionAdminNoteListGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -258,18 +258,18 @@ func (a *MerchantSubscriptionNoteAPIService) MerchantSubscriptionAdminNoteListPo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantSubscriptionNoteAPIMerchantSubscriptionNewAdminNotePostRequest struct {
+type ApiMerchantSubscriptionNewAdminNotePostRequest struct {
 	ctx context.Context
 	ApiService *MerchantSubscriptionNoteAPIService
 	unibeeApiMerchantSubscriptionNewAdminNoteReq *UnibeeApiMerchantSubscriptionNewAdminNoteReq
 }
 
-func (r MerchantSubscriptionNoteAPIMerchantSubscriptionNewAdminNotePostRequest) UnibeeApiMerchantSubscriptionNewAdminNoteReq(unibeeApiMerchantSubscriptionNewAdminNoteReq UnibeeApiMerchantSubscriptionNewAdminNoteReq) MerchantSubscriptionNoteAPIMerchantSubscriptionNewAdminNotePostRequest {
+func (r ApiMerchantSubscriptionNewAdminNotePostRequest) UnibeeApiMerchantSubscriptionNewAdminNoteReq(unibeeApiMerchantSubscriptionNewAdminNoteReq UnibeeApiMerchantSubscriptionNewAdminNoteReq) ApiMerchantSubscriptionNewAdminNotePostRequest {
 	r.unibeeApiMerchantSubscriptionNewAdminNoteReq = &unibeeApiMerchantSubscriptionNewAdminNoteReq
 	return r
 }
 
-func (r MerchantSubscriptionNoteAPIMerchantSubscriptionNewAdminNotePostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantSubscriptionNewAdminNotePostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantSubscriptionNewAdminNotePostExecute(r)
 }
 
@@ -277,10 +277,10 @@ func (r MerchantSubscriptionNoteAPIMerchantSubscriptionNewAdminNotePostRequest) 
 MerchantSubscriptionNewAdminNotePost Merchant New Subscription Note
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantSubscriptionNoteAPIMerchantSubscriptionNewAdminNotePostRequest
+ @return ApiMerchantSubscriptionNewAdminNotePostRequest
 */
-func (a *MerchantSubscriptionNoteAPIService) MerchantSubscriptionNewAdminNotePost(ctx context.Context) MerchantSubscriptionNoteAPIMerchantSubscriptionNewAdminNotePostRequest {
-	return MerchantSubscriptionNoteAPIMerchantSubscriptionNewAdminNotePostRequest{
+func (a *MerchantSubscriptionNoteAPIService) MerchantSubscriptionNewAdminNotePost(ctx context.Context) ApiMerchantSubscriptionNewAdminNotePostRequest {
+	return ApiMerchantSubscriptionNewAdminNotePostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -288,7 +288,7 @@ func (a *MerchantSubscriptionNoteAPIService) MerchantSubscriptionNewAdminNotePos
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantSubscriptionNoteAPIService) MerchantSubscriptionNewAdminNotePostExecute(r MerchantSubscriptionNoteAPIMerchantSubscriptionNewAdminNotePostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantSubscriptionNoteAPIService) MerchantSubscriptionNewAdminNotePostExecute(r ApiMerchantSubscriptionNewAdminNotePostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

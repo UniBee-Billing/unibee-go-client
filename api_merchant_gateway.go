@@ -22,18 +22,18 @@ import (
 // MerchantGatewayAPIService MerchantGatewayAPI service
 type MerchantGatewayAPIService service
 
-type MerchantGatewayAPIMerchantGatewayEditPostRequest struct {
+type ApiMerchantGatewayEditPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantGatewayAPIService
 	unibeeApiMerchantGatewayEditReq *UnibeeApiMerchantGatewayEditReq
 }
 
-func (r MerchantGatewayAPIMerchantGatewayEditPostRequest) UnibeeApiMerchantGatewayEditReq(unibeeApiMerchantGatewayEditReq UnibeeApiMerchantGatewayEditReq) MerchantGatewayAPIMerchantGatewayEditPostRequest {
+func (r ApiMerchantGatewayEditPostRequest) UnibeeApiMerchantGatewayEditReq(unibeeApiMerchantGatewayEditReq UnibeeApiMerchantGatewayEditReq) ApiMerchantGatewayEditPostRequest {
 	r.unibeeApiMerchantGatewayEditReq = &unibeeApiMerchantGatewayEditReq
 	return r
 }
 
-func (r MerchantGatewayAPIMerchantGatewayEditPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantGatewayEditPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantGatewayEditPostExecute(r)
 }
 
@@ -41,10 +41,10 @@ func (r MerchantGatewayAPIMerchantGatewayEditPostRequest) Execute() (*MerchantAu
 MerchantGatewayEditPost Gateway Webhook Edit
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantGatewayAPIMerchantGatewayEditPostRequest
+ @return ApiMerchantGatewayEditPostRequest
 */
-func (a *MerchantGatewayAPIService) MerchantGatewayEditPost(ctx context.Context) MerchantGatewayAPIMerchantGatewayEditPostRequest {
-	return MerchantGatewayAPIMerchantGatewayEditPostRequest{
+func (a *MerchantGatewayAPIService) MerchantGatewayEditPost(ctx context.Context) ApiMerchantGatewayEditPostRequest {
+	return ApiMerchantGatewayEditPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -52,7 +52,7 @@ func (a *MerchantGatewayAPIService) MerchantGatewayEditPost(ctx context.Context)
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantGatewayAPIService) MerchantGatewayEditPostExecute(r MerchantGatewayAPIMerchantGatewayEditPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantGatewayAPIService) MerchantGatewayEditPostExecute(r ApiMerchantGatewayEditPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -130,12 +130,12 @@ func (a *MerchantGatewayAPIService) MerchantGatewayEditPostExecute(r MerchantGat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantGatewayAPIMerchantGatewayListGetRequest struct {
+type ApiMerchantGatewayListGetRequest struct {
 	ctx context.Context
 	ApiService *MerchantGatewayAPIService
 }
 
-func (r MerchantGatewayAPIMerchantGatewayListGetRequest) Execute() (*MerchantGatewayListGet200Response, *http.Response, error) {
+func (r ApiMerchantGatewayListGetRequest) Execute() (*MerchantGatewayListGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantGatewayListGetExecute(r)
 }
 
@@ -143,10 +143,10 @@ func (r MerchantGatewayAPIMerchantGatewayListGetRequest) Execute() (*MerchantGat
 MerchantGatewayListGet Gateway List
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantGatewayAPIMerchantGatewayListGetRequest
+ @return ApiMerchantGatewayListGetRequest
 */
-func (a *MerchantGatewayAPIService) MerchantGatewayListGet(ctx context.Context) MerchantGatewayAPIMerchantGatewayListGetRequest {
-	return MerchantGatewayAPIMerchantGatewayListGetRequest{
+func (a *MerchantGatewayAPIService) MerchantGatewayListGet(ctx context.Context) ApiMerchantGatewayListGetRequest {
+	return ApiMerchantGatewayListGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -154,7 +154,7 @@ func (a *MerchantGatewayAPIService) MerchantGatewayListGet(ctx context.Context) 
 
 // Execute executes the request
 //  @return MerchantGatewayListGet200Response
-func (a *MerchantGatewayAPIService) MerchantGatewayListGetExecute(r MerchantGatewayAPIMerchantGatewayListGetRequest) (*MerchantGatewayListGet200Response, *http.Response, error) {
+func (a *MerchantGatewayAPIService) MerchantGatewayListGetExecute(r ApiMerchantGatewayListGetRequest) (*MerchantGatewayListGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -227,18 +227,18 @@ func (a *MerchantGatewayAPIService) MerchantGatewayListGetExecute(r MerchantGate
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantGatewayAPIMerchantGatewaySetupPostRequest struct {
+type ApiMerchantGatewaySetupPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantGatewayAPIService
 	unibeeApiMerchantGatewaySetupReq *UnibeeApiMerchantGatewaySetupReq
 }
 
-func (r MerchantGatewayAPIMerchantGatewaySetupPostRequest) UnibeeApiMerchantGatewaySetupReq(unibeeApiMerchantGatewaySetupReq UnibeeApiMerchantGatewaySetupReq) MerchantGatewayAPIMerchantGatewaySetupPostRequest {
+func (r ApiMerchantGatewaySetupPostRequest) UnibeeApiMerchantGatewaySetupReq(unibeeApiMerchantGatewaySetupReq UnibeeApiMerchantGatewaySetupReq) ApiMerchantGatewaySetupPostRequest {
 	r.unibeeApiMerchantGatewaySetupReq = &unibeeApiMerchantGatewaySetupReq
 	return r
 }
 
-func (r MerchantGatewayAPIMerchantGatewaySetupPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantGatewaySetupPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantGatewaySetupPostExecute(r)
 }
 
@@ -246,10 +246,10 @@ func (r MerchantGatewayAPIMerchantGatewaySetupPostRequest) Execute() (*MerchantA
 MerchantGatewaySetupPost Gateway Setup
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantGatewayAPIMerchantGatewaySetupPostRequest
+ @return ApiMerchantGatewaySetupPostRequest
 */
-func (a *MerchantGatewayAPIService) MerchantGatewaySetupPost(ctx context.Context) MerchantGatewayAPIMerchantGatewaySetupPostRequest {
-	return MerchantGatewayAPIMerchantGatewaySetupPostRequest{
+func (a *MerchantGatewayAPIService) MerchantGatewaySetupPost(ctx context.Context) ApiMerchantGatewaySetupPostRequest {
+	return ApiMerchantGatewaySetupPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -257,7 +257,7 @@ func (a *MerchantGatewayAPIService) MerchantGatewaySetupPost(ctx context.Context
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantGatewayAPIService) MerchantGatewaySetupPostExecute(r MerchantGatewayAPIMerchantGatewaySetupPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantGatewayAPIService) MerchantGatewaySetupPostExecute(r ApiMerchantGatewaySetupPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -335,18 +335,18 @@ func (a *MerchantGatewayAPIService) MerchantGatewaySetupPostExecute(r MerchantGa
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantGatewayAPIMerchantGatewaySetupWebhookPostRequest struct {
+type ApiMerchantGatewaySetupWebhookPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantGatewayAPIService
 	unibeeApiMerchantGatewaySetupWebhookReq *UnibeeApiMerchantGatewaySetupWebhookReq
 }
 
-func (r MerchantGatewayAPIMerchantGatewaySetupWebhookPostRequest) UnibeeApiMerchantGatewaySetupWebhookReq(unibeeApiMerchantGatewaySetupWebhookReq UnibeeApiMerchantGatewaySetupWebhookReq) MerchantGatewayAPIMerchantGatewaySetupWebhookPostRequest {
+func (r ApiMerchantGatewaySetupWebhookPostRequest) UnibeeApiMerchantGatewaySetupWebhookReq(unibeeApiMerchantGatewaySetupWebhookReq UnibeeApiMerchantGatewaySetupWebhookReq) ApiMerchantGatewaySetupWebhookPostRequest {
 	r.unibeeApiMerchantGatewaySetupWebhookReq = &unibeeApiMerchantGatewaySetupWebhookReq
 	return r
 }
 
-func (r MerchantGatewayAPIMerchantGatewaySetupWebhookPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantGatewaySetupWebhookPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantGatewaySetupWebhookPostExecute(r)
 }
 
@@ -354,10 +354,10 @@ func (r MerchantGatewayAPIMerchantGatewaySetupWebhookPostRequest) Execute() (*Me
 MerchantGatewaySetupWebhookPost Gateway Webhook Setup
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantGatewayAPIMerchantGatewaySetupWebhookPostRequest
+ @return ApiMerchantGatewaySetupWebhookPostRequest
 */
-func (a *MerchantGatewayAPIService) MerchantGatewaySetupWebhookPost(ctx context.Context) MerchantGatewayAPIMerchantGatewaySetupWebhookPostRequest {
-	return MerchantGatewayAPIMerchantGatewaySetupWebhookPostRequest{
+func (a *MerchantGatewayAPIService) MerchantGatewaySetupWebhookPost(ctx context.Context) ApiMerchantGatewaySetupWebhookPostRequest {
+	return ApiMerchantGatewaySetupWebhookPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -365,7 +365,7 @@ func (a *MerchantGatewayAPIService) MerchantGatewaySetupWebhookPost(ctx context.
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantGatewayAPIService) MerchantGatewaySetupWebhookPostExecute(r MerchantGatewayAPIMerchantGatewaySetupWebhookPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantGatewayAPIService) MerchantGatewaySetupWebhookPostExecute(r ApiMerchantGatewaySetupWebhookPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

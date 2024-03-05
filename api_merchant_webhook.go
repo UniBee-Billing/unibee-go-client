@@ -22,18 +22,18 @@ import (
 // MerchantWebhookAPIService MerchantWebhookAPI service
 type MerchantWebhookAPIService service
 
-type MerchantWebhookAPIMerchantWebhookDeleteEndpointPostRequest struct {
+type ApiMerchantWebhookDeleteEndpointPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantWebhookAPIService
 	unibeeApiMerchantWebhookDeleteEndpointReq *UnibeeApiMerchantWebhookDeleteEndpointReq
 }
 
-func (r MerchantWebhookAPIMerchantWebhookDeleteEndpointPostRequest) UnibeeApiMerchantWebhookDeleteEndpointReq(unibeeApiMerchantWebhookDeleteEndpointReq UnibeeApiMerchantWebhookDeleteEndpointReq) MerchantWebhookAPIMerchantWebhookDeleteEndpointPostRequest {
+func (r ApiMerchantWebhookDeleteEndpointPostRequest) UnibeeApiMerchantWebhookDeleteEndpointReq(unibeeApiMerchantWebhookDeleteEndpointReq UnibeeApiMerchantWebhookDeleteEndpointReq) ApiMerchantWebhookDeleteEndpointPostRequest {
 	r.unibeeApiMerchantWebhookDeleteEndpointReq = &unibeeApiMerchantWebhookDeleteEndpointReq
 	return r
 }
 
-func (r MerchantWebhookAPIMerchantWebhookDeleteEndpointPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantWebhookDeleteEndpointPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantWebhookDeleteEndpointPostExecute(r)
 }
 
@@ -41,10 +41,10 @@ func (r MerchantWebhookAPIMerchantWebhookDeleteEndpointPostRequest) Execute() (*
 MerchantWebhookDeleteEndpointPost Merchant Delete Webhook Endpoint
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantWebhookAPIMerchantWebhookDeleteEndpointPostRequest
+ @return ApiMerchantWebhookDeleteEndpointPostRequest
 */
-func (a *MerchantWebhookAPIService) MerchantWebhookDeleteEndpointPost(ctx context.Context) MerchantWebhookAPIMerchantWebhookDeleteEndpointPostRequest {
-	return MerchantWebhookAPIMerchantWebhookDeleteEndpointPostRequest{
+func (a *MerchantWebhookAPIService) MerchantWebhookDeleteEndpointPost(ctx context.Context) ApiMerchantWebhookDeleteEndpointPostRequest {
+	return ApiMerchantWebhookDeleteEndpointPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -52,7 +52,7 @@ func (a *MerchantWebhookAPIService) MerchantWebhookDeleteEndpointPost(ctx contex
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantWebhookAPIService) MerchantWebhookDeleteEndpointPostExecute(r MerchantWebhookAPIMerchantWebhookDeleteEndpointPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantWebhookAPIService) MerchantWebhookDeleteEndpointPostExecute(r ApiMerchantWebhookDeleteEndpointPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -130,12 +130,12 @@ func (a *MerchantWebhookAPIService) MerchantWebhookDeleteEndpointPostExecute(r M
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantWebhookAPIMerchantWebhookEndpointListGetRequest struct {
+type ApiMerchantWebhookEndpointListGetRequest struct {
 	ctx context.Context
 	ApiService *MerchantWebhookAPIService
 }
 
-func (r MerchantWebhookAPIMerchantWebhookEndpointListGetRequest) Execute() (*MerchantWebhookEndpointListGet200Response, *http.Response, error) {
+func (r ApiMerchantWebhookEndpointListGetRequest) Execute() (*MerchantWebhookEndpointListGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantWebhookEndpointListGetExecute(r)
 }
 
@@ -143,10 +143,10 @@ func (r MerchantWebhookAPIMerchantWebhookEndpointListGetRequest) Execute() (*Mer
 MerchantWebhookEndpointListGet Merchant Webhook Endpoint list
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantWebhookAPIMerchantWebhookEndpointListGetRequest
+ @return ApiMerchantWebhookEndpointListGetRequest
 */
-func (a *MerchantWebhookAPIService) MerchantWebhookEndpointListGet(ctx context.Context) MerchantWebhookAPIMerchantWebhookEndpointListGetRequest {
-	return MerchantWebhookAPIMerchantWebhookEndpointListGetRequest{
+func (a *MerchantWebhookAPIService) MerchantWebhookEndpointListGet(ctx context.Context) ApiMerchantWebhookEndpointListGetRequest {
+	return ApiMerchantWebhookEndpointListGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -154,7 +154,7 @@ func (a *MerchantWebhookAPIService) MerchantWebhookEndpointListGet(ctx context.C
 
 // Execute executes the request
 //  @return MerchantWebhookEndpointListGet200Response
-func (a *MerchantWebhookAPIService) MerchantWebhookEndpointListGetExecute(r MerchantWebhookAPIMerchantWebhookEndpointListGetRequest) (*MerchantWebhookEndpointListGet200Response, *http.Response, error) {
+func (a *MerchantWebhookAPIService) MerchantWebhookEndpointListGetExecute(r ApiMerchantWebhookEndpointListGetRequest) (*MerchantWebhookEndpointListGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -227,7 +227,7 @@ func (a *MerchantWebhookAPIService) MerchantWebhookEndpointListGetExecute(r Merc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantWebhookAPIMerchantWebhookEndpointLogListGetRequest struct {
+type ApiMerchantWebhookEndpointLogListGetRequest struct {
 	ctx context.Context
 	ApiService *MerchantWebhookAPIService
 	endpointId *int64
@@ -236,24 +236,24 @@ type MerchantWebhookAPIMerchantWebhookEndpointLogListGetRequest struct {
 }
 
 // EndpointId
-func (r MerchantWebhookAPIMerchantWebhookEndpointLogListGetRequest) EndpointId(endpointId int64) MerchantWebhookAPIMerchantWebhookEndpointLogListGetRequest {
+func (r ApiMerchantWebhookEndpointLogListGetRequest) EndpointId(endpointId int64) ApiMerchantWebhookEndpointLogListGetRequest {
 	r.endpointId = &endpointId
 	return r
 }
 
 // Page, Start WIth 0
-func (r MerchantWebhookAPIMerchantWebhookEndpointLogListGetRequest) Page(page int32) MerchantWebhookAPIMerchantWebhookEndpointLogListGetRequest {
+func (r ApiMerchantWebhookEndpointLogListGetRequest) Page(page int32) ApiMerchantWebhookEndpointLogListGetRequest {
 	r.page = &page
 	return r
 }
 
 // Count Of Page
-func (r MerchantWebhookAPIMerchantWebhookEndpointLogListGetRequest) Count(count int32) MerchantWebhookAPIMerchantWebhookEndpointLogListGetRequest {
+func (r ApiMerchantWebhookEndpointLogListGetRequest) Count(count int32) ApiMerchantWebhookEndpointLogListGetRequest {
 	r.count = &count
 	return r
 }
 
-func (r MerchantWebhookAPIMerchantWebhookEndpointLogListGetRequest) Execute() (*MerchantWebhookEndpointLogListGet200Response, *http.Response, error) {
+func (r ApiMerchantWebhookEndpointLogListGetRequest) Execute() (*MerchantWebhookEndpointLogListGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantWebhookEndpointLogListGetExecute(r)
 }
 
@@ -261,10 +261,10 @@ func (r MerchantWebhookAPIMerchantWebhookEndpointLogListGetRequest) Execute() (*
 MerchantWebhookEndpointLogListGet Merchant Webhook Endpoint Log list
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantWebhookAPIMerchantWebhookEndpointLogListGetRequest
+ @return ApiMerchantWebhookEndpointLogListGetRequest
 */
-func (a *MerchantWebhookAPIService) MerchantWebhookEndpointLogListGet(ctx context.Context) MerchantWebhookAPIMerchantWebhookEndpointLogListGetRequest {
-	return MerchantWebhookAPIMerchantWebhookEndpointLogListGetRequest{
+func (a *MerchantWebhookAPIService) MerchantWebhookEndpointLogListGet(ctx context.Context) ApiMerchantWebhookEndpointLogListGetRequest {
+	return ApiMerchantWebhookEndpointLogListGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -272,7 +272,7 @@ func (a *MerchantWebhookAPIService) MerchantWebhookEndpointLogListGet(ctx contex
 
 // Execute executes the request
 //  @return MerchantWebhookEndpointLogListGet200Response
-func (a *MerchantWebhookAPIService) MerchantWebhookEndpointLogListGetExecute(r MerchantWebhookAPIMerchantWebhookEndpointLogListGetRequest) (*MerchantWebhookEndpointLogListGet200Response, *http.Response, error) {
+func (a *MerchantWebhookAPIService) MerchantWebhookEndpointLogListGetExecute(r ApiMerchantWebhookEndpointLogListGetRequest) (*MerchantWebhookEndpointLogListGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -355,12 +355,12 @@ func (a *MerchantWebhookAPIService) MerchantWebhookEndpointLogListGetExecute(r M
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantWebhookAPIMerchantWebhookEventListGetRequest struct {
+type ApiMerchantWebhookEventListGetRequest struct {
 	ctx context.Context
 	ApiService *MerchantWebhookAPIService
 }
 
-func (r MerchantWebhookAPIMerchantWebhookEventListGetRequest) Execute() (*MerchantWebhookEventListGet200Response, *http.Response, error) {
+func (r ApiMerchantWebhookEventListGetRequest) Execute() (*MerchantWebhookEventListGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantWebhookEventListGetExecute(r)
 }
 
@@ -368,10 +368,10 @@ func (r MerchantWebhookAPIMerchantWebhookEventListGetRequest) Execute() (*Mercha
 MerchantWebhookEventListGet Webhook Event list
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantWebhookAPIMerchantWebhookEventListGetRequest
+ @return ApiMerchantWebhookEventListGetRequest
 */
-func (a *MerchantWebhookAPIService) MerchantWebhookEventListGet(ctx context.Context) MerchantWebhookAPIMerchantWebhookEventListGetRequest {
-	return MerchantWebhookAPIMerchantWebhookEventListGetRequest{
+func (a *MerchantWebhookAPIService) MerchantWebhookEventListGet(ctx context.Context) ApiMerchantWebhookEventListGetRequest {
+	return ApiMerchantWebhookEventListGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -379,7 +379,7 @@ func (a *MerchantWebhookAPIService) MerchantWebhookEventListGet(ctx context.Cont
 
 // Execute executes the request
 //  @return MerchantWebhookEventListGet200Response
-func (a *MerchantWebhookAPIService) MerchantWebhookEventListGetExecute(r MerchantWebhookAPIMerchantWebhookEventListGetRequest) (*MerchantWebhookEventListGet200Response, *http.Response, error) {
+func (a *MerchantWebhookAPIService) MerchantWebhookEventListGetExecute(r ApiMerchantWebhookEventListGetRequest) (*MerchantWebhookEventListGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -452,18 +452,18 @@ func (a *MerchantWebhookAPIService) MerchantWebhookEventListGetExecute(r Merchan
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantWebhookAPIMerchantWebhookNewEndpointPostRequest struct {
+type ApiMerchantWebhookNewEndpointPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantWebhookAPIService
 	unibeeApiMerchantWebhookNewEndpointReq *UnibeeApiMerchantWebhookNewEndpointReq
 }
 
-func (r MerchantWebhookAPIMerchantWebhookNewEndpointPostRequest) UnibeeApiMerchantWebhookNewEndpointReq(unibeeApiMerchantWebhookNewEndpointReq UnibeeApiMerchantWebhookNewEndpointReq) MerchantWebhookAPIMerchantWebhookNewEndpointPostRequest {
+func (r ApiMerchantWebhookNewEndpointPostRequest) UnibeeApiMerchantWebhookNewEndpointReq(unibeeApiMerchantWebhookNewEndpointReq UnibeeApiMerchantWebhookNewEndpointReq) ApiMerchantWebhookNewEndpointPostRequest {
 	r.unibeeApiMerchantWebhookNewEndpointReq = &unibeeApiMerchantWebhookNewEndpointReq
 	return r
 }
 
-func (r MerchantWebhookAPIMerchantWebhookNewEndpointPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantWebhookNewEndpointPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantWebhookNewEndpointPostExecute(r)
 }
 
@@ -471,10 +471,10 @@ func (r MerchantWebhookAPIMerchantWebhookNewEndpointPostRequest) Execute() (*Mer
 MerchantWebhookNewEndpointPost Merchant New Webhook Endpoint
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantWebhookAPIMerchantWebhookNewEndpointPostRequest
+ @return ApiMerchantWebhookNewEndpointPostRequest
 */
-func (a *MerchantWebhookAPIService) MerchantWebhookNewEndpointPost(ctx context.Context) MerchantWebhookAPIMerchantWebhookNewEndpointPostRequest {
-	return MerchantWebhookAPIMerchantWebhookNewEndpointPostRequest{
+func (a *MerchantWebhookAPIService) MerchantWebhookNewEndpointPost(ctx context.Context) ApiMerchantWebhookNewEndpointPostRequest {
+	return ApiMerchantWebhookNewEndpointPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -482,7 +482,7 @@ func (a *MerchantWebhookAPIService) MerchantWebhookNewEndpointPost(ctx context.C
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantWebhookAPIService) MerchantWebhookNewEndpointPostExecute(r MerchantWebhookAPIMerchantWebhookNewEndpointPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantWebhookAPIService) MerchantWebhookNewEndpointPostExecute(r ApiMerchantWebhookNewEndpointPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -560,18 +560,18 @@ func (a *MerchantWebhookAPIService) MerchantWebhookNewEndpointPostExecute(r Merc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantWebhookAPIMerchantWebhookUpdateEndpointPostRequest struct {
+type ApiMerchantWebhookUpdateEndpointPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantWebhookAPIService
 	unibeeApiMerchantWebhookUpdateEndpointReq *UnibeeApiMerchantWebhookUpdateEndpointReq
 }
 
-func (r MerchantWebhookAPIMerchantWebhookUpdateEndpointPostRequest) UnibeeApiMerchantWebhookUpdateEndpointReq(unibeeApiMerchantWebhookUpdateEndpointReq UnibeeApiMerchantWebhookUpdateEndpointReq) MerchantWebhookAPIMerchantWebhookUpdateEndpointPostRequest {
+func (r ApiMerchantWebhookUpdateEndpointPostRequest) UnibeeApiMerchantWebhookUpdateEndpointReq(unibeeApiMerchantWebhookUpdateEndpointReq UnibeeApiMerchantWebhookUpdateEndpointReq) ApiMerchantWebhookUpdateEndpointPostRequest {
 	r.unibeeApiMerchantWebhookUpdateEndpointReq = &unibeeApiMerchantWebhookUpdateEndpointReq
 	return r
 }
 
-func (r MerchantWebhookAPIMerchantWebhookUpdateEndpointPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantWebhookUpdateEndpointPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantWebhookUpdateEndpointPostExecute(r)
 }
 
@@ -579,10 +579,10 @@ func (r MerchantWebhookAPIMerchantWebhookUpdateEndpointPostRequest) Execute() (*
 MerchantWebhookUpdateEndpointPost Merchant Update Webhook Endpoint
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantWebhookAPIMerchantWebhookUpdateEndpointPostRequest
+ @return ApiMerchantWebhookUpdateEndpointPostRequest
 */
-func (a *MerchantWebhookAPIService) MerchantWebhookUpdateEndpointPost(ctx context.Context) MerchantWebhookAPIMerchantWebhookUpdateEndpointPostRequest {
-	return MerchantWebhookAPIMerchantWebhookUpdateEndpointPostRequest{
+func (a *MerchantWebhookAPIService) MerchantWebhookUpdateEndpointPost(ctx context.Context) ApiMerchantWebhookUpdateEndpointPostRequest {
+	return ApiMerchantWebhookUpdateEndpointPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -590,7 +590,7 @@ func (a *MerchantWebhookAPIService) MerchantWebhookUpdateEndpointPost(ctx contex
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantWebhookAPIService) MerchantWebhookUpdateEndpointPostExecute(r MerchantWebhookAPIMerchantWebhookUpdateEndpointPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantWebhookAPIService) MerchantWebhookUpdateEndpointPostExecute(r ApiMerchantWebhookUpdateEndpointPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

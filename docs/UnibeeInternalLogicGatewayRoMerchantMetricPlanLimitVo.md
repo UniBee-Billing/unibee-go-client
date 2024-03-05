@@ -6,12 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **GmtModify** | Pointer to **int64** | update time | [optional] 
-**Id** | Pointer to **int32** | id | [optional] 
-**MerchantId** | Pointer to **int32** | merchantId | [optional] 
+**Id** | Pointer to **int64** | id | [optional] 
+**MerchantId** | Pointer to **int64** | merchantId | [optional] 
 **MerchantMetricVo** | Pointer to [**UnibeeInternalLogicGatewayRoMerchantMetricVo**](UnibeeInternalLogicGatewayRoMerchantMetricVo.md) |  | [optional] 
 **MetricId** | Pointer to **int64** | metricId | [optional] 
-**MetricLimit** | Pointer to **int32** | plan metric limit | [optional] 
-**PlanId** | Pointer to **int32** | plan_id | [optional] 
+**MetricLimit** | Pointer to **int64** | plan metric limit | [optional] 
+**PlanId** | Pointer to **int64** | plan_id | [optional] 
 
 ## Methods
 
@@ -84,20 +84,20 @@ HasGmtModify returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetId() int32`
+`func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetIdOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) SetId(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -109,20 +109,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetMerchantId
 
-`func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetMerchantId() int32`
+`func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetMerchantId() int64`
 
 GetMerchantId returns the MerchantId field if non-nil, zero value otherwise.
 
 ### GetMerchantIdOk
 
-`func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetMerchantIdOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetMerchantIdOk() (*int64, bool)`
 
 GetMerchantIdOk returns a tuple with the MerchantId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantId
 
-`func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) SetMerchantId(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) SetMerchantId(v int64)`
 
 SetMerchantId sets MerchantId field to given value.
 
@@ -184,20 +184,20 @@ HasMetricId returns a boolean if a field has been set.
 
 ### GetMetricLimit
 
-`func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetMetricLimit() int32`
+`func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetMetricLimit() int64`
 
 GetMetricLimit returns the MetricLimit field if non-nil, zero value otherwise.
 
 ### GetMetricLimitOk
 
-`func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetMetricLimitOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetMetricLimitOk() (*int64, bool)`
 
 GetMetricLimitOk returns a tuple with the MetricLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetricLimit
 
-`func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) SetMetricLimit(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) SetMetricLimit(v int64)`
 
 SetMetricLimit sets MetricLimit field to given value.
 
@@ -209,20 +209,20 @@ HasMetricLimit returns a boolean if a field has been set.
 
 ### GetPlanId
 
-`func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetPlanId() int32`
+`func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetPlanId() int64`
 
 GetPlanId returns the PlanId field if non-nil, zero value otherwise.
 
 ### GetPlanIdOk
 
-`func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetPlanIdOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetPlanIdOk() (*int64, bool)`
 
 GetPlanIdOk returns a tuple with the PlanId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlanId
 
-`func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) SetPlanId(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) SetPlanId(v int64)`
 
 SetPlanId sets PlanId field to given value.
 

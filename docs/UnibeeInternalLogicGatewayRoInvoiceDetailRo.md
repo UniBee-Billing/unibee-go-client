@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Data** | Pointer to **string** | Data | [optional] 
 **DiscountAmount** | Pointer to **int64** | DiscountAmount,Cents | [optional] 
 **Gateway** | Pointer to [**UnibeeInternalLogicGatewayRoGatewaySimplify**](UnibeeInternalLogicGatewayRoGatewaySimplify.md) |  | [optional] 
-**GatewayId** | Pointer to **int32** | Id | [optional] 
+**GatewayId** | Pointer to **int64** | Id | [optional] 
 **GatewayInvoiceId** | Pointer to **string** | GatewayInvoiceId | [optional] 
 **GatewayInvoicePdf** | Pointer to **string** | GatewayInvoicePdf pdf | [optional] 
 **GatewayPaymentId** | Pointer to **string** | GatewayPaymentId PaymentId | [optional] 
@@ -16,14 +16,14 @@ Name | Type | Description | Notes
 **GatewayUserId** | Pointer to **string** | GatewayUserId Id | [optional] 
 **GmtCreate** | Pointer to **string** | GmtCreate | [optional] 
 **GmtModify** | Pointer to **string** | GmtModify | [optional] 
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **InvoiceId** | Pointer to **string** | InvoiceId | [optional] 
 **InvoiceName** | Pointer to **string** | InvoiceName | [optional] 
 **IsDeleted** | Pointer to **int32** |  | [optional] 
 **Lines** | Pointer to [**[]UnibeeInternalLogicGatewayRoInvoiceItemDetailRo**](UnibeeInternalLogicGatewayRoInvoiceItemDetailRo.md) | lines json data | [optional] 
 **Link** | Pointer to **string** | Link | [optional] 
 **Merchant** | Pointer to [**UnibeeInternalModelEntityOverseaPayMerchant**](UnibeeInternalModelEntityOverseaPayMerchant.md) |  | [optional] 
-**MerchantId** | Pointer to **int32** | MerchantId | [optional] 
+**MerchantId** | Pointer to **int64** | MerchantId | [optional] 
 **Payment** | Pointer to [**UnibeeInternalModelEntityOverseaPayPayment**](UnibeeInternalModelEntityOverseaPayPayment.md) |  | [optional] 
 **PaymentId** | Pointer to **string** | PaymentId | [optional] 
 **PeriodEnd** | Pointer to **int64** | period_end | [optional] 
@@ -169,20 +169,20 @@ HasGateway returns a boolean if a field has been set.
 
 ### GetGatewayId
 
-`func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetGatewayId() int32`
+`func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetGatewayId() int64`
 
 GetGatewayId returns the GatewayId field if non-nil, zero value otherwise.
 
 ### GetGatewayIdOk
 
-`func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetGatewayIdOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetGatewayIdOk() (*int64, bool)`
 
 GetGatewayIdOk returns a tuple with the GatewayId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGatewayId
 
-`func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) SetGatewayId(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) SetGatewayId(v int64)`
 
 SetGatewayId sets GatewayId field to given value.
 
@@ -369,20 +369,20 @@ HasGmtModify returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetId() int32`
+`func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetIdOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) SetId(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -544,20 +544,20 @@ HasMerchant returns a boolean if a field has been set.
 
 ### GetMerchantId
 
-`func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetMerchantId() int32`
+`func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetMerchantId() int64`
 
 GetMerchantId returns the MerchantId field if non-nil, zero value otherwise.
 
 ### GetMerchantIdOk
 
-`func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetMerchantIdOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetMerchantIdOk() (*int64, bool)`
 
 GetMerchantIdOk returns a tuple with the MerchantId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantId
 
-`func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) SetMerchantId(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) SetMerchantId(v int64)`
 
 SetMerchantId sets MerchantId field to given value.
 

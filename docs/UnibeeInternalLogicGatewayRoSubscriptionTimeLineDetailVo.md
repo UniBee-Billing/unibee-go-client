@@ -7,15 +7,15 @@ Name | Type | Description | Notes
 **Addons** | Pointer to [**[]UnibeeInternalLogicGatewayRoPlanAddonVo**](UnibeeInternalLogicGatewayRoPlanAddonVo.md) | Addon | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Currency** | Pointer to **string** | currency | [optional] 
-**GatewayId** | Pointer to **int32** | gateway_id | [optional] 
+**GatewayId** | Pointer to **int64** | gateway_id | [optional] 
 **InvoiceId** | Pointer to **string** | invoice id | [optional] 
-**MerchantId** | Pointer to **int32** | merchant id | [optional] 
+**MerchantId** | Pointer to **int64** | merchant id | [optional] 
 **PeriodEnd** | Pointer to **int64** | period_end | [optional] 
 **PeriodEndTime** | Pointer to **string** | period end (datatime) | [optional] 
 **PeriodStart** | Pointer to **int64** | period_start | [optional] 
 **PeriodStartTime** | Pointer to **string** | period start (datetime) | [optional] 
 **Plan** | Pointer to [**UnibeeInternalLogicGatewayRoPlanSimplify**](UnibeeInternalLogicGatewayRoPlanSimplify.md) |  | [optional] 
-**PlanId** | Pointer to **int32** | PlanId | [optional] 
+**PlanId** | Pointer to **int64** | PlanId | [optional] 
 **Quantity** | Pointer to **int64** | quantity | [optional] 
 **SubscriptionId** | Pointer to **string** | subscription id | [optional] 
 **UniqueId** | Pointer to **string** | unique id | [optional] 
@@ -117,20 +117,20 @@ HasCurrency returns a boolean if a field has been set.
 
 ### GetGatewayId
 
-`func (o *UnibeeInternalLogicGatewayRoSubscriptionTimeLineDetailVo) GetGatewayId() int32`
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionTimeLineDetailVo) GetGatewayId() int64`
 
 GetGatewayId returns the GatewayId field if non-nil, zero value otherwise.
 
 ### GetGatewayIdOk
 
-`func (o *UnibeeInternalLogicGatewayRoSubscriptionTimeLineDetailVo) GetGatewayIdOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionTimeLineDetailVo) GetGatewayIdOk() (*int64, bool)`
 
 GetGatewayIdOk returns a tuple with the GatewayId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGatewayId
 
-`func (o *UnibeeInternalLogicGatewayRoSubscriptionTimeLineDetailVo) SetGatewayId(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionTimeLineDetailVo) SetGatewayId(v int64)`
 
 SetGatewayId sets GatewayId field to given value.
 
@@ -167,20 +167,20 @@ HasInvoiceId returns a boolean if a field has been set.
 
 ### GetMerchantId
 
-`func (o *UnibeeInternalLogicGatewayRoSubscriptionTimeLineDetailVo) GetMerchantId() int32`
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionTimeLineDetailVo) GetMerchantId() int64`
 
 GetMerchantId returns the MerchantId field if non-nil, zero value otherwise.
 
 ### GetMerchantIdOk
 
-`func (o *UnibeeInternalLogicGatewayRoSubscriptionTimeLineDetailVo) GetMerchantIdOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionTimeLineDetailVo) GetMerchantIdOk() (*int64, bool)`
 
 GetMerchantIdOk returns a tuple with the MerchantId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantId
 
-`func (o *UnibeeInternalLogicGatewayRoSubscriptionTimeLineDetailVo) SetMerchantId(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionTimeLineDetailVo) SetMerchantId(v int64)`
 
 SetMerchantId sets MerchantId field to given value.
 
@@ -317,20 +317,20 @@ HasPlan returns a boolean if a field has been set.
 
 ### GetPlanId
 
-`func (o *UnibeeInternalLogicGatewayRoSubscriptionTimeLineDetailVo) GetPlanId() int32`
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionTimeLineDetailVo) GetPlanId() int64`
 
 GetPlanId returns the PlanId field if non-nil, zero value otherwise.
 
 ### GetPlanIdOk
 
-`func (o *UnibeeInternalLogicGatewayRoSubscriptionTimeLineDetailVo) GetPlanIdOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionTimeLineDetailVo) GetPlanIdOk() (*int64, bool)`
 
 GetPlanIdOk returns a tuple with the PlanId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlanId
 
-`func (o *UnibeeInternalLogicGatewayRoSubscriptionTimeLineDetailVo) SetPlanId(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionTimeLineDetailVo) SetPlanId(v int64)`
 
 SetPlanId sets PlanId field to given value.
 

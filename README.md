@@ -21,7 +21,7 @@ go get golang.org/x/net/context
 Put the package under your project folder and add the following in import:
 
 ```go
-import openapi "github.com/GIT_USER_ID/GIT_REPO_ID"
+import openapi "github.com/UniB-e-e/unibee-go-client"
 ```
 
 To use a proxy, set the environment variable `HTTP_PROXY`:
@@ -126,8 +126,6 @@ Class | Method | HTTP request | Description
 *MerchantMetricAPI* | [**MerchantMetricPlanLimitDeletePost**](docs/MerchantMetricAPI.md#merchantmetricplanlimitdeletepost) | **Post** /merchant/metric/plan/limit/delete | Delete Merchant Metric Plan TotalLimit
 *MerchantMetricAPI* | [**MerchantMetricPlanLimitEditPost**](docs/MerchantMetricAPI.md#merchantmetricplanlimiteditpost) | **Post** /merchant/metric/plan/limit/edit | Edit Merchant Metric Plan TotalLimit
 *MerchantMetricAPI* | [**MerchantMetricPlanLimitNewPost**](docs/MerchantMetricAPI.md#merchantmetricplanlimitnewpost) | **Post** /merchant/metric/plan/limit/new | New Merchant Metric Plan TotalLimit
-*MerchantMetricAPI* | [**MerchantMetricUserStatGet**](docs/MerchantMetricAPI.md#merchantmetricuserstatget) | **Get** /merchant/metric/user/stat | Query User Metric Stat
-*MerchantMetricAPI* | [**MerchantMetricUserStatPost**](docs/MerchantMetricAPI.md#merchantmetricuserstatpost) | **Post** /merchant/metric/user/stat | Query User Metric Stat
 *MerchantPaymentTimelineAPI* | [**MerchantPaymentPaymentTimelineListGet**](docs/MerchantPaymentTimelineAPI.md#merchantpaymentpaymenttimelinelistget) | **Get** /merchant/payment/payment_timeline_list | Payment TimeLine List
 *MerchantPaymentTimelineAPI* | [**MerchantPaymentPaymentTimelineListPost**](docs/MerchantPaymentTimelineAPI.md#merchantpaymentpaymenttimelinelistpost) | **Post** /merchant/payment/payment_timeline_list | Payment TimeLine List
 *MerchantPlanAPI* | [**MerchantPlanActivatePost**](docs/MerchantPlanAPI.md#merchantplanactivatepost) | **Post** /merchant/plan/activate | Plan Sync To Gateway And Activate
@@ -174,6 +172,7 @@ Class | Method | HTTP request | Description
 *MerchantUserAPI* | [**MerchantUserSearchGet**](docs/MerchantUserAPI.md#merchantusersearchget) | **Get** /merchant/user/search | User Search
 *MerchantUserAPI* | [**MerchantUserSearchPost**](docs/MerchantUserAPI.md#merchantusersearchpost) | **Post** /merchant/user/search | User Search
 *MerchantUserAPI* | [**MerchantUserUpdatePost**](docs/MerchantUserAPI.md#merchantuserupdatepost) | **Post** /merchant/user/update | Update User Profile
+*MerchantUserMetricAPI* | [**MerchantMetricUserMetricGet**](docs/MerchantUserMetricAPI.md#merchantmetricusermetricget) | **Get** /merchant/metric/user/metric | Query User Metric
 *MerchantVatAPI* | [**MerchantVatCountryListGet**](docs/MerchantVatAPI.md#merchantvatcountrylistget) | **Get** /merchant/vat/country_list | Vat Country List
 *MerchantVatAPI* | [**MerchantVatCountryListPost**](docs/MerchantVatAPI.md#merchantvatcountrylistpost) | **Post** /merchant/vat/country_list | Vat Country List
 *MerchantVatAPI* | [**MerchantVatSetupGatewayPost**](docs/MerchantVatAPI.md#merchantvatsetupgatewaypost) | **Post** /merchant/vat/setup_gateway | Vat Gateway Setup
@@ -218,8 +217,8 @@ Class | Method | HTTP request | Description
  - [MerchantMetricListGet200ResponseData](docs/MerchantMetricListGet200ResponseData.md)
  - [MerchantMetricPlanLimitDeletePost200Response](docs/MerchantMetricPlanLimitDeletePost200Response.md)
  - [MerchantMetricPlanLimitDeletePost200ResponseData](docs/MerchantMetricPlanLimitDeletePost200ResponseData.md)
- - [MerchantMetricUserStatGet200Response](docs/MerchantMetricUserStatGet200Response.md)
- - [MerchantMetricUserStatGet200ResponseData](docs/MerchantMetricUserStatGet200ResponseData.md)
+ - [MerchantMetricUserMetricGet200Response](docs/MerchantMetricUserMetricGet200Response.md)
+ - [MerchantMetricUserMetricGet200ResponseData](docs/MerchantMetricUserMetricGet200ResponseData.md)
  - [MerchantOssFilePost200Response](docs/MerchantOssFilePost200Response.md)
  - [MerchantOssFilePost200ResponseData](docs/MerchantOssFilePost200ResponseData.md)
  - [MerchantPaymentPaymentTimelineListGet200Response](docs/MerchantPaymentPaymentTimelineListGet200Response.md)
@@ -324,8 +323,8 @@ Class | Method | HTTP request | Description
  - [UnibeeApiMerchantMetricNewPlanLimitRes](docs/UnibeeApiMerchantMetricNewPlanLimitRes.md)
  - [UnibeeApiMerchantMetricNewReq](docs/UnibeeApiMerchantMetricNewReq.md)
  - [UnibeeApiMerchantMetricNewRes](docs/UnibeeApiMerchantMetricNewRes.md)
- - [UnibeeApiMerchantMetricUserStatReq](docs/UnibeeApiMerchantMetricUserStatReq.md)
- - [UnibeeApiMerchantMetricUserStatRes](docs/UnibeeApiMerchantMetricUserStatRes.md)
+ - [UnibeeApiMerchantMetricUserMetricReq](docs/UnibeeApiMerchantMetricUserMetricReq.md)
+ - [UnibeeApiMerchantMetricUserMetricRes](docs/UnibeeApiMerchantMetricUserMetricRes.md)
  - [UnibeeApiMerchantOssFileUploadRes](docs/UnibeeApiMerchantOssFileUploadRes.md)
  - [UnibeeApiMerchantPaymentTimeLineListReq](docs/UnibeeApiMerchantPaymentTimeLineListReq.md)
  - [UnibeeApiMerchantPaymentTimeLineListRes](docs/UnibeeApiMerchantPaymentTimeLineListRes.md)
@@ -422,7 +421,7 @@ Class | Method | HTTP request | Description
  - [UnibeeInternalLogicGatewayRoSubscriptionTimeLineDetailVo](docs/UnibeeInternalLogicGatewayRoSubscriptionTimeLineDetailVo.md)
  - [UnibeeInternalLogicGatewayRoUserAccountSimplify](docs/UnibeeInternalLogicGatewayRoUserAccountSimplify.md)
  - [UnibeeInternalLogicGatewayRoUserMerchantMetricStat](docs/UnibeeInternalLogicGatewayRoUserMerchantMetricStat.md)
- - [UnibeeInternalLogicGatewayRoUserMetricStat](docs/UnibeeInternalLogicGatewayRoUserMetricStat.md)
+ - [UnibeeInternalLogicGatewayRoUserMetric](docs/UnibeeInternalLogicGatewayRoUserMetric.md)
  - [UnibeeInternalLogicGatewayRoValidResult](docs/UnibeeInternalLogicGatewayRoValidResult.md)
  - [UnibeeInternalLogicGatewayRoVatCountryRate](docs/UnibeeInternalLogicGatewayRoVatCountryRate.md)
  - [UnibeeInternalLogicWebhookMerchantWebhookEndpointVo](docs/UnibeeInternalLogicWebhookMerchantWebhookEndpointVo.md)

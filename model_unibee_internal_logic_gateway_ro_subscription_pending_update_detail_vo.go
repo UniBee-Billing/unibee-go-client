@@ -32,7 +32,7 @@ type UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo struct {
 	// effect_immediate=0, EffectTime unit_time
 	EffectTime *int64 `json:"effectTime,omitempty"`
 	// Id
-	GatewayId *int32 `json:"gatewayId,omitempty"`
+	GatewayId *int64 `json:"gatewayId,omitempty"`
 	// GmtCreate
 	GmtCreate *string `json:"gmtCreate,omitempty"`
 	// GmtModify
@@ -40,7 +40,7 @@ type UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo struct {
 	// Link
 	Link *string `json:"link,omitempty"`
 	// MerchantId
-	MerchantId *int32 `json:"merchantId,omitempty"`
+	MerchantId *int64 `json:"merchantId,omitempty"`
 	MerchantMember *UnibeeInternalLogicGatewayRoMerchantMemberSimplify `json:"merchantMember,omitempty"`
 	// Update Note
 	Note *string `json:"note,omitempty"`
@@ -48,7 +48,7 @@ type UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo struct {
 	Paid *int32 `json:"paid,omitempty"`
 	Plan *UnibeeInternalLogicGatewayRoPlanSimplify `json:"plan,omitempty"`
 	// PlanId
-	PlanId *int32 `json:"planId,omitempty"`
+	PlanId *int64 `json:"planId,omitempty"`
 	// ProrationAmount,Cents
 	ProrationAmount *int64 `json:"prorationAmount,omitempty"`
 	// quantity
@@ -67,7 +67,7 @@ type UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo struct {
 	UpdateCurrency *string `json:"updateCurrency,omitempty"`
 	UpdatePlan *UnibeeInternalLogicGatewayRoPlanSimplify `json:"updatePlan,omitempty"`
 	// UpdatePlanId
-	UpdatePlanId *int32 `json:"updatePlanId,omitempty"`
+	UpdatePlanId *int64 `json:"updatePlanId,omitempty"`
 	// UpdateQuantity
 	UpdateQuantity *int64 `json:"updateQuantity,omitempty"`
 	// UpdateSubscriptionId
@@ -286,9 +286,9 @@ func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) SetEffec
 }
 
 // GetGatewayId returns the GatewayId field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetGatewayId() int32 {
+func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetGatewayId() int64 {
 	if o == nil || IsNil(o.GatewayId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.GatewayId
@@ -296,7 +296,7 @@ func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetGatew
 
 // GetGatewayIdOk returns a tuple with the GatewayId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetGatewayIdOk() (*int32, bool) {
+func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetGatewayIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.GatewayId) {
 		return nil, false
 	}
@@ -312,8 +312,8 @@ func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) HasGatew
 	return false
 }
 
-// SetGatewayId gets a reference to the given int32 and assigns it to the GatewayId field.
-func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) SetGatewayId(v int32) {
+// SetGatewayId gets a reference to the given int64 and assigns it to the GatewayId field.
+func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) SetGatewayId(v int64) {
 	o.GatewayId = &v
 }
 
@@ -414,9 +414,9 @@ func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) SetLink(
 }
 
 // GetMerchantId returns the MerchantId field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetMerchantId() int32 {
+func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetMerchantId() int64 {
 	if o == nil || IsNil(o.MerchantId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MerchantId
@@ -424,7 +424,7 @@ func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetMerch
 
 // GetMerchantIdOk returns a tuple with the MerchantId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetMerchantIdOk() (*int32, bool) {
+func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetMerchantIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.MerchantId) {
 		return nil, false
 	}
@@ -440,8 +440,8 @@ func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) HasMerch
 	return false
 }
 
-// SetMerchantId gets a reference to the given int32 and assigns it to the MerchantId field.
-func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) SetMerchantId(v int32) {
+// SetMerchantId gets a reference to the given int64 and assigns it to the MerchantId field.
+func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) SetMerchantId(v int64) {
 	o.MerchantId = &v
 }
 
@@ -574,9 +574,9 @@ func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) SetPlan(
 }
 
 // GetPlanId returns the PlanId field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetPlanId() int32 {
+func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetPlanId() int64 {
 	if o == nil || IsNil(o.PlanId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.PlanId
@@ -584,7 +584,7 @@ func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetPlanI
 
 // GetPlanIdOk returns a tuple with the PlanId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetPlanIdOk() (*int32, bool) {
+func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetPlanIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.PlanId) {
 		return nil, false
 	}
@@ -600,8 +600,8 @@ func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) HasPlanI
 	return false
 }
 
-// SetPlanId gets a reference to the given int32 and assigns it to the PlanId field.
-func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) SetPlanId(v int32) {
+// SetPlanId gets a reference to the given int64 and assigns it to the PlanId field.
+func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) SetPlanId(v int64) {
 	o.PlanId = &v
 }
 
@@ -894,9 +894,9 @@ func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) SetUpdat
 }
 
 // GetUpdatePlanId returns the UpdatePlanId field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetUpdatePlanId() int32 {
+func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetUpdatePlanId() int64 {
 	if o == nil || IsNil(o.UpdatePlanId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.UpdatePlanId
@@ -904,7 +904,7 @@ func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetUpdat
 
 // GetUpdatePlanIdOk returns a tuple with the UpdatePlanId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetUpdatePlanIdOk() (*int32, bool) {
+func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetUpdatePlanIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.UpdatePlanId) {
 		return nil, false
 	}
@@ -920,8 +920,8 @@ func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) HasUpdat
 	return false
 }
 
-// SetUpdatePlanId gets a reference to the given int32 and assigns it to the UpdatePlanId field.
-func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) SetUpdatePlanId(v int32) {
+// SetUpdatePlanId gets a reference to the given int64 and assigns it to the UpdatePlanId field.
+func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) SetUpdatePlanId(v int64) {
 	o.UpdatePlanId = &v
 }
 

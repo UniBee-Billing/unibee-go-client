@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonParams** | Pointer to [**[]UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo**](UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo.md) | addonParams | [optional] 
-**NewPlanId** | **int32** | New PlanId | 
+**NewPlanId** | **int64** | New PlanId | 
 **Quantity** | Pointer to **int64** | Quantity，Default 1 | [optional] 
 **SubscriptionId** | **string** | SubscriptionId | 
 **WithImmediateEffect** | Pointer to **int32** | Effect Immediate，1-Immediate，2-Next Period | [optional] 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewUnibeeApiMerchantSubscriptionUpdatePreviewReq
 
-`func NewUnibeeApiMerchantSubscriptionUpdatePreviewReq(newPlanId int32, subscriptionId string, ) *UnibeeApiMerchantSubscriptionUpdatePreviewReq`
+`func NewUnibeeApiMerchantSubscriptionUpdatePreviewReq(newPlanId int64, subscriptionId string, ) *UnibeeApiMerchantSubscriptionUpdatePreviewReq`
 
 NewUnibeeApiMerchantSubscriptionUpdatePreviewReq instantiates a new UnibeeApiMerchantSubscriptionUpdatePreviewReq object
 This constructor will assign default values to properties that have it defined,
@@ -56,20 +56,20 @@ HasAddonParams returns a boolean if a field has been set.
 
 ### GetNewPlanId
 
-`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetNewPlanId() int32`
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetNewPlanId() int64`
 
 GetNewPlanId returns the NewPlanId field if non-nil, zero value otherwise.
 
 ### GetNewPlanIdOk
 
-`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetNewPlanIdOk() (*int32, bool)`
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetNewPlanIdOk() (*int64, bool)`
 
 GetNewPlanIdOk returns a tuple with the NewPlanId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNewPlanId
 
-`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) SetNewPlanId(v int32)`
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) SetNewPlanId(v int64)`
 
 SetNewPlanId sets NewPlanId field to given value.
 

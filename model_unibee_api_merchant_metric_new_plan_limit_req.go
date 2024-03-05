@@ -24,9 +24,9 @@ type UnibeeApiMerchantMetricNewPlanLimitReq struct {
 	// MetricId
 	MetricId int64 `json:"metricId"`
 	// MetricLimit
-	MetricLimit int32 `json:"metricLimit"`
+	MetricLimit int64 `json:"metricLimit"`
 	// PlanId
-	PlanId int32 `json:"planId"`
+	PlanId int64 `json:"planId"`
 }
 
 type _UnibeeApiMerchantMetricNewPlanLimitReq UnibeeApiMerchantMetricNewPlanLimitReq
@@ -35,7 +35,7 @@ type _UnibeeApiMerchantMetricNewPlanLimitReq UnibeeApiMerchantMetricNewPlanLimit
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiMerchantMetricNewPlanLimitReq(metricId int64, metricLimit int32, planId int32) *UnibeeApiMerchantMetricNewPlanLimitReq {
+func NewUnibeeApiMerchantMetricNewPlanLimitReq(metricId int64, metricLimit int64, planId int64) *UnibeeApiMerchantMetricNewPlanLimitReq {
 	this := UnibeeApiMerchantMetricNewPlanLimitReq{}
 	this.MetricId = metricId
 	this.MetricLimit = metricLimit
@@ -76,9 +76,9 @@ func (o *UnibeeApiMerchantMetricNewPlanLimitReq) SetMetricId(v int64) {
 }
 
 // GetMetricLimit returns the MetricLimit field value
-func (o *UnibeeApiMerchantMetricNewPlanLimitReq) GetMetricLimit() int32 {
+func (o *UnibeeApiMerchantMetricNewPlanLimitReq) GetMetricLimit() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -87,7 +87,7 @@ func (o *UnibeeApiMerchantMetricNewPlanLimitReq) GetMetricLimit() int32 {
 
 // GetMetricLimitOk returns a tuple with the MetricLimit field value
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantMetricNewPlanLimitReq) GetMetricLimitOk() (*int32, bool) {
+func (o *UnibeeApiMerchantMetricNewPlanLimitReq) GetMetricLimitOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -95,14 +95,14 @@ func (o *UnibeeApiMerchantMetricNewPlanLimitReq) GetMetricLimitOk() (*int32, boo
 }
 
 // SetMetricLimit sets field value
-func (o *UnibeeApiMerchantMetricNewPlanLimitReq) SetMetricLimit(v int32) {
+func (o *UnibeeApiMerchantMetricNewPlanLimitReq) SetMetricLimit(v int64) {
 	o.MetricLimit = v
 }
 
 // GetPlanId returns the PlanId field value
-func (o *UnibeeApiMerchantMetricNewPlanLimitReq) GetPlanId() int32 {
+func (o *UnibeeApiMerchantMetricNewPlanLimitReq) GetPlanId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -111,7 +111,7 @@ func (o *UnibeeApiMerchantMetricNewPlanLimitReq) GetPlanId() int32 {
 
 // GetPlanIdOk returns a tuple with the PlanId field value
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantMetricNewPlanLimitReq) GetPlanIdOk() (*int32, bool) {
+func (o *UnibeeApiMerchantMetricNewPlanLimitReq) GetPlanIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -119,7 +119,7 @@ func (o *UnibeeApiMerchantMetricNewPlanLimitReq) GetPlanIdOk() (*int32, bool) {
 }
 
 // SetPlanId sets field value
-func (o *UnibeeApiMerchantMetricNewPlanLimitReq) SetPlanId(v int32) {
+func (o *UnibeeApiMerchantMetricNewPlanLimitReq) SetPlanId(v int64) {
 	o.PlanId = v
 }
 

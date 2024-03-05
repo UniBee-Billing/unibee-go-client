@@ -11,20 +11,20 @@ Name | Type | Description | Notes
 **Data** | Pointer to **string** |  | [optional] 
 **EffectImmediate** | Pointer to **int32** | effect immediate，0-no，1-yes | [optional] 
 **EffectTime** | Pointer to **int64** | effect_immediate&#x3D;0, effect time, utc_time | [optional] 
-**GatewayId** | Pointer to **int32** | gateway_id | [optional] 
+**GatewayId** | Pointer to **int64** | gateway_id | [optional] 
 **GatewayStatus** | Pointer to **string** | gateway status | [optional] 
 **GmtCreate** | Pointer to **string** | create time | [optional] 
 **GmtModify** | Pointer to **string** | update time | [optional] 
-**Id** | Pointer to **int32** | id | [optional] 
+**Id** | Pointer to **int64** | id | [optional] 
 **InvoiceId** | Pointer to **string** | gateway update payment id assosiate to this update, use payment.paymentId | [optional] 
 **IsDeleted** | Pointer to **int32** | 0-UnDeleted，1-Deleted | [optional] 
 **Link** | Pointer to **string** | payment link | [optional] 
-**MerchantId** | Pointer to **int32** | merchant id | [optional] 
+**MerchantId** | Pointer to **int64** | merchant id | [optional] 
 **MerchantMemberId** | Pointer to **int64** | merchant_user_id | [optional] 
 **Name** | Pointer to **string** | name | [optional] 
 **Note** | Pointer to **string** | note | [optional] 
 **Paid** | Pointer to **int32** | paid，0-no，1-yes | [optional] 
-**PlanId** | Pointer to **int32** | the plan id of this period | [optional] 
+**PlanId** | Pointer to **int64** | the plan id of this period | [optional] 
 **ProrationAmount** | Pointer to **int64** | proration amount of this pending update , cent | [optional] 
 **ProrationDate** | Pointer to **int64** | merchant_user_id | [optional] 
 **Quantity** | Pointer to **int64** | quantity of this period | [optional] 
@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 **UpdateAddonData** | Pointer to **string** | plan addon data (json) after update | [optional] 
 **UpdateAmount** | Pointer to **int64** | the amount after update | [optional] 
 **UpdateCurrency** | Pointer to **string** | the currency after update | [optional] 
-**UpdatePlanId** | Pointer to **int32** | the plan id after update | [optional] 
+**UpdatePlanId** | Pointer to **int64** | the plan id after update | [optional] 
 **UpdateQuantity** | Pointer to **int64** | quantity after update | [optional] 
 **UpdateSubscriptionId** | Pointer to **string** | pending update unique id | [optional] 
 **UserId** | Pointer to **int64** | userId | [optional] 
@@ -235,20 +235,20 @@ HasEffectTime returns a boolean if a field has been set.
 
 ### GetGatewayId
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetGatewayId() int32`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetGatewayId() int64`
 
 GetGatewayId returns the GatewayId field if non-nil, zero value otherwise.
 
 ### GetGatewayIdOk
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetGatewayIdOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetGatewayIdOk() (*int64, bool)`
 
 GetGatewayIdOk returns a tuple with the GatewayId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGatewayId
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) SetGatewayId(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) SetGatewayId(v int64)`
 
 SetGatewayId sets GatewayId field to given value.
 
@@ -335,20 +335,20 @@ HasGmtModify returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetId() int32`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetIdOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) SetId(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -435,20 +435,20 @@ HasLink returns a boolean if a field has been set.
 
 ### GetMerchantId
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetMerchantId() int32`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetMerchantId() int64`
 
 GetMerchantId returns the MerchantId field if non-nil, zero value otherwise.
 
 ### GetMerchantIdOk
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetMerchantIdOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetMerchantIdOk() (*int64, bool)`
 
 GetMerchantIdOk returns a tuple with the MerchantId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantId
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) SetMerchantId(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) SetMerchantId(v int64)`
 
 SetMerchantId sets MerchantId field to given value.
 
@@ -560,20 +560,20 @@ HasPaid returns a boolean if a field has been set.
 
 ### GetPlanId
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetPlanId() int32`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetPlanId() int64`
 
 GetPlanId returns the PlanId field if non-nil, zero value otherwise.
 
 ### GetPlanIdOk
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetPlanIdOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetPlanIdOk() (*int64, bool)`
 
 GetPlanIdOk returns a tuple with the PlanId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlanId
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) SetPlanId(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) SetPlanId(v int64)`
 
 SetPlanId sets PlanId field to given value.
 
@@ -810,20 +810,20 @@ HasUpdateCurrency returns a boolean if a field has been set.
 
 ### GetUpdatePlanId
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetUpdatePlanId() int32`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetUpdatePlanId() int64`
 
 GetUpdatePlanId returns the UpdatePlanId field if non-nil, zero value otherwise.
 
 ### GetUpdatePlanIdOk
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetUpdatePlanIdOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) GetUpdatePlanIdOk() (*int64, bool)`
 
 GetUpdatePlanIdOk returns a tuple with the UpdatePlanId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdatePlanId
 
-`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) SetUpdatePlanId(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate) SetUpdatePlanId(v int64)`
 
 SetUpdatePlanId sets UpdatePlanId field to given value.
 

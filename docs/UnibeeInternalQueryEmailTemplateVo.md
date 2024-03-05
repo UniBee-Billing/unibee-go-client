@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Id** | Pointer to **int64** |  | [optional] 
-**MerchantId** | Pointer to **int32** |  | [optional] 
+**MerchantId** | Pointer to **int64** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **TemplateAttachName** | Pointer to **string** |  | [optional] 
 **TemplateContent** | Pointer to **string** |  | [optional] 
@@ -86,20 +86,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetMerchantId
 
-`func (o *UnibeeInternalQueryEmailTemplateVo) GetMerchantId() int32`
+`func (o *UnibeeInternalQueryEmailTemplateVo) GetMerchantId() int64`
 
 GetMerchantId returns the MerchantId field if non-nil, zero value otherwise.
 
 ### GetMerchantIdOk
 
-`func (o *UnibeeInternalQueryEmailTemplateVo) GetMerchantIdOk() (*int32, bool)`
+`func (o *UnibeeInternalQueryEmailTemplateVo) GetMerchantIdOk() (*int64, bool)`
 
 GetMerchantIdOk returns a tuple with the MerchantId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantId
 
-`func (o *UnibeeInternalQueryEmailTemplateVo) SetMerchantId(v int32)`
+`func (o *UnibeeInternalQueryEmailTemplateVo) SetMerchantId(v int64)`
 
 SetMerchantId sets MerchantId field to given value.
 

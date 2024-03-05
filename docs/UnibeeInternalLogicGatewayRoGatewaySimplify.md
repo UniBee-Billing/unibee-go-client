@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**GatewayId** | Pointer to **int32** |  | [optional] 
+**GatewayId** | Pointer to **int64** |  | [optional] 
 **GatewayLogo** | Pointer to **string** |  | [optional] 
 **GatewayName** | Pointer to **string** |  | [optional] 
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetGatewayId
 
-`func (o *UnibeeInternalLogicGatewayRoGatewaySimplify) GetGatewayId() int32`
+`func (o *UnibeeInternalLogicGatewayRoGatewaySimplify) GetGatewayId() int64`
 
 GetGatewayId returns the GatewayId field if non-nil, zero value otherwise.
 
 ### GetGatewayIdOk
 
-`func (o *UnibeeInternalLogicGatewayRoGatewaySimplify) GetGatewayIdOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoGatewaySimplify) GetGatewayIdOk() (*int64, bool)`
 
 GetGatewayIdOk returns a tuple with the GatewayId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGatewayId
 
-`func (o *UnibeeInternalLogicGatewayRoGatewaySimplify) SetGatewayId(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoGatewaySimplify) SetGatewayId(v int64)`
 
 SetGatewayId sets GatewayId field to given value.
 

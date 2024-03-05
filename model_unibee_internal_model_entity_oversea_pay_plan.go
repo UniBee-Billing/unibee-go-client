@@ -42,7 +42,7 @@ type UnibeeInternalModelEntityOverseaPayPlan struct {
 	GmtModify *string `json:"gmtModify,omitempty"`
 	// home_url
 	HomeUrl *string `json:"homeUrl,omitempty"`
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// image_url
 	ImageUrl *string `json:"imageUrl,omitempty"`
 	// period unit count
@@ -52,7 +52,7 @@ type UnibeeInternalModelEntityOverseaPayPlan struct {
 	// 0-UnDeleted，1-Deleted
 	IsDeleted *int32 `json:"isDeleted,omitempty"`
 	// merchant id
-	MerchantId *int32 `json:"merchantId,omitempty"`
+	MerchantId *int64 `json:"merchantId,omitempty"`
 	// PlanName
 	PlanName *string `json:"planName,omitempty"`
 	// 1-UnPublish,2-Publish, Use For Display Plan At UserPortal
@@ -469,9 +469,9 @@ func (o *UnibeeInternalModelEntityOverseaPayPlan) SetHomeUrl(v string) {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *UnibeeInternalModelEntityOverseaPayPlan) GetId() int32 {
+func (o *UnibeeInternalModelEntityOverseaPayPlan) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -479,7 +479,7 @@ func (o *UnibeeInternalModelEntityOverseaPayPlan) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalModelEntityOverseaPayPlan) GetIdOk() (*int32, bool) {
+func (o *UnibeeInternalModelEntityOverseaPayPlan) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -495,8 +495,8 @@ func (o *UnibeeInternalModelEntityOverseaPayPlan) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *UnibeeInternalModelEntityOverseaPayPlan) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *UnibeeInternalModelEntityOverseaPayPlan) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -629,9 +629,9 @@ func (o *UnibeeInternalModelEntityOverseaPayPlan) SetIsDeleted(v int32) {
 }
 
 // GetMerchantId returns the MerchantId field value if set, zero value otherwise.
-func (o *UnibeeInternalModelEntityOverseaPayPlan) GetMerchantId() int32 {
+func (o *UnibeeInternalModelEntityOverseaPayPlan) GetMerchantId() int64 {
 	if o == nil || IsNil(o.MerchantId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MerchantId
@@ -639,7 +639,7 @@ func (o *UnibeeInternalModelEntityOverseaPayPlan) GetMerchantId() int32 {
 
 // GetMerchantIdOk returns a tuple with the MerchantId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalModelEntityOverseaPayPlan) GetMerchantIdOk() (*int32, bool) {
+func (o *UnibeeInternalModelEntityOverseaPayPlan) GetMerchantIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.MerchantId) {
 		return nil, false
 	}
@@ -655,8 +655,8 @@ func (o *UnibeeInternalModelEntityOverseaPayPlan) HasMerchantId() bool {
 	return false
 }
 
-// SetMerchantId gets a reference to the given int32 and assigns it to the MerchantId field.
-func (o *UnibeeInternalModelEntityOverseaPayPlan) SetMerchantId(v int32) {
+// SetMerchantId gets a reference to the given int64 and assigns it to the MerchantId field.
+func (o *UnibeeInternalModelEntityOverseaPayPlan) SetMerchantId(v int64) {
 	o.MerchantId = &v
 }
 

@@ -22,7 +22,7 @@ import (
 // MerchantPaymentTimelineAPIService MerchantPaymentTimelineAPI service
 type MerchantPaymentTimelineAPIService service
 
-type MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListGetRequest struct {
+type ApiMerchantPaymentPaymentTimelineListGetRequest struct {
 	ctx context.Context
 	ApiService *MerchantPaymentTimelineAPIService
 	userId *int32
@@ -33,36 +33,36 @@ type MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListGetRequest stru
 }
 
 // Filter UserId, Default All
-func (r MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListGetRequest) UserId(userId int32) MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListGetRequest {
+func (r ApiMerchantPaymentPaymentTimelineListGetRequest) UserId(userId int32) ApiMerchantPaymentPaymentTimelineListGetRequest {
 	r.userId = &userId
 	return r
 }
 
 // Sort，invoice_id|gmt_create|gmt_modify|period_end|total_amount，Default gmt_modify
-func (r MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListGetRequest) SortField(sortField string) MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListGetRequest {
+func (r ApiMerchantPaymentPaymentTimelineListGetRequest) SortField(sortField string) ApiMerchantPaymentPaymentTimelineListGetRequest {
 	r.sortField = &sortField
 	return r
 }
 
 // Sort Type，asc|desc，Default desc
-func (r MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListGetRequest) SortType(sortType string) MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListGetRequest {
+func (r ApiMerchantPaymentPaymentTimelineListGetRequest) SortType(sortType string) ApiMerchantPaymentPaymentTimelineListGetRequest {
 	r.sortType = &sortType
 	return r
 }
 
 // Page,Start 0
-func (r MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListGetRequest) Page(page int32) MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListGetRequest {
+func (r ApiMerchantPaymentPaymentTimelineListGetRequest) Page(page int32) ApiMerchantPaymentPaymentTimelineListGetRequest {
 	r.page = &page
 	return r
 }
 
 // Count Of Page
-func (r MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListGetRequest) Count(count int32) MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListGetRequest {
+func (r ApiMerchantPaymentPaymentTimelineListGetRequest) Count(count int32) ApiMerchantPaymentPaymentTimelineListGetRequest {
 	r.count = &count
 	return r
 }
 
-func (r MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListGetRequest) Execute() (*MerchantPaymentPaymentTimelineListGet200Response, *http.Response, error) {
+func (r ApiMerchantPaymentPaymentTimelineListGetRequest) Execute() (*MerchantPaymentPaymentTimelineListGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantPaymentPaymentTimelineListGetExecute(r)
 }
 
@@ -70,10 +70,10 @@ func (r MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListGetRequest) 
 MerchantPaymentPaymentTimelineListGet Payment TimeLine List
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListGetRequest
+ @return ApiMerchantPaymentPaymentTimelineListGetRequest
 */
-func (a *MerchantPaymentTimelineAPIService) MerchantPaymentPaymentTimelineListGet(ctx context.Context) MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListGetRequest {
-	return MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListGetRequest{
+func (a *MerchantPaymentTimelineAPIService) MerchantPaymentPaymentTimelineListGet(ctx context.Context) ApiMerchantPaymentPaymentTimelineListGetRequest {
+	return ApiMerchantPaymentPaymentTimelineListGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -81,7 +81,7 @@ func (a *MerchantPaymentTimelineAPIService) MerchantPaymentPaymentTimelineListGe
 
 // Execute executes the request
 //  @return MerchantPaymentPaymentTimelineListGet200Response
-func (a *MerchantPaymentTimelineAPIService) MerchantPaymentPaymentTimelineListGetExecute(r MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListGetRequest) (*MerchantPaymentPaymentTimelineListGet200Response, *http.Response, error) {
+func (a *MerchantPaymentTimelineAPIService) MerchantPaymentPaymentTimelineListGetExecute(r ApiMerchantPaymentPaymentTimelineListGetRequest) (*MerchantPaymentPaymentTimelineListGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -169,18 +169,18 @@ func (a *MerchantPaymentTimelineAPIService) MerchantPaymentPaymentTimelineListGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListPostRequest struct {
+type ApiMerchantPaymentPaymentTimelineListPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantPaymentTimelineAPIService
 	unibeeApiMerchantPaymentTimeLineListReq *UnibeeApiMerchantPaymentTimeLineListReq
 }
 
-func (r MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListPostRequest) UnibeeApiMerchantPaymentTimeLineListReq(unibeeApiMerchantPaymentTimeLineListReq UnibeeApiMerchantPaymentTimeLineListReq) MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListPostRequest {
+func (r ApiMerchantPaymentPaymentTimelineListPostRequest) UnibeeApiMerchantPaymentTimeLineListReq(unibeeApiMerchantPaymentTimeLineListReq UnibeeApiMerchantPaymentTimeLineListReq) ApiMerchantPaymentPaymentTimelineListPostRequest {
 	r.unibeeApiMerchantPaymentTimeLineListReq = &unibeeApiMerchantPaymentTimeLineListReq
 	return r
 }
 
-func (r MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListPostRequest) Execute() (*MerchantPaymentPaymentTimelineListGet200Response, *http.Response, error) {
+func (r ApiMerchantPaymentPaymentTimelineListPostRequest) Execute() (*MerchantPaymentPaymentTimelineListGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantPaymentPaymentTimelineListPostExecute(r)
 }
 
@@ -188,10 +188,10 @@ func (r MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListPostRequest)
 MerchantPaymentPaymentTimelineListPost Payment TimeLine List
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListPostRequest
+ @return ApiMerchantPaymentPaymentTimelineListPostRequest
 */
-func (a *MerchantPaymentTimelineAPIService) MerchantPaymentPaymentTimelineListPost(ctx context.Context) MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListPostRequest {
-	return MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListPostRequest{
+func (a *MerchantPaymentTimelineAPIService) MerchantPaymentPaymentTimelineListPost(ctx context.Context) ApiMerchantPaymentPaymentTimelineListPostRequest {
+	return ApiMerchantPaymentPaymentTimelineListPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -199,7 +199,7 @@ func (a *MerchantPaymentTimelineAPIService) MerchantPaymentPaymentTimelineListPo
 
 // Execute executes the request
 //  @return MerchantPaymentPaymentTimelineListGet200Response
-func (a *MerchantPaymentTimelineAPIService) MerchantPaymentPaymentTimelineListPostExecute(r MerchantPaymentTimelineAPIMerchantPaymentPaymentTimelineListPostRequest) (*MerchantPaymentPaymentTimelineListGet200Response, *http.Response, error) {
+func (a *MerchantPaymentTimelineAPIService) MerchantPaymentPaymentTimelineListPostExecute(r ApiMerchantPaymentPaymentTimelineListPostRequest) (*MerchantPaymentPaymentTimelineListGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

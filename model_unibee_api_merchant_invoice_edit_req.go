@@ -25,7 +25,7 @@ type UnibeeApiMerchantInvoiceEditReq struct {
 	Currency *string `json:"currency,omitempty"`
 	Finish *bool `json:"finish,omitempty"`
 	// Gateway Id
-	GatewayId *int32 `json:"gatewayId,omitempty"`
+	GatewayId *int64 `json:"gatewayId,omitempty"`
 	// InvoiceId
 	InvoiceId string `json:"invoiceId"`
 	Lines []UnibeeApiMerchantInvoiceNewInvoiceItemParam `json:"lines,omitempty"`
@@ -120,9 +120,9 @@ func (o *UnibeeApiMerchantInvoiceEditReq) SetFinish(v bool) {
 }
 
 // GetGatewayId returns the GatewayId field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantInvoiceEditReq) GetGatewayId() int32 {
+func (o *UnibeeApiMerchantInvoiceEditReq) GetGatewayId() int64 {
 	if o == nil || IsNil(o.GatewayId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.GatewayId
@@ -130,7 +130,7 @@ func (o *UnibeeApiMerchantInvoiceEditReq) GetGatewayId() int32 {
 
 // GetGatewayIdOk returns a tuple with the GatewayId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantInvoiceEditReq) GetGatewayIdOk() (*int32, bool) {
+func (o *UnibeeApiMerchantInvoiceEditReq) GetGatewayIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.GatewayId) {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *UnibeeApiMerchantInvoiceEditReq) HasGatewayId() bool {
 	return false
 }
 
-// SetGatewayId gets a reference to the given int32 and assigns it to the GatewayId field.
-func (o *UnibeeApiMerchantInvoiceEditReq) SetGatewayId(v int32) {
+// SetGatewayId gets a reference to the given int64 and assigns it to the GatewayId field.
+func (o *UnibeeApiMerchantInvoiceEditReq) SetGatewayId(v int64) {
 	o.GatewayId = &v
 }
 

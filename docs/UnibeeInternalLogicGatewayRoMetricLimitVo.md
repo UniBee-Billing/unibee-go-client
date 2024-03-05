@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MerchantId** | Pointer to **int32** |  | [optional] 
+**MerchantId** | Pointer to **int64** |  | [optional] 
 **MetricId** | Pointer to **int64** |  | [optional] 
 **PlanLimits** | Pointer to [**[]UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo**](UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo.md) |  | [optional] 
-**TotalLimit** | Pointer to **int32** |  | [optional] 
+**TotalLimit** | Pointer to **int64** |  | [optional] 
 **UserId** | Pointer to **int64** |  | [optional] 
 **AggregationProperty** | Pointer to **string** | aggregation property | [optional] 
 **AggregationType** | Pointer to **int32** | 0-count，1-count unique, 2-latest, 3-max, 4-sum | [optional] 
@@ -36,20 +36,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMerchantId
 
-`func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) GetMerchantId() int32`
+`func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) GetMerchantId() int64`
 
 GetMerchantId returns the MerchantId field if non-nil, zero value otherwise.
 
 ### GetMerchantIdOk
 
-`func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) GetMerchantIdOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) GetMerchantIdOk() (*int64, bool)`
 
 GetMerchantIdOk returns a tuple with the MerchantId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantId
 
-`func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) SetMerchantId(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) SetMerchantId(v int64)`
 
 SetMerchantId sets MerchantId field to given value.
 
@@ -111,20 +111,20 @@ HasPlanLimits returns a boolean if a field has been set.
 
 ### GetTotalLimit
 
-`func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) GetTotalLimit() int32`
+`func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) GetTotalLimit() int64`
 
 GetTotalLimit returns the TotalLimit field if non-nil, zero value otherwise.
 
 ### GetTotalLimitOk
 
-`func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) GetTotalLimitOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) GetTotalLimitOk() (*int64, bool)`
 
 GetTotalLimitOk returns a tuple with the TotalLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTotalLimit
 
-`func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) SetTotalLimit(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) SetTotalLimit(v int64)`
 
 SetTotalLimit sets TotalLimit field to given value.
 

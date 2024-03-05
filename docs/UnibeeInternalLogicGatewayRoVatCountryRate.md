@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **CountryCode** | Pointer to **string** |  | [optional] 
 **CountryName** | Pointer to **string** |  | [optional] 
 **Gateway** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **int32** | TaxId | [optional] 
+**Id** | Pointer to **int64** | TaxId | [optional] 
 **StandardTaxPercentage** | Pointer to **int64** | Tax税率，万分位，1000 表示 10% | [optional] 
 **VatSupport** | Pointer to **bool** | vat support,true or false | [optional] 
 
@@ -107,20 +107,20 @@ HasGateway returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *UnibeeInternalLogicGatewayRoVatCountryRate) GetId() int32`
+`func (o *UnibeeInternalLogicGatewayRoVatCountryRate) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *UnibeeInternalLogicGatewayRoVatCountryRate) GetIdOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoVatCountryRate) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *UnibeeInternalLogicGatewayRoVatCountryRate) SetId(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoVatCountryRate) SetId(v int64)`
 
 SetId sets Id field to given value.
 

@@ -22,7 +22,7 @@ type UnibeeInternalQueryEmailTemplateVo struct {
 	// create utc time
 	CreateTime *int64 `json:"createTime,omitempty"`
 	Id *int64 `json:"id,omitempty"`
-	MerchantId *int32 `json:"merchantId,omitempty"`
+	MerchantId *int64 `json:"merchantId,omitempty"`
 	Status *string `json:"status,omitempty"`
 	TemplateAttachName *string `json:"templateAttachName,omitempty"`
 	TemplateContent *string `json:"templateContent,omitempty"`
@@ -115,9 +115,9 @@ func (o *UnibeeInternalQueryEmailTemplateVo) SetId(v int64) {
 }
 
 // GetMerchantId returns the MerchantId field value if set, zero value otherwise.
-func (o *UnibeeInternalQueryEmailTemplateVo) GetMerchantId() int32 {
+func (o *UnibeeInternalQueryEmailTemplateVo) GetMerchantId() int64 {
 	if o == nil || IsNil(o.MerchantId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MerchantId
@@ -125,7 +125,7 @@ func (o *UnibeeInternalQueryEmailTemplateVo) GetMerchantId() int32 {
 
 // GetMerchantIdOk returns a tuple with the MerchantId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalQueryEmailTemplateVo) GetMerchantIdOk() (*int32, bool) {
+func (o *UnibeeInternalQueryEmailTemplateVo) GetMerchantIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.MerchantId) {
 		return nil, false
 	}
@@ -141,8 +141,8 @@ func (o *UnibeeInternalQueryEmailTemplateVo) HasMerchantId() bool {
 	return false
 }
 
-// SetMerchantId gets a reference to the given int32 and assigns it to the MerchantId field.
-func (o *UnibeeInternalQueryEmailTemplateVo) SetMerchantId(v int32) {
+// SetMerchantId gets a reference to the given int64 and assigns it to the MerchantId field.
+func (o *UnibeeInternalQueryEmailTemplateVo) SetMerchantId(v int64) {
 	o.MerchantId = &v
 }
 

@@ -22,7 +22,7 @@ var _ MappedNullable = &UnibeeApiMerchantGatewayEditReq{}
 // UnibeeApiMerchantGatewayEditReq struct for UnibeeApiMerchantGatewayEditReq
 type UnibeeApiMerchantGatewayEditReq struct {
 	// GatewayId
-	GatewayId int32 `json:"gatewayId"`
+	GatewayId int64 `json:"gatewayId"`
 	// GatewayKey
 	GatewayKey *string `json:"gatewayKey,omitempty"`
 	// GatewaySecret
@@ -35,7 +35,7 @@ type _UnibeeApiMerchantGatewayEditReq UnibeeApiMerchantGatewayEditReq
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiMerchantGatewayEditReq(gatewayId int32) *UnibeeApiMerchantGatewayEditReq {
+func NewUnibeeApiMerchantGatewayEditReq(gatewayId int64) *UnibeeApiMerchantGatewayEditReq {
 	this := UnibeeApiMerchantGatewayEditReq{}
 	this.GatewayId = gatewayId
 	return &this
@@ -50,9 +50,9 @@ func NewUnibeeApiMerchantGatewayEditReqWithDefaults() *UnibeeApiMerchantGatewayE
 }
 
 // GetGatewayId returns the GatewayId field value
-func (o *UnibeeApiMerchantGatewayEditReq) GetGatewayId() int32 {
+func (o *UnibeeApiMerchantGatewayEditReq) GetGatewayId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -61,7 +61,7 @@ func (o *UnibeeApiMerchantGatewayEditReq) GetGatewayId() int32 {
 
 // GetGatewayIdOk returns a tuple with the GatewayId field value
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantGatewayEditReq) GetGatewayIdOk() (*int32, bool) {
+func (o *UnibeeApiMerchantGatewayEditReq) GetGatewayIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -69,7 +69,7 @@ func (o *UnibeeApiMerchantGatewayEditReq) GetGatewayIdOk() (*int32, bool) {
 }
 
 // SetGatewayId sets field value
-func (o *UnibeeApiMerchantGatewayEditReq) SetGatewayId(v int32) {
+func (o *UnibeeApiMerchantGatewayEditReq) SetGatewayId(v int64) {
 	o.GatewayId = v
 }
 

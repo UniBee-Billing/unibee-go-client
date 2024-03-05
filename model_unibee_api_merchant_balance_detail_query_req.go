@@ -22,7 +22,7 @@ var _ MappedNullable = &UnibeeApiMerchantBalanceDetailQueryReq{}
 // UnibeeApiMerchantBalanceDetailQueryReq struct for UnibeeApiMerchantBalanceDetailQueryReq
 type UnibeeApiMerchantBalanceDetailQueryReq struct {
 	// gatewayId
-	GatewayId int32 `json:"gatewayId"`
+	GatewayId int64 `json:"gatewayId"`
 }
 
 type _UnibeeApiMerchantBalanceDetailQueryReq UnibeeApiMerchantBalanceDetailQueryReq
@@ -31,7 +31,7 @@ type _UnibeeApiMerchantBalanceDetailQueryReq UnibeeApiMerchantBalanceDetailQuery
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiMerchantBalanceDetailQueryReq(gatewayId int32) *UnibeeApiMerchantBalanceDetailQueryReq {
+func NewUnibeeApiMerchantBalanceDetailQueryReq(gatewayId int64) *UnibeeApiMerchantBalanceDetailQueryReq {
 	this := UnibeeApiMerchantBalanceDetailQueryReq{}
 	this.GatewayId = gatewayId
 	return &this
@@ -46,9 +46,9 @@ func NewUnibeeApiMerchantBalanceDetailQueryReqWithDefaults() *UnibeeApiMerchantB
 }
 
 // GetGatewayId returns the GatewayId field value
-func (o *UnibeeApiMerchantBalanceDetailQueryReq) GetGatewayId() int32 {
+func (o *UnibeeApiMerchantBalanceDetailQueryReq) GetGatewayId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -57,7 +57,7 @@ func (o *UnibeeApiMerchantBalanceDetailQueryReq) GetGatewayId() int32 {
 
 // GetGatewayIdOk returns a tuple with the GatewayId field value
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantBalanceDetailQueryReq) GetGatewayIdOk() (*int32, bool) {
+func (o *UnibeeApiMerchantBalanceDetailQueryReq) GetGatewayIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -65,7 +65,7 @@ func (o *UnibeeApiMerchantBalanceDetailQueryReq) GetGatewayIdOk() (*int32, bool)
 }
 
 // SetGatewayId sets field value
-func (o *UnibeeApiMerchantBalanceDetailQueryReq) SetGatewayId(v int32) {
+func (o *UnibeeApiMerchantBalanceDetailQueryReq) SetGatewayId(v int64) {
 	o.GatewayId = v
 }
 

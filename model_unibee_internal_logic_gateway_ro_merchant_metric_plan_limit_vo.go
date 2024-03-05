@@ -24,16 +24,16 @@ type UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo struct {
 	// update time
 	GmtModify *int64 `json:"gmtModify,omitempty"`
 	// id
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// merchantId
-	MerchantId *int32 `json:"merchantId,omitempty"`
+	MerchantId *int64 `json:"merchantId,omitempty"`
 	MerchantMetricVo *UnibeeInternalLogicGatewayRoMerchantMetricVo `json:"merchantMetricVo,omitempty"`
 	// metricId
 	MetricId *int64 `json:"metricId,omitempty"`
 	// plan metric limit
-	MetricLimit *int32 `json:"metricLimit,omitempty"`
+	MetricLimit *int64 `json:"metricLimit,omitempty"`
 	// plan_id
-	PlanId *int32 `json:"planId,omitempty"`
+	PlanId *int64 `json:"planId,omitempty"`
 }
 
 // NewUnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo instantiates a new UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo object
@@ -118,9 +118,9 @@ func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) SetGmtModify(v i
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetId() int32 {
+func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -128,7 +128,7 @@ func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetIdOk() (*int32, bool) {
+func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -144,15 +144,15 @@ func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) SetId(v int64) {
 	o.Id = &v
 }
 
 // GetMerchantId returns the MerchantId field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetMerchantId() int32 {
+func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetMerchantId() int64 {
 	if o == nil || IsNil(o.MerchantId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MerchantId
@@ -160,7 +160,7 @@ func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetMerchantId() 
 
 // GetMerchantIdOk returns a tuple with the MerchantId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetMerchantIdOk() (*int32, bool) {
+func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetMerchantIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.MerchantId) {
 		return nil, false
 	}
@@ -176,8 +176,8 @@ func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) HasMerchantId() 
 	return false
 }
 
-// SetMerchantId gets a reference to the given int32 and assigns it to the MerchantId field.
-func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) SetMerchantId(v int32) {
+// SetMerchantId gets a reference to the given int64 and assigns it to the MerchantId field.
+func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) SetMerchantId(v int64) {
 	o.MerchantId = &v
 }
 
@@ -246,9 +246,9 @@ func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) SetMetricId(v in
 }
 
 // GetMetricLimit returns the MetricLimit field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetMetricLimit() int32 {
+func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetMetricLimit() int64 {
 	if o == nil || IsNil(o.MetricLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MetricLimit
@@ -256,7 +256,7 @@ func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetMetricLimit()
 
 // GetMetricLimitOk returns a tuple with the MetricLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetMetricLimitOk() (*int32, bool) {
+func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetMetricLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.MetricLimit) {
 		return nil, false
 	}
@@ -272,15 +272,15 @@ func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) HasMetricLimit()
 	return false
 }
 
-// SetMetricLimit gets a reference to the given int32 and assigns it to the MetricLimit field.
-func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) SetMetricLimit(v int32) {
+// SetMetricLimit gets a reference to the given int64 and assigns it to the MetricLimit field.
+func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) SetMetricLimit(v int64) {
 	o.MetricLimit = &v
 }
 
 // GetPlanId returns the PlanId field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetPlanId() int32 {
+func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetPlanId() int64 {
 	if o == nil || IsNil(o.PlanId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.PlanId
@@ -288,7 +288,7 @@ func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetPlanId() int3
 
 // GetPlanIdOk returns a tuple with the PlanId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetPlanIdOk() (*int32, bool) {
+func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) GetPlanIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.PlanId) {
 		return nil, false
 	}
@@ -304,8 +304,8 @@ func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) HasPlanId() bool
 	return false
 }
 
-// SetPlanId gets a reference to the given int32 and assigns it to the PlanId field.
-func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) SetPlanId(v int32) {
+// SetPlanId gets a reference to the given int64 and assigns it to the PlanId field.
+func (o *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) SetPlanId(v int64) {
 	o.PlanId = &v
 }
 

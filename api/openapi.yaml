@@ -153,7 +153,7 @@ paths:
         required: true
         schema:
           description: gatewayId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         style: form
@@ -205,7 +205,7 @@ paths:
         required: true
         schema:
           description: gatewayId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         style: form
@@ -1002,7 +1002,7 @@ paths:
       summary: New Merchant Metric Plan TotalLimit
       tags:
       - Merchant-Metric
-  /merchant/metric/user/stat:
+  /merchant/metric/user/metric:
     get:
       parameters:
       - description: "UserId, One Of UserId|ExternalUserId Needed"
@@ -1032,28 +1032,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/_merchant_metric_user_stat_get_200_response'
+                $ref: '#/components/schemas/_merchant_metric_user_metric_get_200_response'
           description: ""
-      summary: Query User Metric Stat
+      summary: Query User Metric
       tags:
-      - Merchant-Metric
-    post:
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/unibee.api.merchant.metric.UserStatReq'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/_merchant_metric_user_stat_get_200_response'
-          description: ""
-      summary: Query User Metric Stat
-      tags:
-      - Merchant-Metric
+      - Merchant-User-Metric
   /merchant/oss/file:
     post:
       requestBody:
@@ -1223,7 +1206,7 @@ paths:
         required: true
         schema:
           description: PlanId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         style: form
@@ -2405,7 +2388,7 @@ paths:
         required: true
         schema:
           description: MerchantId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         style: form
@@ -2755,7 +2738,7 @@ components:
       properties:
         gatewayId:
           description: gatewayId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
       required:
@@ -2786,7 +2769,7 @@ components:
       properties:
         gatewayId:
           description: gatewayId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         userId:
@@ -2921,7 +2904,7 @@ components:
       properties:
         gatewayId:
           description: GatewayId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         gatewayKey:
@@ -2979,7 +2962,7 @@ components:
       properties:
         gatewayId:
           description: GatewayId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
       required:
@@ -3091,7 +3074,7 @@ components:
           type: boolean
         gatewayId:
           description: Gateway Id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         invoiceId:
@@ -3261,7 +3244,7 @@ components:
           type: boolean
         gatewayId:
           description: Gateway Id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         lines:
@@ -3453,7 +3436,7 @@ components:
       properties:
         metricId:
           description: MetricId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
       required:
@@ -3468,7 +3451,7 @@ components:
       properties:
         metricLimit:
           description: MetricLimit
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         metricPlanLimitId:
@@ -3563,12 +3546,12 @@ components:
           type: integer
         metricLimit:
           description: MetricLimit
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         planId:
           description: PlanId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
       required:
@@ -3617,7 +3600,7 @@ components:
         merchantMetric:
           $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.MerchantMetricVo'
       type: object
-    unibee.api.merchant.metric.UserStatReq:
+    unibee.api.merchant.metric.UserMetricReq:
       properties:
         externalUserId:
           description: "ExternalUserId, One Of UserId|ExternalUserId Needed"
@@ -3630,10 +3613,10 @@ components:
           properties: {}
           type: integer
       type: object
-    unibee.api.merchant.metric.UserStatRes:
+    unibee.api.merchant.metric.UserMetricRes:
       properties:
-        userMetricStat:
-          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.UserMetricStat'
+        userMetric:
+          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.UserMetric'
       type: object
     unibee.api.merchant.oss.FileUploadReq:
       properties:
@@ -3694,7 +3677,7 @@ components:
       properties:
         planId:
           description: PlanId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
       required:
@@ -3721,7 +3704,7 @@ components:
           type: array
         planId:
           description: PlanID
-          format: uint64
+          format: int64
           properties: {}
           type: integer
       required:
@@ -3738,7 +3721,7 @@ components:
       properties:
         planId:
           description: PlanId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
       required:
@@ -3751,7 +3734,7 @@ components:
       properties:
         planId:
           description: PlanId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
       required:
@@ -3818,7 +3801,7 @@ components:
           type: array
         planId:
           description: PlanId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         planName:
@@ -3857,7 +3840,7 @@ components:
           type: integer
         planId:
           description: PlanId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
       required:
@@ -4019,7 +4002,7 @@ components:
       properties:
         planId:
           description: PlanId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
       required:
@@ -4032,7 +4015,7 @@ components:
       properties:
         planId:
           description: PlanId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
       required:
@@ -4531,7 +4514,7 @@ components:
           type: array
         newPlanId:
           description: New PlanId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         quantity:
@@ -4593,7 +4576,7 @@ components:
           type: integer
         newPlanId:
           description: New PlanId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         prorationDate:
@@ -4861,7 +4844,7 @@ components:
           type: string
         userId:
           description: User Id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         vATNumber:
@@ -4895,7 +4878,7 @@ components:
       properties:
         merchantId:
           description: MerchantId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
       required:
@@ -5216,7 +5199,7 @@ components:
           type: integer
         metricLimit:
           description: MetricLimit
-          format: uint64
+          format: int64
           properties: {}
           type: integer
       required:
@@ -5244,7 +5227,7 @@ components:
         gatewayId: 6
       properties:
         gatewayId:
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         gatewayLogo:
@@ -5532,7 +5515,7 @@ components:
           $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.GatewaySimplify'
         gatewayId:
           description: Id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         gatewayInvoiceId:
@@ -5571,7 +5554,7 @@ components:
           properties: {}
           type: string
         id:
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         invoiceId:
@@ -5604,7 +5587,7 @@ components:
           $ref: '#/components/schemas/unibee.internal.model.entity.oversea_pay.Merchant'
         merchantId:
           description: MerchantId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         payment:
@@ -5897,7 +5880,7 @@ components:
           type: string
         id:
           description: userId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         lastName:
@@ -5907,7 +5890,7 @@ components:
           type: string
         merchantId:
           description: merchant id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
       type: object
@@ -5944,12 +5927,12 @@ components:
           type: integer
         id:
           description: id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         merchantId:
           description: merchantId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         merchantMetricVo:
@@ -5961,12 +5944,12 @@ components:
           type: integer
         metricLimit:
           description: plan metric limit
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         planId:
           description: plan_id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
       type: object
@@ -6010,12 +5993,12 @@ components:
           type: integer
         id:
           description: id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         merchantId:
           description: merchantId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         metricDescription:
@@ -6085,7 +6068,7 @@ components:
           metricLimit: 7
       properties:
         MerchantId:
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         MetricId:
@@ -6099,7 +6082,7 @@ components:
           properties: {}
           type: array
         TotalLimit:
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         UserId:
@@ -6364,7 +6347,7 @@ components:
           properties: {}
           type: string
         id:
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         imageUrl:
@@ -6384,7 +6367,7 @@ components:
           type: string
         merchantId:
           description: merchant id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         planName:
@@ -6918,7 +6901,7 @@ components:
           type: integer
         gatewayId:
           description: Id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         gmtCreate:
@@ -6938,7 +6921,7 @@ components:
           type: string
         merchantId:
           description: MerchantId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         merchantMember:
@@ -6957,7 +6940,7 @@ components:
           $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PlanSimplify'
         planId:
           description: PlanId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         prorationAmount:
@@ -7006,7 +6989,7 @@ components:
           $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PlanSimplify'
         updatePlanId:
           description: UpdatePlanId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         updateQuantity:
@@ -7032,7 +7015,7 @@ components:
       properties:
         addonPlanId:
           description: AddonPlanId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         quantity:
@@ -7137,7 +7120,7 @@ components:
           type: integer
         gatewayId:
           description: gateway_id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         gatewayItemData:
@@ -7151,7 +7134,7 @@ components:
           properties: {}
           type: string
         id:
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         lastUpdateTime:
@@ -7169,7 +7152,7 @@ components:
           type: string
         merchantId:
           description: merchant id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         pendingUpdateId:
@@ -7178,7 +7161,7 @@ components:
           type: string
         planId:
           description: plan id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         quantity:
@@ -7336,7 +7319,7 @@ components:
           type: string
         gatewayId:
           description: gateway_id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         invoiceId:
@@ -7346,7 +7329,7 @@ components:
           type: string
         merchantId:
           description: merchant id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         periodEnd:
@@ -7373,7 +7356,7 @@ components:
           $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PlanSimplify'
         planId:
           description: PlanId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         quantity:
@@ -7435,7 +7418,7 @@ components:
           type: string
         id:
           description: userId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         lastName:
@@ -7445,7 +7428,7 @@ components:
           type: string
         merchantId:
           description: merchant id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
       type: object
@@ -7501,13 +7484,13 @@ components:
         CurrentUseValue: 3
       properties:
         CurrentUseValue:
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         MetricLimit:
           $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.MetricLimitVo'
       type: object
-    unibee.internal.logic.gateway.ro.UserMetricStat:
+    unibee.internal.logic.gateway.ro.UserMetric:
       example:
         isPaid: true
         userMerchantMetricStats:
@@ -7790,7 +7773,7 @@ components:
           type: string
         id:
           description: TaxId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         standardTaxPercentage:
@@ -7827,12 +7810,12 @@ components:
           type: integer
         id:
           description: id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         merchantId:
           description: webhook url
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         webhookEvents:
@@ -7915,7 +7898,7 @@ components:
           type: string
         gatewayId:
           description: gateway_id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         gatewayInvoiceId:
@@ -7945,7 +7928,7 @@ components:
           properties: {}
           type: string
         id:
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         invoiceId:
@@ -7975,7 +7958,7 @@ components:
           type: string
         merchantId:
           description: merchant_id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         paymentId:
@@ -8171,7 +8154,7 @@ components:
           type: string
         id:
           description: merchant_id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         idcard:
@@ -8257,7 +8240,7 @@ components:
           type: string
         id:
           description: userId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         isDeleted:
@@ -8272,7 +8255,7 @@ components:
           type: string
         merchantId:
           description: merchant id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         mobile:
@@ -8319,7 +8302,7 @@ components:
           type: string
         aggregationPropertyInt:
           description: "aggregation property int, use for metric of max|sum type"
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         aggregationPropertyString:
@@ -8354,7 +8337,7 @@ components:
           type: string
         id:
           description: Id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         isDeleted:
@@ -8364,7 +8347,7 @@ components:
           type: integer
         merchantId:
           description: merchantId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         metricId:
@@ -8373,7 +8356,7 @@ components:
           properties: {}
           type: integer
         metricLimit:
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         subscriptionIds:
@@ -8391,7 +8374,7 @@ components:
           properties: {}
           type: integer
         used:
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         userId:
@@ -8442,7 +8425,7 @@ components:
           type: string
         id:
           description: id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         mamo:
@@ -8452,7 +8435,7 @@ components:
           type: string
         merchantId:
           description: webhook url
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         reconsumeCount:
@@ -8627,7 +8610,7 @@ components:
           type: string
         gatewayId:
           description: gateway_id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         gatewayPaymentId:
@@ -8679,7 +8662,7 @@ components:
           type: string
         merchantId:
           description: merchant id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         openApiId:
@@ -8788,7 +8771,7 @@ components:
           type: string
         gatewayId:
           description: gateway id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         gmtCreate:
@@ -8802,7 +8785,7 @@ components:
           properties: {}
           type: string
         id:
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         invoiceId:
@@ -8817,7 +8800,7 @@ components:
           type: integer
         merchantId:
           description: merchant id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         paymentId:
@@ -8918,7 +8901,7 @@ components:
           properties: {}
           type: string
         id:
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         imageUrl:
@@ -8943,7 +8926,7 @@ components:
           type: integer
         merchantId:
           description: merchant id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         planName:
@@ -9047,7 +9030,7 @@ components:
           type: string
         gatewayId:
           description: gateway_id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         gatewayRefundId:
@@ -9072,7 +9055,7 @@ components:
           type: integer
         merchantId:
           description: merchant id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         openApiId:
@@ -9271,7 +9254,7 @@ components:
           type: string
         gatewayId:
           description: gateway_id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         gatewayItemData:
@@ -9305,7 +9288,7 @@ components:
           properties: {}
           type: string
         id:
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         isDeleted:
@@ -9328,7 +9311,7 @@ components:
           type: string
         merchantId:
           description: merchant id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         pendingUpdateId:
@@ -9337,7 +9320,7 @@ components:
           type: string
         planId:
           description: plan id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         quantity:
@@ -9477,7 +9460,7 @@ components:
           type: integer
         gatewayId:
           description: gateway_id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         gatewayStatus:
@@ -9497,7 +9480,7 @@ components:
           type: string
         id:
           description: id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         invoiceId:
@@ -9517,7 +9500,7 @@ components:
           type: string
         merchantId:
           description: merchant id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         merchantMemberId:
@@ -9542,7 +9525,7 @@ components:
           type: integer
         planId:
           description: the plan id of this period
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         prorationAmount:
@@ -9591,7 +9574,7 @@ components:
           type: string
         updatePlanId:
           description: the plan id after update
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         updateQuantity:
@@ -9746,7 +9729,7 @@ components:
           type: string
         id:
           description: userId
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         isDeleted:
@@ -9781,7 +9764,7 @@ components:
           type: string
         merchantId:
           description: merchant_id
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         mobile:
@@ -9911,7 +9894,7 @@ components:
           properties: {}
           type: integer
         merchantId:
-          format: uint64
+          format: int64
           properties: {}
           type: integer
         status:
@@ -12533,9 +12516,9 @@ components:
           properties: {}
           type: string
       type: object
-    _merchant_metric_user_stat_get_200_response_data:
+    _merchant_metric_user_metric_get_200_response_data:
       example:
-        userMetricStat:
+        userMetric:
           isPaid: true
           userMerchantMetricStats:
           - MetricLimit:
@@ -12741,15 +12724,15 @@ components:
             id: 5
             email: email
       properties:
-        userMetricStat:
-          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.UserMetricStat'
+        userMetric:
+          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.UserMetric'
       type: object
-    _merchant_metric_user_stat_get_200_response:
+    _merchant_metric_user_metric_get_200_response:
       example:
         redirect: redirect
         code: 0
         data:
-          userMetricStat:
+          userMetric:
             isPaid: true
             userMerchantMetricStats:
             - MetricLimit:
@@ -12962,7 +12945,7 @@ components:
           properties: {}
           type: integer
         data:
-          $ref: '#/components/schemas/_merchant_metric_user_stat_get_200_response_data'
+          $ref: '#/components/schemas/_merchant_metric_user_metric_get_200_response_data'
         message:
           format: string
           properties: {}

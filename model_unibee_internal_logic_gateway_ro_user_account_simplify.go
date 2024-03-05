@@ -30,11 +30,11 @@ type UnibeeInternalLogicGatewayRoUserAccountSimplify struct {
 	// first name
 	FirstName *string `json:"firstName,omitempty"`
 	// userId
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// last name
 	LastName *string `json:"lastName,omitempty"`
 	// merchant id
-	MerchantId *int32 `json:"merchantId,omitempty"`
+	MerchantId *int64 `json:"merchantId,omitempty"`
 }
 
 // NewUnibeeInternalLogicGatewayRoUserAccountSimplify instantiates a new UnibeeInternalLogicGatewayRoUserAccountSimplify object
@@ -215,9 +215,9 @@ func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) SetFirstName(v string)
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) GetId() int32 {
+func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -225,7 +225,7 @@ func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) GetIdOk() (*int32, bool) {
+func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -241,8 +241,8 @@ func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -279,9 +279,9 @@ func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) SetLastName(v string) 
 }
 
 // GetMerchantId returns the MerchantId field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) GetMerchantId() int32 {
+func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) GetMerchantId() int64 {
 	if o == nil || IsNil(o.MerchantId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MerchantId
@@ -289,7 +289,7 @@ func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) GetMerchantId() int32 
 
 // GetMerchantIdOk returns a tuple with the MerchantId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) GetMerchantIdOk() (*int32, bool) {
+func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) GetMerchantIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.MerchantId) {
 		return nil, false
 	}
@@ -305,8 +305,8 @@ func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) HasMerchantId() bool {
 	return false
 }
 
-// SetMerchantId gets a reference to the given int32 and assigns it to the MerchantId field.
-func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) SetMerchantId(v int32) {
+// SetMerchantId gets a reference to the given int64 and assigns it to the MerchantId field.
+func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) SetMerchantId(v int64) {
 	o.MerchantId = &v
 }
 

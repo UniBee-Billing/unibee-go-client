@@ -14,11 +14,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the UnibeeInternalLogicGatewayRoUserMetricStat type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &UnibeeInternalLogicGatewayRoUserMetricStat{}
+// checks if the UnibeeInternalLogicGatewayRoUserMetric type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &UnibeeInternalLogicGatewayRoUserMetric{}
 
-// UnibeeInternalLogicGatewayRoUserMetricStat struct for UnibeeInternalLogicGatewayRoUserMetricStat
-type UnibeeInternalLogicGatewayRoUserMetricStat struct {
+// UnibeeInternalLogicGatewayRoUserMetric struct for UnibeeInternalLogicGatewayRoUserMetric
+type UnibeeInternalLogicGatewayRoUserMetric struct {
 	// Addon
 	Addons []UnibeeInternalLogicGatewayRoPlanAddonVo `json:"addons,omitempty"`
 	// IsPaid
@@ -30,25 +30,25 @@ type UnibeeInternalLogicGatewayRoUserMetricStat struct {
 	UserMerchantMetricStats []UnibeeInternalLogicGatewayRoUserMerchantMetricStat `json:"userMerchantMetricStats,omitempty"`
 }
 
-// NewUnibeeInternalLogicGatewayRoUserMetricStat instantiates a new UnibeeInternalLogicGatewayRoUserMetricStat object
+// NewUnibeeInternalLogicGatewayRoUserMetric instantiates a new UnibeeInternalLogicGatewayRoUserMetric object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeInternalLogicGatewayRoUserMetricStat() *UnibeeInternalLogicGatewayRoUserMetricStat {
-	this := UnibeeInternalLogicGatewayRoUserMetricStat{}
+func NewUnibeeInternalLogicGatewayRoUserMetric() *UnibeeInternalLogicGatewayRoUserMetric {
+	this := UnibeeInternalLogicGatewayRoUserMetric{}
 	return &this
 }
 
-// NewUnibeeInternalLogicGatewayRoUserMetricStatWithDefaults instantiates a new UnibeeInternalLogicGatewayRoUserMetricStat object
+// NewUnibeeInternalLogicGatewayRoUserMetricWithDefaults instantiates a new UnibeeInternalLogicGatewayRoUserMetric object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewUnibeeInternalLogicGatewayRoUserMetricStatWithDefaults() *UnibeeInternalLogicGatewayRoUserMetricStat {
-	this := UnibeeInternalLogicGatewayRoUserMetricStat{}
+func NewUnibeeInternalLogicGatewayRoUserMetricWithDefaults() *UnibeeInternalLogicGatewayRoUserMetric {
+	this := UnibeeInternalLogicGatewayRoUserMetric{}
 	return &this
 }
 
 // GetAddons returns the Addons field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetAddons() []UnibeeInternalLogicGatewayRoPlanAddonVo {
+func (o *UnibeeInternalLogicGatewayRoUserMetric) GetAddons() []UnibeeInternalLogicGatewayRoPlanAddonVo {
 	if o == nil || IsNil(o.Addons) {
 		var ret []UnibeeInternalLogicGatewayRoPlanAddonVo
 		return ret
@@ -58,7 +58,7 @@ func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetAddons() []UnibeeInterna
 
 // GetAddonsOk returns a tuple with the Addons field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetAddonsOk() ([]UnibeeInternalLogicGatewayRoPlanAddonVo, bool) {
+func (o *UnibeeInternalLogicGatewayRoUserMetric) GetAddonsOk() ([]UnibeeInternalLogicGatewayRoPlanAddonVo, bool) {
 	if o == nil || IsNil(o.Addons) {
 		return nil, false
 	}
@@ -66,7 +66,7 @@ func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetAddonsOk() ([]UnibeeInte
 }
 
 // HasAddons returns a boolean if a field has been set.
-func (o *UnibeeInternalLogicGatewayRoUserMetricStat) HasAddons() bool {
+func (o *UnibeeInternalLogicGatewayRoUserMetric) HasAddons() bool {
 	if o != nil && !IsNil(o.Addons) {
 		return true
 	}
@@ -75,12 +75,12 @@ func (o *UnibeeInternalLogicGatewayRoUserMetricStat) HasAddons() bool {
 }
 
 // SetAddons gets a reference to the given []UnibeeInternalLogicGatewayRoPlanAddonVo and assigns it to the Addons field.
-func (o *UnibeeInternalLogicGatewayRoUserMetricStat) SetAddons(v []UnibeeInternalLogicGatewayRoPlanAddonVo) {
+func (o *UnibeeInternalLogicGatewayRoUserMetric) SetAddons(v []UnibeeInternalLogicGatewayRoPlanAddonVo) {
 	o.Addons = v
 }
 
 // GetIsPaid returns the IsPaid field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetIsPaid() bool {
+func (o *UnibeeInternalLogicGatewayRoUserMetric) GetIsPaid() bool {
 	if o == nil || IsNil(o.IsPaid) {
 		var ret bool
 		return ret
@@ -90,7 +90,7 @@ func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetIsPaid() bool {
 
 // GetIsPaidOk returns a tuple with the IsPaid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetIsPaidOk() (*bool, bool) {
+func (o *UnibeeInternalLogicGatewayRoUserMetric) GetIsPaidOk() (*bool, bool) {
 	if o == nil || IsNil(o.IsPaid) {
 		return nil, false
 	}
@@ -98,7 +98,7 @@ func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetIsPaidOk() (*bool, bool)
 }
 
 // HasIsPaid returns a boolean if a field has been set.
-func (o *UnibeeInternalLogicGatewayRoUserMetricStat) HasIsPaid() bool {
+func (o *UnibeeInternalLogicGatewayRoUserMetric) HasIsPaid() bool {
 	if o != nil && !IsNil(o.IsPaid) {
 		return true
 	}
@@ -107,12 +107,12 @@ func (o *UnibeeInternalLogicGatewayRoUserMetricStat) HasIsPaid() bool {
 }
 
 // SetIsPaid gets a reference to the given bool and assigns it to the IsPaid field.
-func (o *UnibeeInternalLogicGatewayRoUserMetricStat) SetIsPaid(v bool) {
+func (o *UnibeeInternalLogicGatewayRoUserMetric) SetIsPaid(v bool) {
 	o.IsPaid = &v
 }
 
 // GetPlan returns the Plan field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetPlan() UnibeeInternalLogicGatewayRoPlanSimplify {
+func (o *UnibeeInternalLogicGatewayRoUserMetric) GetPlan() UnibeeInternalLogicGatewayRoPlanSimplify {
 	if o == nil || IsNil(o.Plan) {
 		var ret UnibeeInternalLogicGatewayRoPlanSimplify
 		return ret
@@ -122,7 +122,7 @@ func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetPlan() UnibeeInternalLog
 
 // GetPlanOk returns a tuple with the Plan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetPlanOk() (*UnibeeInternalLogicGatewayRoPlanSimplify, bool) {
+func (o *UnibeeInternalLogicGatewayRoUserMetric) GetPlanOk() (*UnibeeInternalLogicGatewayRoPlanSimplify, bool) {
 	if o == nil || IsNil(o.Plan) {
 		return nil, false
 	}
@@ -130,7 +130,7 @@ func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetPlanOk() (*UnibeeInterna
 }
 
 // HasPlan returns a boolean if a field has been set.
-func (o *UnibeeInternalLogicGatewayRoUserMetricStat) HasPlan() bool {
+func (o *UnibeeInternalLogicGatewayRoUserMetric) HasPlan() bool {
 	if o != nil && !IsNil(o.Plan) {
 		return true
 	}
@@ -139,12 +139,12 @@ func (o *UnibeeInternalLogicGatewayRoUserMetricStat) HasPlan() bool {
 }
 
 // SetPlan gets a reference to the given UnibeeInternalLogicGatewayRoPlanSimplify and assigns it to the Plan field.
-func (o *UnibeeInternalLogicGatewayRoUserMetricStat) SetPlan(v UnibeeInternalLogicGatewayRoPlanSimplify) {
+func (o *UnibeeInternalLogicGatewayRoUserMetric) SetPlan(v UnibeeInternalLogicGatewayRoPlanSimplify) {
 	o.Plan = &v
 }
 
 // GetSubscription returns the Subscription field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetSubscription() UnibeeInternalLogicGatewayRoSubscriptionSimplify {
+func (o *UnibeeInternalLogicGatewayRoUserMetric) GetSubscription() UnibeeInternalLogicGatewayRoSubscriptionSimplify {
 	if o == nil || IsNil(o.Subscription) {
 		var ret UnibeeInternalLogicGatewayRoSubscriptionSimplify
 		return ret
@@ -154,7 +154,7 @@ func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetSubscription() UnibeeInt
 
 // GetSubscriptionOk returns a tuple with the Subscription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetSubscriptionOk() (*UnibeeInternalLogicGatewayRoSubscriptionSimplify, bool) {
+func (o *UnibeeInternalLogicGatewayRoUserMetric) GetSubscriptionOk() (*UnibeeInternalLogicGatewayRoSubscriptionSimplify, bool) {
 	if o == nil || IsNil(o.Subscription) {
 		return nil, false
 	}
@@ -162,7 +162,7 @@ func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetSubscriptionOk() (*Unibe
 }
 
 // HasSubscription returns a boolean if a field has been set.
-func (o *UnibeeInternalLogicGatewayRoUserMetricStat) HasSubscription() bool {
+func (o *UnibeeInternalLogicGatewayRoUserMetric) HasSubscription() bool {
 	if o != nil && !IsNil(o.Subscription) {
 		return true
 	}
@@ -171,12 +171,12 @@ func (o *UnibeeInternalLogicGatewayRoUserMetricStat) HasSubscription() bool {
 }
 
 // SetSubscription gets a reference to the given UnibeeInternalLogicGatewayRoSubscriptionSimplify and assigns it to the Subscription field.
-func (o *UnibeeInternalLogicGatewayRoUserMetricStat) SetSubscription(v UnibeeInternalLogicGatewayRoSubscriptionSimplify) {
+func (o *UnibeeInternalLogicGatewayRoUserMetric) SetSubscription(v UnibeeInternalLogicGatewayRoSubscriptionSimplify) {
 	o.Subscription = &v
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetUser() UnibeeInternalLogicGatewayRoUserAccountSimplify {
+func (o *UnibeeInternalLogicGatewayRoUserMetric) GetUser() UnibeeInternalLogicGatewayRoUserAccountSimplify {
 	if o == nil || IsNil(o.User) {
 		var ret UnibeeInternalLogicGatewayRoUserAccountSimplify
 		return ret
@@ -186,7 +186,7 @@ func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetUser() UnibeeInternalLog
 
 // GetUserOk returns a tuple with the User field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetUserOk() (*UnibeeInternalLogicGatewayRoUserAccountSimplify, bool) {
+func (o *UnibeeInternalLogicGatewayRoUserMetric) GetUserOk() (*UnibeeInternalLogicGatewayRoUserAccountSimplify, bool) {
 	if o == nil || IsNil(o.User) {
 		return nil, false
 	}
@@ -194,7 +194,7 @@ func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetUserOk() (*UnibeeInterna
 }
 
 // HasUser returns a boolean if a field has been set.
-func (o *UnibeeInternalLogicGatewayRoUserMetricStat) HasUser() bool {
+func (o *UnibeeInternalLogicGatewayRoUserMetric) HasUser() bool {
 	if o != nil && !IsNil(o.User) {
 		return true
 	}
@@ -203,12 +203,12 @@ func (o *UnibeeInternalLogicGatewayRoUserMetricStat) HasUser() bool {
 }
 
 // SetUser gets a reference to the given UnibeeInternalLogicGatewayRoUserAccountSimplify and assigns it to the User field.
-func (o *UnibeeInternalLogicGatewayRoUserMetricStat) SetUser(v UnibeeInternalLogicGatewayRoUserAccountSimplify) {
+func (o *UnibeeInternalLogicGatewayRoUserMetric) SetUser(v UnibeeInternalLogicGatewayRoUserAccountSimplify) {
 	o.User = &v
 }
 
 // GetUserMerchantMetricStats returns the UserMerchantMetricStats field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetUserMerchantMetricStats() []UnibeeInternalLogicGatewayRoUserMerchantMetricStat {
+func (o *UnibeeInternalLogicGatewayRoUserMetric) GetUserMerchantMetricStats() []UnibeeInternalLogicGatewayRoUserMerchantMetricStat {
 	if o == nil || IsNil(o.UserMerchantMetricStats) {
 		var ret []UnibeeInternalLogicGatewayRoUserMerchantMetricStat
 		return ret
@@ -218,7 +218,7 @@ func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetUserMerchantMetricStats(
 
 // GetUserMerchantMetricStatsOk returns a tuple with the UserMerchantMetricStats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetUserMerchantMetricStatsOk() ([]UnibeeInternalLogicGatewayRoUserMerchantMetricStat, bool) {
+func (o *UnibeeInternalLogicGatewayRoUserMetric) GetUserMerchantMetricStatsOk() ([]UnibeeInternalLogicGatewayRoUserMerchantMetricStat, bool) {
 	if o == nil || IsNil(o.UserMerchantMetricStats) {
 		return nil, false
 	}
@@ -226,7 +226,7 @@ func (o *UnibeeInternalLogicGatewayRoUserMetricStat) GetUserMerchantMetricStatsO
 }
 
 // HasUserMerchantMetricStats returns a boolean if a field has been set.
-func (o *UnibeeInternalLogicGatewayRoUserMetricStat) HasUserMerchantMetricStats() bool {
+func (o *UnibeeInternalLogicGatewayRoUserMetric) HasUserMerchantMetricStats() bool {
 	if o != nil && !IsNil(o.UserMerchantMetricStats) {
 		return true
 	}
@@ -235,11 +235,11 @@ func (o *UnibeeInternalLogicGatewayRoUserMetricStat) HasUserMerchantMetricStats(
 }
 
 // SetUserMerchantMetricStats gets a reference to the given []UnibeeInternalLogicGatewayRoUserMerchantMetricStat and assigns it to the UserMerchantMetricStats field.
-func (o *UnibeeInternalLogicGatewayRoUserMetricStat) SetUserMerchantMetricStats(v []UnibeeInternalLogicGatewayRoUserMerchantMetricStat) {
+func (o *UnibeeInternalLogicGatewayRoUserMetric) SetUserMerchantMetricStats(v []UnibeeInternalLogicGatewayRoUserMerchantMetricStat) {
 	o.UserMerchantMetricStats = v
 }
 
-func (o UnibeeInternalLogicGatewayRoUserMetricStat) MarshalJSON() ([]byte, error) {
+func (o UnibeeInternalLogicGatewayRoUserMetric) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -247,7 +247,7 @@ func (o UnibeeInternalLogicGatewayRoUserMetricStat) MarshalJSON() ([]byte, error
 	return json.Marshal(toSerialize)
 }
 
-func (o UnibeeInternalLogicGatewayRoUserMetricStat) ToMap() (map[string]interface{}, error) {
+func (o UnibeeInternalLogicGatewayRoUserMetric) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Addons) {
 		toSerialize["addons"] = o.Addons
@@ -270,38 +270,38 @@ func (o UnibeeInternalLogicGatewayRoUserMetricStat) ToMap() (map[string]interfac
 	return toSerialize, nil
 }
 
-type NullableUnibeeInternalLogicGatewayRoUserMetricStat struct {
-	value *UnibeeInternalLogicGatewayRoUserMetricStat
+type NullableUnibeeInternalLogicGatewayRoUserMetric struct {
+	value *UnibeeInternalLogicGatewayRoUserMetric
 	isSet bool
 }
 
-func (v NullableUnibeeInternalLogicGatewayRoUserMetricStat) Get() *UnibeeInternalLogicGatewayRoUserMetricStat {
+func (v NullableUnibeeInternalLogicGatewayRoUserMetric) Get() *UnibeeInternalLogicGatewayRoUserMetric {
 	return v.value
 }
 
-func (v *NullableUnibeeInternalLogicGatewayRoUserMetricStat) Set(val *UnibeeInternalLogicGatewayRoUserMetricStat) {
+func (v *NullableUnibeeInternalLogicGatewayRoUserMetric) Set(val *UnibeeInternalLogicGatewayRoUserMetric) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableUnibeeInternalLogicGatewayRoUserMetricStat) IsSet() bool {
+func (v NullableUnibeeInternalLogicGatewayRoUserMetric) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableUnibeeInternalLogicGatewayRoUserMetricStat) Unset() {
+func (v *NullableUnibeeInternalLogicGatewayRoUserMetric) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableUnibeeInternalLogicGatewayRoUserMetricStat(val *UnibeeInternalLogicGatewayRoUserMetricStat) *NullableUnibeeInternalLogicGatewayRoUserMetricStat {
-	return &NullableUnibeeInternalLogicGatewayRoUserMetricStat{value: val, isSet: true}
+func NewNullableUnibeeInternalLogicGatewayRoUserMetric(val *UnibeeInternalLogicGatewayRoUserMetric) *NullableUnibeeInternalLogicGatewayRoUserMetric {
+	return &NullableUnibeeInternalLogicGatewayRoUserMetric{value: val, isSet: true}
 }
 
-func (v NullableUnibeeInternalLogicGatewayRoUserMetricStat) MarshalJSON() ([]byte, error) {
+func (v NullableUnibeeInternalLogicGatewayRoUserMetric) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableUnibeeInternalLogicGatewayRoUserMetricStat) UnmarshalJSON(src []byte) error {
+func (v *NullableUnibeeInternalLogicGatewayRoUserMetric) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

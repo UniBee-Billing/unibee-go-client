@@ -55,7 +55,7 @@ type UnibeeInternalModelEntityOverseaPayPayment struct {
 	// gateway edition
 	GatewayEdition *string `json:"gatewayEdition,omitempty"`
 	// gateway_id
-	GatewayId *int32 `json:"gatewayId,omitempty"`
+	GatewayId *int64 `json:"gatewayId,omitempty"`
 	// gateway_payment_id
 	GatewayPaymentId *string `json:"gatewayPaymentId,omitempty"`
 	// gateway_payment_intent_id
@@ -74,7 +74,7 @@ type UnibeeInternalModelEntityOverseaPayPayment struct {
 	InvoiceId *string `json:"invoiceId,omitempty"`
 	Link *string `json:"link,omitempty"`
 	// merchant id
-	MerchantId *int32 `json:"merchantId,omitempty"`
+	MerchantId *int64 `json:"merchantId,omitempty"`
 	// open api id
 	OpenApiId *int64 `json:"openApiId,omitempty"`
 	// paid time, utc time
@@ -764,9 +764,9 @@ func (o *UnibeeInternalModelEntityOverseaPayPayment) SetGatewayEdition(v string)
 }
 
 // GetGatewayId returns the GatewayId field value if set, zero value otherwise.
-func (o *UnibeeInternalModelEntityOverseaPayPayment) GetGatewayId() int32 {
+func (o *UnibeeInternalModelEntityOverseaPayPayment) GetGatewayId() int64 {
 	if o == nil || IsNil(o.GatewayId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.GatewayId
@@ -774,7 +774,7 @@ func (o *UnibeeInternalModelEntityOverseaPayPayment) GetGatewayId() int32 {
 
 // GetGatewayIdOk returns a tuple with the GatewayId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalModelEntityOverseaPayPayment) GetGatewayIdOk() (*int32, bool) {
+func (o *UnibeeInternalModelEntityOverseaPayPayment) GetGatewayIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.GatewayId) {
 		return nil, false
 	}
@@ -790,8 +790,8 @@ func (o *UnibeeInternalModelEntityOverseaPayPayment) HasGatewayId() bool {
 	return false
 }
 
-// SetGatewayId gets a reference to the given int32 and assigns it to the GatewayId field.
-func (o *UnibeeInternalModelEntityOverseaPayPayment) SetGatewayId(v int32) {
+// SetGatewayId gets a reference to the given int64 and assigns it to the GatewayId field.
+func (o *UnibeeInternalModelEntityOverseaPayPayment) SetGatewayId(v int64) {
 	o.GatewayId = &v
 }
 
@@ -1116,9 +1116,9 @@ func (o *UnibeeInternalModelEntityOverseaPayPayment) SetLink(v string) {
 }
 
 // GetMerchantId returns the MerchantId field value if set, zero value otherwise.
-func (o *UnibeeInternalModelEntityOverseaPayPayment) GetMerchantId() int32 {
+func (o *UnibeeInternalModelEntityOverseaPayPayment) GetMerchantId() int64 {
 	if o == nil || IsNil(o.MerchantId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MerchantId
@@ -1126,7 +1126,7 @@ func (o *UnibeeInternalModelEntityOverseaPayPayment) GetMerchantId() int32 {
 
 // GetMerchantIdOk returns a tuple with the MerchantId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalModelEntityOverseaPayPayment) GetMerchantIdOk() (*int32, bool) {
+func (o *UnibeeInternalModelEntityOverseaPayPayment) GetMerchantIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.MerchantId) {
 		return nil, false
 	}
@@ -1142,8 +1142,8 @@ func (o *UnibeeInternalModelEntityOverseaPayPayment) HasMerchantId() bool {
 	return false
 }
 
-// SetMerchantId gets a reference to the given int32 and assigns it to the MerchantId field.
-func (o *UnibeeInternalModelEntityOverseaPayPayment) SetMerchantId(v int32) {
+// SetMerchantId gets a reference to the given int64 and assigns it to the MerchantId field.
+func (o *UnibeeInternalModelEntityOverseaPayPayment) SetMerchantId(v int64) {
 	o.MerchantId = &v
 }
 

@@ -22,18 +22,18 @@ import (
 // MerchantEmailTemplateAPIService MerchantEmailTemplateAPI service
 type MerchantEmailTemplateAPIService service
 
-type MerchantEmailTemplateAPIMerchantEmailTemplateActivatePostRequest struct {
+type ApiMerchantEmailTemplateActivatePostRequest struct {
 	ctx context.Context
 	ApiService *MerchantEmailTemplateAPIService
 	unibeeApiMerchantEmailTemplateActivateReq *UnibeeApiMerchantEmailTemplateActivateReq
 }
 
-func (r MerchantEmailTemplateAPIMerchantEmailTemplateActivatePostRequest) UnibeeApiMerchantEmailTemplateActivateReq(unibeeApiMerchantEmailTemplateActivateReq UnibeeApiMerchantEmailTemplateActivateReq) MerchantEmailTemplateAPIMerchantEmailTemplateActivatePostRequest {
+func (r ApiMerchantEmailTemplateActivatePostRequest) UnibeeApiMerchantEmailTemplateActivateReq(unibeeApiMerchantEmailTemplateActivateReq UnibeeApiMerchantEmailTemplateActivateReq) ApiMerchantEmailTemplateActivatePostRequest {
 	r.unibeeApiMerchantEmailTemplateActivateReq = &unibeeApiMerchantEmailTemplateActivateReq
 	return r
 }
 
-func (r MerchantEmailTemplateAPIMerchantEmailTemplateActivatePostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantEmailTemplateActivatePostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantEmailTemplateActivatePostExecute(r)
 }
 
@@ -41,10 +41,10 @@ func (r MerchantEmailTemplateAPIMerchantEmailTemplateActivatePostRequest) Execut
 MerchantEmailTemplateActivatePost Merchant Email Template Activate
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantEmailTemplateAPIMerchantEmailTemplateActivatePostRequest
+ @return ApiMerchantEmailTemplateActivatePostRequest
 */
-func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateActivatePost(ctx context.Context) MerchantEmailTemplateAPIMerchantEmailTemplateActivatePostRequest {
-	return MerchantEmailTemplateAPIMerchantEmailTemplateActivatePostRequest{
+func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateActivatePost(ctx context.Context) ApiMerchantEmailTemplateActivatePostRequest {
+	return ApiMerchantEmailTemplateActivatePostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -52,7 +52,7 @@ func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateActivatePost(ctx 
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateActivatePostExecute(r MerchantEmailTemplateAPIMerchantEmailTemplateActivatePostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateActivatePostExecute(r ApiMerchantEmailTemplateActivatePostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -130,18 +130,18 @@ func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateActivatePostExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantEmailTemplateAPIMerchantEmailTemplateDeactivatePostRequest struct {
+type ApiMerchantEmailTemplateDeactivatePostRequest struct {
 	ctx context.Context
 	ApiService *MerchantEmailTemplateAPIService
 	unibeeApiMerchantEmailTemplateDeactivateReq *UnibeeApiMerchantEmailTemplateDeactivateReq
 }
 
-func (r MerchantEmailTemplateAPIMerchantEmailTemplateDeactivatePostRequest) UnibeeApiMerchantEmailTemplateDeactivateReq(unibeeApiMerchantEmailTemplateDeactivateReq UnibeeApiMerchantEmailTemplateDeactivateReq) MerchantEmailTemplateAPIMerchantEmailTemplateDeactivatePostRequest {
+func (r ApiMerchantEmailTemplateDeactivatePostRequest) UnibeeApiMerchantEmailTemplateDeactivateReq(unibeeApiMerchantEmailTemplateDeactivateReq UnibeeApiMerchantEmailTemplateDeactivateReq) ApiMerchantEmailTemplateDeactivatePostRequest {
 	r.unibeeApiMerchantEmailTemplateDeactivateReq = &unibeeApiMerchantEmailTemplateDeactivateReq
 	return r
 }
 
-func (r MerchantEmailTemplateAPIMerchantEmailTemplateDeactivatePostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantEmailTemplateDeactivatePostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantEmailTemplateDeactivatePostExecute(r)
 }
 
@@ -149,10 +149,10 @@ func (r MerchantEmailTemplateAPIMerchantEmailTemplateDeactivatePostRequest) Exec
 MerchantEmailTemplateDeactivatePost Merchant Email Template Deactivate
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantEmailTemplateAPIMerchantEmailTemplateDeactivatePostRequest
+ @return ApiMerchantEmailTemplateDeactivatePostRequest
 */
-func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateDeactivatePost(ctx context.Context) MerchantEmailTemplateAPIMerchantEmailTemplateDeactivatePostRequest {
-	return MerchantEmailTemplateAPIMerchantEmailTemplateDeactivatePostRequest{
+func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateDeactivatePost(ctx context.Context) ApiMerchantEmailTemplateDeactivatePostRequest {
+	return ApiMerchantEmailTemplateDeactivatePostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -160,7 +160,7 @@ func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateDeactivatePost(ct
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateDeactivatePostExecute(r MerchantEmailTemplateAPIMerchantEmailTemplateDeactivatePostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateDeactivatePostExecute(r ApiMerchantEmailTemplateDeactivatePostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -238,12 +238,12 @@ func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateDeactivatePostExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantEmailTemplateAPIMerchantEmailTemplateListGetRequest struct {
+type ApiMerchantEmailTemplateListGetRequest struct {
 	ctx context.Context
 	ApiService *MerchantEmailTemplateAPIService
 }
 
-func (r MerchantEmailTemplateAPIMerchantEmailTemplateListGetRequest) Execute() (*MerchantEmailTemplateListGet200Response, *http.Response, error) {
+func (r ApiMerchantEmailTemplateListGetRequest) Execute() (*MerchantEmailTemplateListGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantEmailTemplateListGetExecute(r)
 }
 
@@ -251,10 +251,10 @@ func (r MerchantEmailTemplateAPIMerchantEmailTemplateListGetRequest) Execute() (
 MerchantEmailTemplateListGet Merchant Email Template List
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantEmailTemplateAPIMerchantEmailTemplateListGetRequest
+ @return ApiMerchantEmailTemplateListGetRequest
 */
-func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateListGet(ctx context.Context) MerchantEmailTemplateAPIMerchantEmailTemplateListGetRequest {
-	return MerchantEmailTemplateAPIMerchantEmailTemplateListGetRequest{
+func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateListGet(ctx context.Context) ApiMerchantEmailTemplateListGetRequest {
+	return ApiMerchantEmailTemplateListGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -262,7 +262,7 @@ func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateListGet(ctx conte
 
 // Execute executes the request
 //  @return MerchantEmailTemplateListGet200Response
-func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateListGetExecute(r MerchantEmailTemplateAPIMerchantEmailTemplateListGetRequest) (*MerchantEmailTemplateListGet200Response, *http.Response, error) {
+func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateListGetExecute(r ApiMerchantEmailTemplateListGetRequest) (*MerchantEmailTemplateListGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -335,18 +335,18 @@ func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateListGetExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantEmailTemplateAPIMerchantEmailTemplateSetDefaultPostRequest struct {
+type ApiMerchantEmailTemplateSetDefaultPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantEmailTemplateAPIService
 	unibeeApiMerchantEmailTemplateSetDefaultReq *UnibeeApiMerchantEmailTemplateSetDefaultReq
 }
 
-func (r MerchantEmailTemplateAPIMerchantEmailTemplateSetDefaultPostRequest) UnibeeApiMerchantEmailTemplateSetDefaultReq(unibeeApiMerchantEmailTemplateSetDefaultReq UnibeeApiMerchantEmailTemplateSetDefaultReq) MerchantEmailTemplateAPIMerchantEmailTemplateSetDefaultPostRequest {
+func (r ApiMerchantEmailTemplateSetDefaultPostRequest) UnibeeApiMerchantEmailTemplateSetDefaultReq(unibeeApiMerchantEmailTemplateSetDefaultReq UnibeeApiMerchantEmailTemplateSetDefaultReq) ApiMerchantEmailTemplateSetDefaultPostRequest {
 	r.unibeeApiMerchantEmailTemplateSetDefaultReq = &unibeeApiMerchantEmailTemplateSetDefaultReq
 	return r
 }
 
-func (r MerchantEmailTemplateAPIMerchantEmailTemplateSetDefaultPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantEmailTemplateSetDefaultPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantEmailTemplateSetDefaultPostExecute(r)
 }
 
@@ -354,10 +354,10 @@ func (r MerchantEmailTemplateAPIMerchantEmailTemplateSetDefaultPostRequest) Exec
 MerchantEmailTemplateSetDefaultPost Merchant Email Template Set Default
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantEmailTemplateAPIMerchantEmailTemplateSetDefaultPostRequest
+ @return ApiMerchantEmailTemplateSetDefaultPostRequest
 */
-func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateSetDefaultPost(ctx context.Context) MerchantEmailTemplateAPIMerchantEmailTemplateSetDefaultPostRequest {
-	return MerchantEmailTemplateAPIMerchantEmailTemplateSetDefaultPostRequest{
+func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateSetDefaultPost(ctx context.Context) ApiMerchantEmailTemplateSetDefaultPostRequest {
+	return ApiMerchantEmailTemplateSetDefaultPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -365,7 +365,7 @@ func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateSetDefaultPost(ct
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateSetDefaultPostExecute(r MerchantEmailTemplateAPIMerchantEmailTemplateSetDefaultPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateSetDefaultPostExecute(r ApiMerchantEmailTemplateSetDefaultPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -443,18 +443,18 @@ func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateSetDefaultPostExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantEmailTemplateAPIMerchantEmailTemplateUpdatePostRequest struct {
+type ApiMerchantEmailTemplateUpdatePostRequest struct {
 	ctx context.Context
 	ApiService *MerchantEmailTemplateAPIService
 	unibeeApiMerchantEmailTemplateUpdateReq *UnibeeApiMerchantEmailTemplateUpdateReq
 }
 
-func (r MerchantEmailTemplateAPIMerchantEmailTemplateUpdatePostRequest) UnibeeApiMerchantEmailTemplateUpdateReq(unibeeApiMerchantEmailTemplateUpdateReq UnibeeApiMerchantEmailTemplateUpdateReq) MerchantEmailTemplateAPIMerchantEmailTemplateUpdatePostRequest {
+func (r ApiMerchantEmailTemplateUpdatePostRequest) UnibeeApiMerchantEmailTemplateUpdateReq(unibeeApiMerchantEmailTemplateUpdateReq UnibeeApiMerchantEmailTemplateUpdateReq) ApiMerchantEmailTemplateUpdatePostRequest {
 	r.unibeeApiMerchantEmailTemplateUpdateReq = &unibeeApiMerchantEmailTemplateUpdateReq
 	return r
 }
 
-func (r MerchantEmailTemplateAPIMerchantEmailTemplateUpdatePostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantEmailTemplateUpdatePostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantEmailTemplateUpdatePostExecute(r)
 }
 
@@ -462,10 +462,10 @@ func (r MerchantEmailTemplateAPIMerchantEmailTemplateUpdatePostRequest) Execute(
 MerchantEmailTemplateUpdatePost Merchant Email Template Update
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantEmailTemplateAPIMerchantEmailTemplateUpdatePostRequest
+ @return ApiMerchantEmailTemplateUpdatePostRequest
 */
-func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateUpdatePost(ctx context.Context) MerchantEmailTemplateAPIMerchantEmailTemplateUpdatePostRequest {
-	return MerchantEmailTemplateAPIMerchantEmailTemplateUpdatePostRequest{
+func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateUpdatePost(ctx context.Context) ApiMerchantEmailTemplateUpdatePostRequest {
+	return ApiMerchantEmailTemplateUpdatePostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -473,7 +473,7 @@ func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateUpdatePost(ctx co
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateUpdatePostExecute(r MerchantEmailTemplateAPIMerchantEmailTemplateUpdatePostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantEmailTemplateAPIService) MerchantEmailTemplateUpdatePostExecute(r ApiMerchantEmailTemplateUpdatePostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

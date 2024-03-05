@@ -22,7 +22,7 @@ var _ MappedNullable = &UnibeeApiMerchantGatewaySetupWebhookReq{}
 // UnibeeApiMerchantGatewaySetupWebhookReq struct for UnibeeApiMerchantGatewaySetupWebhookReq
 type UnibeeApiMerchantGatewaySetupWebhookReq struct {
 	// GatewayId
-	GatewayId int32 `json:"gatewayId"`
+	GatewayId int64 `json:"gatewayId"`
 }
 
 type _UnibeeApiMerchantGatewaySetupWebhookReq UnibeeApiMerchantGatewaySetupWebhookReq
@@ -31,7 +31,7 @@ type _UnibeeApiMerchantGatewaySetupWebhookReq UnibeeApiMerchantGatewaySetupWebho
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiMerchantGatewaySetupWebhookReq(gatewayId int32) *UnibeeApiMerchantGatewaySetupWebhookReq {
+func NewUnibeeApiMerchantGatewaySetupWebhookReq(gatewayId int64) *UnibeeApiMerchantGatewaySetupWebhookReq {
 	this := UnibeeApiMerchantGatewaySetupWebhookReq{}
 	this.GatewayId = gatewayId
 	return &this
@@ -46,9 +46,9 @@ func NewUnibeeApiMerchantGatewaySetupWebhookReqWithDefaults() *UnibeeApiMerchant
 }
 
 // GetGatewayId returns the GatewayId field value
-func (o *UnibeeApiMerchantGatewaySetupWebhookReq) GetGatewayId() int32 {
+func (o *UnibeeApiMerchantGatewaySetupWebhookReq) GetGatewayId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -57,7 +57,7 @@ func (o *UnibeeApiMerchantGatewaySetupWebhookReq) GetGatewayId() int32 {
 
 // GetGatewayIdOk returns a tuple with the GatewayId field value
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantGatewaySetupWebhookReq) GetGatewayIdOk() (*int32, bool) {
+func (o *UnibeeApiMerchantGatewaySetupWebhookReq) GetGatewayIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -65,7 +65,7 @@ func (o *UnibeeApiMerchantGatewaySetupWebhookReq) GetGatewayIdOk() (*int32, bool
 }
 
 // SetGatewayId sets field value
-func (o *UnibeeApiMerchantGatewaySetupWebhookReq) SetGatewayId(v int32) {
+func (o *UnibeeApiMerchantGatewaySetupWebhookReq) SetGatewayId(v int64) {
 	o.GatewayId = v
 }
 

@@ -16,12 +16,12 @@ Name | Type | Description | Notes
 **GmtCreate** | Pointer to **string** | create time | [optional] 
 **GmtModify** | Pointer to **string** | update time | [optional] 
 **HomeUrl** | Pointer to **string** | home_url | [optional] 
-**Id** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **ImageUrl** | Pointer to **string** | image_url | [optional] 
 **IntervalCount** | Pointer to **int32** | period unit count | [optional] 
 **IntervalUnit** | Pointer to **string** | period unit,day|month|year|week | [optional] 
 **IsDeleted** | Pointer to **int32** | 0-UnDeleted，1-Deleted | [optional] 
-**MerchantId** | Pointer to **int32** | merchant id | [optional] 
+**MerchantId** | Pointer to **int64** | merchant id | [optional] 
 **PlanName** | Pointer to **string** | PlanName | [optional] 
 **PublishStatus** | Pointer to **int32** | 1-UnPublish,2-Publish, Use For Display Plan At UserPortal | [optional] 
 **Status** | Pointer to **int32** | status，1-editing，2-active，3-inactive，4-expired | [optional] 
@@ -350,20 +350,20 @@ HasHomeUrl returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *UnibeeInternalModelEntityOverseaPayPlan) GetId() int32`
+`func (o *UnibeeInternalModelEntityOverseaPayPlan) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *UnibeeInternalModelEntityOverseaPayPlan) GetIdOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPayPlan) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *UnibeeInternalModelEntityOverseaPayPlan) SetId(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPayPlan) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -475,20 +475,20 @@ HasIsDeleted returns a boolean if a field has been set.
 
 ### GetMerchantId
 
-`func (o *UnibeeInternalModelEntityOverseaPayPlan) GetMerchantId() int32`
+`func (o *UnibeeInternalModelEntityOverseaPayPlan) GetMerchantId() int64`
 
 GetMerchantId returns the MerchantId field if non-nil, zero value otherwise.
 
 ### GetMerchantIdOk
 
-`func (o *UnibeeInternalModelEntityOverseaPayPlan) GetMerchantIdOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPayPlan) GetMerchantIdOk() (*int64, bool)`
 
 GetMerchantIdOk returns a tuple with the MerchantId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantId
 
-`func (o *UnibeeInternalModelEntityOverseaPayPlan) SetMerchantId(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPayPlan) SetMerchantId(v int64)`
 
 SetMerchantId sets MerchantId field to given value.
 

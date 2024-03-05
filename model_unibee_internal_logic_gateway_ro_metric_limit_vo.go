@@ -19,10 +19,10 @@ var _ MappedNullable = &UnibeeInternalLogicGatewayRoMetricLimitVo{}
 
 // UnibeeInternalLogicGatewayRoMetricLimitVo struct for UnibeeInternalLogicGatewayRoMetricLimitVo
 type UnibeeInternalLogicGatewayRoMetricLimitVo struct {
-	MerchantId *int32 `json:"MerchantId,omitempty"`
+	MerchantId *int64 `json:"MerchantId,omitempty"`
 	MetricId *int64 `json:"MetricId,omitempty"`
 	PlanLimits []UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo `json:"PlanLimits,omitempty"`
-	TotalLimit *int32 `json:"TotalLimit,omitempty"`
+	TotalLimit *int64 `json:"TotalLimit,omitempty"`
 	UserId *int64 `json:"UserId,omitempty"`
 	// aggregation property
 	AggregationProperty *string `json:"aggregationProperty,omitempty"`
@@ -54,9 +54,9 @@ func NewUnibeeInternalLogicGatewayRoMetricLimitVoWithDefaults() *UnibeeInternalL
 }
 
 // GetMerchantId returns the MerchantId field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) GetMerchantId() int32 {
+func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) GetMerchantId() int64 {
 	if o == nil || IsNil(o.MerchantId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MerchantId
@@ -64,7 +64,7 @@ func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) GetMerchantId() int32 {
 
 // GetMerchantIdOk returns a tuple with the MerchantId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) GetMerchantIdOk() (*int32, bool) {
+func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) GetMerchantIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.MerchantId) {
 		return nil, false
 	}
@@ -80,8 +80,8 @@ func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) HasMerchantId() bool {
 	return false
 }
 
-// SetMerchantId gets a reference to the given int32 and assigns it to the MerchantId field.
-func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) SetMerchantId(v int32) {
+// SetMerchantId gets a reference to the given int64 and assigns it to the MerchantId field.
+func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) SetMerchantId(v int64) {
 	o.MerchantId = &v
 }
 
@@ -150,9 +150,9 @@ func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) SetPlanLimits(v []UnibeeInte
 }
 
 // GetTotalLimit returns the TotalLimit field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) GetTotalLimit() int32 {
+func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) GetTotalLimit() int64 {
 	if o == nil || IsNil(o.TotalLimit) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.TotalLimit
@@ -160,7 +160,7 @@ func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) GetTotalLimit() int32 {
 
 // GetTotalLimitOk returns a tuple with the TotalLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) GetTotalLimitOk() (*int32, bool) {
+func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) GetTotalLimitOk() (*int64, bool) {
 	if o == nil || IsNil(o.TotalLimit) {
 		return nil, false
 	}
@@ -176,8 +176,8 @@ func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) HasTotalLimit() bool {
 	return false
 }
 
-// SetTotalLimit gets a reference to the given int32 and assigns it to the TotalLimit field.
-func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) SetTotalLimit(v int32) {
+// SetTotalLimit gets a reference to the given int64 and assigns it to the TotalLimit field.
+func (o *UnibeeInternalLogicGatewayRoMetricLimitVo) SetTotalLimit(v int64) {
 	o.TotalLimit = &v
 }
 

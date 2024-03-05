@@ -27,7 +27,7 @@ type UnibeeInternalLogicGatewayRoInvoiceDetailRo struct {
 	DiscountAmount *int64 `json:"discountAmount,omitempty"`
 	Gateway *UnibeeInternalLogicGatewayRoGatewaySimplify `json:"gateway,omitempty"`
 	// Id
-	GatewayId *int32 `json:"gatewayId,omitempty"`
+	GatewayId *int64 `json:"gatewayId,omitempty"`
 	// GatewayInvoiceId
 	GatewayInvoiceId *string `json:"gatewayInvoiceId,omitempty"`
 	// GatewayInvoicePdf pdf
@@ -42,7 +42,7 @@ type UnibeeInternalLogicGatewayRoInvoiceDetailRo struct {
 	GmtCreate *string `json:"gmtCreate,omitempty"`
 	// GmtModify
 	GmtModify *string `json:"gmtModify,omitempty"`
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// InvoiceId
 	InvoiceId *string `json:"invoiceId,omitempty"`
 	// InvoiceName
@@ -54,7 +54,7 @@ type UnibeeInternalLogicGatewayRoInvoiceDetailRo struct {
 	Link *string `json:"link,omitempty"`
 	Merchant *UnibeeInternalModelEntityOverseaPayMerchant `json:"merchant,omitempty"`
 	// MerchantId
-	MerchantId *int32 `json:"merchantId,omitempty"`
+	MerchantId *int64 `json:"merchantId,omitempty"`
 	Payment *UnibeeInternalModelEntityOverseaPayPayment `json:"payment,omitempty"`
 	// PaymentId
 	PaymentId *string `json:"paymentId,omitempty"`
@@ -245,9 +245,9 @@ func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) SetGateway(v UnibeeInterna
 }
 
 // GetGatewayId returns the GatewayId field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetGatewayId() int32 {
+func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetGatewayId() int64 {
 	if o == nil || IsNil(o.GatewayId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.GatewayId
@@ -255,7 +255,7 @@ func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetGatewayId() int32 {
 
 // GetGatewayIdOk returns a tuple with the GatewayId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetGatewayIdOk() (*int32, bool) {
+func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetGatewayIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.GatewayId) {
 		return nil, false
 	}
@@ -271,8 +271,8 @@ func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) HasGatewayId() bool {
 	return false
 }
 
-// SetGatewayId gets a reference to the given int32 and assigns it to the GatewayId field.
-func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) SetGatewayId(v int32) {
+// SetGatewayId gets a reference to the given int64 and assigns it to the GatewayId field.
+func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) SetGatewayId(v int64) {
 	o.GatewayId = &v
 }
 
@@ -501,9 +501,9 @@ func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) SetGmtModify(v string) {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetId() int32 {
+func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -511,7 +511,7 @@ func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetIdOk() (*int32, bool) {
+func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -527,8 +527,8 @@ func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -725,9 +725,9 @@ func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) SetMerchant(v UnibeeIntern
 }
 
 // GetMerchantId returns the MerchantId field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetMerchantId() int32 {
+func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetMerchantId() int64 {
 	if o == nil || IsNil(o.MerchantId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MerchantId
@@ -735,7 +735,7 @@ func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetMerchantId() int32 {
 
 // GetMerchantIdOk returns a tuple with the MerchantId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetMerchantIdOk() (*int32, bool) {
+func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) GetMerchantIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.MerchantId) {
 		return nil, false
 	}
@@ -751,8 +751,8 @@ func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) HasMerchantId() bool {
 	return false
 }
 
-// SetMerchantId gets a reference to the given int32 and assigns it to the MerchantId field.
-func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) SetMerchantId(v int32) {
+// SetMerchantId gets a reference to the given int64 and assigns it to the MerchantId field.
+func (o *UnibeeInternalLogicGatewayRoInvoiceDetailRo) SetMerchantId(v int64) {
 	o.MerchantId = &v
 }
 

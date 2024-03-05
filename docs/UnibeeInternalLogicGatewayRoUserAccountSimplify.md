@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **Email** | Pointer to **string** | email | [optional] 
 **ExternalUserId** | Pointer to **string** | externalUserId | [optional] 
 **FirstName** | Pointer to **string** | first name | [optional] 
-**Id** | Pointer to **int32** | userId | [optional] 
+**Id** | Pointer to **int64** | userId | [optional] 
 **LastName** | Pointer to **string** | last name | [optional] 
-**MerchantId** | Pointer to **int32** | merchant id | [optional] 
+**MerchantId** | Pointer to **int64** | merchant id | [optional] 
 
 ## Methods
 
@@ -159,20 +159,20 @@ HasFirstName returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) GetId() int32`
+`func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) GetIdOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) SetId(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -209,20 +209,20 @@ HasLastName returns a boolean if a field has been set.
 
 ### GetMerchantId
 
-`func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) GetMerchantId() int32`
+`func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) GetMerchantId() int64`
 
 GetMerchantId returns the MerchantId field if non-nil, zero value otherwise.
 
 ### GetMerchantIdOk
 
-`func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) GetMerchantIdOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) GetMerchantIdOk() (*int64, bool)`
 
 GetMerchantIdOk returns a tuple with the MerchantId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantId
 
-`func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) SetMerchantId(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoUserAccountSimplify) SetMerchantId(v int64)`
 
 SetMerchantId sets MerchantId field to given value.
 

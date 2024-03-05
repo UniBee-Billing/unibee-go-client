@@ -23,18 +23,18 @@ import (
 // MerchantSubscriptionAPIService MerchantSubscriptionAPI service
 type MerchantSubscriptionAPIService service
 
-type MerchantSubscriptionAPIMerchantSubscriptionAddNewTrialStartPostRequest struct {
+type ApiMerchantSubscriptionAddNewTrialStartPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantSubscriptionAPIService
 	unibeeApiMerchantSubscriptionAddNewTrialStartReq *UnibeeApiMerchantSubscriptionAddNewTrialStartReq
 }
 
-func (r MerchantSubscriptionAPIMerchantSubscriptionAddNewTrialStartPostRequest) UnibeeApiMerchantSubscriptionAddNewTrialStartReq(unibeeApiMerchantSubscriptionAddNewTrialStartReq UnibeeApiMerchantSubscriptionAddNewTrialStartReq) MerchantSubscriptionAPIMerchantSubscriptionAddNewTrialStartPostRequest {
+func (r ApiMerchantSubscriptionAddNewTrialStartPostRequest) UnibeeApiMerchantSubscriptionAddNewTrialStartReq(unibeeApiMerchantSubscriptionAddNewTrialStartReq UnibeeApiMerchantSubscriptionAddNewTrialStartReq) ApiMerchantSubscriptionAddNewTrialStartPostRequest {
 	r.unibeeApiMerchantSubscriptionAddNewTrialStartReq = &unibeeApiMerchantSubscriptionAddNewTrialStartReq
 	return r
 }
 
-func (r MerchantSubscriptionAPIMerchantSubscriptionAddNewTrialStartPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantSubscriptionAddNewTrialStartPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantSubscriptionAddNewTrialStartPostExecute(r)
 }
 
@@ -42,10 +42,10 @@ func (r MerchantSubscriptionAPIMerchantSubscriptionAddNewTrialStartPostRequest) 
 MerchantSubscriptionAddNewTrialStartPost Merchant Edit Subscription-add appendTrialEndHour For Free
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantSubscriptionAPIMerchantSubscriptionAddNewTrialStartPostRequest
+ @return ApiMerchantSubscriptionAddNewTrialStartPostRequest
 */
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionAddNewTrialStartPost(ctx context.Context) MerchantSubscriptionAPIMerchantSubscriptionAddNewTrialStartPostRequest {
-	return MerchantSubscriptionAPIMerchantSubscriptionAddNewTrialStartPostRequest{
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionAddNewTrialStartPost(ctx context.Context) ApiMerchantSubscriptionAddNewTrialStartPostRequest {
+	return ApiMerchantSubscriptionAddNewTrialStartPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -53,7 +53,7 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionAddNewTrialStartPos
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionAddNewTrialStartPostExecute(r MerchantSubscriptionAPIMerchantSubscriptionAddNewTrialStartPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionAddNewTrialStartPostExecute(r ApiMerchantSubscriptionAddNewTrialStartPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -131,18 +131,18 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionAddNewTrialStartPos
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantSubscriptionAPIMerchantSubscriptionCancelAtPeriodEndPostRequest struct {
+type ApiMerchantSubscriptionCancelAtPeriodEndPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantSubscriptionAPIService
 	unibeeApiMerchantSubscriptionCancelAtPeriodEndReq *UnibeeApiMerchantSubscriptionCancelAtPeriodEndReq
 }
 
-func (r MerchantSubscriptionAPIMerchantSubscriptionCancelAtPeriodEndPostRequest) UnibeeApiMerchantSubscriptionCancelAtPeriodEndReq(unibeeApiMerchantSubscriptionCancelAtPeriodEndReq UnibeeApiMerchantSubscriptionCancelAtPeriodEndReq) MerchantSubscriptionAPIMerchantSubscriptionCancelAtPeriodEndPostRequest {
+func (r ApiMerchantSubscriptionCancelAtPeriodEndPostRequest) UnibeeApiMerchantSubscriptionCancelAtPeriodEndReq(unibeeApiMerchantSubscriptionCancelAtPeriodEndReq UnibeeApiMerchantSubscriptionCancelAtPeriodEndReq) ApiMerchantSubscriptionCancelAtPeriodEndPostRequest {
 	r.unibeeApiMerchantSubscriptionCancelAtPeriodEndReq = &unibeeApiMerchantSubscriptionCancelAtPeriodEndReq
 	return r
 }
 
-func (r MerchantSubscriptionAPIMerchantSubscriptionCancelAtPeriodEndPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantSubscriptionCancelAtPeriodEndPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantSubscriptionCancelAtPeriodEndPostExecute(r)
 }
 
@@ -150,10 +150,10 @@ func (r MerchantSubscriptionAPIMerchantSubscriptionCancelAtPeriodEndPostRequest)
 MerchantSubscriptionCancelAtPeriodEndPost Merchant Edit Subscription-Set Cancel Ad Period End
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantSubscriptionAPIMerchantSubscriptionCancelAtPeriodEndPostRequest
+ @return ApiMerchantSubscriptionCancelAtPeriodEndPostRequest
 */
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionCancelAtPeriodEndPost(ctx context.Context) MerchantSubscriptionAPIMerchantSubscriptionCancelAtPeriodEndPostRequest {
-	return MerchantSubscriptionAPIMerchantSubscriptionCancelAtPeriodEndPostRequest{
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionCancelAtPeriodEndPost(ctx context.Context) ApiMerchantSubscriptionCancelAtPeriodEndPostRequest {
+	return ApiMerchantSubscriptionCancelAtPeriodEndPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -161,7 +161,7 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionCancelAtPeriodEndPo
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionCancelAtPeriodEndPostExecute(r MerchantSubscriptionAPIMerchantSubscriptionCancelAtPeriodEndPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionCancelAtPeriodEndPostExecute(r ApiMerchantSubscriptionCancelAtPeriodEndPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -239,18 +239,18 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionCancelAtPeriodEndPo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantSubscriptionAPIMerchantSubscriptionCancelLastCancelAtPeriodEndPostRequest struct {
+type ApiMerchantSubscriptionCancelLastCancelAtPeriodEndPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantSubscriptionAPIService
 	unibeeApiMerchantSubscriptionCancelLastCancelAtPeriodEndReq *UnibeeApiMerchantSubscriptionCancelLastCancelAtPeriodEndReq
 }
 
-func (r MerchantSubscriptionAPIMerchantSubscriptionCancelLastCancelAtPeriodEndPostRequest) UnibeeApiMerchantSubscriptionCancelLastCancelAtPeriodEndReq(unibeeApiMerchantSubscriptionCancelLastCancelAtPeriodEndReq UnibeeApiMerchantSubscriptionCancelLastCancelAtPeriodEndReq) MerchantSubscriptionAPIMerchantSubscriptionCancelLastCancelAtPeriodEndPostRequest {
+func (r ApiMerchantSubscriptionCancelLastCancelAtPeriodEndPostRequest) UnibeeApiMerchantSubscriptionCancelLastCancelAtPeriodEndReq(unibeeApiMerchantSubscriptionCancelLastCancelAtPeriodEndReq UnibeeApiMerchantSubscriptionCancelLastCancelAtPeriodEndReq) ApiMerchantSubscriptionCancelLastCancelAtPeriodEndPostRequest {
 	r.unibeeApiMerchantSubscriptionCancelLastCancelAtPeriodEndReq = &unibeeApiMerchantSubscriptionCancelLastCancelAtPeriodEndReq
 	return r
 }
 
-func (r MerchantSubscriptionAPIMerchantSubscriptionCancelLastCancelAtPeriodEndPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantSubscriptionCancelLastCancelAtPeriodEndPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantSubscriptionCancelLastCancelAtPeriodEndPostExecute(r)
 }
 
@@ -258,10 +258,10 @@ func (r MerchantSubscriptionAPIMerchantSubscriptionCancelLastCancelAtPeriodEndPo
 MerchantSubscriptionCancelLastCancelAtPeriodEndPost Merchant Edit Subscription-Cancel Last CancelAtPeriod
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantSubscriptionAPIMerchantSubscriptionCancelLastCancelAtPeriodEndPostRequest
+ @return ApiMerchantSubscriptionCancelLastCancelAtPeriodEndPostRequest
 */
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionCancelLastCancelAtPeriodEndPost(ctx context.Context) MerchantSubscriptionAPIMerchantSubscriptionCancelLastCancelAtPeriodEndPostRequest {
-	return MerchantSubscriptionAPIMerchantSubscriptionCancelLastCancelAtPeriodEndPostRequest{
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionCancelLastCancelAtPeriodEndPost(ctx context.Context) ApiMerchantSubscriptionCancelLastCancelAtPeriodEndPostRequest {
+	return ApiMerchantSubscriptionCancelLastCancelAtPeriodEndPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -269,7 +269,7 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionCancelLastCancelAtP
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionCancelLastCancelAtPeriodEndPostExecute(r MerchantSubscriptionAPIMerchantSubscriptionCancelLastCancelAtPeriodEndPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionCancelLastCancelAtPeriodEndPostExecute(r ApiMerchantSubscriptionCancelLastCancelAtPeriodEndPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -347,18 +347,18 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionCancelLastCancelAtP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantSubscriptionAPIMerchantSubscriptionCancelPostRequest struct {
+type ApiMerchantSubscriptionCancelPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantSubscriptionAPIService
 	unibeeApiMerchantSubscriptionCancelReq *UnibeeApiMerchantSubscriptionCancelReq
 }
 
-func (r MerchantSubscriptionAPIMerchantSubscriptionCancelPostRequest) UnibeeApiMerchantSubscriptionCancelReq(unibeeApiMerchantSubscriptionCancelReq UnibeeApiMerchantSubscriptionCancelReq) MerchantSubscriptionAPIMerchantSubscriptionCancelPostRequest {
+func (r ApiMerchantSubscriptionCancelPostRequest) UnibeeApiMerchantSubscriptionCancelReq(unibeeApiMerchantSubscriptionCancelReq UnibeeApiMerchantSubscriptionCancelReq) ApiMerchantSubscriptionCancelPostRequest {
 	r.unibeeApiMerchantSubscriptionCancelReq = &unibeeApiMerchantSubscriptionCancelReq
 	return r
 }
 
-func (r MerchantSubscriptionAPIMerchantSubscriptionCancelPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantSubscriptionCancelPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantSubscriptionCancelPostExecute(r)
 }
 
@@ -366,10 +366,10 @@ func (r MerchantSubscriptionAPIMerchantSubscriptionCancelPostRequest) Execute() 
 MerchantSubscriptionCancelPost Merchant Cancel Subscription Immediately (Will Not Generate Proration Invoice)
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantSubscriptionAPIMerchantSubscriptionCancelPostRequest
+ @return ApiMerchantSubscriptionCancelPostRequest
 */
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionCancelPost(ctx context.Context) MerchantSubscriptionAPIMerchantSubscriptionCancelPostRequest {
-	return MerchantSubscriptionAPIMerchantSubscriptionCancelPostRequest{
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionCancelPost(ctx context.Context) ApiMerchantSubscriptionCancelPostRequest {
+	return ApiMerchantSubscriptionCancelPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -377,7 +377,7 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionCancelPost(ctx cont
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionCancelPostExecute(r MerchantSubscriptionAPIMerchantSubscriptionCancelPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionCancelPostExecute(r ApiMerchantSubscriptionCancelPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -455,19 +455,19 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionCancelPostExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantSubscriptionAPIMerchantSubscriptionDetailGetRequest struct {
+type ApiMerchantSubscriptionDetailGetRequest struct {
 	ctx context.Context
 	ApiService *MerchantSubscriptionAPIService
 	subscriptionId *string
 }
 
 // SubscriptionId
-func (r MerchantSubscriptionAPIMerchantSubscriptionDetailGetRequest) SubscriptionId(subscriptionId string) MerchantSubscriptionAPIMerchantSubscriptionDetailGetRequest {
+func (r ApiMerchantSubscriptionDetailGetRequest) SubscriptionId(subscriptionId string) ApiMerchantSubscriptionDetailGetRequest {
 	r.subscriptionId = &subscriptionId
 	return r
 }
 
-func (r MerchantSubscriptionAPIMerchantSubscriptionDetailGetRequest) Execute() (*MerchantSubscriptionDetailGet200Response, *http.Response, error) {
+func (r ApiMerchantSubscriptionDetailGetRequest) Execute() (*MerchantSubscriptionDetailGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantSubscriptionDetailGetExecute(r)
 }
 
@@ -475,10 +475,10 @@ func (r MerchantSubscriptionAPIMerchantSubscriptionDetailGetRequest) Execute() (
 MerchantSubscriptionDetailGet Subscription Detail
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantSubscriptionAPIMerchantSubscriptionDetailGetRequest
+ @return ApiMerchantSubscriptionDetailGetRequest
 */
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionDetailGet(ctx context.Context) MerchantSubscriptionAPIMerchantSubscriptionDetailGetRequest {
-	return MerchantSubscriptionAPIMerchantSubscriptionDetailGetRequest{
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionDetailGet(ctx context.Context) ApiMerchantSubscriptionDetailGetRequest {
+	return ApiMerchantSubscriptionDetailGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -486,7 +486,7 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionDetailGet(ctx conte
 
 // Execute executes the request
 //  @return MerchantSubscriptionDetailGet200Response
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionDetailGetExecute(r MerchantSubscriptionAPIMerchantSubscriptionDetailGetRequest) (*MerchantSubscriptionDetailGet200Response, *http.Response, error) {
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionDetailGetExecute(r ApiMerchantSubscriptionDetailGetRequest) (*MerchantSubscriptionDetailGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -563,18 +563,18 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionDetailGetExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantSubscriptionAPIMerchantSubscriptionDetailPostRequest struct {
+type ApiMerchantSubscriptionDetailPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantSubscriptionAPIService
 	unibeeApiMerchantSubscriptionDetailReq *UnibeeApiMerchantSubscriptionDetailReq
 }
 
-func (r MerchantSubscriptionAPIMerchantSubscriptionDetailPostRequest) UnibeeApiMerchantSubscriptionDetailReq(unibeeApiMerchantSubscriptionDetailReq UnibeeApiMerchantSubscriptionDetailReq) MerchantSubscriptionAPIMerchantSubscriptionDetailPostRequest {
+func (r ApiMerchantSubscriptionDetailPostRequest) UnibeeApiMerchantSubscriptionDetailReq(unibeeApiMerchantSubscriptionDetailReq UnibeeApiMerchantSubscriptionDetailReq) ApiMerchantSubscriptionDetailPostRequest {
 	r.unibeeApiMerchantSubscriptionDetailReq = &unibeeApiMerchantSubscriptionDetailReq
 	return r
 }
 
-func (r MerchantSubscriptionAPIMerchantSubscriptionDetailPostRequest) Execute() (*MerchantSubscriptionDetailGet200Response, *http.Response, error) {
+func (r ApiMerchantSubscriptionDetailPostRequest) Execute() (*MerchantSubscriptionDetailGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantSubscriptionDetailPostExecute(r)
 }
 
@@ -582,10 +582,10 @@ func (r MerchantSubscriptionAPIMerchantSubscriptionDetailPostRequest) Execute() 
 MerchantSubscriptionDetailPost Subscription Detail
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantSubscriptionAPIMerchantSubscriptionDetailPostRequest
+ @return ApiMerchantSubscriptionDetailPostRequest
 */
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionDetailPost(ctx context.Context) MerchantSubscriptionAPIMerchantSubscriptionDetailPostRequest {
-	return MerchantSubscriptionAPIMerchantSubscriptionDetailPostRequest{
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionDetailPost(ctx context.Context) ApiMerchantSubscriptionDetailPostRequest {
+	return ApiMerchantSubscriptionDetailPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -593,7 +593,7 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionDetailPost(ctx cont
 
 // Execute executes the request
 //  @return MerchantSubscriptionDetailGet200Response
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionDetailPostExecute(r MerchantSubscriptionAPIMerchantSubscriptionDetailPostRequest) (*MerchantSubscriptionDetailGet200Response, *http.Response, error) {
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionDetailPostExecute(r ApiMerchantSubscriptionDetailPostRequest) (*MerchantSubscriptionDetailGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -671,7 +671,7 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionDetailPostExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantSubscriptionAPIMerchantSubscriptionListGetRequest struct {
+type ApiMerchantSubscriptionListGetRequest struct {
 	ctx context.Context
 	ApiService *MerchantSubscriptionAPIService
 	userId *int64
@@ -683,42 +683,42 @@ type MerchantSubscriptionAPIMerchantSubscriptionListGetRequest struct {
 }
 
 // UserId
-func (r MerchantSubscriptionAPIMerchantSubscriptionListGetRequest) UserId(userId int64) MerchantSubscriptionAPIMerchantSubscriptionListGetRequest {
+func (r ApiMerchantSubscriptionListGetRequest) UserId(userId int64) ApiMerchantSubscriptionListGetRequest {
 	r.userId = &userId
 	return r
 }
 
 // Filter, Default All，Status，0-Init | 1-Create｜2-Active｜3-Suspend | 4-Cancel | 5-Expire
-func (r MerchantSubscriptionAPIMerchantSubscriptionListGetRequest) Status(status []int32) MerchantSubscriptionAPIMerchantSubscriptionListGetRequest {
+func (r ApiMerchantSubscriptionListGetRequest) Status(status []int32) ApiMerchantSubscriptionListGetRequest {
 	r.status = &status
 	return r
 }
 
 // Sort Field，gmt_create|gmt_modify，Default gmt_modify
-func (r MerchantSubscriptionAPIMerchantSubscriptionListGetRequest) SortField(sortField string) MerchantSubscriptionAPIMerchantSubscriptionListGetRequest {
+func (r ApiMerchantSubscriptionListGetRequest) SortField(sortField string) ApiMerchantSubscriptionListGetRequest {
 	r.sortField = &sortField
 	return r
 }
 
 // Sort Type，asc|desc，Default desc
-func (r MerchantSubscriptionAPIMerchantSubscriptionListGetRequest) SortType(sortType string) MerchantSubscriptionAPIMerchantSubscriptionListGetRequest {
+func (r ApiMerchantSubscriptionListGetRequest) SortType(sortType string) ApiMerchantSubscriptionListGetRequest {
 	r.sortType = &sortType
 	return r
 }
 
 // Page, Start WIth 0
-func (r MerchantSubscriptionAPIMerchantSubscriptionListGetRequest) Page(page int32) MerchantSubscriptionAPIMerchantSubscriptionListGetRequest {
+func (r ApiMerchantSubscriptionListGetRequest) Page(page int32) ApiMerchantSubscriptionListGetRequest {
 	r.page = &page
 	return r
 }
 
 // Count Of Page
-func (r MerchantSubscriptionAPIMerchantSubscriptionListGetRequest) Count(count int32) MerchantSubscriptionAPIMerchantSubscriptionListGetRequest {
+func (r ApiMerchantSubscriptionListGetRequest) Count(count int32) ApiMerchantSubscriptionListGetRequest {
 	r.count = &count
 	return r
 }
 
-func (r MerchantSubscriptionAPIMerchantSubscriptionListGetRequest) Execute() (*MerchantSubscriptionListGet200Response, *http.Response, error) {
+func (r ApiMerchantSubscriptionListGetRequest) Execute() (*MerchantSubscriptionListGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantSubscriptionListGetExecute(r)
 }
 
@@ -726,10 +726,10 @@ func (r MerchantSubscriptionAPIMerchantSubscriptionListGetRequest) Execute() (*M
 MerchantSubscriptionListGet Subscription List
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantSubscriptionAPIMerchantSubscriptionListGetRequest
+ @return ApiMerchantSubscriptionListGetRequest
 */
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionListGet(ctx context.Context) MerchantSubscriptionAPIMerchantSubscriptionListGetRequest {
-	return MerchantSubscriptionAPIMerchantSubscriptionListGetRequest{
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionListGet(ctx context.Context) ApiMerchantSubscriptionListGetRequest {
+	return ApiMerchantSubscriptionListGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -737,7 +737,7 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionListGet(ctx context
 
 // Execute executes the request
 //  @return MerchantSubscriptionListGet200Response
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionListGetExecute(r MerchantSubscriptionAPIMerchantSubscriptionListGetRequest) (*MerchantSubscriptionListGet200Response, *http.Response, error) {
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionListGetExecute(r ApiMerchantSubscriptionListGetRequest) (*MerchantSubscriptionListGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -836,18 +836,18 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionListGetExecute(r Me
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantSubscriptionAPIMerchantSubscriptionListPostRequest struct {
+type ApiMerchantSubscriptionListPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantSubscriptionAPIService
 	unibeeApiMerchantSubscriptionListReq *UnibeeApiMerchantSubscriptionListReq
 }
 
-func (r MerchantSubscriptionAPIMerchantSubscriptionListPostRequest) UnibeeApiMerchantSubscriptionListReq(unibeeApiMerchantSubscriptionListReq UnibeeApiMerchantSubscriptionListReq) MerchantSubscriptionAPIMerchantSubscriptionListPostRequest {
+func (r ApiMerchantSubscriptionListPostRequest) UnibeeApiMerchantSubscriptionListReq(unibeeApiMerchantSubscriptionListReq UnibeeApiMerchantSubscriptionListReq) ApiMerchantSubscriptionListPostRequest {
 	r.unibeeApiMerchantSubscriptionListReq = &unibeeApiMerchantSubscriptionListReq
 	return r
 }
 
-func (r MerchantSubscriptionAPIMerchantSubscriptionListPostRequest) Execute() (*MerchantSubscriptionListGet200Response, *http.Response, error) {
+func (r ApiMerchantSubscriptionListPostRequest) Execute() (*MerchantSubscriptionListGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantSubscriptionListPostExecute(r)
 }
 
@@ -855,10 +855,10 @@ func (r MerchantSubscriptionAPIMerchantSubscriptionListPostRequest) Execute() (*
 MerchantSubscriptionListPost Subscription List
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantSubscriptionAPIMerchantSubscriptionListPostRequest
+ @return ApiMerchantSubscriptionListPostRequest
 */
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionListPost(ctx context.Context) MerchantSubscriptionAPIMerchantSubscriptionListPostRequest {
-	return MerchantSubscriptionAPIMerchantSubscriptionListPostRequest{
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionListPost(ctx context.Context) ApiMerchantSubscriptionListPostRequest {
+	return ApiMerchantSubscriptionListPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -866,7 +866,7 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionListPost(ctx contex
 
 // Execute executes the request
 //  @return MerchantSubscriptionListGet200Response
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionListPostExecute(r MerchantSubscriptionAPIMerchantSubscriptionListPostRequest) (*MerchantSubscriptionListGet200Response, *http.Response, error) {
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionListPostExecute(r ApiMerchantSubscriptionListPostRequest) (*MerchantSubscriptionListGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -944,18 +944,18 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionListPostExecute(r M
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantSubscriptionAPIMerchantSubscriptionResumePostRequest struct {
+type ApiMerchantSubscriptionResumePostRequest struct {
 	ctx context.Context
 	ApiService *MerchantSubscriptionAPIService
 	unibeeApiMerchantSubscriptionResumeReq *UnibeeApiMerchantSubscriptionResumeReq
 }
 
-func (r MerchantSubscriptionAPIMerchantSubscriptionResumePostRequest) UnibeeApiMerchantSubscriptionResumeReq(unibeeApiMerchantSubscriptionResumeReq UnibeeApiMerchantSubscriptionResumeReq) MerchantSubscriptionAPIMerchantSubscriptionResumePostRequest {
+func (r ApiMerchantSubscriptionResumePostRequest) UnibeeApiMerchantSubscriptionResumeReq(unibeeApiMerchantSubscriptionResumeReq UnibeeApiMerchantSubscriptionResumeReq) ApiMerchantSubscriptionResumePostRequest {
 	r.unibeeApiMerchantSubscriptionResumeReq = &unibeeApiMerchantSubscriptionResumeReq
 	return r
 }
 
-func (r MerchantSubscriptionAPIMerchantSubscriptionResumePostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantSubscriptionResumePostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantSubscriptionResumePostExecute(r)
 }
 
@@ -963,12 +963,12 @@ func (r MerchantSubscriptionAPIMerchantSubscriptionResumePostRequest) Execute() 
 MerchantSubscriptionResumePost Merchant Edit Subscription-Resume
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantSubscriptionAPIMerchantSubscriptionResumePostRequest
+ @return ApiMerchantSubscriptionResumePostRequest
 
 Deprecated
 */
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionResumePost(ctx context.Context) MerchantSubscriptionAPIMerchantSubscriptionResumePostRequest {
-	return MerchantSubscriptionAPIMerchantSubscriptionResumePostRequest{
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionResumePost(ctx context.Context) ApiMerchantSubscriptionResumePostRequest {
+	return ApiMerchantSubscriptionResumePostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -977,7 +977,7 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionResumePost(ctx cont
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
 // Deprecated
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionResumePostExecute(r MerchantSubscriptionAPIMerchantSubscriptionResumePostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionResumePostExecute(r ApiMerchantSubscriptionResumePostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1055,18 +1055,18 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionResumePostExecute(r
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantSubscriptionAPIMerchantSubscriptionSuspendPostRequest struct {
+type ApiMerchantSubscriptionSuspendPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantSubscriptionAPIService
 	unibeeApiMerchantSubscriptionSuspendReq *UnibeeApiMerchantSubscriptionSuspendReq
 }
 
-func (r MerchantSubscriptionAPIMerchantSubscriptionSuspendPostRequest) UnibeeApiMerchantSubscriptionSuspendReq(unibeeApiMerchantSubscriptionSuspendReq UnibeeApiMerchantSubscriptionSuspendReq) MerchantSubscriptionAPIMerchantSubscriptionSuspendPostRequest {
+func (r ApiMerchantSubscriptionSuspendPostRequest) UnibeeApiMerchantSubscriptionSuspendReq(unibeeApiMerchantSubscriptionSuspendReq UnibeeApiMerchantSubscriptionSuspendReq) ApiMerchantSubscriptionSuspendPostRequest {
 	r.unibeeApiMerchantSubscriptionSuspendReq = &unibeeApiMerchantSubscriptionSuspendReq
 	return r
 }
 
-func (r MerchantSubscriptionAPIMerchantSubscriptionSuspendPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantSubscriptionSuspendPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantSubscriptionSuspendPostExecute(r)
 }
 
@@ -1074,12 +1074,12 @@ func (r MerchantSubscriptionAPIMerchantSubscriptionSuspendPostRequest) Execute()
 MerchantSubscriptionSuspendPost Merchant Edit Subscription-Stop
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantSubscriptionAPIMerchantSubscriptionSuspendPostRequest
+ @return ApiMerchantSubscriptionSuspendPostRequest
 
 Deprecated
 */
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionSuspendPost(ctx context.Context) MerchantSubscriptionAPIMerchantSubscriptionSuspendPostRequest {
-	return MerchantSubscriptionAPIMerchantSubscriptionSuspendPostRequest{
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionSuspendPost(ctx context.Context) ApiMerchantSubscriptionSuspendPostRequest {
+	return ApiMerchantSubscriptionSuspendPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1088,7 +1088,7 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionSuspendPost(ctx con
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
 // Deprecated
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionSuspendPostExecute(r MerchantSubscriptionAPIMerchantSubscriptionSuspendPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionSuspendPostExecute(r ApiMerchantSubscriptionSuspendPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1166,18 +1166,18 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionSuspendPostExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantSubscriptionAPIMerchantSubscriptionUpdatePreviewPostRequest struct {
+type ApiMerchantSubscriptionUpdatePreviewPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantSubscriptionAPIService
 	unibeeApiMerchantSubscriptionUpdatePreviewReq *UnibeeApiMerchantSubscriptionUpdatePreviewReq
 }
 
-func (r MerchantSubscriptionAPIMerchantSubscriptionUpdatePreviewPostRequest) UnibeeApiMerchantSubscriptionUpdatePreviewReq(unibeeApiMerchantSubscriptionUpdatePreviewReq UnibeeApiMerchantSubscriptionUpdatePreviewReq) MerchantSubscriptionAPIMerchantSubscriptionUpdatePreviewPostRequest {
+func (r ApiMerchantSubscriptionUpdatePreviewPostRequest) UnibeeApiMerchantSubscriptionUpdatePreviewReq(unibeeApiMerchantSubscriptionUpdatePreviewReq UnibeeApiMerchantSubscriptionUpdatePreviewReq) ApiMerchantSubscriptionUpdatePreviewPostRequest {
 	r.unibeeApiMerchantSubscriptionUpdatePreviewReq = &unibeeApiMerchantSubscriptionUpdatePreviewReq
 	return r
 }
 
-func (r MerchantSubscriptionAPIMerchantSubscriptionUpdatePreviewPostRequest) Execute() (*MerchantSubscriptionUpdatePreviewPost200Response, *http.Response, error) {
+func (r ApiMerchantSubscriptionUpdatePreviewPostRequest) Execute() (*MerchantSubscriptionUpdatePreviewPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantSubscriptionUpdatePreviewPostExecute(r)
 }
 
@@ -1185,10 +1185,10 @@ func (r MerchantSubscriptionAPIMerchantSubscriptionUpdatePreviewPostRequest) Exe
 MerchantSubscriptionUpdatePreviewPost Merchant Update Subscription Preview
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantSubscriptionAPIMerchantSubscriptionUpdatePreviewPostRequest
+ @return ApiMerchantSubscriptionUpdatePreviewPostRequest
 */
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionUpdatePreviewPost(ctx context.Context) MerchantSubscriptionAPIMerchantSubscriptionUpdatePreviewPostRequest {
-	return MerchantSubscriptionAPIMerchantSubscriptionUpdatePreviewPostRequest{
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionUpdatePreviewPost(ctx context.Context) ApiMerchantSubscriptionUpdatePreviewPostRequest {
+	return ApiMerchantSubscriptionUpdatePreviewPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1196,7 +1196,7 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionUpdatePreviewPost(c
 
 // Execute executes the request
 //  @return MerchantSubscriptionUpdatePreviewPost200Response
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionUpdatePreviewPostExecute(r MerchantSubscriptionAPIMerchantSubscriptionUpdatePreviewPostRequest) (*MerchantSubscriptionUpdatePreviewPost200Response, *http.Response, error) {
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionUpdatePreviewPostExecute(r ApiMerchantSubscriptionUpdatePreviewPostRequest) (*MerchantSubscriptionUpdatePreviewPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1274,18 +1274,18 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionUpdatePreviewPostEx
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantSubscriptionAPIMerchantSubscriptionUpdateSubmitPostRequest struct {
+type ApiMerchantSubscriptionUpdateSubmitPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantSubscriptionAPIService
 	unibeeApiMerchantSubscriptionUpdateReq *UnibeeApiMerchantSubscriptionUpdateReq
 }
 
-func (r MerchantSubscriptionAPIMerchantSubscriptionUpdateSubmitPostRequest) UnibeeApiMerchantSubscriptionUpdateReq(unibeeApiMerchantSubscriptionUpdateReq UnibeeApiMerchantSubscriptionUpdateReq) MerchantSubscriptionAPIMerchantSubscriptionUpdateSubmitPostRequest {
+func (r ApiMerchantSubscriptionUpdateSubmitPostRequest) UnibeeApiMerchantSubscriptionUpdateReq(unibeeApiMerchantSubscriptionUpdateReq UnibeeApiMerchantSubscriptionUpdateReq) ApiMerchantSubscriptionUpdateSubmitPostRequest {
 	r.unibeeApiMerchantSubscriptionUpdateReq = &unibeeApiMerchantSubscriptionUpdateReq
 	return r
 }
 
-func (r MerchantSubscriptionAPIMerchantSubscriptionUpdateSubmitPostRequest) Execute() (*MerchantSubscriptionUpdateSubmitPost200Response, *http.Response, error) {
+func (r ApiMerchantSubscriptionUpdateSubmitPostRequest) Execute() (*MerchantSubscriptionUpdateSubmitPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantSubscriptionUpdateSubmitPostExecute(r)
 }
 
@@ -1293,10 +1293,10 @@ func (r MerchantSubscriptionAPIMerchantSubscriptionUpdateSubmitPostRequest) Exec
 MerchantSubscriptionUpdateSubmitPost Merchant Update Subscription Submit
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantSubscriptionAPIMerchantSubscriptionUpdateSubmitPostRequest
+ @return ApiMerchantSubscriptionUpdateSubmitPostRequest
 */
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionUpdateSubmitPost(ctx context.Context) MerchantSubscriptionAPIMerchantSubscriptionUpdateSubmitPostRequest {
-	return MerchantSubscriptionAPIMerchantSubscriptionUpdateSubmitPostRequest{
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionUpdateSubmitPost(ctx context.Context) ApiMerchantSubscriptionUpdateSubmitPostRequest {
+	return ApiMerchantSubscriptionUpdateSubmitPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1304,7 +1304,7 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionUpdateSubmitPost(ct
 
 // Execute executes the request
 //  @return MerchantSubscriptionUpdateSubmitPost200Response
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionUpdateSubmitPostExecute(r MerchantSubscriptionAPIMerchantSubscriptionUpdateSubmitPostRequest) (*MerchantSubscriptionUpdateSubmitPost200Response, *http.Response, error) {
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionUpdateSubmitPostExecute(r ApiMerchantSubscriptionUpdateSubmitPostRequest) (*MerchantSubscriptionUpdateSubmitPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1382,19 +1382,19 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionUpdateSubmitPostExe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantSubscriptionAPIMerchantSubscriptionUserSubscriptionDetailGetRequest struct {
+type ApiMerchantSubscriptionUserSubscriptionDetailGetRequest struct {
 	ctx context.Context
 	ApiService *MerchantSubscriptionAPIService
 	userId *int64
 }
 
 // UserId
-func (r MerchantSubscriptionAPIMerchantSubscriptionUserSubscriptionDetailGetRequest) UserId(userId int64) MerchantSubscriptionAPIMerchantSubscriptionUserSubscriptionDetailGetRequest {
+func (r ApiMerchantSubscriptionUserSubscriptionDetailGetRequest) UserId(userId int64) ApiMerchantSubscriptionUserSubscriptionDetailGetRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r MerchantSubscriptionAPIMerchantSubscriptionUserSubscriptionDetailGetRequest) Execute() (*MerchantSubscriptionDetailGet200Response, *http.Response, error) {
+func (r ApiMerchantSubscriptionUserSubscriptionDetailGetRequest) Execute() (*MerchantSubscriptionDetailGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantSubscriptionUserSubscriptionDetailGetExecute(r)
 }
 
@@ -1402,10 +1402,10 @@ func (r MerchantSubscriptionAPIMerchantSubscriptionUserSubscriptionDetailGetRequ
 MerchantSubscriptionUserSubscriptionDetailGet Subscription Detail
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantSubscriptionAPIMerchantSubscriptionUserSubscriptionDetailGetRequest
+ @return ApiMerchantSubscriptionUserSubscriptionDetailGetRequest
 */
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionUserSubscriptionDetailGet(ctx context.Context) MerchantSubscriptionAPIMerchantSubscriptionUserSubscriptionDetailGetRequest {
-	return MerchantSubscriptionAPIMerchantSubscriptionUserSubscriptionDetailGetRequest{
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionUserSubscriptionDetailGet(ctx context.Context) ApiMerchantSubscriptionUserSubscriptionDetailGetRequest {
+	return ApiMerchantSubscriptionUserSubscriptionDetailGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1413,7 +1413,7 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionUserSubscriptionDet
 
 // Execute executes the request
 //  @return MerchantSubscriptionDetailGet200Response
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionUserSubscriptionDetailGetExecute(r MerchantSubscriptionAPIMerchantSubscriptionUserSubscriptionDetailGetRequest) (*MerchantSubscriptionDetailGet200Response, *http.Response, error) {
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionUserSubscriptionDetailGetExecute(r ApiMerchantSubscriptionUserSubscriptionDetailGetRequest) (*MerchantSubscriptionDetailGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1490,18 +1490,18 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionUserSubscriptionDet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantSubscriptionAPIMerchantSubscriptionUserSubscriptionDetailPostRequest struct {
+type ApiMerchantSubscriptionUserSubscriptionDetailPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantSubscriptionAPIService
 	unibeeApiMerchantSubscriptionUserSubscriptionDetailReq *UnibeeApiMerchantSubscriptionUserSubscriptionDetailReq
 }
 
-func (r MerchantSubscriptionAPIMerchantSubscriptionUserSubscriptionDetailPostRequest) UnibeeApiMerchantSubscriptionUserSubscriptionDetailReq(unibeeApiMerchantSubscriptionUserSubscriptionDetailReq UnibeeApiMerchantSubscriptionUserSubscriptionDetailReq) MerchantSubscriptionAPIMerchantSubscriptionUserSubscriptionDetailPostRequest {
+func (r ApiMerchantSubscriptionUserSubscriptionDetailPostRequest) UnibeeApiMerchantSubscriptionUserSubscriptionDetailReq(unibeeApiMerchantSubscriptionUserSubscriptionDetailReq UnibeeApiMerchantSubscriptionUserSubscriptionDetailReq) ApiMerchantSubscriptionUserSubscriptionDetailPostRequest {
 	r.unibeeApiMerchantSubscriptionUserSubscriptionDetailReq = &unibeeApiMerchantSubscriptionUserSubscriptionDetailReq
 	return r
 }
 
-func (r MerchantSubscriptionAPIMerchantSubscriptionUserSubscriptionDetailPostRequest) Execute() (*MerchantSubscriptionDetailGet200Response, *http.Response, error) {
+func (r ApiMerchantSubscriptionUserSubscriptionDetailPostRequest) Execute() (*MerchantSubscriptionDetailGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantSubscriptionUserSubscriptionDetailPostExecute(r)
 }
 
@@ -1509,10 +1509,10 @@ func (r MerchantSubscriptionAPIMerchantSubscriptionUserSubscriptionDetailPostReq
 MerchantSubscriptionUserSubscriptionDetailPost Subscription Detail
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantSubscriptionAPIMerchantSubscriptionUserSubscriptionDetailPostRequest
+ @return ApiMerchantSubscriptionUserSubscriptionDetailPostRequest
 */
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionUserSubscriptionDetailPost(ctx context.Context) MerchantSubscriptionAPIMerchantSubscriptionUserSubscriptionDetailPostRequest {
-	return MerchantSubscriptionAPIMerchantSubscriptionUserSubscriptionDetailPostRequest{
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionUserSubscriptionDetailPost(ctx context.Context) ApiMerchantSubscriptionUserSubscriptionDetailPostRequest {
+	return ApiMerchantSubscriptionUserSubscriptionDetailPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1520,7 +1520,7 @@ func (a *MerchantSubscriptionAPIService) MerchantSubscriptionUserSubscriptionDet
 
 // Execute executes the request
 //  @return MerchantSubscriptionDetailGet200Response
-func (a *MerchantSubscriptionAPIService) MerchantSubscriptionUserSubscriptionDetailPostExecute(r MerchantSubscriptionAPIMerchantSubscriptionUserSubscriptionDetailPostRequest) (*MerchantSubscriptionDetailGet200Response, *http.Response, error) {
+func (a *MerchantSubscriptionAPIService) MerchantSubscriptionUserSubscriptionDetailPostExecute(r ApiMerchantSubscriptionUserSubscriptionDetailPostRequest) (*MerchantSubscriptionDetailGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

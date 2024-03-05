@@ -23,18 +23,18 @@ import (
 // MerchantUserAPIService MerchantUserAPI service
 type MerchantUserAPIService service
 
-type MerchantUserAPIMerchantUserFrozenUserPostRequest struct {
+type ApiMerchantUserFrozenUserPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantUserAPIService
 	unibeeApiMerchantUserFrozenReq *UnibeeApiMerchantUserFrozenReq
 }
 
-func (r MerchantUserAPIMerchantUserFrozenUserPostRequest) UnibeeApiMerchantUserFrozenReq(unibeeApiMerchantUserFrozenReq UnibeeApiMerchantUserFrozenReq) MerchantUserAPIMerchantUserFrozenUserPostRequest {
+func (r ApiMerchantUserFrozenUserPostRequest) UnibeeApiMerchantUserFrozenReq(unibeeApiMerchantUserFrozenReq UnibeeApiMerchantUserFrozenReq) ApiMerchantUserFrozenUserPostRequest {
 	r.unibeeApiMerchantUserFrozenReq = &unibeeApiMerchantUserFrozenReq
 	return r
 }
 
-func (r MerchantUserAPIMerchantUserFrozenUserPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantUserFrozenUserPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantUserFrozenUserPostExecute(r)
 }
 
@@ -42,10 +42,10 @@ func (r MerchantUserAPIMerchantUserFrozenUserPostRequest) Execute() (*MerchantAu
 MerchantUserFrozenUserPost Merchant Frozen User
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantUserAPIMerchantUserFrozenUserPostRequest
+ @return ApiMerchantUserFrozenUserPostRequest
 */
-func (a *MerchantUserAPIService) MerchantUserFrozenUserPost(ctx context.Context) MerchantUserAPIMerchantUserFrozenUserPostRequest {
-	return MerchantUserAPIMerchantUserFrozenUserPostRequest{
+func (a *MerchantUserAPIService) MerchantUserFrozenUserPost(ctx context.Context) ApiMerchantUserFrozenUserPostRequest {
+	return ApiMerchantUserFrozenUserPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -53,7 +53,7 @@ func (a *MerchantUserAPIService) MerchantUserFrozenUserPost(ctx context.Context)
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantUserAPIService) MerchantUserFrozenUserPostExecute(r MerchantUserAPIMerchantUserFrozenUserPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantUserAPIService) MerchantUserFrozenUserPostExecute(r ApiMerchantUserFrozenUserPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -131,19 +131,19 @@ func (a *MerchantUserAPIService) MerchantUserFrozenUserPostExecute(r MerchantUse
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantUserAPIMerchantUserGetGetRequest struct {
+type ApiMerchantUserGetGetRequest struct {
 	ctx context.Context
 	ApiService *MerchantUserAPIService
 	userId *int64
 }
 
 // UserId
-func (r MerchantUserAPIMerchantUserGetGetRequest) UserId(userId int64) MerchantUserAPIMerchantUserGetGetRequest {
+func (r ApiMerchantUserGetGetRequest) UserId(userId int64) ApiMerchantUserGetGetRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r MerchantUserAPIMerchantUserGetGetRequest) Execute() (*MerchantUserGetGet200Response, *http.Response, error) {
+func (r ApiMerchantUserGetGetRequest) Execute() (*MerchantUserGetGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantUserGetGetExecute(r)
 }
 
@@ -151,10 +151,10 @@ func (r MerchantUserAPIMerchantUserGetGetRequest) Execute() (*MerchantUserGetGet
 MerchantUserGetGet Get User Profile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantUserAPIMerchantUserGetGetRequest
+ @return ApiMerchantUserGetGetRequest
 */
-func (a *MerchantUserAPIService) MerchantUserGetGet(ctx context.Context) MerchantUserAPIMerchantUserGetGetRequest {
-	return MerchantUserAPIMerchantUserGetGetRequest{
+func (a *MerchantUserAPIService) MerchantUserGetGet(ctx context.Context) ApiMerchantUserGetGetRequest {
+	return ApiMerchantUserGetGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -162,7 +162,7 @@ func (a *MerchantUserAPIService) MerchantUserGetGet(ctx context.Context) Merchan
 
 // Execute executes the request
 //  @return MerchantUserGetGet200Response
-func (a *MerchantUserAPIService) MerchantUserGetGetExecute(r MerchantUserAPIMerchantUserGetGetRequest) (*MerchantUserGetGet200Response, *http.Response, error) {
+func (a *MerchantUserAPIService) MerchantUserGetGetExecute(r ApiMerchantUserGetGetRequest) (*MerchantUserGetGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -238,7 +238,7 @@ func (a *MerchantUserAPIService) MerchantUserGetGetExecute(r MerchantUserAPIMerc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantUserAPIMerchantUserListGetRequest struct {
+type ApiMerchantUserListGetRequest struct {
 	ctx context.Context
 	ApiService *MerchantUserAPIService
 	userId *int32
@@ -254,66 +254,66 @@ type MerchantUserAPIMerchantUserListGetRequest struct {
 }
 
 // Filter UserId
-func (r MerchantUserAPIMerchantUserListGetRequest) UserId(userId int32) MerchantUserAPIMerchantUserListGetRequest {
+func (r ApiMerchantUserListGetRequest) UserId(userId int32) ApiMerchantUserListGetRequest {
 	r.userId = &userId
 	return r
 }
 
 // Search FirstName
-func (r MerchantUserAPIMerchantUserListGetRequest) FirstName(firstName string) MerchantUserAPIMerchantUserListGetRequest {
+func (r ApiMerchantUserListGetRequest) FirstName(firstName string) ApiMerchantUserListGetRequest {
 	r.firstName = &firstName
 	return r
 }
 
 // Search LastName
-func (r MerchantUserAPIMerchantUserListGetRequest) LastName(lastName string) MerchantUserAPIMerchantUserListGetRequest {
+func (r ApiMerchantUserListGetRequest) LastName(lastName string) ApiMerchantUserListGetRequest {
 	r.lastName = &lastName
 	return r
 }
 
 // Search Filter Email
-func (r MerchantUserAPIMerchantUserListGetRequest) Email(email string) MerchantUserAPIMerchantUserListGetRequest {
+func (r ApiMerchantUserListGetRequest) Email(email string) ApiMerchantUserListGetRequest {
 	r.email = &email
 	return r
 }
 
 // Status, 0-Active｜2-Frozen
-func (r MerchantUserAPIMerchantUserListGetRequest) Status(status []int32) MerchantUserAPIMerchantUserListGetRequest {
+func (r ApiMerchantUserListGetRequest) Status(status []int32) ApiMerchantUserListGetRequest {
 	r.status = &status
 	return r
 }
 
 // Deleted Involved，Need Admin
-func (r MerchantUserAPIMerchantUserListGetRequest) DeleteInclude(deleteInclude bool) MerchantUserAPIMerchantUserListGetRequest {
+func (r ApiMerchantUserListGetRequest) DeleteInclude(deleteInclude bool) ApiMerchantUserListGetRequest {
 	r.deleteInclude = &deleteInclude
 	return r
 }
 
 // Sort，user_id|gmt_create|email|user_name|subscription_name|subscription_status|payment_method|recurring_amount|billing_type，Default gmt_create
-func (r MerchantUserAPIMerchantUserListGetRequest) SortField(sortField string) MerchantUserAPIMerchantUserListGetRequest {
+func (r ApiMerchantUserListGetRequest) SortField(sortField string) ApiMerchantUserListGetRequest {
 	r.sortField = &sortField
 	return r
 }
 
 // Sort Type，asc|desc，Default desc
-func (r MerchantUserAPIMerchantUserListGetRequest) SortType(sortType string) MerchantUserAPIMerchantUserListGetRequest {
+func (r ApiMerchantUserListGetRequest) SortType(sortType string) ApiMerchantUserListGetRequest {
 	r.sortType = &sortType
 	return r
 }
 
 // Page,Start 0
-func (r MerchantUserAPIMerchantUserListGetRequest) Page(page int32) MerchantUserAPIMerchantUserListGetRequest {
+func (r ApiMerchantUserListGetRequest) Page(page int32) ApiMerchantUserListGetRequest {
 	r.page = &page
 	return r
 }
 
 // Count OF Page
-func (r MerchantUserAPIMerchantUserListGetRequest) Count(count int32) MerchantUserAPIMerchantUserListGetRequest {
+func (r ApiMerchantUserListGetRequest) Count(count int32) ApiMerchantUserListGetRequest {
 	r.count = &count
 	return r
 }
 
-func (r MerchantUserAPIMerchantUserListGetRequest) Execute() (*MerchantUserListGet200Response, *http.Response, error) {
+func (r ApiMerchantUserListGetRequest) Execute() (*MerchantUserListGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantUserListGetExecute(r)
 }
 
@@ -321,10 +321,10 @@ func (r MerchantUserAPIMerchantUserListGetRequest) Execute() (*MerchantUserListG
 MerchantUserListGet User List
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantUserAPIMerchantUserListGetRequest
+ @return ApiMerchantUserListGetRequest
 */
-func (a *MerchantUserAPIService) MerchantUserListGet(ctx context.Context) MerchantUserAPIMerchantUserListGetRequest {
-	return MerchantUserAPIMerchantUserListGetRequest{
+func (a *MerchantUserAPIService) MerchantUserListGet(ctx context.Context) ApiMerchantUserListGetRequest {
+	return ApiMerchantUserListGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -332,7 +332,7 @@ func (a *MerchantUserAPIService) MerchantUserListGet(ctx context.Context) Mercha
 
 // Execute executes the request
 //  @return MerchantUserListGet200Response
-func (a *MerchantUserAPIService) MerchantUserListGetExecute(r MerchantUserAPIMerchantUserListGetRequest) (*MerchantUserListGet200Response, *http.Response, error) {
+func (a *MerchantUserAPIService) MerchantUserListGetExecute(r ApiMerchantUserListGetRequest) (*MerchantUserListGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -443,18 +443,18 @@ func (a *MerchantUserAPIService) MerchantUserListGetExecute(r MerchantUserAPIMer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantUserAPIMerchantUserListPostRequest struct {
+type ApiMerchantUserListPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantUserAPIService
 	unibeeApiMerchantUserListReq *UnibeeApiMerchantUserListReq
 }
 
-func (r MerchantUserAPIMerchantUserListPostRequest) UnibeeApiMerchantUserListReq(unibeeApiMerchantUserListReq UnibeeApiMerchantUserListReq) MerchantUserAPIMerchantUserListPostRequest {
+func (r ApiMerchantUserListPostRequest) UnibeeApiMerchantUserListReq(unibeeApiMerchantUserListReq UnibeeApiMerchantUserListReq) ApiMerchantUserListPostRequest {
 	r.unibeeApiMerchantUserListReq = &unibeeApiMerchantUserListReq
 	return r
 }
 
-func (r MerchantUserAPIMerchantUserListPostRequest) Execute() (*MerchantUserListGet200Response, *http.Response, error) {
+func (r ApiMerchantUserListPostRequest) Execute() (*MerchantUserListGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantUserListPostExecute(r)
 }
 
@@ -462,10 +462,10 @@ func (r MerchantUserAPIMerchantUserListPostRequest) Execute() (*MerchantUserList
 MerchantUserListPost User List
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantUserAPIMerchantUserListPostRequest
+ @return ApiMerchantUserListPostRequest
 */
-func (a *MerchantUserAPIService) MerchantUserListPost(ctx context.Context) MerchantUserAPIMerchantUserListPostRequest {
-	return MerchantUserAPIMerchantUserListPostRequest{
+func (a *MerchantUserAPIService) MerchantUserListPost(ctx context.Context) ApiMerchantUserListPostRequest {
+	return ApiMerchantUserListPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -473,7 +473,7 @@ func (a *MerchantUserAPIService) MerchantUserListPost(ctx context.Context) Merch
 
 // Execute executes the request
 //  @return MerchantUserListGet200Response
-func (a *MerchantUserAPIService) MerchantUserListPostExecute(r MerchantUserAPIMerchantUserListPostRequest) (*MerchantUserListGet200Response, *http.Response, error) {
+func (a *MerchantUserAPIService) MerchantUserListPostExecute(r ApiMerchantUserListPostRequest) (*MerchantUserListGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -551,18 +551,18 @@ func (a *MerchantUserAPIService) MerchantUserListPostExecute(r MerchantUserAPIMe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantUserAPIMerchantUserReleaseUserPostRequest struct {
+type ApiMerchantUserReleaseUserPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantUserAPIService
 	unibeeApiMerchantUserReleaseReq *UnibeeApiMerchantUserReleaseReq
 }
 
-func (r MerchantUserAPIMerchantUserReleaseUserPostRequest) UnibeeApiMerchantUserReleaseReq(unibeeApiMerchantUserReleaseReq UnibeeApiMerchantUserReleaseReq) MerchantUserAPIMerchantUserReleaseUserPostRequest {
+func (r ApiMerchantUserReleaseUserPostRequest) UnibeeApiMerchantUserReleaseReq(unibeeApiMerchantUserReleaseReq UnibeeApiMerchantUserReleaseReq) ApiMerchantUserReleaseUserPostRequest {
 	r.unibeeApiMerchantUserReleaseReq = &unibeeApiMerchantUserReleaseReq
 	return r
 }
 
-func (r MerchantUserAPIMerchantUserReleaseUserPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantUserReleaseUserPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantUserReleaseUserPostExecute(r)
 }
 
@@ -570,10 +570,10 @@ func (r MerchantUserAPIMerchantUserReleaseUserPostRequest) Execute() (*MerchantA
 MerchantUserReleaseUserPost Merchant Release User
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantUserAPIMerchantUserReleaseUserPostRequest
+ @return ApiMerchantUserReleaseUserPostRequest
 */
-func (a *MerchantUserAPIService) MerchantUserReleaseUserPost(ctx context.Context) MerchantUserAPIMerchantUserReleaseUserPostRequest {
-	return MerchantUserAPIMerchantUserReleaseUserPostRequest{
+func (a *MerchantUserAPIService) MerchantUserReleaseUserPost(ctx context.Context) ApiMerchantUserReleaseUserPostRequest {
+	return ApiMerchantUserReleaseUserPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -581,7 +581,7 @@ func (a *MerchantUserAPIService) MerchantUserReleaseUserPost(ctx context.Context
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantUserAPIService) MerchantUserReleaseUserPostExecute(r MerchantUserAPIMerchantUserReleaseUserPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantUserAPIService) MerchantUserReleaseUserPostExecute(r ApiMerchantUserReleaseUserPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -659,19 +659,19 @@ func (a *MerchantUserAPIService) MerchantUserReleaseUserPostExecute(r MerchantUs
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantUserAPIMerchantUserSearchGetRequest struct {
+type ApiMerchantUserSearchGetRequest struct {
 	ctx context.Context
 	ApiService *MerchantUserAPIService
 	searchKey *string
 }
 
 // SearchKey, Will Search UserId|Email|UserName|CompanyName|SubscriptionId|VatNumber|InvoiceId||PaymentId
-func (r MerchantUserAPIMerchantUserSearchGetRequest) SearchKey(searchKey string) MerchantUserAPIMerchantUserSearchGetRequest {
+func (r ApiMerchantUserSearchGetRequest) SearchKey(searchKey string) ApiMerchantUserSearchGetRequest {
 	r.searchKey = &searchKey
 	return r
 }
 
-func (r MerchantUserAPIMerchantUserSearchGetRequest) Execute() (*MerchantUserListGet200Response, *http.Response, error) {
+func (r ApiMerchantUserSearchGetRequest) Execute() (*MerchantUserListGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantUserSearchGetExecute(r)
 }
 
@@ -679,10 +679,10 @@ func (r MerchantUserAPIMerchantUserSearchGetRequest) Execute() (*MerchantUserLis
 MerchantUserSearchGet User Search
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantUserAPIMerchantUserSearchGetRequest
+ @return ApiMerchantUserSearchGetRequest
 */
-func (a *MerchantUserAPIService) MerchantUserSearchGet(ctx context.Context) MerchantUserAPIMerchantUserSearchGetRequest {
-	return MerchantUserAPIMerchantUserSearchGetRequest{
+func (a *MerchantUserAPIService) MerchantUserSearchGet(ctx context.Context) ApiMerchantUserSearchGetRequest {
+	return ApiMerchantUserSearchGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -690,7 +690,7 @@ func (a *MerchantUserAPIService) MerchantUserSearchGet(ctx context.Context) Merc
 
 // Execute executes the request
 //  @return MerchantUserListGet200Response
-func (a *MerchantUserAPIService) MerchantUserSearchGetExecute(r MerchantUserAPIMerchantUserSearchGetRequest) (*MerchantUserListGet200Response, *http.Response, error) {
+func (a *MerchantUserAPIService) MerchantUserSearchGetExecute(r ApiMerchantUserSearchGetRequest) (*MerchantUserListGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -766,18 +766,18 @@ func (a *MerchantUserAPIService) MerchantUserSearchGetExecute(r MerchantUserAPIM
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantUserAPIMerchantUserSearchPostRequest struct {
+type ApiMerchantUserSearchPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantUserAPIService
 	unibeeApiMerchantUserSearchReq *UnibeeApiMerchantUserSearchReq
 }
 
-func (r MerchantUserAPIMerchantUserSearchPostRequest) UnibeeApiMerchantUserSearchReq(unibeeApiMerchantUserSearchReq UnibeeApiMerchantUserSearchReq) MerchantUserAPIMerchantUserSearchPostRequest {
+func (r ApiMerchantUserSearchPostRequest) UnibeeApiMerchantUserSearchReq(unibeeApiMerchantUserSearchReq UnibeeApiMerchantUserSearchReq) ApiMerchantUserSearchPostRequest {
 	r.unibeeApiMerchantUserSearchReq = &unibeeApiMerchantUserSearchReq
 	return r
 }
 
-func (r MerchantUserAPIMerchantUserSearchPostRequest) Execute() (*MerchantUserListGet200Response, *http.Response, error) {
+func (r ApiMerchantUserSearchPostRequest) Execute() (*MerchantUserListGet200Response, *http.Response, error) {
 	return r.ApiService.MerchantUserSearchPostExecute(r)
 }
 
@@ -785,10 +785,10 @@ func (r MerchantUserAPIMerchantUserSearchPostRequest) Execute() (*MerchantUserLi
 MerchantUserSearchPost User Search
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantUserAPIMerchantUserSearchPostRequest
+ @return ApiMerchantUserSearchPostRequest
 */
-func (a *MerchantUserAPIService) MerchantUserSearchPost(ctx context.Context) MerchantUserAPIMerchantUserSearchPostRequest {
-	return MerchantUserAPIMerchantUserSearchPostRequest{
+func (a *MerchantUserAPIService) MerchantUserSearchPost(ctx context.Context) ApiMerchantUserSearchPostRequest {
+	return ApiMerchantUserSearchPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -796,7 +796,7 @@ func (a *MerchantUserAPIService) MerchantUserSearchPost(ctx context.Context) Mer
 
 // Execute executes the request
 //  @return MerchantUserListGet200Response
-func (a *MerchantUserAPIService) MerchantUserSearchPostExecute(r MerchantUserAPIMerchantUserSearchPostRequest) (*MerchantUserListGet200Response, *http.Response, error) {
+func (a *MerchantUserAPIService) MerchantUserSearchPostExecute(r ApiMerchantUserSearchPostRequest) (*MerchantUserListGet200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -874,18 +874,18 @@ func (a *MerchantUserAPIService) MerchantUserSearchPostExecute(r MerchantUserAPI
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type MerchantUserAPIMerchantUserUpdatePostRequest struct {
+type ApiMerchantUserUpdatePostRequest struct {
 	ctx context.Context
 	ApiService *MerchantUserAPIService
 	unibeeApiMerchantUserUpdateReq *UnibeeApiMerchantUserUpdateReq
 }
 
-func (r MerchantUserAPIMerchantUserUpdatePostRequest) UnibeeApiMerchantUserUpdateReq(unibeeApiMerchantUserUpdateReq UnibeeApiMerchantUserUpdateReq) MerchantUserAPIMerchantUserUpdatePostRequest {
+func (r ApiMerchantUserUpdatePostRequest) UnibeeApiMerchantUserUpdateReq(unibeeApiMerchantUserUpdateReq UnibeeApiMerchantUserUpdateReq) ApiMerchantUserUpdatePostRequest {
 	r.unibeeApiMerchantUserUpdateReq = &unibeeApiMerchantUserUpdateReq
 	return r
 }
 
-func (r MerchantUserAPIMerchantUserUpdatePostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantUserUpdatePostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantUserUpdatePostExecute(r)
 }
 
@@ -893,10 +893,10 @@ func (r MerchantUserAPIMerchantUserUpdatePostRequest) Execute() (*MerchantAuthSs
 MerchantUserUpdatePost Update User Profile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantUserAPIMerchantUserUpdatePostRequest
+ @return ApiMerchantUserUpdatePostRequest
 */
-func (a *MerchantUserAPIService) MerchantUserUpdatePost(ctx context.Context) MerchantUserAPIMerchantUserUpdatePostRequest {
-	return MerchantUserAPIMerchantUserUpdatePostRequest{
+func (a *MerchantUserAPIService) MerchantUserUpdatePost(ctx context.Context) ApiMerchantUserUpdatePostRequest {
+	return ApiMerchantUserUpdatePostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -904,7 +904,7 @@ func (a *MerchantUserAPIService) MerchantUserUpdatePost(ctx context.Context) Mer
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantUserAPIService) MerchantUserUpdatePostExecute(r MerchantUserAPIMerchantUserUpdatePostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantUserAPIService) MerchantUserUpdatePostExecute(r ApiMerchantUserUpdatePostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

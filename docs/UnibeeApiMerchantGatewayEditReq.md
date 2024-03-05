@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**GatewayId** | **int32** | GatewayId | 
+**GatewayId** | **int64** | GatewayId | 
 **GatewayKey** | Pointer to **string** | GatewayKey | [optional] 
 **GatewaySecret** | Pointer to **string** | GatewaySecret | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewUnibeeApiMerchantGatewayEditReq
 
-`func NewUnibeeApiMerchantGatewayEditReq(gatewayId int32, ) *UnibeeApiMerchantGatewayEditReq`
+`func NewUnibeeApiMerchantGatewayEditReq(gatewayId int64, ) *UnibeeApiMerchantGatewayEditReq`
 
 NewUnibeeApiMerchantGatewayEditReq instantiates a new UnibeeApiMerchantGatewayEditReq object
 This constructor will assign default values to properties that have it defined,
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetGatewayId
 
-`func (o *UnibeeApiMerchantGatewayEditReq) GetGatewayId() int32`
+`func (o *UnibeeApiMerchantGatewayEditReq) GetGatewayId() int64`
 
 GetGatewayId returns the GatewayId field if non-nil, zero value otherwise.
 
 ### GetGatewayIdOk
 
-`func (o *UnibeeApiMerchantGatewayEditReq) GetGatewayIdOk() (*int32, bool)`
+`func (o *UnibeeApiMerchantGatewayEditReq) GetGatewayIdOk() (*int64, bool)`
 
 GetGatewayIdOk returns a tuple with the GatewayId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGatewayId
 
-`func (o *UnibeeApiMerchantGatewayEditReq) SetGatewayId(v int32)`
+`func (o *UnibeeApiMerchantGatewayEditReq) SetGatewayId(v int64)`
 
 SetGatewayId sets GatewayId field to given value.
 

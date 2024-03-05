@@ -12,12 +12,12 @@ Name | Type | Description | Notes
 **CountryCode** | Pointer to **string** | country code | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Currency** | Pointer to **string** | currency | [optional] 
-**GatewayId** | Pointer to **int32** | gateway_id | [optional] 
+**GatewayId** | Pointer to **int64** | gateway_id | [optional] 
 **GatewayRefundId** | Pointer to **string** | gateway refund id | [optional] 
 **GmtCreate** | Pointer to **string** | create time | [optional] 
 **GmtModify** | Pointer to **string** | update time | [optional] 
 **Id** | Pointer to **int64** | id | [optional] 
-**MerchantId** | Pointer to **int32** | merchant id | [optional] 
+**MerchantId** | Pointer to **int64** | merchant id | [optional] 
 **OpenApiId** | Pointer to **int64** | open api id | [optional] 
 **PaymentId** | Pointer to **string** | relative payment id | [optional] 
 **RefundAmount** | Pointer to **int64** | refund amount, cent | [optional] 
@@ -252,20 +252,20 @@ HasCurrency returns a boolean if a field has been set.
 
 ### GetGatewayId
 
-`func (o *UnibeeInternalModelEntityOverseaPayRefund) GetGatewayId() int32`
+`func (o *UnibeeInternalModelEntityOverseaPayRefund) GetGatewayId() int64`
 
 GetGatewayId returns the GatewayId field if non-nil, zero value otherwise.
 
 ### GetGatewayIdOk
 
-`func (o *UnibeeInternalModelEntityOverseaPayRefund) GetGatewayIdOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPayRefund) GetGatewayIdOk() (*int64, bool)`
 
 GetGatewayIdOk returns a tuple with the GatewayId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGatewayId
 
-`func (o *UnibeeInternalModelEntityOverseaPayRefund) SetGatewayId(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPayRefund) SetGatewayId(v int64)`
 
 SetGatewayId sets GatewayId field to given value.
 
@@ -377,20 +377,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetMerchantId
 
-`func (o *UnibeeInternalModelEntityOverseaPayRefund) GetMerchantId() int32`
+`func (o *UnibeeInternalModelEntityOverseaPayRefund) GetMerchantId() int64`
 
 GetMerchantId returns the MerchantId field if non-nil, zero value otherwise.
 
 ### GetMerchantIdOk
 
-`func (o *UnibeeInternalModelEntityOverseaPayRefund) GetMerchantIdOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPayRefund) GetMerchantIdOk() (*int64, bool)`
 
 GetMerchantIdOk returns a tuple with the MerchantId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantId
 
-`func (o *UnibeeInternalModelEntityOverseaPayRefund) SetMerchantId(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPayRefund) SetMerchantId(v int64)`
 
 SetMerchantId sets MerchantId field to given value.
 

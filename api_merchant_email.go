@@ -22,18 +22,18 @@ import (
 // MerchantEmailAPIService MerchantEmailAPI service
 type MerchantEmailAPIService service
 
-type MerchantEmailAPIMerchantEmailGatewaySetupPostRequest struct {
+type ApiMerchantEmailGatewaySetupPostRequest struct {
 	ctx context.Context
 	ApiService *MerchantEmailAPIService
 	unibeeApiMerchantEmailGatewaySetupReq *UnibeeApiMerchantEmailGatewaySetupReq
 }
 
-func (r MerchantEmailAPIMerchantEmailGatewaySetupPostRequest) UnibeeApiMerchantEmailGatewaySetupReq(unibeeApiMerchantEmailGatewaySetupReq UnibeeApiMerchantEmailGatewaySetupReq) MerchantEmailAPIMerchantEmailGatewaySetupPostRequest {
+func (r ApiMerchantEmailGatewaySetupPostRequest) UnibeeApiMerchantEmailGatewaySetupReq(unibeeApiMerchantEmailGatewaySetupReq UnibeeApiMerchantEmailGatewaySetupReq) ApiMerchantEmailGatewaySetupPostRequest {
 	r.unibeeApiMerchantEmailGatewaySetupReq = &unibeeApiMerchantEmailGatewaySetupReq
 	return r
 }
 
-func (r MerchantEmailAPIMerchantEmailGatewaySetupPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r ApiMerchantEmailGatewaySetupPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	return r.ApiService.MerchantEmailGatewaySetupPostExecute(r)
 }
 
@@ -41,10 +41,10 @@ func (r MerchantEmailAPIMerchantEmailGatewaySetupPostRequest) Execute() (*Mercha
 MerchantEmailGatewaySetupPost Merchant Email Gateway Setup
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantEmailAPIMerchantEmailGatewaySetupPostRequest
+ @return ApiMerchantEmailGatewaySetupPostRequest
 */
-func (a *MerchantEmailAPIService) MerchantEmailGatewaySetupPost(ctx context.Context) MerchantEmailAPIMerchantEmailGatewaySetupPostRequest {
-	return MerchantEmailAPIMerchantEmailGatewaySetupPostRequest{
+func (a *MerchantEmailAPIService) MerchantEmailGatewaySetupPost(ctx context.Context) ApiMerchantEmailGatewaySetupPostRequest {
+	return ApiMerchantEmailGatewaySetupPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -52,7 +52,7 @@ func (a *MerchantEmailAPIService) MerchantEmailGatewaySetupPost(ctx context.Cont
 
 // Execute executes the request
 //  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *MerchantEmailAPIService) MerchantEmailGatewaySetupPostExecute(r MerchantEmailAPIMerchantEmailGatewaySetupPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (a *MerchantEmailAPIService) MerchantEmailGatewaySetupPostExecute(r ApiMerchantEmailGatewaySetupPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

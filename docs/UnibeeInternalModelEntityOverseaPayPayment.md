@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **Currency** | Pointer to **string** | currency，“SGD” “MYR” “PHP” “IDR” “THB” | [optional] 
 **FailureReason** | Pointer to **string** |  | [optional] 
 **GatewayEdition** | Pointer to **string** | gateway edition | [optional] 
-**GatewayId** | Pointer to **int32** | gateway_id | [optional] 
+**GatewayId** | Pointer to **int64** | gateway_id | [optional] 
 **GatewayPaymentId** | Pointer to **string** | gateway_payment_id | [optional] 
 **GatewayPaymentIntentId** | Pointer to **string** | gateway_payment_intent_id | [optional] 
 **GatewayPaymentMethod** | Pointer to **string** |  | [optional] 
@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 **InvoiceData** | Pointer to **string** |  | [optional] 
 **InvoiceId** | Pointer to **string** | invoice id | [optional] 
 **Link** | Pointer to **string** |  | [optional] 
-**MerchantId** | Pointer to **int32** | merchant id | [optional] 
+**MerchantId** | Pointer to **int64** | merchant id | [optional] 
 **OpenApiId** | Pointer to **int64** | open api id | [optional] 
 **PaidTime** | Pointer to **int64** | paid time, utc time | [optional] 
 **PaymentAmount** | Pointer to **int64** | payment_amount | [optional] 
@@ -573,20 +573,20 @@ HasGatewayEdition returns a boolean if a field has been set.
 
 ### GetGatewayId
 
-`func (o *UnibeeInternalModelEntityOverseaPayPayment) GetGatewayId() int32`
+`func (o *UnibeeInternalModelEntityOverseaPayPayment) GetGatewayId() int64`
 
 GetGatewayId returns the GatewayId field if non-nil, zero value otherwise.
 
 ### GetGatewayIdOk
 
-`func (o *UnibeeInternalModelEntityOverseaPayPayment) GetGatewayIdOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPayPayment) GetGatewayIdOk() (*int64, bool)`
 
 GetGatewayIdOk returns a tuple with the GatewayId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGatewayId
 
-`func (o *UnibeeInternalModelEntityOverseaPayPayment) SetGatewayId(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPayPayment) SetGatewayId(v int64)`
 
 SetGatewayId sets GatewayId field to given value.
 
@@ -848,20 +848,20 @@ HasLink returns a boolean if a field has been set.
 
 ### GetMerchantId
 
-`func (o *UnibeeInternalModelEntityOverseaPayPayment) GetMerchantId() int32`
+`func (o *UnibeeInternalModelEntityOverseaPayPayment) GetMerchantId() int64`
 
 GetMerchantId returns the MerchantId field if non-nil, zero value otherwise.
 
 ### GetMerchantIdOk
 
-`func (o *UnibeeInternalModelEntityOverseaPayPayment) GetMerchantIdOk() (*int32, bool)`
+`func (o *UnibeeInternalModelEntityOverseaPayPayment) GetMerchantIdOk() (*int64, bool)`
 
 GetMerchantIdOk returns a tuple with the MerchantId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantId
 
-`func (o *UnibeeInternalModelEntityOverseaPayPayment) SetMerchantId(v int32)`
+`func (o *UnibeeInternalModelEntityOverseaPayPayment) SetMerchantId(v int64)`
 
 SetMerchantId sets MerchantId field to given value.
 
