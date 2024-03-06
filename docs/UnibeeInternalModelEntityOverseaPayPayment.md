@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **BalanceEnd** | Pointer to **int64** | balance_end, utc time | [optional] 
 **BalanceStart** | Pointer to **int64** | balance_start, utc time | [optional] 
 **BillingReason** | Pointer to **string** |  | [optional] 
-**BizId** | Pointer to **string** | biz_id | [optional] 
 **BizType** | Pointer to **int32** | biz_type 1-single payment, 3-subscription | [optional] 
 **CancelTime** | Pointer to **int64** | cancel time, utc time | [optional] 
 **CaptureDelayHours** | Pointer to **int32** | capture_delay_hours | [optional] 
@@ -22,6 +21,7 @@ Name | Type | Description | Notes
 **CountryCode** | Pointer to **string** | country code | [optional] 
 **CreateTime** | Pointer to **int64** | create time, utc time | [optional] 
 **Currency** | Pointer to **string** | currency，“SGD” “MYR” “PHP” “IDR” “THB” | [optional] 
+**ExternalPaymentId** | Pointer to **string** | external_payment_id | [optional] 
 **FailureReason** | Pointer to **string** |  | [optional] 
 **GatewayEdition** | Pointer to **string** | gateway edition | [optional] 
 **GatewayId** | Pointer to **int64** | gateway_id | [optional] 
@@ -296,31 +296,6 @@ SetBillingReason sets BillingReason field to given value.
 
 HasBillingReason returns a boolean if a field has been set.
 
-### GetBizId
-
-`func (o *UnibeeInternalModelEntityOverseaPayPayment) GetBizId() string`
-
-GetBizId returns the BizId field if non-nil, zero value otherwise.
-
-### GetBizIdOk
-
-`func (o *UnibeeInternalModelEntityOverseaPayPayment) GetBizIdOk() (*string, bool)`
-
-GetBizIdOk returns a tuple with the BizId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBizId
-
-`func (o *UnibeeInternalModelEntityOverseaPayPayment) SetBizId(v string)`
-
-SetBizId sets BizId field to given value.
-
-### HasBizId
-
-`func (o *UnibeeInternalModelEntityOverseaPayPayment) HasBizId() bool`
-
-HasBizId returns a boolean if a field has been set.
-
 ### GetBizType
 
 `func (o *UnibeeInternalModelEntityOverseaPayPayment) GetBizType() int32`
@@ -520,6 +495,31 @@ SetCurrency sets Currency field to given value.
 `func (o *UnibeeInternalModelEntityOverseaPayPayment) HasCurrency() bool`
 
 HasCurrency returns a boolean if a field has been set.
+
+### GetExternalPaymentId
+
+`func (o *UnibeeInternalModelEntityOverseaPayPayment) GetExternalPaymentId() string`
+
+GetExternalPaymentId returns the ExternalPaymentId field if non-nil, zero value otherwise.
+
+### GetExternalPaymentIdOk
+
+`func (o *UnibeeInternalModelEntityOverseaPayPayment) GetExternalPaymentIdOk() (*string, bool)`
+
+GetExternalPaymentIdOk returns a tuple with the ExternalPaymentId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalPaymentId
+
+`func (o *UnibeeInternalModelEntityOverseaPayPayment) SetExternalPaymentId(v string)`
+
+SetExternalPaymentId sets ExternalPaymentId field to given value.
+
+### HasExternalPaymentId
+
+`func (o *UnibeeInternalModelEntityOverseaPayPayment) HasExternalPaymentId() bool`
+
+HasExternalPaymentId returns a boolean if a field has been set.
 
 ### GetFailureReason
 

@@ -23,7 +23,7 @@ var _ MappedNullable = &UnibeeApiMerchantPlanNewReq{}
 type UnibeeApiMerchantPlanNewReq struct {
 	// Plan Ids Of Addon Type
 	AddonIds []int64 `json:"addonIds,omitempty"`
-	// Plan Amount
+	// Plan CaptureAmount
 	Amount int64 `json:"amount"`
 	// Plan Currency
 	Currency string `json:"currency"`

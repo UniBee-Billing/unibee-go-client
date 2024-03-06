@@ -6,12 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AdditionalData** | Pointer to **string** |  | [optional] 
 **AppId** | Pointer to **string** | app id | [optional] 
-**BizId** | Pointer to **string** | biz id,copy from payment.biz_id | [optional] 
 **BizType** | Pointer to **int32** | biz type, copy from payment.biz_type | [optional] 
 **CompanyId** | Pointer to **int64** | company id | [optional] 
 **CountryCode** | Pointer to **string** | country code | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Currency** | Pointer to **string** | currency | [optional] 
+**ExternalRefundId** | Pointer to **string** | external_refund_id | [optional] 
 **GatewayId** | Pointer to **int64** | gateway_id | [optional] 
 **GatewayRefundId** | Pointer to **string** | gateway refund id | [optional] 
 **GmtCreate** | Pointer to **string** | create time | [optional] 
@@ -99,31 +99,6 @@ SetAppId sets AppId field to given value.
 `func (o *UnibeeInternalModelEntityOverseaPayRefund) HasAppId() bool`
 
 HasAppId returns a boolean if a field has been set.
-
-### GetBizId
-
-`func (o *UnibeeInternalModelEntityOverseaPayRefund) GetBizId() string`
-
-GetBizId returns the BizId field if non-nil, zero value otherwise.
-
-### GetBizIdOk
-
-`func (o *UnibeeInternalModelEntityOverseaPayRefund) GetBizIdOk() (*string, bool)`
-
-GetBizIdOk returns a tuple with the BizId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBizId
-
-`func (o *UnibeeInternalModelEntityOverseaPayRefund) SetBizId(v string)`
-
-SetBizId sets BizId field to given value.
-
-### HasBizId
-
-`func (o *UnibeeInternalModelEntityOverseaPayRefund) HasBizId() bool`
-
-HasBizId returns a boolean if a field has been set.
 
 ### GetBizType
 
@@ -249,6 +224,31 @@ SetCurrency sets Currency field to given value.
 `func (o *UnibeeInternalModelEntityOverseaPayRefund) HasCurrency() bool`
 
 HasCurrency returns a boolean if a field has been set.
+
+### GetExternalRefundId
+
+`func (o *UnibeeInternalModelEntityOverseaPayRefund) GetExternalRefundId() string`
+
+GetExternalRefundId returns the ExternalRefundId field if non-nil, zero value otherwise.
+
+### GetExternalRefundIdOk
+
+`func (o *UnibeeInternalModelEntityOverseaPayRefund) GetExternalRefundIdOk() (*string, bool)`
+
+GetExternalRefundIdOk returns a tuple with the ExternalRefundId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalRefundId
+
+`func (o *UnibeeInternalModelEntityOverseaPayRefund) SetExternalRefundId(v string)`
+
+SetExternalRefundId sets ExternalRefundId field to given value.
+
+### HasExternalRefundId
+
+`func (o *UnibeeInternalModelEntityOverseaPayRefund) HasExternalRefundId() bool`
+
+HasExternalRefundId returns a boolean if a field has been set.
 
 ### GetGatewayId
 

@@ -23,7 +23,7 @@ type UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo struct {
 	AddonData *string `json:"addonData,omitempty"`
 	// Addons
 	Addons []UnibeeInternalLogicGatewayRoPlanAddonVo `json:"addons,omitempty"`
-	// Amount, Cent
+	// CaptureAmount, Cent
 	Amount *int64 `json:"amount,omitempty"`
 	// Currency
 	Currency *string `json:"currency,omitempty"`

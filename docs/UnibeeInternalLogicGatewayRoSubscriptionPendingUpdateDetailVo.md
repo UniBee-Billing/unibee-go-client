@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonData** | Pointer to **string** | plan addon json data | [optional] 
 **Addons** | Pointer to [**[]UnibeeInternalLogicGatewayRoPlanAddonVo**](UnibeeInternalLogicGatewayRoPlanAddonVo.md) | Addons | [optional] 
-**Amount** | Pointer to **int64** | Amount, Cent | [optional] 
+**Amount** | Pointer to **int64** | CaptureAmount, Cent | [optional] 
 **Currency** | Pointer to **string** | Currency | [optional] 
 **EffectImmediate** | Pointer to **int32** | EffectImmediate | [optional] 
 **EffectTime** | Pointer to **int64** | effect_immediate&#x3D;0, EffectTime unit_time | [optional] 

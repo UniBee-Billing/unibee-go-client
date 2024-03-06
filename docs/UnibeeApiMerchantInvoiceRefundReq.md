@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **InvoiceId** | **string** | InvoiceId | 
 **Reason** | **string** | Refund Reason | 
-**RefundAmount** | **int64** | Refund Amount | 
+**RefundAmount** | **int64** | Refund CaptureAmount | 
 **RefundNo** | **string** | RefundNo | 
 
 ## Methods

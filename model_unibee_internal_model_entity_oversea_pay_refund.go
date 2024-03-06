@@ -22,8 +22,6 @@ type UnibeeInternalModelEntityOverseaPayRefund struct {
 	AdditionalData *string `json:"additionalData,omitempty"`
 	// app id
 	AppId *string `json:"appId,omitempty"`
-	// biz id,copy from payment.biz_id
-	BizId *string `json:"bizId,omitempty"`
 	// biz type, copy from payment.biz_type
 	BizType *int32 `json:"bizType,omitempty"`
 	// company id
@@ -34,6 +32,8 @@ type UnibeeInternalModelEntityOverseaPayRefund struct {
 	CreateTime *int64 `json:"createTime,omitempty"`
 	// currency
 	Currency *string `json:"currency,omitempty"`
+	// external_refund_id
+	ExternalRefundId *string `json:"externalRefundId,omitempty"`
 	// gateway_id
 	GatewayId *int64 `json:"gatewayId,omitempty"`
 	// gateway refund id
@@ -151,38 +151,6 @@ func (o *UnibeeInternalModelEntityOverseaPayRefund) HasAppId() bool {
 // SetAppId gets a reference to the given string and assigns it to the AppId field.
 func (o *UnibeeInternalModelEntityOverseaPayRefund) SetAppId(v string) {
 	o.AppId = &v
-}
-
-// GetBizId returns the BizId field value if set, zero value otherwise.
-func (o *UnibeeInternalModelEntityOverseaPayRefund) GetBizId() string {
-	if o == nil || IsNil(o.BizId) {
-		var ret string
-		return ret
-	}
-	return *o.BizId
-}
-
-// GetBizIdOk returns a tuple with the BizId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UnibeeInternalModelEntityOverseaPayRefund) GetBizIdOk() (*string, bool) {
-	if o == nil || IsNil(o.BizId) {
-		return nil, false
-	}
-	return o.BizId, true
-}
-
-// HasBizId returns a boolean if a field has been set.
-func (o *UnibeeInternalModelEntityOverseaPayRefund) HasBizId() bool {
-	if o != nil && !IsNil(o.BizId) {
-		return true
-	}
-
-	return false
-}
-
-// SetBizId gets a reference to the given string and assigns it to the BizId field.
-func (o *UnibeeInternalModelEntityOverseaPayRefund) SetBizId(v string) {
-	o.BizId = &v
 }
 
 // GetBizType returns the BizType field value if set, zero value otherwise.
@@ -343,6 +311,38 @@ func (o *UnibeeInternalModelEntityOverseaPayRefund) HasCurrency() bool {
 // SetCurrency gets a reference to the given string and assigns it to the Currency field.
 func (o *UnibeeInternalModelEntityOverseaPayRefund) SetCurrency(v string) {
 	o.Currency = &v
+}
+
+// GetExternalRefundId returns the ExternalRefundId field value if set, zero value otherwise.
+func (o *UnibeeInternalModelEntityOverseaPayRefund) GetExternalRefundId() string {
+	if o == nil || IsNil(o.ExternalRefundId) {
+		var ret string
+		return ret
+	}
+	return *o.ExternalRefundId
+}
+
+// GetExternalRefundIdOk returns a tuple with the ExternalRefundId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeInternalModelEntityOverseaPayRefund) GetExternalRefundIdOk() (*string, bool) {
+	if o == nil || IsNil(o.ExternalRefundId) {
+		return nil, false
+	}
+	return o.ExternalRefundId, true
+}
+
+// HasExternalRefundId returns a boolean if a field has been set.
+func (o *UnibeeInternalModelEntityOverseaPayRefund) HasExternalRefundId() bool {
+	if o != nil && !IsNil(o.ExternalRefundId) {
+		return true
+	}
+
+	return false
+}
+
+// SetExternalRefundId gets a reference to the given string and assigns it to the ExternalRefundId field.
+func (o *UnibeeInternalModelEntityOverseaPayRefund) SetExternalRefundId(v string) {
+	o.ExternalRefundId = &v
 }
 
 // GetGatewayId returns the GatewayId field value if set, zero value otherwise.
@@ -937,9 +937,6 @@ func (o UnibeeInternalModelEntityOverseaPayRefund) ToMap() (map[string]interface
 	if !IsNil(o.AppId) {
 		toSerialize["appId"] = o.AppId
 	}
-	if !IsNil(o.BizId) {
-		toSerialize["bizId"] = o.BizId
-	}
 	if !IsNil(o.BizType) {
 		toSerialize["bizType"] = o.BizType
 	}
@@ -954,6 +951,9 @@ func (o UnibeeInternalModelEntityOverseaPayRefund) ToMap() (map[string]interface
 	}
 	if !IsNil(o.Currency) {
 		toSerialize["currency"] = o.Currency
+	}
+	if !IsNil(o.ExternalRefundId) {
+		toSerialize["externalRefundId"] = o.ExternalRefundId
 	}
 	if !IsNil(o.GatewayId) {
 		toSerialize["gatewayId"] = o.GatewayId

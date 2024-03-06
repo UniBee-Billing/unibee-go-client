@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MerchantMemberId** | **int64** | MerchantMemberId | 
 **Note** | **string** | note | 
 **SubscriptionId** | **string** | SubscriptionId | 
 
@@ -12,7 +11,7 @@ Name | Type | Description | Notes
 
 ### NewUnibeeApiMerchantSubscriptionNewAdminNoteReq
 
-`func NewUnibeeApiMerchantSubscriptionNewAdminNoteReq(merchantMemberId int64, note string, subscriptionId string, ) *UnibeeApiMerchantSubscriptionNewAdminNoteReq`
+`func NewUnibeeApiMerchantSubscriptionNewAdminNoteReq(note string, subscriptionId string, ) *UnibeeApiMerchantSubscriptionNewAdminNoteReq`
 
 NewUnibeeApiMerchantSubscriptionNewAdminNoteReq instantiates a new UnibeeApiMerchantSubscriptionNewAdminNoteReq object
 This constructor will assign default values to properties that have it defined,
@@ -26,26 +25,6 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantSubscriptionNewAdminNoteReqWithDefaults instantiates a new UnibeeApiMerchantSubscriptionNewAdminNoteReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMerchantMemberId
-
-`func (o *UnibeeApiMerchantSubscriptionNewAdminNoteReq) GetMerchantMemberId() int64`
-
-GetMerchantMemberId returns the MerchantMemberId field if non-nil, zero value otherwise.
-
-### GetMerchantMemberIdOk
-
-`func (o *UnibeeApiMerchantSubscriptionNewAdminNoteReq) GetMerchantMemberIdOk() (*int64, bool)`
-
-GetMerchantMemberIdOk returns a tuple with the MerchantMemberId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMerchantMemberId
-
-`func (o *UnibeeApiMerchantSubscriptionNewAdminNoteReq) SetMerchantMemberId(v int64)`
-
-SetMerchantMemberId sets MerchantMemberId field to given value.
-
 
 ### GetNote
 

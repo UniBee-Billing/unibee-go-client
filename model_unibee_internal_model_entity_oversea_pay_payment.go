@@ -34,8 +34,6 @@ type UnibeeInternalModelEntityOverseaPayPayment struct {
 	// balance_start, utc time
 	BalanceStart *int64 `json:"balanceStart,omitempty"`
 	BillingReason *string `json:"billingReason,omitempty"`
-	// biz_id
-	BizId *string `json:"bizId,omitempty"`
 	// biz_type 1-single payment, 3-subscription
 	BizType *int32 `json:"bizType,omitempty"`
 	// cancel time, utc time
@@ -51,6 +49,8 @@ type UnibeeInternalModelEntityOverseaPayPayment struct {
 	CreateTime *int64 `json:"createTime,omitempty"`
 	// currency，“SGD” “MYR” “PHP” “IDR” “THB”
 	Currency *string `json:"currency,omitempty"`
+	// external_payment_id
+	ExternalPaymentId *string `json:"externalPaymentId,omitempty"`
 	FailureReason *string `json:"failureReason,omitempty"`
 	// gateway edition
 	GatewayEdition *string `json:"gatewayEdition,omitempty"`
@@ -411,38 +411,6 @@ func (o *UnibeeInternalModelEntityOverseaPayPayment) SetBillingReason(v string) 
 	o.BillingReason = &v
 }
 
-// GetBizId returns the BizId field value if set, zero value otherwise.
-func (o *UnibeeInternalModelEntityOverseaPayPayment) GetBizId() string {
-	if o == nil || IsNil(o.BizId) {
-		var ret string
-		return ret
-	}
-	return *o.BizId
-}
-
-// GetBizIdOk returns a tuple with the BizId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UnibeeInternalModelEntityOverseaPayPayment) GetBizIdOk() (*string, bool) {
-	if o == nil || IsNil(o.BizId) {
-		return nil, false
-	}
-	return o.BizId, true
-}
-
-// HasBizId returns a boolean if a field has been set.
-func (o *UnibeeInternalModelEntityOverseaPayPayment) HasBizId() bool {
-	if o != nil && !IsNil(o.BizId) {
-		return true
-	}
-
-	return false
-}
-
-// SetBizId gets a reference to the given string and assigns it to the BizId field.
-func (o *UnibeeInternalModelEntityOverseaPayPayment) SetBizId(v string) {
-	o.BizId = &v
-}
-
 // GetBizType returns the BizType field value if set, zero value otherwise.
 func (o *UnibeeInternalModelEntityOverseaPayPayment) GetBizType() int32 {
 	if o == nil || IsNil(o.BizType) {
@@ -697,6 +665,38 @@ func (o *UnibeeInternalModelEntityOverseaPayPayment) HasCurrency() bool {
 // SetCurrency gets a reference to the given string and assigns it to the Currency field.
 func (o *UnibeeInternalModelEntityOverseaPayPayment) SetCurrency(v string) {
 	o.Currency = &v
+}
+
+// GetExternalPaymentId returns the ExternalPaymentId field value if set, zero value otherwise.
+func (o *UnibeeInternalModelEntityOverseaPayPayment) GetExternalPaymentId() string {
+	if o == nil || IsNil(o.ExternalPaymentId) {
+		var ret string
+		return ret
+	}
+	return *o.ExternalPaymentId
+}
+
+// GetExternalPaymentIdOk returns a tuple with the ExternalPaymentId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeInternalModelEntityOverseaPayPayment) GetExternalPaymentIdOk() (*string, bool) {
+	if o == nil || IsNil(o.ExternalPaymentId) {
+		return nil, false
+	}
+	return o.ExternalPaymentId, true
+}
+
+// HasExternalPaymentId returns a boolean if a field has been set.
+func (o *UnibeeInternalModelEntityOverseaPayPayment) HasExternalPaymentId() bool {
+	if o != nil && !IsNil(o.ExternalPaymentId) {
+		return true
+	}
+
+	return false
+}
+
+// SetExternalPaymentId gets a reference to the given string and assigns it to the ExternalPaymentId field.
+func (o *UnibeeInternalModelEntityOverseaPayPayment) SetExternalPaymentId(v string) {
+	o.ExternalPaymentId = &v
 }
 
 // GetFailureReason returns the FailureReason field value if set, zero value otherwise.
@@ -1664,9 +1664,6 @@ func (o UnibeeInternalModelEntityOverseaPayPayment) ToMap() (map[string]interfac
 	if !IsNil(o.BillingReason) {
 		toSerialize["billingReason"] = o.BillingReason
 	}
-	if !IsNil(o.BizId) {
-		toSerialize["bizId"] = o.BizId
-	}
 	if !IsNil(o.BizType) {
 		toSerialize["bizType"] = o.BizType
 	}
@@ -1690,6 +1687,9 @@ func (o UnibeeInternalModelEntityOverseaPayPayment) ToMap() (map[string]interfac
 	}
 	if !IsNil(o.Currency) {
 		toSerialize["currency"] = o.Currency
+	}
+	if !IsNil(o.ExternalPaymentId) {
+		toSerialize["externalPaymentId"] = o.ExternalPaymentId
 	}
 	if !IsNil(o.FailureReason) {
 		toSerialize["failureReason"] = o.FailureReason

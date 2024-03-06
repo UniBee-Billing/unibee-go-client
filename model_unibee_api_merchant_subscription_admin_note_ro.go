@@ -19,16 +19,18 @@ var _ MappedNullable = &UnibeeApiMerchantSubscriptionAdminNoteRo{}
 
 // UnibeeApiMerchantSubscriptionAdminNoteRo struct for UnibeeApiMerchantSubscriptionAdminNoteRo
 type UnibeeApiMerchantSubscriptionAdminNoteRo struct {
+	// create utc time
+	CreateTime *int64 `json:"createTime,omitempty"`
 	// 邮箱
 	Email *string `json:"email,omitempty"`
 	FirstName *string `json:"firstName,omitempty"`
-	// 创建时间
-	GmtCreate *string `json:"gmtCreate,omitempty"`
-	// 修改时间
-	GmtModify *string `json:"gmtModify,omitempty"`
+	// id
+	Id *int64 `json:"id,omitempty"`
 	LastName *string `json:"lastName,omitempty"`
 	// 手机号
 	Mobile *string `json:"mobile,omitempty"`
+	// note
+	Note *string `json:"note,omitempty"`
 	// SubscriptionId
 	SubscriptionId *string `json:"subscriptionId,omitempty"`
 	// 用户名
@@ -50,6 +52,38 @@ func NewUnibeeApiMerchantSubscriptionAdminNoteRo() *UnibeeApiMerchantSubscriptio
 func NewUnibeeApiMerchantSubscriptionAdminNoteRoWithDefaults() *UnibeeApiMerchantSubscriptionAdminNoteRo {
 	this := UnibeeApiMerchantSubscriptionAdminNoteRo{}
 	return &this
+}
+
+// GetCreateTime returns the CreateTime field value if set, zero value otherwise.
+func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) GetCreateTime() int64 {
+	if o == nil || IsNil(o.CreateTime) {
+		var ret int64
+		return ret
+	}
+	return *o.CreateTime
+}
+
+// GetCreateTimeOk returns a tuple with the CreateTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) GetCreateTimeOk() (*int64, bool) {
+	if o == nil || IsNil(o.CreateTime) {
+		return nil, false
+	}
+	return o.CreateTime, true
+}
+
+// HasCreateTime returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) HasCreateTime() bool {
+	if o != nil && !IsNil(o.CreateTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetCreateTime gets a reference to the given int64 and assigns it to the CreateTime field.
+func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) SetCreateTime(v int64) {
+	o.CreateTime = &v
 }
 
 // GetEmail returns the Email field value if set, zero value otherwise.
@@ -116,68 +150,36 @@ func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) SetFirstName(v string) {
 	o.FirstName = &v
 }
 
-// GetGmtCreate returns the GmtCreate field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) GetGmtCreate() string {
-	if o == nil || IsNil(o.GmtCreate) {
-		var ret string
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) GetId() int64 {
+	if o == nil || IsNil(o.Id) {
+		var ret int64
 		return ret
 	}
-	return *o.GmtCreate
+	return *o.Id
 }
 
-// GetGmtCreateOk returns a tuple with the GmtCreate field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) GetGmtCreateOk() (*string, bool) {
-	if o == nil || IsNil(o.GmtCreate) {
+func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) GetIdOk() (*int64, bool) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
-	return o.GmtCreate, true
+	return o.Id, true
 }
 
-// HasGmtCreate returns a boolean if a field has been set.
-func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) HasGmtCreate() bool {
-	if o != nil && !IsNil(o.GmtCreate) {
+// HasId returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
 	return false
 }
 
-// SetGmtCreate gets a reference to the given string and assigns it to the GmtCreate field.
-func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) SetGmtCreate(v string) {
-	o.GmtCreate = &v
-}
-
-// GetGmtModify returns the GmtModify field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) GetGmtModify() string {
-	if o == nil || IsNil(o.GmtModify) {
-		var ret string
-		return ret
-	}
-	return *o.GmtModify
-}
-
-// GetGmtModifyOk returns a tuple with the GmtModify field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) GetGmtModifyOk() (*string, bool) {
-	if o == nil || IsNil(o.GmtModify) {
-		return nil, false
-	}
-	return o.GmtModify, true
-}
-
-// HasGmtModify returns a boolean if a field has been set.
-func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) HasGmtModify() bool {
-	if o != nil && !IsNil(o.GmtModify) {
-		return true
-	}
-
-	return false
-}
-
-// SetGmtModify gets a reference to the given string and assigns it to the GmtModify field.
-func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) SetGmtModify(v string) {
-	o.GmtModify = &v
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) SetId(v int64) {
+	o.Id = &v
 }
 
 // GetLastName returns the LastName field value if set, zero value otherwise.
@@ -242,6 +244,38 @@ func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) HasMobile() bool {
 // SetMobile gets a reference to the given string and assigns it to the Mobile field.
 func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) SetMobile(v string) {
 	o.Mobile = &v
+}
+
+// GetNote returns the Note field value if set, zero value otherwise.
+func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) GetNote() string {
+	if o == nil || IsNil(o.Note) {
+		var ret string
+		return ret
+	}
+	return *o.Note
+}
+
+// GetNoteOk returns a tuple with the Note field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) GetNoteOk() (*string, bool) {
+	if o == nil || IsNil(o.Note) {
+		return nil, false
+	}
+	return o.Note, true
+}
+
+// HasNote returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) HasNote() bool {
+	if o != nil && !IsNil(o.Note) {
+		return true
+	}
+
+	return false
+}
+
+// SetNote gets a reference to the given string and assigns it to the Note field.
+func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) SetNote(v string) {
+	o.Note = &v
 }
 
 // GetSubscriptionId returns the SubscriptionId field value if set, zero value otherwise.
@@ -318,23 +352,26 @@ func (o UnibeeApiMerchantSubscriptionAdminNoteRo) MarshalJSON() ([]byte, error) 
 
 func (o UnibeeApiMerchantSubscriptionAdminNoteRo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.CreateTime) {
+		toSerialize["createTime"] = o.CreateTime
+	}
 	if !IsNil(o.Email) {
 		toSerialize["email"] = o.Email
 	}
 	if !IsNil(o.FirstName) {
 		toSerialize["firstName"] = o.FirstName
 	}
-	if !IsNil(o.GmtCreate) {
-		toSerialize["gmtCreate"] = o.GmtCreate
-	}
-	if !IsNil(o.GmtModify) {
-		toSerialize["gmtModify"] = o.GmtModify
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
 	if !IsNil(o.LastName) {
 		toSerialize["lastName"] = o.LastName
 	}
 	if !IsNil(o.Mobile) {
 		toSerialize["mobile"] = o.Mobile
+	}
+	if !IsNil(o.Note) {
+		toSerialize["note"] = o.Note
 	}
 	if !IsNil(o.SubscriptionId) {
 		toSerialize["subscriptionId"] = o.SubscriptionId

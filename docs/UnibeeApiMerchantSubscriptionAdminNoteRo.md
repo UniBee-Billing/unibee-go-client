@@ -4,12 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Email** | Pointer to **string** | 邮箱 | [optional] 
 **FirstName** | Pointer to **string** |  | [optional] 
-**GmtCreate** | Pointer to **string** | 创建时间 | [optional] 
-**GmtModify** | Pointer to **string** | 修改时间 | [optional] 
+**Id** | Pointer to **int64** | id | [optional] 
 **LastName** | Pointer to **string** |  | [optional] 
 **Mobile** | Pointer to **string** | 手机号 | [optional] 
+**Note** | Pointer to **string** | note | [optional] 
 **SubscriptionId** | Pointer to **string** | SubscriptionId | [optional] 
 **UserName** | Pointer to **string** | 用户名 | [optional] 
 
@@ -31,6 +32,31 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantSubscriptionAdminNoteRoWithDefaults instantiates a new UnibeeApiMerchantSubscriptionAdminNoteRo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCreateTime
+
+`func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) GetCreateTime() int64`
+
+GetCreateTime returns the CreateTime field if non-nil, zero value otherwise.
+
+### GetCreateTimeOk
+
+`func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) GetCreateTimeOk() (*int64, bool)`
+
+GetCreateTimeOk returns a tuple with the CreateTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateTime
+
+`func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) SetCreateTime(v int64)`
+
+SetCreateTime sets CreateTime field to given value.
+
+### HasCreateTime
+
+`func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) HasCreateTime() bool`
+
+HasCreateTime returns a boolean if a field has been set.
 
 ### GetEmail
 
@@ -82,55 +108,30 @@ SetFirstName sets FirstName field to given value.
 
 HasFirstName returns a boolean if a field has been set.
 
-### GetGmtCreate
+### GetId
 
-`func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) GetGmtCreate() string`
+`func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) GetId() int64`
 
-GetGmtCreate returns the GmtCreate field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetGmtCreateOk
+### GetIdOk
 
-`func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) GetGmtCreateOk() (*string, bool)`
+`func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) GetIdOk() (*int64, bool)`
 
-GetGmtCreateOk returns a tuple with the GmtCreate field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetGmtCreate
+### SetId
 
-`func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) SetGmtCreate(v string)`
+`func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) SetId(v int64)`
 
-SetGmtCreate sets GmtCreate field to given value.
+SetId sets Id field to given value.
 
-### HasGmtCreate
+### HasId
 
-`func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) HasGmtCreate() bool`
+`func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) HasId() bool`
 
-HasGmtCreate returns a boolean if a field has been set.
-
-### GetGmtModify
-
-`func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) GetGmtModify() string`
-
-GetGmtModify returns the GmtModify field if non-nil, zero value otherwise.
-
-### GetGmtModifyOk
-
-`func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) GetGmtModifyOk() (*string, bool)`
-
-GetGmtModifyOk returns a tuple with the GmtModify field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGmtModify
-
-`func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) SetGmtModify(v string)`
-
-SetGmtModify sets GmtModify field to given value.
-
-### HasGmtModify
-
-`func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) HasGmtModify() bool`
-
-HasGmtModify returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 ### GetLastName
 
@@ -181,6 +182,31 @@ SetMobile sets Mobile field to given value.
 `func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) HasMobile() bool`
 
 HasMobile returns a boolean if a field has been set.
+
+### GetNote
+
+`func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) GetNote() string`
+
+GetNote returns the Note field if non-nil, zero value otherwise.
+
+### GetNoteOk
+
+`func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) GetNoteOk() (*string, bool)`
+
+GetNoteOk returns a tuple with the Note field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNote
+
+`func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) SetNote(v string)`
+
+SetNote sets Note field to given value.
+
+### HasNote
+
+`func (o *UnibeeApiMerchantSubscriptionAdminNoteRo) HasNote() bool`
+
+HasNote returns a boolean if a field has been set.
 
 ### GetSubscriptionId
 

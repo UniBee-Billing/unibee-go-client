@@ -11,11 +11,6 @@ servers:
 - url: /
 security:
 - {}
-tags:
-- description: access to UniBee plan
-  name: Merchant-Plan
-- description: access to UniBee subscription
-  name: Merchant-Subscription
 paths:
   /merchant/auth/sso/login:
     post:
@@ -3311,7 +3306,7 @@ components:
           properties: {}
           type: string
         refundAmount:
-          description: Refund Amount
+          description: Refund CaptureAmount
           format: int64
           properties: {}
           type: integer
@@ -3757,7 +3752,7 @@ components:
           properties: {}
           type: array
         amount:
-          description: Plan Amount
+          description: Plan CaptureAmount
           format: int64
           properties: {}
           type: integer
@@ -3924,7 +3919,7 @@ components:
           properties: {}
           type: array
         amount:
-          description: Plan Amount
+          description: Plan CaptureAmount
           format: int64
           properties: {}
           type: integer
@@ -4197,13 +4192,19 @@ components:
       example:
         firstName: firstName
         lastName: lastName
-        gmtModify: gmtModify
+        note: note
+        createTime: 6
         mobile: mobile
-        gmtCreate: gmtCreate
+        id: 1
         subscriptionId: subscriptionId
         userName: userName
         email: email
       properties:
+        createTime:
+          description: create utc time
+          format: int64
+          properties: {}
+          type: integer
         email:
           description: 邮箱
           format: string
@@ -4213,22 +4214,22 @@ components:
           format: string
           properties: {}
           type: string
-        gmtCreate:
-          description: 创建时间
-          format: '*gtime.Time'
+        id:
+          description: id
+          format: int64
           properties: {}
-          type: string
-        gmtModify:
-          description: 修改时间
-          format: '*gtime.Time'
-          properties: {}
-          type: string
+          type: integer
         lastName:
           format: string
           properties: {}
           type: string
         mobile:
           description: 手机号
+          format: string
+          properties: {}
+          type: string
+        note:
+          description: note
           format: string
           properties: {}
           type: string
@@ -4374,11 +4375,6 @@ components:
       type: object
     unibee.api.merchant.subscription.NewAdminNoteReq:
       properties:
-        merchantMemberId:
-          description: MerchantMemberId
-          format: int64
-          properties: {}
-          type: integer
         note:
           description: note
           format: string
@@ -4390,7 +4386,6 @@ components:
           properties: {}
           type: string
       required:
-      - merchantMemberId
       - note
       - subscriptionId
       type: object
@@ -5321,9 +5316,9 @@ components:
           paymentId: paymentId
           appId: appId
           balanceStart: 4
-          bizId: bizId
           verify: verify
           currency: currency
+          externalPaymentId: externalPaymentId
           additionalData: additionalData
           id: 6
           returnUrl: returnUrl
@@ -5470,11 +5465,11 @@ components:
         refund:
           bizType: 7
           gmtModify: gmtModify
+          externalRefundId: externalRefundId
           merchantId: 4
           countryCode: countryCode
           paymentId: paymentId
           appId: appId
-          bizId: bizId
           refundCommentExplain: refundCommentExplain
           currency: currency
           additionalData: additionalData
@@ -6880,7 +6875,7 @@ components:
           properties: {}
           type: array
         amount:
-          description: "Amount, Cent"
+          description: "CaptureAmount, Cent"
           format: int64
           properties: {}
           type: integer
@@ -8480,9 +8475,9 @@ components:
         paymentId: paymentId
         appId: appId
         balanceStart: 4
-        bizId: bizId
         verify: verify
         currency: currency
+        externalPaymentId: externalPaymentId
         additionalData: additionalData
         id: 6
         returnUrl: returnUrl
@@ -8555,11 +8550,6 @@ components:
           format: string
           properties: {}
           type: string
-        bizId:
-          description: biz_id
-          format: string
-          properties: {}
-          type: string
         bizType:
           description: "biz_type 1-single payment, 3-subscription"
           format: int
@@ -8596,6 +8586,11 @@ components:
           type: integer
         currency:
           description: currency，“SGD” “MYR” “PHP” “IDR” “THB”
+          format: string
+          properties: {}
+          type: string
+        externalPaymentId:
+          description: external_payment_id
           format: string
           properties: {}
           type: string
@@ -8964,11 +8959,11 @@ components:
       example:
         bizType: 7
         gmtModify: gmtModify
+        externalRefundId: externalRefundId
         merchantId: 4
         countryCode: countryCode
         paymentId: paymentId
         appId: appId
-        bizId: bizId
         refundCommentExplain: refundCommentExplain
         currency: currency
         additionalData: additionalData
@@ -8998,11 +8993,6 @@ components:
           format: string
           properties: {}
           type: string
-        bizId:
-          description: "biz id,copy from payment.biz_id"
-          format: string
-          properties: {}
-          type: string
         bizType:
           description: "biz type, copy from payment.biz_type"
           format: int
@@ -9025,6 +9015,11 @@ components:
           type: integer
         currency:
           description: currency
+          format: string
+          properties: {}
+          type: string
+        externalRefundId:
+          description: external_refund_id
           format: string
           properties: {}
           type: string
@@ -10521,9 +10516,9 @@ components:
             paymentId: paymentId
             appId: appId
             balanceStart: 4
-            bizId: bizId
             verify: verify
             currency: currency
+            externalPaymentId: externalPaymentId
             additionalData: additionalData
             id: 6
             returnUrl: returnUrl
@@ -10670,11 +10665,11 @@ components:
           refund:
             bizType: 7
             gmtModify: gmtModify
+            externalRefundId: externalRefundId
             merchantId: 4
             countryCode: countryCode
             paymentId: paymentId
             appId: appId
-            bizId: bizId
             refundCommentExplain: refundCommentExplain
             currency: currency
             additionalData: additionalData
@@ -10785,9 +10780,9 @@ components:
               paymentId: paymentId
               appId: appId
               balanceStart: 4
-              bizId: bizId
               verify: verify
               currency: currency
+              externalPaymentId: externalPaymentId
               additionalData: additionalData
               id: 6
               returnUrl: returnUrl
@@ -10934,11 +10929,11 @@ components:
             refund:
               bizType: 7
               gmtModify: gmtModify
+              externalRefundId: externalRefundId
               merchantId: 4
               countryCode: countryCode
               paymentId: paymentId
               appId: appId
-              bizId: bizId
               refundCommentExplain: refundCommentExplain
               currency: currency
               additionalData: additionalData
@@ -11179,9 +11174,9 @@ components:
             paymentId: paymentId
             appId: appId
             balanceStart: 4
-            bizId: bizId
             verify: verify
             currency: currency
+            externalPaymentId: externalPaymentId
             additionalData: additionalData
             id: 6
             returnUrl: returnUrl
@@ -11328,11 +11323,11 @@ components:
           refund:
             bizType: 7
             gmtModify: gmtModify
+            externalRefundId: externalRefundId
             merchantId: 4
             countryCode: countryCode
             paymentId: paymentId
             appId: appId
-            bizId: bizId
             refundCommentExplain: refundCommentExplain
             currency: currency
             additionalData: additionalData
@@ -11433,9 +11428,9 @@ components:
             paymentId: paymentId
             appId: appId
             balanceStart: 4
-            bizId: bizId
             verify: verify
             currency: currency
+            externalPaymentId: externalPaymentId
             additionalData: additionalData
             id: 6
             returnUrl: returnUrl
@@ -11582,11 +11577,11 @@ components:
           refund:
             bizType: 7
             gmtModify: gmtModify
+            externalRefundId: externalRefundId
             merchantId: 4
             countryCode: countryCode
             paymentId: paymentId
             appId: appId
-            bizId: bizId
             refundCommentExplain: refundCommentExplain
             currency: currency
             additionalData: additionalData
@@ -11702,9 +11697,9 @@ components:
               paymentId: paymentId
               appId: appId
               balanceStart: 4
-              bizId: bizId
               verify: verify
               currency: currency
+              externalPaymentId: externalPaymentId
               additionalData: additionalData
               id: 6
               returnUrl: returnUrl
@@ -11851,11 +11846,11 @@ components:
             refund:
               bizType: 7
               gmtModify: gmtModify
+              externalRefundId: externalRefundId
               merchantId: 4
               countryCode: countryCode
               paymentId: paymentId
               appId: appId
-              bizId: bizId
               refundCommentExplain: refundCommentExplain
               currency: currency
               additionalData: additionalData
@@ -11956,9 +11951,9 @@ components:
               paymentId: paymentId
               appId: appId
               balanceStart: 4
-              bizId: bizId
               verify: verify
               currency: currency
+              externalPaymentId: externalPaymentId
               additionalData: additionalData
               id: 6
               returnUrl: returnUrl
@@ -12105,11 +12100,11 @@ components:
             refund:
               bizType: 7
               gmtModify: gmtModify
+              externalRefundId: externalRefundId
               merchantId: 4
               countryCode: countryCode
               paymentId: paymentId
               appId: appId
-              bizId: bizId
               refundCommentExplain: refundCommentExplain
               currency: currency
               additionalData: additionalData
@@ -12157,11 +12152,11 @@ components:
         refund:
           bizType: 7
           gmtModify: gmtModify
+          externalRefundId: externalRefundId
           merchantId: 4
           countryCode: countryCode
           paymentId: paymentId
           appId: appId
-          bizId: bizId
           refundCommentExplain: refundCommentExplain
           currency: currency
           additionalData: additionalData
@@ -12193,11 +12188,11 @@ components:
           refund:
             bizType: 7
             gmtModify: gmtModify
+            externalRefundId: externalRefundId
             merchantId: 4
             countryCode: countryCode
             paymentId: paymentId
             appId: appId
-            bizId: bizId
             refundCommentExplain: refundCommentExplain
             currency: currency
             additionalData: additionalData
@@ -14317,17 +14312,19 @@ components:
         noteLists:
         - firstName: firstName
           lastName: lastName
-          gmtModify: gmtModify
+          note: note
+          createTime: 6
           mobile: mobile
-          gmtCreate: gmtCreate
+          id: 1
           subscriptionId: subscriptionId
           userName: userName
           email: email
         - firstName: firstName
           lastName: lastName
-          gmtModify: gmtModify
+          note: note
+          createTime: 6
           mobile: mobile
-          gmtCreate: gmtCreate
+          id: 1
           subscriptionId: subscriptionId
           userName: userName
           email: email
@@ -14347,17 +14344,19 @@ components:
           noteLists:
           - firstName: firstName
             lastName: lastName
-            gmtModify: gmtModify
+            note: note
+            createTime: 6
             mobile: mobile
-            gmtCreate: gmtCreate
+            id: 1
             subscriptionId: subscriptionId
             userName: userName
             email: email
           - firstName: firstName
             lastName: lastName
-            gmtModify: gmtModify
+            note: note
+            createTime: 6
             mobile: mobile
-            gmtCreate: gmtCreate
+            id: 1
             subscriptionId: subscriptionId
             userName: userName
             email: email

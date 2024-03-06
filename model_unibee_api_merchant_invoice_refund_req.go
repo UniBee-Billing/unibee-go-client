@@ -25,7 +25,7 @@ type UnibeeApiMerchantInvoiceRefundReq struct {
 	InvoiceId string `json:"invoiceId"`
 	// Refund Reason
 	Reason string `json:"reason"`
-	// Refund Amount
+	// Refund CaptureAmount
 	RefundAmount int64 `json:"refundAmount"`
 	// RefundNo
 	RefundNo string `json:"refundNo"`

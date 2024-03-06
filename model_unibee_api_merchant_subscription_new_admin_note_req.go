@@ -21,8 +21,6 @@ var _ MappedNullable = &UnibeeApiMerchantSubscriptionNewAdminNoteReq{}
 
 // UnibeeApiMerchantSubscriptionNewAdminNoteReq struct for UnibeeApiMerchantSubscriptionNewAdminNoteReq
 type UnibeeApiMerchantSubscriptionNewAdminNoteReq struct {
-	// MerchantMemberId
-	MerchantMemberId int64 `json:"merchantMemberId"`
 	// note
 	Note string `json:"note"`
 	// SubscriptionId
@@ -35,9 +33,8 @@ type _UnibeeApiMerchantSubscriptionNewAdminNoteReq UnibeeApiMerchantSubscription
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiMerchantSubscriptionNewAdminNoteReq(merchantMemberId int64, note string, subscriptionId string) *UnibeeApiMerchantSubscriptionNewAdminNoteReq {
+func NewUnibeeApiMerchantSubscriptionNewAdminNoteReq(note string, subscriptionId string) *UnibeeApiMerchantSubscriptionNewAdminNoteReq {
 	this := UnibeeApiMerchantSubscriptionNewAdminNoteReq{}
-	this.MerchantMemberId = merchantMemberId
 	this.Note = note
 	this.SubscriptionId = subscriptionId
 	return &this
@@ -49,30 +46,6 @@ func NewUnibeeApiMerchantSubscriptionNewAdminNoteReq(merchantMemberId int64, not
 func NewUnibeeApiMerchantSubscriptionNewAdminNoteReqWithDefaults() *UnibeeApiMerchantSubscriptionNewAdminNoteReq {
 	this := UnibeeApiMerchantSubscriptionNewAdminNoteReq{}
 	return &this
-}
-
-// GetMerchantMemberId returns the MerchantMemberId field value
-func (o *UnibeeApiMerchantSubscriptionNewAdminNoteReq) GetMerchantMemberId() int64 {
-	if o == nil {
-		var ret int64
-		return ret
-	}
-
-	return o.MerchantMemberId
-}
-
-// GetMerchantMemberIdOk returns a tuple with the MerchantMemberId field value
-// and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantSubscriptionNewAdminNoteReq) GetMerchantMemberIdOk() (*int64, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MerchantMemberId, true
-}
-
-// SetMerchantMemberId sets field value
-func (o *UnibeeApiMerchantSubscriptionNewAdminNoteReq) SetMerchantMemberId(v int64) {
-	o.MerchantMemberId = v
 }
 
 // GetNote returns the Note field value
@@ -133,7 +106,6 @@ func (o UnibeeApiMerchantSubscriptionNewAdminNoteReq) MarshalJSON() ([]byte, err
 
 func (o UnibeeApiMerchantSubscriptionNewAdminNoteReq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["merchantMemberId"] = o.MerchantMemberId
 	toSerialize["note"] = o.Note
 	toSerialize["subscriptionId"] = o.SubscriptionId
 	return toSerialize, nil
@@ -144,7 +116,6 @@ func (o *UnibeeApiMerchantSubscriptionNewAdminNoteReq) UnmarshalJSON(data []byte
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"merchantMemberId",
 		"note",
 		"subscriptionId",
 	}

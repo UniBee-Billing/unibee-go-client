@@ -161,7 +161,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantSubscriptionNewAdminNoteReq := *openapiclient.NewUnibeeApiMerchantSubscriptionNewAdminNoteReq(int64(123), "Note_example", "SubscriptionId_example") // UnibeeApiMerchantSubscriptionNewAdminNoteReq | 
+	unibeeApiMerchantSubscriptionNewAdminNoteReq := *openapiclient.NewUnibeeApiMerchantSubscriptionNewAdminNoteReq("Note_example", "SubscriptionId_example") // UnibeeApiMerchantSubscriptionNewAdminNoteReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
