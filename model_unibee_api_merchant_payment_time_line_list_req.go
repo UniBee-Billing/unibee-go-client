@@ -28,7 +28,7 @@ type UnibeeApiMerchantPaymentTimeLineListReq struct {
 	// Sort Type，asc|desc，Default desc
 	SortType *string `json:"sortType,omitempty"`
 	// Filter UserId, Default All
-	UserId *int32 `json:"userId,omitempty"`
+	UserId *int64 `json:"userId,omitempty"`
 }
 
 // NewUnibeeApiMerchantPaymentTimeLineListReq instantiates a new UnibeeApiMerchantPaymentTimeLineListReq object
@@ -177,9 +177,9 @@ func (o *UnibeeApiMerchantPaymentTimeLineListReq) SetSortType(v string) {
 }
 
 // GetUserId returns the UserId field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetUserId() int32 {
+func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetUserId() int64 {
 	if o == nil || IsNil(o.UserId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.UserId
@@ -187,7 +187,7 @@ func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetUserId() int32 {
 
 // GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetUserIdOk() (*int32, bool) {
+func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetUserIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.UserId) {
 		return nil, false
 	}
@@ -203,8 +203,8 @@ func (o *UnibeeApiMerchantPaymentTimeLineListReq) HasUserId() bool {
 	return false
 }
 
-// SetUserId gets a reference to the given int32 and assigns it to the UserId field.
-func (o *UnibeeApiMerchantPaymentTimeLineListReq) SetUserId(v int32) {
+// SetUserId gets a reference to the given int64 and assigns it to the UserId field.
+func (o *UnibeeApiMerchantPaymentTimeLineListReq) SetUserId(v int64) {
 	o.UserId = &v
 }
 

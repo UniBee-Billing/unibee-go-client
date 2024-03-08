@@ -1,7 +1,7 @@
 /*
 OpenAPI UniBee
 
-Testing FileAPIService
+Testing FileService
 
 */
 
@@ -17,16 +17,16 @@ import (
 	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
-func Test_openapi_FileAPIService(t *testing.T) {
+func Test_openapi_FileService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test FileAPIService MerchantOssFilePost", func(t *testing.T) {
+	t.Run("Test FileService OssFilePost", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.FileAPI.MerchantOssFilePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.File.OssFilePost(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

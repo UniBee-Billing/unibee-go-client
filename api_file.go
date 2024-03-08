@@ -20,33 +20,33 @@ import (
 )
 
 
-// FileAPIService FileAPI service
-type FileAPIService service
+// FileService File service
+type FileService service
 
-type ApiMerchantOssFilePostRequest struct {
+type FileOssFilePostRequest struct {
 	ctx context.Context
-	ApiService *FileAPIService
+	ApiService *FileService
 	file **os.File
 }
 
 // File To Upload
-func (r ApiMerchantOssFilePostRequest) File(file *os.File) ApiMerchantOssFilePostRequest {
+func (r FileOssFilePostRequest) File(file *os.File) FileOssFilePostRequest {
 	r.file = &file
 	return r
 }
 
-func (r ApiMerchantOssFilePostRequest) Execute() (*MerchantOssFilePost200Response, *http.Response, error) {
-	return r.ApiService.MerchantOssFilePostExecute(r)
+func (r FileOssFilePostRequest) Execute() (*MerchantOssFilePost200Response, *http.Response, error) {
+	return r.ApiService.OssFilePostExecute(r)
 }
 
 /*
-MerchantOssFilePost Upload File
+OssFilePost Upload File
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMerchantOssFilePostRequest
+ @return FileOssFilePostRequest
 */
-func (a *FileAPIService) MerchantOssFilePost(ctx context.Context) ApiMerchantOssFilePostRequest {
-	return ApiMerchantOssFilePostRequest{
+func (a *FileService) OssFilePost(ctx context.Context) FileOssFilePostRequest {
+	return FileOssFilePostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -54,7 +54,7 @@ func (a *FileAPIService) MerchantOssFilePost(ctx context.Context) ApiMerchantOss
 
 // Execute executes the request
 //  @return MerchantOssFilePost200Response
-func (a *FileAPIService) MerchantOssFilePostExecute(r ApiMerchantOssFilePostRequest) (*MerchantOssFilePost200Response, *http.Response, error) {
+func (a *FileService) OssFilePostExecute(r FileOssFilePostRequest) (*MerchantOssFilePost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -62,7 +62,7 @@ func (a *FileAPIService) MerchantOssFilePostExecute(r ApiMerchantOssFilePostRequ
 		localVarReturnValue  *MerchantOssFilePost200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FileAPIService.MerchantOssFilePost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FileService.OssFilePost")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

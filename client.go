@@ -49,49 +49,49 @@ type APIClient struct {
 
 	// API Services
 
-	FileAPI *FileAPIService
+	Auth *AuthService
 
-	MerchantAuthAPI *MerchantAuthAPIService
+	Balance *BalanceService
 
-	MerchantBalanceAPI *MerchantBalanceAPIService
+	Email *EmailService
 
-	MerchantEmailAPI *MerchantEmailAPIService
+	EmailTemplate *EmailTemplateService
 
-	MerchantEmailTemplateAPI *MerchantEmailTemplateAPIService
+	File *FileService
 
-	MerchantGatewayAPI *MerchantGatewayAPIService
+	Gateway *GatewayService
 
-	MerchantInfoAPI *MerchantInfoAPIService
+	Invoice *InvoiceService
 
-	MerchantInvoiceAPI *MerchantInvoiceAPIService
+	Member *MemberService
 
-	MerchantMemberProfileAPI *MerchantMemberProfileAPIService
+	Metric *MetricService
 
-	MerchantMetricAPI *MerchantMetricAPIService
+	Payment *PaymentService
 
-	MerchantPaymentTimelineAPI *MerchantPaymentTimelineAPIService
+	Plan *PlanService
 
-	MerchantPlanAPI *MerchantPlanAPIService
+	Profile *ProfileService
 
-	MerchantSearchAPI *MerchantSearchAPIService
+	Search *SearchService
 
-	MerchantSessionAPI *MerchantSessionAPIService
+	Session *SessionService
 
-	MerchantSubscriptionAPI *MerchantSubscriptionAPIService
+	Subscription *SubscriptionService
 
-	MerchantSubscriptionNoteAPI *MerchantSubscriptionNoteAPIService
+	SubscriptionNote *SubscriptionNoteService
 
-	MerchantSubscriptionPendingUpdateAPI *MerchantSubscriptionPendingUpdateAPIService
+	SubscriptionPendingUpdate *SubscriptionPendingUpdateService
 
-	MerchantSubscriptionTimelineAPI *MerchantSubscriptionTimelineAPIService
+	SubscriptionTimeline *SubscriptionTimelineService
 
-	MerchantUserAPI *MerchantUserAPIService
+	User *UserService
 
-	MerchantUserMetricAPI *MerchantUserMetricAPIService
+	UserMetric *UserMetricService
 
-	MerchantVatAPI *MerchantVatAPIService
+	Vat *VatService
 
-	MerchantWebhookAPI *MerchantWebhookAPIService
+	Webhook *WebhookService
 }
 
 type service struct {
@@ -110,28 +110,28 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
-	c.FileAPI = (*FileAPIService)(&c.common)
-	c.MerchantAuthAPI = (*MerchantAuthAPIService)(&c.common)
-	c.MerchantBalanceAPI = (*MerchantBalanceAPIService)(&c.common)
-	c.MerchantEmailAPI = (*MerchantEmailAPIService)(&c.common)
-	c.MerchantEmailTemplateAPI = (*MerchantEmailTemplateAPIService)(&c.common)
-	c.MerchantGatewayAPI = (*MerchantGatewayAPIService)(&c.common)
-	c.MerchantInfoAPI = (*MerchantInfoAPIService)(&c.common)
-	c.MerchantInvoiceAPI = (*MerchantInvoiceAPIService)(&c.common)
-	c.MerchantMemberProfileAPI = (*MerchantMemberProfileAPIService)(&c.common)
-	c.MerchantMetricAPI = (*MerchantMetricAPIService)(&c.common)
-	c.MerchantPaymentTimelineAPI = (*MerchantPaymentTimelineAPIService)(&c.common)
-	c.MerchantPlanAPI = (*MerchantPlanAPIService)(&c.common)
-	c.MerchantSearchAPI = (*MerchantSearchAPIService)(&c.common)
-	c.MerchantSessionAPI = (*MerchantSessionAPIService)(&c.common)
-	c.MerchantSubscriptionAPI = (*MerchantSubscriptionAPIService)(&c.common)
-	c.MerchantSubscriptionNoteAPI = (*MerchantSubscriptionNoteAPIService)(&c.common)
-	c.MerchantSubscriptionPendingUpdateAPI = (*MerchantSubscriptionPendingUpdateAPIService)(&c.common)
-	c.MerchantSubscriptionTimelineAPI = (*MerchantSubscriptionTimelineAPIService)(&c.common)
-	c.MerchantUserAPI = (*MerchantUserAPIService)(&c.common)
-	c.MerchantUserMetricAPI = (*MerchantUserMetricAPIService)(&c.common)
-	c.MerchantVatAPI = (*MerchantVatAPIService)(&c.common)
-	c.MerchantWebhookAPI = (*MerchantWebhookAPIService)(&c.common)
+	c.Auth = (*AuthService)(&c.common)
+	c.Balance = (*BalanceService)(&c.common)
+	c.Email = (*EmailService)(&c.common)
+	c.EmailTemplate = (*EmailTemplateService)(&c.common)
+	c.File = (*FileService)(&c.common)
+	c.Gateway = (*GatewayService)(&c.common)
+	c.Invoice = (*InvoiceService)(&c.common)
+	c.Member = (*MemberService)(&c.common)
+	c.Metric = (*MetricService)(&c.common)
+	c.Payment = (*PaymentService)(&c.common)
+	c.Plan = (*PlanService)(&c.common)
+	c.Profile = (*ProfileService)(&c.common)
+	c.Search = (*SearchService)(&c.common)
+	c.Session = (*SessionService)(&c.common)
+	c.Subscription = (*SubscriptionService)(&c.common)
+	c.SubscriptionNote = (*SubscriptionNoteService)(&c.common)
+	c.SubscriptionPendingUpdate = (*SubscriptionPendingUpdateService)(&c.common)
+	c.SubscriptionTimeline = (*SubscriptionTimelineService)(&c.common)
+	c.User = (*UserService)(&c.common)
+	c.UserMetric = (*UserMetricService)(&c.common)
+	c.Vat = (*VatService)(&c.common)
+	c.Webhook = (*WebhookService)(&c.common)
 
 	return c
 }

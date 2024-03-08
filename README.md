@@ -77,111 +77,118 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*FileAPI* | [**MerchantOssFilePost**](docs/FileAPI.md#merchantossfilepost) | **Post** /merchant/oss/file | Upload File
-*MerchantAuthAPI* | [**MerchantAuthSsoLoginOTPPost**](docs/MerchantAuthAPI.md#merchantauthssologinotppost) | **Post** /merchant/auth/sso/loginOTP | Login OTP
-*MerchantAuthAPI* | [**MerchantAuthSsoLoginOTPVerifyPost**](docs/MerchantAuthAPI.md#merchantauthssologinotpverifypost) | **Post** /merchant/auth/sso/loginOTPVerify | Merchant User OTP Login Verify
-*MerchantAuthAPI* | [**MerchantAuthSsoLoginPost**](docs/MerchantAuthAPI.md#merchantauthssologinpost) | **Post** /merchant/auth/sso/login | Login
-*MerchantAuthAPI* | [**MerchantAuthSsoPasswordForgetOTPPost**](docs/MerchantAuthAPI.md#merchantauthssopasswordforgetotppost) | **Post** /merchant/auth/sso/passwordForgetOTP | Merchant Password Forget OTP
-*MerchantAuthAPI* | [**MerchantAuthSsoPasswordForgetOTPVerifyPost**](docs/MerchantAuthAPI.md#merchantauthssopasswordforgetotpverifypost) | **Post** /merchant/auth/sso/passwordForgetOTPVerify | Merchant Password Forget OTP Verify
-*MerchantAuthAPI* | [**MerchantAuthSsoRegisterPost**](docs/MerchantAuthAPI.md#merchantauthssoregisterpost) | **Post** /merchant/auth/sso/register | Merchant Register
-*MerchantAuthAPI* | [**MerchantAuthSsoRegisterVerifyPost**](docs/MerchantAuthAPI.md#merchantauthssoregisterverifypost) | **Post** /merchant/auth/sso/registerVerify | Merchant Register Verify
-*MerchantBalanceAPI* | [**MerchantBalanceMerchantBalanceQueryGet**](docs/MerchantBalanceAPI.md#merchantbalancemerchantbalancequeryget) | **Get** /merchant/balance/merchant_balance_query | Query Merchant Gateway Balance
-*MerchantBalanceAPI* | [**MerchantBalanceMerchantBalanceQueryPost**](docs/MerchantBalanceAPI.md#merchantbalancemerchantbalancequerypost) | **Post** /merchant/balance/merchant_balance_query | Query Merchant Gateway Balance
-*MerchantBalanceAPI* | [**MerchantBalanceUserBalanceQueryGet**](docs/MerchantBalanceAPI.md#merchantbalanceuserbalancequeryget) | **Get** /merchant/balance/user_balance_query | Query User Balance
-*MerchantBalanceAPI* | [**MerchantBalanceUserBalanceQueryPost**](docs/MerchantBalanceAPI.md#merchantbalanceuserbalancequerypost) | **Post** /merchant/balance/user_balance_query | Query User Balance
-*MerchantEmailAPI* | [**MerchantEmailGatewaySetupPost**](docs/MerchantEmailAPI.md#merchantemailgatewaysetuppost) | **Post** /merchant/email/gateway_setup | Merchant Email Gateway Setup
-*MerchantEmailTemplateAPI* | [**MerchantEmailTemplateActivatePost**](docs/MerchantEmailTemplateAPI.md#merchantemailtemplateactivatepost) | **Post** /merchant/email/template_activate | Merchant Email Template Activate
-*MerchantEmailTemplateAPI* | [**MerchantEmailTemplateDeactivatePost**](docs/MerchantEmailTemplateAPI.md#merchantemailtemplatedeactivatepost) | **Post** /merchant/email/template_deactivate | Merchant Email Template Deactivate
-*MerchantEmailTemplateAPI* | [**MerchantEmailTemplateListGet**](docs/MerchantEmailTemplateAPI.md#merchantemailtemplatelistget) | **Get** /merchant/email/template_list | Merchant Email Template List
-*MerchantEmailTemplateAPI* | [**MerchantEmailTemplateSetDefaultPost**](docs/MerchantEmailTemplateAPI.md#merchantemailtemplatesetdefaultpost) | **Post** /merchant/email/template_set_default | Merchant Email Template Set Default
-*MerchantEmailTemplateAPI* | [**MerchantEmailTemplateUpdatePost**](docs/MerchantEmailTemplateAPI.md#merchantemailtemplateupdatepost) | **Post** /merchant/email/template_update | Merchant Email Template Update
-*MerchantGatewayAPI* | [**MerchantGatewayEditPost**](docs/MerchantGatewayAPI.md#merchantgatewayeditpost) | **Post** /merchant/gateway/edit | Gateway Webhook Edit
-*MerchantGatewayAPI* | [**MerchantGatewayListGet**](docs/MerchantGatewayAPI.md#merchantgatewaylistget) | **Get** /merchant/gateway/list | Gateway List
-*MerchantGatewayAPI* | [**MerchantGatewaySetupPost**](docs/MerchantGatewayAPI.md#merchantgatewaysetuppost) | **Post** /merchant/gateway/setup | Gateway Setup
-*MerchantGatewayAPI* | [**MerchantGatewaySetupWebhookPost**](docs/MerchantGatewayAPI.md#merchantgatewaysetupwebhookpost) | **Post** /merchant/gateway/setup_webhook | Gateway Webhook Setup
-*MerchantInfoAPI* | [**MerchantGetGet**](docs/MerchantInfoAPI.md#merchantgetget) | **Get** /merchant/get | Get Merchant Info
-*MerchantInfoAPI* | [**MerchantUpdatePost**](docs/MerchantInfoAPI.md#merchantupdatepost) | **Post** /merchant/update | Update Merchant Info
-*MerchantInvoiceAPI* | [**MerchantInvoiceCancelPost**](docs/MerchantInvoiceAPI.md#merchantinvoicecancelpost) | **Post** /merchant/invoice/cancel | Admin Cancel Invoice Of Processing Status
-*MerchantInvoiceAPI* | [**MerchantInvoiceDeletePost**](docs/MerchantInvoiceAPI.md#merchantinvoicedeletepost) | **Post** /merchant/invoice/delete | Admin Delete Invoice Of Pending Status
-*MerchantInvoiceAPI* | [**MerchantInvoiceDetailGet**](docs/MerchantInvoiceAPI.md#merchantinvoicedetailget) | **Get** /merchant/invoice/detail | Invoice Detail
-*MerchantInvoiceAPI* | [**MerchantInvoiceDetailPost**](docs/MerchantInvoiceAPI.md#merchantinvoicedetailpost) | **Post** /merchant/invoice/detail | Invoice Detail
-*MerchantInvoiceAPI* | [**MerchantInvoiceEditPost**](docs/MerchantInvoiceAPI.md#merchantinvoiceeditpost) | **Post** /merchant/invoice/edit | Admin Edit Invoice
-*MerchantInvoiceAPI* | [**MerchantInvoiceFinishPost**](docs/MerchantInvoiceAPI.md#merchantinvoicefinishpost) | **Post** /merchant/invoice/finish | Admin Finish Invoice，Generate Pay Link
-*MerchantInvoiceAPI* | [**MerchantInvoiceListGet**](docs/MerchantInvoiceAPI.md#merchantinvoicelistget) | **Get** /merchant/invoice/list | Invoice List
-*MerchantInvoiceAPI* | [**MerchantInvoiceListPost**](docs/MerchantInvoiceAPI.md#merchantinvoicelistpost) | **Post** /merchant/invoice/list | Invoice List
-*MerchantInvoiceAPI* | [**MerchantInvoiceNewPost**](docs/MerchantInvoiceAPI.md#merchantinvoicenewpost) | **Post** /merchant/invoice/new | Admin Create New Invoice
-*MerchantInvoiceAPI* | [**MerchantInvoicePdfGeneratePost**](docs/MerchantInvoiceAPI.md#merchantinvoicepdfgeneratepost) | **Post** /merchant/invoice/pdf_generate | Admin Generate Merchant Invoice pdf
-*MerchantInvoiceAPI* | [**MerchantInvoiceRefundPost**](docs/MerchantInvoiceAPI.md#merchantinvoicerefundpost) | **Post** /merchant/invoice/refund | Admin Create Refund From Invoice
-*MerchantInvoiceAPI* | [**MerchantInvoiceSendEmailPost**](docs/MerchantInvoiceAPI.md#merchantinvoicesendemailpost) | **Post** /merchant/invoice/send_email | Admin Send Merchant Invoice Email to User
-*MerchantMemberProfileAPI* | [**MerchantMemberLogoutPost**](docs/MerchantMemberProfileAPI.md#merchantmemberlogoutpost) | **Post** /merchant/member/logout | Merchant Member Logout
-*MerchantMemberProfileAPI* | [**MerchantMemberPasswordResetPost**](docs/MerchantMemberProfileAPI.md#merchantmemberpasswordresetpost) | **Post** /merchant/member/passwordReset | Merchant Member Reset Password
-*MerchantMemberProfileAPI* | [**MerchantMemberProfileGet**](docs/MerchantMemberProfileAPI.md#merchantmemberprofileget) | **Get** /merchant/member/profile | Get Merchant Member Profile
-*MerchantMetricAPI* | [**MerchantMetricDeletePost**](docs/MerchantMetricAPI.md#merchantmetricdeletepost) | **Post** /merchant/metric/delete | Delete Merchant Metric
-*MerchantMetricAPI* | [**MerchantMetricDetailPost**](docs/MerchantMetricAPI.md#merchantmetricdetailpost) | **Post** /merchant/metric/detail | Merchant Metric Detail
-*MerchantMetricAPI* | [**MerchantMetricEditPost**](docs/MerchantMetricAPI.md#merchantmetriceditpost) | **Post** /merchant/metric/edit | Edit Merchant Metric
-*MerchantMetricAPI* | [**MerchantMetricEventDeletePost**](docs/MerchantMetricAPI.md#merchantmetriceventdeletepost) | **Post** /merchant/metric/event/delete | Del Merchant Metric Event
-*MerchantMetricAPI* | [**MerchantMetricEventNewPost**](docs/MerchantMetricAPI.md#merchantmetriceventnewpost) | **Post** /merchant/metric/event/new | Merchant Metric Event
-*MerchantMetricAPI* | [**MerchantMetricListGet**](docs/MerchantMetricAPI.md#merchantmetriclistget) | **Get** /merchant/metric/list | Merchant Metric list
-*MerchantMetricAPI* | [**MerchantMetricNewPost**](docs/MerchantMetricAPI.md#merchantmetricnewpost) | **Post** /merchant/metric/new | New Merchant Metric
-*MerchantMetricAPI* | [**MerchantMetricPlanLimitDeletePost**](docs/MerchantMetricAPI.md#merchantmetricplanlimitdeletepost) | **Post** /merchant/metric/plan/limit/delete | Delete Merchant Metric Plan TotalLimit
-*MerchantMetricAPI* | [**MerchantMetricPlanLimitEditPost**](docs/MerchantMetricAPI.md#merchantmetricplanlimiteditpost) | **Post** /merchant/metric/plan/limit/edit | Edit Merchant Metric Plan TotalLimit
-*MerchantMetricAPI* | [**MerchantMetricPlanLimitNewPost**](docs/MerchantMetricAPI.md#merchantmetricplanlimitnewpost) | **Post** /merchant/metric/plan/limit/new | New Merchant Metric Plan TotalLimit
-*MerchantPaymentTimelineAPI* | [**MerchantPaymentPaymentTimelineListGet**](docs/MerchantPaymentTimelineAPI.md#merchantpaymentpaymenttimelinelistget) | **Get** /merchant/payment/payment_timeline_list | Payment TimeLine List
-*MerchantPaymentTimelineAPI* | [**MerchantPaymentPaymentTimelineListPost**](docs/MerchantPaymentTimelineAPI.md#merchantpaymentpaymenttimelinelistpost) | **Post** /merchant/payment/payment_timeline_list | Payment TimeLine List
-*MerchantPlanAPI* | [**MerchantPlanActivatePost**](docs/MerchantPlanAPI.md#merchantplanactivatepost) | **Post** /merchant/plan/activate | Plan Sync To Gateway And Activate
-*MerchantPlanAPI* | [**MerchantPlanAddonsBindingPost**](docs/MerchantPlanAPI.md#merchantplanaddonsbindingpost) | **Post** /merchant/plan/addons_binding | Plan Binding Addons
-*MerchantPlanAPI* | [**MerchantPlanDeletePost**](docs/MerchantPlanAPI.md#merchantplandeletepost) | **Post** /merchant/plan/delete | Delete A Plan Before Activate
-*MerchantPlanAPI* | [**MerchantPlanDetailGet**](docs/MerchantPlanAPI.md#merchantplandetailget) | **Get** /merchant/plan/detail | Plan Detail
-*MerchantPlanAPI* | [**MerchantPlanDetailPost**](docs/MerchantPlanAPI.md#merchantplandetailpost) | **Post** /merchant/plan/detail | Plan Detail
-*MerchantPlanAPI* | [**MerchantPlanEditPost**](docs/MerchantPlanAPI.md#merchantplaneditpost) | **Post** /merchant/plan/edit | Edit Plan
-*MerchantPlanAPI* | [**MerchantPlanExpirePost**](docs/MerchantPlanAPI.md#merchantplanexpirepost) | **Post** /merchant/plan/expire | Expire A Plan
-*MerchantPlanAPI* | [**MerchantPlanListGet**](docs/MerchantPlanAPI.md#merchantplanlistget) | **Get** /merchant/plan/list | Plan List
-*MerchantPlanAPI* | [**MerchantPlanListPost**](docs/MerchantPlanAPI.md#merchantplanlistpost) | **Post** /merchant/plan/list | Plan List
-*MerchantPlanAPI* | [**MerchantPlanNewPost**](docs/MerchantPlanAPI.md#merchantplannewpost) | **Post** /merchant/plan/new | Create Plan
-*MerchantPlanAPI* | [**MerchantPlanPublishPost**](docs/MerchantPlanAPI.md#merchantplanpublishpost) | **Post** /merchant/plan/publish | Publish Plan，Will Be Visible To UserPortal
-*MerchantPlanAPI* | [**MerchantPlanUnpublishedPost**](docs/MerchantPlanAPI.md#merchantplanunpublishedpost) | **Post** /merchant/plan/unpublished | UnPublish Plan
-*MerchantSearchAPI* | [**MerchantSearchKeySearchGet**](docs/MerchantSearchAPI.md#merchantsearchkeysearchget) | **Get** /merchant/search/key_search | Merchant Search
-*MerchantSearchAPI* | [**MerchantSearchKeySearchPost**](docs/MerchantSearchAPI.md#merchantsearchkeysearchpost) | **Post** /merchant/search/key_search | Merchant Search
-*MerchantSessionAPI* | [**MerchantSessionNewSessionPost**](docs/MerchantSessionAPI.md#merchantsessionnewsessionpost) | **Post** /merchant/session/new_session | New User Portal Session
-*MerchantSubscriptionAPI* | [**MerchantSubscriptionAddNewTrialStartPost**](docs/MerchantSubscriptionAPI.md#merchantsubscriptionaddnewtrialstartpost) | **Post** /merchant/subscription/add_new_trial_start | Merchant Edit Subscription-add appendTrialEndHour For Free
-*MerchantSubscriptionAPI* | [**MerchantSubscriptionCancelAtPeriodEndPost**](docs/MerchantSubscriptionAPI.md#merchantsubscriptioncancelatperiodendpost) | **Post** /merchant/subscription/cancel_at_period_end | Merchant Edit Subscription-Set Cancel Ad Period End
-*MerchantSubscriptionAPI* | [**MerchantSubscriptionCancelLastCancelAtPeriodEndPost**](docs/MerchantSubscriptionAPI.md#merchantsubscriptioncancellastcancelatperiodendpost) | **Post** /merchant/subscription/cancel_last_cancel_at_period_end | Merchant Edit Subscription-Cancel Last CancelAtPeriod
-*MerchantSubscriptionAPI* | [**MerchantSubscriptionCancelPost**](docs/MerchantSubscriptionAPI.md#merchantsubscriptioncancelpost) | **Post** /merchant/subscription/cancel | Merchant Cancel Subscription Immediately (Will Not Generate Proration Invoice)
-*MerchantSubscriptionAPI* | [**MerchantSubscriptionDetailGet**](docs/MerchantSubscriptionAPI.md#merchantsubscriptiondetailget) | **Get** /merchant/subscription/detail | Subscription Detail
-*MerchantSubscriptionAPI* | [**MerchantSubscriptionDetailPost**](docs/MerchantSubscriptionAPI.md#merchantsubscriptiondetailpost) | **Post** /merchant/subscription/detail | Subscription Detail
-*MerchantSubscriptionAPI* | [**MerchantSubscriptionListGet**](docs/MerchantSubscriptionAPI.md#merchantsubscriptionlistget) | **Get** /merchant/subscription/list | Subscription List
-*MerchantSubscriptionAPI* | [**MerchantSubscriptionListPost**](docs/MerchantSubscriptionAPI.md#merchantsubscriptionlistpost) | **Post** /merchant/subscription/list | Subscription List
-*MerchantSubscriptionAPI* | [**MerchantSubscriptionResumePost**](docs/MerchantSubscriptionAPI.md#merchantsubscriptionresumepost) | **Post** /merchant/subscription/resume | Merchant Edit Subscription-Resume
-*MerchantSubscriptionAPI* | [**MerchantSubscriptionSuspendPost**](docs/MerchantSubscriptionAPI.md#merchantsubscriptionsuspendpost) | **Post** /merchant/subscription/suspend | Merchant Edit Subscription-Stop
-*MerchantSubscriptionAPI* | [**MerchantSubscriptionUpdatePreviewPost**](docs/MerchantSubscriptionAPI.md#merchantsubscriptionupdatepreviewpost) | **Post** /merchant/subscription/update_preview | Merchant Update Subscription Preview
-*MerchantSubscriptionAPI* | [**MerchantSubscriptionUpdateSubmitPost**](docs/MerchantSubscriptionAPI.md#merchantsubscriptionupdatesubmitpost) | **Post** /merchant/subscription/update_submit | Merchant Update Subscription Submit
-*MerchantSubscriptionAPI* | [**MerchantSubscriptionUserSubscriptionDetailGet**](docs/MerchantSubscriptionAPI.md#merchantsubscriptionusersubscriptiondetailget) | **Get** /merchant/subscription/user_subscription_detail | Subscription Detail
-*MerchantSubscriptionAPI* | [**MerchantSubscriptionUserSubscriptionDetailPost**](docs/MerchantSubscriptionAPI.md#merchantsubscriptionusersubscriptiondetailpost) | **Post** /merchant/subscription/user_subscription_detail | Subscription Detail
-*MerchantSubscriptionNoteAPI* | [**MerchantSubscriptionAdminNoteListGet**](docs/MerchantSubscriptionNoteAPI.md#merchantsubscriptionadminnotelistget) | **Get** /merchant/subscription/admin_note_list | Merchant Subscription Note List
-*MerchantSubscriptionNoteAPI* | [**MerchantSubscriptionAdminNoteListPost**](docs/MerchantSubscriptionNoteAPI.md#merchantsubscriptionadminnotelistpost) | **Post** /merchant/subscription/admin_note_list | Merchant Subscription Note List
-*MerchantSubscriptionNoteAPI* | [**MerchantSubscriptionNewAdminNotePost**](docs/MerchantSubscriptionNoteAPI.md#merchantsubscriptionnewadminnotepost) | **Post** /merchant/subscription/new_admin_note | Merchant New Subscription Note
-*MerchantSubscriptionPendingUpdateAPI* | [**MerchantSubscriptionPendingUpdateListGet**](docs/MerchantSubscriptionPendingUpdateAPI.md#merchantsubscriptionpendingupdatelistget) | **Get** /merchant/subscription/pending_update_list | Merchant SubscriptionPendingUpdate List
-*MerchantSubscriptionPendingUpdateAPI* | [**MerchantSubscriptionPendingUpdateListPost**](docs/MerchantSubscriptionPendingUpdateAPI.md#merchantsubscriptionpendingupdatelistpost) | **Post** /merchant/subscription/pending_update_list | Merchant SubscriptionPendingUpdate List
-*MerchantSubscriptionTimelineAPI* | [**MerchantSubscriptionTimelineListGet**](docs/MerchantSubscriptionTimelineAPI.md#merchantsubscriptiontimelinelistget) | **Get** /merchant/subscription/timeline_list | Merchant Subscription TimeLine List
-*MerchantSubscriptionTimelineAPI* | [**MerchantSubscriptionTimelineListPost**](docs/MerchantSubscriptionTimelineAPI.md#merchantsubscriptiontimelinelistpost) | **Post** /merchant/subscription/timeline_list | Merchant Subscription TimeLine List
-*MerchantUserAPI* | [**MerchantUserFrozenUserPost**](docs/MerchantUserAPI.md#merchantuserfrozenuserpost) | **Post** /merchant/user/frozen_user | Merchant Frozen User
-*MerchantUserAPI* | [**MerchantUserGetGet**](docs/MerchantUserAPI.md#merchantusergetget) | **Get** /merchant/user/get | Get User Profile
-*MerchantUserAPI* | [**MerchantUserListGet**](docs/MerchantUserAPI.md#merchantuserlistget) | **Get** /merchant/user/list | User List
-*MerchantUserAPI* | [**MerchantUserListPost**](docs/MerchantUserAPI.md#merchantuserlistpost) | **Post** /merchant/user/list | User List
-*MerchantUserAPI* | [**MerchantUserReleaseUserPost**](docs/MerchantUserAPI.md#merchantuserreleaseuserpost) | **Post** /merchant/user/release_user | Merchant Release User
-*MerchantUserAPI* | [**MerchantUserSearchGet**](docs/MerchantUserAPI.md#merchantusersearchget) | **Get** /merchant/user/search | User Search
-*MerchantUserAPI* | [**MerchantUserSearchPost**](docs/MerchantUserAPI.md#merchantusersearchpost) | **Post** /merchant/user/search | User Search
-*MerchantUserAPI* | [**MerchantUserUpdatePost**](docs/MerchantUserAPI.md#merchantuserupdatepost) | **Post** /merchant/user/update | Update User Profile
-*MerchantUserMetricAPI* | [**MerchantMetricUserMetricGet**](docs/MerchantUserMetricAPI.md#merchantmetricusermetricget) | **Get** /merchant/metric/user/metric | Query User Metric
-*MerchantVatAPI* | [**MerchantVatCountryListGet**](docs/MerchantVatAPI.md#merchantvatcountrylistget) | **Get** /merchant/vat/country_list | Vat Country List
-*MerchantVatAPI* | [**MerchantVatCountryListPost**](docs/MerchantVatAPI.md#merchantvatcountrylistpost) | **Post** /merchant/vat/country_list | Vat Country List
-*MerchantVatAPI* | [**MerchantVatSetupGatewayPost**](docs/MerchantVatAPI.md#merchantvatsetupgatewaypost) | **Post** /merchant/vat/setup_gateway | Vat Gateway Setup
-*MerchantWebhookAPI* | [**MerchantWebhookDeleteEndpointPost**](docs/MerchantWebhookAPI.md#merchantwebhookdeleteendpointpost) | **Post** /merchant/webhook/delete_endpoint | Merchant Delete Webhook Endpoint
-*MerchantWebhookAPI* | [**MerchantWebhookEndpointListGet**](docs/MerchantWebhookAPI.md#merchantwebhookendpointlistget) | **Get** /merchant/webhook/endpoint_list | Merchant Webhook Endpoint list
-*MerchantWebhookAPI* | [**MerchantWebhookEndpointLogListGet**](docs/MerchantWebhookAPI.md#merchantwebhookendpointloglistget) | **Get** /merchant/webhook/endpoint_log_list | Merchant Webhook Endpoint Log list
-*MerchantWebhookAPI* | [**MerchantWebhookEventListGet**](docs/MerchantWebhookAPI.md#merchantwebhookeventlistget) | **Get** /merchant/webhook/event_list | Webhook Event list
-*MerchantWebhookAPI* | [**MerchantWebhookNewEndpointPost**](docs/MerchantWebhookAPI.md#merchantwebhooknewendpointpost) | **Post** /merchant/webhook/new_endpoint | Merchant New Webhook Endpoint
-*MerchantWebhookAPI* | [**MerchantWebhookUpdateEndpointPost**](docs/MerchantWebhookAPI.md#merchantwebhookupdateendpointpost) | **Post** /merchant/webhook/update_endpoint | Merchant Update Webhook Endpoint
+*Auth* | [**AuthSsoLoginOTPPost**](docs/Auth.md#authssologinotppost) | **Post** /merchant/auth/sso/loginOTP | Login OTP
+*Auth* | [**AuthSsoLoginOTPVerifyPost**](docs/Auth.md#authssologinotpverifypost) | **Post** /merchant/auth/sso/loginOTPVerify | Merchant User OTP Login Verify
+*Auth* | [**AuthSsoLoginPost**](docs/Auth.md#authssologinpost) | **Post** /merchant/auth/sso/login | Login
+*Auth* | [**AuthSsoPasswordForgetOTPPost**](docs/Auth.md#authssopasswordforgetotppost) | **Post** /merchant/auth/sso/passwordForgetOTP | Merchant Password Forget OTP
+*Auth* | [**AuthSsoPasswordForgetOTPVerifyPost**](docs/Auth.md#authssopasswordforgetotpverifypost) | **Post** /merchant/auth/sso/passwordForgetOTPVerify | Merchant Password Forget OTP Verify
+*Auth* | [**AuthSsoRegisterPost**](docs/Auth.md#authssoregisterpost) | **Post** /merchant/auth/sso/register | Merchant Register
+*Auth* | [**AuthSsoRegisterVerifyPost**](docs/Auth.md#authssoregisterverifypost) | **Post** /merchant/auth/sso/registerVerify | Merchant Register Verify
+*Balance* | [**BalanceMerchantBalanceQueryGet**](docs/Balance.md#balancemerchantbalancequeryget) | **Get** /merchant/balance/merchant_balance_query | Query Merchant Gateway Balance
+*Balance* | [**BalanceMerchantBalanceQueryPost**](docs/Balance.md#balancemerchantbalancequerypost) | **Post** /merchant/balance/merchant_balance_query | Query Merchant Gateway Balance
+*Balance* | [**BalanceUserBalanceQueryGet**](docs/Balance.md#balanceuserbalancequeryget) | **Get** /merchant/balance/user_balance_query | Query User Balance
+*Balance* | [**BalanceUserBalanceQueryPost**](docs/Balance.md#balanceuserbalancequerypost) | **Post** /merchant/balance/user_balance_query | Query User Balance
+*Email* | [**EmailGatewaySetupPost**](docs/Email.md#emailgatewaysetuppost) | **Post** /merchant/email/gateway_setup | Merchant Email Gateway Setup
+*EmailTemplate* | [**EmailTemplateActivatePost**](docs/EmailTemplate.md#emailtemplateactivatepost) | **Post** /merchant/email/template_activate | Merchant Email Template Activate
+*EmailTemplate* | [**EmailTemplateDeactivatePost**](docs/EmailTemplate.md#emailtemplatedeactivatepost) | **Post** /merchant/email/template_deactivate | Merchant Email Template Deactivate
+*EmailTemplate* | [**EmailTemplateListGet**](docs/EmailTemplate.md#emailtemplatelistget) | **Get** /merchant/email/template_list | Merchant Email Template List
+*EmailTemplate* | [**EmailTemplateSetDefaultPost**](docs/EmailTemplate.md#emailtemplatesetdefaultpost) | **Post** /merchant/email/template_set_default | Merchant Email Template Set Default
+*EmailTemplate* | [**EmailTemplateUpdatePost**](docs/EmailTemplate.md#emailtemplateupdatepost) | **Post** /merchant/email/template_update | Merchant Email Template Update
+*File* | [**OssFilePost**](docs/File.md#ossfilepost) | **Post** /merchant/oss/file | Upload File
+*Gateway* | [**GatewayEditPost**](docs/Gateway.md#gatewayeditpost) | **Post** /merchant/gateway/edit | Gateway Webhook Edit
+*Gateway* | [**GatewayListGet**](docs/Gateway.md#gatewaylistget) | **Get** /merchant/gateway/list | Gateway List
+*Gateway* | [**GatewaySetupPost**](docs/Gateway.md#gatewaysetuppost) | **Post** /merchant/gateway/setup | Gateway Setup
+*Gateway* | [**GatewaySetupWebhookPost**](docs/Gateway.md#gatewaysetupwebhookpost) | **Post** /merchant/gateway/setup_webhook | Gateway Webhook Setup
+*Invoice* | [**InvoiceCancelPost**](docs/Invoice.md#invoicecancelpost) | **Post** /merchant/invoice/cancel | Admin Cancel Invoice Of Processing Status
+*Invoice* | [**InvoiceDeletePost**](docs/Invoice.md#invoicedeletepost) | **Post** /merchant/invoice/delete | Admin Delete Invoice Of Pending Status
+*Invoice* | [**InvoiceDetailGet**](docs/Invoice.md#invoicedetailget) | **Get** /merchant/invoice/detail | Invoice Detail
+*Invoice* | [**InvoiceDetailPost**](docs/Invoice.md#invoicedetailpost) | **Post** /merchant/invoice/detail | Invoice Detail
+*Invoice* | [**InvoiceEditPost**](docs/Invoice.md#invoiceeditpost) | **Post** /merchant/invoice/edit | Admin Edit Invoice
+*Invoice* | [**InvoiceFinishPost**](docs/Invoice.md#invoicefinishpost) | **Post** /merchant/invoice/finish | Admin Finish Invoice，Generate Pay Link
+*Invoice* | [**InvoiceListGet**](docs/Invoice.md#invoicelistget) | **Get** /merchant/invoice/list | Invoice List
+*Invoice* | [**InvoiceListPost**](docs/Invoice.md#invoicelistpost) | **Post** /merchant/invoice/list | Invoice List
+*Invoice* | [**InvoiceNewPost**](docs/Invoice.md#invoicenewpost) | **Post** /merchant/invoice/new | Admin Create New Invoice
+*Invoice* | [**InvoicePdfGeneratePost**](docs/Invoice.md#invoicepdfgeneratepost) | **Post** /merchant/invoice/pdf_generate | Admin Generate Merchant Invoice pdf
+*Invoice* | [**InvoiceRefundPost**](docs/Invoice.md#invoicerefundpost) | **Post** /merchant/invoice/refund | Admin Create Refund From Invoice
+*Invoice* | [**InvoiceSendEmailPost**](docs/Invoice.md#invoicesendemailpost) | **Post** /merchant/invoice/send_email | Admin Send Merchant Invoice Email to User
+*Member* | [**MemberLogoutPost**](docs/Member.md#memberlogoutpost) | **Post** /merchant/member/logout | Merchant Member Logout
+*Member* | [**MemberPasswordResetPost**](docs/Member.md#memberpasswordresetpost) | **Post** /merchant/member/passwordReset | Merchant Member Reset Password
+*Member* | [**MemberProfileGet**](docs/Member.md#memberprofileget) | **Get** /merchant/member/profile | Get Merchant Member Profile
+*Metric* | [**MetricDeletePost**](docs/Metric.md#metricdeletepost) | **Post** /merchant/metric/delete | Delete Merchant Metric
+*Metric* | [**MetricDetailPost**](docs/Metric.md#metricdetailpost) | **Post** /merchant/metric/detail | Merchant Metric Detail
+*Metric* | [**MetricEditPost**](docs/Metric.md#metriceditpost) | **Post** /merchant/metric/edit | Edit Merchant Metric
+*Metric* | [**MetricEventDeletePost**](docs/Metric.md#metriceventdeletepost) | **Post** /merchant/metric/event/delete | Del Merchant Metric Event
+*Metric* | [**MetricEventNewPost**](docs/Metric.md#metriceventnewpost) | **Post** /merchant/metric/event/new | Merchant Metric Event
+*Metric* | [**MetricListGet**](docs/Metric.md#metriclistget) | **Get** /merchant/metric/list | Merchant Metric list
+*Metric* | [**MetricNewPost**](docs/Metric.md#metricnewpost) | **Post** /merchant/metric/new | New Merchant Metric
+*Metric* | [**MetricPlanLimitDeletePost**](docs/Metric.md#metricplanlimitdeletepost) | **Post** /merchant/metric/plan/limit/delete | Delete Merchant Metric Plan TotalLimit
+*Metric* | [**MetricPlanLimitEditPost**](docs/Metric.md#metricplanlimiteditpost) | **Post** /merchant/metric/plan/limit/edit | Edit Merchant Metric Plan TotalLimit
+*Metric* | [**MetricPlanLimitNewPost**](docs/Metric.md#metricplanlimitnewpost) | **Post** /merchant/metric/plan/limit/new | New Merchant Metric Plan TotalLimit
+*Payment* | [**PaymentCancelPost**](docs/Payment.md#paymentcancelpost) | **Post** /merchant/payment/cancel | Cancel Payment
+*Payment* | [**PaymentCapturePost**](docs/Payment.md#paymentcapturepost) | **Post** /merchant/payment/capture | Capture Payment
+*Payment* | [**PaymentDetailGet**](docs/Payment.md#paymentdetailget) | **Get** /merchant/payment/detail | Query Payment Detail
+*Payment* | [**PaymentListGet**](docs/Payment.md#paymentlistget) | **Get** /merchant/payment/list | Query Payment List
+*Payment* | [**PaymentNewPost**](docs/Payment.md#paymentnewpost) | **Post** /merchant/payment/new | New Payment
+*Payment* | [**PaymentRefundDetailGet**](docs/Payment.md#paymentrefunddetailget) | **Get** /merchant/payment/refund/detail | Query Payment Refund Detail
+*Payment* | [**PaymentRefundListGet**](docs/Payment.md#paymentrefundlistget) | **Get** /merchant/payment/refund/list | Query Payment Refund List
+*Payment* | [**PaymentRefundNewPost**](docs/Payment.md#paymentrefundnewpost) | **Post** /merchant/payment/refund/new | New Payment Refund
+*Payment* | [**PaymentTimelineListGet**](docs/Payment.md#paymenttimelinelistget) | **Get** /merchant/payment/timeline/list | Payment TimeLine List
+*Plan* | [**PlanActivatePost**](docs/Plan.md#planactivatepost) | **Post** /merchant/plan/activate | Plan Sync To Gateway And Activate
+*Plan* | [**PlanAddonsBindingPost**](docs/Plan.md#planaddonsbindingpost) | **Post** /merchant/plan/addons_binding | Plan Binding Addons
+*Plan* | [**PlanDeletePost**](docs/Plan.md#plandeletepost) | **Post** /merchant/plan/delete | Delete A Plan Before Activate
+*Plan* | [**PlanDetailGet**](docs/Plan.md#plandetailget) | **Get** /merchant/plan/detail | Plan Detail
+*Plan* | [**PlanDetailPost**](docs/Plan.md#plandetailpost) | **Post** /merchant/plan/detail | Plan Detail
+*Plan* | [**PlanEditPost**](docs/Plan.md#planeditpost) | **Post** /merchant/plan/edit | Edit Plan
+*Plan* | [**PlanExpirePost**](docs/Plan.md#planexpirepost) | **Post** /merchant/plan/expire | Expire A Plan
+*Plan* | [**PlanListGet**](docs/Plan.md#planlistget) | **Get** /merchant/plan/list | Plan List
+*Plan* | [**PlanListPost**](docs/Plan.md#planlistpost) | **Post** /merchant/plan/list | Plan List
+*Plan* | [**PlanNewPost**](docs/Plan.md#plannewpost) | **Post** /merchant/plan/new | Create Plan
+*Plan* | [**PlanPublishPost**](docs/Plan.md#planpublishpost) | **Post** /merchant/plan/publish | Publish Plan，Will Be Visible To UserPortal
+*Plan* | [**PlanUnpublishedPost**](docs/Plan.md#planunpublishedpost) | **Post** /merchant/plan/unpublished | UnPublish Plan
+*Profile* | [**GetGet**](docs/Profile.md#getget) | **Get** /merchant/get | Get Merchant Info
+*Profile* | [**UpdatePost**](docs/Profile.md#updatepost) | **Post** /merchant/update | Update Merchant Info
+*Search* | [**SearchKeySearchGet**](docs/Search.md#searchkeysearchget) | **Get** /merchant/search/key_search | Merchant Search
+*Search* | [**SearchKeySearchPost**](docs/Search.md#searchkeysearchpost) | **Post** /merchant/search/key_search | Merchant Search
+*Session* | [**SessionNewSessionPost**](docs/Session.md#sessionnewsessionpost) | **Post** /merchant/session/new_session | New User Portal Session
+*Subscription* | [**SubscriptionAddNewTrialStartPost**](docs/Subscription.md#subscriptionaddnewtrialstartpost) | **Post** /merchant/subscription/add_new_trial_start | Merchant Edit Subscription-add appendTrialEndHour For Free
+*Subscription* | [**SubscriptionCancelAtPeriodEndPost**](docs/Subscription.md#subscriptioncancelatperiodendpost) | **Post** /merchant/subscription/cancel_at_period_end | Merchant Edit Subscription-Set Cancel Ad Period End
+*Subscription* | [**SubscriptionCancelLastCancelAtPeriodEndPost**](docs/Subscription.md#subscriptioncancellastcancelatperiodendpost) | **Post** /merchant/subscription/cancel_last_cancel_at_period_end | Merchant Edit Subscription-Cancel Last CancelAtPeriod
+*Subscription* | [**SubscriptionCancelPost**](docs/Subscription.md#subscriptioncancelpost) | **Post** /merchant/subscription/cancel | Merchant Cancel Subscription Immediately (Will Not Generate Proration Invoice)
+*Subscription* | [**SubscriptionDetailGet**](docs/Subscription.md#subscriptiondetailget) | **Get** /merchant/subscription/detail | Subscription Detail
+*Subscription* | [**SubscriptionDetailPost**](docs/Subscription.md#subscriptiondetailpost) | **Post** /merchant/subscription/detail | Subscription Detail
+*Subscription* | [**SubscriptionListGet**](docs/Subscription.md#subscriptionlistget) | **Get** /merchant/subscription/list | Subscription List
+*Subscription* | [**SubscriptionListPost**](docs/Subscription.md#subscriptionlistpost) | **Post** /merchant/subscription/list | Subscription List
+*Subscription* | [**SubscriptionResumePost**](docs/Subscription.md#subscriptionresumepost) | **Post** /merchant/subscription/resume | Merchant Edit Subscription-Resume
+*Subscription* | [**SubscriptionSuspendPost**](docs/Subscription.md#subscriptionsuspendpost) | **Post** /merchant/subscription/suspend | Merchant Edit Subscription-Stop
+*Subscription* | [**SubscriptionUpdatePreviewPost**](docs/Subscription.md#subscriptionupdatepreviewpost) | **Post** /merchant/subscription/update_preview | Merchant Update Subscription Preview
+*Subscription* | [**SubscriptionUpdateSubmitPost**](docs/Subscription.md#subscriptionupdatesubmitpost) | **Post** /merchant/subscription/update_submit | Merchant Update Subscription Submit
+*Subscription* | [**SubscriptionUserSubscriptionDetailGet**](docs/Subscription.md#subscriptionusersubscriptiondetailget) | **Get** /merchant/subscription/user_subscription_detail | Subscription Detail
+*Subscription* | [**SubscriptionUserSubscriptionDetailPost**](docs/Subscription.md#subscriptionusersubscriptiondetailpost) | **Post** /merchant/subscription/user_subscription_detail | Subscription Detail
+*SubscriptionNote* | [**SubscriptionAdminNoteListGet**](docs/SubscriptionNote.md#subscriptionadminnotelistget) | **Get** /merchant/subscription/admin_note_list | Merchant Subscription Note List
+*SubscriptionNote* | [**SubscriptionAdminNoteListPost**](docs/SubscriptionNote.md#subscriptionadminnotelistpost) | **Post** /merchant/subscription/admin_note_list | Merchant Subscription Note List
+*SubscriptionNote* | [**SubscriptionNewAdminNotePost**](docs/SubscriptionNote.md#subscriptionnewadminnotepost) | **Post** /merchant/subscription/new_admin_note | Merchant New Subscription Note
+*SubscriptionPendingUpdate* | [**SubscriptionPendingUpdateListGet**](docs/SubscriptionPendingUpdate.md#subscriptionpendingupdatelistget) | **Get** /merchant/subscription/pending_update_list | Merchant SubscriptionPendingUpdate List
+*SubscriptionPendingUpdate* | [**SubscriptionPendingUpdateListPost**](docs/SubscriptionPendingUpdate.md#subscriptionpendingupdatelistpost) | **Post** /merchant/subscription/pending_update_list | Merchant SubscriptionPendingUpdate List
+*SubscriptionTimeline* | [**SubscriptionTimelineListGet**](docs/SubscriptionTimeline.md#subscriptiontimelinelistget) | **Get** /merchant/subscription/timeline_list | Merchant Subscription TimeLine List
+*SubscriptionTimeline* | [**SubscriptionTimelineListPost**](docs/SubscriptionTimeline.md#subscriptiontimelinelistpost) | **Post** /merchant/subscription/timeline_list | Merchant Subscription TimeLine List
+*User* | [**UserFrozenUserPost**](docs/User.md#userfrozenuserpost) | **Post** /merchant/user/frozen_user | Merchant Frozen User
+*User* | [**UserGetGet**](docs/User.md#usergetget) | **Get** /merchant/user/get | Get User Profile
+*User* | [**UserListGet**](docs/User.md#userlistget) | **Get** /merchant/user/list | User List
+*User* | [**UserListPost**](docs/User.md#userlistpost) | **Post** /merchant/user/list | User List
+*User* | [**UserReleaseUserPost**](docs/User.md#userreleaseuserpost) | **Post** /merchant/user/release_user | Merchant Release User
+*User* | [**UserSearchGet**](docs/User.md#usersearchget) | **Get** /merchant/user/search | User Search
+*User* | [**UserSearchPost**](docs/User.md#usersearchpost) | **Post** /merchant/user/search | User Search
+*User* | [**UserUpdatePost**](docs/User.md#userupdatepost) | **Post** /merchant/user/update | Update User Profile
+*UserMetric* | [**MetricUserMetricGet**](docs/UserMetric.md#metricusermetricget) | **Get** /merchant/metric/user/metric | Query User Metric
+*Vat* | [**VatCountryListGet**](docs/Vat.md#vatcountrylistget) | **Get** /merchant/vat/country_list | Vat Country List
+*Vat* | [**VatCountryListPost**](docs/Vat.md#vatcountrylistpost) | **Post** /merchant/vat/country_list | Vat Country List
+*Vat* | [**VatSetupGatewayPost**](docs/Vat.md#vatsetupgatewaypost) | **Post** /merchant/vat/setup_gateway | Vat Gateway Setup
+*Webhook* | [**WebhookDeleteEndpointPost**](docs/Webhook.md#webhookdeleteendpointpost) | **Post** /merchant/webhook/delete_endpoint | Merchant Delete Webhook Endpoint
+*Webhook* | [**WebhookEndpointListGet**](docs/Webhook.md#webhookendpointlistget) | **Get** /merchant/webhook/endpoint_list | Merchant Webhook Endpoint list
+*Webhook* | [**WebhookEndpointLogListGet**](docs/Webhook.md#webhookendpointloglistget) | **Get** /merchant/webhook/endpoint_log_list | Merchant Webhook Endpoint Log list
+*Webhook* | [**WebhookEventListGet**](docs/Webhook.md#webhookeventlistget) | **Get** /merchant/webhook/event_list | Webhook Event list
+*Webhook* | [**WebhookNewEndpointPost**](docs/Webhook.md#webhooknewendpointpost) | **Post** /merchant/webhook/new_endpoint | Merchant New Webhook Endpoint
+*Webhook* | [**WebhookUpdateEndpointPost**](docs/Webhook.md#webhookupdateendpointpost) | **Post** /merchant/webhook/update_endpoint | Merchant Update Webhook Endpoint
 
 
 ## Documentation For Models
@@ -221,8 +228,22 @@ Class | Method | HTTP request | Description
  - [MerchantMetricUserMetricGet200ResponseData](docs/MerchantMetricUserMetricGet200ResponseData.md)
  - [MerchantOssFilePost200Response](docs/MerchantOssFilePost200Response.md)
  - [MerchantOssFilePost200ResponseData](docs/MerchantOssFilePost200ResponseData.md)
- - [MerchantPaymentPaymentTimelineListGet200Response](docs/MerchantPaymentPaymentTimelineListGet200Response.md)
- - [MerchantPaymentPaymentTimelineListGet200ResponseData](docs/MerchantPaymentPaymentTimelineListGet200ResponseData.md)
+ - [MerchantPaymentCapturePostRequest](docs/MerchantPaymentCapturePostRequest.md)
+ - [MerchantPaymentDetailGet200Response](docs/MerchantPaymentDetailGet200Response.md)
+ - [MerchantPaymentDetailGet200ResponseData](docs/MerchantPaymentDetailGet200ResponseData.md)
+ - [MerchantPaymentListGet200Response](docs/MerchantPaymentListGet200Response.md)
+ - [MerchantPaymentListGet200ResponseData](docs/MerchantPaymentListGet200ResponseData.md)
+ - [MerchantPaymentNewPost200Response](docs/MerchantPaymentNewPost200Response.md)
+ - [MerchantPaymentNewPost200ResponseData](docs/MerchantPaymentNewPost200ResponseData.md)
+ - [MerchantPaymentRefundDetailGet200Response](docs/MerchantPaymentRefundDetailGet200Response.md)
+ - [MerchantPaymentRefundDetailGet200ResponseData](docs/MerchantPaymentRefundDetailGet200ResponseData.md)
+ - [MerchantPaymentRefundListGet200Response](docs/MerchantPaymentRefundListGet200Response.md)
+ - [MerchantPaymentRefundListGet200ResponseData](docs/MerchantPaymentRefundListGet200ResponseData.md)
+ - [MerchantPaymentRefundNewPost200Response](docs/MerchantPaymentRefundNewPost200Response.md)
+ - [MerchantPaymentRefundNewPost200ResponseData](docs/MerchantPaymentRefundNewPost200ResponseData.md)
+ - [MerchantPaymentRefundNewPostRequest](docs/MerchantPaymentRefundNewPostRequest.md)
+ - [MerchantPaymentTimelineListGet200Response](docs/MerchantPaymentTimelineListGet200Response.md)
+ - [MerchantPaymentTimelineListGet200ResponseData](docs/MerchantPaymentTimelineListGet200ResponseData.md)
  - [MerchantPlanAddonsBindingPost200Response](docs/MerchantPlanAddonsBindingPost200Response.md)
  - [MerchantPlanAddonsBindingPost200ResponseData](docs/MerchantPlanAddonsBindingPost200ResponseData.md)
  - [MerchantPlanDetailGet200Response](docs/MerchantPlanDetailGet200Response.md)
@@ -283,9 +304,6 @@ Class | Method | HTTP request | Description
  - [UnibeeApiMerchantGatewayListRes](docs/UnibeeApiMerchantGatewayListRes.md)
  - [UnibeeApiMerchantGatewaySetupReq](docs/UnibeeApiMerchantGatewaySetupReq.md)
  - [UnibeeApiMerchantGatewaySetupWebhookReq](docs/UnibeeApiMerchantGatewaySetupWebhookReq.md)
- - [UnibeeApiMerchantInfoGetRes](docs/UnibeeApiMerchantInfoGetRes.md)
- - [UnibeeApiMerchantInfoUpdateReq](docs/UnibeeApiMerchantInfoUpdateReq.md)
- - [UnibeeApiMerchantInfoUpdateRes](docs/UnibeeApiMerchantInfoUpdateRes.md)
  - [UnibeeApiMerchantInvoiceCancelReq](docs/UnibeeApiMerchantInvoiceCancelReq.md)
  - [UnibeeApiMerchantInvoiceDeleteReq](docs/UnibeeApiMerchantInvoiceDeleteReq.md)
  - [UnibeeApiMerchantInvoiceDetailReq](docs/UnibeeApiMerchantInvoiceDetailReq.md)
@@ -326,6 +344,21 @@ Class | Method | HTTP request | Description
  - [UnibeeApiMerchantMetricUserMetricReq](docs/UnibeeApiMerchantMetricUserMetricReq.md)
  - [UnibeeApiMerchantMetricUserMetricRes](docs/UnibeeApiMerchantMetricUserMetricRes.md)
  - [UnibeeApiMerchantOssFileUploadRes](docs/UnibeeApiMerchantOssFileUploadRes.md)
+ - [UnibeeApiMerchantPaymentCancelReq](docs/UnibeeApiMerchantPaymentCancelReq.md)
+ - [UnibeeApiMerchantPaymentCaptureReq](docs/UnibeeApiMerchantPaymentCaptureReq.md)
+ - [UnibeeApiMerchantPaymentDetailReq](docs/UnibeeApiMerchantPaymentDetailReq.md)
+ - [UnibeeApiMerchantPaymentDetailRes](docs/UnibeeApiMerchantPaymentDetailRes.md)
+ - [UnibeeApiMerchantPaymentItem](docs/UnibeeApiMerchantPaymentItem.md)
+ - [UnibeeApiMerchantPaymentListReq](docs/UnibeeApiMerchantPaymentListReq.md)
+ - [UnibeeApiMerchantPaymentListRes](docs/UnibeeApiMerchantPaymentListRes.md)
+ - [UnibeeApiMerchantPaymentNewPaymentRefundReq](docs/UnibeeApiMerchantPaymentNewPaymentRefundReq.md)
+ - [UnibeeApiMerchantPaymentNewPaymentRefundRes](docs/UnibeeApiMerchantPaymentNewPaymentRefundRes.md)
+ - [UnibeeApiMerchantPaymentNewReq](docs/UnibeeApiMerchantPaymentNewReq.md)
+ - [UnibeeApiMerchantPaymentNewRes](docs/UnibeeApiMerchantPaymentNewRes.md)
+ - [UnibeeApiMerchantPaymentRefundDetailReq](docs/UnibeeApiMerchantPaymentRefundDetailReq.md)
+ - [UnibeeApiMerchantPaymentRefundDetailRes](docs/UnibeeApiMerchantPaymentRefundDetailRes.md)
+ - [UnibeeApiMerchantPaymentRefundListReq](docs/UnibeeApiMerchantPaymentRefundListReq.md)
+ - [UnibeeApiMerchantPaymentRefundListRes](docs/UnibeeApiMerchantPaymentRefundListRes.md)
  - [UnibeeApiMerchantPaymentTimeLineListReq](docs/UnibeeApiMerchantPaymentTimeLineListReq.md)
  - [UnibeeApiMerchantPaymentTimeLineListRes](docs/UnibeeApiMerchantPaymentTimeLineListRes.md)
  - [UnibeeApiMerchantPlanActivateReq](docs/UnibeeApiMerchantPlanActivateReq.md)
@@ -343,6 +376,9 @@ Class | Method | HTTP request | Description
  - [UnibeeApiMerchantPlanNewRes](docs/UnibeeApiMerchantPlanNewRes.md)
  - [UnibeeApiMerchantPlanPublishReq](docs/UnibeeApiMerchantPlanPublishReq.md)
  - [UnibeeApiMerchantPlanUnPublishReq](docs/UnibeeApiMerchantPlanUnPublishReq.md)
+ - [UnibeeApiMerchantProfileGetRes](docs/UnibeeApiMerchantProfileGetRes.md)
+ - [UnibeeApiMerchantProfileUpdateReq](docs/UnibeeApiMerchantProfileUpdateReq.md)
+ - [UnibeeApiMerchantProfileUpdateRes](docs/UnibeeApiMerchantProfileUpdateRes.md)
  - [UnibeeApiMerchantSearchPrecisionMatchObject](docs/UnibeeApiMerchantSearchPrecisionMatchObject.md)
  - [UnibeeApiMerchantSearchSearchReq](docs/UnibeeApiMerchantSearchSearchReq.md)
  - [UnibeeApiMerchantSearchSearchRes](docs/UnibeeApiMerchantSearchSearchRes.md)
@@ -410,10 +446,14 @@ Class | Method | HTTP request | Description
  - [UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo](docs/UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo.md)
  - [UnibeeInternalLogicGatewayRoMerchantMetricVo](docs/UnibeeInternalLogicGatewayRoMerchantMetricVo.md)
  - [UnibeeInternalLogicGatewayRoMetricLimitVo](docs/UnibeeInternalLogicGatewayRoMetricLimitVo.md)
+ - [UnibeeInternalLogicGatewayRoPaymentDetailRo](docs/UnibeeInternalLogicGatewayRoPaymentDetailRo.md)
  - [UnibeeInternalLogicGatewayRoPaymentMethod](docs/UnibeeInternalLogicGatewayRoPaymentMethod.md)
+ - [UnibeeInternalLogicGatewayRoPaymentSimplify](docs/UnibeeInternalLogicGatewayRoPaymentSimplify.md)
  - [UnibeeInternalLogicGatewayRoPlanAddonVo](docs/UnibeeInternalLogicGatewayRoPlanAddonVo.md)
  - [UnibeeInternalLogicGatewayRoPlanDetailRo](docs/UnibeeInternalLogicGatewayRoPlanDetailRo.md)
  - [UnibeeInternalLogicGatewayRoPlanSimplify](docs/UnibeeInternalLogicGatewayRoPlanSimplify.md)
+ - [UnibeeInternalLogicGatewayRoRefundDetailRo](docs/UnibeeInternalLogicGatewayRoRefundDetailRo.md)
+ - [UnibeeInternalLogicGatewayRoRefundSimplify](docs/UnibeeInternalLogicGatewayRoRefundSimplify.md)
  - [UnibeeInternalLogicGatewayRoSubscriptionDetailVo](docs/UnibeeInternalLogicGatewayRoSubscriptionDetailVo.md)
  - [UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo](docs/UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo.md)
  - [UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo](docs/UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo.md)

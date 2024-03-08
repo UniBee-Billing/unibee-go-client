@@ -29,7 +29,7 @@ paths:
           description: ""
       summary: Login
       tags:
-      - Merchant-Auth
+      - Auth
   /merchant/auth/sso/loginOTP:
     post:
       requestBody:
@@ -47,7 +47,7 @@ paths:
           description: ""
       summary: Login OTP
       tags:
-      - Merchant-Auth
+      - Auth
   /merchant/auth/sso/loginOTPVerify:
     post:
       requestBody:
@@ -65,7 +65,7 @@ paths:
           description: ""
       summary: Merchant User OTP Login Verify
       tags:
-      - Merchant-Auth
+      - Auth
   /merchant/auth/sso/passwordForgetOTP:
     post:
       requestBody:
@@ -83,7 +83,7 @@ paths:
           description: ""
       summary: Merchant Password Forget OTP
       tags:
-      - Merchant-Auth
+      - Auth
   /merchant/auth/sso/passwordForgetOTPVerify:
     post:
       requestBody:
@@ -101,7 +101,7 @@ paths:
           description: ""
       summary: Merchant Password Forget OTP Verify
       tags:
-      - Merchant-Auth
+      - Auth
   /merchant/auth/sso/register:
     post:
       requestBody:
@@ -119,7 +119,7 @@ paths:
           description: ""
       summary: Merchant Register
       tags:
-      - Merchant-Auth
+      - Auth
   /merchant/auth/sso/registerVerify:
     post:
       requestBody:
@@ -137,7 +137,7 @@ paths:
           description: ""
       summary: Merchant Register Verify
       tags:
-      - Merchant-Auth
+      - Auth
   /merchant/balance/merchant_balance_query:
     get:
       parameters:
@@ -161,7 +161,7 @@ paths:
           description: ""
       summary: Query Merchant Gateway Balance
       tags:
-      - Merchant-Balance
+      - Balance
     post:
       requestBody:
         content:
@@ -178,7 +178,7 @@ paths:
           description: ""
       summary: Query Merchant Gateway Balance
       tags:
-      - Merchant-Balance
+      - Balance
   /merchant/balance/user_balance_query:
     get:
       parameters:
@@ -213,7 +213,7 @@ paths:
           description: ""
       summary: Query User Balance
       tags:
-      - Merchant-Balance
+      - Balance
     post:
       requestBody:
         content:
@@ -230,7 +230,7 @@ paths:
           description: ""
       summary: Query User Balance
       tags:
-      - Merchant-Balance
+      - Balance
   /merchant/email/gateway_setup:
     post:
       requestBody:
@@ -248,7 +248,7 @@ paths:
           description: ""
       summary: Merchant Email Gateway Setup
       tags:
-      - Merchant-Email
+      - Email
   /merchant/email/template_activate:
     post:
       requestBody:
@@ -266,7 +266,7 @@ paths:
           description: ""
       summary: Merchant Email Template Activate
       tags:
-      - Merchant-Email-Template
+      - Email-Template
   /merchant/email/template_deactivate:
     post:
       requestBody:
@@ -284,7 +284,7 @@ paths:
           description: ""
       summary: Merchant Email Template Deactivate
       tags:
-      - Merchant-Email-Template
+      - Email-Template
   /merchant/email/template_list:
     get:
       responses:
@@ -296,7 +296,7 @@ paths:
           description: ""
       summary: Merchant Email Template List
       tags:
-      - Merchant-Email-Template
+      - Email-Template
   /merchant/email/template_set_default:
     post:
       requestBody:
@@ -314,7 +314,7 @@ paths:
           description: ""
       summary: Merchant Email Template Set Default
       tags:
-      - Merchant-Email-Template
+      - Email-Template
   /merchant/email/template_update:
     post:
       requestBody:
@@ -332,7 +332,7 @@ paths:
           description: ""
       summary: Merchant Email Template Update
       tags:
-      - Merchant-Email-Template
+      - Email-Template
   /merchant/gateway/edit:
     post:
       requestBody:
@@ -350,7 +350,7 @@ paths:
           description: ""
       summary: Gateway Webhook Edit
       tags:
-      - Merchant-Gateway
+      - Gateway
   /merchant/gateway/list:
     get:
       responses:
@@ -362,7 +362,7 @@ paths:
           description: ""
       summary: Gateway List
       tags:
-      - Merchant-Gateway
+      - Gateway
   /merchant/gateway/setup:
     post:
       requestBody:
@@ -380,7 +380,7 @@ paths:
           description: ""
       summary: Gateway Setup
       tags:
-      - Merchant-Gateway
+      - Gateway
   /merchant/gateway/setup_webhook:
     post:
       requestBody:
@@ -398,7 +398,7 @@ paths:
           description: ""
       summary: Gateway Webhook Setup
       tags:
-      - Merchant-Gateway
+      - Gateway
   /merchant/get:
     get:
       responses:
@@ -410,7 +410,7 @@ paths:
           description: ""
       summary: Get Merchant Info
       tags:
-      - Merchant-Info
+      - Profile
   /merchant/invoice/cancel:
     post:
       requestBody:
@@ -428,7 +428,7 @@ paths:
           description: ""
       summary: Admin Cancel Invoice Of Processing Status
       tags:
-      - Merchant-Invoice
+      - Invoice
   /merchant/invoice/delete:
     post:
       requestBody:
@@ -446,7 +446,7 @@ paths:
           description: ""
       summary: Admin Delete Invoice Of Pending Status
       tags:
-      - Merchant-Invoice
+      - Invoice
   /merchant/invoice/detail:
     get:
       parameters:
@@ -470,7 +470,7 @@ paths:
           description: ""
       summary: Invoice Detail
       tags:
-      - Merchant-Invoice
+      - Invoice
     post:
       requestBody:
         content:
@@ -487,7 +487,7 @@ paths:
           description: ""
       summary: Invoice Detail
       tags:
-      - Merchant-Invoice
+      - Invoice
   /merchant/invoice/edit:
     post:
       requestBody:
@@ -505,7 +505,7 @@ paths:
           description: ""
       summary: Admin Edit Invoice
       tags:
-      - Merchant-Invoice
+      - Invoice
   /merchant/invoice/finish:
     post:
       requestBody:
@@ -523,7 +523,7 @@ paths:
           description: ""
       summary: Admin Finish Invoice，Generate Pay Link
       tags:
-      - Merchant-Invoice
+      - Invoice
   /merchant/invoice/list:
     get:
       parameters:
@@ -685,7 +685,7 @@ paths:
           description: ""
       summary: Invoice List
       tags:
-      - Merchant-Invoice
+      - Invoice
     post:
       requestBody:
         content:
@@ -702,7 +702,7 @@ paths:
           description: ""
       summary: Invoice List
       tags:
-      - Merchant-Invoice
+      - Invoice
   /merchant/invoice/new:
     post:
       requestBody:
@@ -720,7 +720,7 @@ paths:
           description: ""
       summary: Admin Create New Invoice
       tags:
-      - Merchant-Invoice
+      - Invoice
   /merchant/invoice/pdf_generate:
     post:
       requestBody:
@@ -738,7 +738,7 @@ paths:
           description: ""
       summary: Admin Generate Merchant Invoice pdf
       tags:
-      - Merchant-Invoice
+      - Invoice
   /merchant/invoice/refund:
     post:
       requestBody:
@@ -756,7 +756,7 @@ paths:
           description: ""
       summary: Admin Create Refund From Invoice
       tags:
-      - Merchant-Invoice
+      - Invoice
   /merchant/invoice/send_email:
     post:
       requestBody:
@@ -774,7 +774,7 @@ paths:
           description: ""
       summary: Admin Send Merchant Invoice Email to User
       tags:
-      - Merchant-Invoice
+      - Invoice
   /merchant/member/logout:
     post:
       requestBody:
@@ -792,7 +792,7 @@ paths:
           description: ""
       summary: Merchant Member Logout
       tags:
-      - Merchant-Member-Profile
+      - Member
   /merchant/member/passwordReset:
     post:
       requestBody:
@@ -810,7 +810,7 @@ paths:
           description: ""
       summary: Merchant Member Reset Password
       tags:
-      - Merchant-Member-Profile
+      - Member
   /merchant/member/profile:
     get:
       responses:
@@ -822,7 +822,7 @@ paths:
           description: ""
       summary: Get Merchant Member Profile
       tags:
-      - Merchant-Member-Profile
+      - Member
   /merchant/metric/delete:
     post:
       requestBody:
@@ -840,7 +840,7 @@ paths:
           description: ""
       summary: Delete Merchant Metric
       tags:
-      - Merchant-Metric
+      - Metric
   /merchant/metric/detail:
     post:
       requestBody:
@@ -858,7 +858,7 @@ paths:
           description: ""
       summary: Merchant Metric Detail
       tags:
-      - Merchant-Metric
+      - Metric
   /merchant/metric/edit:
     post:
       requestBody:
@@ -876,7 +876,7 @@ paths:
           description: ""
       summary: Edit Merchant Metric
       tags:
-      - Merchant-Metric
+      - Metric
   /merchant/metric/event/delete:
     post:
       requestBody:
@@ -894,7 +894,7 @@ paths:
           description: ""
       summary: Del Merchant Metric Event
       tags:
-      - Merchant-Metric
+      - Metric
   /merchant/metric/event/new:
     post:
       requestBody:
@@ -912,7 +912,7 @@ paths:
           description: ""
       summary: Merchant Metric Event
       tags:
-      - Merchant-Metric
+      - Metric
   /merchant/metric/list:
     get:
       responses:
@@ -924,7 +924,7 @@ paths:
           description: ""
       summary: Merchant Metric list
       tags:
-      - Merchant-Metric
+      - Metric
   /merchant/metric/new:
     post:
       requestBody:
@@ -942,7 +942,7 @@ paths:
           description: ""
       summary: New Merchant Metric
       tags:
-      - Merchant-Metric
+      - Metric
   /merchant/metric/plan/limit/delete:
     post:
       requestBody:
@@ -960,7 +960,7 @@ paths:
           description: ""
       summary: Delete Merchant Metric Plan TotalLimit
       tags:
-      - Merchant-Metric
+      - Metric
   /merchant/metric/plan/limit/edit:
     post:
       requestBody:
@@ -978,7 +978,7 @@ paths:
           description: ""
       summary: Edit Merchant Metric Plan TotalLimit
       tags:
-      - Merchant-Metric
+      - Metric
   /merchant/metric/plan/limit/new:
     post:
       requestBody:
@@ -996,7 +996,7 @@ paths:
           description: ""
       summary: New Merchant Metric Plan TotalLimit
       tags:
-      - Merchant-Metric
+      - Metric
   /merchant/metric/user/metric:
     get:
       parameters:
@@ -1031,7 +1031,7 @@ paths:
           description: ""
       summary: Query User Metric
       tags:
-      - Merchant-User-Metric
+      - User-Metric
   /merchant/oss/file:
     post:
       requestBody:
@@ -1050,7 +1050,375 @@ paths:
       summary: Upload File
       tags:
       - File
-  /merchant/payment/payment_timeline_list:
+  /merchant/payment/cancel:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/unibee.api.merchant.payment.CancelReq'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_auth_sso_loginOTP_post_200_response'
+          description: ""
+      summary: Cancel Payment
+      tags:
+      - Payment
+  /merchant/payment/capture:
+    post:
+      parameters:
+      - description: "CaptureAmount, Cent"
+        explode: true
+        in: query
+        name: captureAmount
+        required: true
+        schema:
+          description: "CaptureAmount, Cent"
+          format: int64
+          properties: {}
+          type: integer
+        style: form
+      - description: Currency
+        explode: true
+        in: query
+        name: currency
+        required: true
+        schema:
+          description: Currency
+          format: string
+          properties: {}
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/_merchant_payment_capture_post_request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_auth_sso_loginOTP_post_200_response'
+          description: ""
+      summary: Capture Payment
+      tags:
+      - Payment
+  /merchant/payment/detail:
+    get:
+      parameters:
+      - description: PaymentId
+        explode: true
+        in: query
+        name: paymentId
+        required: true
+        schema:
+          description: PaymentId
+          format: string
+          properties: {}
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_payment_detail_get_200_response'
+          description: ""
+      summary: Query Payment Detail
+      tags:
+      - Payment
+  /merchant/payment/list:
+    get:
+      parameters:
+      - description: GatewayId
+        explode: true
+        in: query
+        name: gatewayId
+        required: false
+        schema:
+          description: GatewayId
+          format: int64
+          properties: {}
+          type: integer
+        style: form
+      - description: 'UserId '
+        explode: true
+        in: query
+        name: userId
+        required: false
+        schema:
+          description: 'UserId '
+          format: int64
+          properties: {}
+          type: integer
+        style: form
+      - description: Email
+        explode: true
+        in: query
+        name: email
+        required: false
+        schema:
+          description: Email
+          format: string
+          properties: {}
+          type: string
+        style: form
+      - description: "Status, 10-Created|20-Success|30-Failed|40-Cancelled"
+        explode: true
+        in: query
+        name: status
+        required: false
+        schema:
+          description: "Status, 10-Created|20-Success|30-Failed|40-Cancelled"
+          format: int
+          properties: {}
+          type: integer
+        style: form
+      - description: Currency
+        explode: true
+        in: query
+        name: currency
+        required: false
+        schema:
+          description: Currency
+          format: string
+          properties: {}
+          type: string
+        style: form
+      - description: CountryCode
+        explode: true
+        in: query
+        name: countryCode
+        required: false
+        schema:
+          description: CountryCode
+          format: string
+          properties: {}
+          type: string
+        style: form
+      - description: Sort Field，user_id|create_time|status
+        explode: true
+        in: query
+        name: sortField
+        required: false
+        schema:
+          description: Sort Field，user_id|create_time|status
+          format: string
+          properties: {}
+          type: string
+        style: form
+      - description: Sort Type，asc|desc
+        explode: true
+        in: query
+        name: sortType
+        required: false
+        schema:
+          description: Sort Type，asc|desc
+          format: string
+          properties: {}
+          type: string
+        style: form
+      - description: "Page, Start With 0"
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          description: "Page, Start With 0"
+          format: int
+          properties: {}
+          type: integer
+        style: form
+      - description: Count Of Page
+        explode: true
+        in: query
+        name: count
+        required: false
+        schema:
+          description: Count Of Page
+          format: int
+          properties: {}
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_payment_list_get_200_response'
+          description: ""
+      summary: Query Payment List
+      tags:
+      - Payment
+  /merchant/payment/new:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/unibee.api.merchant.payment.NewReq'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_payment_new_post_200_response'
+          description: ""
+      summary: New Payment
+      tags:
+      - Payment
+  /merchant/payment/refund/detail:
+    get:
+      parameters:
+      - description: RefundId
+        explode: true
+        in: query
+        name: refundId
+        required: false
+        schema:
+          description: RefundId
+          format: string
+          properties: {}
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_payment_refund_detail_get_200_response'
+          description: ""
+      summary: Query Payment Refund Detail
+      tags:
+      - Payment
+  /merchant/payment/refund/list:
+    get:
+      parameters:
+      - description: PaymentId
+        explode: true
+        in: query
+        name: paymentId
+        required: true
+        schema:
+          description: PaymentId
+          format: string
+          properties: {}
+          type: string
+        style: form
+      - description: "Status,10-create|20-success|30-Failed|40-Reverse"
+        explode: true
+        in: query
+        name: status
+        required: false
+        schema:
+          description: "Status,10-create|20-success|30-Failed|40-Reverse"
+          format: int
+          properties: {}
+          type: integer
+        style: form
+      - description: GatewayId
+        explode: true
+        in: query
+        name: gatewayId
+        required: false
+        schema:
+          description: GatewayId
+          format: int64
+          properties: {}
+          type: integer
+        style: form
+      - description: UserId
+        explode: true
+        in: query
+        name: userId
+        required: false
+        schema:
+          description: UserId
+          format: int64
+          properties: {}
+          type: integer
+        style: form
+      - description: Email
+        explode: true
+        in: query
+        name: email
+        required: false
+        schema:
+          description: Email
+          format: string
+          properties: {}
+          type: string
+        style: form
+      - description: Currency
+        explode: true
+        in: query
+        name: currency
+        required: false
+        schema:
+          description: Currency
+          format: string
+          properties: {}
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_payment_refund_list_get_200_response'
+          description: ""
+      summary: Query Payment Refund List
+      tags:
+      - Payment
+  /merchant/payment/refund/new:
+    post:
+      parameters:
+      - description: "RefundAmount, Cent"
+        explode: true
+        in: query
+        name: refundAmount
+        required: true
+        schema:
+          description: "RefundAmount, Cent"
+          format: int64
+          properties: {}
+          type: integer
+        style: form
+      - description: Currency
+        explode: true
+        in: query
+        name: currency
+        required: true
+        schema:
+          description: Currency
+          format: string
+          properties: {}
+          type: string
+        style: form
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/_merchant_payment_refund_new_post_request'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_payment_refund_new_post_200_response'
+          description: ""
+      summary: New Payment Refund
+      tags:
+      - Payment
+  /merchant/payment/timeline/list:
     get:
       parameters:
       - description: "Filter UserId, Default All"
@@ -1060,7 +1428,7 @@ paths:
         required: false
         schema:
           description: "Filter UserId, Default All"
-          format: int
+          format: int64
           properties: {}
           type: integer
         style: form
@@ -1115,28 +1483,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/_merchant_payment_payment_timeline_list_get_200_response'
+                $ref: '#/components/schemas/_merchant_payment_timeline_list_get_200_response'
           description: ""
       summary: Payment TimeLine List
       tags:
-      - Merchant-Payment-Timeline
-    post:
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/unibee.api.merchant.payment.TimeLineListReq'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/_merchant_payment_payment_timeline_list_get_200_response'
-          description: ""
-      summary: Payment TimeLine List
-      tags:
-      - Merchant-Payment-Timeline
+      - Payment
   /merchant/plan/activate:
     post:
       requestBody:
@@ -1154,7 +1505,7 @@ paths:
           description: ""
       summary: Plan Sync To Gateway And Activate
       tags:
-      - Merchant-Plan
+      - Plan
   /merchant/plan/addons_binding:
     post:
       requestBody:
@@ -1172,7 +1523,7 @@ paths:
           description: ""
       summary: Plan Binding Addons
       tags:
-      - Merchant-Plan
+      - Plan
   /merchant/plan/delete:
     post:
       requestBody:
@@ -1190,7 +1541,7 @@ paths:
           description: ""
       summary: Delete A Plan Before Activate
       tags:
-      - Merchant-Plan
+      - Plan
   /merchant/plan/detail:
     get:
       parameters:
@@ -1214,7 +1565,7 @@ paths:
           description: ""
       summary: Plan Detail
       tags:
-      - Merchant-Plan
+      - Plan
     post:
       requestBody:
         content:
@@ -1231,7 +1582,7 @@ paths:
           description: ""
       summary: Plan Detail
       tags:
-      - Merchant-Plan
+      - Plan
   /merchant/plan/edit:
     post:
       requestBody:
@@ -1249,7 +1600,7 @@ paths:
           description: ""
       summary: Edit Plan
       tags:
-      - Merchant-Plan
+      - Plan
   /merchant/plan/expire:
     post:
       requestBody:
@@ -1267,7 +1618,7 @@ paths:
           description: ""
       summary: Expire A Plan
       tags:
-      - Merchant-Plan
+      - Plan
   /merchant/plan/list:
     get:
       parameters:
@@ -1377,7 +1728,7 @@ paths:
           description: ""
       summary: Plan List
       tags:
-      - Merchant-Plan
+      - Plan
     post:
       requestBody:
         content:
@@ -1394,7 +1745,7 @@ paths:
           description: ""
       summary: Plan List
       tags:
-      - Merchant-Plan
+      - Plan
   /merchant/plan/new:
     post:
       requestBody:
@@ -1412,7 +1763,7 @@ paths:
           description: ""
       summary: Create Plan
       tags:
-      - Merchant-Plan
+      - Plan
   /merchant/plan/publish:
     post:
       requestBody:
@@ -1430,7 +1781,7 @@ paths:
           description: ""
       summary: Publish Plan，Will Be Visible To UserPortal
       tags:
-      - Merchant-Plan
+      - Plan
   /merchant/plan/unpublished:
     post:
       requestBody:
@@ -1448,7 +1799,7 @@ paths:
           description: ""
       summary: UnPublish Plan
       tags:
-      - Merchant-Plan
+      - Plan
   /merchant/search/key_search:
     get:
       parameters:
@@ -1472,7 +1823,7 @@ paths:
           description: ""
       summary: Merchant Search
       tags:
-      - Merchant-Search
+      - Search
     post:
       requestBody:
         content:
@@ -1489,7 +1840,7 @@ paths:
           description: ""
       summary: Merchant Search
       tags:
-      - Merchant-Search
+      - Search
   /merchant/session/new_session:
     post:
       requestBody:
@@ -1507,7 +1858,7 @@ paths:
           description: ""
       summary: New User Portal Session
       tags:
-      - Merchant-Session
+      - Session
   /merchant/subscription/add_new_trial_start:
     post:
       requestBody:
@@ -1525,7 +1876,7 @@ paths:
           description: ""
       summary: Merchant Edit Subscription-add appendTrialEndHour For Free
       tags:
-      - Merchant-Subscription
+      - Subscription
   /merchant/subscription/admin_note_list:
     get:
       parameters:
@@ -1571,7 +1922,7 @@ paths:
           description: ""
       summary: Merchant Subscription Note List
       tags:
-      - Merchant-Subscription-Note
+      - Subscription-Note
     post:
       requestBody:
         content:
@@ -1588,7 +1939,7 @@ paths:
           description: ""
       summary: Merchant Subscription Note List
       tags:
-      - Merchant-Subscription-Note
+      - Subscription-Note
   /merchant/subscription/cancel:
     post:
       requestBody:
@@ -1607,7 +1958,7 @@ paths:
       summary: Merchant Cancel Subscription Immediately (Will Not Generate Proration
         Invoice)
       tags:
-      - Merchant-Subscription
+      - Subscription
   /merchant/subscription/cancel_at_period_end:
     post:
       requestBody:
@@ -1625,7 +1976,7 @@ paths:
           description: ""
       summary: Merchant Edit Subscription-Set Cancel Ad Period End
       tags:
-      - Merchant-Subscription
+      - Subscription
   /merchant/subscription/cancel_last_cancel_at_period_end:
     post:
       requestBody:
@@ -1643,7 +1994,7 @@ paths:
           description: ""
       summary: Merchant Edit Subscription-Cancel Last CancelAtPeriod
       tags:
-      - Merchant-Subscription
+      - Subscription
   /merchant/subscription/detail:
     get:
       parameters:
@@ -1667,7 +2018,7 @@ paths:
           description: ""
       summary: Subscription Detail
       tags:
-      - Merchant-Subscription
+      - Subscription
     post:
       requestBody:
         content:
@@ -1684,7 +2035,7 @@ paths:
           description: ""
       summary: Subscription Detail
       tags:
-      - Merchant-Subscription
+      - Subscription
   /merchant/subscription/list:
     get:
       parameters:
@@ -1769,7 +2120,7 @@ paths:
           description: ""
       summary: Subscription List
       tags:
-      - Merchant-Subscription
+      - Subscription
     post:
       requestBody:
         content:
@@ -1786,7 +2137,7 @@ paths:
           description: ""
       summary: Subscription List
       tags:
-      - Merchant-Subscription
+      - Subscription
   /merchant/subscription/new_admin_note:
     post:
       requestBody:
@@ -1804,7 +2155,7 @@ paths:
           description: ""
       summary: Merchant New Subscription Note
       tags:
-      - Merchant-Subscription-Note
+      - Subscription-Note
   /merchant/subscription/pending_update_list:
     get:
       parameters:
@@ -1872,7 +2223,7 @@ paths:
           description: ""
       summary: Merchant SubscriptionPendingUpdate List
       tags:
-      - Merchant-SubscriptionPendingUpdate
+      - SubscriptionPendingUpdate
     post:
       requestBody:
         content:
@@ -1889,7 +2240,7 @@ paths:
           description: ""
       summary: Merchant SubscriptionPendingUpdate List
       tags:
-      - Merchant-SubscriptionPendingUpdate
+      - SubscriptionPendingUpdate
   /merchant/subscription/resume:
     post:
       deprecated: true
@@ -1908,7 +2259,7 @@ paths:
           description: ""
       summary: Merchant Edit Subscription-Resume
       tags:
-      - Merchant-Subscription
+      - Subscription
   /merchant/subscription/suspend:
     post:
       deprecated: true
@@ -1927,7 +2278,7 @@ paths:
           description: ""
       summary: Merchant Edit Subscription-Stop
       tags:
-      - Merchant-Subscription
+      - Subscription
   /merchant/subscription/timeline_list:
     get:
       parameters:
@@ -1995,7 +2346,7 @@ paths:
           description: ""
       summary: Merchant Subscription TimeLine List
       tags:
-      - Merchant-Subscription-Timeline
+      - Subscription-Timeline
     post:
       requestBody:
         content:
@@ -2012,7 +2363,7 @@ paths:
           description: ""
       summary: Merchant Subscription TimeLine List
       tags:
-      - Merchant-Subscription-Timeline
+      - Subscription-Timeline
   /merchant/subscription/update_preview:
     post:
       requestBody:
@@ -2030,7 +2381,7 @@ paths:
           description: ""
       summary: Merchant Update Subscription Preview
       tags:
-      - Merchant-Subscription
+      - Subscription
   /merchant/subscription/update_submit:
     post:
       requestBody:
@@ -2048,7 +2399,7 @@ paths:
           description: ""
       summary: Merchant Update Subscription Submit
       tags:
-      - Merchant-Subscription
+      - Subscription
   /merchant/subscription/user_subscription_detail:
     get:
       parameters:
@@ -2072,7 +2423,7 @@ paths:
           description: ""
       summary: Subscription Detail
       tags:
-      - Merchant-Subscription
+      - Subscription
     post:
       requestBody:
         content:
@@ -2089,14 +2440,14 @@ paths:
           description: ""
       summary: Subscription Detail
       tags:
-      - Merchant-Subscription
+      - Subscription
   /merchant/update:
     post:
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/unibee.api.merchant.info.UpdateReq'
+              $ref: '#/components/schemas/unibee.api.merchant.profile.UpdateReq'
         required: true
       responses:
         "200":
@@ -2107,7 +2458,7 @@ paths:
           description: ""
       summary: Update Merchant Info
       tags:
-      - Merchant-Info
+      - Profile
   /merchant/user/frozen_user:
     post:
       requestBody:
@@ -2125,7 +2476,7 @@ paths:
           description: ""
       summary: Merchant Frozen User
       tags:
-      - Merchant-User
+      - User
   /merchant/user/get:
     get:
       parameters:
@@ -2149,7 +2500,7 @@ paths:
           description: ""
       summary: Get User Profile
       tags:
-      - Merchant-User
+      - User
   /merchant/user/list:
     get:
       parameters:
@@ -2278,7 +2629,7 @@ paths:
           description: ""
       summary: User List
       tags:
-      - Merchant-User
+      - User
     post:
       requestBody:
         content:
@@ -2295,7 +2646,7 @@ paths:
           description: ""
       summary: User List
       tags:
-      - Merchant-User
+      - User
   /merchant/user/release_user:
     post:
       requestBody:
@@ -2313,7 +2664,7 @@ paths:
           description: ""
       summary: Merchant Release User
       tags:
-      - Merchant-User
+      - User
   /merchant/user/search:
     get:
       parameters:
@@ -2337,7 +2688,7 @@ paths:
           description: ""
       summary: User Search
       tags:
-      - Merchant-User
+      - User
     post:
       requestBody:
         content:
@@ -2354,7 +2705,7 @@ paths:
           description: ""
       summary: User Search
       tags:
-      - Merchant-User
+      - User
   /merchant/user/update:
     post:
       requestBody:
@@ -2372,7 +2723,7 @@ paths:
           description: ""
       summary: Update User Profile
       tags:
-      - Merchant-User
+      - User
   /merchant/vat/country_list:
     get:
       parameters:
@@ -2396,7 +2747,7 @@ paths:
           description: ""
       summary: Vat Country List
       tags:
-      - Merchant-Vat
+      - Vat
     post:
       requestBody:
         content:
@@ -2413,7 +2764,7 @@ paths:
           description: ""
       summary: Vat Country List
       tags:
-      - Merchant-Vat
+      - Vat
   /merchant/vat/setup_gateway:
     post:
       requestBody:
@@ -2431,7 +2782,7 @@ paths:
           description: ""
       summary: Vat Gateway Setup
       tags:
-      - Merchant-Vat
+      - Vat
   /merchant/webhook/delete_endpoint:
     post:
       requestBody:
@@ -2449,7 +2800,7 @@ paths:
           description: ""
       summary: Merchant Delete Webhook Endpoint
       tags:
-      - Merchant-Webhook
+      - Webhook
   /merchant/webhook/endpoint_list:
     get:
       responses:
@@ -2461,7 +2812,7 @@ paths:
           description: ""
       summary: Merchant Webhook Endpoint list
       tags:
-      - Merchant-Webhook
+      - Webhook
   /merchant/webhook/endpoint_log_list:
     get:
       parameters:
@@ -2507,7 +2858,7 @@ paths:
           description: ""
       summary: Merchant Webhook Endpoint Log list
       tags:
-      - Merchant-Webhook
+      - Webhook
   /merchant/webhook/event_list:
     get:
       responses:
@@ -2519,7 +2870,7 @@ paths:
           description: ""
       summary: Webhook Event list
       tags:
-      - Merchant-Webhook
+      - Webhook
   /merchant/webhook/new_endpoint:
     post:
       requestBody:
@@ -2537,7 +2888,7 @@ paths:
           description: ""
       summary: Merchant New Webhook Endpoint
       tags:
-      - Merchant-Webhook
+      - Webhook
   /merchant/webhook/update_endpoint:
     post:
       requestBody:
@@ -2555,7 +2906,7 @@ paths:
           description: ""
       summary: Merchant Update Webhook Endpoint
       tags:
-      - Merchant-Webhook
+      - Webhook
 components:
   schemas:
     github.com.gogf.gf.v2.encoding.gjson.Json:
@@ -2965,57 +3316,6 @@ components:
       type: object
     unibee.api.merchant.gateway.SetupWebhookRes:
       properties: {}
-      type: object
-    unibee.api.merchant.info.GetReq:
-      properties: {}
-      type: object
-    unibee.api.merchant.info.GetRes:
-      properties:
-        merchant:
-          $ref: '#/components/schemas/unibee.internal.model.entity.oversea_pay.Merchant'
-      type: object
-    unibee.api.merchant.info.UpdateReq:
-      properties:
-        address:
-          description: address
-          format: string
-          properties: {}
-          type: string
-        companyLogo:
-          description: company_logo
-          format: string
-          properties: {}
-          type: string
-        companyName:
-          description: company_name
-          format: string
-          properties: {}
-          type: string
-        email:
-          description: email
-          format: string
-          properties: {}
-          type: string
-        host:
-          description: User Portal Host
-          format: string
-          properties: {}
-          type: string
-        phone:
-          description: phone
-          format: string
-          properties: {}
-          type: string
-        timeZone:
-          description: User TimeZone
-          format: string
-          properties: {}
-          type: string
-      type: object
-    unibee.api.merchant.info.UpdateRes:
-      properties:
-        merchant:
-          $ref: '#/components/schemas/unibee.internal.model.entity.oversea_pay.Merchant'
       type: object
     unibee.api.merchant.invoice.CancelReq:
       properties:
@@ -3629,6 +3929,374 @@ components:
           properties: {}
           type: string
       type: object
+    unibee.api.merchant.payment.CancelReq:
+      properties:
+        externalCancelId:
+          description: ExternalCancelId
+          format: string
+          properties: {}
+          type: string
+        paymentId:
+          description: PaymentId
+          format: string
+          properties: {}
+          type: string
+      required:
+      - externalCancelId
+      - paymentId
+      type: object
+    unibee.api.merchant.payment.CancelRes:
+      properties: {}
+      type: object
+    unibee.api.merchant.payment.CaptureReq:
+      properties:
+        captureAmount:
+          description: "CaptureAmount, Cent"
+          format: int64
+          properties: {}
+          type: integer
+        currency:
+          description: Currency
+          format: string
+          properties: {}
+          type: string
+        externalCaptureId:
+          description: ExternalCaptureId
+          format: string
+          properties: {}
+          type: string
+        paymentId:
+          description: PaymentId
+          format: string
+          properties: {}
+          type: string
+      required:
+      - captureAmount
+      - currency
+      - externalCaptureId
+      - paymentId
+      type: object
+    unibee.api.merchant.payment.CaptureRes:
+      properties: {}
+      type: object
+    unibee.api.merchant.payment.DetailReq:
+      properties:
+        paymentId:
+          description: PaymentId
+          format: string
+          properties: {}
+          type: string
+      required:
+      - paymentId
+      type: object
+    unibee.api.merchant.payment.DetailRes:
+      properties:
+        paymentDetail:
+          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PaymentDetailRo'
+      type: object
+    unibee.api.merchant.payment.Item:
+      properties:
+        description:
+          description: Description
+          format: string
+          properties: {}
+          type: string
+        imageUrl:
+          description: ImageUrl
+          format: string
+          properties: {}
+          type: string
+        productUrl:
+          description: ProductUrl
+          format: string
+          properties: {}
+          type: string
+        quantity:
+          description: Quantity
+          format: int64
+          properties: {}
+          type: integer
+        taxScale:
+          description: TaxScale
+          format: int64
+          properties: {}
+          type: integer
+        unitAmountExcludingTax:
+          description: UnitAmountExcludingTax
+          format: int64
+          properties: {}
+          type: integer
+      required:
+      - quantity
+      - taxScale
+      - unitAmountExcludingTax
+      type: object
+    unibee.api.merchant.payment.ListReq:
+      properties:
+        count:
+          description: Count Of Page
+          format: int
+          properties: {}
+          type: integer
+        countryCode:
+          description: CountryCode
+          format: string
+          properties: {}
+          type: string
+        currency:
+          description: Currency
+          format: string
+          properties: {}
+          type: string
+        email:
+          description: Email
+          format: string
+          properties: {}
+          type: string
+        gatewayId:
+          description: GatewayId
+          format: int64
+          properties: {}
+          type: integer
+        page:
+          description: "Page, Start With 0"
+          format: int
+          properties: {}
+          type: integer
+        sortField:
+          description: Sort Field，user_id|create_time|status
+          format: string
+          properties: {}
+          type: string
+        sortType:
+          description: Sort Type，asc|desc
+          format: string
+          properties: {}
+          type: string
+        status:
+          description: "Status, 10-Created|20-Success|30-Failed|40-Cancelled"
+          format: int
+          properties: {}
+          type: integer
+        userId:
+          description: 'UserId '
+          format: int64
+          properties: {}
+          type: integer
+      type: object
+    unibee.api.merchant.payment.ListRes:
+      properties:
+        paymentDetails:
+          description: PaymentDetails
+          format: "[]*ro.PaymentDetailRo"
+          items:
+            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PaymentDetailRo'
+          properties: {}
+          type: array
+      type: object
+    unibee.api.merchant.payment.NewPaymentRefundReq:
+      properties:
+        currency:
+          description: Currency
+          format: string
+          properties: {}
+          type: string
+        externalRefundId:
+          description: ExternalRefundId
+          format: string
+          properties: {}
+          type: string
+        paymentId:
+          description: PaymentId
+          format: string
+          properties: {}
+          type: string
+        reason:
+          description: Reason
+          format: string
+          properties: {}
+          type: string
+        refundAmount:
+          description: "RefundAmount, Cent"
+          format: int64
+          properties: {}
+          type: integer
+      required:
+      - currency
+      - externalRefundId
+      - paymentId
+      - refundAmount
+      type: object
+    unibee.api.merchant.payment.NewPaymentRefundRes:
+      properties:
+        externalRefundId:
+          description: ExternalRefundId
+          format: string
+          properties: {}
+          type: string
+        paymentId:
+          description: PaymentId
+          format: string
+          properties: {}
+          type: string
+        refundId:
+          description: RefundId
+          format: string
+          properties: {}
+          type: string
+        status:
+          description: "Status,10-create|20-success|30-Failed|40-Reverse"
+          format: int
+          properties: {}
+          type: integer
+      type: object
+    unibee.api.merchant.payment.NewReq:
+      properties:
+        countryCode:
+          description: CountryCode
+          format: string
+          properties: {}
+          type: string
+        currency:
+          description: Currency
+          format: string
+          properties: {}
+          type: string
+        email:
+          description: Email
+          format: string
+          properties: {}
+          type: string
+        externalPaymentId:
+          description: ExternalPaymentId should unique for payment
+          format: string
+          properties: {}
+          type: string
+        externalUserId:
+          description: "ExternalUserId, should unique for user"
+          format: string
+          properties: {}
+          type: string
+        gatewayId:
+          description: GatewayId
+          format: int64
+          properties: {}
+          type: integer
+        lineItems:
+          description: Items
+          format: "[]*payment.Item"
+          items:
+            $ref: '#/components/schemas/unibee.api.merchant.payment.Item'
+          properties: {}
+          type: array
+        redirectUrl:
+          description: Redirect Url
+          format: string
+          properties: {}
+          type: string
+        reference:
+          additionalProperties:
+            format: string
+            properties: {}
+            type: string
+          description: Metadata，Map
+          format: "map[string]string"
+          properties: {}
+          type: object
+        totalAmount:
+          description: "Total PaymentAmount, Cent"
+          format: int64
+          properties: {}
+          type: integer
+      required:
+      - countryCode
+      - currency
+      - email
+      - externalPaymentId
+      - externalUserId
+      - gatewayId
+      - redirectUrl
+      - totalAmount
+      type: object
+    unibee.api.merchant.payment.NewRes:
+      properties:
+        action:
+          properties: {}
+          type: object
+        externalPaymentId:
+          description: ExternalPaymentId
+          format: string
+          properties: {}
+          type: string
+        paymentId:
+          description: PaymentId
+          format: string
+          properties: {}
+          type: string
+        status:
+          description: "Status, 10-Created|20-Success|30-Failed|40-Cancelled"
+          format: int
+          properties: {}
+          type: integer
+      type: object
+    unibee.api.merchant.payment.RefundDetailReq:
+      properties:
+        refundId:
+          description: RefundId
+          format: string
+          properties: {}
+          type: string
+      type: object
+    unibee.api.merchant.payment.RefundDetailRes:
+      properties:
+        refundDetail:
+          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.RefundDetailRo'
+      type: object
+    unibee.api.merchant.payment.RefundListReq:
+      properties:
+        currency:
+          description: Currency
+          format: string
+          properties: {}
+          type: string
+        email:
+          description: Email
+          format: string
+          properties: {}
+          type: string
+        gatewayId:
+          description: GatewayId
+          format: int64
+          properties: {}
+          type: integer
+        paymentId:
+          description: PaymentId
+          format: string
+          properties: {}
+          type: string
+        status:
+          description: "Status,10-create|20-success|30-Failed|40-Reverse"
+          format: int
+          properties: {}
+          type: integer
+        userId:
+          description: UserId
+          format: int64
+          properties: {}
+          type: integer
+      required:
+      - paymentId
+      type: object
+    unibee.api.merchant.payment.RefundListRes:
+      properties:
+        refundDetails:
+          description: RefundDetails
+          format: "[]*ro.RefundDetailRo"
+          items:
+            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.RefundDetailRo'
+          properties: {}
+          type: array
+      type: object
     unibee.api.merchant.payment.TimeLineListReq:
       properties:
         count:
@@ -3654,7 +4322,7 @@ components:
           type: string
         userId:
           description: "Filter UserId, Default All"
-          format: int
+          format: int64
           properties: {}
           type: integer
       type: object
@@ -4018,6 +4686,57 @@ components:
       type: object
     unibee.api.merchant.plan.UnPublishRes:
       properties: {}
+      type: object
+    unibee.api.merchant.profile.GetReq:
+      properties: {}
+      type: object
+    unibee.api.merchant.profile.GetRes:
+      properties:
+        merchant:
+          $ref: '#/components/schemas/unibee.internal.model.entity.oversea_pay.Merchant'
+      type: object
+    unibee.api.merchant.profile.UpdateReq:
+      properties:
+        address:
+          description: address
+          format: string
+          properties: {}
+          type: string
+        companyLogo:
+          description: company_logo
+          format: string
+          properties: {}
+          type: string
+        companyName:
+          description: company_name
+          format: string
+          properties: {}
+          type: string
+        email:
+          description: email
+          format: string
+          properties: {}
+          type: string
+        host:
+          description: User Portal Host
+          format: string
+          properties: {}
+          type: string
+        phone:
+          description: phone
+          format: string
+          properties: {}
+          type: string
+        timeZone:
+          description: User TimeZone
+          format: string
+          properties: {}
+          type: string
+      type: object
+    unibee.api.merchant.profile.UpdateRes:
+      properties:
+        merchant:
+          $ref: '#/components/schemas/unibee.internal.model.entity.oversea_pay.Merchant'
       type: object
     unibee.api.merchant.search.PrecisionMatchObject:
       example:
@@ -6111,6 +6830,49 @@ components:
           properties: {}
           type: integer
       type: object
+    unibee.internal.logic.gateway.ro.PaymentDetailRo:
+      example:
+        payment:
+          authorizeReason: authorizeReason
+          billingReason: billingReason
+          link: link
+          paymentAmount: 2
+          merchantId: 9
+          countryCode: countryCode
+          paymentId: paymentId
+          currency: currency
+          externalPaymentId: externalPaymentId
+          returnUrl: returnUrl
+          gatewayPaymentId: gatewayPaymentId
+          refundAmount: 4
+          automatic: 1
+          authorizeStatus: 6
+          balanceAmount: 5
+          paidTime: 3
+          userId: 1
+          totalAmount: 1
+          cancelTime: 5
+          createTime: 2
+          failureReason: failureReason
+          invoiceId: invoiceId
+          subscriptionId: subscriptionId
+          gatewayId: 7
+          status: 7
+        user:
+          firstName: firstName
+          lastName: lastName
+          address: address
+          createTime: 6
+          externalUserId: externalUserId
+          merchantId: 6
+          id: 5
+          email: email
+      properties:
+        payment:
+          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PaymentSimplify'
+        user:
+          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.UserAccountSimplify'
+      type: object
     unibee.internal.logic.gateway.ro.PaymentMethod:
       properties:
         data:
@@ -6124,6 +6886,155 @@ components:
           format: string
           properties: {}
           type: string
+      type: object
+    unibee.internal.logic.gateway.ro.PaymentSimplify:
+      example:
+        authorizeReason: authorizeReason
+        billingReason: billingReason
+        link: link
+        paymentAmount: 2
+        merchantId: 9
+        countryCode: countryCode
+        paymentId: paymentId
+        currency: currency
+        externalPaymentId: externalPaymentId
+        returnUrl: returnUrl
+        gatewayPaymentId: gatewayPaymentId
+        refundAmount: 4
+        automatic: 1
+        authorizeStatus: 6
+        balanceAmount: 5
+        paidTime: 3
+        userId: 1
+        totalAmount: 1
+        cancelTime: 5
+        createTime: 2
+        failureReason: failureReason
+        invoiceId: invoiceId
+        subscriptionId: subscriptionId
+        gatewayId: 7
+        status: 7
+      properties:
+        authorizeReason:
+          format: string
+          properties: {}
+          type: string
+        authorizeStatus:
+          description: authorize status，0-waiting authorize，1-authorized，2-authorized_request
+          format: int
+          properties: {}
+          type: integer
+        automatic:
+          format: int
+          properties: {}
+          type: integer
+        balanceAmount:
+          description: balance_amount
+          format: int64
+          properties: {}
+          type: integer
+        billingReason:
+          format: string
+          properties: {}
+          type: string
+        cancelTime:
+          description: "cancel time, utc time"
+          format: int64
+          properties: {}
+          type: integer
+        countryCode:
+          description: country code
+          format: string
+          properties: {}
+          type: string
+        createTime:
+          description: "create time, utc time"
+          format: int64
+          properties: {}
+          type: integer
+        currency:
+          description: currency，“SGD” “MYR” “PHP” “IDR” “THB”
+          format: string
+          properties: {}
+          type: string
+        externalPaymentId:
+          description: external_payment_id
+          format: string
+          properties: {}
+          type: string
+        failureReason:
+          format: string
+          properties: {}
+          type: string
+        gatewayId:
+          description: gateway_id
+          format: int64
+          properties: {}
+          type: integer
+        gatewayPaymentId:
+          description: gateway_payment_id
+          format: string
+          properties: {}
+          type: string
+        invoiceId:
+          description: invoice id
+          format: string
+          properties: {}
+          type: string
+        link:
+          format: string
+          properties: {}
+          type: string
+        merchantId:
+          description: merchant id
+          format: int64
+          properties: {}
+          type: integer
+        paidTime:
+          description: "paid time, utc time"
+          format: int64
+          properties: {}
+          type: integer
+        paymentAmount:
+          description: payment_amount
+          format: int64
+          properties: {}
+          type: integer
+        paymentId:
+          description: payment id
+          format: string
+          properties: {}
+          type: string
+        refundAmount:
+          description: total refund amount
+          format: int64
+          properties: {}
+          type: integer
+        returnUrl:
+          description: return url
+          format: string
+          properties: {}
+          type: string
+        status:
+          description: "status  10-pending，20-success，30-failure, 40-cancel"
+          format: int
+          properties: {}
+          type: integer
+        subscriptionId:
+          description: subscription id
+          format: string
+          properties: {}
+          type: string
+        totalAmount:
+          description: total amount
+          format: int64
+          properties: {}
+          type: integer
+        userId:
+          description: user_id
+          format: int64
+          properties: {}
+          type: integer
       type: object
     unibee.internal.logic.gateway.ro.PlanAddonVo:
       example:
@@ -6398,6 +7309,168 @@ components:
         type:
           description: type，1-main plan，2-addon plan
           format: int
+          properties: {}
+          type: integer
+      type: object
+    unibee.internal.logic.gateway.ro.RefundDetailRo:
+      example:
+        payment:
+          authorizeReason: authorizeReason
+          billingReason: billingReason
+          link: link
+          paymentAmount: 2
+          merchantId: 9
+          countryCode: countryCode
+          paymentId: paymentId
+          currency: currency
+          externalPaymentId: externalPaymentId
+          returnUrl: returnUrl
+          gatewayPaymentId: gatewayPaymentId
+          refundAmount: 4
+          automatic: 1
+          authorizeStatus: 6
+          balanceAmount: 5
+          paidTime: 3
+          userId: 1
+          totalAmount: 1
+          cancelTime: 5
+          createTime: 2
+          failureReason: failureReason
+          invoiceId: invoiceId
+          subscriptionId: subscriptionId
+          gatewayId: 7
+          status: 7
+        user:
+          firstName: firstName
+          lastName: lastName
+          address: address
+          createTime: 6
+          externalUserId: externalUserId
+          merchantId: 6
+          id: 5
+          email: email
+        refund:
+          refundTime: 2
+          externalRefundId: externalRefundId
+          userId: 9
+          createTime: 6
+          merchantId: 5
+          countryCode: countryCode
+          paymentId: paymentId
+          currency: currency
+          returnUrl: returnUrl
+          subscriptionId: subscriptionId
+          gatewayRefundId: gatewayRefundId
+          refundComment: refundComment
+          gatewayId: 1
+          refundId: refundId
+          refundAmount: 5
+          status: 7
+      properties:
+        payment:
+          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PaymentSimplify'
+        refund:
+          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.RefundSimplify'
+        user:
+          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.UserAccountSimplify'
+      type: object
+    unibee.internal.logic.gateway.ro.RefundSimplify:
+      example:
+        refundTime: 2
+        externalRefundId: externalRefundId
+        userId: 9
+        createTime: 6
+        merchantId: 5
+        countryCode: countryCode
+        paymentId: paymentId
+        currency: currency
+        returnUrl: returnUrl
+        subscriptionId: subscriptionId
+        gatewayRefundId: gatewayRefundId
+        refundComment: refundComment
+        gatewayId: 1
+        refundId: refundId
+        refundAmount: 5
+        status: 7
+      properties:
+        countryCode:
+          description: country code
+          format: string
+          properties: {}
+          type: string
+        createTime:
+          description: create utc time
+          format: int64
+          properties: {}
+          type: integer
+        currency:
+          description: currency
+          format: string
+          properties: {}
+          type: string
+        externalRefundId:
+          description: external_refund_id
+          format: string
+          properties: {}
+          type: string
+        gatewayId:
+          description: gateway_id
+          format: int64
+          properties: {}
+          type: integer
+        gatewayRefundId:
+          description: gateway refund id
+          format: string
+          properties: {}
+          type: string
+        merchantId:
+          description: merchant id
+          format: int64
+          properties: {}
+          type: integer
+        paymentId:
+          description: relative payment id
+          format: string
+          properties: {}
+          type: string
+        refundAmount:
+          description: "refund amount, cent"
+          format: int64
+          properties: {}
+          type: integer
+        refundComment:
+          description: refund comment
+          format: string
+          properties: {}
+          type: string
+        refundId:
+          description: refund id (system generate)
+          format: string
+          properties: {}
+          type: string
+        refundTime:
+          description: refund success time
+          format: int64
+          properties: {}
+          type: integer
+        returnUrl:
+          description: return url after refund success
+          format: string
+          properties: {}
+          type: string
+        status:
+          description: "status。10-pending，20-success，30-failure, 40-cancel"
+          format: int
+          properties: {}
+          type: integer
+        subscriptionId:
+          description: subscription id
+          format: string
+          properties: {}
+          type: string
+        userId:
+          description: user_id
+          format: int64
           properties: {}
           type: integer
       type: object
@@ -12992,7 +14065,832 @@ components:
           properties: {}
           type: string
       type: object
-    _merchant_payment_payment_timeline_list_get_200_response_data:
+    _merchant_payment_capture_post_request:
+      properties:
+        externalCaptureId:
+          description: ExternalCaptureId
+          format: string
+          properties: {}
+          type: string
+        paymentId:
+          description: PaymentId
+          format: string
+          properties: {}
+          type: string
+      required:
+      - externalCaptureId
+      - paymentId
+      type: object
+    _merchant_payment_detail_get_200_response_data:
+      example:
+        paymentDetail:
+          payment:
+            authorizeReason: authorizeReason
+            billingReason: billingReason
+            link: link
+            paymentAmount: 2
+            merchantId: 9
+            countryCode: countryCode
+            paymentId: paymentId
+            currency: currency
+            externalPaymentId: externalPaymentId
+            returnUrl: returnUrl
+            gatewayPaymentId: gatewayPaymentId
+            refundAmount: 4
+            automatic: 1
+            authorizeStatus: 6
+            balanceAmount: 5
+            paidTime: 3
+            userId: 1
+            totalAmount: 1
+            cancelTime: 5
+            createTime: 2
+            failureReason: failureReason
+            invoiceId: invoiceId
+            subscriptionId: subscriptionId
+            gatewayId: 7
+            status: 7
+          user:
+            firstName: firstName
+            lastName: lastName
+            address: address
+            createTime: 6
+            externalUserId: externalUserId
+            merchantId: 6
+            id: 5
+            email: email
+      properties:
+        paymentDetail:
+          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PaymentDetailRo'
+      type: object
+    _merchant_payment_detail_get_200_response:
+      example:
+        redirect: redirect
+        code: 0
+        data:
+          paymentDetail:
+            payment:
+              authorizeReason: authorizeReason
+              billingReason: billingReason
+              link: link
+              paymentAmount: 2
+              merchantId: 9
+              countryCode: countryCode
+              paymentId: paymentId
+              currency: currency
+              externalPaymentId: externalPaymentId
+              returnUrl: returnUrl
+              gatewayPaymentId: gatewayPaymentId
+              refundAmount: 4
+              automatic: 1
+              authorizeStatus: 6
+              balanceAmount: 5
+              paidTime: 3
+              userId: 1
+              totalAmount: 1
+              cancelTime: 5
+              createTime: 2
+              failureReason: failureReason
+              invoiceId: invoiceId
+              subscriptionId: subscriptionId
+              gatewayId: 7
+              status: 7
+            user:
+              firstName: firstName
+              lastName: lastName
+              address: address
+              createTime: 6
+              externalUserId: externalUserId
+              merchantId: 6
+              id: 5
+              email: email
+        requestId: requestId
+        message: message
+      properties:
+        code:
+          format: int
+          properties: {}
+          type: integer
+        data:
+          $ref: '#/components/schemas/_merchant_payment_detail_get_200_response_data'
+        message:
+          format: string
+          properties: {}
+          type: string
+        redirect:
+          format: string
+          properties: {}
+          type: string
+        requestId:
+          format: string
+          properties: {}
+          type: string
+      type: object
+    _merchant_payment_list_get_200_response_data:
+      example:
+        paymentDetails:
+        - payment:
+            authorizeReason: authorizeReason
+            billingReason: billingReason
+            link: link
+            paymentAmount: 2
+            merchantId: 9
+            countryCode: countryCode
+            paymentId: paymentId
+            currency: currency
+            externalPaymentId: externalPaymentId
+            returnUrl: returnUrl
+            gatewayPaymentId: gatewayPaymentId
+            refundAmount: 4
+            automatic: 1
+            authorizeStatus: 6
+            balanceAmount: 5
+            paidTime: 3
+            userId: 1
+            totalAmount: 1
+            cancelTime: 5
+            createTime: 2
+            failureReason: failureReason
+            invoiceId: invoiceId
+            subscriptionId: subscriptionId
+            gatewayId: 7
+            status: 7
+          user:
+            firstName: firstName
+            lastName: lastName
+            address: address
+            createTime: 6
+            externalUserId: externalUserId
+            merchantId: 6
+            id: 5
+            email: email
+        - payment:
+            authorizeReason: authorizeReason
+            billingReason: billingReason
+            link: link
+            paymentAmount: 2
+            merchantId: 9
+            countryCode: countryCode
+            paymentId: paymentId
+            currency: currency
+            externalPaymentId: externalPaymentId
+            returnUrl: returnUrl
+            gatewayPaymentId: gatewayPaymentId
+            refundAmount: 4
+            automatic: 1
+            authorizeStatus: 6
+            balanceAmount: 5
+            paidTime: 3
+            userId: 1
+            totalAmount: 1
+            cancelTime: 5
+            createTime: 2
+            failureReason: failureReason
+            invoiceId: invoiceId
+            subscriptionId: subscriptionId
+            gatewayId: 7
+            status: 7
+          user:
+            firstName: firstName
+            lastName: lastName
+            address: address
+            createTime: 6
+            externalUserId: externalUserId
+            merchantId: 6
+            id: 5
+            email: email
+      properties:
+        paymentDetails:
+          description: PaymentDetails
+          format: "[]*ro.PaymentDetailRo"
+          items:
+            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PaymentDetailRo'
+          properties: {}
+          type: array
+      type: object
+    _merchant_payment_list_get_200_response:
+      example:
+        redirect: redirect
+        code: 0
+        data:
+          paymentDetails:
+          - payment:
+              authorizeReason: authorizeReason
+              billingReason: billingReason
+              link: link
+              paymentAmount: 2
+              merchantId: 9
+              countryCode: countryCode
+              paymentId: paymentId
+              currency: currency
+              externalPaymentId: externalPaymentId
+              returnUrl: returnUrl
+              gatewayPaymentId: gatewayPaymentId
+              refundAmount: 4
+              automatic: 1
+              authorizeStatus: 6
+              balanceAmount: 5
+              paidTime: 3
+              userId: 1
+              totalAmount: 1
+              cancelTime: 5
+              createTime: 2
+              failureReason: failureReason
+              invoiceId: invoiceId
+              subscriptionId: subscriptionId
+              gatewayId: 7
+              status: 7
+            user:
+              firstName: firstName
+              lastName: lastName
+              address: address
+              createTime: 6
+              externalUserId: externalUserId
+              merchantId: 6
+              id: 5
+              email: email
+          - payment:
+              authorizeReason: authorizeReason
+              billingReason: billingReason
+              link: link
+              paymentAmount: 2
+              merchantId: 9
+              countryCode: countryCode
+              paymentId: paymentId
+              currency: currency
+              externalPaymentId: externalPaymentId
+              returnUrl: returnUrl
+              gatewayPaymentId: gatewayPaymentId
+              refundAmount: 4
+              automatic: 1
+              authorizeStatus: 6
+              balanceAmount: 5
+              paidTime: 3
+              userId: 1
+              totalAmount: 1
+              cancelTime: 5
+              createTime: 2
+              failureReason: failureReason
+              invoiceId: invoiceId
+              subscriptionId: subscriptionId
+              gatewayId: 7
+              status: 7
+            user:
+              firstName: firstName
+              lastName: lastName
+              address: address
+              createTime: 6
+              externalUserId: externalUserId
+              merchantId: 6
+              id: 5
+              email: email
+        requestId: requestId
+        message: message
+      properties:
+        code:
+          format: int
+          properties: {}
+          type: integer
+        data:
+          $ref: '#/components/schemas/_merchant_payment_list_get_200_response_data'
+        message:
+          format: string
+          properties: {}
+          type: string
+        redirect:
+          format: string
+          properties: {}
+          type: string
+        requestId:
+          format: string
+          properties: {}
+          type: string
+      type: object
+    _merchant_payment_new_post_200_response_data:
+      example:
+        paymentId: paymentId
+        action: "{}"
+        externalPaymentId: externalPaymentId
+        status: 6
+      properties:
+        action:
+          properties: {}
+          type: object
+        externalPaymentId:
+          description: ExternalPaymentId
+          format: string
+          properties: {}
+          type: string
+        paymentId:
+          description: PaymentId
+          format: string
+          properties: {}
+          type: string
+        status:
+          description: "Status, 10-Created|20-Success|30-Failed|40-Cancelled"
+          format: int
+          properties: {}
+          type: integer
+      type: object
+    _merchant_payment_new_post_200_response:
+      example:
+        redirect: redirect
+        code: 0
+        data:
+          paymentId: paymentId
+          action: "{}"
+          externalPaymentId: externalPaymentId
+          status: 6
+        requestId: requestId
+        message: message
+      properties:
+        code:
+          format: int
+          properties: {}
+          type: integer
+        data:
+          $ref: '#/components/schemas/_merchant_payment_new_post_200_response_data'
+        message:
+          format: string
+          properties: {}
+          type: string
+        redirect:
+          format: string
+          properties: {}
+          type: string
+        requestId:
+          format: string
+          properties: {}
+          type: string
+      type: object
+    _merchant_payment_refund_detail_get_200_response_data:
+      example:
+        refundDetail:
+          payment:
+            authorizeReason: authorizeReason
+            billingReason: billingReason
+            link: link
+            paymentAmount: 2
+            merchantId: 9
+            countryCode: countryCode
+            paymentId: paymentId
+            currency: currency
+            externalPaymentId: externalPaymentId
+            returnUrl: returnUrl
+            gatewayPaymentId: gatewayPaymentId
+            refundAmount: 4
+            automatic: 1
+            authorizeStatus: 6
+            balanceAmount: 5
+            paidTime: 3
+            userId: 1
+            totalAmount: 1
+            cancelTime: 5
+            createTime: 2
+            failureReason: failureReason
+            invoiceId: invoiceId
+            subscriptionId: subscriptionId
+            gatewayId: 7
+            status: 7
+          user:
+            firstName: firstName
+            lastName: lastName
+            address: address
+            createTime: 6
+            externalUserId: externalUserId
+            merchantId: 6
+            id: 5
+            email: email
+          refund:
+            refundTime: 2
+            externalRefundId: externalRefundId
+            userId: 9
+            createTime: 6
+            merchantId: 5
+            countryCode: countryCode
+            paymentId: paymentId
+            currency: currency
+            returnUrl: returnUrl
+            subscriptionId: subscriptionId
+            gatewayRefundId: gatewayRefundId
+            refundComment: refundComment
+            gatewayId: 1
+            refundId: refundId
+            refundAmount: 5
+            status: 7
+      properties:
+        refundDetail:
+          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.RefundDetailRo'
+      type: object
+    _merchant_payment_refund_detail_get_200_response:
+      example:
+        redirect: redirect
+        code: 0
+        data:
+          refundDetail:
+            payment:
+              authorizeReason: authorizeReason
+              billingReason: billingReason
+              link: link
+              paymentAmount: 2
+              merchantId: 9
+              countryCode: countryCode
+              paymentId: paymentId
+              currency: currency
+              externalPaymentId: externalPaymentId
+              returnUrl: returnUrl
+              gatewayPaymentId: gatewayPaymentId
+              refundAmount: 4
+              automatic: 1
+              authorizeStatus: 6
+              balanceAmount: 5
+              paidTime: 3
+              userId: 1
+              totalAmount: 1
+              cancelTime: 5
+              createTime: 2
+              failureReason: failureReason
+              invoiceId: invoiceId
+              subscriptionId: subscriptionId
+              gatewayId: 7
+              status: 7
+            user:
+              firstName: firstName
+              lastName: lastName
+              address: address
+              createTime: 6
+              externalUserId: externalUserId
+              merchantId: 6
+              id: 5
+              email: email
+            refund:
+              refundTime: 2
+              externalRefundId: externalRefundId
+              userId: 9
+              createTime: 6
+              merchantId: 5
+              countryCode: countryCode
+              paymentId: paymentId
+              currency: currency
+              returnUrl: returnUrl
+              subscriptionId: subscriptionId
+              gatewayRefundId: gatewayRefundId
+              refundComment: refundComment
+              gatewayId: 1
+              refundId: refundId
+              refundAmount: 5
+              status: 7
+        requestId: requestId
+        message: message
+      properties:
+        code:
+          format: int
+          properties: {}
+          type: integer
+        data:
+          $ref: '#/components/schemas/_merchant_payment_refund_detail_get_200_response_data'
+        message:
+          format: string
+          properties: {}
+          type: string
+        redirect:
+          format: string
+          properties: {}
+          type: string
+        requestId:
+          format: string
+          properties: {}
+          type: string
+      type: object
+    _merchant_payment_refund_list_get_200_response_data:
+      example:
+        refundDetails:
+        - payment:
+            authorizeReason: authorizeReason
+            billingReason: billingReason
+            link: link
+            paymentAmount: 2
+            merchantId: 9
+            countryCode: countryCode
+            paymentId: paymentId
+            currency: currency
+            externalPaymentId: externalPaymentId
+            returnUrl: returnUrl
+            gatewayPaymentId: gatewayPaymentId
+            refundAmount: 4
+            automatic: 1
+            authorizeStatus: 6
+            balanceAmount: 5
+            paidTime: 3
+            userId: 1
+            totalAmount: 1
+            cancelTime: 5
+            createTime: 2
+            failureReason: failureReason
+            invoiceId: invoiceId
+            subscriptionId: subscriptionId
+            gatewayId: 7
+            status: 7
+          user:
+            firstName: firstName
+            lastName: lastName
+            address: address
+            createTime: 6
+            externalUserId: externalUserId
+            merchantId: 6
+            id: 5
+            email: email
+          refund:
+            refundTime: 2
+            externalRefundId: externalRefundId
+            userId: 9
+            createTime: 6
+            merchantId: 5
+            countryCode: countryCode
+            paymentId: paymentId
+            currency: currency
+            returnUrl: returnUrl
+            subscriptionId: subscriptionId
+            gatewayRefundId: gatewayRefundId
+            refundComment: refundComment
+            gatewayId: 1
+            refundId: refundId
+            refundAmount: 5
+            status: 7
+        - payment:
+            authorizeReason: authorizeReason
+            billingReason: billingReason
+            link: link
+            paymentAmount: 2
+            merchantId: 9
+            countryCode: countryCode
+            paymentId: paymentId
+            currency: currency
+            externalPaymentId: externalPaymentId
+            returnUrl: returnUrl
+            gatewayPaymentId: gatewayPaymentId
+            refundAmount: 4
+            automatic: 1
+            authorizeStatus: 6
+            balanceAmount: 5
+            paidTime: 3
+            userId: 1
+            totalAmount: 1
+            cancelTime: 5
+            createTime: 2
+            failureReason: failureReason
+            invoiceId: invoiceId
+            subscriptionId: subscriptionId
+            gatewayId: 7
+            status: 7
+          user:
+            firstName: firstName
+            lastName: lastName
+            address: address
+            createTime: 6
+            externalUserId: externalUserId
+            merchantId: 6
+            id: 5
+            email: email
+          refund:
+            refundTime: 2
+            externalRefundId: externalRefundId
+            userId: 9
+            createTime: 6
+            merchantId: 5
+            countryCode: countryCode
+            paymentId: paymentId
+            currency: currency
+            returnUrl: returnUrl
+            subscriptionId: subscriptionId
+            gatewayRefundId: gatewayRefundId
+            refundComment: refundComment
+            gatewayId: 1
+            refundId: refundId
+            refundAmount: 5
+            status: 7
+      properties:
+        refundDetails:
+          description: RefundDetails
+          format: "[]*ro.RefundDetailRo"
+          items:
+            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.RefundDetailRo'
+          properties: {}
+          type: array
+      type: object
+    _merchant_payment_refund_list_get_200_response:
+      example:
+        redirect: redirect
+        code: 0
+        data:
+          refundDetails:
+          - payment:
+              authorizeReason: authorizeReason
+              billingReason: billingReason
+              link: link
+              paymentAmount: 2
+              merchantId: 9
+              countryCode: countryCode
+              paymentId: paymentId
+              currency: currency
+              externalPaymentId: externalPaymentId
+              returnUrl: returnUrl
+              gatewayPaymentId: gatewayPaymentId
+              refundAmount: 4
+              automatic: 1
+              authorizeStatus: 6
+              balanceAmount: 5
+              paidTime: 3
+              userId: 1
+              totalAmount: 1
+              cancelTime: 5
+              createTime: 2
+              failureReason: failureReason
+              invoiceId: invoiceId
+              subscriptionId: subscriptionId
+              gatewayId: 7
+              status: 7
+            user:
+              firstName: firstName
+              lastName: lastName
+              address: address
+              createTime: 6
+              externalUserId: externalUserId
+              merchantId: 6
+              id: 5
+              email: email
+            refund:
+              refundTime: 2
+              externalRefundId: externalRefundId
+              userId: 9
+              createTime: 6
+              merchantId: 5
+              countryCode: countryCode
+              paymentId: paymentId
+              currency: currency
+              returnUrl: returnUrl
+              subscriptionId: subscriptionId
+              gatewayRefundId: gatewayRefundId
+              refundComment: refundComment
+              gatewayId: 1
+              refundId: refundId
+              refundAmount: 5
+              status: 7
+          - payment:
+              authorizeReason: authorizeReason
+              billingReason: billingReason
+              link: link
+              paymentAmount: 2
+              merchantId: 9
+              countryCode: countryCode
+              paymentId: paymentId
+              currency: currency
+              externalPaymentId: externalPaymentId
+              returnUrl: returnUrl
+              gatewayPaymentId: gatewayPaymentId
+              refundAmount: 4
+              automatic: 1
+              authorizeStatus: 6
+              balanceAmount: 5
+              paidTime: 3
+              userId: 1
+              totalAmount: 1
+              cancelTime: 5
+              createTime: 2
+              failureReason: failureReason
+              invoiceId: invoiceId
+              subscriptionId: subscriptionId
+              gatewayId: 7
+              status: 7
+            user:
+              firstName: firstName
+              lastName: lastName
+              address: address
+              createTime: 6
+              externalUserId: externalUserId
+              merchantId: 6
+              id: 5
+              email: email
+            refund:
+              refundTime: 2
+              externalRefundId: externalRefundId
+              userId: 9
+              createTime: 6
+              merchantId: 5
+              countryCode: countryCode
+              paymentId: paymentId
+              currency: currency
+              returnUrl: returnUrl
+              subscriptionId: subscriptionId
+              gatewayRefundId: gatewayRefundId
+              refundComment: refundComment
+              gatewayId: 1
+              refundId: refundId
+              refundAmount: 5
+              status: 7
+        requestId: requestId
+        message: message
+      properties:
+        code:
+          format: int
+          properties: {}
+          type: integer
+        data:
+          $ref: '#/components/schemas/_merchant_payment_refund_list_get_200_response_data'
+        message:
+          format: string
+          properties: {}
+          type: string
+        redirect:
+          format: string
+          properties: {}
+          type: string
+        requestId:
+          format: string
+          properties: {}
+          type: string
+      type: object
+    _merchant_payment_refund_new_post_request:
+      properties:
+        externalRefundId:
+          description: ExternalRefundId
+          format: string
+          properties: {}
+          type: string
+        paymentId:
+          description: PaymentId
+          format: string
+          properties: {}
+          type: string
+        reason:
+          description: Reason
+          format: string
+          properties: {}
+          type: string
+      required:
+      - externalRefundId
+      - paymentId
+      type: object
+    _merchant_payment_refund_new_post_200_response_data:
+      example:
+        paymentId: paymentId
+        externalRefundId: externalRefundId
+        refundId: refundId
+        status: 6
+      properties:
+        externalRefundId:
+          description: ExternalRefundId
+          format: string
+          properties: {}
+          type: string
+        paymentId:
+          description: PaymentId
+          format: string
+          properties: {}
+          type: string
+        refundId:
+          description: RefundId
+          format: string
+          properties: {}
+          type: string
+        status:
+          description: "Status,10-create|20-success|30-Failed|40-Reverse"
+          format: int
+          properties: {}
+          type: integer
+      type: object
+    _merchant_payment_refund_new_post_200_response:
+      example:
+        redirect: redirect
+        code: 0
+        data:
+          paymentId: paymentId
+          externalRefundId: externalRefundId
+          refundId: refundId
+          status: 6
+        requestId: requestId
+        message: message
+      properties:
+        code:
+          format: int
+          properties: {}
+          type: integer
+        data:
+          $ref: '#/components/schemas/_merchant_payment_refund_new_post_200_response_data'
+        message:
+          format: string
+          properties: {}
+          type: string
+        redirect:
+          format: string
+          properties: {}
+          type: string
+        requestId:
+          format: string
+          properties: {}
+          type: string
+      type: object
+    _merchant_payment_timeline_list_get_200_response_data:
       example:
         paymentTimeLines:
         - gmtModify: gmtModify
@@ -13036,7 +14934,7 @@ components:
           properties: {}
           type: array
       type: object
-    _merchant_payment_payment_timeline_list_get_200_response:
+    _merchant_payment_timeline_list_get_200_response:
       example:
         redirect: redirect
         code: 0
@@ -13082,7 +14980,7 @@ components:
           properties: {}
           type: integer
         data:
-          $ref: '#/components/schemas/_merchant_payment_payment_timeline_list_get_200_response_data'
+          $ref: '#/components/schemas/_merchant_payment_timeline_list_get_200_response_data'
         message:
           format: string
           properties: {}
