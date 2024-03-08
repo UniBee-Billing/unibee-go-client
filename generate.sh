@@ -1,5 +1,4 @@
 rm -rf *.go
-rm -rf test/*.go
 rm -rf docs/*.md
 java -jar openapi-generator-cli.jar generate \
 -i http://api.unibee.top/api.sdk.generator.json \
