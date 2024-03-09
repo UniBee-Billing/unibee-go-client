@@ -46,6 +46,7 @@ type UnibeeInternalLogicGatewayRoPaymentSimplify struct {
 	Link *string `json:"link,omitempty"`
 	// merchant id
 	MerchantId *int64 `json:"merchantId,omitempty"`
+	Metadata *map[string]string `json:"metadata,omitempty"`
 	// paid time, utc time
 	PaidTime *int64 `json:"paidTime,omitempty"`
 	// payment_amount
@@ -595,6 +596,38 @@ func (o *UnibeeInternalLogicGatewayRoPaymentSimplify) SetMerchantId(v int64) {
 	o.MerchantId = &v
 }
 
+// GetMetadata returns the Metadata field value if set, zero value otherwise.
+func (o *UnibeeInternalLogicGatewayRoPaymentSimplify) GetMetadata() map[string]string {
+	if o == nil || IsNil(o.Metadata) {
+		var ret map[string]string
+		return ret
+	}
+	return *o.Metadata
+}
+
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeInternalLogicGatewayRoPaymentSimplify) GetMetadataOk() (*map[string]string, bool) {
+	if o == nil || IsNil(o.Metadata) {
+		return nil, false
+	}
+	return o.Metadata, true
+}
+
+// HasMetadata returns a boolean if a field has been set.
+func (o *UnibeeInternalLogicGatewayRoPaymentSimplify) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetadata gets a reference to the given map[string]string and assigns it to the Metadata field.
+func (o *UnibeeInternalLogicGatewayRoPaymentSimplify) SetMetadata(v map[string]string) {
+	o.Metadata = &v
+}
+
 // GetPaidTime returns the PaidTime field value if set, zero value otherwise.
 func (o *UnibeeInternalLogicGatewayRoPaymentSimplify) GetPaidTime() int64 {
 	if o == nil || IsNil(o.PaidTime) {
@@ -940,6 +973,9 @@ func (o UnibeeInternalLogicGatewayRoPaymentSimplify) ToMap() (map[string]interfa
 	}
 	if !IsNil(o.MerchantId) {
 		toSerialize["merchantId"] = o.MerchantId
+	}
+	if !IsNil(o.Metadata) {
+		toSerialize["metadata"] = o.Metadata
 	}
 	if !IsNil(o.PaidTime) {
 		toSerialize["paidTime"] = o.PaidTime

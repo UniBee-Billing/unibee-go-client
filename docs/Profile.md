@@ -70,7 +70,7 @@ No authorization required
 
 ## UpdatePost
 
-> MerchantGetGet200Response UpdatePost(ctx).UnibeeApiMerchantProfileUpdateReq(unibeeApiMerchantProfileUpdateReq).Execute()
+> MerchantUpdatePost200Response UpdatePost(ctx).UnibeeApiMerchantProfileUpdateReq(unibeeApiMerchantProfileUpdateReq).Execute()
 
 Update Merchant Info
 
@@ -96,7 +96,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Profile.UpdatePost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdatePost`: MerchantGetGet200Response
+	// response from `UpdatePost`: MerchantUpdatePost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Profile.UpdatePost`: %v\n", resp)
 }
 ```
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantGetGet200Response**](MerchantGetGet200Response.md)
+[**MerchantUpdatePost200Response**](MerchantUpdatePost200Response.md)
 
 ### Authorization
 

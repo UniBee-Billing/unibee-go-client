@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Action** | Pointer to **map[string]interface{}** |  | [optional] 
 **ExternalPaymentId** | Pointer to **string** | ExternalPaymentId | [optional] 
+**Link** | Pointer to **string** |  | [optional] 
 **PaymentId** | Pointer to **string** | PaymentId | [optional] 
 **Status** | Pointer to **int32** | Status, 10-Created|20-Success|30-Failed|40-Cancelled | [optional] 
 
@@ -77,6 +78,31 @@ SetExternalPaymentId sets ExternalPaymentId field to given value.
 `func (o *UnibeeApiMerchantPaymentNewRes) HasExternalPaymentId() bool`
 
 HasExternalPaymentId returns a boolean if a field has been set.
+
+### GetLink
+
+`func (o *UnibeeApiMerchantPaymentNewRes) GetLink() string`
+
+GetLink returns the Link field if non-nil, zero value otherwise.
+
+### GetLinkOk
+
+`func (o *UnibeeApiMerchantPaymentNewRes) GetLinkOk() (*string, bool)`
+
+GetLinkOk returns a tuple with the Link field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLink
+
+`func (o *UnibeeApiMerchantPaymentNewRes) SetLink(v string)`
+
+SetLink sets Link field to given value.
+
+### HasLink
+
+`func (o *UnibeeApiMerchantPaymentNewRes) HasLink() bool`
+
+HasLink returns a boolean if a field has been set.
 
 ### GetPaymentId
 

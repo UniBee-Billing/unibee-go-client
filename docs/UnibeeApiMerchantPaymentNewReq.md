@@ -4,22 +4,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CountryCode** | **string** | CountryCode | 
+**CountryCode** | Pointer to **string** | CountryCode | [optional] 
 **Currency** | **string** | Currency | 
 **Email** | **string** | Email | 
 **ExternalPaymentId** | **string** | ExternalPaymentId should unique for payment | 
 **ExternalUserId** | **string** | ExternalUserId, should unique for user | 
 **GatewayId** | **int64** | GatewayId | 
 **LineItems** | Pointer to [**[]UnibeeApiMerchantPaymentItem**](UnibeeApiMerchantPaymentItem.md) | Items | [optional] 
-**RedirectUrl** | **string** | Redirect Url | 
-**Reference** | Pointer to **map[string]string** | Metadata，Map | [optional] 
+**Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
+**RedirectUrl** | Pointer to **string** | Redirect Url | [optional] 
 **TotalAmount** | **int64** | Total PaymentAmount, Cent | 
 
 ## Methods
 
 ### NewUnibeeApiMerchantPaymentNewReq
 
-`func NewUnibeeApiMerchantPaymentNewReq(countryCode string, currency string, email string, externalPaymentId string, externalUserId string, gatewayId int64, redirectUrl string, totalAmount int64, ) *UnibeeApiMerchantPaymentNewReq`
+`func NewUnibeeApiMerchantPaymentNewReq(currency string, email string, externalPaymentId string, externalUserId string, gatewayId int64, totalAmount int64, ) *UnibeeApiMerchantPaymentNewReq`
 
 NewUnibeeApiMerchantPaymentNewReq instantiates a new UnibeeApiMerchantPaymentNewReq object
 This constructor will assign default values to properties that have it defined,
@@ -53,6 +53,11 @@ and a boolean to check if the value has been set.
 
 SetCountryCode sets CountryCode field to given value.
 
+### HasCountryCode
+
+`func (o *UnibeeApiMerchantPaymentNewReq) HasCountryCode() bool`
+
+HasCountryCode returns a boolean if a field has been set.
 
 ### GetCurrency
 
@@ -179,6 +184,31 @@ SetLineItems sets LineItems field to given value.
 
 HasLineItems returns a boolean if a field has been set.
 
+### GetMetadata
+
+`func (o *UnibeeApiMerchantPaymentNewReq) GetMetadata() map[string]string`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *UnibeeApiMerchantPaymentNewReq) GetMetadataOk() (*map[string]string, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *UnibeeApiMerchantPaymentNewReq) SetMetadata(v map[string]string)`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *UnibeeApiMerchantPaymentNewReq) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
+
 ### GetRedirectUrl
 
 `func (o *UnibeeApiMerchantPaymentNewReq) GetRedirectUrl() string`
@@ -198,31 +228,11 @@ and a boolean to check if the value has been set.
 
 SetRedirectUrl sets RedirectUrl field to given value.
 
+### HasRedirectUrl
 
-### GetReference
+`func (o *UnibeeApiMerchantPaymentNewReq) HasRedirectUrl() bool`
 
-`func (o *UnibeeApiMerchantPaymentNewReq) GetReference() map[string]string`
-
-GetReference returns the Reference field if non-nil, zero value otherwise.
-
-### GetReferenceOk
-
-`func (o *UnibeeApiMerchantPaymentNewReq) GetReferenceOk() (*map[string]string, bool)`
-
-GetReferenceOk returns a tuple with the Reference field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetReference
-
-`func (o *UnibeeApiMerchantPaymentNewReq) SetReference(v map[string]string)`
-
-SetReference sets Reference field to given value.
-
-### HasReference
-
-`func (o *UnibeeApiMerchantPaymentNewReq) HasReference() bool`
-
-HasReference returns a boolean if a field has been set.
+HasRedirectUrl returns a boolean if a field has been set.
 
 ### GetTotalAmount
 

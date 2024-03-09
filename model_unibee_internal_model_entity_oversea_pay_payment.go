@@ -19,13 +19,12 @@ var _ MappedNullable = &UnibeeInternalModelEntityOverseaPayPayment{}
 
 // UnibeeInternalModelEntityOverseaPayPayment struct for UnibeeInternalModelEntityOverseaPayPayment
 type UnibeeInternalModelEntityOverseaPayPayment struct {
-	// addtional data (json)
-	AdditionalData *string `json:"additionalData,omitempty"`
 	// app id
 	AppId *string `json:"appId,omitempty"`
 	AuthorizeReason *string `json:"authorizeReason,omitempty"`
 	// authorize status，0-waiting authorize，1-authorized，2-authorized_request
 	AuthorizeStatus *int32 `json:"authorizeStatus,omitempty"`
+	// 0-no,1-yes
 	Automatic *int32 `json:"automatic,omitempty"`
 	// balance_amount
 	BalanceAmount *int64 `json:"balanceAmount,omitempty"`
@@ -75,6 +74,8 @@ type UnibeeInternalModelEntityOverseaPayPayment struct {
 	Link *string `json:"link,omitempty"`
 	// merchant id
 	MerchantId *int64 `json:"merchantId,omitempty"`
+	// meta_data (json)
+	MetaData *string `json:"metaData,omitempty"`
 	// open api id
 	OpenApiId *int64 `json:"openApiId,omitempty"`
 	// paid time, utc time
@@ -121,38 +122,6 @@ func NewUnibeeInternalModelEntityOverseaPayPayment() *UnibeeInternalModelEntityO
 func NewUnibeeInternalModelEntityOverseaPayPaymentWithDefaults() *UnibeeInternalModelEntityOverseaPayPayment {
 	this := UnibeeInternalModelEntityOverseaPayPayment{}
 	return &this
-}
-
-// GetAdditionalData returns the AdditionalData field value if set, zero value otherwise.
-func (o *UnibeeInternalModelEntityOverseaPayPayment) GetAdditionalData() string {
-	if o == nil || IsNil(o.AdditionalData) {
-		var ret string
-		return ret
-	}
-	return *o.AdditionalData
-}
-
-// GetAdditionalDataOk returns a tuple with the AdditionalData field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UnibeeInternalModelEntityOverseaPayPayment) GetAdditionalDataOk() (*string, bool) {
-	if o == nil || IsNil(o.AdditionalData) {
-		return nil, false
-	}
-	return o.AdditionalData, true
-}
-
-// HasAdditionalData returns a boolean if a field has been set.
-func (o *UnibeeInternalModelEntityOverseaPayPayment) HasAdditionalData() bool {
-	if o != nil && !IsNil(o.AdditionalData) {
-		return true
-	}
-
-	return false
-}
-
-// SetAdditionalData gets a reference to the given string and assigns it to the AdditionalData field.
-func (o *UnibeeInternalModelEntityOverseaPayPayment) SetAdditionalData(v string) {
-	o.AdditionalData = &v
 }
 
 // GetAppId returns the AppId field value if set, zero value otherwise.
@@ -1147,6 +1116,38 @@ func (o *UnibeeInternalModelEntityOverseaPayPayment) SetMerchantId(v int64) {
 	o.MerchantId = &v
 }
 
+// GetMetaData returns the MetaData field value if set, zero value otherwise.
+func (o *UnibeeInternalModelEntityOverseaPayPayment) GetMetaData() string {
+	if o == nil || IsNil(o.MetaData) {
+		var ret string
+		return ret
+	}
+	return *o.MetaData
+}
+
+// GetMetaDataOk returns a tuple with the MetaData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeInternalModelEntityOverseaPayPayment) GetMetaDataOk() (*string, bool) {
+	if o == nil || IsNil(o.MetaData) {
+		return nil, false
+	}
+	return o.MetaData, true
+}
+
+// HasMetaData returns a boolean if a field has been set.
+func (o *UnibeeInternalModelEntityOverseaPayPayment) HasMetaData() bool {
+	if o != nil && !IsNil(o.MetaData) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetaData gets a reference to the given string and assigns it to the MetaData field.
+func (o *UnibeeInternalModelEntityOverseaPayPayment) SetMetaData(v string) {
+	o.MetaData = &v
+}
+
 // GetOpenApiId returns the OpenApiId field value if set, zero value otherwise.
 func (o *UnibeeInternalModelEntityOverseaPayPayment) GetOpenApiId() int64 {
 	if o == nil || IsNil(o.OpenApiId) {
@@ -1637,9 +1638,6 @@ func (o UnibeeInternalModelEntityOverseaPayPayment) MarshalJSON() ([]byte, error
 
 func (o UnibeeInternalModelEntityOverseaPayPayment) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AdditionalData) {
-		toSerialize["additionalData"] = o.AdditionalData
-	}
 	if !IsNil(o.AppId) {
 		toSerialize["appId"] = o.AppId
 	}
@@ -1732,6 +1730,9 @@ func (o UnibeeInternalModelEntityOverseaPayPayment) ToMap() (map[string]interfac
 	}
 	if !IsNil(o.MerchantId) {
 		toSerialize["merchantId"] = o.MerchantId
+	}
+	if !IsNil(o.MetaData) {
+		toSerialize["metaData"] = o.MetaData
 	}
 	if !IsNil(o.OpenApiId) {
 		toSerialize["openApiId"] = o.OpenApiId

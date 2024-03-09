@@ -53,6 +53,8 @@ type UnibeeInternalModelEntityOverseaPayPlan struct {
 	IsDeleted *int32 `json:"isDeleted,omitempty"`
 	// merchant id
 	MerchantId *int64 `json:"merchantId,omitempty"`
+	// meta_data(json)
+	MetaData *string `json:"metaData,omitempty"`
 	// PlanName
 	PlanName *string `json:"planName,omitempty"`
 	// 1-UnPublish,2-Publish, Use For Display Plan At UserPortal
@@ -660,6 +662,38 @@ func (o *UnibeeInternalModelEntityOverseaPayPlan) SetMerchantId(v int64) {
 	o.MerchantId = &v
 }
 
+// GetMetaData returns the MetaData field value if set, zero value otherwise.
+func (o *UnibeeInternalModelEntityOverseaPayPlan) GetMetaData() string {
+	if o == nil || IsNil(o.MetaData) {
+		var ret string
+		return ret
+	}
+	return *o.MetaData
+}
+
+// GetMetaDataOk returns a tuple with the MetaData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeInternalModelEntityOverseaPayPlan) GetMetaDataOk() (*string, bool) {
+	if o == nil || IsNil(o.MetaData) {
+		return nil, false
+	}
+	return o.MetaData, true
+}
+
+// HasMetaData returns a boolean if a field has been set.
+func (o *UnibeeInternalModelEntityOverseaPayPlan) HasMetaData() bool {
+	if o != nil && !IsNil(o.MetaData) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetaData gets a reference to the given string and assigns it to the MetaData field.
+func (o *UnibeeInternalModelEntityOverseaPayPlan) SetMetaData(v string) {
+	o.MetaData = &v
+}
+
 // GetPlanName returns the PlanName field value if set, zero value otherwise.
 func (o *UnibeeInternalModelEntityOverseaPayPlan) GetPlanName() string {
 	if o == nil || IsNil(o.PlanName) {
@@ -915,6 +949,9 @@ func (o UnibeeInternalModelEntityOverseaPayPlan) ToMap() (map[string]interface{}
 	}
 	if !IsNil(o.MerchantId) {
 		toSerialize["merchantId"] = o.MerchantId
+	}
+	if !IsNil(o.MetaData) {
+		toSerialize["metaData"] = o.MetaData
 	}
 	if !IsNil(o.PlanName) {
 		toSerialize["planName"] = o.PlanName

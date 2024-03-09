@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 **LatestInvoiceId** | Pointer to **string** | latest_invoice_id | [optional] 
 **Link** | Pointer to **string** |  | [optional] 
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
+**MetaData** | Pointer to **string** | meta_data(json) | [optional] 
 **PendingUpdateId** | Pointer to **string** |  | [optional] 
 **PlanId** | Pointer to **int64** | plan id | [optional] 
 **Quantity** | Pointer to **int64** | quantity | [optional] 
@@ -844,6 +845,31 @@ SetMerchantId sets MerchantId field to given value.
 `func (o *UnibeeInternalModelEntityOverseaPaySubscription) HasMerchantId() bool`
 
 HasMerchantId returns a boolean if a field has been set.
+
+### GetMetaData
+
+`func (o *UnibeeInternalModelEntityOverseaPaySubscription) GetMetaData() string`
+
+GetMetaData returns the MetaData field if non-nil, zero value otherwise.
+
+### GetMetaDataOk
+
+`func (o *UnibeeInternalModelEntityOverseaPaySubscription) GetMetaDataOk() (*string, bool)`
+
+GetMetaDataOk returns a tuple with the MetaData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetaData
+
+`func (o *UnibeeInternalModelEntityOverseaPaySubscription) SetMetaData(v string)`
+
+SetMetaData sets MetaData field to given value.
+
+### HasMetaData
+
+`func (o *UnibeeInternalModelEntityOverseaPaySubscription) HasMetaData() bool`
+
+HasMetaData returns a boolean if a field has been set.
 
 ### GetPendingUpdateId
 

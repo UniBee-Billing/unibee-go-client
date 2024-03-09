@@ -4,11 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AdditionalData** | Pointer to **string** | addtional data (json) | [optional] 
 **AppId** | Pointer to **string** | app id | [optional] 
 **AuthorizeReason** | Pointer to **string** |  | [optional] 
 **AuthorizeStatus** | Pointer to **int32** | authorize status，0-waiting authorize，1-authorized，2-authorized_request | [optional] 
-**Automatic** | Pointer to **int32** |  | [optional] 
+**Automatic** | Pointer to **int32** | 0-no,1-yes | [optional] 
 **BalanceAmount** | Pointer to **int64** | balance_amount | [optional] 
 **BalanceEnd** | Pointer to **int64** | balance_end, utc time | [optional] 
 **BalanceStart** | Pointer to **int64** | balance_start, utc time | [optional] 
@@ -36,6 +35,7 @@ Name | Type | Description | Notes
 **InvoiceId** | Pointer to **string** | invoice id | [optional] 
 **Link** | Pointer to **string** |  | [optional] 
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
+**MetaData** | Pointer to **string** | meta_data (json) | [optional] 
 **OpenApiId** | Pointer to **int64** | open api id | [optional] 
 **PaidTime** | Pointer to **int64** | paid time, utc time | [optional] 
 **PaymentAmount** | Pointer to **int64** | payment_amount | [optional] 
@@ -70,31 +70,6 @@ will change when the set of required properties is changed
 NewUnibeeInternalModelEntityOverseaPayPaymentWithDefaults instantiates a new UnibeeInternalModelEntityOverseaPayPayment object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetAdditionalData
-
-`func (o *UnibeeInternalModelEntityOverseaPayPayment) GetAdditionalData() string`
-
-GetAdditionalData returns the AdditionalData field if non-nil, zero value otherwise.
-
-### GetAdditionalDataOk
-
-`func (o *UnibeeInternalModelEntityOverseaPayPayment) GetAdditionalDataOk() (*string, bool)`
-
-GetAdditionalDataOk returns a tuple with the AdditionalData field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAdditionalData
-
-`func (o *UnibeeInternalModelEntityOverseaPayPayment) SetAdditionalData(v string)`
-
-SetAdditionalData sets AdditionalData field to given value.
-
-### HasAdditionalData
-
-`func (o *UnibeeInternalModelEntityOverseaPayPayment) HasAdditionalData() bool`
-
-HasAdditionalData returns a boolean if a field has been set.
 
 ### GetAppId
 
@@ -870,6 +845,31 @@ SetMerchantId sets MerchantId field to given value.
 `func (o *UnibeeInternalModelEntityOverseaPayPayment) HasMerchantId() bool`
 
 HasMerchantId returns a boolean if a field has been set.
+
+### GetMetaData
+
+`func (o *UnibeeInternalModelEntityOverseaPayPayment) GetMetaData() string`
+
+GetMetaData returns the MetaData field if non-nil, zero value otherwise.
+
+### GetMetaDataOk
+
+`func (o *UnibeeInternalModelEntityOverseaPayPayment) GetMetaDataOk() (*string, bool)`
+
+GetMetaDataOk returns a tuple with the MetaData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetaData
+
+`func (o *UnibeeInternalModelEntityOverseaPayPayment) SetMetaData(v string)`
+
+SetMetaData sets MetaData field to given value.
+
+### HasMetaData
+
+`func (o *UnibeeInternalModelEntityOverseaPayPayment) HasMetaData() bool`
+
+HasMetaData returns a boolean if a field has been set.
 
 ### GetOpenApiId
 

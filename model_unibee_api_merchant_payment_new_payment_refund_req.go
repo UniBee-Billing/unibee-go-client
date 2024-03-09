@@ -25,6 +25,8 @@ type UnibeeApiMerchantPaymentNewPaymentRefundReq struct {
 	Currency string `json:"currency"`
 	// ExternalRefundId
 	ExternalRefundId string `json:"externalRefundId"`
+	// Metadata，Map
+	Metadata *map[string]string `json:"metadata,omitempty"`
 	// PaymentId
 	PaymentId string `json:"paymentId"`
 	// Reason
@@ -102,6 +104,38 @@ func (o *UnibeeApiMerchantPaymentNewPaymentRefundReq) GetExternalRefundIdOk() (*
 // SetExternalRefundId sets field value
 func (o *UnibeeApiMerchantPaymentNewPaymentRefundReq) SetExternalRefundId(v string) {
 	o.ExternalRefundId = v
+}
+
+// GetMetadata returns the Metadata field value if set, zero value otherwise.
+func (o *UnibeeApiMerchantPaymentNewPaymentRefundReq) GetMetadata() map[string]string {
+	if o == nil || IsNil(o.Metadata) {
+		var ret map[string]string
+		return ret
+	}
+	return *o.Metadata
+}
+
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiMerchantPaymentNewPaymentRefundReq) GetMetadataOk() (*map[string]string, bool) {
+	if o == nil || IsNil(o.Metadata) {
+		return nil, false
+	}
+	return o.Metadata, true
+}
+
+// HasMetadata returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantPaymentNewPaymentRefundReq) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetadata gets a reference to the given map[string]string and assigns it to the Metadata field.
+func (o *UnibeeApiMerchantPaymentNewPaymentRefundReq) SetMetadata(v map[string]string) {
+	o.Metadata = &v
 }
 
 // GetPaymentId returns the PaymentId field value
@@ -196,6 +230,9 @@ func (o UnibeeApiMerchantPaymentNewPaymentRefundReq) ToMap() (map[string]interfa
 	toSerialize := map[string]interface{}{}
 	toSerialize["currency"] = o.Currency
 	toSerialize["externalRefundId"] = o.ExternalRefundId
+	if !IsNil(o.Metadata) {
+		toSerialize["metadata"] = o.Metadata
+	}
 	toSerialize["paymentId"] = o.PaymentId
 	if !IsNil(o.Reason) {
 		toSerialize["reason"] = o.Reason

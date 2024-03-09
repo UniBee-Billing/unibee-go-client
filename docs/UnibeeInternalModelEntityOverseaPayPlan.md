@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **IntervalUnit** | Pointer to **string** | period unit,day|month|year|week | [optional] 
 **IsDeleted** | Pointer to **int32** | 0-UnDeleted，1-Deleted | [optional] 
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
+**MetaData** | Pointer to **string** | meta_data(json) | [optional] 
 **PlanName** | Pointer to **string** | PlanName | [optional] 
 **PublishStatus** | Pointer to **int32** | 1-UnPublish,2-Publish, Use For Display Plan At UserPortal | [optional] 
 **Status** | Pointer to **int32** | status，1-editing，2-active，3-inactive，4-expired | [optional] 
@@ -497,6 +498,31 @@ SetMerchantId sets MerchantId field to given value.
 `func (o *UnibeeInternalModelEntityOverseaPayPlan) HasMerchantId() bool`
 
 HasMerchantId returns a boolean if a field has been set.
+
+### GetMetaData
+
+`func (o *UnibeeInternalModelEntityOverseaPayPlan) GetMetaData() string`
+
+GetMetaData returns the MetaData field if non-nil, zero value otherwise.
+
+### GetMetaDataOk
+
+`func (o *UnibeeInternalModelEntityOverseaPayPlan) GetMetaDataOk() (*string, bool)`
+
+GetMetaDataOk returns a tuple with the MetaData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetaData
+
+`func (o *UnibeeInternalModelEntityOverseaPayPlan) SetMetaData(v string)`
+
+SetMetaData sets MetaData field to given value.
+
+### HasMetaData
+
+`func (o *UnibeeInternalModelEntityOverseaPayPlan) HasMetaData() bool`
+
+HasMetaData returns a boolean if a field has been set.
 
 ### GetPlanName
 

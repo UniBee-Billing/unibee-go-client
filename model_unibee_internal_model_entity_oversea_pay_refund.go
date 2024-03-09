@@ -19,7 +19,6 @@ var _ MappedNullable = &UnibeeInternalModelEntityOverseaPayRefund{}
 
 // UnibeeInternalModelEntityOverseaPayRefund struct for UnibeeInternalModelEntityOverseaPayRefund
 type UnibeeInternalModelEntityOverseaPayRefund struct {
-	AdditionalData *string `json:"additionalData,omitempty"`
 	// app id
 	AppId *string `json:"appId,omitempty"`
 	// biz type, copy from payment.biz_type
@@ -46,6 +45,8 @@ type UnibeeInternalModelEntityOverseaPayRefund struct {
 	Id *int64 `json:"id,omitempty"`
 	// merchant id
 	MerchantId *int64 `json:"merchantId,omitempty"`
+	// meta_data(json)
+	MetaData *string `json:"metaData,omitempty"`
 	// open api id
 	OpenApiId *int64 `json:"openApiId,omitempty"`
 	// relative payment id
@@ -87,38 +88,6 @@ func NewUnibeeInternalModelEntityOverseaPayRefund() *UnibeeInternalModelEntityOv
 func NewUnibeeInternalModelEntityOverseaPayRefundWithDefaults() *UnibeeInternalModelEntityOverseaPayRefund {
 	this := UnibeeInternalModelEntityOverseaPayRefund{}
 	return &this
-}
-
-// GetAdditionalData returns the AdditionalData field value if set, zero value otherwise.
-func (o *UnibeeInternalModelEntityOverseaPayRefund) GetAdditionalData() string {
-	if o == nil || IsNil(o.AdditionalData) {
-		var ret string
-		return ret
-	}
-	return *o.AdditionalData
-}
-
-// GetAdditionalDataOk returns a tuple with the AdditionalData field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UnibeeInternalModelEntityOverseaPayRefund) GetAdditionalDataOk() (*string, bool) {
-	if o == nil || IsNil(o.AdditionalData) {
-		return nil, false
-	}
-	return o.AdditionalData, true
-}
-
-// HasAdditionalData returns a boolean if a field has been set.
-func (o *UnibeeInternalModelEntityOverseaPayRefund) HasAdditionalData() bool {
-	if o != nil && !IsNil(o.AdditionalData) {
-		return true
-	}
-
-	return false
-}
-
-// SetAdditionalData gets a reference to the given string and assigns it to the AdditionalData field.
-func (o *UnibeeInternalModelEntityOverseaPayRefund) SetAdditionalData(v string) {
-	o.AdditionalData = &v
 }
 
 // GetAppId returns the AppId field value if set, zero value otherwise.
@@ -537,6 +506,38 @@ func (o *UnibeeInternalModelEntityOverseaPayRefund) SetMerchantId(v int64) {
 	o.MerchantId = &v
 }
 
+// GetMetaData returns the MetaData field value if set, zero value otherwise.
+func (o *UnibeeInternalModelEntityOverseaPayRefund) GetMetaData() string {
+	if o == nil || IsNil(o.MetaData) {
+		var ret string
+		return ret
+	}
+	return *o.MetaData
+}
+
+// GetMetaDataOk returns a tuple with the MetaData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeInternalModelEntityOverseaPayRefund) GetMetaDataOk() (*string, bool) {
+	if o == nil || IsNil(o.MetaData) {
+		return nil, false
+	}
+	return o.MetaData, true
+}
+
+// HasMetaData returns a boolean if a field has been set.
+func (o *UnibeeInternalModelEntityOverseaPayRefund) HasMetaData() bool {
+	if o != nil && !IsNil(o.MetaData) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetaData gets a reference to the given string and assigns it to the MetaData field.
+func (o *UnibeeInternalModelEntityOverseaPayRefund) SetMetaData(v string) {
+	o.MetaData = &v
+}
+
 // GetOpenApiId returns the OpenApiId field value if set, zero value otherwise.
 func (o *UnibeeInternalModelEntityOverseaPayRefund) GetOpenApiId() int64 {
 	if o == nil || IsNil(o.OpenApiId) {
@@ -931,9 +932,6 @@ func (o UnibeeInternalModelEntityOverseaPayRefund) MarshalJSON() ([]byte, error)
 
 func (o UnibeeInternalModelEntityOverseaPayRefund) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AdditionalData) {
-		toSerialize["additionalData"] = o.AdditionalData
-	}
 	if !IsNil(o.AppId) {
 		toSerialize["appId"] = o.AppId
 	}
@@ -972,6 +970,9 @@ func (o UnibeeInternalModelEntityOverseaPayRefund) ToMap() (map[string]interface
 	}
 	if !IsNil(o.MerchantId) {
 		toSerialize["merchantId"] = o.MerchantId
+	}
+	if !IsNil(o.MetaData) {
+		toSerialize["metaData"] = o.MetaData
 	}
 	if !IsNil(o.OpenApiId) {
 		toSerialize["openApiId"] = o.OpenApiId

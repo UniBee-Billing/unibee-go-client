@@ -19,6 +19,16 @@ var _ MappedNullable = &MerchantGetGet200ResponseData{}
 
 // MerchantGetGet200ResponseData struct for MerchantGetGet200ResponseData
 type MerchantGetGet200ResponseData struct {
+	// Currency List
+	Currency []UnibeeInternalLogicGatewayRoCurrency `json:"Currency,omitempty"`
+	// TimeZone List
+	TimeZone []string `json:"TimeZone,omitempty"`
+	// System Env, em: daily|stage|local|prod
+	Env *string `json:"env,omitempty"`
+	// Gateway List
+	Gateway []UnibeeInternalLogicGatewayRoGatewaySimplify `json:"gateway,omitempty"`
+	// Check System Env Is Prod, true|false
+	IsProd *bool `json:"isProd,omitempty"`
 	Merchant *UnibeeInternalModelEntityOverseaPayMerchant `json:"merchant,omitempty"`
 }
 
@@ -37,6 +47,166 @@ func NewMerchantGetGet200ResponseData() *MerchantGetGet200ResponseData {
 func NewMerchantGetGet200ResponseDataWithDefaults() *MerchantGetGet200ResponseData {
 	this := MerchantGetGet200ResponseData{}
 	return &this
+}
+
+// GetCurrency returns the Currency field value if set, zero value otherwise.
+func (o *MerchantGetGet200ResponseData) GetCurrency() []UnibeeInternalLogicGatewayRoCurrency {
+	if o == nil || IsNil(o.Currency) {
+		var ret []UnibeeInternalLogicGatewayRoCurrency
+		return ret
+	}
+	return o.Currency
+}
+
+// GetCurrencyOk returns a tuple with the Currency field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MerchantGetGet200ResponseData) GetCurrencyOk() ([]UnibeeInternalLogicGatewayRoCurrency, bool) {
+	if o == nil || IsNil(o.Currency) {
+		return nil, false
+	}
+	return o.Currency, true
+}
+
+// HasCurrency returns a boolean if a field has been set.
+func (o *MerchantGetGet200ResponseData) HasCurrency() bool {
+	if o != nil && !IsNil(o.Currency) {
+		return true
+	}
+
+	return false
+}
+
+// SetCurrency gets a reference to the given []UnibeeInternalLogicGatewayRoCurrency and assigns it to the Currency field.
+func (o *MerchantGetGet200ResponseData) SetCurrency(v []UnibeeInternalLogicGatewayRoCurrency) {
+	o.Currency = v
+}
+
+// GetTimeZone returns the TimeZone field value if set, zero value otherwise.
+func (o *MerchantGetGet200ResponseData) GetTimeZone() []string {
+	if o == nil || IsNil(o.TimeZone) {
+		var ret []string
+		return ret
+	}
+	return o.TimeZone
+}
+
+// GetTimeZoneOk returns a tuple with the TimeZone field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MerchantGetGet200ResponseData) GetTimeZoneOk() ([]string, bool) {
+	if o == nil || IsNil(o.TimeZone) {
+		return nil, false
+	}
+	return o.TimeZone, true
+}
+
+// HasTimeZone returns a boolean if a field has been set.
+func (o *MerchantGetGet200ResponseData) HasTimeZone() bool {
+	if o != nil && !IsNil(o.TimeZone) {
+		return true
+	}
+
+	return false
+}
+
+// SetTimeZone gets a reference to the given []string and assigns it to the TimeZone field.
+func (o *MerchantGetGet200ResponseData) SetTimeZone(v []string) {
+	o.TimeZone = v
+}
+
+// GetEnv returns the Env field value if set, zero value otherwise.
+func (o *MerchantGetGet200ResponseData) GetEnv() string {
+	if o == nil || IsNil(o.Env) {
+		var ret string
+		return ret
+	}
+	return *o.Env
+}
+
+// GetEnvOk returns a tuple with the Env field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MerchantGetGet200ResponseData) GetEnvOk() (*string, bool) {
+	if o == nil || IsNil(o.Env) {
+		return nil, false
+	}
+	return o.Env, true
+}
+
+// HasEnv returns a boolean if a field has been set.
+func (o *MerchantGetGet200ResponseData) HasEnv() bool {
+	if o != nil && !IsNil(o.Env) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnv gets a reference to the given string and assigns it to the Env field.
+func (o *MerchantGetGet200ResponseData) SetEnv(v string) {
+	o.Env = &v
+}
+
+// GetGateway returns the Gateway field value if set, zero value otherwise.
+func (o *MerchantGetGet200ResponseData) GetGateway() []UnibeeInternalLogicGatewayRoGatewaySimplify {
+	if o == nil || IsNil(o.Gateway) {
+		var ret []UnibeeInternalLogicGatewayRoGatewaySimplify
+		return ret
+	}
+	return o.Gateway
+}
+
+// GetGatewayOk returns a tuple with the Gateway field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MerchantGetGet200ResponseData) GetGatewayOk() ([]UnibeeInternalLogicGatewayRoGatewaySimplify, bool) {
+	if o == nil || IsNil(o.Gateway) {
+		return nil, false
+	}
+	return o.Gateway, true
+}
+
+// HasGateway returns a boolean if a field has been set.
+func (o *MerchantGetGet200ResponseData) HasGateway() bool {
+	if o != nil && !IsNil(o.Gateway) {
+		return true
+	}
+
+	return false
+}
+
+// SetGateway gets a reference to the given []UnibeeInternalLogicGatewayRoGatewaySimplify and assigns it to the Gateway field.
+func (o *MerchantGetGet200ResponseData) SetGateway(v []UnibeeInternalLogicGatewayRoGatewaySimplify) {
+	o.Gateway = v
+}
+
+// GetIsProd returns the IsProd field value if set, zero value otherwise.
+func (o *MerchantGetGet200ResponseData) GetIsProd() bool {
+	if o == nil || IsNil(o.IsProd) {
+		var ret bool
+		return ret
+	}
+	return *o.IsProd
+}
+
+// GetIsProdOk returns a tuple with the IsProd field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MerchantGetGet200ResponseData) GetIsProdOk() (*bool, bool) {
+	if o == nil || IsNil(o.IsProd) {
+		return nil, false
+	}
+	return o.IsProd, true
+}
+
+// HasIsProd returns a boolean if a field has been set.
+func (o *MerchantGetGet200ResponseData) HasIsProd() bool {
+	if o != nil && !IsNil(o.IsProd) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsProd gets a reference to the given bool and assigns it to the IsProd field.
+func (o *MerchantGetGet200ResponseData) SetIsProd(v bool) {
+	o.IsProd = &v
 }
 
 // GetMerchant returns the Merchant field value if set, zero value otherwise.
@@ -81,6 +251,21 @@ func (o MerchantGetGet200ResponseData) MarshalJSON() ([]byte, error) {
 
 func (o MerchantGetGet200ResponseData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Currency) {
+		toSerialize["Currency"] = o.Currency
+	}
+	if !IsNil(o.TimeZone) {
+		toSerialize["TimeZone"] = o.TimeZone
+	}
+	if !IsNil(o.Env) {
+		toSerialize["env"] = o.Env
+	}
+	if !IsNil(o.Gateway) {
+		toSerialize["gateway"] = o.Gateway
+	}
+	if !IsNil(o.IsProd) {
+		toSerialize["isProd"] = o.IsProd
+	}
 	if !IsNil(o.Merchant) {
 		toSerialize["merchant"] = o.Merchant
 	}

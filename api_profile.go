@@ -130,7 +130,7 @@ func (r ProfileUpdatePostRequest) UnibeeApiMerchantProfileUpdateReq(unibeeApiMer
 	return r
 }
 
-func (r ProfileUpdatePostRequest) Execute() (*MerchantGetGet200Response, *http.Response, error) {
+func (r ProfileUpdatePostRequest) Execute() (*MerchantUpdatePost200Response, *http.Response, error) {
 	return r.ApiService.UpdatePostExecute(r)
 }
 
@@ -148,13 +148,13 @@ func (a *ProfileService) UpdatePost(ctx context.Context) ProfileUpdatePostReques
 }
 
 // Execute executes the request
-//  @return MerchantGetGet200Response
-func (a *ProfileService) UpdatePostExecute(r ProfileUpdatePostRequest) (*MerchantGetGet200Response, *http.Response, error) {
+//  @return MerchantUpdatePost200Response
+func (a *ProfileService) UpdatePostExecute(r ProfileUpdatePostRequest) (*MerchantUpdatePost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *MerchantGetGet200Response
+		localVarReturnValue  *MerchantUpdatePost200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProfileService.UpdatePost")

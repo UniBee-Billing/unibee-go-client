@@ -27,6 +27,8 @@ type UnibeeApiMerchantSubscriptionUpdateReq struct {
 	ConfirmCurrency string `json:"confirmCurrency"`
 	// TotalAmount To Be Confirmed，Get From Preview
 	ConfirmTotalAmount int64 `json:"confirmTotalAmount"`
+	// Metadata，Map
+	Metadata *map[string]string `json:"metadata,omitempty"`
 	// New PlanId
 	NewPlanId int64 `json:"newPlanId"`
 	// prorationDate date to start Proration，Get From Preview
@@ -141,6 +143,38 @@ func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetConfirmTotalAmountOk() (*int
 // SetConfirmTotalAmount sets field value
 func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetConfirmTotalAmount(v int64) {
 	o.ConfirmTotalAmount = v
+}
+
+// GetMetadata returns the Metadata field value if set, zero value otherwise.
+func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetMetadata() map[string]string {
+	if o == nil || IsNil(o.Metadata) {
+		var ret map[string]string
+		return ret
+	}
+	return *o.Metadata
+}
+
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetMetadataOk() (*map[string]string, bool) {
+	if o == nil || IsNil(o.Metadata) {
+		return nil, false
+	}
+	return o.Metadata, true
+}
+
+// HasMetadata returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetadata gets a reference to the given map[string]string and assigns it to the Metadata field.
+func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetMetadata(v map[string]string) {
+	o.Metadata = &v
 }
 
 // GetNewPlanId returns the NewPlanId field value
@@ -294,6 +328,9 @@ func (o UnibeeApiMerchantSubscriptionUpdateReq) ToMap() (map[string]interface{},
 	}
 	toSerialize["confirmCurrency"] = o.ConfirmCurrency
 	toSerialize["confirmTotalAmount"] = o.ConfirmTotalAmount
+	if !IsNil(o.Metadata) {
+		toSerialize["metadata"] = o.Metadata
+	}
 	toSerialize["newPlanId"] = o.NewPlanId
 	toSerialize["prorationDate"] = o.ProrationDate
 	if !IsNil(o.Quantity) {

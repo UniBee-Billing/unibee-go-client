@@ -54,6 +54,7 @@ type UnibeeInternalLogicGatewayRoSubscriptionSimplify struct {
 	Link *string `json:"link,omitempty"`
 	// merchant id
 	MerchantId *int64 `json:"merchantId,omitempty"`
+	Metadata *map[string]string `json:"metadata,omitempty"`
 	PendingUpdateId *string `json:"pendingUpdateId,omitempty"`
 	// plan id
 	PlanId *int64 `json:"planId,omitempty"`
@@ -736,6 +737,38 @@ func (o *UnibeeInternalLogicGatewayRoSubscriptionSimplify) SetMerchantId(v int64
 	o.MerchantId = &v
 }
 
+// GetMetadata returns the Metadata field value if set, zero value otherwise.
+func (o *UnibeeInternalLogicGatewayRoSubscriptionSimplify) GetMetadata() map[string]string {
+	if o == nil || IsNil(o.Metadata) {
+		var ret map[string]string
+		return ret
+	}
+	return *o.Metadata
+}
+
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeInternalLogicGatewayRoSubscriptionSimplify) GetMetadataOk() (*map[string]string, bool) {
+	if o == nil || IsNil(o.Metadata) {
+		return nil, false
+	}
+	return o.Metadata, true
+}
+
+// HasMetadata returns a boolean if a field has been set.
+func (o *UnibeeInternalLogicGatewayRoSubscriptionSimplify) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetadata gets a reference to the given map[string]string and assigns it to the Metadata field.
+func (o *UnibeeInternalLogicGatewayRoSubscriptionSimplify) SetMetadata(v map[string]string) {
+	o.Metadata = &v
+}
+
 // GetPendingUpdateId returns the PendingUpdateId field value if set, zero value otherwise.
 func (o *UnibeeInternalLogicGatewayRoSubscriptionSimplify) GetPendingUpdateId() string {
 	if o == nil || IsNil(o.PendingUpdateId) {
@@ -1221,6 +1254,9 @@ func (o UnibeeInternalLogicGatewayRoSubscriptionSimplify) ToMap() (map[string]in
 	}
 	if !IsNil(o.MerchantId) {
 		toSerialize["merchantId"] = o.MerchantId
+	}
+	if !IsNil(o.Metadata) {
+		toSerialize["metadata"] = o.Metadata
 	}
 	if !IsNil(o.PendingUpdateId) {
 		toSerialize["pendingUpdateId"] = o.PendingUpdateId

@@ -14,35 +14,35 @@ import (
 	"encoding/json"
 )
 
-// checks if the UnibeeApiSystemInformationSupportCurrency type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &UnibeeApiSystemInformationSupportCurrency{}
+// checks if the UnibeeInternalLogicGatewayRoCurrency type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &UnibeeInternalLogicGatewayRoCurrency{}
 
-// UnibeeApiSystemInformationSupportCurrency struct for UnibeeApiSystemInformationSupportCurrency
-type UnibeeApiSystemInformationSupportCurrency struct {
+// UnibeeInternalLogicGatewayRoCurrency struct for UnibeeInternalLogicGatewayRoCurrency
+type UnibeeInternalLogicGatewayRoCurrency struct {
 	Currency *string `json:"Currency,omitempty"`
 	Scale *int32 `json:"Scale,omitempty"`
 	Symbol *string `json:"Symbol,omitempty"`
 }
 
-// NewUnibeeApiSystemInformationSupportCurrency instantiates a new UnibeeApiSystemInformationSupportCurrency object
+// NewUnibeeInternalLogicGatewayRoCurrency instantiates a new UnibeeInternalLogicGatewayRoCurrency object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiSystemInformationSupportCurrency() *UnibeeApiSystemInformationSupportCurrency {
-	this := UnibeeApiSystemInformationSupportCurrency{}
+func NewUnibeeInternalLogicGatewayRoCurrency() *UnibeeInternalLogicGatewayRoCurrency {
+	this := UnibeeInternalLogicGatewayRoCurrency{}
 	return &this
 }
 
-// NewUnibeeApiSystemInformationSupportCurrencyWithDefaults instantiates a new UnibeeApiSystemInformationSupportCurrency object
+// NewUnibeeInternalLogicGatewayRoCurrencyWithDefaults instantiates a new UnibeeInternalLogicGatewayRoCurrency object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewUnibeeApiSystemInformationSupportCurrencyWithDefaults() *UnibeeApiSystemInformationSupportCurrency {
-	this := UnibeeApiSystemInformationSupportCurrency{}
+func NewUnibeeInternalLogicGatewayRoCurrencyWithDefaults() *UnibeeInternalLogicGatewayRoCurrency {
+	this := UnibeeInternalLogicGatewayRoCurrency{}
 	return &this
 }
 
 // GetCurrency returns the Currency field value if set, zero value otherwise.
-func (o *UnibeeApiSystemInformationSupportCurrency) GetCurrency() string {
+func (o *UnibeeInternalLogicGatewayRoCurrency) GetCurrency() string {
 	if o == nil || IsNil(o.Currency) {
 		var ret string
 		return ret
@@ -52,7 +52,7 @@ func (o *UnibeeApiSystemInformationSupportCurrency) GetCurrency() string {
 
 // GetCurrencyOk returns a tuple with the Currency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiSystemInformationSupportCurrency) GetCurrencyOk() (*string, bool) {
+func (o *UnibeeInternalLogicGatewayRoCurrency) GetCurrencyOk() (*string, bool) {
 	if o == nil || IsNil(o.Currency) {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *UnibeeApiSystemInformationSupportCurrency) GetCurrencyOk() (*string, bo
 }
 
 // HasCurrency returns a boolean if a field has been set.
-func (o *UnibeeApiSystemInformationSupportCurrency) HasCurrency() bool {
+func (o *UnibeeInternalLogicGatewayRoCurrency) HasCurrency() bool {
 	if o != nil && !IsNil(o.Currency) {
 		return true
 	}
@@ -69,12 +69,12 @@ func (o *UnibeeApiSystemInformationSupportCurrency) HasCurrency() bool {
 }
 
 // SetCurrency gets a reference to the given string and assigns it to the Currency field.
-func (o *UnibeeApiSystemInformationSupportCurrency) SetCurrency(v string) {
+func (o *UnibeeInternalLogicGatewayRoCurrency) SetCurrency(v string) {
 	o.Currency = &v
 }
 
 // GetScale returns the Scale field value if set, zero value otherwise.
-func (o *UnibeeApiSystemInformationSupportCurrency) GetScale() int32 {
+func (o *UnibeeInternalLogicGatewayRoCurrency) GetScale() int32 {
 	if o == nil || IsNil(o.Scale) {
 		var ret int32
 		return ret
@@ -84,7 +84,7 @@ func (o *UnibeeApiSystemInformationSupportCurrency) GetScale() int32 {
 
 // GetScaleOk returns a tuple with the Scale field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiSystemInformationSupportCurrency) GetScaleOk() (*int32, bool) {
+func (o *UnibeeInternalLogicGatewayRoCurrency) GetScaleOk() (*int32, bool) {
 	if o == nil || IsNil(o.Scale) {
 		return nil, false
 	}
@@ -92,7 +92,7 @@ func (o *UnibeeApiSystemInformationSupportCurrency) GetScaleOk() (*int32, bool) 
 }
 
 // HasScale returns a boolean if a field has been set.
-func (o *UnibeeApiSystemInformationSupportCurrency) HasScale() bool {
+func (o *UnibeeInternalLogicGatewayRoCurrency) HasScale() bool {
 	if o != nil && !IsNil(o.Scale) {
 		return true
 	}
@@ -101,12 +101,12 @@ func (o *UnibeeApiSystemInformationSupportCurrency) HasScale() bool {
 }
 
 // SetScale gets a reference to the given int32 and assigns it to the Scale field.
-func (o *UnibeeApiSystemInformationSupportCurrency) SetScale(v int32) {
+func (o *UnibeeInternalLogicGatewayRoCurrency) SetScale(v int32) {
 	o.Scale = &v
 }
 
 // GetSymbol returns the Symbol field value if set, zero value otherwise.
-func (o *UnibeeApiSystemInformationSupportCurrency) GetSymbol() string {
+func (o *UnibeeInternalLogicGatewayRoCurrency) GetSymbol() string {
 	if o == nil || IsNil(o.Symbol) {
 		var ret string
 		return ret
@@ -116,7 +116,7 @@ func (o *UnibeeApiSystemInformationSupportCurrency) GetSymbol() string {
 
 // GetSymbolOk returns a tuple with the Symbol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiSystemInformationSupportCurrency) GetSymbolOk() (*string, bool) {
+func (o *UnibeeInternalLogicGatewayRoCurrency) GetSymbolOk() (*string, bool) {
 	if o == nil || IsNil(o.Symbol) {
 		return nil, false
 	}
@@ -124,7 +124,7 @@ func (o *UnibeeApiSystemInformationSupportCurrency) GetSymbolOk() (*string, bool
 }
 
 // HasSymbol returns a boolean if a field has been set.
-func (o *UnibeeApiSystemInformationSupportCurrency) HasSymbol() bool {
+func (o *UnibeeInternalLogicGatewayRoCurrency) HasSymbol() bool {
 	if o != nil && !IsNil(o.Symbol) {
 		return true
 	}
@@ -133,11 +133,11 @@ func (o *UnibeeApiSystemInformationSupportCurrency) HasSymbol() bool {
 }
 
 // SetSymbol gets a reference to the given string and assigns it to the Symbol field.
-func (o *UnibeeApiSystemInformationSupportCurrency) SetSymbol(v string) {
+func (o *UnibeeInternalLogicGatewayRoCurrency) SetSymbol(v string) {
 	o.Symbol = &v
 }
 
-func (o UnibeeApiSystemInformationSupportCurrency) MarshalJSON() ([]byte, error) {
+func (o UnibeeInternalLogicGatewayRoCurrency) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -145,7 +145,7 @@ func (o UnibeeApiSystemInformationSupportCurrency) MarshalJSON() ([]byte, error)
 	return json.Marshal(toSerialize)
 }
 
-func (o UnibeeApiSystemInformationSupportCurrency) ToMap() (map[string]interface{}, error) {
+func (o UnibeeInternalLogicGatewayRoCurrency) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Currency) {
 		toSerialize["Currency"] = o.Currency
@@ -159,38 +159,38 @@ func (o UnibeeApiSystemInformationSupportCurrency) ToMap() (map[string]interface
 	return toSerialize, nil
 }
 
-type NullableUnibeeApiSystemInformationSupportCurrency struct {
-	value *UnibeeApiSystemInformationSupportCurrency
+type NullableUnibeeInternalLogicGatewayRoCurrency struct {
+	value *UnibeeInternalLogicGatewayRoCurrency
 	isSet bool
 }
 
-func (v NullableUnibeeApiSystemInformationSupportCurrency) Get() *UnibeeApiSystemInformationSupportCurrency {
+func (v NullableUnibeeInternalLogicGatewayRoCurrency) Get() *UnibeeInternalLogicGatewayRoCurrency {
 	return v.value
 }
 
-func (v *NullableUnibeeApiSystemInformationSupportCurrency) Set(val *UnibeeApiSystemInformationSupportCurrency) {
+func (v *NullableUnibeeInternalLogicGatewayRoCurrency) Set(val *UnibeeInternalLogicGatewayRoCurrency) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableUnibeeApiSystemInformationSupportCurrency) IsSet() bool {
+func (v NullableUnibeeInternalLogicGatewayRoCurrency) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableUnibeeApiSystemInformationSupportCurrency) Unset() {
+func (v *NullableUnibeeInternalLogicGatewayRoCurrency) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableUnibeeApiSystemInformationSupportCurrency(val *UnibeeApiSystemInformationSupportCurrency) *NullableUnibeeApiSystemInformationSupportCurrency {
-	return &NullableUnibeeApiSystemInformationSupportCurrency{value: val, isSet: true}
+func NewNullableUnibeeInternalLogicGatewayRoCurrency(val *UnibeeInternalLogicGatewayRoCurrency) *NullableUnibeeInternalLogicGatewayRoCurrency {
+	return &NullableUnibeeInternalLogicGatewayRoCurrency{value: val, isSet: true}
 }
 
-func (v NullableUnibeeApiSystemInformationSupportCurrency) MarshalJSON() ([]byte, error) {
+func (v NullableUnibeeInternalLogicGatewayRoCurrency) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableUnibeeApiSystemInformationSupportCurrency) UnmarshalJSON(src []byte) error {
+func (v *NullableUnibeeInternalLogicGatewayRoCurrency) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

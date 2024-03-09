@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **ImageUrl** | Pointer to **string** | ImageUrl,Start With: http | [optional] 
 **IntervalCount** | Pointer to **int32** | Default 1，Number Of IntervalUnit | [optional] [default to 1]
 **IntervalUnit** | **string** | Plan Interval Unit，em: day|month|year|week | 
+**Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
 **MetricLimits** | Pointer to [**[]UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam**](UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam.md) | Plan&#39;s MetricLimit List | [optional] 
 **PlanId** | **int64** | PlanId | 
 **PlanName** | **string** | Plan Name | 
@@ -221,6 +222,31 @@ and a boolean to check if the value has been set.
 
 SetIntervalUnit sets IntervalUnit field to given value.
 
+
+### GetMetadata
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetMetadata() map[string]string`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetMetadataOk() (*map[string]string, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *UnibeeApiMerchantPlanEditReq) SetMetadata(v map[string]string)`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *UnibeeApiMerchantPlanEditReq) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
 
 ### GetMetricLimits
 

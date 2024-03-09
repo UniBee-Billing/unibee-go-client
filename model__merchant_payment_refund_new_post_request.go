@@ -23,6 +23,8 @@ var _ MappedNullable = &MerchantPaymentRefundNewPostRequest{}
 type MerchantPaymentRefundNewPostRequest struct {
 	// ExternalRefundId
 	ExternalRefundId string `json:"externalRefundId"`
+	// Metadata，Map
+	Metadata *map[string]string `json:"metadata,omitempty"`
 	// PaymentId
 	PaymentId string `json:"paymentId"`
 	// Reason
@@ -72,6 +74,38 @@ func (o *MerchantPaymentRefundNewPostRequest) GetExternalRefundIdOk() (*string, 
 // SetExternalRefundId sets field value
 func (o *MerchantPaymentRefundNewPostRequest) SetExternalRefundId(v string) {
 	o.ExternalRefundId = v
+}
+
+// GetMetadata returns the Metadata field value if set, zero value otherwise.
+func (o *MerchantPaymentRefundNewPostRequest) GetMetadata() map[string]string {
+	if o == nil || IsNil(o.Metadata) {
+		var ret map[string]string
+		return ret
+	}
+	return *o.Metadata
+}
+
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MerchantPaymentRefundNewPostRequest) GetMetadataOk() (*map[string]string, bool) {
+	if o == nil || IsNil(o.Metadata) {
+		return nil, false
+	}
+	return o.Metadata, true
+}
+
+// HasMetadata returns a boolean if a field has been set.
+func (o *MerchantPaymentRefundNewPostRequest) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetadata gets a reference to the given map[string]string and assigns it to the Metadata field.
+func (o *MerchantPaymentRefundNewPostRequest) SetMetadata(v map[string]string) {
+	o.Metadata = &v
 }
 
 // GetPaymentId returns the PaymentId field value
@@ -141,6 +175,9 @@ func (o MerchantPaymentRefundNewPostRequest) MarshalJSON() ([]byte, error) {
 func (o MerchantPaymentRefundNewPostRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["externalRefundId"] = o.ExternalRefundId
+	if !IsNil(o.Metadata) {
+		toSerialize["metadata"] = o.Metadata
+	}
 	toSerialize["paymentId"] = o.PaymentId
 	if !IsNil(o.Reason) {
 		toSerialize["reason"] = o.Reason

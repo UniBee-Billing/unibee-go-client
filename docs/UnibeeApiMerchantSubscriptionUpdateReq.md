@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AddonParams** | Pointer to [**[]UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo**](UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo.md) | addonParams | [optional] 
 **ConfirmCurrency** | **string** | Currency To Be Confirmed，Get From Preview | 
 **ConfirmTotalAmount** | **int64** | TotalAmount To Be Confirmed，Get From Preview | 
+**Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
 **NewPlanId** | **int64** | New PlanId | 
 **ProrationDate** | **int64** | prorationDate date to start Proration，Get From Preview | 
 **Quantity** | Pointer to **int64** | Quantity，Default 1 | [optional] 
@@ -96,6 +97,31 @@ and a boolean to check if the value has been set.
 
 SetConfirmTotalAmount sets ConfirmTotalAmount field to given value.
 
+
+### GetMetadata
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetMetadata() map[string]string`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetMetadataOk() (*map[string]string, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetMetadata(v map[string]string)`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
 
 ### GetNewPlanId
 

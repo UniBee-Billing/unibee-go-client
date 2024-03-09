@@ -2454,7 +2454,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/_merchant_get_get_200_response'
+                $ref: '#/components/schemas/_merchant_update_post_200_response'
           description: ""
       summary: Update Merchant Info
       tags:
@@ -3996,40 +3996,40 @@ components:
       type: object
     unibee.api.merchant.payment.Item:
       properties:
+        amount:
+          description: "the item total amount,cent"
+          format: int64
+          properties: {}
+          type: integer
+        amountExcludingTax:
+          format: int64
+          properties: {}
+          type: integer
+        currency:
+          format: string
+          properties: {}
+          type: string
         description:
-          description: Description
-          format: string
-          properties: {}
-          type: string
-        imageUrl:
-          description: ImageUrl
-          format: string
-          properties: {}
-          type: string
-        productUrl:
-          description: ProductUrl
           format: string
           properties: {}
           type: string
         quantity:
-          description: Quantity
+          format: int64
+          properties: {}
+          type: integer
+        tax:
           format: int64
           properties: {}
           type: integer
         taxScale:
-          description: TaxScale
+          description: Tax Scale，1000 = 10%
           format: int64
           properties: {}
           type: integer
         unitAmountExcludingTax:
-          description: UnitAmountExcludingTax
           format: int64
           properties: {}
           type: integer
-      required:
-      - quantity
-      - taxScale
-      - unitAmountExcludingTax
       type: object
     unibee.api.merchant.payment.ListReq:
       properties:
@@ -4106,6 +4106,15 @@ components:
           format: string
           properties: {}
           type: string
+        metadata:
+          additionalProperties:
+            format: string
+            properties: {}
+            type: string
+          description: Metadata，Map
+          format: "map[string]string"
+          properties: {}
+          type: object
         paymentId:
           description: PaymentId
           format: string
@@ -4189,12 +4198,7 @@ components:
             $ref: '#/components/schemas/unibee.api.merchant.payment.Item'
           properties: {}
           type: array
-        redirectUrl:
-          description: Redirect Url
-          format: string
-          properties: {}
-          type: string
-        reference:
+        metadata:
           additionalProperties:
             format: string
             properties: {}
@@ -4203,19 +4207,22 @@ components:
           format: "map[string]string"
           properties: {}
           type: object
+        redirectUrl:
+          description: Redirect Url
+          format: string
+          properties: {}
+          type: string
         totalAmount:
           description: "Total PaymentAmount, Cent"
           format: int64
           properties: {}
           type: integer
       required:
-      - countryCode
       - currency
       - email
       - externalPaymentId
       - externalUserId
       - gatewayId
-      - redirectUrl
       - totalAmount
       type: object
     unibee.api.merchant.payment.NewRes:
@@ -4225,6 +4232,10 @@ components:
           type: object
         externalPaymentId:
           description: ExternalPaymentId
+          format: string
+          properties: {}
+          type: string
+        link:
           format: string
           properties: {}
           type: string
@@ -4455,6 +4466,15 @@ components:
           format: string
           properties: {}
           type: string
+        metadata:
+          additionalProperties:
+            format: string
+            properties: {}
+            type: string
+          description: Metadata，Map
+          format: "map[string]string"
+          properties: {}
+          type: object
         metricLimits:
           description: Plan's MetricLimit List
           format: "[]*ro.BulkMetricLimitPlanBindingParam"
@@ -4622,6 +4642,15 @@ components:
           format: string
           properties: {}
           type: string
+        metadata:
+          additionalProperties:
+            format: string
+            properties: {}
+            type: string
+          description: Metadata，Map
+          format: "map[string]string"
+          properties: {}
+          type: object
         metricLimits:
           description: Plan's MetricLimit List
           format: "[]*ro.BulkMetricLimitPlanBindingParam"
@@ -4692,6 +4721,39 @@ components:
       type: object
     unibee.api.merchant.profile.GetRes:
       properties:
+        Currency:
+          description: Currency List
+          format: "[]*ro.Currency"
+          items:
+            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.Currency'
+          properties: {}
+          type: array
+        TimeZone:
+          description: TimeZone List
+          format: "[]string"
+          items:
+            format: string
+            properties: {}
+            type: string
+          properties: {}
+          type: array
+        env:
+          description: "System Env, em: daily|stage|local|prod"
+          format: string
+          properties: {}
+          type: string
+        gateway:
+          description: Gateway List
+          format: "[]*ro.GatewaySimplify"
+          items:
+            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.GatewaySimplify'
+          properties: {}
+          type: array
+        isProd:
+          description: "Check System Env Is Prod, true|false"
+          format: bool
+          properties: {}
+          type: boolean
         merchant:
           $ref: '#/components/schemas/unibee.internal.model.entity.oversea_pay.Merchant'
       type: object
@@ -5288,6 +5350,15 @@ components:
           format: int64
           properties: {}
           type: integer
+        metadata:
+          additionalProperties:
+            format: string
+            properties: {}
+            type: string
+          description: Metadata，Map
+          format: "map[string]string"
+          properties: {}
+          type: object
         newPlanId:
           description: New PlanId
           format: int64
@@ -5778,9 +5849,9 @@ components:
           type: boolean
         supportCurrency:
           description: Support Currency List
-          format: "[]*information.SupportCurrency"
+          format: "[]*ro.Currency"
           items:
-            $ref: '#/components/schemas/unibee.api.system.information.SupportCurrency'
+            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.Currency'
           properties: {}
           type: array
         supportTimeZone:
@@ -5792,21 +5863,6 @@ components:
             type: string
           properties: {}
           type: array
-      type: object
-    unibee.api.system.information.SupportCurrency:
-      properties:
-        Currency:
-          format: string
-          properties: {}
-          type: string
-        Scale:
-          format: int
-          properties: {}
-          type: integer
-        Symbol:
-          format: string
-          properties: {}
-          type: string
       type: object
     unibee.api.system.invoice.BulkChannelSyncReq:
       properties:
@@ -5920,6 +5976,25 @@ components:
       - metricId
       - metricLimit
       type: object
+    unibee.internal.logic.gateway.ro.Currency:
+      example:
+        Symbol: Symbol
+        Currency: Currency
+        Scale: 6
+      properties:
+        Currency:
+          format: string
+          properties: {}
+          type: string
+        Scale:
+          format: int
+          properties: {}
+          type: integer
+        Symbol:
+          format: string
+          properties: {}
+          type: string
+      type: object
     unibee.internal.logic.gateway.ro.GatewayBalance:
       example:
         amount: 6
@@ -5976,6 +6051,7 @@ components:
           responseData: responseData
           type: 2
           firstPaidTime: 9
+          metaData: metaData
           isDeleted: 0
           merchantId: 5
           taxScale: 4
@@ -6030,6 +6106,7 @@ components:
           gatewayPaymentMethod: gatewayPaymentMethod
           paymentAmount: 2
           gatewayEdition: gatewayEdition
+          metaData: metaData
           merchantId: 3
           countryCode: countryCode
           paymentId: paymentId
@@ -6038,7 +6115,6 @@ components:
           verify: verify
           currency: currency
           externalPaymentId: externalPaymentId
-          additionalData: additionalData
           id: 6
           returnUrl: returnUrl
           gatewayPaymentId: gatewayPaymentId
@@ -6103,12 +6179,12 @@ components:
           companyName: companyName
           timeZone: timeZone
           gmtCreate: gmtCreate
-          type: 2
-          userId: 7
+          type: 7
+          userId: 9
           homeUrl: homeUrl
-          companyId: 6
-          isDeleted: 5
-          createTime: 1
+          companyId: 1
+          isDeleted: 2
+          createTime: 5
           phone: phone
           idcard: idcard
           host: host
@@ -6185,13 +6261,13 @@ components:
           bizType: 7
           gmtModify: gmtModify
           externalRefundId: externalRefundId
+          metaData: metaData
           merchantId: 4
           countryCode: countryCode
           paymentId: paymentId
           appId: appId
           refundCommentExplain: refundCommentExplain
           currency: currency
-          additionalData: additionalData
           id: 0
           returnUrl: returnUrl
           refundComment: refundComment
@@ -6833,6 +6909,8 @@ components:
     unibee.internal.logic.gateway.ro.PaymentDetailRo:
       example:
         payment:
+          metadata:
+            key: metadata
           authorizeReason: authorizeReason
           billingReason: billingReason
           link: link
@@ -6889,6 +6967,8 @@ components:
       type: object
     unibee.internal.logic.gateway.ro.PaymentSimplify:
       example:
+        metadata:
+          key: metadata
         authorizeReason: authorizeReason
         billingReason: billingReason
         link: link
@@ -6990,6 +7070,14 @@ components:
           format: int64
           properties: {}
           type: integer
+        metadata:
+          additionalProperties:
+            format: string
+            properties: {}
+            type: string
+          format: "map[string]string"
+          properties: {}
+          type: object
         paidTime:
           description: "paid time, utc time"
           format: int64
@@ -7041,6 +7129,8 @@ components:
         quantity: 4
         addonPlan:
           amount: 6
+          metadata:
+            key: metadata
           extraMetricData: extraMetricData
           bindingAddonIds: bindingAddonIds
           intervalUnit: intervalUnit
@@ -7072,6 +7162,8 @@ components:
       example:
         addons:
         - amount: 6
+          metadata:
+            key: metadata
           extraMetricData: extraMetricData
           bindingAddonIds: bindingAddonIds
           intervalUnit: intervalUnit
@@ -7091,6 +7183,8 @@ components:
           publishStatus: 7
           status: 9
         - amount: 6
+          metadata:
+            key: metadata
           extraMetricData: extraMetricData
           bindingAddonIds: bindingAddonIds
           intervalUnit: intervalUnit
@@ -7114,6 +7208,8 @@ components:
         - 6
         plan:
           amount: 6
+          metadata:
+            key: metadata
           extraMetricData: extraMetricData
           bindingAddonIds: bindingAddonIds
           intervalUnit: intervalUnit
@@ -7199,6 +7295,8 @@ components:
     unibee.internal.logic.gateway.ro.PlanSimplify:
       example:
         amount: 6
+        metadata:
+          key: metadata
         extraMetricData: extraMetricData
         bindingAddonIds: bindingAddonIds
         intervalUnit: intervalUnit
@@ -7276,6 +7374,14 @@ components:
           format: int64
           properties: {}
           type: integer
+        metadata:
+          additionalProperties:
+            format: string
+            properties: {}
+            type: string
+          format: "map[string]string"
+          properties: {}
+          type: object
         planName:
           description: PlanName
           format: string
@@ -7315,6 +7421,8 @@ components:
     unibee.internal.logic.gateway.ro.RefundDetailRo:
       example:
         payment:
+          metadata:
+            key: metadata
           authorizeReason: authorizeReason
           billingReason: billingReason
           link: link
@@ -7350,6 +7458,8 @@ components:
           id: 5
           email: email
         refund:
+          metadata:
+            key: metadata
           refundTime: 2
           externalRefundId: externalRefundId
           userId: 9
@@ -7376,6 +7486,8 @@ components:
       type: object
     unibee.internal.logic.gateway.ro.RefundSimplify:
       example:
+        metadata:
+          key: metadata
         refundTime: 2
         externalRefundId: externalRefundId
         userId: 9
@@ -7428,6 +7540,14 @@ components:
           format: int64
           properties: {}
           type: integer
+        metadata:
+          additionalProperties:
+            format: string
+            properties: {}
+            type: string
+          format: "map[string]string"
+          properties: {}
+          type: object
         paymentId:
           description: relative payment id
           format: string
@@ -7478,12 +7598,16 @@ components:
       example:
         unfinishedSubscriptionPendingUpdate:
           note: note
+          metadata:
+            key: metadata
           gmtModify: gmtModify
           updateAddonData: updateAddonData
           addons:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -7505,6 +7629,8 @@ components:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -7526,6 +7652,8 @@ components:
           link: link
           updatePlan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -7549,6 +7677,8 @@ components:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -7570,6 +7700,8 @@ components:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -7596,6 +7728,8 @@ components:
           planId: 4
           plan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -7643,6 +7777,8 @@ components:
         - quantity: 4
           addonPlan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -7664,6 +7800,8 @@ components:
         - quantity: 4
           addonPlan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -7683,6 +7821,8 @@ components:
             publishStatus: 7
             status: 9
         subscription:
+          metadata:
+            key: metadata
           gatewayItemData: gatewayItemData
           testClock: 6
           currentPeriodEnd: 6
@@ -7718,6 +7858,8 @@ components:
           vatNumber: vatNumber
         plan:
           amount: 6
+          metadata:
+            key: metadata
           extraMetricData: extraMetricData
           bindingAddonIds: bindingAddonIds
           intervalUnit: intervalUnit
@@ -7778,12 +7920,16 @@ components:
     unibee.internal.logic.gateway.ro.SubscriptionPendingUpdateDetailVo:
       example:
         note: note
+        metadata:
+          key: metadata
         gmtModify: gmtModify
         updateAddonData: updateAddonData
         addons:
         - quantity: 4
           addonPlan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -7805,6 +7951,8 @@ components:
         - quantity: 4
           addonPlan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -7826,6 +7974,8 @@ components:
         link: link
         updatePlan:
           amount: 6
+          metadata:
+            key: metadata
           extraMetricData: extraMetricData
           bindingAddonIds: bindingAddonIds
           intervalUnit: intervalUnit
@@ -7849,6 +7999,8 @@ components:
         - quantity: 4
           addonPlan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -7870,6 +8022,8 @@ components:
         - quantity: 4
           addonPlan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -7896,6 +8050,8 @@ components:
         planId: 4
         plan:
           amount: 6
+          metadata:
+            key: metadata
           extraMetricData: extraMetricData
           bindingAddonIds: bindingAddonIds
           intervalUnit: intervalUnit
@@ -7994,6 +8150,14 @@ components:
           type: integer
         merchantMember:
           $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.MerchantMemberSimplify'
+        metadata:
+          additionalProperties:
+            format: string
+            properties: {}
+            type: string
+          format: "map[string]string"
+          properties: {}
+          type: object
         note:
           description: Update Note
           format: string
@@ -8094,6 +8258,8 @@ components:
       type: object
     unibee.internal.logic.gateway.ro.SubscriptionSimplify:
       example:
+        metadata:
+          key: metadata
         gatewayItemData: gatewayItemData
         testClock: 6
         currentPeriodEnd: 6
@@ -8223,6 +8389,14 @@ components:
           format: int64
           properties: {}
           type: integer
+        metadata:
+          additionalProperties:
+            format: string
+            properties: {}
+            type: string
+          format: "map[string]string"
+          properties: {}
+          type: object
         pendingUpdateId:
           format: string
           properties: {}
@@ -8295,6 +8469,8 @@ components:
         - quantity: 4
           addonPlan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -8316,6 +8492,8 @@ components:
         - quantity: 4
           addonPlan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -8346,6 +8524,8 @@ components:
         periodStart: 2
         plan:
           amount: 6
+          metadata:
+            key: metadata
           extraMetricData: extraMetricData
           bindingAddonIds: bindingAddonIds
           intervalUnit: intervalUnit
@@ -8662,6 +8842,8 @@ components:
         - quantity: 4
           addonPlan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -8683,6 +8865,8 @@ components:
         - quantity: 4
           addonPlan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -8702,6 +8886,8 @@ components:
             publishStatus: 7
             status: 9
         subscription:
+          metadata:
+            key: metadata
           gatewayItemData: gatewayItemData
           testClock: 6
           currentPeriodEnd: 6
@@ -8737,6 +8923,8 @@ components:
           vatNumber: vatNumber
         plan:
           amount: 6
+          metadata:
+            key: metadata
           extraMetricData: extraMetricData
           bindingAddonIds: bindingAddonIds
           intervalUnit: intervalUnit
@@ -9147,12 +9335,12 @@ components:
         companyName: companyName
         timeZone: timeZone
         gmtCreate: gmtCreate
-        type: 2
-        userId: 7
+        type: 7
+        userId: 9
         homeUrl: homeUrl
-        companyId: 6
-        isDeleted: 5
-        createTime: 1
+        companyId: 1
+        isDeleted: 2
+        createTime: 5
         phone: phone
         idcard: idcard
         host: host
@@ -9543,6 +9731,7 @@ components:
         gatewayPaymentMethod: gatewayPaymentMethod
         paymentAmount: 2
         gatewayEdition: gatewayEdition
+        metaData: metaData
         merchantId: 3
         countryCode: countryCode
         paymentId: paymentId
@@ -9551,7 +9740,6 @@ components:
         verify: verify
         currency: currency
         externalPaymentId: externalPaymentId
-        additionalData: additionalData
         id: 6
         returnUrl: returnUrl
         gatewayPaymentId: gatewayPaymentId
@@ -9581,11 +9769,6 @@ components:
         status: 6
         terminalIp: terminalIp
       properties:
-        additionalData:
-          description: addtional data (json)
-          format: string
-          properties: {}
-          type: string
         appId:
           description: app id
           format: string
@@ -9601,6 +9784,7 @@ components:
           properties: {}
           type: integer
         automatic:
+          description: "0-no,1-yes"
           format: int
           properties: {}
           type: integer
@@ -9733,6 +9917,11 @@ components:
           format: int64
           properties: {}
           type: integer
+        metaData:
+          description: meta_data (json)
+          format: string
+          properties: {}
+          type: string
         openApiId:
           description: open api id
           format: int64
@@ -9997,6 +10186,11 @@ components:
           format: int64
           properties: {}
           type: integer
+        metaData:
+          description: meta_data(json)
+          format: string
+          properties: {}
+          type: string
         planName:
           description: PlanName
           format: string
@@ -10033,13 +10227,13 @@ components:
         bizType: 7
         gmtModify: gmtModify
         externalRefundId: externalRefundId
+        metaData: metaData
         merchantId: 4
         countryCode: countryCode
         paymentId: paymentId
         appId: appId
         refundCommentExplain: refundCommentExplain
         currency: currency
-        additionalData: additionalData
         id: 0
         returnUrl: returnUrl
         refundComment: refundComment
@@ -10057,10 +10251,6 @@ components:
         uniqueId: uniqueId
         status: 3
       properties:
-        additionalData:
-          format: string
-          properties: {}
-          type: string
         appId:
           description: app id
           format: string
@@ -10126,6 +10316,11 @@ components:
           format: int64
           properties: {}
           type: integer
+        metaData:
+          description: meta_data(json)
+          format: string
+          properties: {}
+          type: string
         openApiId:
           description: open api id
           format: int64
@@ -10201,6 +10396,7 @@ components:
         responseData: responseData
         type: 2
         firstPaidTime: 9
+        metaData: metaData
         isDeleted: 0
         merchantId: 5
         taxScale: 4
@@ -10382,6 +10578,11 @@ components:
           format: int64
           properties: {}
           type: integer
+        metaData:
+          description: meta_data(json)
+          format: string
+          properties: {}
+          type: string
         pendingUpdateId:
           format: string
           properties: {}
@@ -10464,6 +10665,7 @@ components:
         link: link
         effectImmediate: 5
         responseData: responseData
+        metaData: metaData
         updateCurrency: updateCurrency
         updatePlanId: 1
         isDeleted: 9
@@ -10576,6 +10778,11 @@ components:
           format: int64
           properties: {}
           type: integer
+        metaData:
+          description: meta_data(json)
+          format: string
+          properties: {}
+          type: string
         name:
           description: name
           format: string
@@ -11431,6 +11638,17 @@ components:
       type: object
     _merchant_get_get_200_response_data:
       example:
+        TimeZone:
+        - TimeZone
+        - TimeZone
+        isProd: true
+        Currency:
+        - Symbol: Symbol
+          Currency: Currency
+          Scale: 6
+        - Symbol: Symbol
+          Currency: Currency
+          Scale: 6
         merchant:
           businessNum: businessNum
           address: address
@@ -11440,12 +11658,12 @@ components:
           companyName: companyName
           timeZone: timeZone
           gmtCreate: gmtCreate
-          type: 2
-          userId: 7
+          type: 7
+          userId: 9
           homeUrl: homeUrl
-          companyId: 6
-          isDeleted: 5
-          createTime: 1
+          companyId: 1
+          isDeleted: 2
+          createTime: 5
           phone: phone
           idcard: idcard
           host: host
@@ -11453,7 +11671,48 @@ components:
           location: location
           id: 5
           email: email
+        env: env
+        gateway:
+        - gatewayName: gatewayName
+          gatewayLogo: gatewayLogo
+          gatewayId: 6
+        - gatewayName: gatewayName
+          gatewayLogo: gatewayLogo
+          gatewayId: 6
       properties:
+        Currency:
+          description: Currency List
+          format: "[]*ro.Currency"
+          items:
+            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.Currency'
+          properties: {}
+          type: array
+        TimeZone:
+          description: TimeZone List
+          format: "[]string"
+          items:
+            format: string
+            properties: {}
+            type: string
+          properties: {}
+          type: array
+        env:
+          description: "System Env, em: daily|stage|local|prod"
+          format: string
+          properties: {}
+          type: string
+        gateway:
+          description: Gateway List
+          format: "[]*ro.GatewaySimplify"
+          items:
+            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.GatewaySimplify'
+          properties: {}
+          type: array
+        isProd:
+          description: "Check System Env Is Prod, true|false"
+          format: bool
+          properties: {}
+          type: boolean
         merchant:
           $ref: '#/components/schemas/unibee.internal.model.entity.oversea_pay.Merchant'
       type: object
@@ -11462,6 +11721,17 @@ components:
         redirect: redirect
         code: 0
         data:
+          TimeZone:
+          - TimeZone
+          - TimeZone
+          isProd: true
+          Currency:
+          - Symbol: Symbol
+            Currency: Currency
+            Scale: 6
+          - Symbol: Symbol
+            Currency: Currency
+            Scale: 6
           merchant:
             businessNum: businessNum
             address: address
@@ -11471,12 +11741,12 @@ components:
             companyName: companyName
             timeZone: timeZone
             gmtCreate: gmtCreate
-            type: 2
-            userId: 7
+            type: 7
+            userId: 9
             homeUrl: homeUrl
-            companyId: 6
-            isDeleted: 5
-            createTime: 1
+            companyId: 1
+            isDeleted: 2
+            createTime: 5
             phone: phone
             idcard: idcard
             host: host
@@ -11484,6 +11754,14 @@ components:
             location: location
             id: 5
             email: email
+          env: env
+          gateway:
+          - gatewayName: gatewayName
+            gatewayLogo: gatewayLogo
+            gatewayId: 6
+          - gatewayName: gatewayName
+            gatewayLogo: gatewayLogo
+            gatewayId: 6
         requestId: requestId
         message: message
       properties:
@@ -11530,6 +11808,7 @@ components:
             responseData: responseData
             type: 2
             firstPaidTime: 9
+            metaData: metaData
             isDeleted: 0
             merchantId: 5
             taxScale: 4
@@ -11584,6 +11863,7 @@ components:
             gatewayPaymentMethod: gatewayPaymentMethod
             paymentAmount: 2
             gatewayEdition: gatewayEdition
+            metaData: metaData
             merchantId: 3
             countryCode: countryCode
             paymentId: paymentId
@@ -11592,7 +11872,6 @@ components:
             verify: verify
             currency: currency
             externalPaymentId: externalPaymentId
-            additionalData: additionalData
             id: 6
             returnUrl: returnUrl
             gatewayPaymentId: gatewayPaymentId
@@ -11657,12 +11936,12 @@ components:
             companyName: companyName
             timeZone: timeZone
             gmtCreate: gmtCreate
-            type: 2
-            userId: 7
+            type: 7
+            userId: 9
             homeUrl: homeUrl
-            companyId: 6
-            isDeleted: 5
-            createTime: 1
+            companyId: 1
+            isDeleted: 2
+            createTime: 5
             phone: phone
             idcard: idcard
             host: host
@@ -11739,13 +12018,13 @@ components:
             bizType: 7
             gmtModify: gmtModify
             externalRefundId: externalRefundId
+            metaData: metaData
             merchantId: 4
             countryCode: countryCode
             paymentId: paymentId
             appId: appId
             refundCommentExplain: refundCommentExplain
             currency: currency
-            additionalData: additionalData
             id: 0
             returnUrl: returnUrl
             refundComment: refundComment
@@ -11794,6 +12073,7 @@ components:
               responseData: responseData
               type: 2
               firstPaidTime: 9
+              metaData: metaData
               isDeleted: 0
               merchantId: 5
               taxScale: 4
@@ -11848,6 +12128,7 @@ components:
               gatewayPaymentMethod: gatewayPaymentMethod
               paymentAmount: 2
               gatewayEdition: gatewayEdition
+              metaData: metaData
               merchantId: 3
               countryCode: countryCode
               paymentId: paymentId
@@ -11856,7 +12137,6 @@ components:
               verify: verify
               currency: currency
               externalPaymentId: externalPaymentId
-              additionalData: additionalData
               id: 6
               returnUrl: returnUrl
               gatewayPaymentId: gatewayPaymentId
@@ -11921,12 +12201,12 @@ components:
               companyName: companyName
               timeZone: timeZone
               gmtCreate: gmtCreate
-              type: 2
-              userId: 7
+              type: 7
+              userId: 9
               homeUrl: homeUrl
-              companyId: 6
-              isDeleted: 5
-              createTime: 1
+              companyId: 1
+              isDeleted: 2
+              createTime: 5
               phone: phone
               idcard: idcard
               host: host
@@ -12003,13 +12283,13 @@ components:
               bizType: 7
               gmtModify: gmtModify
               externalRefundId: externalRefundId
+              metaData: metaData
               merchantId: 4
               countryCode: countryCode
               paymentId: paymentId
               appId: appId
               refundCommentExplain: refundCommentExplain
               currency: currency
-              additionalData: additionalData
               id: 0
               returnUrl: returnUrl
               refundComment: refundComment
@@ -12188,6 +12468,7 @@ components:
             responseData: responseData
             type: 2
             firstPaidTime: 9
+            metaData: metaData
             isDeleted: 0
             merchantId: 5
             taxScale: 4
@@ -12242,6 +12523,7 @@ components:
             gatewayPaymentMethod: gatewayPaymentMethod
             paymentAmount: 2
             gatewayEdition: gatewayEdition
+            metaData: metaData
             merchantId: 3
             countryCode: countryCode
             paymentId: paymentId
@@ -12250,7 +12532,6 @@ components:
             verify: verify
             currency: currency
             externalPaymentId: externalPaymentId
-            additionalData: additionalData
             id: 6
             returnUrl: returnUrl
             gatewayPaymentId: gatewayPaymentId
@@ -12315,12 +12596,12 @@ components:
             companyName: companyName
             timeZone: timeZone
             gmtCreate: gmtCreate
-            type: 2
-            userId: 7
+            type: 7
+            userId: 9
             homeUrl: homeUrl
-            companyId: 6
-            isDeleted: 5
-            createTime: 1
+            companyId: 1
+            isDeleted: 2
+            createTime: 5
             phone: phone
             idcard: idcard
             host: host
@@ -12397,13 +12678,13 @@ components:
             bizType: 7
             gmtModify: gmtModify
             externalRefundId: externalRefundId
+            metaData: metaData
             merchantId: 4
             countryCode: countryCode
             paymentId: paymentId
             appId: appId
             refundCommentExplain: refundCommentExplain
             currency: currency
-            additionalData: additionalData
             id: 0
             returnUrl: returnUrl
             refundComment: refundComment
@@ -12442,6 +12723,7 @@ components:
             responseData: responseData
             type: 2
             firstPaidTime: 9
+            metaData: metaData
             isDeleted: 0
             merchantId: 5
             taxScale: 4
@@ -12496,6 +12778,7 @@ components:
             gatewayPaymentMethod: gatewayPaymentMethod
             paymentAmount: 2
             gatewayEdition: gatewayEdition
+            metaData: metaData
             merchantId: 3
             countryCode: countryCode
             paymentId: paymentId
@@ -12504,7 +12787,6 @@ components:
             verify: verify
             currency: currency
             externalPaymentId: externalPaymentId
-            additionalData: additionalData
             id: 6
             returnUrl: returnUrl
             gatewayPaymentId: gatewayPaymentId
@@ -12569,12 +12851,12 @@ components:
             companyName: companyName
             timeZone: timeZone
             gmtCreate: gmtCreate
-            type: 2
-            userId: 7
+            type: 7
+            userId: 9
             homeUrl: homeUrl
-            companyId: 6
-            isDeleted: 5
-            createTime: 1
+            companyId: 1
+            isDeleted: 2
+            createTime: 5
             phone: phone
             idcard: idcard
             host: host
@@ -12651,13 +12933,13 @@ components:
             bizType: 7
             gmtModify: gmtModify
             externalRefundId: externalRefundId
+            metaData: metaData
             merchantId: 4
             countryCode: countryCode
             paymentId: paymentId
             appId: appId
             refundCommentExplain: refundCommentExplain
             currency: currency
-            additionalData: additionalData
             id: 0
             returnUrl: returnUrl
             refundComment: refundComment
@@ -12711,6 +12993,7 @@ components:
               responseData: responseData
               type: 2
               firstPaidTime: 9
+              metaData: metaData
               isDeleted: 0
               merchantId: 5
               taxScale: 4
@@ -12765,6 +13048,7 @@ components:
               gatewayPaymentMethod: gatewayPaymentMethod
               paymentAmount: 2
               gatewayEdition: gatewayEdition
+              metaData: metaData
               merchantId: 3
               countryCode: countryCode
               paymentId: paymentId
@@ -12773,7 +13057,6 @@ components:
               verify: verify
               currency: currency
               externalPaymentId: externalPaymentId
-              additionalData: additionalData
               id: 6
               returnUrl: returnUrl
               gatewayPaymentId: gatewayPaymentId
@@ -12838,12 +13121,12 @@ components:
               companyName: companyName
               timeZone: timeZone
               gmtCreate: gmtCreate
-              type: 2
-              userId: 7
+              type: 7
+              userId: 9
               homeUrl: homeUrl
-              companyId: 6
-              isDeleted: 5
-              createTime: 1
+              companyId: 1
+              isDeleted: 2
+              createTime: 5
               phone: phone
               idcard: idcard
               host: host
@@ -12920,13 +13203,13 @@ components:
               bizType: 7
               gmtModify: gmtModify
               externalRefundId: externalRefundId
+              metaData: metaData
               merchantId: 4
               countryCode: countryCode
               paymentId: paymentId
               appId: appId
               refundCommentExplain: refundCommentExplain
               currency: currency
-              additionalData: additionalData
               id: 0
               returnUrl: returnUrl
               refundComment: refundComment
@@ -12965,6 +13248,7 @@ components:
               responseData: responseData
               type: 2
               firstPaidTime: 9
+              metaData: metaData
               isDeleted: 0
               merchantId: 5
               taxScale: 4
@@ -13019,6 +13303,7 @@ components:
               gatewayPaymentMethod: gatewayPaymentMethod
               paymentAmount: 2
               gatewayEdition: gatewayEdition
+              metaData: metaData
               merchantId: 3
               countryCode: countryCode
               paymentId: paymentId
@@ -13027,7 +13312,6 @@ components:
               verify: verify
               currency: currency
               externalPaymentId: externalPaymentId
-              additionalData: additionalData
               id: 6
               returnUrl: returnUrl
               gatewayPaymentId: gatewayPaymentId
@@ -13092,12 +13376,12 @@ components:
               companyName: companyName
               timeZone: timeZone
               gmtCreate: gmtCreate
-              type: 2
-              userId: 7
+              type: 7
+              userId: 9
               homeUrl: homeUrl
-              companyId: 6
-              isDeleted: 5
-              createTime: 1
+              companyId: 1
+              isDeleted: 2
+              createTime: 5
               phone: phone
               idcard: idcard
               host: host
@@ -13174,13 +13458,13 @@ components:
               bizType: 7
               gmtModify: gmtModify
               externalRefundId: externalRefundId
+              metaData: metaData
               merchantId: 4
               countryCode: countryCode
               paymentId: paymentId
               appId: appId
               refundCommentExplain: refundCommentExplain
               currency: currency
-              additionalData: additionalData
               id: 0
               returnUrl: returnUrl
               refundComment: refundComment
@@ -13226,13 +13510,13 @@ components:
           bizType: 7
           gmtModify: gmtModify
           externalRefundId: externalRefundId
+          metaData: metaData
           merchantId: 4
           countryCode: countryCode
           paymentId: paymentId
           appId: appId
           refundCommentExplain: refundCommentExplain
           currency: currency
-          additionalData: additionalData
           id: 0
           returnUrl: returnUrl
           refundComment: refundComment
@@ -13262,13 +13546,13 @@ components:
             bizType: 7
             gmtModify: gmtModify
             externalRefundId: externalRefundId
+            metaData: metaData
             merchantId: 4
             countryCode: countryCode
             paymentId: paymentId
             appId: appId
             refundCommentExplain: refundCommentExplain
             currency: currency
-            additionalData: additionalData
             id: 0
             returnUrl: returnUrl
             refundComment: refundComment
@@ -13689,6 +13973,8 @@ components:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -13710,6 +13996,8 @@ components:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -13729,6 +14017,8 @@ components:
               publishStatus: 7
               status: 9
           subscription:
+            metadata:
+              key: metadata
             gatewayItemData: gatewayItemData
             testClock: 6
             currentPeriodEnd: 6
@@ -13764,6 +14054,8 @@ components:
             vatNumber: vatNumber
           plan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -13903,6 +14195,8 @@ components:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -13924,6 +14218,8 @@ components:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -13943,6 +14239,8 @@ components:
                 publishStatus: 7
                 status: 9
             subscription:
+              metadata:
+                key: metadata
               gatewayItemData: gatewayItemData
               testClock: 6
               currentPeriodEnd: 6
@@ -13978,6 +14276,8 @@ components:
               vatNumber: vatNumber
             plan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -14085,6 +14385,8 @@ components:
       example:
         paymentDetail:
           payment:
+            metadata:
+              key: metadata
             authorizeReason: authorizeReason
             billingReason: billingReason
             link: link
@@ -14130,6 +14432,8 @@ components:
         data:
           paymentDetail:
             payment:
+              metadata:
+                key: metadata
               authorizeReason: authorizeReason
               billingReason: billingReason
               link: link
@@ -14190,6 +14494,8 @@ components:
       example:
         paymentDetails:
         - payment:
+            metadata:
+              key: metadata
             authorizeReason: authorizeReason
             billingReason: billingReason
             link: link
@@ -14225,6 +14531,8 @@ components:
             id: 5
             email: email
         - payment:
+            metadata:
+              key: metadata
             authorizeReason: authorizeReason
             billingReason: billingReason
             link: link
@@ -14275,6 +14583,8 @@ components:
         data:
           paymentDetails:
           - payment:
+              metadata:
+                key: metadata
               authorizeReason: authorizeReason
               billingReason: billingReason
               link: link
@@ -14310,6 +14620,8 @@ components:
               id: 5
               email: email
           - payment:
+              metadata:
+                key: metadata
               authorizeReason: authorizeReason
               billingReason: billingReason
               link: link
@@ -14369,6 +14681,7 @@ components:
     _merchant_payment_new_post_200_response_data:
       example:
         paymentId: paymentId
+        link: link
         action: "{}"
         externalPaymentId: externalPaymentId
         status: 6
@@ -14378,6 +14691,10 @@ components:
           type: object
         externalPaymentId:
           description: ExternalPaymentId
+          format: string
+          properties: {}
+          type: string
+        link:
           format: string
           properties: {}
           type: string
@@ -14398,6 +14715,7 @@ components:
         code: 0
         data:
           paymentId: paymentId
+          link: link
           action: "{}"
           externalPaymentId: externalPaymentId
           status: 6
@@ -14427,6 +14745,8 @@ components:
       example:
         refundDetail:
           payment:
+            metadata:
+              key: metadata
             authorizeReason: authorizeReason
             billingReason: billingReason
             link: link
@@ -14462,6 +14782,8 @@ components:
             id: 5
             email: email
           refund:
+            metadata:
+              key: metadata
             refundTime: 2
             externalRefundId: externalRefundId
             userId: 9
@@ -14489,6 +14811,8 @@ components:
         data:
           refundDetail:
             payment:
+              metadata:
+                key: metadata
               authorizeReason: authorizeReason
               billingReason: billingReason
               link: link
@@ -14524,6 +14848,8 @@ components:
               id: 5
               email: email
             refund:
+              metadata:
+                key: metadata
               refundTime: 2
               externalRefundId: externalRefundId
               userId: 9
@@ -14566,6 +14892,8 @@ components:
       example:
         refundDetails:
         - payment:
+            metadata:
+              key: metadata
             authorizeReason: authorizeReason
             billingReason: billingReason
             link: link
@@ -14601,6 +14929,8 @@ components:
             id: 5
             email: email
           refund:
+            metadata:
+              key: metadata
             refundTime: 2
             externalRefundId: externalRefundId
             userId: 9
@@ -14618,6 +14948,8 @@ components:
             refundAmount: 5
             status: 7
         - payment:
+            metadata:
+              key: metadata
             authorizeReason: authorizeReason
             billingReason: billingReason
             link: link
@@ -14653,6 +14985,8 @@ components:
             id: 5
             email: email
           refund:
+            metadata:
+              key: metadata
             refundTime: 2
             externalRefundId: externalRefundId
             userId: 9
@@ -14685,6 +15019,8 @@ components:
         data:
           refundDetails:
           - payment:
+              metadata:
+                key: metadata
               authorizeReason: authorizeReason
               billingReason: billingReason
               link: link
@@ -14720,6 +15056,8 @@ components:
               id: 5
               email: email
             refund:
+              metadata:
+                key: metadata
               refundTime: 2
               externalRefundId: externalRefundId
               userId: 9
@@ -14737,6 +15075,8 @@ components:
               refundAmount: 5
               status: 7
           - payment:
+              metadata:
+                key: metadata
               authorizeReason: authorizeReason
               billingReason: billingReason
               link: link
@@ -14772,6 +15112,8 @@ components:
               id: 5
               email: email
             refund:
+              metadata:
+                key: metadata
               refundTime: 2
               externalRefundId: externalRefundId
               userId: 9
@@ -14817,6 +15159,15 @@ components:
           format: string
           properties: {}
           type: string
+        metadata:
+          additionalProperties:
+            format: string
+            properties: {}
+            type: string
+          description: Metadata，Map
+          format: "map[string]string"
+          properties: {}
+          type: object
         paymentId:
           description: PaymentId
           format: string
@@ -14998,6 +15349,8 @@ components:
       example:
         plan:
           amount: 6
+          metadata:
+            key: metadata
           extraMetricData: extraMetricData
           bindingAddonIds: bindingAddonIds
           intervalUnit: intervalUnit
@@ -15027,6 +15380,8 @@ components:
         data:
           plan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -15072,6 +15427,8 @@ components:
         plan:
           addons:
           - amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -15091,6 +15448,8 @@ components:
             publishStatus: 7
             status: 9
           - amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -15114,6 +15473,8 @@ components:
           - 6
           plan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -15181,6 +15542,8 @@ components:
           plan:
             addons:
             - amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -15200,6 +15563,8 @@ components:
               publishStatus: 7
               status: 9
             - amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -15223,6 +15588,8 @@ components:
             - 6
             plan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -15305,6 +15672,8 @@ components:
         plans:
         - addons:
           - amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -15324,6 +15693,8 @@ components:
             publishStatus: 7
             status: 9
           - amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -15347,6 +15718,8 @@ components:
           - 6
           plan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -15404,6 +15777,8 @@ components:
             metricLimit: 7
         - addons:
           - amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -15423,6 +15798,8 @@ components:
             publishStatus: 7
             status: 9
           - amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -15446,6 +15823,8 @@ components:
           - 6
           plan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -15518,6 +15897,8 @@ components:
           plans:
           - addons:
             - amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -15537,6 +15918,8 @@ components:
               publishStatus: 7
               status: 9
             - amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -15560,6 +15943,8 @@ components:
             - 6
             plan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -15617,6 +16002,8 @@ components:
               metricLimit: 7
           - addons:
             - amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -15636,6 +16023,8 @@ components:
               publishStatus: 7
               status: 9
             - amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -15659,6 +16048,8 @@ components:
             - 6
             plan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -16284,12 +16675,16 @@ components:
       example:
         unfinishedSubscriptionPendingUpdate:
           note: note
+          metadata:
+            key: metadata
           gmtModify: gmtModify
           updateAddonData: updateAddonData
           addons:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -16311,6 +16706,8 @@ components:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -16332,6 +16729,8 @@ components:
           link: link
           updatePlan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -16355,6 +16754,8 @@ components:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -16376,6 +16777,8 @@ components:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -16402,6 +16805,8 @@ components:
           planId: 4
           plan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -16444,6 +16849,8 @@ components:
         - quantity: 4
           addonPlan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -16465,6 +16872,8 @@ components:
         - quantity: 4
           addonPlan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -16484,6 +16893,8 @@ components:
             publishStatus: 7
             status: 9
         subscription:
+          metadata:
+            key: metadata
           gatewayItemData: gatewayItemData
           testClock: 6
           currentPeriodEnd: 6
@@ -16519,6 +16930,8 @@ components:
           vatNumber: vatNumber
         plan:
           amount: 6
+          metadata:
+            key: metadata
           extraMetricData: extraMetricData
           bindingAddonIds: bindingAddonIds
           intervalUnit: intervalUnit
@@ -16576,12 +16989,16 @@ components:
         data:
           unfinishedSubscriptionPendingUpdate:
             note: note
+            metadata:
+              key: metadata
             gmtModify: gmtModify
             updateAddonData: updateAddonData
             addons:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -16603,6 +17020,8 @@ components:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -16624,6 +17043,8 @@ components:
             link: link
             updatePlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -16647,6 +17068,8 @@ components:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -16668,6 +17091,8 @@ components:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -16694,6 +17119,8 @@ components:
             planId: 4
             plan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -16736,6 +17163,8 @@ components:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -16757,6 +17186,8 @@ components:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -16776,6 +17207,8 @@ components:
               publishStatus: 7
               status: 9
           subscription:
+            metadata:
+              key: metadata
             gatewayItemData: gatewayItemData
             testClock: 6
             currentPeriodEnd: 6
@@ -16811,6 +17244,8 @@ components:
             vatNumber: vatNumber
           plan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -16869,12 +17304,16 @@ components:
         subscriptions:
         - unfinishedSubscriptionPendingUpdate:
             note: note
+            metadata:
+              key: metadata
             gmtModify: gmtModify
             updateAddonData: updateAddonData
             addons:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -16896,6 +17335,8 @@ components:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -16917,6 +17358,8 @@ components:
             link: link
             updatePlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -16940,6 +17383,8 @@ components:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -16961,6 +17406,8 @@ components:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -16987,6 +17434,8 @@ components:
             planId: 4
             plan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -17034,6 +17483,8 @@ components:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -17055,6 +17506,8 @@ components:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -17074,6 +17527,8 @@ components:
               publishStatus: 7
               status: 9
           subscription:
+            metadata:
+              key: metadata
             gatewayItemData: gatewayItemData
             testClock: 6
             currentPeriodEnd: 6
@@ -17109,6 +17564,8 @@ components:
             vatNumber: vatNumber
           plan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -17142,12 +17599,16 @@ components:
             gatewayId: 6
         - unfinishedSubscriptionPendingUpdate:
             note: note
+            metadata:
+              key: metadata
             gmtModify: gmtModify
             updateAddonData: updateAddonData
             addons:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -17169,6 +17630,8 @@ components:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -17190,6 +17653,8 @@ components:
             link: link
             updatePlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -17213,6 +17678,8 @@ components:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -17234,6 +17701,8 @@ components:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -17260,6 +17729,8 @@ components:
             planId: 4
             plan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -17307,6 +17778,8 @@ components:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -17328,6 +17801,8 @@ components:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -17347,6 +17822,8 @@ components:
               publishStatus: 7
               status: 9
           subscription:
+            metadata:
+              key: metadata
             gatewayItemData: gatewayItemData
             testClock: 6
             currentPeriodEnd: 6
@@ -17382,6 +17859,8 @@ components:
             vatNumber: vatNumber
           plan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -17430,12 +17909,16 @@ components:
           subscriptions:
           - unfinishedSubscriptionPendingUpdate:
               note: note
+              metadata:
+                key: metadata
               gmtModify: gmtModify
               updateAddonData: updateAddonData
               addons:
               - quantity: 4
                 addonPlan:
                   amount: 6
+                  metadata:
+                    key: metadata
                   extraMetricData: extraMetricData
                   bindingAddonIds: bindingAddonIds
                   intervalUnit: intervalUnit
@@ -17457,6 +17940,8 @@ components:
               - quantity: 4
                 addonPlan:
                   amount: 6
+                  metadata:
+                    key: metadata
                   extraMetricData: extraMetricData
                   bindingAddonIds: bindingAddonIds
                   intervalUnit: intervalUnit
@@ -17478,6 +17963,8 @@ components:
               link: link
               updatePlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -17501,6 +17988,8 @@ components:
               - quantity: 4
                 addonPlan:
                   amount: 6
+                  metadata:
+                    key: metadata
                   extraMetricData: extraMetricData
                   bindingAddonIds: bindingAddonIds
                   intervalUnit: intervalUnit
@@ -17522,6 +18011,8 @@ components:
               - quantity: 4
                 addonPlan:
                   amount: 6
+                  metadata:
+                    key: metadata
                   extraMetricData: extraMetricData
                   bindingAddonIds: bindingAddonIds
                   intervalUnit: intervalUnit
@@ -17548,6 +18039,8 @@ components:
               planId: 4
               plan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -17595,6 +18088,8 @@ components:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -17616,6 +18111,8 @@ components:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -17635,6 +18132,8 @@ components:
                 publishStatus: 7
                 status: 9
             subscription:
+              metadata:
+                key: metadata
               gatewayItemData: gatewayItemData
               testClock: 6
               currentPeriodEnd: 6
@@ -17670,6 +18169,8 @@ components:
               vatNumber: vatNumber
             plan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -17703,12 +18204,16 @@ components:
               gatewayId: 6
           - unfinishedSubscriptionPendingUpdate:
               note: note
+              metadata:
+                key: metadata
               gmtModify: gmtModify
               updateAddonData: updateAddonData
               addons:
               - quantity: 4
                 addonPlan:
                   amount: 6
+                  metadata:
+                    key: metadata
                   extraMetricData: extraMetricData
                   bindingAddonIds: bindingAddonIds
                   intervalUnit: intervalUnit
@@ -17730,6 +18235,8 @@ components:
               - quantity: 4
                 addonPlan:
                   amount: 6
+                  metadata:
+                    key: metadata
                   extraMetricData: extraMetricData
                   bindingAddonIds: bindingAddonIds
                   intervalUnit: intervalUnit
@@ -17751,6 +18258,8 @@ components:
               link: link
               updatePlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -17774,6 +18283,8 @@ components:
               - quantity: 4
                 addonPlan:
                   amount: 6
+                  metadata:
+                    key: metadata
                   extraMetricData: extraMetricData
                   bindingAddonIds: bindingAddonIds
                   intervalUnit: intervalUnit
@@ -17795,6 +18306,8 @@ components:
               - quantity: 4
                 addonPlan:
                   amount: 6
+                  metadata:
+                    key: metadata
                   extraMetricData: extraMetricData
                   bindingAddonIds: bindingAddonIds
                   intervalUnit: intervalUnit
@@ -17821,6 +18334,8 @@ components:
               planId: 4
               plan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -17868,6 +18383,8 @@ components:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -17889,6 +18406,8 @@ components:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -17908,6 +18427,8 @@ components:
                 publishStatus: 7
                 status: 9
             subscription:
+              metadata:
+                key: metadata
               gatewayItemData: gatewayItemData
               testClock: 6
               currentPeriodEnd: 6
@@ -17943,6 +18464,8 @@ components:
               vatNumber: vatNumber
             plan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -18000,12 +18523,16 @@ components:
       example:
         subscriptionPendingUpdateDetails:
         - note: note
+          metadata:
+            key: metadata
           gmtModify: gmtModify
           updateAddonData: updateAddonData
           addons:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -18027,6 +18554,8 @@ components:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -18048,6 +18577,8 @@ components:
           link: link
           updatePlan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -18071,6 +18602,8 @@ components:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -18092,6 +18625,8 @@ components:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -18118,6 +18653,8 @@ components:
           planId: 4
           plan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -18157,12 +18694,16 @@ components:
           gatewayId: 5
           status: 1
         - note: note
+          metadata:
+            key: metadata
           gmtModify: gmtModify
           updateAddonData: updateAddonData
           addons:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -18184,6 +18725,8 @@ components:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -18205,6 +18748,8 @@ components:
           link: link
           updatePlan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -18228,6 +18773,8 @@ components:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -18249,6 +18796,8 @@ components:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -18275,6 +18824,8 @@ components:
           planId: 4
           plan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -18329,12 +18880,16 @@ components:
         data:
           subscriptionPendingUpdateDetails:
           - note: note
+            metadata:
+              key: metadata
             gmtModify: gmtModify
             updateAddonData: updateAddonData
             addons:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -18356,6 +18911,8 @@ components:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -18377,6 +18934,8 @@ components:
             link: link
             updatePlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -18400,6 +18959,8 @@ components:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -18421,6 +18982,8 @@ components:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -18447,6 +19010,8 @@ components:
             planId: 4
             plan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -18486,12 +19051,16 @@ components:
             gatewayId: 5
             status: 1
           - note: note
+            metadata:
+              key: metadata
             gmtModify: gmtModify
             updateAddonData: updateAddonData
             addons:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -18513,6 +19082,8 @@ components:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -18534,6 +19105,8 @@ components:
             link: link
             updatePlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -18557,6 +19130,8 @@ components:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -18578,6 +19153,8 @@ components:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -18604,6 +19181,8 @@ components:
             planId: 4
             plan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -18672,6 +19251,8 @@ components:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -18693,6 +19274,8 @@ components:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -18723,6 +19306,8 @@ components:
           periodStart: 2
           plan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -18749,6 +19334,8 @@ components:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -18770,6 +19357,8 @@ components:
           - quantity: 4
             addonPlan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -18800,6 +19389,8 @@ components:
           periodStart: 2
           plan:
             amount: 6
+            metadata:
+              key: metadata
             extraMetricData: extraMetricData
             bindingAddonIds: bindingAddonIds
             intervalUnit: intervalUnit
@@ -18841,6 +19432,8 @@ components:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -18862,6 +19455,8 @@ components:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -18892,6 +19487,8 @@ components:
             periodStart: 2
             plan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -18918,6 +19515,8 @@ components:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -18939,6 +19538,8 @@ components:
             - quantity: 4
               addonPlan:
                 amount: 6
+                metadata:
+                  key: metadata
                 extraMetricData: extraMetricData
                 bindingAddonIds: bindingAddonIds
                 intervalUnit: intervalUnit
@@ -18969,6 +19570,8 @@ components:
             periodStart: 2
             plan:
               amount: 6
+              metadata:
+                key: metadata
               extraMetricData: extraMetricData
               bindingAddonIds: bindingAddonIds
               intervalUnit: intervalUnit
@@ -19225,6 +19828,7 @@ components:
           link: link
           effectImmediate: 5
           responseData: responseData
+          metaData: metaData
           updateCurrency: updateCurrency
           updatePlanId: 1
           isDeleted: 9
@@ -19279,6 +19883,7 @@ components:
             link: link
             effectImmediate: 5
             responseData: responseData
+            metaData: metaData
             updateCurrency: updateCurrency
             updatePlanId: 1
             isDeleted: 9
@@ -19315,6 +19920,83 @@ components:
           type: integer
         data:
           $ref: '#/components/schemas/_merchant_subscription_update_submit_post_200_response_data'
+        message:
+          format: string
+          properties: {}
+          type: string
+        redirect:
+          format: string
+          properties: {}
+          type: string
+        requestId:
+          format: string
+          properties: {}
+          type: string
+      type: object
+    _merchant_update_post_200_response_data:
+      example:
+        merchant:
+          businessNum: businessNum
+          address: address
+          apiKey: apiKey
+          gmtModify: gmtModify
+          companyLogo: companyLogo
+          companyName: companyName
+          timeZone: timeZone
+          gmtCreate: gmtCreate
+          type: 7
+          userId: 9
+          homeUrl: homeUrl
+          companyId: 1
+          isDeleted: 2
+          createTime: 5
+          phone: phone
+          idcard: idcard
+          host: host
+          name: name
+          location: location
+          id: 5
+          email: email
+      properties:
+        merchant:
+          $ref: '#/components/schemas/unibee.internal.model.entity.oversea_pay.Merchant'
+      type: object
+    _merchant_update_post_200_response:
+      example:
+        redirect: redirect
+        code: 0
+        data:
+          merchant:
+            businessNum: businessNum
+            address: address
+            apiKey: apiKey
+            gmtModify: gmtModify
+            companyLogo: companyLogo
+            companyName: companyName
+            timeZone: timeZone
+            gmtCreate: gmtCreate
+            type: 7
+            userId: 9
+            homeUrl: homeUrl
+            companyId: 1
+            isDeleted: 2
+            createTime: 5
+            phone: phone
+            idcard: idcard
+            host: host
+            name: name
+            location: location
+            id: 5
+            email: email
+        requestId: requestId
+        message: message
+      properties:
+        code:
+          format: int
+          properties: {}
+          type: integer
+        data:
+          $ref: '#/components/schemas/_merchant_update_post_200_response_data'
         message:
           format: string
           properties: {}

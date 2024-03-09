@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **Link** | Pointer to **string** | Link | [optional] 
 **MerchantId** | Pointer to **int64** | MerchantId | [optional] 
 **MerchantMember** | Pointer to [**UnibeeInternalLogicGatewayRoMerchantMemberSimplify**](UnibeeInternalLogicGatewayRoMerchantMemberSimplify.md) |  | [optional] 
+**Metadata** | Pointer to **map[string]string** |  | [optional] 
 **Note** | Pointer to **string** | Update Note | [optional] 
 **Paid** | Pointer to **int32** | Paid | [optional] 
 **Plan** | Pointer to [**UnibeeInternalLogicGatewayRoPlanSimplify**](UnibeeInternalLogicGatewayRoPlanSimplify.md) |  | [optional] 
@@ -352,6 +353,31 @@ SetMerchantMember sets MerchantMember field to given value.
 `func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) HasMerchantMember() bool`
 
 HasMerchantMember returns a boolean if a field has been set.
+
+### GetMetadata
+
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetMetadata() map[string]string`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetMetadataOk() (*map[string]string, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) SetMetadata(v map[string]string)`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
 
 ### GetNote
 

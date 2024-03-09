@@ -1,4 +1,4 @@
-# UnibeeApiSystemInformationSupportCurrency
+# UnibeeInternalLogicGatewayRoCurrency
 
 ## Properties
 
@@ -10,95 +10,95 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewUnibeeApiSystemInformationSupportCurrency
+### NewUnibeeInternalLogicGatewayRoCurrency
 
-`func NewUnibeeApiSystemInformationSupportCurrency() *UnibeeApiSystemInformationSupportCurrency`
+`func NewUnibeeInternalLogicGatewayRoCurrency() *UnibeeInternalLogicGatewayRoCurrency`
 
-NewUnibeeApiSystemInformationSupportCurrency instantiates a new UnibeeApiSystemInformationSupportCurrency object
+NewUnibeeInternalLogicGatewayRoCurrency instantiates a new UnibeeInternalLogicGatewayRoCurrency object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUnibeeApiSystemInformationSupportCurrencyWithDefaults
+### NewUnibeeInternalLogicGatewayRoCurrencyWithDefaults
 
-`func NewUnibeeApiSystemInformationSupportCurrencyWithDefaults() *UnibeeApiSystemInformationSupportCurrency`
+`func NewUnibeeInternalLogicGatewayRoCurrencyWithDefaults() *UnibeeInternalLogicGatewayRoCurrency`
 
-NewUnibeeApiSystemInformationSupportCurrencyWithDefaults instantiates a new UnibeeApiSystemInformationSupportCurrency object
+NewUnibeeInternalLogicGatewayRoCurrencyWithDefaults instantiates a new UnibeeInternalLogicGatewayRoCurrency object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetCurrency
 
-`func (o *UnibeeApiSystemInformationSupportCurrency) GetCurrency() string`
+`func (o *UnibeeInternalLogicGatewayRoCurrency) GetCurrency() string`
 
 GetCurrency returns the Currency field if non-nil, zero value otherwise.
 
 ### GetCurrencyOk
 
-`func (o *UnibeeApiSystemInformationSupportCurrency) GetCurrencyOk() (*string, bool)`
+`func (o *UnibeeInternalLogicGatewayRoCurrency) GetCurrencyOk() (*string, bool)`
 
 GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCurrency
 
-`func (o *UnibeeApiSystemInformationSupportCurrency) SetCurrency(v string)`
+`func (o *UnibeeInternalLogicGatewayRoCurrency) SetCurrency(v string)`
 
 SetCurrency sets Currency field to given value.
 
 ### HasCurrency
 
-`func (o *UnibeeApiSystemInformationSupportCurrency) HasCurrency() bool`
+`func (o *UnibeeInternalLogicGatewayRoCurrency) HasCurrency() bool`
 
 HasCurrency returns a boolean if a field has been set.
 
 ### GetScale
 
-`func (o *UnibeeApiSystemInformationSupportCurrency) GetScale() int32`
+`func (o *UnibeeInternalLogicGatewayRoCurrency) GetScale() int32`
 
 GetScale returns the Scale field if non-nil, zero value otherwise.
 
 ### GetScaleOk
 
-`func (o *UnibeeApiSystemInformationSupportCurrency) GetScaleOk() (*int32, bool)`
+`func (o *UnibeeInternalLogicGatewayRoCurrency) GetScaleOk() (*int32, bool)`
 
 GetScaleOk returns a tuple with the Scale field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetScale
 
-`func (o *UnibeeApiSystemInformationSupportCurrency) SetScale(v int32)`
+`func (o *UnibeeInternalLogicGatewayRoCurrency) SetScale(v int32)`
 
 SetScale sets Scale field to given value.
 
 ### HasScale
 
-`func (o *UnibeeApiSystemInformationSupportCurrency) HasScale() bool`
+`func (o *UnibeeInternalLogicGatewayRoCurrency) HasScale() bool`
 
 HasScale returns a boolean if a field has been set.
 
 ### GetSymbol
 
-`func (o *UnibeeApiSystemInformationSupportCurrency) GetSymbol() string`
+`func (o *UnibeeInternalLogicGatewayRoCurrency) GetSymbol() string`
 
 GetSymbol returns the Symbol field if non-nil, zero value otherwise.
 
 ### GetSymbolOk
 
-`func (o *UnibeeApiSystemInformationSupportCurrency) GetSymbolOk() (*string, bool)`
+`func (o *UnibeeInternalLogicGatewayRoCurrency) GetSymbolOk() (*string, bool)`
 
 GetSymbolOk returns a tuple with the Symbol field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSymbol
 
-`func (o *UnibeeApiSystemInformationSupportCurrency) SetSymbol(v string)`
+`func (o *UnibeeInternalLogicGatewayRoCurrency) SetSymbol(v string)`
 
 SetSymbol sets Symbol field to given value.
 
 ### HasSymbol
 
-`func (o *UnibeeApiSystemInformationSupportCurrency) HasSymbol() bool`
+`func (o *UnibeeInternalLogicGatewayRoCurrency) HasSymbol() bool`
 
 HasSymbol returns a boolean if a field has been set.
 

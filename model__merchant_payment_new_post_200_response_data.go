@@ -22,6 +22,7 @@ type MerchantPaymentNewPost200ResponseData struct {
 	Action map[string]interface{} `json:"action,omitempty"`
 	// ExternalPaymentId
 	ExternalPaymentId *string `json:"externalPaymentId,omitempty"`
+	Link *string `json:"link,omitempty"`
 	// PaymentId
 	PaymentId *string `json:"paymentId,omitempty"`
 	// Status, 10-Created|20-Success|30-Failed|40-Cancelled
@@ -109,6 +110,38 @@ func (o *MerchantPaymentNewPost200ResponseData) SetExternalPaymentId(v string) {
 	o.ExternalPaymentId = &v
 }
 
+// GetLink returns the Link field value if set, zero value otherwise.
+func (o *MerchantPaymentNewPost200ResponseData) GetLink() string {
+	if o == nil || IsNil(o.Link) {
+		var ret string
+		return ret
+	}
+	return *o.Link
+}
+
+// GetLinkOk returns a tuple with the Link field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MerchantPaymentNewPost200ResponseData) GetLinkOk() (*string, bool) {
+	if o == nil || IsNil(o.Link) {
+		return nil, false
+	}
+	return o.Link, true
+}
+
+// HasLink returns a boolean if a field has been set.
+func (o *MerchantPaymentNewPost200ResponseData) HasLink() bool {
+	if o != nil && !IsNil(o.Link) {
+		return true
+	}
+
+	return false
+}
+
+// SetLink gets a reference to the given string and assigns it to the Link field.
+func (o *MerchantPaymentNewPost200ResponseData) SetLink(v string) {
+	o.Link = &v
+}
+
 // GetPaymentId returns the PaymentId field value if set, zero value otherwise.
 func (o *MerchantPaymentNewPost200ResponseData) GetPaymentId() string {
 	if o == nil || IsNil(o.PaymentId) {
@@ -188,6 +221,9 @@ func (o MerchantPaymentNewPost200ResponseData) ToMap() (map[string]interface{}, 
 	}
 	if !IsNil(o.ExternalPaymentId) {
 		toSerialize["externalPaymentId"] = o.ExternalPaymentId
+	}
+	if !IsNil(o.Link) {
+		toSerialize["link"] = o.Link
 	}
 	if !IsNil(o.PaymentId) {
 		toSerialize["paymentId"] = o.PaymentId

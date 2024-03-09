@@ -42,6 +42,7 @@ type UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo struct {
 	// MerchantId
 	MerchantId *int64 `json:"merchantId,omitempty"`
 	MerchantMember *UnibeeInternalLogicGatewayRoMerchantMemberSimplify `json:"merchantMember,omitempty"`
+	Metadata *map[string]string `json:"metadata,omitempty"`
 	// Update Note
 	Note *string `json:"note,omitempty"`
 	// Paid
@@ -475,6 +476,38 @@ func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) HasMerch
 // SetMerchantMember gets a reference to the given UnibeeInternalLogicGatewayRoMerchantMemberSimplify and assigns it to the MerchantMember field.
 func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) SetMerchantMember(v UnibeeInternalLogicGatewayRoMerchantMemberSimplify) {
 	o.MerchantMember = &v
+}
+
+// GetMetadata returns the Metadata field value if set, zero value otherwise.
+func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetMetadata() map[string]string {
+	if o == nil || IsNil(o.Metadata) {
+		var ret map[string]string
+		return ret
+	}
+	return *o.Metadata
+}
+
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) GetMetadataOk() (*map[string]string, bool) {
+	if o == nil || IsNil(o.Metadata) {
+		return nil, false
+	}
+	return o.Metadata, true
+}
+
+// HasMetadata returns a boolean if a field has been set.
+func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetadata gets a reference to the given map[string]string and assigns it to the Metadata field.
+func (o *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) SetMetadata(v map[string]string) {
+	o.Metadata = &v
 }
 
 // GetNote returns the Note field value if set, zero value otherwise.
@@ -1066,6 +1099,9 @@ func (o UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) ToMap() (
 	}
 	if !IsNil(o.MerchantMember) {
 		toSerialize["merchantMember"] = o.MerchantMember
+	}
+	if !IsNil(o.Metadata) {
+		toSerialize["metadata"] = o.Metadata
 	}
 	if !IsNil(o.Note) {
 		toSerialize["note"] = o.Note

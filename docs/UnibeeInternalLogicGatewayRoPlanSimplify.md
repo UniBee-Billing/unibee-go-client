@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **IntervalCount** | Pointer to **int32** | period unit count | [optional] 
 **IntervalUnit** | Pointer to **string** | period unit,day|month|year|week | [optional] 
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
+**Metadata** | Pointer to **map[string]string** |  | [optional] 
 **PlanName** | Pointer to **string** | PlanName | [optional] 
 **ProductDescription** | Pointer to **string** | product description | [optional] 
 **ProductName** | Pointer to **string** | product name | [optional] 
@@ -342,6 +343,31 @@ SetMerchantId sets MerchantId field to given value.
 `func (o *UnibeeInternalLogicGatewayRoPlanSimplify) HasMerchantId() bool`
 
 HasMerchantId returns a boolean if a field has been set.
+
+### GetMetadata
+
+`func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetMetadata() map[string]string`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetMetadataOk() (*map[string]string, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *UnibeeInternalLogicGatewayRoPlanSimplify) SetMetadata(v map[string]string)`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *UnibeeInternalLogicGatewayRoPlanSimplify) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
 
 ### GetPlanName
 

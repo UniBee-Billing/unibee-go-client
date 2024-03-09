@@ -33,6 +33,7 @@ type UnibeeInternalLogicGatewayRoRefundSimplify struct {
 	GatewayRefundId *string `json:"gatewayRefundId,omitempty"`
 	// merchant id
 	MerchantId *int64 `json:"merchantId,omitempty"`
+	Metadata *map[string]string `json:"metadata,omitempty"`
 	// relative payment id
 	PaymentId *string `json:"paymentId,omitempty"`
 	// refund amount, cent
@@ -292,6 +293,38 @@ func (o *UnibeeInternalLogicGatewayRoRefundSimplify) HasMerchantId() bool {
 // SetMerchantId gets a reference to the given int64 and assigns it to the MerchantId field.
 func (o *UnibeeInternalLogicGatewayRoRefundSimplify) SetMerchantId(v int64) {
 	o.MerchantId = &v
+}
+
+// GetMetadata returns the Metadata field value if set, zero value otherwise.
+func (o *UnibeeInternalLogicGatewayRoRefundSimplify) GetMetadata() map[string]string {
+	if o == nil || IsNil(o.Metadata) {
+		var ret map[string]string
+		return ret
+	}
+	return *o.Metadata
+}
+
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeInternalLogicGatewayRoRefundSimplify) GetMetadataOk() (*map[string]string, bool) {
+	if o == nil || IsNil(o.Metadata) {
+		return nil, false
+	}
+	return o.Metadata, true
+}
+
+// HasMetadata returns a boolean if a field has been set.
+func (o *UnibeeInternalLogicGatewayRoRefundSimplify) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetadata gets a reference to the given map[string]string and assigns it to the Metadata field.
+func (o *UnibeeInternalLogicGatewayRoRefundSimplify) SetMetadata(v map[string]string) {
+	o.Metadata = &v
 }
 
 // GetPaymentId returns the PaymentId field value if set, zero value otherwise.
@@ -612,6 +645,9 @@ func (o UnibeeInternalLogicGatewayRoRefundSimplify) ToMap() (map[string]interfac
 	}
 	if !IsNil(o.MerchantId) {
 		toSerialize["merchantId"] = o.MerchantId
+	}
+	if !IsNil(o.Metadata) {
+		toSerialize["metadata"] = o.Metadata
 	}
 	if !IsNil(o.PaymentId) {
 		toSerialize["paymentId"] = o.PaymentId

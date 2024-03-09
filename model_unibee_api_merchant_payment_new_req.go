@@ -22,7 +22,7 @@ var _ MappedNullable = &UnibeeApiMerchantPaymentNewReq{}
 // UnibeeApiMerchantPaymentNewReq struct for UnibeeApiMerchantPaymentNewReq
 type UnibeeApiMerchantPaymentNewReq struct {
 	// CountryCode
-	CountryCode string `json:"countryCode"`
+	CountryCode *string `json:"countryCode,omitempty"`
 	// Currency
 	Currency string `json:"currency"`
 	// Email
@@ -35,10 +35,10 @@ type UnibeeApiMerchantPaymentNewReq struct {
 	GatewayId int64 `json:"gatewayId"`
 	// Items
 	LineItems []UnibeeApiMerchantPaymentItem `json:"lineItems,omitempty"`
-	// Redirect Url
-	RedirectUrl string `json:"redirectUrl"`
 	// Metadata，Map
-	Reference *map[string]string `json:"reference,omitempty"`
+	Metadata *map[string]string `json:"metadata,omitempty"`
+	// Redirect Url
+	RedirectUrl *string `json:"redirectUrl,omitempty"`
 	// Total PaymentAmount, Cent
 	TotalAmount int64 `json:"totalAmount"`
 }
@@ -49,15 +49,13 @@ type _UnibeeApiMerchantPaymentNewReq UnibeeApiMerchantPaymentNewReq
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiMerchantPaymentNewReq(countryCode string, currency string, email string, externalPaymentId string, externalUserId string, gatewayId int64, redirectUrl string, totalAmount int64) *UnibeeApiMerchantPaymentNewReq {
+func NewUnibeeApiMerchantPaymentNewReq(currency string, email string, externalPaymentId string, externalUserId string, gatewayId int64, totalAmount int64) *UnibeeApiMerchantPaymentNewReq {
 	this := UnibeeApiMerchantPaymentNewReq{}
-	this.CountryCode = countryCode
 	this.Currency = currency
 	this.Email = email
 	this.ExternalPaymentId = externalPaymentId
 	this.ExternalUserId = externalUserId
 	this.GatewayId = gatewayId
-	this.RedirectUrl = redirectUrl
 	this.TotalAmount = totalAmount
 	return &this
 }
@@ -70,28 +68,36 @@ func NewUnibeeApiMerchantPaymentNewReqWithDefaults() *UnibeeApiMerchantPaymentNe
 	return &this
 }
 
-// GetCountryCode returns the CountryCode field value
+// GetCountryCode returns the CountryCode field value if set, zero value otherwise.
 func (o *UnibeeApiMerchantPaymentNewReq) GetCountryCode() string {
-	if o == nil {
+	if o == nil || IsNil(o.CountryCode) {
 		var ret string
 		return ret
 	}
-
-	return o.CountryCode
+	return *o.CountryCode
 }
 
-// GetCountryCodeOk returns a tuple with the CountryCode field value
+// GetCountryCodeOk returns a tuple with the CountryCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnibeeApiMerchantPaymentNewReq) GetCountryCodeOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.CountryCode) {
 		return nil, false
 	}
-	return &o.CountryCode, true
+	return o.CountryCode, true
 }
 
-// SetCountryCode sets field value
+// HasCountryCode returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantPaymentNewReq) HasCountryCode() bool {
+	if o != nil && !IsNil(o.CountryCode) {
+		return true
+	}
+
+	return false
+}
+
+// SetCountryCode gets a reference to the given string and assigns it to the CountryCode field.
 func (o *UnibeeApiMerchantPaymentNewReq) SetCountryCode(v string) {
-	o.CountryCode = v
+	o.CountryCode = &v
 }
 
 // GetCurrency returns the Currency field value
@@ -246,60 +252,68 @@ func (o *UnibeeApiMerchantPaymentNewReq) SetLineItems(v []UnibeeApiMerchantPayme
 	o.LineItems = v
 }
 
-// GetRedirectUrl returns the RedirectUrl field value
-func (o *UnibeeApiMerchantPaymentNewReq) GetRedirectUrl() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.RedirectUrl
-}
-
-// GetRedirectUrlOk returns a tuple with the RedirectUrl field value
-// and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantPaymentNewReq) GetRedirectUrlOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.RedirectUrl, true
-}
-
-// SetRedirectUrl sets field value
-func (o *UnibeeApiMerchantPaymentNewReq) SetRedirectUrl(v string) {
-	o.RedirectUrl = v
-}
-
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantPaymentNewReq) GetReference() map[string]string {
-	if o == nil || IsNil(o.Reference) {
+// GetMetadata returns the Metadata field value if set, zero value otherwise.
+func (o *UnibeeApiMerchantPaymentNewReq) GetMetadata() map[string]string {
+	if o == nil || IsNil(o.Metadata) {
 		var ret map[string]string
 		return ret
 	}
-	return *o.Reference
+	return *o.Metadata
 }
 
-// GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantPaymentNewReq) GetReferenceOk() (*map[string]string, bool) {
-	if o == nil || IsNil(o.Reference) {
+func (o *UnibeeApiMerchantPaymentNewReq) GetMetadataOk() (*map[string]string, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Reference, true
+	return o.Metadata, true
 }
 
-// HasReference returns a boolean if a field has been set.
-func (o *UnibeeApiMerchantPaymentNewReq) HasReference() bool {
-	if o != nil && !IsNil(o.Reference) {
+// HasMetadata returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantPaymentNewReq) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given map[string]string and assigns it to the Reference field.
-func (o *UnibeeApiMerchantPaymentNewReq) SetReference(v map[string]string) {
-	o.Reference = &v
+// SetMetadata gets a reference to the given map[string]string and assigns it to the Metadata field.
+func (o *UnibeeApiMerchantPaymentNewReq) SetMetadata(v map[string]string) {
+	o.Metadata = &v
+}
+
+// GetRedirectUrl returns the RedirectUrl field value if set, zero value otherwise.
+func (o *UnibeeApiMerchantPaymentNewReq) GetRedirectUrl() string {
+	if o == nil || IsNil(o.RedirectUrl) {
+		var ret string
+		return ret
+	}
+	return *o.RedirectUrl
+}
+
+// GetRedirectUrlOk returns a tuple with the RedirectUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiMerchantPaymentNewReq) GetRedirectUrlOk() (*string, bool) {
+	if o == nil || IsNil(o.RedirectUrl) {
+		return nil, false
+	}
+	return o.RedirectUrl, true
+}
+
+// HasRedirectUrl returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantPaymentNewReq) HasRedirectUrl() bool {
+	if o != nil && !IsNil(o.RedirectUrl) {
+		return true
+	}
+
+	return false
+}
+
+// SetRedirectUrl gets a reference to the given string and assigns it to the RedirectUrl field.
+func (o *UnibeeApiMerchantPaymentNewReq) SetRedirectUrl(v string) {
+	o.RedirectUrl = &v
 }
 
 // GetTotalAmount returns the TotalAmount field value
@@ -336,7 +350,9 @@ func (o UnibeeApiMerchantPaymentNewReq) MarshalJSON() ([]byte, error) {
 
 func (o UnibeeApiMerchantPaymentNewReq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["countryCode"] = o.CountryCode
+	if !IsNil(o.CountryCode) {
+		toSerialize["countryCode"] = o.CountryCode
+	}
 	toSerialize["currency"] = o.Currency
 	toSerialize["email"] = o.Email
 	toSerialize["externalPaymentId"] = o.ExternalPaymentId
@@ -345,9 +361,11 @@ func (o UnibeeApiMerchantPaymentNewReq) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.LineItems) {
 		toSerialize["lineItems"] = o.LineItems
 	}
-	toSerialize["redirectUrl"] = o.RedirectUrl
-	if !IsNil(o.Reference) {
-		toSerialize["reference"] = o.Reference
+	if !IsNil(o.Metadata) {
+		toSerialize["metadata"] = o.Metadata
+	}
+	if !IsNil(o.RedirectUrl) {
+		toSerialize["redirectUrl"] = o.RedirectUrl
 	}
 	toSerialize["totalAmount"] = o.TotalAmount
 	return toSerialize, nil
@@ -358,13 +376,11 @@ func (o *UnibeeApiMerchantPaymentNewReq) UnmarshalJSON(data []byte) (err error) 
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"countryCode",
 		"currency",
 		"email",
 		"externalPaymentId",
 		"externalUserId",
 		"gatewayId",
-		"redirectUrl",
 		"totalAmount",
 	}
 

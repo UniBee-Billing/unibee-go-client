@@ -26,7 +26,7 @@ type UnibeeApiSystemInformationGetRes struct {
 	// Check System Env Is Prod, true|false
 	IsProd *bool `json:"isProd,omitempty"`
 	// Support Currency List
-	SupportCurrency []UnibeeApiSystemInformationSupportCurrency `json:"supportCurrency,omitempty"`
+	SupportCurrency []UnibeeInternalLogicGatewayRoCurrency `json:"supportCurrency,omitempty"`
 	// Support TimeZone List
 	SupportTimeZone []string `json:"supportTimeZone,omitempty"`
 }
@@ -145,9 +145,9 @@ func (o *UnibeeApiSystemInformationGetRes) SetIsProd(v bool) {
 }
 
 // GetSupportCurrency returns the SupportCurrency field value if set, zero value otherwise.
-func (o *UnibeeApiSystemInformationGetRes) GetSupportCurrency() []UnibeeApiSystemInformationSupportCurrency {
+func (o *UnibeeApiSystemInformationGetRes) GetSupportCurrency() []UnibeeInternalLogicGatewayRoCurrency {
 	if o == nil || IsNil(o.SupportCurrency) {
-		var ret []UnibeeApiSystemInformationSupportCurrency
+		var ret []UnibeeInternalLogicGatewayRoCurrency
 		return ret
 	}
 	return o.SupportCurrency
@@ -155,7 +155,7 @@ func (o *UnibeeApiSystemInformationGetRes) GetSupportCurrency() []UnibeeApiSyste
 
 // GetSupportCurrencyOk returns a tuple with the SupportCurrency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiSystemInformationGetRes) GetSupportCurrencyOk() ([]UnibeeApiSystemInformationSupportCurrency, bool) {
+func (o *UnibeeApiSystemInformationGetRes) GetSupportCurrencyOk() ([]UnibeeInternalLogicGatewayRoCurrency, bool) {
 	if o == nil || IsNil(o.SupportCurrency) {
 		return nil, false
 	}
@@ -171,8 +171,8 @@ func (o *UnibeeApiSystemInformationGetRes) HasSupportCurrency() bool {
 	return false
 }
 
-// SetSupportCurrency gets a reference to the given []UnibeeApiSystemInformationSupportCurrency and assigns it to the SupportCurrency field.
-func (o *UnibeeApiSystemInformationGetRes) SetSupportCurrency(v []UnibeeApiSystemInformationSupportCurrency) {
+// SetSupportCurrency gets a reference to the given []UnibeeInternalLogicGatewayRoCurrency and assigns it to the SupportCurrency field.
+func (o *UnibeeApiSystemInformationGetRes) SetSupportCurrency(v []UnibeeInternalLogicGatewayRoCurrency) {
 	o.SupportCurrency = v
 }
 

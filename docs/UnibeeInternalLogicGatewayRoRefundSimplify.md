@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **GatewayId** | Pointer to **int64** | gateway_id | [optional] 
 **GatewayRefundId** | Pointer to **string** | gateway refund id | [optional] 
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
+**Metadata** | Pointer to **map[string]string** |  | [optional] 
 **PaymentId** | Pointer to **string** | relative payment id | [optional] 
 **RefundAmount** | Pointer to **int64** | refund amount, cent | [optional] 
 **RefundComment** | Pointer to **string** | refund comment | [optional] 
@@ -214,6 +215,31 @@ SetMerchantId sets MerchantId field to given value.
 `func (o *UnibeeInternalLogicGatewayRoRefundSimplify) HasMerchantId() bool`
 
 HasMerchantId returns a boolean if a field has been set.
+
+### GetMetadata
+
+`func (o *UnibeeInternalLogicGatewayRoRefundSimplify) GetMetadata() map[string]string`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *UnibeeInternalLogicGatewayRoRefundSimplify) GetMetadataOk() (*map[string]string, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *UnibeeInternalLogicGatewayRoRefundSimplify) SetMetadata(v map[string]string)`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *UnibeeInternalLogicGatewayRoRefundSimplify) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
 
 ### GetPaymentId
 

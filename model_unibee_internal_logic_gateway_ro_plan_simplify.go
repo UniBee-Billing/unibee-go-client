@@ -41,6 +41,7 @@ type UnibeeInternalLogicGatewayRoPlanSimplify struct {
 	IntervalUnit *string `json:"intervalUnit,omitempty"`
 	// merchant id
 	MerchantId *int64 `json:"merchantId,omitempty"`
+	Metadata *map[string]string `json:"metadata,omitempty"`
 	// PlanName
 	PlanName *string `json:"planName,omitempty"`
 	// product description
@@ -458,6 +459,38 @@ func (o *UnibeeInternalLogicGatewayRoPlanSimplify) SetMerchantId(v int64) {
 	o.MerchantId = &v
 }
 
+// GetMetadata returns the Metadata field value if set, zero value otherwise.
+func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetMetadata() map[string]string {
+	if o == nil || IsNil(o.Metadata) {
+		var ret map[string]string
+		return ret
+	}
+	return *o.Metadata
+}
+
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetMetadataOk() (*map[string]string, bool) {
+	if o == nil || IsNil(o.Metadata) {
+		return nil, false
+	}
+	return o.Metadata, true
+}
+
+// HasMetadata returns a boolean if a field has been set.
+func (o *UnibeeInternalLogicGatewayRoPlanSimplify) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetadata gets a reference to the given map[string]string and assigns it to the Metadata field.
+func (o *UnibeeInternalLogicGatewayRoPlanSimplify) SetMetadata(v map[string]string) {
+	o.Metadata = &v
+}
+
 // GetPlanName returns the PlanName field value if set, zero value otherwise.
 func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetPlanName() string {
 	if o == nil || IsNil(o.PlanName) {
@@ -727,6 +760,9 @@ func (o UnibeeInternalLogicGatewayRoPlanSimplify) ToMap() (map[string]interface{
 	}
 	if !IsNil(o.MerchantId) {
 		toSerialize["merchantId"] = o.MerchantId
+	}
+	if !IsNil(o.Metadata) {
+		toSerialize["metadata"] = o.Metadata
 	}
 	if !IsNil(o.PlanName) {
 		toSerialize["planName"] = o.PlanName

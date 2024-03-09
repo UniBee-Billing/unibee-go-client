@@ -37,6 +37,8 @@ type UnibeeApiMerchantPlanEditReq struct {
 	IntervalCount *int32 `json:"intervalCount,omitempty"`
 	// Plan Interval Unit，em: day|month|year|week
 	IntervalUnit string `json:"intervalUnit"`
+	// Metadata，Map
+	Metadata *map[string]string `json:"metadata,omitempty"`
 	// Plan's MetricLimit List
 	MetricLimits []UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam `json:"metricLimits,omitempty"`
 	// PlanId
@@ -309,6 +311,38 @@ func (o *UnibeeApiMerchantPlanEditReq) SetIntervalUnit(v string) {
 	o.IntervalUnit = v
 }
 
+// GetMetadata returns the Metadata field value if set, zero value otherwise.
+func (o *UnibeeApiMerchantPlanEditReq) GetMetadata() map[string]string {
+	if o == nil || IsNil(o.Metadata) {
+		var ret map[string]string
+		return ret
+	}
+	return *o.Metadata
+}
+
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiMerchantPlanEditReq) GetMetadataOk() (*map[string]string, bool) {
+	if o == nil || IsNil(o.Metadata) {
+		return nil, false
+	}
+	return o.Metadata, true
+}
+
+// HasMetadata returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantPlanEditReq) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetadata gets a reference to the given map[string]string and assigns it to the Metadata field.
+func (o *UnibeeApiMerchantPlanEditReq) SetMetadata(v map[string]string) {
+	o.Metadata = &v
+}
+
 // GetMetricLimits returns the MetricLimits field value if set, zero value otherwise.
 func (o *UnibeeApiMerchantPlanEditReq) GetMetricLimits() []UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam {
 	if o == nil || IsNil(o.MetricLimits) {
@@ -481,6 +515,9 @@ func (o UnibeeApiMerchantPlanEditReq) ToMap() (map[string]interface{}, error) {
 		toSerialize["intervalCount"] = o.IntervalCount
 	}
 	toSerialize["intervalUnit"] = o.IntervalUnit
+	if !IsNil(o.Metadata) {
+		toSerialize["metadata"] = o.Metadata
+	}
 	if !IsNil(o.MetricLimits) {
 		toSerialize["metricLimits"] = o.MetricLimits
 	}
