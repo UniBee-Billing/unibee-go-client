@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **ExternalPaymentId** | **string** | ExternalPaymentId should unique for payment | 
 **ExternalUserId** | **string** | ExternalUserId, should unique for user | 
 **GatewayId** | **int64** | GatewayId | 
-**LineItems** | Pointer to [**[]UnibeeApiMerchantPaymentItem**](UnibeeApiMerchantPaymentItem.md) | Items | [optional] 
+**Items** | Pointer to [**[]UnibeeApiMerchantPaymentItem**](UnibeeApiMerchantPaymentItem.md) | Items | [optional] 
 **Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
 **RedirectUrl** | Pointer to **string** | Redirect Url | [optional] 
 **TotalAmount** | **int64** | Total PaymentAmount, Cent | 
@@ -159,30 +159,30 @@ and a boolean to check if the value has been set.
 SetGatewayId sets GatewayId field to given value.
 
 
-### GetLineItems
+### GetItems
 
-`func (o *UnibeeApiMerchantPaymentNewReq) GetLineItems() []UnibeeApiMerchantPaymentItem`
+`func (o *UnibeeApiMerchantPaymentNewReq) GetItems() []UnibeeApiMerchantPaymentItem`
 
-GetLineItems returns the LineItems field if non-nil, zero value otherwise.
+GetItems returns the Items field if non-nil, zero value otherwise.
 
-### GetLineItemsOk
+### GetItemsOk
 
-`func (o *UnibeeApiMerchantPaymentNewReq) GetLineItemsOk() (*[]UnibeeApiMerchantPaymentItem, bool)`
+`func (o *UnibeeApiMerchantPaymentNewReq) GetItemsOk() (*[]UnibeeApiMerchantPaymentItem, bool)`
 
-GetLineItemsOk returns a tuple with the LineItems field if it's non-nil, zero value otherwise
+GetItemsOk returns a tuple with the Items field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLineItems
+### SetItems
 
-`func (o *UnibeeApiMerchantPaymentNewReq) SetLineItems(v []UnibeeApiMerchantPaymentItem)`
+`func (o *UnibeeApiMerchantPaymentNewReq) SetItems(v []UnibeeApiMerchantPaymentItem)`
 
-SetLineItems sets LineItems field to given value.
+SetItems sets Items field to given value.
 
-### HasLineItems
+### HasItems
 
-`func (o *UnibeeApiMerchantPaymentNewReq) HasLineItems() bool`
+`func (o *UnibeeApiMerchantPaymentNewReq) HasItems() bool`
 
-HasLineItems returns a boolean if a field has been set.
+HasItems returns a boolean if a field has been set.
 
 ### GetMetadata
 

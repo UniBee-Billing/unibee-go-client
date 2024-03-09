@@ -1,4 +1,4 @@
-# Go API client for openapi
+# Go API client for unibee
 
 This is UniBee api server, For this sample, you can use the api key `EUXAgwv3Vcr1PFWt2SgBumMHXn3ImBqM` to test the authorization filters
 
@@ -21,7 +21,7 @@ go get golang.org/x/net/context
 Put the package under your project folder and add the following in import:
 
 ```go
-import openapi "github.com/UniB-e-e/unibee-go-client"
+import unibee "github.com/UniB-e-e/unibee-go-client"
 ```
 
 To use a proxy, set the environment variable `HTTP_PROXY`:
@@ -36,18 +36,18 @@ Default configuration comes with `Servers` field that contains server objects as
 
 ### Select Server Configuration
 
-For using other server than the one defined on index 0 set context value `openapi.ContextServerIndex` of type `int`.
+For using other server than the one defined on index 0 set context value `unibee.ContextServerIndex` of type `int`.
 
 ```go
-ctx := context.WithValue(context.Background(), openapi.ContextServerIndex, 1)
+ctx := context.WithValue(context.Background(), unibee.ContextServerIndex, 1)
 ```
 
 ### Templated Server URL
 
-Templated server URL is formatted using default variables from configuration or from context value `openapi.ContextServerVariables` of type `map[string]string`.
+Templated server URL is formatted using default variables from configuration or from context value `unibee.ContextServerVariables` of type `map[string]string`.
 
 ```go
-ctx := context.WithValue(context.Background(), openapi.ContextServerVariables, map[string]string{
+ctx := context.WithValue(context.Background(), unibee.ContextServerVariables, map[string]string{
 	"basePath": "v2",
 })
 ```
@@ -58,13 +58,13 @@ Note, enum values are always validated and all unused variables are silently ign
 
 Each operation can use different server URL defined using `OperationServers` map in the `Configuration`.
 An operation is uniquely identified by `"{classname}Service.{nickname}"` string.
-Similar rules for overriding default operation server index and variables applies by using `openapi.ContextOperationServerIndices` and `openapi.ContextOperationServerVariables` context maps.
+Similar rules for overriding default operation server index and variables applies by using `unibee.ContextOperationServerIndices` and `unibee.ContextOperationServerVariables` context maps.
 
 ```go
-ctx := context.WithValue(context.Background(), openapi.ContextOperationServerIndices, map[string]int{
+ctx := context.WithValue(context.Background(), unibee.ContextOperationServerIndices, map[string]int{
 	"{classname}Service.{nickname}": 2,
 })
-ctx = context.WithValue(context.Background(), openapi.ContextOperationServerVariables, map[string]map[string]string{
+ctx = context.WithValue(context.Background(), unibee.ContextOperationServerVariables, map[string]map[string]string{
 	"{classname}Service.{nickname}": {
 		"port": "8443",
 	},

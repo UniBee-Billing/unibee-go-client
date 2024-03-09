@@ -4191,7 +4191,7 @@ components:
           format: int64
           properties: {}
           type: integer
-        lineItems:
+        items:
           description: Items
           format: "[]*payment.Item"
           items:

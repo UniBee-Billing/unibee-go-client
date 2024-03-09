@@ -1,3 +1,4 @@
+mv unibee.go unibee.backup
 rm -rf *.go
 rm -rf docs/*.md
 java -jar openapi-generator-cli.jar generate \
@@ -6,4 +7,6 @@ java -jar openapi-generator-cli.jar generate \
 -o . \
 --git-repo-id unibee-go-client \
 --git-user-id UniB-e-e \
+-p packageName=unibee \
 -c config.yaml
+mv unibee.backup unibee.go
