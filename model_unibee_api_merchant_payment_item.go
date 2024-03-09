@@ -12,6 +12,8 @@ package unibee
 
 import (
 	"encoding/json"
+	"bytes"
+	"fmt"
 )
 
 // checks if the UnibeeApiMerchantPaymentItem type satisfies the MappedNullable interface at compile time
@@ -19,24 +21,31 @@ var _ MappedNullable = &UnibeeApiMerchantPaymentItem{}
 
 // UnibeeApiMerchantPaymentItem struct for UnibeeApiMerchantPaymentItem
 type UnibeeApiMerchantPaymentItem struct {
-	// the item total amount,cent
-	Amount *int64 `json:"amount,omitempty"`
+	// item total amount, sum(item.amount) should equal to totalAmount, cent
+	Amount int64 `json:"amount"`
+	// amountExcludingTax = unitAmountExcludingTax * quantity
 	AmountExcludingTax *int64 `json:"amountExcludingTax,omitempty"`
 	Currency *string `json:"currency,omitempty"`
-	Description *string `json:"description,omitempty"`
+	// item description 
+	Description string `json:"description"`
 	Quantity *int64 `json:"quantity,omitempty"`
+	// tax = amount - amountExcludingTax
 	Tax *int64 `json:"tax,omitempty"`
 	// Tax Scale，1000 = 10%
 	TaxScale *int64 `json:"taxScale,omitempty"`
 	UnitAmountExcludingTax *int64 `json:"unitAmountExcludingTax,omitempty"`
 }
 
+type _UnibeeApiMerchantPaymentItem UnibeeApiMerchantPaymentItem
+
 // NewUnibeeApiMerchantPaymentItem instantiates a new UnibeeApiMerchantPaymentItem object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiMerchantPaymentItem() *UnibeeApiMerchantPaymentItem {
+func NewUnibeeApiMerchantPaymentItem(amount int64, description string) *UnibeeApiMerchantPaymentItem {
 	this := UnibeeApiMerchantPaymentItem{}
+	this.Amount = amount
+	this.Description = description
 	return &this
 }
 
@@ -48,36 +57,28 @@ func NewUnibeeApiMerchantPaymentItemWithDefaults() *UnibeeApiMerchantPaymentItem
 	return &this
 }
 
-// GetAmount returns the Amount field value if set, zero value otherwise.
+// GetAmount returns the Amount field value
 func (o *UnibeeApiMerchantPaymentItem) GetAmount() int64 {
-	if o == nil || IsNil(o.Amount) {
+	if o == nil {
 		var ret int64
 		return ret
 	}
-	return *o.Amount
+
+	return o.Amount
 }
 
-// GetAmountOk returns a tuple with the Amount field value if set, nil otherwise
+// GetAmountOk returns a tuple with the Amount field value
 // and a boolean to check if the value has been set.
 func (o *UnibeeApiMerchantPaymentItem) GetAmountOk() (*int64, bool) {
-	if o == nil || IsNil(o.Amount) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Amount, true
+	return &o.Amount, true
 }
 
-// HasAmount returns a boolean if a field has been set.
-func (o *UnibeeApiMerchantPaymentItem) HasAmount() bool {
-	if o != nil && !IsNil(o.Amount) {
-		return true
-	}
-
-	return false
-}
-
-// SetAmount gets a reference to the given int64 and assigns it to the Amount field.
+// SetAmount sets field value
 func (o *UnibeeApiMerchantPaymentItem) SetAmount(v int64) {
-	o.Amount = &v
+	o.Amount = v
 }
 
 // GetAmountExcludingTax returns the AmountExcludingTax field value if set, zero value otherwise.
@@ -144,36 +145,28 @@ func (o *UnibeeApiMerchantPaymentItem) SetCurrency(v string) {
 	o.Currency = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value
 func (o *UnibeeApiMerchantPaymentItem) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Description
+
+	return o.Description
 }
 
-// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// GetDescriptionOk returns a tuple with the Description field value
 // and a boolean to check if the value has been set.
 func (o *UnibeeApiMerchantPaymentItem) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Description, true
+	return &o.Description, true
 }
 
-// HasDescription returns a boolean if a field has been set.
-func (o *UnibeeApiMerchantPaymentItem) HasDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription sets field value
 func (o *UnibeeApiMerchantPaymentItem) SetDescription(v string) {
-	o.Description = &v
+	o.Description = v
 }
 
 // GetQuantity returns the Quantity field value if set, zero value otherwise.
@@ -314,18 +307,14 @@ func (o UnibeeApiMerchantPaymentItem) MarshalJSON() ([]byte, error) {
 
 func (o UnibeeApiMerchantPaymentItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Amount) {
-		toSerialize["amount"] = o.Amount
-	}
+	toSerialize["amount"] = o.Amount
 	if !IsNil(o.AmountExcludingTax) {
 		toSerialize["amountExcludingTax"] = o.AmountExcludingTax
 	}
 	if !IsNil(o.Currency) {
 		toSerialize["currency"] = o.Currency
 	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
+	toSerialize["description"] = o.Description
 	if !IsNil(o.Quantity) {
 		toSerialize["quantity"] = o.Quantity
 	}
@@ -339,6 +328,44 @@ func (o UnibeeApiMerchantPaymentItem) ToMap() (map[string]interface{}, error) {
 		toSerialize["unitAmountExcludingTax"] = o.UnitAmountExcludingTax
 	}
 	return toSerialize, nil
+}
+
+func (o *UnibeeApiMerchantPaymentItem) UnmarshalJSON(data []byte) (err error) {
+	// This validates that all required properties are included in the JSON object
+	// by unmarshalling the object into a generic map with string keys and checking
+	// that every required field exists as a key in the generic map.
+	requiredProperties := []string{
+		"amount",
+		"description",
+	}
+
+	allProperties := make(map[string]interface{})
+
+	err = json.Unmarshal(data, &allProperties)
+
+	if err != nil {
+		return err;
+	}
+
+	for _, requiredProperty := range(requiredProperties) {
+		if _, exists := allProperties[requiredProperty]; !exists {
+			return fmt.Errorf("no value given for required property %v", requiredProperty)
+		}
+	}
+
+	varUnibeeApiMerchantPaymentItem := _UnibeeApiMerchantPaymentItem{}
+
+	decoder := json.NewDecoder(bytes.NewReader(data))
+	decoder.DisallowUnknownFields()
+	err = decoder.Decode(&varUnibeeApiMerchantPaymentItem)
+
+	if err != nil {
+		return err
+	}
+
+	*o = UnibeeApiMerchantPaymentItem(varUnibeeApiMerchantPaymentItem)
+
+	return err
 }
 
 type NullableUnibeeApiMerchantPaymentItem struct {

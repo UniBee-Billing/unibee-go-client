@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | Pointer to **int64** | the item total amount,cent | [optional] 
-**AmountExcludingTax** | Pointer to **int64** |  | [optional] 
+**Amount** | **int64** | item total amount, sum(item.amount) should equal to totalAmount, cent | 
+**AmountExcludingTax** | Pointer to **int64** | amountExcludingTax &#x3D; unitAmountExcludingTax * quantity | [optional] 
 **Currency** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | **string** | item description  | 
 **Quantity** | Pointer to **int64** |  | [optional] 
-**Tax** | Pointer to **int64** |  | [optional] 
+**Tax** | Pointer to **int64** | tax &#x3D; amount - amountExcludingTax | [optional] 
 **TaxScale** | Pointer to **int64** | Tax Scale，1000 &#x3D; 10% | [optional] 
 **UnitAmountExcludingTax** | Pointer to **int64** |  | [optional] 
 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewUnibeeApiMerchantPaymentItem
 
-`func NewUnibeeApiMerchantPaymentItem() *UnibeeApiMerchantPaymentItem`
+`func NewUnibeeApiMerchantPaymentItem(amount int64, description string, ) *UnibeeApiMerchantPaymentItem`
 
 NewUnibeeApiMerchantPaymentItem instantiates a new UnibeeApiMerchantPaymentItem object
 This constructor will assign default values to properties that have it defined,
@@ -51,11 +51,6 @@ and a boolean to check if the value has been set.
 
 SetAmount sets Amount field to given value.
 
-### HasAmount
-
-`func (o *UnibeeApiMerchantPaymentItem) HasAmount() bool`
-
-HasAmount returns a boolean if a field has been set.
 
 ### GetAmountExcludingTax
 
@@ -126,11 +121,6 @@ and a boolean to check if the value has been set.
 
 SetDescription sets Description field to given value.
 
-### HasDescription
-
-`func (o *UnibeeApiMerchantPaymentItem) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
 
 ### GetQuantity
 

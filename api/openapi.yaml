@@ -3997,11 +3997,13 @@ components:
     unibee.api.merchant.payment.Item:
       properties:
         amount:
-          description: "the item total amount,cent"
+          description: "item total amount, sum(item.amount) should equal to totalAmount,\
+            \ cent"
           format: int64
           properties: {}
           type: integer
         amountExcludingTax:
+          description: amountExcludingTax = unitAmountExcludingTax * quantity
           format: int64
           properties: {}
           type: integer
@@ -4010,6 +4012,7 @@ components:
           properties: {}
           type: string
         description:
+          description: 'item description '
           format: string
           properties: {}
           type: string
@@ -4018,6 +4021,7 @@ components:
           properties: {}
           type: integer
         tax:
+          description: tax = amount - amountExcludingTax
           format: int64
           properties: {}
           type: integer
@@ -4030,6 +4034,9 @@ components:
           format: int64
           properties: {}
           type: integer
+      required:
+      - amount
+      - description
       type: object
     unibee.api.merchant.payment.ListReq:
       properties:
