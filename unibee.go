@@ -22,6 +22,15 @@ const (
 )
 
 const (
+	PlanTypeMain          = 1
+	PlanTypeAddon         = 2
+	PlanIntervalUnitDay   = "day"
+	PlanIntervalUnitMonth = "month"
+	PlanIntervalUnitYear  = "year"
+	PlanIntervalUnitWeek  = "week"
+)
+
+const (
 	UNIBEE_WEBHOOK_EVENT_SUBSCRIPTION_CREATED   = "subscription.created"
 	UNIBEE_WEBHOOK_EVENT_SUBSCRIPTION_UPDATED   = "subscription.updated"
 	UNIBEE_WEBHOOK_EVENT_SUBSCRIPTION_CANCELLED = "subscription.cancelled"
@@ -93,6 +102,20 @@ func Float64Slice(v []float64) []*float64 {
 		out[i] = &v[i]
 	}
 	return out
+}
+
+// Int32 returns a pointer to the int64 value passed in.
+func Int32(v int32) *int32 {
+	return &v
+}
+
+// Int32Value returns the value of the int32 pointer passed in or
+// 0 if the pointer is nil.
+func Int32Value(v *int32) int32 {
+	if v != nil {
+		return *v
+	}
+	return 0
 }
 
 // Int64 returns a pointer to the int64 value passed in.
