@@ -19,7 +19,7 @@ var _ MappedNullable = &UnibeeApiMerchantMetricUserMetricRes{}
 
 // UnibeeApiMerchantMetricUserMetricRes struct for UnibeeApiMerchantMetricUserMetricRes
 type UnibeeApiMerchantMetricUserMetricRes struct {
-	UserMetric *UnibeeInternalLogicGatewayRoUserMetric `json:"userMetric,omitempty"`
+	UserMetric *UnibeeApiMerchantMetricUserMetric `json:"userMetric,omitempty"`
 }
 
 // NewUnibeeApiMerchantMetricUserMetricRes instantiates a new UnibeeApiMerchantMetricUserMetricRes object
@@ -40,9 +40,9 @@ func NewUnibeeApiMerchantMetricUserMetricResWithDefaults() *UnibeeApiMerchantMet
 }
 
 // GetUserMetric returns the UserMetric field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantMetricUserMetricRes) GetUserMetric() UnibeeInternalLogicGatewayRoUserMetric {
+func (o *UnibeeApiMerchantMetricUserMetricRes) GetUserMetric() UnibeeApiMerchantMetricUserMetric {
 	if o == nil || IsNil(o.UserMetric) {
-		var ret UnibeeInternalLogicGatewayRoUserMetric
+		var ret UnibeeApiMerchantMetricUserMetric
 		return ret
 	}
 	return *o.UserMetric
@@ -50,7 +50,7 @@ func (o *UnibeeApiMerchantMetricUserMetricRes) GetUserMetric() UnibeeInternalLog
 
 // GetUserMetricOk returns a tuple with the UserMetric field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantMetricUserMetricRes) GetUserMetricOk() (*UnibeeInternalLogicGatewayRoUserMetric, bool) {
+func (o *UnibeeApiMerchantMetricUserMetricRes) GetUserMetricOk() (*UnibeeApiMerchantMetricUserMetric, bool) {
 	if o == nil || IsNil(o.UserMetric) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *UnibeeApiMerchantMetricUserMetricRes) HasUserMetric() bool {
 	return false
 }
 
-// SetUserMetric gets a reference to the given UnibeeInternalLogicGatewayRoUserMetric and assigns it to the UserMetric field.
-func (o *UnibeeApiMerchantMetricUserMetricRes) SetUserMetric(v UnibeeInternalLogicGatewayRoUserMetric) {
+// SetUserMetric gets a reference to the given UnibeeApiMerchantMetricUserMetric and assigns it to the UserMetric field.
+func (o *UnibeeApiMerchantMetricUserMetricRes) SetUserMetric(v UnibeeApiMerchantMetricUserMetric) {
 	o.UserMetric = &v
 }
 

@@ -14,10 +14,11 @@ const (
 )
 
 const (
-	RefundIng     = 10
-	RefundSuccess = 20
-	RefundFailed  = 30
-	RefundReverse = 40
+	RefundCreated   = 10
+	RefundSuccess   = 20
+	RefundFailed    = 30
+	RefundCancelled = 40
+	RefundReverse   = 50
 )
 
 const (
@@ -34,6 +35,7 @@ const (
 	UNIBEE_WEBHOOK_EVENT_REFUND_CREATED         = "refund.created"
 	UNIBEE_WEBHOOK_EVENT_REFUND_SUCCESS         = "refund.success"
 	UNIBEE_WEBHOOK_EVENT_REFUND_FAILURE         = "refund.failure"
+	UNIBEE_WEBHOOK_EVENT_REFUND_CANCELLED       = "refund.cancelled"
 	UNIBEE_WEBHOOK_EVENT_REFUND_REVERSE         = "refund.reverse"
 )
 

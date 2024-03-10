@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**PaymentDetailGet**](Payment.md#PaymentDetailGet) | **Get** /merchant/payment/detail | Query Payment Detail
 [**PaymentListGet**](Payment.md#PaymentListGet) | **Get** /merchant/payment/list | Query Payment List
 [**PaymentNewPost**](Payment.md#PaymentNewPost) | **Post** /merchant/payment/new | New Payment
+[**PaymentRefundCancelPost**](Payment.md#PaymentRefundCancelPost) | **Post** /merchant/payment/refund/cancel | Cancel Payment Refund
 [**PaymentRefundDetailGet**](Payment.md#PaymentRefundDetailGet) | **Get** /merchant/payment/refund/detail | Query Payment Refund Detail
 [**PaymentRefundListGet**](Payment.md#PaymentRefundListGet) | **Get** /merchant/payment/refund/list | Query Payment Refund List
 [**PaymentRefundNewPost**](Payment.md#PaymentRefundNewPost) | **Post** /merchant/payment/refund/new | New Payment Refund
@@ -35,7 +36,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantPaymentCancelReq := *openapiclient.NewUnibeeApiMerchantPaymentCancelReq("ExternalCancelId_example", "PaymentId_example") // UnibeeApiMerchantPaymentCancelReq | 
+	unibeeApiMerchantPaymentCancelReq := *openapiclient.NewUnibeeApiMerchantPaymentCancelReq("PaymentId_example") // UnibeeApiMerchantPaymentCancelReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -82,7 +83,7 @@ No authorization required
 
 ## PaymentCapturePost
 
-> MerchantAuthSsoLoginOTPPost200Response PaymentCapturePost(ctx).CaptureAmount(captureAmount).Currency(currency).MerchantPaymentCapturePostRequest(merchantPaymentCapturePostRequest).Execute()
+> MerchantAuthSsoLoginOTPPost200Response PaymentCapturePost(ctx).UnibeeApiMerchantPaymentCaptureReq(unibeeApiMerchantPaymentCaptureReq).Execute()
 
 Capture Payment
 
@@ -99,13 +100,11 @@ import (
 )
 
 func main() {
-	captureAmount := int64(789) // int64 | CaptureAmount, Cent
-	currency := "currency_example" // string | Currency
-	merchantPaymentCapturePostRequest := *openapiclient.NewMerchantPaymentCapturePostRequest("ExternalCaptureId_example", "PaymentId_example") // MerchantPaymentCapturePostRequest | 
+	unibeeApiMerchantPaymentCaptureReq := *openapiclient.NewUnibeeApiMerchantPaymentCaptureReq(int64(123), "Currency_example", "ExternalCaptureId_example", "PaymentId_example") // UnibeeApiMerchantPaymentCaptureReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Payment.PaymentCapturePost(context.Background()).CaptureAmount(captureAmount).Currency(currency).MerchantPaymentCapturePostRequest(merchantPaymentCapturePostRequest).Execute()
+	resp, r, err := apiClient.Payment.PaymentCapturePost(context.Background()).UnibeeApiMerchantPaymentCaptureReq(unibeeApiMerchantPaymentCaptureReq).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Payment.PaymentCapturePost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -126,9 +125,7 @@ Other parameters are passed through a pointer to a apiPaymentCapturePostRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **captureAmount** | **int64** | CaptureAmount, Cent | 
- **currency** | **string** | Currency | 
- **merchantPaymentCapturePostRequest** | [**MerchantPaymentCapturePostRequest**](MerchantPaymentCapturePostRequest.md) |  | 
+ **unibeeApiMerchantPaymentCaptureReq** | [**UnibeeApiMerchantPaymentCaptureReq**](UnibeeApiMerchantPaymentCaptureReq.md) |  | 
 
 ### Return type
 
@@ -343,6 +340,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantPaymentNewPost200Response**](MerchantPaymentNewPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PaymentRefundCancelPost
+
+> MerchantAuthSsoLoginOTPPost200Response PaymentRefundCancelPost(ctx).UnibeeApiMerchantPaymentRefundCancelReq(unibeeApiMerchantPaymentRefundCancelReq).Execute()
+
+Cancel Payment Refund
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantPaymentRefundCancelReq := *openapiclient.NewUnibeeApiMerchantPaymentRefundCancelReq("RefundId_example") // UnibeeApiMerchantPaymentRefundCancelReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Payment.PaymentRefundCancelPost(context.Background()).UnibeeApiMerchantPaymentRefundCancelReq(unibeeApiMerchantPaymentRefundCancelReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Payment.PaymentRefundCancelPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PaymentRefundCancelPost`: MerchantAuthSsoLoginOTPPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Payment.PaymentRefundCancelPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPaymentRefundCancelPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantPaymentRefundCancelReq** | [**UnibeeApiMerchantPaymentRefundCancelReq**](UnibeeApiMerchantPaymentRefundCancelReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
 
 ### Authorization
 

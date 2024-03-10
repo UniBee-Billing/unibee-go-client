@@ -21,8 +21,6 @@ var _ MappedNullable = &UnibeeApiMerchantPaymentCancelReq{}
 
 // UnibeeApiMerchantPaymentCancelReq struct for UnibeeApiMerchantPaymentCancelReq
 type UnibeeApiMerchantPaymentCancelReq struct {
-	// ExternalCancelId
-	ExternalCancelId string `json:"externalCancelId"`
 	// PaymentId
 	PaymentId string `json:"paymentId"`
 }
@@ -33,9 +31,8 @@ type _UnibeeApiMerchantPaymentCancelReq UnibeeApiMerchantPaymentCancelReq
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiMerchantPaymentCancelReq(externalCancelId string, paymentId string) *UnibeeApiMerchantPaymentCancelReq {
+func NewUnibeeApiMerchantPaymentCancelReq(paymentId string) *UnibeeApiMerchantPaymentCancelReq {
 	this := UnibeeApiMerchantPaymentCancelReq{}
-	this.ExternalCancelId = externalCancelId
 	this.PaymentId = paymentId
 	return &this
 }
@@ -46,30 +43,6 @@ func NewUnibeeApiMerchantPaymentCancelReq(externalCancelId string, paymentId str
 func NewUnibeeApiMerchantPaymentCancelReqWithDefaults() *UnibeeApiMerchantPaymentCancelReq {
 	this := UnibeeApiMerchantPaymentCancelReq{}
 	return &this
-}
-
-// GetExternalCancelId returns the ExternalCancelId field value
-func (o *UnibeeApiMerchantPaymentCancelReq) GetExternalCancelId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ExternalCancelId
-}
-
-// GetExternalCancelIdOk returns a tuple with the ExternalCancelId field value
-// and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantPaymentCancelReq) GetExternalCancelIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ExternalCancelId, true
-}
-
-// SetExternalCancelId sets field value
-func (o *UnibeeApiMerchantPaymentCancelReq) SetExternalCancelId(v string) {
-	o.ExternalCancelId = v
 }
 
 // GetPaymentId returns the PaymentId field value
@@ -106,7 +79,6 @@ func (o UnibeeApiMerchantPaymentCancelReq) MarshalJSON() ([]byte, error) {
 
 func (o UnibeeApiMerchantPaymentCancelReq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["externalCancelId"] = o.ExternalCancelId
 	toSerialize["paymentId"] = o.PaymentId
 	return toSerialize, nil
 }
@@ -116,7 +88,6 @@ func (o *UnibeeApiMerchantPaymentCancelReq) UnmarshalJSON(data []byte) (err erro
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"externalCancelId",
 		"paymentId",
 	}
 

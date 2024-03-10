@@ -1070,34 +1070,11 @@ paths:
       - Payment
   /merchant/payment/capture:
     post:
-      parameters:
-      - description: "CaptureAmount, Cent"
-        explode: true
-        in: query
-        name: captureAmount
-        required: true
-        schema:
-          description: "CaptureAmount, Cent"
-          format: int64
-          properties: {}
-          type: integer
-        style: form
-      - description: Currency
-        explode: true
-        in: query
-        name: currency
-        required: true
-        schema:
-          description: Currency
-          format: string
-          properties: {}
-          type: string
-        style: form
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/_merchant_payment_capture_post_request'
+              $ref: '#/components/schemas/unibee.api.merchant.payment.CaptureReq'
         required: true
       responses:
         "200":
@@ -1272,6 +1249,24 @@ paths:
                 $ref: '#/components/schemas/_merchant_payment_new_post_200_response'
           description: ""
       summary: New Payment
+      tags:
+      - Payment
+  /merchant/payment/refund/cancel:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/unibee.api.merchant.payment.RefundCancelReq'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_auth_sso_loginOTP_post_200_response'
+          description: ""
+      summary: Cancel Payment Refund
       tags:
       - Payment
   /merchant/payment/refund/detail:
@@ -3872,6 +3867,247 @@ components:
         merchantMetric:
           $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.MerchantMetricVo'
       type: object
+    unibee.api.merchant.metric.UserMetric:
+      example:
+        isPaid: true
+        userMerchantMetricStats:
+        - MetricLimit:
+            MetricId: 7
+            TotalLimit: 0
+            aggregationType: 6
+            aggregationProperty: aggregationProperty
+            code: code
+            metricName: metricName
+            UserId: 7
+            MerchantId: 3
+            type: 0
+            PlanLimits:
+            - gmtModify: 1
+              metricId: 2
+              createTime: 6
+              merchantId: 5
+              merchantMetricVo:
+                aggregationType: 6
+                aggregationProperty: aggregationProperty
+                code: code
+                metricDescription: metricDescription
+                metricName: metricName
+                gmtModify: 5
+                createTime: 1
+                merchantId: 2
+                id: 5
+                type: 7
+              planId: 9
+              id: 5
+              metricLimit: 7
+            - gmtModify: 1
+              metricId: 2
+              createTime: 6
+              merchantId: 5
+              merchantMetricVo:
+                aggregationType: 6
+                aggregationProperty: aggregationProperty
+                code: code
+                metricDescription: metricDescription
+                metricName: metricName
+                gmtModify: 5
+                createTime: 1
+                merchantId: 2
+                id: 5
+                type: 7
+              planId: 9
+              id: 5
+              metricLimit: 7
+          CurrentUseValue: 3
+        - MetricLimit:
+            MetricId: 7
+            TotalLimit: 0
+            aggregationType: 6
+            aggregationProperty: aggregationProperty
+            code: code
+            metricName: metricName
+            UserId: 7
+            MerchantId: 3
+            type: 0
+            PlanLimits:
+            - gmtModify: 1
+              metricId: 2
+              createTime: 6
+              merchantId: 5
+              merchantMetricVo:
+                aggregationType: 6
+                aggregationProperty: aggregationProperty
+                code: code
+                metricDescription: metricDescription
+                metricName: metricName
+                gmtModify: 5
+                createTime: 1
+                merchantId: 2
+                id: 5
+                type: 7
+              planId: 9
+              id: 5
+              metricLimit: 7
+            - gmtModify: 1
+              metricId: 2
+              createTime: 6
+              merchantId: 5
+              merchantMetricVo:
+                aggregationType: 6
+                aggregationProperty: aggregationProperty
+                code: code
+                metricDescription: metricDescription
+                metricName: metricName
+                gmtModify: 5
+                createTime: 1
+                merchantId: 2
+                id: 5
+                type: 7
+              planId: 9
+              id: 5
+              metricLimit: 7
+          CurrentUseValue: 3
+        addons:
+        - quantity: 4
+          addonPlan:
+            amount: 6
+            metadata:
+              key: metadata
+            extraMetricData: extraMetricData
+            bindingAddonIds: bindingAddonIds
+            intervalUnit: intervalUnit
+            description: description
+            planName: planName
+            type: 2
+            productName: productName
+            homeUrl: homeUrl
+            createTime: 1
+            merchantId: 2
+            taxScale: 3
+            imageUrl: imageUrl
+            intervalCount: 5
+            currency: currency
+            id: 5
+            productDescription: productDescription
+            publishStatus: 7
+            status: 9
+        - quantity: 4
+          addonPlan:
+            amount: 6
+            metadata:
+              key: metadata
+            extraMetricData: extraMetricData
+            bindingAddonIds: bindingAddonIds
+            intervalUnit: intervalUnit
+            description: description
+            planName: planName
+            type: 2
+            productName: productName
+            homeUrl: homeUrl
+            createTime: 1
+            merchantId: 2
+            taxScale: 3
+            imageUrl: imageUrl
+            intervalCount: 5
+            currency: currency
+            id: 5
+            productDescription: productDescription
+            publishStatus: 7
+            status: 9
+        subscription:
+          metadata:
+            key: metadata
+          gatewayItemData: gatewayItemData
+          testClock: 6
+          currentPeriodEnd: 6
+          link: link
+          type: 2
+          firstPaidTime: 4
+          merchantId: 6
+          taxScale: 3
+          countryCode: countryCode
+          dunningTime: 1
+          currency: currency
+          planId: 8
+          id: 9
+          cancelReason: cancelReason
+          returnUrl: returnUrl
+          gatewayStatus: gatewayStatus
+          addonData: addonData
+          billingCycleAnchor: 1
+          currentPeriodStart: 7
+          trialEnd: 1
+          amount: 7
+          quantity: 9
+          userId: 6
+          createTime: 1
+          latestInvoiceId: latestInvoiceId
+          cancelAtPeriodEnd: 1
+          subscriptionId: subscriptionId
+          gatewayId: 5
+          lastUpdateTime: 9
+          pendingUpdateId: pendingUpdateId
+          status: 6
+          taskTime: taskTime
+          vatNumber: vatNumber
+        plan:
+          amount: 6
+          metadata:
+            key: metadata
+          extraMetricData: extraMetricData
+          bindingAddonIds: bindingAddonIds
+          intervalUnit: intervalUnit
+          description: description
+          planName: planName
+          type: 2
+          productName: productName
+          homeUrl: homeUrl
+          createTime: 1
+          merchantId: 2
+          taxScale: 3
+          imageUrl: imageUrl
+          intervalCount: 5
+          currency: currency
+          id: 5
+          productDescription: productDescription
+          publishStatus: 7
+          status: 9
+        user:
+          firstName: firstName
+          lastName: lastName
+          address: address
+          createTime: 6
+          externalUserId: externalUserId
+          merchantId: 6
+          id: 5
+          email: email
+      properties:
+        addons:
+          description: Addon
+          format: "[]*ro.PlanAddonVo"
+          items:
+            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PlanAddonVo'
+          properties: {}
+          type: array
+        isPaid:
+          description: IsPaid
+          format: bool
+          properties: {}
+          type: boolean
+        plan:
+          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PlanSimplify'
+        subscription:
+          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.SubscriptionSimplify'
+        user:
+          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.UserAccountSimplify'
+        userMerchantMetricStats:
+          description: UserMerchantMetricStats
+          format: "[]*ro.UserMerchantMetricStat"
+          items:
+            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.UserMerchantMetricStat'
+          properties: {}
+          type: array
+      type: object
     unibee.api.merchant.metric.UserMetricReq:
       properties:
         externalUserId:
@@ -3888,7 +4124,7 @@ components:
     unibee.api.merchant.metric.UserMetricRes:
       properties:
         userMetric:
-          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.UserMetric'
+          $ref: '#/components/schemas/unibee.api.merchant.metric.UserMetric'
       type: object
     unibee.api.merchant.oss.FileUploadReq:
       properties:
@@ -3908,18 +4144,12 @@ components:
       type: object
     unibee.api.merchant.payment.CancelReq:
       properties:
-        externalCancelId:
-          description: ExternalCancelId
-          format: string
-          properties: {}
-          type: string
         paymentId:
           description: PaymentId
           format: string
           properties: {}
           type: string
       required:
-      - externalCancelId
       - paymentId
       type: object
     unibee.api.merchant.payment.CancelRes:
@@ -4278,6 +4508,19 @@ components:
           $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PaymentSimplify'
         user:
           $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.UserAccountSimplify'
+      type: object
+    unibee.api.merchant.payment.RefundCancelReq:
+      properties:
+        refundId:
+          description: RefundId
+          format: string
+          properties: {}
+          type: string
+      required:
+      - refundId
+      type: object
+    unibee.api.merchant.payment.RefundCancelRes:
+      properties: {}
       type: object
     unibee.api.merchant.payment.RefundDetail:
       example:
@@ -8721,247 +8964,6 @@ components:
           type: integer
         MetricLimit:
           $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.MetricLimitVo'
-      type: object
-    unibee.internal.logic.gateway.ro.UserMetric:
-      example:
-        isPaid: true
-        userMerchantMetricStats:
-        - MetricLimit:
-            MetricId: 7
-            TotalLimit: 0
-            aggregationType: 6
-            aggregationProperty: aggregationProperty
-            code: code
-            metricName: metricName
-            UserId: 7
-            MerchantId: 3
-            type: 0
-            PlanLimits:
-            - gmtModify: 1
-              metricId: 2
-              createTime: 6
-              merchantId: 5
-              merchantMetricVo:
-                aggregationType: 6
-                aggregationProperty: aggregationProperty
-                code: code
-                metricDescription: metricDescription
-                metricName: metricName
-                gmtModify: 5
-                createTime: 1
-                merchantId: 2
-                id: 5
-                type: 7
-              planId: 9
-              id: 5
-              metricLimit: 7
-            - gmtModify: 1
-              metricId: 2
-              createTime: 6
-              merchantId: 5
-              merchantMetricVo:
-                aggregationType: 6
-                aggregationProperty: aggregationProperty
-                code: code
-                metricDescription: metricDescription
-                metricName: metricName
-                gmtModify: 5
-                createTime: 1
-                merchantId: 2
-                id: 5
-                type: 7
-              planId: 9
-              id: 5
-              metricLimit: 7
-          CurrentUseValue: 3
-        - MetricLimit:
-            MetricId: 7
-            TotalLimit: 0
-            aggregationType: 6
-            aggregationProperty: aggregationProperty
-            code: code
-            metricName: metricName
-            UserId: 7
-            MerchantId: 3
-            type: 0
-            PlanLimits:
-            - gmtModify: 1
-              metricId: 2
-              createTime: 6
-              merchantId: 5
-              merchantMetricVo:
-                aggregationType: 6
-                aggregationProperty: aggregationProperty
-                code: code
-                metricDescription: metricDescription
-                metricName: metricName
-                gmtModify: 5
-                createTime: 1
-                merchantId: 2
-                id: 5
-                type: 7
-              planId: 9
-              id: 5
-              metricLimit: 7
-            - gmtModify: 1
-              metricId: 2
-              createTime: 6
-              merchantId: 5
-              merchantMetricVo:
-                aggregationType: 6
-                aggregationProperty: aggregationProperty
-                code: code
-                metricDescription: metricDescription
-                metricName: metricName
-                gmtModify: 5
-                createTime: 1
-                merchantId: 2
-                id: 5
-                type: 7
-              planId: 9
-              id: 5
-              metricLimit: 7
-          CurrentUseValue: 3
-        addons:
-        - quantity: 4
-          addonPlan:
-            amount: 6
-            metadata:
-              key: metadata
-            extraMetricData: extraMetricData
-            bindingAddonIds: bindingAddonIds
-            intervalUnit: intervalUnit
-            description: description
-            planName: planName
-            type: 2
-            productName: productName
-            homeUrl: homeUrl
-            createTime: 1
-            merchantId: 2
-            taxScale: 3
-            imageUrl: imageUrl
-            intervalCount: 5
-            currency: currency
-            id: 5
-            productDescription: productDescription
-            publishStatus: 7
-            status: 9
-        - quantity: 4
-          addonPlan:
-            amount: 6
-            metadata:
-              key: metadata
-            extraMetricData: extraMetricData
-            bindingAddonIds: bindingAddonIds
-            intervalUnit: intervalUnit
-            description: description
-            planName: planName
-            type: 2
-            productName: productName
-            homeUrl: homeUrl
-            createTime: 1
-            merchantId: 2
-            taxScale: 3
-            imageUrl: imageUrl
-            intervalCount: 5
-            currency: currency
-            id: 5
-            productDescription: productDescription
-            publishStatus: 7
-            status: 9
-        subscription:
-          metadata:
-            key: metadata
-          gatewayItemData: gatewayItemData
-          testClock: 6
-          currentPeriodEnd: 6
-          link: link
-          type: 2
-          firstPaidTime: 4
-          merchantId: 6
-          taxScale: 3
-          countryCode: countryCode
-          dunningTime: 1
-          currency: currency
-          planId: 8
-          id: 9
-          cancelReason: cancelReason
-          returnUrl: returnUrl
-          gatewayStatus: gatewayStatus
-          addonData: addonData
-          billingCycleAnchor: 1
-          currentPeriodStart: 7
-          trialEnd: 1
-          amount: 7
-          quantity: 9
-          userId: 6
-          createTime: 1
-          latestInvoiceId: latestInvoiceId
-          cancelAtPeriodEnd: 1
-          subscriptionId: subscriptionId
-          gatewayId: 5
-          lastUpdateTime: 9
-          pendingUpdateId: pendingUpdateId
-          status: 6
-          taskTime: taskTime
-          vatNumber: vatNumber
-        plan:
-          amount: 6
-          metadata:
-            key: metadata
-          extraMetricData: extraMetricData
-          bindingAddonIds: bindingAddonIds
-          intervalUnit: intervalUnit
-          description: description
-          planName: planName
-          type: 2
-          productName: productName
-          homeUrl: homeUrl
-          createTime: 1
-          merchantId: 2
-          taxScale: 3
-          imageUrl: imageUrl
-          intervalCount: 5
-          currency: currency
-          id: 5
-          productDescription: productDescription
-          publishStatus: 7
-          status: 9
-        user:
-          firstName: firstName
-          lastName: lastName
-          address: address
-          createTime: 6
-          externalUserId: externalUserId
-          merchantId: 6
-          id: 5
-          email: email
-      properties:
-        addons:
-          description: Addon
-          format: "[]*ro.PlanAddonVo"
-          items:
-            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PlanAddonVo'
-          properties: {}
-          type: array
-        isPaid:
-          description: IsPaid
-          format: bool
-          properties: {}
-          type: boolean
-        plan:
-          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PlanSimplify'
-        subscription:
-          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.SubscriptionSimplify'
-        user:
-          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.UserAccountSimplify'
-        userMerchantMetricStats:
-          description: UserMerchantMetricStats
-          format: "[]*ro.UserMerchantMetricStat"
-          items:
-            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.UserMerchantMetricStat'
-          properties: {}
-          type: array
       type: object
     unibee.internal.logic.gateway.ro.ValidResult:
       properties:
@@ -14069,7 +14071,7 @@ components:
             email: email
       properties:
         userMetric:
-          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.UserMetric'
+          $ref: '#/components/schemas/unibee.api.merchant.metric.UserMetric'
       type: object
     _merchant_metric_user_metric_get_200_response:
       example:
@@ -14348,22 +14350,6 @@ components:
           format: string
           properties: {}
           type: string
-      type: object
-    _merchant_payment_capture_post_request:
-      properties:
-        externalCaptureId:
-          description: ExternalCaptureId
-          format: string
-          properties: {}
-          type: string
-        paymentId:
-          description: PaymentId
-          format: string
-          properties: {}
-          type: string
-      required:
-      - externalCaptureId
-      - paymentId
       type: object
     _merchant_payment_detail_get_200_response_data:
       example:

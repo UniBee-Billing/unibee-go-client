@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UserMetric** | Pointer to [**UnibeeInternalLogicGatewayRoUserMetric**](UnibeeInternalLogicGatewayRoUserMetric.md) |  | [optional] 
+**UserMetric** | Pointer to [**UnibeeApiMerchantMetricUserMetric**](UnibeeApiMerchantMetricUserMetric.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetUserMetric
 
-`func (o *UnibeeApiMerchantMetricUserMetricRes) GetUserMetric() UnibeeInternalLogicGatewayRoUserMetric`
+`func (o *UnibeeApiMerchantMetricUserMetricRes) GetUserMetric() UnibeeApiMerchantMetricUserMetric`
 
 GetUserMetric returns the UserMetric field if non-nil, zero value otherwise.
 
 ### GetUserMetricOk
 
-`func (o *UnibeeApiMerchantMetricUserMetricRes) GetUserMetricOk() (*UnibeeInternalLogicGatewayRoUserMetric, bool)`
+`func (o *UnibeeApiMerchantMetricUserMetricRes) GetUserMetricOk() (*UnibeeApiMerchantMetricUserMetric, bool)`
 
 GetUserMetricOk returns a tuple with the UserMetric field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserMetric
 
-`func (o *UnibeeApiMerchantMetricUserMetricRes) SetUserMetric(v UnibeeInternalLogicGatewayRoUserMetric)`
+`func (o *UnibeeApiMerchantMetricUserMetricRes) SetUserMetric(v UnibeeApiMerchantMetricUserMetric)`
 
 SetUserMetric sets UserMetric field to given value.
 

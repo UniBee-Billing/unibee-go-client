@@ -133,25 +133,11 @@ func (a *PaymentService) PaymentCancelPostExecute(r PaymentPaymentCancelPostRequ
 type PaymentPaymentCapturePostRequest struct {
 	ctx context.Context
 	ApiService *PaymentService
-	captureAmount *int64
-	currency *string
-	merchantPaymentCapturePostRequest *MerchantPaymentCapturePostRequest
+	unibeeApiMerchantPaymentCaptureReq *UnibeeApiMerchantPaymentCaptureReq
 }
 
-// CaptureAmount, Cent
-func (r PaymentPaymentCapturePostRequest) CaptureAmount(captureAmount int64) PaymentPaymentCapturePostRequest {
-	r.captureAmount = &captureAmount
-	return r
-}
-
-// Currency
-func (r PaymentPaymentCapturePostRequest) Currency(currency string) PaymentPaymentCapturePostRequest {
-	r.currency = &currency
-	return r
-}
-
-func (r PaymentPaymentCapturePostRequest) MerchantPaymentCapturePostRequest(merchantPaymentCapturePostRequest MerchantPaymentCapturePostRequest) PaymentPaymentCapturePostRequest {
-	r.merchantPaymentCapturePostRequest = &merchantPaymentCapturePostRequest
+func (r PaymentPaymentCapturePostRequest) UnibeeApiMerchantPaymentCaptureReq(unibeeApiMerchantPaymentCaptureReq UnibeeApiMerchantPaymentCaptureReq) PaymentPaymentCapturePostRequest {
+	r.unibeeApiMerchantPaymentCaptureReq = &unibeeApiMerchantPaymentCaptureReq
 	return r
 }
 
@@ -192,18 +178,10 @@ func (a *PaymentService) PaymentCapturePostExecute(r PaymentPaymentCapturePostRe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.captureAmount == nil {
-		return localVarReturnValue, nil, reportError("captureAmount is required and must be specified")
-	}
-	if r.currency == nil {
-		return localVarReturnValue, nil, reportError("currency is required and must be specified")
-	}
-	if r.merchantPaymentCapturePostRequest == nil {
-		return localVarReturnValue, nil, reportError("merchantPaymentCapturePostRequest is required and must be specified")
+	if r.unibeeApiMerchantPaymentCaptureReq == nil {
+		return localVarReturnValue, nil, reportError("unibeeApiMerchantPaymentCaptureReq is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "captureAmount", r.captureAmount, "")
-	parameterAddToHeaderOrQuery(localVarQueryParams, "currency", r.currency, "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -222,7 +200,7 @@ func (a *PaymentService) PaymentCapturePostExecute(r PaymentPaymentCapturePostRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.merchantPaymentCapturePostRequest
+	localVarPostBody = r.unibeeApiMerchantPaymentCaptureReq
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -636,6 +614,114 @@ func (a *PaymentService) PaymentNewPostExecute(r PaymentPaymentNewPostRequest) (
 	}
 	// body params
 	localVarPostBody = r.unibeeApiMerchantPaymentNewReq
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type PaymentPaymentRefundCancelPostRequest struct {
+	ctx context.Context
+	ApiService *PaymentService
+	unibeeApiMerchantPaymentRefundCancelReq *UnibeeApiMerchantPaymentRefundCancelReq
+}
+
+func (r PaymentPaymentRefundCancelPostRequest) UnibeeApiMerchantPaymentRefundCancelReq(unibeeApiMerchantPaymentRefundCancelReq UnibeeApiMerchantPaymentRefundCancelReq) PaymentPaymentRefundCancelPostRequest {
+	r.unibeeApiMerchantPaymentRefundCancelReq = &unibeeApiMerchantPaymentRefundCancelReq
+	return r
+}
+
+func (r PaymentPaymentRefundCancelPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+	return r.ApiService.PaymentRefundCancelPostExecute(r)
+}
+
+/*
+PaymentRefundCancelPost Cancel Payment Refund
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return PaymentPaymentRefundCancelPostRequest
+*/
+func (a *PaymentService) PaymentRefundCancelPost(ctx context.Context) PaymentPaymentRefundCancelPostRequest {
+	return PaymentPaymentRefundCancelPostRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return MerchantAuthSsoLoginOTPPost200Response
+func (a *PaymentService) PaymentRefundCancelPostExecute(r PaymentPaymentRefundCancelPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *MerchantAuthSsoLoginOTPPost200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentService.PaymentRefundCancelPost")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/merchant/payment/refund/cancel"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.unibeeApiMerchantPaymentRefundCancelReq == nil {
+		return localVarReturnValue, nil, reportError("unibeeApiMerchantPaymentRefundCancelReq is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.unibeeApiMerchantPaymentRefundCancelReq
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

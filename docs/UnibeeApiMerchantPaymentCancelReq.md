@@ -4,14 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ExternalCancelId** | **string** | ExternalCancelId | 
 **PaymentId** | **string** | PaymentId | 
 
 ## Methods
 
 ### NewUnibeeApiMerchantPaymentCancelReq
 
-`func NewUnibeeApiMerchantPaymentCancelReq(externalCancelId string, paymentId string, ) *UnibeeApiMerchantPaymentCancelReq`
+`func NewUnibeeApiMerchantPaymentCancelReq(paymentId string, ) *UnibeeApiMerchantPaymentCancelReq`
 
 NewUnibeeApiMerchantPaymentCancelReq instantiates a new UnibeeApiMerchantPaymentCancelReq object
 This constructor will assign default values to properties that have it defined,
@@ -25,26 +24,6 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantPaymentCancelReqWithDefaults instantiates a new UnibeeApiMerchantPaymentCancelReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetExternalCancelId
-
-`func (o *UnibeeApiMerchantPaymentCancelReq) GetExternalCancelId() string`
-
-GetExternalCancelId returns the ExternalCancelId field if non-nil, zero value otherwise.
-
-### GetExternalCancelIdOk
-
-`func (o *UnibeeApiMerchantPaymentCancelReq) GetExternalCancelIdOk() (*string, bool)`
-
-GetExternalCancelIdOk returns a tuple with the ExternalCancelId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExternalCancelId
-
-`func (o *UnibeeApiMerchantPaymentCancelReq) SetExternalCancelId(v string)`
-
-SetExternalCancelId sets ExternalCancelId field to given value.
-
 
 ### GetPaymentId
 

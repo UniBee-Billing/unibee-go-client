@@ -129,6 +129,7 @@ Class | Method | HTTP request | Description
 *Payment* | [**PaymentDetailGet**](docs/Payment.md#paymentdetailget) | **Get** /merchant/payment/detail | Query Payment Detail
 *Payment* | [**PaymentListGet**](docs/Payment.md#paymentlistget) | **Get** /merchant/payment/list | Query Payment List
 *Payment* | [**PaymentNewPost**](docs/Payment.md#paymentnewpost) | **Post** /merchant/payment/new | New Payment
+*Payment* | [**PaymentRefundCancelPost**](docs/Payment.md#paymentrefundcancelpost) | **Post** /merchant/payment/refund/cancel | Cancel Payment Refund
 *Payment* | [**PaymentRefundDetailGet**](docs/Payment.md#paymentrefunddetailget) | **Get** /merchant/payment/refund/detail | Query Payment Refund Detail
 *Payment* | [**PaymentRefundListGet**](docs/Payment.md#paymentrefundlistget) | **Get** /merchant/payment/refund/list | Query Payment Refund List
 *Payment* | [**PaymentRefundNewPost**](docs/Payment.md#paymentrefundnewpost) | **Post** /merchant/payment/refund/new | New Payment Refund
@@ -228,7 +229,6 @@ Class | Method | HTTP request | Description
  - [MerchantMetricUserMetricGet200ResponseData](docs/MerchantMetricUserMetricGet200ResponseData.md)
  - [MerchantOssFilePost200Response](docs/MerchantOssFilePost200Response.md)
  - [MerchantOssFilePost200ResponseData](docs/MerchantOssFilePost200ResponseData.md)
- - [MerchantPaymentCapturePostRequest](docs/MerchantPaymentCapturePostRequest.md)
  - [MerchantPaymentDetailGet200Response](docs/MerchantPaymentDetailGet200Response.md)
  - [MerchantPaymentDetailGet200ResponseData](docs/MerchantPaymentDetailGet200ResponseData.md)
  - [MerchantPaymentListGet200Response](docs/MerchantPaymentListGet200Response.md)
@@ -342,6 +342,7 @@ Class | Method | HTTP request | Description
  - [UnibeeApiMerchantMetricNewPlanLimitRes](docs/UnibeeApiMerchantMetricNewPlanLimitRes.md)
  - [UnibeeApiMerchantMetricNewReq](docs/UnibeeApiMerchantMetricNewReq.md)
  - [UnibeeApiMerchantMetricNewRes](docs/UnibeeApiMerchantMetricNewRes.md)
+ - [UnibeeApiMerchantMetricUserMetric](docs/UnibeeApiMerchantMetricUserMetric.md)
  - [UnibeeApiMerchantMetricUserMetricReq](docs/UnibeeApiMerchantMetricUserMetricReq.md)
  - [UnibeeApiMerchantMetricUserMetricRes](docs/UnibeeApiMerchantMetricUserMetricRes.md)
  - [UnibeeApiMerchantOssFileUploadRes](docs/UnibeeApiMerchantOssFileUploadRes.md)
@@ -357,6 +358,7 @@ Class | Method | HTTP request | Description
  - [UnibeeApiMerchantPaymentNewReq](docs/UnibeeApiMerchantPaymentNewReq.md)
  - [UnibeeApiMerchantPaymentNewRes](docs/UnibeeApiMerchantPaymentNewRes.md)
  - [UnibeeApiMerchantPaymentPaymentDetail](docs/UnibeeApiMerchantPaymentPaymentDetail.md)
+ - [UnibeeApiMerchantPaymentRefundCancelReq](docs/UnibeeApiMerchantPaymentRefundCancelReq.md)
  - [UnibeeApiMerchantPaymentRefundDetail](docs/UnibeeApiMerchantPaymentRefundDetail.md)
  - [UnibeeApiMerchantPaymentRefundDetailReq](docs/UnibeeApiMerchantPaymentRefundDetailReq.md)
  - [UnibeeApiMerchantPaymentRefundDetailRes](docs/UnibeeApiMerchantPaymentRefundDetailRes.md)
@@ -462,7 +464,6 @@ Class | Method | HTTP request | Description
  - [UnibeeInternalLogicGatewayRoSubscriptionTimeLineDetailVo](docs/UnibeeInternalLogicGatewayRoSubscriptionTimeLineDetailVo.md)
  - [UnibeeInternalLogicGatewayRoUserAccountSimplify](docs/UnibeeInternalLogicGatewayRoUserAccountSimplify.md)
  - [UnibeeInternalLogicGatewayRoUserMerchantMetricStat](docs/UnibeeInternalLogicGatewayRoUserMerchantMetricStat.md)
- - [UnibeeInternalLogicGatewayRoUserMetric](docs/UnibeeInternalLogicGatewayRoUserMetric.md)
  - [UnibeeInternalLogicGatewayRoValidResult](docs/UnibeeInternalLogicGatewayRoValidResult.md)
  - [UnibeeInternalLogicGatewayRoVatCountryRate](docs/UnibeeInternalLogicGatewayRoVatCountryRate.md)
  - [UnibeeInternalLogicWebhookMerchantWebhookEndpointVo](docs/UnibeeInternalLogicWebhookMerchantWebhookEndpointVo.md)
