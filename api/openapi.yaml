@@ -1379,34 +1379,11 @@ paths:
       - Payment
   /merchant/payment/refund/new:
     post:
-      parameters:
-      - description: "RefundAmount, Cent"
-        explode: true
-        in: query
-        name: refundAmount
-        required: true
-        schema:
-          description: "RefundAmount, Cent"
-          format: int64
-          properties: {}
-          type: integer
-        style: form
-      - description: Currency
-        explode: true
-        in: query
-        name: currency
-        required: true
-        schema:
-          description: Currency
-          format: string
-          properties: {}
-          type: string
-        style: form
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/_merchant_payment_refund_new_post_request'
+              $ref: '#/components/schemas/unibee.api.merchant.payment.NewPaymentRefundReq'
         required: true
       responses:
         "200":
@@ -3992,7 +3969,7 @@ components:
     unibee.api.merchant.payment.DetailRes:
       properties:
         paymentDetail:
-          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PaymentDetailRo'
+          $ref: '#/components/schemas/unibee.api.merchant.payment.PaymentDetail'
       type: object
     unibee.api.merchant.payment.Item:
       properties:
@@ -4095,9 +4072,9 @@ components:
       properties:
         paymentDetails:
           description: PaymentDetails
-          format: "[]*ro.PaymentDetailRo"
+          format: "[]*payment.PaymentDetail"
           items:
-            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PaymentDetailRo'
+            $ref: '#/components/schemas/unibee.api.merchant.payment.PaymentDetail'
           properties: {}
           type: array
       type: object
@@ -4257,6 +4234,117 @@ components:
           properties: {}
           type: integer
       type: object
+    unibee.api.merchant.payment.PaymentDetail:
+      example:
+        payment:
+          metadata:
+            key: metadata
+          authorizeReason: authorizeReason
+          billingReason: billingReason
+          link: link
+          paymentAmount: 2
+          merchantId: 9
+          countryCode: countryCode
+          paymentId: paymentId
+          currency: currency
+          externalPaymentId: externalPaymentId
+          returnUrl: returnUrl
+          gatewayPaymentId: gatewayPaymentId
+          refundAmount: 4
+          automatic: 1
+          authorizeStatus: 6
+          balanceAmount: 5
+          paidTime: 3
+          userId: 1
+          totalAmount: 1
+          cancelTime: 5
+          createTime: 2
+          failureReason: failureReason
+          invoiceId: invoiceId
+          subscriptionId: subscriptionId
+          gatewayId: 7
+          status: 7
+        user:
+          firstName: firstName
+          lastName: lastName
+          address: address
+          createTime: 6
+          externalUserId: externalUserId
+          merchantId: 6
+          id: 5
+          email: email
+      properties:
+        payment:
+          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PaymentSimplify'
+        user:
+          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.UserAccountSimplify'
+      type: object
+    unibee.api.merchant.payment.RefundDetail:
+      example:
+        payment:
+          metadata:
+            key: metadata
+          authorizeReason: authorizeReason
+          billingReason: billingReason
+          link: link
+          paymentAmount: 2
+          merchantId: 9
+          countryCode: countryCode
+          paymentId: paymentId
+          currency: currency
+          externalPaymentId: externalPaymentId
+          returnUrl: returnUrl
+          gatewayPaymentId: gatewayPaymentId
+          refundAmount: 4
+          automatic: 1
+          authorizeStatus: 6
+          balanceAmount: 5
+          paidTime: 3
+          userId: 1
+          totalAmount: 1
+          cancelTime: 5
+          createTime: 2
+          failureReason: failureReason
+          invoiceId: invoiceId
+          subscriptionId: subscriptionId
+          gatewayId: 7
+          status: 7
+        user:
+          firstName: firstName
+          lastName: lastName
+          address: address
+          createTime: 6
+          externalUserId: externalUserId
+          merchantId: 6
+          id: 5
+          email: email
+        refund:
+          metadata:
+            key: metadata
+          refundTime: 2
+          externalRefundId: externalRefundId
+          userId: 9
+          createTime: 6
+          merchantId: 5
+          countryCode: countryCode
+          paymentId: paymentId
+          currency: currency
+          returnUrl: returnUrl
+          subscriptionId: subscriptionId
+          gatewayRefundId: gatewayRefundId
+          refundComment: refundComment
+          gatewayId: 1
+          refundId: refundId
+          refundAmount: 5
+          status: 7
+      properties:
+        payment:
+          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PaymentSimplify'
+        refund:
+          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.RefundSimplify'
+        user:
+          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.UserAccountSimplify'
+      type: object
     unibee.api.merchant.payment.RefundDetailReq:
       properties:
         refundId:
@@ -4268,7 +4356,7 @@ components:
     unibee.api.merchant.payment.RefundDetailRes:
       properties:
         refundDetail:
-          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.RefundDetailRo'
+          $ref: '#/components/schemas/unibee.api.merchant.payment.RefundDetail'
       type: object
     unibee.api.merchant.payment.RefundListReq:
       properties:
@@ -4309,9 +4397,9 @@ components:
       properties:
         refundDetails:
           description: RefundDetails
-          format: "[]*ro.RefundDetailRo"
+          format: "[]*payment.RefundDetail"
           items:
-            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.RefundDetailRo'
+            $ref: '#/components/schemas/unibee.api.merchant.payment.RefundDetail'
           properties: {}
           type: array
       type: object
@@ -4424,7 +4512,7 @@ components:
     unibee.api.merchant.plan.DetailRes:
       properties:
         plan:
-          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PlanDetailRo'
+          $ref: '#/components/schemas/unibee.api.merchant.plan.PlanDetail'
       type: object
     unibee.api.merchant.plan.EditReq:
       properties:
@@ -4596,9 +4684,9 @@ components:
       properties:
         plans:
           description: Plans
-          format: "[]*ro.PlanDetailRo"
+          format: "[]*plan.PlanDetail"
           items:
-            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PlanDetailRo'
+            $ref: '#/components/schemas/unibee.api.merchant.plan.PlanDetail'
           properties: {}
           type: array
       type: object
@@ -4694,6 +4782,140 @@ components:
       type: object
     unibee.api.merchant.plan.NewRes:
       properties:
+        plan:
+          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PlanSimplify'
+      type: object
+    unibee.api.merchant.plan.PlanDetail:
+      example:
+        addons:
+        - amount: 6
+          metadata:
+            key: metadata
+          extraMetricData: extraMetricData
+          bindingAddonIds: bindingAddonIds
+          intervalUnit: intervalUnit
+          description: description
+          planName: planName
+          type: 2
+          productName: productName
+          homeUrl: homeUrl
+          createTime: 1
+          merchantId: 2
+          taxScale: 3
+          imageUrl: imageUrl
+          intervalCount: 5
+          currency: currency
+          id: 5
+          productDescription: productDescription
+          publishStatus: 7
+          status: 9
+        - amount: 6
+          metadata:
+            key: metadata
+          extraMetricData: extraMetricData
+          bindingAddonIds: bindingAddonIds
+          intervalUnit: intervalUnit
+          description: description
+          planName: planName
+          type: 2
+          productName: productName
+          homeUrl: homeUrl
+          createTime: 1
+          merchantId: 2
+          taxScale: 3
+          imageUrl: imageUrl
+          intervalCount: 5
+          currency: currency
+          id: 5
+          productDescription: productDescription
+          publishStatus: 7
+          status: 9
+        addonIds:
+        - 6
+        - 6
+        plan:
+          amount: 6
+          metadata:
+            key: metadata
+          extraMetricData: extraMetricData
+          bindingAddonIds: bindingAddonIds
+          intervalUnit: intervalUnit
+          description: description
+          planName: planName
+          type: 2
+          productName: productName
+          homeUrl: homeUrl
+          createTime: 1
+          merchantId: 2
+          taxScale: 3
+          imageUrl: imageUrl
+          intervalCount: 5
+          currency: currency
+          id: 5
+          productDescription: productDescription
+          publishStatus: 7
+          status: 9
+        metricPlanLimits:
+        - gmtModify: 1
+          metricId: 2
+          createTime: 6
+          merchantId: 5
+          merchantMetricVo:
+            aggregationType: 6
+            aggregationProperty: aggregationProperty
+            code: code
+            metricDescription: metricDescription
+            metricName: metricName
+            gmtModify: 5
+            createTime: 1
+            merchantId: 2
+            id: 5
+            type: 7
+          planId: 9
+          id: 5
+          metricLimit: 7
+        - gmtModify: 1
+          metricId: 2
+          createTime: 6
+          merchantId: 5
+          merchantMetricVo:
+            aggregationType: 6
+            aggregationProperty: aggregationProperty
+            code: code
+            metricDescription: metricDescription
+            metricName: metricName
+            gmtModify: 5
+            createTime: 1
+            merchantId: 2
+            id: 5
+            type: 7
+          planId: 9
+          id: 5
+          metricLimit: 7
+      properties:
+        addonIds:
+          description: AddonIds
+          format: "[]int64"
+          items:
+            format: int64
+            properties: {}
+            type: integer
+          properties: {}
+          type: array
+        addons:
+          description: Addons
+          format: "[]*ro.PlanSimplify"
+          items:
+            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PlanSimplify'
+          properties: {}
+          type: array
+        metricPlanLimits:
+          description: MetricPlanLimits
+          format: "[]*ro.MerchantMetricPlanLimitVo"
+          items:
+            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.MerchantMetricPlanLimitVo'
+          properties: {}
+          type: array
         plan:
           $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PlanSimplify'
       type: object
@@ -6913,51 +7135,6 @@ components:
           properties: {}
           type: integer
       type: object
-    unibee.internal.logic.gateway.ro.PaymentDetailRo:
-      example:
-        payment:
-          metadata:
-            key: metadata
-          authorizeReason: authorizeReason
-          billingReason: billingReason
-          link: link
-          paymentAmount: 2
-          merchantId: 9
-          countryCode: countryCode
-          paymentId: paymentId
-          currency: currency
-          externalPaymentId: externalPaymentId
-          returnUrl: returnUrl
-          gatewayPaymentId: gatewayPaymentId
-          refundAmount: 4
-          automatic: 1
-          authorizeStatus: 6
-          balanceAmount: 5
-          paidTime: 3
-          userId: 1
-          totalAmount: 1
-          cancelTime: 5
-          createTime: 2
-          failureReason: failureReason
-          invoiceId: invoiceId
-          subscriptionId: subscriptionId
-          gatewayId: 7
-          status: 7
-        user:
-          firstName: firstName
-          lastName: lastName
-          address: address
-          createTime: 6
-          externalUserId: externalUserId
-          merchantId: 6
-          id: 5
-          email: email
-      properties:
-        payment:
-          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PaymentSimplify'
-        user:
-          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.UserAccountSimplify'
-      type: object
     unibee.internal.logic.gateway.ro.PaymentMethod:
       properties:
         data:
@@ -7165,140 +7342,6 @@ components:
           properties: {}
           type: integer
       type: object
-    unibee.internal.logic.gateway.ro.PlanDetailRo:
-      example:
-        addons:
-        - amount: 6
-          metadata:
-            key: metadata
-          extraMetricData: extraMetricData
-          bindingAddonIds: bindingAddonIds
-          intervalUnit: intervalUnit
-          description: description
-          planName: planName
-          type: 2
-          productName: productName
-          homeUrl: homeUrl
-          createTime: 1
-          merchantId: 2
-          taxScale: 3
-          imageUrl: imageUrl
-          intervalCount: 5
-          currency: currency
-          id: 5
-          productDescription: productDescription
-          publishStatus: 7
-          status: 9
-        - amount: 6
-          metadata:
-            key: metadata
-          extraMetricData: extraMetricData
-          bindingAddonIds: bindingAddonIds
-          intervalUnit: intervalUnit
-          description: description
-          planName: planName
-          type: 2
-          productName: productName
-          homeUrl: homeUrl
-          createTime: 1
-          merchantId: 2
-          taxScale: 3
-          imageUrl: imageUrl
-          intervalCount: 5
-          currency: currency
-          id: 5
-          productDescription: productDescription
-          publishStatus: 7
-          status: 9
-        addonIds:
-        - 6
-        - 6
-        plan:
-          amount: 6
-          metadata:
-            key: metadata
-          extraMetricData: extraMetricData
-          bindingAddonIds: bindingAddonIds
-          intervalUnit: intervalUnit
-          description: description
-          planName: planName
-          type: 2
-          productName: productName
-          homeUrl: homeUrl
-          createTime: 1
-          merchantId: 2
-          taxScale: 3
-          imageUrl: imageUrl
-          intervalCount: 5
-          currency: currency
-          id: 5
-          productDescription: productDescription
-          publishStatus: 7
-          status: 9
-        metricPlanLimits:
-        - gmtModify: 1
-          metricId: 2
-          createTime: 6
-          merchantId: 5
-          merchantMetricVo:
-            aggregationType: 6
-            aggregationProperty: aggregationProperty
-            code: code
-            metricDescription: metricDescription
-            metricName: metricName
-            gmtModify: 5
-            createTime: 1
-            merchantId: 2
-            id: 5
-            type: 7
-          planId: 9
-          id: 5
-          metricLimit: 7
-        - gmtModify: 1
-          metricId: 2
-          createTime: 6
-          merchantId: 5
-          merchantMetricVo:
-            aggregationType: 6
-            aggregationProperty: aggregationProperty
-            code: code
-            metricDescription: metricDescription
-            metricName: metricName
-            gmtModify: 5
-            createTime: 1
-            merchantId: 2
-            id: 5
-            type: 7
-          planId: 9
-          id: 5
-          metricLimit: 7
-      properties:
-        addonIds:
-          description: AddonIds
-          format: "[]int64"
-          items:
-            format: int64
-            properties: {}
-            type: integer
-          properties: {}
-          type: array
-        addons:
-          description: Addons
-          format: "[]*ro.PlanSimplify"
-          items:
-            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PlanSimplify'
-          properties: {}
-          type: array
-        metricPlanLimits:
-          description: MetricPlanLimits
-          format: "[]*ro.MerchantMetricPlanLimitVo"
-          items:
-            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.MerchantMetricPlanLimitVo'
-          properties: {}
-          type: array
-        plan:
-          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PlanSimplify'
-      type: object
     unibee.internal.logic.gateway.ro.PlanSimplify:
       example:
         amount: 6
@@ -7424,72 +7467,6 @@ components:
           format: int
           properties: {}
           type: integer
-      type: object
-    unibee.internal.logic.gateway.ro.RefundDetailRo:
-      example:
-        payment:
-          metadata:
-            key: metadata
-          authorizeReason: authorizeReason
-          billingReason: billingReason
-          link: link
-          paymentAmount: 2
-          merchantId: 9
-          countryCode: countryCode
-          paymentId: paymentId
-          currency: currency
-          externalPaymentId: externalPaymentId
-          returnUrl: returnUrl
-          gatewayPaymentId: gatewayPaymentId
-          refundAmount: 4
-          automatic: 1
-          authorizeStatus: 6
-          balanceAmount: 5
-          paidTime: 3
-          userId: 1
-          totalAmount: 1
-          cancelTime: 5
-          createTime: 2
-          failureReason: failureReason
-          invoiceId: invoiceId
-          subscriptionId: subscriptionId
-          gatewayId: 7
-          status: 7
-        user:
-          firstName: firstName
-          lastName: lastName
-          address: address
-          createTime: 6
-          externalUserId: externalUserId
-          merchantId: 6
-          id: 5
-          email: email
-        refund:
-          metadata:
-            key: metadata
-          refundTime: 2
-          externalRefundId: externalRefundId
-          userId: 9
-          createTime: 6
-          merchantId: 5
-          countryCode: countryCode
-          paymentId: paymentId
-          currency: currency
-          returnUrl: returnUrl
-          subscriptionId: subscriptionId
-          gatewayRefundId: gatewayRefundId
-          refundComment: refundComment
-          gatewayId: 1
-          refundId: refundId
-          refundAmount: 5
-          status: 7
-      properties:
-        payment:
-          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PaymentSimplify'
-        refund:
-          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.RefundSimplify'
-        user:
-          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.UserAccountSimplify'
       type: object
     unibee.internal.logic.gateway.ro.RefundSimplify:
       example:
@@ -14430,7 +14407,7 @@ components:
             email: email
       properties:
         paymentDetail:
-          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PaymentDetailRo'
+          $ref: '#/components/schemas/unibee.api.merchant.payment.PaymentDetail'
       type: object
     _merchant_payment_detail_get_200_response:
       example:
@@ -14577,9 +14554,9 @@ components:
       properties:
         paymentDetails:
           description: PaymentDetails
-          format: "[]*ro.PaymentDetailRo"
+          format: "[]*payment.PaymentDetail"
           items:
-            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PaymentDetailRo'
+            $ref: '#/components/schemas/unibee.api.merchant.payment.PaymentDetail'
           properties: {}
           type: array
       type: object
@@ -14809,7 +14786,7 @@ components:
             status: 7
       properties:
         refundDetail:
-          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.RefundDetailRo'
+          $ref: '#/components/schemas/unibee.api.merchant.payment.RefundDetail'
       type: object
     _merchant_payment_refund_detail_get_200_response:
       example:
@@ -15013,9 +14990,9 @@ components:
       properties:
         refundDetails:
           description: RefundDetails
-          format: "[]*ro.RefundDetailRo"
+          format: "[]*payment.RefundDetail"
           items:
-            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.RefundDetailRo'
+            $ref: '#/components/schemas/unibee.api.merchant.payment.RefundDetail'
           properties: {}
           type: array
       type: object
@@ -15158,36 +15135,6 @@ components:
           format: string
           properties: {}
           type: string
-      type: object
-    _merchant_payment_refund_new_post_request:
-      properties:
-        externalRefundId:
-          description: ExternalRefundId
-          format: string
-          properties: {}
-          type: string
-        metadata:
-          additionalProperties:
-            format: string
-            properties: {}
-            type: string
-          description: Metadata，Map
-          format: "map[string]string"
-          properties: {}
-          type: object
-        paymentId:
-          description: PaymentId
-          format: string
-          properties: {}
-          type: string
-        reason:
-          description: Reason
-          format: string
-          properties: {}
-          type: string
-      required:
-      - externalRefundId
-      - paymentId
       type: object
     _merchant_payment_refund_new_post_200_response_data:
       example:
@@ -15539,7 +15486,7 @@ components:
             metricLimit: 7
       properties:
         plan:
-          $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PlanDetailRo'
+          $ref: '#/components/schemas/unibee.api.merchant.plan.PlanDetail'
       type: object
     _merchant_plan_detail_get_200_response:
       example:
@@ -15890,9 +15837,9 @@ components:
       properties:
         plans:
           description: Plans
-          format: "[]*ro.PlanDetailRo"
+          format: "[]*plan.PlanDetail"
           items:
-            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PlanDetailRo'
+            $ref: '#/components/schemas/unibee.api.merchant.plan.PlanDetail'
           properties: {}
           type: array
       type: object

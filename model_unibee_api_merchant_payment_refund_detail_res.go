@@ -19,7 +19,7 @@ var _ MappedNullable = &UnibeeApiMerchantPaymentRefundDetailRes{}
 
 // UnibeeApiMerchantPaymentRefundDetailRes struct for UnibeeApiMerchantPaymentRefundDetailRes
 type UnibeeApiMerchantPaymentRefundDetailRes struct {
-	RefundDetail *UnibeeInternalLogicGatewayRoRefundDetailRo `json:"refundDetail,omitempty"`
+	RefundDetail *UnibeeApiMerchantPaymentRefundDetail `json:"refundDetail,omitempty"`
 }
 
 // NewUnibeeApiMerchantPaymentRefundDetailRes instantiates a new UnibeeApiMerchantPaymentRefundDetailRes object
@@ -40,9 +40,9 @@ func NewUnibeeApiMerchantPaymentRefundDetailResWithDefaults() *UnibeeApiMerchant
 }
 
 // GetRefundDetail returns the RefundDetail field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantPaymentRefundDetailRes) GetRefundDetail() UnibeeInternalLogicGatewayRoRefundDetailRo {
+func (o *UnibeeApiMerchantPaymentRefundDetailRes) GetRefundDetail() UnibeeApiMerchantPaymentRefundDetail {
 	if o == nil || IsNil(o.RefundDetail) {
-		var ret UnibeeInternalLogicGatewayRoRefundDetailRo
+		var ret UnibeeApiMerchantPaymentRefundDetail
 		return ret
 	}
 	return *o.RefundDetail
@@ -50,7 +50,7 @@ func (o *UnibeeApiMerchantPaymentRefundDetailRes) GetRefundDetail() UnibeeIntern
 
 // GetRefundDetailOk returns a tuple with the RefundDetail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantPaymentRefundDetailRes) GetRefundDetailOk() (*UnibeeInternalLogicGatewayRoRefundDetailRo, bool) {
+func (o *UnibeeApiMerchantPaymentRefundDetailRes) GetRefundDetailOk() (*UnibeeApiMerchantPaymentRefundDetail, bool) {
 	if o == nil || IsNil(o.RefundDetail) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *UnibeeApiMerchantPaymentRefundDetailRes) HasRefundDetail() bool {
 	return false
 }
 
-// SetRefundDetail gets a reference to the given UnibeeInternalLogicGatewayRoRefundDetailRo and assigns it to the RefundDetail field.
-func (o *UnibeeApiMerchantPaymentRefundDetailRes) SetRefundDetail(v UnibeeInternalLogicGatewayRoRefundDetailRo) {
+// SetRefundDetail gets a reference to the given UnibeeApiMerchantPaymentRefundDetail and assigns it to the RefundDetail field.
+func (o *UnibeeApiMerchantPaymentRefundDetailRes) SetRefundDetail(v UnibeeApiMerchantPaymentRefundDetail) {
 	o.RefundDetail = &v
 }
 

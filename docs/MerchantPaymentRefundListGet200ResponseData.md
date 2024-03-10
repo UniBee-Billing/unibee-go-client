@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RefundDetails** | Pointer to [**[]UnibeeInternalLogicGatewayRoRefundDetailRo**](UnibeeInternalLogicGatewayRoRefundDetailRo.md) | RefundDetails | [optional] 
+**RefundDetails** | Pointer to [**[]UnibeeApiMerchantPaymentRefundDetail**](UnibeeApiMerchantPaymentRefundDetail.md) | RefundDetails | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRefundDetails
 
-`func (o *MerchantPaymentRefundListGet200ResponseData) GetRefundDetails() []UnibeeInternalLogicGatewayRoRefundDetailRo`
+`func (o *MerchantPaymentRefundListGet200ResponseData) GetRefundDetails() []UnibeeApiMerchantPaymentRefundDetail`
 
 GetRefundDetails returns the RefundDetails field if non-nil, zero value otherwise.
 
 ### GetRefundDetailsOk
 
-`func (o *MerchantPaymentRefundListGet200ResponseData) GetRefundDetailsOk() (*[]UnibeeInternalLogicGatewayRoRefundDetailRo, bool)`
+`func (o *MerchantPaymentRefundListGet200ResponseData) GetRefundDetailsOk() (*[]UnibeeApiMerchantPaymentRefundDetail, bool)`
 
 GetRefundDetailsOk returns a tuple with the RefundDetails field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRefundDetails
 
-`func (o *MerchantPaymentRefundListGet200ResponseData) SetRefundDetails(v []UnibeeInternalLogicGatewayRoRefundDetailRo)`
+`func (o *MerchantPaymentRefundListGet200ResponseData) SetRefundDetails(v []UnibeeApiMerchantPaymentRefundDetail)`
 
 SetRefundDetails sets RefundDetails field to given value.
 

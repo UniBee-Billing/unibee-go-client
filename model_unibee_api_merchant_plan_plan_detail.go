@@ -14,11 +14,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the UnibeeInternalLogicGatewayRoPlanDetailRo type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &UnibeeInternalLogicGatewayRoPlanDetailRo{}
+// checks if the UnibeeApiMerchantPlanPlanDetail type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &UnibeeApiMerchantPlanPlanDetail{}
 
-// UnibeeInternalLogicGatewayRoPlanDetailRo struct for UnibeeInternalLogicGatewayRoPlanDetailRo
-type UnibeeInternalLogicGatewayRoPlanDetailRo struct {
+// UnibeeApiMerchantPlanPlanDetail struct for UnibeeApiMerchantPlanPlanDetail
+type UnibeeApiMerchantPlanPlanDetail struct {
 	// AddonIds
 	AddonIds []int64 `json:"addonIds,omitempty"`
 	// Addons
@@ -28,25 +28,25 @@ type UnibeeInternalLogicGatewayRoPlanDetailRo struct {
 	Plan *UnibeeInternalLogicGatewayRoPlanSimplify `json:"plan,omitempty"`
 }
 
-// NewUnibeeInternalLogicGatewayRoPlanDetailRo instantiates a new UnibeeInternalLogicGatewayRoPlanDetailRo object
+// NewUnibeeApiMerchantPlanPlanDetail instantiates a new UnibeeApiMerchantPlanPlanDetail object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeInternalLogicGatewayRoPlanDetailRo() *UnibeeInternalLogicGatewayRoPlanDetailRo {
-	this := UnibeeInternalLogicGatewayRoPlanDetailRo{}
+func NewUnibeeApiMerchantPlanPlanDetail() *UnibeeApiMerchantPlanPlanDetail {
+	this := UnibeeApiMerchantPlanPlanDetail{}
 	return &this
 }
 
-// NewUnibeeInternalLogicGatewayRoPlanDetailRoWithDefaults instantiates a new UnibeeInternalLogicGatewayRoPlanDetailRo object
+// NewUnibeeApiMerchantPlanPlanDetailWithDefaults instantiates a new UnibeeApiMerchantPlanPlanDetail object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewUnibeeInternalLogicGatewayRoPlanDetailRoWithDefaults() *UnibeeInternalLogicGatewayRoPlanDetailRo {
-	this := UnibeeInternalLogicGatewayRoPlanDetailRo{}
+func NewUnibeeApiMerchantPlanPlanDetailWithDefaults() *UnibeeApiMerchantPlanPlanDetail {
+	this := UnibeeApiMerchantPlanPlanDetail{}
 	return &this
 }
 
 // GetAddonIds returns the AddonIds field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) GetAddonIds() []int64 {
+func (o *UnibeeApiMerchantPlanPlanDetail) GetAddonIds() []int64 {
 	if o == nil || IsNil(o.AddonIds) {
 		var ret []int64
 		return ret
@@ -56,7 +56,7 @@ func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) GetAddonIds() []int64 {
 
 // GetAddonIdsOk returns a tuple with the AddonIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) GetAddonIdsOk() ([]int64, bool) {
+func (o *UnibeeApiMerchantPlanPlanDetail) GetAddonIdsOk() ([]int64, bool) {
 	if o == nil || IsNil(o.AddonIds) {
 		return nil, false
 	}
@@ -64,7 +64,7 @@ func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) GetAddonIdsOk() ([]int64, boo
 }
 
 // HasAddonIds returns a boolean if a field has been set.
-func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) HasAddonIds() bool {
+func (o *UnibeeApiMerchantPlanPlanDetail) HasAddonIds() bool {
 	if o != nil && !IsNil(o.AddonIds) {
 		return true
 	}
@@ -73,12 +73,12 @@ func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) HasAddonIds() bool {
 }
 
 // SetAddonIds gets a reference to the given []int64 and assigns it to the AddonIds field.
-func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) SetAddonIds(v []int64) {
+func (o *UnibeeApiMerchantPlanPlanDetail) SetAddonIds(v []int64) {
 	o.AddonIds = v
 }
 
 // GetAddons returns the Addons field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) GetAddons() []UnibeeInternalLogicGatewayRoPlanSimplify {
+func (o *UnibeeApiMerchantPlanPlanDetail) GetAddons() []UnibeeInternalLogicGatewayRoPlanSimplify {
 	if o == nil || IsNil(o.Addons) {
 		var ret []UnibeeInternalLogicGatewayRoPlanSimplify
 		return ret
@@ -88,7 +88,7 @@ func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) GetAddons() []UnibeeInternalL
 
 // GetAddonsOk returns a tuple with the Addons field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) GetAddonsOk() ([]UnibeeInternalLogicGatewayRoPlanSimplify, bool) {
+func (o *UnibeeApiMerchantPlanPlanDetail) GetAddonsOk() ([]UnibeeInternalLogicGatewayRoPlanSimplify, bool) {
 	if o == nil || IsNil(o.Addons) {
 		return nil, false
 	}
@@ -96,7 +96,7 @@ func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) GetAddonsOk() ([]UnibeeIntern
 }
 
 // HasAddons returns a boolean if a field has been set.
-func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) HasAddons() bool {
+func (o *UnibeeApiMerchantPlanPlanDetail) HasAddons() bool {
 	if o != nil && !IsNil(o.Addons) {
 		return true
 	}
@@ -105,12 +105,12 @@ func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) HasAddons() bool {
 }
 
 // SetAddons gets a reference to the given []UnibeeInternalLogicGatewayRoPlanSimplify and assigns it to the Addons field.
-func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) SetAddons(v []UnibeeInternalLogicGatewayRoPlanSimplify) {
+func (o *UnibeeApiMerchantPlanPlanDetail) SetAddons(v []UnibeeInternalLogicGatewayRoPlanSimplify) {
 	o.Addons = v
 }
 
 // GetMetricPlanLimits returns the MetricPlanLimits field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) GetMetricPlanLimits() []UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo {
+func (o *UnibeeApiMerchantPlanPlanDetail) GetMetricPlanLimits() []UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo {
 	if o == nil || IsNil(o.MetricPlanLimits) {
 		var ret []UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo
 		return ret
@@ -120,7 +120,7 @@ func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) GetMetricPlanLimits() []Unibe
 
 // GetMetricPlanLimitsOk returns a tuple with the MetricPlanLimits field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) GetMetricPlanLimitsOk() ([]UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo, bool) {
+func (o *UnibeeApiMerchantPlanPlanDetail) GetMetricPlanLimitsOk() ([]UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo, bool) {
 	if o == nil || IsNil(o.MetricPlanLimits) {
 		return nil, false
 	}
@@ -128,7 +128,7 @@ func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) GetMetricPlanLimitsOk() ([]Un
 }
 
 // HasMetricPlanLimits returns a boolean if a field has been set.
-func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) HasMetricPlanLimits() bool {
+func (o *UnibeeApiMerchantPlanPlanDetail) HasMetricPlanLimits() bool {
 	if o != nil && !IsNil(o.MetricPlanLimits) {
 		return true
 	}
@@ -137,12 +137,12 @@ func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) HasMetricPlanLimits() bool {
 }
 
 // SetMetricPlanLimits gets a reference to the given []UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo and assigns it to the MetricPlanLimits field.
-func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) SetMetricPlanLimits(v []UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) {
+func (o *UnibeeApiMerchantPlanPlanDetail) SetMetricPlanLimits(v []UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) {
 	o.MetricPlanLimits = v
 }
 
 // GetPlan returns the Plan field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) GetPlan() UnibeeInternalLogicGatewayRoPlanSimplify {
+func (o *UnibeeApiMerchantPlanPlanDetail) GetPlan() UnibeeInternalLogicGatewayRoPlanSimplify {
 	if o == nil || IsNil(o.Plan) {
 		var ret UnibeeInternalLogicGatewayRoPlanSimplify
 		return ret
@@ -152,7 +152,7 @@ func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) GetPlan() UnibeeInternalLogic
 
 // GetPlanOk returns a tuple with the Plan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) GetPlanOk() (*UnibeeInternalLogicGatewayRoPlanSimplify, bool) {
+func (o *UnibeeApiMerchantPlanPlanDetail) GetPlanOk() (*UnibeeInternalLogicGatewayRoPlanSimplify, bool) {
 	if o == nil || IsNil(o.Plan) {
 		return nil, false
 	}
@@ -160,7 +160,7 @@ func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) GetPlanOk() (*UnibeeInternalL
 }
 
 // HasPlan returns a boolean if a field has been set.
-func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) HasPlan() bool {
+func (o *UnibeeApiMerchantPlanPlanDetail) HasPlan() bool {
 	if o != nil && !IsNil(o.Plan) {
 		return true
 	}
@@ -169,11 +169,11 @@ func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) HasPlan() bool {
 }
 
 // SetPlan gets a reference to the given UnibeeInternalLogicGatewayRoPlanSimplify and assigns it to the Plan field.
-func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) SetPlan(v UnibeeInternalLogicGatewayRoPlanSimplify) {
+func (o *UnibeeApiMerchantPlanPlanDetail) SetPlan(v UnibeeInternalLogicGatewayRoPlanSimplify) {
 	o.Plan = &v
 }
 
-func (o UnibeeInternalLogicGatewayRoPlanDetailRo) MarshalJSON() ([]byte, error) {
+func (o UnibeeApiMerchantPlanPlanDetail) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -181,7 +181,7 @@ func (o UnibeeInternalLogicGatewayRoPlanDetailRo) MarshalJSON() ([]byte, error) 
 	return json.Marshal(toSerialize)
 }
 
-func (o UnibeeInternalLogicGatewayRoPlanDetailRo) ToMap() (map[string]interface{}, error) {
+func (o UnibeeApiMerchantPlanPlanDetail) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.AddonIds) {
 		toSerialize["addonIds"] = o.AddonIds
@@ -198,38 +198,38 @@ func (o UnibeeInternalLogicGatewayRoPlanDetailRo) ToMap() (map[string]interface{
 	return toSerialize, nil
 }
 
-type NullableUnibeeInternalLogicGatewayRoPlanDetailRo struct {
-	value *UnibeeInternalLogicGatewayRoPlanDetailRo
+type NullableUnibeeApiMerchantPlanPlanDetail struct {
+	value *UnibeeApiMerchantPlanPlanDetail
 	isSet bool
 }
 
-func (v NullableUnibeeInternalLogicGatewayRoPlanDetailRo) Get() *UnibeeInternalLogicGatewayRoPlanDetailRo {
+func (v NullableUnibeeApiMerchantPlanPlanDetail) Get() *UnibeeApiMerchantPlanPlanDetail {
 	return v.value
 }
 
-func (v *NullableUnibeeInternalLogicGatewayRoPlanDetailRo) Set(val *UnibeeInternalLogicGatewayRoPlanDetailRo) {
+func (v *NullableUnibeeApiMerchantPlanPlanDetail) Set(val *UnibeeApiMerchantPlanPlanDetail) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableUnibeeInternalLogicGatewayRoPlanDetailRo) IsSet() bool {
+func (v NullableUnibeeApiMerchantPlanPlanDetail) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableUnibeeInternalLogicGatewayRoPlanDetailRo) Unset() {
+func (v *NullableUnibeeApiMerchantPlanPlanDetail) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableUnibeeInternalLogicGatewayRoPlanDetailRo(val *UnibeeInternalLogicGatewayRoPlanDetailRo) *NullableUnibeeInternalLogicGatewayRoPlanDetailRo {
-	return &NullableUnibeeInternalLogicGatewayRoPlanDetailRo{value: val, isSet: true}
+func NewNullableUnibeeApiMerchantPlanPlanDetail(val *UnibeeApiMerchantPlanPlanDetail) *NullableUnibeeApiMerchantPlanPlanDetail {
+	return &NullableUnibeeApiMerchantPlanPlanDetail{value: val, isSet: true}
 }
 
-func (v NullableUnibeeInternalLogicGatewayRoPlanDetailRo) MarshalJSON() ([]byte, error) {
+func (v NullableUnibeeApiMerchantPlanPlanDetail) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableUnibeeInternalLogicGatewayRoPlanDetailRo) UnmarshalJSON(src []byte) error {
+func (v *NullableUnibeeApiMerchantPlanPlanDetail) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

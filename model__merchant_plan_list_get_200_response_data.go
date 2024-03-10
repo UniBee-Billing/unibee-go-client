@@ -20,7 +20,7 @@ var _ MappedNullable = &MerchantPlanListGet200ResponseData{}
 // MerchantPlanListGet200ResponseData struct for MerchantPlanListGet200ResponseData
 type MerchantPlanListGet200ResponseData struct {
 	// Plans
-	Plans []UnibeeInternalLogicGatewayRoPlanDetailRo `json:"plans,omitempty"`
+	Plans []UnibeeApiMerchantPlanPlanDetail `json:"plans,omitempty"`
 }
 
 // NewMerchantPlanListGet200ResponseData instantiates a new MerchantPlanListGet200ResponseData object
@@ -41,9 +41,9 @@ func NewMerchantPlanListGet200ResponseDataWithDefaults() *MerchantPlanListGet200
 }
 
 // GetPlans returns the Plans field value if set, zero value otherwise.
-func (o *MerchantPlanListGet200ResponseData) GetPlans() []UnibeeInternalLogicGatewayRoPlanDetailRo {
+func (o *MerchantPlanListGet200ResponseData) GetPlans() []UnibeeApiMerchantPlanPlanDetail {
 	if o == nil || IsNil(o.Plans) {
-		var ret []UnibeeInternalLogicGatewayRoPlanDetailRo
+		var ret []UnibeeApiMerchantPlanPlanDetail
 		return ret
 	}
 	return o.Plans
@@ -51,7 +51,7 @@ func (o *MerchantPlanListGet200ResponseData) GetPlans() []UnibeeInternalLogicGat
 
 // GetPlansOk returns a tuple with the Plans field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantPlanListGet200ResponseData) GetPlansOk() ([]UnibeeInternalLogicGatewayRoPlanDetailRo, bool) {
+func (o *MerchantPlanListGet200ResponseData) GetPlansOk() ([]UnibeeApiMerchantPlanPlanDetail, bool) {
 	if o == nil || IsNil(o.Plans) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *MerchantPlanListGet200ResponseData) HasPlans() bool {
 	return false
 }
 
-// SetPlans gets a reference to the given []UnibeeInternalLogicGatewayRoPlanDetailRo and assigns it to the Plans field.
-func (o *MerchantPlanListGet200ResponseData) SetPlans(v []UnibeeInternalLogicGatewayRoPlanDetailRo) {
+// SetPlans gets a reference to the given []UnibeeApiMerchantPlanPlanDetail and assigns it to the Plans field.
+func (o *MerchantPlanListGet200ResponseData) SetPlans(v []UnibeeApiMerchantPlanPlanDetail) {
 	o.Plans = v
 }
 

@@ -1,4 +1,4 @@
-# UnibeeInternalLogicGatewayRoPlanDetailRo
+# UnibeeApiMerchantPlanPlanDetail
 
 ## Properties
 
@@ -11,120 +11,120 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewUnibeeInternalLogicGatewayRoPlanDetailRo
+### NewUnibeeApiMerchantPlanPlanDetail
 
-`func NewUnibeeInternalLogicGatewayRoPlanDetailRo() *UnibeeInternalLogicGatewayRoPlanDetailRo`
+`func NewUnibeeApiMerchantPlanPlanDetail() *UnibeeApiMerchantPlanPlanDetail`
 
-NewUnibeeInternalLogicGatewayRoPlanDetailRo instantiates a new UnibeeInternalLogicGatewayRoPlanDetailRo object
+NewUnibeeApiMerchantPlanPlanDetail instantiates a new UnibeeApiMerchantPlanPlanDetail object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUnibeeInternalLogicGatewayRoPlanDetailRoWithDefaults
+### NewUnibeeApiMerchantPlanPlanDetailWithDefaults
 
-`func NewUnibeeInternalLogicGatewayRoPlanDetailRoWithDefaults() *UnibeeInternalLogicGatewayRoPlanDetailRo`
+`func NewUnibeeApiMerchantPlanPlanDetailWithDefaults() *UnibeeApiMerchantPlanPlanDetail`
 
-NewUnibeeInternalLogicGatewayRoPlanDetailRoWithDefaults instantiates a new UnibeeInternalLogicGatewayRoPlanDetailRo object
+NewUnibeeApiMerchantPlanPlanDetailWithDefaults instantiates a new UnibeeApiMerchantPlanPlanDetail object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetAddonIds
 
-`func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) GetAddonIds() []int64`
+`func (o *UnibeeApiMerchantPlanPlanDetail) GetAddonIds() []int64`
 
 GetAddonIds returns the AddonIds field if non-nil, zero value otherwise.
 
 ### GetAddonIdsOk
 
-`func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) GetAddonIdsOk() (*[]int64, bool)`
+`func (o *UnibeeApiMerchantPlanPlanDetail) GetAddonIdsOk() (*[]int64, bool)`
 
 GetAddonIdsOk returns a tuple with the AddonIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddonIds
 
-`func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) SetAddonIds(v []int64)`
+`func (o *UnibeeApiMerchantPlanPlanDetail) SetAddonIds(v []int64)`
 
 SetAddonIds sets AddonIds field to given value.
 
 ### HasAddonIds
 
-`func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) HasAddonIds() bool`
+`func (o *UnibeeApiMerchantPlanPlanDetail) HasAddonIds() bool`
 
 HasAddonIds returns a boolean if a field has been set.
 
 ### GetAddons
 
-`func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) GetAddons() []UnibeeInternalLogicGatewayRoPlanSimplify`
+`func (o *UnibeeApiMerchantPlanPlanDetail) GetAddons() []UnibeeInternalLogicGatewayRoPlanSimplify`
 
 GetAddons returns the Addons field if non-nil, zero value otherwise.
 
 ### GetAddonsOk
 
-`func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) GetAddonsOk() (*[]UnibeeInternalLogicGatewayRoPlanSimplify, bool)`
+`func (o *UnibeeApiMerchantPlanPlanDetail) GetAddonsOk() (*[]UnibeeInternalLogicGatewayRoPlanSimplify, bool)`
 
 GetAddonsOk returns a tuple with the Addons field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddons
 
-`func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) SetAddons(v []UnibeeInternalLogicGatewayRoPlanSimplify)`
+`func (o *UnibeeApiMerchantPlanPlanDetail) SetAddons(v []UnibeeInternalLogicGatewayRoPlanSimplify)`
 
 SetAddons sets Addons field to given value.
 
 ### HasAddons
 
-`func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) HasAddons() bool`
+`func (o *UnibeeApiMerchantPlanPlanDetail) HasAddons() bool`
 
 HasAddons returns a boolean if a field has been set.
 
 ### GetMetricPlanLimits
 
-`func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) GetMetricPlanLimits() []UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo`
+`func (o *UnibeeApiMerchantPlanPlanDetail) GetMetricPlanLimits() []UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo`
 
 GetMetricPlanLimits returns the MetricPlanLimits field if non-nil, zero value otherwise.
 
 ### GetMetricPlanLimitsOk
 
-`func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) GetMetricPlanLimitsOk() (*[]UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo, bool)`
+`func (o *UnibeeApiMerchantPlanPlanDetail) GetMetricPlanLimitsOk() (*[]UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo, bool)`
 
 GetMetricPlanLimitsOk returns a tuple with the MetricPlanLimits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetricPlanLimits
 
-`func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) SetMetricPlanLimits(v []UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo)`
+`func (o *UnibeeApiMerchantPlanPlanDetail) SetMetricPlanLimits(v []UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo)`
 
 SetMetricPlanLimits sets MetricPlanLimits field to given value.
 
 ### HasMetricPlanLimits
 
-`func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) HasMetricPlanLimits() bool`
+`func (o *UnibeeApiMerchantPlanPlanDetail) HasMetricPlanLimits() bool`
 
 HasMetricPlanLimits returns a boolean if a field has been set.
 
 ### GetPlan
 
-`func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) GetPlan() UnibeeInternalLogicGatewayRoPlanSimplify`
+`func (o *UnibeeApiMerchantPlanPlanDetail) GetPlan() UnibeeInternalLogicGatewayRoPlanSimplify`
 
 GetPlan returns the Plan field if non-nil, zero value otherwise.
 
 ### GetPlanOk
 
-`func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) GetPlanOk() (*UnibeeInternalLogicGatewayRoPlanSimplify, bool)`
+`func (o *UnibeeApiMerchantPlanPlanDetail) GetPlanOk() (*UnibeeInternalLogicGatewayRoPlanSimplify, bool)`
 
 GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlan
 
-`func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) SetPlan(v UnibeeInternalLogicGatewayRoPlanSimplify)`
+`func (o *UnibeeApiMerchantPlanPlanDetail) SetPlan(v UnibeeInternalLogicGatewayRoPlanSimplify)`
 
 SetPlan sets Plan field to given value.
 
 ### HasPlan
 
-`func (o *UnibeeInternalLogicGatewayRoPlanDetailRo) HasPlan() bool`
+`func (o *UnibeeApiMerchantPlanPlanDetail) HasPlan() bool`
 
 HasPlan returns a boolean if a field has been set.
 

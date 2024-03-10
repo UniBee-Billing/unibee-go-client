@@ -498,7 +498,7 @@ No authorization required
 
 ## PaymentRefundNewPost
 
-> MerchantPaymentRefundNewPost200Response PaymentRefundNewPost(ctx).RefundAmount(refundAmount).Currency(currency).MerchantPaymentRefundNewPostRequest(merchantPaymentRefundNewPostRequest).Execute()
+> MerchantPaymentRefundNewPost200Response PaymentRefundNewPost(ctx).UnibeeApiMerchantPaymentNewPaymentRefundReq(unibeeApiMerchantPaymentNewPaymentRefundReq).Execute()
 
 New Payment Refund
 
@@ -515,13 +515,11 @@ import (
 )
 
 func main() {
-	refundAmount := int64(789) // int64 | RefundAmount, Cent
-	currency := "currency_example" // string | Currency
-	merchantPaymentRefundNewPostRequest := *openapiclient.NewMerchantPaymentRefundNewPostRequest("ExternalRefundId_example", "PaymentId_example") // MerchantPaymentRefundNewPostRequest | 
+	unibeeApiMerchantPaymentNewPaymentRefundReq := *openapiclient.NewUnibeeApiMerchantPaymentNewPaymentRefundReq("Currency_example", "ExternalRefundId_example", "PaymentId_example", int64(123)) // UnibeeApiMerchantPaymentNewPaymentRefundReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Payment.PaymentRefundNewPost(context.Background()).RefundAmount(refundAmount).Currency(currency).MerchantPaymentRefundNewPostRequest(merchantPaymentRefundNewPostRequest).Execute()
+	resp, r, err := apiClient.Payment.PaymentRefundNewPost(context.Background()).UnibeeApiMerchantPaymentNewPaymentRefundReq(unibeeApiMerchantPaymentNewPaymentRefundReq).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Payment.PaymentRefundNewPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -542,9 +540,7 @@ Other parameters are passed through a pointer to a apiPaymentRefundNewPostReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **refundAmount** | **int64** | RefundAmount, Cent | 
- **currency** | **string** | Currency | 
- **merchantPaymentRefundNewPostRequest** | [**MerchantPaymentRefundNewPostRequest**](MerchantPaymentRefundNewPostRequest.md) |  | 
+ **unibeeApiMerchantPaymentNewPaymentRefundReq** | [**UnibeeApiMerchantPaymentNewPaymentRefundReq**](UnibeeApiMerchantPaymentNewPaymentRefundReq.md) |  | 
 
 ### Return type
 

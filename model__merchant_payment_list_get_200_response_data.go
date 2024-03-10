@@ -20,7 +20,7 @@ var _ MappedNullable = &MerchantPaymentListGet200ResponseData{}
 // MerchantPaymentListGet200ResponseData struct for MerchantPaymentListGet200ResponseData
 type MerchantPaymentListGet200ResponseData struct {
 	// PaymentDetails
-	PaymentDetails []UnibeeInternalLogicGatewayRoPaymentDetailRo `json:"paymentDetails,omitempty"`
+	PaymentDetails []UnibeeApiMerchantPaymentPaymentDetail `json:"paymentDetails,omitempty"`
 }
 
 // NewMerchantPaymentListGet200ResponseData instantiates a new MerchantPaymentListGet200ResponseData object
@@ -41,9 +41,9 @@ func NewMerchantPaymentListGet200ResponseDataWithDefaults() *MerchantPaymentList
 }
 
 // GetPaymentDetails returns the PaymentDetails field value if set, zero value otherwise.
-func (o *MerchantPaymentListGet200ResponseData) GetPaymentDetails() []UnibeeInternalLogicGatewayRoPaymentDetailRo {
+func (o *MerchantPaymentListGet200ResponseData) GetPaymentDetails() []UnibeeApiMerchantPaymentPaymentDetail {
 	if o == nil || IsNil(o.PaymentDetails) {
-		var ret []UnibeeInternalLogicGatewayRoPaymentDetailRo
+		var ret []UnibeeApiMerchantPaymentPaymentDetail
 		return ret
 	}
 	return o.PaymentDetails
@@ -51,7 +51,7 @@ func (o *MerchantPaymentListGet200ResponseData) GetPaymentDetails() []UnibeeInte
 
 // GetPaymentDetailsOk returns a tuple with the PaymentDetails field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantPaymentListGet200ResponseData) GetPaymentDetailsOk() ([]UnibeeInternalLogicGatewayRoPaymentDetailRo, bool) {
+func (o *MerchantPaymentListGet200ResponseData) GetPaymentDetailsOk() ([]UnibeeApiMerchantPaymentPaymentDetail, bool) {
 	if o == nil || IsNil(o.PaymentDetails) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *MerchantPaymentListGet200ResponseData) HasPaymentDetails() bool {
 	return false
 }
 
-// SetPaymentDetails gets a reference to the given []UnibeeInternalLogicGatewayRoPaymentDetailRo and assigns it to the PaymentDetails field.
-func (o *MerchantPaymentListGet200ResponseData) SetPaymentDetails(v []UnibeeInternalLogicGatewayRoPaymentDetailRo) {
+// SetPaymentDetails gets a reference to the given []UnibeeApiMerchantPaymentPaymentDetail and assigns it to the PaymentDetails field.
+func (o *MerchantPaymentListGet200ResponseData) SetPaymentDetails(v []UnibeeApiMerchantPaymentPaymentDetail) {
 	o.PaymentDetails = v
 }
 

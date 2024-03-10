@@ -14,35 +14,35 @@ import (
 	"encoding/json"
 )
 
-// checks if the UnibeeInternalLogicGatewayRoRefundDetailRo type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &UnibeeInternalLogicGatewayRoRefundDetailRo{}
+// checks if the UnibeeApiMerchantPaymentRefundDetail type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &UnibeeApiMerchantPaymentRefundDetail{}
 
-// UnibeeInternalLogicGatewayRoRefundDetailRo struct for UnibeeInternalLogicGatewayRoRefundDetailRo
-type UnibeeInternalLogicGatewayRoRefundDetailRo struct {
+// UnibeeApiMerchantPaymentRefundDetail struct for UnibeeApiMerchantPaymentRefundDetail
+type UnibeeApiMerchantPaymentRefundDetail struct {
 	Payment *UnibeeInternalLogicGatewayRoPaymentSimplify `json:"payment,omitempty"`
 	Refund *UnibeeInternalLogicGatewayRoRefundSimplify `json:"refund,omitempty"`
 	User *UnibeeInternalLogicGatewayRoUserAccountSimplify `json:"user,omitempty"`
 }
 
-// NewUnibeeInternalLogicGatewayRoRefundDetailRo instantiates a new UnibeeInternalLogicGatewayRoRefundDetailRo object
+// NewUnibeeApiMerchantPaymentRefundDetail instantiates a new UnibeeApiMerchantPaymentRefundDetail object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeInternalLogicGatewayRoRefundDetailRo() *UnibeeInternalLogicGatewayRoRefundDetailRo {
-	this := UnibeeInternalLogicGatewayRoRefundDetailRo{}
+func NewUnibeeApiMerchantPaymentRefundDetail() *UnibeeApiMerchantPaymentRefundDetail {
+	this := UnibeeApiMerchantPaymentRefundDetail{}
 	return &this
 }
 
-// NewUnibeeInternalLogicGatewayRoRefundDetailRoWithDefaults instantiates a new UnibeeInternalLogicGatewayRoRefundDetailRo object
+// NewUnibeeApiMerchantPaymentRefundDetailWithDefaults instantiates a new UnibeeApiMerchantPaymentRefundDetail object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewUnibeeInternalLogicGatewayRoRefundDetailRoWithDefaults() *UnibeeInternalLogicGatewayRoRefundDetailRo {
-	this := UnibeeInternalLogicGatewayRoRefundDetailRo{}
+func NewUnibeeApiMerchantPaymentRefundDetailWithDefaults() *UnibeeApiMerchantPaymentRefundDetail {
+	this := UnibeeApiMerchantPaymentRefundDetail{}
 	return &this
 }
 
 // GetPayment returns the Payment field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoRefundDetailRo) GetPayment() UnibeeInternalLogicGatewayRoPaymentSimplify {
+func (o *UnibeeApiMerchantPaymentRefundDetail) GetPayment() UnibeeInternalLogicGatewayRoPaymentSimplify {
 	if o == nil || IsNil(o.Payment) {
 		var ret UnibeeInternalLogicGatewayRoPaymentSimplify
 		return ret
@@ -52,7 +52,7 @@ func (o *UnibeeInternalLogicGatewayRoRefundDetailRo) GetPayment() UnibeeInternal
 
 // GetPaymentOk returns a tuple with the Payment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoRefundDetailRo) GetPaymentOk() (*UnibeeInternalLogicGatewayRoPaymentSimplify, bool) {
+func (o *UnibeeApiMerchantPaymentRefundDetail) GetPaymentOk() (*UnibeeInternalLogicGatewayRoPaymentSimplify, bool) {
 	if o == nil || IsNil(o.Payment) {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *UnibeeInternalLogicGatewayRoRefundDetailRo) GetPaymentOk() (*UnibeeInte
 }
 
 // HasPayment returns a boolean if a field has been set.
-func (o *UnibeeInternalLogicGatewayRoRefundDetailRo) HasPayment() bool {
+func (o *UnibeeApiMerchantPaymentRefundDetail) HasPayment() bool {
 	if o != nil && !IsNil(o.Payment) {
 		return true
 	}
@@ -69,12 +69,12 @@ func (o *UnibeeInternalLogicGatewayRoRefundDetailRo) HasPayment() bool {
 }
 
 // SetPayment gets a reference to the given UnibeeInternalLogicGatewayRoPaymentSimplify and assigns it to the Payment field.
-func (o *UnibeeInternalLogicGatewayRoRefundDetailRo) SetPayment(v UnibeeInternalLogicGatewayRoPaymentSimplify) {
+func (o *UnibeeApiMerchantPaymentRefundDetail) SetPayment(v UnibeeInternalLogicGatewayRoPaymentSimplify) {
 	o.Payment = &v
 }
 
 // GetRefund returns the Refund field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoRefundDetailRo) GetRefund() UnibeeInternalLogicGatewayRoRefundSimplify {
+func (o *UnibeeApiMerchantPaymentRefundDetail) GetRefund() UnibeeInternalLogicGatewayRoRefundSimplify {
 	if o == nil || IsNil(o.Refund) {
 		var ret UnibeeInternalLogicGatewayRoRefundSimplify
 		return ret
@@ -84,7 +84,7 @@ func (o *UnibeeInternalLogicGatewayRoRefundDetailRo) GetRefund() UnibeeInternalL
 
 // GetRefundOk returns a tuple with the Refund field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoRefundDetailRo) GetRefundOk() (*UnibeeInternalLogicGatewayRoRefundSimplify, bool) {
+func (o *UnibeeApiMerchantPaymentRefundDetail) GetRefundOk() (*UnibeeInternalLogicGatewayRoRefundSimplify, bool) {
 	if o == nil || IsNil(o.Refund) {
 		return nil, false
 	}
@@ -92,7 +92,7 @@ func (o *UnibeeInternalLogicGatewayRoRefundDetailRo) GetRefundOk() (*UnibeeInter
 }
 
 // HasRefund returns a boolean if a field has been set.
-func (o *UnibeeInternalLogicGatewayRoRefundDetailRo) HasRefund() bool {
+func (o *UnibeeApiMerchantPaymentRefundDetail) HasRefund() bool {
 	if o != nil && !IsNil(o.Refund) {
 		return true
 	}
@@ -101,12 +101,12 @@ func (o *UnibeeInternalLogicGatewayRoRefundDetailRo) HasRefund() bool {
 }
 
 // SetRefund gets a reference to the given UnibeeInternalLogicGatewayRoRefundSimplify and assigns it to the Refund field.
-func (o *UnibeeInternalLogicGatewayRoRefundDetailRo) SetRefund(v UnibeeInternalLogicGatewayRoRefundSimplify) {
+func (o *UnibeeApiMerchantPaymentRefundDetail) SetRefund(v UnibeeInternalLogicGatewayRoRefundSimplify) {
 	o.Refund = &v
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
-func (o *UnibeeInternalLogicGatewayRoRefundDetailRo) GetUser() UnibeeInternalLogicGatewayRoUserAccountSimplify {
+func (o *UnibeeApiMerchantPaymentRefundDetail) GetUser() UnibeeInternalLogicGatewayRoUserAccountSimplify {
 	if o == nil || IsNil(o.User) {
 		var ret UnibeeInternalLogicGatewayRoUserAccountSimplify
 		return ret
@@ -116,7 +116,7 @@ func (o *UnibeeInternalLogicGatewayRoRefundDetailRo) GetUser() UnibeeInternalLog
 
 // GetUserOk returns a tuple with the User field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeInternalLogicGatewayRoRefundDetailRo) GetUserOk() (*UnibeeInternalLogicGatewayRoUserAccountSimplify, bool) {
+func (o *UnibeeApiMerchantPaymentRefundDetail) GetUserOk() (*UnibeeInternalLogicGatewayRoUserAccountSimplify, bool) {
 	if o == nil || IsNil(o.User) {
 		return nil, false
 	}
@@ -124,7 +124,7 @@ func (o *UnibeeInternalLogicGatewayRoRefundDetailRo) GetUserOk() (*UnibeeInterna
 }
 
 // HasUser returns a boolean if a field has been set.
-func (o *UnibeeInternalLogicGatewayRoRefundDetailRo) HasUser() bool {
+func (o *UnibeeApiMerchantPaymentRefundDetail) HasUser() bool {
 	if o != nil && !IsNil(o.User) {
 		return true
 	}
@@ -133,11 +133,11 @@ func (o *UnibeeInternalLogicGatewayRoRefundDetailRo) HasUser() bool {
 }
 
 // SetUser gets a reference to the given UnibeeInternalLogicGatewayRoUserAccountSimplify and assigns it to the User field.
-func (o *UnibeeInternalLogicGatewayRoRefundDetailRo) SetUser(v UnibeeInternalLogicGatewayRoUserAccountSimplify) {
+func (o *UnibeeApiMerchantPaymentRefundDetail) SetUser(v UnibeeInternalLogicGatewayRoUserAccountSimplify) {
 	o.User = &v
 }
 
-func (o UnibeeInternalLogicGatewayRoRefundDetailRo) MarshalJSON() ([]byte, error) {
+func (o UnibeeApiMerchantPaymentRefundDetail) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -145,7 +145,7 @@ func (o UnibeeInternalLogicGatewayRoRefundDetailRo) MarshalJSON() ([]byte, error
 	return json.Marshal(toSerialize)
 }
 
-func (o UnibeeInternalLogicGatewayRoRefundDetailRo) ToMap() (map[string]interface{}, error) {
+func (o UnibeeApiMerchantPaymentRefundDetail) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Payment) {
 		toSerialize["payment"] = o.Payment
@@ -159,38 +159,38 @@ func (o UnibeeInternalLogicGatewayRoRefundDetailRo) ToMap() (map[string]interfac
 	return toSerialize, nil
 }
 
-type NullableUnibeeInternalLogicGatewayRoRefundDetailRo struct {
-	value *UnibeeInternalLogicGatewayRoRefundDetailRo
+type NullableUnibeeApiMerchantPaymentRefundDetail struct {
+	value *UnibeeApiMerchantPaymentRefundDetail
 	isSet bool
 }
 
-func (v NullableUnibeeInternalLogicGatewayRoRefundDetailRo) Get() *UnibeeInternalLogicGatewayRoRefundDetailRo {
+func (v NullableUnibeeApiMerchantPaymentRefundDetail) Get() *UnibeeApiMerchantPaymentRefundDetail {
 	return v.value
 }
 
-func (v *NullableUnibeeInternalLogicGatewayRoRefundDetailRo) Set(val *UnibeeInternalLogicGatewayRoRefundDetailRo) {
+func (v *NullableUnibeeApiMerchantPaymentRefundDetail) Set(val *UnibeeApiMerchantPaymentRefundDetail) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableUnibeeInternalLogicGatewayRoRefundDetailRo) IsSet() bool {
+func (v NullableUnibeeApiMerchantPaymentRefundDetail) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableUnibeeInternalLogicGatewayRoRefundDetailRo) Unset() {
+func (v *NullableUnibeeApiMerchantPaymentRefundDetail) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableUnibeeInternalLogicGatewayRoRefundDetailRo(val *UnibeeInternalLogicGatewayRoRefundDetailRo) *NullableUnibeeInternalLogicGatewayRoRefundDetailRo {
-	return &NullableUnibeeInternalLogicGatewayRoRefundDetailRo{value: val, isSet: true}
+func NewNullableUnibeeApiMerchantPaymentRefundDetail(val *UnibeeApiMerchantPaymentRefundDetail) *NullableUnibeeApiMerchantPaymentRefundDetail {
+	return &NullableUnibeeApiMerchantPaymentRefundDetail{value: val, isSet: true}
 }
 
-func (v NullableUnibeeInternalLogicGatewayRoRefundDetailRo) MarshalJSON() ([]byte, error) {
+func (v NullableUnibeeApiMerchantPaymentRefundDetail) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableUnibeeInternalLogicGatewayRoRefundDetailRo) UnmarshalJSON(src []byte) error {
+func (v *NullableUnibeeApiMerchantPaymentRefundDetail) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

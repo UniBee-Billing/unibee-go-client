@@ -941,25 +941,11 @@ func (a *PaymentService) PaymentRefundListGetExecute(r PaymentPaymentRefundListG
 type PaymentPaymentRefundNewPostRequest struct {
 	ctx context.Context
 	ApiService *PaymentService
-	refundAmount *int64
-	currency *string
-	merchantPaymentRefundNewPostRequest *MerchantPaymentRefundNewPostRequest
+	unibeeApiMerchantPaymentNewPaymentRefundReq *UnibeeApiMerchantPaymentNewPaymentRefundReq
 }
 
-// RefundAmount, Cent
-func (r PaymentPaymentRefundNewPostRequest) RefundAmount(refundAmount int64) PaymentPaymentRefundNewPostRequest {
-	r.refundAmount = &refundAmount
-	return r
-}
-
-// Currency
-func (r PaymentPaymentRefundNewPostRequest) Currency(currency string) PaymentPaymentRefundNewPostRequest {
-	r.currency = &currency
-	return r
-}
-
-func (r PaymentPaymentRefundNewPostRequest) MerchantPaymentRefundNewPostRequest(merchantPaymentRefundNewPostRequest MerchantPaymentRefundNewPostRequest) PaymentPaymentRefundNewPostRequest {
-	r.merchantPaymentRefundNewPostRequest = &merchantPaymentRefundNewPostRequest
+func (r PaymentPaymentRefundNewPostRequest) UnibeeApiMerchantPaymentNewPaymentRefundReq(unibeeApiMerchantPaymentNewPaymentRefundReq UnibeeApiMerchantPaymentNewPaymentRefundReq) PaymentPaymentRefundNewPostRequest {
+	r.unibeeApiMerchantPaymentNewPaymentRefundReq = &unibeeApiMerchantPaymentNewPaymentRefundReq
 	return r
 }
 
@@ -1000,18 +986,10 @@ func (a *PaymentService) PaymentRefundNewPostExecute(r PaymentPaymentRefundNewPo
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.refundAmount == nil {
-		return localVarReturnValue, nil, reportError("refundAmount is required and must be specified")
-	}
-	if r.currency == nil {
-		return localVarReturnValue, nil, reportError("currency is required and must be specified")
-	}
-	if r.merchantPaymentRefundNewPostRequest == nil {
-		return localVarReturnValue, nil, reportError("merchantPaymentRefundNewPostRequest is required and must be specified")
+	if r.unibeeApiMerchantPaymentNewPaymentRefundReq == nil {
+		return localVarReturnValue, nil, reportError("unibeeApiMerchantPaymentNewPaymentRefundReq is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "refundAmount", r.refundAmount, "")
-	parameterAddToHeaderOrQuery(localVarQueryParams, "currency", r.currency, "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -1030,7 +1008,7 @@ func (a *PaymentService) PaymentRefundNewPostExecute(r PaymentPaymentRefundNewPo
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.merchantPaymentRefundNewPostRequest
+	localVarPostBody = r.unibeeApiMerchantPaymentNewPaymentRefundReq
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

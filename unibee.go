@@ -1,5 +1,42 @@
 package unibee
 
+const (
+	WaitingAuthorized = 0
+	Authorized        = 1
+	CaptureRequest    = 2
+)
+
+const (
+	PaymentCreated   = 10
+	PaymentSuccess   = 20
+	PaymentFailed    = 30
+	PaymentCancelled = 40
+)
+
+const (
+	RefundIng     = 10
+	RefundSuccess = 20
+	RefundFailed  = 30
+	RefundReverse = 40
+)
+
+const (
+	UNIBEE_WEBHOOK_EVENT_SUBSCRIPTION_CREATED   = "subscription.created"
+	UNIBEE_WEBHOOK_EVENT_SUBSCRIPTION_UPDATED   = "subscription.updated"
+	UNIBEE_WEBHOOK_EVENT_SUBSCRIPTION_CANCELLED = "subscription.cancelled"
+	UNIBEE_WEBHOOK_EVENT_SUBSCRIPTION_EXPIRED   = "subscription.expired"
+	UNIBEE_WEBHOOK_EVENT_USER_METRIC_UPDATED    = "user.metric.update"
+	UNIBEE_WEBHOOK_EVENT_PAYMENT_CREATED        = "payment.created"
+	UNIBEE_WEBHOOK_EVENT_PAYMENT_NEEDAUTHORISED = "payment.authorised.need"
+	UNIBEE_WEBHOOK_EVENT_PAYMENT_SUCCESS        = "payment.success"
+	UNIBEE_WEBHOOK_EVENT_PAYMENT_CANCEL         = "payment.cancelled"
+	UNIBEE_WEBHOOK_EVENT_PAYMENT_FAILURE        = "payment.failure"
+	UNIBEE_WEBHOOK_EVENT_REFUND_CREATED         = "refund.created"
+	UNIBEE_WEBHOOK_EVENT_REFUND_SUCCESS         = "refund.success"
+	UNIBEE_WEBHOOK_EVENT_REFUND_FAILURE         = "refund.failure"
+	UNIBEE_WEBHOOK_EVENT_REFUND_REVERSE         = "refund.reverse"
+)
+
 // AppInfo contains information about the "app" which this integration belongs
 // to. This should be reserved for plugins that wish to identify themselves
 // with Stripe.

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PaymentDetail** | Pointer to [**UnibeeInternalLogicGatewayRoPaymentDetailRo**](UnibeeInternalLogicGatewayRoPaymentDetailRo.md) |  | [optional] 
+**PaymentDetail** | Pointer to [**UnibeeApiMerchantPaymentPaymentDetail**](UnibeeApiMerchantPaymentPaymentDetail.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPaymentDetail
 
-`func (o *UnibeeApiMerchantPaymentDetailRes) GetPaymentDetail() UnibeeInternalLogicGatewayRoPaymentDetailRo`
+`func (o *UnibeeApiMerchantPaymentDetailRes) GetPaymentDetail() UnibeeApiMerchantPaymentPaymentDetail`
 
 GetPaymentDetail returns the PaymentDetail field if non-nil, zero value otherwise.
 
 ### GetPaymentDetailOk
 
-`func (o *UnibeeApiMerchantPaymentDetailRes) GetPaymentDetailOk() (*UnibeeInternalLogicGatewayRoPaymentDetailRo, bool)`
+`func (o *UnibeeApiMerchantPaymentDetailRes) GetPaymentDetailOk() (*UnibeeApiMerchantPaymentPaymentDetail, bool)`
 
 GetPaymentDetailOk returns a tuple with the PaymentDetail field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPaymentDetail
 
-`func (o *UnibeeApiMerchantPaymentDetailRes) SetPaymentDetail(v UnibeeInternalLogicGatewayRoPaymentDetailRo)`
+`func (o *UnibeeApiMerchantPaymentDetailRes) SetPaymentDetail(v UnibeeApiMerchantPaymentPaymentDetail)`
 
 SetPaymentDetail sets PaymentDetail field to given value.
 
