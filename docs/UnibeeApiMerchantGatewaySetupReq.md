@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **GatewayKey** | Pointer to **string** | GatewayKey | [optional] 
-**GatewayName** | **string** | GatewayName, stripe|paypal | 
+**GatewayName** | **string** | GatewayName, stripe|paypal|changelly | 
 **GatewaySecret** | Pointer to **string** | GatewaySecret | [optional] 
 
 ## Methods

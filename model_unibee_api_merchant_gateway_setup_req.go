@@ -23,7 +23,7 @@ var _ MappedNullable = &UnibeeApiMerchantGatewaySetupReq{}
 type UnibeeApiMerchantGatewaySetupReq struct {
 	// GatewayKey
 	GatewayKey *string `json:"gatewayKey,omitempty"`
-	// GatewayName, stripe|paypal
+	// GatewayName, stripe|paypal|changelly
 	GatewayName string `json:"gatewayName"`
 	// GatewaySecret
 	GatewaySecret *string `json:"gatewaySecret,omitempty"`

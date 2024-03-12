@@ -31,6 +31,8 @@ type UnibeeApiMerchantPaymentNewReq struct {
 	ExternalPaymentId string `json:"externalPaymentId"`
 	// ExternalUserId, should unique for user
 	ExternalUserId string `json:"externalUserId"`
+	// who pay the gas, merchant|user
+	GasPayer *string `json:"gasPayer,omitempty"`
 	// GatewayId
 	GatewayId int64 `json:"gatewayId"`
 	// Items
@@ -196,6 +198,38 @@ func (o *UnibeeApiMerchantPaymentNewReq) SetExternalUserId(v string) {
 	o.ExternalUserId = v
 }
 
+// GetGasPayer returns the GasPayer field value if set, zero value otherwise.
+func (o *UnibeeApiMerchantPaymentNewReq) GetGasPayer() string {
+	if o == nil || IsNil(o.GasPayer) {
+		var ret string
+		return ret
+	}
+	return *o.GasPayer
+}
+
+// GetGasPayerOk returns a tuple with the GasPayer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiMerchantPaymentNewReq) GetGasPayerOk() (*string, bool) {
+	if o == nil || IsNil(o.GasPayer) {
+		return nil, false
+	}
+	return o.GasPayer, true
+}
+
+// HasGasPayer returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantPaymentNewReq) HasGasPayer() bool {
+	if o != nil && !IsNil(o.GasPayer) {
+		return true
+	}
+
+	return false
+}
+
+// SetGasPayer gets a reference to the given string and assigns it to the GasPayer field.
+func (o *UnibeeApiMerchantPaymentNewReq) SetGasPayer(v string) {
+	o.GasPayer = &v
+}
+
 // GetGatewayId returns the GatewayId field value
 func (o *UnibeeApiMerchantPaymentNewReq) GetGatewayId() int64 {
 	if o == nil {
@@ -357,6 +391,9 @@ func (o UnibeeApiMerchantPaymentNewReq) ToMap() (map[string]interface{}, error) 
 	toSerialize["email"] = o.Email
 	toSerialize["externalPaymentId"] = o.ExternalPaymentId
 	toSerialize["externalUserId"] = o.ExternalUserId
+	if !IsNil(o.GasPayer) {
+		toSerialize["gasPayer"] = o.GasPayer
+	}
 	toSerialize["gatewayId"] = o.GatewayId
 	if !IsNil(o.Items) {
 		toSerialize["items"] = o.Items

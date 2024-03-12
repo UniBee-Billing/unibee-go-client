@@ -394,7 +394,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/_merchant_auth_sso_loginOTP_post_200_response'
+                $ref: '#/components/schemas/_merchant_gateway_setup_webhook_post_200_response'
           description: ""
       summary: Gateway Webhook Setup
       tags:
@@ -1231,6 +1231,52 @@ paths:
                 $ref: '#/components/schemas/_merchant_payment_list_get_200_response'
           description: ""
       summary: Query Payment List
+      tags:
+      - Payment
+  /merchant/payment/method_list:
+    get:
+      parameters:
+      - description: GatewayId
+        explode: true
+        in: query
+        name: gatewayId
+        required: true
+        schema:
+          description: GatewayId
+          format: int64
+          properties: {}
+          type: integer
+        style: form
+      - description: UserId
+        explode: true
+        in: query
+        name: userId
+        required: false
+        schema:
+          description: UserId
+          format: int64
+          properties: {}
+          type: integer
+        style: form
+      - description: PaymentId
+        explode: true
+        in: query
+        name: paymentId
+        required: false
+        schema:
+          description: PaymentId
+          format: string
+          properties: {}
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_payment_method_list_get_200_response'
+          description: ""
+      summary: Query Payment Method List
       tags:
       - Payment
   /merchant/payment/new:
@@ -3261,7 +3307,7 @@ components:
           properties: {}
           type: string
         gatewayName:
-          description: "GatewayName, stripe|paypal"
+          description: "GatewayName, stripe|paypal|changelly"
           format: string
           properties: {}
           type: string
@@ -3287,7 +3333,12 @@ components:
       - gatewayId
       type: object
     unibee.api.merchant.gateway.SetupWebhookRes:
-      properties: {}
+      properties:
+        gatewayWebhookUrl:
+          description: GatewayWebhookUrl
+          format: string
+          properties: {}
+          type: string
       type: object
     unibee.api.merchant.invoice.CancelReq:
       properties:
@@ -3981,6 +4032,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -4004,6 +4056,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -4023,6 +4076,7 @@ components:
           link: link
           type: 2
           firstPaidTime: 4
+          gasPayer: gasPayer
           merchantId: 6
           taxScale: 3
           countryCode: countryCode
@@ -4062,6 +4116,7 @@ components:
           type: 2
           productName: productName
           homeUrl: homeUrl
+          gasPayer: gasPayer
           createTime: 1
           merchantId: 2
           taxScale: 3
@@ -4308,6 +4363,36 @@ components:
           properties: {}
           type: array
       type: object
+    unibee.api.merchant.payment.MethodListReq:
+      properties:
+        gatewayId:
+          description: GatewayId
+          format: int64
+          properties: {}
+          type: integer
+        paymentId:
+          description: PaymentId
+          format: string
+          properties: {}
+          type: string
+        userId:
+          description: UserId
+          format: int64
+          properties: {}
+          type: integer
+      required:
+      - gatewayId
+      type: object
+    unibee.api.merchant.payment.MethodListRes:
+      properties:
+        methodList:
+          description: MethodList
+          format: "[]*ro.PaymentMethod"
+          items:
+            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PaymentMethod'
+          properties: {}
+          type: array
+      type: object
     unibee.api.merchant.payment.NewPaymentRefundReq:
       properties:
         currency:
@@ -4400,6 +4485,11 @@ components:
           format: string
           properties: {}
           type: string
+        gasPayer:
+          description: "who pay the gas, merchant|user"
+          format: string
+          properties: {}
+          type: string
         gatewayId:
           description: GatewayId
           format: int64
@@ -4473,6 +4563,7 @@ components:
           billingReason: billingReason
           link: link
           paymentAmount: 2
+          gasPayer: gasPayer
           merchantId: 9
           countryCode: countryCode
           paymentId: paymentId
@@ -4531,6 +4622,7 @@ components:
           billingReason: billingReason
           link: link
           paymentAmount: 2
+          gasPayer: gasPayer
           merchantId: 9
           countryCode: countryCode
           paymentId: paymentId
@@ -4783,6 +4875,11 @@ components:
           format: string
           properties: {}
           type: string
+        gasPayer:
+          description: "who pay the gas, merchant|user"
+          format: string
+          properties: {}
+          type: string
         homeUrl:
           description: "HomeUrl,Start With: http"
           format: string
@@ -4794,8 +4891,7 @@ components:
           properties: {}
           type: string
         intervalCount:
-          default: 1
-          description: Default 1，Number Of IntervalUnit
+          description: Number Of IntervalUnit
           format: int
           properties: {}
           type: integer
@@ -4959,6 +5055,11 @@ components:
           format: string
           properties: {}
           type: string
+        gasPayer:
+          description: "who pay the gas, merchant|user"
+          format: string
+          properties: {}
+          type: string
         homeUrl:
           description: "HomeUrl,Start With: http"
           format: string
@@ -4970,8 +5071,7 @@ components:
           properties: {}
           type: string
         intervalCount:
-          default: 1
-          description: Default 1，Number Of IntervalUnit
+          description: "Number Of IntervalUnit，em: day|month|year|week"
           format: int
           properties: {}
           type: integer
@@ -5020,6 +5120,7 @@ components:
       required:
       - amount
       - currency
+      - intervalCount
       - intervalUnit
       - planName
       type: object
@@ -5042,6 +5143,7 @@ components:
           type: 2
           productName: productName
           homeUrl: homeUrl
+          gasPayer: gasPayer
           createTime: 1
           merchantId: 2
           taxScale: 3
@@ -5063,6 +5165,7 @@ components:
           type: 2
           productName: productName
           homeUrl: homeUrl
+          gasPayer: gasPayer
           createTime: 1
           merchantId: 2
           taxScale: 3
@@ -5088,6 +5191,7 @@ components:
           type: 2
           productName: productName
           homeUrl: homeUrl
+          gasPayer: gasPayer
           createTime: 1
           merchantId: 2
           taxScale: 3
@@ -5842,7 +5946,7 @@ components:
           properties: {}
           type: integer
         quantity:
-          description: Quantity，Default 1
+          description: Quantity
           format: int64
           properties: {}
           type: integer
@@ -5861,6 +5965,7 @@ components:
       - confirmTotalAmount
       - newPlanId
       - prorationDate
+      - quantity
       - subscriptionId
       type: object
     unibee.api.merchant.subscription.UpdateRes:
@@ -6368,25 +6473,6 @@ components:
     unibee.api.system.invoice.ChannelSyncRes:
       properties: {}
       type: object
-    unibee.api.system.payment.GatewayPaymentMethodListReq:
-      properties:
-        paymentId:
-          description: PaymentId
-          format: string
-          properties: {}
-          type: string
-      required:
-      - paymentId
-      type: object
-    unibee.api.system.payment.GatewayPaymentMethodListRes:
-      properties:
-        MethodList:
-          format: "[]*ro.PaymentMethod"
-          items:
-            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PaymentMethod'
-          properties: {}
-          type: array
-      type: object
     unibee.api.system.payment.PaymentCallbackAgainReq:
       properties:
         paymentId:
@@ -6483,6 +6569,7 @@ components:
       type: object
     unibee.internal.logic.gateway.ro.GatewaySimplify:
       example:
+        gatewayType: 1
         gatewayName: gatewayName
         gatewayLogo: gatewayLogo
         gatewayId: 6
@@ -6499,6 +6586,11 @@ components:
           format: string
           properties: {}
           type: string
+        gatewayType:
+          description: gateway type，1-Default｜ 2-Crypto
+          format: int64
+          properties: {}
+          type: integer
       type: object
     unibee.internal.logic.gateway.ro.InvoiceDetailRo:
       example:
@@ -6524,6 +6616,7 @@ components:
           type: 2
           firstPaidTime: 9
           metaData: metaData
+          gasPayer: gasPayer
           isDeleted: 0
           merchantId: 5
           taxScale: 4
@@ -6579,6 +6672,7 @@ components:
           paymentAmount: 2
           gatewayEdition: gatewayEdition
           metaData: metaData
+          gasPayer: gasPayer
           merchantId: 3
           countryCode: countryCode
           paymentId: paymentId
@@ -6722,6 +6816,7 @@ components:
         taxAmount: 4
         periodStart: 3
         gateway:
+          gatewayType: 1
           gatewayName: gatewayName
           gatewayLogo: gatewayLogo
           gatewayId: 6
@@ -7379,6 +7474,10 @@ components:
           type: integer
       type: object
     unibee.internal.logic.gateway.ro.PaymentMethod:
+      example:
+        data: "{}"
+        id: id
+        type: type
       properties:
         data:
           properties: {}
@@ -7400,6 +7499,7 @@ components:
         billingReason: billingReason
         link: link
         paymentAmount: 2
+        gasPayer: gasPayer
         merchantId: 9
         countryCode: countryCode
         paymentId: paymentId
@@ -7470,6 +7570,11 @@ components:
           properties: {}
           type: string
         failureReason:
+          format: string
+          properties: {}
+          type: string
+        gasPayer:
+          description: "who pay the gas, merchant|user"
           format: string
           properties: {}
           type: string
@@ -7566,6 +7671,7 @@ components:
           type: 2
           productName: productName
           homeUrl: homeUrl
+          gasPayer: gasPayer
           createTime: 1
           merchantId: 2
           taxScale: 3
@@ -7598,6 +7704,7 @@ components:
         type: 2
         productName: productName
         homeUrl: homeUrl
+        gasPayer: gasPayer
         createTime: 1
         merchantId: 2
         taxScale: 3
@@ -7635,6 +7742,11 @@ components:
           properties: {}
           type: string
         extraMetricData:
+          format: string
+          properties: {}
+          type: string
+        gasPayer:
+          description: "who pay the gas, merchant|user"
           format: string
           properties: {}
           type: string
@@ -7843,6 +7955,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -7866,6 +7979,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -7889,6 +8003,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -7914,6 +8029,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -7937,6 +8053,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -7965,6 +8082,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -8014,6 +8132,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -8037,6 +8156,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -8056,6 +8176,7 @@ components:
           link: link
           type: 2
           firstPaidTime: 4
+          gasPayer: gasPayer
           merchantId: 6
           taxScale: 3
           countryCode: countryCode
@@ -8095,6 +8216,7 @@ components:
           type: 2
           productName: productName
           homeUrl: homeUrl
+          gasPayer: gasPayer
           createTime: 1
           merchantId: 2
           taxScale: 3
@@ -8115,6 +8237,7 @@ components:
           id: 5
           email: email
         gateway:
+          gatewayType: 1
           gatewayName: gatewayName
           gatewayLogo: gatewayLogo
           gatewayId: 6
@@ -8165,6 +8288,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -8188,6 +8312,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -8211,6 +8336,7 @@ components:
           type: 2
           productName: productName
           homeUrl: homeUrl
+          gasPayer: gasPayer
           createTime: 1
           merchantId: 2
           taxScale: 3
@@ -8236,6 +8362,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -8259,6 +8386,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -8287,6 +8415,7 @@ components:
           type: 2
           productName: productName
           homeUrl: homeUrl
+          gasPayer: gasPayer
           createTime: 1
           merchantId: 2
           taxScale: 3
@@ -8493,6 +8622,7 @@ components:
         link: link
         type: 2
         firstPaidTime: 4
+        gasPayer: gasPayer
         merchantId: 6
         taxScale: 3
         countryCode: countryCode
@@ -8579,6 +8709,11 @@ components:
           format: int64
           properties: {}
           type: integer
+        gasPayer:
+          description: "who pay the gas, merchant|user"
+          format: string
+          properties: {}
+          type: string
         gatewayId:
           description: gateway_id
           format: int64
@@ -8706,6 +8841,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -8729,6 +8865,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -8761,6 +8898,7 @@ components:
           type: 2
           productName: productName
           homeUrl: homeUrl
+          gasPayer: gasPayer
           createTime: 1
           merchantId: 2
           taxScale: 3
@@ -9718,6 +9856,7 @@ components:
         paymentAmount: 2
         gatewayEdition: gatewayEdition
         metaData: metaData
+        gasPayer: gasPayer
         merchantId: 3
         countryCode: countryCode
         paymentId: paymentId
@@ -9838,6 +9977,11 @@ components:
           properties: {}
           type: string
         failureReason:
+          format: string
+          properties: {}
+          type: string
+        gasPayer:
+          description: "who pay the gas, merchant|user"
           format: string
           properties: {}
           type: string
@@ -10118,6 +10262,11 @@ components:
           format: string
           properties: {}
           type: string
+        gasPayer:
+          description: "who pay the gas, merchant|user"
+          format: string
+          properties: {}
+          type: string
         gatewayProductDescription:
           description: gateway product description
           format: string
@@ -10383,6 +10532,7 @@ components:
         type: 2
         firstPaidTime: 9
         metaData: metaData
+        gasPayer: gasPayer
         isDeleted: 0
         merchantId: 5
         taxScale: 4
@@ -10498,6 +10648,11 @@ components:
           format: int64
           properties: {}
           type: integer
+        gasPayer:
+          description: "who pay the gas, merchant|user"
+          format: string
+          properties: {}
+          type: string
         gatewayDefaultPaymentMethod:
           format: string
           properties: {}
@@ -11574,10 +11729,12 @@ components:
     _merchant_gateway_list_get_200_response_data:
       example:
         gateways:
-        - gatewayName: gatewayName
+        - gatewayType: 1
+          gatewayName: gatewayName
           gatewayLogo: gatewayLogo
           gatewayId: 6
-        - gatewayName: gatewayName
+        - gatewayType: 1
+          gatewayName: gatewayName
           gatewayLogo: gatewayLogo
           gatewayId: 6
       properties:
@@ -11594,10 +11751,12 @@ components:
         code: 0
         data:
           gateways:
-          - gatewayName: gatewayName
+          - gatewayType: 1
+            gatewayName: gatewayName
             gatewayLogo: gatewayLogo
             gatewayId: 6
-          - gatewayName: gatewayName
+          - gatewayType: 1
+            gatewayName: gatewayName
             gatewayLogo: gatewayLogo
             gatewayId: 6
         requestId: requestId
@@ -11609,6 +11768,44 @@ components:
           type: integer
         data:
           $ref: '#/components/schemas/_merchant_gateway_list_get_200_response_data'
+        message:
+          format: string
+          properties: {}
+          type: string
+        redirect:
+          format: string
+          properties: {}
+          type: string
+        requestId:
+          format: string
+          properties: {}
+          type: string
+      type: object
+    _merchant_gateway_setup_webhook_post_200_response_data:
+      example:
+        gatewayWebhookUrl: gatewayWebhookUrl
+      properties:
+        gatewayWebhookUrl:
+          description: GatewayWebhookUrl
+          format: string
+          properties: {}
+          type: string
+      type: object
+    _merchant_gateway_setup_webhook_post_200_response:
+      example:
+        redirect: redirect
+        code: 0
+        data:
+          gatewayWebhookUrl: gatewayWebhookUrl
+        requestId: requestId
+        message: message
+      properties:
+        code:
+          format: int
+          properties: {}
+          type: integer
+        data:
+          $ref: '#/components/schemas/_merchant_gateway_setup_webhook_post_200_response_data'
         message:
           format: string
           properties: {}
@@ -11659,10 +11856,12 @@ components:
           email: email
         env: env
         gateway:
-        - gatewayName: gatewayName
+        - gatewayType: 1
+          gatewayName: gatewayName
           gatewayLogo: gatewayLogo
           gatewayId: 6
-        - gatewayName: gatewayName
+        - gatewayType: 1
+          gatewayName: gatewayName
           gatewayLogo: gatewayLogo
           gatewayId: 6
       properties:
@@ -11742,10 +11941,12 @@ components:
             email: email
           env: env
           gateway:
-          - gatewayName: gatewayName
+          - gatewayType: 1
+            gatewayName: gatewayName
             gatewayLogo: gatewayLogo
             gatewayId: 6
-          - gatewayName: gatewayName
+          - gatewayType: 1
+            gatewayName: gatewayName
             gatewayLogo: gatewayLogo
             gatewayId: 6
         requestId: requestId
@@ -11795,6 +11996,7 @@ components:
             type: 2
             firstPaidTime: 9
             metaData: metaData
+            gasPayer: gasPayer
             isDeleted: 0
             merchantId: 5
             taxScale: 4
@@ -11850,6 +12052,7 @@ components:
             paymentAmount: 2
             gatewayEdition: gatewayEdition
             metaData: metaData
+            gasPayer: gasPayer
             merchantId: 3
             countryCode: countryCode
             paymentId: paymentId
@@ -11993,6 +12196,7 @@ components:
           taxAmount: 4
           periodStart: 3
           gateway:
+            gatewayType: 1
             gatewayName: gatewayName
             gatewayLogo: gatewayLogo
             gatewayId: 6
@@ -12060,6 +12264,7 @@ components:
               type: 2
               firstPaidTime: 9
               metaData: metaData
+              gasPayer: gasPayer
               isDeleted: 0
               merchantId: 5
               taxScale: 4
@@ -12115,6 +12320,7 @@ components:
               paymentAmount: 2
               gatewayEdition: gatewayEdition
               metaData: metaData
+              gasPayer: gasPayer
               merchantId: 3
               countryCode: countryCode
               paymentId: paymentId
@@ -12258,6 +12464,7 @@ components:
             taxAmount: 4
             periodStart: 3
             gateway:
+              gatewayType: 1
               gatewayName: gatewayName
               gatewayLogo: gatewayLogo
               gatewayId: 6
@@ -12455,6 +12662,7 @@ components:
             type: 2
             firstPaidTime: 9
             metaData: metaData
+            gasPayer: gasPayer
             isDeleted: 0
             merchantId: 5
             taxScale: 4
@@ -12510,6 +12718,7 @@ components:
             paymentAmount: 2
             gatewayEdition: gatewayEdition
             metaData: metaData
+            gasPayer: gasPayer
             merchantId: 3
             countryCode: countryCode
             paymentId: paymentId
@@ -12653,6 +12862,7 @@ components:
           taxAmount: 4
           periodStart: 3
           gateway:
+            gatewayType: 1
             gatewayName: gatewayName
             gatewayLogo: gatewayLogo
             gatewayId: 6
@@ -12710,6 +12920,7 @@ components:
             type: 2
             firstPaidTime: 9
             metaData: metaData
+            gasPayer: gasPayer
             isDeleted: 0
             merchantId: 5
             taxScale: 4
@@ -12765,6 +12976,7 @@ components:
             paymentAmount: 2
             gatewayEdition: gatewayEdition
             metaData: metaData
+            gasPayer: gasPayer
             merchantId: 3
             countryCode: countryCode
             paymentId: paymentId
@@ -12908,6 +13120,7 @@ components:
           taxAmount: 4
           periodStart: 3
           gateway:
+            gatewayType: 1
             gatewayName: gatewayName
             gatewayLogo: gatewayLogo
             gatewayId: 6
@@ -12980,6 +13193,7 @@ components:
               type: 2
               firstPaidTime: 9
               metaData: metaData
+              gasPayer: gasPayer
               isDeleted: 0
               merchantId: 5
               taxScale: 4
@@ -13035,6 +13249,7 @@ components:
               paymentAmount: 2
               gatewayEdition: gatewayEdition
               metaData: metaData
+              gasPayer: gasPayer
               merchantId: 3
               countryCode: countryCode
               paymentId: paymentId
@@ -13178,6 +13393,7 @@ components:
             taxAmount: 4
             periodStart: 3
             gateway:
+              gatewayType: 1
               gatewayName: gatewayName
               gatewayLogo: gatewayLogo
               gatewayId: 6
@@ -13235,6 +13451,7 @@ components:
               type: 2
               firstPaidTime: 9
               metaData: metaData
+              gasPayer: gasPayer
               isDeleted: 0
               merchantId: 5
               taxScale: 4
@@ -13290,6 +13507,7 @@ components:
               paymentAmount: 2
               gatewayEdition: gatewayEdition
               metaData: metaData
+              gasPayer: gasPayer
               merchantId: 3
               countryCode: countryCode
               paymentId: paymentId
@@ -13433,6 +13651,7 @@ components:
             taxAmount: 4
             periodStart: 3
             gateway:
+              gatewayType: 1
               gatewayName: gatewayName
               gatewayLogo: gatewayLogo
               gatewayId: 6
@@ -13969,6 +14188,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -13992,6 +14212,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -14011,6 +14232,7 @@ components:
             link: link
             type: 2
             firstPaidTime: 4
+            gasPayer: gasPayer
             merchantId: 6
             taxScale: 3
             countryCode: countryCode
@@ -14050,6 +14272,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -14191,6 +14414,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -14214,6 +14438,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -14233,6 +14458,7 @@ components:
               link: link
               type: 2
               firstPaidTime: 4
+              gasPayer: gasPayer
               merchantId: 6
               taxScale: 3
               countryCode: countryCode
@@ -14272,6 +14498,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -14361,6 +14588,7 @@ components:
             billingReason: billingReason
             link: link
             paymentAmount: 2
+            gasPayer: gasPayer
             merchantId: 9
             countryCode: countryCode
             paymentId: paymentId
@@ -14408,6 +14636,7 @@ components:
               billingReason: billingReason
               link: link
               paymentAmount: 2
+              gasPayer: gasPayer
               merchantId: 9
               countryCode: countryCode
               paymentId: paymentId
@@ -14470,6 +14699,7 @@ components:
             billingReason: billingReason
             link: link
             paymentAmount: 2
+            gasPayer: gasPayer
             merchantId: 9
             countryCode: countryCode
             paymentId: paymentId
@@ -14507,6 +14737,7 @@ components:
             billingReason: billingReason
             link: link
             paymentAmount: 2
+            gasPayer: gasPayer
             merchantId: 9
             countryCode: countryCode
             paymentId: paymentId
@@ -14559,6 +14790,7 @@ components:
               billingReason: billingReason
               link: link
               paymentAmount: 2
+              gasPayer: gasPayer
               merchantId: 9
               countryCode: countryCode
               paymentId: paymentId
@@ -14596,6 +14828,7 @@ components:
               billingReason: billingReason
               link: link
               paymentAmount: 2
+              gasPayer: gasPayer
               merchantId: 9
               countryCode: countryCode
               paymentId: paymentId
@@ -14635,6 +14868,58 @@ components:
           type: integer
         data:
           $ref: '#/components/schemas/_merchant_payment_list_get_200_response_data'
+        message:
+          format: string
+          properties: {}
+          type: string
+        redirect:
+          format: string
+          properties: {}
+          type: string
+        requestId:
+          format: string
+          properties: {}
+          type: string
+      type: object
+    _merchant_payment_method_list_get_200_response_data:
+      example:
+        methodList:
+        - data: "{}"
+          id: id
+          type: type
+        - data: "{}"
+          id: id
+          type: type
+      properties:
+        methodList:
+          description: MethodList
+          format: "[]*ro.PaymentMethod"
+          items:
+            $ref: '#/components/schemas/unibee.internal.logic.gateway.ro.PaymentMethod'
+          properties: {}
+          type: array
+      type: object
+    _merchant_payment_method_list_get_200_response:
+      example:
+        redirect: redirect
+        code: 0
+        data:
+          methodList:
+          - data: "{}"
+            id: id
+            type: type
+          - data: "{}"
+            id: id
+            type: type
+        requestId: requestId
+        message: message
+      properties:
+        code:
+          format: int
+          properties: {}
+          type: integer
+        data:
+          $ref: '#/components/schemas/_merchant_payment_method_list_get_200_response_data'
         message:
           format: string
           properties: {}
@@ -14721,6 +15006,7 @@ components:
             billingReason: billingReason
             link: link
             paymentAmount: 2
+            gasPayer: gasPayer
             merchantId: 9
             countryCode: countryCode
             paymentId: paymentId
@@ -14787,6 +15073,7 @@ components:
               billingReason: billingReason
               link: link
               paymentAmount: 2
+              gasPayer: gasPayer
               merchantId: 9
               countryCode: countryCode
               paymentId: paymentId
@@ -14868,6 +15155,7 @@ components:
             billingReason: billingReason
             link: link
             paymentAmount: 2
+            gasPayer: gasPayer
             merchantId: 9
             countryCode: countryCode
             paymentId: paymentId
@@ -14924,6 +15212,7 @@ components:
             billingReason: billingReason
             link: link
             paymentAmount: 2
+            gasPayer: gasPayer
             merchantId: 9
             countryCode: countryCode
             paymentId: paymentId
@@ -14995,6 +15284,7 @@ components:
               billingReason: billingReason
               link: link
               paymentAmount: 2
+              gasPayer: gasPayer
               merchantId: 9
               countryCode: countryCode
               paymentId: paymentId
@@ -15051,6 +15341,7 @@ components:
               billingReason: billingReason
               link: link
               paymentAmount: 2
+              gasPayer: gasPayer
               merchantId: 9
               countryCode: countryCode
               paymentId: paymentId
@@ -15299,6 +15590,7 @@ components:
           type: 2
           productName: productName
           homeUrl: homeUrl
+          gasPayer: gasPayer
           createTime: 1
           merchantId: 2
           taxScale: 3
@@ -15330,6 +15622,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -15377,6 +15670,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -15398,6 +15692,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -15423,6 +15718,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -15492,6 +15788,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -15513,6 +15810,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -15538,6 +15836,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -15622,6 +15921,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -15643,6 +15943,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -15668,6 +15969,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -15727,6 +16029,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -15748,6 +16051,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -15773,6 +16077,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -15847,6 +16152,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -15868,6 +16174,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -15893,6 +16200,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -15952,6 +16260,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -15973,6 +16282,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -15998,6 +16308,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -16633,6 +16944,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -16656,6 +16968,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -16679,6 +16992,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -16704,6 +17018,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -16727,6 +17042,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -16755,6 +17071,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -16799,6 +17116,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -16822,6 +17140,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -16841,6 +17160,7 @@ components:
           link: link
           type: 2
           firstPaidTime: 4
+          gasPayer: gasPayer
           merchantId: 6
           taxScale: 3
           countryCode: countryCode
@@ -16880,6 +17200,7 @@ components:
           type: 2
           productName: productName
           homeUrl: homeUrl
+          gasPayer: gasPayer
           createTime: 1
           merchantId: 2
           taxScale: 3
@@ -16900,6 +17221,7 @@ components:
           id: 5
           email: email
         gateway:
+          gatewayType: 1
           gatewayName: gatewayName
           gatewayLogo: gatewayLogo
           gatewayId: 6
@@ -16947,6 +17269,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -16970,6 +17293,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -16993,6 +17317,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -17018,6 +17343,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -17041,6 +17367,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -17069,6 +17396,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -17113,6 +17441,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -17136,6 +17465,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -17155,6 +17485,7 @@ components:
             link: link
             type: 2
             firstPaidTime: 4
+            gasPayer: gasPayer
             merchantId: 6
             taxScale: 3
             countryCode: countryCode
@@ -17194,6 +17525,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -17214,6 +17546,7 @@ components:
             id: 5
             email: email
           gateway:
+            gatewayType: 1
             gatewayName: gatewayName
             gatewayLogo: gatewayLogo
             gatewayId: 6
@@ -17262,6 +17595,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -17285,6 +17619,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -17308,6 +17643,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -17333,6 +17669,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -17356,6 +17693,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -17384,6 +17722,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -17433,6 +17772,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -17456,6 +17796,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -17475,6 +17816,7 @@ components:
             link: link
             type: 2
             firstPaidTime: 4
+            gasPayer: gasPayer
             merchantId: 6
             taxScale: 3
             countryCode: countryCode
@@ -17514,6 +17856,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -17534,6 +17877,7 @@ components:
             id: 5
             email: email
           gateway:
+            gatewayType: 1
             gatewayName: gatewayName
             gatewayLogo: gatewayLogo
             gatewayId: 6
@@ -17557,6 +17901,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -17580,6 +17925,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -17603,6 +17949,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -17628,6 +17975,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -17651,6 +17999,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -17679,6 +18028,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -17728,6 +18078,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -17751,6 +18102,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -17770,6 +18122,7 @@ components:
             link: link
             type: 2
             firstPaidTime: 4
+            gasPayer: gasPayer
             merchantId: 6
             taxScale: 3
             countryCode: countryCode
@@ -17809,6 +18162,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -17829,6 +18183,7 @@ components:
             id: 5
             email: email
           gateway:
+            gatewayType: 1
             gatewayName: gatewayName
             gatewayLogo: gatewayLogo
             gatewayId: 6
@@ -17867,6 +18222,7 @@ components:
                   type: 2
                   productName: productName
                   homeUrl: homeUrl
+                  gasPayer: gasPayer
                   createTime: 1
                   merchantId: 2
                   taxScale: 3
@@ -17890,6 +18246,7 @@ components:
                   type: 2
                   productName: productName
                   homeUrl: homeUrl
+                  gasPayer: gasPayer
                   createTime: 1
                   merchantId: 2
                   taxScale: 3
@@ -17913,6 +18270,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -17938,6 +18296,7 @@ components:
                   type: 2
                   productName: productName
                   homeUrl: homeUrl
+                  gasPayer: gasPayer
                   createTime: 1
                   merchantId: 2
                   taxScale: 3
@@ -17961,6 +18320,7 @@ components:
                   type: 2
                   productName: productName
                   homeUrl: homeUrl
+                  gasPayer: gasPayer
                   createTime: 1
                   merchantId: 2
                   taxScale: 3
@@ -17989,6 +18349,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -18038,6 +18399,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -18061,6 +18423,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -18080,6 +18443,7 @@ components:
               link: link
               type: 2
               firstPaidTime: 4
+              gasPayer: gasPayer
               merchantId: 6
               taxScale: 3
               countryCode: countryCode
@@ -18119,6 +18483,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -18139,6 +18504,7 @@ components:
               id: 5
               email: email
             gateway:
+              gatewayType: 1
               gatewayName: gatewayName
               gatewayLogo: gatewayLogo
               gatewayId: 6
@@ -18162,6 +18528,7 @@ components:
                   type: 2
                   productName: productName
                   homeUrl: homeUrl
+                  gasPayer: gasPayer
                   createTime: 1
                   merchantId: 2
                   taxScale: 3
@@ -18185,6 +18552,7 @@ components:
                   type: 2
                   productName: productName
                   homeUrl: homeUrl
+                  gasPayer: gasPayer
                   createTime: 1
                   merchantId: 2
                   taxScale: 3
@@ -18208,6 +18576,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -18233,6 +18602,7 @@ components:
                   type: 2
                   productName: productName
                   homeUrl: homeUrl
+                  gasPayer: gasPayer
                   createTime: 1
                   merchantId: 2
                   taxScale: 3
@@ -18256,6 +18626,7 @@ components:
                   type: 2
                   productName: productName
                   homeUrl: homeUrl
+                  gasPayer: gasPayer
                   createTime: 1
                   merchantId: 2
                   taxScale: 3
@@ -18284,6 +18655,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -18333,6 +18705,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -18356,6 +18729,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -18375,6 +18749,7 @@ components:
               link: link
               type: 2
               firstPaidTime: 4
+              gasPayer: gasPayer
               merchantId: 6
               taxScale: 3
               countryCode: countryCode
@@ -18414,6 +18789,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -18434,6 +18810,7 @@ components:
               id: 5
               email: email
             gateway:
+              gatewayType: 1
               gatewayName: gatewayName
               gatewayLogo: gatewayLogo
               gatewayId: 6
@@ -18481,6 +18858,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -18504,6 +18882,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -18527,6 +18906,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -18552,6 +18932,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -18575,6 +18956,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -18603,6 +18985,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -18652,6 +19035,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -18675,6 +19059,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -18698,6 +19083,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -18723,6 +19109,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -18746,6 +19133,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -18774,6 +19162,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -18838,6 +19227,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -18861,6 +19251,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -18884,6 +19275,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -18909,6 +19301,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -18932,6 +19325,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -18960,6 +19354,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -19009,6 +19404,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -19032,6 +19428,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -19055,6 +19452,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -19080,6 +19478,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -19103,6 +19502,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -19131,6 +19531,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -19201,6 +19602,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -19224,6 +19626,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -19256,6 +19659,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -19284,6 +19688,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -19307,6 +19712,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -19339,6 +19745,7 @@ components:
             type: 2
             productName: productName
             homeUrl: homeUrl
+            gasPayer: gasPayer
             createTime: 1
             merchantId: 2
             taxScale: 3
@@ -19382,6 +19789,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -19405,6 +19813,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -19437,6 +19846,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3
@@ -19465,6 +19875,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -19488,6 +19899,7 @@ components:
                 type: 2
                 productName: productName
                 homeUrl: homeUrl
+                gasPayer: gasPayer
                 createTime: 1
                 merchantId: 2
                 taxScale: 3
@@ -19520,6 +19932,7 @@ components:
               type: 2
               productName: productName
               homeUrl: homeUrl
+              gasPayer: gasPayer
               createTime: 1
               merchantId: 2
               taxScale: 3

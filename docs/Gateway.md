@@ -200,7 +200,7 @@ No authorization required
 
 ## GatewaySetupWebhookPost
 
-> MerchantAuthSsoLoginOTPPost200Response GatewaySetupWebhookPost(ctx).UnibeeApiMerchantGatewaySetupWebhookReq(unibeeApiMerchantGatewaySetupWebhookReq).Execute()
+> MerchantGatewaySetupWebhookPost200Response GatewaySetupWebhookPost(ctx).UnibeeApiMerchantGatewaySetupWebhookReq(unibeeApiMerchantGatewaySetupWebhookReq).Execute()
 
 Gateway Webhook Setup
 
@@ -226,7 +226,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Gateway.GatewaySetupWebhookPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GatewaySetupWebhookPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `GatewaySetupWebhookPost`: MerchantGatewaySetupWebhookPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Gateway.GatewaySetupWebhookPost`: %v\n", resp)
 }
 ```
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantGatewaySetupWebhookPost200Response**](MerchantGatewaySetupWebhookPost200Response.md)
 
 ### Authorization
 

@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**PaymentCapturePost**](Payment.md#PaymentCapturePost) | **Post** /merchant/payment/capture | Capture Payment
 [**PaymentDetailGet**](Payment.md#PaymentDetailGet) | **Get** /merchant/payment/detail | Query Payment Detail
 [**PaymentListGet**](Payment.md#PaymentListGet) | **Get** /merchant/payment/list | Query Payment List
+[**PaymentMethodListGet**](Payment.md#PaymentMethodListGet) | **Get** /merchant/payment/method_list | Query Payment Method List
 [**PaymentNewPost**](Payment.md#PaymentNewPost) | **Post** /merchant/payment/new | New Payment
 [**PaymentRefundCancelPost**](Payment.md#PaymentRefundCancelPost) | **Post** /merchant/payment/refund/cancel | Cancel Payment Refund
 [**PaymentRefundDetailGet**](Payment.md#PaymentRefundDetailGet) | **Get** /merchant/payment/refund/detail | Query Payment Refund Detail
@@ -276,6 +277,74 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantPaymentListGet200Response**](MerchantPaymentListGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PaymentMethodListGet
+
+> MerchantPaymentMethodListGet200Response PaymentMethodListGet(ctx).GatewayId(gatewayId).UserId(userId).PaymentId(paymentId).Execute()
+
+Query Payment Method List
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	gatewayId := int64(789) // int64 | GatewayId
+	userId := int64(789) // int64 | UserId (optional)
+	paymentId := "paymentId_example" // string | PaymentId (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Payment.PaymentMethodListGet(context.Background()).GatewayId(gatewayId).UserId(userId).PaymentId(paymentId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Payment.PaymentMethodListGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PaymentMethodListGet`: MerchantPaymentMethodListGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `Payment.PaymentMethodListGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPaymentMethodListGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **gatewayId** | **int64** | GatewayId | 
+ **userId** | **int64** | UserId | 
+ **paymentId** | **string** | PaymentId | 
+
+### Return type
+
+[**MerchantPaymentMethodListGet200Response**](MerchantPaymentMethodListGet200Response.md)
 
 ### Authorization
 

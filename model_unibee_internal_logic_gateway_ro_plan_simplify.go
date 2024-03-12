@@ -30,6 +30,8 @@ type UnibeeInternalLogicGatewayRoPlanSimplify struct {
 	// description
 	Description *string `json:"description,omitempty"`
 	ExtraMetricData *string `json:"extraMetricData,omitempty"`
+	// who pay the gas, merchant|user
+	GasPayer *string `json:"gasPayer,omitempty"`
 	// home_url
 	HomeUrl *string `json:"homeUrl,omitempty"`
 	Id *int64 `json:"id,omitempty"`
@@ -265,6 +267,38 @@ func (o *UnibeeInternalLogicGatewayRoPlanSimplify) HasExtraMetricData() bool {
 // SetExtraMetricData gets a reference to the given string and assigns it to the ExtraMetricData field.
 func (o *UnibeeInternalLogicGatewayRoPlanSimplify) SetExtraMetricData(v string) {
 	o.ExtraMetricData = &v
+}
+
+// GetGasPayer returns the GasPayer field value if set, zero value otherwise.
+func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetGasPayer() string {
+	if o == nil || IsNil(o.GasPayer) {
+		var ret string
+		return ret
+	}
+	return *o.GasPayer
+}
+
+// GetGasPayerOk returns a tuple with the GasPayer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeInternalLogicGatewayRoPlanSimplify) GetGasPayerOk() (*string, bool) {
+	if o == nil || IsNil(o.GasPayer) {
+		return nil, false
+	}
+	return o.GasPayer, true
+}
+
+// HasGasPayer returns a boolean if a field has been set.
+func (o *UnibeeInternalLogicGatewayRoPlanSimplify) HasGasPayer() bool {
+	if o != nil && !IsNil(o.GasPayer) {
+		return true
+	}
+
+	return false
+}
+
+// SetGasPayer gets a reference to the given string and assigns it to the GasPayer field.
+func (o *UnibeeInternalLogicGatewayRoPlanSimplify) SetGasPayer(v string) {
+	o.GasPayer = &v
 }
 
 // GetHomeUrl returns the HomeUrl field value if set, zero value otherwise.
@@ -742,6 +776,9 @@ func (o UnibeeInternalLogicGatewayRoPlanSimplify) ToMap() (map[string]interface{
 	}
 	if !IsNil(o.ExtraMetricData) {
 		toSerialize["extraMetricData"] = o.ExtraMetricData
+	}
+	if !IsNil(o.GasPayer) {
+		toSerialize["gasPayer"] = o.GasPayer
 	}
 	if !IsNil(o.HomeUrl) {
 		toSerialize["homeUrl"] = o.HomeUrl

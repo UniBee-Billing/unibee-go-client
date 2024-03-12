@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Currency** | Pointer to **string** | currency | [optional] 
 **Description** | Pointer to **string** | description | [optional] 
 **ExtraMetricData** | Pointer to **string** |  | [optional] 
+**GasPayer** | Pointer to **string** | who pay the gas, merchant|user | [optional] 
 **GatewayProductDescription** | Pointer to **string** | gateway product description | [optional] 
 **GatewayProductName** | Pointer to **string** | gateway product name | [optional] 
 **GmtCreate** | Pointer to **string** | create time | [optional] 
@@ -223,6 +224,31 @@ SetExtraMetricData sets ExtraMetricData field to given value.
 `func (o *UnibeeInternalModelEntityOverseaPayPlan) HasExtraMetricData() bool`
 
 HasExtraMetricData returns a boolean if a field has been set.
+
+### GetGasPayer
+
+`func (o *UnibeeInternalModelEntityOverseaPayPlan) GetGasPayer() string`
+
+GetGasPayer returns the GasPayer field if non-nil, zero value otherwise.
+
+### GetGasPayerOk
+
+`func (o *UnibeeInternalModelEntityOverseaPayPlan) GetGasPayerOk() (*string, bool)`
+
+GetGasPayerOk returns a tuple with the GasPayer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGasPayer
+
+`func (o *UnibeeInternalModelEntityOverseaPayPlan) SetGasPayer(v string)`
+
+SetGasPayer sets GasPayer field to given value.
+
+### HasGasPayer
+
+`func (o *UnibeeInternalModelEntityOverseaPayPlan) HasGasPayer() bool`
+
+HasGasPayer returns a boolean if a field has been set.
 
 ### GetGatewayProductDescription
 

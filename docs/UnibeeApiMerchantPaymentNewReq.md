@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Email** | **string** | Email | 
 **ExternalPaymentId** | **string** | ExternalPaymentId should unique for payment | 
 **ExternalUserId** | **string** | ExternalUserId, should unique for user | 
+**GasPayer** | Pointer to **string** | who pay the gas, merchant|user | [optional] 
 **GatewayId** | **int64** | GatewayId | 
 **Items** | Pointer to [**[]UnibeeApiMerchantPaymentItem**](UnibeeApiMerchantPaymentItem.md) | Items | [optional] 
 **Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
@@ -138,6 +139,31 @@ and a boolean to check if the value has been set.
 
 SetExternalUserId sets ExternalUserId field to given value.
 
+
+### GetGasPayer
+
+`func (o *UnibeeApiMerchantPaymentNewReq) GetGasPayer() string`
+
+GetGasPayer returns the GasPayer field if non-nil, zero value otherwise.
+
+### GetGasPayerOk
+
+`func (o *UnibeeApiMerchantPaymentNewReq) GetGasPayerOk() (*string, bool)`
+
+GetGasPayerOk returns a tuple with the GasPayer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGasPayer
+
+`func (o *UnibeeApiMerchantPaymentNewReq) SetGasPayer(v string)`
+
+SetGasPayer sets GasPayer field to given value.
+
+### HasGasPayer
+
+`func (o *UnibeeApiMerchantPaymentNewReq) HasGasPayer() bool`
+
+HasGasPayer returns a boolean if a field has been set.
 
 ### GetGatewayId
 

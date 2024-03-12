@@ -32,6 +32,8 @@ type UnibeeInternalModelEntityOverseaPayPlan struct {
 	// description
 	Description *string `json:"description,omitempty"`
 	ExtraMetricData *string `json:"extraMetricData,omitempty"`
+	// who pay the gas, merchant|user
+	GasPayer *string `json:"gasPayer,omitempty"`
 	// gateway product description
 	GatewayProductDescription *string `json:"gatewayProductDescription,omitempty"`
 	// gateway product name
@@ -308,6 +310,38 @@ func (o *UnibeeInternalModelEntityOverseaPayPlan) HasExtraMetricData() bool {
 // SetExtraMetricData gets a reference to the given string and assigns it to the ExtraMetricData field.
 func (o *UnibeeInternalModelEntityOverseaPayPlan) SetExtraMetricData(v string) {
 	o.ExtraMetricData = &v
+}
+
+// GetGasPayer returns the GasPayer field value if set, zero value otherwise.
+func (o *UnibeeInternalModelEntityOverseaPayPlan) GetGasPayer() string {
+	if o == nil || IsNil(o.GasPayer) {
+		var ret string
+		return ret
+	}
+	return *o.GasPayer
+}
+
+// GetGasPayerOk returns a tuple with the GasPayer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeInternalModelEntityOverseaPayPlan) GetGasPayerOk() (*string, bool) {
+	if o == nil || IsNil(o.GasPayer) {
+		return nil, false
+	}
+	return o.GasPayer, true
+}
+
+// HasGasPayer returns a boolean if a field has been set.
+func (o *UnibeeInternalModelEntityOverseaPayPlan) HasGasPayer() bool {
+	if o != nil && !IsNil(o.GasPayer) {
+		return true
+	}
+
+	return false
+}
+
+// SetGasPayer gets a reference to the given string and assigns it to the GasPayer field.
+func (o *UnibeeInternalModelEntityOverseaPayPlan) SetGasPayer(v string) {
+	o.GasPayer = &v
 }
 
 // GetGatewayProductDescription returns the GatewayProductDescription field value if set, zero value otherwise.
@@ -916,6 +950,9 @@ func (o UnibeeInternalModelEntityOverseaPayPlan) ToMap() (map[string]interface{}
 	}
 	if !IsNil(o.ExtraMetricData) {
 		toSerialize["extraMetricData"] = o.ExtraMetricData
+	}
+	if !IsNil(o.GasPayer) {
+		toSerialize["gasPayer"] = o.GasPayer
 	}
 	if !IsNil(o.GatewayProductDescription) {
 		toSerialize["gatewayProductDescription"] = o.GatewayProductDescription

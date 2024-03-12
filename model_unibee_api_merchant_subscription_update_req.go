@@ -33,8 +33,8 @@ type UnibeeApiMerchantSubscriptionUpdateReq struct {
 	NewPlanId int64 `json:"newPlanId"`
 	// prorationDate date to start Proration，Get From Preview
 	ProrationDate int64 `json:"prorationDate"`
-	// Quantity，Default 1
-	Quantity *int64 `json:"quantity,omitempty"`
+	// Quantity
+	Quantity int64 `json:"quantity"`
 	// SubscriptionId
 	SubscriptionId string `json:"subscriptionId"`
 	// Effect Immediate，1-Immediate，2-Next Period
@@ -47,12 +47,13 @@ type _UnibeeApiMerchantSubscriptionUpdateReq UnibeeApiMerchantSubscriptionUpdate
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiMerchantSubscriptionUpdateReq(confirmCurrency string, confirmTotalAmount int64, newPlanId int64, prorationDate int64, subscriptionId string) *UnibeeApiMerchantSubscriptionUpdateReq {
+func NewUnibeeApiMerchantSubscriptionUpdateReq(confirmCurrency string, confirmTotalAmount int64, newPlanId int64, prorationDate int64, quantity int64, subscriptionId string) *UnibeeApiMerchantSubscriptionUpdateReq {
 	this := UnibeeApiMerchantSubscriptionUpdateReq{}
 	this.ConfirmCurrency = confirmCurrency
 	this.ConfirmTotalAmount = confirmTotalAmount
 	this.NewPlanId = newPlanId
 	this.ProrationDate = prorationDate
+	this.Quantity = quantity
 	this.SubscriptionId = subscriptionId
 	return &this
 }
@@ -225,36 +226,28 @@ func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetProrationDate(v int64) {
 	o.ProrationDate = v
 }
 
-// GetQuantity returns the Quantity field value if set, zero value otherwise.
+// GetQuantity returns the Quantity field value
 func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetQuantity() int64 {
-	if o == nil || IsNil(o.Quantity) {
+	if o == nil {
 		var ret int64
 		return ret
 	}
-	return *o.Quantity
+
+	return o.Quantity
 }
 
-// GetQuantityOk returns a tuple with the Quantity field value if set, nil otherwise
+// GetQuantityOk returns a tuple with the Quantity field value
 // and a boolean to check if the value has been set.
 func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetQuantityOk() (*int64, bool) {
-	if o == nil || IsNil(o.Quantity) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Quantity, true
+	return &o.Quantity, true
 }
 
-// HasQuantity returns a boolean if a field has been set.
-func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasQuantity() bool {
-	if o != nil && !IsNil(o.Quantity) {
-		return true
-	}
-
-	return false
-}
-
-// SetQuantity gets a reference to the given int64 and assigns it to the Quantity field.
+// SetQuantity sets field value
 func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetQuantity(v int64) {
-	o.Quantity = &v
+	o.Quantity = v
 }
 
 // GetSubscriptionId returns the SubscriptionId field value
@@ -333,9 +326,7 @@ func (o UnibeeApiMerchantSubscriptionUpdateReq) ToMap() (map[string]interface{},
 	}
 	toSerialize["newPlanId"] = o.NewPlanId
 	toSerialize["prorationDate"] = o.ProrationDate
-	if !IsNil(o.Quantity) {
-		toSerialize["quantity"] = o.Quantity
-	}
+	toSerialize["quantity"] = o.Quantity
 	toSerialize["subscriptionId"] = o.SubscriptionId
 	if !IsNil(o.WithImmediateEffect) {
 		toSerialize["withImmediateEffect"] = o.WithImmediateEffect
@@ -352,6 +343,7 @@ func (o *UnibeeApiMerchantSubscriptionUpdateReq) UnmarshalJSON(data []byte) (err
 		"confirmTotalAmount",
 		"newPlanId",
 		"prorationDate",
+		"quantity",
 		"subscriptionId",
 	}
 

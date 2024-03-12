@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
 **NewPlanId** | **int64** | New PlanId | 
 **ProrationDate** | **int64** | prorationDate date to start Proration，Get From Preview | 
-**Quantity** | Pointer to **int64** | Quantity，Default 1 | [optional] 
+**Quantity** | **int64** | Quantity | 
 **SubscriptionId** | **string** | SubscriptionId | 
 **WithImmediateEffect** | Pointer to **int32** | Effect Immediate，1-Immediate，2-Next Period | [optional] 
 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewUnibeeApiMerchantSubscriptionUpdateReq
 
-`func NewUnibeeApiMerchantSubscriptionUpdateReq(confirmCurrency string, confirmTotalAmount int64, newPlanId int64, prorationDate int64, subscriptionId string, ) *UnibeeApiMerchantSubscriptionUpdateReq`
+`func NewUnibeeApiMerchantSubscriptionUpdateReq(confirmCurrency string, confirmTotalAmount int64, newPlanId int64, prorationDate int64, quantity int64, subscriptionId string, ) *UnibeeApiMerchantSubscriptionUpdateReq`
 
 NewUnibeeApiMerchantSubscriptionUpdateReq instantiates a new UnibeeApiMerchantSubscriptionUpdateReq object
 This constructor will assign default values to properties that have it defined,
@@ -182,11 +182,6 @@ and a boolean to check if the value has been set.
 
 SetQuantity sets Quantity field to given value.
 
-### HasQuantity
-
-`func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasQuantity() bool`
-
-HasQuantity returns a boolean if a field has been set.
 
 ### GetSubscriptionId
 

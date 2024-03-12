@@ -128,6 +128,7 @@ Class | Method | HTTP request | Description
 *Payment* | [**PaymentCapturePost**](docs/Payment.md#paymentcapturepost) | **Post** /merchant/payment/capture | Capture Payment
 *Payment* | [**PaymentDetailGet**](docs/Payment.md#paymentdetailget) | **Get** /merchant/payment/detail | Query Payment Detail
 *Payment* | [**PaymentListGet**](docs/Payment.md#paymentlistget) | **Get** /merchant/payment/list | Query Payment List
+*Payment* | [**PaymentMethodListGet**](docs/Payment.md#paymentmethodlistget) | **Get** /merchant/payment/method_list | Query Payment Method List
 *Payment* | [**PaymentNewPost**](docs/Payment.md#paymentnewpost) | **Post** /merchant/payment/new | New Payment
 *Payment* | [**PaymentRefundCancelPost**](docs/Payment.md#paymentrefundcancelpost) | **Post** /merchant/payment/refund/cancel | Cancel Payment Refund
 *Payment* | [**PaymentRefundDetailGet**](docs/Payment.md#paymentrefunddetailget) | **Get** /merchant/payment/refund/detail | Query Payment Refund Detail
@@ -207,6 +208,8 @@ Class | Method | HTTP request | Description
  - [MerchantEmailTemplateListGet200ResponseData](docs/MerchantEmailTemplateListGet200ResponseData.md)
  - [MerchantGatewayListGet200Response](docs/MerchantGatewayListGet200Response.md)
  - [MerchantGatewayListGet200ResponseData](docs/MerchantGatewayListGet200ResponseData.md)
+ - [MerchantGatewaySetupWebhookPost200Response](docs/MerchantGatewaySetupWebhookPost200Response.md)
+ - [MerchantGatewaySetupWebhookPost200ResponseData](docs/MerchantGatewaySetupWebhookPost200ResponseData.md)
  - [MerchantGetGet200Response](docs/MerchantGetGet200Response.md)
  - [MerchantGetGet200ResponseData](docs/MerchantGetGet200ResponseData.md)
  - [MerchantInvoiceDetailGet200Response](docs/MerchantInvoiceDetailGet200Response.md)
@@ -233,6 +236,8 @@ Class | Method | HTTP request | Description
  - [MerchantPaymentDetailGet200ResponseData](docs/MerchantPaymentDetailGet200ResponseData.md)
  - [MerchantPaymentListGet200Response](docs/MerchantPaymentListGet200Response.md)
  - [MerchantPaymentListGet200ResponseData](docs/MerchantPaymentListGet200ResponseData.md)
+ - [MerchantPaymentMethodListGet200Response](docs/MerchantPaymentMethodListGet200Response.md)
+ - [MerchantPaymentMethodListGet200ResponseData](docs/MerchantPaymentMethodListGet200ResponseData.md)
  - [MerchantPaymentNewPost200Response](docs/MerchantPaymentNewPost200Response.md)
  - [MerchantPaymentNewPost200ResponseData](docs/MerchantPaymentNewPost200ResponseData.md)
  - [MerchantPaymentRefundDetailGet200Response](docs/MerchantPaymentRefundDetailGet200Response.md)
@@ -305,6 +310,7 @@ Class | Method | HTTP request | Description
  - [UnibeeApiMerchantGatewayListRes](docs/UnibeeApiMerchantGatewayListRes.md)
  - [UnibeeApiMerchantGatewaySetupReq](docs/UnibeeApiMerchantGatewaySetupReq.md)
  - [UnibeeApiMerchantGatewaySetupWebhookReq](docs/UnibeeApiMerchantGatewaySetupWebhookReq.md)
+ - [UnibeeApiMerchantGatewaySetupWebhookRes](docs/UnibeeApiMerchantGatewaySetupWebhookRes.md)
  - [UnibeeApiMerchantInvoiceCancelReq](docs/UnibeeApiMerchantInvoiceCancelReq.md)
  - [UnibeeApiMerchantInvoiceDeleteReq](docs/UnibeeApiMerchantInvoiceDeleteReq.md)
  - [UnibeeApiMerchantInvoiceDetailReq](docs/UnibeeApiMerchantInvoiceDetailReq.md)
@@ -353,6 +359,8 @@ Class | Method | HTTP request | Description
  - [UnibeeApiMerchantPaymentItem](docs/UnibeeApiMerchantPaymentItem.md)
  - [UnibeeApiMerchantPaymentListReq](docs/UnibeeApiMerchantPaymentListReq.md)
  - [UnibeeApiMerchantPaymentListRes](docs/UnibeeApiMerchantPaymentListRes.md)
+ - [UnibeeApiMerchantPaymentMethodListReq](docs/UnibeeApiMerchantPaymentMethodListReq.md)
+ - [UnibeeApiMerchantPaymentMethodListRes](docs/UnibeeApiMerchantPaymentMethodListRes.md)
  - [UnibeeApiMerchantPaymentNewPaymentRefundReq](docs/UnibeeApiMerchantPaymentNewPaymentRefundReq.md)
  - [UnibeeApiMerchantPaymentNewPaymentRefundRes](docs/UnibeeApiMerchantPaymentNewPaymentRefundRes.md)
  - [UnibeeApiMerchantPaymentNewReq](docs/UnibeeApiMerchantPaymentNewReq.md)
@@ -436,8 +444,6 @@ Class | Method | HTTP request | Description
  - [UnibeeApiSystemInformationGetRes](docs/UnibeeApiSystemInformationGetRes.md)
  - [UnibeeApiSystemInvoiceBulkChannelSyncReq](docs/UnibeeApiSystemInvoiceBulkChannelSyncReq.md)
  - [UnibeeApiSystemInvoiceChannelSyncReq](docs/UnibeeApiSystemInvoiceChannelSyncReq.md)
- - [UnibeeApiSystemPaymentGatewayPaymentMethodListReq](docs/UnibeeApiSystemPaymentGatewayPaymentMethodListReq.md)
- - [UnibeeApiSystemPaymentGatewayPaymentMethodListRes](docs/UnibeeApiSystemPaymentGatewayPaymentMethodListRes.md)
  - [UnibeeApiSystemPaymentPaymentCallbackAgainReq](docs/UnibeeApiSystemPaymentPaymentCallbackAgainReq.md)
  - [UnibeeApiSystemRefundBulkChannelSyncReq](docs/UnibeeApiSystemRefundBulkChannelSyncReq.md)
  - [UnibeeApiSystemSubscriptionTestClockWalkReq](docs/UnibeeApiSystemSubscriptionTestClockWalkReq.md)

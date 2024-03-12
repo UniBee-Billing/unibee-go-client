@@ -84,14 +84,23 @@ type Configuration struct {
 
 // NewConfiguration returns a new Configuration object
 func NewConfiguration() *Configuration {
+	if len(ApiKey) == 0 {
+		panic("UniBee Apikey Not Set, unibee.ApiKey = ${your_api_key}")
+	}
+	if len(Host) == 0 {
+		panic("UniBee Host Not Set, unibee.Host = ${unibee_host}")
+	}
+	if !strings.HasPrefix(Host,"http") {
+		panic("UniBee Host Invalid")
+	}
 	cfg := &Configuration{
-		DefaultHeader:    make(map[string]string),
+		DefaultHeader:    map[string]string{"Authorization": "Bearer "+ApiKey},
 		UserAgent:        "OpenAPI-Generator/1.0.0/go",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
-				URL: "",
-				Description: "No description provided",
+				URL: Host,
+				Description: "UniBee Api Host",
 			},
 		},
 		OperationServers: map[string]ServerConfigurations{

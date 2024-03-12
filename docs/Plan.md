@@ -628,7 +628,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantPlanNewReq := *openapiclient.NewUnibeeApiMerchantPlanNewReq(int64(123), "Currency_example", "IntervalUnit_example", "PlanName_example") // UnibeeApiMerchantPlanNewReq | 
+	unibeeApiMerchantPlanNewReq := *openapiclient.NewUnibeeApiMerchantPlanNewReq(int64(123), "Currency_example", int32(123), "IntervalUnit_example", "PlanName_example") // UnibeeApiMerchantPlanNewReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

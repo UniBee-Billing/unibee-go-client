@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **GatewayId** | Pointer to **int64** |  | [optional] 
 **GatewayLogo** | Pointer to **string** |  | [optional] 
 **GatewayName** | Pointer to **string** |  | [optional] 
+**GatewayType** | Pointer to **int64** | gateway type，1-Default｜ 2-Crypto | [optional] 
 
 ## Methods
 
@@ -101,6 +102,31 @@ SetGatewayName sets GatewayName field to given value.
 `func (o *UnibeeInternalLogicGatewayRoGatewaySimplify) HasGatewayName() bool`
 
 HasGatewayName returns a boolean if a field has been set.
+
+### GetGatewayType
+
+`func (o *UnibeeInternalLogicGatewayRoGatewaySimplify) GetGatewayType() int64`
+
+GetGatewayType returns the GatewayType field if non-nil, zero value otherwise.
+
+### GetGatewayTypeOk
+
+`func (o *UnibeeInternalLogicGatewayRoGatewaySimplify) GetGatewayTypeOk() (*int64, bool)`
+
+GetGatewayTypeOk returns a tuple with the GatewayType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayType
+
+`func (o *UnibeeInternalLogicGatewayRoGatewaySimplify) SetGatewayType(v int64)`
+
+SetGatewayType sets GatewayType field to given value.
+
+### HasGatewayType
+
+`func (o *UnibeeInternalLogicGatewayRoGatewaySimplify) HasGatewayType() bool`
+
+HasGatewayType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

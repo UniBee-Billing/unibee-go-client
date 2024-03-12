@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **Currency** | Pointer to **string** | currency，“SGD” “MYR” “PHP” “IDR” “THB” | [optional] 
 **ExternalPaymentId** | Pointer to **string** | external_payment_id | [optional] 
 **FailureReason** | Pointer to **string** |  | [optional] 
+**GasPayer** | Pointer to **string** | who pay the gas, merchant|user | [optional] 
 **GatewayId** | Pointer to **int64** | gateway_id | [optional] 
 **GatewayPaymentId** | Pointer to **string** | gateway_payment_id | [optional] 
 **InvoiceId** | Pointer to **string** | invoice id | [optional] 
@@ -324,6 +325,31 @@ SetFailureReason sets FailureReason field to given value.
 `func (o *UnibeeInternalLogicGatewayRoPaymentSimplify) HasFailureReason() bool`
 
 HasFailureReason returns a boolean if a field has been set.
+
+### GetGasPayer
+
+`func (o *UnibeeInternalLogicGatewayRoPaymentSimplify) GetGasPayer() string`
+
+GetGasPayer returns the GasPayer field if non-nil, zero value otherwise.
+
+### GetGasPayerOk
+
+`func (o *UnibeeInternalLogicGatewayRoPaymentSimplify) GetGasPayerOk() (*string, bool)`
+
+GetGasPayerOk returns a tuple with the GasPayer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGasPayer
+
+`func (o *UnibeeInternalLogicGatewayRoPaymentSimplify) SetGasPayer(v string)`
+
+SetGasPayer sets GasPayer field to given value.
+
+### HasGasPayer
+
+`func (o *UnibeeInternalLogicGatewayRoPaymentSimplify) HasGasPayer() bool`
+
+HasGasPayer returns a boolean if a field has been set.
 
 ### GetGatewayId
 

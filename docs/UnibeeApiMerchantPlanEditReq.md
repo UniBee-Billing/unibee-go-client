@@ -8,9 +8,10 @@ Name | Type | Description | Notes
 **Amount** | **int64** | Plan CaptureAmount | 
 **Currency** | **string** | Plan Currency | 
 **Description** | Pointer to **string** | Description | [optional] 
+**GasPayer** | Pointer to **string** | who pay the gas, merchant|user | [optional] 
 **HomeUrl** | Pointer to **string** | HomeUrl,Start With: http | [optional] 
 **ImageUrl** | Pointer to **string** | ImageUrl,Start With: http | [optional] 
-**IntervalCount** | Pointer to **int32** | Default 1，Number Of IntervalUnit | [optional] [default to 1]
+**IntervalCount** | Pointer to **int32** | Number Of IntervalUnit | [optional] 
 **IntervalUnit** | **string** | Plan Interval Unit，em: day|month|year|week | 
 **Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
 **MetricLimits** | Pointer to [**[]UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam**](UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam.md) | Plan&#39;s MetricLimit List | [optional] 
@@ -127,6 +128,31 @@ SetDescription sets Description field to given value.
 `func (o *UnibeeApiMerchantPlanEditReq) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetGasPayer
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetGasPayer() string`
+
+GetGasPayer returns the GasPayer field if non-nil, zero value otherwise.
+
+### GetGasPayerOk
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetGasPayerOk() (*string, bool)`
+
+GetGasPayerOk returns a tuple with the GasPayer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGasPayer
+
+`func (o *UnibeeApiMerchantPlanEditReq) SetGasPayer(v string)`
+
+SetGasPayer sets GasPayer field to given value.
+
+### HasGasPayer
+
+`func (o *UnibeeApiMerchantPlanEditReq) HasGasPayer() bool`
+
+HasGasPayer returns a boolean if a field has been set.
 
 ### GetHomeUrl
 

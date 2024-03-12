@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **CurrentPeriodStart** | Pointer to **int64** | current_period_start, utc time | [optional] 
 **DunningTime** | Pointer to **int64** | dunning_time, utc time | [optional] 
 **FirstPaidTime** | Pointer to **int64** | first success payment time | [optional] 
+**GasPayer** | Pointer to **string** | who pay the gas, merchant|user | [optional] 
 **GatewayId** | Pointer to **int64** | gateway_id | [optional] 
 **GatewayItemData** | Pointer to **string** | gateway_item_data | [optional] 
 **GatewayStatus** | Pointer to **string** | gateway status，Stripe：https://stripe.com/docs/billing/subscriptions/webhooks  Paypal：https://developer.paypal.com/docs/api/subscriptions/v1/#subscriptions_get | [optional] 
@@ -357,6 +358,31 @@ SetFirstPaidTime sets FirstPaidTime field to given value.
 `func (o *UnibeeInternalLogicGatewayRoSubscriptionSimplify) HasFirstPaidTime() bool`
 
 HasFirstPaidTime returns a boolean if a field has been set.
+
+### GetGasPayer
+
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionSimplify) GetGasPayer() string`
+
+GetGasPayer returns the GasPayer field if non-nil, zero value otherwise.
+
+### GetGasPayerOk
+
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionSimplify) GetGasPayerOk() (*string, bool)`
+
+GetGasPayerOk returns a tuple with the GasPayer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGasPayer
+
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionSimplify) SetGasPayer(v string)`
+
+SetGasPayer sets GasPayer field to given value.
+
+### HasGasPayer
+
+`func (o *UnibeeInternalLogicGatewayRoSubscriptionSimplify) HasGasPayer() bool`
+
+HasGasPayer returns a boolean if a field has been set.
 
 ### GetGatewayId
 

@@ -543,6 +543,134 @@ func (a *PaymentService) PaymentListGetExecute(r PaymentPaymentListGetRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type PaymentPaymentMethodListGetRequest struct {
+	ctx context.Context
+	ApiService *PaymentService
+	gatewayId *int64
+	userId *int64
+	paymentId *string
+}
+
+// GatewayId
+func (r PaymentPaymentMethodListGetRequest) GatewayId(gatewayId int64) PaymentPaymentMethodListGetRequest {
+	r.gatewayId = &gatewayId
+	return r
+}
+
+// UserId
+func (r PaymentPaymentMethodListGetRequest) UserId(userId int64) PaymentPaymentMethodListGetRequest {
+	r.userId = &userId
+	return r
+}
+
+// PaymentId
+func (r PaymentPaymentMethodListGetRequest) PaymentId(paymentId string) PaymentPaymentMethodListGetRequest {
+	r.paymentId = &paymentId
+	return r
+}
+
+func (r PaymentPaymentMethodListGetRequest) Execute() (*MerchantPaymentMethodListGet200Response, *http.Response, error) {
+	return r.ApiService.PaymentMethodListGetExecute(r)
+}
+
+/*
+PaymentMethodListGet Query Payment Method List
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return PaymentPaymentMethodListGetRequest
+*/
+func (a *PaymentService) PaymentMethodListGet(ctx context.Context) PaymentPaymentMethodListGetRequest {
+	return PaymentPaymentMethodListGetRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return MerchantPaymentMethodListGet200Response
+func (a *PaymentService) PaymentMethodListGetExecute(r PaymentPaymentMethodListGetRequest) (*MerchantPaymentMethodListGet200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *MerchantPaymentMethodListGet200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentService.PaymentMethodListGet")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/merchant/payment/method_list"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.gatewayId == nil {
+		return localVarReturnValue, nil, reportError("gatewayId is required and must be specified")
+	}
+
+	parameterAddToHeaderOrQuery(localVarQueryParams, "gatewayId", r.gatewayId, "")
+	if r.userId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "userId", r.userId, "")
+	}
+	if r.paymentId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "paymentId", r.paymentId, "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type PaymentPaymentNewPostRequest struct {
 	ctx context.Context
 	ApiService *PaymentService

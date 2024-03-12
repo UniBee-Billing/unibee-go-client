@@ -48,6 +48,9 @@ const (
 	UNIBEE_WEBHOOK_EVENT_REFUND_REVERSE         = "refund.reverse"
 )
 
+var ApiKey string
+var Host string
+
 // AppInfo contains information about the "app" which this integration belongs
 // to. This should be reserved for plugins that wish to identify themselves
 // with Stripe.

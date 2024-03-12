@@ -48,6 +48,8 @@ type UnibeeInternalModelEntityOverseaPaySubscription struct {
 	DunningTime *int64 `json:"dunningTime,omitempty"`
 	// first success payment time
 	FirstPaidTime *int64 `json:"firstPaidTime,omitempty"`
+	// who pay the gas, merchant|user
+	GasPayer *string `json:"gasPayer,omitempty"`
 	GatewayDefaultPaymentMethod *string `json:"gatewayDefaultPaymentMethod,omitempty"`
 	// gateway_id
 	GatewayId *int64 `json:"gatewayId,omitempty"`
@@ -660,6 +662,38 @@ func (o *UnibeeInternalModelEntityOverseaPaySubscription) HasFirstPaidTime() boo
 // SetFirstPaidTime gets a reference to the given int64 and assigns it to the FirstPaidTime field.
 func (o *UnibeeInternalModelEntityOverseaPaySubscription) SetFirstPaidTime(v int64) {
 	o.FirstPaidTime = &v
+}
+
+// GetGasPayer returns the GasPayer field value if set, zero value otherwise.
+func (o *UnibeeInternalModelEntityOverseaPaySubscription) GetGasPayer() string {
+	if o == nil || IsNil(o.GasPayer) {
+		var ret string
+		return ret
+	}
+	return *o.GasPayer
+}
+
+// GetGasPayerOk returns a tuple with the GasPayer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeInternalModelEntityOverseaPaySubscription) GetGasPayerOk() (*string, bool) {
+	if o == nil || IsNil(o.GasPayer) {
+		return nil, false
+	}
+	return o.GasPayer, true
+}
+
+// HasGasPayer returns a boolean if a field has been set.
+func (o *UnibeeInternalModelEntityOverseaPaySubscription) HasGasPayer() bool {
+	if o != nil && !IsNil(o.GasPayer) {
+		return true
+	}
+
+	return false
+}
+
+// SetGasPayer gets a reference to the given string and assigns it to the GasPayer field.
+func (o *UnibeeInternalModelEntityOverseaPaySubscription) SetGasPayer(v string) {
+	o.GasPayer = &v
 }
 
 // GetGatewayDefaultPaymentMethod returns the GatewayDefaultPaymentMethod field value if set, zero value otherwise.
@@ -1682,6 +1716,9 @@ func (o UnibeeInternalModelEntityOverseaPaySubscription) ToMap() (map[string]int
 	}
 	if !IsNil(o.FirstPaidTime) {
 		toSerialize["firstPaidTime"] = o.FirstPaidTime
+	}
+	if !IsNil(o.GasPayer) {
+		toSerialize["gasPayer"] = o.GasPayer
 	}
 	if !IsNil(o.GatewayDefaultPaymentMethod) {
 		toSerialize["gatewayDefaultPaymentMethod"] = o.GatewayDefaultPaymentMethod

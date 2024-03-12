@@ -29,12 +29,14 @@ type UnibeeApiMerchantPlanNewReq struct {
 	Currency string `json:"currency"`
 	// Description
 	Description *string `json:"description,omitempty"`
+	// who pay the gas, merchant|user
+	GasPayer *string `json:"gasPayer,omitempty"`
 	// HomeUrl,Start With: http
 	HomeUrl *string `json:"homeUrl,omitempty"`
 	// ImageUrl,Start With: http
 	ImageUrl *string `json:"imageUrl,omitempty"`
-	// Default 1，Number Of IntervalUnit
-	IntervalCount *int32 `json:"intervalCount,omitempty"`
+	// Number Of IntervalUnit，em: day|month|year|week
+	IntervalCount int32 `json:"intervalCount"`
 	// Plan Interval Unit，em: day|month|year|week
 	IntervalUnit string `json:"intervalUnit"`
 	// Metadata，Map
@@ -57,12 +59,11 @@ type _UnibeeApiMerchantPlanNewReq UnibeeApiMerchantPlanNewReq
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiMerchantPlanNewReq(amount int64, currency string, intervalUnit string, planName string) *UnibeeApiMerchantPlanNewReq {
+func NewUnibeeApiMerchantPlanNewReq(amount int64, currency string, intervalCount int32, intervalUnit string, planName string) *UnibeeApiMerchantPlanNewReq {
 	this := UnibeeApiMerchantPlanNewReq{}
 	this.Amount = amount
 	this.Currency = currency
-	var intervalCount int32 = 1
-	this.IntervalCount = &intervalCount
+	this.IntervalCount = intervalCount
 	this.IntervalUnit = intervalUnit
 	this.PlanName = planName
 	var type_ int32 = 1
@@ -75,8 +76,6 @@ func NewUnibeeApiMerchantPlanNewReq(amount int64, currency string, intervalUnit 
 // but it doesn't guarantee that properties required by API are set
 func NewUnibeeApiMerchantPlanNewReqWithDefaults() *UnibeeApiMerchantPlanNewReq {
 	this := UnibeeApiMerchantPlanNewReq{}
-	var intervalCount int32 = 1
-	this.IntervalCount = &intervalCount
 	var type_ int32 = 1
 	this.Type = &type_
 	return &this
@@ -194,6 +193,38 @@ func (o *UnibeeApiMerchantPlanNewReq) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetGasPayer returns the GasPayer field value if set, zero value otherwise.
+func (o *UnibeeApiMerchantPlanNewReq) GetGasPayer() string {
+	if o == nil || IsNil(o.GasPayer) {
+		var ret string
+		return ret
+	}
+	return *o.GasPayer
+}
+
+// GetGasPayerOk returns a tuple with the GasPayer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiMerchantPlanNewReq) GetGasPayerOk() (*string, bool) {
+	if o == nil || IsNil(o.GasPayer) {
+		return nil, false
+	}
+	return o.GasPayer, true
+}
+
+// HasGasPayer returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantPlanNewReq) HasGasPayer() bool {
+	if o != nil && !IsNil(o.GasPayer) {
+		return true
+	}
+
+	return false
+}
+
+// SetGasPayer gets a reference to the given string and assigns it to the GasPayer field.
+func (o *UnibeeApiMerchantPlanNewReq) SetGasPayer(v string) {
+	o.GasPayer = &v
+}
+
 // GetHomeUrl returns the HomeUrl field value if set, zero value otherwise.
 func (o *UnibeeApiMerchantPlanNewReq) GetHomeUrl() string {
 	if o == nil || IsNil(o.HomeUrl) {
@@ -258,36 +289,28 @@ func (o *UnibeeApiMerchantPlanNewReq) SetImageUrl(v string) {
 	o.ImageUrl = &v
 }
 
-// GetIntervalCount returns the IntervalCount field value if set, zero value otherwise.
+// GetIntervalCount returns the IntervalCount field value
 func (o *UnibeeApiMerchantPlanNewReq) GetIntervalCount() int32 {
-	if o == nil || IsNil(o.IntervalCount) {
+	if o == nil {
 		var ret int32
 		return ret
 	}
-	return *o.IntervalCount
+
+	return o.IntervalCount
 }
 
-// GetIntervalCountOk returns a tuple with the IntervalCount field value if set, nil otherwise
+// GetIntervalCountOk returns a tuple with the IntervalCount field value
 // and a boolean to check if the value has been set.
 func (o *UnibeeApiMerchantPlanNewReq) GetIntervalCountOk() (*int32, bool) {
-	if o == nil || IsNil(o.IntervalCount) {
+	if o == nil {
 		return nil, false
 	}
-	return o.IntervalCount, true
+	return &o.IntervalCount, true
 }
 
-// HasIntervalCount returns a boolean if a field has been set.
-func (o *UnibeeApiMerchantPlanNewReq) HasIntervalCount() bool {
-	if o != nil && !IsNil(o.IntervalCount) {
-		return true
-	}
-
-	return false
-}
-
-// SetIntervalCount gets a reference to the given int32 and assigns it to the IntervalCount field.
+// SetIntervalCount sets field value
 func (o *UnibeeApiMerchantPlanNewReq) SetIntervalCount(v int32) {
-	o.IntervalCount = &v
+	o.IntervalCount = v
 }
 
 // GetIntervalUnit returns the IntervalUnit field value
@@ -516,15 +539,16 @@ func (o UnibeeApiMerchantPlanNewReq) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
+	if !IsNil(o.GasPayer) {
+		toSerialize["gasPayer"] = o.GasPayer
+	}
 	if !IsNil(o.HomeUrl) {
 		toSerialize["homeUrl"] = o.HomeUrl
 	}
 	if !IsNil(o.ImageUrl) {
 		toSerialize["imageUrl"] = o.ImageUrl
 	}
-	if !IsNil(o.IntervalCount) {
-		toSerialize["intervalCount"] = o.IntervalCount
-	}
+	toSerialize["intervalCount"] = o.IntervalCount
 	toSerialize["intervalUnit"] = o.IntervalUnit
 	if !IsNil(o.Metadata) {
 		toSerialize["metadata"] = o.Metadata
@@ -552,6 +576,7 @@ func (o *UnibeeApiMerchantPlanNewReq) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"amount",
 		"currency",
+		"intervalCount",
 		"intervalUnit",
 		"planName",
 	}

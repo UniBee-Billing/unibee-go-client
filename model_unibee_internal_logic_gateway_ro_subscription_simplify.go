@@ -41,6 +41,8 @@ type UnibeeInternalLogicGatewayRoSubscriptionSimplify struct {
 	DunningTime *int64 `json:"dunningTime,omitempty"`
 	// first success payment time
 	FirstPaidTime *int64 `json:"firstPaidTime,omitempty"`
+	// who pay the gas, merchant|user
+	GasPayer *string `json:"gasPayer,omitempty"`
 	// gateway_id
 	GatewayId *int64 `json:"gatewayId,omitempty"`
 	// gateway_item_data
@@ -479,6 +481,38 @@ func (o *UnibeeInternalLogicGatewayRoSubscriptionSimplify) HasFirstPaidTime() bo
 // SetFirstPaidTime gets a reference to the given int64 and assigns it to the FirstPaidTime field.
 func (o *UnibeeInternalLogicGatewayRoSubscriptionSimplify) SetFirstPaidTime(v int64) {
 	o.FirstPaidTime = &v
+}
+
+// GetGasPayer returns the GasPayer field value if set, zero value otherwise.
+func (o *UnibeeInternalLogicGatewayRoSubscriptionSimplify) GetGasPayer() string {
+	if o == nil || IsNil(o.GasPayer) {
+		var ret string
+		return ret
+	}
+	return *o.GasPayer
+}
+
+// GetGasPayerOk returns a tuple with the GasPayer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeInternalLogicGatewayRoSubscriptionSimplify) GetGasPayerOk() (*string, bool) {
+	if o == nil || IsNil(o.GasPayer) {
+		return nil, false
+	}
+	return o.GasPayer, true
+}
+
+// HasGasPayer returns a boolean if a field has been set.
+func (o *UnibeeInternalLogicGatewayRoSubscriptionSimplify) HasGasPayer() bool {
+	if o != nil && !IsNil(o.GasPayer) {
+		return true
+	}
+
+	return false
+}
+
+// SetGasPayer gets a reference to the given string and assigns it to the GasPayer field.
+func (o *UnibeeInternalLogicGatewayRoSubscriptionSimplify) SetGasPayer(v string) {
+	o.GasPayer = &v
 }
 
 // GetGatewayId returns the GatewayId field value if set, zero value otherwise.
@@ -1230,6 +1264,9 @@ func (o UnibeeInternalLogicGatewayRoSubscriptionSimplify) ToMap() (map[string]in
 	}
 	if !IsNil(o.FirstPaidTime) {
 		toSerialize["firstPaidTime"] = o.FirstPaidTime
+	}
+	if !IsNil(o.GasPayer) {
+		toSerialize["gasPayer"] = o.GasPayer
 	}
 	if !IsNil(o.GatewayId) {
 		toSerialize["gatewayId"] = o.GatewayId

@@ -346,7 +346,7 @@ func (r GatewayGatewaySetupWebhookPostRequest) UnibeeApiMerchantGatewaySetupWebh
 	return r
 }
 
-func (r GatewayGatewaySetupWebhookPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+func (r GatewayGatewaySetupWebhookPostRequest) Execute() (*MerchantGatewaySetupWebhookPost200Response, *http.Response, error) {
 	return r.ApiService.GatewaySetupWebhookPostExecute(r)
 }
 
@@ -364,13 +364,13 @@ func (a *GatewayService) GatewaySetupWebhookPost(ctx context.Context) GatewayGat
 }
 
 // Execute executes the request
-//  @return MerchantAuthSsoLoginOTPPost200Response
-func (a *GatewayService) GatewaySetupWebhookPostExecute(r GatewayGatewaySetupWebhookPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+//  @return MerchantGatewaySetupWebhookPost200Response
+func (a *GatewayService) GatewaySetupWebhookPostExecute(r GatewayGatewaySetupWebhookPostRequest) (*MerchantGatewaySetupWebhookPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *MerchantAuthSsoLoginOTPPost200Response
+		localVarReturnValue  *MerchantGatewaySetupWebhookPost200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GatewayService.GatewaySetupWebhookPost")

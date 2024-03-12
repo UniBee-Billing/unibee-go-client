@@ -29,11 +29,13 @@ type UnibeeApiMerchantPlanEditReq struct {
 	Currency string `json:"currency"`
 	// Description
 	Description *string `json:"description,omitempty"`
+	// who pay the gas, merchant|user
+	GasPayer *string `json:"gasPayer,omitempty"`
 	// HomeUrl,Start With: http
 	HomeUrl *string `json:"homeUrl,omitempty"`
 	// ImageUrl,Start With: http
 	ImageUrl *string `json:"imageUrl,omitempty"`
-	// Default 1，Number Of IntervalUnit
+	// Number Of IntervalUnit
 	IntervalCount *int32 `json:"intervalCount,omitempty"`
 	// Plan Interval Unit，em: day|month|year|week
 	IntervalUnit string `json:"intervalUnit"`
@@ -61,8 +63,6 @@ func NewUnibeeApiMerchantPlanEditReq(amount int64, currency string, intervalUnit
 	this := UnibeeApiMerchantPlanEditReq{}
 	this.Amount = amount
 	this.Currency = currency
-	var intervalCount int32 = 1
-	this.IntervalCount = &intervalCount
 	this.IntervalUnit = intervalUnit
 	this.PlanId = planId
 	this.PlanName = planName
@@ -74,8 +74,6 @@ func NewUnibeeApiMerchantPlanEditReq(amount int64, currency string, intervalUnit
 // but it doesn't guarantee that properties required by API are set
 func NewUnibeeApiMerchantPlanEditReqWithDefaults() *UnibeeApiMerchantPlanEditReq {
 	this := UnibeeApiMerchantPlanEditReq{}
-	var intervalCount int32 = 1
-	this.IntervalCount = &intervalCount
 	return &this
 }
 
@@ -189,6 +187,38 @@ func (o *UnibeeApiMerchantPlanEditReq) HasDescription() bool {
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *UnibeeApiMerchantPlanEditReq) SetDescription(v string) {
 	o.Description = &v
+}
+
+// GetGasPayer returns the GasPayer field value if set, zero value otherwise.
+func (o *UnibeeApiMerchantPlanEditReq) GetGasPayer() string {
+	if o == nil || IsNil(o.GasPayer) {
+		var ret string
+		return ret
+	}
+	return *o.GasPayer
+}
+
+// GetGasPayerOk returns a tuple with the GasPayer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiMerchantPlanEditReq) GetGasPayerOk() (*string, bool) {
+	if o == nil || IsNil(o.GasPayer) {
+		return nil, false
+	}
+	return o.GasPayer, true
+}
+
+// HasGasPayer returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantPlanEditReq) HasGasPayer() bool {
+	if o != nil && !IsNil(o.GasPayer) {
+		return true
+	}
+
+	return false
+}
+
+// SetGasPayer gets a reference to the given string and assigns it to the GasPayer field.
+func (o *UnibeeApiMerchantPlanEditReq) SetGasPayer(v string) {
+	o.GasPayer = &v
 }
 
 // GetHomeUrl returns the HomeUrl field value if set, zero value otherwise.
@@ -504,6 +534,9 @@ func (o UnibeeApiMerchantPlanEditReq) ToMap() (map[string]interface{}, error) {
 	toSerialize["currency"] = o.Currency
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.GasPayer) {
+		toSerialize["gasPayer"] = o.GasPayer
 	}
 	if !IsNil(o.HomeUrl) {
 		toSerialize["homeUrl"] = o.HomeUrl

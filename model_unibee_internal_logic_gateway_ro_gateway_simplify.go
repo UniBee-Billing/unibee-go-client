@@ -22,6 +22,8 @@ type UnibeeInternalLogicGatewayRoGatewaySimplify struct {
 	GatewayId *int64 `json:"gatewayId,omitempty"`
 	GatewayLogo *string `json:"gatewayLogo,omitempty"`
 	GatewayName *string `json:"gatewayName,omitempty"`
+	// gateway type，1-Default｜ 2-Crypto
+	GatewayType *int64 `json:"gatewayType,omitempty"`
 }
 
 // NewUnibeeInternalLogicGatewayRoGatewaySimplify instantiates a new UnibeeInternalLogicGatewayRoGatewaySimplify object
@@ -137,6 +139,38 @@ func (o *UnibeeInternalLogicGatewayRoGatewaySimplify) SetGatewayName(v string) {
 	o.GatewayName = &v
 }
 
+// GetGatewayType returns the GatewayType field value if set, zero value otherwise.
+func (o *UnibeeInternalLogicGatewayRoGatewaySimplify) GetGatewayType() int64 {
+	if o == nil || IsNil(o.GatewayType) {
+		var ret int64
+		return ret
+	}
+	return *o.GatewayType
+}
+
+// GetGatewayTypeOk returns a tuple with the GatewayType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeInternalLogicGatewayRoGatewaySimplify) GetGatewayTypeOk() (*int64, bool) {
+	if o == nil || IsNil(o.GatewayType) {
+		return nil, false
+	}
+	return o.GatewayType, true
+}
+
+// HasGatewayType returns a boolean if a field has been set.
+func (o *UnibeeInternalLogicGatewayRoGatewaySimplify) HasGatewayType() bool {
+	if o != nil && !IsNil(o.GatewayType) {
+		return true
+	}
+
+	return false
+}
+
+// SetGatewayType gets a reference to the given int64 and assigns it to the GatewayType field.
+func (o *UnibeeInternalLogicGatewayRoGatewaySimplify) SetGatewayType(v int64) {
+	o.GatewayType = &v
+}
+
 func (o UnibeeInternalLogicGatewayRoGatewaySimplify) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -155,6 +189,9 @@ func (o UnibeeInternalLogicGatewayRoGatewaySimplify) ToMap() (map[string]interfa
 	}
 	if !IsNil(o.GatewayName) {
 		toSerialize["gatewayName"] = o.GatewayName
+	}
+	if !IsNil(o.GatewayType) {
+		toSerialize["gatewayType"] = o.GatewayType
 	}
 	return toSerialize, nil
 }
