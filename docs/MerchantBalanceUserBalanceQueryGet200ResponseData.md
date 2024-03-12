@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Balance** | Pointer to [**UnibeeInternalLogicGatewayRoGatewayBalance**](UnibeeInternalLogicGatewayRoGatewayBalance.md) |  | [optional] 
-**CashBalance** | Pointer to [**[]UnibeeInternalLogicGatewayRoGatewayBalance**](UnibeeInternalLogicGatewayRoGatewayBalance.md) |  | [optional] 
-**InvoiceCreditBalance** | Pointer to [**[]UnibeeInternalLogicGatewayRoGatewayBalance**](UnibeeInternalLogicGatewayRoGatewayBalance.md) |  | [optional] 
+**Balance** | Pointer to [**UnibeeInternalLogicGatewayGatewayBeanGatewayBalance**](UnibeeInternalLogicGatewayGatewayBeanGatewayBalance.md) |  | [optional] 
+**CashBalance** | Pointer to [**[]UnibeeInternalLogicGatewayGatewayBeanGatewayBalance**](UnibeeInternalLogicGatewayGatewayBeanGatewayBalance.md) |  | [optional] 
+**InvoiceCreditBalance** | Pointer to [**[]UnibeeInternalLogicGatewayGatewayBeanGatewayBalance**](UnibeeInternalLogicGatewayGatewayBeanGatewayBalance.md) |  | [optional] 
 
 ## Methods
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetBalance
 
-`func (o *MerchantBalanceUserBalanceQueryGet200ResponseData) GetBalance() UnibeeInternalLogicGatewayRoGatewayBalance`
+`func (o *MerchantBalanceUserBalanceQueryGet200ResponseData) GetBalance() UnibeeInternalLogicGatewayGatewayBeanGatewayBalance`
 
 GetBalance returns the Balance field if non-nil, zero value otherwise.
 
 ### GetBalanceOk
 
-`func (o *MerchantBalanceUserBalanceQueryGet200ResponseData) GetBalanceOk() (*UnibeeInternalLogicGatewayRoGatewayBalance, bool)`
+`func (o *MerchantBalanceUserBalanceQueryGet200ResponseData) GetBalanceOk() (*UnibeeInternalLogicGatewayGatewayBeanGatewayBalance, bool)`
 
 GetBalanceOk returns a tuple with the Balance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBalance
 
-`func (o *MerchantBalanceUserBalanceQueryGet200ResponseData) SetBalance(v UnibeeInternalLogicGatewayRoGatewayBalance)`
+`func (o *MerchantBalanceUserBalanceQueryGet200ResponseData) SetBalance(v UnibeeInternalLogicGatewayGatewayBeanGatewayBalance)`
 
 SetBalance sets Balance field to given value.
 
@@ -54,20 +54,20 @@ HasBalance returns a boolean if a field has been set.
 
 ### GetCashBalance
 
-`func (o *MerchantBalanceUserBalanceQueryGet200ResponseData) GetCashBalance() []UnibeeInternalLogicGatewayRoGatewayBalance`
+`func (o *MerchantBalanceUserBalanceQueryGet200ResponseData) GetCashBalance() []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance`
 
 GetCashBalance returns the CashBalance field if non-nil, zero value otherwise.
 
 ### GetCashBalanceOk
 
-`func (o *MerchantBalanceUserBalanceQueryGet200ResponseData) GetCashBalanceOk() (*[]UnibeeInternalLogicGatewayRoGatewayBalance, bool)`
+`func (o *MerchantBalanceUserBalanceQueryGet200ResponseData) GetCashBalanceOk() (*[]UnibeeInternalLogicGatewayGatewayBeanGatewayBalance, bool)`
 
 GetCashBalanceOk returns a tuple with the CashBalance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCashBalance
 
-`func (o *MerchantBalanceUserBalanceQueryGet200ResponseData) SetCashBalance(v []UnibeeInternalLogicGatewayRoGatewayBalance)`
+`func (o *MerchantBalanceUserBalanceQueryGet200ResponseData) SetCashBalance(v []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance)`
 
 SetCashBalance sets CashBalance field to given value.
 
@@ -79,20 +79,20 @@ HasCashBalance returns a boolean if a field has been set.
 
 ### GetInvoiceCreditBalance
 
-`func (o *MerchantBalanceUserBalanceQueryGet200ResponseData) GetInvoiceCreditBalance() []UnibeeInternalLogicGatewayRoGatewayBalance`
+`func (o *MerchantBalanceUserBalanceQueryGet200ResponseData) GetInvoiceCreditBalance() []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance`
 
 GetInvoiceCreditBalance returns the InvoiceCreditBalance field if non-nil, zero value otherwise.
 
 ### GetInvoiceCreditBalanceOk
 
-`func (o *MerchantBalanceUserBalanceQueryGet200ResponseData) GetInvoiceCreditBalanceOk() (*[]UnibeeInternalLogicGatewayRoGatewayBalance, bool)`
+`func (o *MerchantBalanceUserBalanceQueryGet200ResponseData) GetInvoiceCreditBalanceOk() (*[]UnibeeInternalLogicGatewayGatewayBeanGatewayBalance, bool)`
 
 GetInvoiceCreditBalanceOk returns a tuple with the InvoiceCreditBalance field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInvoiceCreditBalance
 
-`func (o *MerchantBalanceUserBalanceQueryGet200ResponseData) SetInvoiceCreditBalance(v []UnibeeInternalLogicGatewayRoGatewayBalance)`
+`func (o *MerchantBalanceUserBalanceQueryGet200ResponseData) SetInvoiceCreditBalance(v []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance)`
 
 SetInvoiceCreditBalance sets InvoiceCreditBalance field to given value.
 

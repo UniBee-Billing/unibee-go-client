@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**VatCountryList** | Pointer to [**[]UnibeeInternalLogicGatewayRoVatCountryRate**](UnibeeInternalLogicGatewayRoVatCountryRate.md) | VatCountryList | [optional] 
+**VatCountryList** | Pointer to [**[]UnibeeApiBeanVatCountryRate**](UnibeeApiBeanVatCountryRate.md) | VatCountryList | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetVatCountryList
 
-`func (o *UnibeeApiMerchantVatCountryListRes) GetVatCountryList() []UnibeeInternalLogicGatewayRoVatCountryRate`
+`func (o *UnibeeApiMerchantVatCountryListRes) GetVatCountryList() []UnibeeApiBeanVatCountryRate`
 
 GetVatCountryList returns the VatCountryList field if non-nil, zero value otherwise.
 
 ### GetVatCountryListOk
 
-`func (o *UnibeeApiMerchantVatCountryListRes) GetVatCountryListOk() (*[]UnibeeInternalLogicGatewayRoVatCountryRate, bool)`
+`func (o *UnibeeApiMerchantVatCountryListRes) GetVatCountryListOk() (*[]UnibeeApiBeanVatCountryRate, bool)`
 
 GetVatCountryListOk returns a tuple with the VatCountryList field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVatCountryList
 
-`func (o *UnibeeApiMerchantVatCountryListRes) SetVatCountryList(v []UnibeeInternalLogicGatewayRoVatCountryRate)`
+`func (o *UnibeeApiMerchantVatCountryListRes) SetVatCountryList(v []UnibeeApiBeanVatCountryRate)`
 
 SetVatCountryList sets VatCountryList field to given value.
 

@@ -19,9 +19,9 @@ var _ MappedNullable = &UnibeeApiMerchantPaymentRefundDetail{}
 
 // UnibeeApiMerchantPaymentRefundDetail struct for UnibeeApiMerchantPaymentRefundDetail
 type UnibeeApiMerchantPaymentRefundDetail struct {
-	Payment *UnibeeInternalLogicGatewayRoPaymentSimplify `json:"payment,omitempty"`
-	Refund *UnibeeInternalLogicGatewayRoRefundSimplify `json:"refund,omitempty"`
-	User *UnibeeInternalLogicGatewayRoUserAccountSimplify `json:"user,omitempty"`
+	Payment *UnibeeApiBeanPaymentSimplify `json:"payment,omitempty"`
+	Refund *UnibeeApiBeanRefundSimplify `json:"refund,omitempty"`
+	User *UnibeeApiBeanUserAccountSimplify `json:"user,omitempty"`
 }
 
 // NewUnibeeApiMerchantPaymentRefundDetail instantiates a new UnibeeApiMerchantPaymentRefundDetail object
@@ -42,9 +42,9 @@ func NewUnibeeApiMerchantPaymentRefundDetailWithDefaults() *UnibeeApiMerchantPay
 }
 
 // GetPayment returns the Payment field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantPaymentRefundDetail) GetPayment() UnibeeInternalLogicGatewayRoPaymentSimplify {
+func (o *UnibeeApiMerchantPaymentRefundDetail) GetPayment() UnibeeApiBeanPaymentSimplify {
 	if o == nil || IsNil(o.Payment) {
-		var ret UnibeeInternalLogicGatewayRoPaymentSimplify
+		var ret UnibeeApiBeanPaymentSimplify
 		return ret
 	}
 	return *o.Payment
@@ -52,7 +52,7 @@ func (o *UnibeeApiMerchantPaymentRefundDetail) GetPayment() UnibeeInternalLogicG
 
 // GetPaymentOk returns a tuple with the Payment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantPaymentRefundDetail) GetPaymentOk() (*UnibeeInternalLogicGatewayRoPaymentSimplify, bool) {
+func (o *UnibeeApiMerchantPaymentRefundDetail) GetPaymentOk() (*UnibeeApiBeanPaymentSimplify, bool) {
 	if o == nil || IsNil(o.Payment) {
 		return nil, false
 	}
@@ -68,15 +68,15 @@ func (o *UnibeeApiMerchantPaymentRefundDetail) HasPayment() bool {
 	return false
 }
 
-// SetPayment gets a reference to the given UnibeeInternalLogicGatewayRoPaymentSimplify and assigns it to the Payment field.
-func (o *UnibeeApiMerchantPaymentRefundDetail) SetPayment(v UnibeeInternalLogicGatewayRoPaymentSimplify) {
+// SetPayment gets a reference to the given UnibeeApiBeanPaymentSimplify and assigns it to the Payment field.
+func (o *UnibeeApiMerchantPaymentRefundDetail) SetPayment(v UnibeeApiBeanPaymentSimplify) {
 	o.Payment = &v
 }
 
 // GetRefund returns the Refund field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantPaymentRefundDetail) GetRefund() UnibeeInternalLogicGatewayRoRefundSimplify {
+func (o *UnibeeApiMerchantPaymentRefundDetail) GetRefund() UnibeeApiBeanRefundSimplify {
 	if o == nil || IsNil(o.Refund) {
-		var ret UnibeeInternalLogicGatewayRoRefundSimplify
+		var ret UnibeeApiBeanRefundSimplify
 		return ret
 	}
 	return *o.Refund
@@ -84,7 +84,7 @@ func (o *UnibeeApiMerchantPaymentRefundDetail) GetRefund() UnibeeInternalLogicGa
 
 // GetRefundOk returns a tuple with the Refund field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantPaymentRefundDetail) GetRefundOk() (*UnibeeInternalLogicGatewayRoRefundSimplify, bool) {
+func (o *UnibeeApiMerchantPaymentRefundDetail) GetRefundOk() (*UnibeeApiBeanRefundSimplify, bool) {
 	if o == nil || IsNil(o.Refund) {
 		return nil, false
 	}
@@ -100,15 +100,15 @@ func (o *UnibeeApiMerchantPaymentRefundDetail) HasRefund() bool {
 	return false
 }
 
-// SetRefund gets a reference to the given UnibeeInternalLogicGatewayRoRefundSimplify and assigns it to the Refund field.
-func (o *UnibeeApiMerchantPaymentRefundDetail) SetRefund(v UnibeeInternalLogicGatewayRoRefundSimplify) {
+// SetRefund gets a reference to the given UnibeeApiBeanRefundSimplify and assigns it to the Refund field.
+func (o *UnibeeApiMerchantPaymentRefundDetail) SetRefund(v UnibeeApiBeanRefundSimplify) {
 	o.Refund = &v
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantPaymentRefundDetail) GetUser() UnibeeInternalLogicGatewayRoUserAccountSimplify {
+func (o *UnibeeApiMerchantPaymentRefundDetail) GetUser() UnibeeApiBeanUserAccountSimplify {
 	if o == nil || IsNil(o.User) {
-		var ret UnibeeInternalLogicGatewayRoUserAccountSimplify
+		var ret UnibeeApiBeanUserAccountSimplify
 		return ret
 	}
 	return *o.User
@@ -116,7 +116,7 @@ func (o *UnibeeApiMerchantPaymentRefundDetail) GetUser() UnibeeInternalLogicGate
 
 // GetUserOk returns a tuple with the User field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantPaymentRefundDetail) GetUserOk() (*UnibeeInternalLogicGatewayRoUserAccountSimplify, bool) {
+func (o *UnibeeApiMerchantPaymentRefundDetail) GetUserOk() (*UnibeeApiBeanUserAccountSimplify, bool) {
 	if o == nil || IsNil(o.User) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *UnibeeApiMerchantPaymentRefundDetail) HasUser() bool {
 	return false
 }
 
-// SetUser gets a reference to the given UnibeeInternalLogicGatewayRoUserAccountSimplify and assigns it to the User field.
-func (o *UnibeeApiMerchantPaymentRefundDetail) SetUser(v UnibeeInternalLogicGatewayRoUserAccountSimplify) {
+// SetUser gets a reference to the given UnibeeApiBeanUserAccountSimplify and assigns it to the User field.
+func (o *UnibeeApiMerchantPaymentRefundDetail) SetUser(v UnibeeApiBeanUserAccountSimplify) {
 	o.User = &v
 }
 

@@ -20,16 +20,16 @@ var _ MappedNullable = &UnibeeApiMerchantProfileGetRes{}
 // UnibeeApiMerchantProfileGetRes struct for UnibeeApiMerchantProfileGetRes
 type UnibeeApiMerchantProfileGetRes struct {
 	// Currency List
-	Currency []UnibeeInternalLogicGatewayRoCurrency `json:"Currency,omitempty"`
+	Currency []UnibeeApiBeanCurrency `json:"Currency,omitempty"`
 	// TimeZone List
 	TimeZone []string `json:"TimeZone,omitempty"`
 	// System Env, em: daily|stage|local|prod
 	Env *string `json:"env,omitempty"`
 	// Gateway List
-	Gateway []UnibeeInternalLogicGatewayRoGatewaySimplify `json:"gateway,omitempty"`
+	Gateway []UnibeeApiBeanGatewaySimplify `json:"gateway,omitempty"`
 	// Check System Env Is Prod, true|false
 	IsProd *bool `json:"isProd,omitempty"`
-	Merchant *UnibeeInternalModelEntityOverseaPayMerchant `json:"merchant,omitempty"`
+	Merchant *UnibeeApiBeanMerchantSimplify `json:"merchant,omitempty"`
 }
 
 // NewUnibeeApiMerchantProfileGetRes instantiates a new UnibeeApiMerchantProfileGetRes object
@@ -50,9 +50,9 @@ func NewUnibeeApiMerchantProfileGetResWithDefaults() *UnibeeApiMerchantProfileGe
 }
 
 // GetCurrency returns the Currency field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantProfileGetRes) GetCurrency() []UnibeeInternalLogicGatewayRoCurrency {
+func (o *UnibeeApiMerchantProfileGetRes) GetCurrency() []UnibeeApiBeanCurrency {
 	if o == nil || IsNil(o.Currency) {
-		var ret []UnibeeInternalLogicGatewayRoCurrency
+		var ret []UnibeeApiBeanCurrency
 		return ret
 	}
 	return o.Currency
@@ -60,7 +60,7 @@ func (o *UnibeeApiMerchantProfileGetRes) GetCurrency() []UnibeeInternalLogicGate
 
 // GetCurrencyOk returns a tuple with the Currency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantProfileGetRes) GetCurrencyOk() ([]UnibeeInternalLogicGatewayRoCurrency, bool) {
+func (o *UnibeeApiMerchantProfileGetRes) GetCurrencyOk() ([]UnibeeApiBeanCurrency, bool) {
 	if o == nil || IsNil(o.Currency) {
 		return nil, false
 	}
@@ -76,8 +76,8 @@ func (o *UnibeeApiMerchantProfileGetRes) HasCurrency() bool {
 	return false
 }
 
-// SetCurrency gets a reference to the given []UnibeeInternalLogicGatewayRoCurrency and assigns it to the Currency field.
-func (o *UnibeeApiMerchantProfileGetRes) SetCurrency(v []UnibeeInternalLogicGatewayRoCurrency) {
+// SetCurrency gets a reference to the given []UnibeeApiBeanCurrency and assigns it to the Currency field.
+func (o *UnibeeApiMerchantProfileGetRes) SetCurrency(v []UnibeeApiBeanCurrency) {
 	o.Currency = v
 }
 
@@ -146,9 +146,9 @@ func (o *UnibeeApiMerchantProfileGetRes) SetEnv(v string) {
 }
 
 // GetGateway returns the Gateway field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantProfileGetRes) GetGateway() []UnibeeInternalLogicGatewayRoGatewaySimplify {
+func (o *UnibeeApiMerchantProfileGetRes) GetGateway() []UnibeeApiBeanGatewaySimplify {
 	if o == nil || IsNil(o.Gateway) {
-		var ret []UnibeeInternalLogicGatewayRoGatewaySimplify
+		var ret []UnibeeApiBeanGatewaySimplify
 		return ret
 	}
 	return o.Gateway
@@ -156,7 +156,7 @@ func (o *UnibeeApiMerchantProfileGetRes) GetGateway() []UnibeeInternalLogicGatew
 
 // GetGatewayOk returns a tuple with the Gateway field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantProfileGetRes) GetGatewayOk() ([]UnibeeInternalLogicGatewayRoGatewaySimplify, bool) {
+func (o *UnibeeApiMerchantProfileGetRes) GetGatewayOk() ([]UnibeeApiBeanGatewaySimplify, bool) {
 	if o == nil || IsNil(o.Gateway) {
 		return nil, false
 	}
@@ -172,8 +172,8 @@ func (o *UnibeeApiMerchantProfileGetRes) HasGateway() bool {
 	return false
 }
 
-// SetGateway gets a reference to the given []UnibeeInternalLogicGatewayRoGatewaySimplify and assigns it to the Gateway field.
-func (o *UnibeeApiMerchantProfileGetRes) SetGateway(v []UnibeeInternalLogicGatewayRoGatewaySimplify) {
+// SetGateway gets a reference to the given []UnibeeApiBeanGatewaySimplify and assigns it to the Gateway field.
+func (o *UnibeeApiMerchantProfileGetRes) SetGateway(v []UnibeeApiBeanGatewaySimplify) {
 	o.Gateway = v
 }
 
@@ -210,9 +210,9 @@ func (o *UnibeeApiMerchantProfileGetRes) SetIsProd(v bool) {
 }
 
 // GetMerchant returns the Merchant field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantProfileGetRes) GetMerchant() UnibeeInternalModelEntityOverseaPayMerchant {
+func (o *UnibeeApiMerchantProfileGetRes) GetMerchant() UnibeeApiBeanMerchantSimplify {
 	if o == nil || IsNil(o.Merchant) {
-		var ret UnibeeInternalModelEntityOverseaPayMerchant
+		var ret UnibeeApiBeanMerchantSimplify
 		return ret
 	}
 	return *o.Merchant
@@ -220,7 +220,7 @@ func (o *UnibeeApiMerchantProfileGetRes) GetMerchant() UnibeeInternalModelEntity
 
 // GetMerchantOk returns a tuple with the Merchant field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantProfileGetRes) GetMerchantOk() (*UnibeeInternalModelEntityOverseaPayMerchant, bool) {
+func (o *UnibeeApiMerchantProfileGetRes) GetMerchantOk() (*UnibeeApiBeanMerchantSimplify, bool) {
 	if o == nil || IsNil(o.Merchant) {
 		return nil, false
 	}
@@ -236,8 +236,8 @@ func (o *UnibeeApiMerchantProfileGetRes) HasMerchant() bool {
 	return false
 }
 
-// SetMerchant gets a reference to the given UnibeeInternalModelEntityOverseaPayMerchant and assigns it to the Merchant field.
-func (o *UnibeeApiMerchantProfileGetRes) SetMerchant(v UnibeeInternalModelEntityOverseaPayMerchant) {
+// SetMerchant gets a reference to the given UnibeeApiBeanMerchantSimplify and assigns it to the Merchant field.
+func (o *UnibeeApiMerchantProfileGetRes) SetMerchant(v UnibeeApiBeanMerchantSimplify) {
 	o.Merchant = &v
 }
 

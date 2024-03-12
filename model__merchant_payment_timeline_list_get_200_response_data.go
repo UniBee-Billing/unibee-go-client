@@ -20,7 +20,7 @@ var _ MappedNullable = &MerchantPaymentTimelineListGet200ResponseData{}
 // MerchantPaymentTimelineListGet200ResponseData struct for MerchantPaymentTimelineListGet200ResponseData
 type MerchantPaymentTimelineListGet200ResponseData struct {
 	// PaymentTimeLines
-	PaymentTimeLines []UnibeeInternalModelEntityOverseaPayPaymentTimeline `json:"paymentTimeLines,omitempty"`
+	PaymentTimeLines []UnibeeApiBeanPaymentTimelineSimplify `json:"paymentTimeLines,omitempty"`
 }
 
 // NewMerchantPaymentTimelineListGet200ResponseData instantiates a new MerchantPaymentTimelineListGet200ResponseData object
@@ -41,9 +41,9 @@ func NewMerchantPaymentTimelineListGet200ResponseDataWithDefaults() *MerchantPay
 }
 
 // GetPaymentTimeLines returns the PaymentTimeLines field value if set, zero value otherwise.
-func (o *MerchantPaymentTimelineListGet200ResponseData) GetPaymentTimeLines() []UnibeeInternalModelEntityOverseaPayPaymentTimeline {
+func (o *MerchantPaymentTimelineListGet200ResponseData) GetPaymentTimeLines() []UnibeeApiBeanPaymentTimelineSimplify {
 	if o == nil || IsNil(o.PaymentTimeLines) {
-		var ret []UnibeeInternalModelEntityOverseaPayPaymentTimeline
+		var ret []UnibeeApiBeanPaymentTimelineSimplify
 		return ret
 	}
 	return o.PaymentTimeLines
@@ -51,7 +51,7 @@ func (o *MerchantPaymentTimelineListGet200ResponseData) GetPaymentTimeLines() []
 
 // GetPaymentTimeLinesOk returns a tuple with the PaymentTimeLines field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantPaymentTimelineListGet200ResponseData) GetPaymentTimeLinesOk() ([]UnibeeInternalModelEntityOverseaPayPaymentTimeline, bool) {
+func (o *MerchantPaymentTimelineListGet200ResponseData) GetPaymentTimeLinesOk() ([]UnibeeApiBeanPaymentTimelineSimplify, bool) {
 	if o == nil || IsNil(o.PaymentTimeLines) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *MerchantPaymentTimelineListGet200ResponseData) HasPaymentTimeLines() bo
 	return false
 }
 
-// SetPaymentTimeLines gets a reference to the given []UnibeeInternalModelEntityOverseaPayPaymentTimeline and assigns it to the PaymentTimeLines field.
-func (o *MerchantPaymentTimelineListGet200ResponseData) SetPaymentTimeLines(v []UnibeeInternalModelEntityOverseaPayPaymentTimeline) {
+// SetPaymentTimeLines gets a reference to the given []UnibeeApiBeanPaymentTimelineSimplify and assigns it to the PaymentTimeLines field.
+func (o *MerchantPaymentTimelineListGet200ResponseData) SetPaymentTimeLines(v []UnibeeApiBeanPaymentTimelineSimplify) {
 	o.PaymentTimeLines = v
 }
 

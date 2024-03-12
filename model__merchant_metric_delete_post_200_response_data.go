@@ -19,7 +19,7 @@ var _ MappedNullable = &MerchantMetricDeletePost200ResponseData{}
 
 // MerchantMetricDeletePost200ResponseData struct for MerchantMetricDeletePost200ResponseData
 type MerchantMetricDeletePost200ResponseData struct {
-	MerchantMetric *UnibeeInternalLogicGatewayRoMerchantMetricVo `json:"merchantMetric,omitempty"`
+	MerchantMetric *UnibeeApiBeanMerchantMetricSimplify `json:"merchantMetric,omitempty"`
 }
 
 // NewMerchantMetricDeletePost200ResponseData instantiates a new MerchantMetricDeletePost200ResponseData object
@@ -40,9 +40,9 @@ func NewMerchantMetricDeletePost200ResponseDataWithDefaults() *MerchantMetricDel
 }
 
 // GetMerchantMetric returns the MerchantMetric field value if set, zero value otherwise.
-func (o *MerchantMetricDeletePost200ResponseData) GetMerchantMetric() UnibeeInternalLogicGatewayRoMerchantMetricVo {
+func (o *MerchantMetricDeletePost200ResponseData) GetMerchantMetric() UnibeeApiBeanMerchantMetricSimplify {
 	if o == nil || IsNil(o.MerchantMetric) {
-		var ret UnibeeInternalLogicGatewayRoMerchantMetricVo
+		var ret UnibeeApiBeanMerchantMetricSimplify
 		return ret
 	}
 	return *o.MerchantMetric
@@ -50,7 +50,7 @@ func (o *MerchantMetricDeletePost200ResponseData) GetMerchantMetric() UnibeeInte
 
 // GetMerchantMetricOk returns a tuple with the MerchantMetric field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantMetricDeletePost200ResponseData) GetMerchantMetricOk() (*UnibeeInternalLogicGatewayRoMerchantMetricVo, bool) {
+func (o *MerchantMetricDeletePost200ResponseData) GetMerchantMetricOk() (*UnibeeApiBeanMerchantMetricSimplify, bool) {
 	if o == nil || IsNil(o.MerchantMetric) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *MerchantMetricDeletePost200ResponseData) HasMerchantMetric() bool {
 	return false
 }
 
-// SetMerchantMetric gets a reference to the given UnibeeInternalLogicGatewayRoMerchantMetricVo and assigns it to the MerchantMetric field.
-func (o *MerchantMetricDeletePost200ResponseData) SetMerchantMetric(v UnibeeInternalLogicGatewayRoMerchantMetricVo) {
+// SetMerchantMetric gets a reference to the given UnibeeApiBeanMerchantMetricSimplify and assigns it to the MerchantMetric field.
+func (o *MerchantMetricDeletePost200ResponseData) SetMerchantMetric(v UnibeeApiBeanMerchantMetricSimplify) {
 	o.MerchantMetric = &v
 }
 

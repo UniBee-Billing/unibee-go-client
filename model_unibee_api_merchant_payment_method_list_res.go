@@ -20,7 +20,7 @@ var _ MappedNullable = &UnibeeApiMerchantPaymentMethodListRes{}
 // UnibeeApiMerchantPaymentMethodListRes struct for UnibeeApiMerchantPaymentMethodListRes
 type UnibeeApiMerchantPaymentMethodListRes struct {
 	// MethodList
-	MethodList []UnibeeInternalLogicGatewayRoPaymentMethod `json:"methodList,omitempty"`
+	MethodList []UnibeeApiBeanPaymentMethod `json:"methodList,omitempty"`
 }
 
 // NewUnibeeApiMerchantPaymentMethodListRes instantiates a new UnibeeApiMerchantPaymentMethodListRes object
@@ -41,9 +41,9 @@ func NewUnibeeApiMerchantPaymentMethodListResWithDefaults() *UnibeeApiMerchantPa
 }
 
 // GetMethodList returns the MethodList field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantPaymentMethodListRes) GetMethodList() []UnibeeInternalLogicGatewayRoPaymentMethod {
+func (o *UnibeeApiMerchantPaymentMethodListRes) GetMethodList() []UnibeeApiBeanPaymentMethod {
 	if o == nil || IsNil(o.MethodList) {
-		var ret []UnibeeInternalLogicGatewayRoPaymentMethod
+		var ret []UnibeeApiBeanPaymentMethod
 		return ret
 	}
 	return o.MethodList
@@ -51,7 +51,7 @@ func (o *UnibeeApiMerchantPaymentMethodListRes) GetMethodList() []UnibeeInternal
 
 // GetMethodListOk returns a tuple with the MethodList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantPaymentMethodListRes) GetMethodListOk() ([]UnibeeInternalLogicGatewayRoPaymentMethod, bool) {
+func (o *UnibeeApiMerchantPaymentMethodListRes) GetMethodListOk() ([]UnibeeApiBeanPaymentMethod, bool) {
 	if o == nil || IsNil(o.MethodList) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *UnibeeApiMerchantPaymentMethodListRes) HasMethodList() bool {
 	return false
 }
 
-// SetMethodList gets a reference to the given []UnibeeInternalLogicGatewayRoPaymentMethod and assigns it to the MethodList field.
-func (o *UnibeeApiMerchantPaymentMethodListRes) SetMethodList(v []UnibeeInternalLogicGatewayRoPaymentMethod) {
+// SetMethodList gets a reference to the given []UnibeeApiBeanPaymentMethod and assigns it to the MethodList field.
+func (o *UnibeeApiMerchantPaymentMethodListRes) SetMethodList(v []UnibeeApiBeanPaymentMethod) {
 	o.MethodList = v
 }
 

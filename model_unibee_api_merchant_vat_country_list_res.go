@@ -20,7 +20,7 @@ var _ MappedNullable = &UnibeeApiMerchantVatCountryListRes{}
 // UnibeeApiMerchantVatCountryListRes struct for UnibeeApiMerchantVatCountryListRes
 type UnibeeApiMerchantVatCountryListRes struct {
 	// VatCountryList
-	VatCountryList []UnibeeInternalLogicGatewayRoVatCountryRate `json:"vatCountryList,omitempty"`
+	VatCountryList []UnibeeApiBeanVatCountryRate `json:"vatCountryList,omitempty"`
 }
 
 // NewUnibeeApiMerchantVatCountryListRes instantiates a new UnibeeApiMerchantVatCountryListRes object
@@ -41,9 +41,9 @@ func NewUnibeeApiMerchantVatCountryListResWithDefaults() *UnibeeApiMerchantVatCo
 }
 
 // GetVatCountryList returns the VatCountryList field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantVatCountryListRes) GetVatCountryList() []UnibeeInternalLogicGatewayRoVatCountryRate {
+func (o *UnibeeApiMerchantVatCountryListRes) GetVatCountryList() []UnibeeApiBeanVatCountryRate {
 	if o == nil || IsNil(o.VatCountryList) {
-		var ret []UnibeeInternalLogicGatewayRoVatCountryRate
+		var ret []UnibeeApiBeanVatCountryRate
 		return ret
 	}
 	return o.VatCountryList
@@ -51,7 +51,7 @@ func (o *UnibeeApiMerchantVatCountryListRes) GetVatCountryList() []UnibeeInterna
 
 // GetVatCountryListOk returns a tuple with the VatCountryList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantVatCountryListRes) GetVatCountryListOk() ([]UnibeeInternalLogicGatewayRoVatCountryRate, bool) {
+func (o *UnibeeApiMerchantVatCountryListRes) GetVatCountryListOk() ([]UnibeeApiBeanVatCountryRate, bool) {
 	if o == nil || IsNil(o.VatCountryList) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *UnibeeApiMerchantVatCountryListRes) HasVatCountryList() bool {
 	return false
 }
 
-// SetVatCountryList gets a reference to the given []UnibeeInternalLogicGatewayRoVatCountryRate and assigns it to the VatCountryList field.
-func (o *UnibeeApiMerchantVatCountryListRes) SetVatCountryList(v []UnibeeInternalLogicGatewayRoVatCountryRate) {
+// SetVatCountryList gets a reference to the given []UnibeeApiBeanVatCountryRate and assigns it to the VatCountryList field.
+func (o *UnibeeApiMerchantVatCountryListRes) SetVatCountryList(v []UnibeeApiBeanVatCountryRate) {
 	o.VatCountryList = v
 }
 

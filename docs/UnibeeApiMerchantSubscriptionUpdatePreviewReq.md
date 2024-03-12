@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AddonParams** | Pointer to [**[]UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo**](UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo.md) | addonParams | [optional] 
+**AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | addonParams | [optional] 
 **NewPlanId** | **int64** | New PlanId | 
 **Quantity** | Pointer to **int64** | Quantity，Default 1 | [optional] 
 **SubscriptionId** | **string** | SubscriptionId | 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAddonParams
 
-`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetAddonParams() []UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo`
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetAddonParams() []UnibeeApiBeanPlanAddonParam`
 
 GetAddonParams returns the AddonParams field if non-nil, zero value otherwise.
 
 ### GetAddonParamsOk
 
-`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetAddonParamsOk() (*[]UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo, bool)`
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetAddonParamsOk() (*[]UnibeeApiBeanPlanAddonParam, bool)`
 
 GetAddonParamsOk returns a tuple with the AddonParams field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddonParams
 
-`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) SetAddonParams(v []UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo)`
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) SetAddonParams(v []UnibeeApiBeanPlanAddonParam)`
 
 SetAddonParams sets AddonParams field to given value.
 

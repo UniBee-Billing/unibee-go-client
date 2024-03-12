@@ -20,7 +20,7 @@ var _ MappedNullable = &UnibeeApiMerchantInvoiceListRes{}
 // UnibeeApiMerchantInvoiceListRes struct for UnibeeApiMerchantInvoiceListRes
 type UnibeeApiMerchantInvoiceListRes struct {
 	// invoice Detail List
-	Invoices []UnibeeInternalLogicGatewayRoInvoiceDetailRo `json:"invoices,omitempty"`
+	Invoices []UnibeeApiBeanInvoiceDetail `json:"invoices,omitempty"`
 }
 
 // NewUnibeeApiMerchantInvoiceListRes instantiates a new UnibeeApiMerchantInvoiceListRes object
@@ -41,9 +41,9 @@ func NewUnibeeApiMerchantInvoiceListResWithDefaults() *UnibeeApiMerchantInvoiceL
 }
 
 // GetInvoices returns the Invoices field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantInvoiceListRes) GetInvoices() []UnibeeInternalLogicGatewayRoInvoiceDetailRo {
+func (o *UnibeeApiMerchantInvoiceListRes) GetInvoices() []UnibeeApiBeanInvoiceDetail {
 	if o == nil || IsNil(o.Invoices) {
-		var ret []UnibeeInternalLogicGatewayRoInvoiceDetailRo
+		var ret []UnibeeApiBeanInvoiceDetail
 		return ret
 	}
 	return o.Invoices
@@ -51,7 +51,7 @@ func (o *UnibeeApiMerchantInvoiceListRes) GetInvoices() []UnibeeInternalLogicGat
 
 // GetInvoicesOk returns a tuple with the Invoices field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantInvoiceListRes) GetInvoicesOk() ([]UnibeeInternalLogicGatewayRoInvoiceDetailRo, bool) {
+func (o *UnibeeApiMerchantInvoiceListRes) GetInvoicesOk() ([]UnibeeApiBeanInvoiceDetail, bool) {
 	if o == nil || IsNil(o.Invoices) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *UnibeeApiMerchantInvoiceListRes) HasInvoices() bool {
 	return false
 }
 
-// SetInvoices gets a reference to the given []UnibeeInternalLogicGatewayRoInvoiceDetailRo and assigns it to the Invoices field.
-func (o *UnibeeApiMerchantInvoiceListRes) SetInvoices(v []UnibeeInternalLogicGatewayRoInvoiceDetailRo) {
+// SetInvoices gets a reference to the given []UnibeeApiBeanInvoiceDetail and assigns it to the Invoices field.
+func (o *UnibeeApiMerchantInvoiceListRes) SetInvoices(v []UnibeeApiBeanInvoiceDetail) {
 	o.Invoices = v
 }
 

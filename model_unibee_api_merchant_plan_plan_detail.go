@@ -22,10 +22,10 @@ type UnibeeApiMerchantPlanPlanDetail struct {
 	// AddonIds
 	AddonIds []int64 `json:"addonIds,omitempty"`
 	// Addons
-	Addons []UnibeeInternalLogicGatewayRoPlanSimplify `json:"addons,omitempty"`
+	Addons []UnibeeApiBeanPlanSimplify `json:"addons,omitempty"`
 	// MetricPlanLimits
-	MetricPlanLimits []UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo `json:"metricPlanLimits,omitempty"`
-	Plan *UnibeeInternalLogicGatewayRoPlanSimplify `json:"plan,omitempty"`
+	MetricPlanLimits []UnibeeApiBeanMerchantMetricPlanLimit `json:"metricPlanLimits,omitempty"`
+	Plan *UnibeeApiBeanPlanSimplify `json:"plan,omitempty"`
 }
 
 // NewUnibeeApiMerchantPlanPlanDetail instantiates a new UnibeeApiMerchantPlanPlanDetail object
@@ -78,9 +78,9 @@ func (o *UnibeeApiMerchantPlanPlanDetail) SetAddonIds(v []int64) {
 }
 
 // GetAddons returns the Addons field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantPlanPlanDetail) GetAddons() []UnibeeInternalLogicGatewayRoPlanSimplify {
+func (o *UnibeeApiMerchantPlanPlanDetail) GetAddons() []UnibeeApiBeanPlanSimplify {
 	if o == nil || IsNil(o.Addons) {
-		var ret []UnibeeInternalLogicGatewayRoPlanSimplify
+		var ret []UnibeeApiBeanPlanSimplify
 		return ret
 	}
 	return o.Addons
@@ -88,7 +88,7 @@ func (o *UnibeeApiMerchantPlanPlanDetail) GetAddons() []UnibeeInternalLogicGatew
 
 // GetAddonsOk returns a tuple with the Addons field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantPlanPlanDetail) GetAddonsOk() ([]UnibeeInternalLogicGatewayRoPlanSimplify, bool) {
+func (o *UnibeeApiMerchantPlanPlanDetail) GetAddonsOk() ([]UnibeeApiBeanPlanSimplify, bool) {
 	if o == nil || IsNil(o.Addons) {
 		return nil, false
 	}
@@ -104,15 +104,15 @@ func (o *UnibeeApiMerchantPlanPlanDetail) HasAddons() bool {
 	return false
 }
 
-// SetAddons gets a reference to the given []UnibeeInternalLogicGatewayRoPlanSimplify and assigns it to the Addons field.
-func (o *UnibeeApiMerchantPlanPlanDetail) SetAddons(v []UnibeeInternalLogicGatewayRoPlanSimplify) {
+// SetAddons gets a reference to the given []UnibeeApiBeanPlanSimplify and assigns it to the Addons field.
+func (o *UnibeeApiMerchantPlanPlanDetail) SetAddons(v []UnibeeApiBeanPlanSimplify) {
 	o.Addons = v
 }
 
 // GetMetricPlanLimits returns the MetricPlanLimits field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantPlanPlanDetail) GetMetricPlanLimits() []UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo {
+func (o *UnibeeApiMerchantPlanPlanDetail) GetMetricPlanLimits() []UnibeeApiBeanMerchantMetricPlanLimit {
 	if o == nil || IsNil(o.MetricPlanLimits) {
-		var ret []UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo
+		var ret []UnibeeApiBeanMerchantMetricPlanLimit
 		return ret
 	}
 	return o.MetricPlanLimits
@@ -120,7 +120,7 @@ func (o *UnibeeApiMerchantPlanPlanDetail) GetMetricPlanLimits() []UnibeeInternal
 
 // GetMetricPlanLimitsOk returns a tuple with the MetricPlanLimits field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantPlanPlanDetail) GetMetricPlanLimitsOk() ([]UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo, bool) {
+func (o *UnibeeApiMerchantPlanPlanDetail) GetMetricPlanLimitsOk() ([]UnibeeApiBeanMerchantMetricPlanLimit, bool) {
 	if o == nil || IsNil(o.MetricPlanLimits) {
 		return nil, false
 	}
@@ -136,15 +136,15 @@ func (o *UnibeeApiMerchantPlanPlanDetail) HasMetricPlanLimits() bool {
 	return false
 }
 
-// SetMetricPlanLimits gets a reference to the given []UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo and assigns it to the MetricPlanLimits field.
-func (o *UnibeeApiMerchantPlanPlanDetail) SetMetricPlanLimits(v []UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) {
+// SetMetricPlanLimits gets a reference to the given []UnibeeApiBeanMerchantMetricPlanLimit and assigns it to the MetricPlanLimits field.
+func (o *UnibeeApiMerchantPlanPlanDetail) SetMetricPlanLimits(v []UnibeeApiBeanMerchantMetricPlanLimit) {
 	o.MetricPlanLimits = v
 }
 
 // GetPlan returns the Plan field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantPlanPlanDetail) GetPlan() UnibeeInternalLogicGatewayRoPlanSimplify {
+func (o *UnibeeApiMerchantPlanPlanDetail) GetPlan() UnibeeApiBeanPlanSimplify {
 	if o == nil || IsNil(o.Plan) {
-		var ret UnibeeInternalLogicGatewayRoPlanSimplify
+		var ret UnibeeApiBeanPlanSimplify
 		return ret
 	}
 	return *o.Plan
@@ -152,7 +152,7 @@ func (o *UnibeeApiMerchantPlanPlanDetail) GetPlan() UnibeeInternalLogicGatewayRo
 
 // GetPlanOk returns a tuple with the Plan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantPlanPlanDetail) GetPlanOk() (*UnibeeInternalLogicGatewayRoPlanSimplify, bool) {
+func (o *UnibeeApiMerchantPlanPlanDetail) GetPlanOk() (*UnibeeApiBeanPlanSimplify, bool) {
 	if o == nil || IsNil(o.Plan) {
 		return nil, false
 	}
@@ -168,8 +168,8 @@ func (o *UnibeeApiMerchantPlanPlanDetail) HasPlan() bool {
 	return false
 }
 
-// SetPlan gets a reference to the given UnibeeInternalLogicGatewayRoPlanSimplify and assigns it to the Plan field.
-func (o *UnibeeApiMerchantPlanPlanDetail) SetPlan(v UnibeeInternalLogicGatewayRoPlanSimplify) {
+// SetPlan gets a reference to the given UnibeeApiBeanPlanSimplify and assigns it to the Plan field.
+func (o *UnibeeApiMerchantPlanPlanDetail) SetPlan(v UnibeeApiBeanPlanSimplify) {
 	o.Plan = &v
 }
 

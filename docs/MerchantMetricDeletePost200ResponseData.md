@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MerchantMetric** | Pointer to [**UnibeeInternalLogicGatewayRoMerchantMetricVo**](UnibeeInternalLogicGatewayRoMerchantMetricVo.md) |  | [optional] 
+**MerchantMetric** | Pointer to [**UnibeeApiBeanMerchantMetricSimplify**](UnibeeApiBeanMerchantMetricSimplify.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMerchantMetric
 
-`func (o *MerchantMetricDeletePost200ResponseData) GetMerchantMetric() UnibeeInternalLogicGatewayRoMerchantMetricVo`
+`func (o *MerchantMetricDeletePost200ResponseData) GetMerchantMetric() UnibeeApiBeanMerchantMetricSimplify`
 
 GetMerchantMetric returns the MerchantMetric field if non-nil, zero value otherwise.
 
 ### GetMerchantMetricOk
 
-`func (o *MerchantMetricDeletePost200ResponseData) GetMerchantMetricOk() (*UnibeeInternalLogicGatewayRoMerchantMetricVo, bool)`
+`func (o *MerchantMetricDeletePost200ResponseData) GetMerchantMetricOk() (*UnibeeApiBeanMerchantMetricSimplify, bool)`
 
 GetMerchantMetricOk returns a tuple with the MerchantMetric field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantMetric
 
-`func (o *MerchantMetricDeletePost200ResponseData) SetMerchantMetric(v UnibeeInternalLogicGatewayRoMerchantMetricVo)`
+`func (o *MerchantMetricDeletePost200ResponseData) SetMerchantMetric(v UnibeeApiBeanMerchantMetricSimplify)`
 
 SetMerchantMetric sets MerchantMetric field to given value.
 

@@ -19,7 +19,7 @@ var _ MappedNullable = &MerchantUserGetGet200ResponseData{}
 
 // MerchantUserGetGet200ResponseData struct for MerchantUserGetGet200ResponseData
 type MerchantUserGetGet200ResponseData struct {
-	User *UnibeeInternalModelEntityOverseaPayUserAccount `json:"user,omitempty"`
+	User *UnibeeApiBeanUserAccountSimplify `json:"user,omitempty"`
 }
 
 // NewMerchantUserGetGet200ResponseData instantiates a new MerchantUserGetGet200ResponseData object
@@ -40,9 +40,9 @@ func NewMerchantUserGetGet200ResponseDataWithDefaults() *MerchantUserGetGet200Re
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
-func (o *MerchantUserGetGet200ResponseData) GetUser() UnibeeInternalModelEntityOverseaPayUserAccount {
+func (o *MerchantUserGetGet200ResponseData) GetUser() UnibeeApiBeanUserAccountSimplify {
 	if o == nil || IsNil(o.User) {
-		var ret UnibeeInternalModelEntityOverseaPayUserAccount
+		var ret UnibeeApiBeanUserAccountSimplify
 		return ret
 	}
 	return *o.User
@@ -50,7 +50,7 @@ func (o *MerchantUserGetGet200ResponseData) GetUser() UnibeeInternalModelEntityO
 
 // GetUserOk returns a tuple with the User field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantUserGetGet200ResponseData) GetUserOk() (*UnibeeInternalModelEntityOverseaPayUserAccount, bool) {
+func (o *MerchantUserGetGet200ResponseData) GetUserOk() (*UnibeeApiBeanUserAccountSimplify, bool) {
 	if o == nil || IsNil(o.User) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *MerchantUserGetGet200ResponseData) HasUser() bool {
 	return false
 }
 
-// SetUser gets a reference to the given UnibeeInternalModelEntityOverseaPayUserAccount and assigns it to the User field.
-func (o *MerchantUserGetGet200ResponseData) SetUser(v UnibeeInternalModelEntityOverseaPayUserAccount) {
+// SetUser gets a reference to the given UnibeeApiBeanUserAccountSimplify and assigns it to the User field.
+func (o *MerchantUserGetGet200ResponseData) SetUser(v UnibeeApiBeanUserAccountSimplify) {
 	o.User = &v
 }
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Subscriptions** | Pointer to [**[]UnibeeInternalLogicGatewayRoSubscriptionDetailVo**](UnibeeInternalLogicGatewayRoSubscriptionDetailVo.md) | Subscriptions | [optional] 
+**Subscriptions** | Pointer to [**[]UnibeeApiBeanSubscriptionDetail**](UnibeeApiBeanSubscriptionDetail.md) | Subscriptions | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSubscriptions
 
-`func (o *UnibeeApiMerchantSubscriptionListRes) GetSubscriptions() []UnibeeInternalLogicGatewayRoSubscriptionDetailVo`
+`func (o *UnibeeApiMerchantSubscriptionListRes) GetSubscriptions() []UnibeeApiBeanSubscriptionDetail`
 
 GetSubscriptions returns the Subscriptions field if non-nil, zero value otherwise.
 
 ### GetSubscriptionsOk
 
-`func (o *UnibeeApiMerchantSubscriptionListRes) GetSubscriptionsOk() (*[]UnibeeInternalLogicGatewayRoSubscriptionDetailVo, bool)`
+`func (o *UnibeeApiMerchantSubscriptionListRes) GetSubscriptionsOk() (*[]UnibeeApiBeanSubscriptionDetail, bool)`
 
 GetSubscriptionsOk returns a tuple with the Subscriptions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubscriptions
 
-`func (o *UnibeeApiMerchantSubscriptionListRes) SetSubscriptions(v []UnibeeInternalLogicGatewayRoSubscriptionDetailVo)`
+`func (o *UnibeeApiMerchantSubscriptionListRes) SetSubscriptions(v []UnibeeApiBeanSubscriptionDetail)`
 
 SetSubscriptions sets Subscriptions field to given value.
 

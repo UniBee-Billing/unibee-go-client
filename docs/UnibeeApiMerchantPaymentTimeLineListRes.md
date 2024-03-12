@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PaymentTimeLines** | Pointer to [**[]UnibeeInternalModelEntityOverseaPayPaymentTimeline**](UnibeeInternalModelEntityOverseaPayPaymentTimeline.md) | PaymentTimeLines | [optional] 
+**PaymentTimeLines** | Pointer to [**[]UnibeeApiBeanPaymentTimelineSimplify**](UnibeeApiBeanPaymentTimelineSimplify.md) | PaymentTimeLines | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPaymentTimeLines
 
-`func (o *UnibeeApiMerchantPaymentTimeLineListRes) GetPaymentTimeLines() []UnibeeInternalModelEntityOverseaPayPaymentTimeline`
+`func (o *UnibeeApiMerchantPaymentTimeLineListRes) GetPaymentTimeLines() []UnibeeApiBeanPaymentTimelineSimplify`
 
 GetPaymentTimeLines returns the PaymentTimeLines field if non-nil, zero value otherwise.
 
 ### GetPaymentTimeLinesOk
 
-`func (o *UnibeeApiMerchantPaymentTimeLineListRes) GetPaymentTimeLinesOk() (*[]UnibeeInternalModelEntityOverseaPayPaymentTimeline, bool)`
+`func (o *UnibeeApiMerchantPaymentTimeLineListRes) GetPaymentTimeLinesOk() (*[]UnibeeApiBeanPaymentTimelineSimplify, bool)`
 
 GetPaymentTimeLinesOk returns a tuple with the PaymentTimeLines field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPaymentTimeLines
 
-`func (o *UnibeeApiMerchantPaymentTimeLineListRes) SetPaymentTimeLines(v []UnibeeInternalModelEntityOverseaPayPaymentTimeline)`
+`func (o *UnibeeApiMerchantPaymentTimeLineListRes) SetPaymentTimeLines(v []UnibeeApiBeanPaymentTimelineSimplify)`
 
 SetPaymentTimeLines sets PaymentTimeLines field to given value.
 

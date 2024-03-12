@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Env** | Pointer to **string** | System Env, em: daily|stage|local|prod | [optional] 
-**Gateway** | Pointer to [**[]UnibeeInternalLogicGatewayRoGatewaySimplify**](UnibeeInternalLogicGatewayRoGatewaySimplify.md) | Support Currency List | [optional] 
+**Gateway** | Pointer to [**[]UnibeeApiBeanGatewaySimplify**](UnibeeApiBeanGatewaySimplify.md) | Support Currency List | [optional] 
 **IsProd** | Pointer to **bool** | Check System Env Is Prod, true|false | [optional] 
-**SupportCurrency** | Pointer to [**[]UnibeeInternalLogicGatewayRoCurrency**](UnibeeInternalLogicGatewayRoCurrency.md) | Support Currency List | [optional] 
+**SupportCurrency** | Pointer to [**[]UnibeeApiBeanCurrency**](UnibeeApiBeanCurrency.md) | Support Currency List | [optional] 
 **SupportTimeZone** | Pointer to **[]string** | Support TimeZone List | [optional] 
 
 ## Methods
@@ -56,20 +56,20 @@ HasEnv returns a boolean if a field has been set.
 
 ### GetGateway
 
-`func (o *UnibeeApiSystemInformationGetRes) GetGateway() []UnibeeInternalLogicGatewayRoGatewaySimplify`
+`func (o *UnibeeApiSystemInformationGetRes) GetGateway() []UnibeeApiBeanGatewaySimplify`
 
 GetGateway returns the Gateway field if non-nil, zero value otherwise.
 
 ### GetGatewayOk
 
-`func (o *UnibeeApiSystemInformationGetRes) GetGatewayOk() (*[]UnibeeInternalLogicGatewayRoGatewaySimplify, bool)`
+`func (o *UnibeeApiSystemInformationGetRes) GetGatewayOk() (*[]UnibeeApiBeanGatewaySimplify, bool)`
 
 GetGatewayOk returns a tuple with the Gateway field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGateway
 
-`func (o *UnibeeApiSystemInformationGetRes) SetGateway(v []UnibeeInternalLogicGatewayRoGatewaySimplify)`
+`func (o *UnibeeApiSystemInformationGetRes) SetGateway(v []UnibeeApiBeanGatewaySimplify)`
 
 SetGateway sets Gateway field to given value.
 
@@ -106,20 +106,20 @@ HasIsProd returns a boolean if a field has been set.
 
 ### GetSupportCurrency
 
-`func (o *UnibeeApiSystemInformationGetRes) GetSupportCurrency() []UnibeeInternalLogicGatewayRoCurrency`
+`func (o *UnibeeApiSystemInformationGetRes) GetSupportCurrency() []UnibeeApiBeanCurrency`
 
 GetSupportCurrency returns the SupportCurrency field if non-nil, zero value otherwise.
 
 ### GetSupportCurrencyOk
 
-`func (o *UnibeeApiSystemInformationGetRes) GetSupportCurrencyOk() (*[]UnibeeInternalLogicGatewayRoCurrency, bool)`
+`func (o *UnibeeApiSystemInformationGetRes) GetSupportCurrencyOk() (*[]UnibeeApiBeanCurrency, bool)`
 
 GetSupportCurrencyOk returns a tuple with the SupportCurrency field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSupportCurrency
 
-`func (o *UnibeeApiSystemInformationGetRes) SetSupportCurrency(v []UnibeeInternalLogicGatewayRoCurrency)`
+`func (o *UnibeeApiSystemInformationGetRes) SetSupportCurrency(v []UnibeeApiBeanCurrency)`
 
 SetSupportCurrency sets SupportCurrency field to given value.
 

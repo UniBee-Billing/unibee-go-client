@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Currency** | Pointer to [**[]UnibeeInternalLogicGatewayRoCurrency**](UnibeeInternalLogicGatewayRoCurrency.md) | Currency List | [optional] 
+**Currency** | Pointer to [**[]UnibeeApiBeanCurrency**](UnibeeApiBeanCurrency.md) | Currency List | [optional] 
 **TimeZone** | Pointer to **[]string** | TimeZone List | [optional] 
 **Env** | Pointer to **string** | System Env, em: daily|stage|local|prod | [optional] 
-**Gateway** | Pointer to [**[]UnibeeInternalLogicGatewayRoGatewaySimplify**](UnibeeInternalLogicGatewayRoGatewaySimplify.md) | Gateway List | [optional] 
+**Gateway** | Pointer to [**[]UnibeeApiBeanGatewaySimplify**](UnibeeApiBeanGatewaySimplify.md) | Gateway List | [optional] 
 **IsProd** | Pointer to **bool** | Check System Env Is Prod, true|false | [optional] 
-**Merchant** | Pointer to [**UnibeeInternalModelEntityOverseaPayMerchant**](UnibeeInternalModelEntityOverseaPayMerchant.md) |  | [optional] 
+**Merchant** | Pointer to [**UnibeeApiBeanMerchantSimplify**](UnibeeApiBeanMerchantSimplify.md) |  | [optional] 
 
 ## Methods
 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCurrency
 
-`func (o *UnibeeApiMerchantProfileGetRes) GetCurrency() []UnibeeInternalLogicGatewayRoCurrency`
+`func (o *UnibeeApiMerchantProfileGetRes) GetCurrency() []UnibeeApiBeanCurrency`
 
 GetCurrency returns the Currency field if non-nil, zero value otherwise.
 
 ### GetCurrencyOk
 
-`func (o *UnibeeApiMerchantProfileGetRes) GetCurrencyOk() (*[]UnibeeInternalLogicGatewayRoCurrency, bool)`
+`func (o *UnibeeApiMerchantProfileGetRes) GetCurrencyOk() (*[]UnibeeApiBeanCurrency, bool)`
 
 GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCurrency
 
-`func (o *UnibeeApiMerchantProfileGetRes) SetCurrency(v []UnibeeInternalLogicGatewayRoCurrency)`
+`func (o *UnibeeApiMerchantProfileGetRes) SetCurrency(v []UnibeeApiBeanCurrency)`
 
 SetCurrency sets Currency field to given value.
 
@@ -107,20 +107,20 @@ HasEnv returns a boolean if a field has been set.
 
 ### GetGateway
 
-`func (o *UnibeeApiMerchantProfileGetRes) GetGateway() []UnibeeInternalLogicGatewayRoGatewaySimplify`
+`func (o *UnibeeApiMerchantProfileGetRes) GetGateway() []UnibeeApiBeanGatewaySimplify`
 
 GetGateway returns the Gateway field if non-nil, zero value otherwise.
 
 ### GetGatewayOk
 
-`func (o *UnibeeApiMerchantProfileGetRes) GetGatewayOk() (*[]UnibeeInternalLogicGatewayRoGatewaySimplify, bool)`
+`func (o *UnibeeApiMerchantProfileGetRes) GetGatewayOk() (*[]UnibeeApiBeanGatewaySimplify, bool)`
 
 GetGatewayOk returns a tuple with the Gateway field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGateway
 
-`func (o *UnibeeApiMerchantProfileGetRes) SetGateway(v []UnibeeInternalLogicGatewayRoGatewaySimplify)`
+`func (o *UnibeeApiMerchantProfileGetRes) SetGateway(v []UnibeeApiBeanGatewaySimplify)`
 
 SetGateway sets Gateway field to given value.
 
@@ -157,20 +157,20 @@ HasIsProd returns a boolean if a field has been set.
 
 ### GetMerchant
 
-`func (o *UnibeeApiMerchantProfileGetRes) GetMerchant() UnibeeInternalModelEntityOverseaPayMerchant`
+`func (o *UnibeeApiMerchantProfileGetRes) GetMerchant() UnibeeApiBeanMerchantSimplify`
 
 GetMerchant returns the Merchant field if non-nil, zero value otherwise.
 
 ### GetMerchantOk
 
-`func (o *UnibeeApiMerchantProfileGetRes) GetMerchantOk() (*UnibeeInternalModelEntityOverseaPayMerchant, bool)`
+`func (o *UnibeeApiMerchantProfileGetRes) GetMerchantOk() (*UnibeeApiBeanMerchantSimplify, bool)`
 
 GetMerchantOk returns a tuple with the Merchant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchant
 
-`func (o *UnibeeApiMerchantProfileGetRes) SetMerchant(v UnibeeInternalModelEntityOverseaPayMerchant)`
+`func (o *UnibeeApiMerchantProfileGetRes) SetMerchant(v UnibeeApiBeanMerchantSimplify)`
 
 SetMerchant sets Merchant field to given value.
 

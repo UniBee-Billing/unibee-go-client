@@ -20,9 +20,9 @@ var _ MappedNullable = &MerchantSearchKeySearchGet200ResponseData{}
 // MerchantSearchKeySearchGet200ResponseData struct for MerchantSearchKeySearchGet200ResponseData
 type MerchantSearchKeySearchGet200ResponseData struct {
 	// MatchInvoice
-	MatchInvoice []UnibeeInternalModelEntityOverseaPayInvoice `json:"matchInvoice,omitempty"`
+	MatchInvoice []UnibeeApiBeanInvoiceSimplify `json:"matchInvoice,omitempty"`
 	// MatchUserAccounts
-	MatchUserAccounts []UnibeeInternalModelEntityOverseaPayUserAccount `json:"matchUserAccounts,omitempty"`
+	MatchUserAccounts []UnibeeApiBeanUserAccountSimplify `json:"matchUserAccounts,omitempty"`
 	PrecisionMatchObject *UnibeeApiMerchantSearchPrecisionMatchObject `json:"precisionMatchObject,omitempty"`
 }
 
@@ -44,9 +44,9 @@ func NewMerchantSearchKeySearchGet200ResponseDataWithDefaults() *MerchantSearchK
 }
 
 // GetMatchInvoice returns the MatchInvoice field value if set, zero value otherwise.
-func (o *MerchantSearchKeySearchGet200ResponseData) GetMatchInvoice() []UnibeeInternalModelEntityOverseaPayInvoice {
+func (o *MerchantSearchKeySearchGet200ResponseData) GetMatchInvoice() []UnibeeApiBeanInvoiceSimplify {
 	if o == nil || IsNil(o.MatchInvoice) {
-		var ret []UnibeeInternalModelEntityOverseaPayInvoice
+		var ret []UnibeeApiBeanInvoiceSimplify
 		return ret
 	}
 	return o.MatchInvoice
@@ -54,7 +54,7 @@ func (o *MerchantSearchKeySearchGet200ResponseData) GetMatchInvoice() []UnibeeIn
 
 // GetMatchInvoiceOk returns a tuple with the MatchInvoice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantSearchKeySearchGet200ResponseData) GetMatchInvoiceOk() ([]UnibeeInternalModelEntityOverseaPayInvoice, bool) {
+func (o *MerchantSearchKeySearchGet200ResponseData) GetMatchInvoiceOk() ([]UnibeeApiBeanInvoiceSimplify, bool) {
 	if o == nil || IsNil(o.MatchInvoice) {
 		return nil, false
 	}
@@ -70,15 +70,15 @@ func (o *MerchantSearchKeySearchGet200ResponseData) HasMatchInvoice() bool {
 	return false
 }
 
-// SetMatchInvoice gets a reference to the given []UnibeeInternalModelEntityOverseaPayInvoice and assigns it to the MatchInvoice field.
-func (o *MerchantSearchKeySearchGet200ResponseData) SetMatchInvoice(v []UnibeeInternalModelEntityOverseaPayInvoice) {
+// SetMatchInvoice gets a reference to the given []UnibeeApiBeanInvoiceSimplify and assigns it to the MatchInvoice field.
+func (o *MerchantSearchKeySearchGet200ResponseData) SetMatchInvoice(v []UnibeeApiBeanInvoiceSimplify) {
 	o.MatchInvoice = v
 }
 
 // GetMatchUserAccounts returns the MatchUserAccounts field value if set, zero value otherwise.
-func (o *MerchantSearchKeySearchGet200ResponseData) GetMatchUserAccounts() []UnibeeInternalModelEntityOverseaPayUserAccount {
+func (o *MerchantSearchKeySearchGet200ResponseData) GetMatchUserAccounts() []UnibeeApiBeanUserAccountSimplify {
 	if o == nil || IsNil(o.MatchUserAccounts) {
-		var ret []UnibeeInternalModelEntityOverseaPayUserAccount
+		var ret []UnibeeApiBeanUserAccountSimplify
 		return ret
 	}
 	return o.MatchUserAccounts
@@ -86,7 +86,7 @@ func (o *MerchantSearchKeySearchGet200ResponseData) GetMatchUserAccounts() []Uni
 
 // GetMatchUserAccountsOk returns a tuple with the MatchUserAccounts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantSearchKeySearchGet200ResponseData) GetMatchUserAccountsOk() ([]UnibeeInternalModelEntityOverseaPayUserAccount, bool) {
+func (o *MerchantSearchKeySearchGet200ResponseData) GetMatchUserAccountsOk() ([]UnibeeApiBeanUserAccountSimplify, bool) {
 	if o == nil || IsNil(o.MatchUserAccounts) {
 		return nil, false
 	}
@@ -102,8 +102,8 @@ func (o *MerchantSearchKeySearchGet200ResponseData) HasMatchUserAccounts() bool 
 	return false
 }
 
-// SetMatchUserAccounts gets a reference to the given []UnibeeInternalModelEntityOverseaPayUserAccount and assigns it to the MatchUserAccounts field.
-func (o *MerchantSearchKeySearchGet200ResponseData) SetMatchUserAccounts(v []UnibeeInternalModelEntityOverseaPayUserAccount) {
+// SetMatchUserAccounts gets a reference to the given []UnibeeApiBeanUserAccountSimplify and assigns it to the MatchUserAccounts field.
+func (o *MerchantSearchKeySearchGet200ResponseData) SetMatchUserAccounts(v []UnibeeApiBeanUserAccountSimplify) {
 	o.MatchUserAccounts = v
 }
 

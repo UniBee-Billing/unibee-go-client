@@ -19,7 +19,7 @@ var _ MappedNullable = &UnibeeApiMerchantInvoiceNewRes{}
 
 // UnibeeApiMerchantInvoiceNewRes struct for UnibeeApiMerchantInvoiceNewRes
 type UnibeeApiMerchantInvoiceNewRes struct {
-	Invoice *UnibeeInternalLogicGatewayRoInvoiceDetailRo `json:"invoice,omitempty"`
+	Invoice *UnibeeApiBeanInvoiceDetail `json:"invoice,omitempty"`
 }
 
 // NewUnibeeApiMerchantInvoiceNewRes instantiates a new UnibeeApiMerchantInvoiceNewRes object
@@ -40,9 +40,9 @@ func NewUnibeeApiMerchantInvoiceNewResWithDefaults() *UnibeeApiMerchantInvoiceNe
 }
 
 // GetInvoice returns the Invoice field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantInvoiceNewRes) GetInvoice() UnibeeInternalLogicGatewayRoInvoiceDetailRo {
+func (o *UnibeeApiMerchantInvoiceNewRes) GetInvoice() UnibeeApiBeanInvoiceDetail {
 	if o == nil || IsNil(o.Invoice) {
-		var ret UnibeeInternalLogicGatewayRoInvoiceDetailRo
+		var ret UnibeeApiBeanInvoiceDetail
 		return ret
 	}
 	return *o.Invoice
@@ -50,7 +50,7 @@ func (o *UnibeeApiMerchantInvoiceNewRes) GetInvoice() UnibeeInternalLogicGateway
 
 // GetInvoiceOk returns a tuple with the Invoice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantInvoiceNewRes) GetInvoiceOk() (*UnibeeInternalLogicGatewayRoInvoiceDetailRo, bool) {
+func (o *UnibeeApiMerchantInvoiceNewRes) GetInvoiceOk() (*UnibeeApiBeanInvoiceDetail, bool) {
 	if o == nil || IsNil(o.Invoice) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *UnibeeApiMerchantInvoiceNewRes) HasInvoice() bool {
 	return false
 }
 
-// SetInvoice gets a reference to the given UnibeeInternalLogicGatewayRoInvoiceDetailRo and assigns it to the Invoice field.
-func (o *UnibeeApiMerchantInvoiceNewRes) SetInvoice(v UnibeeInternalLogicGatewayRoInvoiceDetailRo) {
+// SetInvoice gets a reference to the given UnibeeApiBeanInvoiceDetail and assigns it to the Invoice field.
+func (o *UnibeeApiMerchantInvoiceNewRes) SetInvoice(v UnibeeApiBeanInvoiceDetail) {
 	o.Invoice = &v
 }
 

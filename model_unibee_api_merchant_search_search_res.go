@@ -20,9 +20,9 @@ var _ MappedNullable = &UnibeeApiMerchantSearchSearchRes{}
 // UnibeeApiMerchantSearchSearchRes struct for UnibeeApiMerchantSearchSearchRes
 type UnibeeApiMerchantSearchSearchRes struct {
 	// MatchInvoice
-	MatchInvoice []UnibeeInternalModelEntityOverseaPayInvoice `json:"matchInvoice,omitempty"`
+	MatchInvoice []UnibeeApiBeanInvoiceSimplify `json:"matchInvoice,omitempty"`
 	// MatchUserAccounts
-	MatchUserAccounts []UnibeeInternalModelEntityOverseaPayUserAccount `json:"matchUserAccounts,omitempty"`
+	MatchUserAccounts []UnibeeApiBeanUserAccountSimplify `json:"matchUserAccounts,omitempty"`
 	PrecisionMatchObject *UnibeeApiMerchantSearchPrecisionMatchObject `json:"precisionMatchObject,omitempty"`
 }
 
@@ -44,9 +44,9 @@ func NewUnibeeApiMerchantSearchSearchResWithDefaults() *UnibeeApiMerchantSearchS
 }
 
 // GetMatchInvoice returns the MatchInvoice field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantSearchSearchRes) GetMatchInvoice() []UnibeeInternalModelEntityOverseaPayInvoice {
+func (o *UnibeeApiMerchantSearchSearchRes) GetMatchInvoice() []UnibeeApiBeanInvoiceSimplify {
 	if o == nil || IsNil(o.MatchInvoice) {
-		var ret []UnibeeInternalModelEntityOverseaPayInvoice
+		var ret []UnibeeApiBeanInvoiceSimplify
 		return ret
 	}
 	return o.MatchInvoice
@@ -54,7 +54,7 @@ func (o *UnibeeApiMerchantSearchSearchRes) GetMatchInvoice() []UnibeeInternalMod
 
 // GetMatchInvoiceOk returns a tuple with the MatchInvoice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantSearchSearchRes) GetMatchInvoiceOk() ([]UnibeeInternalModelEntityOverseaPayInvoice, bool) {
+func (o *UnibeeApiMerchantSearchSearchRes) GetMatchInvoiceOk() ([]UnibeeApiBeanInvoiceSimplify, bool) {
 	if o == nil || IsNil(o.MatchInvoice) {
 		return nil, false
 	}
@@ -70,15 +70,15 @@ func (o *UnibeeApiMerchantSearchSearchRes) HasMatchInvoice() bool {
 	return false
 }
 
-// SetMatchInvoice gets a reference to the given []UnibeeInternalModelEntityOverseaPayInvoice and assigns it to the MatchInvoice field.
-func (o *UnibeeApiMerchantSearchSearchRes) SetMatchInvoice(v []UnibeeInternalModelEntityOverseaPayInvoice) {
+// SetMatchInvoice gets a reference to the given []UnibeeApiBeanInvoiceSimplify and assigns it to the MatchInvoice field.
+func (o *UnibeeApiMerchantSearchSearchRes) SetMatchInvoice(v []UnibeeApiBeanInvoiceSimplify) {
 	o.MatchInvoice = v
 }
 
 // GetMatchUserAccounts returns the MatchUserAccounts field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantSearchSearchRes) GetMatchUserAccounts() []UnibeeInternalModelEntityOverseaPayUserAccount {
+func (o *UnibeeApiMerchantSearchSearchRes) GetMatchUserAccounts() []UnibeeApiBeanUserAccountSimplify {
 	if o == nil || IsNil(o.MatchUserAccounts) {
-		var ret []UnibeeInternalModelEntityOverseaPayUserAccount
+		var ret []UnibeeApiBeanUserAccountSimplify
 		return ret
 	}
 	return o.MatchUserAccounts
@@ -86,7 +86,7 @@ func (o *UnibeeApiMerchantSearchSearchRes) GetMatchUserAccounts() []UnibeeIntern
 
 // GetMatchUserAccountsOk returns a tuple with the MatchUserAccounts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantSearchSearchRes) GetMatchUserAccountsOk() ([]UnibeeInternalModelEntityOverseaPayUserAccount, bool) {
+func (o *UnibeeApiMerchantSearchSearchRes) GetMatchUserAccountsOk() ([]UnibeeApiBeanUserAccountSimplify, bool) {
 	if o == nil || IsNil(o.MatchUserAccounts) {
 		return nil, false
 	}
@@ -102,8 +102,8 @@ func (o *UnibeeApiMerchantSearchSearchRes) HasMatchUserAccounts() bool {
 	return false
 }
 
-// SetMatchUserAccounts gets a reference to the given []UnibeeInternalModelEntityOverseaPayUserAccount and assigns it to the MatchUserAccounts field.
-func (o *UnibeeApiMerchantSearchSearchRes) SetMatchUserAccounts(v []UnibeeInternalModelEntityOverseaPayUserAccount) {
+// SetMatchUserAccounts gets a reference to the given []UnibeeApiBeanUserAccountSimplify and assigns it to the MatchUserAccounts field.
+func (o *UnibeeApiMerchantSearchSearchRes) SetMatchUserAccounts(v []UnibeeApiBeanUserAccountSimplify) {
 	o.MatchUserAccounts = v
 }
 

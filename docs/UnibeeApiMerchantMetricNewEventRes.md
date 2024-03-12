@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MerchantMetricEvent** | Pointer to [**UnibeeInternalModelEntityOverseaPayMerchantMetricEvent**](UnibeeInternalModelEntityOverseaPayMerchantMetricEvent.md) |  | [optional] 
+**MerchantMetricEvent** | Pointer to [**UnibeeApiBeanMerchantMetricEventSimplify**](UnibeeApiBeanMerchantMetricEventSimplify.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMerchantMetricEvent
 
-`func (o *UnibeeApiMerchantMetricNewEventRes) GetMerchantMetricEvent() UnibeeInternalModelEntityOverseaPayMerchantMetricEvent`
+`func (o *UnibeeApiMerchantMetricNewEventRes) GetMerchantMetricEvent() UnibeeApiBeanMerchantMetricEventSimplify`
 
 GetMerchantMetricEvent returns the MerchantMetricEvent field if non-nil, zero value otherwise.
 
 ### GetMerchantMetricEventOk
 
-`func (o *UnibeeApiMerchantMetricNewEventRes) GetMerchantMetricEventOk() (*UnibeeInternalModelEntityOverseaPayMerchantMetricEvent, bool)`
+`func (o *UnibeeApiMerchantMetricNewEventRes) GetMerchantMetricEventOk() (*UnibeeApiBeanMerchantMetricEventSimplify, bool)`
 
 GetMerchantMetricEventOk returns a tuple with the MerchantMetricEvent field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantMetricEvent
 
-`func (o *UnibeeApiMerchantMetricNewEventRes) SetMerchantMetricEvent(v UnibeeInternalModelEntityOverseaPayMerchantMetricEvent)`
+`func (o *UnibeeApiMerchantMetricNewEventRes) SetMerchantMetricEvent(v UnibeeApiBeanMerchantMetricEventSimplify)`
 
 SetMerchantMetricEvent sets MerchantMetricEvent field to given value.
 

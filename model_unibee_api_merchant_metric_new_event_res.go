@@ -19,7 +19,7 @@ var _ MappedNullable = &UnibeeApiMerchantMetricNewEventRes{}
 
 // UnibeeApiMerchantMetricNewEventRes struct for UnibeeApiMerchantMetricNewEventRes
 type UnibeeApiMerchantMetricNewEventRes struct {
-	MerchantMetricEvent *UnibeeInternalModelEntityOverseaPayMerchantMetricEvent `json:"merchantMetricEvent,omitempty"`
+	MerchantMetricEvent *UnibeeApiBeanMerchantMetricEventSimplify `json:"merchantMetricEvent,omitempty"`
 }
 
 // NewUnibeeApiMerchantMetricNewEventRes instantiates a new UnibeeApiMerchantMetricNewEventRes object
@@ -40,9 +40,9 @@ func NewUnibeeApiMerchantMetricNewEventResWithDefaults() *UnibeeApiMerchantMetri
 }
 
 // GetMerchantMetricEvent returns the MerchantMetricEvent field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantMetricNewEventRes) GetMerchantMetricEvent() UnibeeInternalModelEntityOverseaPayMerchantMetricEvent {
+func (o *UnibeeApiMerchantMetricNewEventRes) GetMerchantMetricEvent() UnibeeApiBeanMerchantMetricEventSimplify {
 	if o == nil || IsNil(o.MerchantMetricEvent) {
-		var ret UnibeeInternalModelEntityOverseaPayMerchantMetricEvent
+		var ret UnibeeApiBeanMerchantMetricEventSimplify
 		return ret
 	}
 	return *o.MerchantMetricEvent
@@ -50,7 +50,7 @@ func (o *UnibeeApiMerchantMetricNewEventRes) GetMerchantMetricEvent() UnibeeInte
 
 // GetMerchantMetricEventOk returns a tuple with the MerchantMetricEvent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantMetricNewEventRes) GetMerchantMetricEventOk() (*UnibeeInternalModelEntityOverseaPayMerchantMetricEvent, bool) {
+func (o *UnibeeApiMerchantMetricNewEventRes) GetMerchantMetricEventOk() (*UnibeeApiBeanMerchantMetricEventSimplify, bool) {
 	if o == nil || IsNil(o.MerchantMetricEvent) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *UnibeeApiMerchantMetricNewEventRes) HasMerchantMetricEvent() bool {
 	return false
 }
 
-// SetMerchantMetricEvent gets a reference to the given UnibeeInternalModelEntityOverseaPayMerchantMetricEvent and assigns it to the MerchantMetricEvent field.
-func (o *UnibeeApiMerchantMetricNewEventRes) SetMerchantMetricEvent(v UnibeeInternalModelEntityOverseaPayMerchantMetricEvent) {
+// SetMerchantMetricEvent gets a reference to the given UnibeeApiBeanMerchantMetricEventSimplify and assigns it to the MerchantMetricEvent field.
+func (o *UnibeeApiMerchantMetricNewEventRes) SetMerchantMetricEvent(v UnibeeApiBeanMerchantMetricEventSimplify) {
 	o.MerchantMetricEvent = &v
 }
 

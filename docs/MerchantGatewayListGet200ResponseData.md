@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Gateways** | Pointer to [**[]UnibeeInternalLogicGatewayRoGatewaySimplify**](UnibeeInternalLogicGatewayRoGatewaySimplify.md) |  | [optional] 
+**Gateways** | Pointer to [**[]UnibeeApiBeanGatewaySimplify**](UnibeeApiBeanGatewaySimplify.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetGateways
 
-`func (o *MerchantGatewayListGet200ResponseData) GetGateways() []UnibeeInternalLogicGatewayRoGatewaySimplify`
+`func (o *MerchantGatewayListGet200ResponseData) GetGateways() []UnibeeApiBeanGatewaySimplify`
 
 GetGateways returns the Gateways field if non-nil, zero value otherwise.
 
 ### GetGatewaysOk
 
-`func (o *MerchantGatewayListGet200ResponseData) GetGatewaysOk() (*[]UnibeeInternalLogicGatewayRoGatewaySimplify, bool)`
+`func (o *MerchantGatewayListGet200ResponseData) GetGatewaysOk() (*[]UnibeeApiBeanGatewaySimplify, bool)`
 
 GetGatewaysOk returns a tuple with the Gateways field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGateways
 
-`func (o *MerchantGatewayListGet200ResponseData) SetGateways(v []UnibeeInternalLogicGatewayRoGatewaySimplify)`
+`func (o *MerchantGatewayListGet200ResponseData) SetGateways(v []UnibeeApiBeanGatewaySimplify)`
 
 SetGateways sets Gateways field to given value.
 

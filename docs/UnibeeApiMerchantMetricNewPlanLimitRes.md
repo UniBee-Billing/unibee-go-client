@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MerchantMetricPlanLimit** | Pointer to [**UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo**](UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo.md) |  | [optional] 
+**MerchantMetricPlanLimit** | Pointer to [**UnibeeApiBeanMerchantMetricPlanLimit**](UnibeeApiBeanMerchantMetricPlanLimit.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMerchantMetricPlanLimit
 
-`func (o *UnibeeApiMerchantMetricNewPlanLimitRes) GetMerchantMetricPlanLimit() UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo`
+`func (o *UnibeeApiMerchantMetricNewPlanLimitRes) GetMerchantMetricPlanLimit() UnibeeApiBeanMerchantMetricPlanLimit`
 
 GetMerchantMetricPlanLimit returns the MerchantMetricPlanLimit field if non-nil, zero value otherwise.
 
 ### GetMerchantMetricPlanLimitOk
 
-`func (o *UnibeeApiMerchantMetricNewPlanLimitRes) GetMerchantMetricPlanLimitOk() (*UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo, bool)`
+`func (o *UnibeeApiMerchantMetricNewPlanLimitRes) GetMerchantMetricPlanLimitOk() (*UnibeeApiBeanMerchantMetricPlanLimit, bool)`
 
 GetMerchantMetricPlanLimitOk returns a tuple with the MerchantMetricPlanLimit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantMetricPlanLimit
 
-`func (o *UnibeeApiMerchantMetricNewPlanLimitRes) SetMerchantMetricPlanLimit(v UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo)`
+`func (o *UnibeeApiMerchantMetricNewPlanLimitRes) SetMerchantMetricPlanLimit(v UnibeeApiBeanMerchantMetricPlanLimit)`
 
 SetMerchantMetricPlanLimit sets MerchantMetricPlanLimit field to given value.
 

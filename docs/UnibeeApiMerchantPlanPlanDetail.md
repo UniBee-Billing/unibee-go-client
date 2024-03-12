@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonIds** | Pointer to **[]int64** | AddonIds | [optional] 
-**Addons** | Pointer to [**[]UnibeeInternalLogicGatewayRoPlanSimplify**](UnibeeInternalLogicGatewayRoPlanSimplify.md) | Addons | [optional] 
-**MetricPlanLimits** | Pointer to [**[]UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo**](UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo.md) | MetricPlanLimits | [optional] 
-**Plan** | Pointer to [**UnibeeInternalLogicGatewayRoPlanSimplify**](UnibeeInternalLogicGatewayRoPlanSimplify.md) |  | [optional] 
+**Addons** | Pointer to [**[]UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) | Addons | [optional] 
+**MetricPlanLimits** | Pointer to [**[]UnibeeApiBeanMerchantMetricPlanLimit**](UnibeeApiBeanMerchantMetricPlanLimit.md) | MetricPlanLimits | [optional] 
+**Plan** | Pointer to [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
 
 ## Methods
 
@@ -55,20 +55,20 @@ HasAddonIds returns a boolean if a field has been set.
 
 ### GetAddons
 
-`func (o *UnibeeApiMerchantPlanPlanDetail) GetAddons() []UnibeeInternalLogicGatewayRoPlanSimplify`
+`func (o *UnibeeApiMerchantPlanPlanDetail) GetAddons() []UnibeeApiBeanPlanSimplify`
 
 GetAddons returns the Addons field if non-nil, zero value otherwise.
 
 ### GetAddonsOk
 
-`func (o *UnibeeApiMerchantPlanPlanDetail) GetAddonsOk() (*[]UnibeeInternalLogicGatewayRoPlanSimplify, bool)`
+`func (o *UnibeeApiMerchantPlanPlanDetail) GetAddonsOk() (*[]UnibeeApiBeanPlanSimplify, bool)`
 
 GetAddonsOk returns a tuple with the Addons field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddons
 
-`func (o *UnibeeApiMerchantPlanPlanDetail) SetAddons(v []UnibeeInternalLogicGatewayRoPlanSimplify)`
+`func (o *UnibeeApiMerchantPlanPlanDetail) SetAddons(v []UnibeeApiBeanPlanSimplify)`
 
 SetAddons sets Addons field to given value.
 
@@ -80,20 +80,20 @@ HasAddons returns a boolean if a field has been set.
 
 ### GetMetricPlanLimits
 
-`func (o *UnibeeApiMerchantPlanPlanDetail) GetMetricPlanLimits() []UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo`
+`func (o *UnibeeApiMerchantPlanPlanDetail) GetMetricPlanLimits() []UnibeeApiBeanMerchantMetricPlanLimit`
 
 GetMetricPlanLimits returns the MetricPlanLimits field if non-nil, zero value otherwise.
 
 ### GetMetricPlanLimitsOk
 
-`func (o *UnibeeApiMerchantPlanPlanDetail) GetMetricPlanLimitsOk() (*[]UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo, bool)`
+`func (o *UnibeeApiMerchantPlanPlanDetail) GetMetricPlanLimitsOk() (*[]UnibeeApiBeanMerchantMetricPlanLimit, bool)`
 
 GetMetricPlanLimitsOk returns a tuple with the MetricPlanLimits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetricPlanLimits
 
-`func (o *UnibeeApiMerchantPlanPlanDetail) SetMetricPlanLimits(v []UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo)`
+`func (o *UnibeeApiMerchantPlanPlanDetail) SetMetricPlanLimits(v []UnibeeApiBeanMerchantMetricPlanLimit)`
 
 SetMetricPlanLimits sets MetricPlanLimits field to given value.
 
@@ -105,20 +105,20 @@ HasMetricPlanLimits returns a boolean if a field has been set.
 
 ### GetPlan
 
-`func (o *UnibeeApiMerchantPlanPlanDetail) GetPlan() UnibeeInternalLogicGatewayRoPlanSimplify`
+`func (o *UnibeeApiMerchantPlanPlanDetail) GetPlan() UnibeeApiBeanPlanSimplify`
 
 GetPlan returns the Plan field if non-nil, zero value otherwise.
 
 ### GetPlanOk
 
-`func (o *UnibeeApiMerchantPlanPlanDetail) GetPlanOk() (*UnibeeInternalLogicGatewayRoPlanSimplify, bool)`
+`func (o *UnibeeApiMerchantPlanPlanDetail) GetPlanOk() (*UnibeeApiBeanPlanSimplify, bool)`
 
 GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlan
 
-`func (o *UnibeeApiMerchantPlanPlanDetail) SetPlan(v UnibeeInternalLogicGatewayRoPlanSimplify)`
+`func (o *UnibeeApiMerchantPlanPlanDetail) SetPlan(v UnibeeApiBeanPlanSimplify)`
 
 SetPlan sets Plan field to given value.
 

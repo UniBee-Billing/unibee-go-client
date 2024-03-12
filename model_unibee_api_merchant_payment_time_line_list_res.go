@@ -20,7 +20,7 @@ var _ MappedNullable = &UnibeeApiMerchantPaymentTimeLineListRes{}
 // UnibeeApiMerchantPaymentTimeLineListRes struct for UnibeeApiMerchantPaymentTimeLineListRes
 type UnibeeApiMerchantPaymentTimeLineListRes struct {
 	// PaymentTimeLines
-	PaymentTimeLines []UnibeeInternalModelEntityOverseaPayPaymentTimeline `json:"paymentTimeLines,omitempty"`
+	PaymentTimeLines []UnibeeApiBeanPaymentTimelineSimplify `json:"paymentTimeLines,omitempty"`
 }
 
 // NewUnibeeApiMerchantPaymentTimeLineListRes instantiates a new UnibeeApiMerchantPaymentTimeLineListRes object
@@ -41,9 +41,9 @@ func NewUnibeeApiMerchantPaymentTimeLineListResWithDefaults() *UnibeeApiMerchant
 }
 
 // GetPaymentTimeLines returns the PaymentTimeLines field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantPaymentTimeLineListRes) GetPaymentTimeLines() []UnibeeInternalModelEntityOverseaPayPaymentTimeline {
+func (o *UnibeeApiMerchantPaymentTimeLineListRes) GetPaymentTimeLines() []UnibeeApiBeanPaymentTimelineSimplify {
 	if o == nil || IsNil(o.PaymentTimeLines) {
-		var ret []UnibeeInternalModelEntityOverseaPayPaymentTimeline
+		var ret []UnibeeApiBeanPaymentTimelineSimplify
 		return ret
 	}
 	return o.PaymentTimeLines
@@ -51,7 +51,7 @@ func (o *UnibeeApiMerchantPaymentTimeLineListRes) GetPaymentTimeLines() []Unibee
 
 // GetPaymentTimeLinesOk returns a tuple with the PaymentTimeLines field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantPaymentTimeLineListRes) GetPaymentTimeLinesOk() ([]UnibeeInternalModelEntityOverseaPayPaymentTimeline, bool) {
+func (o *UnibeeApiMerchantPaymentTimeLineListRes) GetPaymentTimeLinesOk() ([]UnibeeApiBeanPaymentTimelineSimplify, bool) {
 	if o == nil || IsNil(o.PaymentTimeLines) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *UnibeeApiMerchantPaymentTimeLineListRes) HasPaymentTimeLines() bool {
 	return false
 }
 
-// SetPaymentTimeLines gets a reference to the given []UnibeeInternalModelEntityOverseaPayPaymentTimeline and assigns it to the PaymentTimeLines field.
-func (o *UnibeeApiMerchantPaymentTimeLineListRes) SetPaymentTimeLines(v []UnibeeInternalModelEntityOverseaPayPaymentTimeline) {
+// SetPaymentTimeLines gets a reference to the given []UnibeeApiBeanPaymentTimelineSimplify and assigns it to the PaymentTimeLines field.
+func (o *UnibeeApiMerchantPaymentTimeLineListRes) SetPaymentTimeLines(v []UnibeeApiBeanPaymentTimelineSimplify) {
 	o.PaymentTimeLines = v
 }
 

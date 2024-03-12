@@ -20,7 +20,7 @@ var _ MappedNullable = &MerchantSubscriptionListGet200ResponseData{}
 // MerchantSubscriptionListGet200ResponseData struct for MerchantSubscriptionListGet200ResponseData
 type MerchantSubscriptionListGet200ResponseData struct {
 	// Subscriptions
-	Subscriptions []UnibeeInternalLogicGatewayRoSubscriptionDetailVo `json:"subscriptions,omitempty"`
+	Subscriptions []UnibeeApiBeanSubscriptionDetail `json:"subscriptions,omitempty"`
 }
 
 // NewMerchantSubscriptionListGet200ResponseData instantiates a new MerchantSubscriptionListGet200ResponseData object
@@ -41,9 +41,9 @@ func NewMerchantSubscriptionListGet200ResponseDataWithDefaults() *MerchantSubscr
 }
 
 // GetSubscriptions returns the Subscriptions field value if set, zero value otherwise.
-func (o *MerchantSubscriptionListGet200ResponseData) GetSubscriptions() []UnibeeInternalLogicGatewayRoSubscriptionDetailVo {
+func (o *MerchantSubscriptionListGet200ResponseData) GetSubscriptions() []UnibeeApiBeanSubscriptionDetail {
 	if o == nil || IsNil(o.Subscriptions) {
-		var ret []UnibeeInternalLogicGatewayRoSubscriptionDetailVo
+		var ret []UnibeeApiBeanSubscriptionDetail
 		return ret
 	}
 	return o.Subscriptions
@@ -51,7 +51,7 @@ func (o *MerchantSubscriptionListGet200ResponseData) GetSubscriptions() []Unibee
 
 // GetSubscriptionsOk returns a tuple with the Subscriptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantSubscriptionListGet200ResponseData) GetSubscriptionsOk() ([]UnibeeInternalLogicGatewayRoSubscriptionDetailVo, bool) {
+func (o *MerchantSubscriptionListGet200ResponseData) GetSubscriptionsOk() ([]UnibeeApiBeanSubscriptionDetail, bool) {
 	if o == nil || IsNil(o.Subscriptions) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *MerchantSubscriptionListGet200ResponseData) HasSubscriptions() bool {
 	return false
 }
 
-// SetSubscriptions gets a reference to the given []UnibeeInternalLogicGatewayRoSubscriptionDetailVo and assigns it to the Subscriptions field.
-func (o *MerchantSubscriptionListGet200ResponseData) SetSubscriptions(v []UnibeeInternalLogicGatewayRoSubscriptionDetailVo) {
+// SetSubscriptions gets a reference to the given []UnibeeApiBeanSubscriptionDetail and assigns it to the Subscriptions field.
+func (o *MerchantSubscriptionListGet200ResponseData) SetSubscriptions(v []UnibeeApiBeanSubscriptionDetail) {
 	o.Subscriptions = v
 }
 

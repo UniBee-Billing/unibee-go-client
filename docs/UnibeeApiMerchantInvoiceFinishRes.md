@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Invoice** | Pointer to [**UnibeeInternalModelEntityOverseaPayInvoice**](UnibeeInternalModelEntityOverseaPayInvoice.md) |  | [optional] 
+**Invoice** | Pointer to [**UnibeeApiBeanInvoiceSimplify**](UnibeeApiBeanInvoiceSimplify.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetInvoice
 
-`func (o *UnibeeApiMerchantInvoiceFinishRes) GetInvoice() UnibeeInternalModelEntityOverseaPayInvoice`
+`func (o *UnibeeApiMerchantInvoiceFinishRes) GetInvoice() UnibeeApiBeanInvoiceSimplify`
 
 GetInvoice returns the Invoice field if non-nil, zero value otherwise.
 
 ### GetInvoiceOk
 
-`func (o *UnibeeApiMerchantInvoiceFinishRes) GetInvoiceOk() (*UnibeeInternalModelEntityOverseaPayInvoice, bool)`
+`func (o *UnibeeApiMerchantInvoiceFinishRes) GetInvoiceOk() (*UnibeeApiBeanInvoiceSimplify, bool)`
 
 GetInvoiceOk returns a tuple with the Invoice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInvoice
 
-`func (o *UnibeeApiMerchantInvoiceFinishRes) SetInvoice(v UnibeeInternalModelEntityOverseaPayInvoice)`
+`func (o *UnibeeApiMerchantInvoiceFinishRes) SetInvoice(v UnibeeApiBeanInvoiceSimplify)`
 
 SetInvoice sets Invoice field to given value.
 

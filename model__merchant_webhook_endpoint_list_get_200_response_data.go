@@ -20,7 +20,7 @@ var _ MappedNullable = &MerchantWebhookEndpointListGet200ResponseData{}
 // MerchantWebhookEndpointListGet200ResponseData struct for MerchantWebhookEndpointListGet200ResponseData
 type MerchantWebhookEndpointListGet200ResponseData struct {
 	// EndpointList
-	EndpointList []UnibeeInternalLogicWebhookMerchantWebhookEndpointVo `json:"endpointList,omitempty"`
+	EndpointList []UnibeeApiBeanMerchantWebhookEndpointSimplify `json:"endpointList,omitempty"`
 }
 
 // NewMerchantWebhookEndpointListGet200ResponseData instantiates a new MerchantWebhookEndpointListGet200ResponseData object
@@ -41,9 +41,9 @@ func NewMerchantWebhookEndpointListGet200ResponseDataWithDefaults() *MerchantWeb
 }
 
 // GetEndpointList returns the EndpointList field value if set, zero value otherwise.
-func (o *MerchantWebhookEndpointListGet200ResponseData) GetEndpointList() []UnibeeInternalLogicWebhookMerchantWebhookEndpointVo {
+func (o *MerchantWebhookEndpointListGet200ResponseData) GetEndpointList() []UnibeeApiBeanMerchantWebhookEndpointSimplify {
 	if o == nil || IsNil(o.EndpointList) {
-		var ret []UnibeeInternalLogicWebhookMerchantWebhookEndpointVo
+		var ret []UnibeeApiBeanMerchantWebhookEndpointSimplify
 		return ret
 	}
 	return o.EndpointList
@@ -51,7 +51,7 @@ func (o *MerchantWebhookEndpointListGet200ResponseData) GetEndpointList() []Unib
 
 // GetEndpointListOk returns a tuple with the EndpointList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantWebhookEndpointListGet200ResponseData) GetEndpointListOk() ([]UnibeeInternalLogicWebhookMerchantWebhookEndpointVo, bool) {
+func (o *MerchantWebhookEndpointListGet200ResponseData) GetEndpointListOk() ([]UnibeeApiBeanMerchantWebhookEndpointSimplify, bool) {
 	if o == nil || IsNil(o.EndpointList) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *MerchantWebhookEndpointListGet200ResponseData) HasEndpointList() bool {
 	return false
 }
 
-// SetEndpointList gets a reference to the given []UnibeeInternalLogicWebhookMerchantWebhookEndpointVo and assigns it to the EndpointList field.
-func (o *MerchantWebhookEndpointListGet200ResponseData) SetEndpointList(v []UnibeeInternalLogicWebhookMerchantWebhookEndpointVo) {
+// SetEndpointList gets a reference to the given []UnibeeApiBeanMerchantWebhookEndpointSimplify and assigns it to the EndpointList field.
+func (o *MerchantWebhookEndpointListGet200ResponseData) SetEndpointList(v []UnibeeApiBeanMerchantWebhookEndpointSimplify) {
 	o.EndpointList = v
 }
 

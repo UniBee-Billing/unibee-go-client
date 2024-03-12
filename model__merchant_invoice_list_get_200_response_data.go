@@ -20,7 +20,7 @@ var _ MappedNullable = &MerchantInvoiceListGet200ResponseData{}
 // MerchantInvoiceListGet200ResponseData struct for MerchantInvoiceListGet200ResponseData
 type MerchantInvoiceListGet200ResponseData struct {
 	// invoice Detail List
-	Invoices []UnibeeInternalLogicGatewayRoInvoiceDetailRo `json:"invoices,omitempty"`
+	Invoices []UnibeeApiBeanInvoiceDetail `json:"invoices,omitempty"`
 }
 
 // NewMerchantInvoiceListGet200ResponseData instantiates a new MerchantInvoiceListGet200ResponseData object
@@ -41,9 +41,9 @@ func NewMerchantInvoiceListGet200ResponseDataWithDefaults() *MerchantInvoiceList
 }
 
 // GetInvoices returns the Invoices field value if set, zero value otherwise.
-func (o *MerchantInvoiceListGet200ResponseData) GetInvoices() []UnibeeInternalLogicGatewayRoInvoiceDetailRo {
+func (o *MerchantInvoiceListGet200ResponseData) GetInvoices() []UnibeeApiBeanInvoiceDetail {
 	if o == nil || IsNil(o.Invoices) {
-		var ret []UnibeeInternalLogicGatewayRoInvoiceDetailRo
+		var ret []UnibeeApiBeanInvoiceDetail
 		return ret
 	}
 	return o.Invoices
@@ -51,7 +51,7 @@ func (o *MerchantInvoiceListGet200ResponseData) GetInvoices() []UnibeeInternalLo
 
 // GetInvoicesOk returns a tuple with the Invoices field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantInvoiceListGet200ResponseData) GetInvoicesOk() ([]UnibeeInternalLogicGatewayRoInvoiceDetailRo, bool) {
+func (o *MerchantInvoiceListGet200ResponseData) GetInvoicesOk() ([]UnibeeApiBeanInvoiceDetail, bool) {
 	if o == nil || IsNil(o.Invoices) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *MerchantInvoiceListGet200ResponseData) HasInvoices() bool {
 	return false
 }
 
-// SetInvoices gets a reference to the given []UnibeeInternalLogicGatewayRoInvoiceDetailRo and assigns it to the Invoices field.
-func (o *MerchantInvoiceListGet200ResponseData) SetInvoices(v []UnibeeInternalLogicGatewayRoInvoiceDetailRo) {
+// SetInvoices gets a reference to the given []UnibeeApiBeanInvoiceDetail and assigns it to the Invoices field.
+func (o *MerchantInvoiceListGet200ResponseData) SetInvoices(v []UnibeeApiBeanInvoiceDetail) {
 	o.Invoices = v
 }
 

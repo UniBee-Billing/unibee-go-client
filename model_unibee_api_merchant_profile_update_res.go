@@ -19,7 +19,7 @@ var _ MappedNullable = &UnibeeApiMerchantProfileUpdateRes{}
 
 // UnibeeApiMerchantProfileUpdateRes struct for UnibeeApiMerchantProfileUpdateRes
 type UnibeeApiMerchantProfileUpdateRes struct {
-	Merchant *UnibeeInternalModelEntityOverseaPayMerchant `json:"merchant,omitempty"`
+	Merchant *UnibeeApiBeanMerchantSimplify `json:"merchant,omitempty"`
 }
 
 // NewUnibeeApiMerchantProfileUpdateRes instantiates a new UnibeeApiMerchantProfileUpdateRes object
@@ -40,9 +40,9 @@ func NewUnibeeApiMerchantProfileUpdateResWithDefaults() *UnibeeApiMerchantProfil
 }
 
 // GetMerchant returns the Merchant field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantProfileUpdateRes) GetMerchant() UnibeeInternalModelEntityOverseaPayMerchant {
+func (o *UnibeeApiMerchantProfileUpdateRes) GetMerchant() UnibeeApiBeanMerchantSimplify {
 	if o == nil || IsNil(o.Merchant) {
-		var ret UnibeeInternalModelEntityOverseaPayMerchant
+		var ret UnibeeApiBeanMerchantSimplify
 		return ret
 	}
 	return *o.Merchant
@@ -50,7 +50,7 @@ func (o *UnibeeApiMerchantProfileUpdateRes) GetMerchant() UnibeeInternalModelEnt
 
 // GetMerchantOk returns a tuple with the Merchant field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantProfileUpdateRes) GetMerchantOk() (*UnibeeInternalModelEntityOverseaPayMerchant, bool) {
+func (o *UnibeeApiMerchantProfileUpdateRes) GetMerchantOk() (*UnibeeApiBeanMerchantSimplify, bool) {
 	if o == nil || IsNil(o.Merchant) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *UnibeeApiMerchantProfileUpdateRes) HasMerchant() bool {
 	return false
 }
 
-// SetMerchant gets a reference to the given UnibeeInternalModelEntityOverseaPayMerchant and assigns it to the Merchant field.
-func (o *UnibeeApiMerchantProfileUpdateRes) SetMerchant(v UnibeeInternalModelEntityOverseaPayMerchant) {
+// SetMerchant gets a reference to the given UnibeeApiBeanMerchantSimplify and assigns it to the Merchant field.
+func (o *UnibeeApiMerchantProfileUpdateRes) SetMerchant(v UnibeeApiBeanMerchantSimplify) {
 	o.Merchant = &v
 }
 

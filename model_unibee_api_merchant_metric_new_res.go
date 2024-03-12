@@ -19,7 +19,7 @@ var _ MappedNullable = &UnibeeApiMerchantMetricNewRes{}
 
 // UnibeeApiMerchantMetricNewRes struct for UnibeeApiMerchantMetricNewRes
 type UnibeeApiMerchantMetricNewRes struct {
-	MerchantMetric *UnibeeInternalLogicGatewayRoMerchantMetricVo `json:"merchantMetric,omitempty"`
+	MerchantMetric *UnibeeApiBeanMerchantMetricSimplify `json:"merchantMetric,omitempty"`
 }
 
 // NewUnibeeApiMerchantMetricNewRes instantiates a new UnibeeApiMerchantMetricNewRes object
@@ -40,9 +40,9 @@ func NewUnibeeApiMerchantMetricNewResWithDefaults() *UnibeeApiMerchantMetricNewR
 }
 
 // GetMerchantMetric returns the MerchantMetric field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantMetricNewRes) GetMerchantMetric() UnibeeInternalLogicGatewayRoMerchantMetricVo {
+func (o *UnibeeApiMerchantMetricNewRes) GetMerchantMetric() UnibeeApiBeanMerchantMetricSimplify {
 	if o == nil || IsNil(o.MerchantMetric) {
-		var ret UnibeeInternalLogicGatewayRoMerchantMetricVo
+		var ret UnibeeApiBeanMerchantMetricSimplify
 		return ret
 	}
 	return *o.MerchantMetric
@@ -50,7 +50,7 @@ func (o *UnibeeApiMerchantMetricNewRes) GetMerchantMetric() UnibeeInternalLogicG
 
 // GetMerchantMetricOk returns a tuple with the MerchantMetric field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantMetricNewRes) GetMerchantMetricOk() (*UnibeeInternalLogicGatewayRoMerchantMetricVo, bool) {
+func (o *UnibeeApiMerchantMetricNewRes) GetMerchantMetricOk() (*UnibeeApiBeanMerchantMetricSimplify, bool) {
 	if o == nil || IsNil(o.MerchantMetric) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *UnibeeApiMerchantMetricNewRes) HasMerchantMetric() bool {
 	return false
 }
 
-// SetMerchantMetric gets a reference to the given UnibeeInternalLogicGatewayRoMerchantMetricVo and assigns it to the MerchantMetric field.
-func (o *UnibeeApiMerchantMetricNewRes) SetMerchantMetric(v UnibeeInternalLogicGatewayRoMerchantMetricVo) {
+// SetMerchantMetric gets a reference to the given UnibeeApiBeanMerchantMetricSimplify and assigns it to the MerchantMetric field.
+func (o *UnibeeApiMerchantMetricNewRes) SetMerchantMetric(v UnibeeApiBeanMerchantMetricSimplify) {
 	o.MerchantMetric = &v
 }
 

@@ -19,7 +19,7 @@ var _ MappedNullable = &MerchantPlanAddonsBindingPost200ResponseData{}
 
 // MerchantPlanAddonsBindingPost200ResponseData struct for MerchantPlanAddonsBindingPost200ResponseData
 type MerchantPlanAddonsBindingPost200ResponseData struct {
-	Plan *UnibeeInternalLogicGatewayRoPlanSimplify `json:"plan,omitempty"`
+	Plan *UnibeeApiBeanPlanSimplify `json:"plan,omitempty"`
 }
 
 // NewMerchantPlanAddonsBindingPost200ResponseData instantiates a new MerchantPlanAddonsBindingPost200ResponseData object
@@ -40,9 +40,9 @@ func NewMerchantPlanAddonsBindingPost200ResponseDataWithDefaults() *MerchantPlan
 }
 
 // GetPlan returns the Plan field value if set, zero value otherwise.
-func (o *MerchantPlanAddonsBindingPost200ResponseData) GetPlan() UnibeeInternalLogicGatewayRoPlanSimplify {
+func (o *MerchantPlanAddonsBindingPost200ResponseData) GetPlan() UnibeeApiBeanPlanSimplify {
 	if o == nil || IsNil(o.Plan) {
-		var ret UnibeeInternalLogicGatewayRoPlanSimplify
+		var ret UnibeeApiBeanPlanSimplify
 		return ret
 	}
 	return *o.Plan
@@ -50,7 +50,7 @@ func (o *MerchantPlanAddonsBindingPost200ResponseData) GetPlan() UnibeeInternalL
 
 // GetPlanOk returns a tuple with the Plan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantPlanAddonsBindingPost200ResponseData) GetPlanOk() (*UnibeeInternalLogicGatewayRoPlanSimplify, bool) {
+func (o *MerchantPlanAddonsBindingPost200ResponseData) GetPlanOk() (*UnibeeApiBeanPlanSimplify, bool) {
 	if o == nil || IsNil(o.Plan) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *MerchantPlanAddonsBindingPost200ResponseData) HasPlan() bool {
 	return false
 }
 
-// SetPlan gets a reference to the given UnibeeInternalLogicGatewayRoPlanSimplify and assigns it to the Plan field.
-func (o *MerchantPlanAddonsBindingPost200ResponseData) SetPlan(v UnibeeInternalLogicGatewayRoPlanSimplify) {
+// SetPlan gets a reference to the given UnibeeApiBeanPlanSimplify and assigns it to the Plan field.
+func (o *MerchantPlanAddonsBindingPost200ResponseData) SetPlan(v UnibeeApiBeanPlanSimplify) {
 	o.Plan = &v
 }
 

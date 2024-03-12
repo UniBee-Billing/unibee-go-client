@@ -19,7 +19,7 @@ var _ MappedNullable = &UnibeeApiMerchantUserGetRes{}
 
 // UnibeeApiMerchantUserGetRes struct for UnibeeApiMerchantUserGetRes
 type UnibeeApiMerchantUserGetRes struct {
-	User *UnibeeInternalModelEntityOverseaPayUserAccount `json:"user,omitempty"`
+	User *UnibeeApiBeanUserAccountSimplify `json:"user,omitempty"`
 }
 
 // NewUnibeeApiMerchantUserGetRes instantiates a new UnibeeApiMerchantUserGetRes object
@@ -40,9 +40,9 @@ func NewUnibeeApiMerchantUserGetResWithDefaults() *UnibeeApiMerchantUserGetRes {
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantUserGetRes) GetUser() UnibeeInternalModelEntityOverseaPayUserAccount {
+func (o *UnibeeApiMerchantUserGetRes) GetUser() UnibeeApiBeanUserAccountSimplify {
 	if o == nil || IsNil(o.User) {
-		var ret UnibeeInternalModelEntityOverseaPayUserAccount
+		var ret UnibeeApiBeanUserAccountSimplify
 		return ret
 	}
 	return *o.User
@@ -50,7 +50,7 @@ func (o *UnibeeApiMerchantUserGetRes) GetUser() UnibeeInternalModelEntityOversea
 
 // GetUserOk returns a tuple with the User field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantUserGetRes) GetUserOk() (*UnibeeInternalModelEntityOverseaPayUserAccount, bool) {
+func (o *UnibeeApiMerchantUserGetRes) GetUserOk() (*UnibeeApiBeanUserAccountSimplify, bool) {
 	if o == nil || IsNil(o.User) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *UnibeeApiMerchantUserGetRes) HasUser() bool {
 	return false
 }
 
-// SetUser gets a reference to the given UnibeeInternalModelEntityOverseaPayUserAccount and assigns it to the User field.
-func (o *UnibeeApiMerchantUserGetRes) SetUser(v UnibeeInternalModelEntityOverseaPayUserAccount) {
+// SetUser gets a reference to the given UnibeeApiBeanUserAccountSimplify and assigns it to the User field.
+func (o *UnibeeApiMerchantUserGetRes) SetUser(v UnibeeApiBeanUserAccountSimplify) {
 	o.User = &v
 }
 

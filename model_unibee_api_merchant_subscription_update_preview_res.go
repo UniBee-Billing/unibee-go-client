@@ -20,8 +20,8 @@ var _ MappedNullable = &UnibeeApiMerchantSubscriptionUpdatePreviewRes{}
 // UnibeeApiMerchantSubscriptionUpdatePreviewRes struct for UnibeeApiMerchantSubscriptionUpdatePreviewRes
 type UnibeeApiMerchantSubscriptionUpdatePreviewRes struct {
 	Currency *string `json:"currency,omitempty"`
-	Invoice *UnibeeInternalLogicGatewayRoInvoiceDetailSimplify `json:"invoice,omitempty"`
-	NextPeriodInvoice *UnibeeInternalLogicGatewayRoInvoiceDetailSimplify `json:"nextPeriodInvoice,omitempty"`
+	Invoice *UnibeeApiBeanInvoiceSimplify `json:"invoice,omitempty"`
+	NextPeriodInvoice *UnibeeApiBeanInvoiceSimplify `json:"nextPeriodInvoice,omitempty"`
 	ProrationDate *int64 `json:"prorationDate,omitempty"`
 	TotalAmount *int64 `json:"totalAmount,omitempty"`
 }
@@ -76,9 +76,9 @@ func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) SetCurrency(v string) {
 }
 
 // GetInvoice returns the Invoice field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) GetInvoice() UnibeeInternalLogicGatewayRoInvoiceDetailSimplify {
+func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) GetInvoice() UnibeeApiBeanInvoiceSimplify {
 	if o == nil || IsNil(o.Invoice) {
-		var ret UnibeeInternalLogicGatewayRoInvoiceDetailSimplify
+		var ret UnibeeApiBeanInvoiceSimplify
 		return ret
 	}
 	return *o.Invoice
@@ -86,7 +86,7 @@ func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) GetInvoice() UnibeeInter
 
 // GetInvoiceOk returns a tuple with the Invoice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) GetInvoiceOk() (*UnibeeInternalLogicGatewayRoInvoiceDetailSimplify, bool) {
+func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) GetInvoiceOk() (*UnibeeApiBeanInvoiceSimplify, bool) {
 	if o == nil || IsNil(o.Invoice) {
 		return nil, false
 	}
@@ -102,15 +102,15 @@ func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) HasInvoice() bool {
 	return false
 }
 
-// SetInvoice gets a reference to the given UnibeeInternalLogicGatewayRoInvoiceDetailSimplify and assigns it to the Invoice field.
-func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) SetInvoice(v UnibeeInternalLogicGatewayRoInvoiceDetailSimplify) {
+// SetInvoice gets a reference to the given UnibeeApiBeanInvoiceSimplify and assigns it to the Invoice field.
+func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) SetInvoice(v UnibeeApiBeanInvoiceSimplify) {
 	o.Invoice = &v
 }
 
 // GetNextPeriodInvoice returns the NextPeriodInvoice field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) GetNextPeriodInvoice() UnibeeInternalLogicGatewayRoInvoiceDetailSimplify {
+func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) GetNextPeriodInvoice() UnibeeApiBeanInvoiceSimplify {
 	if o == nil || IsNil(o.NextPeriodInvoice) {
-		var ret UnibeeInternalLogicGatewayRoInvoiceDetailSimplify
+		var ret UnibeeApiBeanInvoiceSimplify
 		return ret
 	}
 	return *o.NextPeriodInvoice
@@ -118,7 +118,7 @@ func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) GetNextPeriodInvoice() U
 
 // GetNextPeriodInvoiceOk returns a tuple with the NextPeriodInvoice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) GetNextPeriodInvoiceOk() (*UnibeeInternalLogicGatewayRoInvoiceDetailSimplify, bool) {
+func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) GetNextPeriodInvoiceOk() (*UnibeeApiBeanInvoiceSimplify, bool) {
 	if o == nil || IsNil(o.NextPeriodInvoice) {
 		return nil, false
 	}
@@ -134,8 +134,8 @@ func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) HasNextPeriodInvoice() b
 	return false
 }
 
-// SetNextPeriodInvoice gets a reference to the given UnibeeInternalLogicGatewayRoInvoiceDetailSimplify and assigns it to the NextPeriodInvoice field.
-func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) SetNextPeriodInvoice(v UnibeeInternalLogicGatewayRoInvoiceDetailSimplify) {
+// SetNextPeriodInvoice gets a reference to the given UnibeeApiBeanInvoiceSimplify and assigns it to the NextPeriodInvoice field.
+func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) SetNextPeriodInvoice(v UnibeeApiBeanInvoiceSimplify) {
 	o.NextPeriodInvoice = &v
 }
 

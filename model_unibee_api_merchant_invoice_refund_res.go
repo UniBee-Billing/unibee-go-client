@@ -19,7 +19,7 @@ var _ MappedNullable = &UnibeeApiMerchantInvoiceRefundRes{}
 
 // UnibeeApiMerchantInvoiceRefundRes struct for UnibeeApiMerchantInvoiceRefundRes
 type UnibeeApiMerchantInvoiceRefundRes struct {
-	Refund *UnibeeInternalModelEntityOverseaPayRefund `json:"refund,omitempty"`
+	Refund *UnibeeApiBeanRefundSimplify `json:"refund,omitempty"`
 }
 
 // NewUnibeeApiMerchantInvoiceRefundRes instantiates a new UnibeeApiMerchantInvoiceRefundRes object
@@ -40,9 +40,9 @@ func NewUnibeeApiMerchantInvoiceRefundResWithDefaults() *UnibeeApiMerchantInvoic
 }
 
 // GetRefund returns the Refund field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantInvoiceRefundRes) GetRefund() UnibeeInternalModelEntityOverseaPayRefund {
+func (o *UnibeeApiMerchantInvoiceRefundRes) GetRefund() UnibeeApiBeanRefundSimplify {
 	if o == nil || IsNil(o.Refund) {
-		var ret UnibeeInternalModelEntityOverseaPayRefund
+		var ret UnibeeApiBeanRefundSimplify
 		return ret
 	}
 	return *o.Refund
@@ -50,7 +50,7 @@ func (o *UnibeeApiMerchantInvoiceRefundRes) GetRefund() UnibeeInternalModelEntit
 
 // GetRefundOk returns a tuple with the Refund field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantInvoiceRefundRes) GetRefundOk() (*UnibeeInternalModelEntityOverseaPayRefund, bool) {
+func (o *UnibeeApiMerchantInvoiceRefundRes) GetRefundOk() (*UnibeeApiBeanRefundSimplify, bool) {
 	if o == nil || IsNil(o.Refund) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *UnibeeApiMerchantInvoiceRefundRes) HasRefund() bool {
 	return false
 }
 
-// SetRefund gets a reference to the given UnibeeInternalModelEntityOverseaPayRefund and assigns it to the Refund field.
-func (o *UnibeeApiMerchantInvoiceRefundRes) SetRefund(v UnibeeInternalModelEntityOverseaPayRefund) {
+// SetRefund gets a reference to the given UnibeeApiBeanRefundSimplify and assigns it to the Refund field.
+func (o *UnibeeApiMerchantInvoiceRefundRes) SetRefund(v UnibeeApiBeanRefundSimplify) {
 	o.Refund = &v
 }
 

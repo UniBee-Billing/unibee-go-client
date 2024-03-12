@@ -20,7 +20,7 @@ var _ MappedNullable = &UnibeeApiMerchantUserSearchRes{}
 // UnibeeApiMerchantUserSearchRes struct for UnibeeApiMerchantUserSearchRes
 type UnibeeApiMerchantUserSearchRes struct {
 	// UserAccounts
-	UserAccounts []UnibeeInternalModelEntityOverseaPayUserAccount `json:"userAccounts,omitempty"`
+	UserAccounts []UnibeeApiBeanUserAccountSimplify `json:"userAccounts,omitempty"`
 }
 
 // NewUnibeeApiMerchantUserSearchRes instantiates a new UnibeeApiMerchantUserSearchRes object
@@ -41,9 +41,9 @@ func NewUnibeeApiMerchantUserSearchResWithDefaults() *UnibeeApiMerchantUserSearc
 }
 
 // GetUserAccounts returns the UserAccounts field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantUserSearchRes) GetUserAccounts() []UnibeeInternalModelEntityOverseaPayUserAccount {
+func (o *UnibeeApiMerchantUserSearchRes) GetUserAccounts() []UnibeeApiBeanUserAccountSimplify {
 	if o == nil || IsNil(o.UserAccounts) {
-		var ret []UnibeeInternalModelEntityOverseaPayUserAccount
+		var ret []UnibeeApiBeanUserAccountSimplify
 		return ret
 	}
 	return o.UserAccounts
@@ -51,7 +51,7 @@ func (o *UnibeeApiMerchantUserSearchRes) GetUserAccounts() []UnibeeInternalModel
 
 // GetUserAccountsOk returns a tuple with the UserAccounts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantUserSearchRes) GetUserAccountsOk() ([]UnibeeInternalModelEntityOverseaPayUserAccount, bool) {
+func (o *UnibeeApiMerchantUserSearchRes) GetUserAccountsOk() ([]UnibeeApiBeanUserAccountSimplify, bool) {
 	if o == nil || IsNil(o.UserAccounts) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *UnibeeApiMerchantUserSearchRes) HasUserAccounts() bool {
 	return false
 }
 
-// SetUserAccounts gets a reference to the given []UnibeeInternalModelEntityOverseaPayUserAccount and assigns it to the UserAccounts field.
-func (o *UnibeeApiMerchantUserSearchRes) SetUserAccounts(v []UnibeeInternalModelEntityOverseaPayUserAccount) {
+// SetUserAccounts gets a reference to the given []UnibeeApiBeanUserAccountSimplify and assigns it to the UserAccounts field.
+func (o *UnibeeApiMerchantUserSearchRes) SetUserAccounts(v []UnibeeApiBeanUserAccountSimplify) {
 	o.UserAccounts = v
 }
 

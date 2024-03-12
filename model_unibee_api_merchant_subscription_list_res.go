@@ -20,7 +20,7 @@ var _ MappedNullable = &UnibeeApiMerchantSubscriptionListRes{}
 // UnibeeApiMerchantSubscriptionListRes struct for UnibeeApiMerchantSubscriptionListRes
 type UnibeeApiMerchantSubscriptionListRes struct {
 	// Subscriptions
-	Subscriptions []UnibeeInternalLogicGatewayRoSubscriptionDetailVo `json:"subscriptions,omitempty"`
+	Subscriptions []UnibeeApiBeanSubscriptionDetail `json:"subscriptions,omitempty"`
 }
 
 // NewUnibeeApiMerchantSubscriptionListRes instantiates a new UnibeeApiMerchantSubscriptionListRes object
@@ -41,9 +41,9 @@ func NewUnibeeApiMerchantSubscriptionListResWithDefaults() *UnibeeApiMerchantSub
 }
 
 // GetSubscriptions returns the Subscriptions field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantSubscriptionListRes) GetSubscriptions() []UnibeeInternalLogicGatewayRoSubscriptionDetailVo {
+func (o *UnibeeApiMerchantSubscriptionListRes) GetSubscriptions() []UnibeeApiBeanSubscriptionDetail {
 	if o == nil || IsNil(o.Subscriptions) {
-		var ret []UnibeeInternalLogicGatewayRoSubscriptionDetailVo
+		var ret []UnibeeApiBeanSubscriptionDetail
 		return ret
 	}
 	return o.Subscriptions
@@ -51,7 +51,7 @@ func (o *UnibeeApiMerchantSubscriptionListRes) GetSubscriptions() []UnibeeIntern
 
 // GetSubscriptionsOk returns a tuple with the Subscriptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantSubscriptionListRes) GetSubscriptionsOk() ([]UnibeeInternalLogicGatewayRoSubscriptionDetailVo, bool) {
+func (o *UnibeeApiMerchantSubscriptionListRes) GetSubscriptionsOk() ([]UnibeeApiBeanSubscriptionDetail, bool) {
 	if o == nil || IsNil(o.Subscriptions) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *UnibeeApiMerchantSubscriptionListRes) HasSubscriptions() bool {
 	return false
 }
 
-// SetSubscriptions gets a reference to the given []UnibeeInternalLogicGatewayRoSubscriptionDetailVo and assigns it to the Subscriptions field.
-func (o *UnibeeApiMerchantSubscriptionListRes) SetSubscriptions(v []UnibeeInternalLogicGatewayRoSubscriptionDetailVo) {
+// SetSubscriptions gets a reference to the given []UnibeeApiBeanSubscriptionDetail and assigns it to the Subscriptions field.
+func (o *UnibeeApiMerchantSubscriptionListRes) SetSubscriptions(v []UnibeeApiBeanSubscriptionDetail) {
 	o.Subscriptions = v
 }
 

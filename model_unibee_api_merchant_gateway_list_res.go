@@ -19,7 +19,7 @@ var _ MappedNullable = &UnibeeApiMerchantGatewayListRes{}
 
 // UnibeeApiMerchantGatewayListRes struct for UnibeeApiMerchantGatewayListRes
 type UnibeeApiMerchantGatewayListRes struct {
-	Gateways []UnibeeInternalLogicGatewayRoGatewaySimplify `json:"gateways,omitempty"`
+	Gateways []UnibeeApiBeanGatewaySimplify `json:"gateways,omitempty"`
 }
 
 // NewUnibeeApiMerchantGatewayListRes instantiates a new UnibeeApiMerchantGatewayListRes object
@@ -40,9 +40,9 @@ func NewUnibeeApiMerchantGatewayListResWithDefaults() *UnibeeApiMerchantGatewayL
 }
 
 // GetGateways returns the Gateways field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantGatewayListRes) GetGateways() []UnibeeInternalLogicGatewayRoGatewaySimplify {
+func (o *UnibeeApiMerchantGatewayListRes) GetGateways() []UnibeeApiBeanGatewaySimplify {
 	if o == nil || IsNil(o.Gateways) {
-		var ret []UnibeeInternalLogicGatewayRoGatewaySimplify
+		var ret []UnibeeApiBeanGatewaySimplify
 		return ret
 	}
 	return o.Gateways
@@ -50,7 +50,7 @@ func (o *UnibeeApiMerchantGatewayListRes) GetGateways() []UnibeeInternalLogicGat
 
 // GetGatewaysOk returns a tuple with the Gateways field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantGatewayListRes) GetGatewaysOk() ([]UnibeeInternalLogicGatewayRoGatewaySimplify, bool) {
+func (o *UnibeeApiMerchantGatewayListRes) GetGatewaysOk() ([]UnibeeApiBeanGatewaySimplify, bool) {
 	if o == nil || IsNil(o.Gateways) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *UnibeeApiMerchantGatewayListRes) HasGateways() bool {
 	return false
 }
 
-// SetGateways gets a reference to the given []UnibeeInternalLogicGatewayRoGatewaySimplify and assigns it to the Gateways field.
-func (o *UnibeeApiMerchantGatewayListRes) SetGateways(v []UnibeeInternalLogicGatewayRoGatewaySimplify) {
+// SetGateways gets a reference to the given []UnibeeApiBeanGatewaySimplify and assigns it to the Gateways field.
+func (o *UnibeeApiMerchantGatewayListRes) SetGateways(v []UnibeeApiBeanGatewaySimplify) {
 	o.Gateways = v
 }
 

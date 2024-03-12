@@ -19,9 +19,9 @@ var _ MappedNullable = &MerchantBalanceMerchantBalanceQueryGet200ResponseData{}
 
 // MerchantBalanceMerchantBalanceQueryGet200ResponseData struct for MerchantBalanceMerchantBalanceQueryGet200ResponseData
 type MerchantBalanceMerchantBalanceQueryGet200ResponseData struct {
-	Available []UnibeeInternalLogicGatewayRoGatewayBalance `json:"available,omitempty"`
-	ConnectReserved []UnibeeInternalLogicGatewayRoGatewayBalance `json:"connectReserved,omitempty"`
-	Pending []UnibeeInternalLogicGatewayRoGatewayBalance `json:"pending,omitempty"`
+	Available []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance `json:"available,omitempty"`
+	ConnectReserved []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance `json:"connectReserved,omitempty"`
+	Pending []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance `json:"pending,omitempty"`
 }
 
 // NewMerchantBalanceMerchantBalanceQueryGet200ResponseData instantiates a new MerchantBalanceMerchantBalanceQueryGet200ResponseData object
@@ -42,9 +42,9 @@ func NewMerchantBalanceMerchantBalanceQueryGet200ResponseDataWithDefaults() *Mer
 }
 
 // GetAvailable returns the Available field value if set, zero value otherwise.
-func (o *MerchantBalanceMerchantBalanceQueryGet200ResponseData) GetAvailable() []UnibeeInternalLogicGatewayRoGatewayBalance {
+func (o *MerchantBalanceMerchantBalanceQueryGet200ResponseData) GetAvailable() []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance {
 	if o == nil || IsNil(o.Available) {
-		var ret []UnibeeInternalLogicGatewayRoGatewayBalance
+		var ret []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance
 		return ret
 	}
 	return o.Available
@@ -52,7 +52,7 @@ func (o *MerchantBalanceMerchantBalanceQueryGet200ResponseData) GetAvailable() [
 
 // GetAvailableOk returns a tuple with the Available field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantBalanceMerchantBalanceQueryGet200ResponseData) GetAvailableOk() ([]UnibeeInternalLogicGatewayRoGatewayBalance, bool) {
+func (o *MerchantBalanceMerchantBalanceQueryGet200ResponseData) GetAvailableOk() ([]UnibeeInternalLogicGatewayGatewayBeanGatewayBalance, bool) {
 	if o == nil || IsNil(o.Available) {
 		return nil, false
 	}
@@ -68,15 +68,15 @@ func (o *MerchantBalanceMerchantBalanceQueryGet200ResponseData) HasAvailable() b
 	return false
 }
 
-// SetAvailable gets a reference to the given []UnibeeInternalLogicGatewayRoGatewayBalance and assigns it to the Available field.
-func (o *MerchantBalanceMerchantBalanceQueryGet200ResponseData) SetAvailable(v []UnibeeInternalLogicGatewayRoGatewayBalance) {
+// SetAvailable gets a reference to the given []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance and assigns it to the Available field.
+func (o *MerchantBalanceMerchantBalanceQueryGet200ResponseData) SetAvailable(v []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance) {
 	o.Available = v
 }
 
 // GetConnectReserved returns the ConnectReserved field value if set, zero value otherwise.
-func (o *MerchantBalanceMerchantBalanceQueryGet200ResponseData) GetConnectReserved() []UnibeeInternalLogicGatewayRoGatewayBalance {
+func (o *MerchantBalanceMerchantBalanceQueryGet200ResponseData) GetConnectReserved() []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance {
 	if o == nil || IsNil(o.ConnectReserved) {
-		var ret []UnibeeInternalLogicGatewayRoGatewayBalance
+		var ret []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance
 		return ret
 	}
 	return o.ConnectReserved
@@ -84,7 +84,7 @@ func (o *MerchantBalanceMerchantBalanceQueryGet200ResponseData) GetConnectReserv
 
 // GetConnectReservedOk returns a tuple with the ConnectReserved field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantBalanceMerchantBalanceQueryGet200ResponseData) GetConnectReservedOk() ([]UnibeeInternalLogicGatewayRoGatewayBalance, bool) {
+func (o *MerchantBalanceMerchantBalanceQueryGet200ResponseData) GetConnectReservedOk() ([]UnibeeInternalLogicGatewayGatewayBeanGatewayBalance, bool) {
 	if o == nil || IsNil(o.ConnectReserved) {
 		return nil, false
 	}
@@ -100,15 +100,15 @@ func (o *MerchantBalanceMerchantBalanceQueryGet200ResponseData) HasConnectReserv
 	return false
 }
 
-// SetConnectReserved gets a reference to the given []UnibeeInternalLogicGatewayRoGatewayBalance and assigns it to the ConnectReserved field.
-func (o *MerchantBalanceMerchantBalanceQueryGet200ResponseData) SetConnectReserved(v []UnibeeInternalLogicGatewayRoGatewayBalance) {
+// SetConnectReserved gets a reference to the given []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance and assigns it to the ConnectReserved field.
+func (o *MerchantBalanceMerchantBalanceQueryGet200ResponseData) SetConnectReserved(v []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance) {
 	o.ConnectReserved = v
 }
 
 // GetPending returns the Pending field value if set, zero value otherwise.
-func (o *MerchantBalanceMerchantBalanceQueryGet200ResponseData) GetPending() []UnibeeInternalLogicGatewayRoGatewayBalance {
+func (o *MerchantBalanceMerchantBalanceQueryGet200ResponseData) GetPending() []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance {
 	if o == nil || IsNil(o.Pending) {
-		var ret []UnibeeInternalLogicGatewayRoGatewayBalance
+		var ret []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance
 		return ret
 	}
 	return o.Pending
@@ -116,7 +116,7 @@ func (o *MerchantBalanceMerchantBalanceQueryGet200ResponseData) GetPending() []U
 
 // GetPendingOk returns a tuple with the Pending field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantBalanceMerchantBalanceQueryGet200ResponseData) GetPendingOk() ([]UnibeeInternalLogicGatewayRoGatewayBalance, bool) {
+func (o *MerchantBalanceMerchantBalanceQueryGet200ResponseData) GetPendingOk() ([]UnibeeInternalLogicGatewayGatewayBeanGatewayBalance, bool) {
 	if o == nil || IsNil(o.Pending) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *MerchantBalanceMerchantBalanceQueryGet200ResponseData) HasPending() boo
 	return false
 }
 
-// SetPending gets a reference to the given []UnibeeInternalLogicGatewayRoGatewayBalance and assigns it to the Pending field.
-func (o *MerchantBalanceMerchantBalanceQueryGet200ResponseData) SetPending(v []UnibeeInternalLogicGatewayRoGatewayBalance) {
+// SetPending gets a reference to the given []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance and assigns it to the Pending field.
+func (o *MerchantBalanceMerchantBalanceQueryGet200ResponseData) SetPending(v []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance) {
 	o.Pending = v
 }
 

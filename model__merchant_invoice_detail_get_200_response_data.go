@@ -19,7 +19,7 @@ var _ MappedNullable = &MerchantInvoiceDetailGet200ResponseData{}
 
 // MerchantInvoiceDetailGet200ResponseData struct for MerchantInvoiceDetailGet200ResponseData
 type MerchantInvoiceDetailGet200ResponseData struct {
-	Invoice *UnibeeInternalLogicGatewayRoInvoiceDetailRo `json:"invoice,omitempty"`
+	Invoice *UnibeeApiBeanInvoiceDetail `json:"invoice,omitempty"`
 }
 
 // NewMerchantInvoiceDetailGet200ResponseData instantiates a new MerchantInvoiceDetailGet200ResponseData object
@@ -40,9 +40,9 @@ func NewMerchantInvoiceDetailGet200ResponseDataWithDefaults() *MerchantInvoiceDe
 }
 
 // GetInvoice returns the Invoice field value if set, zero value otherwise.
-func (o *MerchantInvoiceDetailGet200ResponseData) GetInvoice() UnibeeInternalLogicGatewayRoInvoiceDetailRo {
+func (o *MerchantInvoiceDetailGet200ResponseData) GetInvoice() UnibeeApiBeanInvoiceDetail {
 	if o == nil || IsNil(o.Invoice) {
-		var ret UnibeeInternalLogicGatewayRoInvoiceDetailRo
+		var ret UnibeeApiBeanInvoiceDetail
 		return ret
 	}
 	return *o.Invoice
@@ -50,7 +50,7 @@ func (o *MerchantInvoiceDetailGet200ResponseData) GetInvoice() UnibeeInternalLog
 
 // GetInvoiceOk returns a tuple with the Invoice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantInvoiceDetailGet200ResponseData) GetInvoiceOk() (*UnibeeInternalLogicGatewayRoInvoiceDetailRo, bool) {
+func (o *MerchantInvoiceDetailGet200ResponseData) GetInvoiceOk() (*UnibeeApiBeanInvoiceDetail, bool) {
 	if o == nil || IsNil(o.Invoice) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *MerchantInvoiceDetailGet200ResponseData) HasInvoice() bool {
 	return false
 }
 
-// SetInvoice gets a reference to the given UnibeeInternalLogicGatewayRoInvoiceDetailRo and assigns it to the Invoice field.
-func (o *MerchantInvoiceDetailGet200ResponseData) SetInvoice(v UnibeeInternalLogicGatewayRoInvoiceDetailRo) {
+// SetInvoice gets a reference to the given UnibeeApiBeanInvoiceDetail and assigns it to the Invoice field.
+func (o *MerchantInvoiceDetailGet200ResponseData) SetInvoice(v UnibeeApiBeanInvoiceDetail) {
 	o.Invoice = &v
 }
 

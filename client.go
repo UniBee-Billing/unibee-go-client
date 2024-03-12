@@ -693,8 +693,8 @@ func (e GenericOpenAPIError) Error() string {
 }
 
 // Body returns the raw bytes of the response
-func (e GenericOpenAPIError) Body() string {
-	return string(e.body)
+func (e GenericOpenAPIError) Body() []byte {
+	return e.body
 }
 
 // Model returns the unpacked model of the error

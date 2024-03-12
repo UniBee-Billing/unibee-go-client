@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Payment** | Pointer to [**UnibeeInternalLogicGatewayRoPaymentSimplify**](UnibeeInternalLogicGatewayRoPaymentSimplify.md) |  | [optional] 
-**Refund** | Pointer to [**UnibeeInternalLogicGatewayRoRefundSimplify**](UnibeeInternalLogicGatewayRoRefundSimplify.md) |  | [optional] 
-**User** | Pointer to [**UnibeeInternalLogicGatewayRoUserAccountSimplify**](UnibeeInternalLogicGatewayRoUserAccountSimplify.md) |  | [optional] 
+**Payment** | Pointer to [**UnibeeApiBeanPaymentSimplify**](UnibeeApiBeanPaymentSimplify.md) |  | [optional] 
+**Refund** | Pointer to [**UnibeeApiBeanRefundSimplify**](UnibeeApiBeanRefundSimplify.md) |  | [optional] 
+**User** | Pointer to [**UnibeeApiBeanUserAccountSimplify**](UnibeeApiBeanUserAccountSimplify.md) |  | [optional] 
 
 ## Methods
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPayment
 
-`func (o *UnibeeApiMerchantPaymentRefundDetail) GetPayment() UnibeeInternalLogicGatewayRoPaymentSimplify`
+`func (o *UnibeeApiMerchantPaymentRefundDetail) GetPayment() UnibeeApiBeanPaymentSimplify`
 
 GetPayment returns the Payment field if non-nil, zero value otherwise.
 
 ### GetPaymentOk
 
-`func (o *UnibeeApiMerchantPaymentRefundDetail) GetPaymentOk() (*UnibeeInternalLogicGatewayRoPaymentSimplify, bool)`
+`func (o *UnibeeApiMerchantPaymentRefundDetail) GetPaymentOk() (*UnibeeApiBeanPaymentSimplify, bool)`
 
 GetPaymentOk returns a tuple with the Payment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPayment
 
-`func (o *UnibeeApiMerchantPaymentRefundDetail) SetPayment(v UnibeeInternalLogicGatewayRoPaymentSimplify)`
+`func (o *UnibeeApiMerchantPaymentRefundDetail) SetPayment(v UnibeeApiBeanPaymentSimplify)`
 
 SetPayment sets Payment field to given value.
 
@@ -54,20 +54,20 @@ HasPayment returns a boolean if a field has been set.
 
 ### GetRefund
 
-`func (o *UnibeeApiMerchantPaymentRefundDetail) GetRefund() UnibeeInternalLogicGatewayRoRefundSimplify`
+`func (o *UnibeeApiMerchantPaymentRefundDetail) GetRefund() UnibeeApiBeanRefundSimplify`
 
 GetRefund returns the Refund field if non-nil, zero value otherwise.
 
 ### GetRefundOk
 
-`func (o *UnibeeApiMerchantPaymentRefundDetail) GetRefundOk() (*UnibeeInternalLogicGatewayRoRefundSimplify, bool)`
+`func (o *UnibeeApiMerchantPaymentRefundDetail) GetRefundOk() (*UnibeeApiBeanRefundSimplify, bool)`
 
 GetRefundOk returns a tuple with the Refund field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRefund
 
-`func (o *UnibeeApiMerchantPaymentRefundDetail) SetRefund(v UnibeeInternalLogicGatewayRoRefundSimplify)`
+`func (o *UnibeeApiMerchantPaymentRefundDetail) SetRefund(v UnibeeApiBeanRefundSimplify)`
 
 SetRefund sets Refund field to given value.
 
@@ -79,20 +79,20 @@ HasRefund returns a boolean if a field has been set.
 
 ### GetUser
 
-`func (o *UnibeeApiMerchantPaymentRefundDetail) GetUser() UnibeeInternalLogicGatewayRoUserAccountSimplify`
+`func (o *UnibeeApiMerchantPaymentRefundDetail) GetUser() UnibeeApiBeanUserAccountSimplify`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *UnibeeApiMerchantPaymentRefundDetail) GetUserOk() (*UnibeeInternalLogicGatewayRoUserAccountSimplify, bool)`
+`func (o *UnibeeApiMerchantPaymentRefundDetail) GetUserOk() (*UnibeeApiBeanUserAccountSimplify, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *UnibeeApiMerchantPaymentRefundDetail) SetUser(v UnibeeInternalLogicGatewayRoUserAccountSimplify)`
+`func (o *UnibeeApiMerchantPaymentRefundDetail) SetUser(v UnibeeApiBeanUserAccountSimplify)`
 
 SetUser sets User field to given value.
 

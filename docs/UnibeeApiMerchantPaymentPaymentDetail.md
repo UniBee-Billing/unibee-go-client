@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Payment** | Pointer to [**UnibeeInternalLogicGatewayRoPaymentSimplify**](UnibeeInternalLogicGatewayRoPaymentSimplify.md) |  | [optional] 
-**User** | Pointer to [**UnibeeInternalLogicGatewayRoUserAccountSimplify**](UnibeeInternalLogicGatewayRoUserAccountSimplify.md) |  | [optional] 
+**Payment** | Pointer to [**UnibeeApiBeanPaymentSimplify**](UnibeeApiBeanPaymentSimplify.md) |  | [optional] 
+**User** | Pointer to [**UnibeeApiBeanUserAccountSimplify**](UnibeeApiBeanUserAccountSimplify.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPayment
 
-`func (o *UnibeeApiMerchantPaymentPaymentDetail) GetPayment() UnibeeInternalLogicGatewayRoPaymentSimplify`
+`func (o *UnibeeApiMerchantPaymentPaymentDetail) GetPayment() UnibeeApiBeanPaymentSimplify`
 
 GetPayment returns the Payment field if non-nil, zero value otherwise.
 
 ### GetPaymentOk
 
-`func (o *UnibeeApiMerchantPaymentPaymentDetail) GetPaymentOk() (*UnibeeInternalLogicGatewayRoPaymentSimplify, bool)`
+`func (o *UnibeeApiMerchantPaymentPaymentDetail) GetPaymentOk() (*UnibeeApiBeanPaymentSimplify, bool)`
 
 GetPaymentOk returns a tuple with the Payment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPayment
 
-`func (o *UnibeeApiMerchantPaymentPaymentDetail) SetPayment(v UnibeeInternalLogicGatewayRoPaymentSimplify)`
+`func (o *UnibeeApiMerchantPaymentPaymentDetail) SetPayment(v UnibeeApiBeanPaymentSimplify)`
 
 SetPayment sets Payment field to given value.
 
@@ -53,20 +53,20 @@ HasPayment returns a boolean if a field has been set.
 
 ### GetUser
 
-`func (o *UnibeeApiMerchantPaymentPaymentDetail) GetUser() UnibeeInternalLogicGatewayRoUserAccountSimplify`
+`func (o *UnibeeApiMerchantPaymentPaymentDetail) GetUser() UnibeeApiBeanUserAccountSimplify`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *UnibeeApiMerchantPaymentPaymentDetail) GetUserOk() (*UnibeeInternalLogicGatewayRoUserAccountSimplify, bool)`
+`func (o *UnibeeApiMerchantPaymentPaymentDetail) GetUserOk() (*UnibeeApiBeanUserAccountSimplify, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *UnibeeApiMerchantPaymentPaymentDetail) SetUser(v UnibeeInternalLogicGatewayRoUserAccountSimplify)`
+`func (o *UnibeeApiMerchantPaymentPaymentDetail) SetUser(v UnibeeApiBeanUserAccountSimplify)`
 
 SetUser sets User field to given value.
 

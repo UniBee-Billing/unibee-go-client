@@ -19,7 +19,7 @@ var _ MappedNullable = &UnibeeApiMerchantInvoiceDetailRes{}
 
 // UnibeeApiMerchantInvoiceDetailRes struct for UnibeeApiMerchantInvoiceDetailRes
 type UnibeeApiMerchantInvoiceDetailRes struct {
-	Invoice *UnibeeInternalLogicGatewayRoInvoiceDetailRo `json:"invoice,omitempty"`
+	Invoice *UnibeeApiBeanInvoiceDetail `json:"invoice,omitempty"`
 }
 
 // NewUnibeeApiMerchantInvoiceDetailRes instantiates a new UnibeeApiMerchantInvoiceDetailRes object
@@ -40,9 +40,9 @@ func NewUnibeeApiMerchantInvoiceDetailResWithDefaults() *UnibeeApiMerchantInvoic
 }
 
 // GetInvoice returns the Invoice field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantInvoiceDetailRes) GetInvoice() UnibeeInternalLogicGatewayRoInvoiceDetailRo {
+func (o *UnibeeApiMerchantInvoiceDetailRes) GetInvoice() UnibeeApiBeanInvoiceDetail {
 	if o == nil || IsNil(o.Invoice) {
-		var ret UnibeeInternalLogicGatewayRoInvoiceDetailRo
+		var ret UnibeeApiBeanInvoiceDetail
 		return ret
 	}
 	return *o.Invoice
@@ -50,7 +50,7 @@ func (o *UnibeeApiMerchantInvoiceDetailRes) GetInvoice() UnibeeInternalLogicGate
 
 // GetInvoiceOk returns a tuple with the Invoice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantInvoiceDetailRes) GetInvoiceOk() (*UnibeeInternalLogicGatewayRoInvoiceDetailRo, bool) {
+func (o *UnibeeApiMerchantInvoiceDetailRes) GetInvoiceOk() (*UnibeeApiBeanInvoiceDetail, bool) {
 	if o == nil || IsNil(o.Invoice) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *UnibeeApiMerchantInvoiceDetailRes) HasInvoice() bool {
 	return false
 }
 
-// SetInvoice gets a reference to the given UnibeeInternalLogicGatewayRoInvoiceDetailRo and assigns it to the Invoice field.
-func (o *UnibeeApiMerchantInvoiceDetailRes) SetInvoice(v UnibeeInternalLogicGatewayRoInvoiceDetailRo) {
+// SetInvoice gets a reference to the given UnibeeApiBeanInvoiceDetail and assigns it to the Invoice field.
+func (o *UnibeeApiMerchantInvoiceDetailRes) SetInvoice(v UnibeeApiBeanInvoiceDetail) {
 	o.Invoice = &v
 }
 

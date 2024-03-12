@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Plan** | Pointer to [**UnibeeInternalLogicGatewayRoPlanSimplify**](UnibeeInternalLogicGatewayRoPlanSimplify.md) |  | [optional] 
+**Plan** | Pointer to [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPlan
 
-`func (o *MerchantPlanAddonsBindingPost200ResponseData) GetPlan() UnibeeInternalLogicGatewayRoPlanSimplify`
+`func (o *MerchantPlanAddonsBindingPost200ResponseData) GetPlan() UnibeeApiBeanPlanSimplify`
 
 GetPlan returns the Plan field if non-nil, zero value otherwise.
 
 ### GetPlanOk
 
-`func (o *MerchantPlanAddonsBindingPost200ResponseData) GetPlanOk() (*UnibeeInternalLogicGatewayRoPlanSimplify, bool)`
+`func (o *MerchantPlanAddonsBindingPost200ResponseData) GetPlanOk() (*UnibeeApiBeanPlanSimplify, bool)`
 
 GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlan
 
-`func (o *MerchantPlanAddonsBindingPost200ResponseData) SetPlan(v UnibeeInternalLogicGatewayRoPlanSimplify)`
+`func (o *MerchantPlanAddonsBindingPost200ResponseData) SetPlan(v UnibeeApiBeanPlanSimplify)`
 
 SetPlan sets Plan field to given value.
 

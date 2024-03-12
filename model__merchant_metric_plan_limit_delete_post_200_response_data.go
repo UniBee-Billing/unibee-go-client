@@ -19,7 +19,7 @@ var _ MappedNullable = &MerchantMetricPlanLimitDeletePost200ResponseData{}
 
 // MerchantMetricPlanLimitDeletePost200ResponseData struct for MerchantMetricPlanLimitDeletePost200ResponseData
 type MerchantMetricPlanLimitDeletePost200ResponseData struct {
-	MerchantMetricPlanLimit *UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo `json:"merchantMetricPlanLimit,omitempty"`
+	MerchantMetricPlanLimit *UnibeeApiBeanMerchantMetricPlanLimit `json:"merchantMetricPlanLimit,omitempty"`
 }
 
 // NewMerchantMetricPlanLimitDeletePost200ResponseData instantiates a new MerchantMetricPlanLimitDeletePost200ResponseData object
@@ -40,9 +40,9 @@ func NewMerchantMetricPlanLimitDeletePost200ResponseDataWithDefaults() *Merchant
 }
 
 // GetMerchantMetricPlanLimit returns the MerchantMetricPlanLimit field value if set, zero value otherwise.
-func (o *MerchantMetricPlanLimitDeletePost200ResponseData) GetMerchantMetricPlanLimit() UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo {
+func (o *MerchantMetricPlanLimitDeletePost200ResponseData) GetMerchantMetricPlanLimit() UnibeeApiBeanMerchantMetricPlanLimit {
 	if o == nil || IsNil(o.MerchantMetricPlanLimit) {
-		var ret UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo
+		var ret UnibeeApiBeanMerchantMetricPlanLimit
 		return ret
 	}
 	return *o.MerchantMetricPlanLimit
@@ -50,7 +50,7 @@ func (o *MerchantMetricPlanLimitDeletePost200ResponseData) GetMerchantMetricPlan
 
 // GetMerchantMetricPlanLimitOk returns a tuple with the MerchantMetricPlanLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantMetricPlanLimitDeletePost200ResponseData) GetMerchantMetricPlanLimitOk() (*UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo, bool) {
+func (o *MerchantMetricPlanLimitDeletePost200ResponseData) GetMerchantMetricPlanLimitOk() (*UnibeeApiBeanMerchantMetricPlanLimit, bool) {
 	if o == nil || IsNil(o.MerchantMetricPlanLimit) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *MerchantMetricPlanLimitDeletePost200ResponseData) HasMerchantMetricPlan
 	return false
 }
 
-// SetMerchantMetricPlanLimit gets a reference to the given UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo and assigns it to the MerchantMetricPlanLimit field.
-func (o *MerchantMetricPlanLimitDeletePost200ResponseData) SetMerchantMetricPlanLimit(v UnibeeInternalLogicGatewayRoMerchantMetricPlanLimitVo) {
+// SetMerchantMetricPlanLimit gets a reference to the given UnibeeApiBeanMerchantMetricPlanLimit and assigns it to the MerchantMetricPlanLimit field.
+func (o *MerchantMetricPlanLimitDeletePost200ResponseData) SetMerchantMetricPlanLimit(v UnibeeApiBeanMerchantMetricPlanLimit) {
 	o.MerchantMetricPlanLimit = &v
 }
 

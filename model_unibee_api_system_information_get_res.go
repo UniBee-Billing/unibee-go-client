@@ -22,11 +22,11 @@ type UnibeeApiSystemInformationGetRes struct {
 	// System Env, em: daily|stage|local|prod
 	Env *string `json:"env,omitempty"`
 	// Support Currency List
-	Gateway []UnibeeInternalLogicGatewayRoGatewaySimplify `json:"gateway,omitempty"`
+	Gateway []UnibeeApiBeanGatewaySimplify `json:"gateway,omitempty"`
 	// Check System Env Is Prod, true|false
 	IsProd *bool `json:"isProd,omitempty"`
 	// Support Currency List
-	SupportCurrency []UnibeeInternalLogicGatewayRoCurrency `json:"supportCurrency,omitempty"`
+	SupportCurrency []UnibeeApiBeanCurrency `json:"supportCurrency,omitempty"`
 	// Support TimeZone List
 	SupportTimeZone []string `json:"supportTimeZone,omitempty"`
 }
@@ -81,9 +81,9 @@ func (o *UnibeeApiSystemInformationGetRes) SetEnv(v string) {
 }
 
 // GetGateway returns the Gateway field value if set, zero value otherwise.
-func (o *UnibeeApiSystemInformationGetRes) GetGateway() []UnibeeInternalLogicGatewayRoGatewaySimplify {
+func (o *UnibeeApiSystemInformationGetRes) GetGateway() []UnibeeApiBeanGatewaySimplify {
 	if o == nil || IsNil(o.Gateway) {
-		var ret []UnibeeInternalLogicGatewayRoGatewaySimplify
+		var ret []UnibeeApiBeanGatewaySimplify
 		return ret
 	}
 	return o.Gateway
@@ -91,7 +91,7 @@ func (o *UnibeeApiSystemInformationGetRes) GetGateway() []UnibeeInternalLogicGat
 
 // GetGatewayOk returns a tuple with the Gateway field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiSystemInformationGetRes) GetGatewayOk() ([]UnibeeInternalLogicGatewayRoGatewaySimplify, bool) {
+func (o *UnibeeApiSystemInformationGetRes) GetGatewayOk() ([]UnibeeApiBeanGatewaySimplify, bool) {
 	if o == nil || IsNil(o.Gateway) {
 		return nil, false
 	}
@@ -107,8 +107,8 @@ func (o *UnibeeApiSystemInformationGetRes) HasGateway() bool {
 	return false
 }
 
-// SetGateway gets a reference to the given []UnibeeInternalLogicGatewayRoGatewaySimplify and assigns it to the Gateway field.
-func (o *UnibeeApiSystemInformationGetRes) SetGateway(v []UnibeeInternalLogicGatewayRoGatewaySimplify) {
+// SetGateway gets a reference to the given []UnibeeApiBeanGatewaySimplify and assigns it to the Gateway field.
+func (o *UnibeeApiSystemInformationGetRes) SetGateway(v []UnibeeApiBeanGatewaySimplify) {
 	o.Gateway = v
 }
 
@@ -145,9 +145,9 @@ func (o *UnibeeApiSystemInformationGetRes) SetIsProd(v bool) {
 }
 
 // GetSupportCurrency returns the SupportCurrency field value if set, zero value otherwise.
-func (o *UnibeeApiSystemInformationGetRes) GetSupportCurrency() []UnibeeInternalLogicGatewayRoCurrency {
+func (o *UnibeeApiSystemInformationGetRes) GetSupportCurrency() []UnibeeApiBeanCurrency {
 	if o == nil || IsNil(o.SupportCurrency) {
-		var ret []UnibeeInternalLogicGatewayRoCurrency
+		var ret []UnibeeApiBeanCurrency
 		return ret
 	}
 	return o.SupportCurrency
@@ -155,7 +155,7 @@ func (o *UnibeeApiSystemInformationGetRes) GetSupportCurrency() []UnibeeInternal
 
 // GetSupportCurrencyOk returns a tuple with the SupportCurrency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiSystemInformationGetRes) GetSupportCurrencyOk() ([]UnibeeInternalLogicGatewayRoCurrency, bool) {
+func (o *UnibeeApiSystemInformationGetRes) GetSupportCurrencyOk() ([]UnibeeApiBeanCurrency, bool) {
 	if o == nil || IsNil(o.SupportCurrency) {
 		return nil, false
 	}
@@ -171,8 +171,8 @@ func (o *UnibeeApiSystemInformationGetRes) HasSupportCurrency() bool {
 	return false
 }
 
-// SetSupportCurrency gets a reference to the given []UnibeeInternalLogicGatewayRoCurrency and assigns it to the SupportCurrency field.
-func (o *UnibeeApiSystemInformationGetRes) SetSupportCurrency(v []UnibeeInternalLogicGatewayRoCurrency) {
+// SetSupportCurrency gets a reference to the given []UnibeeApiBeanCurrency and assigns it to the SupportCurrency field.
+func (o *UnibeeApiSystemInformationGetRes) SetSupportCurrency(v []UnibeeApiBeanCurrency) {
 	o.SupportCurrency = v
 }
 

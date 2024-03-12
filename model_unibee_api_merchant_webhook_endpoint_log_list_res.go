@@ -20,7 +20,7 @@ var _ MappedNullable = &UnibeeApiMerchantWebhookEndpointLogListRes{}
 // UnibeeApiMerchantWebhookEndpointLogListRes struct for UnibeeApiMerchantWebhookEndpointLogListRes
 type UnibeeApiMerchantWebhookEndpointLogListRes struct {
 	// EndpointLogList
-	EndpointLogList []UnibeeInternalModelEntityOverseaPayMerchantWebhookLog `json:"endpointLogList,omitempty"`
+	EndpointLogList []UnibeeApiBeanMerchantWebhookLogSimplify `json:"endpointLogList,omitempty"`
 }
 
 // NewUnibeeApiMerchantWebhookEndpointLogListRes instantiates a new UnibeeApiMerchantWebhookEndpointLogListRes object
@@ -41,9 +41,9 @@ func NewUnibeeApiMerchantWebhookEndpointLogListResWithDefaults() *UnibeeApiMerch
 }
 
 // GetEndpointLogList returns the EndpointLogList field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantWebhookEndpointLogListRes) GetEndpointLogList() []UnibeeInternalModelEntityOverseaPayMerchantWebhookLog {
+func (o *UnibeeApiMerchantWebhookEndpointLogListRes) GetEndpointLogList() []UnibeeApiBeanMerchantWebhookLogSimplify {
 	if o == nil || IsNil(o.EndpointLogList) {
-		var ret []UnibeeInternalModelEntityOverseaPayMerchantWebhookLog
+		var ret []UnibeeApiBeanMerchantWebhookLogSimplify
 		return ret
 	}
 	return o.EndpointLogList
@@ -51,7 +51,7 @@ func (o *UnibeeApiMerchantWebhookEndpointLogListRes) GetEndpointLogList() []Unib
 
 // GetEndpointLogListOk returns a tuple with the EndpointLogList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantWebhookEndpointLogListRes) GetEndpointLogListOk() ([]UnibeeInternalModelEntityOverseaPayMerchantWebhookLog, bool) {
+func (o *UnibeeApiMerchantWebhookEndpointLogListRes) GetEndpointLogListOk() ([]UnibeeApiBeanMerchantWebhookLogSimplify, bool) {
 	if o == nil || IsNil(o.EndpointLogList) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *UnibeeApiMerchantWebhookEndpointLogListRes) HasEndpointLogList() bool {
 	return false
 }
 
-// SetEndpointLogList gets a reference to the given []UnibeeInternalModelEntityOverseaPayMerchantWebhookLog and assigns it to the EndpointLogList field.
-func (o *UnibeeApiMerchantWebhookEndpointLogListRes) SetEndpointLogList(v []UnibeeInternalModelEntityOverseaPayMerchantWebhookLog) {
+// SetEndpointLogList gets a reference to the given []UnibeeApiBeanMerchantWebhookLogSimplify and assigns it to the EndpointLogList field.
+func (o *UnibeeApiMerchantWebhookEndpointLogListRes) SetEndpointLogList(v []UnibeeApiBeanMerchantWebhookLogSimplify) {
 	o.EndpointLogList = v
 }
 

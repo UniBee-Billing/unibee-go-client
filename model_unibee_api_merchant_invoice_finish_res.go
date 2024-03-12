@@ -19,7 +19,7 @@ var _ MappedNullable = &UnibeeApiMerchantInvoiceFinishRes{}
 
 // UnibeeApiMerchantInvoiceFinishRes struct for UnibeeApiMerchantInvoiceFinishRes
 type UnibeeApiMerchantInvoiceFinishRes struct {
-	Invoice *UnibeeInternalModelEntityOverseaPayInvoice `json:"invoice,omitempty"`
+	Invoice *UnibeeApiBeanInvoiceSimplify `json:"invoice,omitempty"`
 }
 
 // NewUnibeeApiMerchantInvoiceFinishRes instantiates a new UnibeeApiMerchantInvoiceFinishRes object
@@ -40,9 +40,9 @@ func NewUnibeeApiMerchantInvoiceFinishResWithDefaults() *UnibeeApiMerchantInvoic
 }
 
 // GetInvoice returns the Invoice field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantInvoiceFinishRes) GetInvoice() UnibeeInternalModelEntityOverseaPayInvoice {
+func (o *UnibeeApiMerchantInvoiceFinishRes) GetInvoice() UnibeeApiBeanInvoiceSimplify {
 	if o == nil || IsNil(o.Invoice) {
-		var ret UnibeeInternalModelEntityOverseaPayInvoice
+		var ret UnibeeApiBeanInvoiceSimplify
 		return ret
 	}
 	return *o.Invoice
@@ -50,7 +50,7 @@ func (o *UnibeeApiMerchantInvoiceFinishRes) GetInvoice() UnibeeInternalModelEnti
 
 // GetInvoiceOk returns a tuple with the Invoice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantInvoiceFinishRes) GetInvoiceOk() (*UnibeeInternalModelEntityOverseaPayInvoice, bool) {
+func (o *UnibeeApiMerchantInvoiceFinishRes) GetInvoiceOk() (*UnibeeApiBeanInvoiceSimplify, bool) {
 	if o == nil || IsNil(o.Invoice) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *UnibeeApiMerchantInvoiceFinishRes) HasInvoice() bool {
 	return false
 }
 
-// SetInvoice gets a reference to the given UnibeeInternalModelEntityOverseaPayInvoice and assigns it to the Invoice field.
-func (o *UnibeeApiMerchantInvoiceFinishRes) SetInvoice(v UnibeeInternalModelEntityOverseaPayInvoice) {
+// SetInvoice gets a reference to the given UnibeeApiBeanInvoiceSimplify and assigns it to the Invoice field.
+func (o *UnibeeApiMerchantInvoiceFinishRes) SetInvoice(v UnibeeApiBeanInvoiceSimplify) {
 	o.Invoice = &v
 }
 

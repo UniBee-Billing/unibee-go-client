@@ -20,12 +20,12 @@ var _ MappedNullable = &UnibeeApiMerchantSubscriptionDetailRes{}
 // UnibeeApiMerchantSubscriptionDetailRes struct for UnibeeApiMerchantSubscriptionDetailRes
 type UnibeeApiMerchantSubscriptionDetailRes struct {
 	// Plan Addon
-	Addons []UnibeeInternalLogicGatewayRoPlanAddonVo `json:"addons,omitempty"`
-	Gateway *UnibeeInternalLogicGatewayRoGatewaySimplify `json:"gateway,omitempty"`
-	Plan *UnibeeInternalLogicGatewayRoPlanSimplify `json:"plan,omitempty"`
-	Subscription *UnibeeInternalLogicGatewayRoSubscriptionSimplify `json:"subscription,omitempty"`
-	UnfinishedSubscriptionPendingUpdate *UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo `json:"unfinishedSubscriptionPendingUpdate,omitempty"`
-	User *UnibeeInternalLogicGatewayRoUserAccountSimplify `json:"user,omitempty"`
+	Addons []UnibeeApiBeanPlanAddonDetail `json:"addons,omitempty"`
+	Gateway *UnibeeApiBeanGatewaySimplify `json:"gateway,omitempty"`
+	Plan *UnibeeApiBeanPlanSimplify `json:"plan,omitempty"`
+	Subscription *UnibeeApiBeanSubscriptionSimplify `json:"subscription,omitempty"`
+	UnfinishedSubscriptionPendingUpdate *UnibeeApiBeanSubscriptionPendingUpdateDetail `json:"unfinishedSubscriptionPendingUpdate,omitempty"`
+	User *UnibeeApiBeanUserAccountSimplify `json:"user,omitempty"`
 }
 
 // NewUnibeeApiMerchantSubscriptionDetailRes instantiates a new UnibeeApiMerchantSubscriptionDetailRes object
@@ -46,9 +46,9 @@ func NewUnibeeApiMerchantSubscriptionDetailResWithDefaults() *UnibeeApiMerchantS
 }
 
 // GetAddons returns the Addons field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantSubscriptionDetailRes) GetAddons() []UnibeeInternalLogicGatewayRoPlanAddonVo {
+func (o *UnibeeApiMerchantSubscriptionDetailRes) GetAddons() []UnibeeApiBeanPlanAddonDetail {
 	if o == nil || IsNil(o.Addons) {
-		var ret []UnibeeInternalLogicGatewayRoPlanAddonVo
+		var ret []UnibeeApiBeanPlanAddonDetail
 		return ret
 	}
 	return o.Addons
@@ -56,7 +56,7 @@ func (o *UnibeeApiMerchantSubscriptionDetailRes) GetAddons() []UnibeeInternalLog
 
 // GetAddonsOk returns a tuple with the Addons field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantSubscriptionDetailRes) GetAddonsOk() ([]UnibeeInternalLogicGatewayRoPlanAddonVo, bool) {
+func (o *UnibeeApiMerchantSubscriptionDetailRes) GetAddonsOk() ([]UnibeeApiBeanPlanAddonDetail, bool) {
 	if o == nil || IsNil(o.Addons) {
 		return nil, false
 	}
@@ -72,15 +72,15 @@ func (o *UnibeeApiMerchantSubscriptionDetailRes) HasAddons() bool {
 	return false
 }
 
-// SetAddons gets a reference to the given []UnibeeInternalLogicGatewayRoPlanAddonVo and assigns it to the Addons field.
-func (o *UnibeeApiMerchantSubscriptionDetailRes) SetAddons(v []UnibeeInternalLogicGatewayRoPlanAddonVo) {
+// SetAddons gets a reference to the given []UnibeeApiBeanPlanAddonDetail and assigns it to the Addons field.
+func (o *UnibeeApiMerchantSubscriptionDetailRes) SetAddons(v []UnibeeApiBeanPlanAddonDetail) {
 	o.Addons = v
 }
 
 // GetGateway returns the Gateway field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantSubscriptionDetailRes) GetGateway() UnibeeInternalLogicGatewayRoGatewaySimplify {
+func (o *UnibeeApiMerchantSubscriptionDetailRes) GetGateway() UnibeeApiBeanGatewaySimplify {
 	if o == nil || IsNil(o.Gateway) {
-		var ret UnibeeInternalLogicGatewayRoGatewaySimplify
+		var ret UnibeeApiBeanGatewaySimplify
 		return ret
 	}
 	return *o.Gateway
@@ -88,7 +88,7 @@ func (o *UnibeeApiMerchantSubscriptionDetailRes) GetGateway() UnibeeInternalLogi
 
 // GetGatewayOk returns a tuple with the Gateway field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantSubscriptionDetailRes) GetGatewayOk() (*UnibeeInternalLogicGatewayRoGatewaySimplify, bool) {
+func (o *UnibeeApiMerchantSubscriptionDetailRes) GetGatewayOk() (*UnibeeApiBeanGatewaySimplify, bool) {
 	if o == nil || IsNil(o.Gateway) {
 		return nil, false
 	}
@@ -104,15 +104,15 @@ func (o *UnibeeApiMerchantSubscriptionDetailRes) HasGateway() bool {
 	return false
 }
 
-// SetGateway gets a reference to the given UnibeeInternalLogicGatewayRoGatewaySimplify and assigns it to the Gateway field.
-func (o *UnibeeApiMerchantSubscriptionDetailRes) SetGateway(v UnibeeInternalLogicGatewayRoGatewaySimplify) {
+// SetGateway gets a reference to the given UnibeeApiBeanGatewaySimplify and assigns it to the Gateway field.
+func (o *UnibeeApiMerchantSubscriptionDetailRes) SetGateway(v UnibeeApiBeanGatewaySimplify) {
 	o.Gateway = &v
 }
 
 // GetPlan returns the Plan field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantSubscriptionDetailRes) GetPlan() UnibeeInternalLogicGatewayRoPlanSimplify {
+func (o *UnibeeApiMerchantSubscriptionDetailRes) GetPlan() UnibeeApiBeanPlanSimplify {
 	if o == nil || IsNil(o.Plan) {
-		var ret UnibeeInternalLogicGatewayRoPlanSimplify
+		var ret UnibeeApiBeanPlanSimplify
 		return ret
 	}
 	return *o.Plan
@@ -120,7 +120,7 @@ func (o *UnibeeApiMerchantSubscriptionDetailRes) GetPlan() UnibeeInternalLogicGa
 
 // GetPlanOk returns a tuple with the Plan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantSubscriptionDetailRes) GetPlanOk() (*UnibeeInternalLogicGatewayRoPlanSimplify, bool) {
+func (o *UnibeeApiMerchantSubscriptionDetailRes) GetPlanOk() (*UnibeeApiBeanPlanSimplify, bool) {
 	if o == nil || IsNil(o.Plan) {
 		return nil, false
 	}
@@ -136,15 +136,15 @@ func (o *UnibeeApiMerchantSubscriptionDetailRes) HasPlan() bool {
 	return false
 }
 
-// SetPlan gets a reference to the given UnibeeInternalLogicGatewayRoPlanSimplify and assigns it to the Plan field.
-func (o *UnibeeApiMerchantSubscriptionDetailRes) SetPlan(v UnibeeInternalLogicGatewayRoPlanSimplify) {
+// SetPlan gets a reference to the given UnibeeApiBeanPlanSimplify and assigns it to the Plan field.
+func (o *UnibeeApiMerchantSubscriptionDetailRes) SetPlan(v UnibeeApiBeanPlanSimplify) {
 	o.Plan = &v
 }
 
 // GetSubscription returns the Subscription field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantSubscriptionDetailRes) GetSubscription() UnibeeInternalLogicGatewayRoSubscriptionSimplify {
+func (o *UnibeeApiMerchantSubscriptionDetailRes) GetSubscription() UnibeeApiBeanSubscriptionSimplify {
 	if o == nil || IsNil(o.Subscription) {
-		var ret UnibeeInternalLogicGatewayRoSubscriptionSimplify
+		var ret UnibeeApiBeanSubscriptionSimplify
 		return ret
 	}
 	return *o.Subscription
@@ -152,7 +152,7 @@ func (o *UnibeeApiMerchantSubscriptionDetailRes) GetSubscription() UnibeeInterna
 
 // GetSubscriptionOk returns a tuple with the Subscription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantSubscriptionDetailRes) GetSubscriptionOk() (*UnibeeInternalLogicGatewayRoSubscriptionSimplify, bool) {
+func (o *UnibeeApiMerchantSubscriptionDetailRes) GetSubscriptionOk() (*UnibeeApiBeanSubscriptionSimplify, bool) {
 	if o == nil || IsNil(o.Subscription) {
 		return nil, false
 	}
@@ -168,15 +168,15 @@ func (o *UnibeeApiMerchantSubscriptionDetailRes) HasSubscription() bool {
 	return false
 }
 
-// SetSubscription gets a reference to the given UnibeeInternalLogicGatewayRoSubscriptionSimplify and assigns it to the Subscription field.
-func (o *UnibeeApiMerchantSubscriptionDetailRes) SetSubscription(v UnibeeInternalLogicGatewayRoSubscriptionSimplify) {
+// SetSubscription gets a reference to the given UnibeeApiBeanSubscriptionSimplify and assigns it to the Subscription field.
+func (o *UnibeeApiMerchantSubscriptionDetailRes) SetSubscription(v UnibeeApiBeanSubscriptionSimplify) {
 	o.Subscription = &v
 }
 
 // GetUnfinishedSubscriptionPendingUpdate returns the UnfinishedSubscriptionPendingUpdate field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantSubscriptionDetailRes) GetUnfinishedSubscriptionPendingUpdate() UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo {
+func (o *UnibeeApiMerchantSubscriptionDetailRes) GetUnfinishedSubscriptionPendingUpdate() UnibeeApiBeanSubscriptionPendingUpdateDetail {
 	if o == nil || IsNil(o.UnfinishedSubscriptionPendingUpdate) {
-		var ret UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo
+		var ret UnibeeApiBeanSubscriptionPendingUpdateDetail
 		return ret
 	}
 	return *o.UnfinishedSubscriptionPendingUpdate
@@ -184,7 +184,7 @@ func (o *UnibeeApiMerchantSubscriptionDetailRes) GetUnfinishedSubscriptionPendin
 
 // GetUnfinishedSubscriptionPendingUpdateOk returns a tuple with the UnfinishedSubscriptionPendingUpdate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantSubscriptionDetailRes) GetUnfinishedSubscriptionPendingUpdateOk() (*UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo, bool) {
+func (o *UnibeeApiMerchantSubscriptionDetailRes) GetUnfinishedSubscriptionPendingUpdateOk() (*UnibeeApiBeanSubscriptionPendingUpdateDetail, bool) {
 	if o == nil || IsNil(o.UnfinishedSubscriptionPendingUpdate) {
 		return nil, false
 	}
@@ -200,15 +200,15 @@ func (o *UnibeeApiMerchantSubscriptionDetailRes) HasUnfinishedSubscriptionPendin
 	return false
 }
 
-// SetUnfinishedSubscriptionPendingUpdate gets a reference to the given UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo and assigns it to the UnfinishedSubscriptionPendingUpdate field.
-func (o *UnibeeApiMerchantSubscriptionDetailRes) SetUnfinishedSubscriptionPendingUpdate(v UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo) {
+// SetUnfinishedSubscriptionPendingUpdate gets a reference to the given UnibeeApiBeanSubscriptionPendingUpdateDetail and assigns it to the UnfinishedSubscriptionPendingUpdate field.
+func (o *UnibeeApiMerchantSubscriptionDetailRes) SetUnfinishedSubscriptionPendingUpdate(v UnibeeApiBeanSubscriptionPendingUpdateDetail) {
 	o.UnfinishedSubscriptionPendingUpdate = &v
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantSubscriptionDetailRes) GetUser() UnibeeInternalLogicGatewayRoUserAccountSimplify {
+func (o *UnibeeApiMerchantSubscriptionDetailRes) GetUser() UnibeeApiBeanUserAccountSimplify {
 	if o == nil || IsNil(o.User) {
-		var ret UnibeeInternalLogicGatewayRoUserAccountSimplify
+		var ret UnibeeApiBeanUserAccountSimplify
 		return ret
 	}
 	return *o.User
@@ -216,7 +216,7 @@ func (o *UnibeeApiMerchantSubscriptionDetailRes) GetUser() UnibeeInternalLogicGa
 
 // GetUserOk returns a tuple with the User field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantSubscriptionDetailRes) GetUserOk() (*UnibeeInternalLogicGatewayRoUserAccountSimplify, bool) {
+func (o *UnibeeApiMerchantSubscriptionDetailRes) GetUserOk() (*UnibeeApiBeanUserAccountSimplify, bool) {
 	if o == nil || IsNil(o.User) {
 		return nil, false
 	}
@@ -232,8 +232,8 @@ func (o *UnibeeApiMerchantSubscriptionDetailRes) HasUser() bool {
 	return false
 }
 
-// SetUser gets a reference to the given UnibeeInternalLogicGatewayRoUserAccountSimplify and assigns it to the User field.
-func (o *UnibeeApiMerchantSubscriptionDetailRes) SetUser(v UnibeeInternalLogicGatewayRoUserAccountSimplify) {
+// SetUser gets a reference to the given UnibeeApiBeanUserAccountSimplify and assigns it to the User field.
+func (o *UnibeeApiMerchantSubscriptionDetailRes) SetUser(v UnibeeApiBeanUserAccountSimplify) {
 	o.User = &v
 }
 

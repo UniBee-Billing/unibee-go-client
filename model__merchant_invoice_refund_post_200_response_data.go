@@ -19,7 +19,7 @@ var _ MappedNullable = &MerchantInvoiceRefundPost200ResponseData{}
 
 // MerchantInvoiceRefundPost200ResponseData struct for MerchantInvoiceRefundPost200ResponseData
 type MerchantInvoiceRefundPost200ResponseData struct {
-	Refund *UnibeeInternalModelEntityOverseaPayRefund `json:"refund,omitempty"`
+	Refund *UnibeeApiBeanRefundSimplify `json:"refund,omitempty"`
 }
 
 // NewMerchantInvoiceRefundPost200ResponseData instantiates a new MerchantInvoiceRefundPost200ResponseData object
@@ -40,9 +40,9 @@ func NewMerchantInvoiceRefundPost200ResponseDataWithDefaults() *MerchantInvoiceR
 }
 
 // GetRefund returns the Refund field value if set, zero value otherwise.
-func (o *MerchantInvoiceRefundPost200ResponseData) GetRefund() UnibeeInternalModelEntityOverseaPayRefund {
+func (o *MerchantInvoiceRefundPost200ResponseData) GetRefund() UnibeeApiBeanRefundSimplify {
 	if o == nil || IsNil(o.Refund) {
-		var ret UnibeeInternalModelEntityOverseaPayRefund
+		var ret UnibeeApiBeanRefundSimplify
 		return ret
 	}
 	return *o.Refund
@@ -50,7 +50,7 @@ func (o *MerchantInvoiceRefundPost200ResponseData) GetRefund() UnibeeInternalMod
 
 // GetRefundOk returns a tuple with the Refund field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantInvoiceRefundPost200ResponseData) GetRefundOk() (*UnibeeInternalModelEntityOverseaPayRefund, bool) {
+func (o *MerchantInvoiceRefundPost200ResponseData) GetRefundOk() (*UnibeeApiBeanRefundSimplify, bool) {
 	if o == nil || IsNil(o.Refund) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *MerchantInvoiceRefundPost200ResponseData) HasRefund() bool {
 	return false
 }
 
-// SetRefund gets a reference to the given UnibeeInternalModelEntityOverseaPayRefund and assigns it to the Refund field.
-func (o *MerchantInvoiceRefundPost200ResponseData) SetRefund(v UnibeeInternalModelEntityOverseaPayRefund) {
+// SetRefund gets a reference to the given UnibeeApiBeanRefundSimplify and assigns it to the Refund field.
+func (o *MerchantInvoiceRefundPost200ResponseData) SetRefund(v UnibeeApiBeanRefundSimplify) {
 	o.Refund = &v
 }
 

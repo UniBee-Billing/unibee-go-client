@@ -19,7 +19,7 @@ var _ MappedNullable = &UnibeeApiMerchantPlanAddonsBindingRes{}
 
 // UnibeeApiMerchantPlanAddonsBindingRes struct for UnibeeApiMerchantPlanAddonsBindingRes
 type UnibeeApiMerchantPlanAddonsBindingRes struct {
-	Plan *UnibeeInternalLogicGatewayRoPlanSimplify `json:"plan,omitempty"`
+	Plan *UnibeeApiBeanPlanSimplify `json:"plan,omitempty"`
 }
 
 // NewUnibeeApiMerchantPlanAddonsBindingRes instantiates a new UnibeeApiMerchantPlanAddonsBindingRes object
@@ -40,9 +40,9 @@ func NewUnibeeApiMerchantPlanAddonsBindingResWithDefaults() *UnibeeApiMerchantPl
 }
 
 // GetPlan returns the Plan field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantPlanAddonsBindingRes) GetPlan() UnibeeInternalLogicGatewayRoPlanSimplify {
+func (o *UnibeeApiMerchantPlanAddonsBindingRes) GetPlan() UnibeeApiBeanPlanSimplify {
 	if o == nil || IsNil(o.Plan) {
-		var ret UnibeeInternalLogicGatewayRoPlanSimplify
+		var ret UnibeeApiBeanPlanSimplify
 		return ret
 	}
 	return *o.Plan
@@ -50,7 +50,7 @@ func (o *UnibeeApiMerchantPlanAddonsBindingRes) GetPlan() UnibeeInternalLogicGat
 
 // GetPlanOk returns a tuple with the Plan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantPlanAddonsBindingRes) GetPlanOk() (*UnibeeInternalLogicGatewayRoPlanSimplify, bool) {
+func (o *UnibeeApiMerchantPlanAddonsBindingRes) GetPlanOk() (*UnibeeApiBeanPlanSimplify, bool) {
 	if o == nil || IsNil(o.Plan) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *UnibeeApiMerchantPlanAddonsBindingRes) HasPlan() bool {
 	return false
 }
 
-// SetPlan gets a reference to the given UnibeeInternalLogicGatewayRoPlanSimplify and assigns it to the Plan field.
-func (o *UnibeeApiMerchantPlanAddonsBindingRes) SetPlan(v UnibeeInternalLogicGatewayRoPlanSimplify) {
+// SetPlan gets a reference to the given UnibeeApiBeanPlanSimplify and assigns it to the Plan field.
+func (o *UnibeeApiMerchantPlanAddonsBindingRes) SetPlan(v UnibeeApiBeanPlanSimplify) {
 	o.Plan = &v
 }
 

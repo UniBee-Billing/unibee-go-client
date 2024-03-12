@@ -20,7 +20,7 @@ var _ MappedNullable = &MerchantUserListGet200ResponseData{}
 // MerchantUserListGet200ResponseData struct for MerchantUserListGet200ResponseData
 type MerchantUserListGet200ResponseData struct {
 	// UserAccounts
-	UserAccounts []UnibeeInternalModelEntityOverseaPayUserAccount `json:"userAccounts,omitempty"`
+	UserAccounts []UnibeeApiBeanUserAccountSimplify `json:"userAccounts,omitempty"`
 }
 
 // NewMerchantUserListGet200ResponseData instantiates a new MerchantUserListGet200ResponseData object
@@ -41,9 +41,9 @@ func NewMerchantUserListGet200ResponseDataWithDefaults() *MerchantUserListGet200
 }
 
 // GetUserAccounts returns the UserAccounts field value if set, zero value otherwise.
-func (o *MerchantUserListGet200ResponseData) GetUserAccounts() []UnibeeInternalModelEntityOverseaPayUserAccount {
+func (o *MerchantUserListGet200ResponseData) GetUserAccounts() []UnibeeApiBeanUserAccountSimplify {
 	if o == nil || IsNil(o.UserAccounts) {
-		var ret []UnibeeInternalModelEntityOverseaPayUserAccount
+		var ret []UnibeeApiBeanUserAccountSimplify
 		return ret
 	}
 	return o.UserAccounts
@@ -51,7 +51,7 @@ func (o *MerchantUserListGet200ResponseData) GetUserAccounts() []UnibeeInternalM
 
 // GetUserAccountsOk returns a tuple with the UserAccounts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantUserListGet200ResponseData) GetUserAccountsOk() ([]UnibeeInternalModelEntityOverseaPayUserAccount, bool) {
+func (o *MerchantUserListGet200ResponseData) GetUserAccountsOk() ([]UnibeeApiBeanUserAccountSimplify, bool) {
 	if o == nil || IsNil(o.UserAccounts) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *MerchantUserListGet200ResponseData) HasUserAccounts() bool {
 	return false
 }
 
-// SetUserAccounts gets a reference to the given []UnibeeInternalModelEntityOverseaPayUserAccount and assigns it to the UserAccounts field.
-func (o *MerchantUserListGet200ResponseData) SetUserAccounts(v []UnibeeInternalModelEntityOverseaPayUserAccount) {
+// SetUserAccounts gets a reference to the given []UnibeeApiBeanUserAccountSimplify and assigns it to the UserAccounts field.
+func (o *MerchantUserListGet200ResponseData) SetUserAccounts(v []UnibeeApiBeanUserAccountSimplify) {
 	o.UserAccounts = v
 }
 

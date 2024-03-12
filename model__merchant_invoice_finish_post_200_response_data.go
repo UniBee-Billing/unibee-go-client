@@ -19,7 +19,7 @@ var _ MappedNullable = &MerchantInvoiceFinishPost200ResponseData{}
 
 // MerchantInvoiceFinishPost200ResponseData struct for MerchantInvoiceFinishPost200ResponseData
 type MerchantInvoiceFinishPost200ResponseData struct {
-	Invoice *UnibeeInternalModelEntityOverseaPayInvoice `json:"invoice,omitempty"`
+	Invoice *UnibeeApiBeanInvoiceSimplify `json:"invoice,omitempty"`
 }
 
 // NewMerchantInvoiceFinishPost200ResponseData instantiates a new MerchantInvoiceFinishPost200ResponseData object
@@ -40,9 +40,9 @@ func NewMerchantInvoiceFinishPost200ResponseDataWithDefaults() *MerchantInvoiceF
 }
 
 // GetInvoice returns the Invoice field value if set, zero value otherwise.
-func (o *MerchantInvoiceFinishPost200ResponseData) GetInvoice() UnibeeInternalModelEntityOverseaPayInvoice {
+func (o *MerchantInvoiceFinishPost200ResponseData) GetInvoice() UnibeeApiBeanInvoiceSimplify {
 	if o == nil || IsNil(o.Invoice) {
-		var ret UnibeeInternalModelEntityOverseaPayInvoice
+		var ret UnibeeApiBeanInvoiceSimplify
 		return ret
 	}
 	return *o.Invoice
@@ -50,7 +50,7 @@ func (o *MerchantInvoiceFinishPost200ResponseData) GetInvoice() UnibeeInternalMo
 
 // GetInvoiceOk returns a tuple with the Invoice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantInvoiceFinishPost200ResponseData) GetInvoiceOk() (*UnibeeInternalModelEntityOverseaPayInvoice, bool) {
+func (o *MerchantInvoiceFinishPost200ResponseData) GetInvoiceOk() (*UnibeeApiBeanInvoiceSimplify, bool) {
 	if o == nil || IsNil(o.Invoice) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *MerchantInvoiceFinishPost200ResponseData) HasInvoice() bool {
 	return false
 }
 
-// SetInvoice gets a reference to the given UnibeeInternalModelEntityOverseaPayInvoice and assigns it to the Invoice field.
-func (o *MerchantInvoiceFinishPost200ResponseData) SetInvoice(v UnibeeInternalModelEntityOverseaPayInvoice) {
+// SetInvoice gets a reference to the given UnibeeApiBeanInvoiceSimplify and assigns it to the Invoice field.
+func (o *MerchantInvoiceFinishPost200ResponseData) SetInvoice(v UnibeeApiBeanInvoiceSimplify) {
 	o.Invoice = &v
 }
 

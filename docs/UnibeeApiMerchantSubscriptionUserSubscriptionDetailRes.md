@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Addons** | Pointer to [**[]UnibeeInternalLogicGatewayRoPlanAddonVo**](UnibeeInternalLogicGatewayRoPlanAddonVo.md) | Plan Addon | [optional] 
-**Gateway** | Pointer to [**UnibeeInternalLogicGatewayRoGatewaySimplify**](UnibeeInternalLogicGatewayRoGatewaySimplify.md) |  | [optional] 
-**Plan** | Pointer to [**UnibeeInternalLogicGatewayRoPlanSimplify**](UnibeeInternalLogicGatewayRoPlanSimplify.md) |  | [optional] 
-**Subscription** | Pointer to [**UnibeeInternalLogicGatewayRoSubscriptionSimplify**](UnibeeInternalLogicGatewayRoSubscriptionSimplify.md) |  | [optional] 
-**UnfinishedSubscriptionPendingUpdate** | Pointer to [**UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo**](UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo.md) |  | [optional] 
-**User** | Pointer to [**UnibeeInternalLogicGatewayRoUserAccountSimplify**](UnibeeInternalLogicGatewayRoUserAccountSimplify.md) |  | [optional] 
+**Addons** | Pointer to [**[]UnibeeApiBeanPlanAddonDetail**](UnibeeApiBeanPlanAddonDetail.md) | Plan Addon | [optional] 
+**Gateway** | Pointer to [**UnibeeApiBeanGatewaySimplify**](UnibeeApiBeanGatewaySimplify.md) |  | [optional] 
+**Plan** | Pointer to [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
+**Subscription** | Pointer to [**UnibeeApiBeanSubscriptionSimplify**](UnibeeApiBeanSubscriptionSimplify.md) |  | [optional] 
+**UnfinishedSubscriptionPendingUpdate** | Pointer to [**UnibeeApiBeanSubscriptionPendingUpdateDetail**](UnibeeApiBeanSubscriptionPendingUpdateDetail.md) |  | [optional] 
+**User** | Pointer to [**UnibeeApiBeanUserAccountSimplify**](UnibeeApiBeanUserAccountSimplify.md) |  | [optional] 
 
 ## Methods
 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAddons
 
-`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetAddons() []UnibeeInternalLogicGatewayRoPlanAddonVo`
+`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetAddons() []UnibeeApiBeanPlanAddonDetail`
 
 GetAddons returns the Addons field if non-nil, zero value otherwise.
 
 ### GetAddonsOk
 
-`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetAddonsOk() (*[]UnibeeInternalLogicGatewayRoPlanAddonVo, bool)`
+`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetAddonsOk() (*[]UnibeeApiBeanPlanAddonDetail, bool)`
 
 GetAddonsOk returns a tuple with the Addons field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddons
 
-`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) SetAddons(v []UnibeeInternalLogicGatewayRoPlanAddonVo)`
+`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) SetAddons(v []UnibeeApiBeanPlanAddonDetail)`
 
 SetAddons sets Addons field to given value.
 
@@ -57,20 +57,20 @@ HasAddons returns a boolean if a field has been set.
 
 ### GetGateway
 
-`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetGateway() UnibeeInternalLogicGatewayRoGatewaySimplify`
+`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetGateway() UnibeeApiBeanGatewaySimplify`
 
 GetGateway returns the Gateway field if non-nil, zero value otherwise.
 
 ### GetGatewayOk
 
-`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetGatewayOk() (*UnibeeInternalLogicGatewayRoGatewaySimplify, bool)`
+`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetGatewayOk() (*UnibeeApiBeanGatewaySimplify, bool)`
 
 GetGatewayOk returns a tuple with the Gateway field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGateway
 
-`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) SetGateway(v UnibeeInternalLogicGatewayRoGatewaySimplify)`
+`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) SetGateway(v UnibeeApiBeanGatewaySimplify)`
 
 SetGateway sets Gateway field to given value.
 
@@ -82,20 +82,20 @@ HasGateway returns a boolean if a field has been set.
 
 ### GetPlan
 
-`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetPlan() UnibeeInternalLogicGatewayRoPlanSimplify`
+`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetPlan() UnibeeApiBeanPlanSimplify`
 
 GetPlan returns the Plan field if non-nil, zero value otherwise.
 
 ### GetPlanOk
 
-`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetPlanOk() (*UnibeeInternalLogicGatewayRoPlanSimplify, bool)`
+`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetPlanOk() (*UnibeeApiBeanPlanSimplify, bool)`
 
 GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlan
 
-`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) SetPlan(v UnibeeInternalLogicGatewayRoPlanSimplify)`
+`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) SetPlan(v UnibeeApiBeanPlanSimplify)`
 
 SetPlan sets Plan field to given value.
 
@@ -107,20 +107,20 @@ HasPlan returns a boolean if a field has been set.
 
 ### GetSubscription
 
-`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetSubscription() UnibeeInternalLogicGatewayRoSubscriptionSimplify`
+`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetSubscription() UnibeeApiBeanSubscriptionSimplify`
 
 GetSubscription returns the Subscription field if non-nil, zero value otherwise.
 
 ### GetSubscriptionOk
 
-`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetSubscriptionOk() (*UnibeeInternalLogicGatewayRoSubscriptionSimplify, bool)`
+`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetSubscriptionOk() (*UnibeeApiBeanSubscriptionSimplify, bool)`
 
 GetSubscriptionOk returns a tuple with the Subscription field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubscription
 
-`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) SetSubscription(v UnibeeInternalLogicGatewayRoSubscriptionSimplify)`
+`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) SetSubscription(v UnibeeApiBeanSubscriptionSimplify)`
 
 SetSubscription sets Subscription field to given value.
 
@@ -132,20 +132,20 @@ HasSubscription returns a boolean if a field has been set.
 
 ### GetUnfinishedSubscriptionPendingUpdate
 
-`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetUnfinishedSubscriptionPendingUpdate() UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo`
+`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetUnfinishedSubscriptionPendingUpdate() UnibeeApiBeanSubscriptionPendingUpdateDetail`
 
 GetUnfinishedSubscriptionPendingUpdate returns the UnfinishedSubscriptionPendingUpdate field if non-nil, zero value otherwise.
 
 ### GetUnfinishedSubscriptionPendingUpdateOk
 
-`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetUnfinishedSubscriptionPendingUpdateOk() (*UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo, bool)`
+`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetUnfinishedSubscriptionPendingUpdateOk() (*UnibeeApiBeanSubscriptionPendingUpdateDetail, bool)`
 
 GetUnfinishedSubscriptionPendingUpdateOk returns a tuple with the UnfinishedSubscriptionPendingUpdate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUnfinishedSubscriptionPendingUpdate
 
-`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) SetUnfinishedSubscriptionPendingUpdate(v UnibeeInternalLogicGatewayRoSubscriptionPendingUpdateDetailVo)`
+`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) SetUnfinishedSubscriptionPendingUpdate(v UnibeeApiBeanSubscriptionPendingUpdateDetail)`
 
 SetUnfinishedSubscriptionPendingUpdate sets UnfinishedSubscriptionPendingUpdate field to given value.
 
@@ -157,20 +157,20 @@ HasUnfinishedSubscriptionPendingUpdate returns a boolean if a field has been set
 
 ### GetUser
 
-`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetUser() UnibeeInternalLogicGatewayRoUserAccountSimplify`
+`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetUser() UnibeeApiBeanUserAccountSimplify`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetUserOk() (*UnibeeInternalLogicGatewayRoUserAccountSimplify, bool)`
+`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetUserOk() (*UnibeeApiBeanUserAccountSimplify, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) SetUser(v UnibeeInternalLogicGatewayRoUserAccountSimplify)`
+`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) SetUser(v UnibeeApiBeanUserAccountSimplify)`
 
 SetUser sets User field to given value.
 

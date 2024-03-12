@@ -19,9 +19,9 @@ var _ MappedNullable = &UnibeeApiMerchantBalanceUserDetailQueryRes{}
 
 // UnibeeApiMerchantBalanceUserDetailQueryRes struct for UnibeeApiMerchantBalanceUserDetailQueryRes
 type UnibeeApiMerchantBalanceUserDetailQueryRes struct {
-	Balance *UnibeeInternalLogicGatewayRoGatewayBalance `json:"balance,omitempty"`
-	CashBalance []UnibeeInternalLogicGatewayRoGatewayBalance `json:"cashBalance,omitempty"`
-	InvoiceCreditBalance []UnibeeInternalLogicGatewayRoGatewayBalance `json:"invoiceCreditBalance,omitempty"`
+	Balance *UnibeeInternalLogicGatewayGatewayBeanGatewayBalance `json:"balance,omitempty"`
+	CashBalance []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance `json:"cashBalance,omitempty"`
+	InvoiceCreditBalance []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance `json:"invoiceCreditBalance,omitempty"`
 }
 
 // NewUnibeeApiMerchantBalanceUserDetailQueryRes instantiates a new UnibeeApiMerchantBalanceUserDetailQueryRes object
@@ -42,9 +42,9 @@ func NewUnibeeApiMerchantBalanceUserDetailQueryResWithDefaults() *UnibeeApiMerch
 }
 
 // GetBalance returns the Balance field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantBalanceUserDetailQueryRes) GetBalance() UnibeeInternalLogicGatewayRoGatewayBalance {
+func (o *UnibeeApiMerchantBalanceUserDetailQueryRes) GetBalance() UnibeeInternalLogicGatewayGatewayBeanGatewayBalance {
 	if o == nil || IsNil(o.Balance) {
-		var ret UnibeeInternalLogicGatewayRoGatewayBalance
+		var ret UnibeeInternalLogicGatewayGatewayBeanGatewayBalance
 		return ret
 	}
 	return *o.Balance
@@ -52,7 +52,7 @@ func (o *UnibeeApiMerchantBalanceUserDetailQueryRes) GetBalance() UnibeeInternal
 
 // GetBalanceOk returns a tuple with the Balance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantBalanceUserDetailQueryRes) GetBalanceOk() (*UnibeeInternalLogicGatewayRoGatewayBalance, bool) {
+func (o *UnibeeApiMerchantBalanceUserDetailQueryRes) GetBalanceOk() (*UnibeeInternalLogicGatewayGatewayBeanGatewayBalance, bool) {
 	if o == nil || IsNil(o.Balance) {
 		return nil, false
 	}
@@ -68,15 +68,15 @@ func (o *UnibeeApiMerchantBalanceUserDetailQueryRes) HasBalance() bool {
 	return false
 }
 
-// SetBalance gets a reference to the given UnibeeInternalLogicGatewayRoGatewayBalance and assigns it to the Balance field.
-func (o *UnibeeApiMerchantBalanceUserDetailQueryRes) SetBalance(v UnibeeInternalLogicGatewayRoGatewayBalance) {
+// SetBalance gets a reference to the given UnibeeInternalLogicGatewayGatewayBeanGatewayBalance and assigns it to the Balance field.
+func (o *UnibeeApiMerchantBalanceUserDetailQueryRes) SetBalance(v UnibeeInternalLogicGatewayGatewayBeanGatewayBalance) {
 	o.Balance = &v
 }
 
 // GetCashBalance returns the CashBalance field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantBalanceUserDetailQueryRes) GetCashBalance() []UnibeeInternalLogicGatewayRoGatewayBalance {
+func (o *UnibeeApiMerchantBalanceUserDetailQueryRes) GetCashBalance() []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance {
 	if o == nil || IsNil(o.CashBalance) {
-		var ret []UnibeeInternalLogicGatewayRoGatewayBalance
+		var ret []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance
 		return ret
 	}
 	return o.CashBalance
@@ -84,7 +84,7 @@ func (o *UnibeeApiMerchantBalanceUserDetailQueryRes) GetCashBalance() []UnibeeIn
 
 // GetCashBalanceOk returns a tuple with the CashBalance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantBalanceUserDetailQueryRes) GetCashBalanceOk() ([]UnibeeInternalLogicGatewayRoGatewayBalance, bool) {
+func (o *UnibeeApiMerchantBalanceUserDetailQueryRes) GetCashBalanceOk() ([]UnibeeInternalLogicGatewayGatewayBeanGatewayBalance, bool) {
 	if o == nil || IsNil(o.CashBalance) {
 		return nil, false
 	}
@@ -100,15 +100,15 @@ func (o *UnibeeApiMerchantBalanceUserDetailQueryRes) HasCashBalance() bool {
 	return false
 }
 
-// SetCashBalance gets a reference to the given []UnibeeInternalLogicGatewayRoGatewayBalance and assigns it to the CashBalance field.
-func (o *UnibeeApiMerchantBalanceUserDetailQueryRes) SetCashBalance(v []UnibeeInternalLogicGatewayRoGatewayBalance) {
+// SetCashBalance gets a reference to the given []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance and assigns it to the CashBalance field.
+func (o *UnibeeApiMerchantBalanceUserDetailQueryRes) SetCashBalance(v []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance) {
 	o.CashBalance = v
 }
 
 // GetInvoiceCreditBalance returns the InvoiceCreditBalance field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantBalanceUserDetailQueryRes) GetInvoiceCreditBalance() []UnibeeInternalLogicGatewayRoGatewayBalance {
+func (o *UnibeeApiMerchantBalanceUserDetailQueryRes) GetInvoiceCreditBalance() []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance {
 	if o == nil || IsNil(o.InvoiceCreditBalance) {
-		var ret []UnibeeInternalLogicGatewayRoGatewayBalance
+		var ret []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance
 		return ret
 	}
 	return o.InvoiceCreditBalance
@@ -116,7 +116,7 @@ func (o *UnibeeApiMerchantBalanceUserDetailQueryRes) GetInvoiceCreditBalance() [
 
 // GetInvoiceCreditBalanceOk returns a tuple with the InvoiceCreditBalance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantBalanceUserDetailQueryRes) GetInvoiceCreditBalanceOk() ([]UnibeeInternalLogicGatewayRoGatewayBalance, bool) {
+func (o *UnibeeApiMerchantBalanceUserDetailQueryRes) GetInvoiceCreditBalanceOk() ([]UnibeeInternalLogicGatewayGatewayBeanGatewayBalance, bool) {
 	if o == nil || IsNil(o.InvoiceCreditBalance) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *UnibeeApiMerchantBalanceUserDetailQueryRes) HasInvoiceCreditBalance() b
 	return false
 }
 
-// SetInvoiceCreditBalance gets a reference to the given []UnibeeInternalLogicGatewayRoGatewayBalance and assigns it to the InvoiceCreditBalance field.
-func (o *UnibeeApiMerchantBalanceUserDetailQueryRes) SetInvoiceCreditBalance(v []UnibeeInternalLogicGatewayRoGatewayBalance) {
+// SetInvoiceCreditBalance gets a reference to the given []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance and assigns it to the InvoiceCreditBalance field.
+func (o *UnibeeApiMerchantBalanceUserDetailQueryRes) SetInvoiceCreditBalance(v []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance) {
 	o.InvoiceCreditBalance = v
 }
 

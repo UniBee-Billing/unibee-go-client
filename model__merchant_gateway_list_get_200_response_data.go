@@ -19,7 +19,7 @@ var _ MappedNullable = &MerchantGatewayListGet200ResponseData{}
 
 // MerchantGatewayListGet200ResponseData struct for MerchantGatewayListGet200ResponseData
 type MerchantGatewayListGet200ResponseData struct {
-	Gateways []UnibeeInternalLogicGatewayRoGatewaySimplify `json:"gateways,omitempty"`
+	Gateways []UnibeeApiBeanGatewaySimplify `json:"gateways,omitempty"`
 }
 
 // NewMerchantGatewayListGet200ResponseData instantiates a new MerchantGatewayListGet200ResponseData object
@@ -40,9 +40,9 @@ func NewMerchantGatewayListGet200ResponseDataWithDefaults() *MerchantGatewayList
 }
 
 // GetGateways returns the Gateways field value if set, zero value otherwise.
-func (o *MerchantGatewayListGet200ResponseData) GetGateways() []UnibeeInternalLogicGatewayRoGatewaySimplify {
+func (o *MerchantGatewayListGet200ResponseData) GetGateways() []UnibeeApiBeanGatewaySimplify {
 	if o == nil || IsNil(o.Gateways) {
-		var ret []UnibeeInternalLogicGatewayRoGatewaySimplify
+		var ret []UnibeeApiBeanGatewaySimplify
 		return ret
 	}
 	return o.Gateways
@@ -50,7 +50,7 @@ func (o *MerchantGatewayListGet200ResponseData) GetGateways() []UnibeeInternalLo
 
 // GetGatewaysOk returns a tuple with the Gateways field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantGatewayListGet200ResponseData) GetGatewaysOk() ([]UnibeeInternalLogicGatewayRoGatewaySimplify, bool) {
+func (o *MerchantGatewayListGet200ResponseData) GetGatewaysOk() ([]UnibeeApiBeanGatewaySimplify, bool) {
 	if o == nil || IsNil(o.Gateways) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *MerchantGatewayListGet200ResponseData) HasGateways() bool {
 	return false
 }
 
-// SetGateways gets a reference to the given []UnibeeInternalLogicGatewayRoGatewaySimplify and assigns it to the Gateways field.
-func (o *MerchantGatewayListGet200ResponseData) SetGateways(v []UnibeeInternalLogicGatewayRoGatewaySimplify) {
+// SetGateways gets a reference to the given []UnibeeApiBeanGatewaySimplify and assigns it to the Gateways field.
+func (o *MerchantGatewayListGet200ResponseData) SetGateways(v []UnibeeApiBeanGatewaySimplify) {
 	o.Gateways = v
 }
 

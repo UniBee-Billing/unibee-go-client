@@ -22,7 +22,7 @@ var _ MappedNullable = &UnibeeApiMerchantSubscriptionUpdatePreviewReq{}
 // UnibeeApiMerchantSubscriptionUpdatePreviewReq struct for UnibeeApiMerchantSubscriptionUpdatePreviewReq
 type UnibeeApiMerchantSubscriptionUpdatePreviewReq struct {
 	// addonParams
-	AddonParams []UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo `json:"addonParams,omitempty"`
+	AddonParams []UnibeeApiBeanPlanAddonParam `json:"addonParams,omitempty"`
 	// New PlanId
 	NewPlanId int64 `json:"newPlanId"`
 	// Quantity，Default 1
@@ -55,9 +55,9 @@ func NewUnibeeApiMerchantSubscriptionUpdatePreviewReqWithDefaults() *UnibeeApiMe
 }
 
 // GetAddonParams returns the AddonParams field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetAddonParams() []UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo {
+func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetAddonParams() []UnibeeApiBeanPlanAddonParam {
 	if o == nil || IsNil(o.AddonParams) {
-		var ret []UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo
+		var ret []UnibeeApiBeanPlanAddonParam
 		return ret
 	}
 	return o.AddonParams
@@ -65,7 +65,7 @@ func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetAddonParams() []Unibe
 
 // GetAddonParamsOk returns a tuple with the AddonParams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetAddonParamsOk() ([]UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo, bool) {
+func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetAddonParamsOk() ([]UnibeeApiBeanPlanAddonParam, bool) {
 	if o == nil || IsNil(o.AddonParams) {
 		return nil, false
 	}
@@ -81,8 +81,8 @@ func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) HasAddonParams() bool {
 	return false
 }
 
-// SetAddonParams gets a reference to the given []UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo and assigns it to the AddonParams field.
-func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) SetAddonParams(v []UnibeeInternalLogicGatewayRoSubscriptionPlanAddonParamRo) {
+// SetAddonParams gets a reference to the given []UnibeeApiBeanPlanAddonParam and assigns it to the AddonParams field.
+func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) SetAddonParams(v []UnibeeApiBeanPlanAddonParam) {
 	o.AddonParams = v
 }
 

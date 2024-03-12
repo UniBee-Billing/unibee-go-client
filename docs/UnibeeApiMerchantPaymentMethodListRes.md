@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MethodList** | Pointer to [**[]UnibeeInternalLogicGatewayRoPaymentMethod**](UnibeeInternalLogicGatewayRoPaymentMethod.md) | MethodList | [optional] 
+**MethodList** | Pointer to [**[]UnibeeApiBeanPaymentMethod**](UnibeeApiBeanPaymentMethod.md) | MethodList | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMethodList
 
-`func (o *UnibeeApiMerchantPaymentMethodListRes) GetMethodList() []UnibeeInternalLogicGatewayRoPaymentMethod`
+`func (o *UnibeeApiMerchantPaymentMethodListRes) GetMethodList() []UnibeeApiBeanPaymentMethod`
 
 GetMethodList returns the MethodList field if non-nil, zero value otherwise.
 
 ### GetMethodListOk
 
-`func (o *UnibeeApiMerchantPaymentMethodListRes) GetMethodListOk() (*[]UnibeeInternalLogicGatewayRoPaymentMethod, bool)`
+`func (o *UnibeeApiMerchantPaymentMethodListRes) GetMethodListOk() (*[]UnibeeApiBeanPaymentMethod, bool)`
 
 GetMethodListOk returns a tuple with the MethodList field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMethodList
 
-`func (o *UnibeeApiMerchantPaymentMethodListRes) SetMethodList(v []UnibeeInternalLogicGatewayRoPaymentMethod)`
+`func (o *UnibeeApiMerchantPaymentMethodListRes) SetMethodList(v []UnibeeApiBeanPaymentMethod)`
 
 SetMethodList sets MethodList field to given value.
 

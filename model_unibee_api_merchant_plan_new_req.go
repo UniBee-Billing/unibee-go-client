@@ -42,7 +42,7 @@ type UnibeeApiMerchantPlanNewReq struct {
 	// Metadata，Map
 	Metadata *map[string]string `json:"metadata,omitempty"`
 	// Plan's MetricLimit List
-	MetricLimits []UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam `json:"metricLimits,omitempty"`
+	MetricLimits []UnibeeApiBeanBulkMetricLimitPlanBindingParam `json:"metricLimits,omitempty"`
 	// Plan Name
 	PlanName string `json:"planName"`
 	// Default Copy Description
@@ -370,9 +370,9 @@ func (o *UnibeeApiMerchantPlanNewReq) SetMetadata(v map[string]string) {
 }
 
 // GetMetricLimits returns the MetricLimits field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantPlanNewReq) GetMetricLimits() []UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam {
+func (o *UnibeeApiMerchantPlanNewReq) GetMetricLimits() []UnibeeApiBeanBulkMetricLimitPlanBindingParam {
 	if o == nil || IsNil(o.MetricLimits) {
-		var ret []UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam
+		var ret []UnibeeApiBeanBulkMetricLimitPlanBindingParam
 		return ret
 	}
 	return o.MetricLimits
@@ -380,7 +380,7 @@ func (o *UnibeeApiMerchantPlanNewReq) GetMetricLimits() []UnibeeInternalLogicGat
 
 // GetMetricLimitsOk returns a tuple with the MetricLimits field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantPlanNewReq) GetMetricLimitsOk() ([]UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam, bool) {
+func (o *UnibeeApiMerchantPlanNewReq) GetMetricLimitsOk() ([]UnibeeApiBeanBulkMetricLimitPlanBindingParam, bool) {
 	if o == nil || IsNil(o.MetricLimits) {
 		return nil, false
 	}
@@ -396,8 +396,8 @@ func (o *UnibeeApiMerchantPlanNewReq) HasMetricLimits() bool {
 	return false
 }
 
-// SetMetricLimits gets a reference to the given []UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam and assigns it to the MetricLimits field.
-func (o *UnibeeApiMerchantPlanNewReq) SetMetricLimits(v []UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam) {
+// SetMetricLimits gets a reference to the given []UnibeeApiBeanBulkMetricLimitPlanBindingParam and assigns it to the MetricLimits field.
+func (o *UnibeeApiMerchantPlanNewReq) SetMetricLimits(v []UnibeeApiBeanBulkMetricLimitPlanBindingParam) {
 	o.MetricLimits = v
 }
 

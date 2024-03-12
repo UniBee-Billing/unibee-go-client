@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **IntervalCount** | **int32** | Number Of IntervalUnit，em: day|month|year|week | 
 **IntervalUnit** | **string** | Plan Interval Unit，em: day|month|year|week | 
 **Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
-**MetricLimits** | Pointer to [**[]UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam**](UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam.md) | Plan&#39;s MetricLimit List | [optional] 
+**MetricLimits** | Pointer to [**[]UnibeeApiBeanBulkMetricLimitPlanBindingParam**](UnibeeApiBeanBulkMetricLimitPlanBindingParam.md) | Plan&#39;s MetricLimit List | [optional] 
 **PlanName** | **string** | Plan Name | 
 **ProductDescription** | Pointer to **string** | Default Copy Description | [optional] 
 **ProductName** | Pointer to **string** | Default Copy PlanName | [optional] 
@@ -271,20 +271,20 @@ HasMetadata returns a boolean if a field has been set.
 
 ### GetMetricLimits
 
-`func (o *UnibeeApiMerchantPlanNewReq) GetMetricLimits() []UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam`
+`func (o *UnibeeApiMerchantPlanNewReq) GetMetricLimits() []UnibeeApiBeanBulkMetricLimitPlanBindingParam`
 
 GetMetricLimits returns the MetricLimits field if non-nil, zero value otherwise.
 
 ### GetMetricLimitsOk
 
-`func (o *UnibeeApiMerchantPlanNewReq) GetMetricLimitsOk() (*[]UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam, bool)`
+`func (o *UnibeeApiMerchantPlanNewReq) GetMetricLimitsOk() (*[]UnibeeApiBeanBulkMetricLimitPlanBindingParam, bool)`
 
 GetMetricLimitsOk returns a tuple with the MetricLimits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetricLimits
 
-`func (o *UnibeeApiMerchantPlanNewReq) SetMetricLimits(v []UnibeeInternalLogicGatewayRoBulkMetricLimitPlanBindingParam)`
+`func (o *UnibeeApiMerchantPlanNewReq) SetMetricLimits(v []UnibeeApiBeanBulkMetricLimitPlanBindingParam)`
 
 SetMetricLimits sets MetricLimits field to given value.
 

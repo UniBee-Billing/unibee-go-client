@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Link** | Pointer to **string** |  | [optional] 
 **Paid** | Pointer to **bool** |  | [optional] 
-**SubscriptionPendingUpdate** | Pointer to [**UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate**](UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate.md) |  | [optional] 
+**SubscriptionPendingUpdate** | Pointer to [**UnibeeApiBeanSubscriptionPendingUpdateDetail**](UnibeeApiBeanSubscriptionPendingUpdateDetail.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasPaid returns a boolean if a field has been set.
 
 ### GetSubscriptionPendingUpdate
 
-`func (o *UnibeeApiMerchantSubscriptionUpdateRes) GetSubscriptionPendingUpdate() UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate`
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) GetSubscriptionPendingUpdate() UnibeeApiBeanSubscriptionPendingUpdateDetail`
 
 GetSubscriptionPendingUpdate returns the SubscriptionPendingUpdate field if non-nil, zero value otherwise.
 
 ### GetSubscriptionPendingUpdateOk
 
-`func (o *UnibeeApiMerchantSubscriptionUpdateRes) GetSubscriptionPendingUpdateOk() (*UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate, bool)`
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) GetSubscriptionPendingUpdateOk() (*UnibeeApiBeanSubscriptionPendingUpdateDetail, bool)`
 
 GetSubscriptionPendingUpdateOk returns a tuple with the SubscriptionPendingUpdate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubscriptionPendingUpdate
 
-`func (o *UnibeeApiMerchantSubscriptionUpdateRes) SetSubscriptionPendingUpdate(v UnibeeInternalModelEntityOverseaPaySubscriptionPendingUpdate)`
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) SetSubscriptionPendingUpdate(v UnibeeApiBeanSubscriptionPendingUpdateDetail)`
 
 SetSubscriptionPendingUpdate sets SubscriptionPendingUpdate field to given value.
 

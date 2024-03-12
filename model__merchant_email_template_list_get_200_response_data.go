@@ -20,7 +20,7 @@ var _ MappedNullable = &MerchantEmailTemplateListGet200ResponseData{}
 // MerchantEmailTemplateListGet200ResponseData struct for MerchantEmailTemplateListGet200ResponseData
 type MerchantEmailTemplateListGet200ResponseData struct {
 	// EmailTemplateList
-	EmailTemplateList []UnibeeInternalQueryEmailTemplateVo `json:"emailTemplateList,omitempty"`
+	EmailTemplateList []UnibeeApiBeanEmailTemplateVo `json:"emailTemplateList,omitempty"`
 }
 
 // NewMerchantEmailTemplateListGet200ResponseData instantiates a new MerchantEmailTemplateListGet200ResponseData object
@@ -41,9 +41,9 @@ func NewMerchantEmailTemplateListGet200ResponseDataWithDefaults() *MerchantEmail
 }
 
 // GetEmailTemplateList returns the EmailTemplateList field value if set, zero value otherwise.
-func (o *MerchantEmailTemplateListGet200ResponseData) GetEmailTemplateList() []UnibeeInternalQueryEmailTemplateVo {
+func (o *MerchantEmailTemplateListGet200ResponseData) GetEmailTemplateList() []UnibeeApiBeanEmailTemplateVo {
 	if o == nil || IsNil(o.EmailTemplateList) {
-		var ret []UnibeeInternalQueryEmailTemplateVo
+		var ret []UnibeeApiBeanEmailTemplateVo
 		return ret
 	}
 	return o.EmailTemplateList
@@ -51,7 +51,7 @@ func (o *MerchantEmailTemplateListGet200ResponseData) GetEmailTemplateList() []U
 
 // GetEmailTemplateListOk returns a tuple with the EmailTemplateList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantEmailTemplateListGet200ResponseData) GetEmailTemplateListOk() ([]UnibeeInternalQueryEmailTemplateVo, bool) {
+func (o *MerchantEmailTemplateListGet200ResponseData) GetEmailTemplateListOk() ([]UnibeeApiBeanEmailTemplateVo, bool) {
 	if o == nil || IsNil(o.EmailTemplateList) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *MerchantEmailTemplateListGet200ResponseData) HasEmailTemplateList() boo
 	return false
 }
 
-// SetEmailTemplateList gets a reference to the given []UnibeeInternalQueryEmailTemplateVo and assigns it to the EmailTemplateList field.
-func (o *MerchantEmailTemplateListGet200ResponseData) SetEmailTemplateList(v []UnibeeInternalQueryEmailTemplateVo) {
+// SetEmailTemplateList gets a reference to the given []UnibeeApiBeanEmailTemplateVo and assigns it to the EmailTemplateList field.
+func (o *MerchantEmailTemplateListGet200ResponseData) SetEmailTemplateList(v []UnibeeApiBeanEmailTemplateVo) {
 	o.EmailTemplateList = v
 }
 

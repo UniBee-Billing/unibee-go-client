@@ -19,7 +19,7 @@ var _ MappedNullable = &UnibeeApiMerchantAuthLoginRes{}
 
 // UnibeeApiMerchantAuthLoginRes struct for UnibeeApiMerchantAuthLoginRes
 type UnibeeApiMerchantAuthLoginRes struct {
-	MerchantMember *UnibeeInternalModelEntityOverseaPayMerchantMember `json:"merchantMember,omitempty"`
+	MerchantMember *UnibeeApiBeanMerchantMemberSimplify `json:"merchantMember,omitempty"`
 	// Token
 	Token *string `json:"token,omitempty"`
 }
@@ -42,9 +42,9 @@ func NewUnibeeApiMerchantAuthLoginResWithDefaults() *UnibeeApiMerchantAuthLoginR
 }
 
 // GetMerchantMember returns the MerchantMember field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantAuthLoginRes) GetMerchantMember() UnibeeInternalModelEntityOverseaPayMerchantMember {
+func (o *UnibeeApiMerchantAuthLoginRes) GetMerchantMember() UnibeeApiBeanMerchantMemberSimplify {
 	if o == nil || IsNil(o.MerchantMember) {
-		var ret UnibeeInternalModelEntityOverseaPayMerchantMember
+		var ret UnibeeApiBeanMerchantMemberSimplify
 		return ret
 	}
 	return *o.MerchantMember
@@ -52,7 +52,7 @@ func (o *UnibeeApiMerchantAuthLoginRes) GetMerchantMember() UnibeeInternalModelE
 
 // GetMerchantMemberOk returns a tuple with the MerchantMember field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantAuthLoginRes) GetMerchantMemberOk() (*UnibeeInternalModelEntityOverseaPayMerchantMember, bool) {
+func (o *UnibeeApiMerchantAuthLoginRes) GetMerchantMemberOk() (*UnibeeApiBeanMerchantMemberSimplify, bool) {
 	if o == nil || IsNil(o.MerchantMember) {
 		return nil, false
 	}
@@ -68,8 +68,8 @@ func (o *UnibeeApiMerchantAuthLoginRes) HasMerchantMember() bool {
 	return false
 }
 
-// SetMerchantMember gets a reference to the given UnibeeInternalModelEntityOverseaPayMerchantMember and assigns it to the MerchantMember field.
-func (o *UnibeeApiMerchantAuthLoginRes) SetMerchantMember(v UnibeeInternalModelEntityOverseaPayMerchantMember) {
+// SetMerchantMember gets a reference to the given UnibeeApiBeanMerchantMemberSimplify and assigns it to the MerchantMember field.
+func (o *UnibeeApiMerchantAuthLoginRes) SetMerchantMember(v UnibeeApiBeanMerchantMemberSimplify) {
 	o.MerchantMember = &v
 }
 

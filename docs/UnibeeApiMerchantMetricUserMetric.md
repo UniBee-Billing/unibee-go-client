@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Addons** | Pointer to [**[]UnibeeInternalLogicGatewayRoPlanAddonVo**](UnibeeInternalLogicGatewayRoPlanAddonVo.md) | Addon | [optional] 
+**Addons** | Pointer to [**[]UnibeeApiBeanPlanAddonDetail**](UnibeeApiBeanPlanAddonDetail.md) | Addon | [optional] 
 **IsPaid** | Pointer to **bool** | IsPaid | [optional] 
-**Plan** | Pointer to [**UnibeeInternalLogicGatewayRoPlanSimplify**](UnibeeInternalLogicGatewayRoPlanSimplify.md) |  | [optional] 
-**Subscription** | Pointer to [**UnibeeInternalLogicGatewayRoSubscriptionSimplify**](UnibeeInternalLogicGatewayRoSubscriptionSimplify.md) |  | [optional] 
-**User** | Pointer to [**UnibeeInternalLogicGatewayRoUserAccountSimplify**](UnibeeInternalLogicGatewayRoUserAccountSimplify.md) |  | [optional] 
-**UserMerchantMetricStats** | Pointer to [**[]UnibeeInternalLogicGatewayRoUserMerchantMetricStat**](UnibeeInternalLogicGatewayRoUserMerchantMetricStat.md) | UserMerchantMetricStats | [optional] 
+**Plan** | Pointer to [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
+**Subscription** | Pointer to [**UnibeeApiBeanSubscriptionSimplify**](UnibeeApiBeanSubscriptionSimplify.md) |  | [optional] 
+**User** | Pointer to [**UnibeeApiBeanUserAccountSimplify**](UnibeeApiBeanUserAccountSimplify.md) |  | [optional] 
+**UserMerchantMetricStats** | Pointer to [**[]UnibeeApiBeanUserMerchantMetricStat**](UnibeeApiBeanUserMerchantMetricStat.md) | UserMerchantMetricStats | [optional] 
 
 ## Methods
 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAddons
 
-`func (o *UnibeeApiMerchantMetricUserMetric) GetAddons() []UnibeeInternalLogicGatewayRoPlanAddonVo`
+`func (o *UnibeeApiMerchantMetricUserMetric) GetAddons() []UnibeeApiBeanPlanAddonDetail`
 
 GetAddons returns the Addons field if non-nil, zero value otherwise.
 
 ### GetAddonsOk
 
-`func (o *UnibeeApiMerchantMetricUserMetric) GetAddonsOk() (*[]UnibeeInternalLogicGatewayRoPlanAddonVo, bool)`
+`func (o *UnibeeApiMerchantMetricUserMetric) GetAddonsOk() (*[]UnibeeApiBeanPlanAddonDetail, bool)`
 
 GetAddonsOk returns a tuple with the Addons field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddons
 
-`func (o *UnibeeApiMerchantMetricUserMetric) SetAddons(v []UnibeeInternalLogicGatewayRoPlanAddonVo)`
+`func (o *UnibeeApiMerchantMetricUserMetric) SetAddons(v []UnibeeApiBeanPlanAddonDetail)`
 
 SetAddons sets Addons field to given value.
 
@@ -82,20 +82,20 @@ HasIsPaid returns a boolean if a field has been set.
 
 ### GetPlan
 
-`func (o *UnibeeApiMerchantMetricUserMetric) GetPlan() UnibeeInternalLogicGatewayRoPlanSimplify`
+`func (o *UnibeeApiMerchantMetricUserMetric) GetPlan() UnibeeApiBeanPlanSimplify`
 
 GetPlan returns the Plan field if non-nil, zero value otherwise.
 
 ### GetPlanOk
 
-`func (o *UnibeeApiMerchantMetricUserMetric) GetPlanOk() (*UnibeeInternalLogicGatewayRoPlanSimplify, bool)`
+`func (o *UnibeeApiMerchantMetricUserMetric) GetPlanOk() (*UnibeeApiBeanPlanSimplify, bool)`
 
 GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlan
 
-`func (o *UnibeeApiMerchantMetricUserMetric) SetPlan(v UnibeeInternalLogicGatewayRoPlanSimplify)`
+`func (o *UnibeeApiMerchantMetricUserMetric) SetPlan(v UnibeeApiBeanPlanSimplify)`
 
 SetPlan sets Plan field to given value.
 
@@ -107,20 +107,20 @@ HasPlan returns a boolean if a field has been set.
 
 ### GetSubscription
 
-`func (o *UnibeeApiMerchantMetricUserMetric) GetSubscription() UnibeeInternalLogicGatewayRoSubscriptionSimplify`
+`func (o *UnibeeApiMerchantMetricUserMetric) GetSubscription() UnibeeApiBeanSubscriptionSimplify`
 
 GetSubscription returns the Subscription field if non-nil, zero value otherwise.
 
 ### GetSubscriptionOk
 
-`func (o *UnibeeApiMerchantMetricUserMetric) GetSubscriptionOk() (*UnibeeInternalLogicGatewayRoSubscriptionSimplify, bool)`
+`func (o *UnibeeApiMerchantMetricUserMetric) GetSubscriptionOk() (*UnibeeApiBeanSubscriptionSimplify, bool)`
 
 GetSubscriptionOk returns a tuple with the Subscription field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubscription
 
-`func (o *UnibeeApiMerchantMetricUserMetric) SetSubscription(v UnibeeInternalLogicGatewayRoSubscriptionSimplify)`
+`func (o *UnibeeApiMerchantMetricUserMetric) SetSubscription(v UnibeeApiBeanSubscriptionSimplify)`
 
 SetSubscription sets Subscription field to given value.
 
@@ -132,20 +132,20 @@ HasSubscription returns a boolean if a field has been set.
 
 ### GetUser
 
-`func (o *UnibeeApiMerchantMetricUserMetric) GetUser() UnibeeInternalLogicGatewayRoUserAccountSimplify`
+`func (o *UnibeeApiMerchantMetricUserMetric) GetUser() UnibeeApiBeanUserAccountSimplify`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *UnibeeApiMerchantMetricUserMetric) GetUserOk() (*UnibeeInternalLogicGatewayRoUserAccountSimplify, bool)`
+`func (o *UnibeeApiMerchantMetricUserMetric) GetUserOk() (*UnibeeApiBeanUserAccountSimplify, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *UnibeeApiMerchantMetricUserMetric) SetUser(v UnibeeInternalLogicGatewayRoUserAccountSimplify)`
+`func (o *UnibeeApiMerchantMetricUserMetric) SetUser(v UnibeeApiBeanUserAccountSimplify)`
 
 SetUser sets User field to given value.
 
@@ -157,20 +157,20 @@ HasUser returns a boolean if a field has been set.
 
 ### GetUserMerchantMetricStats
 
-`func (o *UnibeeApiMerchantMetricUserMetric) GetUserMerchantMetricStats() []UnibeeInternalLogicGatewayRoUserMerchantMetricStat`
+`func (o *UnibeeApiMerchantMetricUserMetric) GetUserMerchantMetricStats() []UnibeeApiBeanUserMerchantMetricStat`
 
 GetUserMerchantMetricStats returns the UserMerchantMetricStats field if non-nil, zero value otherwise.
 
 ### GetUserMerchantMetricStatsOk
 
-`func (o *UnibeeApiMerchantMetricUserMetric) GetUserMerchantMetricStatsOk() (*[]UnibeeInternalLogicGatewayRoUserMerchantMetricStat, bool)`
+`func (o *UnibeeApiMerchantMetricUserMetric) GetUserMerchantMetricStatsOk() (*[]UnibeeApiBeanUserMerchantMetricStat, bool)`
 
 GetUserMerchantMetricStatsOk returns a tuple with the UserMerchantMetricStats field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserMerchantMetricStats
 
-`func (o *UnibeeApiMerchantMetricUserMetric) SetUserMerchantMetricStats(v []UnibeeInternalLogicGatewayRoUserMerchantMetricStat)`
+`func (o *UnibeeApiMerchantMetricUserMetric) SetUserMerchantMetricStats(v []UnibeeApiBeanUserMerchantMetricStat)`
 
 SetUserMerchantMetricStats sets UserMerchantMetricStats field to given value.
 

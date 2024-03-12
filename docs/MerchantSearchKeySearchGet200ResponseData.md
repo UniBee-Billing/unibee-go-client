@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MatchInvoice** | Pointer to [**[]UnibeeInternalModelEntityOverseaPayInvoice**](UnibeeInternalModelEntityOverseaPayInvoice.md) | MatchInvoice | [optional] 
-**MatchUserAccounts** | Pointer to [**[]UnibeeInternalModelEntityOverseaPayUserAccount**](UnibeeInternalModelEntityOverseaPayUserAccount.md) | MatchUserAccounts | [optional] 
+**MatchInvoice** | Pointer to [**[]UnibeeApiBeanInvoiceSimplify**](UnibeeApiBeanInvoiceSimplify.md) | MatchInvoice | [optional] 
+**MatchUserAccounts** | Pointer to [**[]UnibeeApiBeanUserAccountSimplify**](UnibeeApiBeanUserAccountSimplify.md) | MatchUserAccounts | [optional] 
 **PrecisionMatchObject** | Pointer to [**UnibeeApiMerchantSearchPrecisionMatchObject**](UnibeeApiMerchantSearchPrecisionMatchObject.md) |  | [optional] 
 
 ## Methods
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMatchInvoice
 
-`func (o *MerchantSearchKeySearchGet200ResponseData) GetMatchInvoice() []UnibeeInternalModelEntityOverseaPayInvoice`
+`func (o *MerchantSearchKeySearchGet200ResponseData) GetMatchInvoice() []UnibeeApiBeanInvoiceSimplify`
 
 GetMatchInvoice returns the MatchInvoice field if non-nil, zero value otherwise.
 
 ### GetMatchInvoiceOk
 
-`func (o *MerchantSearchKeySearchGet200ResponseData) GetMatchInvoiceOk() (*[]UnibeeInternalModelEntityOverseaPayInvoice, bool)`
+`func (o *MerchantSearchKeySearchGet200ResponseData) GetMatchInvoiceOk() (*[]UnibeeApiBeanInvoiceSimplify, bool)`
 
 GetMatchInvoiceOk returns a tuple with the MatchInvoice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMatchInvoice
 
-`func (o *MerchantSearchKeySearchGet200ResponseData) SetMatchInvoice(v []UnibeeInternalModelEntityOverseaPayInvoice)`
+`func (o *MerchantSearchKeySearchGet200ResponseData) SetMatchInvoice(v []UnibeeApiBeanInvoiceSimplify)`
 
 SetMatchInvoice sets MatchInvoice field to given value.
 
@@ -54,20 +54,20 @@ HasMatchInvoice returns a boolean if a field has been set.
 
 ### GetMatchUserAccounts
 
-`func (o *MerchantSearchKeySearchGet200ResponseData) GetMatchUserAccounts() []UnibeeInternalModelEntityOverseaPayUserAccount`
+`func (o *MerchantSearchKeySearchGet200ResponseData) GetMatchUserAccounts() []UnibeeApiBeanUserAccountSimplify`
 
 GetMatchUserAccounts returns the MatchUserAccounts field if non-nil, zero value otherwise.
 
 ### GetMatchUserAccountsOk
 
-`func (o *MerchantSearchKeySearchGet200ResponseData) GetMatchUserAccountsOk() (*[]UnibeeInternalModelEntityOverseaPayUserAccount, bool)`
+`func (o *MerchantSearchKeySearchGet200ResponseData) GetMatchUserAccountsOk() (*[]UnibeeApiBeanUserAccountSimplify, bool)`
 
 GetMatchUserAccountsOk returns a tuple with the MatchUserAccounts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMatchUserAccounts
 
-`func (o *MerchantSearchKeySearchGet200ResponseData) SetMatchUserAccounts(v []UnibeeInternalModelEntityOverseaPayUserAccount)`
+`func (o *MerchantSearchKeySearchGet200ResponseData) SetMatchUserAccounts(v []UnibeeApiBeanUserAccountSimplify)`
 
 SetMatchUserAccounts sets MatchUserAccounts field to given value.
 

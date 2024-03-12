@@ -19,9 +19,9 @@ var _ MappedNullable = &UnibeeApiMerchantBalanceDetailQueryRes{}
 
 // UnibeeApiMerchantBalanceDetailQueryRes struct for UnibeeApiMerchantBalanceDetailQueryRes
 type UnibeeApiMerchantBalanceDetailQueryRes struct {
-	Available []UnibeeInternalLogicGatewayRoGatewayBalance `json:"available,omitempty"`
-	ConnectReserved []UnibeeInternalLogicGatewayRoGatewayBalance `json:"connectReserved,omitempty"`
-	Pending []UnibeeInternalLogicGatewayRoGatewayBalance `json:"pending,omitempty"`
+	Available []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance `json:"available,omitempty"`
+	ConnectReserved []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance `json:"connectReserved,omitempty"`
+	Pending []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance `json:"pending,omitempty"`
 }
 
 // NewUnibeeApiMerchantBalanceDetailQueryRes instantiates a new UnibeeApiMerchantBalanceDetailQueryRes object
@@ -42,9 +42,9 @@ func NewUnibeeApiMerchantBalanceDetailQueryResWithDefaults() *UnibeeApiMerchantB
 }
 
 // GetAvailable returns the Available field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantBalanceDetailQueryRes) GetAvailable() []UnibeeInternalLogicGatewayRoGatewayBalance {
+func (o *UnibeeApiMerchantBalanceDetailQueryRes) GetAvailable() []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance {
 	if o == nil || IsNil(o.Available) {
-		var ret []UnibeeInternalLogicGatewayRoGatewayBalance
+		var ret []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance
 		return ret
 	}
 	return o.Available
@@ -52,7 +52,7 @@ func (o *UnibeeApiMerchantBalanceDetailQueryRes) GetAvailable() []UnibeeInternal
 
 // GetAvailableOk returns a tuple with the Available field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantBalanceDetailQueryRes) GetAvailableOk() ([]UnibeeInternalLogicGatewayRoGatewayBalance, bool) {
+func (o *UnibeeApiMerchantBalanceDetailQueryRes) GetAvailableOk() ([]UnibeeInternalLogicGatewayGatewayBeanGatewayBalance, bool) {
 	if o == nil || IsNil(o.Available) {
 		return nil, false
 	}
@@ -68,15 +68,15 @@ func (o *UnibeeApiMerchantBalanceDetailQueryRes) HasAvailable() bool {
 	return false
 }
 
-// SetAvailable gets a reference to the given []UnibeeInternalLogicGatewayRoGatewayBalance and assigns it to the Available field.
-func (o *UnibeeApiMerchantBalanceDetailQueryRes) SetAvailable(v []UnibeeInternalLogicGatewayRoGatewayBalance) {
+// SetAvailable gets a reference to the given []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance and assigns it to the Available field.
+func (o *UnibeeApiMerchantBalanceDetailQueryRes) SetAvailable(v []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance) {
 	o.Available = v
 }
 
 // GetConnectReserved returns the ConnectReserved field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantBalanceDetailQueryRes) GetConnectReserved() []UnibeeInternalLogicGatewayRoGatewayBalance {
+func (o *UnibeeApiMerchantBalanceDetailQueryRes) GetConnectReserved() []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance {
 	if o == nil || IsNil(o.ConnectReserved) {
-		var ret []UnibeeInternalLogicGatewayRoGatewayBalance
+		var ret []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance
 		return ret
 	}
 	return o.ConnectReserved
@@ -84,7 +84,7 @@ func (o *UnibeeApiMerchantBalanceDetailQueryRes) GetConnectReserved() []UnibeeIn
 
 // GetConnectReservedOk returns a tuple with the ConnectReserved field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantBalanceDetailQueryRes) GetConnectReservedOk() ([]UnibeeInternalLogicGatewayRoGatewayBalance, bool) {
+func (o *UnibeeApiMerchantBalanceDetailQueryRes) GetConnectReservedOk() ([]UnibeeInternalLogicGatewayGatewayBeanGatewayBalance, bool) {
 	if o == nil || IsNil(o.ConnectReserved) {
 		return nil, false
 	}
@@ -100,15 +100,15 @@ func (o *UnibeeApiMerchantBalanceDetailQueryRes) HasConnectReserved() bool {
 	return false
 }
 
-// SetConnectReserved gets a reference to the given []UnibeeInternalLogicGatewayRoGatewayBalance and assigns it to the ConnectReserved field.
-func (o *UnibeeApiMerchantBalanceDetailQueryRes) SetConnectReserved(v []UnibeeInternalLogicGatewayRoGatewayBalance) {
+// SetConnectReserved gets a reference to the given []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance and assigns it to the ConnectReserved field.
+func (o *UnibeeApiMerchantBalanceDetailQueryRes) SetConnectReserved(v []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance) {
 	o.ConnectReserved = v
 }
 
 // GetPending returns the Pending field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantBalanceDetailQueryRes) GetPending() []UnibeeInternalLogicGatewayRoGatewayBalance {
+func (o *UnibeeApiMerchantBalanceDetailQueryRes) GetPending() []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance {
 	if o == nil || IsNil(o.Pending) {
-		var ret []UnibeeInternalLogicGatewayRoGatewayBalance
+		var ret []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance
 		return ret
 	}
 	return o.Pending
@@ -116,7 +116,7 @@ func (o *UnibeeApiMerchantBalanceDetailQueryRes) GetPending() []UnibeeInternalLo
 
 // GetPendingOk returns a tuple with the Pending field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantBalanceDetailQueryRes) GetPendingOk() ([]UnibeeInternalLogicGatewayRoGatewayBalance, bool) {
+func (o *UnibeeApiMerchantBalanceDetailQueryRes) GetPendingOk() ([]UnibeeInternalLogicGatewayGatewayBeanGatewayBalance, bool) {
 	if o == nil || IsNil(o.Pending) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *UnibeeApiMerchantBalanceDetailQueryRes) HasPending() bool {
 	return false
 }
 
-// SetPending gets a reference to the given []UnibeeInternalLogicGatewayRoGatewayBalance and assigns it to the Pending field.
-func (o *UnibeeApiMerchantBalanceDetailQueryRes) SetPending(v []UnibeeInternalLogicGatewayRoGatewayBalance) {
+// SetPending gets a reference to the given []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance and assigns it to the Pending field.
+func (o *UnibeeApiMerchantBalanceDetailQueryRes) SetPending(v []UnibeeInternalLogicGatewayGatewayBeanGatewayBalance) {
 	o.Pending = v
 }
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MerchantMember** | Pointer to [**UnibeeInternalModelEntityOverseaPayMerchantMember**](UnibeeInternalModelEntityOverseaPayMerchantMember.md) |  | [optional] 
+**MerchantMember** | Pointer to [**UnibeeApiBeanMerchantMemberSimplify**](UnibeeApiBeanMerchantMemberSimplify.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMerchantMember
 
-`func (o *UnibeeApiMerchantAuthRegisterVerifyRes) GetMerchantMember() UnibeeInternalModelEntityOverseaPayMerchantMember`
+`func (o *UnibeeApiMerchantAuthRegisterVerifyRes) GetMerchantMember() UnibeeApiBeanMerchantMemberSimplify`
 
 GetMerchantMember returns the MerchantMember field if non-nil, zero value otherwise.
 
 ### GetMerchantMemberOk
 
-`func (o *UnibeeApiMerchantAuthRegisterVerifyRes) GetMerchantMemberOk() (*UnibeeInternalModelEntityOverseaPayMerchantMember, bool)`
+`func (o *UnibeeApiMerchantAuthRegisterVerifyRes) GetMerchantMemberOk() (*UnibeeApiBeanMerchantMemberSimplify, bool)`
 
 GetMerchantMemberOk returns a tuple with the MerchantMember field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantMember
 
-`func (o *UnibeeApiMerchantAuthRegisterVerifyRes) SetMerchantMember(v UnibeeInternalModelEntityOverseaPayMerchantMember)`
+`func (o *UnibeeApiMerchantAuthRegisterVerifyRes) SetMerchantMember(v UnibeeApiBeanMerchantMemberSimplify)`
 
 SetMerchantMember sets MerchantMember field to given value.
 
