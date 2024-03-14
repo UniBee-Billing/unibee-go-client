@@ -21,7 +21,7 @@ var _ MappedNullable = &UnibeeApiMerchantSubscriptionUpdateRes{}
 type UnibeeApiMerchantSubscriptionUpdateRes struct {
 	Link *string `json:"link,omitempty"`
 	Paid *bool `json:"paid,omitempty"`
-	SubscriptionPendingUpdate *UnibeeApiBeanSubscriptionPendingUpdateDetail `json:"subscriptionPendingUpdate,omitempty"`
+	SubscriptionPendingUpdate *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail `json:"subscriptionPendingUpdate,omitempty"`
 }
 
 // NewUnibeeApiMerchantSubscriptionUpdateRes instantiates a new UnibeeApiMerchantSubscriptionUpdateRes object
@@ -106,9 +106,9 @@ func (o *UnibeeApiMerchantSubscriptionUpdateRes) SetPaid(v bool) {
 }
 
 // GetSubscriptionPendingUpdate returns the SubscriptionPendingUpdate field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantSubscriptionUpdateRes) GetSubscriptionPendingUpdate() UnibeeApiBeanSubscriptionPendingUpdateDetail {
+func (o *UnibeeApiMerchantSubscriptionUpdateRes) GetSubscriptionPendingUpdate() UnibeeApiBeanDetailSubscriptionPendingUpdateDetail {
 	if o == nil || IsNil(o.SubscriptionPendingUpdate) {
-		var ret UnibeeApiBeanSubscriptionPendingUpdateDetail
+		var ret UnibeeApiBeanDetailSubscriptionPendingUpdateDetail
 		return ret
 	}
 	return *o.SubscriptionPendingUpdate
@@ -116,7 +116,7 @@ func (o *UnibeeApiMerchantSubscriptionUpdateRes) GetSubscriptionPendingUpdate() 
 
 // GetSubscriptionPendingUpdateOk returns a tuple with the SubscriptionPendingUpdate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantSubscriptionUpdateRes) GetSubscriptionPendingUpdateOk() (*UnibeeApiBeanSubscriptionPendingUpdateDetail, bool) {
+func (o *UnibeeApiMerchantSubscriptionUpdateRes) GetSubscriptionPendingUpdateOk() (*UnibeeApiBeanDetailSubscriptionPendingUpdateDetail, bool) {
 	if o == nil || IsNil(o.SubscriptionPendingUpdate) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *UnibeeApiMerchantSubscriptionUpdateRes) HasSubscriptionPendingUpdate() 
 	return false
 }
 
-// SetSubscriptionPendingUpdate gets a reference to the given UnibeeApiBeanSubscriptionPendingUpdateDetail and assigns it to the SubscriptionPendingUpdate field.
-func (o *UnibeeApiMerchantSubscriptionUpdateRes) SetSubscriptionPendingUpdate(v UnibeeApiBeanSubscriptionPendingUpdateDetail) {
+// SetSubscriptionPendingUpdate gets a reference to the given UnibeeApiBeanDetailSubscriptionPendingUpdateDetail and assigns it to the SubscriptionPendingUpdate field.
+func (o *UnibeeApiMerchantSubscriptionUpdateRes) SetSubscriptionPendingUpdate(v UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) {
 	o.SubscriptionPendingUpdate = &v
 }
 

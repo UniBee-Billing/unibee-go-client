@@ -14,11 +14,15 @@ import (
 	"encoding/json"
 )
 
-// checks if the UnibeeApiBeanInvoiceDetail type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &UnibeeApiBeanInvoiceDetail{}
+// checks if the UnibeeApiBeanDetailInvoiceDetail type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &UnibeeApiBeanDetailInvoiceDetail{}
 
-// UnibeeApiBeanInvoiceDetail struct for UnibeeApiBeanInvoiceDetail
-type UnibeeApiBeanInvoiceDetail struct {
+// UnibeeApiBeanDetailInvoiceDetail struct for UnibeeApiBeanDetailInvoiceDetail
+type UnibeeApiBeanDetailInvoiceDetail struct {
+	// crypto_amount, cent
+	CryptoAmount *int64 `json:"cryptoAmount,omitempty"`
+	// crypto_currency
+	CryptoCurrency *string `json:"cryptoCurrency,omitempty"`
 	// Currency
 	Currency *string `json:"currency,omitempty"`
 	// Data
@@ -99,25 +103,89 @@ type UnibeeApiBeanInvoiceDetail struct {
 	UserId *int64 `json:"userId,omitempty"`
 }
 
-// NewUnibeeApiBeanInvoiceDetail instantiates a new UnibeeApiBeanInvoiceDetail object
+// NewUnibeeApiBeanDetailInvoiceDetail instantiates a new UnibeeApiBeanDetailInvoiceDetail object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiBeanInvoiceDetail() *UnibeeApiBeanInvoiceDetail {
-	this := UnibeeApiBeanInvoiceDetail{}
+func NewUnibeeApiBeanDetailInvoiceDetail() *UnibeeApiBeanDetailInvoiceDetail {
+	this := UnibeeApiBeanDetailInvoiceDetail{}
 	return &this
 }
 
-// NewUnibeeApiBeanInvoiceDetailWithDefaults instantiates a new UnibeeApiBeanInvoiceDetail object
+// NewUnibeeApiBeanDetailInvoiceDetailWithDefaults instantiates a new UnibeeApiBeanDetailInvoiceDetail object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewUnibeeApiBeanInvoiceDetailWithDefaults() *UnibeeApiBeanInvoiceDetail {
-	this := UnibeeApiBeanInvoiceDetail{}
+func NewUnibeeApiBeanDetailInvoiceDetailWithDefaults() *UnibeeApiBeanDetailInvoiceDetail {
+	this := UnibeeApiBeanDetailInvoiceDetail{}
 	return &this
+}
+
+// GetCryptoAmount returns the CryptoAmount field value if set, zero value otherwise.
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetCryptoAmount() int64 {
+	if o == nil || IsNil(o.CryptoAmount) {
+		var ret int64
+		return ret
+	}
+	return *o.CryptoAmount
+}
+
+// GetCryptoAmountOk returns a tuple with the CryptoAmount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetCryptoAmountOk() (*int64, bool) {
+	if o == nil || IsNil(o.CryptoAmount) {
+		return nil, false
+	}
+	return o.CryptoAmount, true
+}
+
+// HasCryptoAmount returns a boolean if a field has been set.
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasCryptoAmount() bool {
+	if o != nil && !IsNil(o.CryptoAmount) {
+		return true
+	}
+
+	return false
+}
+
+// SetCryptoAmount gets a reference to the given int64 and assigns it to the CryptoAmount field.
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetCryptoAmount(v int64) {
+	o.CryptoAmount = &v
+}
+
+// GetCryptoCurrency returns the CryptoCurrency field value if set, zero value otherwise.
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetCryptoCurrency() string {
+	if o == nil || IsNil(o.CryptoCurrency) {
+		var ret string
+		return ret
+	}
+	return *o.CryptoCurrency
+}
+
+// GetCryptoCurrencyOk returns a tuple with the CryptoCurrency field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetCryptoCurrencyOk() (*string, bool) {
+	if o == nil || IsNil(o.CryptoCurrency) {
+		return nil, false
+	}
+	return o.CryptoCurrency, true
+}
+
+// HasCryptoCurrency returns a boolean if a field has been set.
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasCryptoCurrency() bool {
+	if o != nil && !IsNil(o.CryptoCurrency) {
+		return true
+	}
+
+	return false
+}
+
+// SetCryptoCurrency gets a reference to the given string and assigns it to the CryptoCurrency field.
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetCryptoCurrency(v string) {
+	o.CryptoCurrency = &v
 }
 
 // GetCurrency returns the Currency field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetCurrency() string {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetCurrency() string {
 	if o == nil || IsNil(o.Currency) {
 		var ret string
 		return ret
@@ -127,7 +195,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetCurrency() string {
 
 // GetCurrencyOk returns a tuple with the Currency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetCurrencyOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetCurrencyOk() (*string, bool) {
 	if o == nil || IsNil(o.Currency) {
 		return nil, false
 	}
@@ -135,7 +203,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetCurrencyOk() (*string, bool) {
 }
 
 // HasCurrency returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasCurrency() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasCurrency() bool {
 	if o != nil && !IsNil(o.Currency) {
 		return true
 	}
@@ -144,12 +212,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasCurrency() bool {
 }
 
 // SetCurrency gets a reference to the given string and assigns it to the Currency field.
-func (o *UnibeeApiBeanInvoiceDetail) SetCurrency(v string) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetCurrency(v string) {
 	o.Currency = &v
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetData() string {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetData() string {
 	if o == nil || IsNil(o.Data) {
 		var ret string
 		return ret
@@ -159,7 +227,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetData() string {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetDataOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetDataOk() (*string, bool) {
 	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
@@ -167,7 +235,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetDataOk() (*string, bool) {
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasData() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasData() bool {
 	if o != nil && !IsNil(o.Data) {
 		return true
 	}
@@ -176,12 +244,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasData() bool {
 }
 
 // SetData gets a reference to the given string and assigns it to the Data field.
-func (o *UnibeeApiBeanInvoiceDetail) SetData(v string) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetData(v string) {
 	o.Data = &v
 }
 
 // GetDiscountAmount returns the DiscountAmount field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetDiscountAmount() int64 {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetDiscountAmount() int64 {
 	if o == nil || IsNil(o.DiscountAmount) {
 		var ret int64
 		return ret
@@ -191,7 +259,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetDiscountAmount() int64 {
 
 // GetDiscountAmountOk returns a tuple with the DiscountAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetDiscountAmountOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetDiscountAmountOk() (*int64, bool) {
 	if o == nil || IsNil(o.DiscountAmount) {
 		return nil, false
 	}
@@ -199,7 +267,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetDiscountAmountOk() (*int64, bool) {
 }
 
 // HasDiscountAmount returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasDiscountAmount() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasDiscountAmount() bool {
 	if o != nil && !IsNil(o.DiscountAmount) {
 		return true
 	}
@@ -208,12 +276,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasDiscountAmount() bool {
 }
 
 // SetDiscountAmount gets a reference to the given int64 and assigns it to the DiscountAmount field.
-func (o *UnibeeApiBeanInvoiceDetail) SetDiscountAmount(v int64) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetDiscountAmount(v int64) {
 	o.DiscountAmount = &v
 }
 
 // GetGateway returns the Gateway field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetGateway() UnibeeApiBeanGatewaySimplify {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetGateway() UnibeeApiBeanGatewaySimplify {
 	if o == nil || IsNil(o.Gateway) {
 		var ret UnibeeApiBeanGatewaySimplify
 		return ret
@@ -223,7 +291,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetGateway() UnibeeApiBeanGatewaySimplify {
 
 // GetGatewayOk returns a tuple with the Gateway field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetGatewayOk() (*UnibeeApiBeanGatewaySimplify, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetGatewayOk() (*UnibeeApiBeanGatewaySimplify, bool) {
 	if o == nil || IsNil(o.Gateway) {
 		return nil, false
 	}
@@ -231,7 +299,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetGatewayOk() (*UnibeeApiBeanGatewaySimpli
 }
 
 // HasGateway returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasGateway() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasGateway() bool {
 	if o != nil && !IsNil(o.Gateway) {
 		return true
 	}
@@ -240,12 +308,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasGateway() bool {
 }
 
 // SetGateway gets a reference to the given UnibeeApiBeanGatewaySimplify and assigns it to the Gateway field.
-func (o *UnibeeApiBeanInvoiceDetail) SetGateway(v UnibeeApiBeanGatewaySimplify) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetGateway(v UnibeeApiBeanGatewaySimplify) {
 	o.Gateway = &v
 }
 
 // GetGatewayId returns the GatewayId field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetGatewayId() int64 {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetGatewayId() int64 {
 	if o == nil || IsNil(o.GatewayId) {
 		var ret int64
 		return ret
@@ -255,7 +323,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetGatewayId() int64 {
 
 // GetGatewayIdOk returns a tuple with the GatewayId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetGatewayIdOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetGatewayIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.GatewayId) {
 		return nil, false
 	}
@@ -263,7 +331,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetGatewayIdOk() (*int64, bool) {
 }
 
 // HasGatewayId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasGatewayId() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasGatewayId() bool {
 	if o != nil && !IsNil(o.GatewayId) {
 		return true
 	}
@@ -272,12 +340,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasGatewayId() bool {
 }
 
 // SetGatewayId gets a reference to the given int64 and assigns it to the GatewayId field.
-func (o *UnibeeApiBeanInvoiceDetail) SetGatewayId(v int64) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetGatewayId(v int64) {
 	o.GatewayId = &v
 }
 
 // GetGatewayInvoiceId returns the GatewayInvoiceId field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetGatewayInvoiceId() string {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetGatewayInvoiceId() string {
 	if o == nil || IsNil(o.GatewayInvoiceId) {
 		var ret string
 		return ret
@@ -287,7 +355,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetGatewayInvoiceId() string {
 
 // GetGatewayInvoiceIdOk returns a tuple with the GatewayInvoiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetGatewayInvoiceIdOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetGatewayInvoiceIdOk() (*string, bool) {
 	if o == nil || IsNil(o.GatewayInvoiceId) {
 		return nil, false
 	}
@@ -295,7 +363,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetGatewayInvoiceIdOk() (*string, bool) {
 }
 
 // HasGatewayInvoiceId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasGatewayInvoiceId() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasGatewayInvoiceId() bool {
 	if o != nil && !IsNil(o.GatewayInvoiceId) {
 		return true
 	}
@@ -304,12 +372,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasGatewayInvoiceId() bool {
 }
 
 // SetGatewayInvoiceId gets a reference to the given string and assigns it to the GatewayInvoiceId field.
-func (o *UnibeeApiBeanInvoiceDetail) SetGatewayInvoiceId(v string) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetGatewayInvoiceId(v string) {
 	o.GatewayInvoiceId = &v
 }
 
 // GetGatewayInvoicePdf returns the GatewayInvoicePdf field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetGatewayInvoicePdf() string {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetGatewayInvoicePdf() string {
 	if o == nil || IsNil(o.GatewayInvoicePdf) {
 		var ret string
 		return ret
@@ -319,7 +387,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetGatewayInvoicePdf() string {
 
 // GetGatewayInvoicePdfOk returns a tuple with the GatewayInvoicePdf field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetGatewayInvoicePdfOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetGatewayInvoicePdfOk() (*string, bool) {
 	if o == nil || IsNil(o.GatewayInvoicePdf) {
 		return nil, false
 	}
@@ -327,7 +395,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetGatewayInvoicePdfOk() (*string, bool) {
 }
 
 // HasGatewayInvoicePdf returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasGatewayInvoicePdf() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasGatewayInvoicePdf() bool {
 	if o != nil && !IsNil(o.GatewayInvoicePdf) {
 		return true
 	}
@@ -336,12 +404,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasGatewayInvoicePdf() bool {
 }
 
 // SetGatewayInvoicePdf gets a reference to the given string and assigns it to the GatewayInvoicePdf field.
-func (o *UnibeeApiBeanInvoiceDetail) SetGatewayInvoicePdf(v string) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetGatewayInvoicePdf(v string) {
 	o.GatewayInvoicePdf = &v
 }
 
 // GetGatewayPaymentId returns the GatewayPaymentId field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetGatewayPaymentId() string {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetGatewayPaymentId() string {
 	if o == nil || IsNil(o.GatewayPaymentId) {
 		var ret string
 		return ret
@@ -351,7 +419,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetGatewayPaymentId() string {
 
 // GetGatewayPaymentIdOk returns a tuple with the GatewayPaymentId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetGatewayPaymentIdOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetGatewayPaymentIdOk() (*string, bool) {
 	if o == nil || IsNil(o.GatewayPaymentId) {
 		return nil, false
 	}
@@ -359,7 +427,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetGatewayPaymentIdOk() (*string, bool) {
 }
 
 // HasGatewayPaymentId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasGatewayPaymentId() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasGatewayPaymentId() bool {
 	if o != nil && !IsNil(o.GatewayPaymentId) {
 		return true
 	}
@@ -368,12 +436,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasGatewayPaymentId() bool {
 }
 
 // SetGatewayPaymentId gets a reference to the given string and assigns it to the GatewayPaymentId field.
-func (o *UnibeeApiBeanInvoiceDetail) SetGatewayPaymentId(v string) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetGatewayPaymentId(v string) {
 	o.GatewayPaymentId = &v
 }
 
 // GetGatewayStatus returns the GatewayStatus field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetGatewayStatus() string {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetGatewayStatus() string {
 	if o == nil || IsNil(o.GatewayStatus) {
 		var ret string
 		return ret
@@ -383,7 +451,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetGatewayStatus() string {
 
 // GetGatewayStatusOk returns a tuple with the GatewayStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetGatewayStatusOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetGatewayStatusOk() (*string, bool) {
 	if o == nil || IsNil(o.GatewayStatus) {
 		return nil, false
 	}
@@ -391,7 +459,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetGatewayStatusOk() (*string, bool) {
 }
 
 // HasGatewayStatus returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasGatewayStatus() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasGatewayStatus() bool {
 	if o != nil && !IsNil(o.GatewayStatus) {
 		return true
 	}
@@ -400,12 +468,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasGatewayStatus() bool {
 }
 
 // SetGatewayStatus gets a reference to the given string and assigns it to the GatewayStatus field.
-func (o *UnibeeApiBeanInvoiceDetail) SetGatewayStatus(v string) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetGatewayStatus(v string) {
 	o.GatewayStatus = &v
 }
 
 // GetGatewayUserId returns the GatewayUserId field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetGatewayUserId() string {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetGatewayUserId() string {
 	if o == nil || IsNil(o.GatewayUserId) {
 		var ret string
 		return ret
@@ -415,7 +483,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetGatewayUserId() string {
 
 // GetGatewayUserIdOk returns a tuple with the GatewayUserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetGatewayUserIdOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetGatewayUserIdOk() (*string, bool) {
 	if o == nil || IsNil(o.GatewayUserId) {
 		return nil, false
 	}
@@ -423,7 +491,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetGatewayUserIdOk() (*string, bool) {
 }
 
 // HasGatewayUserId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasGatewayUserId() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasGatewayUserId() bool {
 	if o != nil && !IsNil(o.GatewayUserId) {
 		return true
 	}
@@ -432,12 +500,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasGatewayUserId() bool {
 }
 
 // SetGatewayUserId gets a reference to the given string and assigns it to the GatewayUserId field.
-func (o *UnibeeApiBeanInvoiceDetail) SetGatewayUserId(v string) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetGatewayUserId(v string) {
 	o.GatewayUserId = &v
 }
 
 // GetGmtCreate returns the GmtCreate field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetGmtCreate() string {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetGmtCreate() string {
 	if o == nil || IsNil(o.GmtCreate) {
 		var ret string
 		return ret
@@ -447,7 +515,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetGmtCreate() string {
 
 // GetGmtCreateOk returns a tuple with the GmtCreate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetGmtCreateOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetGmtCreateOk() (*string, bool) {
 	if o == nil || IsNil(o.GmtCreate) {
 		return nil, false
 	}
@@ -455,7 +523,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetGmtCreateOk() (*string, bool) {
 }
 
 // HasGmtCreate returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasGmtCreate() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasGmtCreate() bool {
 	if o != nil && !IsNil(o.GmtCreate) {
 		return true
 	}
@@ -464,12 +532,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasGmtCreate() bool {
 }
 
 // SetGmtCreate gets a reference to the given string and assigns it to the GmtCreate field.
-func (o *UnibeeApiBeanInvoiceDetail) SetGmtCreate(v string) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetGmtCreate(v string) {
 	o.GmtCreate = &v
 }
 
 // GetGmtModify returns the GmtModify field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetGmtModify() string {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetGmtModify() string {
 	if o == nil || IsNil(o.GmtModify) {
 		var ret string
 		return ret
@@ -479,7 +547,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetGmtModify() string {
 
 // GetGmtModifyOk returns a tuple with the GmtModify field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetGmtModifyOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetGmtModifyOk() (*string, bool) {
 	if o == nil || IsNil(o.GmtModify) {
 		return nil, false
 	}
@@ -487,7 +555,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetGmtModifyOk() (*string, bool) {
 }
 
 // HasGmtModify returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasGmtModify() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasGmtModify() bool {
 	if o != nil && !IsNil(o.GmtModify) {
 		return true
 	}
@@ -496,12 +564,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasGmtModify() bool {
 }
 
 // SetGmtModify gets a reference to the given string and assigns it to the GmtModify field.
-func (o *UnibeeApiBeanInvoiceDetail) SetGmtModify(v string) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetGmtModify(v string) {
 	o.GmtModify = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetId() int64 {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
 		var ret int64
 		return ret
@@ -511,7 +579,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetId() int64 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetIdOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -519,7 +587,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetIdOk() (*int64, bool) {
 }
 
 // HasId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasId() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasId() bool {
 	if o != nil && !IsNil(o.Id) {
 		return true
 	}
@@ -528,12 +596,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasId() bool {
 }
 
 // SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *UnibeeApiBeanInvoiceDetail) SetId(v int64) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetId(v int64) {
 	o.Id = &v
 }
 
 // GetInvoiceId returns the InvoiceId field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetInvoiceId() string {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetInvoiceId() string {
 	if o == nil || IsNil(o.InvoiceId) {
 		var ret string
 		return ret
@@ -543,7 +611,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetInvoiceId() string {
 
 // GetInvoiceIdOk returns a tuple with the InvoiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetInvoiceIdOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetInvoiceIdOk() (*string, bool) {
 	if o == nil || IsNil(o.InvoiceId) {
 		return nil, false
 	}
@@ -551,7 +619,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetInvoiceIdOk() (*string, bool) {
 }
 
 // HasInvoiceId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasInvoiceId() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasInvoiceId() bool {
 	if o != nil && !IsNil(o.InvoiceId) {
 		return true
 	}
@@ -560,12 +628,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasInvoiceId() bool {
 }
 
 // SetInvoiceId gets a reference to the given string and assigns it to the InvoiceId field.
-func (o *UnibeeApiBeanInvoiceDetail) SetInvoiceId(v string) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetInvoiceId(v string) {
 	o.InvoiceId = &v
 }
 
 // GetInvoiceName returns the InvoiceName field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetInvoiceName() string {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetInvoiceName() string {
 	if o == nil || IsNil(o.InvoiceName) {
 		var ret string
 		return ret
@@ -575,7 +643,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetInvoiceName() string {
 
 // GetInvoiceNameOk returns a tuple with the InvoiceName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetInvoiceNameOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetInvoiceNameOk() (*string, bool) {
 	if o == nil || IsNil(o.InvoiceName) {
 		return nil, false
 	}
@@ -583,7 +651,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetInvoiceNameOk() (*string, bool) {
 }
 
 // HasInvoiceName returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasInvoiceName() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasInvoiceName() bool {
 	if o != nil && !IsNil(o.InvoiceName) {
 		return true
 	}
@@ -592,12 +660,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasInvoiceName() bool {
 }
 
 // SetInvoiceName gets a reference to the given string and assigns it to the InvoiceName field.
-func (o *UnibeeApiBeanInvoiceDetail) SetInvoiceName(v string) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetInvoiceName(v string) {
 	o.InvoiceName = &v
 }
 
 // GetIsDeleted returns the IsDeleted field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetIsDeleted() int32 {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetIsDeleted() int32 {
 	if o == nil || IsNil(o.IsDeleted) {
 		var ret int32
 		return ret
@@ -607,7 +675,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetIsDeleted() int32 {
 
 // GetIsDeletedOk returns a tuple with the IsDeleted field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetIsDeletedOk() (*int32, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetIsDeletedOk() (*int32, bool) {
 	if o == nil || IsNil(o.IsDeleted) {
 		return nil, false
 	}
@@ -615,7 +683,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetIsDeletedOk() (*int32, bool) {
 }
 
 // HasIsDeleted returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasIsDeleted() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasIsDeleted() bool {
 	if o != nil && !IsNil(o.IsDeleted) {
 		return true
 	}
@@ -624,12 +692,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasIsDeleted() bool {
 }
 
 // SetIsDeleted gets a reference to the given int32 and assigns it to the IsDeleted field.
-func (o *UnibeeApiBeanInvoiceDetail) SetIsDeleted(v int32) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetIsDeleted(v int32) {
 	o.IsDeleted = &v
 }
 
 // GetLines returns the Lines field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetLines() []UnibeeApiBeanInvoiceItemSimplify {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetLines() []UnibeeApiBeanInvoiceItemSimplify {
 	if o == nil || IsNil(o.Lines) {
 		var ret []UnibeeApiBeanInvoiceItemSimplify
 		return ret
@@ -639,7 +707,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetLines() []UnibeeApiBeanInvoiceItemSimpli
 
 // GetLinesOk returns a tuple with the Lines field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetLinesOk() ([]UnibeeApiBeanInvoiceItemSimplify, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetLinesOk() ([]UnibeeApiBeanInvoiceItemSimplify, bool) {
 	if o == nil || IsNil(o.Lines) {
 		return nil, false
 	}
@@ -647,7 +715,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetLinesOk() ([]UnibeeApiBeanInvoiceItemSim
 }
 
 // HasLines returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasLines() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasLines() bool {
 	if o != nil && !IsNil(o.Lines) {
 		return true
 	}
@@ -656,12 +724,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasLines() bool {
 }
 
 // SetLines gets a reference to the given []UnibeeApiBeanInvoiceItemSimplify and assigns it to the Lines field.
-func (o *UnibeeApiBeanInvoiceDetail) SetLines(v []UnibeeApiBeanInvoiceItemSimplify) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetLines(v []UnibeeApiBeanInvoiceItemSimplify) {
 	o.Lines = v
 }
 
 // GetLink returns the Link field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetLink() string {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetLink() string {
 	if o == nil || IsNil(o.Link) {
 		var ret string
 		return ret
@@ -671,7 +739,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetLink() string {
 
 // GetLinkOk returns a tuple with the Link field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetLinkOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetLinkOk() (*string, bool) {
 	if o == nil || IsNil(o.Link) {
 		return nil, false
 	}
@@ -679,7 +747,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetLinkOk() (*string, bool) {
 }
 
 // HasLink returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasLink() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasLink() bool {
 	if o != nil && !IsNil(o.Link) {
 		return true
 	}
@@ -688,12 +756,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasLink() bool {
 }
 
 // SetLink gets a reference to the given string and assigns it to the Link field.
-func (o *UnibeeApiBeanInvoiceDetail) SetLink(v string) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetLink(v string) {
 	o.Link = &v
 }
 
 // GetMerchant returns the Merchant field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetMerchant() UnibeeApiBeanMerchantSimplify {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetMerchant() UnibeeApiBeanMerchantSimplify {
 	if o == nil || IsNil(o.Merchant) {
 		var ret UnibeeApiBeanMerchantSimplify
 		return ret
@@ -703,7 +771,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetMerchant() UnibeeApiBeanMerchantSimplify
 
 // GetMerchantOk returns a tuple with the Merchant field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetMerchantOk() (*UnibeeApiBeanMerchantSimplify, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetMerchantOk() (*UnibeeApiBeanMerchantSimplify, bool) {
 	if o == nil || IsNil(o.Merchant) {
 		return nil, false
 	}
@@ -711,7 +779,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetMerchantOk() (*UnibeeApiBeanMerchantSimp
 }
 
 // HasMerchant returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasMerchant() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasMerchant() bool {
 	if o != nil && !IsNil(o.Merchant) {
 		return true
 	}
@@ -720,12 +788,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasMerchant() bool {
 }
 
 // SetMerchant gets a reference to the given UnibeeApiBeanMerchantSimplify and assigns it to the Merchant field.
-func (o *UnibeeApiBeanInvoiceDetail) SetMerchant(v UnibeeApiBeanMerchantSimplify) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetMerchant(v UnibeeApiBeanMerchantSimplify) {
 	o.Merchant = &v
 }
 
 // GetMerchantId returns the MerchantId field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetMerchantId() int64 {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetMerchantId() int64 {
 	if o == nil || IsNil(o.MerchantId) {
 		var ret int64
 		return ret
@@ -735,7 +803,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetMerchantId() int64 {
 
 // GetMerchantIdOk returns a tuple with the MerchantId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetMerchantIdOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetMerchantIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.MerchantId) {
 		return nil, false
 	}
@@ -743,7 +811,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetMerchantIdOk() (*int64, bool) {
 }
 
 // HasMerchantId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasMerchantId() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasMerchantId() bool {
 	if o != nil && !IsNil(o.MerchantId) {
 		return true
 	}
@@ -752,12 +820,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasMerchantId() bool {
 }
 
 // SetMerchantId gets a reference to the given int64 and assigns it to the MerchantId field.
-func (o *UnibeeApiBeanInvoiceDetail) SetMerchantId(v int64) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetMerchantId(v int64) {
 	o.MerchantId = &v
 }
 
 // GetPayment returns the Payment field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetPayment() UnibeeApiBeanPaymentSimplify {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetPayment() UnibeeApiBeanPaymentSimplify {
 	if o == nil || IsNil(o.Payment) {
 		var ret UnibeeApiBeanPaymentSimplify
 		return ret
@@ -767,7 +835,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetPayment() UnibeeApiBeanPaymentSimplify {
 
 // GetPaymentOk returns a tuple with the Payment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetPaymentOk() (*UnibeeApiBeanPaymentSimplify, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetPaymentOk() (*UnibeeApiBeanPaymentSimplify, bool) {
 	if o == nil || IsNil(o.Payment) {
 		return nil, false
 	}
@@ -775,7 +843,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetPaymentOk() (*UnibeeApiBeanPaymentSimpli
 }
 
 // HasPayment returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasPayment() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasPayment() bool {
 	if o != nil && !IsNil(o.Payment) {
 		return true
 	}
@@ -784,12 +852,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasPayment() bool {
 }
 
 // SetPayment gets a reference to the given UnibeeApiBeanPaymentSimplify and assigns it to the Payment field.
-func (o *UnibeeApiBeanInvoiceDetail) SetPayment(v UnibeeApiBeanPaymentSimplify) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetPayment(v UnibeeApiBeanPaymentSimplify) {
 	o.Payment = &v
 }
 
 // GetPaymentId returns the PaymentId field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetPaymentId() string {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetPaymentId() string {
 	if o == nil || IsNil(o.PaymentId) {
 		var ret string
 		return ret
@@ -799,7 +867,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetPaymentId() string {
 
 // GetPaymentIdOk returns a tuple with the PaymentId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetPaymentIdOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetPaymentIdOk() (*string, bool) {
 	if o == nil || IsNil(o.PaymentId) {
 		return nil, false
 	}
@@ -807,7 +875,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetPaymentIdOk() (*string, bool) {
 }
 
 // HasPaymentId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasPaymentId() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasPaymentId() bool {
 	if o != nil && !IsNil(o.PaymentId) {
 		return true
 	}
@@ -816,12 +884,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasPaymentId() bool {
 }
 
 // SetPaymentId gets a reference to the given string and assigns it to the PaymentId field.
-func (o *UnibeeApiBeanInvoiceDetail) SetPaymentId(v string) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetPaymentId(v string) {
 	o.PaymentId = &v
 }
 
 // GetPeriodEnd returns the PeriodEnd field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetPeriodEnd() int64 {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetPeriodEnd() int64 {
 	if o == nil || IsNil(o.PeriodEnd) {
 		var ret int64
 		return ret
@@ -831,7 +899,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetPeriodEnd() int64 {
 
 // GetPeriodEndOk returns a tuple with the PeriodEnd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetPeriodEndOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetPeriodEndOk() (*int64, bool) {
 	if o == nil || IsNil(o.PeriodEnd) {
 		return nil, false
 	}
@@ -839,7 +907,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetPeriodEndOk() (*int64, bool) {
 }
 
 // HasPeriodEnd returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasPeriodEnd() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasPeriodEnd() bool {
 	if o != nil && !IsNil(o.PeriodEnd) {
 		return true
 	}
@@ -848,12 +916,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasPeriodEnd() bool {
 }
 
 // SetPeriodEnd gets a reference to the given int64 and assigns it to the PeriodEnd field.
-func (o *UnibeeApiBeanInvoiceDetail) SetPeriodEnd(v int64) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetPeriodEnd(v int64) {
 	o.PeriodEnd = &v
 }
 
 // GetPeriodStart returns the PeriodStart field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetPeriodStart() int64 {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetPeriodStart() int64 {
 	if o == nil || IsNil(o.PeriodStart) {
 		var ret int64
 		return ret
@@ -863,7 +931,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetPeriodStart() int64 {
 
 // GetPeriodStartOk returns a tuple with the PeriodStart field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetPeriodStartOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetPeriodStartOk() (*int64, bool) {
 	if o == nil || IsNil(o.PeriodStart) {
 		return nil, false
 	}
@@ -871,7 +939,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetPeriodStartOk() (*int64, bool) {
 }
 
 // HasPeriodStart returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasPeriodStart() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasPeriodStart() bool {
 	if o != nil && !IsNil(o.PeriodStart) {
 		return true
 	}
@@ -880,12 +948,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasPeriodStart() bool {
 }
 
 // SetPeriodStart gets a reference to the given int64 and assigns it to the PeriodStart field.
-func (o *UnibeeApiBeanInvoiceDetail) SetPeriodStart(v int64) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetPeriodStart(v int64) {
 	o.PeriodStart = &v
 }
 
 // GetRefund returns the Refund field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetRefund() UnibeeApiBeanRefundSimplify {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetRefund() UnibeeApiBeanRefundSimplify {
 	if o == nil || IsNil(o.Refund) {
 		var ret UnibeeApiBeanRefundSimplify
 		return ret
@@ -895,7 +963,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetRefund() UnibeeApiBeanRefundSimplify {
 
 // GetRefundOk returns a tuple with the Refund field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetRefundOk() (*UnibeeApiBeanRefundSimplify, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetRefundOk() (*UnibeeApiBeanRefundSimplify, bool) {
 	if o == nil || IsNil(o.Refund) {
 		return nil, false
 	}
@@ -903,7 +971,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetRefundOk() (*UnibeeApiBeanRefundSimplify
 }
 
 // HasRefund returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasRefund() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasRefund() bool {
 	if o != nil && !IsNil(o.Refund) {
 		return true
 	}
@@ -912,12 +980,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasRefund() bool {
 }
 
 // SetRefund gets a reference to the given UnibeeApiBeanRefundSimplify and assigns it to the Refund field.
-func (o *UnibeeApiBeanInvoiceDetail) SetRefund(v UnibeeApiBeanRefundSimplify) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetRefund(v UnibeeApiBeanRefundSimplify) {
 	o.Refund = &v
 }
 
 // GetRefundId returns the RefundId field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetRefundId() string {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetRefundId() string {
 	if o == nil || IsNil(o.RefundId) {
 		var ret string
 		return ret
@@ -927,7 +995,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetRefundId() string {
 
 // GetRefundIdOk returns a tuple with the RefundId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetRefundIdOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetRefundIdOk() (*string, bool) {
 	if o == nil || IsNil(o.RefundId) {
 		return nil, false
 	}
@@ -935,7 +1003,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetRefundIdOk() (*string, bool) {
 }
 
 // HasRefundId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasRefundId() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasRefundId() bool {
 	if o != nil && !IsNil(o.RefundId) {
 		return true
 	}
@@ -944,12 +1012,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasRefundId() bool {
 }
 
 // SetRefundId gets a reference to the given string and assigns it to the RefundId field.
-func (o *UnibeeApiBeanInvoiceDetail) SetRefundId(v string) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetRefundId(v string) {
 	o.RefundId = &v
 }
 
 // GetSendEmail returns the SendEmail field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetSendEmail() string {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetSendEmail() string {
 	if o == nil || IsNil(o.SendEmail) {
 		var ret string
 		return ret
@@ -959,7 +1027,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetSendEmail() string {
 
 // GetSendEmailOk returns a tuple with the SendEmail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetSendEmailOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetSendEmailOk() (*string, bool) {
 	if o == nil || IsNil(o.SendEmail) {
 		return nil, false
 	}
@@ -967,7 +1035,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetSendEmailOk() (*string, bool) {
 }
 
 // HasSendEmail returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasSendEmail() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasSendEmail() bool {
 	if o != nil && !IsNil(o.SendEmail) {
 		return true
 	}
@@ -976,12 +1044,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasSendEmail() bool {
 }
 
 // SetSendEmail gets a reference to the given string and assigns it to the SendEmail field.
-func (o *UnibeeApiBeanInvoiceDetail) SetSendEmail(v string) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetSendEmail(v string) {
 	o.SendEmail = &v
 }
 
 // GetSendNote returns the SendNote field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetSendNote() string {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetSendNote() string {
 	if o == nil || IsNil(o.SendNote) {
 		var ret string
 		return ret
@@ -991,7 +1059,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetSendNote() string {
 
 // GetSendNoteOk returns a tuple with the SendNote field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetSendNoteOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetSendNoteOk() (*string, bool) {
 	if o == nil || IsNil(o.SendNote) {
 		return nil, false
 	}
@@ -999,7 +1067,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetSendNoteOk() (*string, bool) {
 }
 
 // HasSendNote returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasSendNote() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasSendNote() bool {
 	if o != nil && !IsNil(o.SendNote) {
 		return true
 	}
@@ -1008,12 +1076,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasSendNote() bool {
 }
 
 // SetSendNote gets a reference to the given string and assigns it to the SendNote field.
-func (o *UnibeeApiBeanInvoiceDetail) SetSendNote(v string) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetSendNote(v string) {
 	o.SendNote = &v
 }
 
 // GetSendPdf returns the SendPdf field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetSendPdf() string {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetSendPdf() string {
 	if o == nil || IsNil(o.SendPdf) {
 		var ret string
 		return ret
@@ -1023,7 +1091,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetSendPdf() string {
 
 // GetSendPdfOk returns a tuple with the SendPdf field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetSendPdfOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetSendPdfOk() (*string, bool) {
 	if o == nil || IsNil(o.SendPdf) {
 		return nil, false
 	}
@@ -1031,7 +1099,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetSendPdfOk() (*string, bool) {
 }
 
 // HasSendPdf returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasSendPdf() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasSendPdf() bool {
 	if o != nil && !IsNil(o.SendPdf) {
 		return true
 	}
@@ -1040,12 +1108,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasSendPdf() bool {
 }
 
 // SetSendPdf gets a reference to the given string and assigns it to the SendPdf field.
-func (o *UnibeeApiBeanInvoiceDetail) SetSendPdf(v string) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetSendPdf(v string) {
 	o.SendPdf = &v
 }
 
 // GetSendStatus returns the SendStatus field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetSendStatus() int32 {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetSendStatus() int32 {
 	if o == nil || IsNil(o.SendStatus) {
 		var ret int32
 		return ret
@@ -1055,7 +1123,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetSendStatus() int32 {
 
 // GetSendStatusOk returns a tuple with the SendStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetSendStatusOk() (*int32, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetSendStatusOk() (*int32, bool) {
 	if o == nil || IsNil(o.SendStatus) {
 		return nil, false
 	}
@@ -1063,7 +1131,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetSendStatusOk() (*int32, bool) {
 }
 
 // HasSendStatus returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasSendStatus() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasSendStatus() bool {
 	if o != nil && !IsNil(o.SendStatus) {
 		return true
 	}
@@ -1072,12 +1140,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasSendStatus() bool {
 }
 
 // SetSendStatus gets a reference to the given int32 and assigns it to the SendStatus field.
-func (o *UnibeeApiBeanInvoiceDetail) SetSendStatus(v int32) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetSendStatus(v int32) {
 	o.SendStatus = &v
 }
 
 // GetSendTerms returns the SendTerms field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetSendTerms() string {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetSendTerms() string {
 	if o == nil || IsNil(o.SendTerms) {
 		var ret string
 		return ret
@@ -1087,7 +1155,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetSendTerms() string {
 
 // GetSendTermsOk returns a tuple with the SendTerms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetSendTermsOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetSendTermsOk() (*string, bool) {
 	if o == nil || IsNil(o.SendTerms) {
 		return nil, false
 	}
@@ -1095,7 +1163,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetSendTermsOk() (*string, bool) {
 }
 
 // HasSendTerms returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasSendTerms() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasSendTerms() bool {
 	if o != nil && !IsNil(o.SendTerms) {
 		return true
 	}
@@ -1104,12 +1172,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasSendTerms() bool {
 }
 
 // SetSendTerms gets a reference to the given string and assigns it to the SendTerms field.
-func (o *UnibeeApiBeanInvoiceDetail) SetSendTerms(v string) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetSendTerms(v string) {
 	o.SendTerms = &v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetStatus() int32 {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetStatus() int32 {
 	if o == nil || IsNil(o.Status) {
 		var ret int32
 		return ret
@@ -1119,7 +1187,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetStatus() int32 {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetStatusOk() (*int32, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetStatusOk() (*int32, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -1127,7 +1195,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetStatusOk() (*int32, bool) {
 }
 
 // HasStatus returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasStatus() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasStatus() bool {
 	if o != nil && !IsNil(o.Status) {
 		return true
 	}
@@ -1136,12 +1204,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasStatus() bool {
 }
 
 // SetStatus gets a reference to the given int32 and assigns it to the Status field.
-func (o *UnibeeApiBeanInvoiceDetail) SetStatus(v int32) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetStatus(v int32) {
 	o.Status = &v
 }
 
 // GetSubscription returns the Subscription field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetSubscription() UnibeeApiBeanSubscriptionSimplify {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetSubscription() UnibeeApiBeanSubscriptionSimplify {
 	if o == nil || IsNil(o.Subscription) {
 		var ret UnibeeApiBeanSubscriptionSimplify
 		return ret
@@ -1151,7 +1219,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetSubscription() UnibeeApiBeanSubscription
 
 // GetSubscriptionOk returns a tuple with the Subscription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetSubscriptionOk() (*UnibeeApiBeanSubscriptionSimplify, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetSubscriptionOk() (*UnibeeApiBeanSubscriptionSimplify, bool) {
 	if o == nil || IsNil(o.Subscription) {
 		return nil, false
 	}
@@ -1159,7 +1227,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetSubscriptionOk() (*UnibeeApiBeanSubscrip
 }
 
 // HasSubscription returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasSubscription() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasSubscription() bool {
 	if o != nil && !IsNil(o.Subscription) {
 		return true
 	}
@@ -1168,12 +1236,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasSubscription() bool {
 }
 
 // SetSubscription gets a reference to the given UnibeeApiBeanSubscriptionSimplify and assigns it to the Subscription field.
-func (o *UnibeeApiBeanInvoiceDetail) SetSubscription(v UnibeeApiBeanSubscriptionSimplify) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetSubscription(v UnibeeApiBeanSubscriptionSimplify) {
 	o.Subscription = &v
 }
 
 // GetSubscriptionAmount returns the SubscriptionAmount field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetSubscriptionAmount() int64 {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetSubscriptionAmount() int64 {
 	if o == nil || IsNil(o.SubscriptionAmount) {
 		var ret int64
 		return ret
@@ -1183,7 +1251,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetSubscriptionAmount() int64 {
 
 // GetSubscriptionAmountOk returns a tuple with the SubscriptionAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetSubscriptionAmountOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetSubscriptionAmountOk() (*int64, bool) {
 	if o == nil || IsNil(o.SubscriptionAmount) {
 		return nil, false
 	}
@@ -1191,7 +1259,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetSubscriptionAmountOk() (*int64, bool) {
 }
 
 // HasSubscriptionAmount returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasSubscriptionAmount() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasSubscriptionAmount() bool {
 	if o != nil && !IsNil(o.SubscriptionAmount) {
 		return true
 	}
@@ -1200,12 +1268,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasSubscriptionAmount() bool {
 }
 
 // SetSubscriptionAmount gets a reference to the given int64 and assigns it to the SubscriptionAmount field.
-func (o *UnibeeApiBeanInvoiceDetail) SetSubscriptionAmount(v int64) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetSubscriptionAmount(v int64) {
 	o.SubscriptionAmount = &v
 }
 
 // GetSubscriptionAmountExcludingTax returns the SubscriptionAmountExcludingTax field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetSubscriptionAmountExcludingTax() int64 {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetSubscriptionAmountExcludingTax() int64 {
 	if o == nil || IsNil(o.SubscriptionAmountExcludingTax) {
 		var ret int64
 		return ret
@@ -1215,7 +1283,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetSubscriptionAmountExcludingTax() int64 {
 
 // GetSubscriptionAmountExcludingTaxOk returns a tuple with the SubscriptionAmountExcludingTax field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetSubscriptionAmountExcludingTaxOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetSubscriptionAmountExcludingTaxOk() (*int64, bool) {
 	if o == nil || IsNil(o.SubscriptionAmountExcludingTax) {
 		return nil, false
 	}
@@ -1223,7 +1291,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetSubscriptionAmountExcludingTaxOk() (*int
 }
 
 // HasSubscriptionAmountExcludingTax returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasSubscriptionAmountExcludingTax() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasSubscriptionAmountExcludingTax() bool {
 	if o != nil && !IsNil(o.SubscriptionAmountExcludingTax) {
 		return true
 	}
@@ -1232,12 +1300,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasSubscriptionAmountExcludingTax() bool {
 }
 
 // SetSubscriptionAmountExcludingTax gets a reference to the given int64 and assigns it to the SubscriptionAmountExcludingTax field.
-func (o *UnibeeApiBeanInvoiceDetail) SetSubscriptionAmountExcludingTax(v int64) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetSubscriptionAmountExcludingTax(v int64) {
 	o.SubscriptionAmountExcludingTax = &v
 }
 
 // GetSubscriptionId returns the SubscriptionId field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetSubscriptionId() string {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetSubscriptionId() string {
 	if o == nil || IsNil(o.SubscriptionId) {
 		var ret string
 		return ret
@@ -1247,7 +1315,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetSubscriptionId() string {
 
 // GetSubscriptionIdOk returns a tuple with the SubscriptionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetSubscriptionIdOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetSubscriptionIdOk() (*string, bool) {
 	if o == nil || IsNil(o.SubscriptionId) {
 		return nil, false
 	}
@@ -1255,7 +1323,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetSubscriptionIdOk() (*string, bool) {
 }
 
 // HasSubscriptionId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasSubscriptionId() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasSubscriptionId() bool {
 	if o != nil && !IsNil(o.SubscriptionId) {
 		return true
 	}
@@ -1264,12 +1332,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasSubscriptionId() bool {
 }
 
 // SetSubscriptionId gets a reference to the given string and assigns it to the SubscriptionId field.
-func (o *UnibeeApiBeanInvoiceDetail) SetSubscriptionId(v string) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetSubscriptionId(v string) {
 	o.SubscriptionId = &v
 }
 
 // GetTaxAmount returns the TaxAmount field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetTaxAmount() int64 {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetTaxAmount() int64 {
 	if o == nil || IsNil(o.TaxAmount) {
 		var ret int64
 		return ret
@@ -1279,7 +1347,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetTaxAmount() int64 {
 
 // GetTaxAmountOk returns a tuple with the TaxAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetTaxAmountOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetTaxAmountOk() (*int64, bool) {
 	if o == nil || IsNil(o.TaxAmount) {
 		return nil, false
 	}
@@ -1287,7 +1355,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetTaxAmountOk() (*int64, bool) {
 }
 
 // HasTaxAmount returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasTaxAmount() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasTaxAmount() bool {
 	if o != nil && !IsNil(o.TaxAmount) {
 		return true
 	}
@@ -1296,12 +1364,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasTaxAmount() bool {
 }
 
 // SetTaxAmount gets a reference to the given int64 and assigns it to the TaxAmount field.
-func (o *UnibeeApiBeanInvoiceDetail) SetTaxAmount(v int64) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetTaxAmount(v int64) {
 	o.TaxAmount = &v
 }
 
 // GetTaxScale returns the TaxScale field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetTaxScale() int64 {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetTaxScale() int64 {
 	if o == nil || IsNil(o.TaxScale) {
 		var ret int64
 		return ret
@@ -1311,7 +1379,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetTaxScale() int64 {
 
 // GetTaxScaleOk returns a tuple with the TaxScale field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetTaxScaleOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetTaxScaleOk() (*int64, bool) {
 	if o == nil || IsNil(o.TaxScale) {
 		return nil, false
 	}
@@ -1319,7 +1387,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetTaxScaleOk() (*int64, bool) {
 }
 
 // HasTaxScale returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasTaxScale() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasTaxScale() bool {
 	if o != nil && !IsNil(o.TaxScale) {
 		return true
 	}
@@ -1328,12 +1396,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasTaxScale() bool {
 }
 
 // SetTaxScale gets a reference to the given int64 and assigns it to the TaxScale field.
-func (o *UnibeeApiBeanInvoiceDetail) SetTaxScale(v int64) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetTaxScale(v int64) {
 	o.TaxScale = &v
 }
 
 // GetTotalAmount returns the TotalAmount field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetTotalAmount() int64 {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetTotalAmount() int64 {
 	if o == nil || IsNil(o.TotalAmount) {
 		var ret int64
 		return ret
@@ -1343,7 +1411,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetTotalAmount() int64 {
 
 // GetTotalAmountOk returns a tuple with the TotalAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetTotalAmountOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetTotalAmountOk() (*int64, bool) {
 	if o == nil || IsNil(o.TotalAmount) {
 		return nil, false
 	}
@@ -1351,7 +1419,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetTotalAmountOk() (*int64, bool) {
 }
 
 // HasTotalAmount returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasTotalAmount() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasTotalAmount() bool {
 	if o != nil && !IsNil(o.TotalAmount) {
 		return true
 	}
@@ -1360,12 +1428,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasTotalAmount() bool {
 }
 
 // SetTotalAmount gets a reference to the given int64 and assigns it to the TotalAmount field.
-func (o *UnibeeApiBeanInvoiceDetail) SetTotalAmount(v int64) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetTotalAmount(v int64) {
 	o.TotalAmount = &v
 }
 
 // GetTotalAmountExcludingTax returns the TotalAmountExcludingTax field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetTotalAmountExcludingTax() int64 {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetTotalAmountExcludingTax() int64 {
 	if o == nil || IsNil(o.TotalAmountExcludingTax) {
 		var ret int64
 		return ret
@@ -1375,7 +1443,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetTotalAmountExcludingTax() int64 {
 
 // GetTotalAmountExcludingTaxOk returns a tuple with the TotalAmountExcludingTax field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetTotalAmountExcludingTaxOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetTotalAmountExcludingTaxOk() (*int64, bool) {
 	if o == nil || IsNil(o.TotalAmountExcludingTax) {
 		return nil, false
 	}
@@ -1383,7 +1451,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetTotalAmountExcludingTaxOk() (*int64, boo
 }
 
 // HasTotalAmountExcludingTax returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasTotalAmountExcludingTax() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasTotalAmountExcludingTax() bool {
 	if o != nil && !IsNil(o.TotalAmountExcludingTax) {
 		return true
 	}
@@ -1392,12 +1460,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasTotalAmountExcludingTax() bool {
 }
 
 // SetTotalAmountExcludingTax gets a reference to the given int64 and assigns it to the TotalAmountExcludingTax field.
-func (o *UnibeeApiBeanInvoiceDetail) SetTotalAmountExcludingTax(v int64) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetTotalAmountExcludingTax(v int64) {
 	o.TotalAmountExcludingTax = &v
 }
 
 // GetUniqueId returns the UniqueId field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetUniqueId() string {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetUniqueId() string {
 	if o == nil || IsNil(o.UniqueId) {
 		var ret string
 		return ret
@@ -1407,7 +1475,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetUniqueId() string {
 
 // GetUniqueIdOk returns a tuple with the UniqueId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetUniqueIdOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetUniqueIdOk() (*string, bool) {
 	if o == nil || IsNil(o.UniqueId) {
 		return nil, false
 	}
@@ -1415,7 +1483,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetUniqueIdOk() (*string, bool) {
 }
 
 // HasUniqueId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasUniqueId() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasUniqueId() bool {
 	if o != nil && !IsNil(o.UniqueId) {
 		return true
 	}
@@ -1424,12 +1492,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasUniqueId() bool {
 }
 
 // SetUniqueId gets a reference to the given string and assigns it to the UniqueId field.
-func (o *UnibeeApiBeanInvoiceDetail) SetUniqueId(v string) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetUniqueId(v string) {
 	o.UniqueId = &v
 }
 
 // GetUserAccount returns the UserAccount field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetUserAccount() UnibeeApiBeanUserAccountSimplify {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetUserAccount() UnibeeApiBeanUserAccountSimplify {
 	if o == nil || IsNil(o.UserAccount) {
 		var ret UnibeeApiBeanUserAccountSimplify
 		return ret
@@ -1439,7 +1507,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetUserAccount() UnibeeApiBeanUserAccountSi
 
 // GetUserAccountOk returns a tuple with the UserAccount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetUserAccountOk() (*UnibeeApiBeanUserAccountSimplify, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetUserAccountOk() (*UnibeeApiBeanUserAccountSimplify, bool) {
 	if o == nil || IsNil(o.UserAccount) {
 		return nil, false
 	}
@@ -1447,7 +1515,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetUserAccountOk() (*UnibeeApiBeanUserAccou
 }
 
 // HasUserAccount returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasUserAccount() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasUserAccount() bool {
 	if o != nil && !IsNil(o.UserAccount) {
 		return true
 	}
@@ -1456,12 +1524,12 @@ func (o *UnibeeApiBeanInvoiceDetail) HasUserAccount() bool {
 }
 
 // SetUserAccount gets a reference to the given UnibeeApiBeanUserAccountSimplify and assigns it to the UserAccount field.
-func (o *UnibeeApiBeanInvoiceDetail) SetUserAccount(v UnibeeApiBeanUserAccountSimplify) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetUserAccount(v UnibeeApiBeanUserAccountSimplify) {
 	o.UserAccount = &v
 }
 
 // GetUserId returns the UserId field value if set, zero value otherwise.
-func (o *UnibeeApiBeanInvoiceDetail) GetUserId() int64 {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetUserId() int64 {
 	if o == nil || IsNil(o.UserId) {
 		var ret int64
 		return ret
@@ -1471,7 +1539,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetUserId() int64 {
 
 // GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanInvoiceDetail) GetUserIdOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetUserIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.UserId) {
 		return nil, false
 	}
@@ -1479,7 +1547,7 @@ func (o *UnibeeApiBeanInvoiceDetail) GetUserIdOk() (*int64, bool) {
 }
 
 // HasUserId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanInvoiceDetail) HasUserId() bool {
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasUserId() bool {
 	if o != nil && !IsNil(o.UserId) {
 		return true
 	}
@@ -1488,11 +1556,11 @@ func (o *UnibeeApiBeanInvoiceDetail) HasUserId() bool {
 }
 
 // SetUserId gets a reference to the given int64 and assigns it to the UserId field.
-func (o *UnibeeApiBeanInvoiceDetail) SetUserId(v int64) {
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetUserId(v int64) {
 	o.UserId = &v
 }
 
-func (o UnibeeApiBeanInvoiceDetail) MarshalJSON() ([]byte, error) {
+func (o UnibeeApiBeanDetailInvoiceDetail) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -1500,8 +1568,14 @@ func (o UnibeeApiBeanInvoiceDetail) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o UnibeeApiBeanInvoiceDetail) ToMap() (map[string]interface{}, error) {
+func (o UnibeeApiBeanDetailInvoiceDetail) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.CryptoAmount) {
+		toSerialize["cryptoAmount"] = o.CryptoAmount
+	}
+	if !IsNil(o.CryptoCurrency) {
+		toSerialize["cryptoCurrency"] = o.CryptoCurrency
+	}
 	if !IsNil(o.Currency) {
 		toSerialize["currency"] = o.Currency
 	}
@@ -1634,38 +1708,38 @@ func (o UnibeeApiBeanInvoiceDetail) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableUnibeeApiBeanInvoiceDetail struct {
-	value *UnibeeApiBeanInvoiceDetail
+type NullableUnibeeApiBeanDetailInvoiceDetail struct {
+	value *UnibeeApiBeanDetailInvoiceDetail
 	isSet bool
 }
 
-func (v NullableUnibeeApiBeanInvoiceDetail) Get() *UnibeeApiBeanInvoiceDetail {
+func (v NullableUnibeeApiBeanDetailInvoiceDetail) Get() *UnibeeApiBeanDetailInvoiceDetail {
 	return v.value
 }
 
-func (v *NullableUnibeeApiBeanInvoiceDetail) Set(val *UnibeeApiBeanInvoiceDetail) {
+func (v *NullableUnibeeApiBeanDetailInvoiceDetail) Set(val *UnibeeApiBeanDetailInvoiceDetail) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableUnibeeApiBeanInvoiceDetail) IsSet() bool {
+func (v NullableUnibeeApiBeanDetailInvoiceDetail) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableUnibeeApiBeanInvoiceDetail) Unset() {
+func (v *NullableUnibeeApiBeanDetailInvoiceDetail) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableUnibeeApiBeanInvoiceDetail(val *UnibeeApiBeanInvoiceDetail) *NullableUnibeeApiBeanInvoiceDetail {
-	return &NullableUnibeeApiBeanInvoiceDetail{value: val, isSet: true}
+func NewNullableUnibeeApiBeanDetailInvoiceDetail(val *UnibeeApiBeanDetailInvoiceDetail) *NullableUnibeeApiBeanDetailInvoiceDetail {
+	return &NullableUnibeeApiBeanDetailInvoiceDetail{value: val, isSet: true}
 }
 
-func (v NullableUnibeeApiBeanInvoiceDetail) MarshalJSON() ([]byte, error) {
+func (v NullableUnibeeApiBeanDetailInvoiceDetail) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableUnibeeApiBeanInvoiceDetail) UnmarshalJSON(src []byte) error {
+func (v *NullableUnibeeApiBeanDetailInvoiceDetail) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

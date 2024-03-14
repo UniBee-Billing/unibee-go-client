@@ -23,6 +23,8 @@ var _ MappedNullable = &UnibeeApiMerchantSubscriptionUpdatePreviewReq{}
 type UnibeeApiMerchantSubscriptionUpdatePreviewReq struct {
 	// addonParams
 	AddonParams []UnibeeApiBeanPlanAddonParam `json:"addonParams,omitempty"`
+	// Id
+	GatewayId *int64 `json:"gatewayId,omitempty"`
 	// New PlanId
 	NewPlanId int64 `json:"newPlanId"`
 	// Quantity，Default 1
@@ -84,6 +86,38 @@ func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) HasAddonParams() bool {
 // SetAddonParams gets a reference to the given []UnibeeApiBeanPlanAddonParam and assigns it to the AddonParams field.
 func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) SetAddonParams(v []UnibeeApiBeanPlanAddonParam) {
 	o.AddonParams = v
+}
+
+// GetGatewayId returns the GatewayId field value if set, zero value otherwise.
+func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetGatewayId() int64 {
+	if o == nil || IsNil(o.GatewayId) {
+		var ret int64
+		return ret
+	}
+	return *o.GatewayId
+}
+
+// GetGatewayIdOk returns a tuple with the GatewayId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetGatewayIdOk() (*int64, bool) {
+	if o == nil || IsNil(o.GatewayId) {
+		return nil, false
+	}
+	return o.GatewayId, true
+}
+
+// HasGatewayId returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) HasGatewayId() bool {
+	if o != nil && !IsNil(o.GatewayId) {
+		return true
+	}
+
+	return false
+}
+
+// SetGatewayId gets a reference to the given int64 and assigns it to the GatewayId field.
+func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) SetGatewayId(v int64) {
+	o.GatewayId = &v
 }
 
 // GetNewPlanId returns the NewPlanId field value
@@ -210,6 +244,9 @@ func (o UnibeeApiMerchantSubscriptionUpdatePreviewReq) ToMap() (map[string]inter
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.AddonParams) {
 		toSerialize["addonParams"] = o.AddonParams
+	}
+	if !IsNil(o.GatewayId) {
+		toSerialize["gatewayId"] = o.GatewayId
 	}
 	toSerialize["newPlanId"] = o.NewPlanId
 	if !IsNil(o.Quantity) {

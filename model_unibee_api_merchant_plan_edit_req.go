@@ -29,7 +29,7 @@ type UnibeeApiMerchantPlanEditReq struct {
 	Currency string `json:"currency"`
 	// Description
 	Description *string `json:"description,omitempty"`
-	// who pay the gas, merchant|user
+	// who pay the gas for crypto payment, merchant|user
 	GasPayer *string `json:"gasPayer,omitempty"`
 	// HomeUrl,Start With: http
 	HomeUrl *string `json:"homeUrl,omitempty"`

@@ -14,11 +14,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the UnibeeApiBeanSubscriptionTimeLineDetail type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &UnibeeApiBeanSubscriptionTimeLineDetail{}
+// checks if the UnibeeApiBeanDetailSubscriptionTimeLineDetail type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &UnibeeApiBeanDetailSubscriptionTimeLineDetail{}
 
-// UnibeeApiBeanSubscriptionTimeLineDetail struct for UnibeeApiBeanSubscriptionTimeLineDetail
-type UnibeeApiBeanSubscriptionTimeLineDetail struct {
+// UnibeeApiBeanDetailSubscriptionTimeLineDetail struct for UnibeeApiBeanDetailSubscriptionTimeLineDetail
+type UnibeeApiBeanDetailSubscriptionTimeLineDetail struct {
 	// Addon
 	Addons []UnibeeApiBeanPlanAddonDetail `json:"addons,omitempty"`
 	// create utc time
@@ -52,25 +52,25 @@ type UnibeeApiBeanSubscriptionTimeLineDetail struct {
 	UserId *int64 `json:"userId,omitempty"`
 }
 
-// NewUnibeeApiBeanSubscriptionTimeLineDetail instantiates a new UnibeeApiBeanSubscriptionTimeLineDetail object
+// NewUnibeeApiBeanDetailSubscriptionTimeLineDetail instantiates a new UnibeeApiBeanDetailSubscriptionTimeLineDetail object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiBeanSubscriptionTimeLineDetail() *UnibeeApiBeanSubscriptionTimeLineDetail {
-	this := UnibeeApiBeanSubscriptionTimeLineDetail{}
+func NewUnibeeApiBeanDetailSubscriptionTimeLineDetail() *UnibeeApiBeanDetailSubscriptionTimeLineDetail {
+	this := UnibeeApiBeanDetailSubscriptionTimeLineDetail{}
 	return &this
 }
 
-// NewUnibeeApiBeanSubscriptionTimeLineDetailWithDefaults instantiates a new UnibeeApiBeanSubscriptionTimeLineDetail object
+// NewUnibeeApiBeanDetailSubscriptionTimeLineDetailWithDefaults instantiates a new UnibeeApiBeanDetailSubscriptionTimeLineDetail object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewUnibeeApiBeanSubscriptionTimeLineDetailWithDefaults() *UnibeeApiBeanSubscriptionTimeLineDetail {
-	this := UnibeeApiBeanSubscriptionTimeLineDetail{}
+func NewUnibeeApiBeanDetailSubscriptionTimeLineDetailWithDefaults() *UnibeeApiBeanDetailSubscriptionTimeLineDetail {
+	this := UnibeeApiBeanDetailSubscriptionTimeLineDetail{}
 	return &this
 }
 
 // GetAddons returns the Addons field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetAddons() []UnibeeApiBeanPlanAddonDetail {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetAddons() []UnibeeApiBeanPlanAddonDetail {
 	if o == nil || IsNil(o.Addons) {
 		var ret []UnibeeApiBeanPlanAddonDetail
 		return ret
@@ -80,7 +80,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetAddons() []UnibeeApiBeanPla
 
 // GetAddonsOk returns a tuple with the Addons field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetAddonsOk() ([]UnibeeApiBeanPlanAddonDetail, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetAddonsOk() ([]UnibeeApiBeanPlanAddonDetail, bool) {
 	if o == nil || IsNil(o.Addons) {
 		return nil, false
 	}
@@ -88,7 +88,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetAddonsOk() ([]UnibeeApiBean
 }
 
 // HasAddons returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasAddons() bool {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) HasAddons() bool {
 	if o != nil && !IsNil(o.Addons) {
 		return true
 	}
@@ -97,12 +97,12 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasAddons() bool {
 }
 
 // SetAddons gets a reference to the given []UnibeeApiBeanPlanAddonDetail and assigns it to the Addons field.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) SetAddons(v []UnibeeApiBeanPlanAddonDetail) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) SetAddons(v []UnibeeApiBeanPlanAddonDetail) {
 	o.Addons = v
 }
 
 // GetCreateTime returns the CreateTime field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetCreateTime() int64 {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetCreateTime() int64 {
 	if o == nil || IsNil(o.CreateTime) {
 		var ret int64
 		return ret
@@ -112,7 +112,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetCreateTime() int64 {
 
 // GetCreateTimeOk returns a tuple with the CreateTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetCreateTimeOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetCreateTimeOk() (*int64, bool) {
 	if o == nil || IsNil(o.CreateTime) {
 		return nil, false
 	}
@@ -120,7 +120,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetCreateTimeOk() (*int64, boo
 }
 
 // HasCreateTime returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasCreateTime() bool {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) HasCreateTime() bool {
 	if o != nil && !IsNil(o.CreateTime) {
 		return true
 	}
@@ -129,12 +129,12 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasCreateTime() bool {
 }
 
 // SetCreateTime gets a reference to the given int64 and assigns it to the CreateTime field.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) SetCreateTime(v int64) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) SetCreateTime(v int64) {
 	o.CreateTime = &v
 }
 
 // GetCurrency returns the Currency field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetCurrency() string {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetCurrency() string {
 	if o == nil || IsNil(o.Currency) {
 		var ret string
 		return ret
@@ -144,7 +144,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetCurrency() string {
 
 // GetCurrencyOk returns a tuple with the Currency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetCurrencyOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetCurrencyOk() (*string, bool) {
 	if o == nil || IsNil(o.Currency) {
 		return nil, false
 	}
@@ -152,7 +152,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetCurrencyOk() (*string, bool
 }
 
 // HasCurrency returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasCurrency() bool {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) HasCurrency() bool {
 	if o != nil && !IsNil(o.Currency) {
 		return true
 	}
@@ -161,12 +161,12 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasCurrency() bool {
 }
 
 // SetCurrency gets a reference to the given string and assigns it to the Currency field.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) SetCurrency(v string) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) SetCurrency(v string) {
 	o.Currency = &v
 }
 
 // GetGatewayId returns the GatewayId field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetGatewayId() int64 {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetGatewayId() int64 {
 	if o == nil || IsNil(o.GatewayId) {
 		var ret int64
 		return ret
@@ -176,7 +176,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetGatewayId() int64 {
 
 // GetGatewayIdOk returns a tuple with the GatewayId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetGatewayIdOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetGatewayIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.GatewayId) {
 		return nil, false
 	}
@@ -184,7 +184,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetGatewayIdOk() (*int64, bool
 }
 
 // HasGatewayId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasGatewayId() bool {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) HasGatewayId() bool {
 	if o != nil && !IsNil(o.GatewayId) {
 		return true
 	}
@@ -193,12 +193,12 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasGatewayId() bool {
 }
 
 // SetGatewayId gets a reference to the given int64 and assigns it to the GatewayId field.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) SetGatewayId(v int64) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) SetGatewayId(v int64) {
 	o.GatewayId = &v
 }
 
 // GetInvoiceId returns the InvoiceId field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetInvoiceId() string {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetInvoiceId() string {
 	if o == nil || IsNil(o.InvoiceId) {
 		var ret string
 		return ret
@@ -208,7 +208,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetInvoiceId() string {
 
 // GetInvoiceIdOk returns a tuple with the InvoiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetInvoiceIdOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetInvoiceIdOk() (*string, bool) {
 	if o == nil || IsNil(o.InvoiceId) {
 		return nil, false
 	}
@@ -216,7 +216,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetInvoiceIdOk() (*string, boo
 }
 
 // HasInvoiceId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasInvoiceId() bool {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) HasInvoiceId() bool {
 	if o != nil && !IsNil(o.InvoiceId) {
 		return true
 	}
@@ -225,12 +225,12 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasInvoiceId() bool {
 }
 
 // SetInvoiceId gets a reference to the given string and assigns it to the InvoiceId field.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) SetInvoiceId(v string) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) SetInvoiceId(v string) {
 	o.InvoiceId = &v
 }
 
 // GetMerchantId returns the MerchantId field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetMerchantId() int64 {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetMerchantId() int64 {
 	if o == nil || IsNil(o.MerchantId) {
 		var ret int64
 		return ret
@@ -240,7 +240,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetMerchantId() int64 {
 
 // GetMerchantIdOk returns a tuple with the MerchantId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetMerchantIdOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetMerchantIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.MerchantId) {
 		return nil, false
 	}
@@ -248,7 +248,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetMerchantIdOk() (*int64, boo
 }
 
 // HasMerchantId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasMerchantId() bool {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) HasMerchantId() bool {
 	if o != nil && !IsNil(o.MerchantId) {
 		return true
 	}
@@ -257,12 +257,12 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasMerchantId() bool {
 }
 
 // SetMerchantId gets a reference to the given int64 and assigns it to the MerchantId field.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) SetMerchantId(v int64) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) SetMerchantId(v int64) {
 	o.MerchantId = &v
 }
 
 // GetPeriodEnd returns the PeriodEnd field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetPeriodEnd() int64 {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetPeriodEnd() int64 {
 	if o == nil || IsNil(o.PeriodEnd) {
 		var ret int64
 		return ret
@@ -272,7 +272,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetPeriodEnd() int64 {
 
 // GetPeriodEndOk returns a tuple with the PeriodEnd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetPeriodEndOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetPeriodEndOk() (*int64, bool) {
 	if o == nil || IsNil(o.PeriodEnd) {
 		return nil, false
 	}
@@ -280,7 +280,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetPeriodEndOk() (*int64, bool
 }
 
 // HasPeriodEnd returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasPeriodEnd() bool {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) HasPeriodEnd() bool {
 	if o != nil && !IsNil(o.PeriodEnd) {
 		return true
 	}
@@ -289,12 +289,12 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasPeriodEnd() bool {
 }
 
 // SetPeriodEnd gets a reference to the given int64 and assigns it to the PeriodEnd field.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) SetPeriodEnd(v int64) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) SetPeriodEnd(v int64) {
 	o.PeriodEnd = &v
 }
 
 // GetPeriodEndTime returns the PeriodEndTime field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetPeriodEndTime() string {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetPeriodEndTime() string {
 	if o == nil || IsNil(o.PeriodEndTime) {
 		var ret string
 		return ret
@@ -304,7 +304,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetPeriodEndTime() string {
 
 // GetPeriodEndTimeOk returns a tuple with the PeriodEndTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetPeriodEndTimeOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetPeriodEndTimeOk() (*string, bool) {
 	if o == nil || IsNil(o.PeriodEndTime) {
 		return nil, false
 	}
@@ -312,7 +312,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetPeriodEndTimeOk() (*string,
 }
 
 // HasPeriodEndTime returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasPeriodEndTime() bool {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) HasPeriodEndTime() bool {
 	if o != nil && !IsNil(o.PeriodEndTime) {
 		return true
 	}
@@ -321,12 +321,12 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasPeriodEndTime() bool {
 }
 
 // SetPeriodEndTime gets a reference to the given string and assigns it to the PeriodEndTime field.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) SetPeriodEndTime(v string) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) SetPeriodEndTime(v string) {
 	o.PeriodEndTime = &v
 }
 
 // GetPeriodStart returns the PeriodStart field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetPeriodStart() int64 {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetPeriodStart() int64 {
 	if o == nil || IsNil(o.PeriodStart) {
 		var ret int64
 		return ret
@@ -336,7 +336,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetPeriodStart() int64 {
 
 // GetPeriodStartOk returns a tuple with the PeriodStart field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetPeriodStartOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetPeriodStartOk() (*int64, bool) {
 	if o == nil || IsNil(o.PeriodStart) {
 		return nil, false
 	}
@@ -344,7 +344,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetPeriodStartOk() (*int64, bo
 }
 
 // HasPeriodStart returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasPeriodStart() bool {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) HasPeriodStart() bool {
 	if o != nil && !IsNil(o.PeriodStart) {
 		return true
 	}
@@ -353,12 +353,12 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasPeriodStart() bool {
 }
 
 // SetPeriodStart gets a reference to the given int64 and assigns it to the PeriodStart field.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) SetPeriodStart(v int64) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) SetPeriodStart(v int64) {
 	o.PeriodStart = &v
 }
 
 // GetPeriodStartTime returns the PeriodStartTime field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetPeriodStartTime() string {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetPeriodStartTime() string {
 	if o == nil || IsNil(o.PeriodStartTime) {
 		var ret string
 		return ret
@@ -368,7 +368,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetPeriodStartTime() string {
 
 // GetPeriodStartTimeOk returns a tuple with the PeriodStartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetPeriodStartTimeOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetPeriodStartTimeOk() (*string, bool) {
 	if o == nil || IsNil(o.PeriodStartTime) {
 		return nil, false
 	}
@@ -376,7 +376,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetPeriodStartTimeOk() (*strin
 }
 
 // HasPeriodStartTime returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasPeriodStartTime() bool {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) HasPeriodStartTime() bool {
 	if o != nil && !IsNil(o.PeriodStartTime) {
 		return true
 	}
@@ -385,12 +385,12 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasPeriodStartTime() bool {
 }
 
 // SetPeriodStartTime gets a reference to the given string and assigns it to the PeriodStartTime field.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) SetPeriodStartTime(v string) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) SetPeriodStartTime(v string) {
 	o.PeriodStartTime = &v
 }
 
 // GetPlan returns the Plan field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetPlan() UnibeeApiBeanPlanSimplify {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetPlan() UnibeeApiBeanPlanSimplify {
 	if o == nil || IsNil(o.Plan) {
 		var ret UnibeeApiBeanPlanSimplify
 		return ret
@@ -400,7 +400,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetPlan() UnibeeApiBeanPlanSim
 
 // GetPlanOk returns a tuple with the Plan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetPlanOk() (*UnibeeApiBeanPlanSimplify, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetPlanOk() (*UnibeeApiBeanPlanSimplify, bool) {
 	if o == nil || IsNil(o.Plan) {
 		return nil, false
 	}
@@ -408,7 +408,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetPlanOk() (*UnibeeApiBeanPla
 }
 
 // HasPlan returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasPlan() bool {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) HasPlan() bool {
 	if o != nil && !IsNil(o.Plan) {
 		return true
 	}
@@ -417,12 +417,12 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasPlan() bool {
 }
 
 // SetPlan gets a reference to the given UnibeeApiBeanPlanSimplify and assigns it to the Plan field.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) SetPlan(v UnibeeApiBeanPlanSimplify) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) SetPlan(v UnibeeApiBeanPlanSimplify) {
 	o.Plan = &v
 }
 
 // GetPlanId returns the PlanId field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetPlanId() int64 {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetPlanId() int64 {
 	if o == nil || IsNil(o.PlanId) {
 		var ret int64
 		return ret
@@ -432,7 +432,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetPlanId() int64 {
 
 // GetPlanIdOk returns a tuple with the PlanId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetPlanIdOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetPlanIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.PlanId) {
 		return nil, false
 	}
@@ -440,7 +440,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetPlanIdOk() (*int64, bool) {
 }
 
 // HasPlanId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasPlanId() bool {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) HasPlanId() bool {
 	if o != nil && !IsNil(o.PlanId) {
 		return true
 	}
@@ -449,12 +449,12 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasPlanId() bool {
 }
 
 // SetPlanId gets a reference to the given int64 and assigns it to the PlanId field.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) SetPlanId(v int64) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) SetPlanId(v int64) {
 	o.PlanId = &v
 }
 
 // GetQuantity returns the Quantity field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetQuantity() int64 {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetQuantity() int64 {
 	if o == nil || IsNil(o.Quantity) {
 		var ret int64
 		return ret
@@ -464,7 +464,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetQuantity() int64 {
 
 // GetQuantityOk returns a tuple with the Quantity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetQuantityOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetQuantityOk() (*int64, bool) {
 	if o == nil || IsNil(o.Quantity) {
 		return nil, false
 	}
@@ -472,7 +472,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetQuantityOk() (*int64, bool)
 }
 
 // HasQuantity returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasQuantity() bool {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) HasQuantity() bool {
 	if o != nil && !IsNil(o.Quantity) {
 		return true
 	}
@@ -481,12 +481,12 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasQuantity() bool {
 }
 
 // SetQuantity gets a reference to the given int64 and assigns it to the Quantity field.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) SetQuantity(v int64) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) SetQuantity(v int64) {
 	o.Quantity = &v
 }
 
 // GetSubscriptionId returns the SubscriptionId field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetSubscriptionId() string {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetSubscriptionId() string {
 	if o == nil || IsNil(o.SubscriptionId) {
 		var ret string
 		return ret
@@ -496,7 +496,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetSubscriptionId() string {
 
 // GetSubscriptionIdOk returns a tuple with the SubscriptionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetSubscriptionIdOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetSubscriptionIdOk() (*string, bool) {
 	if o == nil || IsNil(o.SubscriptionId) {
 		return nil, false
 	}
@@ -504,7 +504,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetSubscriptionIdOk() (*string
 }
 
 // HasSubscriptionId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasSubscriptionId() bool {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) HasSubscriptionId() bool {
 	if o != nil && !IsNil(o.SubscriptionId) {
 		return true
 	}
@@ -513,12 +513,12 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasSubscriptionId() bool {
 }
 
 // SetSubscriptionId gets a reference to the given string and assigns it to the SubscriptionId field.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) SetSubscriptionId(v string) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) SetSubscriptionId(v string) {
 	o.SubscriptionId = &v
 }
 
 // GetUniqueId returns the UniqueId field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetUniqueId() string {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetUniqueId() string {
 	if o == nil || IsNil(o.UniqueId) {
 		var ret string
 		return ret
@@ -528,7 +528,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetUniqueId() string {
 
 // GetUniqueIdOk returns a tuple with the UniqueId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetUniqueIdOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetUniqueIdOk() (*string, bool) {
 	if o == nil || IsNil(o.UniqueId) {
 		return nil, false
 	}
@@ -536,7 +536,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetUniqueIdOk() (*string, bool
 }
 
 // HasUniqueId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasUniqueId() bool {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) HasUniqueId() bool {
 	if o != nil && !IsNil(o.UniqueId) {
 		return true
 	}
@@ -545,12 +545,12 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasUniqueId() bool {
 }
 
 // SetUniqueId gets a reference to the given string and assigns it to the UniqueId field.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) SetUniqueId(v string) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) SetUniqueId(v string) {
 	o.UniqueId = &v
 }
 
 // GetUserId returns the UserId field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetUserId() int64 {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetUserId() int64 {
 	if o == nil || IsNil(o.UserId) {
 		var ret int64
 		return ret
@@ -560,7 +560,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetUserId() int64 {
 
 // GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetUserIdOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetUserIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.UserId) {
 		return nil, false
 	}
@@ -568,7 +568,7 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) GetUserIdOk() (*int64, bool) {
 }
 
 // HasUserId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasUserId() bool {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) HasUserId() bool {
 	if o != nil && !IsNil(o.UserId) {
 		return true
 	}
@@ -577,11 +577,11 @@ func (o *UnibeeApiBeanSubscriptionTimeLineDetail) HasUserId() bool {
 }
 
 // SetUserId gets a reference to the given int64 and assigns it to the UserId field.
-func (o *UnibeeApiBeanSubscriptionTimeLineDetail) SetUserId(v int64) {
+func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) SetUserId(v int64) {
 	o.UserId = &v
 }
 
-func (o UnibeeApiBeanSubscriptionTimeLineDetail) MarshalJSON() ([]byte, error) {
+func (o UnibeeApiBeanDetailSubscriptionTimeLineDetail) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -589,7 +589,7 @@ func (o UnibeeApiBeanSubscriptionTimeLineDetail) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o UnibeeApiBeanSubscriptionTimeLineDetail) ToMap() (map[string]interface{}, error) {
+func (o UnibeeApiBeanDetailSubscriptionTimeLineDetail) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Addons) {
 		toSerialize["addons"] = o.Addons
@@ -642,38 +642,38 @@ func (o UnibeeApiBeanSubscriptionTimeLineDetail) ToMap() (map[string]interface{}
 	return toSerialize, nil
 }
 
-type NullableUnibeeApiBeanSubscriptionTimeLineDetail struct {
-	value *UnibeeApiBeanSubscriptionTimeLineDetail
+type NullableUnibeeApiBeanDetailSubscriptionTimeLineDetail struct {
+	value *UnibeeApiBeanDetailSubscriptionTimeLineDetail
 	isSet bool
 }
 
-func (v NullableUnibeeApiBeanSubscriptionTimeLineDetail) Get() *UnibeeApiBeanSubscriptionTimeLineDetail {
+func (v NullableUnibeeApiBeanDetailSubscriptionTimeLineDetail) Get() *UnibeeApiBeanDetailSubscriptionTimeLineDetail {
 	return v.value
 }
 
-func (v *NullableUnibeeApiBeanSubscriptionTimeLineDetail) Set(val *UnibeeApiBeanSubscriptionTimeLineDetail) {
+func (v *NullableUnibeeApiBeanDetailSubscriptionTimeLineDetail) Set(val *UnibeeApiBeanDetailSubscriptionTimeLineDetail) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableUnibeeApiBeanSubscriptionTimeLineDetail) IsSet() bool {
+func (v NullableUnibeeApiBeanDetailSubscriptionTimeLineDetail) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableUnibeeApiBeanSubscriptionTimeLineDetail) Unset() {
+func (v *NullableUnibeeApiBeanDetailSubscriptionTimeLineDetail) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableUnibeeApiBeanSubscriptionTimeLineDetail(val *UnibeeApiBeanSubscriptionTimeLineDetail) *NullableUnibeeApiBeanSubscriptionTimeLineDetail {
-	return &NullableUnibeeApiBeanSubscriptionTimeLineDetail{value: val, isSet: true}
+func NewNullableUnibeeApiBeanDetailSubscriptionTimeLineDetail(val *UnibeeApiBeanDetailSubscriptionTimeLineDetail) *NullableUnibeeApiBeanDetailSubscriptionTimeLineDetail {
+	return &NullableUnibeeApiBeanDetailSubscriptionTimeLineDetail{value: val, isSet: true}
 }
 
-func (v NullableUnibeeApiBeanSubscriptionTimeLineDetail) MarshalJSON() ([]byte, error) {
+func (v NullableUnibeeApiBeanDetailSubscriptionTimeLineDetail) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableUnibeeApiBeanSubscriptionTimeLineDetail) UnmarshalJSON(src []byte) error {
+func (v *NullableUnibeeApiBeanDetailSubscriptionTimeLineDetail) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

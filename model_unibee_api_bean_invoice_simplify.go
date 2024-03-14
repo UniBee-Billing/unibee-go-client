@@ -21,6 +21,10 @@ var _ MappedNullable = &UnibeeApiBeanInvoiceSimplify{}
 type UnibeeApiBeanInvoiceSimplify struct {
 	// biz type from payment 1-single payment, 3-subscription
 	BizType *int32 `json:"bizType,omitempty"`
+	// crypto_amount, cent
+	CryptoAmount *int64 `json:"cryptoAmount,omitempty"`
+	// crypto_currency
+	CryptoCurrency *string `json:"cryptoCurrency,omitempty"`
 	Currency *string `json:"currency,omitempty"`
 	Id *int64 `json:"id,omitempty"`
 	InvoiceId *string `json:"invoiceId,omitempty"`
@@ -96,6 +100,70 @@ func (o *UnibeeApiBeanInvoiceSimplify) HasBizType() bool {
 // SetBizType gets a reference to the given int32 and assigns it to the BizType field.
 func (o *UnibeeApiBeanInvoiceSimplify) SetBizType(v int32) {
 	o.BizType = &v
+}
+
+// GetCryptoAmount returns the CryptoAmount field value if set, zero value otherwise.
+func (o *UnibeeApiBeanInvoiceSimplify) GetCryptoAmount() int64 {
+	if o == nil || IsNil(o.CryptoAmount) {
+		var ret int64
+		return ret
+	}
+	return *o.CryptoAmount
+}
+
+// GetCryptoAmountOk returns a tuple with the CryptoAmount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiBeanInvoiceSimplify) GetCryptoAmountOk() (*int64, bool) {
+	if o == nil || IsNil(o.CryptoAmount) {
+		return nil, false
+	}
+	return o.CryptoAmount, true
+}
+
+// HasCryptoAmount returns a boolean if a field has been set.
+func (o *UnibeeApiBeanInvoiceSimplify) HasCryptoAmount() bool {
+	if o != nil && !IsNil(o.CryptoAmount) {
+		return true
+	}
+
+	return false
+}
+
+// SetCryptoAmount gets a reference to the given int64 and assigns it to the CryptoAmount field.
+func (o *UnibeeApiBeanInvoiceSimplify) SetCryptoAmount(v int64) {
+	o.CryptoAmount = &v
+}
+
+// GetCryptoCurrency returns the CryptoCurrency field value if set, zero value otherwise.
+func (o *UnibeeApiBeanInvoiceSimplify) GetCryptoCurrency() string {
+	if o == nil || IsNil(o.CryptoCurrency) {
+		var ret string
+		return ret
+	}
+	return *o.CryptoCurrency
+}
+
+// GetCryptoCurrencyOk returns a tuple with the CryptoCurrency field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiBeanInvoiceSimplify) GetCryptoCurrencyOk() (*string, bool) {
+	if o == nil || IsNil(o.CryptoCurrency) {
+		return nil, false
+	}
+	return o.CryptoCurrency, true
+}
+
+// HasCryptoCurrency returns a boolean if a field has been set.
+func (o *UnibeeApiBeanInvoiceSimplify) HasCryptoCurrency() bool {
+	if o != nil && !IsNil(o.CryptoCurrency) {
+		return true
+	}
+
+	return false
+}
+
+// SetCryptoCurrency gets a reference to the given string and assigns it to the CryptoCurrency field.
+func (o *UnibeeApiBeanInvoiceSimplify) SetCryptoCurrency(v string) {
+	o.CryptoCurrency = &v
 }
 
 // GetCurrency returns the Currency field value if set, zero value otherwise.
@@ -750,6 +818,12 @@ func (o UnibeeApiBeanInvoiceSimplify) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.BizType) {
 		toSerialize["bizType"] = o.BizType
+	}
+	if !IsNil(o.CryptoAmount) {
+		toSerialize["cryptoAmount"] = o.CryptoAmount
+	}
+	if !IsNil(o.CryptoCurrency) {
+		toSerialize["cryptoCurrency"] = o.CryptoCurrency
 	}
 	if !IsNil(o.Currency) {
 		toSerialize["currency"] = o.Currency

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Invoices** | Pointer to [**[]UnibeeApiBeanInvoiceDetail**](UnibeeApiBeanInvoiceDetail.md) | invoice Detail List | [optional] 
+**Invoices** | Pointer to [**[]UnibeeApiBeanDetailInvoiceDetail**](UnibeeApiBeanDetailInvoiceDetail.md) | invoice Detail List | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetInvoices
 
-`func (o *MerchantInvoiceListGet200ResponseData) GetInvoices() []UnibeeApiBeanInvoiceDetail`
+`func (o *MerchantInvoiceListGet200ResponseData) GetInvoices() []UnibeeApiBeanDetailInvoiceDetail`
 
 GetInvoices returns the Invoices field if non-nil, zero value otherwise.
 
 ### GetInvoicesOk
 
-`func (o *MerchantInvoiceListGet200ResponseData) GetInvoicesOk() (*[]UnibeeApiBeanInvoiceDetail, bool)`
+`func (o *MerchantInvoiceListGet200ResponseData) GetInvoicesOk() (*[]UnibeeApiBeanDetailInvoiceDetail, bool)`
 
 GetInvoicesOk returns a tuple with the Invoices field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInvoices
 
-`func (o *MerchantInvoiceListGet200ResponseData) SetInvoices(v []UnibeeApiBeanInvoiceDetail)`
+`func (o *MerchantInvoiceListGet200ResponseData) SetInvoices(v []UnibeeApiBeanDetailInvoiceDetail)`
 
 SetInvoices sets Invoices field to given value.
 

@@ -1,4 +1,4 @@
-# UnibeeApiBeanSubscriptionPendingUpdateDetail
+# UnibeeApiBeanDetailSubscriptionPendingUpdateDetail
 
 ## Properties
 
@@ -37,770 +37,770 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewUnibeeApiBeanSubscriptionPendingUpdateDetail
+### NewUnibeeApiBeanDetailSubscriptionPendingUpdateDetail
 
-`func NewUnibeeApiBeanSubscriptionPendingUpdateDetail() *UnibeeApiBeanSubscriptionPendingUpdateDetail`
+`func NewUnibeeApiBeanDetailSubscriptionPendingUpdateDetail() *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail`
 
-NewUnibeeApiBeanSubscriptionPendingUpdateDetail instantiates a new UnibeeApiBeanSubscriptionPendingUpdateDetail object
+NewUnibeeApiBeanDetailSubscriptionPendingUpdateDetail instantiates a new UnibeeApiBeanDetailSubscriptionPendingUpdateDetail object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUnibeeApiBeanSubscriptionPendingUpdateDetailWithDefaults
+### NewUnibeeApiBeanDetailSubscriptionPendingUpdateDetailWithDefaults
 
-`func NewUnibeeApiBeanSubscriptionPendingUpdateDetailWithDefaults() *UnibeeApiBeanSubscriptionPendingUpdateDetail`
+`func NewUnibeeApiBeanDetailSubscriptionPendingUpdateDetailWithDefaults() *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail`
 
-NewUnibeeApiBeanSubscriptionPendingUpdateDetailWithDefaults instantiates a new UnibeeApiBeanSubscriptionPendingUpdateDetail object
+NewUnibeeApiBeanDetailSubscriptionPendingUpdateDetailWithDefaults instantiates a new UnibeeApiBeanDetailSubscriptionPendingUpdateDetail object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetAddonData
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetAddonData() string`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetAddonData() string`
 
 GetAddonData returns the AddonData field if non-nil, zero value otherwise.
 
 ### GetAddonDataOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetAddonDataOk() (*string, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetAddonDataOk() (*string, bool)`
 
 GetAddonDataOk returns a tuple with the AddonData field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddonData
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetAddonData(v string)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetAddonData(v string)`
 
 SetAddonData sets AddonData field to given value.
 
 ### HasAddonData
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasAddonData() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasAddonData() bool`
 
 HasAddonData returns a boolean if a field has been set.
 
 ### GetAddons
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetAddons() []UnibeeApiBeanPlanAddonDetail`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetAddons() []UnibeeApiBeanPlanAddonDetail`
 
 GetAddons returns the Addons field if non-nil, zero value otherwise.
 
 ### GetAddonsOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetAddonsOk() (*[]UnibeeApiBeanPlanAddonDetail, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetAddonsOk() (*[]UnibeeApiBeanPlanAddonDetail, bool)`
 
 GetAddonsOk returns a tuple with the Addons field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddons
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetAddons(v []UnibeeApiBeanPlanAddonDetail)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetAddons(v []UnibeeApiBeanPlanAddonDetail)`
 
 SetAddons sets Addons field to given value.
 
 ### HasAddons
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasAddons() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasAddons() bool`
 
 HasAddons returns a boolean if a field has been set.
 
 ### GetAmount
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetAmount() int64`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetAmount() int64`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetAmountOk() (*int64, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetAmountOk() (*int64, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetAmount(v int64)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetAmount(v int64)`
 
 SetAmount sets Amount field to given value.
 
 ### HasAmount
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasAmount() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasAmount() bool`
 
 HasAmount returns a boolean if a field has been set.
 
 ### GetCurrency
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetCurrency() string`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetCurrency() string`
 
 GetCurrency returns the Currency field if non-nil, zero value otherwise.
 
 ### GetCurrencyOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetCurrencyOk() (*string, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetCurrencyOk() (*string, bool)`
 
 GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCurrency
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetCurrency(v string)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetCurrency(v string)`
 
 SetCurrency sets Currency field to given value.
 
 ### HasCurrency
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasCurrency() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasCurrency() bool`
 
 HasCurrency returns a boolean if a field has been set.
 
 ### GetEffectImmediate
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetEffectImmediate() int32`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetEffectImmediate() int32`
 
 GetEffectImmediate returns the EffectImmediate field if non-nil, zero value otherwise.
 
 ### GetEffectImmediateOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetEffectImmediateOk() (*int32, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetEffectImmediateOk() (*int32, bool)`
 
 GetEffectImmediateOk returns a tuple with the EffectImmediate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEffectImmediate
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetEffectImmediate(v int32)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetEffectImmediate(v int32)`
 
 SetEffectImmediate sets EffectImmediate field to given value.
 
 ### HasEffectImmediate
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasEffectImmediate() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasEffectImmediate() bool`
 
 HasEffectImmediate returns a boolean if a field has been set.
 
 ### GetEffectTime
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetEffectTime() int64`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetEffectTime() int64`
 
 GetEffectTime returns the EffectTime field if non-nil, zero value otherwise.
 
 ### GetEffectTimeOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetEffectTimeOk() (*int64, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetEffectTimeOk() (*int64, bool)`
 
 GetEffectTimeOk returns a tuple with the EffectTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEffectTime
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetEffectTime(v int64)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetEffectTime(v int64)`
 
 SetEffectTime sets EffectTime field to given value.
 
 ### HasEffectTime
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasEffectTime() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasEffectTime() bool`
 
 HasEffectTime returns a boolean if a field has been set.
 
 ### GetGatewayId
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetGatewayId() int64`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetGatewayId() int64`
 
 GetGatewayId returns the GatewayId field if non-nil, zero value otherwise.
 
 ### GetGatewayIdOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetGatewayIdOk() (*int64, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetGatewayIdOk() (*int64, bool)`
 
 GetGatewayIdOk returns a tuple with the GatewayId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGatewayId
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetGatewayId(v int64)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetGatewayId(v int64)`
 
 SetGatewayId sets GatewayId field to given value.
 
 ### HasGatewayId
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasGatewayId() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasGatewayId() bool`
 
 HasGatewayId returns a boolean if a field has been set.
 
 ### GetGmtCreate
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetGmtCreate() string`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetGmtCreate() string`
 
 GetGmtCreate returns the GmtCreate field if non-nil, zero value otherwise.
 
 ### GetGmtCreateOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetGmtCreateOk() (*string, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetGmtCreateOk() (*string, bool)`
 
 GetGmtCreateOk returns a tuple with the GmtCreate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGmtCreate
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetGmtCreate(v string)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetGmtCreate(v string)`
 
 SetGmtCreate sets GmtCreate field to given value.
 
 ### HasGmtCreate
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasGmtCreate() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasGmtCreate() bool`
 
 HasGmtCreate returns a boolean if a field has been set.
 
 ### GetGmtModify
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetGmtModify() string`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetGmtModify() string`
 
 GetGmtModify returns the GmtModify field if non-nil, zero value otherwise.
 
 ### GetGmtModifyOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetGmtModifyOk() (*string, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetGmtModifyOk() (*string, bool)`
 
 GetGmtModifyOk returns a tuple with the GmtModify field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGmtModify
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetGmtModify(v string)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetGmtModify(v string)`
 
 SetGmtModify sets GmtModify field to given value.
 
 ### HasGmtModify
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasGmtModify() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasGmtModify() bool`
 
 HasGmtModify returns a boolean if a field has been set.
 
 ### GetLink
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetLink() string`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetLink() string`
 
 GetLink returns the Link field if non-nil, zero value otherwise.
 
 ### GetLinkOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetLinkOk() (*string, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetLinkOk() (*string, bool)`
 
 GetLinkOk returns a tuple with the Link field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLink
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetLink(v string)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetLink(v string)`
 
 SetLink sets Link field to given value.
 
 ### HasLink
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasLink() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasLink() bool`
 
 HasLink returns a boolean if a field has been set.
 
 ### GetMerchantId
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetMerchantId() int64`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetMerchantId() int64`
 
 GetMerchantId returns the MerchantId field if non-nil, zero value otherwise.
 
 ### GetMerchantIdOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetMerchantIdOk() (*int64, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetMerchantIdOk() (*int64, bool)`
 
 GetMerchantIdOk returns a tuple with the MerchantId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantId
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetMerchantId(v int64)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetMerchantId(v int64)`
 
 SetMerchantId sets MerchantId field to given value.
 
 ### HasMerchantId
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasMerchantId() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasMerchantId() bool`
 
 HasMerchantId returns a boolean if a field has been set.
 
 ### GetMerchantMember
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetMerchantMember() UnibeeApiBeanMerchantMemberSimplify`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetMerchantMember() UnibeeApiBeanMerchantMemberSimplify`
 
 GetMerchantMember returns the MerchantMember field if non-nil, zero value otherwise.
 
 ### GetMerchantMemberOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetMerchantMemberOk() (*UnibeeApiBeanMerchantMemberSimplify, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetMerchantMemberOk() (*UnibeeApiBeanMerchantMemberSimplify, bool)`
 
 GetMerchantMemberOk returns a tuple with the MerchantMember field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantMember
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetMerchantMember(v UnibeeApiBeanMerchantMemberSimplify)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetMerchantMember(v UnibeeApiBeanMerchantMemberSimplify)`
 
 SetMerchantMember sets MerchantMember field to given value.
 
 ### HasMerchantMember
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasMerchantMember() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasMerchantMember() bool`
 
 HasMerchantMember returns a boolean if a field has been set.
 
 ### GetMetadata
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetMetadata() map[string]string`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetMetadata() map[string]string`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetMetadataOk() (*map[string]string, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetMetadataOk() (*map[string]string, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetMetadata(v map[string]string)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetMetadata(v map[string]string)`
 
 SetMetadata sets Metadata field to given value.
 
 ### HasMetadata
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasMetadata() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasMetadata() bool`
 
 HasMetadata returns a boolean if a field has been set.
 
 ### GetNote
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetNote() string`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetNote() string`
 
 GetNote returns the Note field if non-nil, zero value otherwise.
 
 ### GetNoteOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetNoteOk() (*string, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetNoteOk() (*string, bool)`
 
 GetNoteOk returns a tuple with the Note field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNote
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetNote(v string)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetNote(v string)`
 
 SetNote sets Note field to given value.
 
 ### HasNote
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasNote() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasNote() bool`
 
 HasNote returns a boolean if a field has been set.
 
 ### GetPaid
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetPaid() int32`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetPaid() int32`
 
 GetPaid returns the Paid field if non-nil, zero value otherwise.
 
 ### GetPaidOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetPaidOk() (*int32, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetPaidOk() (*int32, bool)`
 
 GetPaidOk returns a tuple with the Paid field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPaid
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetPaid(v int32)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetPaid(v int32)`
 
 SetPaid sets Paid field to given value.
 
 ### HasPaid
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasPaid() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasPaid() bool`
 
 HasPaid returns a boolean if a field has been set.
 
 ### GetPlan
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetPlan() UnibeeApiBeanPlanSimplify`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetPlan() UnibeeApiBeanPlanSimplify`
 
 GetPlan returns the Plan field if non-nil, zero value otherwise.
 
 ### GetPlanOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetPlanOk() (*UnibeeApiBeanPlanSimplify, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetPlanOk() (*UnibeeApiBeanPlanSimplify, bool)`
 
 GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlan
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetPlan(v UnibeeApiBeanPlanSimplify)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetPlan(v UnibeeApiBeanPlanSimplify)`
 
 SetPlan sets Plan field to given value.
 
 ### HasPlan
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasPlan() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasPlan() bool`
 
 HasPlan returns a boolean if a field has been set.
 
 ### GetPlanId
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetPlanId() int64`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetPlanId() int64`
 
 GetPlanId returns the PlanId field if non-nil, zero value otherwise.
 
 ### GetPlanIdOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetPlanIdOk() (*int64, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetPlanIdOk() (*int64, bool)`
 
 GetPlanIdOk returns a tuple with the PlanId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlanId
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetPlanId(v int64)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetPlanId(v int64)`
 
 SetPlanId sets PlanId field to given value.
 
 ### HasPlanId
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasPlanId() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasPlanId() bool`
 
 HasPlanId returns a boolean if a field has been set.
 
 ### GetProrationAmount
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetProrationAmount() int64`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetProrationAmount() int64`
 
 GetProrationAmount returns the ProrationAmount field if non-nil, zero value otherwise.
 
 ### GetProrationAmountOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetProrationAmountOk() (*int64, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetProrationAmountOk() (*int64, bool)`
 
 GetProrationAmountOk returns a tuple with the ProrationAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProrationAmount
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetProrationAmount(v int64)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetProrationAmount(v int64)`
 
 SetProrationAmount sets ProrationAmount field to given value.
 
 ### HasProrationAmount
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasProrationAmount() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasProrationAmount() bool`
 
 HasProrationAmount returns a boolean if a field has been set.
 
 ### GetQuantity
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetQuantity() int64`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetQuantity() int64`
 
 GetQuantity returns the Quantity field if non-nil, zero value otherwise.
 
 ### GetQuantityOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetQuantityOk() (*int64, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetQuantityOk() (*int64, bool)`
 
 GetQuantityOk returns a tuple with the Quantity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetQuantity
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetQuantity(v int64)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetQuantity(v int64)`
 
 SetQuantity sets Quantity field to given value.
 
 ### HasQuantity
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasQuantity() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasQuantity() bool`
 
 HasQuantity returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetStatus() int32`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetStatus() int32`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetStatusOk() (*int32, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetStatusOk() (*int32, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetStatus(v int32)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetStatus(v int32)`
 
 SetStatus sets Status field to given value.
 
 ### HasStatus
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasStatus() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
 
 ### GetSubscriptionId
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetSubscriptionId() string`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetSubscriptionId() string`
 
 GetSubscriptionId returns the SubscriptionId field if non-nil, zero value otherwise.
 
 ### GetSubscriptionIdOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetSubscriptionIdOk() (*string, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetSubscriptionIdOk() (*string, bool)`
 
 GetSubscriptionIdOk returns a tuple with the SubscriptionId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubscriptionId
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetSubscriptionId(v string)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetSubscriptionId(v string)`
 
 SetSubscriptionId sets SubscriptionId field to given value.
 
 ### HasSubscriptionId
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasSubscriptionId() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasSubscriptionId() bool`
 
 HasSubscriptionId returns a boolean if a field has been set.
 
 ### GetUpdateAddonData
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateAddonData() string`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateAddonData() string`
 
 GetUpdateAddonData returns the UpdateAddonData field if non-nil, zero value otherwise.
 
 ### GetUpdateAddonDataOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateAddonDataOk() (*string, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateAddonDataOk() (*string, bool)`
 
 GetUpdateAddonDataOk returns a tuple with the UpdateAddonData field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdateAddonData
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetUpdateAddonData(v string)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetUpdateAddonData(v string)`
 
 SetUpdateAddonData sets UpdateAddonData field to given value.
 
 ### HasUpdateAddonData
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUpdateAddonData() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasUpdateAddonData() bool`
 
 HasUpdateAddonData returns a boolean if a field has been set.
 
 ### GetUpdateAddons
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateAddons() []UnibeeApiBeanPlanAddonDetail`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateAddons() []UnibeeApiBeanPlanAddonDetail`
 
 GetUpdateAddons returns the UpdateAddons field if non-nil, zero value otherwise.
 
 ### GetUpdateAddonsOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateAddonsOk() (*[]UnibeeApiBeanPlanAddonDetail, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateAddonsOk() (*[]UnibeeApiBeanPlanAddonDetail, bool)`
 
 GetUpdateAddonsOk returns a tuple with the UpdateAddons field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdateAddons
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetUpdateAddons(v []UnibeeApiBeanPlanAddonDetail)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetUpdateAddons(v []UnibeeApiBeanPlanAddonDetail)`
 
 SetUpdateAddons sets UpdateAddons field to given value.
 
 ### HasUpdateAddons
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUpdateAddons() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasUpdateAddons() bool`
 
 HasUpdateAddons returns a boolean if a field has been set.
 
 ### GetUpdateAmount
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateAmount() int64`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateAmount() int64`
 
 GetUpdateAmount returns the UpdateAmount field if non-nil, zero value otherwise.
 
 ### GetUpdateAmountOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateAmountOk() (*int64, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateAmountOk() (*int64, bool)`
 
 GetUpdateAmountOk returns a tuple with the UpdateAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdateAmount
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetUpdateAmount(v int64)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetUpdateAmount(v int64)`
 
 SetUpdateAmount sets UpdateAmount field to given value.
 
 ### HasUpdateAmount
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUpdateAmount() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasUpdateAmount() bool`
 
 HasUpdateAmount returns a boolean if a field has been set.
 
 ### GetUpdateCurrency
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateCurrency() string`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateCurrency() string`
 
 GetUpdateCurrency returns the UpdateCurrency field if non-nil, zero value otherwise.
 
 ### GetUpdateCurrencyOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateCurrencyOk() (*string, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateCurrencyOk() (*string, bool)`
 
 GetUpdateCurrencyOk returns a tuple with the UpdateCurrency field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdateCurrency
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetUpdateCurrency(v string)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetUpdateCurrency(v string)`
 
 SetUpdateCurrency sets UpdateCurrency field to given value.
 
 ### HasUpdateCurrency
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUpdateCurrency() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasUpdateCurrency() bool`
 
 HasUpdateCurrency returns a boolean if a field has been set.
 
 ### GetUpdatePlan
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdatePlan() UnibeeApiBeanPlanSimplify`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdatePlan() UnibeeApiBeanPlanSimplify`
 
 GetUpdatePlan returns the UpdatePlan field if non-nil, zero value otherwise.
 
 ### GetUpdatePlanOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdatePlanOk() (*UnibeeApiBeanPlanSimplify, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdatePlanOk() (*UnibeeApiBeanPlanSimplify, bool)`
 
 GetUpdatePlanOk returns a tuple with the UpdatePlan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdatePlan
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetUpdatePlan(v UnibeeApiBeanPlanSimplify)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetUpdatePlan(v UnibeeApiBeanPlanSimplify)`
 
 SetUpdatePlan sets UpdatePlan field to given value.
 
 ### HasUpdatePlan
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUpdatePlan() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasUpdatePlan() bool`
 
 HasUpdatePlan returns a boolean if a field has been set.
 
 ### GetUpdatePlanId
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdatePlanId() int64`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdatePlanId() int64`
 
 GetUpdatePlanId returns the UpdatePlanId field if non-nil, zero value otherwise.
 
 ### GetUpdatePlanIdOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdatePlanIdOk() (*int64, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdatePlanIdOk() (*int64, bool)`
 
 GetUpdatePlanIdOk returns a tuple with the UpdatePlanId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdatePlanId
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetUpdatePlanId(v int64)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetUpdatePlanId(v int64)`
 
 SetUpdatePlanId sets UpdatePlanId field to given value.
 
 ### HasUpdatePlanId
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUpdatePlanId() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasUpdatePlanId() bool`
 
 HasUpdatePlanId returns a boolean if a field has been set.
 
 ### GetUpdateQuantity
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateQuantity() int64`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateQuantity() int64`
 
 GetUpdateQuantity returns the UpdateQuantity field if non-nil, zero value otherwise.
 
 ### GetUpdateQuantityOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateQuantityOk() (*int64, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateQuantityOk() (*int64, bool)`
 
 GetUpdateQuantityOk returns a tuple with the UpdateQuantity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdateQuantity
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetUpdateQuantity(v int64)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetUpdateQuantity(v int64)`
 
 SetUpdateQuantity sets UpdateQuantity field to given value.
 
 ### HasUpdateQuantity
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUpdateQuantity() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasUpdateQuantity() bool`
 
 HasUpdateQuantity returns a boolean if a field has been set.
 
 ### GetUpdateSubscriptionId
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateSubscriptionId() string`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateSubscriptionId() string`
 
 GetUpdateSubscriptionId returns the UpdateSubscriptionId field if non-nil, zero value otherwise.
 
 ### GetUpdateSubscriptionIdOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateSubscriptionIdOk() (*string, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateSubscriptionIdOk() (*string, bool)`
 
 GetUpdateSubscriptionIdOk returns a tuple with the UpdateSubscriptionId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdateSubscriptionId
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetUpdateSubscriptionId(v string)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetUpdateSubscriptionId(v string)`
 
 SetUpdateSubscriptionId sets UpdateSubscriptionId field to given value.
 
 ### HasUpdateSubscriptionId
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUpdateSubscriptionId() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasUpdateSubscriptionId() bool`
 
 HasUpdateSubscriptionId returns a boolean if a field has been set.
 
 ### GetUserId
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUserId() int64`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUserId() int64`
 
 GetUserId returns the UserId field if non-nil, zero value otherwise.
 
 ### GetUserIdOk
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUserIdOk() (*int64, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUserIdOk() (*int64, bool)`
 
 GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserId
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetUserId(v int64)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetUserId(v int64)`
 
 SetUserId sets UserId field to given value.
 
 ### HasUserId
 
-`func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUserId() bool`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasUserId() bool`
 
 HasUserId returns a boolean if a field has been set.
 

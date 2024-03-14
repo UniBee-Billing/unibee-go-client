@@ -21,7 +21,7 @@ var _ MappedNullable = &MerchantSubscriptionUpdateSubmitPost200ResponseData{}
 type MerchantSubscriptionUpdateSubmitPost200ResponseData struct {
 	Link *string `json:"link,omitempty"`
 	Paid *bool `json:"paid,omitempty"`
-	SubscriptionPendingUpdate *UnibeeApiBeanSubscriptionPendingUpdateDetail `json:"subscriptionPendingUpdate,omitempty"`
+	SubscriptionPendingUpdate *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail `json:"subscriptionPendingUpdate,omitempty"`
 }
 
 // NewMerchantSubscriptionUpdateSubmitPost200ResponseData instantiates a new MerchantSubscriptionUpdateSubmitPost200ResponseData object
@@ -106,9 +106,9 @@ func (o *MerchantSubscriptionUpdateSubmitPost200ResponseData) SetPaid(v bool) {
 }
 
 // GetSubscriptionPendingUpdate returns the SubscriptionPendingUpdate field value if set, zero value otherwise.
-func (o *MerchantSubscriptionUpdateSubmitPost200ResponseData) GetSubscriptionPendingUpdate() UnibeeApiBeanSubscriptionPendingUpdateDetail {
+func (o *MerchantSubscriptionUpdateSubmitPost200ResponseData) GetSubscriptionPendingUpdate() UnibeeApiBeanDetailSubscriptionPendingUpdateDetail {
 	if o == nil || IsNil(o.SubscriptionPendingUpdate) {
-		var ret UnibeeApiBeanSubscriptionPendingUpdateDetail
+		var ret UnibeeApiBeanDetailSubscriptionPendingUpdateDetail
 		return ret
 	}
 	return *o.SubscriptionPendingUpdate
@@ -116,7 +116,7 @@ func (o *MerchantSubscriptionUpdateSubmitPost200ResponseData) GetSubscriptionPen
 
 // GetSubscriptionPendingUpdateOk returns a tuple with the SubscriptionPendingUpdate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantSubscriptionUpdateSubmitPost200ResponseData) GetSubscriptionPendingUpdateOk() (*UnibeeApiBeanSubscriptionPendingUpdateDetail, bool) {
+func (o *MerchantSubscriptionUpdateSubmitPost200ResponseData) GetSubscriptionPendingUpdateOk() (*UnibeeApiBeanDetailSubscriptionPendingUpdateDetail, bool) {
 	if o == nil || IsNil(o.SubscriptionPendingUpdate) {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *MerchantSubscriptionUpdateSubmitPost200ResponseData) HasSubscriptionPen
 	return false
 }
 
-// SetSubscriptionPendingUpdate gets a reference to the given UnibeeApiBeanSubscriptionPendingUpdateDetail and assigns it to the SubscriptionPendingUpdate field.
-func (o *MerchantSubscriptionUpdateSubmitPost200ResponseData) SetSubscriptionPendingUpdate(v UnibeeApiBeanSubscriptionPendingUpdateDetail) {
+// SetSubscriptionPendingUpdate gets a reference to the given UnibeeApiBeanDetailSubscriptionPendingUpdateDetail and assigns it to the SubscriptionPendingUpdate field.
+func (o *MerchantSubscriptionUpdateSubmitPost200ResponseData) SetSubscriptionPendingUpdate(v UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) {
 	o.SubscriptionPendingUpdate = &v
 }
 

@@ -24,7 +24,7 @@ type UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes struct {
 	Gateway *UnibeeApiBeanGatewaySimplify `json:"gateway,omitempty"`
 	Plan *UnibeeApiBeanPlanSimplify `json:"plan,omitempty"`
 	Subscription *UnibeeApiBeanSubscriptionSimplify `json:"subscription,omitempty"`
-	UnfinishedSubscriptionPendingUpdate *UnibeeApiBeanSubscriptionPendingUpdateDetail `json:"unfinishedSubscriptionPendingUpdate,omitempty"`
+	UnfinishedSubscriptionPendingUpdate *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail `json:"unfinishedSubscriptionPendingUpdate,omitempty"`
 	User *UnibeeApiBeanUserAccountSimplify `json:"user,omitempty"`
 }
 
@@ -174,9 +174,9 @@ func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) SetSubscription
 }
 
 // GetUnfinishedSubscriptionPendingUpdate returns the UnfinishedSubscriptionPendingUpdate field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetUnfinishedSubscriptionPendingUpdate() UnibeeApiBeanSubscriptionPendingUpdateDetail {
+func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetUnfinishedSubscriptionPendingUpdate() UnibeeApiBeanDetailSubscriptionPendingUpdateDetail {
 	if o == nil || IsNil(o.UnfinishedSubscriptionPendingUpdate) {
-		var ret UnibeeApiBeanSubscriptionPendingUpdateDetail
+		var ret UnibeeApiBeanDetailSubscriptionPendingUpdateDetail
 		return ret
 	}
 	return *o.UnfinishedSubscriptionPendingUpdate
@@ -184,7 +184,7 @@ func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetUnfinishedSu
 
 // GetUnfinishedSubscriptionPendingUpdateOk returns a tuple with the UnfinishedSubscriptionPendingUpdate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetUnfinishedSubscriptionPendingUpdateOk() (*UnibeeApiBeanSubscriptionPendingUpdateDetail, bool) {
+func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) GetUnfinishedSubscriptionPendingUpdateOk() (*UnibeeApiBeanDetailSubscriptionPendingUpdateDetail, bool) {
 	if o == nil || IsNil(o.UnfinishedSubscriptionPendingUpdate) {
 		return nil, false
 	}
@@ -200,8 +200,8 @@ func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) HasUnfinishedSu
 	return false
 }
 
-// SetUnfinishedSubscriptionPendingUpdate gets a reference to the given UnibeeApiBeanSubscriptionPendingUpdateDetail and assigns it to the UnfinishedSubscriptionPendingUpdate field.
-func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) SetUnfinishedSubscriptionPendingUpdate(v UnibeeApiBeanSubscriptionPendingUpdateDetail) {
+// SetUnfinishedSubscriptionPendingUpdate gets a reference to the given UnibeeApiBeanDetailSubscriptionPendingUpdateDetail and assigns it to the UnfinishedSubscriptionPendingUpdate field.
+func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailRes) SetUnfinishedSubscriptionPendingUpdate(v UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) {
 	o.UnfinishedSubscriptionPendingUpdate = &v
 }
 

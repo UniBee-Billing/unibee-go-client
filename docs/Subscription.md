@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**SubscriptionCancelAtPeriodEndPost**](Subscription.md#SubscriptionCancelAtPeriodEndPost) | **Post** /merchant/subscription/cancel_at_period_end | Merchant Edit Subscription-Set Cancel Ad Period End
 [**SubscriptionCancelLastCancelAtPeriodEndPost**](Subscription.md#SubscriptionCancelLastCancelAtPeriodEndPost) | **Post** /merchant/subscription/cancel_last_cancel_at_period_end | Merchant Edit Subscription-Cancel Last CancelAtPeriod
 [**SubscriptionCancelPost**](Subscription.md#SubscriptionCancelPost) | **Post** /merchant/subscription/cancel | Merchant Cancel Subscription Immediately (Will Not Generate Proration Invoice)
+[**SubscriptionChangeGatewayPost**](Subscription.md#SubscriptionChangeGatewayPost) | **Post** /merchant/subscription/change_gateway | Change Subscription Gateway
 [**SubscriptionDetailGet**](Subscription.md#SubscriptionDetailGet) | **Get** /merchant/subscription/detail | Subscription Detail
 [**SubscriptionDetailPost**](Subscription.md#SubscriptionDetailPost) | **Post** /merchant/subscription/detail | Subscription Detail
 [**SubscriptionListGet**](Subscription.md#SubscriptionListGet) | **Get** /merchant/subscription/list | Subscription List
@@ -258,6 +259,70 @@ Other parameters are passed through a pointer to a apiSubscriptionCancelPostRequ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **unibeeApiMerchantSubscriptionCancelReq** | [**UnibeeApiMerchantSubscriptionCancelReq**](UnibeeApiMerchantSubscriptionCancelReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SubscriptionChangeGatewayPost
+
+> MerchantAuthSsoLoginOTPPost200Response SubscriptionChangeGatewayPost(ctx).UnibeeApiMerchantSubscriptionChangeGatewayReq(unibeeApiMerchantSubscriptionChangeGatewayReq).Execute()
+
+Change Subscription Gateway
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantSubscriptionChangeGatewayReq := *openapiclient.NewUnibeeApiMerchantSubscriptionChangeGatewayReq(int64(123), "SubscriptionId_example") // UnibeeApiMerchantSubscriptionChangeGatewayReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Subscription.SubscriptionChangeGatewayPost(context.Background()).UnibeeApiMerchantSubscriptionChangeGatewayReq(unibeeApiMerchantSubscriptionChangeGatewayReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionChangeGatewayPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SubscriptionChangeGatewayPost`: MerchantAuthSsoLoginOTPPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionChangeGatewayPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSubscriptionChangeGatewayPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantSubscriptionChangeGatewayReq** | [**UnibeeApiMerchantSubscriptionChangeGatewayReq**](UnibeeApiMerchantSubscriptionChangeGatewayReq.md) |  | 
 
 ### Return type
 

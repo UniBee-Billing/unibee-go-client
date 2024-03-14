@@ -14,11 +14,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the UnibeeApiBeanSubscriptionDetail type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &UnibeeApiBeanSubscriptionDetail{}
+// checks if the UnibeeApiBeanDetailSubscriptionDetail type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &UnibeeApiBeanDetailSubscriptionDetail{}
 
-// UnibeeApiBeanSubscriptionDetail struct for UnibeeApiBeanSubscriptionDetail
-type UnibeeApiBeanSubscriptionDetail struct {
+// UnibeeApiBeanDetailSubscriptionDetail struct for UnibeeApiBeanDetailSubscriptionDetail
+type UnibeeApiBeanDetailSubscriptionDetail struct {
 	// AddonParams
 	AddonParams []UnibeeApiBeanPlanAddonParam `json:"addonParams,omitempty"`
 	// Addon
@@ -26,29 +26,29 @@ type UnibeeApiBeanSubscriptionDetail struct {
 	Gateway *UnibeeApiBeanGatewaySimplify `json:"gateway,omitempty"`
 	Plan *UnibeeApiBeanPlanSimplify `json:"plan,omitempty"`
 	Subscription *UnibeeApiBeanSubscriptionSimplify `json:"subscription,omitempty"`
-	UnfinishedSubscriptionPendingUpdate *UnibeeApiBeanSubscriptionPendingUpdateDetail `json:"unfinishedSubscriptionPendingUpdate,omitempty"`
+	UnfinishedSubscriptionPendingUpdate *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail `json:"unfinishedSubscriptionPendingUpdate,omitempty"`
 	User *UnibeeApiBeanUserAccountSimplify `json:"user,omitempty"`
 }
 
-// NewUnibeeApiBeanSubscriptionDetail instantiates a new UnibeeApiBeanSubscriptionDetail object
+// NewUnibeeApiBeanDetailSubscriptionDetail instantiates a new UnibeeApiBeanDetailSubscriptionDetail object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiBeanSubscriptionDetail() *UnibeeApiBeanSubscriptionDetail {
-	this := UnibeeApiBeanSubscriptionDetail{}
+func NewUnibeeApiBeanDetailSubscriptionDetail() *UnibeeApiBeanDetailSubscriptionDetail {
+	this := UnibeeApiBeanDetailSubscriptionDetail{}
 	return &this
 }
 
-// NewUnibeeApiBeanSubscriptionDetailWithDefaults instantiates a new UnibeeApiBeanSubscriptionDetail object
+// NewUnibeeApiBeanDetailSubscriptionDetailWithDefaults instantiates a new UnibeeApiBeanDetailSubscriptionDetail object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewUnibeeApiBeanSubscriptionDetailWithDefaults() *UnibeeApiBeanSubscriptionDetail {
-	this := UnibeeApiBeanSubscriptionDetail{}
+func NewUnibeeApiBeanDetailSubscriptionDetailWithDefaults() *UnibeeApiBeanDetailSubscriptionDetail {
+	this := UnibeeApiBeanDetailSubscriptionDetail{}
 	return &this
 }
 
 // GetAddonParams returns the AddonParams field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionDetail) GetAddonParams() []UnibeeApiBeanPlanAddonParam {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) GetAddonParams() []UnibeeApiBeanPlanAddonParam {
 	if o == nil || IsNil(o.AddonParams) {
 		var ret []UnibeeApiBeanPlanAddonParam
 		return ret
@@ -58,7 +58,7 @@ func (o *UnibeeApiBeanSubscriptionDetail) GetAddonParams() []UnibeeApiBeanPlanAd
 
 // GetAddonParamsOk returns a tuple with the AddonParams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionDetail) GetAddonParamsOk() ([]UnibeeApiBeanPlanAddonParam, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) GetAddonParamsOk() ([]UnibeeApiBeanPlanAddonParam, bool) {
 	if o == nil || IsNil(o.AddonParams) {
 		return nil, false
 	}
@@ -66,7 +66,7 @@ func (o *UnibeeApiBeanSubscriptionDetail) GetAddonParamsOk() ([]UnibeeApiBeanPla
 }
 
 // HasAddonParams returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionDetail) HasAddonParams() bool {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) HasAddonParams() bool {
 	if o != nil && !IsNil(o.AddonParams) {
 		return true
 	}
@@ -75,12 +75,12 @@ func (o *UnibeeApiBeanSubscriptionDetail) HasAddonParams() bool {
 }
 
 // SetAddonParams gets a reference to the given []UnibeeApiBeanPlanAddonParam and assigns it to the AddonParams field.
-func (o *UnibeeApiBeanSubscriptionDetail) SetAddonParams(v []UnibeeApiBeanPlanAddonParam) {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) SetAddonParams(v []UnibeeApiBeanPlanAddonParam) {
 	o.AddonParams = v
 }
 
 // GetAddons returns the Addons field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionDetail) GetAddons() []UnibeeApiBeanPlanAddonDetail {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) GetAddons() []UnibeeApiBeanPlanAddonDetail {
 	if o == nil || IsNil(o.Addons) {
 		var ret []UnibeeApiBeanPlanAddonDetail
 		return ret
@@ -90,7 +90,7 @@ func (o *UnibeeApiBeanSubscriptionDetail) GetAddons() []UnibeeApiBeanPlanAddonDe
 
 // GetAddonsOk returns a tuple with the Addons field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionDetail) GetAddonsOk() ([]UnibeeApiBeanPlanAddonDetail, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) GetAddonsOk() ([]UnibeeApiBeanPlanAddonDetail, bool) {
 	if o == nil || IsNil(o.Addons) {
 		return nil, false
 	}
@@ -98,7 +98,7 @@ func (o *UnibeeApiBeanSubscriptionDetail) GetAddonsOk() ([]UnibeeApiBeanPlanAddo
 }
 
 // HasAddons returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionDetail) HasAddons() bool {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) HasAddons() bool {
 	if o != nil && !IsNil(o.Addons) {
 		return true
 	}
@@ -107,12 +107,12 @@ func (o *UnibeeApiBeanSubscriptionDetail) HasAddons() bool {
 }
 
 // SetAddons gets a reference to the given []UnibeeApiBeanPlanAddonDetail and assigns it to the Addons field.
-func (o *UnibeeApiBeanSubscriptionDetail) SetAddons(v []UnibeeApiBeanPlanAddonDetail) {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) SetAddons(v []UnibeeApiBeanPlanAddonDetail) {
 	o.Addons = v
 }
 
 // GetGateway returns the Gateway field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionDetail) GetGateway() UnibeeApiBeanGatewaySimplify {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) GetGateway() UnibeeApiBeanGatewaySimplify {
 	if o == nil || IsNil(o.Gateway) {
 		var ret UnibeeApiBeanGatewaySimplify
 		return ret
@@ -122,7 +122,7 @@ func (o *UnibeeApiBeanSubscriptionDetail) GetGateway() UnibeeApiBeanGatewaySimpl
 
 // GetGatewayOk returns a tuple with the Gateway field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionDetail) GetGatewayOk() (*UnibeeApiBeanGatewaySimplify, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) GetGatewayOk() (*UnibeeApiBeanGatewaySimplify, bool) {
 	if o == nil || IsNil(o.Gateway) {
 		return nil, false
 	}
@@ -130,7 +130,7 @@ func (o *UnibeeApiBeanSubscriptionDetail) GetGatewayOk() (*UnibeeApiBeanGatewayS
 }
 
 // HasGateway returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionDetail) HasGateway() bool {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) HasGateway() bool {
 	if o != nil && !IsNil(o.Gateway) {
 		return true
 	}
@@ -139,12 +139,12 @@ func (o *UnibeeApiBeanSubscriptionDetail) HasGateway() bool {
 }
 
 // SetGateway gets a reference to the given UnibeeApiBeanGatewaySimplify and assigns it to the Gateway field.
-func (o *UnibeeApiBeanSubscriptionDetail) SetGateway(v UnibeeApiBeanGatewaySimplify) {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) SetGateway(v UnibeeApiBeanGatewaySimplify) {
 	o.Gateway = &v
 }
 
 // GetPlan returns the Plan field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionDetail) GetPlan() UnibeeApiBeanPlanSimplify {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) GetPlan() UnibeeApiBeanPlanSimplify {
 	if o == nil || IsNil(o.Plan) {
 		var ret UnibeeApiBeanPlanSimplify
 		return ret
@@ -154,7 +154,7 @@ func (o *UnibeeApiBeanSubscriptionDetail) GetPlan() UnibeeApiBeanPlanSimplify {
 
 // GetPlanOk returns a tuple with the Plan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionDetail) GetPlanOk() (*UnibeeApiBeanPlanSimplify, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) GetPlanOk() (*UnibeeApiBeanPlanSimplify, bool) {
 	if o == nil || IsNil(o.Plan) {
 		return nil, false
 	}
@@ -162,7 +162,7 @@ func (o *UnibeeApiBeanSubscriptionDetail) GetPlanOk() (*UnibeeApiBeanPlanSimplif
 }
 
 // HasPlan returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionDetail) HasPlan() bool {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) HasPlan() bool {
 	if o != nil && !IsNil(o.Plan) {
 		return true
 	}
@@ -171,12 +171,12 @@ func (o *UnibeeApiBeanSubscriptionDetail) HasPlan() bool {
 }
 
 // SetPlan gets a reference to the given UnibeeApiBeanPlanSimplify and assigns it to the Plan field.
-func (o *UnibeeApiBeanSubscriptionDetail) SetPlan(v UnibeeApiBeanPlanSimplify) {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) SetPlan(v UnibeeApiBeanPlanSimplify) {
 	o.Plan = &v
 }
 
 // GetSubscription returns the Subscription field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionDetail) GetSubscription() UnibeeApiBeanSubscriptionSimplify {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) GetSubscription() UnibeeApiBeanSubscriptionSimplify {
 	if o == nil || IsNil(o.Subscription) {
 		var ret UnibeeApiBeanSubscriptionSimplify
 		return ret
@@ -186,7 +186,7 @@ func (o *UnibeeApiBeanSubscriptionDetail) GetSubscription() UnibeeApiBeanSubscri
 
 // GetSubscriptionOk returns a tuple with the Subscription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionDetail) GetSubscriptionOk() (*UnibeeApiBeanSubscriptionSimplify, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) GetSubscriptionOk() (*UnibeeApiBeanSubscriptionSimplify, bool) {
 	if o == nil || IsNil(o.Subscription) {
 		return nil, false
 	}
@@ -194,7 +194,7 @@ func (o *UnibeeApiBeanSubscriptionDetail) GetSubscriptionOk() (*UnibeeApiBeanSub
 }
 
 // HasSubscription returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionDetail) HasSubscription() bool {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) HasSubscription() bool {
 	if o != nil && !IsNil(o.Subscription) {
 		return true
 	}
@@ -203,14 +203,14 @@ func (o *UnibeeApiBeanSubscriptionDetail) HasSubscription() bool {
 }
 
 // SetSubscription gets a reference to the given UnibeeApiBeanSubscriptionSimplify and assigns it to the Subscription field.
-func (o *UnibeeApiBeanSubscriptionDetail) SetSubscription(v UnibeeApiBeanSubscriptionSimplify) {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) SetSubscription(v UnibeeApiBeanSubscriptionSimplify) {
 	o.Subscription = &v
 }
 
 // GetUnfinishedSubscriptionPendingUpdate returns the UnfinishedSubscriptionPendingUpdate field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionDetail) GetUnfinishedSubscriptionPendingUpdate() UnibeeApiBeanSubscriptionPendingUpdateDetail {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) GetUnfinishedSubscriptionPendingUpdate() UnibeeApiBeanDetailSubscriptionPendingUpdateDetail {
 	if o == nil || IsNil(o.UnfinishedSubscriptionPendingUpdate) {
-		var ret UnibeeApiBeanSubscriptionPendingUpdateDetail
+		var ret UnibeeApiBeanDetailSubscriptionPendingUpdateDetail
 		return ret
 	}
 	return *o.UnfinishedSubscriptionPendingUpdate
@@ -218,7 +218,7 @@ func (o *UnibeeApiBeanSubscriptionDetail) GetUnfinishedSubscriptionPendingUpdate
 
 // GetUnfinishedSubscriptionPendingUpdateOk returns a tuple with the UnfinishedSubscriptionPendingUpdate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionDetail) GetUnfinishedSubscriptionPendingUpdateOk() (*UnibeeApiBeanSubscriptionPendingUpdateDetail, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) GetUnfinishedSubscriptionPendingUpdateOk() (*UnibeeApiBeanDetailSubscriptionPendingUpdateDetail, bool) {
 	if o == nil || IsNil(o.UnfinishedSubscriptionPendingUpdate) {
 		return nil, false
 	}
@@ -226,7 +226,7 @@ func (o *UnibeeApiBeanSubscriptionDetail) GetUnfinishedSubscriptionPendingUpdate
 }
 
 // HasUnfinishedSubscriptionPendingUpdate returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionDetail) HasUnfinishedSubscriptionPendingUpdate() bool {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) HasUnfinishedSubscriptionPendingUpdate() bool {
 	if o != nil && !IsNil(o.UnfinishedSubscriptionPendingUpdate) {
 		return true
 	}
@@ -234,13 +234,13 @@ func (o *UnibeeApiBeanSubscriptionDetail) HasUnfinishedSubscriptionPendingUpdate
 	return false
 }
 
-// SetUnfinishedSubscriptionPendingUpdate gets a reference to the given UnibeeApiBeanSubscriptionPendingUpdateDetail and assigns it to the UnfinishedSubscriptionPendingUpdate field.
-func (o *UnibeeApiBeanSubscriptionDetail) SetUnfinishedSubscriptionPendingUpdate(v UnibeeApiBeanSubscriptionPendingUpdateDetail) {
+// SetUnfinishedSubscriptionPendingUpdate gets a reference to the given UnibeeApiBeanDetailSubscriptionPendingUpdateDetail and assigns it to the UnfinishedSubscriptionPendingUpdate field.
+func (o *UnibeeApiBeanDetailSubscriptionDetail) SetUnfinishedSubscriptionPendingUpdate(v UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) {
 	o.UnfinishedSubscriptionPendingUpdate = &v
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionDetail) GetUser() UnibeeApiBeanUserAccountSimplify {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) GetUser() UnibeeApiBeanUserAccountSimplify {
 	if o == nil || IsNil(o.User) {
 		var ret UnibeeApiBeanUserAccountSimplify
 		return ret
@@ -250,7 +250,7 @@ func (o *UnibeeApiBeanSubscriptionDetail) GetUser() UnibeeApiBeanUserAccountSimp
 
 // GetUserOk returns a tuple with the User field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionDetail) GetUserOk() (*UnibeeApiBeanUserAccountSimplify, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) GetUserOk() (*UnibeeApiBeanUserAccountSimplify, bool) {
 	if o == nil || IsNil(o.User) {
 		return nil, false
 	}
@@ -258,7 +258,7 @@ func (o *UnibeeApiBeanSubscriptionDetail) GetUserOk() (*UnibeeApiBeanUserAccount
 }
 
 // HasUser returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionDetail) HasUser() bool {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) HasUser() bool {
 	if o != nil && !IsNil(o.User) {
 		return true
 	}
@@ -267,11 +267,11 @@ func (o *UnibeeApiBeanSubscriptionDetail) HasUser() bool {
 }
 
 // SetUser gets a reference to the given UnibeeApiBeanUserAccountSimplify and assigns it to the User field.
-func (o *UnibeeApiBeanSubscriptionDetail) SetUser(v UnibeeApiBeanUserAccountSimplify) {
+func (o *UnibeeApiBeanDetailSubscriptionDetail) SetUser(v UnibeeApiBeanUserAccountSimplify) {
 	o.User = &v
 }
 
-func (o UnibeeApiBeanSubscriptionDetail) MarshalJSON() ([]byte, error) {
+func (o UnibeeApiBeanDetailSubscriptionDetail) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -279,7 +279,7 @@ func (o UnibeeApiBeanSubscriptionDetail) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o UnibeeApiBeanSubscriptionDetail) ToMap() (map[string]interface{}, error) {
+func (o UnibeeApiBeanDetailSubscriptionDetail) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.AddonParams) {
 		toSerialize["addonParams"] = o.AddonParams
@@ -305,38 +305,38 @@ func (o UnibeeApiBeanSubscriptionDetail) ToMap() (map[string]interface{}, error)
 	return toSerialize, nil
 }
 
-type NullableUnibeeApiBeanSubscriptionDetail struct {
-	value *UnibeeApiBeanSubscriptionDetail
+type NullableUnibeeApiBeanDetailSubscriptionDetail struct {
+	value *UnibeeApiBeanDetailSubscriptionDetail
 	isSet bool
 }
 
-func (v NullableUnibeeApiBeanSubscriptionDetail) Get() *UnibeeApiBeanSubscriptionDetail {
+func (v NullableUnibeeApiBeanDetailSubscriptionDetail) Get() *UnibeeApiBeanDetailSubscriptionDetail {
 	return v.value
 }
 
-func (v *NullableUnibeeApiBeanSubscriptionDetail) Set(val *UnibeeApiBeanSubscriptionDetail) {
+func (v *NullableUnibeeApiBeanDetailSubscriptionDetail) Set(val *UnibeeApiBeanDetailSubscriptionDetail) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableUnibeeApiBeanSubscriptionDetail) IsSet() bool {
+func (v NullableUnibeeApiBeanDetailSubscriptionDetail) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableUnibeeApiBeanSubscriptionDetail) Unset() {
+func (v *NullableUnibeeApiBeanDetailSubscriptionDetail) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableUnibeeApiBeanSubscriptionDetail(val *UnibeeApiBeanSubscriptionDetail) *NullableUnibeeApiBeanSubscriptionDetail {
-	return &NullableUnibeeApiBeanSubscriptionDetail{value: val, isSet: true}
+func NewNullableUnibeeApiBeanDetailSubscriptionDetail(val *UnibeeApiBeanDetailSubscriptionDetail) *NullableUnibeeApiBeanDetailSubscriptionDetail {
+	return &NullableUnibeeApiBeanDetailSubscriptionDetail{value: val, isSet: true}
 }
 
-func (v NullableUnibeeApiBeanSubscriptionDetail) MarshalJSON() ([]byte, error) {
+func (v NullableUnibeeApiBeanDetailSubscriptionDetail) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableUnibeeApiBeanSubscriptionDetail) UnmarshalJSON(src []byte) error {
+func (v *NullableUnibeeApiBeanDetailSubscriptionDetail) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

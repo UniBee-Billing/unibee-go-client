@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SubscriptionPendingUpdateDetails** | Pointer to [**[]UnibeeApiBeanSubscriptionPendingUpdateDetail**](UnibeeApiBeanSubscriptionPendingUpdateDetail.md) | SubscriptionPendingUpdateDetails | [optional] 
+**SubscriptionPendingUpdateDetails** | Pointer to [**[]UnibeeApiBeanDetailSubscriptionPendingUpdateDetail**](UnibeeApiBeanDetailSubscriptionPendingUpdateDetail.md) | SubscriptionPendingUpdateDetails | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSubscriptionPendingUpdateDetails
 
-`func (o *MerchantSubscriptionPendingUpdateListGet200ResponseData) GetSubscriptionPendingUpdateDetails() []UnibeeApiBeanSubscriptionPendingUpdateDetail`
+`func (o *MerchantSubscriptionPendingUpdateListGet200ResponseData) GetSubscriptionPendingUpdateDetails() []UnibeeApiBeanDetailSubscriptionPendingUpdateDetail`
 
 GetSubscriptionPendingUpdateDetails returns the SubscriptionPendingUpdateDetails field if non-nil, zero value otherwise.
 
 ### GetSubscriptionPendingUpdateDetailsOk
 
-`func (o *MerchantSubscriptionPendingUpdateListGet200ResponseData) GetSubscriptionPendingUpdateDetailsOk() (*[]UnibeeApiBeanSubscriptionPendingUpdateDetail, bool)`
+`func (o *MerchantSubscriptionPendingUpdateListGet200ResponseData) GetSubscriptionPendingUpdateDetailsOk() (*[]UnibeeApiBeanDetailSubscriptionPendingUpdateDetail, bool)`
 
 GetSubscriptionPendingUpdateDetailsOk returns a tuple with the SubscriptionPendingUpdateDetails field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubscriptionPendingUpdateDetails
 
-`func (o *MerchantSubscriptionPendingUpdateListGet200ResponseData) SetSubscriptionPendingUpdateDetails(v []UnibeeApiBeanSubscriptionPendingUpdateDetail)`
+`func (o *MerchantSubscriptionPendingUpdateListGet200ResponseData) SetSubscriptionPendingUpdateDetails(v []UnibeeApiBeanDetailSubscriptionPendingUpdateDetail)`
 
 SetSubscriptionPendingUpdateDetails sets SubscriptionPendingUpdateDetails field to given value.
 

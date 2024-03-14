@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SubscriptionTimeLines** | Pointer to [**[]UnibeeApiBeanSubscriptionTimeLineDetail**](UnibeeApiBeanSubscriptionTimeLineDetail.md) | SubscriptionTimeLines | [optional] 
+**SubscriptionTimeLines** | Pointer to [**[]UnibeeApiBeanDetailSubscriptionTimeLineDetail**](UnibeeApiBeanDetailSubscriptionTimeLineDetail.md) | SubscriptionTimeLines | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSubscriptionTimeLines
 
-`func (o *UnibeeApiMerchantSubscriptionTimeLineListRes) GetSubscriptionTimeLines() []UnibeeApiBeanSubscriptionTimeLineDetail`
+`func (o *UnibeeApiMerchantSubscriptionTimeLineListRes) GetSubscriptionTimeLines() []UnibeeApiBeanDetailSubscriptionTimeLineDetail`
 
 GetSubscriptionTimeLines returns the SubscriptionTimeLines field if non-nil, zero value otherwise.
 
 ### GetSubscriptionTimeLinesOk
 
-`func (o *UnibeeApiMerchantSubscriptionTimeLineListRes) GetSubscriptionTimeLinesOk() (*[]UnibeeApiBeanSubscriptionTimeLineDetail, bool)`
+`func (o *UnibeeApiMerchantSubscriptionTimeLineListRes) GetSubscriptionTimeLinesOk() (*[]UnibeeApiBeanDetailSubscriptionTimeLineDetail, bool)`
 
 GetSubscriptionTimeLinesOk returns a tuple with the SubscriptionTimeLines field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubscriptionTimeLines
 
-`func (o *UnibeeApiMerchantSubscriptionTimeLineListRes) SetSubscriptionTimeLines(v []UnibeeApiBeanSubscriptionTimeLineDetail)`
+`func (o *UnibeeApiMerchantSubscriptionTimeLineListRes) SetSubscriptionTimeLines(v []UnibeeApiBeanDetailSubscriptionTimeLineDetail)`
 
 SetSubscriptionTimeLines sets SubscriptionTimeLines field to given value.
 

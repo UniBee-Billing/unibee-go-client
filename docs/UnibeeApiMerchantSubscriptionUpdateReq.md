@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | addonParams | [optional] 
 **ConfirmCurrency** | **string** | Currency To Be Confirmed，Get From Preview | 
 **ConfirmTotalAmount** | **int64** | TotalAmount To Be Confirmed，Get From Preview | 
+**GatewayId** | Pointer to **int64** | Id | [optional] 
 **Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
 **NewPlanId** | **int64** | New PlanId | 
 **ProrationDate** | **int64** | prorationDate date to start Proration，Get From Preview | 
@@ -97,6 +98,31 @@ and a boolean to check if the value has been set.
 
 SetConfirmTotalAmount sets ConfirmTotalAmount field to given value.
 
+
+### GetGatewayId
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetGatewayId() int64`
+
+GetGatewayId returns the GatewayId field if non-nil, zero value otherwise.
+
+### GetGatewayIdOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetGatewayIdOk() (*int64, bool)`
+
+GetGatewayIdOk returns a tuple with the GatewayId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayId
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetGatewayId(v int64)`
+
+SetGatewayId sets GatewayId field to given value.
+
+### HasGatewayId
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasGatewayId() bool`
+
+HasGatewayId returns a boolean if a field has been set.
 
 ### GetMetadata
 

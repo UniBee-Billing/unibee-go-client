@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Amount** | **int64** | Plan CaptureAmount | 
 **Currency** | **string** | Plan Currency | 
 **Description** | Pointer to **string** | Description | [optional] 
-**GasPayer** | Pointer to **string** | who pay the gas, merchant|user | [optional] 
+**GasPayer** | Pointer to **string** | who pay the gas for crypto payment, merchant|user | [optional] 
 **HomeUrl** | Pointer to **string** | HomeUrl,Start With: http | [optional] 
 **ImageUrl** | Pointer to **string** | ImageUrl,Start With: http | [optional] 
 **IntervalCount** | Pointer to **int32** | Number Of IntervalUnit | [optional] 

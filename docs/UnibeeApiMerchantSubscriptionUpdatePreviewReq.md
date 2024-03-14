@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | addonParams | [optional] 
+**GatewayId** | Pointer to **int64** | Id | [optional] 
 **NewPlanId** | **int64** | New PlanId | 
 **Quantity** | Pointer to **int64** | Quantity，Default 1 | [optional] 
 **SubscriptionId** | **string** | SubscriptionId | 
@@ -53,6 +54,31 @@ SetAddonParams sets AddonParams field to given value.
 `func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) HasAddonParams() bool`
 
 HasAddonParams returns a boolean if a field has been set.
+
+### GetGatewayId
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetGatewayId() int64`
+
+GetGatewayId returns the GatewayId field if non-nil, zero value otherwise.
+
+### GetGatewayIdOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetGatewayIdOk() (*int64, bool)`
+
+GetGatewayIdOk returns a tuple with the GatewayId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayId
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) SetGatewayId(v int64)`
+
+SetGatewayId sets GatewayId field to given value.
+
+### HasGatewayId
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) HasGatewayId() bool`
+
+HasGatewayId returns a boolean if a field has been set.
 
 ### GetNewPlanId
 

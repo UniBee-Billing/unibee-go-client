@@ -109,6 +109,7 @@ Class | Method | HTTP request | Description
 *Invoice* | [**InvoiceListPost**](docs/Invoice.md#invoicelistpost) | **Post** /merchant/invoice/list | Invoice List
 *Invoice* | [**InvoiceNewPost**](docs/Invoice.md#invoicenewpost) | **Post** /merchant/invoice/new | Admin Create New Invoice
 *Invoice* | [**InvoicePdfGeneratePost**](docs/Invoice.md#invoicepdfgeneratepost) | **Post** /merchant/invoice/pdf_generate | Admin Generate Merchant Invoice pdf
+*Invoice* | [**InvoiceReconvertCryptoAndSendEmailPost**](docs/Invoice.md#invoicereconvertcryptoandsendemailpost) | **Post** /merchant/invoice/reconvert_crypto_and_send_email | Admin Reconvert Crypto Data and Send Invoice Email to User
 *Invoice* | [**InvoiceRefundPost**](docs/Invoice.md#invoicerefundpost) | **Post** /merchant/invoice/refund | Admin Create Refund From Invoice
 *Invoice* | [**InvoiceSendEmailPost**](docs/Invoice.md#invoicesendemailpost) | **Post** /merchant/invoice/send_email | Admin Send Merchant Invoice Email to User
 *Member* | [**MemberLogoutPost**](docs/Member.md#memberlogoutpost) | **Post** /merchant/member/logout | Merchant Member Logout
@@ -156,6 +157,7 @@ Class | Method | HTTP request | Description
 *Subscription* | [**SubscriptionCancelAtPeriodEndPost**](docs/Subscription.md#subscriptioncancelatperiodendpost) | **Post** /merchant/subscription/cancel_at_period_end | Merchant Edit Subscription-Set Cancel Ad Period End
 *Subscription* | [**SubscriptionCancelLastCancelAtPeriodEndPost**](docs/Subscription.md#subscriptioncancellastcancelatperiodendpost) | **Post** /merchant/subscription/cancel_last_cancel_at_period_end | Merchant Edit Subscription-Cancel Last CancelAtPeriod
 *Subscription* | [**SubscriptionCancelPost**](docs/Subscription.md#subscriptioncancelpost) | **Post** /merchant/subscription/cancel | Merchant Cancel Subscription Immediately (Will Not Generate Proration Invoice)
+*Subscription* | [**SubscriptionChangeGatewayPost**](docs/Subscription.md#subscriptionchangegatewaypost) | **Post** /merchant/subscription/change_gateway | Change Subscription Gateway
 *Subscription* | [**SubscriptionDetailGet**](docs/Subscription.md#subscriptiondetailget) | **Get** /merchant/subscription/detail | Subscription Detail
 *Subscription* | [**SubscriptionDetailPost**](docs/Subscription.md#subscriptiondetailpost) | **Post** /merchant/subscription/detail | Subscription Detail
 *Subscription* | [**SubscriptionListGet**](docs/Subscription.md#subscriptionlistget) | **Get** /merchant/subscription/list | Subscription List
@@ -288,9 +290,12 @@ Class | Method | HTTP request | Description
  - [MerchantWebhookEventListGet200ResponseData](docs/MerchantWebhookEventListGet200ResponseData.md)
  - [UnibeeApiBeanBulkMetricLimitPlanBindingParam](docs/UnibeeApiBeanBulkMetricLimitPlanBindingParam.md)
  - [UnibeeApiBeanCurrency](docs/UnibeeApiBeanCurrency.md)
+ - [UnibeeApiBeanDetailInvoiceDetail](docs/UnibeeApiBeanDetailInvoiceDetail.md)
+ - [UnibeeApiBeanDetailSubscriptionDetail](docs/UnibeeApiBeanDetailSubscriptionDetail.md)
+ - [UnibeeApiBeanDetailSubscriptionPendingUpdateDetail](docs/UnibeeApiBeanDetailSubscriptionPendingUpdateDetail.md)
+ - [UnibeeApiBeanDetailSubscriptionTimeLineDetail](docs/UnibeeApiBeanDetailSubscriptionTimeLineDetail.md)
  - [UnibeeApiBeanEmailTemplateVo](docs/UnibeeApiBeanEmailTemplateVo.md)
  - [UnibeeApiBeanGatewaySimplify](docs/UnibeeApiBeanGatewaySimplify.md)
- - [UnibeeApiBeanInvoiceDetail](docs/UnibeeApiBeanInvoiceDetail.md)
  - [UnibeeApiBeanInvoiceItemSimplify](docs/UnibeeApiBeanInvoiceItemSimplify.md)
  - [UnibeeApiBeanInvoiceSimplify](docs/UnibeeApiBeanInvoiceSimplify.md)
  - [UnibeeApiBeanMerchantMemberSimplify](docs/UnibeeApiBeanMerchantMemberSimplify.md)
@@ -308,10 +313,7 @@ Class | Method | HTTP request | Description
  - [UnibeeApiBeanPlanMetricLimitDetail](docs/UnibeeApiBeanPlanMetricLimitDetail.md)
  - [UnibeeApiBeanPlanSimplify](docs/UnibeeApiBeanPlanSimplify.md)
  - [UnibeeApiBeanRefundSimplify](docs/UnibeeApiBeanRefundSimplify.md)
- - [UnibeeApiBeanSubscriptionDetail](docs/UnibeeApiBeanSubscriptionDetail.md)
- - [UnibeeApiBeanSubscriptionPendingUpdateDetail](docs/UnibeeApiBeanSubscriptionPendingUpdateDetail.md)
  - [UnibeeApiBeanSubscriptionSimplify](docs/UnibeeApiBeanSubscriptionSimplify.md)
- - [UnibeeApiBeanSubscriptionTimeLineDetail](docs/UnibeeApiBeanSubscriptionTimeLineDetail.md)
  - [UnibeeApiBeanUserAccountSimplify](docs/UnibeeApiBeanUserAccountSimplify.md)
  - [UnibeeApiBeanUserMerchantMetricStat](docs/UnibeeApiBeanUserMerchantMetricStat.md)
  - [UnibeeApiBeanValidResult](docs/UnibeeApiBeanValidResult.md)
@@ -355,6 +357,7 @@ Class | Method | HTTP request | Description
  - [UnibeeApiMerchantInvoiceNewReq](docs/UnibeeApiMerchantInvoiceNewReq.md)
  - [UnibeeApiMerchantInvoiceNewRes](docs/UnibeeApiMerchantInvoiceNewRes.md)
  - [UnibeeApiMerchantInvoicePdfGenerateReq](docs/UnibeeApiMerchantInvoicePdfGenerateReq.md)
+ - [UnibeeApiMerchantInvoiceReconvertCryptoAndSendReq](docs/UnibeeApiMerchantInvoiceReconvertCryptoAndSendReq.md)
  - [UnibeeApiMerchantInvoiceRefundReq](docs/UnibeeApiMerchantInvoiceRefundReq.md)
  - [UnibeeApiMerchantInvoiceRefundRes](docs/UnibeeApiMerchantInvoiceRefundRes.md)
  - [UnibeeApiMerchantInvoiceSendEmailReq](docs/UnibeeApiMerchantInvoiceSendEmailReq.md)
@@ -435,6 +438,7 @@ Class | Method | HTTP request | Description
  - [UnibeeApiMerchantSubscriptionCancelAtPeriodEndReq](docs/UnibeeApiMerchantSubscriptionCancelAtPeriodEndReq.md)
  - [UnibeeApiMerchantSubscriptionCancelLastCancelAtPeriodEndReq](docs/UnibeeApiMerchantSubscriptionCancelLastCancelAtPeriodEndReq.md)
  - [UnibeeApiMerchantSubscriptionCancelReq](docs/UnibeeApiMerchantSubscriptionCancelReq.md)
+ - [UnibeeApiMerchantSubscriptionChangeGatewayReq](docs/UnibeeApiMerchantSubscriptionChangeGatewayReq.md)
  - [UnibeeApiMerchantSubscriptionDetailReq](docs/UnibeeApiMerchantSubscriptionDetailReq.md)
  - [UnibeeApiMerchantSubscriptionDetailRes](docs/UnibeeApiMerchantSubscriptionDetailRes.md)
  - [UnibeeApiMerchantSubscriptionListReq](docs/UnibeeApiMerchantSubscriptionListReq.md)

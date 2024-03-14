@@ -14,11 +14,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the UnibeeApiBeanSubscriptionPendingUpdateDetail type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &UnibeeApiBeanSubscriptionPendingUpdateDetail{}
+// checks if the UnibeeApiBeanDetailSubscriptionPendingUpdateDetail type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &UnibeeApiBeanDetailSubscriptionPendingUpdateDetail{}
 
-// UnibeeApiBeanSubscriptionPendingUpdateDetail struct for UnibeeApiBeanSubscriptionPendingUpdateDetail
-type UnibeeApiBeanSubscriptionPendingUpdateDetail struct {
+// UnibeeApiBeanDetailSubscriptionPendingUpdateDetail struct for UnibeeApiBeanDetailSubscriptionPendingUpdateDetail
+type UnibeeApiBeanDetailSubscriptionPendingUpdateDetail struct {
 	// plan addon json data
 	AddonData *string `json:"addonData,omitempty"`
 	// Addons
@@ -77,25 +77,25 @@ type UnibeeApiBeanSubscriptionPendingUpdateDetail struct {
 	UserId *int64 `json:"userId,omitempty"`
 }
 
-// NewUnibeeApiBeanSubscriptionPendingUpdateDetail instantiates a new UnibeeApiBeanSubscriptionPendingUpdateDetail object
+// NewUnibeeApiBeanDetailSubscriptionPendingUpdateDetail instantiates a new UnibeeApiBeanDetailSubscriptionPendingUpdateDetail object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiBeanSubscriptionPendingUpdateDetail() *UnibeeApiBeanSubscriptionPendingUpdateDetail {
-	this := UnibeeApiBeanSubscriptionPendingUpdateDetail{}
+func NewUnibeeApiBeanDetailSubscriptionPendingUpdateDetail() *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail {
+	this := UnibeeApiBeanDetailSubscriptionPendingUpdateDetail{}
 	return &this
 }
 
-// NewUnibeeApiBeanSubscriptionPendingUpdateDetailWithDefaults instantiates a new UnibeeApiBeanSubscriptionPendingUpdateDetail object
+// NewUnibeeApiBeanDetailSubscriptionPendingUpdateDetailWithDefaults instantiates a new UnibeeApiBeanDetailSubscriptionPendingUpdateDetail object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewUnibeeApiBeanSubscriptionPendingUpdateDetailWithDefaults() *UnibeeApiBeanSubscriptionPendingUpdateDetail {
-	this := UnibeeApiBeanSubscriptionPendingUpdateDetail{}
+func NewUnibeeApiBeanDetailSubscriptionPendingUpdateDetailWithDefaults() *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail {
+	this := UnibeeApiBeanDetailSubscriptionPendingUpdateDetail{}
 	return &this
 }
 
 // GetAddonData returns the AddonData field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetAddonData() string {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetAddonData() string {
 	if o == nil || IsNil(o.AddonData) {
 		var ret string
 		return ret
@@ -105,7 +105,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetAddonData() string {
 
 // GetAddonDataOk returns a tuple with the AddonData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetAddonDataOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetAddonDataOk() (*string, bool) {
 	if o == nil || IsNil(o.AddonData) {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetAddonDataOk() (*string
 }
 
 // HasAddonData returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasAddonData() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasAddonData() bool {
 	if o != nil && !IsNil(o.AddonData) {
 		return true
 	}
@@ -122,12 +122,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasAddonData() bool {
 }
 
 // SetAddonData gets a reference to the given string and assigns it to the AddonData field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetAddonData(v string) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetAddonData(v string) {
 	o.AddonData = &v
 }
 
 // GetAddons returns the Addons field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetAddons() []UnibeeApiBeanPlanAddonDetail {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetAddons() []UnibeeApiBeanPlanAddonDetail {
 	if o == nil || IsNil(o.Addons) {
 		var ret []UnibeeApiBeanPlanAddonDetail
 		return ret
@@ -137,7 +137,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetAddons() []UnibeeApiBe
 
 // GetAddonsOk returns a tuple with the Addons field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetAddonsOk() ([]UnibeeApiBeanPlanAddonDetail, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetAddonsOk() ([]UnibeeApiBeanPlanAddonDetail, bool) {
 	if o == nil || IsNil(o.Addons) {
 		return nil, false
 	}
@@ -145,7 +145,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetAddonsOk() ([]UnibeeAp
 }
 
 // HasAddons returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasAddons() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasAddons() bool {
 	if o != nil && !IsNil(o.Addons) {
 		return true
 	}
@@ -154,12 +154,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasAddons() bool {
 }
 
 // SetAddons gets a reference to the given []UnibeeApiBeanPlanAddonDetail and assigns it to the Addons field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetAddons(v []UnibeeApiBeanPlanAddonDetail) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetAddons(v []UnibeeApiBeanPlanAddonDetail) {
 	o.Addons = v
 }
 
 // GetAmount returns the Amount field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetAmount() int64 {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetAmount() int64 {
 	if o == nil || IsNil(o.Amount) {
 		var ret int64
 		return ret
@@ -169,7 +169,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetAmount() int64 {
 
 // GetAmountOk returns a tuple with the Amount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetAmountOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetAmountOk() (*int64, bool) {
 	if o == nil || IsNil(o.Amount) {
 		return nil, false
 	}
@@ -177,7 +177,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetAmountOk() (*int64, bo
 }
 
 // HasAmount returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasAmount() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasAmount() bool {
 	if o != nil && !IsNil(o.Amount) {
 		return true
 	}
@@ -186,12 +186,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasAmount() bool {
 }
 
 // SetAmount gets a reference to the given int64 and assigns it to the Amount field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetAmount(v int64) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetAmount(v int64) {
 	o.Amount = &v
 }
 
 // GetCurrency returns the Currency field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetCurrency() string {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetCurrency() string {
 	if o == nil || IsNil(o.Currency) {
 		var ret string
 		return ret
@@ -201,7 +201,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetCurrency() string {
 
 // GetCurrencyOk returns a tuple with the Currency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetCurrencyOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetCurrencyOk() (*string, bool) {
 	if o == nil || IsNil(o.Currency) {
 		return nil, false
 	}
@@ -209,7 +209,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetCurrencyOk() (*string,
 }
 
 // HasCurrency returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasCurrency() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasCurrency() bool {
 	if o != nil && !IsNil(o.Currency) {
 		return true
 	}
@@ -218,12 +218,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasCurrency() bool {
 }
 
 // SetCurrency gets a reference to the given string and assigns it to the Currency field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetCurrency(v string) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetCurrency(v string) {
 	o.Currency = &v
 }
 
 // GetEffectImmediate returns the EffectImmediate field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetEffectImmediate() int32 {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetEffectImmediate() int32 {
 	if o == nil || IsNil(o.EffectImmediate) {
 		var ret int32
 		return ret
@@ -233,7 +233,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetEffectImmediate() int3
 
 // GetEffectImmediateOk returns a tuple with the EffectImmediate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetEffectImmediateOk() (*int32, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetEffectImmediateOk() (*int32, bool) {
 	if o == nil || IsNil(o.EffectImmediate) {
 		return nil, false
 	}
@@ -241,7 +241,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetEffectImmediateOk() (*
 }
 
 // HasEffectImmediate returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasEffectImmediate() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasEffectImmediate() bool {
 	if o != nil && !IsNil(o.EffectImmediate) {
 		return true
 	}
@@ -250,12 +250,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasEffectImmediate() bool
 }
 
 // SetEffectImmediate gets a reference to the given int32 and assigns it to the EffectImmediate field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetEffectImmediate(v int32) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetEffectImmediate(v int32) {
 	o.EffectImmediate = &v
 }
 
 // GetEffectTime returns the EffectTime field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetEffectTime() int64 {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetEffectTime() int64 {
 	if o == nil || IsNil(o.EffectTime) {
 		var ret int64
 		return ret
@@ -265,7 +265,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetEffectTime() int64 {
 
 // GetEffectTimeOk returns a tuple with the EffectTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetEffectTimeOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetEffectTimeOk() (*int64, bool) {
 	if o == nil || IsNil(o.EffectTime) {
 		return nil, false
 	}
@@ -273,7 +273,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetEffectTimeOk() (*int64
 }
 
 // HasEffectTime returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasEffectTime() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasEffectTime() bool {
 	if o != nil && !IsNil(o.EffectTime) {
 		return true
 	}
@@ -282,12 +282,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasEffectTime() bool {
 }
 
 // SetEffectTime gets a reference to the given int64 and assigns it to the EffectTime field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetEffectTime(v int64) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetEffectTime(v int64) {
 	o.EffectTime = &v
 }
 
 // GetGatewayId returns the GatewayId field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetGatewayId() int64 {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetGatewayId() int64 {
 	if o == nil || IsNil(o.GatewayId) {
 		var ret int64
 		return ret
@@ -297,7 +297,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetGatewayId() int64 {
 
 // GetGatewayIdOk returns a tuple with the GatewayId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetGatewayIdOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetGatewayIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.GatewayId) {
 		return nil, false
 	}
@@ -305,7 +305,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetGatewayIdOk() (*int64,
 }
 
 // HasGatewayId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasGatewayId() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasGatewayId() bool {
 	if o != nil && !IsNil(o.GatewayId) {
 		return true
 	}
@@ -314,12 +314,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasGatewayId() bool {
 }
 
 // SetGatewayId gets a reference to the given int64 and assigns it to the GatewayId field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetGatewayId(v int64) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetGatewayId(v int64) {
 	o.GatewayId = &v
 }
 
 // GetGmtCreate returns the GmtCreate field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetGmtCreate() string {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetGmtCreate() string {
 	if o == nil || IsNil(o.GmtCreate) {
 		var ret string
 		return ret
@@ -329,7 +329,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetGmtCreate() string {
 
 // GetGmtCreateOk returns a tuple with the GmtCreate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetGmtCreateOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetGmtCreateOk() (*string, bool) {
 	if o == nil || IsNil(o.GmtCreate) {
 		return nil, false
 	}
@@ -337,7 +337,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetGmtCreateOk() (*string
 }
 
 // HasGmtCreate returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasGmtCreate() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasGmtCreate() bool {
 	if o != nil && !IsNil(o.GmtCreate) {
 		return true
 	}
@@ -346,12 +346,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasGmtCreate() bool {
 }
 
 // SetGmtCreate gets a reference to the given string and assigns it to the GmtCreate field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetGmtCreate(v string) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetGmtCreate(v string) {
 	o.GmtCreate = &v
 }
 
 // GetGmtModify returns the GmtModify field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetGmtModify() string {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetGmtModify() string {
 	if o == nil || IsNil(o.GmtModify) {
 		var ret string
 		return ret
@@ -361,7 +361,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetGmtModify() string {
 
 // GetGmtModifyOk returns a tuple with the GmtModify field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetGmtModifyOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetGmtModifyOk() (*string, bool) {
 	if o == nil || IsNil(o.GmtModify) {
 		return nil, false
 	}
@@ -369,7 +369,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetGmtModifyOk() (*string
 }
 
 // HasGmtModify returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasGmtModify() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasGmtModify() bool {
 	if o != nil && !IsNil(o.GmtModify) {
 		return true
 	}
@@ -378,12 +378,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasGmtModify() bool {
 }
 
 // SetGmtModify gets a reference to the given string and assigns it to the GmtModify field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetGmtModify(v string) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetGmtModify(v string) {
 	o.GmtModify = &v
 }
 
 // GetLink returns the Link field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetLink() string {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetLink() string {
 	if o == nil || IsNil(o.Link) {
 		var ret string
 		return ret
@@ -393,7 +393,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetLink() string {
 
 // GetLinkOk returns a tuple with the Link field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetLinkOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetLinkOk() (*string, bool) {
 	if o == nil || IsNil(o.Link) {
 		return nil, false
 	}
@@ -401,7 +401,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetLinkOk() (*string, boo
 }
 
 // HasLink returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasLink() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasLink() bool {
 	if o != nil && !IsNil(o.Link) {
 		return true
 	}
@@ -410,12 +410,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasLink() bool {
 }
 
 // SetLink gets a reference to the given string and assigns it to the Link field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetLink(v string) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetLink(v string) {
 	o.Link = &v
 }
 
 // GetMerchantId returns the MerchantId field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetMerchantId() int64 {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetMerchantId() int64 {
 	if o == nil || IsNil(o.MerchantId) {
 		var ret int64
 		return ret
@@ -425,7 +425,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetMerchantId() int64 {
 
 // GetMerchantIdOk returns a tuple with the MerchantId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetMerchantIdOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetMerchantIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.MerchantId) {
 		return nil, false
 	}
@@ -433,7 +433,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetMerchantIdOk() (*int64
 }
 
 // HasMerchantId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasMerchantId() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasMerchantId() bool {
 	if o != nil && !IsNil(o.MerchantId) {
 		return true
 	}
@@ -442,12 +442,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasMerchantId() bool {
 }
 
 // SetMerchantId gets a reference to the given int64 and assigns it to the MerchantId field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetMerchantId(v int64) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetMerchantId(v int64) {
 	o.MerchantId = &v
 }
 
 // GetMerchantMember returns the MerchantMember field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetMerchantMember() UnibeeApiBeanMerchantMemberSimplify {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetMerchantMember() UnibeeApiBeanMerchantMemberSimplify {
 	if o == nil || IsNil(o.MerchantMember) {
 		var ret UnibeeApiBeanMerchantMemberSimplify
 		return ret
@@ -457,7 +457,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetMerchantMember() Unibe
 
 // GetMerchantMemberOk returns a tuple with the MerchantMember field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetMerchantMemberOk() (*UnibeeApiBeanMerchantMemberSimplify, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetMerchantMemberOk() (*UnibeeApiBeanMerchantMemberSimplify, bool) {
 	if o == nil || IsNil(o.MerchantMember) {
 		return nil, false
 	}
@@ -465,7 +465,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetMerchantMemberOk() (*U
 }
 
 // HasMerchantMember returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasMerchantMember() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasMerchantMember() bool {
 	if o != nil && !IsNil(o.MerchantMember) {
 		return true
 	}
@@ -474,12 +474,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasMerchantMember() bool 
 }
 
 // SetMerchantMember gets a reference to the given UnibeeApiBeanMerchantMemberSimplify and assigns it to the MerchantMember field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetMerchantMember(v UnibeeApiBeanMerchantMemberSimplify) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetMerchantMember(v UnibeeApiBeanMerchantMemberSimplify) {
 	o.MerchantMember = &v
 }
 
 // GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetMetadata() map[string]string {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetMetadata() map[string]string {
 	if o == nil || IsNil(o.Metadata) {
 		var ret map[string]string
 		return ret
@@ -489,7 +489,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetMetadata() map[string]
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetMetadataOk() (*map[string]string, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetMetadataOk() (*map[string]string, bool) {
 	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
@@ -497,7 +497,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetMetadataOk() (*map[str
 }
 
 // HasMetadata returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasMetadata() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasMetadata() bool {
 	if o != nil && !IsNil(o.Metadata) {
 		return true
 	}
@@ -506,12 +506,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasMetadata() bool {
 }
 
 // SetMetadata gets a reference to the given map[string]string and assigns it to the Metadata field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetMetadata(v map[string]string) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetMetadata(v map[string]string) {
 	o.Metadata = &v
 }
 
 // GetNote returns the Note field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetNote() string {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetNote() string {
 	if o == nil || IsNil(o.Note) {
 		var ret string
 		return ret
@@ -521,7 +521,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetNote() string {
 
 // GetNoteOk returns a tuple with the Note field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetNoteOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetNoteOk() (*string, bool) {
 	if o == nil || IsNil(o.Note) {
 		return nil, false
 	}
@@ -529,7 +529,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetNoteOk() (*string, boo
 }
 
 // HasNote returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasNote() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasNote() bool {
 	if o != nil && !IsNil(o.Note) {
 		return true
 	}
@@ -538,12 +538,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasNote() bool {
 }
 
 // SetNote gets a reference to the given string and assigns it to the Note field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetNote(v string) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetNote(v string) {
 	o.Note = &v
 }
 
 // GetPaid returns the Paid field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetPaid() int32 {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetPaid() int32 {
 	if o == nil || IsNil(o.Paid) {
 		var ret int32
 		return ret
@@ -553,7 +553,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetPaid() int32 {
 
 // GetPaidOk returns a tuple with the Paid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetPaidOk() (*int32, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetPaidOk() (*int32, bool) {
 	if o == nil || IsNil(o.Paid) {
 		return nil, false
 	}
@@ -561,7 +561,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetPaidOk() (*int32, bool
 }
 
 // HasPaid returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasPaid() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasPaid() bool {
 	if o != nil && !IsNil(o.Paid) {
 		return true
 	}
@@ -570,12 +570,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasPaid() bool {
 }
 
 // SetPaid gets a reference to the given int32 and assigns it to the Paid field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetPaid(v int32) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetPaid(v int32) {
 	o.Paid = &v
 }
 
 // GetPlan returns the Plan field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetPlan() UnibeeApiBeanPlanSimplify {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetPlan() UnibeeApiBeanPlanSimplify {
 	if o == nil || IsNil(o.Plan) {
 		var ret UnibeeApiBeanPlanSimplify
 		return ret
@@ -585,7 +585,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetPlan() UnibeeApiBeanPl
 
 // GetPlanOk returns a tuple with the Plan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetPlanOk() (*UnibeeApiBeanPlanSimplify, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetPlanOk() (*UnibeeApiBeanPlanSimplify, bool) {
 	if o == nil || IsNil(o.Plan) {
 		return nil, false
 	}
@@ -593,7 +593,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetPlanOk() (*UnibeeApiBe
 }
 
 // HasPlan returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasPlan() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasPlan() bool {
 	if o != nil && !IsNil(o.Plan) {
 		return true
 	}
@@ -602,12 +602,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasPlan() bool {
 }
 
 // SetPlan gets a reference to the given UnibeeApiBeanPlanSimplify and assigns it to the Plan field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetPlan(v UnibeeApiBeanPlanSimplify) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetPlan(v UnibeeApiBeanPlanSimplify) {
 	o.Plan = &v
 }
 
 // GetPlanId returns the PlanId field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetPlanId() int64 {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetPlanId() int64 {
 	if o == nil || IsNil(o.PlanId) {
 		var ret int64
 		return ret
@@ -617,7 +617,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetPlanId() int64 {
 
 // GetPlanIdOk returns a tuple with the PlanId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetPlanIdOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetPlanIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.PlanId) {
 		return nil, false
 	}
@@ -625,7 +625,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetPlanIdOk() (*int64, bo
 }
 
 // HasPlanId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasPlanId() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasPlanId() bool {
 	if o != nil && !IsNil(o.PlanId) {
 		return true
 	}
@@ -634,12 +634,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasPlanId() bool {
 }
 
 // SetPlanId gets a reference to the given int64 and assigns it to the PlanId field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetPlanId(v int64) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetPlanId(v int64) {
 	o.PlanId = &v
 }
 
 // GetProrationAmount returns the ProrationAmount field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetProrationAmount() int64 {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetProrationAmount() int64 {
 	if o == nil || IsNil(o.ProrationAmount) {
 		var ret int64
 		return ret
@@ -649,7 +649,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetProrationAmount() int6
 
 // GetProrationAmountOk returns a tuple with the ProrationAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetProrationAmountOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetProrationAmountOk() (*int64, bool) {
 	if o == nil || IsNil(o.ProrationAmount) {
 		return nil, false
 	}
@@ -657,7 +657,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetProrationAmountOk() (*
 }
 
 // HasProrationAmount returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasProrationAmount() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasProrationAmount() bool {
 	if o != nil && !IsNil(o.ProrationAmount) {
 		return true
 	}
@@ -666,12 +666,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasProrationAmount() bool
 }
 
 // SetProrationAmount gets a reference to the given int64 and assigns it to the ProrationAmount field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetProrationAmount(v int64) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetProrationAmount(v int64) {
 	o.ProrationAmount = &v
 }
 
 // GetQuantity returns the Quantity field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetQuantity() int64 {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetQuantity() int64 {
 	if o == nil || IsNil(o.Quantity) {
 		var ret int64
 		return ret
@@ -681,7 +681,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetQuantity() int64 {
 
 // GetQuantityOk returns a tuple with the Quantity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetQuantityOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetQuantityOk() (*int64, bool) {
 	if o == nil || IsNil(o.Quantity) {
 		return nil, false
 	}
@@ -689,7 +689,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetQuantityOk() (*int64, 
 }
 
 // HasQuantity returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasQuantity() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasQuantity() bool {
 	if o != nil && !IsNil(o.Quantity) {
 		return true
 	}
@@ -698,12 +698,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasQuantity() bool {
 }
 
 // SetQuantity gets a reference to the given int64 and assigns it to the Quantity field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetQuantity(v int64) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetQuantity(v int64) {
 	o.Quantity = &v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetStatus() int32 {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetStatus() int32 {
 	if o == nil || IsNil(o.Status) {
 		var ret int32
 		return ret
@@ -713,7 +713,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetStatus() int32 {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetStatusOk() (*int32, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetStatusOk() (*int32, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -721,7 +721,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetStatusOk() (*int32, bo
 }
 
 // HasStatus returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasStatus() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasStatus() bool {
 	if o != nil && !IsNil(o.Status) {
 		return true
 	}
@@ -730,12 +730,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasStatus() bool {
 }
 
 // SetStatus gets a reference to the given int32 and assigns it to the Status field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetStatus(v int32) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetStatus(v int32) {
 	o.Status = &v
 }
 
 // GetSubscriptionId returns the SubscriptionId field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetSubscriptionId() string {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetSubscriptionId() string {
 	if o == nil || IsNil(o.SubscriptionId) {
 		var ret string
 		return ret
@@ -745,7 +745,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetSubscriptionId() strin
 
 // GetSubscriptionIdOk returns a tuple with the SubscriptionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetSubscriptionIdOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetSubscriptionIdOk() (*string, bool) {
 	if o == nil || IsNil(o.SubscriptionId) {
 		return nil, false
 	}
@@ -753,7 +753,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetSubscriptionIdOk() (*s
 }
 
 // HasSubscriptionId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasSubscriptionId() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasSubscriptionId() bool {
 	if o != nil && !IsNil(o.SubscriptionId) {
 		return true
 	}
@@ -762,12 +762,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasSubscriptionId() bool 
 }
 
 // SetSubscriptionId gets a reference to the given string and assigns it to the SubscriptionId field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetSubscriptionId(v string) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetSubscriptionId(v string) {
 	o.SubscriptionId = &v
 }
 
 // GetUpdateAddonData returns the UpdateAddonData field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateAddonData() string {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateAddonData() string {
 	if o == nil || IsNil(o.UpdateAddonData) {
 		var ret string
 		return ret
@@ -777,7 +777,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateAddonData() stri
 
 // GetUpdateAddonDataOk returns a tuple with the UpdateAddonData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateAddonDataOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateAddonDataOk() (*string, bool) {
 	if o == nil || IsNil(o.UpdateAddonData) {
 		return nil, false
 	}
@@ -785,7 +785,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateAddonDataOk() (*
 }
 
 // HasUpdateAddonData returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUpdateAddonData() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasUpdateAddonData() bool {
 	if o != nil && !IsNil(o.UpdateAddonData) {
 		return true
 	}
@@ -794,12 +794,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUpdateAddonData() bool
 }
 
 // SetUpdateAddonData gets a reference to the given string and assigns it to the UpdateAddonData field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetUpdateAddonData(v string) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetUpdateAddonData(v string) {
 	o.UpdateAddonData = &v
 }
 
 // GetUpdateAddons returns the UpdateAddons field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateAddons() []UnibeeApiBeanPlanAddonDetail {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateAddons() []UnibeeApiBeanPlanAddonDetail {
 	if o == nil || IsNil(o.UpdateAddons) {
 		var ret []UnibeeApiBeanPlanAddonDetail
 		return ret
@@ -809,7 +809,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateAddons() []Unibe
 
 // GetUpdateAddonsOk returns a tuple with the UpdateAddons field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateAddonsOk() ([]UnibeeApiBeanPlanAddonDetail, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateAddonsOk() ([]UnibeeApiBeanPlanAddonDetail, bool) {
 	if o == nil || IsNil(o.UpdateAddons) {
 		return nil, false
 	}
@@ -817,7 +817,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateAddonsOk() ([]Un
 }
 
 // HasUpdateAddons returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUpdateAddons() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasUpdateAddons() bool {
 	if o != nil && !IsNil(o.UpdateAddons) {
 		return true
 	}
@@ -826,12 +826,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUpdateAddons() bool {
 }
 
 // SetUpdateAddons gets a reference to the given []UnibeeApiBeanPlanAddonDetail and assigns it to the UpdateAddons field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetUpdateAddons(v []UnibeeApiBeanPlanAddonDetail) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetUpdateAddons(v []UnibeeApiBeanPlanAddonDetail) {
 	o.UpdateAddons = v
 }
 
 // GetUpdateAmount returns the UpdateAmount field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateAmount() int64 {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateAmount() int64 {
 	if o == nil || IsNil(o.UpdateAmount) {
 		var ret int64
 		return ret
@@ -841,7 +841,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateAmount() int64 {
 
 // GetUpdateAmountOk returns a tuple with the UpdateAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateAmountOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateAmountOk() (*int64, bool) {
 	if o == nil || IsNil(o.UpdateAmount) {
 		return nil, false
 	}
@@ -849,7 +849,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateAmountOk() (*int
 }
 
 // HasUpdateAmount returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUpdateAmount() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasUpdateAmount() bool {
 	if o != nil && !IsNil(o.UpdateAmount) {
 		return true
 	}
@@ -858,12 +858,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUpdateAmount() bool {
 }
 
 // SetUpdateAmount gets a reference to the given int64 and assigns it to the UpdateAmount field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetUpdateAmount(v int64) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetUpdateAmount(v int64) {
 	o.UpdateAmount = &v
 }
 
 // GetUpdateCurrency returns the UpdateCurrency field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateCurrency() string {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateCurrency() string {
 	if o == nil || IsNil(o.UpdateCurrency) {
 		var ret string
 		return ret
@@ -873,7 +873,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateCurrency() strin
 
 // GetUpdateCurrencyOk returns a tuple with the UpdateCurrency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateCurrencyOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateCurrencyOk() (*string, bool) {
 	if o == nil || IsNil(o.UpdateCurrency) {
 		return nil, false
 	}
@@ -881,7 +881,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateCurrencyOk() (*s
 }
 
 // HasUpdateCurrency returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUpdateCurrency() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasUpdateCurrency() bool {
 	if o != nil && !IsNil(o.UpdateCurrency) {
 		return true
 	}
@@ -890,12 +890,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUpdateCurrency() bool 
 }
 
 // SetUpdateCurrency gets a reference to the given string and assigns it to the UpdateCurrency field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetUpdateCurrency(v string) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetUpdateCurrency(v string) {
 	o.UpdateCurrency = &v
 }
 
 // GetUpdatePlan returns the UpdatePlan field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdatePlan() UnibeeApiBeanPlanSimplify {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdatePlan() UnibeeApiBeanPlanSimplify {
 	if o == nil || IsNil(o.UpdatePlan) {
 		var ret UnibeeApiBeanPlanSimplify
 		return ret
@@ -905,7 +905,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdatePlan() UnibeeApi
 
 // GetUpdatePlanOk returns a tuple with the UpdatePlan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdatePlanOk() (*UnibeeApiBeanPlanSimplify, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdatePlanOk() (*UnibeeApiBeanPlanSimplify, bool) {
 	if o == nil || IsNil(o.UpdatePlan) {
 		return nil, false
 	}
@@ -913,7 +913,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdatePlanOk() (*Unibe
 }
 
 // HasUpdatePlan returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUpdatePlan() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasUpdatePlan() bool {
 	if o != nil && !IsNil(o.UpdatePlan) {
 		return true
 	}
@@ -922,12 +922,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUpdatePlan() bool {
 }
 
 // SetUpdatePlan gets a reference to the given UnibeeApiBeanPlanSimplify and assigns it to the UpdatePlan field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetUpdatePlan(v UnibeeApiBeanPlanSimplify) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetUpdatePlan(v UnibeeApiBeanPlanSimplify) {
 	o.UpdatePlan = &v
 }
 
 // GetUpdatePlanId returns the UpdatePlanId field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdatePlanId() int64 {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdatePlanId() int64 {
 	if o == nil || IsNil(o.UpdatePlanId) {
 		var ret int64
 		return ret
@@ -937,7 +937,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdatePlanId() int64 {
 
 // GetUpdatePlanIdOk returns a tuple with the UpdatePlanId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdatePlanIdOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdatePlanIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.UpdatePlanId) {
 		return nil, false
 	}
@@ -945,7 +945,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdatePlanIdOk() (*int
 }
 
 // HasUpdatePlanId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUpdatePlanId() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasUpdatePlanId() bool {
 	if o != nil && !IsNil(o.UpdatePlanId) {
 		return true
 	}
@@ -954,12 +954,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUpdatePlanId() bool {
 }
 
 // SetUpdatePlanId gets a reference to the given int64 and assigns it to the UpdatePlanId field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetUpdatePlanId(v int64) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetUpdatePlanId(v int64) {
 	o.UpdatePlanId = &v
 }
 
 // GetUpdateQuantity returns the UpdateQuantity field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateQuantity() int64 {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateQuantity() int64 {
 	if o == nil || IsNil(o.UpdateQuantity) {
 		var ret int64
 		return ret
@@ -969,7 +969,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateQuantity() int64
 
 // GetUpdateQuantityOk returns a tuple with the UpdateQuantity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateQuantityOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateQuantityOk() (*int64, bool) {
 	if o == nil || IsNil(o.UpdateQuantity) {
 		return nil, false
 	}
@@ -977,7 +977,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateQuantityOk() (*i
 }
 
 // HasUpdateQuantity returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUpdateQuantity() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasUpdateQuantity() bool {
 	if o != nil && !IsNil(o.UpdateQuantity) {
 		return true
 	}
@@ -986,12 +986,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUpdateQuantity() bool 
 }
 
 // SetUpdateQuantity gets a reference to the given int64 and assigns it to the UpdateQuantity field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetUpdateQuantity(v int64) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetUpdateQuantity(v int64) {
 	o.UpdateQuantity = &v
 }
 
 // GetUpdateSubscriptionId returns the UpdateSubscriptionId field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateSubscriptionId() string {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateSubscriptionId() string {
 	if o == nil || IsNil(o.UpdateSubscriptionId) {
 		var ret string
 		return ret
@@ -1001,7 +1001,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateSubscriptionId()
 
 // GetUpdateSubscriptionIdOk returns a tuple with the UpdateSubscriptionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateSubscriptionIdOk() (*string, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateSubscriptionIdOk() (*string, bool) {
 	if o == nil || IsNil(o.UpdateSubscriptionId) {
 		return nil, false
 	}
@@ -1009,7 +1009,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUpdateSubscriptionIdOk
 }
 
 // HasUpdateSubscriptionId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUpdateSubscriptionId() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasUpdateSubscriptionId() bool {
 	if o != nil && !IsNil(o.UpdateSubscriptionId) {
 		return true
 	}
@@ -1018,12 +1018,12 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUpdateSubscriptionId()
 }
 
 // SetUpdateSubscriptionId gets a reference to the given string and assigns it to the UpdateSubscriptionId field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetUpdateSubscriptionId(v string) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetUpdateSubscriptionId(v string) {
 	o.UpdateSubscriptionId = &v
 }
 
 // GetUserId returns the UserId field value if set, zero value otherwise.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUserId() int64 {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUserId() int64 {
 	if o == nil || IsNil(o.UserId) {
 		var ret int64
 		return ret
@@ -1033,7 +1033,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUserId() int64 {
 
 // GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUserIdOk() (*int64, bool) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUserIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.UserId) {
 		return nil, false
 	}
@@ -1041,7 +1041,7 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) GetUserIdOk() (*int64, bo
 }
 
 // HasUserId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUserId() bool {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasUserId() bool {
 	if o != nil && !IsNil(o.UserId) {
 		return true
 	}
@@ -1050,11 +1050,11 @@ func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) HasUserId() bool {
 }
 
 // SetUserId gets a reference to the given int64 and assigns it to the UserId field.
-func (o *UnibeeApiBeanSubscriptionPendingUpdateDetail) SetUserId(v int64) {
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetUserId(v int64) {
 	o.UserId = &v
 }
 
-func (o UnibeeApiBeanSubscriptionPendingUpdateDetail) MarshalJSON() ([]byte, error) {
+func (o UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -1062,7 +1062,7 @@ func (o UnibeeApiBeanSubscriptionPendingUpdateDetail) MarshalJSON() ([]byte, err
 	return json.Marshal(toSerialize)
 }
 
-func (o UnibeeApiBeanSubscriptionPendingUpdateDetail) ToMap() (map[string]interface{}, error) {
+func (o UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.AddonData) {
 		toSerialize["addonData"] = o.AddonData
@@ -1157,38 +1157,38 @@ func (o UnibeeApiBeanSubscriptionPendingUpdateDetail) ToMap() (map[string]interf
 	return toSerialize, nil
 }
 
-type NullableUnibeeApiBeanSubscriptionPendingUpdateDetail struct {
-	value *UnibeeApiBeanSubscriptionPendingUpdateDetail
+type NullableUnibeeApiBeanDetailSubscriptionPendingUpdateDetail struct {
+	value *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail
 	isSet bool
 }
 
-func (v NullableUnibeeApiBeanSubscriptionPendingUpdateDetail) Get() *UnibeeApiBeanSubscriptionPendingUpdateDetail {
+func (v NullableUnibeeApiBeanDetailSubscriptionPendingUpdateDetail) Get() *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail {
 	return v.value
 }
 
-func (v *NullableUnibeeApiBeanSubscriptionPendingUpdateDetail) Set(val *UnibeeApiBeanSubscriptionPendingUpdateDetail) {
+func (v *NullableUnibeeApiBeanDetailSubscriptionPendingUpdateDetail) Set(val *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableUnibeeApiBeanSubscriptionPendingUpdateDetail) IsSet() bool {
+func (v NullableUnibeeApiBeanDetailSubscriptionPendingUpdateDetail) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableUnibeeApiBeanSubscriptionPendingUpdateDetail) Unset() {
+func (v *NullableUnibeeApiBeanDetailSubscriptionPendingUpdateDetail) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableUnibeeApiBeanSubscriptionPendingUpdateDetail(val *UnibeeApiBeanSubscriptionPendingUpdateDetail) *NullableUnibeeApiBeanSubscriptionPendingUpdateDetail {
-	return &NullableUnibeeApiBeanSubscriptionPendingUpdateDetail{value: val, isSet: true}
+func NewNullableUnibeeApiBeanDetailSubscriptionPendingUpdateDetail(val *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) *NullableUnibeeApiBeanDetailSubscriptionPendingUpdateDetail {
+	return &NullableUnibeeApiBeanDetailSubscriptionPendingUpdateDetail{value: val, isSet: true}
 }
 
-func (v NullableUnibeeApiBeanSubscriptionPendingUpdateDetail) MarshalJSON() ([]byte, error) {
+func (v NullableUnibeeApiBeanDetailSubscriptionPendingUpdateDetail) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableUnibeeApiBeanSubscriptionPendingUpdateDetail) UnmarshalJSON(src []byte) error {
+func (v *NullableUnibeeApiBeanDetailSubscriptionPendingUpdateDetail) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -27,6 +27,8 @@ type UnibeeApiMerchantSubscriptionUpdateReq struct {
 	ConfirmCurrency string `json:"confirmCurrency"`
 	// TotalAmount To Be Confirmed，Get From Preview
 	ConfirmTotalAmount int64 `json:"confirmTotalAmount"`
+	// Id
+	GatewayId *int64 `json:"gatewayId,omitempty"`
 	// Metadata，Map
 	Metadata *map[string]string `json:"metadata,omitempty"`
 	// New PlanId
@@ -144,6 +146,38 @@ func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetConfirmTotalAmountOk() (*int
 // SetConfirmTotalAmount sets field value
 func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetConfirmTotalAmount(v int64) {
 	o.ConfirmTotalAmount = v
+}
+
+// GetGatewayId returns the GatewayId field value if set, zero value otherwise.
+func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetGatewayId() int64 {
+	if o == nil || IsNil(o.GatewayId) {
+		var ret int64
+		return ret
+	}
+	return *o.GatewayId
+}
+
+// GetGatewayIdOk returns a tuple with the GatewayId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetGatewayIdOk() (*int64, bool) {
+	if o == nil || IsNil(o.GatewayId) {
+		return nil, false
+	}
+	return o.GatewayId, true
+}
+
+// HasGatewayId returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasGatewayId() bool {
+	if o != nil && !IsNil(o.GatewayId) {
+		return true
+	}
+
+	return false
+}
+
+// SetGatewayId gets a reference to the given int64 and assigns it to the GatewayId field.
+func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetGatewayId(v int64) {
+	o.GatewayId = &v
 }
 
 // GetMetadata returns the Metadata field value if set, zero value otherwise.
@@ -321,6 +355,9 @@ func (o UnibeeApiMerchantSubscriptionUpdateReq) ToMap() (map[string]interface{},
 	}
 	toSerialize["confirmCurrency"] = o.ConfirmCurrency
 	toSerialize["confirmTotalAmount"] = o.ConfirmTotalAmount
+	if !IsNil(o.GatewayId) {
+		toSerialize["gatewayId"] = o.GatewayId
+	}
 	if !IsNil(o.Metadata) {
 		toSerialize["metadata"] = o.Metadata
 	}

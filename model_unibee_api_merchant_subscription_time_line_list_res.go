@@ -20,7 +20,7 @@ var _ MappedNullable = &UnibeeApiMerchantSubscriptionTimeLineListRes{}
 // UnibeeApiMerchantSubscriptionTimeLineListRes struct for UnibeeApiMerchantSubscriptionTimeLineListRes
 type UnibeeApiMerchantSubscriptionTimeLineListRes struct {
 	// SubscriptionTimeLines
-	SubscriptionTimeLines []UnibeeApiBeanSubscriptionTimeLineDetail `json:"subscriptionTimeLines,omitempty"`
+	SubscriptionTimeLines []UnibeeApiBeanDetailSubscriptionTimeLineDetail `json:"subscriptionTimeLines,omitempty"`
 }
 
 // NewUnibeeApiMerchantSubscriptionTimeLineListRes instantiates a new UnibeeApiMerchantSubscriptionTimeLineListRes object
@@ -41,9 +41,9 @@ func NewUnibeeApiMerchantSubscriptionTimeLineListResWithDefaults() *UnibeeApiMer
 }
 
 // GetSubscriptionTimeLines returns the SubscriptionTimeLines field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantSubscriptionTimeLineListRes) GetSubscriptionTimeLines() []UnibeeApiBeanSubscriptionTimeLineDetail {
+func (o *UnibeeApiMerchantSubscriptionTimeLineListRes) GetSubscriptionTimeLines() []UnibeeApiBeanDetailSubscriptionTimeLineDetail {
 	if o == nil || IsNil(o.SubscriptionTimeLines) {
-		var ret []UnibeeApiBeanSubscriptionTimeLineDetail
+		var ret []UnibeeApiBeanDetailSubscriptionTimeLineDetail
 		return ret
 	}
 	return o.SubscriptionTimeLines
@@ -51,7 +51,7 @@ func (o *UnibeeApiMerchantSubscriptionTimeLineListRes) GetSubscriptionTimeLines(
 
 // GetSubscriptionTimeLinesOk returns a tuple with the SubscriptionTimeLines field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantSubscriptionTimeLineListRes) GetSubscriptionTimeLinesOk() ([]UnibeeApiBeanSubscriptionTimeLineDetail, bool) {
+func (o *UnibeeApiMerchantSubscriptionTimeLineListRes) GetSubscriptionTimeLinesOk() ([]UnibeeApiBeanDetailSubscriptionTimeLineDetail, bool) {
 	if o == nil || IsNil(o.SubscriptionTimeLines) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *UnibeeApiMerchantSubscriptionTimeLineListRes) HasSubscriptionTimeLines(
 	return false
 }
 
-// SetSubscriptionTimeLines gets a reference to the given []UnibeeApiBeanSubscriptionTimeLineDetail and assigns it to the SubscriptionTimeLines field.
-func (o *UnibeeApiMerchantSubscriptionTimeLineListRes) SetSubscriptionTimeLines(v []UnibeeApiBeanSubscriptionTimeLineDetail) {
+// SetSubscriptionTimeLines gets a reference to the given []UnibeeApiBeanDetailSubscriptionTimeLineDetail and assigns it to the SubscriptionTimeLines field.
+func (o *UnibeeApiMerchantSubscriptionTimeLineListRes) SetSubscriptionTimeLines(v []UnibeeApiBeanDetailSubscriptionTimeLineDetail) {
 	o.SubscriptionTimeLines = v
 }
 

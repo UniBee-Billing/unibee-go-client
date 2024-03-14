@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BizType** | Pointer to **int32** | biz type from payment 1-single payment, 3-subscription | [optional] 
+**CryptoAmount** | Pointer to **int64** | crypto_amount, cent | [optional] 
+**CryptoCurrency** | Pointer to **string** | crypto_currency | [optional] 
 **Currency** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **int64** |  | [optional] 
 **InvoiceId** | Pointer to **string** |  | [optional] 
@@ -69,6 +71,56 @@ SetBizType sets BizType field to given value.
 `func (o *UnibeeApiBeanInvoiceSimplify) HasBizType() bool`
 
 HasBizType returns a boolean if a field has been set.
+
+### GetCryptoAmount
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetCryptoAmount() int64`
+
+GetCryptoAmount returns the CryptoAmount field if non-nil, zero value otherwise.
+
+### GetCryptoAmountOk
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetCryptoAmountOk() (*int64, bool)`
+
+GetCryptoAmountOk returns a tuple with the CryptoAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCryptoAmount
+
+`func (o *UnibeeApiBeanInvoiceSimplify) SetCryptoAmount(v int64)`
+
+SetCryptoAmount sets CryptoAmount field to given value.
+
+### HasCryptoAmount
+
+`func (o *UnibeeApiBeanInvoiceSimplify) HasCryptoAmount() bool`
+
+HasCryptoAmount returns a boolean if a field has been set.
+
+### GetCryptoCurrency
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetCryptoCurrency() string`
+
+GetCryptoCurrency returns the CryptoCurrency field if non-nil, zero value otherwise.
+
+### GetCryptoCurrencyOk
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetCryptoCurrencyOk() (*string, bool)`
+
+GetCryptoCurrencyOk returns a tuple with the CryptoCurrency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCryptoCurrency
+
+`func (o *UnibeeApiBeanInvoiceSimplify) SetCryptoCurrency(v string)`
+
+SetCryptoCurrency sets CryptoCurrency field to given value.
+
+### HasCryptoCurrency
+
+`func (o *UnibeeApiBeanInvoiceSimplify) HasCryptoCurrency() bool`
+
+HasCryptoCurrency returns a boolean if a field has been set.
 
 ### GetCurrency
 

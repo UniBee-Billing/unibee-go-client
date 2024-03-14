@@ -20,7 +20,7 @@ var _ MappedNullable = &UnibeeApiMerchantSubscriptionListRes{}
 // UnibeeApiMerchantSubscriptionListRes struct for UnibeeApiMerchantSubscriptionListRes
 type UnibeeApiMerchantSubscriptionListRes struct {
 	// Subscriptions
-	Subscriptions []UnibeeApiBeanSubscriptionDetail `json:"subscriptions,omitempty"`
+	Subscriptions []UnibeeApiBeanDetailSubscriptionDetail `json:"subscriptions,omitempty"`
 }
 
 // NewUnibeeApiMerchantSubscriptionListRes instantiates a new UnibeeApiMerchantSubscriptionListRes object
@@ -41,9 +41,9 @@ func NewUnibeeApiMerchantSubscriptionListResWithDefaults() *UnibeeApiMerchantSub
 }
 
 // GetSubscriptions returns the Subscriptions field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantSubscriptionListRes) GetSubscriptions() []UnibeeApiBeanSubscriptionDetail {
+func (o *UnibeeApiMerchantSubscriptionListRes) GetSubscriptions() []UnibeeApiBeanDetailSubscriptionDetail {
 	if o == nil || IsNil(o.Subscriptions) {
-		var ret []UnibeeApiBeanSubscriptionDetail
+		var ret []UnibeeApiBeanDetailSubscriptionDetail
 		return ret
 	}
 	return o.Subscriptions
@@ -51,7 +51,7 @@ func (o *UnibeeApiMerchantSubscriptionListRes) GetSubscriptions() []UnibeeApiBea
 
 // GetSubscriptionsOk returns a tuple with the Subscriptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantSubscriptionListRes) GetSubscriptionsOk() ([]UnibeeApiBeanSubscriptionDetail, bool) {
+func (o *UnibeeApiMerchantSubscriptionListRes) GetSubscriptionsOk() ([]UnibeeApiBeanDetailSubscriptionDetail, bool) {
 	if o == nil || IsNil(o.Subscriptions) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *UnibeeApiMerchantSubscriptionListRes) HasSubscriptions() bool {
 	return false
 }
 
-// SetSubscriptions gets a reference to the given []UnibeeApiBeanSubscriptionDetail and assigns it to the Subscriptions field.
-func (o *UnibeeApiMerchantSubscriptionListRes) SetSubscriptions(v []UnibeeApiBeanSubscriptionDetail) {
+// SetSubscriptions gets a reference to the given []UnibeeApiBeanDetailSubscriptionDetail and assigns it to the Subscriptions field.
+func (o *UnibeeApiMerchantSubscriptionListRes) SetSubscriptions(v []UnibeeApiBeanDetailSubscriptionDetail) {
 	o.Subscriptions = v
 }
 

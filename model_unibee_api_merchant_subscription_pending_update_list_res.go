@@ -20,7 +20,7 @@ var _ MappedNullable = &UnibeeApiMerchantSubscriptionPendingUpdateListRes{}
 // UnibeeApiMerchantSubscriptionPendingUpdateListRes struct for UnibeeApiMerchantSubscriptionPendingUpdateListRes
 type UnibeeApiMerchantSubscriptionPendingUpdateListRes struct {
 	// SubscriptionPendingUpdateDetails
-	SubscriptionPendingUpdateDetails []UnibeeApiBeanSubscriptionPendingUpdateDetail `json:"subscriptionPendingUpdateDetails,omitempty"`
+	SubscriptionPendingUpdateDetails []UnibeeApiBeanDetailSubscriptionPendingUpdateDetail `json:"subscriptionPendingUpdateDetails,omitempty"`
 }
 
 // NewUnibeeApiMerchantSubscriptionPendingUpdateListRes instantiates a new UnibeeApiMerchantSubscriptionPendingUpdateListRes object
@@ -41,9 +41,9 @@ func NewUnibeeApiMerchantSubscriptionPendingUpdateListResWithDefaults() *UnibeeA
 }
 
 // GetSubscriptionPendingUpdateDetails returns the SubscriptionPendingUpdateDetails field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantSubscriptionPendingUpdateListRes) GetSubscriptionPendingUpdateDetails() []UnibeeApiBeanSubscriptionPendingUpdateDetail {
+func (o *UnibeeApiMerchantSubscriptionPendingUpdateListRes) GetSubscriptionPendingUpdateDetails() []UnibeeApiBeanDetailSubscriptionPendingUpdateDetail {
 	if o == nil || IsNil(o.SubscriptionPendingUpdateDetails) {
-		var ret []UnibeeApiBeanSubscriptionPendingUpdateDetail
+		var ret []UnibeeApiBeanDetailSubscriptionPendingUpdateDetail
 		return ret
 	}
 	return o.SubscriptionPendingUpdateDetails
@@ -51,7 +51,7 @@ func (o *UnibeeApiMerchantSubscriptionPendingUpdateListRes) GetSubscriptionPendi
 
 // GetSubscriptionPendingUpdateDetailsOk returns a tuple with the SubscriptionPendingUpdateDetails field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantSubscriptionPendingUpdateListRes) GetSubscriptionPendingUpdateDetailsOk() ([]UnibeeApiBeanSubscriptionPendingUpdateDetail, bool) {
+func (o *UnibeeApiMerchantSubscriptionPendingUpdateListRes) GetSubscriptionPendingUpdateDetailsOk() ([]UnibeeApiBeanDetailSubscriptionPendingUpdateDetail, bool) {
 	if o == nil || IsNil(o.SubscriptionPendingUpdateDetails) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *UnibeeApiMerchantSubscriptionPendingUpdateListRes) HasSubscriptionPendi
 	return false
 }
 
-// SetSubscriptionPendingUpdateDetails gets a reference to the given []UnibeeApiBeanSubscriptionPendingUpdateDetail and assigns it to the SubscriptionPendingUpdateDetails field.
-func (o *UnibeeApiMerchantSubscriptionPendingUpdateListRes) SetSubscriptionPendingUpdateDetails(v []UnibeeApiBeanSubscriptionPendingUpdateDetail) {
+// SetSubscriptionPendingUpdateDetails gets a reference to the given []UnibeeApiBeanDetailSubscriptionPendingUpdateDetail and assigns it to the SubscriptionPendingUpdateDetails field.
+func (o *UnibeeApiMerchantSubscriptionPendingUpdateListRes) SetSubscriptionPendingUpdateDetails(v []UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) {
 	o.SubscriptionPendingUpdateDetails = v
 }
 

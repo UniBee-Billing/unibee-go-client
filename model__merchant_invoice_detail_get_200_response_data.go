@@ -19,7 +19,7 @@ var _ MappedNullable = &MerchantInvoiceDetailGet200ResponseData{}
 
 // MerchantInvoiceDetailGet200ResponseData struct for MerchantInvoiceDetailGet200ResponseData
 type MerchantInvoiceDetailGet200ResponseData struct {
-	Invoice *UnibeeApiBeanInvoiceDetail `json:"invoice,omitempty"`
+	Invoice *UnibeeApiBeanDetailInvoiceDetail `json:"invoice,omitempty"`
 }
 
 // NewMerchantInvoiceDetailGet200ResponseData instantiates a new MerchantInvoiceDetailGet200ResponseData object
@@ -40,9 +40,9 @@ func NewMerchantInvoiceDetailGet200ResponseDataWithDefaults() *MerchantInvoiceDe
 }
 
 // GetInvoice returns the Invoice field value if set, zero value otherwise.
-func (o *MerchantInvoiceDetailGet200ResponseData) GetInvoice() UnibeeApiBeanInvoiceDetail {
+func (o *MerchantInvoiceDetailGet200ResponseData) GetInvoice() UnibeeApiBeanDetailInvoiceDetail {
 	if o == nil || IsNil(o.Invoice) {
-		var ret UnibeeApiBeanInvoiceDetail
+		var ret UnibeeApiBeanDetailInvoiceDetail
 		return ret
 	}
 	return *o.Invoice
@@ -50,7 +50,7 @@ func (o *MerchantInvoiceDetailGet200ResponseData) GetInvoice() UnibeeApiBeanInvo
 
 // GetInvoiceOk returns a tuple with the Invoice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantInvoiceDetailGet200ResponseData) GetInvoiceOk() (*UnibeeApiBeanInvoiceDetail, bool) {
+func (o *MerchantInvoiceDetailGet200ResponseData) GetInvoiceOk() (*UnibeeApiBeanDetailInvoiceDetail, bool) {
 	if o == nil || IsNil(o.Invoice) {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *MerchantInvoiceDetailGet200ResponseData) HasInvoice() bool {
 	return false
 }
 
-// SetInvoice gets a reference to the given UnibeeApiBeanInvoiceDetail and assigns it to the Invoice field.
-func (o *MerchantInvoiceDetailGet200ResponseData) SetInvoice(v UnibeeApiBeanInvoiceDetail) {
+// SetInvoice gets a reference to the given UnibeeApiBeanDetailInvoiceDetail and assigns it to the Invoice field.
+func (o *MerchantInvoiceDetailGet200ResponseData) SetInvoice(v UnibeeApiBeanDetailInvoiceDetail) {
 	o.Invoice = &v
 }
 

@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**InvoiceListPost**](Invoice.md#InvoiceListPost) | **Post** /merchant/invoice/list | Invoice List
 [**InvoiceNewPost**](Invoice.md#InvoiceNewPost) | **Post** /merchant/invoice/new | Admin Create New Invoice
 [**InvoicePdfGeneratePost**](Invoice.md#InvoicePdfGeneratePost) | **Post** /merchant/invoice/pdf_generate | Admin Generate Merchant Invoice pdf
+[**InvoiceReconvertCryptoAndSendEmailPost**](Invoice.md#InvoiceReconvertCryptoAndSendEmailPost) | **Post** /merchant/invoice/reconvert_crypto_and_send_email | Admin Reconvert Crypto Data and Send Invoice Email to User
 [**InvoiceRefundPost**](Invoice.md#InvoiceRefundPost) | **Post** /merchant/invoice/refund | Admin Create Refund From Invoice
 [**InvoiceSendEmailPost**](Invoice.md#InvoiceSendEmailPost) | **Post** /merchant/invoice/send_email | Admin Send Merchant Invoice Email to User
 
@@ -664,6 +665,70 @@ Other parameters are passed through a pointer to a apiInvoicePdfGeneratePostRequ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **unibeeApiMerchantInvoicePdfGenerateReq** | [**UnibeeApiMerchantInvoicePdfGenerateReq**](UnibeeApiMerchantInvoicePdfGenerateReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## InvoiceReconvertCryptoAndSendEmailPost
+
+> MerchantAuthSsoLoginOTPPost200Response InvoiceReconvertCryptoAndSendEmailPost(ctx).UnibeeApiMerchantInvoiceReconvertCryptoAndSendReq(unibeeApiMerchantInvoiceReconvertCryptoAndSendReq).Execute()
+
+Admin Reconvert Crypto Data and Send Invoice Email to User
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantInvoiceReconvertCryptoAndSendReq := *openapiclient.NewUnibeeApiMerchantInvoiceReconvertCryptoAndSendReq("InvoiceId_example") // UnibeeApiMerchantInvoiceReconvertCryptoAndSendReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Invoice.InvoiceReconvertCryptoAndSendEmailPost(context.Background()).UnibeeApiMerchantInvoiceReconvertCryptoAndSendReq(unibeeApiMerchantInvoiceReconvertCryptoAndSendReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceReconvertCryptoAndSendEmailPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `InvoiceReconvertCryptoAndSendEmailPost`: MerchantAuthSsoLoginOTPPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceReconvertCryptoAndSendEmailPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiInvoiceReconvertCryptoAndSendEmailPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantInvoiceReconvertCryptoAndSendReq** | [**UnibeeApiMerchantInvoiceReconvertCryptoAndSendReq**](UnibeeApiMerchantInvoiceReconvertCryptoAndSendReq.md) |  | 
 
 ### Return type
 
