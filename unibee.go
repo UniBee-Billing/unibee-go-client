@@ -22,12 +22,13 @@ const (
 )
 
 const (
-	PlanTypeMain          = 1
-	PlanTypeAddon         = 2
-	PlanIntervalUnitDay   = "day"
-	PlanIntervalUnitMonth = "month"
-	PlanIntervalUnitYear  = "year"
-	PlanIntervalUnitWeek  = "week"
+	PlanTypeMain           = 1
+	PlanTypeRecurringAddon = 2
+	PlanTypeOnetimeAddon   = 3
+	PlanIntervalUnitDay    = "day"
+	PlanIntervalUnitMonth  = "month"
+	PlanIntervalUnitYear   = "year"
+	PlanIntervalUnitWeek   = "week"
 )
 
 const (

@@ -23,8 +23,10 @@ var _ MappedNullable = &UnibeeApiMerchantPlanAddonsBindingReq{}
 type UnibeeApiMerchantPlanAddonsBindingReq struct {
 	// Action Type，0-override,1-add，2-delete
 	Action int64 `json:"action"`
-	// Plan Ids Of Addon Type
+	// Plan Ids Of Recurring Addon Type
 	AddonIds []int64 `json:"addonIds"`
+	// Plan Ids Of Onetime Addon Type
+	OnetimeAddonIds []int64 `json:"onetimeAddonIds"`
 	// PlanID
 	PlanId int64 `json:"planId"`
 }
@@ -35,10 +37,11 @@ type _UnibeeApiMerchantPlanAddonsBindingReq UnibeeApiMerchantPlanAddonsBindingRe
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiMerchantPlanAddonsBindingReq(action int64, addonIds []int64, planId int64) *UnibeeApiMerchantPlanAddonsBindingReq {
+func NewUnibeeApiMerchantPlanAddonsBindingReq(action int64, addonIds []int64, onetimeAddonIds []int64, planId int64) *UnibeeApiMerchantPlanAddonsBindingReq {
 	this := UnibeeApiMerchantPlanAddonsBindingReq{}
 	this.Action = action
 	this.AddonIds = addonIds
+	this.OnetimeAddonIds = onetimeAddonIds
 	this.PlanId = planId
 	return &this
 }
@@ -99,6 +102,30 @@ func (o *UnibeeApiMerchantPlanAddonsBindingReq) SetAddonIds(v []int64) {
 	o.AddonIds = v
 }
 
+// GetOnetimeAddonIds returns the OnetimeAddonIds field value
+func (o *UnibeeApiMerchantPlanAddonsBindingReq) GetOnetimeAddonIds() []int64 {
+	if o == nil {
+		var ret []int64
+		return ret
+	}
+
+	return o.OnetimeAddonIds
+}
+
+// GetOnetimeAddonIdsOk returns a tuple with the OnetimeAddonIds field value
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiMerchantPlanAddonsBindingReq) GetOnetimeAddonIdsOk() ([]int64, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.OnetimeAddonIds, true
+}
+
+// SetOnetimeAddonIds sets field value
+func (o *UnibeeApiMerchantPlanAddonsBindingReq) SetOnetimeAddonIds(v []int64) {
+	o.OnetimeAddonIds = v
+}
+
 // GetPlanId returns the PlanId field value
 func (o *UnibeeApiMerchantPlanAddonsBindingReq) GetPlanId() int64 {
 	if o == nil {
@@ -135,6 +162,7 @@ func (o UnibeeApiMerchantPlanAddonsBindingReq) ToMap() (map[string]interface{}, 
 	toSerialize := map[string]interface{}{}
 	toSerialize["action"] = o.Action
 	toSerialize["addonIds"] = o.AddonIds
+	toSerialize["onetimeAddonIds"] = o.OnetimeAddonIds
 	toSerialize["planId"] = o.PlanId
 	return toSerialize, nil
 }
@@ -146,6 +174,7 @@ func (o *UnibeeApiMerchantPlanAddonsBindingReq) UnmarshalJSON(data []byte) (err 
 	requiredProperties := []string{
 		"action",
 		"addonIds",
+		"onetimeAddonIds",
 		"planId",
 	}
 

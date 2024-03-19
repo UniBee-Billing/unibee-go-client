@@ -379,7 +379,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantPaymentNewReq := *openapiclient.NewUnibeeApiMerchantPaymentNewReq("Currency_example", "Email_example", "ExternalPaymentId_example", "ExternalUserId_example", int64(123), int64(123)) // UnibeeApiMerchantPaymentNewReq | 
+	unibeeApiMerchantPaymentNewReq := *openapiclient.NewUnibeeApiMerchantPaymentNewReq(int64(123)) // UnibeeApiMerchantPaymentNewReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

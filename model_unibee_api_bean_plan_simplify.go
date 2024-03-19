@@ -21,8 +21,10 @@ var _ MappedNullable = &UnibeeApiBeanPlanSimplify{}
 type UnibeeApiBeanPlanSimplify struct {
 	// amount, cent, without tax
 	Amount *int64 `json:"amount,omitempty"`
-	// binded addon planIds，split with ,
+	// binded recurring addon planIds，split with ,
 	BindingAddonIds *string `json:"bindingAddonIds,omitempty"`
+	// binded onetime addon planIds，split with ,
+	BindingOnetimeAddonIds *string `json:"bindingOnetimeAddonIds,omitempty"`
 	// create utc time
 	CreateTime *int64 `json:"createTime,omitempty"`
 	// currency
@@ -139,6 +141,38 @@ func (o *UnibeeApiBeanPlanSimplify) HasBindingAddonIds() bool {
 // SetBindingAddonIds gets a reference to the given string and assigns it to the BindingAddonIds field.
 func (o *UnibeeApiBeanPlanSimplify) SetBindingAddonIds(v string) {
 	o.BindingAddonIds = &v
+}
+
+// GetBindingOnetimeAddonIds returns the BindingOnetimeAddonIds field value if set, zero value otherwise.
+func (o *UnibeeApiBeanPlanSimplify) GetBindingOnetimeAddonIds() string {
+	if o == nil || IsNil(o.BindingOnetimeAddonIds) {
+		var ret string
+		return ret
+	}
+	return *o.BindingOnetimeAddonIds
+}
+
+// GetBindingOnetimeAddonIdsOk returns a tuple with the BindingOnetimeAddonIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiBeanPlanSimplify) GetBindingOnetimeAddonIdsOk() (*string, bool) {
+	if o == nil || IsNil(o.BindingOnetimeAddonIds) {
+		return nil, false
+	}
+	return o.BindingOnetimeAddonIds, true
+}
+
+// HasBindingOnetimeAddonIds returns a boolean if a field has been set.
+func (o *UnibeeApiBeanPlanSimplify) HasBindingOnetimeAddonIds() bool {
+	if o != nil && !IsNil(o.BindingOnetimeAddonIds) {
+		return true
+	}
+
+	return false
+}
+
+// SetBindingOnetimeAddonIds gets a reference to the given string and assigns it to the BindingOnetimeAddonIds field.
+func (o *UnibeeApiBeanPlanSimplify) SetBindingOnetimeAddonIds(v string) {
+	o.BindingOnetimeAddonIds = &v
 }
 
 // GetCreateTime returns the CreateTime field value if set, zero value otherwise.
@@ -764,6 +798,9 @@ func (o UnibeeApiBeanPlanSimplify) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.BindingAddonIds) {
 		toSerialize["bindingAddonIds"] = o.BindingAddonIds
+	}
+	if !IsNil(o.BindingOnetimeAddonIds) {
+		toSerialize["bindingOnetimeAddonIds"] = o.BindingOnetimeAddonIds
 	}
 	if !IsNil(o.CreateTime) {
 		toSerialize["createTime"] = o.CreateTime

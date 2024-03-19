@@ -5,14 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Action** | **int64** | Action Type，0-override,1-add，2-delete | 
-**AddonIds** | **[]int64** | Plan Ids Of Addon Type | 
+**AddonIds** | **[]int64** | Plan Ids Of Recurring Addon Type | 
+**OnetimeAddonIds** | **[]int64** | Plan Ids Of Onetime Addon Type | 
 **PlanId** | **int64** | PlanID | 
 
 ## Methods
 
 ### NewUnibeeApiMerchantPlanAddonsBindingReq
 
-`func NewUnibeeApiMerchantPlanAddonsBindingReq(action int64, addonIds []int64, planId int64, ) *UnibeeApiMerchantPlanAddonsBindingReq`
+`func NewUnibeeApiMerchantPlanAddonsBindingReq(action int64, addonIds []int64, onetimeAddonIds []int64, planId int64, ) *UnibeeApiMerchantPlanAddonsBindingReq`
 
 NewUnibeeApiMerchantPlanAddonsBindingReq instantiates a new UnibeeApiMerchantPlanAddonsBindingReq object
 This constructor will assign default values to properties that have it defined,
@@ -65,6 +66,26 @@ and a boolean to check if the value has been set.
 `func (o *UnibeeApiMerchantPlanAddonsBindingReq) SetAddonIds(v []int64)`
 
 SetAddonIds sets AddonIds field to given value.
+
+
+### GetOnetimeAddonIds
+
+`func (o *UnibeeApiMerchantPlanAddonsBindingReq) GetOnetimeAddonIds() []int64`
+
+GetOnetimeAddonIds returns the OnetimeAddonIds field if non-nil, zero value otherwise.
+
+### GetOnetimeAddonIdsOk
+
+`func (o *UnibeeApiMerchantPlanAddonsBindingReq) GetOnetimeAddonIdsOk() (*[]int64, bool)`
+
+GetOnetimeAddonIdsOk returns a tuple with the OnetimeAddonIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnetimeAddonIds
+
+`func (o *UnibeeApiMerchantPlanAddonsBindingReq) SetOnetimeAddonIds(v []int64)`
+
+SetOnetimeAddonIds sets OnetimeAddonIds field to given value.
 
 
 ### GetPlanId

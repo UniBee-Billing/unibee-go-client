@@ -20,7 +20,7 @@ var _ MappedNullable = &MerchantPlanListGet200ResponseData{}
 // MerchantPlanListGet200ResponseData struct for MerchantPlanListGet200ResponseData
 type MerchantPlanListGet200ResponseData struct {
 	// Plans
-	Plans []UnibeeApiMerchantPlanPlanDetail `json:"plans,omitempty"`
+	Plans []UnibeeApiBeanDetailPlanDetail `json:"plans,omitempty"`
 }
 
 // NewMerchantPlanListGet200ResponseData instantiates a new MerchantPlanListGet200ResponseData object
@@ -41,9 +41,9 @@ func NewMerchantPlanListGet200ResponseDataWithDefaults() *MerchantPlanListGet200
 }
 
 // GetPlans returns the Plans field value if set, zero value otherwise.
-func (o *MerchantPlanListGet200ResponseData) GetPlans() []UnibeeApiMerchantPlanPlanDetail {
+func (o *MerchantPlanListGet200ResponseData) GetPlans() []UnibeeApiBeanDetailPlanDetail {
 	if o == nil || IsNil(o.Plans) {
-		var ret []UnibeeApiMerchantPlanPlanDetail
+		var ret []UnibeeApiBeanDetailPlanDetail
 		return ret
 	}
 	return o.Plans
@@ -51,7 +51,7 @@ func (o *MerchantPlanListGet200ResponseData) GetPlans() []UnibeeApiMerchantPlanP
 
 // GetPlansOk returns a tuple with the Plans field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantPlanListGet200ResponseData) GetPlansOk() ([]UnibeeApiMerchantPlanPlanDetail, bool) {
+func (o *MerchantPlanListGet200ResponseData) GetPlansOk() ([]UnibeeApiBeanDetailPlanDetail, bool) {
 	if o == nil || IsNil(o.Plans) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *MerchantPlanListGet200ResponseData) HasPlans() bool {
 	return false
 }
 
-// SetPlans gets a reference to the given []UnibeeApiMerchantPlanPlanDetail and assigns it to the Plans field.
-func (o *MerchantPlanListGet200ResponseData) SetPlans(v []UnibeeApiMerchantPlanPlanDetail) {
+// SetPlans gets a reference to the given []UnibeeApiBeanDetailPlanDetail and assigns it to the Plans field.
+func (o *MerchantPlanListGet200ResponseData) SetPlans(v []UnibeeApiBeanDetailPlanDetail) {
 	o.Plans = v
 }
 

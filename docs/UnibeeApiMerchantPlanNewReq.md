@@ -4,17 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AddonIds** | Pointer to **[]int64** | Plan Ids Of Addon Type | [optional] 
+**AddonIds** | Pointer to **[]int64** | Plan Ids Of Recurring Addon Type | [optional] 
 **Amount** | **int64** | Plan CaptureAmount | 
 **Currency** | **string** | Plan Currency | 
 **Description** | Pointer to **string** | Description | [optional] 
 **GasPayer** | Pointer to **string** | who pay the gas for crypto payment, merchant|user | [optional] 
 **HomeUrl** | Pointer to **string** | HomeUrl,Start With: http | [optional] 
 **ImageUrl** | Pointer to **string** | ImageUrl,Start With: http | [optional] 
-**IntervalCount** | **int32** | Number Of IntervalUnit，em: day|month|year|week | 
-**IntervalUnit** | **string** | Plan Interval Unit，em: day|month|year|week | 
+**IntervalCount** | Pointer to **int32** | Number Of IntervalUnit，em: day|month|year|week | [optional] 
+**IntervalUnit** | Pointer to **string** | Plan Interval Unit，em: day|month|year|week | [optional] 
 **Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
 **MetricLimits** | Pointer to [**[]UnibeeApiBeanBulkMetricLimitPlanBindingParam**](UnibeeApiBeanBulkMetricLimitPlanBindingParam.md) | Plan&#39;s MetricLimit List | [optional] 
+**OnetimeAddonIds** | Pointer to **[]int64** | Plan Ids Of Onetime Addon Type | [optional] 
 **PlanName** | **string** | Plan Name | 
 **ProductDescription** | Pointer to **string** | Default Copy Description | [optional] 
 **ProductName** | Pointer to **string** | Default Copy PlanName | [optional] 
@@ -24,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewUnibeeApiMerchantPlanNewReq
 
-`func NewUnibeeApiMerchantPlanNewReq(amount int64, currency string, intervalCount int32, intervalUnit string, planName string, ) *UnibeeApiMerchantPlanNewReq`
+`func NewUnibeeApiMerchantPlanNewReq(amount int64, currency string, planName string, ) *UnibeeApiMerchantPlanNewReq`
 
 NewUnibeeApiMerchantPlanNewReq instantiates a new UnibeeApiMerchantPlanNewReq object
 This constructor will assign default values to properties that have it defined,
@@ -223,6 +224,11 @@ and a boolean to check if the value has been set.
 
 SetIntervalCount sets IntervalCount field to given value.
 
+### HasIntervalCount
+
+`func (o *UnibeeApiMerchantPlanNewReq) HasIntervalCount() bool`
+
+HasIntervalCount returns a boolean if a field has been set.
 
 ### GetIntervalUnit
 
@@ -243,6 +249,11 @@ and a boolean to check if the value has been set.
 
 SetIntervalUnit sets IntervalUnit field to given value.
 
+### HasIntervalUnit
+
+`func (o *UnibeeApiMerchantPlanNewReq) HasIntervalUnit() bool`
+
+HasIntervalUnit returns a boolean if a field has been set.
 
 ### GetMetadata
 
@@ -293,6 +304,31 @@ SetMetricLimits sets MetricLimits field to given value.
 `func (o *UnibeeApiMerchantPlanNewReq) HasMetricLimits() bool`
 
 HasMetricLimits returns a boolean if a field has been set.
+
+### GetOnetimeAddonIds
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetOnetimeAddonIds() []int64`
+
+GetOnetimeAddonIds returns the OnetimeAddonIds field if non-nil, zero value otherwise.
+
+### GetOnetimeAddonIdsOk
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetOnetimeAddonIdsOk() (*[]int64, bool)`
+
+GetOnetimeAddonIdsOk returns a tuple with the OnetimeAddonIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnetimeAddonIds
+
+`func (o *UnibeeApiMerchantPlanNewReq) SetOnetimeAddonIds(v []int64)`
+
+SetOnetimeAddonIds sets OnetimeAddonIds field to given value.
+
+### HasOnetimeAddonIds
+
+`func (o *UnibeeApiMerchantPlanNewReq) HasOnetimeAddonIds() bool`
+
+HasOnetimeAddonIds returns a boolean if a field has been set.
 
 ### GetPlanName
 

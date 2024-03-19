@@ -231,6 +231,42 @@ paths:
       summary: Query User Balance
       tags:
       - Balance
+  /merchant/country_config_list:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/unibee.api.merchant.profile.CountryConfigListReq'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_country_config_list_post_200_response'
+          description: ""
+      summary: Merchant Edit Country Config
+      tags:
+      - Profile
+  /merchant/edit_country_config:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/unibee.api.merchant.profile.EditCountryConfigReq'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_auth_sso_loginOTP_post_200_response'
+          description: ""
+      summary: Merchant Country Config List
+      tags:
+      - Profile
   /merchant/email/gateway_setup:
     post:
       requestBody:
@@ -349,6 +385,24 @@ paths:
                 $ref: '#/components/schemas/_merchant_auth_sso_loginOTP_post_200_response'
           description: ""
       summary: Gateway Webhook Edit
+      tags:
+      - Gateway
+  /merchant/gateway/edit_country_config:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/unibee.api.merchant.gateway.EditCountryConfigReq'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_auth_sso_loginOTP_post_200_response'
+          description: ""
+      summary: Gateway Webhook Edit Country Config
       tags:
       - Gateway
   /merchant/gateway/list:
@@ -2049,6 +2103,42 @@ paths:
       summary: Change Subscription Gateway
       tags:
       - Subscription
+  /merchant/subscription/create_preview:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/unibee.api.merchant.subscription.CreatePreviewReq'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_subscription_create_preview_post_200_response'
+          description: ""
+      summary: Create Subscription Preview
+      tags:
+      - Subscription
+  /merchant/subscription/create_submit:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/unibee.api.merchant.subscription.CreateReq'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_subscription_create_submit_post_200_response'
+          description: ""
+      summary: Create Subscription
+      tags:
+      - Subscription
   /merchant/subscription/detail:
     get:
       parameters:
@@ -3065,8 +3155,18 @@ components:
         gatewayType: 1
         gatewayName: gatewayName
         gatewayLogo: gatewayLogo
+        countryConfig:
+          key: true
         gatewayId: 6
       properties:
+        countryConfig:
+          additionalProperties:
+            format: bool
+            properties: {}
+            type: boolean
+          format: "map[string]bool"
+          properties: {}
+          type: object
         gatewayId:
           format: int64
           properties: {}
@@ -3297,6 +3397,26 @@ components:
           format: int64
           properties: {}
           type: integer
+      type: object
+    unibee.api.bean.MerchantCountryConfigSimplify:
+      example:
+        merchantId: 6
+        countryCode: countryCode
+        name: name
+      properties:
+        countryCode:
+          format: string
+          properties: {}
+          type: string
+        merchantId:
+          description: merchant id
+          format: int64
+          properties: {}
+          type: integer
+        name:
+          format: string
+          properties: {}
+          type: string
       type: object
     unibee.api.bean.MerchantMemberSimplify:
       example:
@@ -4046,6 +4166,7 @@ components:
           taxScale: 3
           imageUrl: imageUrl
           intervalCount: 5
+          bindingOnetimeAddonIds: bindingOnetimeAddonIds
           currency: currency
           id: 5
           productDescription: productDescription
@@ -4193,6 +4314,7 @@ components:
         taxScale: 3
         imageUrl: imageUrl
         intervalCount: 5
+        bindingOnetimeAddonIds: bindingOnetimeAddonIds
         currency: currency
         id: 5
         productDescription: productDescription
@@ -4205,7 +4327,12 @@ components:
           properties: {}
           type: integer
         bindingAddonIds:
-          description: "binded addon planIds，split with ,"
+          description: "binded recurring addon planIds，split with ,"
+          format: string
+          properties: {}
+          type: string
+        bindingOnetimeAddonIds:
+          description: "binded onetime addon planIds，split with ,"
           format: string
           properties: {}
           type: string
@@ -4941,6 +5068,13 @@ components:
           $ref: '#/components/schemas/unibee.api.bean.PlanMetricLimitDetail'
       type: object
     unibee.api.bean.ValidResult:
+      example:
+        valid: true
+        countryCode: countryCode
+        companyAddress: companyAddress
+        companyName: companyName
+        validateMessage: validateMessage
+        vatNumber: vatNumber
       properties:
         companyAddress:
           format: string
@@ -5192,6 +5326,8 @@ components:
           gatewayType: 1
           gatewayName: gatewayName
           gatewayLogo: gatewayLogo
+          countryConfig:
+            key: true
           gatewayId: 6
         gatewayId: 5
         gatewayInvoiceId: gatewayInvoiceId
@@ -5427,6 +5563,212 @@ components:
           properties: {}
           type: integer
       type: object
+    unibee.api.bean.detail.PlanDetail:
+      example:
+        addons:
+        - amount: 6
+          metadata:
+            key: metadata
+          extraMetricData: extraMetricData
+          bindingAddonIds: bindingAddonIds
+          intervalUnit: intervalUnit
+          description: description
+          planName: planName
+          type: 2
+          productName: productName
+          homeUrl: homeUrl
+          gasPayer: gasPayer
+          createTime: 1
+          merchantId: 2
+          taxScale: 3
+          imageUrl: imageUrl
+          intervalCount: 5
+          bindingOnetimeAddonIds: bindingOnetimeAddonIds
+          currency: currency
+          id: 5
+          productDescription: productDescription
+          publishStatus: 7
+          status: 9
+        - amount: 6
+          metadata:
+            key: metadata
+          extraMetricData: extraMetricData
+          bindingAddonIds: bindingAddonIds
+          intervalUnit: intervalUnit
+          description: description
+          planName: planName
+          type: 2
+          productName: productName
+          homeUrl: homeUrl
+          gasPayer: gasPayer
+          createTime: 1
+          merchantId: 2
+          taxScale: 3
+          imageUrl: imageUrl
+          intervalCount: 5
+          bindingOnetimeAddonIds: bindingOnetimeAddonIds
+          currency: currency
+          id: 5
+          productDescription: productDescription
+          publishStatus: 7
+          status: 9
+        onetimeAddonIds:
+        - 1
+        - 1
+        addonIds:
+        - 6
+        - 6
+        plan:
+          amount: 6
+          metadata:
+            key: metadata
+          extraMetricData: extraMetricData
+          bindingAddonIds: bindingAddonIds
+          intervalUnit: intervalUnit
+          description: description
+          planName: planName
+          type: 2
+          productName: productName
+          homeUrl: homeUrl
+          gasPayer: gasPayer
+          createTime: 1
+          merchantId: 2
+          taxScale: 3
+          imageUrl: imageUrl
+          intervalCount: 5
+          bindingOnetimeAddonIds: bindingOnetimeAddonIds
+          currency: currency
+          id: 5
+          productDescription: productDescription
+          publishStatus: 7
+          status: 9
+        metricPlanLimits:
+        - gmtModify: 1
+          metricId: 2
+          createTime: 6
+          merchantId: 5
+          merchantMetricVo:
+            aggregationType: 6
+            aggregationProperty: aggregationProperty
+            code: code
+            metricDescription: metricDescription
+            metricName: metricName
+            gmtModify: 5
+            createTime: 1
+            merchantId: 2
+            id: 5
+            type: 7
+          planId: 9
+          id: 5
+          metricLimit: 7
+        - gmtModify: 1
+          metricId: 2
+          createTime: 6
+          merchantId: 5
+          merchantMetricVo:
+            aggregationType: 6
+            aggregationProperty: aggregationProperty
+            code: code
+            metricDescription: metricDescription
+            metricName: metricName
+            gmtModify: 5
+            createTime: 1
+            merchantId: 2
+            id: 5
+            type: 7
+          planId: 9
+          id: 5
+          metricLimit: 7
+        onetimeAddons:
+        - amount: 6
+          metadata:
+            key: metadata
+          extraMetricData: extraMetricData
+          bindingAddonIds: bindingAddonIds
+          intervalUnit: intervalUnit
+          description: description
+          planName: planName
+          type: 2
+          productName: productName
+          homeUrl: homeUrl
+          gasPayer: gasPayer
+          createTime: 1
+          merchantId: 2
+          taxScale: 3
+          imageUrl: imageUrl
+          intervalCount: 5
+          bindingOnetimeAddonIds: bindingOnetimeAddonIds
+          currency: currency
+          id: 5
+          productDescription: productDescription
+          publishStatus: 7
+          status: 9
+        - amount: 6
+          metadata:
+            key: metadata
+          extraMetricData: extraMetricData
+          bindingAddonIds: bindingAddonIds
+          intervalUnit: intervalUnit
+          description: description
+          planName: planName
+          type: 2
+          productName: productName
+          homeUrl: homeUrl
+          gasPayer: gasPayer
+          createTime: 1
+          merchantId: 2
+          taxScale: 3
+          imageUrl: imageUrl
+          intervalCount: 5
+          bindingOnetimeAddonIds: bindingOnetimeAddonIds
+          currency: currency
+          id: 5
+          productDescription: productDescription
+          publishStatus: 7
+          status: 9
+      properties:
+        addonIds:
+          description: AddonIds
+          format: "[]int64"
+          items:
+            format: int64
+            properties: {}
+            type: integer
+          properties: {}
+          type: array
+        addons:
+          description: Addons
+          format: "[]*bean.PlanSimplify"
+          items:
+            $ref: '#/components/schemas/unibee.api.bean.PlanSimplify'
+          properties: {}
+          type: array
+        metricPlanLimits:
+          description: MetricPlanLimits
+          format: "[]*bean.MerchantMetricPlanLimit"
+          items:
+            $ref: '#/components/schemas/unibee.api.bean.MerchantMetricPlanLimit'
+          properties: {}
+          type: array
+        onetimeAddonIds:
+          description: OneTimeAddonIds
+          format: "[]int64"
+          items:
+            format: int64
+            properties: {}
+            type: integer
+          properties: {}
+          type: array
+        onetimeAddons:
+          description: OneTimeAddons
+          format: "[]*bean.PlanSimplify"
+          items:
+            $ref: '#/components/schemas/unibee.api.bean.PlanSimplify'
+          properties: {}
+          type: array
+        plan:
+          $ref: '#/components/schemas/unibee.api.bean.PlanSimplify'
+      type: object
     unibee.api.bean.detail.SubscriptionDetail:
       example:
         unfinishedSubscriptionPendingUpdate:
@@ -5455,6 +5797,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -5479,6 +5822,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -5503,6 +5847,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -5529,6 +5874,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -5553,6 +5899,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -5582,6 +5929,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -5633,6 +5981,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -5657,6 +6006,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -5717,6 +6067,7 @@ components:
           taxScale: 3
           imageUrl: imageUrl
           intervalCount: 5
+          bindingOnetimeAddonIds: bindingOnetimeAddonIds
           currency: currency
           id: 5
           productDescription: productDescription
@@ -5769,6 +6120,8 @@ components:
           gatewayType: 1
           gatewayName: gatewayName
           gatewayLogo: gatewayLogo
+          countryConfig:
+            key: true
           gatewayId: 6
       properties:
         addonParams:
@@ -5823,6 +6176,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -5847,6 +6201,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -5871,6 +6226,7 @@ components:
           taxScale: 3
           imageUrl: imageUrl
           intervalCount: 5
+          bindingOnetimeAddonIds: bindingOnetimeAddonIds
           currency: currency
           id: 5
           productDescription: productDescription
@@ -5897,6 +6253,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -5921,6 +6278,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -5950,6 +6308,7 @@ components:
           taxScale: 3
           imageUrl: imageUrl
           intervalCount: 5
+          bindingOnetimeAddonIds: bindingOnetimeAddonIds
           currency: currency
           id: 5
           productDescription: productDescription
@@ -6149,6 +6508,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -6173,6 +6533,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -6206,6 +6567,7 @@ components:
           taxScale: 3
           imageUrl: imageUrl
           intervalCount: 5
+          bindingOnetimeAddonIds: bindingOnetimeAddonIds
           currency: currency
           id: 5
           productDescription: productDescription
@@ -6624,6 +6986,28 @@ components:
       - templateTitle
       type: object
     unibee.api.merchant.email.TemplateUpdateRes:
+      properties: {}
+      type: object
+    unibee.api.merchant.gateway.EditCountryConfigReq:
+      properties:
+        countryConfig:
+          additionalProperties:
+            format: bool
+            properties: {}
+            type: boolean
+          description: CountryConfig
+          format: "map[string]bool"
+          properties: {}
+          type: object
+        gatewayId:
+          description: GatewayId
+          format: int64
+          properties: {}
+          type: integer
+      required:
+      - gatewayId
+      type: object
+    unibee.api.merchant.gateway.EditCountryConfigRes:
       properties: {}
       type: object
     unibee.api.merchant.gateway.EditReq:
@@ -7413,6 +7797,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -7437,6 +7822,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -7497,6 +7883,7 @@ components:
           taxScale: 3
           imageUrl: imageUrl
           intervalCount: 5
+          bindingOnetimeAddonIds: bindingOnetimeAddonIds
           currency: currency
           id: 5
           productDescription: productDescription
@@ -7875,12 +8262,12 @@ components:
           properties: {}
           type: string
         currency:
-          description: Currency
+          description: "Currency, either Currency&Currency or PlanId needed"
           format: string
           properties: {}
           type: string
         email:
-          description: Email
+          description: "Email, either ExternalUserId&Email or UserId needed"
           format: string
           properties: {}
           type: string
@@ -7890,7 +8277,8 @@ components:
           properties: {}
           type: string
         externalUserId:
-          description: "ExternalUserId, should unique for user"
+          description: "ExternalUserId, unique, either ExternalUserId&Email or UserId\
+            \ needed"
           format: string
           properties: {}
           type: string
@@ -7920,23 +8308,29 @@ components:
           format: "map[string]string"
           properties: {}
           type: object
+        planId:
+          description: "PlanId, either TotalAmount&Currency or PlanId needed"
+          format: int64
+          properties: {}
+          type: integer
         redirectUrl:
           description: Redirect Url
           format: string
           properties: {}
           type: string
         totalAmount:
-          description: "Total PaymentAmount, Cent"
+          description: "Total PaymentAmount, Cent, either TotalAmount&Currency or\
+            \ PlanId needed"
+          format: int64
+          properties: {}
+          type: integer
+        userId:
+          description: "UserId, either ExternalUserId&Email or UserId needed"
           format: int64
           properties: {}
           type: integer
       required:
-      - currency
-      - email
-      - externalPaymentId
-      - externalUserId
       - gatewayId
-      - totalAmount
       type: object
     unibee.api.merchant.payment.NewRes:
       properties:
@@ -8275,7 +8669,16 @@ components:
           properties: {}
           type: integer
         addonIds:
-          description: Plan Ids Of Addon Type
+          description: Plan Ids Of Recurring Addon Type
+          format: "[]int64"
+          items:
+            format: int64
+            properties: {}
+            type: integer
+          properties: {}
+          type: array
+        onetimeAddonIds:
+          description: Plan Ids Of Onetime Addon Type
           format: "[]int64"
           items:
             format: int64
@@ -8291,6 +8694,7 @@ components:
       required:
       - action
       - addonIds
+      - onetimeAddonIds
       - planId
       type: object
     unibee.api.merchant.plan.AddonsBindingRes:
@@ -8324,12 +8728,12 @@ components:
     unibee.api.merchant.plan.DetailRes:
       properties:
         plan:
-          $ref: '#/components/schemas/unibee.api.merchant.plan.PlanDetail'
+          $ref: '#/components/schemas/unibee.api.bean.detail.PlanDetail'
       type: object
     unibee.api.merchant.plan.EditReq:
       properties:
         addonIds:
-          description: Plan Ids Of Addon Type
+          description: Plan Ids Of Recurring Addon Type
           format: "[]int64"
           items:
             format: int64
@@ -8393,6 +8797,15 @@ components:
             $ref: '#/components/schemas/unibee.api.bean.BulkMetricLimitPlanBindingParam'
           properties: {}
           type: array
+        onetimeAddonIds:
+          description: Plan Ids Of Onetime Addon Type
+          format: "[]int64"
+          items:
+            format: int64
+            properties: {}
+            type: integer
+          properties: {}
+          type: array
         planId:
           description: PlanId
           format: int64
@@ -8416,7 +8829,6 @@ components:
       required:
       - amount
       - currency
-      - intervalUnit
       - planId
       - planName
       type: object
@@ -8500,16 +8912,16 @@ components:
       properties:
         plans:
           description: Plans
-          format: "[]*plan.PlanDetail"
+          format: "[]*detail.PlanDetail"
           items:
-            $ref: '#/components/schemas/unibee.api.merchant.plan.PlanDetail'
+            $ref: '#/components/schemas/unibee.api.bean.detail.PlanDetail'
           properties: {}
           type: array
       type: object
     unibee.api.merchant.plan.NewReq:
       properties:
         addonIds:
-          description: Plan Ids Of Addon Type
+          description: Plan Ids Of Recurring Addon Type
           format: "[]int64"
           items:
             format: int64
@@ -8573,6 +8985,15 @@ components:
             $ref: '#/components/schemas/unibee.api.bean.BulkMetricLimitPlanBindingParam'
           properties: {}
           type: array
+        onetimeAddonIds:
+          description: Plan Ids Of Onetime Addon Type
+          format: "[]int64"
+          items:
+            format: int64
+            properties: {}
+            type: integer
+          properties: {}
+          type: array
         planName:
           description: Plan Name
           format: string
@@ -8597,149 +9018,10 @@ components:
       required:
       - amount
       - currency
-      - intervalCount
-      - intervalUnit
       - planName
       type: object
     unibee.api.merchant.plan.NewRes:
       properties:
-        plan:
-          $ref: '#/components/schemas/unibee.api.bean.PlanSimplify'
-      type: object
-    unibee.api.merchant.plan.PlanDetail:
-      example:
-        addons:
-        - amount: 6
-          metadata:
-            key: metadata
-          extraMetricData: extraMetricData
-          bindingAddonIds: bindingAddonIds
-          intervalUnit: intervalUnit
-          description: description
-          planName: planName
-          type: 2
-          productName: productName
-          homeUrl: homeUrl
-          gasPayer: gasPayer
-          createTime: 1
-          merchantId: 2
-          taxScale: 3
-          imageUrl: imageUrl
-          intervalCount: 5
-          currency: currency
-          id: 5
-          productDescription: productDescription
-          publishStatus: 7
-          status: 9
-        - amount: 6
-          metadata:
-            key: metadata
-          extraMetricData: extraMetricData
-          bindingAddonIds: bindingAddonIds
-          intervalUnit: intervalUnit
-          description: description
-          planName: planName
-          type: 2
-          productName: productName
-          homeUrl: homeUrl
-          gasPayer: gasPayer
-          createTime: 1
-          merchantId: 2
-          taxScale: 3
-          imageUrl: imageUrl
-          intervalCount: 5
-          currency: currency
-          id: 5
-          productDescription: productDescription
-          publishStatus: 7
-          status: 9
-        addonIds:
-        - 6
-        - 6
-        plan:
-          amount: 6
-          metadata:
-            key: metadata
-          extraMetricData: extraMetricData
-          bindingAddonIds: bindingAddonIds
-          intervalUnit: intervalUnit
-          description: description
-          planName: planName
-          type: 2
-          productName: productName
-          homeUrl: homeUrl
-          gasPayer: gasPayer
-          createTime: 1
-          merchantId: 2
-          taxScale: 3
-          imageUrl: imageUrl
-          intervalCount: 5
-          currency: currency
-          id: 5
-          productDescription: productDescription
-          publishStatus: 7
-          status: 9
-        metricPlanLimits:
-        - gmtModify: 1
-          metricId: 2
-          createTime: 6
-          merchantId: 5
-          merchantMetricVo:
-            aggregationType: 6
-            aggregationProperty: aggregationProperty
-            code: code
-            metricDescription: metricDescription
-            metricName: metricName
-            gmtModify: 5
-            createTime: 1
-            merchantId: 2
-            id: 5
-            type: 7
-          planId: 9
-          id: 5
-          metricLimit: 7
-        - gmtModify: 1
-          metricId: 2
-          createTime: 6
-          merchantId: 5
-          merchantMetricVo:
-            aggregationType: 6
-            aggregationProperty: aggregationProperty
-            code: code
-            metricDescription: metricDescription
-            metricName: metricName
-            gmtModify: 5
-            createTime: 1
-            merchantId: 2
-            id: 5
-            type: 7
-          planId: 9
-          id: 5
-          metricLimit: 7
-      properties:
-        addonIds:
-          description: AddonIds
-          format: "[]int64"
-          items:
-            format: int64
-            properties: {}
-            type: integer
-          properties: {}
-          type: array
-        addons:
-          description: Addons
-          format: "[]*bean.PlanSimplify"
-          items:
-            $ref: '#/components/schemas/unibee.api.bean.PlanSimplify'
-          properties: {}
-          type: array
-        metricPlanLimits:
-          description: MetricPlanLimits
-          format: "[]*bean.MerchantMetricPlanLimit"
-          items:
-            $ref: '#/components/schemas/unibee.api.bean.MerchantMetricPlanLimit'
-          properties: {}
-          type: array
         plan:
           $ref: '#/components/schemas/unibee.api.bean.PlanSimplify'
       type: object
@@ -8767,6 +9049,42 @@ components:
       - planId
       type: object
     unibee.api.merchant.plan.UnPublishRes:
+      properties: {}
+      type: object
+    unibee.api.merchant.profile.CountryConfigListReq:
+      properties: {}
+      type: object
+    unibee.api.merchant.profile.CountryConfigListRes:
+      properties:
+        configs:
+          description: Configs
+          format: "[]*bean.MerchantCountryConfigSimplify"
+          items:
+            $ref: '#/components/schemas/unibee.api.bean.MerchantCountryConfigSimplify'
+          properties: {}
+          type: array
+      type: object
+    unibee.api.merchant.profile.EditCountryConfigReq:
+      properties:
+        countryCode:
+          description: CountryCode
+          format: string
+          properties: {}
+          type: string
+        name:
+          description: name
+          format: string
+          properties: {}
+          type: string
+        vatEnable:
+          description: "VatEnable, Default true"
+          format: '*bool'
+          properties: {}
+          type: boolean
+      required:
+      - countryCode
+      type: object
+    unibee.api.merchant.profile.EditCountryConfigRes:
       properties: {}
       type: object
     unibee.api.merchant.profile.GetReq:
@@ -9147,6 +9465,197 @@ components:
       type: object
     unibee.api.merchant.subscription.ChangeGatewayRes:
       properties: {}
+      type: object
+    unibee.api.merchant.subscription.CreatePreviewReq:
+      properties:
+        addonParams:
+          description: addonParams
+          format: "[]*bean.PlanAddonParam"
+          items:
+            $ref: '#/components/schemas/unibee.api.bean.PlanAddonParam'
+          properties: {}
+          type: array
+        gatewayId:
+          description: Id
+          format: int64
+          properties: {}
+          type: integer
+        planId:
+          description: PlanId
+          format: int64
+          properties: {}
+          type: integer
+        quantity:
+          description: Quantity
+          format: int64
+          properties: {}
+          type: integer
+        userId:
+          description: UserId
+          format: int64
+          properties: {}
+          type: integer
+        vatCountryCode:
+          description: "VatCountryCode, CountryName"
+          format: string
+          properties: {}
+          type: string
+        vatNumber:
+          description: VatNumber
+          format: string
+          properties: {}
+          type: string
+      required:
+      - gatewayId
+      - planId
+      - userId
+      type: object
+    unibee.api.merchant.subscription.CreatePreviewRes:
+      properties:
+        addonParams:
+          format: "[]*bean.PlanAddonParam"
+          items:
+            $ref: '#/components/schemas/unibee.api.bean.PlanAddonParam'
+          properties: {}
+          type: array
+        addons:
+          format: "[]*bean.PlanAddonDetail"
+          items:
+            $ref: '#/components/schemas/unibee.api.bean.PlanAddonDetail'
+          properties: {}
+          type: array
+        currency:
+          format: string
+          properties: {}
+          type: string
+        email:
+          format: string
+          properties: {}
+          type: string
+        gateway:
+          $ref: '#/components/schemas/unibee.api.bean.GatewaySimplify'
+        invoice:
+          $ref: '#/components/schemas/unibee.api.bean.InvoiceSimplify'
+        plan:
+          $ref: '#/components/schemas/unibee.api.bean.PlanSimplify'
+        quantity:
+          format: int64
+          properties: {}
+          type: integer
+        taxScale:
+          format: int64
+          properties: {}
+          type: integer
+        totalAmount:
+          format: int64
+          properties: {}
+          type: integer
+        userId:
+          format: int64
+          properties: {}
+          type: integer
+        vatCountryCode:
+          format: string
+          properties: {}
+          type: string
+        vatCountryName:
+          format: string
+          properties: {}
+          type: string
+        vatNumber:
+          format: string
+          properties: {}
+          type: string
+        vatNumberValidate:
+          $ref: '#/components/schemas/unibee.api.bean.ValidResult'
+      type: object
+    unibee.api.merchant.subscription.CreateReq:
+      properties:
+        addonParams:
+          description: addonParams
+          format: "[]*bean.PlanAddonParam"
+          items:
+            $ref: '#/components/schemas/unibee.api.bean.PlanAddonParam'
+          properties: {}
+          type: array
+        confirmCurrency:
+          description: Currency To Be Confirmed，Get From Preview
+          format: string
+          properties: {}
+          type: string
+        confirmTotalAmount:
+          description: TotalAmount To Be Confirmed，Get From Preview
+          format: int64
+          properties: {}
+          type: integer
+        gatewayId:
+          description: Id
+          format: int64
+          properties: {}
+          type: integer
+        metadata:
+          additionalProperties:
+            format: string
+            properties: {}
+            type: string
+          description: Metadata，Map
+          format: "map[string]string"
+          properties: {}
+          type: object
+        paymentMethodId:
+          description: PaymentMethodId
+          format: string
+          properties: {}
+          type: string
+        planId:
+          description: PlanId
+          format: int64
+          properties: {}
+          type: integer
+        quantity:
+          description: Quantity，Default 1
+          format: int64
+          properties: {}
+          type: integer
+        returnUrl:
+          description: RedirectUrl
+          format: string
+          properties: {}
+          type: string
+        userId:
+          description: UserId
+          format: int64
+          properties: {}
+          type: integer
+        vatCountryCode:
+          description: "VatCountryCode, CountryName"
+          format: string
+          properties: {}
+          type: string
+        vatNumber:
+          description: VatNumber
+          format: string
+          properties: {}
+          type: string
+      required:
+      - confirmCurrency
+      - confirmTotalAmount
+      - gatewayId
+      - planId
+      - userId
+      type: object
+    unibee.api.merchant.subscription.CreateRes:
+      properties:
+        link:
+          format: string
+          properties: {}
+          type: string
+        paid:
+          format: bool
+          properties: {}
+          type: boolean
+        subscription:
+          $ref: '#/components/schemas/unibee.api.bean.SubscriptionSimplify'
       type: object
     unibee.api.merchant.subscription.DetailReq:
       properties:
@@ -10321,6 +10830,58 @@ components:
           properties: {}
           type: string
       type: object
+    _merchant_country_config_list_post_200_response_data:
+      example:
+        configs:
+        - merchantId: 6
+          countryCode: countryCode
+          name: name
+        - merchantId: 6
+          countryCode: countryCode
+          name: name
+      properties:
+        configs:
+          description: Configs
+          format: "[]*bean.MerchantCountryConfigSimplify"
+          items:
+            $ref: '#/components/schemas/unibee.api.bean.MerchantCountryConfigSimplify'
+          properties: {}
+          type: array
+      type: object
+    _merchant_country_config_list_post_200_response:
+      example:
+        redirect: redirect
+        code: 0
+        data:
+          configs:
+          - merchantId: 6
+            countryCode: countryCode
+            name: name
+          - merchantId: 6
+            countryCode: countryCode
+            name: name
+        requestId: requestId
+        message: message
+      properties:
+        code:
+          format: int
+          properties: {}
+          type: integer
+        data:
+          $ref: '#/components/schemas/_merchant_country_config_list_post_200_response_data'
+        message:
+          format: string
+          properties: {}
+          type: string
+        redirect:
+          format: string
+          properties: {}
+          type: string
+        requestId:
+          format: string
+          properties: {}
+          type: string
+      type: object
     _merchant_email_template_list_get_200_response_data:
       example:
         emailTemplateList:
@@ -10407,10 +10968,14 @@ components:
         - gatewayType: 1
           gatewayName: gatewayName
           gatewayLogo: gatewayLogo
+          countryConfig:
+            key: true
           gatewayId: 6
         - gatewayType: 1
           gatewayName: gatewayName
           gatewayLogo: gatewayLogo
+          countryConfig:
+            key: true
           gatewayId: 6
       properties:
         gateways:
@@ -10429,10 +10994,14 @@ components:
           - gatewayType: 1
             gatewayName: gatewayName
             gatewayLogo: gatewayLogo
+            countryConfig:
+              key: true
             gatewayId: 6
           - gatewayType: 1
             gatewayName: gatewayName
             gatewayLogo: gatewayLogo
+            countryConfig:
+              key: true
             gatewayId: 6
         requestId: requestId
         message: message
@@ -10529,10 +11098,14 @@ components:
         - gatewayType: 1
           gatewayName: gatewayName
           gatewayLogo: gatewayLogo
+          countryConfig:
+            key: true
           gatewayId: 6
         - gatewayType: 1
           gatewayName: gatewayName
           gatewayLogo: gatewayLogo
+          countryConfig:
+            key: true
           gatewayId: 6
       properties:
         Currency:
@@ -10609,10 +11182,14 @@ components:
           - gatewayType: 1
             gatewayName: gatewayName
             gatewayLogo: gatewayLogo
+            countryConfig:
+              key: true
             gatewayId: 6
           - gatewayType: 1
             gatewayName: gatewayName
             gatewayLogo: gatewayLogo
+            countryConfig:
+              key: true
             gatewayId: 6
         requestId: requestId
         message: message
@@ -10825,6 +11402,8 @@ components:
             gatewayType: 1
             gatewayName: gatewayName
             gatewayLogo: gatewayLogo
+            countryConfig:
+              key: true
             gatewayId: 6
           gatewayId: 5
           gatewayInvoiceId: gatewayInvoiceId
@@ -11046,6 +11625,8 @@ components:
               gatewayType: 1
               gatewayName: gatewayName
               gatewayLogo: gatewayLogo
+              countryConfig:
+                key: true
               gatewayId: 6
             gatewayId: 5
             gatewayInvoiceId: gatewayInvoiceId
@@ -11407,6 +11988,8 @@ components:
             gatewayType: 1
             gatewayName: gatewayName
             gatewayLogo: gatewayLogo
+            countryConfig:
+              key: true
             gatewayId: 6
           gatewayId: 5
           gatewayInvoiceId: gatewayInvoiceId
@@ -11618,6 +12201,8 @@ components:
             gatewayType: 1
             gatewayName: gatewayName
             gatewayLogo: gatewayLogo
+            countryConfig:
+              key: true
             gatewayId: 6
           gatewayId: 5
           gatewayInvoiceId: gatewayInvoiceId
@@ -11844,6 +12429,8 @@ components:
               gatewayType: 1
               gatewayName: gatewayName
               gatewayLogo: gatewayLogo
+              countryConfig:
+                key: true
               gatewayId: 6
             gatewayId: 5
             gatewayInvoiceId: gatewayInvoiceId
@@ -12055,6 +12642,8 @@ components:
               gatewayType: 1
               gatewayName: gatewayName
               gatewayLogo: gatewayLogo
+              countryConfig:
+                key: true
               gatewayId: 6
             gatewayId: 5
             gatewayInvoiceId: gatewayInvoiceId
@@ -12563,6 +13152,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -12587,6 +13177,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -12647,6 +13238,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -12823,6 +13415,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -12847,6 +13440,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -12907,6 +13501,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -14425,6 +15020,7 @@ components:
           taxScale: 3
           imageUrl: imageUrl
           intervalCount: 5
+          bindingOnetimeAddonIds: bindingOnetimeAddonIds
           currency: currency
           id: 5
           productDescription: productDescription
@@ -14457,6 +15053,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -14505,6 +15102,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -14527,11 +15125,15 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
             publishStatus: 7
             status: 9
+          onetimeAddonIds:
+          - 1
+          - 1
           addonIds:
           - 6
           - 6
@@ -14553,6 +15155,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -14595,9 +15198,56 @@ components:
             planId: 9
             id: 5
             metricLimit: 7
+          onetimeAddons:
+          - amount: 6
+            metadata:
+              key: metadata
+            extraMetricData: extraMetricData
+            bindingAddonIds: bindingAddonIds
+            intervalUnit: intervalUnit
+            description: description
+            planName: planName
+            type: 2
+            productName: productName
+            homeUrl: homeUrl
+            gasPayer: gasPayer
+            createTime: 1
+            merchantId: 2
+            taxScale: 3
+            imageUrl: imageUrl
+            intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
+            currency: currency
+            id: 5
+            productDescription: productDescription
+            publishStatus: 7
+            status: 9
+          - amount: 6
+            metadata:
+              key: metadata
+            extraMetricData: extraMetricData
+            bindingAddonIds: bindingAddonIds
+            intervalUnit: intervalUnit
+            description: description
+            planName: planName
+            type: 2
+            productName: productName
+            homeUrl: homeUrl
+            gasPayer: gasPayer
+            createTime: 1
+            merchantId: 2
+            taxScale: 3
+            imageUrl: imageUrl
+            intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
+            currency: currency
+            id: 5
+            productDescription: productDescription
+            publishStatus: 7
+            status: 9
       properties:
         plan:
-          $ref: '#/components/schemas/unibee.api.merchant.plan.PlanDetail'
+          $ref: '#/components/schemas/unibee.api.bean.detail.PlanDetail'
       type: object
     _merchant_plan_detail_get_200_response:
       example:
@@ -14623,6 +15273,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -14645,11 +15296,15 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
               publishStatus: 7
               status: 9
+            onetimeAddonIds:
+            - 1
+            - 1
             addonIds:
             - 6
             - 6
@@ -14671,6 +15326,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -14713,6 +15369,53 @@ components:
               planId: 9
               id: 5
               metricLimit: 7
+            onetimeAddons:
+            - amount: 6
+              metadata:
+                key: metadata
+              extraMetricData: extraMetricData
+              bindingAddonIds: bindingAddonIds
+              intervalUnit: intervalUnit
+              description: description
+              planName: planName
+              type: 2
+              productName: productName
+              homeUrl: homeUrl
+              gasPayer: gasPayer
+              createTime: 1
+              merchantId: 2
+              taxScale: 3
+              imageUrl: imageUrl
+              intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
+              currency: currency
+              id: 5
+              productDescription: productDescription
+              publishStatus: 7
+              status: 9
+            - amount: 6
+              metadata:
+                key: metadata
+              extraMetricData: extraMetricData
+              bindingAddonIds: bindingAddonIds
+              intervalUnit: intervalUnit
+              description: description
+              planName: planName
+              type: 2
+              productName: productName
+              homeUrl: homeUrl
+              gasPayer: gasPayer
+              createTime: 1
+              merchantId: 2
+              taxScale: 3
+              imageUrl: imageUrl
+              intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
+              currency: currency
+              id: 5
+              productDescription: productDescription
+              publishStatus: 7
+              status: 9
         requestId: requestId
         message: message
       properties:
@@ -14756,6 +15459,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -14778,11 +15482,15 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
             publishStatus: 7
             status: 9
+          onetimeAddonIds:
+          - 1
+          - 1
           addonIds:
           - 6
           - 6
@@ -14804,6 +15512,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -14846,6 +15555,53 @@ components:
             planId: 9
             id: 5
             metricLimit: 7
+          onetimeAddons:
+          - amount: 6
+            metadata:
+              key: metadata
+            extraMetricData: extraMetricData
+            bindingAddonIds: bindingAddonIds
+            intervalUnit: intervalUnit
+            description: description
+            planName: planName
+            type: 2
+            productName: productName
+            homeUrl: homeUrl
+            gasPayer: gasPayer
+            createTime: 1
+            merchantId: 2
+            taxScale: 3
+            imageUrl: imageUrl
+            intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
+            currency: currency
+            id: 5
+            productDescription: productDescription
+            publishStatus: 7
+            status: 9
+          - amount: 6
+            metadata:
+              key: metadata
+            extraMetricData: extraMetricData
+            bindingAddonIds: bindingAddonIds
+            intervalUnit: intervalUnit
+            description: description
+            planName: planName
+            type: 2
+            productName: productName
+            homeUrl: homeUrl
+            gasPayer: gasPayer
+            createTime: 1
+            merchantId: 2
+            taxScale: 3
+            imageUrl: imageUrl
+            intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
+            currency: currency
+            id: 5
+            productDescription: productDescription
+            publishStatus: 7
+            status: 9
         - addons:
           - amount: 6
             metadata:
@@ -14864,6 +15620,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -14886,11 +15643,15 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
             publishStatus: 7
             status: 9
+          onetimeAddonIds:
+          - 1
+          - 1
           addonIds:
           - 6
           - 6
@@ -14912,6 +15673,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -14954,12 +15716,59 @@ components:
             planId: 9
             id: 5
             metricLimit: 7
+          onetimeAddons:
+          - amount: 6
+            metadata:
+              key: metadata
+            extraMetricData: extraMetricData
+            bindingAddonIds: bindingAddonIds
+            intervalUnit: intervalUnit
+            description: description
+            planName: planName
+            type: 2
+            productName: productName
+            homeUrl: homeUrl
+            gasPayer: gasPayer
+            createTime: 1
+            merchantId: 2
+            taxScale: 3
+            imageUrl: imageUrl
+            intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
+            currency: currency
+            id: 5
+            productDescription: productDescription
+            publishStatus: 7
+            status: 9
+          - amount: 6
+            metadata:
+              key: metadata
+            extraMetricData: extraMetricData
+            bindingAddonIds: bindingAddonIds
+            intervalUnit: intervalUnit
+            description: description
+            planName: planName
+            type: 2
+            productName: productName
+            homeUrl: homeUrl
+            gasPayer: gasPayer
+            createTime: 1
+            merchantId: 2
+            taxScale: 3
+            imageUrl: imageUrl
+            intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
+            currency: currency
+            id: 5
+            productDescription: productDescription
+            publishStatus: 7
+            status: 9
       properties:
         plans:
           description: Plans
-          format: "[]*plan.PlanDetail"
+          format: "[]*detail.PlanDetail"
           items:
-            $ref: '#/components/schemas/unibee.api.merchant.plan.PlanDetail'
+            $ref: '#/components/schemas/unibee.api.bean.detail.PlanDetail'
           properties: {}
           type: array
       type: object
@@ -14987,6 +15796,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -15009,11 +15819,15 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
               publishStatus: 7
               status: 9
+            onetimeAddonIds:
+            - 1
+            - 1
             addonIds:
             - 6
             - 6
@@ -15035,6 +15849,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -15077,6 +15892,53 @@ components:
               planId: 9
               id: 5
               metricLimit: 7
+            onetimeAddons:
+            - amount: 6
+              metadata:
+                key: metadata
+              extraMetricData: extraMetricData
+              bindingAddonIds: bindingAddonIds
+              intervalUnit: intervalUnit
+              description: description
+              planName: planName
+              type: 2
+              productName: productName
+              homeUrl: homeUrl
+              gasPayer: gasPayer
+              createTime: 1
+              merchantId: 2
+              taxScale: 3
+              imageUrl: imageUrl
+              intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
+              currency: currency
+              id: 5
+              productDescription: productDescription
+              publishStatus: 7
+              status: 9
+            - amount: 6
+              metadata:
+                key: metadata
+              extraMetricData: extraMetricData
+              bindingAddonIds: bindingAddonIds
+              intervalUnit: intervalUnit
+              description: description
+              planName: planName
+              type: 2
+              productName: productName
+              homeUrl: homeUrl
+              gasPayer: gasPayer
+              createTime: 1
+              merchantId: 2
+              taxScale: 3
+              imageUrl: imageUrl
+              intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
+              currency: currency
+              id: 5
+              productDescription: productDescription
+              publishStatus: 7
+              status: 9
           - addons:
             - amount: 6
               metadata:
@@ -15095,6 +15957,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -15117,11 +15980,15 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
               publishStatus: 7
               status: 9
+            onetimeAddonIds:
+            - 1
+            - 1
             addonIds:
             - 6
             - 6
@@ -15143,6 +16010,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -15185,6 +16053,53 @@ components:
               planId: 9
               id: 5
               metricLimit: 7
+            onetimeAddons:
+            - amount: 6
+              metadata:
+                key: metadata
+              extraMetricData: extraMetricData
+              bindingAddonIds: bindingAddonIds
+              intervalUnit: intervalUnit
+              description: description
+              planName: planName
+              type: 2
+              productName: productName
+              homeUrl: homeUrl
+              gasPayer: gasPayer
+              createTime: 1
+              merchantId: 2
+              taxScale: 3
+              imageUrl: imageUrl
+              intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
+              currency: currency
+              id: 5
+              productDescription: productDescription
+              publishStatus: 7
+              status: 9
+            - amount: 6
+              metadata:
+                key: metadata
+              extraMetricData: extraMetricData
+              bindingAddonIds: bindingAddonIds
+              intervalUnit: intervalUnit
+              description: description
+              planName: planName
+              type: 2
+              productName: productName
+              homeUrl: homeUrl
+              gasPayer: gasPayer
+              createTime: 1
+              merchantId: 2
+              taxScale: 3
+              imageUrl: imageUrl
+              intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
+              currency: currency
+              id: 5
+              productDescription: productDescription
+              publishStatus: 7
+              status: 9
         requestId: requestId
         message: message
       properties:
@@ -15755,6 +16670,510 @@ components:
           properties: {}
           type: string
       type: object
+    _merchant_subscription_create_preview_post_200_response_data:
+      example:
+        quantity: 5
+        vatCountryCode: vatCountryCode
+        addons:
+        - quantity: 4
+          addonPlan:
+            amount: 6
+            metadata:
+              key: metadata
+            extraMetricData: extraMetricData
+            bindingAddonIds: bindingAddonIds
+            intervalUnit: intervalUnit
+            description: description
+            planName: planName
+            type: 2
+            productName: productName
+            homeUrl: homeUrl
+            gasPayer: gasPayer
+            createTime: 1
+            merchantId: 2
+            taxScale: 3
+            imageUrl: imageUrl
+            intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
+            currency: currency
+            id: 5
+            productDescription: productDescription
+            publishStatus: 7
+            status: 9
+        - quantity: 4
+          addonPlan:
+            amount: 6
+            metadata:
+              key: metadata
+            extraMetricData: extraMetricData
+            bindingAddonIds: bindingAddonIds
+            intervalUnit: intervalUnit
+            description: description
+            planName: planName
+            type: 2
+            productName: productName
+            homeUrl: homeUrl
+            gasPayer: gasPayer
+            createTime: 1
+            merchantId: 2
+            taxScale: 3
+            imageUrl: imageUrl
+            intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
+            currency: currency
+            id: 5
+            productDescription: productDescription
+            publishStatus: 7
+            status: 9
+        userId: 7
+        totalAmount: 2
+        vatNumberValidate:
+          valid: true
+          countryCode: countryCode
+          companyAddress: companyAddress
+          companyName: companyName
+          validateMessage: validateMessage
+          vatNumber: vatNumber
+        addonParams:
+        - addonPlanId: 6
+          quantity: 1
+        - addonPlanId: 6
+          quantity: 1
+        taxScale: 5
+        currency: currency
+        invoice:
+          bizType: 6
+          invoiceName: invoiceName
+          prorationScale: 9
+          subscriptionAmountExcludingTax: 4
+          link: link
+          paymentLink: paymentLink
+          cryptoCurrency: cryptoCurrency
+          totalAmount: 1
+          cryptoAmount: 1
+          taxScale: 1
+          paymentId: paymentId
+          subscriptionAmount: 2
+          totalAmountExcludingTax: 1
+          prorationDate: 7
+          currency: currency
+          invoiceId: invoiceId
+          id: 5
+          lines:
+          - amount: 7
+            quantity: 4
+            taxScale: 1
+            amountExcludingTax: 9
+            description: description
+            currency: currency
+            tax: 7
+            unitAmountExcludingTax: 1
+            periodStart: 2
+            periodEnd: 3
+            proration: true
+          - amount: 7
+            quantity: 4
+            taxScale: 1
+            amountExcludingTax: 9
+            description: description
+            currency: currency
+            tax: 7
+            unitAmountExcludingTax: 1
+            periodStart: 2
+            periodEnd: 3
+            proration: true
+          taxAmount: 7
+          periodStart: 2
+          refundId: refundId
+          periodEnd: 5
+          status: 3
+        vatCountryName: vatCountryName
+        plan:
+          amount: 6
+          metadata:
+            key: metadata
+          extraMetricData: extraMetricData
+          bindingAddonIds: bindingAddonIds
+          intervalUnit: intervalUnit
+          description: description
+          planName: planName
+          type: 2
+          productName: productName
+          homeUrl: homeUrl
+          gasPayer: gasPayer
+          createTime: 1
+          merchantId: 2
+          taxScale: 3
+          imageUrl: imageUrl
+          intervalCount: 5
+          bindingOnetimeAddonIds: bindingOnetimeAddonIds
+          currency: currency
+          id: 5
+          productDescription: productDescription
+          publishStatus: 7
+          status: 9
+        email: email
+        gateway:
+          gatewayType: 1
+          gatewayName: gatewayName
+          gatewayLogo: gatewayLogo
+          countryConfig:
+            key: true
+          gatewayId: 6
+        vatNumber: vatNumber
+      properties:
+        addonParams:
+          format: "[]*bean.PlanAddonParam"
+          items:
+            $ref: '#/components/schemas/unibee.api.bean.PlanAddonParam'
+          properties: {}
+          type: array
+        addons:
+          format: "[]*bean.PlanAddonDetail"
+          items:
+            $ref: '#/components/schemas/unibee.api.bean.PlanAddonDetail'
+          properties: {}
+          type: array
+        currency:
+          format: string
+          properties: {}
+          type: string
+        email:
+          format: string
+          properties: {}
+          type: string
+        gateway:
+          $ref: '#/components/schemas/unibee.api.bean.GatewaySimplify'
+        invoice:
+          $ref: '#/components/schemas/unibee.api.bean.InvoiceSimplify'
+        plan:
+          $ref: '#/components/schemas/unibee.api.bean.PlanSimplify'
+        quantity:
+          format: int64
+          properties: {}
+          type: integer
+        taxScale:
+          format: int64
+          properties: {}
+          type: integer
+        totalAmount:
+          format: int64
+          properties: {}
+          type: integer
+        userId:
+          format: int64
+          properties: {}
+          type: integer
+        vatCountryCode:
+          format: string
+          properties: {}
+          type: string
+        vatCountryName:
+          format: string
+          properties: {}
+          type: string
+        vatNumber:
+          format: string
+          properties: {}
+          type: string
+        vatNumberValidate:
+          $ref: '#/components/schemas/unibee.api.bean.ValidResult'
+      type: object
+    _merchant_subscription_create_preview_post_200_response:
+      example:
+        redirect: redirect
+        code: 0
+        data:
+          quantity: 5
+          vatCountryCode: vatCountryCode
+          addons:
+          - quantity: 4
+            addonPlan:
+              amount: 6
+              metadata:
+                key: metadata
+              extraMetricData: extraMetricData
+              bindingAddonIds: bindingAddonIds
+              intervalUnit: intervalUnit
+              description: description
+              planName: planName
+              type: 2
+              productName: productName
+              homeUrl: homeUrl
+              gasPayer: gasPayer
+              createTime: 1
+              merchantId: 2
+              taxScale: 3
+              imageUrl: imageUrl
+              intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
+              currency: currency
+              id: 5
+              productDescription: productDescription
+              publishStatus: 7
+              status: 9
+          - quantity: 4
+            addonPlan:
+              amount: 6
+              metadata:
+                key: metadata
+              extraMetricData: extraMetricData
+              bindingAddonIds: bindingAddonIds
+              intervalUnit: intervalUnit
+              description: description
+              planName: planName
+              type: 2
+              productName: productName
+              homeUrl: homeUrl
+              gasPayer: gasPayer
+              createTime: 1
+              merchantId: 2
+              taxScale: 3
+              imageUrl: imageUrl
+              intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
+              currency: currency
+              id: 5
+              productDescription: productDescription
+              publishStatus: 7
+              status: 9
+          userId: 7
+          totalAmount: 2
+          vatNumberValidate:
+            valid: true
+            countryCode: countryCode
+            companyAddress: companyAddress
+            companyName: companyName
+            validateMessage: validateMessage
+            vatNumber: vatNumber
+          addonParams:
+          - addonPlanId: 6
+            quantity: 1
+          - addonPlanId: 6
+            quantity: 1
+          taxScale: 5
+          currency: currency
+          invoice:
+            bizType: 6
+            invoiceName: invoiceName
+            prorationScale: 9
+            subscriptionAmountExcludingTax: 4
+            link: link
+            paymentLink: paymentLink
+            cryptoCurrency: cryptoCurrency
+            totalAmount: 1
+            cryptoAmount: 1
+            taxScale: 1
+            paymentId: paymentId
+            subscriptionAmount: 2
+            totalAmountExcludingTax: 1
+            prorationDate: 7
+            currency: currency
+            invoiceId: invoiceId
+            id: 5
+            lines:
+            - amount: 7
+              quantity: 4
+              taxScale: 1
+              amountExcludingTax: 9
+              description: description
+              currency: currency
+              tax: 7
+              unitAmountExcludingTax: 1
+              periodStart: 2
+              periodEnd: 3
+              proration: true
+            - amount: 7
+              quantity: 4
+              taxScale: 1
+              amountExcludingTax: 9
+              description: description
+              currency: currency
+              tax: 7
+              unitAmountExcludingTax: 1
+              periodStart: 2
+              periodEnd: 3
+              proration: true
+            taxAmount: 7
+            periodStart: 2
+            refundId: refundId
+            periodEnd: 5
+            status: 3
+          vatCountryName: vatCountryName
+          plan:
+            amount: 6
+            metadata:
+              key: metadata
+            extraMetricData: extraMetricData
+            bindingAddonIds: bindingAddonIds
+            intervalUnit: intervalUnit
+            description: description
+            planName: planName
+            type: 2
+            productName: productName
+            homeUrl: homeUrl
+            gasPayer: gasPayer
+            createTime: 1
+            merchantId: 2
+            taxScale: 3
+            imageUrl: imageUrl
+            intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
+            currency: currency
+            id: 5
+            productDescription: productDescription
+            publishStatus: 7
+            status: 9
+          email: email
+          gateway:
+            gatewayType: 1
+            gatewayName: gatewayName
+            gatewayLogo: gatewayLogo
+            countryConfig:
+              key: true
+            gatewayId: 6
+          vatNumber: vatNumber
+        requestId: requestId
+        message: message
+      properties:
+        code:
+          format: int
+          properties: {}
+          type: integer
+        data:
+          $ref: '#/components/schemas/_merchant_subscription_create_preview_post_200_response_data'
+        message:
+          format: string
+          properties: {}
+          type: string
+        redirect:
+          format: string
+          properties: {}
+          type: string
+        requestId:
+          format: string
+          properties: {}
+          type: string
+      type: object
+    _merchant_subscription_create_submit_post_200_response_data:
+      example:
+        link: link
+        paid: true
+        subscription:
+          metadata:
+            key: metadata
+          gatewayItemData: gatewayItemData
+          testClock: 7
+          currentPeriodEnd: 7
+          link: link
+          type: 0
+          firstPaidTime: 7
+          gasPayer: gasPayer
+          merchantId: 0
+          taxScale: 4
+          countryCode: countryCode
+          dunningTime: 3
+          currency: currency
+          planId: 6
+          id: 3
+          cancelReason: cancelReason
+          returnUrl: returnUrl
+          gatewayStatus: gatewayStatus
+          addonData: addonData
+          billingCycleAnchor: 0
+          currentPeriodStart: 3
+          trialEnd: 9
+          amount: 6
+          quantity: 4
+          userId: 9
+          createTime: 8
+          latestInvoiceId: latestInvoiceId
+          cancelAtPeriodEnd: 4
+          subscriptionId: subscriptionId
+          gatewayId: 5
+          lastUpdateTime: 4
+          pendingUpdateId: pendingUpdateId
+          status: 1
+          taskTime: taskTime
+          vatNumber: vatNumber
+      properties:
+        link:
+          format: string
+          properties: {}
+          type: string
+        paid:
+          format: bool
+          properties: {}
+          type: boolean
+        subscription:
+          $ref: '#/components/schemas/unibee.api.bean.SubscriptionSimplify'
+      type: object
+    _merchant_subscription_create_submit_post_200_response:
+      example:
+        redirect: redirect
+        code: 0
+        data:
+          link: link
+          paid: true
+          subscription:
+            metadata:
+              key: metadata
+            gatewayItemData: gatewayItemData
+            testClock: 7
+            currentPeriodEnd: 7
+            link: link
+            type: 0
+            firstPaidTime: 7
+            gasPayer: gasPayer
+            merchantId: 0
+            taxScale: 4
+            countryCode: countryCode
+            dunningTime: 3
+            currency: currency
+            planId: 6
+            id: 3
+            cancelReason: cancelReason
+            returnUrl: returnUrl
+            gatewayStatus: gatewayStatus
+            addonData: addonData
+            billingCycleAnchor: 0
+            currentPeriodStart: 3
+            trialEnd: 9
+            amount: 6
+            quantity: 4
+            userId: 9
+            createTime: 8
+            latestInvoiceId: latestInvoiceId
+            cancelAtPeriodEnd: 4
+            subscriptionId: subscriptionId
+            gatewayId: 5
+            lastUpdateTime: 4
+            pendingUpdateId: pendingUpdateId
+            status: 1
+            taskTime: taskTime
+            vatNumber: vatNumber
+        requestId: requestId
+        message: message
+      properties:
+        code:
+          format: int
+          properties: {}
+          type: integer
+        data:
+          $ref: '#/components/schemas/_merchant_subscription_create_submit_post_200_response_data'
+        message:
+          format: string
+          properties: {}
+          type: string
+        redirect:
+          format: string
+          properties: {}
+          type: string
+        requestId:
+          format: string
+          properties: {}
+          type: string
+      type: object
     _merchant_subscription_detail_get_200_response_data:
       example:
         unfinishedSubscriptionPendingUpdate:
@@ -15783,6 +17202,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -15807,6 +17227,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -15831,6 +17252,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -15857,6 +17279,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -15881,6 +17304,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -15910,6 +17334,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -15956,6 +17381,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -15980,6 +17406,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -16040,6 +17467,7 @@ components:
           taxScale: 3
           imageUrl: imageUrl
           intervalCount: 5
+          bindingOnetimeAddonIds: bindingOnetimeAddonIds
           currency: currency
           id: 5
           productDescription: productDescription
@@ -16092,6 +17520,8 @@ components:
           gatewayType: 1
           gatewayName: gatewayName
           gatewayLogo: gatewayLogo
+          countryConfig:
+            key: true
           gatewayId: 6
       properties:
         addons:
@@ -16143,6 +17573,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -16167,6 +17598,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -16191,6 +17623,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -16217,6 +17650,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -16241,6 +17675,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -16270,6 +17705,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -16316,6 +17752,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -16340,6 +17777,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -16400,6 +17838,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -16452,6 +17891,8 @@ components:
             gatewayType: 1
             gatewayName: gatewayName
             gatewayLogo: gatewayLogo
+            countryConfig:
+              key: true
             gatewayId: 6
         requestId: requestId
         message: message
@@ -16504,6 +17945,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -16528,6 +17970,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -16552,6 +17995,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -16578,6 +18022,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -16602,6 +18047,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -16631,6 +18077,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -16682,6 +18129,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -16706,6 +18154,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -16766,6 +18215,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -16818,6 +18268,8 @@ components:
             gatewayType: 1
             gatewayName: gatewayName
             gatewayLogo: gatewayLogo
+            countryConfig:
+              key: true
             gatewayId: 6
         - unfinishedSubscriptionPendingUpdate:
             note: note
@@ -16845,6 +18297,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -16869,6 +18322,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -16893,6 +18347,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -16919,6 +18374,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -16943,6 +18399,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -16972,6 +18429,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -17023,6 +18481,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -17047,6 +18506,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -17107,6 +18567,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -17159,6 +18620,8 @@ components:
             gatewayType: 1
             gatewayName: gatewayName
             gatewayLogo: gatewayLogo
+            countryConfig:
+              key: true
             gatewayId: 6
       properties:
         subscriptions:
@@ -17201,6 +18664,7 @@ components:
                   taxScale: 3
                   imageUrl: imageUrl
                   intervalCount: 5
+                  bindingOnetimeAddonIds: bindingOnetimeAddonIds
                   currency: currency
                   id: 5
                   productDescription: productDescription
@@ -17225,6 +18689,7 @@ components:
                   taxScale: 3
                   imageUrl: imageUrl
                   intervalCount: 5
+                  bindingOnetimeAddonIds: bindingOnetimeAddonIds
                   currency: currency
                   id: 5
                   productDescription: productDescription
@@ -17249,6 +18714,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -17275,6 +18741,7 @@ components:
                   taxScale: 3
                   imageUrl: imageUrl
                   intervalCount: 5
+                  bindingOnetimeAddonIds: bindingOnetimeAddonIds
                   currency: currency
                   id: 5
                   productDescription: productDescription
@@ -17299,6 +18766,7 @@ components:
                   taxScale: 3
                   imageUrl: imageUrl
                   intervalCount: 5
+                  bindingOnetimeAddonIds: bindingOnetimeAddonIds
                   currency: currency
                   id: 5
                   productDescription: productDescription
@@ -17328,6 +18796,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -17379,6 +18848,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -17403,6 +18873,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -17463,6 +18934,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -17515,6 +18987,8 @@ components:
               gatewayType: 1
               gatewayName: gatewayName
               gatewayLogo: gatewayLogo
+              countryConfig:
+                key: true
               gatewayId: 6
           - unfinishedSubscriptionPendingUpdate:
               note: note
@@ -17542,6 +19016,7 @@ components:
                   taxScale: 3
                   imageUrl: imageUrl
                   intervalCount: 5
+                  bindingOnetimeAddonIds: bindingOnetimeAddonIds
                   currency: currency
                   id: 5
                   productDescription: productDescription
@@ -17566,6 +19041,7 @@ components:
                   taxScale: 3
                   imageUrl: imageUrl
                   intervalCount: 5
+                  bindingOnetimeAddonIds: bindingOnetimeAddonIds
                   currency: currency
                   id: 5
                   productDescription: productDescription
@@ -17590,6 +19066,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -17616,6 +19093,7 @@ components:
                   taxScale: 3
                   imageUrl: imageUrl
                   intervalCount: 5
+                  bindingOnetimeAddonIds: bindingOnetimeAddonIds
                   currency: currency
                   id: 5
                   productDescription: productDescription
@@ -17640,6 +19118,7 @@ components:
                   taxScale: 3
                   imageUrl: imageUrl
                   intervalCount: 5
+                  bindingOnetimeAddonIds: bindingOnetimeAddonIds
                   currency: currency
                   id: 5
                   productDescription: productDescription
@@ -17669,6 +19148,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -17720,6 +19200,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -17744,6 +19225,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -17804,6 +19286,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -17856,6 +19339,8 @@ components:
               gatewayType: 1
               gatewayName: gatewayName
               gatewayLogo: gatewayLogo
+              countryConfig:
+                key: true
               gatewayId: 6
         requestId: requestId
         message: message
@@ -17907,6 +19392,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -17931,6 +19417,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -17955,6 +19442,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -17981,6 +19469,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -18005,6 +19494,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -18034,6 +19524,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -18085,6 +19576,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -18109,6 +19601,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -18133,6 +19626,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -18159,6 +19653,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -18183,6 +19678,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -18212,6 +19708,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -18278,6 +19775,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -18302,6 +19800,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -18326,6 +19825,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -18352,6 +19852,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -18376,6 +19877,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -18405,6 +19907,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -18456,6 +19959,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -18480,6 +19984,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -18504,6 +20009,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -18530,6 +20036,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -18554,6 +20061,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -18583,6 +20091,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -18655,6 +20164,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -18679,6 +20189,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -18712,6 +20223,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -18741,6 +20253,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -18765,6 +20278,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -18798,6 +20312,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -18842,6 +20357,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -18866,6 +20382,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -18899,6 +20416,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -18928,6 +20446,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -18952,6 +20471,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -18985,6 +20505,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -19282,6 +20803,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -19306,6 +20828,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -19330,6 +20853,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -19356,6 +20880,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -19380,6 +20905,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -19409,6 +20935,7 @@ components:
             taxScale: 3
             imageUrl: imageUrl
             intervalCount: 5
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
             currency: currency
             id: 5
             productDescription: productDescription
@@ -19480,6 +21007,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -19504,6 +21032,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -19528,6 +21057,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription
@@ -19554,6 +21084,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -19578,6 +21109,7 @@ components:
                 taxScale: 3
                 imageUrl: imageUrl
                 intervalCount: 5
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 currency: currency
                 id: 5
                 productDescription: productDescription
@@ -19607,6 +21139,7 @@ components:
               taxScale: 3
               imageUrl: imageUrl
               intervalCount: 5
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
               currency: currency
               id: 5
               productDescription: productDescription

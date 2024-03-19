@@ -19,6 +19,7 @@ var _ MappedNullable = &UnibeeApiBeanGatewaySimplify{}
 
 // UnibeeApiBeanGatewaySimplify struct for UnibeeApiBeanGatewaySimplify
 type UnibeeApiBeanGatewaySimplify struct {
+	CountryConfig *map[string]bool `json:"countryConfig,omitempty"`
 	GatewayId *int64 `json:"gatewayId,omitempty"`
 	GatewayLogo *string `json:"gatewayLogo,omitempty"`
 	GatewayName *string `json:"gatewayName,omitempty"`
@@ -41,6 +42,38 @@ func NewUnibeeApiBeanGatewaySimplify() *UnibeeApiBeanGatewaySimplify {
 func NewUnibeeApiBeanGatewaySimplifyWithDefaults() *UnibeeApiBeanGatewaySimplify {
 	this := UnibeeApiBeanGatewaySimplify{}
 	return &this
+}
+
+// GetCountryConfig returns the CountryConfig field value if set, zero value otherwise.
+func (o *UnibeeApiBeanGatewaySimplify) GetCountryConfig() map[string]bool {
+	if o == nil || IsNil(o.CountryConfig) {
+		var ret map[string]bool
+		return ret
+	}
+	return *o.CountryConfig
+}
+
+// GetCountryConfigOk returns a tuple with the CountryConfig field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiBeanGatewaySimplify) GetCountryConfigOk() (*map[string]bool, bool) {
+	if o == nil || IsNil(o.CountryConfig) {
+		return nil, false
+	}
+	return o.CountryConfig, true
+}
+
+// HasCountryConfig returns a boolean if a field has been set.
+func (o *UnibeeApiBeanGatewaySimplify) HasCountryConfig() bool {
+	if o != nil && !IsNil(o.CountryConfig) {
+		return true
+	}
+
+	return false
+}
+
+// SetCountryConfig gets a reference to the given map[string]bool and assigns it to the CountryConfig field.
+func (o *UnibeeApiBeanGatewaySimplify) SetCountryConfig(v map[string]bool) {
+	o.CountryConfig = &v
 }
 
 // GetGatewayId returns the GatewayId field value if set, zero value otherwise.
@@ -181,6 +214,9 @@ func (o UnibeeApiBeanGatewaySimplify) MarshalJSON() ([]byte, error) {
 
 func (o UnibeeApiBeanGatewaySimplify) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.CountryConfig) {
+		toSerialize["countryConfig"] = o.CountryConfig
+	}
 	if !IsNil(o.GatewayId) {
 		toSerialize["gatewayId"] = o.GatewayId
 	}

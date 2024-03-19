@@ -4,11 +4,76 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**GatewayEditCountryConfigPost**](Gateway.md#GatewayEditCountryConfigPost) | **Post** /merchant/gateway/edit_country_config | Gateway Webhook Edit Country Config
 [**GatewayEditPost**](Gateway.md#GatewayEditPost) | **Post** /merchant/gateway/edit | Gateway Webhook Edit
 [**GatewayListGet**](Gateway.md#GatewayListGet) | **Get** /merchant/gateway/list | Gateway List
 [**GatewaySetupPost**](Gateway.md#GatewaySetupPost) | **Post** /merchant/gateway/setup | Gateway Setup
 [**GatewaySetupWebhookPost**](Gateway.md#GatewaySetupWebhookPost) | **Post** /merchant/gateway/setup_webhook | Gateway Webhook Setup
 
+
+
+## GatewayEditCountryConfigPost
+
+> MerchantAuthSsoLoginOTPPost200Response GatewayEditCountryConfigPost(ctx).UnibeeApiMerchantGatewayEditCountryConfigReq(unibeeApiMerchantGatewayEditCountryConfigReq).Execute()
+
+Gateway Webhook Edit Country Config
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantGatewayEditCountryConfigReq := *openapiclient.NewUnibeeApiMerchantGatewayEditCountryConfigReq(int64(123)) // UnibeeApiMerchantGatewayEditCountryConfigReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Gateway.GatewayEditCountryConfigPost(context.Background()).UnibeeApiMerchantGatewayEditCountryConfigReq(unibeeApiMerchantGatewayEditCountryConfigReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Gateway.GatewayEditCountryConfigPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GatewayEditCountryConfigPost`: MerchantAuthSsoLoginOTPPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Gateway.GatewayEditCountryConfigPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGatewayEditCountryConfigPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantGatewayEditCountryConfigReq** | [**UnibeeApiMerchantGatewayEditCountryConfigReq**](UnibeeApiMerchantGatewayEditCountryConfigReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## GatewayEditPost

@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CountryConfig** | Pointer to **map[string]bool** |  | [optional] 
 **GatewayId** | Pointer to **int64** |  | [optional] 
 **GatewayLogo** | Pointer to **string** |  | [optional] 
 **GatewayName** | Pointer to **string** |  | [optional] 
@@ -27,6 +28,31 @@ will change when the set of required properties is changed
 NewUnibeeApiBeanGatewaySimplifyWithDefaults instantiates a new UnibeeApiBeanGatewaySimplify object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCountryConfig
+
+`func (o *UnibeeApiBeanGatewaySimplify) GetCountryConfig() map[string]bool`
+
+GetCountryConfig returns the CountryConfig field if non-nil, zero value otherwise.
+
+### GetCountryConfigOk
+
+`func (o *UnibeeApiBeanGatewaySimplify) GetCountryConfigOk() (*map[string]bool, bool)`
+
+GetCountryConfigOk returns a tuple with the CountryConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCountryConfig
+
+`func (o *UnibeeApiBeanGatewaySimplify) SetCountryConfig(v map[string]bool)`
+
+SetCountryConfig sets CountryConfig field to given value.
+
+### HasCountryConfig
+
+`func (o *UnibeeApiBeanGatewaySimplify) HasCountryConfig() bool`
+
+HasCountryConfig returns a boolean if a field has been set.
 
 ### GetGatewayId
 

@@ -21,7 +21,7 @@ var _ MappedNullable = &UnibeeApiMerchantPlanEditReq{}
 
 // UnibeeApiMerchantPlanEditReq struct for UnibeeApiMerchantPlanEditReq
 type UnibeeApiMerchantPlanEditReq struct {
-	// Plan Ids Of Addon Type
+	// Plan Ids Of Recurring Addon Type
 	AddonIds []int64 `json:"addonIds,omitempty"`
 	// Plan CaptureAmount
 	Amount int64 `json:"amount"`
@@ -38,11 +38,13 @@ type UnibeeApiMerchantPlanEditReq struct {
 	// Number Of IntervalUnit
 	IntervalCount *int32 `json:"intervalCount,omitempty"`
 	// Plan Interval Unit，em: day|month|year|week
-	IntervalUnit string `json:"intervalUnit"`
+	IntervalUnit *string `json:"intervalUnit,omitempty"`
 	// Metadata，Map
 	Metadata *map[string]string `json:"metadata,omitempty"`
 	// Plan's MetricLimit List
 	MetricLimits []UnibeeApiBeanBulkMetricLimitPlanBindingParam `json:"metricLimits,omitempty"`
+	// Plan Ids Of Onetime Addon Type
+	OnetimeAddonIds []int64 `json:"onetimeAddonIds,omitempty"`
 	// PlanId
 	PlanId int64 `json:"planId"`
 	// Plan Name
@@ -59,11 +61,10 @@ type _UnibeeApiMerchantPlanEditReq UnibeeApiMerchantPlanEditReq
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiMerchantPlanEditReq(amount int64, currency string, intervalUnit string, planId int64, planName string) *UnibeeApiMerchantPlanEditReq {
+func NewUnibeeApiMerchantPlanEditReq(amount int64, currency string, planId int64, planName string) *UnibeeApiMerchantPlanEditReq {
 	this := UnibeeApiMerchantPlanEditReq{}
 	this.Amount = amount
 	this.Currency = currency
-	this.IntervalUnit = intervalUnit
 	this.PlanId = planId
 	this.PlanName = planName
 	return &this
@@ -317,28 +318,36 @@ func (o *UnibeeApiMerchantPlanEditReq) SetIntervalCount(v int32) {
 	o.IntervalCount = &v
 }
 
-// GetIntervalUnit returns the IntervalUnit field value
+// GetIntervalUnit returns the IntervalUnit field value if set, zero value otherwise.
 func (o *UnibeeApiMerchantPlanEditReq) GetIntervalUnit() string {
-	if o == nil {
+	if o == nil || IsNil(o.IntervalUnit) {
 		var ret string
 		return ret
 	}
-
-	return o.IntervalUnit
+	return *o.IntervalUnit
 }
 
-// GetIntervalUnitOk returns a tuple with the IntervalUnit field value
+// GetIntervalUnitOk returns a tuple with the IntervalUnit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnibeeApiMerchantPlanEditReq) GetIntervalUnitOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.IntervalUnit) {
 		return nil, false
 	}
-	return &o.IntervalUnit, true
+	return o.IntervalUnit, true
 }
 
-// SetIntervalUnit sets field value
+// HasIntervalUnit returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantPlanEditReq) HasIntervalUnit() bool {
+	if o != nil && !IsNil(o.IntervalUnit) {
+		return true
+	}
+
+	return false
+}
+
+// SetIntervalUnit gets a reference to the given string and assigns it to the IntervalUnit field.
 func (o *UnibeeApiMerchantPlanEditReq) SetIntervalUnit(v string) {
-	o.IntervalUnit = v
+	o.IntervalUnit = &v
 }
 
 // GetMetadata returns the Metadata field value if set, zero value otherwise.
@@ -403,6 +412,38 @@ func (o *UnibeeApiMerchantPlanEditReq) HasMetricLimits() bool {
 // SetMetricLimits gets a reference to the given []UnibeeApiBeanBulkMetricLimitPlanBindingParam and assigns it to the MetricLimits field.
 func (o *UnibeeApiMerchantPlanEditReq) SetMetricLimits(v []UnibeeApiBeanBulkMetricLimitPlanBindingParam) {
 	o.MetricLimits = v
+}
+
+// GetOnetimeAddonIds returns the OnetimeAddonIds field value if set, zero value otherwise.
+func (o *UnibeeApiMerchantPlanEditReq) GetOnetimeAddonIds() []int64 {
+	if o == nil || IsNil(o.OnetimeAddonIds) {
+		var ret []int64
+		return ret
+	}
+	return o.OnetimeAddonIds
+}
+
+// GetOnetimeAddonIdsOk returns a tuple with the OnetimeAddonIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiMerchantPlanEditReq) GetOnetimeAddonIdsOk() ([]int64, bool) {
+	if o == nil || IsNil(o.OnetimeAddonIds) {
+		return nil, false
+	}
+	return o.OnetimeAddonIds, true
+}
+
+// HasOnetimeAddonIds returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantPlanEditReq) HasOnetimeAddonIds() bool {
+	if o != nil && !IsNil(o.OnetimeAddonIds) {
+		return true
+	}
+
+	return false
+}
+
+// SetOnetimeAddonIds gets a reference to the given []int64 and assigns it to the OnetimeAddonIds field.
+func (o *UnibeeApiMerchantPlanEditReq) SetOnetimeAddonIds(v []int64) {
+	o.OnetimeAddonIds = v
 }
 
 // GetPlanId returns the PlanId field value
@@ -547,12 +588,17 @@ func (o UnibeeApiMerchantPlanEditReq) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.IntervalCount) {
 		toSerialize["intervalCount"] = o.IntervalCount
 	}
-	toSerialize["intervalUnit"] = o.IntervalUnit
+	if !IsNil(o.IntervalUnit) {
+		toSerialize["intervalUnit"] = o.IntervalUnit
+	}
 	if !IsNil(o.Metadata) {
 		toSerialize["metadata"] = o.Metadata
 	}
 	if !IsNil(o.MetricLimits) {
 		toSerialize["metricLimits"] = o.MetricLimits
+	}
+	if !IsNil(o.OnetimeAddonIds) {
+		toSerialize["onetimeAddonIds"] = o.OnetimeAddonIds
 	}
 	toSerialize["planId"] = o.PlanId
 	toSerialize["planName"] = o.PlanName
@@ -572,7 +618,6 @@ func (o *UnibeeApiMerchantPlanEditReq) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"amount",
 		"currency",
-		"intervalUnit",
 		"planId",
 		"planName",
 	}

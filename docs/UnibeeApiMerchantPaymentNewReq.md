@@ -5,22 +5,24 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CountryCode** | Pointer to **string** | CountryCode | [optional] 
-**Currency** | **string** | Currency | 
-**Email** | **string** | Email | 
-**ExternalPaymentId** | **string** | ExternalPaymentId should unique for payment | 
-**ExternalUserId** | **string** | ExternalUserId, should unique for user | 
+**Currency** | Pointer to **string** | Currency, either Currency&amp;Currency or PlanId needed | [optional] 
+**Email** | Pointer to **string** | Email, either ExternalUserId&amp;Email or UserId needed | [optional] 
+**ExternalPaymentId** | Pointer to **string** | ExternalPaymentId should unique for payment | [optional] 
+**ExternalUserId** | Pointer to **string** | ExternalUserId, unique, either ExternalUserId&amp;Email or UserId needed | [optional] 
 **GasPayer** | Pointer to **string** | who pay the gas, merchant|user | [optional] 
 **GatewayId** | **int64** | GatewayId | 
 **Items** | Pointer to [**[]UnibeeApiMerchantPaymentItem**](UnibeeApiMerchantPaymentItem.md) | Items | [optional] 
 **Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
+**PlanId** | Pointer to **int64** | PlanId, either TotalAmount&amp;Currency or PlanId needed | [optional] 
 **RedirectUrl** | Pointer to **string** | Redirect Url | [optional] 
-**TotalAmount** | **int64** | Total PaymentAmount, Cent | 
+**TotalAmount** | Pointer to **int64** | Total PaymentAmount, Cent, either TotalAmount&amp;Currency or PlanId needed | [optional] 
+**UserId** | Pointer to **int64** | UserId, either ExternalUserId&amp;Email or UserId needed | [optional] 
 
 ## Methods
 
 ### NewUnibeeApiMerchantPaymentNewReq
 
-`func NewUnibeeApiMerchantPaymentNewReq(currency string, email string, externalPaymentId string, externalUserId string, gatewayId int64, totalAmount int64, ) *UnibeeApiMerchantPaymentNewReq`
+`func NewUnibeeApiMerchantPaymentNewReq(gatewayId int64, ) *UnibeeApiMerchantPaymentNewReq`
 
 NewUnibeeApiMerchantPaymentNewReq instantiates a new UnibeeApiMerchantPaymentNewReq object
 This constructor will assign default values to properties that have it defined,
@@ -79,6 +81,11 @@ and a boolean to check if the value has been set.
 
 SetCurrency sets Currency field to given value.
 
+### HasCurrency
+
+`func (o *UnibeeApiMerchantPaymentNewReq) HasCurrency() bool`
+
+HasCurrency returns a boolean if a field has been set.
 
 ### GetEmail
 
@@ -99,6 +106,11 @@ and a boolean to check if the value has been set.
 
 SetEmail sets Email field to given value.
 
+### HasEmail
+
+`func (o *UnibeeApiMerchantPaymentNewReq) HasEmail() bool`
+
+HasEmail returns a boolean if a field has been set.
 
 ### GetExternalPaymentId
 
@@ -119,6 +131,11 @@ and a boolean to check if the value has been set.
 
 SetExternalPaymentId sets ExternalPaymentId field to given value.
 
+### HasExternalPaymentId
+
+`func (o *UnibeeApiMerchantPaymentNewReq) HasExternalPaymentId() bool`
+
+HasExternalPaymentId returns a boolean if a field has been set.
 
 ### GetExternalUserId
 
@@ -139,6 +156,11 @@ and a boolean to check if the value has been set.
 
 SetExternalUserId sets ExternalUserId field to given value.
 
+### HasExternalUserId
+
+`func (o *UnibeeApiMerchantPaymentNewReq) HasExternalUserId() bool`
+
+HasExternalUserId returns a boolean if a field has been set.
 
 ### GetGasPayer
 
@@ -235,6 +257,31 @@ SetMetadata sets Metadata field to given value.
 
 HasMetadata returns a boolean if a field has been set.
 
+### GetPlanId
+
+`func (o *UnibeeApiMerchantPaymentNewReq) GetPlanId() int64`
+
+GetPlanId returns the PlanId field if non-nil, zero value otherwise.
+
+### GetPlanIdOk
+
+`func (o *UnibeeApiMerchantPaymentNewReq) GetPlanIdOk() (*int64, bool)`
+
+GetPlanIdOk returns a tuple with the PlanId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanId
+
+`func (o *UnibeeApiMerchantPaymentNewReq) SetPlanId(v int64)`
+
+SetPlanId sets PlanId field to given value.
+
+### HasPlanId
+
+`func (o *UnibeeApiMerchantPaymentNewReq) HasPlanId() bool`
+
+HasPlanId returns a boolean if a field has been set.
+
 ### GetRedirectUrl
 
 `func (o *UnibeeApiMerchantPaymentNewReq) GetRedirectUrl() string`
@@ -279,6 +326,36 @@ and a boolean to check if the value has been set.
 
 SetTotalAmount sets TotalAmount field to given value.
 
+### HasTotalAmount
+
+`func (o *UnibeeApiMerchantPaymentNewReq) HasTotalAmount() bool`
+
+HasTotalAmount returns a boolean if a field has been set.
+
+### GetUserId
+
+`func (o *UnibeeApiMerchantPaymentNewReq) GetUserId() int64`
+
+GetUserId returns the UserId field if non-nil, zero value otherwise.
+
+### GetUserIdOk
+
+`func (o *UnibeeApiMerchantPaymentNewReq) GetUserIdOk() (*int64, bool)`
+
+GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserId
+
+`func (o *UnibeeApiMerchantPaymentNewReq) SetUserId(v int64)`
+
+SetUserId sets UserId field to given value.
+
+### HasUserId
+
+`func (o *UnibeeApiMerchantPaymentNewReq) HasUserId() bool`
+
+HasUserId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

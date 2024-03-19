@@ -102,7 +102,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantPlanAddonsBindingReq := *openapiclient.NewUnibeeApiMerchantPlanAddonsBindingReq(int64(123), []int64{int64(123)}, int64(123)) // UnibeeApiMerchantPlanAddonsBindingReq | 
+	unibeeApiMerchantPlanAddonsBindingReq := *openapiclient.NewUnibeeApiMerchantPlanAddonsBindingReq(int64(123), []int64{int64(123)}, []int64{int64(123)}, int64(123)) // UnibeeApiMerchantPlanAddonsBindingReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -358,7 +358,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantPlanEditReq := *openapiclient.NewUnibeeApiMerchantPlanEditReq(int64(123), "Currency_example", "IntervalUnit_example", int64(123), "PlanName_example") // UnibeeApiMerchantPlanEditReq | 
+	unibeeApiMerchantPlanEditReq := *openapiclient.NewUnibeeApiMerchantPlanEditReq(int64(123), "Currency_example", int64(123), "PlanName_example") // UnibeeApiMerchantPlanEditReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -628,7 +628,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantPlanNewReq := *openapiclient.NewUnibeeApiMerchantPlanNewReq(int64(123), "Currency_example", int32(123), "IntervalUnit_example", "PlanName_example") // UnibeeApiMerchantPlanNewReq | 
+	unibeeApiMerchantPlanNewReq := *openapiclient.NewUnibeeApiMerchantPlanNewReq(int64(123), "Currency_example", "PlanName_example") // UnibeeApiMerchantPlanNewReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

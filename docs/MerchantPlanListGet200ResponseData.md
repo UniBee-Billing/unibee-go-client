@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Plans** | Pointer to [**[]UnibeeApiMerchantPlanPlanDetail**](UnibeeApiMerchantPlanPlanDetail.md) | Plans | [optional] 
+**Plans** | Pointer to [**[]UnibeeApiBeanDetailPlanDetail**](UnibeeApiBeanDetailPlanDetail.md) | Plans | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPlans
 
-`func (o *MerchantPlanListGet200ResponseData) GetPlans() []UnibeeApiMerchantPlanPlanDetail`
+`func (o *MerchantPlanListGet200ResponseData) GetPlans() []UnibeeApiBeanDetailPlanDetail`
 
 GetPlans returns the Plans field if non-nil, zero value otherwise.
 
 ### GetPlansOk
 
-`func (o *MerchantPlanListGet200ResponseData) GetPlansOk() (*[]UnibeeApiMerchantPlanPlanDetail, bool)`
+`func (o *MerchantPlanListGet200ResponseData) GetPlansOk() (*[]UnibeeApiBeanDetailPlanDetail, bool)`
 
 GetPlansOk returns a tuple with the Plans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlans
 
-`func (o *MerchantPlanListGet200ResponseData) SetPlans(v []UnibeeApiMerchantPlanPlanDetail)`
+`func (o *MerchantPlanListGet200ResponseData) SetPlans(v []UnibeeApiBeanDetailPlanDetail)`
 
 SetPlans sets Plans field to given value.
 

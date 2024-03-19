@@ -22,6 +22,114 @@ import (
 // GatewayService Gateway service
 type GatewayService service
 
+type GatewayGatewayEditCountryConfigPostRequest struct {
+	ctx context.Context
+	ApiService *GatewayService
+	unibeeApiMerchantGatewayEditCountryConfigReq *UnibeeApiMerchantGatewayEditCountryConfigReq
+}
+
+func (r GatewayGatewayEditCountryConfigPostRequest) UnibeeApiMerchantGatewayEditCountryConfigReq(unibeeApiMerchantGatewayEditCountryConfigReq UnibeeApiMerchantGatewayEditCountryConfigReq) GatewayGatewayEditCountryConfigPostRequest {
+	r.unibeeApiMerchantGatewayEditCountryConfigReq = &unibeeApiMerchantGatewayEditCountryConfigReq
+	return r
+}
+
+func (r GatewayGatewayEditCountryConfigPostRequest) Execute() (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+	return r.ApiService.GatewayEditCountryConfigPostExecute(r)
+}
+
+/*
+GatewayEditCountryConfigPost Gateway Webhook Edit Country Config
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return GatewayGatewayEditCountryConfigPostRequest
+*/
+func (a *GatewayService) GatewayEditCountryConfigPost(ctx context.Context) GatewayGatewayEditCountryConfigPostRequest {
+	return GatewayGatewayEditCountryConfigPostRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return MerchantAuthSsoLoginOTPPost200Response
+func (a *GatewayService) GatewayEditCountryConfigPostExecute(r GatewayGatewayEditCountryConfigPostRequest) (*MerchantAuthSsoLoginOTPPost200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *MerchantAuthSsoLoginOTPPost200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GatewayService.GatewayEditCountryConfigPost")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/merchant/gateway/edit_country_config"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.unibeeApiMerchantGatewayEditCountryConfigReq == nil {
+		return localVarReturnValue, nil, reportError("unibeeApiMerchantGatewayEditCountryConfigReq is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.unibeeApiMerchantGatewayEditCountryConfigReq
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type GatewayGatewayEditPostRequest struct {
 	ctx context.Context
 	ApiService *GatewayService

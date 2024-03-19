@@ -23,14 +23,14 @@ var _ MappedNullable = &UnibeeApiMerchantPaymentNewReq{}
 type UnibeeApiMerchantPaymentNewReq struct {
 	// CountryCode
 	CountryCode *string `json:"countryCode,omitempty"`
-	// Currency
-	Currency string `json:"currency"`
-	// Email
-	Email string `json:"email"`
+	// Currency, either Currency&Currency or PlanId needed
+	Currency *string `json:"currency,omitempty"`
+	// Email, either ExternalUserId&Email or UserId needed
+	Email *string `json:"email,omitempty"`
 	// ExternalPaymentId should unique for payment
-	ExternalPaymentId string `json:"externalPaymentId"`
-	// ExternalUserId, should unique for user
-	ExternalUserId string `json:"externalUserId"`
+	ExternalPaymentId *string `json:"externalPaymentId,omitempty"`
+	// ExternalUserId, unique, either ExternalUserId&Email or UserId needed
+	ExternalUserId *string `json:"externalUserId,omitempty"`
 	// who pay the gas, merchant|user
 	GasPayer *string `json:"gasPayer,omitempty"`
 	// GatewayId
@@ -39,10 +39,14 @@ type UnibeeApiMerchantPaymentNewReq struct {
 	Items []UnibeeApiMerchantPaymentItem `json:"items,omitempty"`
 	// Metadata，Map
 	Metadata *map[string]string `json:"metadata,omitempty"`
+	// PlanId, either TotalAmount&Currency or PlanId needed
+	PlanId *int64 `json:"planId,omitempty"`
 	// Redirect Url
 	RedirectUrl *string `json:"redirectUrl,omitempty"`
-	// Total PaymentAmount, Cent
-	TotalAmount int64 `json:"totalAmount"`
+	// Total PaymentAmount, Cent, either TotalAmount&Currency or PlanId needed
+	TotalAmount *int64 `json:"totalAmount,omitempty"`
+	// UserId, either ExternalUserId&Email or UserId needed
+	UserId *int64 `json:"userId,omitempty"`
 }
 
 type _UnibeeApiMerchantPaymentNewReq UnibeeApiMerchantPaymentNewReq
@@ -51,14 +55,9 @@ type _UnibeeApiMerchantPaymentNewReq UnibeeApiMerchantPaymentNewReq
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiMerchantPaymentNewReq(currency string, email string, externalPaymentId string, externalUserId string, gatewayId int64, totalAmount int64) *UnibeeApiMerchantPaymentNewReq {
+func NewUnibeeApiMerchantPaymentNewReq(gatewayId int64) *UnibeeApiMerchantPaymentNewReq {
 	this := UnibeeApiMerchantPaymentNewReq{}
-	this.Currency = currency
-	this.Email = email
-	this.ExternalPaymentId = externalPaymentId
-	this.ExternalUserId = externalUserId
 	this.GatewayId = gatewayId
-	this.TotalAmount = totalAmount
 	return &this
 }
 
@@ -102,100 +101,132 @@ func (o *UnibeeApiMerchantPaymentNewReq) SetCountryCode(v string) {
 	o.CountryCode = &v
 }
 
-// GetCurrency returns the Currency field value
+// GetCurrency returns the Currency field value if set, zero value otherwise.
 func (o *UnibeeApiMerchantPaymentNewReq) GetCurrency() string {
-	if o == nil {
+	if o == nil || IsNil(o.Currency) {
 		var ret string
 		return ret
 	}
-
-	return o.Currency
+	return *o.Currency
 }
 
-// GetCurrencyOk returns a tuple with the Currency field value
+// GetCurrencyOk returns a tuple with the Currency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnibeeApiMerchantPaymentNewReq) GetCurrencyOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Currency) {
 		return nil, false
 	}
-	return &o.Currency, true
+	return o.Currency, true
 }
 
-// SetCurrency sets field value
+// HasCurrency returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantPaymentNewReq) HasCurrency() bool {
+	if o != nil && !IsNil(o.Currency) {
+		return true
+	}
+
+	return false
+}
+
+// SetCurrency gets a reference to the given string and assigns it to the Currency field.
 func (o *UnibeeApiMerchantPaymentNewReq) SetCurrency(v string) {
-	o.Currency = v
+	o.Currency = &v
 }
 
-// GetEmail returns the Email field value
+// GetEmail returns the Email field value if set, zero value otherwise.
 func (o *UnibeeApiMerchantPaymentNewReq) GetEmail() string {
-	if o == nil {
+	if o == nil || IsNil(o.Email) {
 		var ret string
 		return ret
 	}
-
-	return o.Email
+	return *o.Email
 }
 
-// GetEmailOk returns a tuple with the Email field value
+// GetEmailOk returns a tuple with the Email field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnibeeApiMerchantPaymentNewReq) GetEmailOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Email) {
 		return nil, false
 	}
-	return &o.Email, true
+	return o.Email, true
 }
 
-// SetEmail sets field value
+// HasEmail returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantPaymentNewReq) HasEmail() bool {
+	if o != nil && !IsNil(o.Email) {
+		return true
+	}
+
+	return false
+}
+
+// SetEmail gets a reference to the given string and assigns it to the Email field.
 func (o *UnibeeApiMerchantPaymentNewReq) SetEmail(v string) {
-	o.Email = v
+	o.Email = &v
 }
 
-// GetExternalPaymentId returns the ExternalPaymentId field value
+// GetExternalPaymentId returns the ExternalPaymentId field value if set, zero value otherwise.
 func (o *UnibeeApiMerchantPaymentNewReq) GetExternalPaymentId() string {
-	if o == nil {
+	if o == nil || IsNil(o.ExternalPaymentId) {
 		var ret string
 		return ret
 	}
-
-	return o.ExternalPaymentId
+	return *o.ExternalPaymentId
 }
 
-// GetExternalPaymentIdOk returns a tuple with the ExternalPaymentId field value
+// GetExternalPaymentIdOk returns a tuple with the ExternalPaymentId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnibeeApiMerchantPaymentNewReq) GetExternalPaymentIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ExternalPaymentId) {
 		return nil, false
 	}
-	return &o.ExternalPaymentId, true
+	return o.ExternalPaymentId, true
 }
 
-// SetExternalPaymentId sets field value
+// HasExternalPaymentId returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantPaymentNewReq) HasExternalPaymentId() bool {
+	if o != nil && !IsNil(o.ExternalPaymentId) {
+		return true
+	}
+
+	return false
+}
+
+// SetExternalPaymentId gets a reference to the given string and assigns it to the ExternalPaymentId field.
 func (o *UnibeeApiMerchantPaymentNewReq) SetExternalPaymentId(v string) {
-	o.ExternalPaymentId = v
+	o.ExternalPaymentId = &v
 }
 
-// GetExternalUserId returns the ExternalUserId field value
+// GetExternalUserId returns the ExternalUserId field value if set, zero value otherwise.
 func (o *UnibeeApiMerchantPaymentNewReq) GetExternalUserId() string {
-	if o == nil {
+	if o == nil || IsNil(o.ExternalUserId) {
 		var ret string
 		return ret
 	}
-
-	return o.ExternalUserId
+	return *o.ExternalUserId
 }
 
-// GetExternalUserIdOk returns a tuple with the ExternalUserId field value
+// GetExternalUserIdOk returns a tuple with the ExternalUserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnibeeApiMerchantPaymentNewReq) GetExternalUserIdOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ExternalUserId) {
 		return nil, false
 	}
-	return &o.ExternalUserId, true
+	return o.ExternalUserId, true
 }
 
-// SetExternalUserId sets field value
+// HasExternalUserId returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantPaymentNewReq) HasExternalUserId() bool {
+	if o != nil && !IsNil(o.ExternalUserId) {
+		return true
+	}
+
+	return false
+}
+
+// SetExternalUserId gets a reference to the given string and assigns it to the ExternalUserId field.
 func (o *UnibeeApiMerchantPaymentNewReq) SetExternalUserId(v string) {
-	o.ExternalUserId = v
+	o.ExternalUserId = &v
 }
 
 // GetGasPayer returns the GasPayer field value if set, zero value otherwise.
@@ -318,6 +349,38 @@ func (o *UnibeeApiMerchantPaymentNewReq) SetMetadata(v map[string]string) {
 	o.Metadata = &v
 }
 
+// GetPlanId returns the PlanId field value if set, zero value otherwise.
+func (o *UnibeeApiMerchantPaymentNewReq) GetPlanId() int64 {
+	if o == nil || IsNil(o.PlanId) {
+		var ret int64
+		return ret
+	}
+	return *o.PlanId
+}
+
+// GetPlanIdOk returns a tuple with the PlanId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiMerchantPaymentNewReq) GetPlanIdOk() (*int64, bool) {
+	if o == nil || IsNil(o.PlanId) {
+		return nil, false
+	}
+	return o.PlanId, true
+}
+
+// HasPlanId returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantPaymentNewReq) HasPlanId() bool {
+	if o != nil && !IsNil(o.PlanId) {
+		return true
+	}
+
+	return false
+}
+
+// SetPlanId gets a reference to the given int64 and assigns it to the PlanId field.
+func (o *UnibeeApiMerchantPaymentNewReq) SetPlanId(v int64) {
+	o.PlanId = &v
+}
+
 // GetRedirectUrl returns the RedirectUrl field value if set, zero value otherwise.
 func (o *UnibeeApiMerchantPaymentNewReq) GetRedirectUrl() string {
 	if o == nil || IsNil(o.RedirectUrl) {
@@ -350,28 +413,68 @@ func (o *UnibeeApiMerchantPaymentNewReq) SetRedirectUrl(v string) {
 	o.RedirectUrl = &v
 }
 
-// GetTotalAmount returns the TotalAmount field value
+// GetTotalAmount returns the TotalAmount field value if set, zero value otherwise.
 func (o *UnibeeApiMerchantPaymentNewReq) GetTotalAmount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.TotalAmount) {
 		var ret int64
 		return ret
 	}
-
-	return o.TotalAmount
+	return *o.TotalAmount
 }
 
-// GetTotalAmountOk returns a tuple with the TotalAmount field value
+// GetTotalAmountOk returns a tuple with the TotalAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnibeeApiMerchantPaymentNewReq) GetTotalAmountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.TotalAmount) {
 		return nil, false
 	}
-	return &o.TotalAmount, true
+	return o.TotalAmount, true
 }
 
-// SetTotalAmount sets field value
+// HasTotalAmount returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantPaymentNewReq) HasTotalAmount() bool {
+	if o != nil && !IsNil(o.TotalAmount) {
+		return true
+	}
+
+	return false
+}
+
+// SetTotalAmount gets a reference to the given int64 and assigns it to the TotalAmount field.
 func (o *UnibeeApiMerchantPaymentNewReq) SetTotalAmount(v int64) {
-	o.TotalAmount = v
+	o.TotalAmount = &v
+}
+
+// GetUserId returns the UserId field value if set, zero value otherwise.
+func (o *UnibeeApiMerchantPaymentNewReq) GetUserId() int64 {
+	if o == nil || IsNil(o.UserId) {
+		var ret int64
+		return ret
+	}
+	return *o.UserId
+}
+
+// GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiMerchantPaymentNewReq) GetUserIdOk() (*int64, bool) {
+	if o == nil || IsNil(o.UserId) {
+		return nil, false
+	}
+	return o.UserId, true
+}
+
+// HasUserId returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantPaymentNewReq) HasUserId() bool {
+	if o != nil && !IsNil(o.UserId) {
+		return true
+	}
+
+	return false
+}
+
+// SetUserId gets a reference to the given int64 and assigns it to the UserId field.
+func (o *UnibeeApiMerchantPaymentNewReq) SetUserId(v int64) {
+	o.UserId = &v
 }
 
 func (o UnibeeApiMerchantPaymentNewReq) MarshalJSON() ([]byte, error) {
@@ -387,10 +490,18 @@ func (o UnibeeApiMerchantPaymentNewReq) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.CountryCode) {
 		toSerialize["countryCode"] = o.CountryCode
 	}
-	toSerialize["currency"] = o.Currency
-	toSerialize["email"] = o.Email
-	toSerialize["externalPaymentId"] = o.ExternalPaymentId
-	toSerialize["externalUserId"] = o.ExternalUserId
+	if !IsNil(o.Currency) {
+		toSerialize["currency"] = o.Currency
+	}
+	if !IsNil(o.Email) {
+		toSerialize["email"] = o.Email
+	}
+	if !IsNil(o.ExternalPaymentId) {
+		toSerialize["externalPaymentId"] = o.ExternalPaymentId
+	}
+	if !IsNil(o.ExternalUserId) {
+		toSerialize["externalUserId"] = o.ExternalUserId
+	}
 	if !IsNil(o.GasPayer) {
 		toSerialize["gasPayer"] = o.GasPayer
 	}
@@ -401,10 +512,18 @@ func (o UnibeeApiMerchantPaymentNewReq) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Metadata) {
 		toSerialize["metadata"] = o.Metadata
 	}
+	if !IsNil(o.PlanId) {
+		toSerialize["planId"] = o.PlanId
+	}
 	if !IsNil(o.RedirectUrl) {
 		toSerialize["redirectUrl"] = o.RedirectUrl
 	}
-	toSerialize["totalAmount"] = o.TotalAmount
+	if !IsNil(o.TotalAmount) {
+		toSerialize["totalAmount"] = o.TotalAmount
+	}
+	if !IsNil(o.UserId) {
+		toSerialize["userId"] = o.UserId
+	}
 	return toSerialize, nil
 }
 
@@ -413,12 +532,7 @@ func (o *UnibeeApiMerchantPaymentNewReq) UnmarshalJSON(data []byte) (err error) 
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"currency",
-		"email",
-		"externalPaymentId",
-		"externalUserId",
 		"gatewayId",
-		"totalAmount",
 	}
 
 	allProperties := make(map[string]interface{})

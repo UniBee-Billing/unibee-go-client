@@ -9,6 +9,8 @@ Method | HTTP request | Description
 [**SubscriptionCancelLastCancelAtPeriodEndPost**](Subscription.md#SubscriptionCancelLastCancelAtPeriodEndPost) | **Post** /merchant/subscription/cancel_last_cancel_at_period_end | Merchant Edit Subscription-Cancel Last CancelAtPeriod
 [**SubscriptionCancelPost**](Subscription.md#SubscriptionCancelPost) | **Post** /merchant/subscription/cancel | Merchant Cancel Subscription Immediately (Will Not Generate Proration Invoice)
 [**SubscriptionChangeGatewayPost**](Subscription.md#SubscriptionChangeGatewayPost) | **Post** /merchant/subscription/change_gateway | Change Subscription Gateway
+[**SubscriptionCreatePreviewPost**](Subscription.md#SubscriptionCreatePreviewPost) | **Post** /merchant/subscription/create_preview | Create Subscription Preview
+[**SubscriptionCreateSubmitPost**](Subscription.md#SubscriptionCreateSubmitPost) | **Post** /merchant/subscription/create_submit | Create Subscription
 [**SubscriptionDetailGet**](Subscription.md#SubscriptionDetailGet) | **Get** /merchant/subscription/detail | Subscription Detail
 [**SubscriptionDetailPost**](Subscription.md#SubscriptionDetailPost) | **Post** /merchant/subscription/detail | Subscription Detail
 [**SubscriptionListGet**](Subscription.md#SubscriptionListGet) | **Get** /merchant/subscription/list | Subscription List
@@ -327,6 +329,134 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SubscriptionCreatePreviewPost
+
+> MerchantSubscriptionCreatePreviewPost200Response SubscriptionCreatePreviewPost(ctx).UnibeeApiMerchantSubscriptionCreatePreviewReq(unibeeApiMerchantSubscriptionCreatePreviewReq).Execute()
+
+Create Subscription Preview
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantSubscriptionCreatePreviewReq := *openapiclient.NewUnibeeApiMerchantSubscriptionCreatePreviewReq(int64(123), int64(123), int64(123)) // UnibeeApiMerchantSubscriptionCreatePreviewReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Subscription.SubscriptionCreatePreviewPost(context.Background()).UnibeeApiMerchantSubscriptionCreatePreviewReq(unibeeApiMerchantSubscriptionCreatePreviewReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionCreatePreviewPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SubscriptionCreatePreviewPost`: MerchantSubscriptionCreatePreviewPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionCreatePreviewPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSubscriptionCreatePreviewPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantSubscriptionCreatePreviewReq** | [**UnibeeApiMerchantSubscriptionCreatePreviewReq**](UnibeeApiMerchantSubscriptionCreatePreviewReq.md) |  | 
+
+### Return type
+
+[**MerchantSubscriptionCreatePreviewPost200Response**](MerchantSubscriptionCreatePreviewPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SubscriptionCreateSubmitPost
+
+> MerchantSubscriptionCreateSubmitPost200Response SubscriptionCreateSubmitPost(ctx).UnibeeApiMerchantSubscriptionCreateReq(unibeeApiMerchantSubscriptionCreateReq).Execute()
+
+Create Subscription
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantSubscriptionCreateReq := *openapiclient.NewUnibeeApiMerchantSubscriptionCreateReq("ConfirmCurrency_example", int64(123), int64(123), int64(123), int64(123)) // UnibeeApiMerchantSubscriptionCreateReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Subscription.SubscriptionCreateSubmitPost(context.Background()).UnibeeApiMerchantSubscriptionCreateReq(unibeeApiMerchantSubscriptionCreateReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionCreateSubmitPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SubscriptionCreateSubmitPost`: MerchantSubscriptionCreateSubmitPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionCreateSubmitPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSubscriptionCreateSubmitPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantSubscriptionCreateReq** | [**UnibeeApiMerchantSubscriptionCreateReq**](UnibeeApiMerchantSubscriptionCreateReq.md) |  | 
+
+### Return type
+
+[**MerchantSubscriptionCreateSubmitPost200Response**](MerchantSubscriptionCreateSubmitPost200Response.md)
 
 ### Authorization
 

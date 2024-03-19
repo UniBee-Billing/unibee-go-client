@@ -5,7 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Amount** | Pointer to **int64** | amount, cent, without tax | [optional] 
-**BindingAddonIds** | Pointer to **string** | binded addon planIds，split with , | [optional] 
+**BindingAddonIds** | Pointer to **string** | binded recurring addon planIds，split with , | [optional] 
+**BindingOnetimeAddonIds** | Pointer to **string** | binded onetime addon planIds，split with , | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Currency** | Pointer to **string** | currency | [optional] 
 **Description** | Pointer to **string** | description | [optional] 
@@ -94,6 +95,31 @@ SetBindingAddonIds sets BindingAddonIds field to given value.
 `func (o *UnibeeApiBeanPlanSimplify) HasBindingAddonIds() bool`
 
 HasBindingAddonIds returns a boolean if a field has been set.
+
+### GetBindingOnetimeAddonIds
+
+`func (o *UnibeeApiBeanPlanSimplify) GetBindingOnetimeAddonIds() string`
+
+GetBindingOnetimeAddonIds returns the BindingOnetimeAddonIds field if non-nil, zero value otherwise.
+
+### GetBindingOnetimeAddonIdsOk
+
+`func (o *UnibeeApiBeanPlanSimplify) GetBindingOnetimeAddonIdsOk() (*string, bool)`
+
+GetBindingOnetimeAddonIdsOk returns a tuple with the BindingOnetimeAddonIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBindingOnetimeAddonIds
+
+`func (o *UnibeeApiBeanPlanSimplify) SetBindingOnetimeAddonIds(v string)`
+
+SetBindingOnetimeAddonIds sets BindingOnetimeAddonIds field to given value.
+
+### HasBindingOnetimeAddonIds
+
+`func (o *UnibeeApiBeanPlanSimplify) HasBindingOnetimeAddonIds() bool`
+
+HasBindingOnetimeAddonIds returns a boolean if a field has been set.
 
 ### GetCreateTime
 

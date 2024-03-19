@@ -563,6 +563,222 @@ func (a *SubscriptionService) SubscriptionChangeGatewayPostExecute(r Subscriptio
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type SubscriptionSubscriptionCreatePreviewPostRequest struct {
+	ctx context.Context
+	ApiService *SubscriptionService
+	unibeeApiMerchantSubscriptionCreatePreviewReq *UnibeeApiMerchantSubscriptionCreatePreviewReq
+}
+
+func (r SubscriptionSubscriptionCreatePreviewPostRequest) UnibeeApiMerchantSubscriptionCreatePreviewReq(unibeeApiMerchantSubscriptionCreatePreviewReq UnibeeApiMerchantSubscriptionCreatePreviewReq) SubscriptionSubscriptionCreatePreviewPostRequest {
+	r.unibeeApiMerchantSubscriptionCreatePreviewReq = &unibeeApiMerchantSubscriptionCreatePreviewReq
+	return r
+}
+
+func (r SubscriptionSubscriptionCreatePreviewPostRequest) Execute() (*MerchantSubscriptionCreatePreviewPost200Response, *http.Response, error) {
+	return r.ApiService.SubscriptionCreatePreviewPostExecute(r)
+}
+
+/*
+SubscriptionCreatePreviewPost Create Subscription Preview
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return SubscriptionSubscriptionCreatePreviewPostRequest
+*/
+func (a *SubscriptionService) SubscriptionCreatePreviewPost(ctx context.Context) SubscriptionSubscriptionCreatePreviewPostRequest {
+	return SubscriptionSubscriptionCreatePreviewPostRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return MerchantSubscriptionCreatePreviewPost200Response
+func (a *SubscriptionService) SubscriptionCreatePreviewPostExecute(r SubscriptionSubscriptionCreatePreviewPostRequest) (*MerchantSubscriptionCreatePreviewPost200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *MerchantSubscriptionCreatePreviewPost200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SubscriptionService.SubscriptionCreatePreviewPost")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/merchant/subscription/create_preview"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.unibeeApiMerchantSubscriptionCreatePreviewReq == nil {
+		return localVarReturnValue, nil, reportError("unibeeApiMerchantSubscriptionCreatePreviewReq is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.unibeeApiMerchantSubscriptionCreatePreviewReq
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type SubscriptionSubscriptionCreateSubmitPostRequest struct {
+	ctx context.Context
+	ApiService *SubscriptionService
+	unibeeApiMerchantSubscriptionCreateReq *UnibeeApiMerchantSubscriptionCreateReq
+}
+
+func (r SubscriptionSubscriptionCreateSubmitPostRequest) UnibeeApiMerchantSubscriptionCreateReq(unibeeApiMerchantSubscriptionCreateReq UnibeeApiMerchantSubscriptionCreateReq) SubscriptionSubscriptionCreateSubmitPostRequest {
+	r.unibeeApiMerchantSubscriptionCreateReq = &unibeeApiMerchantSubscriptionCreateReq
+	return r
+}
+
+func (r SubscriptionSubscriptionCreateSubmitPostRequest) Execute() (*MerchantSubscriptionCreateSubmitPost200Response, *http.Response, error) {
+	return r.ApiService.SubscriptionCreateSubmitPostExecute(r)
+}
+
+/*
+SubscriptionCreateSubmitPost Create Subscription
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return SubscriptionSubscriptionCreateSubmitPostRequest
+*/
+func (a *SubscriptionService) SubscriptionCreateSubmitPost(ctx context.Context) SubscriptionSubscriptionCreateSubmitPostRequest {
+	return SubscriptionSubscriptionCreateSubmitPostRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return MerchantSubscriptionCreateSubmitPost200Response
+func (a *SubscriptionService) SubscriptionCreateSubmitPostExecute(r SubscriptionSubscriptionCreateSubmitPostRequest) (*MerchantSubscriptionCreateSubmitPost200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *MerchantSubscriptionCreateSubmitPost200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SubscriptionService.SubscriptionCreateSubmitPost")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/merchant/subscription/create_submit"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.unibeeApiMerchantSubscriptionCreateReq == nil {
+		return localVarReturnValue, nil, reportError("unibeeApiMerchantSubscriptionCreateReq is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.unibeeApiMerchantSubscriptionCreateReq
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type SubscriptionSubscriptionDetailGetRequest struct {
 	ctx context.Context
 	ApiService *SubscriptionService
