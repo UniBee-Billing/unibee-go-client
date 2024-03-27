@@ -26,6 +26,9 @@ type UnibeeApiBeanInvoiceSimplify struct {
 	// crypto_currency
 	CryptoCurrency *string `json:"cryptoCurrency,omitempty"`
 	Currency *string `json:"currency,omitempty"`
+	// day util due after finish
+	DayUtilDue *int64 `json:"dayUtilDue,omitempty"`
+	FinishTime *int64 `json:"finishTime,omitempty"`
 	Id *int64 `json:"id,omitempty"`
 	InvoiceId *string `json:"invoiceId,omitempty"`
 	InvoiceName *string `json:"invoiceName,omitempty"`
@@ -42,6 +45,8 @@ type UnibeeApiBeanInvoiceSimplify struct {
 	ProrationScale *int64 `json:"prorationScale,omitempty"`
 	// refundId
 	RefundId *string `json:"refundId,omitempty"`
+	// email send status，0-No | 1- YES| 2-Unnecessary
+	SendStatus *int32 `json:"sendStatus,omitempty"`
 	// status，0-Init | 1-pending｜2-processing｜3-paid | 4-failed | 5-cancelled
 	Status *int32 `json:"status,omitempty"`
 	SubscriptionAmount *int64 `json:"subscriptionAmount,omitempty"`
@@ -196,6 +201,70 @@ func (o *UnibeeApiBeanInvoiceSimplify) HasCurrency() bool {
 // SetCurrency gets a reference to the given string and assigns it to the Currency field.
 func (o *UnibeeApiBeanInvoiceSimplify) SetCurrency(v string) {
 	o.Currency = &v
+}
+
+// GetDayUtilDue returns the DayUtilDue field value if set, zero value otherwise.
+func (o *UnibeeApiBeanInvoiceSimplify) GetDayUtilDue() int64 {
+	if o == nil || IsNil(o.DayUtilDue) {
+		var ret int64
+		return ret
+	}
+	return *o.DayUtilDue
+}
+
+// GetDayUtilDueOk returns a tuple with the DayUtilDue field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiBeanInvoiceSimplify) GetDayUtilDueOk() (*int64, bool) {
+	if o == nil || IsNil(o.DayUtilDue) {
+		return nil, false
+	}
+	return o.DayUtilDue, true
+}
+
+// HasDayUtilDue returns a boolean if a field has been set.
+func (o *UnibeeApiBeanInvoiceSimplify) HasDayUtilDue() bool {
+	if o != nil && !IsNil(o.DayUtilDue) {
+		return true
+	}
+
+	return false
+}
+
+// SetDayUtilDue gets a reference to the given int64 and assigns it to the DayUtilDue field.
+func (o *UnibeeApiBeanInvoiceSimplify) SetDayUtilDue(v int64) {
+	o.DayUtilDue = &v
+}
+
+// GetFinishTime returns the FinishTime field value if set, zero value otherwise.
+func (o *UnibeeApiBeanInvoiceSimplify) GetFinishTime() int64 {
+	if o == nil || IsNil(o.FinishTime) {
+		var ret int64
+		return ret
+	}
+	return *o.FinishTime
+}
+
+// GetFinishTimeOk returns a tuple with the FinishTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiBeanInvoiceSimplify) GetFinishTimeOk() (*int64, bool) {
+	if o == nil || IsNil(o.FinishTime) {
+		return nil, false
+	}
+	return o.FinishTime, true
+}
+
+// HasFinishTime returns a boolean if a field has been set.
+func (o *UnibeeApiBeanInvoiceSimplify) HasFinishTime() bool {
+	if o != nil && !IsNil(o.FinishTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetFinishTime gets a reference to the given int64 and assigns it to the FinishTime field.
+func (o *UnibeeApiBeanInvoiceSimplify) SetFinishTime(v int64) {
+	o.FinishTime = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -582,6 +651,38 @@ func (o *UnibeeApiBeanInvoiceSimplify) SetRefundId(v string) {
 	o.RefundId = &v
 }
 
+// GetSendStatus returns the SendStatus field value if set, zero value otherwise.
+func (o *UnibeeApiBeanInvoiceSimplify) GetSendStatus() int32 {
+	if o == nil || IsNil(o.SendStatus) {
+		var ret int32
+		return ret
+	}
+	return *o.SendStatus
+}
+
+// GetSendStatusOk returns a tuple with the SendStatus field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiBeanInvoiceSimplify) GetSendStatusOk() (*int32, bool) {
+	if o == nil || IsNil(o.SendStatus) {
+		return nil, false
+	}
+	return o.SendStatus, true
+}
+
+// HasSendStatus returns a boolean if a field has been set.
+func (o *UnibeeApiBeanInvoiceSimplify) HasSendStatus() bool {
+	if o != nil && !IsNil(o.SendStatus) {
+		return true
+	}
+
+	return false
+}
+
+// SetSendStatus gets a reference to the given int32 and assigns it to the SendStatus field.
+func (o *UnibeeApiBeanInvoiceSimplify) SetSendStatus(v int32) {
+	o.SendStatus = &v
+}
+
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *UnibeeApiBeanInvoiceSimplify) GetStatus() int32 {
 	if o == nil || IsNil(o.Status) {
@@ -828,6 +929,12 @@ func (o UnibeeApiBeanInvoiceSimplify) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Currency) {
 		toSerialize["currency"] = o.Currency
 	}
+	if !IsNil(o.DayUtilDue) {
+		toSerialize["dayUtilDue"] = o.DayUtilDue
+	}
+	if !IsNil(o.FinishTime) {
+		toSerialize["finishTime"] = o.FinishTime
+	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
@@ -863,6 +970,9 @@ func (o UnibeeApiBeanInvoiceSimplify) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.RefundId) {
 		toSerialize["refundId"] = o.RefundId
+	}
+	if !IsNil(o.SendStatus) {
+		toSerialize["sendStatus"] = o.SendStatus
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status

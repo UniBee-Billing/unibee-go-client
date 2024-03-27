@@ -23,6 +23,8 @@ var _ MappedNullable = &UnibeeApiMerchantSubscriptionUpdatePreviewReq{}
 type UnibeeApiMerchantSubscriptionUpdatePreviewReq struct {
 	// addonParams
 	AddonParams []UnibeeApiBeanPlanAddonParam `json:"addonParams,omitempty"`
+	// Effect Immediate，1-Immediate，2-Next Period
+	EffectImmediate *int32 `json:"effectImmediate,omitempty"`
 	// Id
 	GatewayId *int64 `json:"gatewayId,omitempty"`
 	// New PlanId
@@ -31,8 +33,6 @@ type UnibeeApiMerchantSubscriptionUpdatePreviewReq struct {
 	Quantity *int64 `json:"quantity,omitempty"`
 	// SubscriptionId
 	SubscriptionId string `json:"subscriptionId"`
-	// Effect Immediate，1-Immediate，2-Next Period
-	WithImmediateEffect *int32 `json:"withImmediateEffect,omitempty"`
 }
 
 type _UnibeeApiMerchantSubscriptionUpdatePreviewReq UnibeeApiMerchantSubscriptionUpdatePreviewReq
@@ -86,6 +86,38 @@ func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) HasAddonParams() bool {
 // SetAddonParams gets a reference to the given []UnibeeApiBeanPlanAddonParam and assigns it to the AddonParams field.
 func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) SetAddonParams(v []UnibeeApiBeanPlanAddonParam) {
 	o.AddonParams = v
+}
+
+// GetEffectImmediate returns the EffectImmediate field value if set, zero value otherwise.
+func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetEffectImmediate() int32 {
+	if o == nil || IsNil(o.EffectImmediate) {
+		var ret int32
+		return ret
+	}
+	return *o.EffectImmediate
+}
+
+// GetEffectImmediateOk returns a tuple with the EffectImmediate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetEffectImmediateOk() (*int32, bool) {
+	if o == nil || IsNil(o.EffectImmediate) {
+		return nil, false
+	}
+	return o.EffectImmediate, true
+}
+
+// HasEffectImmediate returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) HasEffectImmediate() bool {
+	if o != nil && !IsNil(o.EffectImmediate) {
+		return true
+	}
+
+	return false
+}
+
+// SetEffectImmediate gets a reference to the given int32 and assigns it to the EffectImmediate field.
+func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) SetEffectImmediate(v int32) {
+	o.EffectImmediate = &v
 }
 
 // GetGatewayId returns the GatewayId field value if set, zero value otherwise.
@@ -200,38 +232,6 @@ func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) SetSubscriptionId(v stri
 	o.SubscriptionId = v
 }
 
-// GetWithImmediateEffect returns the WithImmediateEffect field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetWithImmediateEffect() int32 {
-	if o == nil || IsNil(o.WithImmediateEffect) {
-		var ret int32
-		return ret
-	}
-	return *o.WithImmediateEffect
-}
-
-// GetWithImmediateEffectOk returns a tuple with the WithImmediateEffect field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetWithImmediateEffectOk() (*int32, bool) {
-	if o == nil || IsNil(o.WithImmediateEffect) {
-		return nil, false
-	}
-	return o.WithImmediateEffect, true
-}
-
-// HasWithImmediateEffect returns a boolean if a field has been set.
-func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) HasWithImmediateEffect() bool {
-	if o != nil && !IsNil(o.WithImmediateEffect) {
-		return true
-	}
-
-	return false
-}
-
-// SetWithImmediateEffect gets a reference to the given int32 and assigns it to the WithImmediateEffect field.
-func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) SetWithImmediateEffect(v int32) {
-	o.WithImmediateEffect = &v
-}
-
 func (o UnibeeApiMerchantSubscriptionUpdatePreviewReq) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -245,6 +245,9 @@ func (o UnibeeApiMerchantSubscriptionUpdatePreviewReq) ToMap() (map[string]inter
 	if !IsNil(o.AddonParams) {
 		toSerialize["addonParams"] = o.AddonParams
 	}
+	if !IsNil(o.EffectImmediate) {
+		toSerialize["effectImmediate"] = o.EffectImmediate
+	}
 	if !IsNil(o.GatewayId) {
 		toSerialize["gatewayId"] = o.GatewayId
 	}
@@ -253,9 +256,6 @@ func (o UnibeeApiMerchantSubscriptionUpdatePreviewReq) ToMap() (map[string]inter
 		toSerialize["quantity"] = o.Quantity
 	}
 	toSerialize["subscriptionId"] = o.SubscriptionId
-	if !IsNil(o.WithImmediateEffect) {
-		toSerialize["withImmediateEffect"] = o.WithImmediateEffect
-	}
 	return toSerialize, nil
 }
 

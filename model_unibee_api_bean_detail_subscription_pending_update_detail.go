@@ -47,6 +47,8 @@ type UnibeeApiBeanDetailSubscriptionPendingUpdateDetail struct {
 	Note *string `json:"note,omitempty"`
 	// Paid
 	Paid *int32 `json:"paid,omitempty"`
+	// PendingUpdateId
+	PendingUpdateId *string `json:"pendingUpdateId,omitempty"`
 	Plan *UnibeeApiBeanPlanSimplify `json:"plan,omitempty"`
 	// PlanId
 	PlanId *int64 `json:"planId,omitempty"`
@@ -71,8 +73,6 @@ type UnibeeApiBeanDetailSubscriptionPendingUpdateDetail struct {
 	UpdatePlanId *int64 `json:"updatePlanId,omitempty"`
 	// UpdateQuantity
 	UpdateQuantity *int64 `json:"updateQuantity,omitempty"`
-	// UpdateSubscriptionId
-	UpdateSubscriptionId *string `json:"updateSubscriptionId,omitempty"`
 	// UserId
 	UserId *int64 `json:"userId,omitempty"`
 }
@@ -574,6 +574,38 @@ func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetPaid(v int32) {
 	o.Paid = &v
 }
 
+// GetPendingUpdateId returns the PendingUpdateId field value if set, zero value otherwise.
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetPendingUpdateId() string {
+	if o == nil || IsNil(o.PendingUpdateId) {
+		var ret string
+		return ret
+	}
+	return *o.PendingUpdateId
+}
+
+// GetPendingUpdateIdOk returns a tuple with the PendingUpdateId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetPendingUpdateIdOk() (*string, bool) {
+	if o == nil || IsNil(o.PendingUpdateId) {
+		return nil, false
+	}
+	return o.PendingUpdateId, true
+}
+
+// HasPendingUpdateId returns a boolean if a field has been set.
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasPendingUpdateId() bool {
+	if o != nil && !IsNil(o.PendingUpdateId) {
+		return true
+	}
+
+	return false
+}
+
+// SetPendingUpdateId gets a reference to the given string and assigns it to the PendingUpdateId field.
+func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetPendingUpdateId(v string) {
+	o.PendingUpdateId = &v
+}
+
 // GetPlan returns the Plan field value if set, zero value otherwise.
 func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetPlan() UnibeeApiBeanPlanSimplify {
 	if o == nil || IsNil(o.Plan) {
@@ -990,38 +1022,6 @@ func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetUpdateQuantity(v
 	o.UpdateQuantity = &v
 }
 
-// GetUpdateSubscriptionId returns the UpdateSubscriptionId field value if set, zero value otherwise.
-func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateSubscriptionId() string {
-	if o == nil || IsNil(o.UpdateSubscriptionId) {
-		var ret string
-		return ret
-	}
-	return *o.UpdateSubscriptionId
-}
-
-// GetUpdateSubscriptionIdOk returns a tuple with the UpdateSubscriptionId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateSubscriptionIdOk() (*string, bool) {
-	if o == nil || IsNil(o.UpdateSubscriptionId) {
-		return nil, false
-	}
-	return o.UpdateSubscriptionId, true
-}
-
-// HasUpdateSubscriptionId returns a boolean if a field has been set.
-func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasUpdateSubscriptionId() bool {
-	if o != nil && !IsNil(o.UpdateSubscriptionId) {
-		return true
-	}
-
-	return false
-}
-
-// SetUpdateSubscriptionId gets a reference to the given string and assigns it to the UpdateSubscriptionId field.
-func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetUpdateSubscriptionId(v string) {
-	o.UpdateSubscriptionId = &v
-}
-
 // GetUserId returns the UserId field value if set, zero value otherwise.
 func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUserId() int64 {
 	if o == nil || IsNil(o.UserId) {
@@ -1109,6 +1109,9 @@ func (o UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) ToMap() (map[string]
 	if !IsNil(o.Paid) {
 		toSerialize["paid"] = o.Paid
 	}
+	if !IsNil(o.PendingUpdateId) {
+		toSerialize["pendingUpdateId"] = o.PendingUpdateId
+	}
 	if !IsNil(o.Plan) {
 		toSerialize["plan"] = o.Plan
 	}
@@ -1147,9 +1150,6 @@ func (o UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) ToMap() (map[string]
 	}
 	if !IsNil(o.UpdateQuantity) {
 		toSerialize["updateQuantity"] = o.UpdateQuantity
-	}
-	if !IsNil(o.UpdateSubscriptionId) {
-		toSerialize["updateSubscriptionId"] = o.UpdateSubscriptionId
 	}
 	if !IsNil(o.UserId) {
 		toSerialize["userId"] = o.UserId

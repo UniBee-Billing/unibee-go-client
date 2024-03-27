@@ -27,6 +27,8 @@ type UnibeeApiBeanDetailInvoiceDetail struct {
 	Currency *string `json:"currency,omitempty"`
 	// Data
 	Data *string `json:"data,omitempty"`
+	// day util due after finish
+	DayUtilDue *int64 `json:"dayUtilDue,omitempty"`
 	// DiscountAmount,Cents
 	DiscountAmount *int64 `json:"discountAmount,omitempty"`
 	Gateway *UnibeeApiBeanGatewaySimplify `json:"gateway,omitempty"`
@@ -246,6 +248,38 @@ func (o *UnibeeApiBeanDetailInvoiceDetail) HasData() bool {
 // SetData gets a reference to the given string and assigns it to the Data field.
 func (o *UnibeeApiBeanDetailInvoiceDetail) SetData(v string) {
 	o.Data = &v
+}
+
+// GetDayUtilDue returns the DayUtilDue field value if set, zero value otherwise.
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetDayUtilDue() int64 {
+	if o == nil || IsNil(o.DayUtilDue) {
+		var ret int64
+		return ret
+	}
+	return *o.DayUtilDue
+}
+
+// GetDayUtilDueOk returns a tuple with the DayUtilDue field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiBeanDetailInvoiceDetail) GetDayUtilDueOk() (*int64, bool) {
+	if o == nil || IsNil(o.DayUtilDue) {
+		return nil, false
+	}
+	return o.DayUtilDue, true
+}
+
+// HasDayUtilDue returns a boolean if a field has been set.
+func (o *UnibeeApiBeanDetailInvoiceDetail) HasDayUtilDue() bool {
+	if o != nil && !IsNil(o.DayUtilDue) {
+		return true
+	}
+
+	return false
+}
+
+// SetDayUtilDue gets a reference to the given int64 and assigns it to the DayUtilDue field.
+func (o *UnibeeApiBeanDetailInvoiceDetail) SetDayUtilDue(v int64) {
+	o.DayUtilDue = &v
 }
 
 // GetDiscountAmount returns the DiscountAmount field value if set, zero value otherwise.
@@ -1581,6 +1615,9 @@ func (o UnibeeApiBeanDetailInvoiceDetail) ToMap() (map[string]interface{}, error
 	}
 	if !IsNil(o.Data) {
 		toSerialize["data"] = o.Data
+	}
+	if !IsNil(o.DayUtilDue) {
+		toSerialize["dayUtilDue"] = o.DayUtilDue
 	}
 	if !IsNil(o.DiscountAmount) {
 		toSerialize["discountAmount"] = o.DiscountAmount

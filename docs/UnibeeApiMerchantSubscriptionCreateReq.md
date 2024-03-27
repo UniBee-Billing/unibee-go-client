@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | addonParams | [optional] 
-**ConfirmCurrency** | **string** | Currency To Be Confirmed，Get From Preview | 
-**ConfirmTotalAmount** | **int64** | TotalAmount To Be Confirmed，Get From Preview | 
+**ConfirmCurrency** | Pointer to **string** | Currency To Be Confirmed，Get From Preview | [optional] 
+**ConfirmTotalAmount** | Pointer to **int64** | TotalAmount To Be Confirmed，Get From Preview | [optional] 
 **GatewayId** | **int64** | Id | 
 **Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
 **PaymentMethodId** | Pointer to **string** | PaymentMethodId | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewUnibeeApiMerchantSubscriptionCreateReq
 
-`func NewUnibeeApiMerchantSubscriptionCreateReq(confirmCurrency string, confirmTotalAmount int64, gatewayId int64, planId int64, userId int64, ) *UnibeeApiMerchantSubscriptionCreateReq`
+`func NewUnibeeApiMerchantSubscriptionCreateReq(gatewayId int64, planId int64, userId int64, ) *UnibeeApiMerchantSubscriptionCreateReq`
 
 NewUnibeeApiMerchantSubscriptionCreateReq instantiates a new UnibeeApiMerchantSubscriptionCreateReq object
 This constructor will assign default values to properties that have it defined,
@@ -80,6 +80,11 @@ and a boolean to check if the value has been set.
 
 SetConfirmCurrency sets ConfirmCurrency field to given value.
 
+### HasConfirmCurrency
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) HasConfirmCurrency() bool`
+
+HasConfirmCurrency returns a boolean if a field has been set.
 
 ### GetConfirmTotalAmount
 
@@ -100,6 +105,11 @@ and a boolean to check if the value has been set.
 
 SetConfirmTotalAmount sets ConfirmTotalAmount field to given value.
 
+### HasConfirmTotalAmount
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) HasConfirmTotalAmount() bool`
+
+HasConfirmTotalAmount returns a boolean if a field has been set.
 
 ### GetGatewayId
 

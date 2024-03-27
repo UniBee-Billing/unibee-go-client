@@ -51,7 +51,7 @@ type UnibeeApiMerchantPlanNewReq struct {
 	ProductDescription *string `json:"productDescription,omitempty"`
 	// Default Copy PlanName
 	ProductName *string `json:"productName,omitempty"`
-	// Default 1，,1-main plan，2-addon plan
+	// Default 1，,1-main plan，2-addon plan, 3-onetime plan
 	Type *int32 `json:"type,omitempty"`
 }
 

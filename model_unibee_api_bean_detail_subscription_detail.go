@@ -24,6 +24,7 @@ type UnibeeApiBeanDetailSubscriptionDetail struct {
 	// Addon
 	Addons []UnibeeApiBeanPlanAddonDetail `json:"addons,omitempty"`
 	Gateway *UnibeeApiBeanGatewaySimplify `json:"gateway,omitempty"`
+	LatestInvoice *UnibeeApiBeanInvoiceSimplify `json:"latestInvoice,omitempty"`
 	Plan *UnibeeApiBeanPlanSimplify `json:"plan,omitempty"`
 	Subscription *UnibeeApiBeanSubscriptionSimplify `json:"subscription,omitempty"`
 	UnfinishedSubscriptionPendingUpdate *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail `json:"unfinishedSubscriptionPendingUpdate,omitempty"`
@@ -141,6 +142,38 @@ func (o *UnibeeApiBeanDetailSubscriptionDetail) HasGateway() bool {
 // SetGateway gets a reference to the given UnibeeApiBeanGatewaySimplify and assigns it to the Gateway field.
 func (o *UnibeeApiBeanDetailSubscriptionDetail) SetGateway(v UnibeeApiBeanGatewaySimplify) {
 	o.Gateway = &v
+}
+
+// GetLatestInvoice returns the LatestInvoice field value if set, zero value otherwise.
+func (o *UnibeeApiBeanDetailSubscriptionDetail) GetLatestInvoice() UnibeeApiBeanInvoiceSimplify {
+	if o == nil || IsNil(o.LatestInvoice) {
+		var ret UnibeeApiBeanInvoiceSimplify
+		return ret
+	}
+	return *o.LatestInvoice
+}
+
+// GetLatestInvoiceOk returns a tuple with the LatestInvoice field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiBeanDetailSubscriptionDetail) GetLatestInvoiceOk() (*UnibeeApiBeanInvoiceSimplify, bool) {
+	if o == nil || IsNil(o.LatestInvoice) {
+		return nil, false
+	}
+	return o.LatestInvoice, true
+}
+
+// HasLatestInvoice returns a boolean if a field has been set.
+func (o *UnibeeApiBeanDetailSubscriptionDetail) HasLatestInvoice() bool {
+	if o != nil && !IsNil(o.LatestInvoice) {
+		return true
+	}
+
+	return false
+}
+
+// SetLatestInvoice gets a reference to the given UnibeeApiBeanInvoiceSimplify and assigns it to the LatestInvoice field.
+func (o *UnibeeApiBeanDetailSubscriptionDetail) SetLatestInvoice(v UnibeeApiBeanInvoiceSimplify) {
+	o.LatestInvoice = &v
 }
 
 // GetPlan returns the Plan field value if set, zero value otherwise.
@@ -289,6 +322,9 @@ func (o UnibeeApiBeanDetailSubscriptionDetail) ToMap() (map[string]interface{}, 
 	}
 	if !IsNil(o.Gateway) {
 		toSerialize["gateway"] = o.Gateway
+	}
+	if !IsNil(o.LatestInvoice) {
+		toSerialize["latestInvoice"] = o.LatestInvoice
 	}
 	if !IsNil(o.Plan) {
 		toSerialize["plan"] = o.Plan

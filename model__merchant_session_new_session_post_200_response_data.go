@@ -19,6 +19,8 @@ var _ MappedNullable = &MerchantSessionNewSessionPost200ResponseData{}
 
 // MerchantSessionNewSessionPost200ResponseData struct for MerchantSessionNewSessionPost200ResponseData
 type MerchantSessionNewSessionPost200ResponseData struct {
+	// ClientSession
+	ClientSession *string `json:"clientSession,omitempty"`
 	// ClientToken
 	ClientToken *string `json:"clientToken,omitempty"`
 	// Email
@@ -46,6 +48,38 @@ func NewMerchantSessionNewSessionPost200ResponseData() *MerchantSessionNewSessio
 func NewMerchantSessionNewSessionPost200ResponseDataWithDefaults() *MerchantSessionNewSessionPost200ResponseData {
 	this := MerchantSessionNewSessionPost200ResponseData{}
 	return &this
+}
+
+// GetClientSession returns the ClientSession field value if set, zero value otherwise.
+func (o *MerchantSessionNewSessionPost200ResponseData) GetClientSession() string {
+	if o == nil || IsNil(o.ClientSession) {
+		var ret string
+		return ret
+	}
+	return *o.ClientSession
+}
+
+// GetClientSessionOk returns a tuple with the ClientSession field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MerchantSessionNewSessionPost200ResponseData) GetClientSessionOk() (*string, bool) {
+	if o == nil || IsNil(o.ClientSession) {
+		return nil, false
+	}
+	return o.ClientSession, true
+}
+
+// HasClientSession returns a boolean if a field has been set.
+func (o *MerchantSessionNewSessionPost200ResponseData) HasClientSession() bool {
+	if o != nil && !IsNil(o.ClientSession) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientSession gets a reference to the given string and assigns it to the ClientSession field.
+func (o *MerchantSessionNewSessionPost200ResponseData) SetClientSession(v string) {
+	o.ClientSession = &v
 }
 
 // GetClientToken returns the ClientToken field value if set, zero value otherwise.
@@ -218,6 +252,9 @@ func (o MerchantSessionNewSessionPost200ResponseData) MarshalJSON() ([]byte, err
 
 func (o MerchantSessionNewSessionPost200ResponseData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.ClientSession) {
+		toSerialize["clientSession"] = o.ClientSession
+	}
 	if !IsNil(o.ClientToken) {
 		toSerialize["clientToken"] = o.ClientToken
 	}

@@ -16,11 +16,11 @@ import (
 	"fmt"
 )
 
-// checks if the UnibeeApiMerchantInvoiceRefundReq type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &UnibeeApiMerchantInvoiceRefundReq{}
+// checks if the UnibeeApiMerchantInvoiceMarkRefundReq type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &UnibeeApiMerchantInvoiceMarkRefundReq{}
 
-// UnibeeApiMerchantInvoiceRefundReq struct for UnibeeApiMerchantInvoiceRefundReq
-type UnibeeApiMerchantInvoiceRefundReq struct {
+// UnibeeApiMerchantInvoiceMarkRefundReq struct for UnibeeApiMerchantInvoiceMarkRefundReq
+type UnibeeApiMerchantInvoiceMarkRefundReq struct {
 	// InvoiceId
 	InvoiceId string `json:"invoiceId"`
 	// Refund Reason
@@ -31,30 +31,30 @@ type UnibeeApiMerchantInvoiceRefundReq struct {
 	RefundNo *string `json:"refundNo,omitempty"`
 }
 
-type _UnibeeApiMerchantInvoiceRefundReq UnibeeApiMerchantInvoiceRefundReq
+type _UnibeeApiMerchantInvoiceMarkRefundReq UnibeeApiMerchantInvoiceMarkRefundReq
 
-// NewUnibeeApiMerchantInvoiceRefundReq instantiates a new UnibeeApiMerchantInvoiceRefundReq object
+// NewUnibeeApiMerchantInvoiceMarkRefundReq instantiates a new UnibeeApiMerchantInvoiceMarkRefundReq object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiMerchantInvoiceRefundReq(invoiceId string, reason string, refundAmount int64) *UnibeeApiMerchantInvoiceRefundReq {
-	this := UnibeeApiMerchantInvoiceRefundReq{}
+func NewUnibeeApiMerchantInvoiceMarkRefundReq(invoiceId string, reason string, refundAmount int64) *UnibeeApiMerchantInvoiceMarkRefundReq {
+	this := UnibeeApiMerchantInvoiceMarkRefundReq{}
 	this.InvoiceId = invoiceId
 	this.Reason = reason
 	this.RefundAmount = refundAmount
 	return &this
 }
 
-// NewUnibeeApiMerchantInvoiceRefundReqWithDefaults instantiates a new UnibeeApiMerchantInvoiceRefundReq object
+// NewUnibeeApiMerchantInvoiceMarkRefundReqWithDefaults instantiates a new UnibeeApiMerchantInvoiceMarkRefundReq object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewUnibeeApiMerchantInvoiceRefundReqWithDefaults() *UnibeeApiMerchantInvoiceRefundReq {
-	this := UnibeeApiMerchantInvoiceRefundReq{}
+func NewUnibeeApiMerchantInvoiceMarkRefundReqWithDefaults() *UnibeeApiMerchantInvoiceMarkRefundReq {
+	this := UnibeeApiMerchantInvoiceMarkRefundReq{}
 	return &this
 }
 
 // GetInvoiceId returns the InvoiceId field value
-func (o *UnibeeApiMerchantInvoiceRefundReq) GetInvoiceId() string {
+func (o *UnibeeApiMerchantInvoiceMarkRefundReq) GetInvoiceId() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -65,7 +65,7 @@ func (o *UnibeeApiMerchantInvoiceRefundReq) GetInvoiceId() string {
 
 // GetInvoiceIdOk returns a tuple with the InvoiceId field value
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantInvoiceRefundReq) GetInvoiceIdOk() (*string, bool) {
+func (o *UnibeeApiMerchantInvoiceMarkRefundReq) GetInvoiceIdOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -73,12 +73,12 @@ func (o *UnibeeApiMerchantInvoiceRefundReq) GetInvoiceIdOk() (*string, bool) {
 }
 
 // SetInvoiceId sets field value
-func (o *UnibeeApiMerchantInvoiceRefundReq) SetInvoiceId(v string) {
+func (o *UnibeeApiMerchantInvoiceMarkRefundReq) SetInvoiceId(v string) {
 	o.InvoiceId = v
 }
 
 // GetReason returns the Reason field value
-func (o *UnibeeApiMerchantInvoiceRefundReq) GetReason() string {
+func (o *UnibeeApiMerchantInvoiceMarkRefundReq) GetReason() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -89,7 +89,7 @@ func (o *UnibeeApiMerchantInvoiceRefundReq) GetReason() string {
 
 // GetReasonOk returns a tuple with the Reason field value
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantInvoiceRefundReq) GetReasonOk() (*string, bool) {
+func (o *UnibeeApiMerchantInvoiceMarkRefundReq) GetReasonOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -97,12 +97,12 @@ func (o *UnibeeApiMerchantInvoiceRefundReq) GetReasonOk() (*string, bool) {
 }
 
 // SetReason sets field value
-func (o *UnibeeApiMerchantInvoiceRefundReq) SetReason(v string) {
+func (o *UnibeeApiMerchantInvoiceMarkRefundReq) SetReason(v string) {
 	o.Reason = v
 }
 
 // GetRefundAmount returns the RefundAmount field value
-func (o *UnibeeApiMerchantInvoiceRefundReq) GetRefundAmount() int64 {
+func (o *UnibeeApiMerchantInvoiceMarkRefundReq) GetRefundAmount() int64 {
 	if o == nil {
 		var ret int64
 		return ret
@@ -113,7 +113,7 @@ func (o *UnibeeApiMerchantInvoiceRefundReq) GetRefundAmount() int64 {
 
 // GetRefundAmountOk returns a tuple with the RefundAmount field value
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantInvoiceRefundReq) GetRefundAmountOk() (*int64, bool) {
+func (o *UnibeeApiMerchantInvoiceMarkRefundReq) GetRefundAmountOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -121,12 +121,12 @@ func (o *UnibeeApiMerchantInvoiceRefundReq) GetRefundAmountOk() (*int64, bool) {
 }
 
 // SetRefundAmount sets field value
-func (o *UnibeeApiMerchantInvoiceRefundReq) SetRefundAmount(v int64) {
+func (o *UnibeeApiMerchantInvoiceMarkRefundReq) SetRefundAmount(v int64) {
 	o.RefundAmount = v
 }
 
 // GetRefundNo returns the RefundNo field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantInvoiceRefundReq) GetRefundNo() string {
+func (o *UnibeeApiMerchantInvoiceMarkRefundReq) GetRefundNo() string {
 	if o == nil || IsNil(o.RefundNo) {
 		var ret string
 		return ret
@@ -136,7 +136,7 @@ func (o *UnibeeApiMerchantInvoiceRefundReq) GetRefundNo() string {
 
 // GetRefundNoOk returns a tuple with the RefundNo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantInvoiceRefundReq) GetRefundNoOk() (*string, bool) {
+func (o *UnibeeApiMerchantInvoiceMarkRefundReq) GetRefundNoOk() (*string, bool) {
 	if o == nil || IsNil(o.RefundNo) {
 		return nil, false
 	}
@@ -144,7 +144,7 @@ func (o *UnibeeApiMerchantInvoiceRefundReq) GetRefundNoOk() (*string, bool) {
 }
 
 // HasRefundNo returns a boolean if a field has been set.
-func (o *UnibeeApiMerchantInvoiceRefundReq) HasRefundNo() bool {
+func (o *UnibeeApiMerchantInvoiceMarkRefundReq) HasRefundNo() bool {
 	if o != nil && !IsNil(o.RefundNo) {
 		return true
 	}
@@ -153,11 +153,11 @@ func (o *UnibeeApiMerchantInvoiceRefundReq) HasRefundNo() bool {
 }
 
 // SetRefundNo gets a reference to the given string and assigns it to the RefundNo field.
-func (o *UnibeeApiMerchantInvoiceRefundReq) SetRefundNo(v string) {
+func (o *UnibeeApiMerchantInvoiceMarkRefundReq) SetRefundNo(v string) {
 	o.RefundNo = &v
 }
 
-func (o UnibeeApiMerchantInvoiceRefundReq) MarshalJSON() ([]byte, error) {
+func (o UnibeeApiMerchantInvoiceMarkRefundReq) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -165,7 +165,7 @@ func (o UnibeeApiMerchantInvoiceRefundReq) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o UnibeeApiMerchantInvoiceRefundReq) ToMap() (map[string]interface{}, error) {
+func (o UnibeeApiMerchantInvoiceMarkRefundReq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["invoiceId"] = o.InvoiceId
 	toSerialize["reason"] = o.Reason
@@ -176,7 +176,7 @@ func (o UnibeeApiMerchantInvoiceRefundReq) ToMap() (map[string]interface{}, erro
 	return toSerialize, nil
 }
 
-func (o *UnibeeApiMerchantInvoiceRefundReq) UnmarshalJSON(data []byte) (err error) {
+func (o *UnibeeApiMerchantInvoiceMarkRefundReq) UnmarshalJSON(data []byte) (err error) {
 	// This validates that all required properties are included in the JSON object
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
@@ -200,53 +200,53 @@ func (o *UnibeeApiMerchantInvoiceRefundReq) UnmarshalJSON(data []byte) (err erro
 		}
 	}
 
-	varUnibeeApiMerchantInvoiceRefundReq := _UnibeeApiMerchantInvoiceRefundReq{}
+	varUnibeeApiMerchantInvoiceMarkRefundReq := _UnibeeApiMerchantInvoiceMarkRefundReq{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
 	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varUnibeeApiMerchantInvoiceRefundReq)
+	err = decoder.Decode(&varUnibeeApiMerchantInvoiceMarkRefundReq)
 
 	if err != nil {
 		return err
 	}
 
-	*o = UnibeeApiMerchantInvoiceRefundReq(varUnibeeApiMerchantInvoiceRefundReq)
+	*o = UnibeeApiMerchantInvoiceMarkRefundReq(varUnibeeApiMerchantInvoiceMarkRefundReq)
 
 	return err
 }
 
-type NullableUnibeeApiMerchantInvoiceRefundReq struct {
-	value *UnibeeApiMerchantInvoiceRefundReq
+type NullableUnibeeApiMerchantInvoiceMarkRefundReq struct {
+	value *UnibeeApiMerchantInvoiceMarkRefundReq
 	isSet bool
 }
 
-func (v NullableUnibeeApiMerchantInvoiceRefundReq) Get() *UnibeeApiMerchantInvoiceRefundReq {
+func (v NullableUnibeeApiMerchantInvoiceMarkRefundReq) Get() *UnibeeApiMerchantInvoiceMarkRefundReq {
 	return v.value
 }
 
-func (v *NullableUnibeeApiMerchantInvoiceRefundReq) Set(val *UnibeeApiMerchantInvoiceRefundReq) {
+func (v *NullableUnibeeApiMerchantInvoiceMarkRefundReq) Set(val *UnibeeApiMerchantInvoiceMarkRefundReq) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableUnibeeApiMerchantInvoiceRefundReq) IsSet() bool {
+func (v NullableUnibeeApiMerchantInvoiceMarkRefundReq) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableUnibeeApiMerchantInvoiceRefundReq) Unset() {
+func (v *NullableUnibeeApiMerchantInvoiceMarkRefundReq) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableUnibeeApiMerchantInvoiceRefundReq(val *UnibeeApiMerchantInvoiceRefundReq) *NullableUnibeeApiMerchantInvoiceRefundReq {
-	return &NullableUnibeeApiMerchantInvoiceRefundReq{value: val, isSet: true}
+func NewNullableUnibeeApiMerchantInvoiceMarkRefundReq(val *UnibeeApiMerchantInvoiceMarkRefundReq) *NullableUnibeeApiMerchantInvoiceMarkRefundReq {
+	return &NullableUnibeeApiMerchantInvoiceMarkRefundReq{value: val, isSet: true}
 }
 
-func (v NullableUnibeeApiMerchantInvoiceRefundReq) MarshalJSON() ([]byte, error) {
+func (v NullableUnibeeApiMerchantInvoiceMarkRefundReq) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableUnibeeApiMerchantInvoiceRefundReq) UnmarshalJSON(src []byte) error {
+func (v *NullableUnibeeApiMerchantInvoiceMarkRefundReq) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

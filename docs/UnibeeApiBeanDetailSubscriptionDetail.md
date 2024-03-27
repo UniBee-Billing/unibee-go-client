@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | AddonParams | [optional] 
 **Addons** | Pointer to [**[]UnibeeApiBeanPlanAddonDetail**](UnibeeApiBeanPlanAddonDetail.md) | Addon | [optional] 
 **Gateway** | Pointer to [**UnibeeApiBeanGatewaySimplify**](UnibeeApiBeanGatewaySimplify.md) |  | [optional] 
+**LatestInvoice** | Pointer to [**UnibeeApiBeanInvoiceSimplify**](UnibeeApiBeanInvoiceSimplify.md) |  | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
 **Subscription** | Pointer to [**UnibeeApiBeanSubscriptionSimplify**](UnibeeApiBeanSubscriptionSimplify.md) |  | [optional] 
 **UnfinishedSubscriptionPendingUpdate** | Pointer to [**UnibeeApiBeanDetailSubscriptionPendingUpdateDetail**](UnibeeApiBeanDetailSubscriptionPendingUpdateDetail.md) |  | [optional] 
@@ -105,6 +106,31 @@ SetGateway sets Gateway field to given value.
 `func (o *UnibeeApiBeanDetailSubscriptionDetail) HasGateway() bool`
 
 HasGateway returns a boolean if a field has been set.
+
+### GetLatestInvoice
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetLatestInvoice() UnibeeApiBeanInvoiceSimplify`
+
+GetLatestInvoice returns the LatestInvoice field if non-nil, zero value otherwise.
+
+### GetLatestInvoiceOk
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetLatestInvoiceOk() (*UnibeeApiBeanInvoiceSimplify, bool)`
+
+GetLatestInvoiceOk returns a tuple with the LatestInvoice field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLatestInvoice
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) SetLatestInvoice(v UnibeeApiBeanInvoiceSimplify)`
+
+SetLatestInvoice sets LatestInvoice field to given value.
+
+### HasLatestInvoice
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) HasLatestInvoice() bool`
+
+HasLatestInvoice returns a boolean if a field has been set.
 
 ### GetPlan
 

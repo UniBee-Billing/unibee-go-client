@@ -1,4 +1,4 @@
-# UnibeeApiMerchantInvoiceRefundReq
+# UnibeeApiMerchantInvoiceMarkRefundReq
 
 ## Properties
 
@@ -11,105 +11,105 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewUnibeeApiMerchantInvoiceRefundReq
+### NewUnibeeApiMerchantInvoiceMarkRefundReq
 
-`func NewUnibeeApiMerchantInvoiceRefundReq(invoiceId string, reason string, refundAmount int64, ) *UnibeeApiMerchantInvoiceRefundReq`
+`func NewUnibeeApiMerchantInvoiceMarkRefundReq(invoiceId string, reason string, refundAmount int64, ) *UnibeeApiMerchantInvoiceMarkRefundReq`
 
-NewUnibeeApiMerchantInvoiceRefundReq instantiates a new UnibeeApiMerchantInvoiceRefundReq object
+NewUnibeeApiMerchantInvoiceMarkRefundReq instantiates a new UnibeeApiMerchantInvoiceMarkRefundReq object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUnibeeApiMerchantInvoiceRefundReqWithDefaults
+### NewUnibeeApiMerchantInvoiceMarkRefundReqWithDefaults
 
-`func NewUnibeeApiMerchantInvoiceRefundReqWithDefaults() *UnibeeApiMerchantInvoiceRefundReq`
+`func NewUnibeeApiMerchantInvoiceMarkRefundReqWithDefaults() *UnibeeApiMerchantInvoiceMarkRefundReq`
 
-NewUnibeeApiMerchantInvoiceRefundReqWithDefaults instantiates a new UnibeeApiMerchantInvoiceRefundReq object
+NewUnibeeApiMerchantInvoiceMarkRefundReqWithDefaults instantiates a new UnibeeApiMerchantInvoiceMarkRefundReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetInvoiceId
 
-`func (o *UnibeeApiMerchantInvoiceRefundReq) GetInvoiceId() string`
+`func (o *UnibeeApiMerchantInvoiceMarkRefundReq) GetInvoiceId() string`
 
 GetInvoiceId returns the InvoiceId field if non-nil, zero value otherwise.
 
 ### GetInvoiceIdOk
 
-`func (o *UnibeeApiMerchantInvoiceRefundReq) GetInvoiceIdOk() (*string, bool)`
+`func (o *UnibeeApiMerchantInvoiceMarkRefundReq) GetInvoiceIdOk() (*string, bool)`
 
 GetInvoiceIdOk returns a tuple with the InvoiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInvoiceId
 
-`func (o *UnibeeApiMerchantInvoiceRefundReq) SetInvoiceId(v string)`
+`func (o *UnibeeApiMerchantInvoiceMarkRefundReq) SetInvoiceId(v string)`
 
 SetInvoiceId sets InvoiceId field to given value.
 
 
 ### GetReason
 
-`func (o *UnibeeApiMerchantInvoiceRefundReq) GetReason() string`
+`func (o *UnibeeApiMerchantInvoiceMarkRefundReq) GetReason() string`
 
 GetReason returns the Reason field if non-nil, zero value otherwise.
 
 ### GetReasonOk
 
-`func (o *UnibeeApiMerchantInvoiceRefundReq) GetReasonOk() (*string, bool)`
+`func (o *UnibeeApiMerchantInvoiceMarkRefundReq) GetReasonOk() (*string, bool)`
 
 GetReasonOk returns a tuple with the Reason field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReason
 
-`func (o *UnibeeApiMerchantInvoiceRefundReq) SetReason(v string)`
+`func (o *UnibeeApiMerchantInvoiceMarkRefundReq) SetReason(v string)`
 
 SetReason sets Reason field to given value.
 
 
 ### GetRefundAmount
 
-`func (o *UnibeeApiMerchantInvoiceRefundReq) GetRefundAmount() int64`
+`func (o *UnibeeApiMerchantInvoiceMarkRefundReq) GetRefundAmount() int64`
 
 GetRefundAmount returns the RefundAmount field if non-nil, zero value otherwise.
 
 ### GetRefundAmountOk
 
-`func (o *UnibeeApiMerchantInvoiceRefundReq) GetRefundAmountOk() (*int64, bool)`
+`func (o *UnibeeApiMerchantInvoiceMarkRefundReq) GetRefundAmountOk() (*int64, bool)`
 
 GetRefundAmountOk returns a tuple with the RefundAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRefundAmount
 
-`func (o *UnibeeApiMerchantInvoiceRefundReq) SetRefundAmount(v int64)`
+`func (o *UnibeeApiMerchantInvoiceMarkRefundReq) SetRefundAmount(v int64)`
 
 SetRefundAmount sets RefundAmount field to given value.
 
 
 ### GetRefundNo
 
-`func (o *UnibeeApiMerchantInvoiceRefundReq) GetRefundNo() string`
+`func (o *UnibeeApiMerchantInvoiceMarkRefundReq) GetRefundNo() string`
 
 GetRefundNo returns the RefundNo field if non-nil, zero value otherwise.
 
 ### GetRefundNoOk
 
-`func (o *UnibeeApiMerchantInvoiceRefundReq) GetRefundNoOk() (*string, bool)`
+`func (o *UnibeeApiMerchantInvoiceMarkRefundReq) GetRefundNoOk() (*string, bool)`
 
 GetRefundNoOk returns a tuple with the RefundNo field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRefundNo
 
-`func (o *UnibeeApiMerchantInvoiceRefundReq) SetRefundNo(v string)`
+`func (o *UnibeeApiMerchantInvoiceMarkRefundReq) SetRefundNo(v string)`
 
 SetRefundNo sets RefundNo field to given value.
 
 ### HasRefundNo
 
-`func (o *UnibeeApiMerchantInvoiceRefundReq) HasRefundNo() bool`
+`func (o *UnibeeApiMerchantInvoiceMarkRefundReq) HasRefundNo() bool`
 
 HasRefundNo returns a boolean if a field has been set.
 

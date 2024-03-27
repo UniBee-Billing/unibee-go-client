@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | addonParams | [optional] 
+**EffectImmediate** | Pointer to **int32** | Effect Immediate，1-Immediate，2-Next Period | [optional] 
 **GatewayId** | Pointer to **int64** | Id | [optional] 
 **NewPlanId** | **int64** | New PlanId | 
 **Quantity** | Pointer to **int64** | Quantity，Default 1 | [optional] 
 **SubscriptionId** | **string** | SubscriptionId | 
-**WithImmediateEffect** | Pointer to **int32** | Effect Immediate，1-Immediate，2-Next Period | [optional] 
 
 ## Methods
 
@@ -54,6 +54,31 @@ SetAddonParams sets AddonParams field to given value.
 `func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) HasAddonParams() bool`
 
 HasAddonParams returns a boolean if a field has been set.
+
+### GetEffectImmediate
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetEffectImmediate() int32`
+
+GetEffectImmediate returns the EffectImmediate field if non-nil, zero value otherwise.
+
+### GetEffectImmediateOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetEffectImmediateOk() (*int32, bool)`
+
+GetEffectImmediateOk returns a tuple with the EffectImmediate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEffectImmediate
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) SetEffectImmediate(v int32)`
+
+SetEffectImmediate sets EffectImmediate field to given value.
+
+### HasEffectImmediate
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) HasEffectImmediate() bool`
+
+HasEffectImmediate returns a boolean if a field has been set.
 
 ### GetGatewayId
 
@@ -144,31 +169,6 @@ and a boolean to check if the value has been set.
 
 SetSubscriptionId sets SubscriptionId field to given value.
 
-
-### GetWithImmediateEffect
-
-`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetWithImmediateEffect() int32`
-
-GetWithImmediateEffect returns the WithImmediateEffect field if non-nil, zero value otherwise.
-
-### GetWithImmediateEffectOk
-
-`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetWithImmediateEffectOk() (*int32, bool)`
-
-GetWithImmediateEffectOk returns a tuple with the WithImmediateEffect field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWithImmediateEffect
-
-`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) SetWithImmediateEffect(v int32)`
-
-SetWithImmediateEffect sets WithImmediateEffect field to given value.
-
-### HasWithImmediateEffect
-
-`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) HasWithImmediateEffect() bool`
-
-HasWithImmediateEffect returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

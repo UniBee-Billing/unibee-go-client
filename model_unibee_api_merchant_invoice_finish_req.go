@@ -25,8 +25,6 @@ type UnibeeApiMerchantInvoiceFinishReq struct {
 	DaysUtilDue int32 `json:"daysUtilDue"`
 	// InvoiceId
 	InvoiceId string `json:"invoiceId"`
-	// PayMethod,1-manual，2-auto
-	PayMethod int32 `json:"payMethod"`
 }
 
 type _UnibeeApiMerchantInvoiceFinishReq UnibeeApiMerchantInvoiceFinishReq
@@ -35,11 +33,10 @@ type _UnibeeApiMerchantInvoiceFinishReq UnibeeApiMerchantInvoiceFinishReq
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiMerchantInvoiceFinishReq(daysUtilDue int32, invoiceId string, payMethod int32) *UnibeeApiMerchantInvoiceFinishReq {
+func NewUnibeeApiMerchantInvoiceFinishReq(daysUtilDue int32, invoiceId string) *UnibeeApiMerchantInvoiceFinishReq {
 	this := UnibeeApiMerchantInvoiceFinishReq{}
 	this.DaysUtilDue = daysUtilDue
 	this.InvoiceId = invoiceId
-	this.PayMethod = payMethod
 	return &this
 }
 
@@ -99,30 +96,6 @@ func (o *UnibeeApiMerchantInvoiceFinishReq) SetInvoiceId(v string) {
 	o.InvoiceId = v
 }
 
-// GetPayMethod returns the PayMethod field value
-func (o *UnibeeApiMerchantInvoiceFinishReq) GetPayMethod() int32 {
-	if o == nil {
-		var ret int32
-		return ret
-	}
-
-	return o.PayMethod
-}
-
-// GetPayMethodOk returns a tuple with the PayMethod field value
-// and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantInvoiceFinishReq) GetPayMethodOk() (*int32, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.PayMethod, true
-}
-
-// SetPayMethod sets field value
-func (o *UnibeeApiMerchantInvoiceFinishReq) SetPayMethod(v int32) {
-	o.PayMethod = v
-}
-
 func (o UnibeeApiMerchantInvoiceFinishReq) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -135,7 +108,6 @@ func (o UnibeeApiMerchantInvoiceFinishReq) ToMap() (map[string]interface{}, erro
 	toSerialize := map[string]interface{}{}
 	toSerialize["daysUtilDue"] = o.DaysUtilDue
 	toSerialize["invoiceId"] = o.InvoiceId
-	toSerialize["payMethod"] = o.PayMethod
 	return toSerialize, nil
 }
 
@@ -146,7 +118,6 @@ func (o *UnibeeApiMerchantInvoiceFinishReq) UnmarshalJSON(data []byte) (err erro
 	requiredProperties := []string{
 		"daysUtilDue",
 		"invoiceId",
-		"payMethod",
 	}
 
 	allProperties := make(map[string]interface{})

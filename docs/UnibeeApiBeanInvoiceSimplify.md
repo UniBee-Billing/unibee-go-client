@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **CryptoAmount** | Pointer to **int64** | crypto_amount, cent | [optional] 
 **CryptoCurrency** | Pointer to **string** | crypto_currency | [optional] 
 **Currency** | Pointer to **string** |  | [optional] 
+**DayUtilDue** | Pointer to **int64** | day util due after finish | [optional] 
+**FinishTime** | Pointer to **int64** |  | [optional] 
 **Id** | Pointer to **int64** |  | [optional] 
 **InvoiceId** | Pointer to **string** |  | [optional] 
 **InvoiceName** | Pointer to **string** |  | [optional] 
@@ -20,6 +22,7 @@ Name | Type | Description | Notes
 **ProrationDate** | Pointer to **int64** |  | [optional] 
 **ProrationScale** | Pointer to **int64** |  | [optional] 
 **RefundId** | Pointer to **string** | refundId | [optional] 
+**SendStatus** | Pointer to **int32** | email send status，0-No | 1- YES| 2-Unnecessary | [optional] 
 **Status** | Pointer to **int32** | status，0-Init | 1-pending｜2-processing｜3-paid | 4-failed | 5-cancelled | [optional] 
 **SubscriptionAmount** | Pointer to **int64** |  | [optional] 
 **SubscriptionAmountExcludingTax** | Pointer to **int64** |  | [optional] 
@@ -146,6 +149,56 @@ SetCurrency sets Currency field to given value.
 `func (o *UnibeeApiBeanInvoiceSimplify) HasCurrency() bool`
 
 HasCurrency returns a boolean if a field has been set.
+
+### GetDayUtilDue
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetDayUtilDue() int64`
+
+GetDayUtilDue returns the DayUtilDue field if non-nil, zero value otherwise.
+
+### GetDayUtilDueOk
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetDayUtilDueOk() (*int64, bool)`
+
+GetDayUtilDueOk returns a tuple with the DayUtilDue field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDayUtilDue
+
+`func (o *UnibeeApiBeanInvoiceSimplify) SetDayUtilDue(v int64)`
+
+SetDayUtilDue sets DayUtilDue field to given value.
+
+### HasDayUtilDue
+
+`func (o *UnibeeApiBeanInvoiceSimplify) HasDayUtilDue() bool`
+
+HasDayUtilDue returns a boolean if a field has been set.
+
+### GetFinishTime
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetFinishTime() int64`
+
+GetFinishTime returns the FinishTime field if non-nil, zero value otherwise.
+
+### GetFinishTimeOk
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetFinishTimeOk() (*int64, bool)`
+
+GetFinishTimeOk returns a tuple with the FinishTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFinishTime
+
+`func (o *UnibeeApiBeanInvoiceSimplify) SetFinishTime(v int64)`
+
+SetFinishTime sets FinishTime field to given value.
+
+### HasFinishTime
+
+`func (o *UnibeeApiBeanInvoiceSimplify) HasFinishTime() bool`
+
+HasFinishTime returns a boolean if a field has been set.
 
 ### GetId
 
@@ -446,6 +499,31 @@ SetRefundId sets RefundId field to given value.
 `func (o *UnibeeApiBeanInvoiceSimplify) HasRefundId() bool`
 
 HasRefundId returns a boolean if a field has been set.
+
+### GetSendStatus
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetSendStatus() int32`
+
+GetSendStatus returns the SendStatus field if non-nil, zero value otherwise.
+
+### GetSendStatusOk
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetSendStatusOk() (*int32, bool)`
+
+GetSendStatusOk returns a tuple with the SendStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSendStatus
+
+`func (o *UnibeeApiBeanInvoiceSimplify) SetSendStatus(v int32)`
+
+SetSendStatus sets SendStatus field to given value.
+
+### HasSendStatus
+
+`func (o *UnibeeApiBeanInvoiceSimplify) HasSendStatus() bool`
+
+HasSendStatus returns a boolean if a field has been set.
 
 ### GetStatus
 

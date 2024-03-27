@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **Metadata** | Pointer to **map[string]string** |  | [optional] 
 **Note** | Pointer to **string** | Update Note | [optional] 
 **Paid** | Pointer to **int32** | Paid | [optional] 
+**PendingUpdateId** | Pointer to **string** | PendingUpdateId | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
 **PlanId** | Pointer to **int64** | PlanId | [optional] 
 **ProrationAmount** | Pointer to **int64** | ProrationAmount,Cents | [optional] 
@@ -32,7 +33,6 @@ Name | Type | Description | Notes
 **UpdatePlan** | Pointer to [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
 **UpdatePlanId** | Pointer to **int64** | UpdatePlanId | [optional] 
 **UpdateQuantity** | Pointer to **int64** | UpdateQuantity | [optional] 
-**UpdateSubscriptionId** | Pointer to **string** | UpdateSubscriptionId | [optional] 
 **UserId** | Pointer to **int64** | UserId | [optional] 
 
 ## Methods
@@ -429,6 +429,31 @@ SetPaid sets Paid field to given value.
 
 HasPaid returns a boolean if a field has been set.
 
+### GetPendingUpdateId
+
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetPendingUpdateId() string`
+
+GetPendingUpdateId returns the PendingUpdateId field if non-nil, zero value otherwise.
+
+### GetPendingUpdateIdOk
+
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetPendingUpdateIdOk() (*string, bool)`
+
+GetPendingUpdateIdOk returns a tuple with the PendingUpdateId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPendingUpdateId
+
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetPendingUpdateId(v string)`
+
+SetPendingUpdateId sets PendingUpdateId field to given value.
+
+### HasPendingUpdateId
+
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasPendingUpdateId() bool`
+
+HasPendingUpdateId returns a boolean if a field has been set.
+
 ### GetPlan
 
 `func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetPlan() UnibeeApiBeanPlanSimplify`
@@ -753,31 +778,6 @@ SetUpdateQuantity sets UpdateQuantity field to given value.
 `func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasUpdateQuantity() bool`
 
 HasUpdateQuantity returns a boolean if a field has been set.
-
-### GetUpdateSubscriptionId
-
-`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateSubscriptionId() string`
-
-GetUpdateSubscriptionId returns the UpdateSubscriptionId field if non-nil, zero value otherwise.
-
-### GetUpdateSubscriptionIdOk
-
-`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdateSubscriptionIdOk() (*string, bool)`
-
-GetUpdateSubscriptionIdOk returns a tuple with the UpdateSubscriptionId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUpdateSubscriptionId
-
-`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetUpdateSubscriptionId(v string)`
-
-SetUpdateSubscriptionId sets UpdateSubscriptionId field to given value.
-
-### HasUpdateSubscriptionId
-
-`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasUpdateSubscriptionId() bool`
-
-HasUpdateSubscriptionId returns a boolean if a field has been set.
 
 ### GetUserId
 

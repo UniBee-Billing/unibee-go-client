@@ -12,10 +12,11 @@ Method | HTTP request | Description
 [**InvoiceFinishPost**](Invoice.md#InvoiceFinishPost) | **Post** /merchant/invoice/finish | Admin Finish Invoice，Generate Pay Link
 [**InvoiceListGet**](Invoice.md#InvoiceListGet) | **Get** /merchant/invoice/list | Invoice List
 [**InvoiceListPost**](Invoice.md#InvoiceListPost) | **Post** /merchant/invoice/list | Invoice List
+[**InvoiceMarkRefundPost**](Invoice.md#InvoiceMarkRefundPost) | **Post** /merchant/invoice/mark_refund | Admin Mark Refund For Invoice
 [**InvoiceNewPost**](Invoice.md#InvoiceNewPost) | **Post** /merchant/invoice/new | Admin Create New Invoice
 [**InvoicePdfGeneratePost**](Invoice.md#InvoicePdfGeneratePost) | **Post** /merchant/invoice/pdf_generate | Admin Generate Merchant Invoice pdf
 [**InvoiceReconvertCryptoAndSendEmailPost**](Invoice.md#InvoiceReconvertCryptoAndSendEmailPost) | **Post** /merchant/invoice/reconvert_crypto_and_send_email | Admin Reconvert Crypto Data and Send Invoice Email to User
-[**InvoiceRefundPost**](Invoice.md#InvoiceRefundPost) | **Post** /merchant/invoice/refund | Admin Create Refund From Invoice
+[**InvoiceRefundPost**](Invoice.md#InvoiceRefundPost) | **Post** /merchant/invoice/refund | Admin Create Refund For Invoice
 [**InvoiceSendEmailPost**](Invoice.md#InvoiceSendEmailPost) | **Post** /merchant/invoice/send_email | Admin Send Merchant Invoice Email to User
 
 
@@ -359,7 +360,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantInvoiceFinishReq := *openapiclient.NewUnibeeApiMerchantInvoiceFinishReq(int32(123), "InvoiceId_example", int32(123)) // UnibeeApiMerchantInvoiceFinishReq | 
+	unibeeApiMerchantInvoiceFinishReq := *openapiclient.NewUnibeeApiMerchantInvoiceFinishReq(int32(123), "InvoiceId_example") // UnibeeApiMerchantInvoiceFinishReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -541,6 +542,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantInvoiceListGet200Response**](MerchantInvoiceListGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## InvoiceMarkRefundPost
+
+> MerchantInvoiceMarkRefundPost200Response InvoiceMarkRefundPost(ctx).UnibeeApiMerchantInvoiceMarkRefundReq(unibeeApiMerchantInvoiceMarkRefundReq).Execute()
+
+Admin Mark Refund For Invoice
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantInvoiceMarkRefundReq := *openapiclient.NewUnibeeApiMerchantInvoiceMarkRefundReq("InvoiceId_example", "Reason_example", int64(123)) // UnibeeApiMerchantInvoiceMarkRefundReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Invoice.InvoiceMarkRefundPost(context.Background()).UnibeeApiMerchantInvoiceMarkRefundReq(unibeeApiMerchantInvoiceMarkRefundReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceMarkRefundPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `InvoiceMarkRefundPost`: MerchantInvoiceMarkRefundPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceMarkRefundPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiInvoiceMarkRefundPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantInvoiceMarkRefundReq** | [**UnibeeApiMerchantInvoiceMarkRefundReq**](UnibeeApiMerchantInvoiceMarkRefundReq.md) |  | 
+
+### Return type
+
+[**MerchantInvoiceMarkRefundPost200Response**](MerchantInvoiceMarkRefundPost200Response.md)
 
 ### Authorization
 
@@ -750,9 +815,9 @@ No authorization required
 
 ## InvoiceRefundPost
 
-> MerchantInvoiceRefundPost200Response InvoiceRefundPost(ctx).UnibeeApiMerchantInvoiceRefundReq(unibeeApiMerchantInvoiceRefundReq).Execute()
+> MerchantInvoiceMarkRefundPost200Response InvoiceRefundPost(ctx).UnibeeApiMerchantInvoiceRefundReq(unibeeApiMerchantInvoiceRefundReq).Execute()
 
-Admin Create Refund From Invoice
+Admin Create Refund For Invoice
 
 ### Example
 
@@ -767,7 +832,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantInvoiceRefundReq := *openapiclient.NewUnibeeApiMerchantInvoiceRefundReq("InvoiceId_example", "Reason_example", int64(123), "RefundNo_example") // UnibeeApiMerchantInvoiceRefundReq | 
+	unibeeApiMerchantInvoiceRefundReq := *openapiclient.NewUnibeeApiMerchantInvoiceRefundReq("InvoiceId_example", "Reason_example", int64(123)) // UnibeeApiMerchantInvoiceRefundReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -776,7 +841,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceRefundPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `InvoiceRefundPost`: MerchantInvoiceRefundPost200Response
+	// response from `InvoiceRefundPost`: MerchantInvoiceMarkRefundPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceRefundPost`: %v\n", resp)
 }
 ```
@@ -796,7 +861,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantInvoiceRefundPost200Response**](MerchantInvoiceRefundPost200Response.md)
+[**MerchantInvoiceMarkRefundPost200Response**](MerchantInvoiceMarkRefundPost200Response.md)
 
 ### Authorization
 

@@ -24,9 +24,9 @@ type UnibeeApiMerchantSubscriptionCreateReq struct {
 	// addonParams
 	AddonParams []UnibeeApiBeanPlanAddonParam `json:"addonParams,omitempty"`
 	// Currency To Be Confirmed，Get From Preview
-	ConfirmCurrency string `json:"confirmCurrency"`
+	ConfirmCurrency *string `json:"confirmCurrency,omitempty"`
 	// TotalAmount To Be Confirmed，Get From Preview
-	ConfirmTotalAmount int64 `json:"confirmTotalAmount"`
+	ConfirmTotalAmount *int64 `json:"confirmTotalAmount,omitempty"`
 	// Id
 	GatewayId int64 `json:"gatewayId"`
 	// Metadata，Map
@@ -53,10 +53,8 @@ type _UnibeeApiMerchantSubscriptionCreateReq UnibeeApiMerchantSubscriptionCreate
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiMerchantSubscriptionCreateReq(confirmCurrency string, confirmTotalAmount int64, gatewayId int64, planId int64, userId int64) *UnibeeApiMerchantSubscriptionCreateReq {
+func NewUnibeeApiMerchantSubscriptionCreateReq(gatewayId int64, planId int64, userId int64) *UnibeeApiMerchantSubscriptionCreateReq {
 	this := UnibeeApiMerchantSubscriptionCreateReq{}
-	this.ConfirmCurrency = confirmCurrency
-	this.ConfirmTotalAmount = confirmTotalAmount
 	this.GatewayId = gatewayId
 	this.PlanId = planId
 	this.UserId = userId
@@ -103,52 +101,68 @@ func (o *UnibeeApiMerchantSubscriptionCreateReq) SetAddonParams(v []UnibeeApiBea
 	o.AddonParams = v
 }
 
-// GetConfirmCurrency returns the ConfirmCurrency field value
+// GetConfirmCurrency returns the ConfirmCurrency field value if set, zero value otherwise.
 func (o *UnibeeApiMerchantSubscriptionCreateReq) GetConfirmCurrency() string {
-	if o == nil {
+	if o == nil || IsNil(o.ConfirmCurrency) {
 		var ret string
 		return ret
 	}
-
-	return o.ConfirmCurrency
+	return *o.ConfirmCurrency
 }
 
-// GetConfirmCurrencyOk returns a tuple with the ConfirmCurrency field value
+// GetConfirmCurrencyOk returns a tuple with the ConfirmCurrency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnibeeApiMerchantSubscriptionCreateReq) GetConfirmCurrencyOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ConfirmCurrency) {
 		return nil, false
 	}
-	return &o.ConfirmCurrency, true
+	return o.ConfirmCurrency, true
 }
 
-// SetConfirmCurrency sets field value
+// HasConfirmCurrency returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantSubscriptionCreateReq) HasConfirmCurrency() bool {
+	if o != nil && !IsNil(o.ConfirmCurrency) {
+		return true
+	}
+
+	return false
+}
+
+// SetConfirmCurrency gets a reference to the given string and assigns it to the ConfirmCurrency field.
 func (o *UnibeeApiMerchantSubscriptionCreateReq) SetConfirmCurrency(v string) {
-	o.ConfirmCurrency = v
+	o.ConfirmCurrency = &v
 }
 
-// GetConfirmTotalAmount returns the ConfirmTotalAmount field value
+// GetConfirmTotalAmount returns the ConfirmTotalAmount field value if set, zero value otherwise.
 func (o *UnibeeApiMerchantSubscriptionCreateReq) GetConfirmTotalAmount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.ConfirmTotalAmount) {
 		var ret int64
 		return ret
 	}
-
-	return o.ConfirmTotalAmount
+	return *o.ConfirmTotalAmount
 }
 
-// GetConfirmTotalAmountOk returns a tuple with the ConfirmTotalAmount field value
+// GetConfirmTotalAmountOk returns a tuple with the ConfirmTotalAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnibeeApiMerchantSubscriptionCreateReq) GetConfirmTotalAmountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ConfirmTotalAmount) {
 		return nil, false
 	}
-	return &o.ConfirmTotalAmount, true
+	return o.ConfirmTotalAmount, true
 }
 
-// SetConfirmTotalAmount sets field value
+// HasConfirmTotalAmount returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantSubscriptionCreateReq) HasConfirmTotalAmount() bool {
+	if o != nil && !IsNil(o.ConfirmTotalAmount) {
+		return true
+	}
+
+	return false
+}
+
+// SetConfirmTotalAmount gets a reference to the given int64 and assigns it to the ConfirmTotalAmount field.
 func (o *UnibeeApiMerchantSubscriptionCreateReq) SetConfirmTotalAmount(v int64) {
-	o.ConfirmTotalAmount = v
+	o.ConfirmTotalAmount = &v
 }
 
 // GetGatewayId returns the GatewayId field value
@@ -428,8 +442,12 @@ func (o UnibeeApiMerchantSubscriptionCreateReq) ToMap() (map[string]interface{},
 	if !IsNil(o.AddonParams) {
 		toSerialize["addonParams"] = o.AddonParams
 	}
-	toSerialize["confirmCurrency"] = o.ConfirmCurrency
-	toSerialize["confirmTotalAmount"] = o.ConfirmTotalAmount
+	if !IsNil(o.ConfirmCurrency) {
+		toSerialize["confirmCurrency"] = o.ConfirmCurrency
+	}
+	if !IsNil(o.ConfirmTotalAmount) {
+		toSerialize["confirmTotalAmount"] = o.ConfirmTotalAmount
+	}
 	toSerialize["gatewayId"] = o.GatewayId
 	if !IsNil(o.Metadata) {
 		toSerialize["metadata"] = o.Metadata
@@ -459,8 +477,6 @@ func (o *UnibeeApiMerchantSubscriptionCreateReq) UnmarshalJSON(data []byte) (err
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"confirmCurrency",
-		"confirmTotalAmount",
 		"gatewayId",
 		"planId",
 		"userId",

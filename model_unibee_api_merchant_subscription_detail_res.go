@@ -19,9 +19,12 @@ var _ MappedNullable = &UnibeeApiMerchantSubscriptionDetailRes{}
 
 // UnibeeApiMerchantSubscriptionDetailRes struct for UnibeeApiMerchantSubscriptionDetailRes
 type UnibeeApiMerchantSubscriptionDetailRes struct {
+	// AddonParams
+	AddonParams []UnibeeApiBeanPlanAddonParam `json:"addonParams,omitempty"`
 	// Plan Addon
 	Addons []UnibeeApiBeanPlanAddonDetail `json:"addons,omitempty"`
 	Gateway *UnibeeApiBeanGatewaySimplify `json:"gateway,omitempty"`
+	LatestInvoice *UnibeeApiBeanInvoiceSimplify `json:"latestInvoice,omitempty"`
 	Plan *UnibeeApiBeanPlanSimplify `json:"plan,omitempty"`
 	Subscription *UnibeeApiBeanSubscriptionSimplify `json:"subscription,omitempty"`
 	UnfinishedSubscriptionPendingUpdate *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail `json:"unfinishedSubscriptionPendingUpdate,omitempty"`
@@ -43,6 +46,38 @@ func NewUnibeeApiMerchantSubscriptionDetailRes() *UnibeeApiMerchantSubscriptionD
 func NewUnibeeApiMerchantSubscriptionDetailResWithDefaults() *UnibeeApiMerchantSubscriptionDetailRes {
 	this := UnibeeApiMerchantSubscriptionDetailRes{}
 	return &this
+}
+
+// GetAddonParams returns the AddonParams field value if set, zero value otherwise.
+func (o *UnibeeApiMerchantSubscriptionDetailRes) GetAddonParams() []UnibeeApiBeanPlanAddonParam {
+	if o == nil || IsNil(o.AddonParams) {
+		var ret []UnibeeApiBeanPlanAddonParam
+		return ret
+	}
+	return o.AddonParams
+}
+
+// GetAddonParamsOk returns a tuple with the AddonParams field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiMerchantSubscriptionDetailRes) GetAddonParamsOk() ([]UnibeeApiBeanPlanAddonParam, bool) {
+	if o == nil || IsNil(o.AddonParams) {
+		return nil, false
+	}
+	return o.AddonParams, true
+}
+
+// HasAddonParams returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantSubscriptionDetailRes) HasAddonParams() bool {
+	if o != nil && !IsNil(o.AddonParams) {
+		return true
+	}
+
+	return false
+}
+
+// SetAddonParams gets a reference to the given []UnibeeApiBeanPlanAddonParam and assigns it to the AddonParams field.
+func (o *UnibeeApiMerchantSubscriptionDetailRes) SetAddonParams(v []UnibeeApiBeanPlanAddonParam) {
+	o.AddonParams = v
 }
 
 // GetAddons returns the Addons field value if set, zero value otherwise.
@@ -107,6 +142,38 @@ func (o *UnibeeApiMerchantSubscriptionDetailRes) HasGateway() bool {
 // SetGateway gets a reference to the given UnibeeApiBeanGatewaySimplify and assigns it to the Gateway field.
 func (o *UnibeeApiMerchantSubscriptionDetailRes) SetGateway(v UnibeeApiBeanGatewaySimplify) {
 	o.Gateway = &v
+}
+
+// GetLatestInvoice returns the LatestInvoice field value if set, zero value otherwise.
+func (o *UnibeeApiMerchantSubscriptionDetailRes) GetLatestInvoice() UnibeeApiBeanInvoiceSimplify {
+	if o == nil || IsNil(o.LatestInvoice) {
+		var ret UnibeeApiBeanInvoiceSimplify
+		return ret
+	}
+	return *o.LatestInvoice
+}
+
+// GetLatestInvoiceOk returns a tuple with the LatestInvoice field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiMerchantSubscriptionDetailRes) GetLatestInvoiceOk() (*UnibeeApiBeanInvoiceSimplify, bool) {
+	if o == nil || IsNil(o.LatestInvoice) {
+		return nil, false
+	}
+	return o.LatestInvoice, true
+}
+
+// HasLatestInvoice returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantSubscriptionDetailRes) HasLatestInvoice() bool {
+	if o != nil && !IsNil(o.LatestInvoice) {
+		return true
+	}
+
+	return false
+}
+
+// SetLatestInvoice gets a reference to the given UnibeeApiBeanInvoiceSimplify and assigns it to the LatestInvoice field.
+func (o *UnibeeApiMerchantSubscriptionDetailRes) SetLatestInvoice(v UnibeeApiBeanInvoiceSimplify) {
+	o.LatestInvoice = &v
 }
 
 // GetPlan returns the Plan field value if set, zero value otherwise.
@@ -247,11 +314,17 @@ func (o UnibeeApiMerchantSubscriptionDetailRes) MarshalJSON() ([]byte, error) {
 
 func (o UnibeeApiMerchantSubscriptionDetailRes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.AddonParams) {
+		toSerialize["addonParams"] = o.AddonParams
+	}
 	if !IsNil(o.Addons) {
 		toSerialize["addons"] = o.Addons
 	}
 	if !IsNil(o.Gateway) {
 		toSerialize["gateway"] = o.Gateway
+	}
+	if !IsNil(o.LatestInvoice) {
+		toSerialize["latestInvoice"] = o.LatestInvoice
 	}
 	if !IsNil(o.Plan) {
 		toSerialize["plan"] = o.Plan

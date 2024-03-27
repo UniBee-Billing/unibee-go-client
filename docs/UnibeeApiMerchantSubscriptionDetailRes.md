@@ -4,8 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | AddonParams | [optional] 
 **Addons** | Pointer to [**[]UnibeeApiBeanPlanAddonDetail**](UnibeeApiBeanPlanAddonDetail.md) | Plan Addon | [optional] 
 **Gateway** | Pointer to [**UnibeeApiBeanGatewaySimplify**](UnibeeApiBeanGatewaySimplify.md) |  | [optional] 
+**LatestInvoice** | Pointer to [**UnibeeApiBeanInvoiceSimplify**](UnibeeApiBeanInvoiceSimplify.md) |  | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
 **Subscription** | Pointer to [**UnibeeApiBeanSubscriptionSimplify**](UnibeeApiBeanSubscriptionSimplify.md) |  | [optional] 
 **UnfinishedSubscriptionPendingUpdate** | Pointer to [**UnibeeApiBeanDetailSubscriptionPendingUpdateDetail**](UnibeeApiBeanDetailSubscriptionPendingUpdateDetail.md) |  | [optional] 
@@ -29,6 +31,31 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantSubscriptionDetailResWithDefaults instantiates a new UnibeeApiMerchantSubscriptionDetailRes object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAddonParams
+
+`func (o *UnibeeApiMerchantSubscriptionDetailRes) GetAddonParams() []UnibeeApiBeanPlanAddonParam`
+
+GetAddonParams returns the AddonParams field if non-nil, zero value otherwise.
+
+### GetAddonParamsOk
+
+`func (o *UnibeeApiMerchantSubscriptionDetailRes) GetAddonParamsOk() (*[]UnibeeApiBeanPlanAddonParam, bool)`
+
+GetAddonParamsOk returns a tuple with the AddonParams field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAddonParams
+
+`func (o *UnibeeApiMerchantSubscriptionDetailRes) SetAddonParams(v []UnibeeApiBeanPlanAddonParam)`
+
+SetAddonParams sets AddonParams field to given value.
+
+### HasAddonParams
+
+`func (o *UnibeeApiMerchantSubscriptionDetailRes) HasAddonParams() bool`
+
+HasAddonParams returns a boolean if a field has been set.
 
 ### GetAddons
 
@@ -79,6 +106,31 @@ SetGateway sets Gateway field to given value.
 `func (o *UnibeeApiMerchantSubscriptionDetailRes) HasGateway() bool`
 
 HasGateway returns a boolean if a field has been set.
+
+### GetLatestInvoice
+
+`func (o *UnibeeApiMerchantSubscriptionDetailRes) GetLatestInvoice() UnibeeApiBeanInvoiceSimplify`
+
+GetLatestInvoice returns the LatestInvoice field if non-nil, zero value otherwise.
+
+### GetLatestInvoiceOk
+
+`func (o *UnibeeApiMerchantSubscriptionDetailRes) GetLatestInvoiceOk() (*UnibeeApiBeanInvoiceSimplify, bool)`
+
+GetLatestInvoiceOk returns a tuple with the LatestInvoice field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLatestInvoice
+
+`func (o *UnibeeApiMerchantSubscriptionDetailRes) SetLatestInvoice(v UnibeeApiBeanInvoiceSimplify)`
+
+SetLatestInvoice sets LatestInvoice field to given value.
+
+### HasLatestInvoice
+
+`func (o *UnibeeApiMerchantSubscriptionDetailRes) HasLatestInvoice() bool`
+
+HasLatestInvoice returns a boolean if a field has been set.
 
 ### GetPlan
 

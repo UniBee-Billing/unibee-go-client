@@ -6,13 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DaysUtilDue** | **int32** | DaysUtilDue,Due Day Of Pay | 
 **InvoiceId** | **string** | InvoiceId | 
-**PayMethod** | **int32** | PayMethod,1-manual，2-auto | 
 
 ## Methods
 
 ### NewUnibeeApiMerchantInvoiceFinishReq
 
-`func NewUnibeeApiMerchantInvoiceFinishReq(daysUtilDue int32, invoiceId string, payMethod int32, ) *UnibeeApiMerchantInvoiceFinishReq`
+`func NewUnibeeApiMerchantInvoiceFinishReq(daysUtilDue int32, invoiceId string, ) *UnibeeApiMerchantInvoiceFinishReq`
 
 NewUnibeeApiMerchantInvoiceFinishReq instantiates a new UnibeeApiMerchantInvoiceFinishReq object
 This constructor will assign default values to properties that have it defined,
@@ -65,26 +64,6 @@ and a boolean to check if the value has been set.
 `func (o *UnibeeApiMerchantInvoiceFinishReq) SetInvoiceId(v string)`
 
 SetInvoiceId sets InvoiceId field to given value.
-
-
-### GetPayMethod
-
-`func (o *UnibeeApiMerchantInvoiceFinishReq) GetPayMethod() int32`
-
-GetPayMethod returns the PayMethod field if non-nil, zero value otherwise.
-
-### GetPayMethodOk
-
-`func (o *UnibeeApiMerchantInvoiceFinishReq) GetPayMethodOk() (*int32, bool)`
-
-GetPayMethodOk returns a tuple with the PayMethod field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPayMethod
-
-`func (o *UnibeeApiMerchantInvoiceFinishReq) SetPayMethod(v int32)`
-
-SetPayMethod sets PayMethod field to given value.
 
 
 

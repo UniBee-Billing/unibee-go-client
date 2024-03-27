@@ -24,9 +24,11 @@ type UnibeeApiMerchantSubscriptionUpdateReq struct {
 	// addonParams
 	AddonParams []UnibeeApiBeanPlanAddonParam `json:"addonParams,omitempty"`
 	// Currency To Be Confirmed，Get From Preview
-	ConfirmCurrency string `json:"confirmCurrency"`
+	ConfirmCurrency *string `json:"confirmCurrency,omitempty"`
 	// TotalAmount To Be Confirmed，Get From Preview
-	ConfirmTotalAmount int64 `json:"confirmTotalAmount"`
+	ConfirmTotalAmount *int64 `json:"confirmTotalAmount,omitempty"`
+	// Effect Immediate，1-Immediate，2-Next Period
+	EffectImmediate *int32 `json:"effectImmediate,omitempty"`
 	// Id
 	GatewayId *int64 `json:"gatewayId,omitempty"`
 	// Metadata，Map
@@ -39,8 +41,6 @@ type UnibeeApiMerchantSubscriptionUpdateReq struct {
 	Quantity int64 `json:"quantity"`
 	// SubscriptionId
 	SubscriptionId string `json:"subscriptionId"`
-	// Effect Immediate，1-Immediate，2-Next Period
-	WithImmediateEffect *int32 `json:"withImmediateEffect,omitempty"`
 }
 
 type _UnibeeApiMerchantSubscriptionUpdateReq UnibeeApiMerchantSubscriptionUpdateReq
@@ -49,10 +49,8 @@ type _UnibeeApiMerchantSubscriptionUpdateReq UnibeeApiMerchantSubscriptionUpdate
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnibeeApiMerchantSubscriptionUpdateReq(confirmCurrency string, confirmTotalAmount int64, newPlanId int64, prorationDate int64, quantity int64, subscriptionId string) *UnibeeApiMerchantSubscriptionUpdateReq {
+func NewUnibeeApiMerchantSubscriptionUpdateReq(newPlanId int64, prorationDate int64, quantity int64, subscriptionId string) *UnibeeApiMerchantSubscriptionUpdateReq {
 	this := UnibeeApiMerchantSubscriptionUpdateReq{}
-	this.ConfirmCurrency = confirmCurrency
-	this.ConfirmTotalAmount = confirmTotalAmount
 	this.NewPlanId = newPlanId
 	this.ProrationDate = prorationDate
 	this.Quantity = quantity
@@ -100,52 +98,100 @@ func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetAddonParams(v []UnibeeApiBea
 	o.AddonParams = v
 }
 
-// GetConfirmCurrency returns the ConfirmCurrency field value
+// GetConfirmCurrency returns the ConfirmCurrency field value if set, zero value otherwise.
 func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetConfirmCurrency() string {
-	if o == nil {
+	if o == nil || IsNil(o.ConfirmCurrency) {
 		var ret string
 		return ret
 	}
-
-	return o.ConfirmCurrency
+	return *o.ConfirmCurrency
 }
 
-// GetConfirmCurrencyOk returns a tuple with the ConfirmCurrency field value
+// GetConfirmCurrencyOk returns a tuple with the ConfirmCurrency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetConfirmCurrencyOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ConfirmCurrency) {
 		return nil, false
 	}
-	return &o.ConfirmCurrency, true
+	return o.ConfirmCurrency, true
 }
 
-// SetConfirmCurrency sets field value
+// HasConfirmCurrency returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasConfirmCurrency() bool {
+	if o != nil && !IsNil(o.ConfirmCurrency) {
+		return true
+	}
+
+	return false
+}
+
+// SetConfirmCurrency gets a reference to the given string and assigns it to the ConfirmCurrency field.
 func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetConfirmCurrency(v string) {
-	o.ConfirmCurrency = v
+	o.ConfirmCurrency = &v
 }
 
-// GetConfirmTotalAmount returns the ConfirmTotalAmount field value
+// GetConfirmTotalAmount returns the ConfirmTotalAmount field value if set, zero value otherwise.
 func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetConfirmTotalAmount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.ConfirmTotalAmount) {
 		var ret int64
 		return ret
 	}
-
-	return o.ConfirmTotalAmount
+	return *o.ConfirmTotalAmount
 }
 
-// GetConfirmTotalAmountOk returns a tuple with the ConfirmTotalAmount field value
+// GetConfirmTotalAmountOk returns a tuple with the ConfirmTotalAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetConfirmTotalAmountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ConfirmTotalAmount) {
 		return nil, false
 	}
-	return &o.ConfirmTotalAmount, true
+	return o.ConfirmTotalAmount, true
 }
 
-// SetConfirmTotalAmount sets field value
+// HasConfirmTotalAmount returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasConfirmTotalAmount() bool {
+	if o != nil && !IsNil(o.ConfirmTotalAmount) {
+		return true
+	}
+
+	return false
+}
+
+// SetConfirmTotalAmount gets a reference to the given int64 and assigns it to the ConfirmTotalAmount field.
 func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetConfirmTotalAmount(v int64) {
-	o.ConfirmTotalAmount = v
+	o.ConfirmTotalAmount = &v
+}
+
+// GetEffectImmediate returns the EffectImmediate field value if set, zero value otherwise.
+func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetEffectImmediate() int32 {
+	if o == nil || IsNil(o.EffectImmediate) {
+		var ret int32
+		return ret
+	}
+	return *o.EffectImmediate
+}
+
+// GetEffectImmediateOk returns a tuple with the EffectImmediate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetEffectImmediateOk() (*int32, bool) {
+	if o == nil || IsNil(o.EffectImmediate) {
+		return nil, false
+	}
+	return o.EffectImmediate, true
+}
+
+// HasEffectImmediate returns a boolean if a field has been set.
+func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasEffectImmediate() bool {
+	if o != nil && !IsNil(o.EffectImmediate) {
+		return true
+	}
+
+	return false
+}
+
+// SetEffectImmediate gets a reference to the given int32 and assigns it to the EffectImmediate field.
+func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetEffectImmediate(v int32) {
+	o.EffectImmediate = &v
 }
 
 // GetGatewayId returns the GatewayId field value if set, zero value otherwise.
@@ -308,38 +354,6 @@ func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetSubscriptionId(v string) {
 	o.SubscriptionId = v
 }
 
-// GetWithImmediateEffect returns the WithImmediateEffect field value if set, zero value otherwise.
-func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetWithImmediateEffect() int32 {
-	if o == nil || IsNil(o.WithImmediateEffect) {
-		var ret int32
-		return ret
-	}
-	return *o.WithImmediateEffect
-}
-
-// GetWithImmediateEffectOk returns a tuple with the WithImmediateEffect field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetWithImmediateEffectOk() (*int32, bool) {
-	if o == nil || IsNil(o.WithImmediateEffect) {
-		return nil, false
-	}
-	return o.WithImmediateEffect, true
-}
-
-// HasWithImmediateEffect returns a boolean if a field has been set.
-func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasWithImmediateEffect() bool {
-	if o != nil && !IsNil(o.WithImmediateEffect) {
-		return true
-	}
-
-	return false
-}
-
-// SetWithImmediateEffect gets a reference to the given int32 and assigns it to the WithImmediateEffect field.
-func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetWithImmediateEffect(v int32) {
-	o.WithImmediateEffect = &v
-}
-
 func (o UnibeeApiMerchantSubscriptionUpdateReq) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -353,8 +367,15 @@ func (o UnibeeApiMerchantSubscriptionUpdateReq) ToMap() (map[string]interface{},
 	if !IsNil(o.AddonParams) {
 		toSerialize["addonParams"] = o.AddonParams
 	}
-	toSerialize["confirmCurrency"] = o.ConfirmCurrency
-	toSerialize["confirmTotalAmount"] = o.ConfirmTotalAmount
+	if !IsNil(o.ConfirmCurrency) {
+		toSerialize["confirmCurrency"] = o.ConfirmCurrency
+	}
+	if !IsNil(o.ConfirmTotalAmount) {
+		toSerialize["confirmTotalAmount"] = o.ConfirmTotalAmount
+	}
+	if !IsNil(o.EffectImmediate) {
+		toSerialize["effectImmediate"] = o.EffectImmediate
+	}
 	if !IsNil(o.GatewayId) {
 		toSerialize["gatewayId"] = o.GatewayId
 	}
@@ -365,9 +386,6 @@ func (o UnibeeApiMerchantSubscriptionUpdateReq) ToMap() (map[string]interface{},
 	toSerialize["prorationDate"] = o.ProrationDate
 	toSerialize["quantity"] = o.Quantity
 	toSerialize["subscriptionId"] = o.SubscriptionId
-	if !IsNil(o.WithImmediateEffect) {
-		toSerialize["withImmediateEffect"] = o.WithImmediateEffect
-	}
 	return toSerialize, nil
 }
 
@@ -376,8 +394,6 @@ func (o *UnibeeApiMerchantSubscriptionUpdateReq) UnmarshalJSON(data []byte) (err
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"confirmCurrency",
-		"confirmTotalAmount",
 		"newPlanId",
 		"prorationDate",
 		"quantity",

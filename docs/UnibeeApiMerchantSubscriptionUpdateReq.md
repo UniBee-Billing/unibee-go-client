@@ -5,21 +5,21 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | addonParams | [optional] 
-**ConfirmCurrency** | **string** | Currency To Be Confirmed，Get From Preview | 
-**ConfirmTotalAmount** | **int64** | TotalAmount To Be Confirmed，Get From Preview | 
+**ConfirmCurrency** | Pointer to **string** | Currency To Be Confirmed，Get From Preview | [optional] 
+**ConfirmTotalAmount** | Pointer to **int64** | TotalAmount To Be Confirmed，Get From Preview | [optional] 
+**EffectImmediate** | Pointer to **int32** | Effect Immediate，1-Immediate，2-Next Period | [optional] 
 **GatewayId** | Pointer to **int64** | Id | [optional] 
 **Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
 **NewPlanId** | **int64** | New PlanId | 
 **ProrationDate** | **int64** | prorationDate date to start Proration，Get From Preview | 
 **Quantity** | **int64** | Quantity | 
 **SubscriptionId** | **string** | SubscriptionId | 
-**WithImmediateEffect** | Pointer to **int32** | Effect Immediate，1-Immediate，2-Next Period | [optional] 
 
 ## Methods
 
 ### NewUnibeeApiMerchantSubscriptionUpdateReq
 
-`func NewUnibeeApiMerchantSubscriptionUpdateReq(confirmCurrency string, confirmTotalAmount int64, newPlanId int64, prorationDate int64, quantity int64, subscriptionId string, ) *UnibeeApiMerchantSubscriptionUpdateReq`
+`func NewUnibeeApiMerchantSubscriptionUpdateReq(newPlanId int64, prorationDate int64, quantity int64, subscriptionId string, ) *UnibeeApiMerchantSubscriptionUpdateReq`
 
 NewUnibeeApiMerchantSubscriptionUpdateReq instantiates a new UnibeeApiMerchantSubscriptionUpdateReq object
 This constructor will assign default values to properties that have it defined,
@@ -78,6 +78,11 @@ and a boolean to check if the value has been set.
 
 SetConfirmCurrency sets ConfirmCurrency field to given value.
 
+### HasConfirmCurrency
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasConfirmCurrency() bool`
+
+HasConfirmCurrency returns a boolean if a field has been set.
 
 ### GetConfirmTotalAmount
 
@@ -98,6 +103,36 @@ and a boolean to check if the value has been set.
 
 SetConfirmTotalAmount sets ConfirmTotalAmount field to given value.
 
+### HasConfirmTotalAmount
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasConfirmTotalAmount() bool`
+
+HasConfirmTotalAmount returns a boolean if a field has been set.
+
+### GetEffectImmediate
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetEffectImmediate() int32`
+
+GetEffectImmediate returns the EffectImmediate field if non-nil, zero value otherwise.
+
+### GetEffectImmediateOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetEffectImmediateOk() (*int32, bool)`
+
+GetEffectImmediateOk returns a tuple with the EffectImmediate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEffectImmediate
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetEffectImmediate(v int32)`
+
+SetEffectImmediate sets EffectImmediate field to given value.
+
+### HasEffectImmediate
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasEffectImmediate() bool`
+
+HasEffectImmediate returns a boolean if a field has been set.
 
 ### GetGatewayId
 
@@ -228,31 +263,6 @@ and a boolean to check if the value has been set.
 
 SetSubscriptionId sets SubscriptionId field to given value.
 
-
-### GetWithImmediateEffect
-
-`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetWithImmediateEffect() int32`
-
-GetWithImmediateEffect returns the WithImmediateEffect field if non-nil, zero value otherwise.
-
-### GetWithImmediateEffectOk
-
-`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetWithImmediateEffectOk() (*int32, bool)`
-
-GetWithImmediateEffectOk returns a tuple with the WithImmediateEffect field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWithImmediateEffect
-
-`func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetWithImmediateEffect(v int32)`
-
-SetWithImmediateEffect sets WithImmediateEffect field to given value.
-
-### HasWithImmediateEffect
-
-`func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasWithImmediateEffect() bool`
-
-HasWithImmediateEffect returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

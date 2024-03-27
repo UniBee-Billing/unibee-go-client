@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ClientSession** | Pointer to **string** | ClientSession | [optional] 
 **ClientToken** | Pointer to **string** | ClientToken | [optional] 
 **Email** | Pointer to **string** | Email | [optional] 
 **ExternalUserId** | Pointer to **string** | ExternalUserId | [optional] 
@@ -28,6 +29,31 @@ will change when the set of required properties is changed
 NewMerchantSessionNewSessionPost200ResponseDataWithDefaults instantiates a new MerchantSessionNewSessionPost200ResponseData object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetClientSession
+
+`func (o *MerchantSessionNewSessionPost200ResponseData) GetClientSession() string`
+
+GetClientSession returns the ClientSession field if non-nil, zero value otherwise.
+
+### GetClientSessionOk
+
+`func (o *MerchantSessionNewSessionPost200ResponseData) GetClientSessionOk() (*string, bool)`
+
+GetClientSessionOk returns a tuple with the ClientSession field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientSession
+
+`func (o *MerchantSessionNewSessionPost200ResponseData) SetClientSession(v string)`
+
+SetClientSession sets ClientSession field to given value.
+
+### HasClientSession
+
+`func (o *MerchantSessionNewSessionPost200ResponseData) HasClientSession() bool`
+
+HasClientSession returns a boolean if a field has been set.
 
 ### GetClientToken
 

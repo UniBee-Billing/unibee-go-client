@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **CryptoCurrency** | Pointer to **string** | crypto_currency | [optional] 
 **Currency** | Pointer to **string** | Currency | [optional] 
 **Data** | Pointer to **string** | Data | [optional] 
+**DayUtilDue** | Pointer to **int64** | day util due after finish | [optional] 
 **DiscountAmount** | Pointer to **int64** | DiscountAmount,Cents | [optional] 
 **Gateway** | Pointer to [**UnibeeApiBeanGatewaySimplify**](UnibeeApiBeanGatewaySimplify.md) |  | [optional] 
 **GatewayId** | Pointer to **int64** | Id | [optional] 
@@ -168,6 +169,31 @@ SetData sets Data field to given value.
 `func (o *UnibeeApiBeanDetailInvoiceDetail) HasData() bool`
 
 HasData returns a boolean if a field has been set.
+
+### GetDayUtilDue
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetDayUtilDue() int64`
+
+GetDayUtilDue returns the DayUtilDue field if non-nil, zero value otherwise.
+
+### GetDayUtilDueOk
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetDayUtilDueOk() (*int64, bool)`
+
+GetDayUtilDueOk returns a tuple with the DayUtilDue field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDayUtilDue
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetDayUtilDue(v int64)`
+
+SetDayUtilDue sets DayUtilDue field to given value.
+
+### HasDayUtilDue
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) HasDayUtilDue() bool`
+
+HasDayUtilDue returns a boolean if a field has been set.
 
 ### GetDiscountAmount
 

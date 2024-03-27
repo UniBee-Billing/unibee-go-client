@@ -14,37 +14,37 @@ import (
 	"encoding/json"
 )
 
-// checks if the MerchantInvoiceRefundPost200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &MerchantInvoiceRefundPost200Response{}
+// checks if the MerchantSubscriptionConfigGet200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MerchantSubscriptionConfigGet200Response{}
 
-// MerchantInvoiceRefundPost200Response struct for MerchantInvoiceRefundPost200Response
-type MerchantInvoiceRefundPost200Response struct {
+// MerchantSubscriptionConfigGet200Response struct for MerchantSubscriptionConfigGet200Response
+type MerchantSubscriptionConfigGet200Response struct {
 	Code *int32 `json:"code,omitempty"`
-	Data *MerchantInvoiceRefundPost200ResponseData `json:"data,omitempty"`
+	Data *MerchantSubscriptionConfigGet200ResponseData `json:"data,omitempty"`
 	Message *string `json:"message,omitempty"`
 	Redirect *string `json:"redirect,omitempty"`
 	RequestId *string `json:"requestId,omitempty"`
 }
 
-// NewMerchantInvoiceRefundPost200Response instantiates a new MerchantInvoiceRefundPost200Response object
+// NewMerchantSubscriptionConfigGet200Response instantiates a new MerchantSubscriptionConfigGet200Response object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMerchantInvoiceRefundPost200Response() *MerchantInvoiceRefundPost200Response {
-	this := MerchantInvoiceRefundPost200Response{}
+func NewMerchantSubscriptionConfigGet200Response() *MerchantSubscriptionConfigGet200Response {
+	this := MerchantSubscriptionConfigGet200Response{}
 	return &this
 }
 
-// NewMerchantInvoiceRefundPost200ResponseWithDefaults instantiates a new MerchantInvoiceRefundPost200Response object
+// NewMerchantSubscriptionConfigGet200ResponseWithDefaults instantiates a new MerchantSubscriptionConfigGet200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewMerchantInvoiceRefundPost200ResponseWithDefaults() *MerchantInvoiceRefundPost200Response {
-	this := MerchantInvoiceRefundPost200Response{}
+func NewMerchantSubscriptionConfigGet200ResponseWithDefaults() *MerchantSubscriptionConfigGet200Response {
+	this := MerchantSubscriptionConfigGet200Response{}
 	return &this
 }
 
 // GetCode returns the Code field value if set, zero value otherwise.
-func (o *MerchantInvoiceRefundPost200Response) GetCode() int32 {
+func (o *MerchantSubscriptionConfigGet200Response) GetCode() int32 {
 	if o == nil || IsNil(o.Code) {
 		var ret int32
 		return ret
@@ -54,7 +54,7 @@ func (o *MerchantInvoiceRefundPost200Response) GetCode() int32 {
 
 // GetCodeOk returns a tuple with the Code field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantInvoiceRefundPost200Response) GetCodeOk() (*int32, bool) {
+func (o *MerchantSubscriptionConfigGet200Response) GetCodeOk() (*int32, bool) {
 	if o == nil || IsNil(o.Code) {
 		return nil, false
 	}
@@ -62,7 +62,7 @@ func (o *MerchantInvoiceRefundPost200Response) GetCodeOk() (*int32, bool) {
 }
 
 // HasCode returns a boolean if a field has been set.
-func (o *MerchantInvoiceRefundPost200Response) HasCode() bool {
+func (o *MerchantSubscriptionConfigGet200Response) HasCode() bool {
 	if o != nil && !IsNil(o.Code) {
 		return true
 	}
@@ -71,14 +71,14 @@ func (o *MerchantInvoiceRefundPost200Response) HasCode() bool {
 }
 
 // SetCode gets a reference to the given int32 and assigns it to the Code field.
-func (o *MerchantInvoiceRefundPost200Response) SetCode(v int32) {
+func (o *MerchantSubscriptionConfigGet200Response) SetCode(v int32) {
 	o.Code = &v
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *MerchantInvoiceRefundPost200Response) GetData() MerchantInvoiceRefundPost200ResponseData {
+func (o *MerchantSubscriptionConfigGet200Response) GetData() MerchantSubscriptionConfigGet200ResponseData {
 	if o == nil || IsNil(o.Data) {
-		var ret MerchantInvoiceRefundPost200ResponseData
+		var ret MerchantSubscriptionConfigGet200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -86,7 +86,7 @@ func (o *MerchantInvoiceRefundPost200Response) GetData() MerchantInvoiceRefundPo
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantInvoiceRefundPost200Response) GetDataOk() (*MerchantInvoiceRefundPost200ResponseData, bool) {
+func (o *MerchantSubscriptionConfigGet200Response) GetDataOk() (*MerchantSubscriptionConfigGet200ResponseData, bool) {
 	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
@@ -94,7 +94,7 @@ func (o *MerchantInvoiceRefundPost200Response) GetDataOk() (*MerchantInvoiceRefu
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *MerchantInvoiceRefundPost200Response) HasData() bool {
+func (o *MerchantSubscriptionConfigGet200Response) HasData() bool {
 	if o != nil && !IsNil(o.Data) {
 		return true
 	}
@@ -102,13 +102,13 @@ func (o *MerchantInvoiceRefundPost200Response) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given MerchantInvoiceRefundPost200ResponseData and assigns it to the Data field.
-func (o *MerchantInvoiceRefundPost200Response) SetData(v MerchantInvoiceRefundPost200ResponseData) {
+// SetData gets a reference to the given MerchantSubscriptionConfigGet200ResponseData and assigns it to the Data field.
+func (o *MerchantSubscriptionConfigGet200Response) SetData(v MerchantSubscriptionConfigGet200ResponseData) {
 	o.Data = &v
 }
 
 // GetMessage returns the Message field value if set, zero value otherwise.
-func (o *MerchantInvoiceRefundPost200Response) GetMessage() string {
+func (o *MerchantSubscriptionConfigGet200Response) GetMessage() string {
 	if o == nil || IsNil(o.Message) {
 		var ret string
 		return ret
@@ -118,7 +118,7 @@ func (o *MerchantInvoiceRefundPost200Response) GetMessage() string {
 
 // GetMessageOk returns a tuple with the Message field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantInvoiceRefundPost200Response) GetMessageOk() (*string, bool) {
+func (o *MerchantSubscriptionConfigGet200Response) GetMessageOk() (*string, bool) {
 	if o == nil || IsNil(o.Message) {
 		return nil, false
 	}
@@ -126,7 +126,7 @@ func (o *MerchantInvoiceRefundPost200Response) GetMessageOk() (*string, bool) {
 }
 
 // HasMessage returns a boolean if a field has been set.
-func (o *MerchantInvoiceRefundPost200Response) HasMessage() bool {
+func (o *MerchantSubscriptionConfigGet200Response) HasMessage() bool {
 	if o != nil && !IsNil(o.Message) {
 		return true
 	}
@@ -135,12 +135,12 @@ func (o *MerchantInvoiceRefundPost200Response) HasMessage() bool {
 }
 
 // SetMessage gets a reference to the given string and assigns it to the Message field.
-func (o *MerchantInvoiceRefundPost200Response) SetMessage(v string) {
+func (o *MerchantSubscriptionConfigGet200Response) SetMessage(v string) {
 	o.Message = &v
 }
 
 // GetRedirect returns the Redirect field value if set, zero value otherwise.
-func (o *MerchantInvoiceRefundPost200Response) GetRedirect() string {
+func (o *MerchantSubscriptionConfigGet200Response) GetRedirect() string {
 	if o == nil || IsNil(o.Redirect) {
 		var ret string
 		return ret
@@ -150,7 +150,7 @@ func (o *MerchantInvoiceRefundPost200Response) GetRedirect() string {
 
 // GetRedirectOk returns a tuple with the Redirect field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantInvoiceRefundPost200Response) GetRedirectOk() (*string, bool) {
+func (o *MerchantSubscriptionConfigGet200Response) GetRedirectOk() (*string, bool) {
 	if o == nil || IsNil(o.Redirect) {
 		return nil, false
 	}
@@ -158,7 +158,7 @@ func (o *MerchantInvoiceRefundPost200Response) GetRedirectOk() (*string, bool) {
 }
 
 // HasRedirect returns a boolean if a field has been set.
-func (o *MerchantInvoiceRefundPost200Response) HasRedirect() bool {
+func (o *MerchantSubscriptionConfigGet200Response) HasRedirect() bool {
 	if o != nil && !IsNil(o.Redirect) {
 		return true
 	}
@@ -167,12 +167,12 @@ func (o *MerchantInvoiceRefundPost200Response) HasRedirect() bool {
 }
 
 // SetRedirect gets a reference to the given string and assigns it to the Redirect field.
-func (o *MerchantInvoiceRefundPost200Response) SetRedirect(v string) {
+func (o *MerchantSubscriptionConfigGet200Response) SetRedirect(v string) {
 	o.Redirect = &v
 }
 
 // GetRequestId returns the RequestId field value if set, zero value otherwise.
-func (o *MerchantInvoiceRefundPost200Response) GetRequestId() string {
+func (o *MerchantSubscriptionConfigGet200Response) GetRequestId() string {
 	if o == nil || IsNil(o.RequestId) {
 		var ret string
 		return ret
@@ -182,7 +182,7 @@ func (o *MerchantInvoiceRefundPost200Response) GetRequestId() string {
 
 // GetRequestIdOk returns a tuple with the RequestId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantInvoiceRefundPost200Response) GetRequestIdOk() (*string, bool) {
+func (o *MerchantSubscriptionConfigGet200Response) GetRequestIdOk() (*string, bool) {
 	if o == nil || IsNil(o.RequestId) {
 		return nil, false
 	}
@@ -190,7 +190,7 @@ func (o *MerchantInvoiceRefundPost200Response) GetRequestIdOk() (*string, bool) 
 }
 
 // HasRequestId returns a boolean if a field has been set.
-func (o *MerchantInvoiceRefundPost200Response) HasRequestId() bool {
+func (o *MerchantSubscriptionConfigGet200Response) HasRequestId() bool {
 	if o != nil && !IsNil(o.RequestId) {
 		return true
 	}
@@ -199,11 +199,11 @@ func (o *MerchantInvoiceRefundPost200Response) HasRequestId() bool {
 }
 
 // SetRequestId gets a reference to the given string and assigns it to the RequestId field.
-func (o *MerchantInvoiceRefundPost200Response) SetRequestId(v string) {
+func (o *MerchantSubscriptionConfigGet200Response) SetRequestId(v string) {
 	o.RequestId = &v
 }
 
-func (o MerchantInvoiceRefundPost200Response) MarshalJSON() ([]byte, error) {
+func (o MerchantSubscriptionConfigGet200Response) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -211,7 +211,7 @@ func (o MerchantInvoiceRefundPost200Response) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o MerchantInvoiceRefundPost200Response) ToMap() (map[string]interface{}, error) {
+func (o MerchantSubscriptionConfigGet200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Code) {
 		toSerialize["code"] = o.Code
@@ -231,38 +231,38 @@ func (o MerchantInvoiceRefundPost200Response) ToMap() (map[string]interface{}, e
 	return toSerialize, nil
 }
 
-type NullableMerchantInvoiceRefundPost200Response struct {
-	value *MerchantInvoiceRefundPost200Response
+type NullableMerchantSubscriptionConfigGet200Response struct {
+	value *MerchantSubscriptionConfigGet200Response
 	isSet bool
 }
 
-func (v NullableMerchantInvoiceRefundPost200Response) Get() *MerchantInvoiceRefundPost200Response {
+func (v NullableMerchantSubscriptionConfigGet200Response) Get() *MerchantSubscriptionConfigGet200Response {
 	return v.value
 }
 
-func (v *NullableMerchantInvoiceRefundPost200Response) Set(val *MerchantInvoiceRefundPost200Response) {
+func (v *NullableMerchantSubscriptionConfigGet200Response) Set(val *MerchantSubscriptionConfigGet200Response) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableMerchantInvoiceRefundPost200Response) IsSet() bool {
+func (v NullableMerchantSubscriptionConfigGet200Response) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableMerchantInvoiceRefundPost200Response) Unset() {
+func (v *NullableMerchantSubscriptionConfigGet200Response) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableMerchantInvoiceRefundPost200Response(val *MerchantInvoiceRefundPost200Response) *NullableMerchantInvoiceRefundPost200Response {
-	return &NullableMerchantInvoiceRefundPost200Response{value: val, isSet: true}
+func NewNullableMerchantSubscriptionConfigGet200Response(val *MerchantSubscriptionConfigGet200Response) *NullableMerchantSubscriptionConfigGet200Response {
+	return &NullableMerchantSubscriptionConfigGet200Response{value: val, isSet: true}
 }
 
-func (v NullableMerchantInvoiceRefundPost200Response) MarshalJSON() ([]byte, error) {
+func (v NullableMerchantSubscriptionConfigGet200Response) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableMerchantInvoiceRefundPost200Response) UnmarshalJSON(src []byte) error {
+func (v *NullableMerchantSubscriptionConfigGet200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
