@@ -3261,7 +3261,7 @@ components:
           description: File To Upload
           format: '*ghttp.UploadFile'
           properties: {}
-          type: file
+          type: string
       type: object
     unibee.api.merchant.oss.FileUploadRes:
       properties:
