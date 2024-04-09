@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **PeriodEnd** | Pointer to **int64** |  | [optional] 
 **PeriodStart** | Pointer to **int64** |  | [optional] 
+**Plan** | Pointer to [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
 **Proration** | Pointer to **bool** |  | [optional] 
 **Quantity** | Pointer to **int64** |  | [optional] 
 **Tax** | Pointer to **int64** |  | [optional] 
@@ -184,6 +185,31 @@ SetPeriodStart sets PeriodStart field to given value.
 `func (o *UnibeeApiBeanInvoiceItemSimplify) HasPeriodStart() bool`
 
 HasPeriodStart returns a boolean if a field has been set.
+
+### GetPlan
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetPlan() UnibeeApiBeanPlanSimplify`
+
+GetPlan returns the Plan field if non-nil, zero value otherwise.
+
+### GetPlanOk
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetPlanOk() (*UnibeeApiBeanPlanSimplify, bool)`
+
+GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlan
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) SetPlan(v UnibeeApiBeanPlanSimplify)`
+
+SetPlan sets Plan field to given value.
+
+### HasPlan
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) HasPlan() bool`
+
+HasPlan returns a boolean if a field has been set.
 
 ### GetProration
 

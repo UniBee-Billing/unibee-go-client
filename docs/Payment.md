@@ -8,7 +8,9 @@ Method | HTTP request | Description
 [**PaymentCapturePost**](Payment.md#PaymentCapturePost) | **Post** /merchant/payment/capture | Capture Payment
 [**PaymentDetailGet**](Payment.md#PaymentDetailGet) | **Get** /merchant/payment/detail | Query Payment Detail
 [**PaymentListGet**](Payment.md#PaymentListGet) | **Get** /merchant/payment/list | Query Payment List
+[**PaymentMethodGetGet**](Payment.md#PaymentMethodGetGet) | **Get** /merchant/payment/method_get | Query Payment Method
 [**PaymentMethodListGet**](Payment.md#PaymentMethodListGet) | **Get** /merchant/payment/method_list | Query Payment Method List
+[**PaymentMethodNewPost**](Payment.md#PaymentMethodNewPost) | **Post** /merchant/payment/method_new | Create New Payment Method And Attach To User
 [**PaymentNewPost**](Payment.md#PaymentNewPost) | **Post** /merchant/payment/new | New Payment
 [**PaymentRefundCancelPost**](Payment.md#PaymentRefundCancelPost) | **Post** /merchant/payment/refund/cancel | Cancel Payment Refund
 [**PaymentRefundDetailGet**](Payment.md#PaymentRefundDetailGet) | **Get** /merchant/payment/refund/detail | Query Payment Refund Detail
@@ -292,6 +294,74 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## PaymentMethodGetGet
+
+> MerchantPaymentMethodGetGet200Response PaymentMethodGetGet(ctx).GatewayId(gatewayId).UserId(userId).PaymentMethodId(paymentMethodId).Execute()
+
+Query Payment Method
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	gatewayId := int64(789) // int64 | GatewayId
+	userId := int64(789) // int64 | UserId
+	paymentMethodId := "paymentMethodId_example" // string | PaymentMethodId
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Payment.PaymentMethodGetGet(context.Background()).GatewayId(gatewayId).UserId(userId).PaymentMethodId(paymentMethodId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Payment.PaymentMethodGetGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PaymentMethodGetGet`: MerchantPaymentMethodGetGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `Payment.PaymentMethodGetGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPaymentMethodGetGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **gatewayId** | **int64** | GatewayId | 
+ **userId** | **int64** | UserId | 
+ **paymentMethodId** | **string** | PaymentMethodId | 
+
+### Return type
+
+[**MerchantPaymentMethodGetGet200Response**](MerchantPaymentMethodGetGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## PaymentMethodListGet
 
 > MerchantPaymentMethodListGet200Response PaymentMethodListGet(ctx).GatewayId(gatewayId).UserId(userId).PaymentId(paymentId).Execute()
@@ -353,6 +423,70 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PaymentMethodNewPost
+
+> MerchantPaymentMethodNewPost200Response PaymentMethodNewPost(ctx).UnibeeApiMerchantPaymentMethodNewReq(unibeeApiMerchantPaymentMethodNewReq).Execute()
+
+Create New Payment Method And Attach To User
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantPaymentMethodNewReq := *openapiclient.NewUnibeeApiMerchantPaymentMethodNewReq("Currency_example", int64(123), int64(123)) // UnibeeApiMerchantPaymentMethodNewReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Payment.PaymentMethodNewPost(context.Background()).UnibeeApiMerchantPaymentMethodNewReq(unibeeApiMerchantPaymentMethodNewReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Payment.PaymentMethodNewPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PaymentMethodNewPost`: MerchantPaymentMethodNewPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Payment.PaymentMethodNewPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPaymentMethodNewPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantPaymentMethodNewReq** | [**UnibeeApiMerchantPaymentMethodNewReq**](UnibeeApiMerchantPaymentMethodNewReq.md) |  | 
+
+### Return type
+
+[**MerchantPaymentMethodNewPost200Response**](MerchantPaymentMethodNewPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

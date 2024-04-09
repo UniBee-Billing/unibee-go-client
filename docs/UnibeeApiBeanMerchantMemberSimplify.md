@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **LastName** | Pointer to **string** | last name | [optional] 
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
 **Mobile** | Pointer to **string** | mobile | [optional] 
+**Role** | Pointer to **string** | role | [optional] 
 
 ## Methods
 
@@ -205,6 +206,31 @@ SetMobile sets Mobile field to given value.
 `func (o *UnibeeApiBeanMerchantMemberSimplify) HasMobile() bool`
 
 HasMobile returns a boolean if a field has been set.
+
+### GetRole
+
+`func (o *UnibeeApiBeanMerchantMemberSimplify) GetRole() string`
+
+GetRole returns the Role field if non-nil, zero value otherwise.
+
+### GetRoleOk
+
+`func (o *UnibeeApiBeanMerchantMemberSimplify) GetRoleOk() (*string, bool)`
+
+GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRole
+
+`func (o *UnibeeApiBeanMerchantMemberSimplify) SetRole(v string)`
+
+SetRole sets Role field to given value.
+
+### HasRole
+
+`func (o *UnibeeApiBeanMerchantMemberSimplify) HasRole() bool`
+
+HasRole returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

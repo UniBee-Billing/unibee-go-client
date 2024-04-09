@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EmailTemplateList** | Pointer to [**[]UnibeeApiBeanEmailTemplateVo**](UnibeeApiBeanEmailTemplateVo.md) | EmailTemplateList | [optional] 
+**EmailTemplateList** | Pointer to [**[]UnibeeApiBeanMerchantEmailTemplateSimplify**](UnibeeApiBeanMerchantEmailTemplateSimplify.md) | EmailTemplateList | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetEmailTemplateList
 
-`func (o *MerchantEmailTemplateListGet200ResponseData) GetEmailTemplateList() []UnibeeApiBeanEmailTemplateVo`
+`func (o *MerchantEmailTemplateListGet200ResponseData) GetEmailTemplateList() []UnibeeApiBeanMerchantEmailTemplateSimplify`
 
 GetEmailTemplateList returns the EmailTemplateList field if non-nil, zero value otherwise.
 
 ### GetEmailTemplateListOk
 
-`func (o *MerchantEmailTemplateListGet200ResponseData) GetEmailTemplateListOk() (*[]UnibeeApiBeanEmailTemplateVo, bool)`
+`func (o *MerchantEmailTemplateListGet200ResponseData) GetEmailTemplateListOk() (*[]UnibeeApiBeanMerchantEmailTemplateSimplify, bool)`
 
 GetEmailTemplateListOk returns a tuple with the EmailTemplateList field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEmailTemplateList
 
-`func (o *MerchantEmailTemplateListGet200ResponseData) SetEmailTemplateList(v []UnibeeApiBeanEmailTemplateVo)`
+`func (o *MerchantEmailTemplateListGet200ResponseData) SetEmailTemplateList(v []UnibeeApiBeanMerchantEmailTemplateSimplify)`
 
 SetEmailTemplateList sets EmailTemplateList field to given value.
 

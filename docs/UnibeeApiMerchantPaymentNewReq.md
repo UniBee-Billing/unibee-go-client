@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CountryCode** | Pointer to **string** | CountryCode | [optional] 
-**Currency** | Pointer to **string** | Currency, either Currency&amp;Currency or PlanId needed | [optional] 
+**Currency** | Pointer to **string** | Currency, either Currency&amp;TotalAmount or PlanId needed | [optional] 
 **Email** | Pointer to **string** | Email, either ExternalUserId&amp;Email or UserId needed | [optional] 
 **ExternalPaymentId** | Pointer to **string** | ExternalPaymentId should unique for payment | [optional] 
 **ExternalUserId** | Pointer to **string** | ExternalUserId, unique, either ExternalUserId&amp;Email or UserId needed | [optional] 

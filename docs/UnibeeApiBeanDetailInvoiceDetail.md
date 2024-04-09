@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **CryptoAmount** | Pointer to **int64** | crypto_amount, cent | [optional] 
 **CryptoCurrency** | Pointer to **string** | crypto_currency | [optional] 
 **Currency** | Pointer to **string** | Currency | [optional] 
-**Data** | Pointer to **string** | Data | [optional] 
 **DayUtilDue** | Pointer to **int64** | day util due after finish | [optional] 
 **DiscountAmount** | Pointer to **int64** | DiscountAmount,Cents | [optional] 
 **Gateway** | Pointer to [**UnibeeApiBeanGatewaySimplify**](UnibeeApiBeanGatewaySimplify.md) |  | [optional] 
@@ -144,31 +143,6 @@ SetCurrency sets Currency field to given value.
 `func (o *UnibeeApiBeanDetailInvoiceDetail) HasCurrency() bool`
 
 HasCurrency returns a boolean if a field has been set.
-
-### GetData
-
-`func (o *UnibeeApiBeanDetailInvoiceDetail) GetData() string`
-
-GetData returns the Data field if non-nil, zero value otherwise.
-
-### GetDataOk
-
-`func (o *UnibeeApiBeanDetailInvoiceDetail) GetDataOk() (*string, bool)`
-
-GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetData
-
-`func (o *UnibeeApiBeanDetailInvoiceDetail) SetData(v string)`
-
-SetData sets Data field to given value.
-
-### HasData
-
-`func (o *UnibeeApiBeanDetailInvoiceDetail) HasData() bool`
-
-HasData returns a boolean if a field has been set.
 
 ### GetDayUtilDue
 

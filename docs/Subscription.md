@@ -17,6 +17,8 @@ Method | HTTP request | Description
 [**SubscriptionDetailPost**](Subscription.md#SubscriptionDetailPost) | **Post** /merchant/subscription/detail | Subscription Detail
 [**SubscriptionListGet**](Subscription.md#SubscriptionListGet) | **Get** /merchant/subscription/list | Subscription List
 [**SubscriptionListPost**](Subscription.md#SubscriptionListPost) | **Post** /merchant/subscription/list | Subscription List
+[**SubscriptionNewOnetimeAddonPaymentPost**](Subscription.md#SubscriptionNewOnetimeAddonPaymentPost) | **Post** /merchant/subscription/new_onetime_addon_payment | New Subscription Onetime Addon Payment
+[**SubscriptionOnetimeAddonListGet**](Subscription.md#SubscriptionOnetimeAddonListGet) | **Get** /merchant/subscription/onetime_addon_list | Merchant Subscription OnetimeAddon List
 [**SubscriptionRenewPost**](Subscription.md#SubscriptionRenewPost) | **Post** /merchant/subscription/renew | Renew Subscription, will create new subscription based on one provided 
 [**SubscriptionResumePost**](Subscription.md#SubscriptionResumePost) | **Post** /merchant/subscription/resume | Merchant Edit Subscription-Resume
 [**SubscriptionSuspendPost**](Subscription.md#SubscriptionSuspendPost) | **Post** /merchant/subscription/suspend | Merchant Edit Subscription-Stop
@@ -408,7 +410,7 @@ No authorization required
 
 ## SubscriptionConfigUpdateGet
 
-> MerchantSubscriptionConfigGet200Response SubscriptionConfigUpdateGet(ctx).DowngradeEffectImmediately(downgradeEffectImmediately).UpgradeProration(upgradeProration).IncompleteExpireTime(incompleteExpireTime).InvoiceEmail(invoiceEmail).Execute()
+> MerchantSubscriptionConfigGet200Response SubscriptionConfigUpdateGet(ctx).DowngradeEffectImmediately(downgradeEffectImmediately).UpgradeProration(upgradeProration).IncompleteExpireTime(incompleteExpireTime).InvoiceEmail(invoiceEmail).TryAutomaticPaymentBeforePeriodEnd(tryAutomaticPaymentBeforePeriodEnd).Execute()
 
 Update Merchant Subscription Config
 
@@ -429,10 +431,11 @@ func main() {
 	upgradeProration := true // bool | UpgradeProration, whether subscription update generation proration invoice or not, default yes (optional)
 	incompleteExpireTime := int32(56) // int32 | IncompleteExpireTime, em.. default 1day for plan of month type (optional)
 	invoiceEmail := true // bool | InvoiceEmail, whether to send invoice email to user, default yes (optional)
+	tryAutomaticPaymentBeforePeriodEnd := int32(56) // int32 | TryAutomaticPaymentBeforePeriodEnd, default 30 min (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Subscription.SubscriptionConfigUpdateGet(context.Background()).DowngradeEffectImmediately(downgradeEffectImmediately).UpgradeProration(upgradeProration).IncompleteExpireTime(incompleteExpireTime).InvoiceEmail(invoiceEmail).Execute()
+	resp, r, err := apiClient.Subscription.SubscriptionConfigUpdateGet(context.Background()).DowngradeEffectImmediately(downgradeEffectImmediately).UpgradeProration(upgradeProration).IncompleteExpireTime(incompleteExpireTime).InvoiceEmail(invoiceEmail).TryAutomaticPaymentBeforePeriodEnd(tryAutomaticPaymentBeforePeriodEnd).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionConfigUpdateGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -457,6 +460,7 @@ Name | Type | Description  | Notes
  **upgradeProration** | **bool** | UpgradeProration, whether subscription update generation proration invoice or not, default yes | 
  **incompleteExpireTime** | **int32** | IncompleteExpireTime, em.. default 1day for plan of month type | 
  **invoiceEmail** | **bool** | InvoiceEmail, whether to send invoice email to user, default yes | 
+ **tryAutomaticPaymentBeforePeriodEnd** | **int32** | TryAutomaticPaymentBeforePeriodEnd, default 30 min | 
 
 ### Return type
 
@@ -863,6 +867,138 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SubscriptionNewOnetimeAddonPaymentPost
+
+> MerchantSubscriptionNewOnetimeAddonPaymentPost200Response SubscriptionNewOnetimeAddonPaymentPost(ctx).UnibeeApiMerchantSubscriptionOnetimeAddonNewReq(unibeeApiMerchantSubscriptionOnetimeAddonNewReq).Execute()
+
+New Subscription Onetime Addon Payment
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantSubscriptionOnetimeAddonNewReq := *openapiclient.NewUnibeeApiMerchantSubscriptionOnetimeAddonNewReq(int64(123), int64(123), "SubscriptionId_example") // UnibeeApiMerchantSubscriptionOnetimeAddonNewReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Subscription.SubscriptionNewOnetimeAddonPaymentPost(context.Background()).UnibeeApiMerchantSubscriptionOnetimeAddonNewReq(unibeeApiMerchantSubscriptionOnetimeAddonNewReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionNewOnetimeAddonPaymentPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SubscriptionNewOnetimeAddonPaymentPost`: MerchantSubscriptionNewOnetimeAddonPaymentPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionNewOnetimeAddonPaymentPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSubscriptionNewOnetimeAddonPaymentPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantSubscriptionOnetimeAddonNewReq** | [**UnibeeApiMerchantSubscriptionOnetimeAddonNewReq**](UnibeeApiMerchantSubscriptionOnetimeAddonNewReq.md) |  | 
+
+### Return type
+
+[**MerchantSubscriptionNewOnetimeAddonPaymentPost200Response**](MerchantSubscriptionNewOnetimeAddonPaymentPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SubscriptionOnetimeAddonListGet
+
+> MerchantSubscriptionOnetimeAddonListGet200Response SubscriptionOnetimeAddonListGet(ctx).SubscriptionId(subscriptionId).Page(page).Count(count).Execute()
+
+Merchant Subscription OnetimeAddon List
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	subscriptionId := "subscriptionId_example" // string | SubscriptionId, id of subscription which one-time addon purchase history attached
+	page := int32(56) // int32 | Page, Start With 0 (optional)
+	count := int32(56) // int32 | Count Of Page (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Subscription.SubscriptionOnetimeAddonListGet(context.Background()).SubscriptionId(subscriptionId).Page(page).Count(count).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionOnetimeAddonListGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SubscriptionOnetimeAddonListGet`: MerchantSubscriptionOnetimeAddonListGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionOnetimeAddonListGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSubscriptionOnetimeAddonListGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subscriptionId** | **string** | SubscriptionId, id of subscription which one-time addon purchase history attached | 
+ **page** | **int32** | Page, Start With 0 | 
+ **count** | **int32** | Count Of Page | 
+
+### Return type
+
+[**MerchantSubscriptionOnetimeAddonListGet200Response**](MerchantSubscriptionOnetimeAddonListGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

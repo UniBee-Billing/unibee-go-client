@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**CountryConfigListPost**](Profile.md#CountryConfigListPost) | **Post** /merchant/country_config_list | Merchant Edit Country Config
 [**EditCountryConfigPost**](Profile.md#EditCountryConfigPost) | **Post** /merchant/edit_country_config | Merchant Country Config List
 [**GetGet**](Profile.md#GetGet) | **Get** /merchant/get | Get Merchant Info
+[**NewApikeyPost**](Profile.md#NewApikeyPost) | **Post** /merchant/new_apikey | Merchant New ApiKey, The old key will expire in one hour
 [**UpdatePost**](Profile.md#UpdatePost) | **Post** /merchant/update | Update Merchant Info
 
 
@@ -191,6 +192,70 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## NewApikeyPost
+
+> MerchantNewApikeyPost200Response NewApikeyPost(ctx).Body(body).Execute()
+
+Merchant New ApiKey, The old key will expire in one hour
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	body := map[string]interface{}{ ... } // map[string]interface{} | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Profile.NewApikeyPost(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Profile.NewApikeyPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `NewApikeyPost`: MerchantNewApikeyPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Profile.NewApikeyPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiNewApikeyPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **map[string]interface{}** |  | 
+
+### Return type
+
+[**MerchantNewApikeyPost200Response**](MerchantNewApikeyPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

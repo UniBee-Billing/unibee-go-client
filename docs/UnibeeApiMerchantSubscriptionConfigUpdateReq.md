@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **DowngradeEffectImmediately** | Pointer to **bool** | DowngradeEffectImmediately, whether subscription downgrade should effect immediately or at period end, default at period end | [optional] 
 **IncompleteExpireTime** | Pointer to **int32** | IncompleteExpireTime, em.. default 1day for plan of month type | [optional] 
 **InvoiceEmail** | Pointer to **bool** | InvoiceEmail, whether to send invoice email to user, default yes | [optional] 
+**TryAutomaticPaymentBeforePeriodEnd** | Pointer to **int32** | TryAutomaticPaymentBeforePeriodEnd, default 30 min | [optional] 
 **UpgradeProration** | Pointer to **bool** | UpgradeProration, whether subscription update generation proration invoice or not, default yes | [optional] 
 
 ## Methods
@@ -102,6 +103,31 @@ SetInvoiceEmail sets InvoiceEmail field to given value.
 `func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) HasInvoiceEmail() bool`
 
 HasInvoiceEmail returns a boolean if a field has been set.
+
+### GetTryAutomaticPaymentBeforePeriodEnd
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) GetTryAutomaticPaymentBeforePeriodEnd() int32`
+
+GetTryAutomaticPaymentBeforePeriodEnd returns the TryAutomaticPaymentBeforePeriodEnd field if non-nil, zero value otherwise.
+
+### GetTryAutomaticPaymentBeforePeriodEndOk
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) GetTryAutomaticPaymentBeforePeriodEndOk() (*int32, bool)`
+
+GetTryAutomaticPaymentBeforePeriodEndOk returns a tuple with the TryAutomaticPaymentBeforePeriodEnd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTryAutomaticPaymentBeforePeriodEnd
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) SetTryAutomaticPaymentBeforePeriodEnd(v int32)`
+
+SetTryAutomaticPaymentBeforePeriodEnd sets TryAutomaticPaymentBeforePeriodEnd field to given value.
+
+### HasTryAutomaticPaymentBeforePeriodEnd
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) HasTryAutomaticPaymentBeforePeriodEnd() bool`
+
+HasTryAutomaticPaymentBeforePeriodEnd returns a boolean if a field has been set.
 
 ### GetUpgradeProration
 

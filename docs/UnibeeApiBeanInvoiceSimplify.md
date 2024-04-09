@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BizType** | Pointer to **int32** | biz type from payment 1-single payment, 3-subscription | [optional] 
+**BizType** | Pointer to **int32** | biz type from payment 1-onetime payment, 3-subscription | [optional] 
 **CryptoAmount** | Pointer to **int64** | crypto_amount, cent | [optional] 
 **CryptoCurrency** | Pointer to **string** | crypto_currency | [optional] 
 **Currency** | Pointer to **string** |  | [optional] 

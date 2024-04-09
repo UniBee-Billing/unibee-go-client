@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**PlanActivatePost**](Plan.md#PlanActivatePost) | **Post** /merchant/plan/activate | Plan Sync To Gateway And Activate
+[**PlanActivatePost**](Plan.md#PlanActivatePost) | **Post** /merchant/plan/activate | Activate Plan
 [**PlanAddonsBindingPost**](Plan.md#PlanAddonsBindingPost) | **Post** /merchant/plan/addons_binding | Plan Binding Addons
 [**PlanDeletePost**](Plan.md#PlanDeletePost) | **Post** /merchant/plan/delete | Delete A Plan Before Activate
-[**PlanDetailGet**](Plan.md#PlanDetailGet) | **Get** /merchant/plan/detail | Plan Detail
-[**PlanDetailPost**](Plan.md#PlanDetailPost) | **Post** /merchant/plan/detail | Plan Detail
+[**PlanDetailGet**](Plan.md#PlanDetailGet) | **Get** /merchant/plan/detail | Query Plan Detail
+[**PlanDetailPost**](Plan.md#PlanDetailPost) | **Post** /merchant/plan/detail | Query Plan Detail
 [**PlanEditPost**](Plan.md#PlanEditPost) | **Post** /merchant/plan/edit | Edit Plan
-[**PlanExpirePost**](Plan.md#PlanExpirePost) | **Post** /merchant/plan/expire | Expire A Plan
+[**PlanExpirePost**](Plan.md#PlanExpirePost) | **Post** /merchant/plan/expire | Expire Plan
 [**PlanListGet**](Plan.md#PlanListGet) | **Get** /merchant/plan/list | Plan List
 [**PlanListPost**](Plan.md#PlanListPost) | **Post** /merchant/plan/list | Plan List
 [**PlanNewPost**](Plan.md#PlanNewPost) | **Post** /merchant/plan/new | Create Plan
@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 > MerchantAuthSsoLoginOTPPost200Response PlanActivatePost(ctx).UnibeeApiMerchantPlanActivateReq(unibeeApiMerchantPlanActivateReq).Execute()
 
-Plan Sync To Gateway And Activate
+Activate Plan
 
 ### Example
 
@@ -215,7 +215,7 @@ No authorization required
 
 > MerchantPlanDetailGet200Response PlanDetailGet(ctx).PlanId(planId).Execute()
 
-Plan Detail
+Query Plan Detail
 
 ### Example
 
@@ -279,7 +279,7 @@ No authorization required
 
 > MerchantPlanDetailGet200Response PlanDetailPost(ctx).UnibeeApiMerchantPlanDetailReq(unibeeApiMerchantPlanDetailReq).Execute()
 
-Plan Detail
+Query Plan Detail
 
 ### Example
 
@@ -407,7 +407,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response PlanExpirePost(ctx).UnibeeApiMerchantPlanExpireReq(unibeeApiMerchantPlanExpireReq).Execute()
 
-Expire A Plan
+Expire Plan
 
 ### Example
 

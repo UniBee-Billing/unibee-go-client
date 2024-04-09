@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Currency** | Pointer to **string** | currency | [optional] 
 **CurrentPeriodEnd** | Pointer to **int64** | current_period_end, utc time | [optional] 
 **CurrentPeriodStart** | Pointer to **int64** | current_period_start, utc time | [optional] 
+**DefaultPaymentMethodId** | Pointer to **string** |  | [optional] 
 **DunningTime** | Pointer to **int64** | dunning_time, utc time | [optional] 
 **FirstPaidTime** | Pointer to **int64** | first success payment time | [optional] 
 **GasPayer** | Pointer to **string** | who pay the gas, merchant|user | [optional] 
@@ -308,6 +309,31 @@ SetCurrentPeriodStart sets CurrentPeriodStart field to given value.
 `func (o *UnibeeApiBeanSubscriptionSimplify) HasCurrentPeriodStart() bool`
 
 HasCurrentPeriodStart returns a boolean if a field has been set.
+
+### GetDefaultPaymentMethodId
+
+`func (o *UnibeeApiBeanSubscriptionSimplify) GetDefaultPaymentMethodId() string`
+
+GetDefaultPaymentMethodId returns the DefaultPaymentMethodId field if non-nil, zero value otherwise.
+
+### GetDefaultPaymentMethodIdOk
+
+`func (o *UnibeeApiBeanSubscriptionSimplify) GetDefaultPaymentMethodIdOk() (*string, bool)`
+
+GetDefaultPaymentMethodIdOk returns a tuple with the DefaultPaymentMethodId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultPaymentMethodId
+
+`func (o *UnibeeApiBeanSubscriptionSimplify) SetDefaultPaymentMethodId(v string)`
+
+SetDefaultPaymentMethodId sets DefaultPaymentMethodId field to given value.
+
+### HasDefaultPaymentMethodId
+
+`func (o *UnibeeApiBeanSubscriptionSimplify) HasDefaultPaymentMethodId() bool`
+
+HasDefaultPaymentMethodId returns a boolean if a field has been set.
 
 ### GetDunningTime
 

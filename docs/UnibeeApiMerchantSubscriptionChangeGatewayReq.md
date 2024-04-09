@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **GatewayId** | **int64** | GatewayId | 
+**PaymentMethodId** | Pointer to **string** | PaymentMethodId | [optional] 
 **SubscriptionId** | **string** | SubscriptionId | 
 
 ## Methods
@@ -45,6 +46,31 @@ and a boolean to check if the value has been set.
 
 SetGatewayId sets GatewayId field to given value.
 
+
+### GetPaymentMethodId
+
+`func (o *UnibeeApiMerchantSubscriptionChangeGatewayReq) GetPaymentMethodId() string`
+
+GetPaymentMethodId returns the PaymentMethodId field if non-nil, zero value otherwise.
+
+### GetPaymentMethodIdOk
+
+`func (o *UnibeeApiMerchantSubscriptionChangeGatewayReq) GetPaymentMethodIdOk() (*string, bool)`
+
+GetPaymentMethodIdOk returns a tuple with the PaymentMethodId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaymentMethodId
+
+`func (o *UnibeeApiMerchantSubscriptionChangeGatewayReq) SetPaymentMethodId(v string)`
+
+SetPaymentMethodId sets PaymentMethodId field to given value.
+
+### HasPaymentMethodId
+
+`func (o *UnibeeApiMerchantSubscriptionChangeGatewayReq) HasPaymentMethodId() bool`
+
+HasPaymentMethodId returns a boolean if a field has been set.
 
 ### GetSubscriptionId
 

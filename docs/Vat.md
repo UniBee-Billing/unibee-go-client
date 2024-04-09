@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**VatCountryListGet**](Vat.md#VatCountryListGet) | **Get** /merchant/vat/country_list | Vat Country List
 [**VatCountryListPost**](Vat.md#VatCountryListPost) | **Post** /merchant/vat/country_list | Vat Country List
+[**VatInitDefaultGatewayPost**](Vat.md#VatInitDefaultGatewayPost) | **Post** /merchant/vat/init_default_gateway | Init Default Vat Gateway
 [**VatSetupGatewayPost**](Vat.md#VatSetupGatewayPost) | **Post** /merchant/vat/setup_gateway | Vat Gateway Setup
 
 
@@ -123,6 +124,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantVatCountryListGet200Response**](MerchantVatCountryListGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VatInitDefaultGatewayPost
+
+> MerchantAuthSsoLoginOTPPost200Response VatInitDefaultGatewayPost(ctx).Body(body).Execute()
+
+Init Default Vat Gateway
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	body := map[string]interface{}{ ... } // map[string]interface{} | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Vat.VatInitDefaultGatewayPost(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Vat.VatInitDefaultGatewayPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VatInitDefaultGatewayPost`: MerchantAuthSsoLoginOTPPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Vat.VatInitDefaultGatewayPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVatInitDefaultGatewayPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **map[string]interface{}** |  | 
+
+### Return type
+
+[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
 
 ### Authorization
 

@@ -85,11 +85,11 @@ func Test_unibee_PaymentService(t *testing.T) {
 
 		resp, httpRes, err := apiClient.Payment.PaymentNewPost(context.Background()).UnibeeApiMerchantPaymentNewReq(openapiclient.UnibeeApiMerchantPaymentNewReq{
 			CountryCode:       openapiclient.String("CH"),
-			TotalAmount:       100,
-			Currency:          "USDT",
-			Email:             "jack.fu@wowow.io",
-			ExternalPaymentId: uuid.New().String(), // your paymentId
-			ExternalUserId:    "1709272139",
+			TotalAmount:       openapiclient.Int64(100),
+			Currency:          openapiclient.String("USDT"),
+			Email:             openapiclient.String("jack.fu@wowow.io"),
+			ExternalPaymentId: openapiclient.String(uuid.New().String()), // your paymentId
+			ExternalUserId:    openapiclient.String("1709272139"),
 			GatewayId:         29,
 			Items:             nil, // without items
 			Metadata:          &map[string]string{"key1": "value1", "key2": "value2"},

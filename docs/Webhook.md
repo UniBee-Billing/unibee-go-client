@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**WebhookEndpointLogListGet**](Webhook.md#WebhookEndpointLogListGet) | **Get** /merchant/webhook/endpoint_log_list | Merchant Webhook Endpoint Log list
 [**WebhookEventListGet**](Webhook.md#WebhookEventListGet) | **Get** /merchant/webhook/event_list | Webhook Event list
 [**WebhookNewEndpointPost**](Webhook.md#WebhookNewEndpointPost) | **Post** /merchant/webhook/new_endpoint | Merchant New Webhook Endpoint
+[**WebhookResendPost**](Webhook.md#WebhookResendPost) | **Post** /merchant/webhook/resend | Merchant Resent Webhook
 [**WebhookUpdateEndpointPost**](Webhook.md#WebhookUpdateEndpointPost) | **Post** /merchant/webhook/update_endpoint | Merchant Update Webhook Endpoint
 
 
@@ -312,6 +313,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## WebhookResendPost
+
+> MerchantWebhookResendPost200Response WebhookResendPost(ctx).UnibeeApiMerchantWebhookResendWebhookReq(unibeeApiMerchantWebhookResendWebhookReq).Execute()
+
+Merchant Resent Webhook
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantWebhookResendWebhookReq := *openapiclient.NewUnibeeApiMerchantWebhookResendWebhookReq(int64(123)) // UnibeeApiMerchantWebhookResendWebhookReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Webhook.WebhookResendPost(context.Background()).UnibeeApiMerchantWebhookResendWebhookReq(unibeeApiMerchantWebhookResendWebhookReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Webhook.WebhookResendPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `WebhookResendPost`: MerchantWebhookResendPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Webhook.WebhookResendPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiWebhookResendPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantWebhookResendWebhookReq** | [**UnibeeApiMerchantWebhookResendWebhookReq**](UnibeeApiMerchantWebhookResendWebhookReq.md) |  | 
+
+### Return type
+
+[**MerchantWebhookResendPost200Response**](MerchantWebhookResendPost200Response.md)
 
 ### Authorization
 

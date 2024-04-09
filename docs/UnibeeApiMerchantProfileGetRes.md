@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Gateway** | Pointer to [**[]UnibeeApiBeanGatewaySimplify**](UnibeeApiBeanGatewaySimplify.md) | Gateway List | [optional] 
 **IsProd** | Pointer to **bool** | Check System Env Is Prod, true|false | [optional] 
 **Merchant** | Pointer to [**UnibeeApiBeanMerchantSimplify**](UnibeeApiBeanMerchantSimplify.md) |  | [optional] 
+**MerchantMember** | Pointer to [**UnibeeApiBeanDetailMerchantMemberDetail**](UnibeeApiBeanDetailMerchantMemberDetail.md) |  | [optional] 
 
 ## Methods
 
@@ -179,6 +180,31 @@ SetMerchant sets Merchant field to given value.
 `func (o *UnibeeApiMerchantProfileGetRes) HasMerchant() bool`
 
 HasMerchant returns a boolean if a field has been set.
+
+### GetMerchantMember
+
+`func (o *UnibeeApiMerchantProfileGetRes) GetMerchantMember() UnibeeApiBeanDetailMerchantMemberDetail`
+
+GetMerchantMember returns the MerchantMember field if non-nil, zero value otherwise.
+
+### GetMerchantMemberOk
+
+`func (o *UnibeeApiMerchantProfileGetRes) GetMerchantMemberOk() (*UnibeeApiBeanDetailMerchantMemberDetail, bool)`
+
+GetMerchantMemberOk returns a tuple with the MerchantMember field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMerchantMember
+
+`func (o *UnibeeApiMerchantProfileGetRes) SetMerchantMember(v UnibeeApiBeanDetailMerchantMemberDetail)`
+
+SetMerchantMember sets MerchantMember field to given value.
+
+### HasMerchantMember
+
+`func (o *UnibeeApiMerchantProfileGetRes) HasMerchantMember() bool`
+
+HasMerchantMember returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

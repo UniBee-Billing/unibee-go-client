@@ -1,4 +1,4 @@
-# UnibeeApiMerchantPaymentRefundDetail
+# UnibeeApiBeanDetailRefundDetail
 
 ## Properties
 
@@ -10,95 +10,95 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewUnibeeApiMerchantPaymentRefundDetail
+### NewUnibeeApiBeanDetailRefundDetail
 
-`func NewUnibeeApiMerchantPaymentRefundDetail() *UnibeeApiMerchantPaymentRefundDetail`
+`func NewUnibeeApiBeanDetailRefundDetail() *UnibeeApiBeanDetailRefundDetail`
 
-NewUnibeeApiMerchantPaymentRefundDetail instantiates a new UnibeeApiMerchantPaymentRefundDetail object
+NewUnibeeApiBeanDetailRefundDetail instantiates a new UnibeeApiBeanDetailRefundDetail object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUnibeeApiMerchantPaymentRefundDetailWithDefaults
+### NewUnibeeApiBeanDetailRefundDetailWithDefaults
 
-`func NewUnibeeApiMerchantPaymentRefundDetailWithDefaults() *UnibeeApiMerchantPaymentRefundDetail`
+`func NewUnibeeApiBeanDetailRefundDetailWithDefaults() *UnibeeApiBeanDetailRefundDetail`
 
-NewUnibeeApiMerchantPaymentRefundDetailWithDefaults instantiates a new UnibeeApiMerchantPaymentRefundDetail object
+NewUnibeeApiBeanDetailRefundDetailWithDefaults instantiates a new UnibeeApiBeanDetailRefundDetail object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetPayment
 
-`func (o *UnibeeApiMerchantPaymentRefundDetail) GetPayment() UnibeeApiBeanPaymentSimplify`
+`func (o *UnibeeApiBeanDetailRefundDetail) GetPayment() UnibeeApiBeanPaymentSimplify`
 
 GetPayment returns the Payment field if non-nil, zero value otherwise.
 
 ### GetPaymentOk
 
-`func (o *UnibeeApiMerchantPaymentRefundDetail) GetPaymentOk() (*UnibeeApiBeanPaymentSimplify, bool)`
+`func (o *UnibeeApiBeanDetailRefundDetail) GetPaymentOk() (*UnibeeApiBeanPaymentSimplify, bool)`
 
 GetPaymentOk returns a tuple with the Payment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPayment
 
-`func (o *UnibeeApiMerchantPaymentRefundDetail) SetPayment(v UnibeeApiBeanPaymentSimplify)`
+`func (o *UnibeeApiBeanDetailRefundDetail) SetPayment(v UnibeeApiBeanPaymentSimplify)`
 
 SetPayment sets Payment field to given value.
 
 ### HasPayment
 
-`func (o *UnibeeApiMerchantPaymentRefundDetail) HasPayment() bool`
+`func (o *UnibeeApiBeanDetailRefundDetail) HasPayment() bool`
 
 HasPayment returns a boolean if a field has been set.
 
 ### GetRefund
 
-`func (o *UnibeeApiMerchantPaymentRefundDetail) GetRefund() UnibeeApiBeanRefundSimplify`
+`func (o *UnibeeApiBeanDetailRefundDetail) GetRefund() UnibeeApiBeanRefundSimplify`
 
 GetRefund returns the Refund field if non-nil, zero value otherwise.
 
 ### GetRefundOk
 
-`func (o *UnibeeApiMerchantPaymentRefundDetail) GetRefundOk() (*UnibeeApiBeanRefundSimplify, bool)`
+`func (o *UnibeeApiBeanDetailRefundDetail) GetRefundOk() (*UnibeeApiBeanRefundSimplify, bool)`
 
 GetRefundOk returns a tuple with the Refund field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRefund
 
-`func (o *UnibeeApiMerchantPaymentRefundDetail) SetRefund(v UnibeeApiBeanRefundSimplify)`
+`func (o *UnibeeApiBeanDetailRefundDetail) SetRefund(v UnibeeApiBeanRefundSimplify)`
 
 SetRefund sets Refund field to given value.
 
 ### HasRefund
 
-`func (o *UnibeeApiMerchantPaymentRefundDetail) HasRefund() bool`
+`func (o *UnibeeApiBeanDetailRefundDetail) HasRefund() bool`
 
 HasRefund returns a boolean if a field has been set.
 
 ### GetUser
 
-`func (o *UnibeeApiMerchantPaymentRefundDetail) GetUser() UnibeeApiBeanUserAccountSimplify`
+`func (o *UnibeeApiBeanDetailRefundDetail) GetUser() UnibeeApiBeanUserAccountSimplify`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *UnibeeApiMerchantPaymentRefundDetail) GetUserOk() (*UnibeeApiBeanUserAccountSimplify, bool)`
+`func (o *UnibeeApiBeanDetailRefundDetail) GetUserOk() (*UnibeeApiBeanUserAccountSimplify, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *UnibeeApiMerchantPaymentRefundDetail) SetUser(v UnibeeApiBeanUserAccountSimplify)`
+`func (o *UnibeeApiBeanDetailRefundDetail) SetUser(v UnibeeApiBeanUserAccountSimplify)`
 
 SetUser sets User field to given value.
 
 ### HasUser
 
-`func (o *UnibeeApiMerchantPaymentRefundDetail) HasUser() bool`
+`func (o *UnibeeApiBeanDetailRefundDetail) HasUser() bool`
 
 HasUser returns a boolean if a field has been set.
 

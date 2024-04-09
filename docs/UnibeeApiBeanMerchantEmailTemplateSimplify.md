@@ -1,4 +1,4 @@
-# UnibeeApiBeanEmailTemplateVo
+# UnibeeApiBeanMerchantEmailTemplateSimplify
 
 ## Properties
 
@@ -17,270 +17,270 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewUnibeeApiBeanEmailTemplateVo
+### NewUnibeeApiBeanMerchantEmailTemplateSimplify
 
-`func NewUnibeeApiBeanEmailTemplateVo() *UnibeeApiBeanEmailTemplateVo`
+`func NewUnibeeApiBeanMerchantEmailTemplateSimplify() *UnibeeApiBeanMerchantEmailTemplateSimplify`
 
-NewUnibeeApiBeanEmailTemplateVo instantiates a new UnibeeApiBeanEmailTemplateVo object
+NewUnibeeApiBeanMerchantEmailTemplateSimplify instantiates a new UnibeeApiBeanMerchantEmailTemplateSimplify object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUnibeeApiBeanEmailTemplateVoWithDefaults
+### NewUnibeeApiBeanMerchantEmailTemplateSimplifyWithDefaults
 
-`func NewUnibeeApiBeanEmailTemplateVoWithDefaults() *UnibeeApiBeanEmailTemplateVo`
+`func NewUnibeeApiBeanMerchantEmailTemplateSimplifyWithDefaults() *UnibeeApiBeanMerchantEmailTemplateSimplify`
 
-NewUnibeeApiBeanEmailTemplateVoWithDefaults instantiates a new UnibeeApiBeanEmailTemplateVo object
+NewUnibeeApiBeanMerchantEmailTemplateSimplifyWithDefaults instantiates a new UnibeeApiBeanMerchantEmailTemplateSimplify object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetCreateTime
 
-`func (o *UnibeeApiBeanEmailTemplateVo) GetCreateTime() int64`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) GetCreateTime() int64`
 
 GetCreateTime returns the CreateTime field if non-nil, zero value otherwise.
 
 ### GetCreateTimeOk
 
-`func (o *UnibeeApiBeanEmailTemplateVo) GetCreateTimeOk() (*int64, bool)`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) GetCreateTimeOk() (*int64, bool)`
 
 GetCreateTimeOk returns a tuple with the CreateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreateTime
 
-`func (o *UnibeeApiBeanEmailTemplateVo) SetCreateTime(v int64)`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) SetCreateTime(v int64)`
 
 SetCreateTime sets CreateTime field to given value.
 
 ### HasCreateTime
 
-`func (o *UnibeeApiBeanEmailTemplateVo) HasCreateTime() bool`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) HasCreateTime() bool`
 
 HasCreateTime returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *UnibeeApiBeanEmailTemplateVo) GetId() int64`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *UnibeeApiBeanEmailTemplateVo) GetIdOk() (*int64, bool)`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *UnibeeApiBeanEmailTemplateVo) SetId(v int64)`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) SetId(v int64)`
 
 SetId sets Id field to given value.
 
 ### HasId
 
-`func (o *UnibeeApiBeanEmailTemplateVo) HasId() bool`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) HasId() bool`
 
 HasId returns a boolean if a field has been set.
 
 ### GetMerchantId
 
-`func (o *UnibeeApiBeanEmailTemplateVo) GetMerchantId() int64`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) GetMerchantId() int64`
 
 GetMerchantId returns the MerchantId field if non-nil, zero value otherwise.
 
 ### GetMerchantIdOk
 
-`func (o *UnibeeApiBeanEmailTemplateVo) GetMerchantIdOk() (*int64, bool)`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) GetMerchantIdOk() (*int64, bool)`
 
 GetMerchantIdOk returns a tuple with the MerchantId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantId
 
-`func (o *UnibeeApiBeanEmailTemplateVo) SetMerchantId(v int64)`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) SetMerchantId(v int64)`
 
 SetMerchantId sets MerchantId field to given value.
 
 ### HasMerchantId
 
-`func (o *UnibeeApiBeanEmailTemplateVo) HasMerchantId() bool`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) HasMerchantId() bool`
 
 HasMerchantId returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *UnibeeApiBeanEmailTemplateVo) GetStatus() string`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) GetStatus() string`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *UnibeeApiBeanEmailTemplateVo) GetStatusOk() (*string, bool)`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) GetStatusOk() (*string, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *UnibeeApiBeanEmailTemplateVo) SetStatus(v string)`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) SetStatus(v string)`
 
 SetStatus sets Status field to given value.
 
 ### HasStatus
 
-`func (o *UnibeeApiBeanEmailTemplateVo) HasStatus() bool`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
 
 ### GetTemplateAttachName
 
-`func (o *UnibeeApiBeanEmailTemplateVo) GetTemplateAttachName() string`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) GetTemplateAttachName() string`
 
 GetTemplateAttachName returns the TemplateAttachName field if non-nil, zero value otherwise.
 
 ### GetTemplateAttachNameOk
 
-`func (o *UnibeeApiBeanEmailTemplateVo) GetTemplateAttachNameOk() (*string, bool)`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) GetTemplateAttachNameOk() (*string, bool)`
 
 GetTemplateAttachNameOk returns a tuple with the TemplateAttachName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTemplateAttachName
 
-`func (o *UnibeeApiBeanEmailTemplateVo) SetTemplateAttachName(v string)`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) SetTemplateAttachName(v string)`
 
 SetTemplateAttachName sets TemplateAttachName field to given value.
 
 ### HasTemplateAttachName
 
-`func (o *UnibeeApiBeanEmailTemplateVo) HasTemplateAttachName() bool`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) HasTemplateAttachName() bool`
 
 HasTemplateAttachName returns a boolean if a field has been set.
 
 ### GetTemplateContent
 
-`func (o *UnibeeApiBeanEmailTemplateVo) GetTemplateContent() string`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) GetTemplateContent() string`
 
 GetTemplateContent returns the TemplateContent field if non-nil, zero value otherwise.
 
 ### GetTemplateContentOk
 
-`func (o *UnibeeApiBeanEmailTemplateVo) GetTemplateContentOk() (*string, bool)`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) GetTemplateContentOk() (*string, bool)`
 
 GetTemplateContentOk returns a tuple with the TemplateContent field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTemplateContent
 
-`func (o *UnibeeApiBeanEmailTemplateVo) SetTemplateContent(v string)`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) SetTemplateContent(v string)`
 
 SetTemplateContent sets TemplateContent field to given value.
 
 ### HasTemplateContent
 
-`func (o *UnibeeApiBeanEmailTemplateVo) HasTemplateContent() bool`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) HasTemplateContent() bool`
 
 HasTemplateContent returns a boolean if a field has been set.
 
 ### GetTemplateDescription
 
-`func (o *UnibeeApiBeanEmailTemplateVo) GetTemplateDescription() string`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) GetTemplateDescription() string`
 
 GetTemplateDescription returns the TemplateDescription field if non-nil, zero value otherwise.
 
 ### GetTemplateDescriptionOk
 
-`func (o *UnibeeApiBeanEmailTemplateVo) GetTemplateDescriptionOk() (*string, bool)`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) GetTemplateDescriptionOk() (*string, bool)`
 
 GetTemplateDescriptionOk returns a tuple with the TemplateDescription field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTemplateDescription
 
-`func (o *UnibeeApiBeanEmailTemplateVo) SetTemplateDescription(v string)`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) SetTemplateDescription(v string)`
 
 SetTemplateDescription sets TemplateDescription field to given value.
 
 ### HasTemplateDescription
 
-`func (o *UnibeeApiBeanEmailTemplateVo) HasTemplateDescription() bool`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) HasTemplateDescription() bool`
 
 HasTemplateDescription returns a boolean if a field has been set.
 
 ### GetTemplateName
 
-`func (o *UnibeeApiBeanEmailTemplateVo) GetTemplateName() string`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) GetTemplateName() string`
 
 GetTemplateName returns the TemplateName field if non-nil, zero value otherwise.
 
 ### GetTemplateNameOk
 
-`func (o *UnibeeApiBeanEmailTemplateVo) GetTemplateNameOk() (*string, bool)`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) GetTemplateNameOk() (*string, bool)`
 
 GetTemplateNameOk returns a tuple with the TemplateName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTemplateName
 
-`func (o *UnibeeApiBeanEmailTemplateVo) SetTemplateName(v string)`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) SetTemplateName(v string)`
 
 SetTemplateName sets TemplateName field to given value.
 
 ### HasTemplateName
 
-`func (o *UnibeeApiBeanEmailTemplateVo) HasTemplateName() bool`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) HasTemplateName() bool`
 
 HasTemplateName returns a boolean if a field has been set.
 
 ### GetTemplateTitle
 
-`func (o *UnibeeApiBeanEmailTemplateVo) GetTemplateTitle() string`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) GetTemplateTitle() string`
 
 GetTemplateTitle returns the TemplateTitle field if non-nil, zero value otherwise.
 
 ### GetTemplateTitleOk
 
-`func (o *UnibeeApiBeanEmailTemplateVo) GetTemplateTitleOk() (*string, bool)`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) GetTemplateTitleOk() (*string, bool)`
 
 GetTemplateTitleOk returns a tuple with the TemplateTitle field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTemplateTitle
 
-`func (o *UnibeeApiBeanEmailTemplateVo) SetTemplateTitle(v string)`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) SetTemplateTitle(v string)`
 
 SetTemplateTitle sets TemplateTitle field to given value.
 
 ### HasTemplateTitle
 
-`func (o *UnibeeApiBeanEmailTemplateVo) HasTemplateTitle() bool`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) HasTemplateTitle() bool`
 
 HasTemplateTitle returns a boolean if a field has been set.
 
 ### GetUpdateTime
 
-`func (o *UnibeeApiBeanEmailTemplateVo) GetUpdateTime() int64`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) GetUpdateTime() int64`
 
 GetUpdateTime returns the UpdateTime field if non-nil, zero value otherwise.
 
 ### GetUpdateTimeOk
 
-`func (o *UnibeeApiBeanEmailTemplateVo) GetUpdateTimeOk() (*int64, bool)`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) GetUpdateTimeOk() (*int64, bool)`
 
 GetUpdateTimeOk returns a tuple with the UpdateTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdateTime
 
-`func (o *UnibeeApiBeanEmailTemplateVo) SetUpdateTime(v int64)`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) SetUpdateTime(v int64)`
 
 SetUpdateTime sets UpdateTime field to given value.
 
 ### HasUpdateTime
 
-`func (o *UnibeeApiBeanEmailTemplateVo) HasUpdateTime() bool`
+`func (o *UnibeeApiBeanMerchantEmailTemplateSimplify) HasUpdateTime() bool`
 
 HasUpdateTime returns a boolean if a field has been set.
 
