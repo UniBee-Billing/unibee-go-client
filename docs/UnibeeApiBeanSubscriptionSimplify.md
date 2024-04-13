@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 **Status** | Pointer to **int32** | status，0-Init | 1-Create｜2-Active｜3-PendingInActive | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | [optional] 
 **SubscriptionId** | Pointer to **string** | subscription id | [optional] 
 **TaskTime** | Pointer to **string** | task_time | [optional] 
-**TaxScale** | Pointer to **int64** | Tax Scale，1000 &#x3D; 10% | [optional] 
+**TaxPercentage** | Pointer to **int64** | TaxPercentage，1000 &#x3D; 10% | [optional] 
 **TestClock** | Pointer to **int64** | test_clock, simulator clock for subscription, if set , sub will out of cronjob controll | [optional] 
 **TrialEnd** | Pointer to **int64** | trial_end, utc time | [optional] 
 **Type** | Pointer to **int32** | sub type, 0-gateway sub, 1-unibee sub | [optional] 
@@ -810,30 +810,30 @@ SetTaskTime sets TaskTime field to given value.
 
 HasTaskTime returns a boolean if a field has been set.
 
-### GetTaxScale
+### GetTaxPercentage
 
-`func (o *UnibeeApiBeanSubscriptionSimplify) GetTaxScale() int64`
+`func (o *UnibeeApiBeanSubscriptionSimplify) GetTaxPercentage() int64`
 
-GetTaxScale returns the TaxScale field if non-nil, zero value otherwise.
+GetTaxPercentage returns the TaxPercentage field if non-nil, zero value otherwise.
 
-### GetTaxScaleOk
+### GetTaxPercentageOk
 
-`func (o *UnibeeApiBeanSubscriptionSimplify) GetTaxScaleOk() (*int64, bool)`
+`func (o *UnibeeApiBeanSubscriptionSimplify) GetTaxPercentageOk() (*int64, bool)`
 
-GetTaxScaleOk returns a tuple with the TaxScale field if it's non-nil, zero value otherwise
+GetTaxPercentageOk returns a tuple with the TaxPercentage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaxScale
+### SetTaxPercentage
 
-`func (o *UnibeeApiBeanSubscriptionSimplify) SetTaxScale(v int64)`
+`func (o *UnibeeApiBeanSubscriptionSimplify) SetTaxPercentage(v int64)`
 
-SetTaxScale sets TaxScale field to given value.
+SetTaxPercentage sets TaxPercentage field to given value.
 
-### HasTaxScale
+### HasTaxPercentage
 
-`func (o *UnibeeApiBeanSubscriptionSimplify) HasTaxScale() bool`
+`func (o *UnibeeApiBeanSubscriptionSimplify) HasTaxPercentage() bool`
 
-HasTaxScale returns a boolean if a field has been set.
+HasTaxPercentage returns a boolean if a field has been set.
 
 ### GetTestClock
 

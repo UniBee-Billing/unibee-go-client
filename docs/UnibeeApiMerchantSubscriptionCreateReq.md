@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | addonParams | [optional] 
 **ConfirmCurrency** | Pointer to **string** | Currency To Be Confirmed，Get From Preview | [optional] 
 **ConfirmTotalAmount** | Pointer to **int64** | TotalAmount To Be Confirmed，Get From Preview | [optional] 
+**DiscountCode** | Pointer to **string** | DiscountCode | [optional] 
 **GatewayId** | **int64** | Id | 
 **Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
 **PaymentMethodId** | Pointer to **string** | PaymentMethodId | [optional] 
@@ -110,6 +111,31 @@ SetConfirmTotalAmount sets ConfirmTotalAmount field to given value.
 `func (o *UnibeeApiMerchantSubscriptionCreateReq) HasConfirmTotalAmount() bool`
 
 HasConfirmTotalAmount returns a boolean if a field has been set.
+
+### GetDiscountCode
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetDiscountCode() string`
+
+GetDiscountCode returns the DiscountCode field if non-nil, zero value otherwise.
+
+### GetDiscountCodeOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetDiscountCodeOk() (*string, bool)`
+
+GetDiscountCodeOk returns a tuple with the DiscountCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscountCode
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) SetDiscountCode(v string)`
+
+SetDiscountCode sets DiscountCode field to given value.
+
+### HasDiscountCode
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) HasDiscountCode() bool`
+
+HasDiscountCode returns a boolean if a field has been set.
 
 ### GetGatewayId
 

@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **ProductName** | Pointer to **string** | product name | [optional] 
 **PublishStatus** | Pointer to **int32** | 1-UnPublish,2-Publish, Use For Display Plan At UserPortal | [optional] 
 **Status** | Pointer to **int32** | status，1-editing，2-active，3-inactive，4-expired | [optional] 
-**TaxScale** | Pointer to **int32** | tax scale 1000 &#x3D; 10% | [optional] 
+**TaxPercentage** | Pointer to **int32** | TaxPercentage 1000 &#x3D; 10% | [optional] 
 **Type** | Pointer to **int32** | type，1-main plan，2-addon plan | [optional] 
 
 ## Methods
@@ -546,30 +546,30 @@ SetStatus sets Status field to given value.
 
 HasStatus returns a boolean if a field has been set.
 
-### GetTaxScale
+### GetTaxPercentage
 
-`func (o *UnibeeApiBeanPlanSimplify) GetTaxScale() int32`
+`func (o *UnibeeApiBeanPlanSimplify) GetTaxPercentage() int32`
 
-GetTaxScale returns the TaxScale field if non-nil, zero value otherwise.
+GetTaxPercentage returns the TaxPercentage field if non-nil, zero value otherwise.
 
-### GetTaxScaleOk
+### GetTaxPercentageOk
 
-`func (o *UnibeeApiBeanPlanSimplify) GetTaxScaleOk() (*int32, bool)`
+`func (o *UnibeeApiBeanPlanSimplify) GetTaxPercentageOk() (*int32, bool)`
 
-GetTaxScaleOk returns a tuple with the TaxScale field if it's non-nil, zero value otherwise
+GetTaxPercentageOk returns a tuple with the TaxPercentage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaxScale
+### SetTaxPercentage
 
-`func (o *UnibeeApiBeanPlanSimplify) SetTaxScale(v int32)`
+`func (o *UnibeeApiBeanPlanSimplify) SetTaxPercentage(v int32)`
 
-SetTaxScale sets TaxScale field to given value.
+SetTaxPercentage sets TaxPercentage field to given value.
 
-### HasTaxScale
+### HasTaxPercentage
 
-`func (o *UnibeeApiBeanPlanSimplify) HasTaxScale() bool`
+`func (o *UnibeeApiBeanPlanSimplify) HasTaxPercentage() bool`
 
-HasTaxScale returns a boolean if a field has been set.
+HasTaxPercentage returns a boolean if a field has been set.
 
 ### GetType
 

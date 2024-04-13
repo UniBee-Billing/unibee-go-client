@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Count** | Pointer to **int32** | Count Of Page | [optional] 
 **Page** | Pointer to **int32** | Page, Start With 0 | [optional] 
-**SubscriptionId** | **string** | SubscriptionId, id of subscription which one-time addon purchase history attached | 
+**UserId** | **int64** | UserId | 
 
 ## Methods
 
 ### NewUnibeeApiMerchantSubscriptionOnetimeAddonListReq
 
-`func NewUnibeeApiMerchantSubscriptionOnetimeAddonListReq(subscriptionId string, ) *UnibeeApiMerchantSubscriptionOnetimeAddonListReq`
+`func NewUnibeeApiMerchantSubscriptionOnetimeAddonListReq(userId int64, ) *UnibeeApiMerchantSubscriptionOnetimeAddonListReq`
 
 NewUnibeeApiMerchantSubscriptionOnetimeAddonListReq instantiates a new UnibeeApiMerchantSubscriptionOnetimeAddonListReq object
 This constructor will assign default values to properties that have it defined,
@@ -77,24 +77,24 @@ SetPage sets Page field to given value.
 
 HasPage returns a boolean if a field has been set.
 
-### GetSubscriptionId
+### GetUserId
 
-`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonListReq) GetSubscriptionId() string`
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonListReq) GetUserId() int64`
 
-GetSubscriptionId returns the SubscriptionId field if non-nil, zero value otherwise.
+GetUserId returns the UserId field if non-nil, zero value otherwise.
 
-### GetSubscriptionIdOk
+### GetUserIdOk
 
-`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonListReq) GetSubscriptionIdOk() (*string, bool)`
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonListReq) GetUserIdOk() (*int64, bool)`
 
-GetSubscriptionIdOk returns a tuple with the SubscriptionId field if it's non-nil, zero value otherwise
+GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSubscriptionId
+### SetUserId
 
-`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonListReq) SetSubscriptionId(v string)`
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonListReq) SetUserId(v int64)`
 
-SetSubscriptionId sets SubscriptionId field to given value.
+SetUserId sets UserId field to given value.
 
 
 

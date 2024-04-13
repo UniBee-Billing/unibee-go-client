@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **InvoiceId** | **string** | InvoiceId | 
 **Lines** | Pointer to [**[]UnibeeApiMerchantInvoiceNewInvoiceItemParam**](UnibeeApiMerchantInvoiceNewInvoiceItemParam.md) |  | [optional] 
 **Name** | Pointer to **string** | Name | [optional] 
-**TaxScale** | Pointer to **int64** | TaxScale，1000 represent 10% | [optional] 
+**TaxPercentage** | Pointer to **int64** | TaxPercentage，1000 represent 10% | [optional] 
 
 ## Methods
 
@@ -176,30 +176,30 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetTaxScale
+### GetTaxPercentage
 
-`func (o *UnibeeApiMerchantInvoiceEditReq) GetTaxScale() int64`
+`func (o *UnibeeApiMerchantInvoiceEditReq) GetTaxPercentage() int64`
 
-GetTaxScale returns the TaxScale field if non-nil, zero value otherwise.
+GetTaxPercentage returns the TaxPercentage field if non-nil, zero value otherwise.
 
-### GetTaxScaleOk
+### GetTaxPercentageOk
 
-`func (o *UnibeeApiMerchantInvoiceEditReq) GetTaxScaleOk() (*int64, bool)`
+`func (o *UnibeeApiMerchantInvoiceEditReq) GetTaxPercentageOk() (*int64, bool)`
 
-GetTaxScaleOk returns a tuple with the TaxScale field if it's non-nil, zero value otherwise
+GetTaxPercentageOk returns a tuple with the TaxPercentage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaxScale
+### SetTaxPercentage
 
-`func (o *UnibeeApiMerchantInvoiceEditReq) SetTaxScale(v int64)`
+`func (o *UnibeeApiMerchantInvoiceEditReq) SetTaxPercentage(v int64)`
 
-SetTaxScale sets TaxScale field to given value.
+SetTaxPercentage sets TaxPercentage field to given value.
 
-### HasTaxScale
+### HasTaxPercentage
 
-`func (o *UnibeeApiMerchantInvoiceEditReq) HasTaxScale() bool`
+`func (o *UnibeeApiMerchantInvoiceEditReq) HasTaxPercentage() bool`
 
-HasTaxScale returns a boolean if a field has been set.
+HasTaxPercentage returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

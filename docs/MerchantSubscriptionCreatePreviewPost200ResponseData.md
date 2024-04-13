@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Invoice** | Pointer to [**UnibeeApiBeanInvoiceSimplify**](UnibeeApiBeanInvoiceSimplify.md) |  | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
 **Quantity** | Pointer to **int64** |  | [optional] 
-**TaxScale** | Pointer to **int64** |  | [optional] 
+**TaxPercentage** | Pointer to **int64** |  | [optional] 
 **TotalAmount** | Pointer to **int64** |  | [optional] 
 **UserId** | Pointer to **int64** |  | [optional] 
 **VatCountryCode** | Pointer to **string** |  | [optional] 
@@ -239,30 +239,30 @@ SetQuantity sets Quantity field to given value.
 
 HasQuantity returns a boolean if a field has been set.
 
-### GetTaxScale
+### GetTaxPercentage
 
-`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetTaxScale() int64`
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetTaxPercentage() int64`
 
-GetTaxScale returns the TaxScale field if non-nil, zero value otherwise.
+GetTaxPercentage returns the TaxPercentage field if non-nil, zero value otherwise.
 
-### GetTaxScaleOk
+### GetTaxPercentageOk
 
-`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetTaxScaleOk() (*int64, bool)`
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetTaxPercentageOk() (*int64, bool)`
 
-GetTaxScaleOk returns a tuple with the TaxScale field if it's non-nil, zero value otherwise
+GetTaxPercentageOk returns a tuple with the TaxPercentage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaxScale
+### SetTaxPercentage
 
-`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) SetTaxScale(v int64)`
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) SetTaxPercentage(v int64)`
 
-SetTaxScale sets TaxScale field to given value.
+SetTaxPercentage sets TaxPercentage field to given value.
 
-### HasTaxScale
+### HasTaxPercentage
 
-`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) HasTaxScale() bool`
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) HasTaxPercentage() bool`
 
-HasTaxScale returns a boolean if a field has been set.
+HasTaxPercentage returns a boolean if a field has been set.
 
 ### GetTotalAmount
 

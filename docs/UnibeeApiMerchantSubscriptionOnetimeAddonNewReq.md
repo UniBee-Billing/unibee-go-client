@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonId** | **int64** | AddonId, id of one-time addon, the new payment will created base on the addon&#39;s amount&#39; | 
+**DiscountCode** | Pointer to **string** | DiscountCode | [optional] 
 **Metadata** | Pointer to **map[string]string** | Metadata，custom data | [optional] 
 **Quantity** | **int64** | Quantity, quantity of the new payment which one-time addon purchased | 
 **ReturnUrl** | Pointer to **string** | ReturnUrl, the addon&#39;s payment will redirect based on the returnUrl provided when it&#39;s back from gateway side | [optional] 
@@ -48,6 +49,31 @@ and a boolean to check if the value has been set.
 
 SetAddonId sets AddonId field to given value.
 
+
+### GetDiscountCode
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetDiscountCode() string`
+
+GetDiscountCode returns the DiscountCode field if non-nil, zero value otherwise.
+
+### GetDiscountCodeOk
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetDiscountCodeOk() (*string, bool)`
+
+GetDiscountCodeOk returns a tuple with the DiscountCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscountCode
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) SetDiscountCode(v string)`
+
+SetDiscountCode sets DiscountCode field to given value.
+
+### HasDiscountCode
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) HasDiscountCode() bool`
+
+HasDiscountCode returns a boolean if a field has been set.
 
 ### GetMetadata
 

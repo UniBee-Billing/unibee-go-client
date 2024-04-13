@@ -9,14 +9,14 @@ Name | Type | Description | Notes
 **GatewayId** | **int64** | Gateway Id | 
 **Lines** | Pointer to [**[]UnibeeApiMerchantInvoiceNewInvoiceItemParam**](UnibeeApiMerchantInvoiceNewInvoiceItemParam.md) |  | [optional] 
 **Name** | Pointer to **string** | Name | [optional] 
-**TaxScale** | **int64** | TaxScale，1000 represent 10% | 
+**TaxPercentage** | **int64** | TaxPercentage，1000 represent 10% | 
 **UserId** | **int64** | UserId | 
 
 ## Methods
 
 ### NewUnibeeApiMerchantInvoiceNewReq
 
-`func NewUnibeeApiMerchantInvoiceNewReq(currency string, gatewayId int64, taxScale int64, userId int64, ) *UnibeeApiMerchantInvoiceNewReq`
+`func NewUnibeeApiMerchantInvoiceNewReq(currency string, gatewayId int64, taxPercentage int64, userId int64, ) *UnibeeApiMerchantInvoiceNewReq`
 
 NewUnibeeApiMerchantInvoiceNewReq instantiates a new UnibeeApiMerchantInvoiceNewReq object
 This constructor will assign default values to properties that have it defined,
@@ -146,24 +146,24 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetTaxScale
+### GetTaxPercentage
 
-`func (o *UnibeeApiMerchantInvoiceNewReq) GetTaxScale() int64`
+`func (o *UnibeeApiMerchantInvoiceNewReq) GetTaxPercentage() int64`
 
-GetTaxScale returns the TaxScale field if non-nil, zero value otherwise.
+GetTaxPercentage returns the TaxPercentage field if non-nil, zero value otherwise.
 
-### GetTaxScaleOk
+### GetTaxPercentageOk
 
-`func (o *UnibeeApiMerchantInvoiceNewReq) GetTaxScaleOk() (*int64, bool)`
+`func (o *UnibeeApiMerchantInvoiceNewReq) GetTaxPercentageOk() (*int64, bool)`
 
-GetTaxScaleOk returns a tuple with the TaxScale field if it's non-nil, zero value otherwise
+GetTaxPercentageOk returns a tuple with the TaxPercentage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaxScale
+### SetTaxPercentage
 
-`func (o *UnibeeApiMerchantInvoiceNewReq) SetTaxScale(v int64)`
+`func (o *UnibeeApiMerchantInvoiceNewReq) SetTaxPercentage(v int64)`
 
-SetTaxScale sets TaxScale field to given value.
+SetTaxPercentage sets TaxPercentage field to given value.
 
 
 ### GetUserId

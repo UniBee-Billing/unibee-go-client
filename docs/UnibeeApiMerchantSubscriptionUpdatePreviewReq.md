@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | addonParams | [optional] 
+**DiscountCode** | Pointer to **string** | DiscountCode | [optional] 
 **EffectImmediate** | Pointer to **int32** | Effect Immediate，1-Immediate，2-Next Period | [optional] 
 **GatewayId** | Pointer to **int64** | Id | [optional] 
 **NewPlanId** | **int64** | New PlanId | 
@@ -54,6 +55,31 @@ SetAddonParams sets AddonParams field to given value.
 `func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) HasAddonParams() bool`
 
 HasAddonParams returns a boolean if a field has been set.
+
+### GetDiscountCode
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetDiscountCode() string`
+
+GetDiscountCode returns the DiscountCode field if non-nil, zero value otherwise.
+
+### GetDiscountCodeOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetDiscountCodeOk() (*string, bool)`
+
+GetDiscountCodeOk returns a tuple with the DiscountCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscountCode
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) SetDiscountCode(v string)`
+
+SetDiscountCode sets DiscountCode field to given value.
+
+### HasDiscountCode
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) HasDiscountCode() bool`
+
+HasDiscountCode returns a boolean if a field has been set.
 
 ### GetEffectImmediate
 

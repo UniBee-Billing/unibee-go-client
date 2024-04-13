@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Description** | **string** | item description  | 
 **Quantity** | Pointer to **int64** |  | [optional] 
 **Tax** | Pointer to **int64** | tax &#x3D; amount - amountExcludingTax | [optional] 
-**TaxScale** | Pointer to **int64** | Tax Scale，1000 &#x3D; 10% | [optional] 
+**TaxPercentage** | Pointer to **int64** | TaxPercentage，1000 &#x3D; 10% | [optional] 
 **UnitAmountExcludingTax** | Pointer to **int64** |  | [optional] 
 
 ## Methods
@@ -172,30 +172,30 @@ SetTax sets Tax field to given value.
 
 HasTax returns a boolean if a field has been set.
 
-### GetTaxScale
+### GetTaxPercentage
 
-`func (o *UnibeeApiMerchantPaymentItem) GetTaxScale() int64`
+`func (o *UnibeeApiMerchantPaymentItem) GetTaxPercentage() int64`
 
-GetTaxScale returns the TaxScale field if non-nil, zero value otherwise.
+GetTaxPercentage returns the TaxPercentage field if non-nil, zero value otherwise.
 
-### GetTaxScaleOk
+### GetTaxPercentageOk
 
-`func (o *UnibeeApiMerchantPaymentItem) GetTaxScaleOk() (*int64, bool)`
+`func (o *UnibeeApiMerchantPaymentItem) GetTaxPercentageOk() (*int64, bool)`
 
-GetTaxScaleOk returns a tuple with the TaxScale field if it's non-nil, zero value otherwise
+GetTaxPercentageOk returns a tuple with the TaxPercentage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaxScale
+### SetTaxPercentage
 
-`func (o *UnibeeApiMerchantPaymentItem) SetTaxScale(v int64)`
+`func (o *UnibeeApiMerchantPaymentItem) SetTaxPercentage(v int64)`
 
-SetTaxScale sets TaxScale field to given value.
+SetTaxPercentage sets TaxPercentage field to given value.
 
-### HasTaxScale
+### HasTaxPercentage
 
-`func (o *UnibeeApiMerchantPaymentItem) HasTaxScale() bool`
+`func (o *UnibeeApiMerchantPaymentItem) HasTaxPercentage() bool`
 
-HasTaxScale returns a boolean if a field has been set.
+HasTaxPercentage returns a boolean if a field has been set.
 
 ### GetUnitAmountExcludingTax
 

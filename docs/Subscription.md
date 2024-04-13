@@ -940,7 +940,7 @@ No authorization required
 
 ## SubscriptionOnetimeAddonListGet
 
-> MerchantSubscriptionOnetimeAddonListGet200Response SubscriptionOnetimeAddonListGet(ctx).SubscriptionId(subscriptionId).Page(page).Count(count).Execute()
+> MerchantSubscriptionOnetimeAddonListGet200Response SubscriptionOnetimeAddonListGet(ctx).UserId(userId).Page(page).Count(count).Execute()
 
 Merchant Subscription OnetimeAddon List
 
@@ -957,13 +957,13 @@ import (
 )
 
 func main() {
-	subscriptionId := "subscriptionId_example" // string | SubscriptionId, id of subscription which one-time addon purchase history attached
+	userId := int64(789) // int64 | UserId
 	page := int32(56) // int32 | Page, Start With 0 (optional)
 	count := int32(56) // int32 | Count Of Page (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Subscription.SubscriptionOnetimeAddonListGet(context.Background()).SubscriptionId(subscriptionId).Page(page).Count(count).Execute()
+	resp, r, err := apiClient.Subscription.SubscriptionOnetimeAddonListGet(context.Background()).UserId(userId).Page(page).Count(count).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionOnetimeAddonListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -984,7 +984,7 @@ Other parameters are passed through a pointer to a apiSubscriptionOnetimeAddonLi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subscriptionId** | **string** | SubscriptionId, id of subscription which one-time addon purchase history attached | 
+ **userId** | **int64** | UserId | 
  **page** | **int32** | Page, Start With 0 | 
  **count** | **int32** | Count Of Page | 
 

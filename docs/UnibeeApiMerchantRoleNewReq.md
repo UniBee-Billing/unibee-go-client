@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Permissions** | [**[]UnibeeApiBeanMerchantRolePermission**](UnibeeApiBeanMerchantRolePermission.md) | Permissions | 
-**Role** | **string** | Code | 
+**Role** | **string** | Role | 
 
 ## Methods
 
