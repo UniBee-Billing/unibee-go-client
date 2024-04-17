@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MemberId** | Pointer to **int64** | MemberId | [optional] 
-**Role** | Pointer to **string** | Role | [optional] 
+**MemberId** | Pointer to **int64** | The unique id of member | [optional] 
+**Role** | Pointer to **string** | The permission role of member | [optional] 
 
 ## Methods
 

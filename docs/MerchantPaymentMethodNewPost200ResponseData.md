@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Method** | Pointer to [**UnibeeApiBeanPaymentMethod**](UnibeeApiBeanPaymentMethod.md) |  | [optional] 
-**Url** | Pointer to **string** | Url | [optional] 
+**Url** | Pointer to **string** | The gateway url to create a new method | [optional] 
 
 ## Methods
 

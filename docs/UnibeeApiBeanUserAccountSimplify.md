@@ -37,7 +37,7 @@ Name | Type | Description | Notes
 **Status** | Pointer to **int32** | 0-Active, 2-Frozen | [optional] 
 **SubscriptionId** | Pointer to **string** | subscription id | [optional] 
 **SubscriptionName** | Pointer to **string** | subscription name | [optional] 
-**SubscriptionStatus** | Pointer to **int32** | sub status，0-Init | 1-Create｜2-Active｜3-PendingInActive | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | [optional] 
+**SubscriptionStatus** | Pointer to **int32** | sub status，0-Init | 1-Pending｜2-Active｜3-PendingInActive | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | [optional] 
 **Telegram** | Pointer to **string** | telegram | [optional] 
 **TikTok** | Pointer to **string** | tictok | [optional] 
 **TimeZone** | Pointer to **string** |  | [optional] 

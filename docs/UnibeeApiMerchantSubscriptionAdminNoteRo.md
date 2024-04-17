@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CreateTime** | Pointer to **int64** | create utc time | [optional] 
-**Email** | Pointer to **string** | 邮箱 | [optional] 
-**FirstName** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **int64** | id | [optional] 
-**LastName** | Pointer to **string** |  | [optional] 
-**Mobile** | Pointer to **string** | 手机号 | [optional] 
-**Note** | Pointer to **string** | note | [optional] 
+**CreateTime** | Pointer to **int64** | CreateTime, UTC Time | [optional] 
+**Email** | Pointer to **string** | Email | [optional] 
+**FirstName** | Pointer to **string** | FirstName | [optional] 
+**Id** | Pointer to **int64** | Id | [optional] 
+**LastName** | Pointer to **string** | LastName | [optional] 
+**Mobile** | Pointer to **string** | Mobile | [optional] 
+**Note** | Pointer to **string** | Note | [optional] 
 **SubscriptionId** | Pointer to **string** | SubscriptionId | [optional] 
-**UserName** | Pointer to **string** | 用户名 | [optional] 
+**UserName** | Pointer to **string** | UserName | [optional] 
 
 ## Methods
 

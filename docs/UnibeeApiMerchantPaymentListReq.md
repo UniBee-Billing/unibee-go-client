@@ -5,15 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Count** | Pointer to **int32** | Count Of Page | [optional] 
-**CountryCode** | Pointer to **string** | CountryCode | [optional] 
-**Currency** | Pointer to **string** | Currency | [optional] 
-**Email** | Pointer to **string** | Email | [optional] 
-**GatewayId** | Pointer to **int64** | GatewayId | [optional] 
+**CountryCode** | Pointer to **string** | The filter country code of payment | [optional] 
+**Currency** | Pointer to **string** | The filter currency of payment | [optional] 
+**Email** | Pointer to **string** | The filter email of payment | [optional] 
+**GatewayId** | Pointer to **int64** | The filter unique id of gateway | [optional] 
 **Page** | Pointer to **int32** | Page, Start With 0 | [optional] 
 **SortField** | Pointer to **string** | Sort Field，user_id|create_time|status | [optional] 
 **SortType** | Pointer to **string** | Sort Type，asc|desc | [optional] 
-**Status** | Pointer to **int32** | Status, 10-Created|20-Success|30-Failed|40-Cancelled | [optional] 
-**UserId** | Pointer to **int64** | UserId  | [optional] 
+**Status** | Pointer to **int32** | The filter status of payment, 10-Created|20-Success|30-Failed|40-Cancelled | [optional] 
+**UserId** | Pointer to **int64** | The filter userid of payment | [optional] 
 
 ## Methods
 

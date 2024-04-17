@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AmountEnd** | Pointer to **int64** | AmountEnd | [optional] 
-**AmountStart** | Pointer to **int64** | AmountStart | [optional] 
+**AmountEnd** | Pointer to **int64** | The filter end amount of invoice | [optional] 
+**AmountStart** | Pointer to **int64** | The filter start amount of invoice | [optional] 
 **Count** | Pointer to **int32** | Count By Page | [optional] 
-**Currency** | Pointer to **string** | Currency | [optional] 
-**DeleteInclude** | Pointer to **bool** | Deleted Involved，Need Admin | [optional] 
-**FirstName** | Pointer to **string** | FirstName | [optional] 
-**LastName** | Pointer to **string** | LastName | [optional] 
+**Currency** | Pointer to **string** | The currency of invoice | [optional] 
+**DeleteInclude** | Pointer to **bool** | Deleted Involved，Need Admin Permission | [optional] 
+**FirstName** | Pointer to **string** | The firstName of invoice | [optional] 
+**LastName** | Pointer to **string** | The lastName of invoice | [optional] 
 **Page** | Pointer to **int32** | Page, Start 0 | [optional] 
-**SendEmail** | Pointer to **string** | SendEmail Filter , Default Filter All | [optional] 
+**SendEmail** | Pointer to **string** | The filter email of invoice | [optional] 
 **SortField** | Pointer to **string** | Filter，em. invoice_id|gmt_create|gmt_modify|period_end|total_amount，Default gmt_modify | [optional] 
 **SortType** | Pointer to **string** | Sort，asc|desc，Default desc | [optional] 
-**Status** | Pointer to **[]int32** | Status, 1-pending｜2-processing｜3-paid | 4-failed | 5-cancelled | [optional] 
-**UserId** | Pointer to **int32** | UserId Filter, Default Filter All | [optional] 
+**Status** | Pointer to **[]int32** | The status of invoice, 1-pending｜2-processing｜3-paid | 4-failed | 5-cancelled | [optional] 
+**UserId** | Pointer to **int64** | The filter userid of invoice | [optional] 
 
 ## Methods
 
@@ -339,20 +339,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetUserId
 
-`func (o *UnibeeApiMerchantInvoiceListReq) GetUserId() int32`
+`func (o *UnibeeApiMerchantInvoiceListReq) GetUserId() int64`
 
 GetUserId returns the UserId field if non-nil, zero value otherwise.
 
 ### GetUserIdOk
 
-`func (o *UnibeeApiMerchantInvoiceListReq) GetUserIdOk() (*int32, bool)`
+`func (o *UnibeeApiMerchantInvoiceListReq) GetUserIdOk() (*int64, bool)`
 
 GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserId
 
-`func (o *UnibeeApiMerchantInvoiceListReq) SetUserId(v int32)`
+`func (o *UnibeeApiMerchantInvoiceListReq) SetUserId(v int64)`
 
 SetUserId sets UserId field to given value.
 

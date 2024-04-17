@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**GatewayId** | **int64** | GatewayId | 
+**GatewayId** | **int64** | The id of payment gateway | 
 
 ## Methods
 

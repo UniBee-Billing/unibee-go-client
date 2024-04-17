@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Currency** | Pointer to **string** | Currency | [optional] 
+**Currency** | Pointer to **string** | The currency of invoice | [optional] 
 **Finish** | Pointer to **bool** |  | [optional] 
-**GatewayId** | Pointer to **int64** | Gateway Id | [optional] 
-**InvoiceId** | **string** | InvoiceId | 
+**GatewayId** | Pointer to **int64** | The gateway id of invoice | [optional] 
+**InvoiceId** | **string** | The unique id of invoice | 
 **Lines** | Pointer to [**[]UnibeeApiMerchantInvoiceNewInvoiceItemParam**](UnibeeApiMerchantInvoiceNewInvoiceItemParam.md) |  | [optional] 
-**Name** | Pointer to **string** | Name | [optional] 
-**TaxPercentage** | Pointer to **int64** | TaxPercentage，1000 represent 10% | [optional] 
+**Name** | Pointer to **string** | The name of invoice | [optional] 
+**TaxPercentage** | Pointer to **int64** | The tax percentage of invoice，1000&#x3D;10% | [optional] 
 
 ## Methods
 

@@ -1,13 +1,13 @@
 # \Role
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**RoleDeletePost**](Role.md#RoleDeletePost) | **Post** /merchant/role/delete | Delete Merchant Role
-[**RoleEditPost**](Role.md#RoleEditPost) | **Post** /merchant/role/edit | Edit Merchant Role
-[**RoleListGet**](Role.md#RoleListGet) | **Get** /merchant/role/list | Get Merchant Role List
-[**RoleNewPost**](Role.md#RoleNewPost) | **Post** /merchant/role/new | New Merchant Role
+[**RoleDeletePost**](Role.md#RoleDeletePost) | **Post** /merchant/role/delete | DeleteRole
+[**RoleEditPost**](Role.md#RoleEditPost) | **Post** /merchant/role/edit | EditRole
+[**RoleListGet**](Role.md#RoleListGet) | **Get** /merchant/role/list | RoleList
+[**RoleNewPost**](Role.md#RoleNewPost) | **Post** /merchant/role/new | NewRole
 
 
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 > MerchantAuthSsoLoginOTPPost200Response RoleDeletePost(ctx).UnibeeApiMerchantRoleDeleteReq(unibeeApiMerchantRoleDeleteReq).Execute()
 
-Delete Merchant Role
+DeleteRole
 
 ### Example
 
@@ -79,7 +79,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response RoleEditPost(ctx).UnibeeApiMerchantRoleEditReq(unibeeApiMerchantRoleEditReq).Execute()
 
-Edit Merchant Role
+EditRole
 
 ### Example
 
@@ -143,7 +143,7 @@ No authorization required
 
 > MerchantRoleListGet200Response RoleListGet(ctx).Execute()
 
-Get Merchant Role List
+RoleList
 
 ### Example
 
@@ -202,7 +202,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response RoleNewPost(ctx).UnibeeApiMerchantRoleNewReq(unibeeApiMerchantRoleNewReq).Execute()
 
-New Merchant Role
+NewRole
 
 ### Example
 

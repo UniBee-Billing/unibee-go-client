@@ -1,22 +1,22 @@
 # \Payment
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**PaymentCancelPost**](Payment.md#PaymentCancelPost) | **Post** /merchant/payment/cancel | Cancel Payment
-[**PaymentCapturePost**](Payment.md#PaymentCapturePost) | **Post** /merchant/payment/capture | Capture Payment
-[**PaymentDetailGet**](Payment.md#PaymentDetailGet) | **Get** /merchant/payment/detail | Query Payment Detail
-[**PaymentListGet**](Payment.md#PaymentListGet) | **Get** /merchant/payment/list | Query Payment List
-[**PaymentMethodGetGet**](Payment.md#PaymentMethodGetGet) | **Get** /merchant/payment/method_get | Query Payment Method
-[**PaymentMethodListGet**](Payment.md#PaymentMethodListGet) | **Get** /merchant/payment/method_list | Query Payment Method List
+[**PaymentCancelPost**](Payment.md#PaymentCancelPost) | **Post** /merchant/payment/cancel | CancelPayment
+[**PaymentCapturePost**](Payment.md#PaymentCapturePost) | **Post** /merchant/payment/capture | CapturePayment
+[**PaymentDetailGet**](Payment.md#PaymentDetailGet) | **Get** /merchant/payment/detail | PaymentDetail
+[**PaymentListGet**](Payment.md#PaymentListGet) | **Get** /merchant/payment/list | PaymentList
+[**PaymentMethodGetGet**](Payment.md#PaymentMethodGetGet) | **Get** /merchant/payment/method_get | PaymentMethod
+[**PaymentMethodListGet**](Payment.md#PaymentMethodListGet) | **Get** /merchant/payment/method_list | PaymentMethodList
 [**PaymentMethodNewPost**](Payment.md#PaymentMethodNewPost) | **Post** /merchant/payment/method_new | Create New Payment Method And Attach To User
-[**PaymentNewPost**](Payment.md#PaymentNewPost) | **Post** /merchant/payment/new | New Payment
-[**PaymentRefundCancelPost**](Payment.md#PaymentRefundCancelPost) | **Post** /merchant/payment/refund/cancel | Cancel Payment Refund
-[**PaymentRefundDetailGet**](Payment.md#PaymentRefundDetailGet) | **Get** /merchant/payment/refund/detail | Query Payment Refund Detail
-[**PaymentRefundListGet**](Payment.md#PaymentRefundListGet) | **Get** /merchant/payment/refund/list | Query Payment Refund List
-[**PaymentRefundNewPost**](Payment.md#PaymentRefundNewPost) | **Post** /merchant/payment/refund/new | New Payment Refund
-[**PaymentTimelineListGet**](Payment.md#PaymentTimelineListGet) | **Get** /merchant/payment/timeline/list | Payment TimeLine List
+[**PaymentNewPost**](Payment.md#PaymentNewPost) | **Post** /merchant/payment/new | NewPayment
+[**PaymentRefundCancelPost**](Payment.md#PaymentRefundCancelPost) | **Post** /merchant/payment/refund/cancel | CancelPaymentRefund
+[**PaymentRefundDetailGet**](Payment.md#PaymentRefundDetailGet) | **Get** /merchant/payment/refund/detail | PaymentRefundDetail
+[**PaymentRefundListGet**](Payment.md#PaymentRefundListGet) | **Get** /merchant/payment/refund/list | PaymentRefundList
+[**PaymentRefundNewPost**](Payment.md#PaymentRefundNewPost) | **Post** /merchant/payment/refund/new | NewPaymentRefund
+[**PaymentTimelineListGet**](Payment.md#PaymentTimelineListGet) | **Get** /merchant/payment/timeline/list | PaymentTimeLineList
 
 
 
@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 > MerchantAuthSsoLoginOTPPost200Response PaymentCancelPost(ctx).UnibeeApiMerchantPaymentCancelReq(unibeeApiMerchantPaymentCancelReq).Execute()
 
-Cancel Payment
+CancelPayment
 
 ### Example
 
@@ -88,7 +88,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response PaymentCapturePost(ctx).UnibeeApiMerchantPaymentCaptureReq(unibeeApiMerchantPaymentCaptureReq).Execute()
 
-Capture Payment
+CapturePayment
 
 ### Example
 
@@ -152,7 +152,7 @@ No authorization required
 
 > MerchantPaymentDetailGet200Response PaymentDetailGet(ctx).PaymentId(paymentId).Execute()
 
-Query Payment Detail
+PaymentDetail
 
 ### Example
 
@@ -167,7 +167,7 @@ import (
 )
 
 func main() {
-	paymentId := "paymentId_example" // string | PaymentId
+	paymentId := "paymentId_example" // string | The unique id of payment
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -192,7 +192,7 @@ Other parameters are passed through a pointer to a apiPaymentDetailGetRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **paymentId** | **string** | PaymentId | 
+ **paymentId** | **string** | The unique id of payment | 
 
 ### Return type
 
@@ -216,7 +216,7 @@ No authorization required
 
 > MerchantPaymentListGet200Response PaymentListGet(ctx).GatewayId(gatewayId).UserId(userId).Email(email).Status(status).Currency(currency).CountryCode(countryCode).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
 
-Query Payment List
+PaymentList
 
 ### Example
 
@@ -231,12 +231,12 @@ import (
 )
 
 func main() {
-	gatewayId := int64(789) // int64 | GatewayId (optional)
-	userId := int64(789) // int64 | UserId  (optional)
-	email := "email_example" // string | Email (optional)
-	status := int32(56) // int32 | Status, 10-Created|20-Success|30-Failed|40-Cancelled (optional)
-	currency := "currency_example" // string | Currency (optional)
-	countryCode := "countryCode_example" // string | CountryCode (optional)
+	gatewayId := int64(789) // int64 | The filter unique id of gateway (optional)
+	userId := int64(789) // int64 | The filter userid of payment (optional)
+	email := "email_example" // string | The filter email of payment (optional)
+	status := int32(56) // int32 | The filter status of payment, 10-Created|20-Success|30-Failed|40-Cancelled (optional)
+	currency := "currency_example" // string | The filter currency of payment (optional)
+	countryCode := "countryCode_example" // string | The filter country code of payment (optional)
 	sortField := "sortField_example" // string | Sort Field，user_id|create_time|status (optional)
 	sortType := "sortType_example" // string | Sort Type，asc|desc (optional)
 	page := int32(56) // int32 | Page, Start With 0 (optional)
@@ -265,12 +265,12 @@ Other parameters are passed through a pointer to a apiPaymentListGetRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **gatewayId** | **int64** | GatewayId | 
- **userId** | **int64** | UserId  | 
- **email** | **string** | Email | 
- **status** | **int32** | Status, 10-Created|20-Success|30-Failed|40-Cancelled | 
- **currency** | **string** | Currency | 
- **countryCode** | **string** | CountryCode | 
+ **gatewayId** | **int64** | The filter unique id of gateway | 
+ **userId** | **int64** | The filter userid of payment | 
+ **email** | **string** | The filter email of payment | 
+ **status** | **int32** | The filter status of payment, 10-Created|20-Success|30-Failed|40-Cancelled | 
+ **currency** | **string** | The filter currency of payment | 
+ **countryCode** | **string** | The filter country code of payment | 
  **sortField** | **string** | Sort Field，user_id|create_time|status | 
  **sortType** | **string** | Sort Type，asc|desc | 
  **page** | **int32** | Page, Start With 0 | 
@@ -298,7 +298,9 @@ No authorization required
 
 > MerchantPaymentMethodGetGet200Response PaymentMethodGetGet(ctx).GatewayId(gatewayId).UserId(userId).PaymentMethodId(paymentMethodId).Execute()
 
-Query Payment Method
+PaymentMethod
+
+
 
 ### Example
 
@@ -313,9 +315,9 @@ import (
 )
 
 func main() {
-	gatewayId := int64(789) // int64 | GatewayId
-	userId := int64(789) // int64 | UserId
-	paymentMethodId := "paymentMethodId_example" // string | PaymentMethodId
+	gatewayId := int64(789) // int64 | The unique id of gateway
+	userId := int64(789) // int64 | The customer's unique id
+	paymentMethodId := "paymentMethodId_example" // string | The unique id of payment method
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -340,9 +342,9 @@ Other parameters are passed through a pointer to a apiPaymentMethodGetGetRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **gatewayId** | **int64** | GatewayId | 
- **userId** | **int64** | UserId | 
- **paymentMethodId** | **string** | PaymentMethodId | 
+ **gatewayId** | **int64** | The unique id of gateway | 
+ **userId** | **int64** | The customer&#39;s unique id | 
+ **paymentMethodId** | **string** | The unique id of payment method | 
 
 ### Return type
 
@@ -366,7 +368,9 @@ No authorization required
 
 > MerchantPaymentMethodListGet200Response PaymentMethodListGet(ctx).GatewayId(gatewayId).UserId(userId).PaymentId(paymentId).Execute()
 
-Query Payment Method List
+PaymentMethodList
+
+
 
 ### Example
 
@@ -381,9 +385,9 @@ import (
 )
 
 func main() {
-	gatewayId := int64(789) // int64 | GatewayId
-	userId := int64(789) // int64 | UserId (optional)
-	paymentId := "paymentId_example" // string | PaymentId (optional)
+	gatewayId := int64(789) // int64 | The unique id of gateway
+	userId := int64(789) // int64 | The customer's unique id (optional)
+	paymentId := "paymentId_example" // string | The unique id of payment (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -408,9 +412,9 @@ Other parameters are passed through a pointer to a apiPaymentMethodListGetReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **gatewayId** | **int64** | GatewayId | 
- **userId** | **int64** | UserId | 
- **paymentId** | **string** | PaymentId | 
+ **gatewayId** | **int64** | The unique id of gateway | 
+ **userId** | **int64** | The customer&#39;s unique id | 
+ **paymentId** | **string** | The unique id of payment | 
 
 ### Return type
 
@@ -498,7 +502,7 @@ No authorization required
 
 > MerchantPaymentNewPost200Response PaymentNewPost(ctx).UnibeeApiMerchantPaymentNewReq(unibeeApiMerchantPaymentNewReq).Execute()
 
-New Payment
+NewPayment
 
 ### Example
 
@@ -562,7 +566,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response PaymentRefundCancelPost(ctx).UnibeeApiMerchantPaymentRefundCancelReq(unibeeApiMerchantPaymentRefundCancelReq).Execute()
 
-Cancel Payment Refund
+CancelPaymentRefund
 
 ### Example
 
@@ -626,7 +630,7 @@ No authorization required
 
 > MerchantPaymentRefundDetailGet200Response PaymentRefundDetailGet(ctx).RefundId(refundId).Execute()
 
-Query Payment Refund Detail
+PaymentRefundDetail
 
 ### Example
 
@@ -690,7 +694,7 @@ No authorization required
 
 > MerchantPaymentRefundListGet200Response PaymentRefundListGet(ctx).PaymentId(paymentId).Status(status).GatewayId(gatewayId).UserId(userId).Email(email).Currency(currency).Execute()
 
-Query Payment Refund List
+PaymentRefundList
 
 ### Example
 
@@ -764,7 +768,7 @@ No authorization required
 
 > MerchantPaymentRefundNewPost200Response PaymentRefundNewPost(ctx).UnibeeApiMerchantPaymentNewPaymentRefundReq(unibeeApiMerchantPaymentNewPaymentRefundReq).Execute()
 
-New Payment Refund
+NewPaymentRefund
 
 ### Example
 
@@ -828,7 +832,7 @@ No authorization required
 
 > MerchantPaymentTimelineListGet200Response PaymentTimelineListGet(ctx).UserId(userId).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
 
-Payment TimeLine List
+PaymentTimeLineList
 
 ### Example
 

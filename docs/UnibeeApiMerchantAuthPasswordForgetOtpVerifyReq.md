@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Email** | **string** | email | 
-**NewPassword** | **string** | NewPassword | 
-**VerificationCode** | **string** | verificationCode | 
+**Email** | **string** | The merchant member&#39;s email address | 
+**NewPassword** | **string** | The new password | 
+**VerificationCode** | **string** | OTP Code, received from email | 
 
 ## Methods
 

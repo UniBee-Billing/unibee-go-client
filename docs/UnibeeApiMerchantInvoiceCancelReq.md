@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**InvoiceId** | Pointer to **string** | InvoiceId | [optional] 
+**InvoiceId** | **string** | The unique id of invoice | 
 
 ## Methods
 
 ### NewUnibeeApiMerchantInvoiceCancelReq
 
-`func NewUnibeeApiMerchantInvoiceCancelReq() *UnibeeApiMerchantInvoiceCancelReq`
+`func NewUnibeeApiMerchantInvoiceCancelReq(invoiceId string, ) *UnibeeApiMerchantInvoiceCancelReq`
 
 NewUnibeeApiMerchantInvoiceCancelReq instantiates a new UnibeeApiMerchantInvoiceCancelReq object
 This constructor will assign default values to properties that have it defined,
@@ -44,11 +44,6 @@ and a boolean to check if the value has been set.
 
 SetInvoiceId sets InvoiceId field to given value.
 
-### HasInvoiceId
-
-`func (o *UnibeeApiMerchantInvoiceCancelReq) HasInvoiceId() bool`
-
-HasInvoiceId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

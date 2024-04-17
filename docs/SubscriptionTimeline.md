@@ -1,11 +1,11 @@
 # \SubscriptionTimeline
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SubscriptionTimelineListGet**](SubscriptionTimeline.md#SubscriptionTimelineListGet) | **Get** /merchant/subscription/timeline_list | Merchant Subscription TimeLine List
-[**SubscriptionTimelineListPost**](SubscriptionTimeline.md#SubscriptionTimelineListPost) | **Post** /merchant/subscription/timeline_list | Merchant Subscription TimeLine List
+[**SubscriptionTimelineListGet**](SubscriptionTimeline.md#SubscriptionTimelineListGet) | **Get** /merchant/subscription/timeline_list | SubscriptionTimeLineList
+[**SubscriptionTimelineListPost**](SubscriptionTimeline.md#SubscriptionTimelineListPost) | **Post** /merchant/subscription/timeline_list | SubscriptionTimeLineList
 
 
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 > MerchantSubscriptionTimelineListGet200Response SubscriptionTimelineListGet(ctx).UserId(userId).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
 
-Merchant Subscription TimeLine List
+SubscriptionTimeLineList
 
 ### Example
 
@@ -28,7 +28,7 @@ import (
 )
 
 func main() {
-	userId := int32(56) // int32 | Filter UserId, Default All  (optional)
+	userId := int64(789) // int64 | Filter UserId, Default All  (optional)
 	sortField := "sortField_example" // string | Sort Field，gmt_create|gmt_modify，Default gmt_modify (optional)
 	sortType := "sortType_example" // string | Sort Type，asc|desc，Default desc (optional)
 	page := int32(56) // int32 | Page, Start WIth 0 (optional)
@@ -57,7 +57,7 @@ Other parameters are passed through a pointer to a apiSubscriptionTimelineListGe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **int32** | Filter UserId, Default All  | 
+ **userId** | **int64** | Filter UserId, Default All  | 
  **sortField** | **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | 
  **sortType** | **string** | Sort Type，asc|desc，Default desc | 
  **page** | **int32** | Page, Start WIth 0 | 
@@ -85,7 +85,7 @@ No authorization required
 
 > MerchantSubscriptionTimelineListGet200Response SubscriptionTimelineListPost(ctx).UnibeeApiMerchantSubscriptionTimeLineListReq(unibeeApiMerchantSubscriptionTimeLineListReq).Execute()
 
-Merchant Subscription TimeLine List
+SubscriptionTimeLineList
 
 ### Example
 

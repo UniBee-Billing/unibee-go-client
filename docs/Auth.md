@@ -1,16 +1,16 @@
 # \Auth
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AuthSsoLoginOTPPost**](Auth.md#AuthSsoLoginOTPPost) | **Post** /merchant/auth/sso/loginOTP | Login OTP
-[**AuthSsoLoginOTPVerifyPost**](Auth.md#AuthSsoLoginOTPVerifyPost) | **Post** /merchant/auth/sso/loginOTPVerify | Merchant User OTP Login Verify
+[**AuthSsoLoginOTPPost**](Auth.md#AuthSsoLoginOTPPost) | **Post** /merchant/auth/sso/loginOTP | LoginOTP
+[**AuthSsoLoginOTPVerifyPost**](Auth.md#AuthSsoLoginOTPVerifyPost) | **Post** /merchant/auth/sso/loginOTPVerify | LoginOTPVerify
 [**AuthSsoLoginPost**](Auth.md#AuthSsoLoginPost) | **Post** /merchant/auth/sso/login | Login
-[**AuthSsoPasswordForgetOTPPost**](Auth.md#AuthSsoPasswordForgetOTPPost) | **Post** /merchant/auth/sso/passwordForgetOTP | Merchant Password Forget OTP
-[**AuthSsoPasswordForgetOTPVerifyPost**](Auth.md#AuthSsoPasswordForgetOTPVerifyPost) | **Post** /merchant/auth/sso/passwordForgetOTPVerify | Merchant Password Forget OTP Verify
-[**AuthSsoRegisterPost**](Auth.md#AuthSsoRegisterPost) | **Post** /merchant/auth/sso/register | Merchant Register
-[**AuthSsoRegisterVerifyPost**](Auth.md#AuthSsoRegisterVerifyPost) | **Post** /merchant/auth/sso/registerVerify | Merchant Register Verify
+[**AuthSsoPasswordForgetOTPPost**](Auth.md#AuthSsoPasswordForgetOTPPost) | **Post** /merchant/auth/sso/passwordForgetOTP | PasswordForgetOTP
+[**AuthSsoPasswordForgetOTPVerifyPost**](Auth.md#AuthSsoPasswordForgetOTPVerifyPost) | **Post** /merchant/auth/sso/passwordForgetOTPVerify | PasswordForgetOTPVerify
+[**AuthSsoRegisterPost**](Auth.md#AuthSsoRegisterPost) | **Post** /merchant/auth/sso/register | Register
+[**AuthSsoRegisterVerifyPost**](Auth.md#AuthSsoRegisterVerifyPost) | **Post** /merchant/auth/sso/registerVerify | RegisterVerify
 
 
 
@@ -18,7 +18,9 @@ Method | HTTP request | Description
 
 > MerchantAuthSsoLoginOTPPost200Response AuthSsoLoginOTPPost(ctx).UnibeeApiMerchantAuthLoginOtpReq(unibeeApiMerchantAuthLoginOtpReq).Execute()
 
-Login OTP
+LoginOTP
+
+
 
 ### Example
 
@@ -82,7 +84,9 @@ No authorization required
 
 > MerchantAuthSsoLoginPost200Response AuthSsoLoginOTPVerifyPost(ctx).UnibeeApiMerchantAuthLoginOtpVerifyReq(unibeeApiMerchantAuthLoginOtpVerifyReq).Execute()
 
-Merchant User OTP Login Verify
+LoginOTPVerify
+
+
 
 ### Example
 
@@ -148,6 +152,8 @@ No authorization required
 
 Login
 
+
+
 ### Example
 
 ```go
@@ -210,7 +216,9 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response AuthSsoPasswordForgetOTPPost(ctx).UnibeeApiMerchantAuthPasswordForgetOtpReq(unibeeApiMerchantAuthPasswordForgetOtpReq).Execute()
 
-Merchant Password Forget OTP
+PasswordForgetOTP
+
+
 
 ### Example
 
@@ -274,7 +282,9 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response AuthSsoPasswordForgetOTPVerifyPost(ctx).UnibeeApiMerchantAuthPasswordForgetOtpVerifyReq(unibeeApiMerchantAuthPasswordForgetOtpVerifyReq).Execute()
 
-Merchant Password Forget OTP Verify
+PasswordForgetOTPVerify
+
+
 
 ### Example
 
@@ -338,7 +348,9 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response AuthSsoRegisterPost(ctx).UnibeeApiMerchantAuthRegisterReq(unibeeApiMerchantAuthRegisterReq).Execute()
 
-Merchant Register
+Register
+
+
 
 ### Example
 
@@ -402,7 +414,9 @@ No authorization required
 
 > MerchantAuthSsoRegisterVerifyPost200Response AuthSsoRegisterVerifyPost(ctx).UnibeeApiMerchantAuthRegisterVerifyReq(unibeeApiMerchantAuthRegisterVerifyReq).Execute()
 
-Merchant Register Verify
+RegisterVerify
+
+
 
 ### Example
 

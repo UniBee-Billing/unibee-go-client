@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Email** | **string** | Email | 
-**FirstName** | **string** | First Name | 
-**LastName** | **string** | Last Name | 
-**Password** | **string** | Password | 
-**Phone** | Pointer to **string** | Phone | [optional] 
-**UserName** | Pointer to **string** | UserName | [optional] 
+**Email** | **string** | The merchant owner&#39;s email address | 
+**FirstName** | **string** | The merchant owner&#39;s first name | 
+**LastName** | **string** | The merchant owner&#39;s last name | 
+**Password** | **string** | The owner&#39;s password | 
+**Phone** | Pointer to **string** | The owner&#39;s Phone | [optional] 
+**UserName** | Pointer to **string** | The owner&#39;s UserName | [optional] 
 
 ## Methods
 

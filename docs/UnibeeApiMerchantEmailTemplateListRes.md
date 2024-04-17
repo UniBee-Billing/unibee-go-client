@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EmailTemplateList** | Pointer to [**[]UnibeeApiBeanMerchantEmailTemplateSimplify**](UnibeeApiBeanMerchantEmailTemplateSimplify.md) | EmailTemplateList | [optional] 
+**EmailTemplateList** | Pointer to [**[]UnibeeApiBeanMerchantEmailTemplateSimplify**](UnibeeApiBeanMerchantEmailTemplateSimplify.md) | Email Template Object List | [optional] 
 
 ## Methods
 

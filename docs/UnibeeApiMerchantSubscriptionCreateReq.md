@@ -13,7 +13,8 @@ Name | Type | Description | Notes
 **PaymentMethodId** | Pointer to **string** | PaymentMethodId | [optional] 
 **PlanId** | **int64** | PlanId | 
 **Quantity** | Pointer to **int64** | Quantity，Default 1 | [optional] 
-**ReturnUrl** | Pointer to **string** | RedirectUrl | [optional] 
+**ReturnUrl** | Pointer to **string** | ReturnUrl | [optional] 
+**TaxPercentage** | Pointer to **int32** | TaxPercentage，1000 &#x3D; 10% | [optional] 
 **UserId** | **int64** | UserId | 
 **VatCountryCode** | Pointer to **string** | VatCountryCode, CountryName | [optional] 
 **VatNumber** | Pointer to **string** | VatNumber | [optional] 
@@ -276,6 +277,31 @@ SetReturnUrl sets ReturnUrl field to given value.
 `func (o *UnibeeApiMerchantSubscriptionCreateReq) HasReturnUrl() bool`
 
 HasReturnUrl returns a boolean if a field has been set.
+
+### GetTaxPercentage
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetTaxPercentage() int32`
+
+GetTaxPercentage returns the TaxPercentage field if non-nil, zero value otherwise.
+
+### GetTaxPercentageOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetTaxPercentageOk() (*int32, bool)`
+
+GetTaxPercentageOk returns a tuple with the TaxPercentage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTaxPercentage
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) SetTaxPercentage(v int32)`
+
+SetTaxPercentage sets TaxPercentage field to given value.
+
+### HasTaxPercentage
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) HasTaxPercentage() bool`
+
+HasTaxPercentage returns a boolean if a field has been set.
 
 ### GetUserId
 

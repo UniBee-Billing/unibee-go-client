@@ -1,31 +1,31 @@
 # \Subscription
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SubscriptionAddNewTrialStartPost**](Subscription.md#SubscriptionAddNewTrialStartPost) | **Post** /merchant/subscription/add_new_trial_start | Merchant Edit Subscription-add appendTrialEndHour For Free
-[**SubscriptionCancelAtPeriodEndPost**](Subscription.md#SubscriptionCancelAtPeriodEndPost) | **Post** /merchant/subscription/cancel_at_period_end | Merchant Edit Subscription-Set Cancel Ad Period End
-[**SubscriptionCancelLastCancelAtPeriodEndPost**](Subscription.md#SubscriptionCancelLastCancelAtPeriodEndPost) | **Post** /merchant/subscription/cancel_last_cancel_at_period_end | Merchant Edit Subscription-Cancel Last CancelAtPeriod
-[**SubscriptionCancelPost**](Subscription.md#SubscriptionCancelPost) | **Post** /merchant/subscription/cancel | Merchant Cancel Subscription Immediately (Will Not Generate Proration Invoice)
-[**SubscriptionChangeGatewayPost**](Subscription.md#SubscriptionChangeGatewayPost) | **Post** /merchant/subscription/change_gateway | Change Subscription Gateway
-[**SubscriptionConfigGet**](Subscription.md#SubscriptionConfigGet) | **Get** /merchant/subscription/config | Get Merchant Subscription Config
+[**SubscriptionAddNewTrialStartPost**](Subscription.md#SubscriptionAddNewTrialStartPost) | **Post** /merchant/subscription/add_new_trial_start | AppendSubscriptionTrialEnd
+[**SubscriptionCancelAtPeriodEndPost**](Subscription.md#SubscriptionCancelAtPeriodEndPost) | **Post** /merchant/subscription/cancel_at_period_end | CancelSubscriptionAtPeriodEnd
+[**SubscriptionCancelLastCancelAtPeriodEndPost**](Subscription.md#SubscriptionCancelLastCancelAtPeriodEndPost) | **Post** /merchant/subscription/cancel_last_cancel_at_period_end | CancelLastCancelSubscriptionAtPeriodEnd
+[**SubscriptionCancelPost**](Subscription.md#SubscriptionCancelPost) | **Post** /merchant/subscription/cancel | CancelSubscriptionImmediately
+[**SubscriptionChangeGatewayPost**](Subscription.md#SubscriptionChangeGatewayPost) | **Post** /merchant/subscription/change_gateway | ChangeSubscriptionGateway
+[**SubscriptionConfigGet**](Subscription.md#SubscriptionConfigGet) | **Get** /merchant/subscription/config | SubscriptionConfig
 [**SubscriptionConfigUpdateGet**](Subscription.md#SubscriptionConfigUpdateGet) | **Get** /merchant/subscription/config/update | Update Merchant Subscription Config
-[**SubscriptionCreatePreviewPost**](Subscription.md#SubscriptionCreatePreviewPost) | **Post** /merchant/subscription/create_preview | Create Subscription Preview
-[**SubscriptionCreateSubmitPost**](Subscription.md#SubscriptionCreateSubmitPost) | **Post** /merchant/subscription/create_submit | Create Subscription
-[**SubscriptionDetailGet**](Subscription.md#SubscriptionDetailGet) | **Get** /merchant/subscription/detail | Subscription Detail
-[**SubscriptionDetailPost**](Subscription.md#SubscriptionDetailPost) | **Post** /merchant/subscription/detail | Subscription Detail
-[**SubscriptionListGet**](Subscription.md#SubscriptionListGet) | **Get** /merchant/subscription/list | Subscription List
-[**SubscriptionListPost**](Subscription.md#SubscriptionListPost) | **Post** /merchant/subscription/list | Subscription List
-[**SubscriptionNewOnetimeAddonPaymentPost**](Subscription.md#SubscriptionNewOnetimeAddonPaymentPost) | **Post** /merchant/subscription/new_onetime_addon_payment | New Subscription Onetime Addon Payment
-[**SubscriptionOnetimeAddonListGet**](Subscription.md#SubscriptionOnetimeAddonListGet) | **Get** /merchant/subscription/onetime_addon_list | Merchant Subscription OnetimeAddon List
-[**SubscriptionRenewPost**](Subscription.md#SubscriptionRenewPost) | **Post** /merchant/subscription/renew | Renew Subscription, will create new subscription based on one provided 
+[**SubscriptionCreatePreviewPost**](Subscription.md#SubscriptionCreatePreviewPost) | **Post** /merchant/subscription/create_preview | CreateSubscriptionPreview
+[**SubscriptionCreateSubmitPost**](Subscription.md#SubscriptionCreateSubmitPost) | **Post** /merchant/subscription/create_submit | CreateSubscription
+[**SubscriptionDetailGet**](Subscription.md#SubscriptionDetailGet) | **Get** /merchant/subscription/detail | SubscriptionDetail
+[**SubscriptionDetailPost**](Subscription.md#SubscriptionDetailPost) | **Post** /merchant/subscription/detail | SubscriptionDetail
+[**SubscriptionListGet**](Subscription.md#SubscriptionListGet) | **Get** /merchant/subscription/list | SubscriptionList
+[**SubscriptionListPost**](Subscription.md#SubscriptionListPost) | **Post** /merchant/subscription/list | SubscriptionList
+[**SubscriptionNewOnetimeAddonPaymentPost**](Subscription.md#SubscriptionNewOnetimeAddonPaymentPost) | **Post** /merchant/subscription/new_onetime_addon_payment | NewSubscriptionOnetimeAddonPayment
+[**SubscriptionOnetimeAddonListGet**](Subscription.md#SubscriptionOnetimeAddonListGet) | **Get** /merchant/subscription/onetime_addon_list | SubscriptionOnetimeAddonList
+[**SubscriptionRenewPost**](Subscription.md#SubscriptionRenewPost) | **Post** /merchant/subscription/renew | RenewSubscription
 [**SubscriptionResumePost**](Subscription.md#SubscriptionResumePost) | **Post** /merchant/subscription/resume | Merchant Edit Subscription-Resume
 [**SubscriptionSuspendPost**](Subscription.md#SubscriptionSuspendPost) | **Post** /merchant/subscription/suspend | Merchant Edit Subscription-Stop
-[**SubscriptionUpdatePreviewPost**](Subscription.md#SubscriptionUpdatePreviewPost) | **Post** /merchant/subscription/update_preview | Merchant Update Subscription Preview
-[**SubscriptionUpdateSubmitPost**](Subscription.md#SubscriptionUpdateSubmitPost) | **Post** /merchant/subscription/update_submit | Merchant Update Subscription Submit
-[**SubscriptionUserSubscriptionDetailGet**](Subscription.md#SubscriptionUserSubscriptionDetailGet) | **Get** /merchant/subscription/user_subscription_detail | Subscription Detail
-[**SubscriptionUserSubscriptionDetailPost**](Subscription.md#SubscriptionUserSubscriptionDetailPost) | **Post** /merchant/subscription/user_subscription_detail | Subscription Detail
+[**SubscriptionUpdatePreviewPost**](Subscription.md#SubscriptionUpdatePreviewPost) | **Post** /merchant/subscription/update_preview | UpdateSubscriptionPreview
+[**SubscriptionUpdateSubmitPost**](Subscription.md#SubscriptionUpdateSubmitPost) | **Post** /merchant/subscription/update_submit | UpdateSubscription
+[**SubscriptionUserSubscriptionDetailGet**](Subscription.md#SubscriptionUserSubscriptionDetailGet) | **Get** /merchant/subscription/user_subscription_detail | SubscriptionDetail
+[**SubscriptionUserSubscriptionDetailPost**](Subscription.md#SubscriptionUserSubscriptionDetailPost) | **Post** /merchant/subscription/user_subscription_detail | SubscriptionDetail
 
 
 
@@ -33,7 +33,7 @@ Method | HTTP request | Description
 
 > MerchantAuthSsoLoginOTPPost200Response SubscriptionAddNewTrialStartPost(ctx).UnibeeApiMerchantSubscriptionAddNewTrialStartReq(unibeeApiMerchantSubscriptionAddNewTrialStartReq).Execute()
 
-Merchant Edit Subscription-add appendTrialEndHour For Free
+AppendSubscriptionTrialEnd
 
 ### Example
 
@@ -97,7 +97,9 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response SubscriptionCancelAtPeriodEndPost(ctx).UnibeeApiMerchantSubscriptionCancelAtPeriodEndReq(unibeeApiMerchantSubscriptionCancelAtPeriodEndReq).Execute()
 
-Merchant Edit Subscription-Set Cancel Ad Period End
+CancelSubscriptionAtPeriodEnd
+
+
 
 ### Example
 
@@ -161,7 +163,9 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response SubscriptionCancelLastCancelAtPeriodEndPost(ctx).UnibeeApiMerchantSubscriptionCancelLastCancelAtPeriodEndReq(unibeeApiMerchantSubscriptionCancelLastCancelAtPeriodEndReq).Execute()
 
-Merchant Edit Subscription-Cancel Last CancelAtPeriod
+CancelLastCancelSubscriptionAtPeriodEnd
+
+
 
 ### Example
 
@@ -225,7 +229,9 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response SubscriptionCancelPost(ctx).UnibeeApiMerchantSubscriptionCancelReq(unibeeApiMerchantSubscriptionCancelReq).Execute()
 
-Merchant Cancel Subscription Immediately (Will Not Generate Proration Invoice)
+CancelSubscriptionImmediately
+
+
 
 ### Example
 
@@ -289,7 +295,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response SubscriptionChangeGatewayPost(ctx).UnibeeApiMerchantSubscriptionChangeGatewayReq(unibeeApiMerchantSubscriptionChangeGatewayReq).Execute()
 
-Change Subscription Gateway
+ChangeSubscriptionGateway
 
 ### Example
 
@@ -353,7 +359,7 @@ No authorization required
 
 > MerchantSubscriptionConfigGet200Response SubscriptionConfigGet(ctx).Execute()
 
-Get Merchant Subscription Config
+SubscriptionConfig
 
 ### Example
 
@@ -484,7 +490,7 @@ No authorization required
 
 > MerchantSubscriptionCreatePreviewPost200Response SubscriptionCreatePreviewPost(ctx).UnibeeApiMerchantSubscriptionCreatePreviewReq(unibeeApiMerchantSubscriptionCreatePreviewReq).Execute()
 
-Create Subscription Preview
+CreateSubscriptionPreview
 
 ### Example
 
@@ -548,7 +554,7 @@ No authorization required
 
 > MerchantSubscriptionCreateSubmitPost200Response SubscriptionCreateSubmitPost(ctx).UnibeeApiMerchantSubscriptionCreateReq(unibeeApiMerchantSubscriptionCreateReq).Execute()
 
-Create Subscription
+CreateSubscription
 
 ### Example
 
@@ -612,7 +618,7 @@ No authorization required
 
 > MerchantSubscriptionDetailGet200Response SubscriptionDetailGet(ctx).SubscriptionId(subscriptionId).Execute()
 
-Subscription Detail
+SubscriptionDetail
 
 ### Example
 
@@ -676,7 +682,7 @@ No authorization required
 
 > MerchantSubscriptionDetailGet200Response SubscriptionDetailPost(ctx).UnibeeApiMerchantSubscriptionDetailReq(unibeeApiMerchantSubscriptionDetailReq).Execute()
 
-Subscription Detail
+SubscriptionDetail
 
 ### Example
 
@@ -740,7 +746,7 @@ No authorization required
 
 > MerchantSubscriptionListGet200Response SubscriptionListGet(ctx).UserId(userId).Status(status).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
 
-Subscription List
+SubscriptionList
 
 ### Example
 
@@ -756,7 +762,7 @@ import (
 
 func main() {
 	userId := int64(789) // int64 | UserId (optional)
-	status := []int32{int32(123)} // []int32 | Filter, Default All，Status，0-Init | 1-Create｜2-Active｜3-Suspend | 4-Cancel | 5-Expire (optional)
+	status := []int32{int32(123)} // []int32 | Filter, Default All，Status，0-Init | 1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire (optional)
 	sortField := "sortField_example" // string | Sort Field，gmt_create|gmt_modify，Default gmt_modify (optional)
 	sortType := "sortType_example" // string | Sort Type，asc|desc，Default desc (optional)
 	page := int32(56) // int32 | Page, Start WIth 0 (optional)
@@ -786,7 +792,7 @@ Other parameters are passed through a pointer to a apiSubscriptionListGetRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int64** | UserId | 
- **status** | **[]int32** | Filter, Default All，Status，0-Init | 1-Create｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 
+ **status** | **[]int32** | Filter, Default All，Status，0-Init | 1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 
  **sortField** | **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | 
  **sortType** | **string** | Sort Type，asc|desc，Default desc | 
  **page** | **int32** | Page, Start WIth 0 | 
@@ -814,7 +820,7 @@ No authorization required
 
 > MerchantSubscriptionListGet200Response SubscriptionListPost(ctx).UnibeeApiMerchantSubscriptionListReq(unibeeApiMerchantSubscriptionListReq).Execute()
 
-Subscription List
+SubscriptionList
 
 ### Example
 
@@ -878,7 +884,9 @@ No authorization required
 
 > MerchantSubscriptionNewOnetimeAddonPaymentPost200Response SubscriptionNewOnetimeAddonPaymentPost(ctx).UnibeeApiMerchantSubscriptionOnetimeAddonNewReq(unibeeApiMerchantSubscriptionOnetimeAddonNewReq).Execute()
 
-New Subscription Onetime Addon Payment
+NewSubscriptionOnetimeAddonPayment
+
+
 
 ### Example
 
@@ -942,7 +950,7 @@ No authorization required
 
 > MerchantSubscriptionOnetimeAddonListGet200Response SubscriptionOnetimeAddonListGet(ctx).UserId(userId).Page(page).Count(count).Execute()
 
-Merchant Subscription OnetimeAddon List
+SubscriptionOnetimeAddonList
 
 ### Example
 
@@ -1010,7 +1018,9 @@ No authorization required
 
 > MerchantSubscriptionCreateSubmitPost200Response SubscriptionRenewPost(ctx).UnibeeApiMerchantSubscriptionRenewReq(unibeeApiMerchantSubscriptionRenewReq).Execute()
 
-Renew Subscription, will create new subscription based on one provided 
+RenewSubscription
+
+
 
 ### Example
 
@@ -1202,7 +1212,7 @@ No authorization required
 
 > MerchantSubscriptionUpdatePreviewPost200Response SubscriptionUpdatePreviewPost(ctx).UnibeeApiMerchantSubscriptionUpdatePreviewReq(unibeeApiMerchantSubscriptionUpdatePreviewReq).Execute()
 
-Merchant Update Subscription Preview
+UpdateSubscriptionPreview
 
 ### Example
 
@@ -1266,7 +1276,7 @@ No authorization required
 
 > MerchantSubscriptionUpdateSubmitPost200Response SubscriptionUpdateSubmitPost(ctx).UnibeeApiMerchantSubscriptionUpdateReq(unibeeApiMerchantSubscriptionUpdateReq).Execute()
 
-Merchant Update Subscription Submit
+UpdateSubscription
 
 ### Example
 
@@ -1330,7 +1340,7 @@ No authorization required
 
 > MerchantSubscriptionUserSubscriptionDetailGet200Response SubscriptionUserSubscriptionDetailGet(ctx).UserId(userId).Execute()
 
-Subscription Detail
+SubscriptionDetail
 
 ### Example
 
@@ -1394,7 +1404,7 @@ No authorization required
 
 > MerchantSubscriptionUserSubscriptionDetailGet200Response SubscriptionUserSubscriptionDetailPost(ctx).UnibeeApiMerchantSubscriptionUserSubscriptionDetailReq(unibeeApiMerchantSubscriptionUserSubscriptionDetailReq).Execute()
 
-Subscription Detail
+SubscriptionDetail
 
 ### Example
 

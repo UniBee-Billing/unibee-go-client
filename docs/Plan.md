@@ -1,21 +1,21 @@
 # \Plan
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**PlanActivatePost**](Plan.md#PlanActivatePost) | **Post** /merchant/plan/activate | Activate Plan
-[**PlanAddonsBindingPost**](Plan.md#PlanAddonsBindingPost) | **Post** /merchant/plan/addons_binding | Plan Binding Addons
-[**PlanDeletePost**](Plan.md#PlanDeletePost) | **Post** /merchant/plan/delete | Delete A Plan Before Activate
-[**PlanDetailGet**](Plan.md#PlanDetailGet) | **Get** /merchant/plan/detail | Query Plan Detail
-[**PlanDetailPost**](Plan.md#PlanDetailPost) | **Post** /merchant/plan/detail | Query Plan Detail
-[**PlanEditPost**](Plan.md#PlanEditPost) | **Post** /merchant/plan/edit | Edit Plan
-[**PlanExpirePost**](Plan.md#PlanExpirePost) | **Post** /merchant/plan/expire | Expire Plan
-[**PlanListGet**](Plan.md#PlanListGet) | **Get** /merchant/plan/list | Plan List
-[**PlanListPost**](Plan.md#PlanListPost) | **Post** /merchant/plan/list | Plan List
-[**PlanNewPost**](Plan.md#PlanNewPost) | **Post** /merchant/plan/new | Create Plan
-[**PlanPublishPost**](Plan.md#PlanPublishPost) | **Post** /merchant/plan/publish | Publish Plan，Will Be Visible To UserPortal
-[**PlanUnpublishedPost**](Plan.md#PlanUnpublishedPost) | **Post** /merchant/plan/unpublished | UnPublish Plan
+[**PlanActivatePost**](Plan.md#PlanActivatePost) | **Post** /merchant/plan/activate | ActivatePlan
+[**PlanAddonsBindingPost**](Plan.md#PlanAddonsBindingPost) | **Post** /merchant/plan/addons_binding | AddonBinding
+[**PlanDeletePost**](Plan.md#PlanDeletePost) | **Post** /merchant/plan/delete | DeletePlan
+[**PlanDetailGet**](Plan.md#PlanDetailGet) | **Get** /merchant/plan/detail | PlanDetail
+[**PlanDetailPost**](Plan.md#PlanDetailPost) | **Post** /merchant/plan/detail | PlanDetail
+[**PlanEditPost**](Plan.md#PlanEditPost) | **Post** /merchant/plan/edit | EditPlan
+[**PlanExpirePost**](Plan.md#PlanExpirePost) | **Post** /merchant/plan/expire | ExpirePlan
+[**PlanListGet**](Plan.md#PlanListGet) | **Get** /merchant/plan/list | PlanList
+[**PlanListPost**](Plan.md#PlanListPost) | **Post** /merchant/plan/list | PlanList
+[**PlanNewPost**](Plan.md#PlanNewPost) | **Post** /merchant/plan/new | CreatePlan
+[**PlanPublishPost**](Plan.md#PlanPublishPost) | **Post** /merchant/plan/publish | PublishPlan
+[**PlanUnpublishedPost**](Plan.md#PlanUnpublishedPost) | **Post** /merchant/plan/unpublished | UnPublishPlan
 
 
 
@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 > MerchantAuthSsoLoginOTPPost200Response PlanActivatePost(ctx).UnibeeApiMerchantPlanActivateReq(unibeeApiMerchantPlanActivateReq).Execute()
 
-Activate Plan
+ActivatePlan
 
 ### Example
 
@@ -87,7 +87,7 @@ No authorization required
 
 > MerchantPlanAddonsBindingPost200Response PlanAddonsBindingPost(ctx).UnibeeApiMerchantPlanAddonsBindingReq(unibeeApiMerchantPlanAddonsBindingReq).Execute()
 
-Plan Binding Addons
+AddonBinding
 
 ### Example
 
@@ -151,7 +151,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response PlanDeletePost(ctx).UnibeeApiMerchantPlanDeleteReq(unibeeApiMerchantPlanDeleteReq).Execute()
 
-Delete A Plan Before Activate
+DeletePlan
 
 ### Example
 
@@ -215,7 +215,7 @@ No authorization required
 
 > MerchantPlanDetailGet200Response PlanDetailGet(ctx).PlanId(planId).Execute()
 
-Query Plan Detail
+PlanDetail
 
 ### Example
 
@@ -279,7 +279,7 @@ No authorization required
 
 > MerchantPlanDetailGet200Response PlanDetailPost(ctx).UnibeeApiMerchantPlanDetailReq(unibeeApiMerchantPlanDetailReq).Execute()
 
-Query Plan Detail
+PlanDetail
 
 ### Example
 
@@ -343,7 +343,7 @@ No authorization required
 
 > MerchantPlanAddonsBindingPost200Response PlanEditPost(ctx).UnibeeApiMerchantPlanEditReq(unibeeApiMerchantPlanEditReq).Execute()
 
-Edit Plan
+EditPlan
 
 ### Example
 
@@ -407,7 +407,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response PlanExpirePost(ctx).UnibeeApiMerchantPlanExpireReq(unibeeApiMerchantPlanExpireReq).Execute()
 
-Expire Plan
+ExpirePlan
 
 ### Example
 
@@ -471,7 +471,7 @@ No authorization required
 
 > MerchantPlanListGet200Response PlanListGet(ctx).Type_(type_).Status(status).PublishStatus(publishStatus).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
 
-Plan List
+PlanList
 
 ### Example
 
@@ -549,7 +549,7 @@ No authorization required
 
 > MerchantPlanListGet200Response PlanListPost(ctx).UnibeeApiMerchantPlanListReq(unibeeApiMerchantPlanListReq).Execute()
 
-Plan List
+PlanList
 
 ### Example
 
@@ -613,7 +613,7 @@ No authorization required
 
 > MerchantPlanAddonsBindingPost200Response PlanNewPost(ctx).UnibeeApiMerchantPlanNewReq(unibeeApiMerchantPlanNewReq).Execute()
 
-Create Plan
+CreatePlan
 
 ### Example
 
@@ -677,7 +677,9 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response PlanPublishPost(ctx).UnibeeApiMerchantPlanPublishReq(unibeeApiMerchantPlanPublishReq).Execute()
 
-Publish Plan，Will Be Visible To UserPortal
+PublishPlan
+
+
 
 ### Example
 
@@ -741,7 +743,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response PlanUnpublishedPost(ctx).UnibeeApiMerchantPlanUnPublishReq(unibeeApiMerchantPlanUnPublishReq).Execute()
 
-UnPublish Plan
+UnPublishPlan
 
 ### Example
 

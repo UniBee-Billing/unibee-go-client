@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Email** | **string** | Email | 
-**Password** | **string** | Password | 
+**Email** | **string** | The merchant member&#39;s email address&#39; | 
+**Password** | **string** | The merchant member&#39;s password&#39; | 
 
 ## Methods
 

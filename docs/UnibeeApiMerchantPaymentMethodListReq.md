@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**GatewayId** | **int64** | GatewayId | 
-**PaymentId** | Pointer to **string** | PaymentId | [optional] 
-**UserId** | Pointer to **int64** | UserId | [optional] 
+**GatewayId** | **int64** | The unique id of gateway | 
+**PaymentId** | Pointer to **string** | The unique id of payment | [optional] 
+**UserId** | Pointer to **int64** | The customer&#39;s unique id | [optional] 
 
 ## Methods
 

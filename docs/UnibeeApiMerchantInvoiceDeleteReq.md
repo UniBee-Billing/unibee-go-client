@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**InvoiceId** | **string** | InvoiceId | 
+**InvoiceId** | **string** | The unique id of invoice | 
 
 ## Methods
 

@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CaptureAmount** | **int64** | CaptureAmount, Cent | 
-**Currency** | **string** | Currency | 
-**ExternalCaptureId** | **string** | ExternalCaptureId | 
-**PaymentId** | **string** | PaymentId | 
+**CaptureAmount** | **int64** | The amount to capture, Cent | 
+**Currency** | **string** | The currency to capture | 
+**ExternalCaptureId** | **string** | The external id of payment capture | 
+**PaymentId** | **string** | The unique id of payment | 
 
 ## Methods
 

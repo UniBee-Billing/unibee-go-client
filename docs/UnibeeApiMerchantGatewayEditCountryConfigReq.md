@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CountryConfig** | Pointer to **map[string]bool** | CountryConfig | [optional] 
-**GatewayId** | **int64** | GatewayId | 
+**CountryConfig** | Pointer to **map[string]bool** | The country config of payment gateway, a map with countryCode as key, and value for enable or disable | [optional] 
+**GatewayId** | **int64** | The id of payment gateway | 
 
 ## Methods
 

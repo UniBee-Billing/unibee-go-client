@@ -1,16 +1,16 @@
 # \Webhook
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**WebhookDeleteEndpointPost**](Webhook.md#WebhookDeleteEndpointPost) | **Post** /merchant/webhook/delete_endpoint | Merchant Delete Webhook Endpoint
-[**WebhookEndpointListGet**](Webhook.md#WebhookEndpointListGet) | **Get** /merchant/webhook/endpoint_list | Merchant Webhook Endpoint list
-[**WebhookEndpointLogListGet**](Webhook.md#WebhookEndpointLogListGet) | **Get** /merchant/webhook/endpoint_log_list | Merchant Webhook Endpoint Log list
-[**WebhookEventListGet**](Webhook.md#WebhookEventListGet) | **Get** /merchant/webhook/event_list | Webhook Event list
-[**WebhookNewEndpointPost**](Webhook.md#WebhookNewEndpointPost) | **Post** /merchant/webhook/new_endpoint | Merchant New Webhook Endpoint
-[**WebhookResendPost**](Webhook.md#WebhookResendPost) | **Post** /merchant/webhook/resend | Merchant Resent Webhook
-[**WebhookUpdateEndpointPost**](Webhook.md#WebhookUpdateEndpointPost) | **Post** /merchant/webhook/update_endpoint | Merchant Update Webhook Endpoint
+[**WebhookDeleteEndpointPost**](Webhook.md#WebhookDeleteEndpointPost) | **Post** /merchant/webhook/delete_endpoint | DeleteWebhookEndpoint
+[**WebhookEndpointListGet**](Webhook.md#WebhookEndpointListGet) | **Get** /merchant/webhook/endpoint_list | WebhookEndpointlist
+[**WebhookEndpointLogListGet**](Webhook.md#WebhookEndpointLogListGet) | **Get** /merchant/webhook/endpoint_log_list | WebhookEndpointLogList
+[**WebhookEventListGet**](Webhook.md#WebhookEventListGet) | **Get** /merchant/webhook/event_list | WebhookEventList
+[**WebhookNewEndpointPost**](Webhook.md#WebhookNewEndpointPost) | **Post** /merchant/webhook/new_endpoint | NewWebhookEndpoint
+[**WebhookResendPost**](Webhook.md#WebhookResendPost) | **Post** /merchant/webhook/resend | ResentWebhook
+[**WebhookUpdateEndpointPost**](Webhook.md#WebhookUpdateEndpointPost) | **Post** /merchant/webhook/update_endpoint | UpdateWebhookEndpoint
 
 
 
@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 > MerchantAuthSsoLoginOTPPost200Response WebhookDeleteEndpointPost(ctx).UnibeeApiMerchantWebhookDeleteEndpointReq(unibeeApiMerchantWebhookDeleteEndpointReq).Execute()
 
-Merchant Delete Webhook Endpoint
+DeleteWebhookEndpoint
 
 ### Example
 
@@ -82,7 +82,7 @@ No authorization required
 
 > MerchantWebhookEndpointListGet200Response WebhookEndpointListGet(ctx).Execute()
 
-Merchant Webhook Endpoint list
+WebhookEndpointlist
 
 ### Example
 
@@ -141,7 +141,7 @@ No authorization required
 
 > MerchantWebhookEndpointLogListGet200Response WebhookEndpointLogListGet(ctx).EndpointId(endpointId).Page(page).Count(count).Execute()
 
-Merchant Webhook Endpoint Log list
+WebhookEndpointLogList
 
 ### Example
 
@@ -209,7 +209,7 @@ No authorization required
 
 > MerchantWebhookEventListGet200Response WebhookEventListGet(ctx).Execute()
 
-Webhook Event list
+WebhookEventList
 
 ### Example
 
@@ -268,7 +268,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response WebhookNewEndpointPost(ctx).UnibeeApiMerchantWebhookNewEndpointReq(unibeeApiMerchantWebhookNewEndpointReq).Execute()
 
-Merchant New Webhook Endpoint
+NewWebhookEndpoint
 
 ### Example
 
@@ -332,7 +332,7 @@ No authorization required
 
 > MerchantWebhookResendPost200Response WebhookResendPost(ctx).UnibeeApiMerchantWebhookResendWebhookReq(unibeeApiMerchantWebhookResendWebhookReq).Execute()
 
-Merchant Resent Webhook
+ResentWebhook
 
 ### Example
 
@@ -396,7 +396,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response WebhookUpdateEndpointPost(ctx).UnibeeApiMerchantWebhookUpdateEndpointReq(unibeeApiMerchantWebhookUpdateEndpointReq).Execute()
 
-Merchant Update Webhook Endpoint
+UpdateWebhookEndpoint
 
 ### Example
 

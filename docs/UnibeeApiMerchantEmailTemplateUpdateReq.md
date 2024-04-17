@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TemplateContent** | **string** | templateContent | 
-**TemplateName** | **string** | templateName | 
-**TemplateTitle** | **string** | templateTitle | 
+**TemplateContent** | **string** | The content of email template | 
+**TemplateName** | **string** | The name of email template | 
+**TemplateTitle** | **string** | The title of email template | 
 
 ## Methods
 

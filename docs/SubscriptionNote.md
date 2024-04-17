@@ -1,12 +1,12 @@
 # \SubscriptionNote
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SubscriptionAdminNoteListGet**](SubscriptionNote.md#SubscriptionAdminNoteListGet) | **Get** /merchant/subscription/admin_note_list | Merchant Subscription Note List
-[**SubscriptionAdminNoteListPost**](SubscriptionNote.md#SubscriptionAdminNoteListPost) | **Post** /merchant/subscription/admin_note_list | Merchant Subscription Note List
-[**SubscriptionNewAdminNotePost**](SubscriptionNote.md#SubscriptionNewAdminNotePost) | **Post** /merchant/subscription/new_admin_note | Merchant New Subscription Note
+[**SubscriptionAdminNoteListGet**](SubscriptionNote.md#SubscriptionAdminNoteListGet) | **Get** /merchant/subscription/admin_note_list | SubscriptionNoteList
+[**SubscriptionAdminNoteListPost**](SubscriptionNote.md#SubscriptionAdminNoteListPost) | **Post** /merchant/subscription/admin_note_list | SubscriptionNoteList
+[**SubscriptionNewAdminNotePost**](SubscriptionNote.md#SubscriptionNewAdminNotePost) | **Post** /merchant/subscription/new_admin_note | NewSubscriptionNote
 
 
 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 > MerchantSubscriptionAdminNoteListGet200Response SubscriptionAdminNoteListGet(ctx).SubscriptionId(subscriptionId).Page(page).Count(count).Execute()
 
-Merchant Subscription Note List
+SubscriptionNoteList
 
 ### Example
 
@@ -82,7 +82,7 @@ No authorization required
 
 > MerchantSubscriptionAdminNoteListGet200Response SubscriptionAdminNoteListPost(ctx).UnibeeApiMerchantSubscriptionAdminNoteListReq(unibeeApiMerchantSubscriptionAdminNoteListReq).Execute()
 
-Merchant Subscription Note List
+SubscriptionNoteList
 
 ### Example
 
@@ -146,7 +146,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response SubscriptionNewAdminNotePost(ctx).UnibeeApiMerchantSubscriptionNewAdminNoteReq(unibeeApiMerchantSubscriptionNewAdminNoteReq).Execute()
 
-Merchant New Subscription Note
+NewSubscriptionNote
 
 ### Example
 

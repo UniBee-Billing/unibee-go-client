@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RefundId** | **string** | RefundId | 
+**RefundId** | **string** | The unique id of refund | 
 
 ## Methods
 

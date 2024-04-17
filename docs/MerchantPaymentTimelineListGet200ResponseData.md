@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PaymentTimeLines** | Pointer to [**[]UnibeeApiBeanPaymentTimelineSimplify**](UnibeeApiBeanPaymentTimelineSimplify.md) | PaymentTimeLines | [optional] 
+**PaymentTimeLines** | Pointer to [**[]UnibeeApiBeanPaymentTimelineSimplify**](UnibeeApiBeanPaymentTimelineSimplify.md) | Payment TimeLine Object List | [optional] 
 
 ## Methods
 

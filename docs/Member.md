@@ -1,15 +1,15 @@
 # \Member
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**MemberListGet**](Member.md#MemberListGet) | **Get** /merchant/member/list | Get Merchant Member List
-[**MemberLogoutPost**](Member.md#MemberLogoutPost) | **Post** /merchant/member/logout | Merchant Member Logout
+[**MemberListGet**](Member.md#MemberListGet) | **Get** /merchant/member/list | GetMemberList
+[**MemberLogoutPost**](Member.md#MemberLogoutPost) | **Post** /merchant/member/logout | MemberLogout
 [**MemberNewMemberPost**](Member.md#MemberNewMemberPost) | **Post** /merchant/member/new_member | Invite member
-[**MemberPasswordResetPost**](Member.md#MemberPasswordResetPost) | **Post** /merchant/member/passwordReset | Merchant Member Reset Password
-[**MemberProfileGet**](Member.md#MemberProfileGet) | **Get** /merchant/member/profile | Get Merchant Member Profile
-[**MemberUpdateMemberRolePost**](Member.md#MemberUpdateMemberRolePost) | **Post** /merchant/member/update_member_role | Update Member Role
+[**MemberPasswordResetPost**](Member.md#MemberPasswordResetPost) | **Post** /merchant/member/passwordReset | MemberResetPassword
+[**MemberProfileGet**](Member.md#MemberProfileGet) | **Get** /merchant/member/profile | GetMemberProfile
+[**MemberUpdateMemberRolePost**](Member.md#MemberUpdateMemberRolePost) | **Post** /merchant/member/update_member_role | UpdateMemberRole
 
 
 
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 > MerchantMemberListGet200Response MemberListGet(ctx).Execute()
 
-Get Merchant Member List
+GetMemberList
 
 ### Example
 
@@ -76,7 +76,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response MemberLogoutPost(ctx).Body(body).Execute()
 
-Merchant Member Logout
+MemberLogout
 
 ### Example
 
@@ -206,7 +206,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response MemberPasswordResetPost(ctx).UnibeeApiMerchantMemberPasswordResetReq(unibeeApiMerchantMemberPasswordResetReq).Execute()
 
-Merchant Member Reset Password
+MemberResetPassword
 
 ### Example
 
@@ -270,7 +270,7 @@ No authorization required
 
 > MerchantAuthSsoRegisterVerifyPost200Response MemberProfileGet(ctx).Execute()
 
-Get Merchant Member Profile
+GetMemberProfile
 
 ### Example
 
@@ -329,7 +329,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response MemberUpdateMemberRolePost(ctx).UnibeeApiMerchantMemberUpdateMemberRoleReq(unibeeApiMerchantMemberUpdateMemberRoleReq).Execute()
 
-Update Member Role
+UpdateMemberRole
 
 ### Example
 

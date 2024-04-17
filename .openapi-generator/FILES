@@ -4,6 +4,7 @@ README.md
 api/openapi.yaml
 api_auth.go
 api_balance.go
+api_discount.go
 api_email.go
 api_email_template.go
 api_file.go
@@ -29,6 +30,7 @@ client.go
 configuration.go
 docs/Auth.md
 docs/Balance.md
+docs/Discount.md
 docs/Email.md
 docs/EmailTemplate.md
 docs/File.md
@@ -46,6 +48,8 @@ docs/MerchantBalanceUserBalanceQueryGet200Response.md
 docs/MerchantBalanceUserBalanceQueryGet200ResponseData.md
 docs/MerchantCountryConfigListPost200Response.md
 docs/MerchantCountryConfigListPost200ResponseData.md
+docs/MerchantDiscountListGet200Response.md
+docs/MerchantDiscountListGet200ResponseData.md
 docs/MerchantEmailTemplateListGet200Response.md
 docs/MerchantEmailTemplateListGet200ResponseData.md
 docs/MerchantGatewayListGet200Response.md
@@ -142,6 +146,8 @@ docs/MerchantUserGetGet200Response.md
 docs/MerchantUserGetGet200ResponseData.md
 docs/MerchantUserListGet200Response.md
 docs/MerchantUserListGet200ResponseData.md
+docs/MerchantUserSearchGet200Response.md
+docs/MerchantUserSearchGet200ResponseData.md
 docs/MerchantVatCountryListGet200Response.md
 docs/MerchantVatCountryListGet200ResponseData.md
 docs/MerchantWebhookEndpointListGet200Response.md
@@ -178,6 +184,7 @@ docs/UnibeeApiBeanGatewaySimplify.md
 docs/UnibeeApiBeanInvoiceItemSimplify.md
 docs/UnibeeApiBeanInvoiceSimplify.md
 docs/UnibeeApiBeanMerchantCountryConfigSimplify.md
+docs/UnibeeApiBeanMerchantDiscountCodeSimplify.md
 docs/UnibeeApiBeanMerchantEmailTemplateSimplify.md
 docs/UnibeeApiBeanMerchantMemberSimplify.md
 docs/UnibeeApiBeanMerchantMetricEventSimplify.md
@@ -217,6 +224,12 @@ docs/UnibeeApiMerchantBalanceDetailQueryReq.md
 docs/UnibeeApiMerchantBalanceDetailQueryRes.md
 docs/UnibeeApiMerchantBalanceUserDetailQueryReq.md
 docs/UnibeeApiMerchantBalanceUserDetailQueryRes.md
+docs/UnibeeApiMerchantDiscountActivateReq.md
+docs/UnibeeApiMerchantDiscountDeactivateReq.md
+docs/UnibeeApiMerchantDiscountDeleteReq.md
+docs/UnibeeApiMerchantDiscountEditReq.md
+docs/UnibeeApiMerchantDiscountListRes.md
+docs/UnibeeApiMerchantDiscountNewReq.md
 docs/UnibeeApiMerchantEmailGatewaySetupReq.md
 docs/UnibeeApiMerchantEmailTemplateActivateReq.md
 docs/UnibeeApiMerchantEmailTemplateDeactivateReq.md
@@ -414,6 +427,8 @@ model__merchant_balance_user_balance_query_get_200_response.go
 model__merchant_balance_user_balance_query_get_200_response_data.go
 model__merchant_country_config_list_post_200_response.go
 model__merchant_country_config_list_post_200_response_data.go
+model__merchant_discount_list_get_200_response.go
+model__merchant_discount_list_get_200_response_data.go
 model__merchant_email_template_list_get_200_response.go
 model__merchant_email_template_list_get_200_response_data.go
 model__merchant_gateway_list_get_200_response.go
@@ -510,6 +525,8 @@ model__merchant_user_get_get_200_response.go
 model__merchant_user_get_get_200_response_data.go
 model__merchant_user_list_get_200_response.go
 model__merchant_user_list_get_200_response_data.go
+model__merchant_user_search_get_200_response.go
+model__merchant_user_search_get_200_response_data.go
 model__merchant_vat_country_list_get_200_response.go
 model__merchant_vat_country_list_get_200_response_data.go
 model__merchant_webhook_endpoint_list_get_200_response.go
@@ -535,6 +552,7 @@ model_unibee_api_bean_gateway_simplify.go
 model_unibee_api_bean_invoice_item_simplify.go
 model_unibee_api_bean_invoice_simplify.go
 model_unibee_api_bean_merchant_country_config_simplify.go
+model_unibee_api_bean_merchant_discount_code_simplify.go
 model_unibee_api_bean_merchant_email_template_simplify.go
 model_unibee_api_bean_merchant_member_simplify.go
 model_unibee_api_bean_merchant_metric_event_simplify.go
@@ -574,6 +592,12 @@ model_unibee_api_merchant_balance_detail_query_req.go
 model_unibee_api_merchant_balance_detail_query_res.go
 model_unibee_api_merchant_balance_user_detail_query_req.go
 model_unibee_api_merchant_balance_user_detail_query_res.go
+model_unibee_api_merchant_discount_activate_req.go
+model_unibee_api_merchant_discount_deactivate_req.go
+model_unibee_api_merchant_discount_delete_req.go
+model_unibee_api_merchant_discount_edit_req.go
+model_unibee_api_merchant_discount_list_res.go
+model_unibee_api_merchant_discount_new_req.go
 model_unibee_api_merchant_email_gateway_setup_req.go
 model_unibee_api_merchant_email_template_activate_req.go
 model_unibee_api_merchant_email_template_deactivate_req.go
@@ -754,4 +778,5 @@ model_unibee_api_system_refund_bulk_channel_sync_req.go
 model_unibee_api_system_subscription_test_clock_walk_req.go
 model_unibee_internal_logic_gateway_gateway_bean_gateway_balance.go
 response.go
+test/api_discount_test.go
 utils.go

@@ -1,14 +1,14 @@
 # \Gateway
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GatewayEditCountryConfigPost**](Gateway.md#GatewayEditCountryConfigPost) | **Post** /merchant/gateway/edit_country_config | Gateway Webhook Edit Country Config
-[**GatewayEditPost**](Gateway.md#GatewayEditPost) | **Post** /merchant/gateway/edit | Gateway Webhook Edit
-[**GatewayListGet**](Gateway.md#GatewayListGet) | **Get** /merchant/gateway/list | Gateway List
-[**GatewaySetupPost**](Gateway.md#GatewaySetupPost) | **Post** /merchant/gateway/setup | Gateway Setup
-[**GatewaySetupWebhookPost**](Gateway.md#GatewaySetupWebhookPost) | **Post** /merchant/gateway/setup_webhook | Gateway Webhook Setup
+[**GatewayEditCountryConfigPost**](Gateway.md#GatewayEditCountryConfigPost) | **Post** /merchant/gateway/edit_country_config | PaymentGatewayCountryConfigEdit
+[**GatewayEditPost**](Gateway.md#GatewayEditPost) | **Post** /merchant/gateway/edit | PaymentGatewayEdit
+[**GatewayListGet**](Gateway.md#GatewayListGet) | **Get** /merchant/gateway/list | PaymentGatewayList
+[**GatewaySetupPost**](Gateway.md#GatewaySetupPost) | **Post** /merchant/gateway/setup | PaymentGatewaySetup
+[**GatewaySetupWebhookPost**](Gateway.md#GatewaySetupWebhookPost) | **Post** /merchant/gateway/setup_webhook | PaymentGatewayWebhookSetup
 
 
 
@@ -16,7 +16,9 @@ Method | HTTP request | Description
 
 > MerchantAuthSsoLoginOTPPost200Response GatewayEditCountryConfigPost(ctx).UnibeeApiMerchantGatewayEditCountryConfigReq(unibeeApiMerchantGatewayEditCountryConfigReq).Execute()
 
-Gateway Webhook Edit Country Config
+PaymentGatewayCountryConfigEdit
+
+
 
 ### Example
 
@@ -80,7 +82,9 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response GatewayEditPost(ctx).UnibeeApiMerchantGatewayEditReq(unibeeApiMerchantGatewayEditReq).Execute()
 
-Gateway Webhook Edit
+PaymentGatewayEdit
+
+
 
 ### Example
 
@@ -144,7 +148,7 @@ No authorization required
 
 > MerchantGatewayListGet200Response GatewayListGet(ctx).Execute()
 
-Gateway List
+PaymentGatewayList
 
 ### Example
 
@@ -203,7 +207,9 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response GatewaySetupPost(ctx).UnibeeApiMerchantGatewaySetupReq(unibeeApiMerchantGatewaySetupReq).Execute()
 
-Gateway Setup
+PaymentGatewaySetup
+
+
 
 ### Example
 
@@ -267,7 +273,7 @@ No authorization required
 
 > MerchantGatewaySetupWebhookPost200Response GatewaySetupWebhookPost(ctx).UnibeeApiMerchantGatewaySetupWebhookReq(unibeeApiMerchantGatewaySetupWebhookReq).Execute()
 
-Gateway Webhook Setup
+PaymentGatewayWebhookSetup
 
 ### Example
 

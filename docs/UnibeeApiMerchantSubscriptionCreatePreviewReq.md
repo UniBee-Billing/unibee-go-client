@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **GatewayId** | **int64** | Id | 
 **PlanId** | **int64** | PlanId | 
 **Quantity** | Pointer to **int64** | Quantity | [optional] 
+**TaxPercentage** | Pointer to **int32** | TaxPercentage，1000 &#x3D; 10% | [optional] 
 **UserId** | **int64** | UserId | 
 **VatCountryCode** | Pointer to **string** | VatCountryCode, CountryName | [optional] 
 **VatNumber** | Pointer to **string** | VatNumber | [optional] 
@@ -146,6 +147,31 @@ SetQuantity sets Quantity field to given value.
 `func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) HasQuantity() bool`
 
 HasQuantity returns a boolean if a field has been set.
+
+### GetTaxPercentage
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) GetTaxPercentage() int32`
+
+GetTaxPercentage returns the TaxPercentage field if non-nil, zero value otherwise.
+
+### GetTaxPercentageOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) GetTaxPercentageOk() (*int32, bool)`
+
+GetTaxPercentageOk returns a tuple with the TaxPercentage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTaxPercentage
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) SetTaxPercentage(v int32)`
+
+SetTaxPercentage sets TaxPercentage field to given value.
+
+### HasTaxPercentage
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) HasTaxPercentage() bool`
+
+HasTaxPercentage returns a boolean if a field has been set.
 
 ### GetUserId
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MerchantMember** | Pointer to [**UnibeeApiBeanDetailMerchantMemberDetail**](UnibeeApiBeanDetailMerchantMemberDetail.md) |  | [optional] 
-**Token** | Pointer to **string** | Token | [optional] 
+**Token** | Pointer to **string** | Access token of admin portal | [optional] 
 
 ## Methods
 

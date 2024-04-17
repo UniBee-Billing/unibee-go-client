@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**GatewayId** | **int64** | GatewayId | 
-**GatewayKey** | Pointer to **string** | GatewayKey | [optional] 
-**GatewaySecret** | Pointer to **string** | GatewaySecret | [optional] 
+**GatewayId** | **int64** | The id of payment gateway | 
+**GatewayKey** | Pointer to **string** | The key of payment gateway | [optional] 
+**GatewaySecret** | Pointer to **string** | The secret of payment gateway | [optional] 
 
 ## Methods
 

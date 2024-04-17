@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Page** | Pointer to **int32** | Page, Start WIth 0 | [optional] 
 **SortField** | Pointer to **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | [optional] 
 **SortType** | Pointer to **string** | Sort Type，asc|desc，Default desc | [optional] 
-**UserId** | Pointer to **int32** | Filter UserId, Default All  | [optional] 
+**UserId** | Pointer to **int64** | Filter UserId, Default All  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasSortType returns a boolean if a field has been set.
 
 ### GetUserId
 
-`func (o *UnibeeApiMerchantSubscriptionTimeLineListReq) GetUserId() int32`
+`func (o *UnibeeApiMerchantSubscriptionTimeLineListReq) GetUserId() int64`
 
 GetUserId returns the UserId field if non-nil, zero value otherwise.
 
 ### GetUserIdOk
 
-`func (o *UnibeeApiMerchantSubscriptionTimeLineListReq) GetUserIdOk() (*int32, bool)`
+`func (o *UnibeeApiMerchantSubscriptionTimeLineListReq) GetUserIdOk() (*int64, bool)`
 
 GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserId
 
-`func (o *UnibeeApiMerchantSubscriptionTimeLineListReq) SetUserId(v int32)`
+`func (o *UnibeeApiMerchantSubscriptionTimeLineListReq) SetUserId(v int64)`
 
 SetUserId sets UserId field to given value.
 

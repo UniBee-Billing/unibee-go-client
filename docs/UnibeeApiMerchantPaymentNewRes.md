@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Action** | Pointer to **map[string]interface{}** |  | [optional] 
-**ExternalPaymentId** | Pointer to **string** | ExternalPaymentId | [optional] 
+**ExternalPaymentId** | Pointer to **string** | The external unique id of payment | [optional] 
 **Link** | Pointer to **string** |  | [optional] 
-**PaymentId** | Pointer to **string** | PaymentId | [optional] 
+**PaymentId** | Pointer to **string** | The unique id of payment | [optional] 
 **Status** | Pointer to **int32** | Status, 10-Created|20-Success|30-Failed|40-Cancelled | [optional] 
 
 ## Methods

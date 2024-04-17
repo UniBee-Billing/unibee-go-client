@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **PlanName** | **string** | Plan Name | 
 **ProductDescription** | Pointer to **string** | Default Copy Description | [optional] 
 **ProductName** | Pointer to **string** | Default Copy PlanName | [optional] 
-**Type** | Pointer to **int32** | Default 1，,1-main plan，2-addon plan, 3-onetime plan | [optional] [default to 1]
+**Type** | Pointer to **int32** | The type of plan, 1-main plan，2-addon plan, 3-onetime plan, default main plan | [optional] [default to 1]
 
 ## Methods
 

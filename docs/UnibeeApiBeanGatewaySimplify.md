@@ -5,7 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CountryConfig** | Pointer to **map[string]bool** |  | [optional] 
+**CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **GatewayId** | Pointer to **int64** |  | [optional] 
+**GatewayKey** | Pointer to **string** |  | [optional] 
 **GatewayLogo** | Pointer to **string** |  | [optional] 
 **GatewayName** | Pointer to **string** |  | [optional] 
 **GatewayType** | Pointer to **int64** | gateway type，1-Default｜ 2-Crypto | [optional] 
@@ -54,6 +56,31 @@ SetCountryConfig sets CountryConfig field to given value.
 
 HasCountryConfig returns a boolean if a field has been set.
 
+### GetCreateTime
+
+`func (o *UnibeeApiBeanGatewaySimplify) GetCreateTime() int64`
+
+GetCreateTime returns the CreateTime field if non-nil, zero value otherwise.
+
+### GetCreateTimeOk
+
+`func (o *UnibeeApiBeanGatewaySimplify) GetCreateTimeOk() (*int64, bool)`
+
+GetCreateTimeOk returns a tuple with the CreateTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateTime
+
+`func (o *UnibeeApiBeanGatewaySimplify) SetCreateTime(v int64)`
+
+SetCreateTime sets CreateTime field to given value.
+
+### HasCreateTime
+
+`func (o *UnibeeApiBeanGatewaySimplify) HasCreateTime() bool`
+
+HasCreateTime returns a boolean if a field has been set.
+
 ### GetGatewayId
 
 `func (o *UnibeeApiBeanGatewaySimplify) GetGatewayId() int64`
@@ -78,6 +105,31 @@ SetGatewayId sets GatewayId field to given value.
 `func (o *UnibeeApiBeanGatewaySimplify) HasGatewayId() bool`
 
 HasGatewayId returns a boolean if a field has been set.
+
+### GetGatewayKey
+
+`func (o *UnibeeApiBeanGatewaySimplify) GetGatewayKey() string`
+
+GetGatewayKey returns the GatewayKey field if non-nil, zero value otherwise.
+
+### GetGatewayKeyOk
+
+`func (o *UnibeeApiBeanGatewaySimplify) GetGatewayKeyOk() (*string, bool)`
+
+GetGatewayKeyOk returns a tuple with the GatewayKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayKey
+
+`func (o *UnibeeApiBeanGatewaySimplify) SetGatewayKey(v string)`
+
+SetGatewayKey sets GatewayKey field to given value.
+
+### HasGatewayKey
+
+`func (o *UnibeeApiBeanGatewaySimplify) HasGatewayKey() bool`
+
+HasGatewayKey returns a boolean if a field has been set.
 
 ### GetGatewayLogo
 

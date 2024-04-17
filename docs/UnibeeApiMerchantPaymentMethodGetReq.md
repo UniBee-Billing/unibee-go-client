@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**GatewayId** | **int64** | GatewayId | 
-**PaymentMethodId** | **string** | PaymentMethodId | 
-**UserId** | **int64** | UserId | 
+**GatewayId** | **int64** | The unique id of gateway | 
+**PaymentMethodId** | **string** | The unique id of payment method | 
+**UserId** | **int64** | The customer&#39;s unique id | 
 
 ## Methods
 

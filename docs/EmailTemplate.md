@@ -1,14 +1,14 @@
 # \EmailTemplate
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**EmailTemplateActivatePost**](EmailTemplate.md#EmailTemplateActivatePost) | **Post** /merchant/email/template_activate | Merchant Email Template Activate
-[**EmailTemplateDeactivatePost**](EmailTemplate.md#EmailTemplateDeactivatePost) | **Post** /merchant/email/template_deactivate | Merchant Email Template Deactivate
-[**EmailTemplateListGet**](EmailTemplate.md#EmailTemplateListGet) | **Get** /merchant/email/template_list | Merchant Email Template List
-[**EmailTemplateSetDefaultPost**](EmailTemplate.md#EmailTemplateSetDefaultPost) | **Post** /merchant/email/template_set_default | Merchant Email Template Set Default
-[**EmailTemplateUpdatePost**](EmailTemplate.md#EmailTemplateUpdatePost) | **Post** /merchant/email/template_update | Merchant Email Template Update
+[**EmailTemplateActivatePost**](EmailTemplate.md#EmailTemplateActivatePost) | **Post** /merchant/email/template_activate | EmailTemplateActivate
+[**EmailTemplateDeactivatePost**](EmailTemplate.md#EmailTemplateDeactivatePost) | **Post** /merchant/email/template_deactivate | EmailTemplateDeactivate
+[**EmailTemplateListGet**](EmailTemplate.md#EmailTemplateListGet) | **Get** /merchant/email/template_list | EmailTemplateList
+[**EmailTemplateSetDefaultPost**](EmailTemplate.md#EmailTemplateSetDefaultPost) | **Post** /merchant/email/template_set_default | EmailTemplateSetDefault
+[**EmailTemplateUpdatePost**](EmailTemplate.md#EmailTemplateUpdatePost) | **Post** /merchant/email/template_update | EmailTemplateUpdate
 
 
 
@@ -16,7 +16,9 @@ Method | HTTP request | Description
 
 > MerchantAuthSsoLoginOTPPost200Response EmailTemplateActivatePost(ctx).UnibeeApiMerchantEmailTemplateActivateReq(unibeeApiMerchantEmailTemplateActivateReq).Execute()
 
-Merchant Email Template Activate
+EmailTemplateActivate
+
+
 
 ### Example
 
@@ -80,7 +82,9 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response EmailTemplateDeactivatePost(ctx).UnibeeApiMerchantEmailTemplateDeactivateReq(unibeeApiMerchantEmailTemplateDeactivateReq).Execute()
 
-Merchant Email Template Deactivate
+EmailTemplateDeactivate
+
+
 
 ### Example
 
@@ -144,7 +148,7 @@ No authorization required
 
 > MerchantEmailTemplateListGet200Response EmailTemplateListGet(ctx).Execute()
 
-Merchant Email Template List
+EmailTemplateList
 
 ### Example
 
@@ -203,7 +207,9 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response EmailTemplateSetDefaultPost(ctx).UnibeeApiMerchantEmailTemplateSetDefaultReq(unibeeApiMerchantEmailTemplateSetDefaultReq).Execute()
 
-Merchant Email Template Set Default
+EmailTemplateSetDefault
+
+
 
 ### Example
 
@@ -267,7 +273,9 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response EmailTemplateUpdatePost(ctx).UnibeeApiMerchantEmailTemplateUpdateReq(unibeeApiMerchantEmailTemplateUpdateReq).Execute()
 
-Merchant Email Template Update
+EmailTemplateUpdate
+
+
 
 ### Example
 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**InvoiceId** | **string** | Invoice ID | 
-**SendUserEmail** | Pointer to **bool** | Whether Send Invoice Email To User Or Not，Default Not Send | [optional] [default to false]
+**InvoiceId** | **string** | The unique id of invoice | 
+**SendUserEmail** | Pointer to **bool** | Whether sen invoice email to user or not，default false | [optional] [default to false]
 
 ## Methods
 

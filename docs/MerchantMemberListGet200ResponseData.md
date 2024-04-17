@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MerchantMembers** | Pointer to [**[]UnibeeApiBeanMerchantMemberSimplify**](UnibeeApiBeanMerchantMemberSimplify.md) | Merchant Members | [optional] 
+**MerchantMembers** | Pointer to [**[]UnibeeApiBeanMerchantMemberSimplify**](UnibeeApiBeanMerchantMemberSimplify.md) | Merchant Member Object List | [optional] 
 
 ## Methods
 

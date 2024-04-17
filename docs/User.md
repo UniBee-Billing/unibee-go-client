@@ -1,17 +1,17 @@
 # \User
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**UserFrozenUserPost**](User.md#UserFrozenUserPost) | **Post** /merchant/user/frozen_user | Merchant Frozen User
-[**UserGetGet**](User.md#UserGetGet) | **Get** /merchant/user/get | Get User Profile
-[**UserListGet**](User.md#UserListGet) | **Get** /merchant/user/list | User List
-[**UserListPost**](User.md#UserListPost) | **Post** /merchant/user/list | User List
-[**UserReleaseUserPost**](User.md#UserReleaseUserPost) | **Post** /merchant/user/release_user | Merchant Release User
-[**UserSearchGet**](User.md#UserSearchGet) | **Get** /merchant/user/search | User Search
-[**UserSearchPost**](User.md#UserSearchPost) | **Post** /merchant/user/search | User Search
-[**UserUpdatePost**](User.md#UserUpdatePost) | **Post** /merchant/user/update | Update User Profile
+[**UserFrozenUserPost**](User.md#UserFrozenUserPost) | **Post** /merchant/user/frozen_user | FrozenUser
+[**UserGetGet**](User.md#UserGetGet) | **Get** /merchant/user/get | GetUserProfile
+[**UserListGet**](User.md#UserListGet) | **Get** /merchant/user/list | UserList
+[**UserListPost**](User.md#UserListPost) | **Post** /merchant/user/list | UserList
+[**UserReleaseUserPost**](User.md#UserReleaseUserPost) | **Post** /merchant/user/release_user | ReleaseUser
+[**UserSearchGet**](User.md#UserSearchGet) | **Get** /merchant/user/search | UserSearch
+[**UserSearchPost**](User.md#UserSearchPost) | **Post** /merchant/user/search | UserSearch
+[**UserUpdatePost**](User.md#UserUpdatePost) | **Post** /merchant/user/update | UpdateUserProfile
 
 
 
@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 > MerchantAuthSsoLoginOTPPost200Response UserFrozenUserPost(ctx).UnibeeApiMerchantUserFrozenReq(unibeeApiMerchantUserFrozenReq).Execute()
 
-Merchant Frozen User
+FrozenUser
 
 ### Example
 
@@ -83,7 +83,7 @@ No authorization required
 
 > MerchantUserGetGet200Response UserGetGet(ctx).UserId(userId).Execute()
 
-Get User Profile
+GetUserProfile
 
 ### Example
 
@@ -147,7 +147,7 @@ No authorization required
 
 > MerchantUserListGet200Response UserListGet(ctx).UserId(userId).FirstName(firstName).LastName(lastName).Email(email).Status(status).DeleteInclude(deleteInclude).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
 
-User List
+UserList
 
 ### Example
 
@@ -229,7 +229,7 @@ No authorization required
 
 > MerchantUserListGet200Response UserListPost(ctx).UnibeeApiMerchantUserListReq(unibeeApiMerchantUserListReq).Execute()
 
-User List
+UserList
 
 ### Example
 
@@ -293,7 +293,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response UserReleaseUserPost(ctx).UnibeeApiMerchantUserReleaseReq(unibeeApiMerchantUserReleaseReq).Execute()
 
-Merchant Release User
+ReleaseUser
 
 ### Example
 
@@ -355,9 +355,9 @@ No authorization required
 
 ## UserSearchGet
 
-> MerchantUserListGet200Response UserSearchGet(ctx).SearchKey(searchKey).Execute()
+> MerchantUserSearchGet200Response UserSearchGet(ctx).SearchKey(searchKey).Execute()
 
-User Search
+UserSearch
 
 ### Example
 
@@ -381,7 +381,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `User.UserSearchGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UserSearchGet`: MerchantUserListGet200Response
+	// response from `UserSearchGet`: MerchantUserSearchGet200Response
 	fmt.Fprintf(os.Stdout, "Response from `User.UserSearchGet`: %v\n", resp)
 }
 ```
@@ -401,7 +401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantUserListGet200Response**](MerchantUserListGet200Response.md)
+[**MerchantUserSearchGet200Response**](MerchantUserSearchGet200Response.md)
 
 ### Authorization
 
@@ -419,9 +419,9 @@ No authorization required
 
 ## UserSearchPost
 
-> MerchantUserListGet200Response UserSearchPost(ctx).UnibeeApiMerchantUserSearchReq(unibeeApiMerchantUserSearchReq).Execute()
+> MerchantUserSearchGet200Response UserSearchPost(ctx).UnibeeApiMerchantUserSearchReq(unibeeApiMerchantUserSearchReq).Execute()
 
-User Search
+UserSearch
 
 ### Example
 
@@ -445,7 +445,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `User.UserSearchPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UserSearchPost`: MerchantUserListGet200Response
+	// response from `UserSearchPost`: MerchantUserSearchGet200Response
 	fmt.Fprintf(os.Stdout, "Response from `User.UserSearchPost`: %v\n", resp)
 }
 ```
@@ -465,7 +465,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantUserListGet200Response**](MerchantUserListGet200Response.md)
+[**MerchantUserSearchGet200Response**](MerchantUserSearchGet200Response.md)
 
 ### Authorization
 
@@ -485,7 +485,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response UserUpdatePost(ctx).UnibeeApiMerchantUserUpdateReq(unibeeApiMerchantUserUpdateReq).Execute()
 
-Update User Profile
+UpdateUserProfile
 
 ### Example
 

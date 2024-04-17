@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MethodList** | Pointer to [**[]UnibeeApiBeanPaymentMethod**](UnibeeApiBeanPaymentMethod.md) | MethodList | [optional] 
+**MethodList** | Pointer to [**[]UnibeeApiBeanPaymentMethod**](UnibeeApiBeanPaymentMethod.md) | Payment Method Object List | [optional] 
 
 ## Methods
 

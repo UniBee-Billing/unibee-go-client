@@ -1,11 +1,11 @@
 # \Search
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SearchKeySearchGet**](Search.md#SearchKeySearchGet) | **Get** /merchant/search/key_search | Merchant Search
-[**SearchKeySearchPost**](Search.md#SearchKeySearchPost) | **Post** /merchant/search/key_search | Merchant Search
+[**SearchKeySearchGet**](Search.md#SearchKeySearchGet) | **Get** /merchant/search/key_search | Search
+[**SearchKeySearchPost**](Search.md#SearchKeySearchPost) | **Post** /merchant/search/key_search | Search
 
 
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 > MerchantSearchKeySearchGet200Response SearchKeySearchGet(ctx).SearchKey(searchKey).Execute()
 
-Merchant Search
+Search
 
 ### Example
 
@@ -77,7 +77,7 @@ No authorization required
 
 > MerchantSearchKeySearchGet200Response SearchKeySearchPost(ctx).UnibeeApiMerchantSearchSearchReq(unibeeApiMerchantSearchSearchReq).Execute()
 
-Merchant Search
+Search
 
 ### Example
 

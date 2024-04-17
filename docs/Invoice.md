@@ -1,23 +1,23 @@
 # \Invoice
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**InvoiceCancelPost**](Invoice.md#InvoiceCancelPost) | **Post** /merchant/invoice/cancel | Admin Cancel Invoice Of Processing Status
-[**InvoiceDeletePost**](Invoice.md#InvoiceDeletePost) | **Post** /merchant/invoice/delete | Admin Delete Invoice Of Pending Status
-[**InvoiceDetailGet**](Invoice.md#InvoiceDetailGet) | **Get** /merchant/invoice/detail | Invoice Detail
-[**InvoiceDetailPost**](Invoice.md#InvoiceDetailPost) | **Post** /merchant/invoice/detail | Invoice Detail
-[**InvoiceEditPost**](Invoice.md#InvoiceEditPost) | **Post** /merchant/invoice/edit | Admin Edit Invoice
-[**InvoiceFinishPost**](Invoice.md#InvoiceFinishPost) | **Post** /merchant/invoice/finish | Admin Finish Invoice，Generate Pay Link
-[**InvoiceListGet**](Invoice.md#InvoiceListGet) | **Get** /merchant/invoice/list | Invoice List
-[**InvoiceListPost**](Invoice.md#InvoiceListPost) | **Post** /merchant/invoice/list | Invoice List
-[**InvoiceMarkRefundPost**](Invoice.md#InvoiceMarkRefundPost) | **Post** /merchant/invoice/mark_refund | Admin Mark Refund For Invoice
-[**InvoiceNewPost**](Invoice.md#InvoiceNewPost) | **Post** /merchant/invoice/new | Admin Create New Invoice
-[**InvoicePdfGeneratePost**](Invoice.md#InvoicePdfGeneratePost) | **Post** /merchant/invoice/pdf_generate | Admin Generate Merchant Invoice pdf
+[**InvoiceDeletePost**](Invoice.md#InvoiceDeletePost) | **Post** /merchant/invoice/delete | DeletePendingInvoice
+[**InvoiceDetailGet**](Invoice.md#InvoiceDetailGet) | **Get** /merchant/invoice/detail | InvoiceDetail
+[**InvoiceDetailPost**](Invoice.md#InvoiceDetailPost) | **Post** /merchant/invoice/detail | InvoiceDetail
+[**InvoiceEditPost**](Invoice.md#InvoiceEditPost) | **Post** /merchant/invoice/edit | InvoiceEdit
+[**InvoiceFinishPost**](Invoice.md#InvoiceFinishPost) | **Post** /merchant/invoice/finish | FinishInvoice
+[**InvoiceListGet**](Invoice.md#InvoiceListGet) | **Get** /merchant/invoice/list | InvoiceList
+[**InvoiceListPost**](Invoice.md#InvoiceListPost) | **Post** /merchant/invoice/list | InvoiceList
+[**InvoiceMarkRefundPost**](Invoice.md#InvoiceMarkRefundPost) | **Post** /merchant/invoice/mark_refund | MarkInvoiceRefund
+[**InvoiceNewPost**](Invoice.md#InvoiceNewPost) | **Post** /merchant/invoice/new | NewInvoice
+[**InvoicePdfGeneratePost**](Invoice.md#InvoicePdfGeneratePost) | **Post** /merchant/invoice/pdf_generate | GenerateInvoicePDF
 [**InvoiceReconvertCryptoAndSendEmailPost**](Invoice.md#InvoiceReconvertCryptoAndSendEmailPost) | **Post** /merchant/invoice/reconvert_crypto_and_send_email | Admin Reconvert Crypto Data and Send Invoice Email to User
-[**InvoiceRefundPost**](Invoice.md#InvoiceRefundPost) | **Post** /merchant/invoice/refund | Admin Create Refund For Invoice
-[**InvoiceSendEmailPost**](Invoice.md#InvoiceSendEmailPost) | **Post** /merchant/invoice/send_email | Admin Send Merchant Invoice Email to User
+[**InvoiceRefundPost**](Invoice.md#InvoiceRefundPost) | **Post** /merchant/invoice/refund | CreateInvoiceRefund
+[**InvoiceSendEmailPost**](Invoice.md#InvoiceSendEmailPost) | **Post** /merchant/invoice/send_email | SendInvoiceEmail
 
 
 
@@ -40,7 +40,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantInvoiceCancelReq := *openapiclient.NewUnibeeApiMerchantInvoiceCancelReq() // UnibeeApiMerchantInvoiceCancelReq | 
+	unibeeApiMerchantInvoiceCancelReq := *openapiclient.NewUnibeeApiMerchantInvoiceCancelReq("InvoiceId_example") // UnibeeApiMerchantInvoiceCancelReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -89,7 +89,9 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response InvoiceDeletePost(ctx).UnibeeApiMerchantInvoiceDeleteReq(unibeeApiMerchantInvoiceDeleteReq).Execute()
 
-Admin Delete Invoice Of Pending Status
+DeletePendingInvoice
+
+
 
 ### Example
 
@@ -153,7 +155,9 @@ No authorization required
 
 > MerchantInvoiceDetailGet200Response InvoiceDetailGet(ctx).InvoiceId(invoiceId).Execute()
 
-Invoice Detail
+InvoiceDetail
+
+
 
 ### Example
 
@@ -168,7 +172,7 @@ import (
 )
 
 func main() {
-	invoiceId := "invoiceId_example" // string | Invoice ID
+	invoiceId := "invoiceId_example" // string | The unique id of invoice
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -193,7 +197,7 @@ Other parameters are passed through a pointer to a apiInvoiceDetailGetRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invoiceId** | **string** | Invoice ID | 
+ **invoiceId** | **string** | The unique id of invoice | 
 
 ### Return type
 
@@ -217,7 +221,9 @@ No authorization required
 
 > MerchantInvoiceDetailGet200Response InvoiceDetailPost(ctx).UnibeeApiMerchantInvoiceDetailReq(unibeeApiMerchantInvoiceDetailReq).Execute()
 
-Invoice Detail
+InvoiceDetail
+
+
 
 ### Example
 
@@ -281,7 +287,9 @@ No authorization required
 
 > MerchantInvoiceDetailGet200Response InvoiceEditPost(ctx).UnibeeApiMerchantInvoiceEditReq(unibeeApiMerchantInvoiceEditReq).Execute()
 
-Admin Edit Invoice
+InvoiceEdit
+
+
 
 ### Example
 
@@ -345,7 +353,9 @@ No authorization required
 
 > MerchantInvoiceFinishPost200Response InvoiceFinishPost(ctx).UnibeeApiMerchantInvoiceFinishReq(unibeeApiMerchantInvoiceFinishReq).Execute()
 
-Admin Finish Invoice，Generate Pay Link
+FinishInvoice
+
+
 
 ### Example
 
@@ -409,7 +419,9 @@ No authorization required
 
 > MerchantInvoiceListGet200Response InvoiceListGet(ctx).FirstName(firstName).LastName(lastName).Currency(currency).Status(status).AmountStart(amountStart).AmountEnd(amountEnd).UserId(userId).SendEmail(sendEmail).SortField(sortField).SortType(sortType).DeleteInclude(deleteInclude).Page(page).Count(count).Execute()
 
-Invoice List
+InvoiceList
+
+
 
 ### Example
 
@@ -424,17 +436,17 @@ import (
 )
 
 func main() {
-	firstName := "firstName_example" // string | FirstName (optional)
-	lastName := "lastName_example" // string | LastName (optional)
-	currency := "currency_example" // string | Currency (optional)
-	status := []int32{int32(123)} // []int32 | Status, 1-pending｜2-processing｜3-paid | 4-failed | 5-cancelled (optional)
-	amountStart := int64(789) // int64 | AmountStart (optional)
-	amountEnd := int64(789) // int64 | AmountEnd (optional)
-	userId := int32(56) // int32 | UserId Filter, Default Filter All (optional)
-	sendEmail := "sendEmail_example" // string | SendEmail Filter , Default Filter All (optional)
+	firstName := "firstName_example" // string | The firstName of invoice (optional)
+	lastName := "lastName_example" // string | The lastName of invoice (optional)
+	currency := "currency_example" // string | The currency of invoice (optional)
+	status := []int32{int32(123)} // []int32 | The status of invoice, 1-pending｜2-processing｜3-paid | 4-failed | 5-cancelled (optional)
+	amountStart := int64(789) // int64 | The filter start amount of invoice (optional)
+	amountEnd := int64(789) // int64 | The filter end amount of invoice (optional)
+	userId := int64(789) // int64 | The filter userid of invoice (optional)
+	sendEmail := "sendEmail_example" // string | The filter email of invoice (optional)
 	sortField := "sortField_example" // string | Filter，em. invoice_id|gmt_create|gmt_modify|period_end|total_amount，Default gmt_modify (optional)
 	sortType := "sortType_example" // string | Sort，asc|desc，Default desc (optional)
-	deleteInclude := true // bool | Deleted Involved，Need Admin (optional)
+	deleteInclude := true // bool | Deleted Involved，Need Admin Permission (optional)
 	page := int32(56) // int32 | Page, Start 0 (optional)
 	count := int32(56) // int32 | Count By Page (optional)
 
@@ -461,17 +473,17 @@ Other parameters are passed through a pointer to a apiInvoiceListGetRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **firstName** | **string** | FirstName | 
- **lastName** | **string** | LastName | 
- **currency** | **string** | Currency | 
- **status** | **[]int32** | Status, 1-pending｜2-processing｜3-paid | 4-failed | 5-cancelled | 
- **amountStart** | **int64** | AmountStart | 
- **amountEnd** | **int64** | AmountEnd | 
- **userId** | **int32** | UserId Filter, Default Filter All | 
- **sendEmail** | **string** | SendEmail Filter , Default Filter All | 
+ **firstName** | **string** | The firstName of invoice | 
+ **lastName** | **string** | The lastName of invoice | 
+ **currency** | **string** | The currency of invoice | 
+ **status** | **[]int32** | The status of invoice, 1-pending｜2-processing｜3-paid | 4-failed | 5-cancelled | 
+ **amountStart** | **int64** | The filter start amount of invoice | 
+ **amountEnd** | **int64** | The filter end amount of invoice | 
+ **userId** | **int64** | The filter userid of invoice | 
+ **sendEmail** | **string** | The filter email of invoice | 
  **sortField** | **string** | Filter，em. invoice_id|gmt_create|gmt_modify|period_end|total_amount，Default gmt_modify | 
  **sortType** | **string** | Sort，asc|desc，Default desc | 
- **deleteInclude** | **bool** | Deleted Involved，Need Admin | 
+ **deleteInclude** | **bool** | Deleted Involved，Need Admin Permission | 
  **page** | **int32** | Page, Start 0 | 
  **count** | **int32** | Count By Page | 
 
@@ -497,7 +509,9 @@ No authorization required
 
 > MerchantInvoiceListGet200Response InvoiceListPost(ctx).UnibeeApiMerchantInvoiceListReq(unibeeApiMerchantInvoiceListReq).Execute()
 
-Invoice List
+InvoiceList
+
+
 
 ### Example
 
@@ -561,7 +575,9 @@ No authorization required
 
 > MerchantInvoiceMarkRefundPost200Response InvoiceMarkRefundPost(ctx).UnibeeApiMerchantInvoiceMarkRefundReq(unibeeApiMerchantInvoiceMarkRefundReq).Execute()
 
-Admin Mark Refund For Invoice
+MarkInvoiceRefund
+
+
 
 ### Example
 
@@ -625,7 +641,7 @@ No authorization required
 
 > MerchantInvoiceDetailGet200Response InvoiceNewPost(ctx).UnibeeApiMerchantInvoiceNewReq(unibeeApiMerchantInvoiceNewReq).Execute()
 
-Admin Create New Invoice
+NewInvoice
 
 ### Example
 
@@ -689,7 +705,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response InvoicePdfGeneratePost(ctx).UnibeeApiMerchantInvoicePdfGenerateReq(unibeeApiMerchantInvoicePdfGenerateReq).Execute()
 
-Admin Generate Merchant Invoice pdf
+GenerateInvoicePDF
 
 ### Example
 
@@ -817,7 +833,9 @@ No authorization required
 
 > MerchantInvoiceMarkRefundPost200Response InvoiceRefundPost(ctx).UnibeeApiMerchantInvoiceRefundReq(unibeeApiMerchantInvoiceRefundReq).Execute()
 
-Admin Create Refund For Invoice
+CreateInvoiceRefund
+
+
 
 ### Example
 
@@ -881,7 +899,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response InvoiceSendEmailPost(ctx).UnibeeApiMerchantInvoiceSendEmailReq(unibeeApiMerchantInvoiceSendEmailReq).Execute()
 
-Admin Send Merchant Invoice Email to User
+SendInvoiceEmail
 
 ### Example
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RefundDetails** | Pointer to [**[]UnibeeApiBeanDetailRefundDetail**](UnibeeApiBeanDetailRefundDetail.md) | RefundDetails | [optional] 
+**RefundDetails** | Pointer to [**[]UnibeeApiBeanDetailRefundDetail**](UnibeeApiBeanDetailRefundDetail.md) | Refund Detail Object List | [optional] 
 
 ## Methods
 

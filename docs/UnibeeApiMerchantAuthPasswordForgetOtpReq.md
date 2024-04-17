@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Email** | **string** | email | 
+**Email** | **string** | The merchant member&#39;s email address | 
 
 ## Methods
 

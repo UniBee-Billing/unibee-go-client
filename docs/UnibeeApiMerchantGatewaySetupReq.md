@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**GatewayKey** | Pointer to **string** | GatewayKey | [optional] 
-**GatewayName** | **string** | GatewayName, stripe|paypal|changelly | 
-**GatewaySecret** | Pointer to **string** | GatewaySecret | [optional] 
+**GatewayKey** | Pointer to **string** | The key of payment gateway | [optional] 
+**GatewayName** | **string** | The name of payment gateway, stripe|paypal|changelly | 
+**GatewaySecret** | Pointer to **string** | The secret of payment gateway | [optional] 
 
 ## Methods
 

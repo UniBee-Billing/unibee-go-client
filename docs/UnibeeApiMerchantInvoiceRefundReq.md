@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**InvoiceId** | **string** | InvoiceId | 
-**Reason** | **string** | Refund Reason | 
-**RefundAmount** | **int64** | Refund CaptureAmount | 
-**RefundNo** | Pointer to **string** | RefundNo | [optional] 
+**InvoiceId** | **string** | The unique id of invoice | 
+**Reason** | **string** | The reason of refund | 
+**RefundAmount** | **int64** | The amount of refund | 
+**RefundNo** | Pointer to **string** | The out refund number | [optional] 
 
 ## Methods
 

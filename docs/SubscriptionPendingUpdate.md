@@ -1,11 +1,11 @@
 # \SubscriptionPendingUpdate
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SubscriptionPendingUpdateListGet**](SubscriptionPendingUpdate.md#SubscriptionPendingUpdateListGet) | **Get** /merchant/subscription/pending_update_list | Merchant SubscriptionPendingUpdate List
-[**SubscriptionPendingUpdateListPost**](SubscriptionPendingUpdate.md#SubscriptionPendingUpdateListPost) | **Post** /merchant/subscription/pending_update_list | Merchant SubscriptionPendingUpdate List
+[**SubscriptionPendingUpdateListGet**](SubscriptionPendingUpdate.md#SubscriptionPendingUpdateListGet) | **Get** /merchant/subscription/pending_update_list | SubscriptionPendingUpdateList
+[**SubscriptionPendingUpdateListPost**](SubscriptionPendingUpdate.md#SubscriptionPendingUpdateListPost) | **Post** /merchant/subscription/pending_update_list | SubscriptionPendingUpdateList
 
 
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 > MerchantSubscriptionPendingUpdateListGet200Response SubscriptionPendingUpdateListGet(ctx).SubscriptionId(subscriptionId).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
 
-Merchant SubscriptionPendingUpdate List
+SubscriptionPendingUpdateList
 
 ### Example
 
@@ -85,7 +85,7 @@ No authorization required
 
 > MerchantSubscriptionPendingUpdateListGet200Response SubscriptionPendingUpdateListPost(ctx).UnibeeApiMerchantSubscriptionPendingUpdateListReq(unibeeApiMerchantSubscriptionPendingUpdateListReq).Execute()
 
-Merchant SubscriptionPendingUpdate List
+SubscriptionPendingUpdateList
 
 ### Example
 

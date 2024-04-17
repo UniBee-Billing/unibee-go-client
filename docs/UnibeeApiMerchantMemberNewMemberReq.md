@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Email** | **string** | Email, email of member, member otp login needs | 
-**FirstName** | Pointer to **string** | FirstName, member firstName, invoice needs | [optional] 
-**LastName** | Pointer to **string** | LastName, member firstName, invoice needs | [optional] 
-**Role** | **string** | Role, permission role of member | 
+**Email** | **string** | The email of member | 
+**FirstName** | Pointer to **string** | The firstName of member | [optional] 
+**LastName** | Pointer to **string** | The lastName of member | [optional] 
+**Role** | **string** | The permission role of member | 
 
 ## Methods
 

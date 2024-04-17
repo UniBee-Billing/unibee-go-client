@@ -1,13 +1,13 @@
 # \Vat
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**VatCountryListGet**](Vat.md#VatCountryListGet) | **Get** /merchant/vat/country_list | Vat Country List
-[**VatCountryListPost**](Vat.md#VatCountryListPost) | **Post** /merchant/vat/country_list | Vat Country List
-[**VatInitDefaultGatewayPost**](Vat.md#VatInitDefaultGatewayPost) | **Post** /merchant/vat/init_default_gateway | Init Default Vat Gateway
-[**VatSetupGatewayPost**](Vat.md#VatSetupGatewayPost) | **Post** /merchant/vat/setup_gateway | Vat Gateway Setup
+[**VatCountryListGet**](Vat.md#VatCountryListGet) | **Get** /merchant/vat/country_list | VatCountryList
+[**VatCountryListPost**](Vat.md#VatCountryListPost) | **Post** /merchant/vat/country_list | VatCountryList
+[**VatInitDefaultGatewayPost**](Vat.md#VatInitDefaultGatewayPost) | **Post** /merchant/vat/init_default_gateway | InitDefaultVatGateway
+[**VatSetupGatewayPost**](Vat.md#VatSetupGatewayPost) | **Post** /merchant/vat/setup_gateway | VatGatewaySetup
 
 
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 > MerchantVatCountryListGet200Response VatCountryListGet(ctx).MerchantId(merchantId).Execute()
 
-Vat Country List
+VatCountryList
 
 ### Example
 
@@ -79,7 +79,7 @@ No authorization required
 
 > MerchantVatCountryListGet200Response VatCountryListPost(ctx).UnibeeApiMerchantVatCountryListReq(unibeeApiMerchantVatCountryListReq).Execute()
 
-Vat Country List
+VatCountryList
 
 ### Example
 
@@ -143,7 +143,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response VatInitDefaultGatewayPost(ctx).Body(body).Execute()
 
-Init Default Vat Gateway
+InitDefaultVatGateway
 
 ### Example
 
@@ -207,7 +207,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response VatSetupGatewayPost(ctx).UnibeeApiMerchantVatSetupGatewayReq(unibeeApiMerchantVatSetupGatewayReq).Execute()
 
-Vat Gateway Setup
+VatGatewaySetup
 
 ### Example
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PaymentId** | **string** | PaymentId | 
+**PaymentId** | **string** | The unique id of payment | 
 
 ## Methods
 

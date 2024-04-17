@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Email** | **string** | Email | 
-**VerificationCode** | **string** | VerificationCode | 
+**Email** | **string** | The merchant member&#39;s email address | 
+**VerificationCode** | **string** | OTP Code, received from email | 
 
 ## Methods
 

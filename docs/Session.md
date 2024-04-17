@@ -1,10 +1,10 @@
 # \Session
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SessionNewSessionPost**](Session.md#SessionNewSessionPost) | **Post** /merchant/session/new_session | New User Portal Session
+[**SessionNewSessionPost**](Session.md#SessionNewSessionPost) | **Post** /merchant/session/new_session | NewSession
 
 
 
@@ -12,7 +12,9 @@ Method | HTTP request | Description
 
 > MerchantSessionNewSessionPost200Response SessionNewSessionPost(ctx).UnibeeApiMerchantSessionNewReq(unibeeApiMerchantSessionNewReq).Execute()
 
-New User Portal Session
+NewSession
+
+
 
 ### Example
 

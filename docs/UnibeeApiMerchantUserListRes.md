@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UserAccounts** | Pointer to [**[]UnibeeApiBeanUserAccountSimplify**](UnibeeApiBeanUserAccountSimplify.md) | UserAccounts | [optional] 
+**UserAccounts** | Pointer to [**[]UnibeeApiBeanUserAccountSimplify**](UnibeeApiBeanUserAccountSimplify.md) | User Account Object List | [optional] 
 
 ## Methods
 

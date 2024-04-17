@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**GatewayWebhookUrl** | Pointer to **string** | GatewayWebhookUrl | [optional] 
+**GatewayWebhookUrl** | Pointer to **string** | The webhook endpoint url of payment gateway, if gateway is stripe, the url will setting to stripe by api automaticly | [optional] 
 
 ## Methods
 

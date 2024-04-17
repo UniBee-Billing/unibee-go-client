@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Currency** | **string** |  | 
+**Currency** | **string** | The currency of payment method | 
 **Data** | Pointer to **map[string]interface{}** |  | [optional] 
-**GatewayId** | **int64** | GatewayId | 
-**RedirectUrl** | Pointer to **string** | Redirect Url | [optional] 
-**SubscriptionId** | Pointer to **string** | if provide, bind to it | [optional] 
+**GatewayId** | **int64** | The unique id of gateway | 
+**RedirectUrl** | Pointer to **string** | The redirect url when method created return back | [optional] 
+**SubscriptionId** | Pointer to **string** | The id of subscription that want to attach | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
-**UserId** | **int64** | UserId | 
+**UserId** | **int64** | The customer&#39;s unique id | 
 
 ## Methods
 

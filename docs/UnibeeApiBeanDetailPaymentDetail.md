@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Gateway** | Pointer to [**UnibeeApiBeanGatewaySimplify**](UnibeeApiBeanGatewaySimplify.md) |  | [optional] 
+**Invoice** | Pointer to [**UnibeeApiBeanDetailInvoiceDetail**](UnibeeApiBeanDetailInvoiceDetail.md) |  | [optional] 
 **Payment** | Pointer to [**UnibeeApiBeanPaymentSimplify**](UnibeeApiBeanPaymentSimplify.md) |  | [optional] 
 **User** | Pointer to [**UnibeeApiBeanUserAccountSimplify**](UnibeeApiBeanUserAccountSimplify.md) |  | [optional] 
 
@@ -25,6 +27,56 @@ will change when the set of required properties is changed
 NewUnibeeApiBeanDetailPaymentDetailWithDefaults instantiates a new UnibeeApiBeanDetailPaymentDetail object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetGateway
+
+`func (o *UnibeeApiBeanDetailPaymentDetail) GetGateway() UnibeeApiBeanGatewaySimplify`
+
+GetGateway returns the Gateway field if non-nil, zero value otherwise.
+
+### GetGatewayOk
+
+`func (o *UnibeeApiBeanDetailPaymentDetail) GetGatewayOk() (*UnibeeApiBeanGatewaySimplify, bool)`
+
+GetGatewayOk returns a tuple with the Gateway field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGateway
+
+`func (o *UnibeeApiBeanDetailPaymentDetail) SetGateway(v UnibeeApiBeanGatewaySimplify)`
+
+SetGateway sets Gateway field to given value.
+
+### HasGateway
+
+`func (o *UnibeeApiBeanDetailPaymentDetail) HasGateway() bool`
+
+HasGateway returns a boolean if a field has been set.
+
+### GetInvoice
+
+`func (o *UnibeeApiBeanDetailPaymentDetail) GetInvoice() UnibeeApiBeanDetailInvoiceDetail`
+
+GetInvoice returns the Invoice field if non-nil, zero value otherwise.
+
+### GetInvoiceOk
+
+`func (o *UnibeeApiBeanDetailPaymentDetail) GetInvoiceOk() (*UnibeeApiBeanDetailInvoiceDetail, bool)`
+
+GetInvoiceOk returns a tuple with the Invoice field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInvoice
+
+`func (o *UnibeeApiBeanDetailPaymentDetail) SetInvoice(v UnibeeApiBeanDetailInvoiceDetail)`
+
+SetInvoice sets Invoice field to given value.
+
+### HasInvoice
+
+`func (o *UnibeeApiBeanDetailPaymentDetail) HasInvoice() bool`
+
+HasInvoice returns a boolean if a field has been set.
 
 ### GetPayment
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Note** | **string** | note | 
+**Note** | **string** | Note | 
 **SubscriptionId** | **string** | SubscriptionId | 
 
 ## Methods

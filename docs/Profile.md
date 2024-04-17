@@ -1,14 +1,14 @@
 # \Profile
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CountryConfigListPost**](Profile.md#CountryConfigListPost) | **Post** /merchant/country_config_list | Merchant Edit Country Config
-[**EditCountryConfigPost**](Profile.md#EditCountryConfigPost) | **Post** /merchant/edit_country_config | Merchant Country Config List
-[**GetGet**](Profile.md#GetGet) | **Get** /merchant/get | Get Merchant Info
-[**NewApikeyPost**](Profile.md#NewApikeyPost) | **Post** /merchant/new_apikey | Merchant New ApiKey, The old key will expire in one hour
-[**UpdatePost**](Profile.md#UpdatePost) | **Post** /merchant/update | Update Merchant Info
+[**CountryConfigListPost**](Profile.md#CountryConfigListPost) | **Post** /merchant/country_config_list | EditCountryConfig
+[**EditCountryConfigPost**](Profile.md#EditCountryConfigPost) | **Post** /merchant/edit_country_config | CountryConfigList
+[**GetGet**](Profile.md#GetGet) | **Get** /merchant/get | MerchantProfile
+[**NewApikeyPost**](Profile.md#NewApikeyPost) | **Post** /merchant/new_apikey | GenerateNewApiKey
+[**UpdatePost**](Profile.md#UpdatePost) | **Post** /merchant/update | UpdateMerchantProfile
 
 
 
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 > MerchantCountryConfigListPost200Response CountryConfigListPost(ctx).Body(body).Execute()
 
-Merchant Edit Country Config
+EditCountryConfig
 
 ### Example
 
@@ -80,7 +80,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response EditCountryConfigPost(ctx).UnibeeApiMerchantProfileEditCountryConfigReq(unibeeApiMerchantProfileEditCountryConfigReq).Execute()
 
-Merchant Country Config List
+CountryConfigList
 
 ### Example
 
@@ -144,7 +144,7 @@ No authorization required
 
 > MerchantGetGet200Response GetGet(ctx).Execute()
 
-Get Merchant Info
+MerchantProfile
 
 ### Example
 
@@ -203,7 +203,9 @@ No authorization required
 
 > MerchantNewApikeyPost200Response NewApikeyPost(ctx).Body(body).Execute()
 
-Merchant New ApiKey, The old key will expire in one hour
+GenerateNewApiKey
+
+
 
 ### Example
 
@@ -267,7 +269,7 @@ No authorization required
 
 > MerchantUpdatePost200Response UpdatePost(ctx).UnibeeApiMerchantProfileUpdateReq(unibeeApiMerchantProfileUpdateReq).Execute()
 
-Update Merchant Info
+UpdateMerchantProfile
 
 ### Example
 

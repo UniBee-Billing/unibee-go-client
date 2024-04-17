@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Amount** | **int64** | item total amount, sum(item.amount) should equal to totalAmount, cent | 
 **AmountExcludingTax** | Pointer to **int64** | amountExcludingTax &#x3D; unitAmountExcludingTax * quantity | [optional] 
-**Currency** | Pointer to **string** |  | [optional] 
-**Description** | **string** | item description  | 
-**Quantity** | Pointer to **int64** |  | [optional] 
+**Currency** | Pointer to **string** | The item currency of payment | [optional] 
+**Description** | **string** | The item description of payment | 
+**Quantity** | Pointer to **int64** | The item quantity of payment | [optional] 
 **Tax** | Pointer to **int64** | tax &#x3D; amount - amountExcludingTax | [optional] 
-**TaxPercentage** | Pointer to **int64** | TaxPercentage，1000 &#x3D; 10% | [optional] 
+**TaxPercentage** | Pointer to **int64** | The tax percentage of payment，1000 &#x3D; 10% | [optional] 
 **UnitAmountExcludingTax** | Pointer to **int64** |  | [optional] 
 
 ## Methods

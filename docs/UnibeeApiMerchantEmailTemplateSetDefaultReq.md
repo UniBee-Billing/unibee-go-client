@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TemplateName** | **string** | templateName | 
+**TemplateName** | **string** | The name of email template | 
 
 ## Methods
 

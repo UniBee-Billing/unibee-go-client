@@ -1,10 +1,10 @@
 # \Email
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**EmailGatewaySetupPost**](Email.md#EmailGatewaySetupPost) | **Post** /merchant/email/gateway_setup | Merchant Email Gateway Setup
+[**EmailGatewaySetupPost**](Email.md#EmailGatewaySetupPost) | **Post** /merchant/email/gateway_setup | EmailGatewaySetup
 
 
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 > MerchantAuthSsoLoginOTPPost200Response EmailGatewaySetupPost(ctx).UnibeeApiMerchantEmailGatewaySetupReq(unibeeApiMerchantEmailGatewaySetupReq).Execute()
 
-Merchant Email Gateway Setup
+EmailGatewaySetup
 
 ### Example
 

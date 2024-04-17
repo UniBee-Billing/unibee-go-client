@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DaysUtilDue** | **int32** | DaysUtilDue,Due Day Of Pay | 
-**InvoiceId** | **string** | InvoiceId | 
+**DaysUtilDue** | **int32** | Due Day Of Invoice Payment | 
+**InvoiceId** | **string** | The unique id of invoice | 
 
 ## Methods
 

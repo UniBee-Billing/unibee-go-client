@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PaymentDetails** | Pointer to [**[]UnibeeApiBeanDetailPaymentDetail**](UnibeeApiBeanDetailPaymentDetail.md) | PaymentDetails | [optional] 
+**PaymentDetails** | Pointer to [**[]UnibeeApiBeanDetailPaymentDetail**](UnibeeApiBeanDetailPaymentDetail.md) | Payment Detail Object List | [optional] 
 
 ## Methods
 
