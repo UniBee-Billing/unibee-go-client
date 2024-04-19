@@ -8,17 +8,17 @@ Name | Type | Description | Notes
 **Code** | Pointer to **string** | code | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Currency** | Pointer to **string** | currency of discount, available when discount_type is fixed_amount | [optional] 
+**CycleLimit** | Pointer to **int32** | the count limitation of subscription cycle , 0-no limit | [optional] 
 **DiscountAmount** | Pointer to **int64** | amount of discount, available when discount_type is fixed_amount | [optional] 
 **DiscountPercentage** | Pointer to **int64** | percentage of discount, 100&#x3D;1%, available when discount_type is percentage | [optional] 
 **DiscountType** | Pointer to **int32** | discount_type, 1-percentage, 2-fixed_amount | [optional] 
-**EndTime** | Pointer to **int64** | end of discount available utc time | [optional] 
-**Id** | Pointer to **int64** | userId | [optional] 
+**EndTime** | Pointer to **int64** | end of discount available utc time, 0-invalid | [optional] 
+**Id** | Pointer to **int64** | Id | [optional] 
 **MerchantId** | Pointer to **int64** | merchantId | [optional] 
+**Metadata** | Pointer to **map[string]string** |  | [optional] 
 **Name** | Pointer to **string** | name | [optional] 
 **StartTime** | Pointer to **int64** | start of discount available utc time | [optional] 
 **Status** | Pointer to **int32** | status, 1-editable, 2-active, 3-deactive, 4-expire | [optional] 
-**SubscriptionLimit** | Pointer to **int32** | the limit of every subscription apply, 0-unlimited | [optional] 
-**UserLimit** | Pointer to **int32** | the limit of every user apply, 0-unlimited | [optional] 
 
 ## Methods
 
@@ -138,6 +138,31 @@ SetCurrency sets Currency field to given value.
 `func (o *UnibeeApiBeanMerchantDiscountCodeSimplify) HasCurrency() bool`
 
 HasCurrency returns a boolean if a field has been set.
+
+### GetCycleLimit
+
+`func (o *UnibeeApiBeanMerchantDiscountCodeSimplify) GetCycleLimit() int32`
+
+GetCycleLimit returns the CycleLimit field if non-nil, zero value otherwise.
+
+### GetCycleLimitOk
+
+`func (o *UnibeeApiBeanMerchantDiscountCodeSimplify) GetCycleLimitOk() (*int32, bool)`
+
+GetCycleLimitOk returns a tuple with the CycleLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCycleLimit
+
+`func (o *UnibeeApiBeanMerchantDiscountCodeSimplify) SetCycleLimit(v int32)`
+
+SetCycleLimit sets CycleLimit field to given value.
+
+### HasCycleLimit
+
+`func (o *UnibeeApiBeanMerchantDiscountCodeSimplify) HasCycleLimit() bool`
+
+HasCycleLimit returns a boolean if a field has been set.
 
 ### GetDiscountAmount
 
@@ -289,6 +314,31 @@ SetMerchantId sets MerchantId field to given value.
 
 HasMerchantId returns a boolean if a field has been set.
 
+### GetMetadata
+
+`func (o *UnibeeApiBeanMerchantDiscountCodeSimplify) GetMetadata() map[string]string`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *UnibeeApiBeanMerchantDiscountCodeSimplify) GetMetadataOk() (*map[string]string, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *UnibeeApiBeanMerchantDiscountCodeSimplify) SetMetadata(v map[string]string)`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *UnibeeApiBeanMerchantDiscountCodeSimplify) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
+
 ### GetName
 
 `func (o *UnibeeApiBeanMerchantDiscountCodeSimplify) GetName() string`
@@ -363,56 +413,6 @@ SetStatus sets Status field to given value.
 `func (o *UnibeeApiBeanMerchantDiscountCodeSimplify) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
-
-### GetSubscriptionLimit
-
-`func (o *UnibeeApiBeanMerchantDiscountCodeSimplify) GetSubscriptionLimit() int32`
-
-GetSubscriptionLimit returns the SubscriptionLimit field if non-nil, zero value otherwise.
-
-### GetSubscriptionLimitOk
-
-`func (o *UnibeeApiBeanMerchantDiscountCodeSimplify) GetSubscriptionLimitOk() (*int32, bool)`
-
-GetSubscriptionLimitOk returns a tuple with the SubscriptionLimit field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSubscriptionLimit
-
-`func (o *UnibeeApiBeanMerchantDiscountCodeSimplify) SetSubscriptionLimit(v int32)`
-
-SetSubscriptionLimit sets SubscriptionLimit field to given value.
-
-### HasSubscriptionLimit
-
-`func (o *UnibeeApiBeanMerchantDiscountCodeSimplify) HasSubscriptionLimit() bool`
-
-HasSubscriptionLimit returns a boolean if a field has been set.
-
-### GetUserLimit
-
-`func (o *UnibeeApiBeanMerchantDiscountCodeSimplify) GetUserLimit() int32`
-
-GetUserLimit returns the UserLimit field if non-nil, zero value otherwise.
-
-### GetUserLimitOk
-
-`func (o *UnibeeApiBeanMerchantDiscountCodeSimplify) GetUserLimitOk() (*int32, bool)`
-
-GetUserLimitOk returns a tuple with the UserLimit field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUserLimit
-
-`func (o *UnibeeApiBeanMerchantDiscountCodeSimplify) SetUserLimit(v int32)`
-
-SetUserLimit sets UserLimit field to given value.
-
-### HasUserLimit
-
-`func (o *UnibeeApiBeanMerchantDiscountCodeSimplify) HasUserLimit() bool`
-
-HasUserLimit returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

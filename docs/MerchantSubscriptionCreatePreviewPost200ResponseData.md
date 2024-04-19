@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) |  | [optional] 
 **Addons** | Pointer to [**[]UnibeeApiBeanPlanAddonDetail**](UnibeeApiBeanPlanAddonDetail.md) |  | [optional] 
 **Currency** | Pointer to **string** |  | [optional] 
+**DiscountAmount** | Pointer to **int64** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
 **Gateway** | Pointer to [**UnibeeApiBeanGatewaySimplify**](UnibeeApiBeanGatewaySimplify.md) |  | [optional] 
 **Invoice** | Pointer to [**UnibeeApiBeanInvoiceSimplify**](UnibeeApiBeanInvoiceSimplify.md) |  | [optional] 
@@ -113,6 +114,31 @@ SetCurrency sets Currency field to given value.
 `func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) HasCurrency() bool`
 
 HasCurrency returns a boolean if a field has been set.
+
+### GetDiscountAmount
+
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetDiscountAmount() int64`
+
+GetDiscountAmount returns the DiscountAmount field if non-nil, zero value otherwise.
+
+### GetDiscountAmountOk
+
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetDiscountAmountOk() (*int64, bool)`
+
+GetDiscountAmountOk returns a tuple with the DiscountAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscountAmount
+
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) SetDiscountAmount(v int64)`
+
+SetDiscountAmount sets DiscountAmount field to given value.
+
+### HasDiscountAmount
+
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) HasDiscountAmount() bool`
+
+HasDiscountAmount returns a boolean if a field has been set.
 
 ### GetEmail
 

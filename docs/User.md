@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**UserGetGet**](User.md#UserGetGet) | **Get** /merchant/user/get | GetUserProfile
 [**UserListGet**](User.md#UserListGet) | **Get** /merchant/user/list | UserList
 [**UserListPost**](User.md#UserListPost) | **Post** /merchant/user/list | UserList
+[**UserNewPost**](User.md#UserNewPost) | **Post** /merchant/user/new | NewUser
 [**UserReleaseUserPost**](User.md#UserReleaseUserPost) | **Post** /merchant/user/release_user | ReleaseUser
 [**UserSearchGet**](User.md#UserSearchGet) | **Get** /merchant/user/search | UserSearch
 [**UserSearchPost**](User.md#UserSearchPost) | **Post** /merchant/user/search | UserSearch
@@ -274,6 +275,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantUserListGet200Response**](MerchantUserListGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UserNewPost
+
+> MerchantUserGetGet200Response UserNewPost(ctx).UnibeeApiMerchantUserNewReq(unibeeApiMerchantUserNewReq).Execute()
+
+NewUser
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantUserNewReq := *openapiclient.NewUnibeeApiMerchantUserNewReq("Email_example", "ExternalUserId_example") // UnibeeApiMerchantUserNewReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.User.UserNewPost(context.Background()).UnibeeApiMerchantUserNewReq(unibeeApiMerchantUserNewReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `User.UserNewPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserNewPost`: MerchantUserGetGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `User.UserNewPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUserNewPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantUserNewReq** | [**UnibeeApiMerchantUserNewReq**](UnibeeApiMerchantUserNewReq.md) |  | 
+
+### Return type
+
+[**MerchantUserGetGet200Response**](MerchantUserGetGet200Response.md)
 
 ### Authorization
 

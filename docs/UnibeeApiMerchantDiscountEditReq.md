@@ -5,13 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BillingType** | Pointer to **int32** | The billing type of the discount code, 1-one-time, 2-recurring, define the situation the code can be used, the code of one-time billing_type can used for all situation that effect only once, the code of recurring billing_tye can only used for subscription purchase | [optional] 
-**Code** | **string** | The discount&#39;s unique code, customize by merchant | 
 **Currency** | Pointer to **string** | The discount currency of discount code, available when discount_type is fixed_amount | [optional] 
 **CycleLimit** | Pointer to **int32** | The count limitation of subscription cycle，each subscription is valid separately, 0-no limit | [optional] 
 **DiscountAmount** | Pointer to **int64** | The discount amount of the discount code, available when discount_type is fixed_amount | [optional] 
 **DiscountPercentage** | Pointer to **int64** | The discount percentage of discount code, 100&#x3D;1%, available when discount_type is percentage | [optional] 
 **DiscountType** | Pointer to **int32** | The discount type of the discount code, 1-percentage, 2-fixed_amount, the discountType of code, the discountPercentage will be effect when discountType is percentage, the discountAmount and currency will be effect when discountTYpe is fixed_amount | [optional] 
 **EndTime** | Pointer to **int64** | The end time of discount code can effect, utc time | [optional] 
+**Id** | **int64** | The discount&#39;s Id | 
+**Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
 **Name** | Pointer to **string** | The discount&#39;s name | [optional] 
 **StartTime** | Pointer to **int64** | The start time of discount code can effect, utc time | [optional] 
 
@@ -19,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewUnibeeApiMerchantDiscountEditReq
 
-`func NewUnibeeApiMerchantDiscountEditReq(code string, ) *UnibeeApiMerchantDiscountEditReq`
+`func NewUnibeeApiMerchantDiscountEditReq(id int64, ) *UnibeeApiMerchantDiscountEditReq`
 
 NewUnibeeApiMerchantDiscountEditReq instantiates a new UnibeeApiMerchantDiscountEditReq object
 This constructor will assign default values to properties that have it defined,
@@ -58,26 +59,6 @@ SetBillingType sets BillingType field to given value.
 `func (o *UnibeeApiMerchantDiscountEditReq) HasBillingType() bool`
 
 HasBillingType returns a boolean if a field has been set.
-
-### GetCode
-
-`func (o *UnibeeApiMerchantDiscountEditReq) GetCode() string`
-
-GetCode returns the Code field if non-nil, zero value otherwise.
-
-### GetCodeOk
-
-`func (o *UnibeeApiMerchantDiscountEditReq) GetCodeOk() (*string, bool)`
-
-GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCode
-
-`func (o *UnibeeApiMerchantDiscountEditReq) SetCode(v string)`
-
-SetCode sets Code field to given value.
-
 
 ### GetCurrency
 
@@ -228,6 +209,51 @@ SetEndTime sets EndTime field to given value.
 `func (o *UnibeeApiMerchantDiscountEditReq) HasEndTime() bool`
 
 HasEndTime returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *UnibeeApiMerchantDiscountEditReq) GetId() int64`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *UnibeeApiMerchantDiscountEditReq) GetIdOk() (*int64, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *UnibeeApiMerchantDiscountEditReq) SetId(v int64)`
+
+SetId sets Id field to given value.
+
+
+### GetMetadata
+
+`func (o *UnibeeApiMerchantDiscountEditReq) GetMetadata() map[string]string`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *UnibeeApiMerchantDiscountEditReq) GetMetadataOk() (*map[string]string, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *UnibeeApiMerchantDiscountEditReq) SetMetadata(v map[string]string)`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *UnibeeApiMerchantDiscountEditReq) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
 
 ### GetName
 

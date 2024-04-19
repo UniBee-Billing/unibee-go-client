@@ -23,7 +23,6 @@ Name | Type | Description | Notes
 **PeriodStart** | Pointer to **int64** |  | [optional] 
 **ProrationDate** | Pointer to **int64** |  | [optional] 
 **ProrationScale** | Pointer to **int64** |  | [optional] 
-**RefundId** | Pointer to **string** | refundId | [optional] 
 **SendStatus** | Pointer to **int32** | email send status，0-No | 1- YES| 2-Unnecessary | [optional] 
 **Status** | Pointer to **int32** | status，0-Init | 1-pending｜2-processing｜3-paid | 4-failed | 5-cancelled | [optional] 
 **SubscriptionAmount** | Pointer to **int64** |  | [optional] 
@@ -526,31 +525,6 @@ SetProrationScale sets ProrationScale field to given value.
 `func (o *UnibeeApiBeanInvoiceSimplify) HasProrationScale() bool`
 
 HasProrationScale returns a boolean if a field has been set.
-
-### GetRefundId
-
-`func (o *UnibeeApiBeanInvoiceSimplify) GetRefundId() string`
-
-GetRefundId returns the RefundId field if non-nil, zero value otherwise.
-
-### GetRefundIdOk
-
-`func (o *UnibeeApiBeanInvoiceSimplify) GetRefundIdOk() (*string, bool)`
-
-GetRefundIdOk returns a tuple with the RefundId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRefundId
-
-`func (o *UnibeeApiBeanInvoiceSimplify) SetRefundId(v string)`
-
-SetRefundId sets RefundId field to given value.
-
-### HasRefundId
-
-`func (o *UnibeeApiBeanInvoiceSimplify) HasRefundId() bool`
-
-HasRefundId returns a boolean if a field has been set.
 
 ### GetSendStatus
 

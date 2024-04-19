@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Code** | **string** | The discount&#39;s unique code, customize by merchant | 
+**Id** | **int64** | The discount&#39;s Id | 
 
 ## Methods
 
 ### NewUnibeeApiMerchantDiscountActivateReq
 
-`func NewUnibeeApiMerchantDiscountActivateReq(code string, ) *UnibeeApiMerchantDiscountActivateReq`
+`func NewUnibeeApiMerchantDiscountActivateReq(id int64, ) *UnibeeApiMerchantDiscountActivateReq`
 
 NewUnibeeApiMerchantDiscountActivateReq instantiates a new UnibeeApiMerchantDiscountActivateReq object
 This constructor will assign default values to properties that have it defined,
@@ -25,24 +25,24 @@ NewUnibeeApiMerchantDiscountActivateReqWithDefaults instantiates a new UnibeeApi
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetCode
+### GetId
 
-`func (o *UnibeeApiMerchantDiscountActivateReq) GetCode() string`
+`func (o *UnibeeApiMerchantDiscountActivateReq) GetId() int64`
 
-GetCode returns the Code field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetCodeOk
+### GetIdOk
 
-`func (o *UnibeeApiMerchantDiscountActivateReq) GetCodeOk() (*string, bool)`
+`func (o *UnibeeApiMerchantDiscountActivateReq) GetIdOk() (*int64, bool)`
 
-GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCode
+### SetId
 
-`func (o *UnibeeApiMerchantDiscountActivateReq) SetCode(v string)`
+`func (o *UnibeeApiMerchantDiscountActivateReq) SetId(v int64)`
 
-SetCode sets Code field to given value.
+SetId sets Id field to given value.
 
 
 

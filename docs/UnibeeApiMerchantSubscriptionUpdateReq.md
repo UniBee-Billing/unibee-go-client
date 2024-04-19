@@ -5,21 +5,24 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | addonParams | [optional] 
-**ConfirmCurrency** | Pointer to **string** | Currency To Be Confirmed，Get From Preview | [optional] 
-**ConfirmTotalAmount** | Pointer to **int64** | TotalAmount To Be Confirmed，Get From Preview | [optional] 
+**ConfirmCurrency** | Pointer to **string** | Currency to verify if provide | [optional] 
+**ConfirmTotalAmount** | Pointer to **int64** | TotalAmount to verify if provide | [optional] 
+**Discount** | Pointer to [**UnibeeApiBeanExternalDiscountParam**](UnibeeApiBeanExternalDiscountParam.md) |  | [optional] 
+**DiscountCode** | Pointer to **string** | DiscountCode | [optional] 
 **EffectImmediate** | Pointer to **int32** | Effect Immediate，1-Immediate，2-Next Period | [optional] 
 **GatewayId** | Pointer to **int64** | Id | [optional] 
 **Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
 **NewPlanId** | **int64** | New PlanId | 
-**ProrationDate** | **int64** | prorationDate date to start Proration，Get From Preview | 
+**ProrationDate** | Pointer to **int32** | The utc time to start Proration, default current time | [optional] 
 **Quantity** | **int64** | Quantity | 
 **SubscriptionId** | **string** | SubscriptionId | 
+**TaxPercentage** | Pointer to **int32** | TaxPercentage，1000 &#x3D; 10%, override subscription taxPercentage if provide | [optional] 
 
 ## Methods
 
 ### NewUnibeeApiMerchantSubscriptionUpdateReq
 
-`func NewUnibeeApiMerchantSubscriptionUpdateReq(newPlanId int64, prorationDate int64, quantity int64, subscriptionId string, ) *UnibeeApiMerchantSubscriptionUpdateReq`
+`func NewUnibeeApiMerchantSubscriptionUpdateReq(newPlanId int64, quantity int64, subscriptionId string, ) *UnibeeApiMerchantSubscriptionUpdateReq`
 
 NewUnibeeApiMerchantSubscriptionUpdateReq instantiates a new UnibeeApiMerchantSubscriptionUpdateReq object
 This constructor will assign default values to properties that have it defined,
@@ -108,6 +111,56 @@ SetConfirmTotalAmount sets ConfirmTotalAmount field to given value.
 `func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasConfirmTotalAmount() bool`
 
 HasConfirmTotalAmount returns a boolean if a field has been set.
+
+### GetDiscount
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetDiscount() UnibeeApiBeanExternalDiscountParam`
+
+GetDiscount returns the Discount field if non-nil, zero value otherwise.
+
+### GetDiscountOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetDiscountOk() (*UnibeeApiBeanExternalDiscountParam, bool)`
+
+GetDiscountOk returns a tuple with the Discount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscount
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetDiscount(v UnibeeApiBeanExternalDiscountParam)`
+
+SetDiscount sets Discount field to given value.
+
+### HasDiscount
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasDiscount() bool`
+
+HasDiscount returns a boolean if a field has been set.
+
+### GetDiscountCode
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetDiscountCode() string`
+
+GetDiscountCode returns the DiscountCode field if non-nil, zero value otherwise.
+
+### GetDiscountCodeOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetDiscountCodeOk() (*string, bool)`
+
+GetDiscountCodeOk returns a tuple with the DiscountCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscountCode
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetDiscountCode(v string)`
+
+SetDiscountCode sets DiscountCode field to given value.
+
+### HasDiscountCode
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasDiscountCode() bool`
+
+HasDiscountCode returns a boolean if a field has been set.
 
 ### GetEffectImmediate
 
@@ -206,23 +259,28 @@ SetNewPlanId sets NewPlanId field to given value.
 
 ### GetProrationDate
 
-`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetProrationDate() int64`
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetProrationDate() int32`
 
 GetProrationDate returns the ProrationDate field if non-nil, zero value otherwise.
 
 ### GetProrationDateOk
 
-`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetProrationDateOk() (*int64, bool)`
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetProrationDateOk() (*int32, bool)`
 
 GetProrationDateOk returns a tuple with the ProrationDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProrationDate
 
-`func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetProrationDate(v int64)`
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetProrationDate(v int32)`
 
 SetProrationDate sets ProrationDate field to given value.
 
+### HasProrationDate
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasProrationDate() bool`
+
+HasProrationDate returns a boolean if a field has been set.
 
 ### GetQuantity
 
@@ -263,6 +321,31 @@ and a boolean to check if the value has been set.
 
 SetSubscriptionId sets SubscriptionId field to given value.
 
+
+### GetTaxPercentage
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetTaxPercentage() int32`
+
+GetTaxPercentage returns the TaxPercentage field if non-nil, zero value otherwise.
+
+### GetTaxPercentageOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetTaxPercentageOk() (*int32, bool)`
+
+GetTaxPercentageOk returns a tuple with the TaxPercentage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTaxPercentage
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetTaxPercentage(v int32)`
+
+SetTaxPercentage sets TaxPercentage field to given value.
+
+### HasTaxPercentage
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasTaxPercentage() bool`
+
+HasTaxPercentage returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

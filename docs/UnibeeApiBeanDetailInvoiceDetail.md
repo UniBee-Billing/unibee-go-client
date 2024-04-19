@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **CryptoCurrency** | Pointer to **string** | crypto_currency | [optional] 
 **Currency** | Pointer to **string** | Currency | [optional] 
 **DayUtilDue** | Pointer to **int64** | day util due after finish | [optional] 
+**Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCodeSimplify**](UnibeeApiBeanMerchantDiscountCodeSimplify.md) |  | [optional] 
 **DiscountAmount** | Pointer to **int64** | DiscountAmount,Cents | [optional] 
 **Gateway** | Pointer to [**UnibeeApiBeanGatewaySimplify**](UnibeeApiBeanGatewaySimplify.md) |  | [optional] 
 **GatewayId** | Pointer to **int64** | Id | [optional] 
@@ -168,6 +169,31 @@ SetDayUtilDue sets DayUtilDue field to given value.
 `func (o *UnibeeApiBeanDetailInvoiceDetail) HasDayUtilDue() bool`
 
 HasDayUtilDue returns a boolean if a field has been set.
+
+### GetDiscount
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetDiscount() UnibeeApiBeanMerchantDiscountCodeSimplify`
+
+GetDiscount returns the Discount field if non-nil, zero value otherwise.
+
+### GetDiscountOk
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetDiscountOk() (*UnibeeApiBeanMerchantDiscountCodeSimplify, bool)`
+
+GetDiscountOk returns a tuple with the Discount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscount
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetDiscount(v UnibeeApiBeanMerchantDiscountCodeSimplify)`
+
+SetDiscount sets Discount field to given value.
+
+### HasDiscount
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) HasDiscount() bool`
+
+HasDiscount returns a boolean if a field has been set.
 
 ### GetDiscountAmount
 

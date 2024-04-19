@@ -6,7 +6,7 @@ info:
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   title: OpenAPI UniBee
   version: |
-    buildtime:202404171839
+    buildtime:202404191455
 servers:
 - url: http://api.unibee.top
 security:
@@ -286,6 +286,47 @@ paths:
       summary: DeleteDiscountCode
       tags:
       - Discount
+  /merchant/discount/detail:
+    get:
+      parameters:
+      - description: The discount's Id
+        explode: true
+        in: query
+        name: id
+        required: true
+        schema:
+          description: The discount's Id
+          format: int64
+          properties: {}
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_discount_detail_get_200_response'
+          description: ""
+      summary: Merchant Discount Detail
+      tags:
+      - Discount
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/unibee.api.merchant.discount.DetailReq'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_discount_detail_get_200_response'
+          description: ""
+      summary: Merchant Discount Detail
+      tags:
+      - Discount
   /merchant/discount/edit:
     post:
       description: Edit the discount code before activate
@@ -300,7 +341,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/_merchant_auth_sso_loginOTP_post_200_response'
+                $ref: '#/components/schemas/_merchant_discount_detail_get_200_response'
           description: ""
       summary: EditDiscountCode
       tags:
@@ -333,7 +374,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/_merchant_auth_sso_loginOTP_post_200_response'
+                $ref: '#/components/schemas/_merchant_discount_detail_get_200_response'
           description: ""
       summary: NewDiscountCode
       tags:
@@ -3298,6 +3339,25 @@ paths:
       summary: UserList
       tags:
       - User
+  /merchant/user/new:
+    post:
+      description: New User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/unibee.api.merchant.user.NewReq'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_user_get_get_200_response'
+          description: ""
+      summary: NewUser
+      tags:
+      - User
   /merchant/user/release_user:
     post:
       requestBody:
@@ -3637,6 +3697,44 @@ components:
           properties: {}
           type: string
       type: object
+    unibee.api.bean.ExternalDiscountParam:
+      properties:
+        cycleLimit:
+          description: "the count limitation of subscription recurring cycle, recurring\
+            \ need enable if cycleLimit set"
+          format: '*int'
+          properties: {}
+          type: integer
+        discountAmount:
+          description: Amount of discount
+          format: '*int64'
+          properties: {}
+          type: integer
+        discountPercentage:
+          description: "Percentage of discount, 100=1%, ignore if discountAmount set"
+          format: '*int64'
+          properties: {}
+          type: integer
+        endTime:
+          description: end of discount available utc time
+          format: '*int64'
+          properties: {}
+          type: integer
+        metadata:
+          additionalProperties:
+            format: string
+            properties: {}
+            type: string
+          description: Metadata，Map
+          format: "map[string]string"
+          properties: {}
+          type: object
+        recurring:
+          description: "Discount recurring enable, default false"
+          format: '*bool'
+          properties: {}
+          type: boolean
+      type: object
     unibee.api.bean.GatewaySimplify:
       example:
         gatewayKey: gatewayKey
@@ -3867,7 +3965,6 @@ components:
         dayUtilDue: 5
         taxAmount: 6
         periodStart: 3
-        refundId: refundId
         status: 1
       properties:
         bizType:
@@ -3955,11 +4052,6 @@ components:
           format: int64
           properties: {}
           type: integer
-        refundId:
-          description: refundId
-          format: string
-          properties: {}
-          type: string
         sendStatus:
           description: email send status，0-No | 1- YES| 2-Unnecessary
           format: int
@@ -4019,21 +4111,22 @@ components:
       type: object
     unibee.api.bean.MerchantDiscountCodeSimplify:
       example:
+        metadata:
+          key: metadata
         code: code
-        subscriptionLimit: 7
         discountAmount: 5
-        discountPercentage: 5
+        discountPercentage: 2
         billingType: 6
         createTime: 1
-        merchantId: 3
+        merchantId: 2
         name: name
         currency: currency
-        discountType: 2
-        startTime: 2
-        endTime: 7
-        id: 9
-        userLimit: 1
-        status: 4
+        discountType: 7
+        startTime: 4
+        cycleLimit: 5
+        endTime: 9
+        id: 3
+        status: 7
       properties:
         billingType:
           description: "billing_type, 1-one-time, 2-recurring"
@@ -4055,6 +4148,11 @@ components:
           format: string
           properties: {}
           type: string
+        cycleLimit:
+          description: "the count limitation of subscription cycle , 0-no limit"
+          format: int
+          properties: {}
+          type: integer
         discountAmount:
           description: "amount of discount, available when discount_type is fixed_amount"
           format: int64
@@ -4072,12 +4170,12 @@ components:
           properties: {}
           type: integer
         endTime:
-          description: end of discount available utc time
+          description: "end of discount available utc time, 0-invalid"
           format: int64
           properties: {}
           type: integer
         id:
-          description: userId
+          description: Id
           format: int64
           properties: {}
           type: integer
@@ -4086,6 +4184,14 @@ components:
           format: int64
           properties: {}
           type: integer
+        metadata:
+          additionalProperties:
+            format: string
+            properties: {}
+            type: string
+          format: "map[string]string"
+          properties: {}
+          type: object
         name:
           description: name
           format: string
@@ -4098,16 +4204,6 @@ components:
           type: integer
         status:
           description: "status, 1-editable, 2-active, 3-deactive, 4-expire"
-          format: int
-          properties: {}
-          type: integer
-        subscriptionLimit:
-          description: "the limit of every subscription apply, 0-unlimited"
-          format: int
-          properties: {}
-          type: integer
-        userLimit:
-          description: "the limit of every user apply, 0-unlimited"
           format: int
           properties: {}
           type: integer
@@ -6078,6 +6174,23 @@ components:
         subscriptionAmountExcludingTax: 8
         link: link
         sendPdf: sendPdf
+        discount:
+          metadata:
+            key: metadata
+          code: code
+          discountAmount: 5
+          discountPercentage: 2
+          billingType: 6
+          createTime: 1
+          merchantId: 2
+          name: name
+          currency: currency
+          discountType: 7
+          startTime: 4
+          cycleLimit: 5
+          endTime: 9
+          id: 3
+          status: 7
         discountAmount: 5
         gatewayInvoicePdf: gatewayInvoicePdf
         subscription:
@@ -6358,6 +6471,8 @@ components:
           format: int64
           properties: {}
           type: integer
+        discount:
+          $ref: '#/components/schemas/unibee.api.bean.MerchantDiscountCodeSimplify'
         discountAmount:
           description: "DiscountAmount,Cents"
           format: int64
@@ -6652,6 +6767,23 @@ components:
           subscriptionAmountExcludingTax: 8
           link: link
           sendPdf: sendPdf
+          discount:
+            metadata:
+              key: metadata
+            code: code
+            discountAmount: 5
+            discountPercentage: 2
+            billingType: 6
+            createTime: 1
+            merchantId: 2
+            name: name
+            currency: currency
+            discountType: 7
+            startTime: 4
+            cycleLimit: 5
+            endTime: 9
+            id: 3
+            status: 7
           discountAmount: 5
           gatewayInvoicePdf: gatewayInvoicePdf
           subscription:
@@ -7379,7 +7511,6 @@ components:
           dayUtilDue: 5
           taxAmount: 6
           periodStart: 3
-          refundId: refundId
           status: 1
         unfinishedSubscriptionPendingUpdate:
           note: note
@@ -7623,6 +7754,23 @@ components:
             productDescription: productDescription
             publishStatus: 7
             status: 1
+        discount:
+          metadata:
+            key: metadata
+          code: code
+          discountAmount: 5
+          discountPercentage: 2
+          billingType: 6
+          createTime: 1
+          merchantId: 2
+          name: name
+          currency: currency
+          discountType: 7
+          startTime: 4
+          cycleLimit: 5
+          endTime: 9
+          id: 3
+          status: 7
         subscription:
           metadata:
             key: metadata
@@ -7752,6 +7900,8 @@ components:
             $ref: '#/components/schemas/unibee.api.bean.PlanAddonDetail'
           properties: {}
           type: array
+        discount:
+          $ref: '#/components/schemas/unibee.api.bean.MerchantDiscountCodeSimplify'
         gateway:
           $ref: '#/components/schemas/unibee.api.bean.GatewaySimplify'
         latestInvoice:
@@ -8673,13 +8823,13 @@ components:
       description: "Activate discount code, the discount code can only effect to payment\
         \ or subscription after activated"
       properties:
-        code:
-          description: "The discount's unique code, customize by merchant"
-          format: string
+        id:
+          description: The discount's Id
+          format: int64
           properties: {}
-          type: string
+          type: integer
       required:
-      - code
+      - id
       type: object
     unibee.api.merchant.discount.ActivateRes:
       properties: {}
@@ -8687,13 +8837,13 @@ components:
     unibee.api.merchant.discount.DeactivateReq:
       description: Deactivate discount code
       properties:
-        code:
-          description: "The discount's unique code, customize by merchant"
-          format: string
+        id:
+          description: The discount's Id
+          format: int64
           properties: {}
-          type: string
+          type: integer
       required:
-      - code
+      - id
       type: object
     unibee.api.merchant.discount.DeactivateRes:
       properties: {}
@@ -8701,16 +8851,31 @@ components:
     unibee.api.merchant.discount.DeleteReq:
       description: Delete discount code before activate
       properties:
-        code:
-          description: "The discount's unique code, customize by merchant"
-          format: string
+        id:
+          description: The discount's Id
+          format: int64
           properties: {}
-          type: string
+          type: integer
       required:
-      - code
+      - id
       type: object
     unibee.api.merchant.discount.DeleteRes:
       properties: {}
+      type: object
+    unibee.api.merchant.discount.DetailReq:
+      properties:
+        id:
+          description: The discount's Id
+          format: int64
+          properties: {}
+          type: integer
+      required:
+      - id
+      type: object
+    unibee.api.merchant.discount.DetailRes:
+      properties:
+        discount:
+          $ref: '#/components/schemas/unibee.api.bean.MerchantDiscountCodeSimplify'
       type: object
     unibee.api.merchant.discount.EditReq:
       description: Edit the discount code before activate
@@ -8723,11 +8888,6 @@ components:
           format: int
           properties: {}
           type: integer
-        code:
-          description: "The discount's unique code, customize by merchant"
-          format: string
-          properties: {}
-          type: string
         currency:
           description: "The discount currency of discount code, available when discount_type\
             \ is fixed_amount"
@@ -8765,6 +8925,20 @@ components:
           format: int64
           properties: {}
           type: integer
+        id:
+          description: The discount's Id
+          format: int64
+          properties: {}
+          type: integer
+        metadata:
+          additionalProperties:
+            format: string
+            properties: {}
+            type: string
+          description: Metadata，Map
+          format: "map[string]string"
+          properties: {}
+          type: object
         name:
           description: The discount's name
           format: string
@@ -8776,10 +8950,12 @@ components:
           properties: {}
           type: integer
       required:
-      - code
+      - id
       type: object
     unibee.api.merchant.discount.EditRes:
-      properties: {}
+      properties:
+        discount:
+          $ref: '#/components/schemas/unibee.api.bean.MerchantDiscountCodeSimplify'
       type: object
     unibee.api.merchant.discount.ListReq:
       description: Get discountCode list
@@ -8787,8 +8963,8 @@ components:
       type: object
     unibee.api.merchant.discount.ListRes:
       properties:
-        merchantDiscountCodes:
-          description: Discount Code Object List
+        discounts:
+          description: Discount Object List
           format: "[]*bean.MerchantDiscountCodeSimplify"
           items:
             $ref: '#/components/schemas/unibee.api.bean.MerchantDiscountCodeSimplify'
@@ -8849,6 +9025,15 @@ components:
           format: int64
           properties: {}
           type: integer
+        metadata:
+          additionalProperties:
+            format: string
+            properties: {}
+            type: string
+          description: Metadata，Map
+          format: "map[string]string"
+          properties: {}
+          type: object
         name:
           description: The discount's name
           format: string
@@ -8867,7 +9052,9 @@ components:
       - startTime
       type: object
     unibee.api.merchant.discount.NewRes:
-      properties: {}
+      properties:
+        discount:
+          $ref: '#/components/schemas/unibee.api.bean.MerchantDiscountCodeSimplify'
       type: object
     unibee.api.merchant.email.GatewaySetupReq:
       properties:
@@ -11678,6 +11865,10 @@ components:
           format: string
           properties: {}
           type: string
+        discountAmount:
+          format: int64
+          properties: {}
+          type: integer
         email:
           format: string
           properties: {}
@@ -11729,15 +11920,17 @@ components:
           properties: {}
           type: array
         confirmCurrency:
-          description: Currency To Be Confirmed，Get From Preview
+          description: Currency to verify if provide
           format: string
           properties: {}
           type: string
         confirmTotalAmount:
-          description: TotalAmount To Be Confirmed，Get From Preview
+          description: TotalAmount to verify if provide
           format: int64
           properties: {}
           type: integer
+        discount:
+          $ref: '#/components/schemas/unibee.api.bean.ExternalDiscountParam'
         discountCode:
           description: DiscountCode
           format: string
@@ -11778,7 +11971,8 @@ components:
           properties: {}
           type: string
         taxPercentage:
-          description: TaxPercentage，1000 = 10%
+          description: "TaxPercentage，1000 = 10%, override subscription taxPercentage\
+            \ if provide"
           format: '*int64'
           properties: {}
           type: integer
@@ -11960,11 +12154,26 @@ components:
           format: int64
           properties: {}
           type: integer
+        discountAmount:
+          description: Amount of discount
+          format: '*int64'
+          properties: {}
+          type: integer
         discountCode:
           description: DiscountCode
           format: string
           properties: {}
           type: string
+        discountPercentage:
+          description: "Percentage of discount, 100=1%, ignore if discountAmount provide"
+          format: '*int64'
+          properties: {}
+          type: integer
+        gatewayId:
+          description: "GatewayId, use subscription's gateway if not provide"
+          format: '*int64'
+          properties: {}
+          type: integer
         metadata:
           additionalProperties:
             format: string
@@ -11991,6 +12200,12 @@ components:
           format: string
           properties: {}
           type: string
+        taxPercentage:
+          description: "TaxPercentage，1000 = 10%, use subscription's taxPercentage\
+            \ if not provide"
+          format: '*int64'
+          properties: {}
+          type: integer
       required:
       - addonId
       - quantity
@@ -12059,11 +12274,29 @@ components:
     unibee.api.merchant.subscription.RenewReq:
       description: 'renew an exist subscription '
       properties:
+        discount:
+          $ref: '#/components/schemas/unibee.api.bean.ExternalDiscountParam'
+        discountCode:
+          description: "DiscountCode, override subscription discount"
+          format: string
+          properties: {}
+          type: string
+        gatewayId:
+          description: "GatewayId, use subscription's gateway if not provide"
+          format: '*int64'
+          properties: {}
+          type: integer
         subscriptionId:
           description: SubscriptionId
           format: string
           properties: {}
           type: string
+        taxPercentage:
+          description: "TaxPercentage，1000 = 10%, override subscription taxPercentage\
+            \ if provide"
+          format: '*int64'
+          properties: {}
+          type: integer
         userId:
           description: UserId
           format: int64
@@ -12201,6 +12434,10 @@ components:
           format: string
           properties: {}
           type: string
+        discountAmount:
+          format: int64
+          properties: {}
+          type: integer
         invoice:
           $ref: '#/components/schemas/unibee.api.bean.InvoiceSimplify'
         nextPeriodInvoice:
@@ -12224,15 +12461,22 @@ components:
           properties: {}
           type: array
         confirmCurrency:
-          description: Currency To Be Confirmed，Get From Preview
+          description: Currency to verify if provide
           format: string
           properties: {}
           type: string
         confirmTotalAmount:
-          description: TotalAmount To Be Confirmed，Get From Preview
+          description: TotalAmount to verify if provide
           format: int64
           properties: {}
           type: integer
+        discount:
+          $ref: '#/components/schemas/unibee.api.bean.ExternalDiscountParam'
+        discountCode:
+          description: DiscountCode
+          format: string
+          properties: {}
+          type: string
         effectImmediate:
           description: Effect Immediate，1-Immediate，2-Next Period
           format: int
@@ -12258,8 +12502,8 @@ components:
           properties: {}
           type: integer
         prorationDate:
-          description: prorationDate date to start Proration，Get From Preview
-          format: int64
+          description: "The utc time to start Proration, default current time"
+          format: '*int64'
           properties: {}
           type: integer
         quantity:
@@ -12272,9 +12516,14 @@ components:
           format: string
           properties: {}
           type: string
+        taxPercentage:
+          description: "TaxPercentage，1000 = 10%, override subscription taxPercentage\
+            \ if provide"
+          format: '*int64'
+          properties: {}
+          type: integer
       required:
       - newPlanId
-      - prorationDate
       - quantity
       - subscriptionId
       type: object
@@ -12412,6 +12661,53 @@ components:
             $ref: '#/components/schemas/unibee.api.bean.UserAccountSimplify'
           properties: {}
           type: array
+      type: object
+    unibee.api.merchant.user.NewReq:
+      description: New User
+      properties:
+        address:
+          description: Address
+          format: string
+          properties: {}
+          type: string
+        email:
+          description: Email
+          format: string
+          properties: {}
+          type: string
+        externalUserId:
+          description: ExternalUserId
+          format: string
+          properties: {}
+          type: string
+        firstName:
+          description: First Name
+          format: string
+          properties: {}
+          type: string
+        lastName:
+          description: Last Name
+          format: string
+          properties: {}
+          type: string
+        password:
+          description: Password
+          format: string
+          properties: {}
+          type: string
+        phone:
+          description: Phone
+          format: string
+          properties: {}
+          type: string
+      required:
+      - email
+      - externalUserId
+      type: object
+    unibee.api.merchant.user.NewRes:
+      properties:
+        user:
+          $ref: '#/components/schemas/unibee.api.bean.UserAccountSimplify'
       type: object
     unibee.api.merchant.user.ReleaseReq:
       properties:
@@ -13223,42 +13519,111 @@ components:
           properties: {}
           type: string
       type: object
+    _merchant_discount_detail_get_200_response_data:
+      example:
+        discount:
+          metadata:
+            key: metadata
+          code: code
+          discountAmount: 5
+          discountPercentage: 2
+          billingType: 6
+          createTime: 1
+          merchantId: 2
+          name: name
+          currency: currency
+          discountType: 7
+          startTime: 4
+          cycleLimit: 5
+          endTime: 9
+          id: 3
+          status: 7
+      properties:
+        discount:
+          $ref: '#/components/schemas/unibee.api.bean.MerchantDiscountCodeSimplify'
+      type: object
+    _merchant_discount_detail_get_200_response:
+      example:
+        redirect: redirect
+        code: 0
+        data:
+          discount:
+            metadata:
+              key: metadata
+            code: code
+            discountAmount: 5
+            discountPercentage: 2
+            billingType: 6
+            createTime: 1
+            merchantId: 2
+            name: name
+            currency: currency
+            discountType: 7
+            startTime: 4
+            cycleLimit: 5
+            endTime: 9
+            id: 3
+            status: 7
+        requestId: requestId
+        message: message
+      properties:
+        code:
+          format: int
+          properties: {}
+          type: integer
+        data:
+          $ref: '#/components/schemas/_merchant_discount_detail_get_200_response_data'
+        message:
+          format: string
+          properties: {}
+          type: string
+        redirect:
+          format: string
+          properties: {}
+          type: string
+        requestId:
+          format: string
+          properties: {}
+          type: string
+      type: object
     _merchant_discount_list_get_200_response_data:
       example:
-        merchantDiscountCodes:
-        - code: code
-          subscriptionLimit: 7
+        discounts:
+        - metadata:
+            key: metadata
+          code: code
           discountAmount: 5
-          discountPercentage: 5
+          discountPercentage: 2
           billingType: 6
           createTime: 1
-          merchantId: 3
+          merchantId: 2
           name: name
           currency: currency
-          discountType: 2
-          startTime: 2
-          endTime: 7
-          id: 9
-          userLimit: 1
-          status: 4
-        - code: code
-          subscriptionLimit: 7
+          discountType: 7
+          startTime: 4
+          cycleLimit: 5
+          endTime: 9
+          id: 3
+          status: 7
+        - metadata:
+            key: metadata
+          code: code
           discountAmount: 5
-          discountPercentage: 5
+          discountPercentage: 2
           billingType: 6
           createTime: 1
-          merchantId: 3
+          merchantId: 2
           name: name
           currency: currency
-          discountType: 2
-          startTime: 2
-          endTime: 7
-          id: 9
-          userLimit: 1
-          status: 4
+          discountType: 7
+          startTime: 4
+          cycleLimit: 5
+          endTime: 9
+          id: 3
+          status: 7
       properties:
-        merchantDiscountCodes:
-          description: Discount Code Object List
+        discounts:
+          description: Discount Object List
           format: "[]*bean.MerchantDiscountCodeSimplify"
           items:
             $ref: '#/components/schemas/unibee.api.bean.MerchantDiscountCodeSimplify'
@@ -13270,37 +13635,39 @@ components:
         redirect: redirect
         code: 0
         data:
-          merchantDiscountCodes:
-          - code: code
-            subscriptionLimit: 7
+          discounts:
+          - metadata:
+              key: metadata
+            code: code
             discountAmount: 5
-            discountPercentage: 5
+            discountPercentage: 2
             billingType: 6
             createTime: 1
-            merchantId: 3
+            merchantId: 2
             name: name
             currency: currency
-            discountType: 2
-            startTime: 2
-            endTime: 7
-            id: 9
-            userLimit: 1
-            status: 4
-          - code: code
-            subscriptionLimit: 7
+            discountType: 7
+            startTime: 4
+            cycleLimit: 5
+            endTime: 9
+            id: 3
+            status: 7
+          - metadata:
+              key: metadata
+            code: code
             discountAmount: 5
-            discountPercentage: 5
+            discountPercentage: 2
             billingType: 6
             createTime: 1
-            merchantId: 3
+            merchantId: 2
             name: name
             currency: currency
-            discountType: 2
-            startTime: 2
-            endTime: 7
-            id: 9
-            userLimit: 1
-            status: 4
+            discountType: 7
+            startTime: 4
+            cycleLimit: 5
+            endTime: 9
+            id: 3
+            status: 7
         requestId: requestId
         message: message
       properties:
@@ -13718,6 +14085,23 @@ components:
           subscriptionAmountExcludingTax: 8
           link: link
           sendPdf: sendPdf
+          discount:
+            metadata:
+              key: metadata
+            code: code
+            discountAmount: 5
+            discountPercentage: 2
+            billingType: 6
+            createTime: 1
+            merchantId: 2
+            name: name
+            currency: currency
+            discountType: 7
+            startTime: 4
+            cycleLimit: 5
+            endTime: 9
+            id: 3
+            status: 7
           discountAmount: 5
           gatewayInvoicePdf: gatewayInvoicePdf
           subscription:
@@ -13992,6 +14376,23 @@ components:
             subscriptionAmountExcludingTax: 8
             link: link
             sendPdf: sendPdf
+            discount:
+              metadata:
+                key: metadata
+              code: code
+              discountAmount: 5
+              discountPercentage: 2
+              billingType: 6
+              createTime: 1
+              merchantId: 2
+              name: name
+              currency: currency
+              discountType: 7
+              startTime: 4
+              cycleLimit: 5
+              endTime: 9
+              id: 3
+              status: 7
             discountAmount: 5
             gatewayInvoicePdf: gatewayInvoicePdf
             subscription:
@@ -14372,7 +14773,6 @@ components:
           dayUtilDue: 5
           taxAmount: 6
           periodStart: 3
-          refundId: refundId
           status: 1
       properties:
         invoice:
@@ -14480,7 +14880,6 @@ components:
             dayUtilDue: 5
             taxAmount: 6
             periodStart: 3
-            refundId: refundId
             status: 1
         requestId: requestId
         message: message
@@ -14512,6 +14911,23 @@ components:
           subscriptionAmountExcludingTax: 8
           link: link
           sendPdf: sendPdf
+          discount:
+            metadata:
+              key: metadata
+            code: code
+            discountAmount: 5
+            discountPercentage: 2
+            billingType: 6
+            createTime: 1
+            merchantId: 2
+            name: name
+            currency: currency
+            discountType: 7
+            startTime: 4
+            cycleLimit: 5
+            endTime: 9
+            id: 3
+            status: 7
           discountAmount: 5
           gatewayInvoicePdf: gatewayInvoicePdf
           subscription:
@@ -14776,6 +15192,23 @@ components:
           subscriptionAmountExcludingTax: 8
           link: link
           sendPdf: sendPdf
+          discount:
+            metadata:
+              key: metadata
+            code: code
+            discountAmount: 5
+            discountPercentage: 2
+            billingType: 6
+            createTime: 1
+            merchantId: 2
+            name: name
+            currency: currency
+            discountType: 7
+            startTime: 4
+            cycleLimit: 5
+            endTime: 9
+            id: 3
+            status: 7
           discountAmount: 5
           gatewayInvoicePdf: gatewayInvoicePdf
           subscription:
@@ -15055,6 +15488,23 @@ components:
             subscriptionAmountExcludingTax: 8
             link: link
             sendPdf: sendPdf
+            discount:
+              metadata:
+                key: metadata
+              code: code
+              discountAmount: 5
+              discountPercentage: 2
+              billingType: 6
+              createTime: 1
+              merchantId: 2
+              name: name
+              currency: currency
+              discountType: 7
+              startTime: 4
+              cycleLimit: 5
+              endTime: 9
+              id: 3
+              status: 7
             discountAmount: 5
             gatewayInvoicePdf: gatewayInvoicePdf
             subscription:
@@ -15319,6 +15769,23 @@ components:
             subscriptionAmountExcludingTax: 8
             link: link
             sendPdf: sendPdf
+            discount:
+              metadata:
+                key: metadata
+              code: code
+              discountAmount: 5
+              discountPercentage: 2
+              billingType: 6
+              createTime: 1
+              merchantId: 2
+              name: name
+              currency: currency
+              discountType: 7
+              startTime: 4
+              cycleLimit: 5
+              endTime: 9
+              id: 3
+              status: 7
             discountAmount: 5
             gatewayInvoicePdf: gatewayInvoicePdf
             subscription:
@@ -16669,6 +17136,23 @@ components:
             subscriptionAmountExcludingTax: 8
             link: link
             sendPdf: sendPdf
+            discount:
+              metadata:
+                key: metadata
+              code: code
+              discountAmount: 5
+              discountPercentage: 2
+              billingType: 6
+              createTime: 1
+              merchantId: 2
+              name: name
+              currency: currency
+              discountType: 7
+              startTime: 4
+              cycleLimit: 5
+              endTime: 9
+              id: 3
+              status: 7
             discountAmount: 5
             gatewayInvoicePdf: gatewayInvoicePdf
             subscription:
@@ -17025,6 +17509,23 @@ components:
               subscriptionAmountExcludingTax: 8
               link: link
               sendPdf: sendPdf
+              discount:
+                metadata:
+                  key: metadata
+                code: code
+                discountAmount: 5
+                discountPercentage: 2
+                billingType: 6
+                createTime: 1
+                merchantId: 2
+                name: name
+                currency: currency
+                discountType: 7
+                startTime: 4
+                cycleLimit: 5
+                endTime: 9
+                id: 3
+                status: 7
               discountAmount: 5
               gatewayInvoicePdf: gatewayInvoicePdf
               subscription:
@@ -17396,6 +17897,23 @@ components:
             subscriptionAmountExcludingTax: 8
             link: link
             sendPdf: sendPdf
+            discount:
+              metadata:
+                key: metadata
+              code: code
+              discountAmount: 5
+              discountPercentage: 2
+              billingType: 6
+              createTime: 1
+              merchantId: 2
+              name: name
+              currency: currency
+              discountType: 7
+              startTime: 4
+              cycleLimit: 5
+              endTime: 9
+              id: 3
+              status: 7
             discountAmount: 5
             gatewayInvoicePdf: gatewayInvoicePdf
             subscription:
@@ -17742,6 +18260,23 @@ components:
             subscriptionAmountExcludingTax: 8
             link: link
             sendPdf: sendPdf
+            discount:
+              metadata:
+                key: metadata
+              code: code
+              discountAmount: 5
+              discountPercentage: 2
+              billingType: 6
+              createTime: 1
+              merchantId: 2
+              name: name
+              currency: currency
+              discountType: 7
+              startTime: 4
+              cycleLimit: 5
+              endTime: 9
+              id: 3
+              status: 7
             discountAmount: 5
             gatewayInvoicePdf: gatewayInvoicePdf
             subscription:
@@ -18103,6 +18638,23 @@ components:
               subscriptionAmountExcludingTax: 8
               link: link
               sendPdf: sendPdf
+              discount:
+                metadata:
+                  key: metadata
+                code: code
+                discountAmount: 5
+                discountPercentage: 2
+                billingType: 6
+                createTime: 1
+                merchantId: 2
+                name: name
+                currency: currency
+                discountType: 7
+                startTime: 4
+                cycleLimit: 5
+                endTime: 9
+                id: 3
+                status: 7
               discountAmount: 5
               gatewayInvoicePdf: gatewayInvoicePdf
               subscription:
@@ -18449,6 +19001,23 @@ components:
               subscriptionAmountExcludingTax: 8
               link: link
               sendPdf: sendPdf
+              discount:
+                metadata:
+                  key: metadata
+                code: code
+                discountAmount: 5
+                discountPercentage: 2
+                billingType: 6
+                createTime: 1
+                merchantId: 2
+                name: name
+                currency: currency
+                discountType: 7
+                startTime: 4
+                cycleLimit: 5
+                endTime: 9
+                id: 3
+                status: 7
               discountAmount: 5
               gatewayInvoicePdf: gatewayInvoicePdf
               subscription:
@@ -21156,7 +21725,6 @@ components:
           dayUtilDue: 5
           taxAmount: 6
           periodStart: 3
-          refundId: refundId
           status: 1
         - bizType: 6
           invoiceName: invoiceName
@@ -21254,7 +21822,6 @@ components:
           dayUtilDue: 5
           taxAmount: 6
           periodStart: 3
-          refundId: refundId
           status: 1
       properties:
         matchInvoice:
@@ -21465,7 +22032,6 @@ components:
             dayUtilDue: 5
             taxAmount: 6
             periodStart: 3
-            refundId: refundId
             status: 1
           - bizType: 6
             invoiceName: invoiceName
@@ -21563,7 +22129,6 @@ components:
             dayUtilDue: 5
             taxAmount: 6
             periodStart: 3
-            refundId: refundId
             status: 1
         requestId: requestId
         message: message
@@ -21835,9 +22400,10 @@ components:
             productDescription: productDescription
             publishStatus: 7
             status: 1
-        taxPercentage: 5
-        userId: 7
-        totalAmount: 2
+        taxPercentage: 2
+        discountAmount: 5
+        userId: 9
+        totalAmount: 7
         vatNumberValidate:
           valid: true
           countryCode: countryCode
@@ -21948,7 +22514,6 @@ components:
           dayUtilDue: 5
           taxAmount: 6
           periodStart: 3
-          refundId: refundId
           status: 1
         vatCountryName: vatCountryName
         plan:
@@ -22003,6 +22568,10 @@ components:
           format: string
           properties: {}
           type: string
+        discountAmount:
+          format: int64
+          properties: {}
+          type: integer
         email:
           format: string
           properties: {}
@@ -22102,9 +22671,10 @@ components:
               productDescription: productDescription
               publishStatus: 7
               status: 1
-          taxPercentage: 5
-          userId: 7
-          totalAmount: 2
+          taxPercentage: 2
+          discountAmount: 5
+          userId: 9
+          totalAmount: 7
           vatNumberValidate:
             valid: true
             countryCode: countryCode
@@ -22215,7 +22785,6 @@ components:
             dayUtilDue: 5
             taxAmount: 6
             periodStart: 3
-            refundId: refundId
             status: 1
           vatCountryName: vatCountryName
           plan:
@@ -22495,7 +23064,6 @@ components:
           dayUtilDue: 5
           taxAmount: 6
           periodStart: 3
-          refundId: refundId
           status: 1
         unfinishedSubscriptionPendingUpdate:
           note: note
@@ -22983,7 +23551,6 @@ components:
             dayUtilDue: 5
             taxAmount: 6
             periodStart: 3
-            refundId: refundId
             status: 1
           unfinishedSubscriptionPendingUpdate:
             note: note
@@ -23463,7 +24030,6 @@ components:
             dayUtilDue: 5
             taxAmount: 6
             periodStart: 3
-            refundId: refundId
             status: 1
           unfinishedSubscriptionPendingUpdate:
             note: note
@@ -23707,6 +24273,23 @@ components:
               productDescription: productDescription
               publishStatus: 7
               status: 1
+          discount:
+            metadata:
+              key: metadata
+            code: code
+            discountAmount: 5
+            discountPercentage: 2
+            billingType: 6
+            createTime: 1
+            merchantId: 2
+            name: name
+            currency: currency
+            discountType: 7
+            startTime: 4
+            cycleLimit: 5
+            endTime: 9
+            id: 3
+            status: 7
           subscription:
             metadata:
               key: metadata
@@ -23918,7 +24501,6 @@ components:
             dayUtilDue: 5
             taxAmount: 6
             periodStart: 3
-            refundId: refundId
             status: 1
           unfinishedSubscriptionPendingUpdate:
             note: note
@@ -24162,6 +24744,23 @@ components:
               productDescription: productDescription
               publishStatus: 7
               status: 1
+          discount:
+            metadata:
+              key: metadata
+            code: code
+            discountAmount: 5
+            discountPercentage: 2
+            billingType: 6
+            createTime: 1
+            merchantId: 2
+            name: name
+            currency: currency
+            discountType: 7
+            startTime: 4
+            cycleLimit: 5
+            endTime: 9
+            id: 3
+            status: 7
           subscription:
             metadata:
               key: metadata
@@ -24388,7 +24987,6 @@ components:
               dayUtilDue: 5
               taxAmount: 6
               periodStart: 3
-              refundId: refundId
               status: 1
             unfinishedSubscriptionPendingUpdate:
               note: note
@@ -24632,6 +25230,23 @@ components:
                 productDescription: productDescription
                 publishStatus: 7
                 status: 1
+            discount:
+              metadata:
+                key: metadata
+              code: code
+              discountAmount: 5
+              discountPercentage: 2
+              billingType: 6
+              createTime: 1
+              merchantId: 2
+              name: name
+              currency: currency
+              discountType: 7
+              startTime: 4
+              cycleLimit: 5
+              endTime: 9
+              id: 3
+              status: 7
             subscription:
               metadata:
                 key: metadata
@@ -24843,7 +25458,6 @@ components:
               dayUtilDue: 5
               taxAmount: 6
               periodStart: 3
-              refundId: refundId
               status: 1
             unfinishedSubscriptionPendingUpdate:
               note: note
@@ -25087,6 +25701,23 @@ components:
                 productDescription: productDescription
                 publishStatus: 7
                 status: 1
+            discount:
+              metadata:
+                key: metadata
+              code: code
+              discountAmount: 5
+              discountPercentage: 2
+              billingType: 6
+              createTime: 1
+              merchantId: 2
+              name: name
+              currency: currency
+              discountType: 7
+              startTime: 4
+              cycleLimit: 5
+              endTime: 9
+              id: 3
+              status: 7
             subscription:
               metadata:
                 key: metadata
@@ -25336,7 +25967,6 @@ components:
           dayUtilDue: 5
           taxAmount: 6
           periodStart: 3
-          refundId: refundId
           status: 1
       properties:
         invoice:
@@ -25473,7 +26103,6 @@ components:
             dayUtilDue: 5
             taxAmount: 6
             periodStart: 3
-            refundId: refundId
             status: 1
         requestId: requestId
         message: message
@@ -27131,8 +27760,9 @@ components:
       type: object
     _merchant_subscription_update_preview_post_200_response_data:
       example:
-        totalAmount: 1
-        prorationDate: 6
+        totalAmount: 5
+        prorationDate: 1
+        discountAmount: 6
         currency: currency
         invoice:
           bizType: 6
@@ -27231,7 +27861,6 @@ components:
           dayUtilDue: 5
           taxAmount: 6
           periodStart: 3
-          refundId: refundId
           status: 1
         nextPeriodInvoice:
           bizType: 6
@@ -27330,13 +27959,16 @@ components:
           dayUtilDue: 5
           taxAmount: 6
           periodStart: 3
-          refundId: refundId
           status: 1
       properties:
         currency:
           format: string
           properties: {}
           type: string
+        discountAmount:
+          format: int64
+          properties: {}
+          type: integer
         invoice:
           $ref: '#/components/schemas/unibee.api.bean.InvoiceSimplify'
         nextPeriodInvoice:
@@ -27355,8 +27987,9 @@ components:
         redirect: redirect
         code: 0
         data:
-          totalAmount: 1
-          prorationDate: 6
+          totalAmount: 5
+          prorationDate: 1
+          discountAmount: 6
           currency: currency
           invoice:
             bizType: 6
@@ -27455,7 +28088,6 @@ components:
             dayUtilDue: 5
             taxAmount: 6
             periodStart: 3
-            refundId: refundId
             status: 1
           nextPeriodInvoice:
             bizType: 6
@@ -27554,7 +28186,6 @@ components:
             dayUtilDue: 5
             taxAmount: 6
             periodStart: 3
-            refundId: refundId
             status: 1
         requestId: requestId
         message: message

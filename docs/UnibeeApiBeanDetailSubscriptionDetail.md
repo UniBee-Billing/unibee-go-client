@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | AddonParams | [optional] 
 **Addons** | Pointer to [**[]UnibeeApiBeanPlanAddonDetail**](UnibeeApiBeanPlanAddonDetail.md) | Addon | [optional] 
+**Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCodeSimplify**](UnibeeApiBeanMerchantDiscountCodeSimplify.md) |  | [optional] 
 **Gateway** | Pointer to [**UnibeeApiBeanGatewaySimplify**](UnibeeApiBeanGatewaySimplify.md) |  | [optional] 
 **LatestInvoice** | Pointer to [**UnibeeApiBeanInvoiceSimplify**](UnibeeApiBeanInvoiceSimplify.md) |  | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
@@ -81,6 +82,31 @@ SetAddons sets Addons field to given value.
 `func (o *UnibeeApiBeanDetailSubscriptionDetail) HasAddons() bool`
 
 HasAddons returns a boolean if a field has been set.
+
+### GetDiscount
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetDiscount() UnibeeApiBeanMerchantDiscountCodeSimplify`
+
+GetDiscount returns the Discount field if non-nil, zero value otherwise.
+
+### GetDiscountOk
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetDiscountOk() (*UnibeeApiBeanMerchantDiscountCodeSimplify, bool)`
+
+GetDiscountOk returns a tuple with the Discount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscount
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) SetDiscount(v UnibeeApiBeanMerchantDiscountCodeSimplify)`
+
+SetDiscount sets Discount field to given value.
+
+### HasDiscount
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) HasDiscount() bool`
+
+HasDiscount returns a boolean if a field has been set.
 
 ### GetGateway
 

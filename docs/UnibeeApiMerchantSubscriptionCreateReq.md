@@ -5,8 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | addonParams | [optional] 
-**ConfirmCurrency** | Pointer to **string** | Currency To Be Confirmed，Get From Preview | [optional] 
-**ConfirmTotalAmount** | Pointer to **int64** | TotalAmount To Be Confirmed，Get From Preview | [optional] 
+**ConfirmCurrency** | Pointer to **string** | Currency to verify if provide | [optional] 
+**ConfirmTotalAmount** | Pointer to **int64** | TotalAmount to verify if provide | [optional] 
+**Discount** | Pointer to [**UnibeeApiBeanExternalDiscountParam**](UnibeeApiBeanExternalDiscountParam.md) |  | [optional] 
 **DiscountCode** | Pointer to **string** | DiscountCode | [optional] 
 **GatewayId** | **int64** | Id | 
 **Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
@@ -14,7 +15,7 @@ Name | Type | Description | Notes
 **PlanId** | **int64** | PlanId | 
 **Quantity** | Pointer to **int64** | Quantity，Default 1 | [optional] 
 **ReturnUrl** | Pointer to **string** | ReturnUrl | [optional] 
-**TaxPercentage** | Pointer to **int32** | TaxPercentage，1000 &#x3D; 10% | [optional] 
+**TaxPercentage** | Pointer to **int32** | TaxPercentage，1000 &#x3D; 10%, override subscription taxPercentage if provide | [optional] 
 **UserId** | **int64** | UserId | 
 **VatCountryCode** | Pointer to **string** | VatCountryCode, CountryName | [optional] 
 **VatNumber** | Pointer to **string** | VatNumber | [optional] 
@@ -112,6 +113,31 @@ SetConfirmTotalAmount sets ConfirmTotalAmount field to given value.
 `func (o *UnibeeApiMerchantSubscriptionCreateReq) HasConfirmTotalAmount() bool`
 
 HasConfirmTotalAmount returns a boolean if a field has been set.
+
+### GetDiscount
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetDiscount() UnibeeApiBeanExternalDiscountParam`
+
+GetDiscount returns the Discount field if non-nil, zero value otherwise.
+
+### GetDiscountOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetDiscountOk() (*UnibeeApiBeanExternalDiscountParam, bool)`
+
+GetDiscountOk returns a tuple with the Discount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscount
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) SetDiscount(v UnibeeApiBeanExternalDiscountParam)`
+
+SetDiscount sets Discount field to given value.
+
+### HasDiscount
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) HasDiscount() bool`
+
+HasDiscount returns a boolean if a field has been set.
 
 ### GetDiscountCode
 

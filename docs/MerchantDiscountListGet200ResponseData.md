@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MerchantDiscountCodes** | Pointer to [**[]UnibeeApiBeanMerchantDiscountCodeSimplify**](UnibeeApiBeanMerchantDiscountCodeSimplify.md) | Discount Code Object List | [optional] 
+**Discounts** | Pointer to [**[]UnibeeApiBeanMerchantDiscountCodeSimplify**](UnibeeApiBeanMerchantDiscountCodeSimplify.md) | Discount Object List | [optional] 
 
 ## Methods
 
@@ -25,30 +25,30 @@ NewMerchantDiscountListGet200ResponseDataWithDefaults instantiates a new Merchan
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetMerchantDiscountCodes
+### GetDiscounts
 
-`func (o *MerchantDiscountListGet200ResponseData) GetMerchantDiscountCodes() []UnibeeApiBeanMerchantDiscountCodeSimplify`
+`func (o *MerchantDiscountListGet200ResponseData) GetDiscounts() []UnibeeApiBeanMerchantDiscountCodeSimplify`
 
-GetMerchantDiscountCodes returns the MerchantDiscountCodes field if non-nil, zero value otherwise.
+GetDiscounts returns the Discounts field if non-nil, zero value otherwise.
 
-### GetMerchantDiscountCodesOk
+### GetDiscountsOk
 
-`func (o *MerchantDiscountListGet200ResponseData) GetMerchantDiscountCodesOk() (*[]UnibeeApiBeanMerchantDiscountCodeSimplify, bool)`
+`func (o *MerchantDiscountListGet200ResponseData) GetDiscountsOk() (*[]UnibeeApiBeanMerchantDiscountCodeSimplify, bool)`
 
-GetMerchantDiscountCodesOk returns a tuple with the MerchantDiscountCodes field if it's non-nil, zero value otherwise
+GetDiscountsOk returns a tuple with the Discounts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMerchantDiscountCodes
+### SetDiscounts
 
-`func (o *MerchantDiscountListGet200ResponseData) SetMerchantDiscountCodes(v []UnibeeApiBeanMerchantDiscountCodeSimplify)`
+`func (o *MerchantDiscountListGet200ResponseData) SetDiscounts(v []UnibeeApiBeanMerchantDiscountCodeSimplify)`
 
-SetMerchantDiscountCodes sets MerchantDiscountCodes field to given value.
+SetDiscounts sets Discounts field to given value.
 
-### HasMerchantDiscountCodes
+### HasDiscounts
 
-`func (o *MerchantDiscountListGet200ResponseData) HasMerchantDiscountCodes() bool`
+`func (o *MerchantDiscountListGet200ResponseData) HasDiscounts() bool`
 
-HasMerchantDiscountCodes returns a boolean if a field has been set.
+HasDiscounts returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

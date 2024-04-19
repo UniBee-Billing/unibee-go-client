@@ -5,11 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonId** | **int64** | AddonId, id of one-time addon, the new payment will created base on the addon&#39;s amount&#39; | 
+**DiscountAmount** | Pointer to **int32** | Amount of discount | [optional] 
 **DiscountCode** | Pointer to **string** | DiscountCode | [optional] 
+**DiscountPercentage** | Pointer to **int32** | Percentage of discount, 100&#x3D;1%, ignore if discountAmount provide | [optional] 
+**GatewayId** | Pointer to **int32** | GatewayId, use subscription&#39;s gateway if not provide | [optional] 
 **Metadata** | Pointer to **map[string]string** | Metadata，custom data | [optional] 
 **Quantity** | **int64** | Quantity, quantity of the new payment which one-time addon purchased | 
 **ReturnUrl** | Pointer to **string** | ReturnUrl, the addon&#39;s payment will redirect based on the returnUrl provided when it&#39;s back from gateway side | [optional] 
 **SubscriptionId** | **string** | SubscriptionId, id of subscription which addon will attached | 
+**TaxPercentage** | Pointer to **int32** | TaxPercentage，1000 &#x3D; 10%, use subscription&#39;s taxPercentage if not provide | [optional] 
 
 ## Methods
 
@@ -50,6 +54,31 @@ and a boolean to check if the value has been set.
 SetAddonId sets AddonId field to given value.
 
 
+### GetDiscountAmount
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetDiscountAmount() int32`
+
+GetDiscountAmount returns the DiscountAmount field if non-nil, zero value otherwise.
+
+### GetDiscountAmountOk
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetDiscountAmountOk() (*int32, bool)`
+
+GetDiscountAmountOk returns a tuple with the DiscountAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscountAmount
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) SetDiscountAmount(v int32)`
+
+SetDiscountAmount sets DiscountAmount field to given value.
+
+### HasDiscountAmount
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) HasDiscountAmount() bool`
+
+HasDiscountAmount returns a boolean if a field has been set.
+
 ### GetDiscountCode
 
 `func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetDiscountCode() string`
@@ -74,6 +103,56 @@ SetDiscountCode sets DiscountCode field to given value.
 `func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) HasDiscountCode() bool`
 
 HasDiscountCode returns a boolean if a field has been set.
+
+### GetDiscountPercentage
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetDiscountPercentage() int32`
+
+GetDiscountPercentage returns the DiscountPercentage field if non-nil, zero value otherwise.
+
+### GetDiscountPercentageOk
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetDiscountPercentageOk() (*int32, bool)`
+
+GetDiscountPercentageOk returns a tuple with the DiscountPercentage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscountPercentage
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) SetDiscountPercentage(v int32)`
+
+SetDiscountPercentage sets DiscountPercentage field to given value.
+
+### HasDiscountPercentage
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) HasDiscountPercentage() bool`
+
+HasDiscountPercentage returns a boolean if a field has been set.
+
+### GetGatewayId
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetGatewayId() int32`
+
+GetGatewayId returns the GatewayId field if non-nil, zero value otherwise.
+
+### GetGatewayIdOk
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetGatewayIdOk() (*int32, bool)`
+
+GetGatewayIdOk returns a tuple with the GatewayId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayId
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) SetGatewayId(v int32)`
+
+SetGatewayId sets GatewayId field to given value.
+
+### HasGatewayId
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) HasGatewayId() bool`
+
+HasGatewayId returns a boolean if a field has been set.
 
 ### GetMetadata
 
@@ -164,6 +243,31 @@ and a boolean to check if the value has been set.
 
 SetSubscriptionId sets SubscriptionId field to given value.
 
+
+### GetTaxPercentage
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetTaxPercentage() int32`
+
+GetTaxPercentage returns the TaxPercentage field if non-nil, zero value otherwise.
+
+### GetTaxPercentageOk
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetTaxPercentageOk() (*int32, bool)`
+
+GetTaxPercentageOk returns a tuple with the TaxPercentage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTaxPercentage
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) SetTaxPercentage(v int32)`
+
+SetTaxPercentage sets TaxPercentage field to given value.
+
+### HasTaxPercentage
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) HasTaxPercentage() bool`
+
+HasTaxPercentage returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
