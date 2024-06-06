@@ -1,11 +1,12 @@
 # \Plan
 
-All URIs are relative to *http://api.unibee.top*
+All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**PlanActivatePost**](Plan.md#PlanActivatePost) | **Post** /merchant/plan/activate | ActivatePlan
 [**PlanAddonsBindingPost**](Plan.md#PlanAddonsBindingPost) | **Post** /merchant/plan/addons_binding | AddonBinding
+[**PlanCopyPost**](Plan.md#PlanCopyPost) | **Post** /merchant/plan/copy | CopyPlan
 [**PlanDeletePost**](Plan.md#PlanDeletePost) | **Post** /merchant/plan/delete | DeletePlan
 [**PlanDetailGet**](Plan.md#PlanDetailGet) | **Get** /merchant/plan/detail | PlanDetail
 [**PlanDetailPost**](Plan.md#PlanDetailPost) | **Post** /merchant/plan/detail | PlanDetail
@@ -128,6 +129,70 @@ Other parameters are passed through a pointer to a apiPlanAddonsBindingPostReque
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **unibeeApiMerchantPlanAddonsBindingReq** | [**UnibeeApiMerchantPlanAddonsBindingReq**](UnibeeApiMerchantPlanAddonsBindingReq.md) |  | 
+
+### Return type
+
+[**MerchantPlanAddonsBindingPost200Response**](MerchantPlanAddonsBindingPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PlanCopyPost
+
+> MerchantPlanAddonsBindingPost200Response PlanCopyPost(ctx).UnibeeApiMerchantPlanCopyReq(unibeeApiMerchantPlanCopyReq).Execute()
+
+CopyPlan
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantPlanCopyReq := *openapiclient.NewUnibeeApiMerchantPlanCopyReq(int64(123)) // UnibeeApiMerchantPlanCopyReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Plan.PlanCopyPost(context.Background()).UnibeeApiMerchantPlanCopyReq(unibeeApiMerchantPlanCopyReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Plan.PlanCopyPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PlanCopyPost`: MerchantPlanAddonsBindingPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Plan.PlanCopyPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPlanCopyPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantPlanCopyReq** | [**UnibeeApiMerchantPlanCopyReq**](UnibeeApiMerchantPlanCopyReq.md) |  | 
 
 ### Return type
 
@@ -345,6 +410,8 @@ No authorization required
 
 EditPlan
 
+
+
 ### Example
 
 ```go
@@ -358,7 +425,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantPlanEditReq := *openapiclient.NewUnibeeApiMerchantPlanEditReq(int64(123), "Currency_example", int64(123), "PlanName_example") // UnibeeApiMerchantPlanEditReq | 
+	unibeeApiMerchantPlanEditReq := *openapiclient.NewUnibeeApiMerchantPlanEditReq(int64(123)) // UnibeeApiMerchantPlanEditReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

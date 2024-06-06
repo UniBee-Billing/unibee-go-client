@@ -8,6 +8,9 @@ Name | Type | Description | Notes
 **AmountExcludingTax** | Pointer to **int64** |  | [optional] 
 **Currency** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
+**DiscountAmount** | Pointer to **int64** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+**OriginAmount** | Pointer to **int64** |  | [optional] 
 **PeriodEnd** | Pointer to **int64** |  | [optional] 
 **PeriodStart** | Pointer to **int64** |  | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
@@ -135,6 +138,81 @@ SetDescription sets Description field to given value.
 `func (o *UnibeeApiBeanInvoiceItemSimplify) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetDiscountAmount
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetDiscountAmount() int64`
+
+GetDiscountAmount returns the DiscountAmount field if non-nil, zero value otherwise.
+
+### GetDiscountAmountOk
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetDiscountAmountOk() (*int64, bool)`
+
+GetDiscountAmountOk returns a tuple with the DiscountAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscountAmount
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) SetDiscountAmount(v int64)`
+
+SetDiscountAmount sets DiscountAmount field to given value.
+
+### HasDiscountAmount
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) HasDiscountAmount() bool`
+
+HasDiscountAmount returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
+### GetOriginAmount
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetOriginAmount() int64`
+
+GetOriginAmount returns the OriginAmount field if non-nil, zero value otherwise.
+
+### GetOriginAmountOk
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetOriginAmountOk() (*int64, bool)`
+
+GetOriginAmountOk returns a tuple with the OriginAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOriginAmount
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) SetOriginAmount(v int64)`
+
+SetOriginAmount sets OriginAmount field to given value.
+
+### HasOriginAmount
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) HasOriginAmount() bool`
+
+HasOriginAmount returns a boolean if a field has been set.
 
 ### GetPeriodEnd
 

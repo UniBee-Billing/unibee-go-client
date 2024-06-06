@@ -7,19 +7,24 @@ Name | Type | Description | Notes
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) |  | [optional] 
 **Addons** | Pointer to [**[]UnibeeApiBeanPlanAddonDetail**](UnibeeApiBeanPlanAddonDetail.md) |  | [optional] 
 **Currency** | Pointer to **string** |  | [optional] 
+**Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCodeSimplify**](UnibeeApiBeanMerchantDiscountCodeSimplify.md) |  | [optional] 
 **DiscountAmount** | Pointer to **int64** |  | [optional] 
+**DiscountMessage** | Pointer to **string** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
 **Gateway** | Pointer to [**UnibeeApiBeanGatewaySimplify**](UnibeeApiBeanGatewaySimplify.md) |  | [optional] 
 **Invoice** | Pointer to [**UnibeeApiBeanInvoiceSimplify**](UnibeeApiBeanInvoiceSimplify.md) |  | [optional] 
+**OriginAmount** | Pointer to **int64** |  | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
 **Quantity** | Pointer to **int64** |  | [optional] 
 **TaxPercentage** | Pointer to **int64** |  | [optional] 
 **TotalAmount** | Pointer to **int64** |  | [optional] 
+**TrialEnd** | Pointer to **int64** | trial_end, utc time | [optional] 
 **UserId** | Pointer to **int64** |  | [optional] 
 **VatCountryCode** | Pointer to **string** |  | [optional] 
 **VatCountryName** | Pointer to **string** |  | [optional] 
 **VatNumber** | Pointer to **string** |  | [optional] 
 **VatNumberValidate** | Pointer to [**UnibeeApiBeanValidResult**](UnibeeApiBeanValidResult.md) |  | [optional] 
+**VatNumberValidateMessage** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -115,6 +120,31 @@ SetCurrency sets Currency field to given value.
 
 HasCurrency returns a boolean if a field has been set.
 
+### GetDiscount
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) GetDiscount() UnibeeApiBeanMerchantDiscountCodeSimplify`
+
+GetDiscount returns the Discount field if non-nil, zero value otherwise.
+
+### GetDiscountOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) GetDiscountOk() (*UnibeeApiBeanMerchantDiscountCodeSimplify, bool)`
+
+GetDiscountOk returns a tuple with the Discount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscount
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) SetDiscount(v UnibeeApiBeanMerchantDiscountCodeSimplify)`
+
+SetDiscount sets Discount field to given value.
+
+### HasDiscount
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) HasDiscount() bool`
+
+HasDiscount returns a boolean if a field has been set.
+
 ### GetDiscountAmount
 
 `func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) GetDiscountAmount() int64`
@@ -139,6 +169,31 @@ SetDiscountAmount sets DiscountAmount field to given value.
 `func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) HasDiscountAmount() bool`
 
 HasDiscountAmount returns a boolean if a field has been set.
+
+### GetDiscountMessage
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) GetDiscountMessage() string`
+
+GetDiscountMessage returns the DiscountMessage field if non-nil, zero value otherwise.
+
+### GetDiscountMessageOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) GetDiscountMessageOk() (*string, bool)`
+
+GetDiscountMessageOk returns a tuple with the DiscountMessage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscountMessage
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) SetDiscountMessage(v string)`
+
+SetDiscountMessage sets DiscountMessage field to given value.
+
+### HasDiscountMessage
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) HasDiscountMessage() bool`
+
+HasDiscountMessage returns a boolean if a field has been set.
 
 ### GetEmail
 
@@ -214,6 +269,31 @@ SetInvoice sets Invoice field to given value.
 `func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) HasInvoice() bool`
 
 HasInvoice returns a boolean if a field has been set.
+
+### GetOriginAmount
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) GetOriginAmount() int64`
+
+GetOriginAmount returns the OriginAmount field if non-nil, zero value otherwise.
+
+### GetOriginAmountOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) GetOriginAmountOk() (*int64, bool)`
+
+GetOriginAmountOk returns a tuple with the OriginAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOriginAmount
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) SetOriginAmount(v int64)`
+
+SetOriginAmount sets OriginAmount field to given value.
+
+### HasOriginAmount
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) HasOriginAmount() bool`
+
+HasOriginAmount returns a boolean if a field has been set.
 
 ### GetPlan
 
@@ -314,6 +394,31 @@ SetTotalAmount sets TotalAmount field to given value.
 `func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) HasTotalAmount() bool`
 
 HasTotalAmount returns a boolean if a field has been set.
+
+### GetTrialEnd
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) GetTrialEnd() int64`
+
+GetTrialEnd returns the TrialEnd field if non-nil, zero value otherwise.
+
+### GetTrialEndOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) GetTrialEndOk() (*int64, bool)`
+
+GetTrialEndOk returns a tuple with the TrialEnd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrialEnd
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) SetTrialEnd(v int64)`
+
+SetTrialEnd sets TrialEnd field to given value.
+
+### HasTrialEnd
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) HasTrialEnd() bool`
+
+HasTrialEnd returns a boolean if a field has been set.
 
 ### GetUserId
 
@@ -439,6 +544,31 @@ SetVatNumberValidate sets VatNumberValidate field to given value.
 `func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) HasVatNumberValidate() bool`
 
 HasVatNumberValidate returns a boolean if a field has been set.
+
+### GetVatNumberValidateMessage
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) GetVatNumberValidateMessage() string`
+
+GetVatNumberValidateMessage returns the VatNumberValidateMessage field if non-nil, zero value otherwise.
+
+### GetVatNumberValidateMessageOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) GetVatNumberValidateMessageOk() (*string, bool)`
+
+GetVatNumberValidateMessageOk returns a tuple with the VatNumberValidateMessage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVatNumberValidateMessage
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) SetVatNumberValidateMessage(v string)`
+
+SetVatNumberValidateMessage sets VatNumberValidateMessage field to given value.
+
+### HasVatNumberValidateMessage
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) HasVatNumberValidateMessage() bool`
+
+HasVatNumberValidateMessage returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

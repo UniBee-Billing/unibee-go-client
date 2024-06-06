@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CountryCode** | Pointer to **string** | CountryCode | [optional] 
 **Currency** | Pointer to **string** | Currency, either Currency&amp;TotalAmount or PlanId needed | [optional] 
+**Description** | Pointer to **string** | Description | [optional] 
 **Email** | Pointer to **string** | Email, either ExternalUserId&amp;Email or UserId needed | [optional] 
 **ExternalPaymentId** | Pointer to **string** | ExternalPaymentId should unique for payment | [optional] 
 **ExternalUserId** | Pointer to **string** | ExternalUserId, unique, either ExternalUserId&amp;Email or UserId needed | [optional] 
@@ -13,6 +14,7 @@ Name | Type | Description | Notes
 **GatewayId** | **int64** | GatewayId | 
 **Items** | Pointer to [**[]UnibeeApiMerchantPaymentItem**](UnibeeApiMerchantPaymentItem.md) | Items | [optional] 
 **Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
+**Name** | Pointer to **string** | Name | [optional] 
 **PlanId** | Pointer to **int64** | PlanId, either TotalAmount&amp;Currency or PlanId needed | [optional] 
 **RedirectUrl** | Pointer to **string** | Redirect Url | [optional] 
 **TotalAmount** | Pointer to **int64** | Total PaymentAmount, Cent, either TotalAmount&amp;Currency or PlanId needed | [optional] 
@@ -86,6 +88,31 @@ SetCurrency sets Currency field to given value.
 `func (o *UnibeeApiMerchantPaymentNewReq) HasCurrency() bool`
 
 HasCurrency returns a boolean if a field has been set.
+
+### GetDescription
+
+`func (o *UnibeeApiMerchantPaymentNewReq) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *UnibeeApiMerchantPaymentNewReq) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *UnibeeApiMerchantPaymentNewReq) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *UnibeeApiMerchantPaymentNewReq) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
 
 ### GetEmail
 
@@ -256,6 +283,31 @@ SetMetadata sets Metadata field to given value.
 `func (o *UnibeeApiMerchantPaymentNewReq) HasMetadata() bool`
 
 HasMetadata returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *UnibeeApiMerchantPaymentNewReq) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *UnibeeApiMerchantPaymentNewReq) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *UnibeeApiMerchantPaymentNewReq) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *UnibeeApiMerchantPaymentNewReq) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetPlanId
 

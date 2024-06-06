@@ -10,19 +10,23 @@ Name | Type | Description | Notes
 **Discount** | Pointer to [**UnibeeApiBeanExternalDiscountParam**](UnibeeApiBeanExternalDiscountParam.md) |  | [optional] 
 **DiscountCode** | Pointer to **string** | DiscountCode | [optional] 
 **EffectImmediate** | Pointer to **int32** | Effect Immediate，1-Immediate，2-Next Period | [optional] 
-**GatewayId** | Pointer to **int64** | Id | [optional] 
+**GatewayId** | Pointer to **int32** | Id of gateway | [optional] 
+**ManualPayment** | Pointer to **bool** | ManualPayment | [optional] 
 **Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
 **NewPlanId** | **int64** | New PlanId | 
+**ProductData** | Pointer to [**UnibeeApiBeanPlanProductParam**](UnibeeApiBeanPlanProductParam.md) |  | [optional] 
 **ProrationDate** | Pointer to **int32** | The utc time to start Proration, default current time | [optional] 
 **Quantity** | **int64** | Quantity | 
-**SubscriptionId** | **string** | SubscriptionId | 
+**ReturnUrl** | Pointer to **string** | ReturnUrl | [optional] 
+**SubscriptionId** | Pointer to **string** | SubscriptionId, either SubscriptionId or UserId needed, The only one active subscription of userId will update | [optional] 
 **TaxPercentage** | Pointer to **int32** | TaxPercentage，1000 &#x3D; 10%, override subscription taxPercentage if provide | [optional] 
+**UserId** | Pointer to **int64** | UserId, either SubscriptionId or UserId needed, The only one active subscription will update if userId provide instead of subscriptionId | [optional] 
 
 ## Methods
 
 ### NewUnibeeApiMerchantSubscriptionUpdateReq
 
-`func NewUnibeeApiMerchantSubscriptionUpdateReq(newPlanId int64, quantity int64, subscriptionId string, ) *UnibeeApiMerchantSubscriptionUpdateReq`
+`func NewUnibeeApiMerchantSubscriptionUpdateReq(newPlanId int64, quantity int64, ) *UnibeeApiMerchantSubscriptionUpdateReq`
 
 NewUnibeeApiMerchantSubscriptionUpdateReq instantiates a new UnibeeApiMerchantSubscriptionUpdateReq object
 This constructor will assign default values to properties that have it defined,
@@ -189,20 +193,20 @@ HasEffectImmediate returns a boolean if a field has been set.
 
 ### GetGatewayId
 
-`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetGatewayId() int64`
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetGatewayId() int32`
 
 GetGatewayId returns the GatewayId field if non-nil, zero value otherwise.
 
 ### GetGatewayIdOk
 
-`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetGatewayIdOk() (*int64, bool)`
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetGatewayIdOk() (*int32, bool)`
 
 GetGatewayIdOk returns a tuple with the GatewayId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGatewayId
 
-`func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetGatewayId(v int64)`
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetGatewayId(v int32)`
 
 SetGatewayId sets GatewayId field to given value.
 
@@ -211,6 +215,31 @@ SetGatewayId sets GatewayId field to given value.
 `func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasGatewayId() bool`
 
 HasGatewayId returns a boolean if a field has been set.
+
+### GetManualPayment
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetManualPayment() bool`
+
+GetManualPayment returns the ManualPayment field if non-nil, zero value otherwise.
+
+### GetManualPaymentOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetManualPaymentOk() (*bool, bool)`
+
+GetManualPaymentOk returns a tuple with the ManualPayment field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetManualPayment
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetManualPayment(v bool)`
+
+SetManualPayment sets ManualPayment field to given value.
+
+### HasManualPayment
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasManualPayment() bool`
+
+HasManualPayment returns a boolean if a field has been set.
 
 ### GetMetadata
 
@@ -257,6 +286,31 @@ and a boolean to check if the value has been set.
 SetNewPlanId sets NewPlanId field to given value.
 
 
+### GetProductData
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetProductData() UnibeeApiBeanPlanProductParam`
+
+GetProductData returns the ProductData field if non-nil, zero value otherwise.
+
+### GetProductDataOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetProductDataOk() (*UnibeeApiBeanPlanProductParam, bool)`
+
+GetProductDataOk returns a tuple with the ProductData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProductData
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetProductData(v UnibeeApiBeanPlanProductParam)`
+
+SetProductData sets ProductData field to given value.
+
+### HasProductData
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasProductData() bool`
+
+HasProductData returns a boolean if a field has been set.
+
 ### GetProrationDate
 
 `func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetProrationDate() int32`
@@ -302,6 +356,31 @@ and a boolean to check if the value has been set.
 SetQuantity sets Quantity field to given value.
 
 
+### GetReturnUrl
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetReturnUrl() string`
+
+GetReturnUrl returns the ReturnUrl field if non-nil, zero value otherwise.
+
+### GetReturnUrlOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetReturnUrlOk() (*string, bool)`
+
+GetReturnUrlOk returns a tuple with the ReturnUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReturnUrl
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetReturnUrl(v string)`
+
+SetReturnUrl sets ReturnUrl field to given value.
+
+### HasReturnUrl
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasReturnUrl() bool`
+
+HasReturnUrl returns a boolean if a field has been set.
+
 ### GetSubscriptionId
 
 `func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetSubscriptionId() string`
@@ -321,6 +400,11 @@ and a boolean to check if the value has been set.
 
 SetSubscriptionId sets SubscriptionId field to given value.
 
+### HasSubscriptionId
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasSubscriptionId() bool`
+
+HasSubscriptionId returns a boolean if a field has been set.
 
 ### GetTaxPercentage
 
@@ -346,6 +430,31 @@ SetTaxPercentage sets TaxPercentage field to given value.
 `func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasTaxPercentage() bool`
 
 HasTaxPercentage returns a boolean if a field has been set.
+
+### GetUserId
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetUserId() int64`
+
+GetUserId returns the UserId field if non-nil, zero value otherwise.
+
+### GetUserIdOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetUserIdOk() (*int64, bool)`
+
+GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserId
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetUserId(v int64)`
+
+SetUserId sets UserId field to given value.
+
+### HasUserId
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasUserId() bool`
+
+HasUserId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

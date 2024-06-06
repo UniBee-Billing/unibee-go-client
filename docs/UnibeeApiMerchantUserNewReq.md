@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Address** | Pointer to **string** | Address | [optional] 
 **Email** | **string** | Email | 
-**ExternalUserId** | **string** | ExternalUserId | 
+**ExternalUserId** | Pointer to **string** | ExternalUserId | [optional] 
 **FirstName** | Pointer to **string** | First Name | [optional] 
 **LastName** | Pointer to **string** | Last Name | [optional] 
 **Password** | Pointer to **string** | Password | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewUnibeeApiMerchantUserNewReq
 
-`func NewUnibeeApiMerchantUserNewReq(email string, externalUserId string, ) *UnibeeApiMerchantUserNewReq`
+`func NewUnibeeApiMerchantUserNewReq(email string, ) *UnibeeApiMerchantUserNewReq`
 
 NewUnibeeApiMerchantUserNewReq instantiates a new UnibeeApiMerchantUserNewReq object
 This constructor will assign default values to properties that have it defined,
@@ -95,6 +95,11 @@ and a boolean to check if the value has been set.
 
 SetExternalUserId sets ExternalUserId field to given value.
 
+### HasExternalUserId
+
+`func (o *UnibeeApiMerchantUserNewReq) HasExternalUserId() bool`
+
+HasExternalUserId returns a boolean if a field has been set.
 
 ### GetFirstName
 

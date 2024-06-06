@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | AddonParams | [optional] 
 **Addons** | Pointer to [**[]UnibeeApiBeanPlanAddonDetail**](UnibeeApiBeanPlanAddonDetail.md) | Addon | [optional] 
+**DayLeft** | Pointer to **int32** | DayLeft util the period end, only available for webhook | [optional] 
 **Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCodeSimplify**](UnibeeApiBeanMerchantDiscountCodeSimplify.md) |  | [optional] 
 **Gateway** | Pointer to [**UnibeeApiBeanGatewaySimplify**](UnibeeApiBeanGatewaySimplify.md) |  | [optional] 
 **LatestInvoice** | Pointer to [**UnibeeApiBeanInvoiceSimplify**](UnibeeApiBeanInvoiceSimplify.md) |  | [optional] 
@@ -82,6 +83,31 @@ SetAddons sets Addons field to given value.
 `func (o *UnibeeApiBeanDetailSubscriptionDetail) HasAddons() bool`
 
 HasAddons returns a boolean if a field has been set.
+
+### GetDayLeft
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetDayLeft() int32`
+
+GetDayLeft returns the DayLeft field if non-nil, zero value otherwise.
+
+### GetDayLeftOk
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetDayLeftOk() (*int32, bool)`
+
+GetDayLeftOk returns a tuple with the DayLeft field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDayLeft
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) SetDayLeft(v int32)`
+
+SetDayLeft sets DayLeft field to given value.
+
+### HasDayLeft
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) HasDayLeft() bool`
+
+HasDayLeft returns a boolean if a field has been set.
 
 ### GetDiscount
 

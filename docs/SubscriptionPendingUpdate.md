@@ -1,6 +1,6 @@
 # \SubscriptionPendingUpdate
 
-All URIs are relative to *http://api.unibee.top*
+All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,7 +31,7 @@ func main() {
 	subscriptionId := "subscriptionId_example" // string | SubscriptionId
 	sortField := "sortField_example" // string | Sort Field，gmt_create|gmt_modify，Default gmt_modify (optional)
 	sortType := "sortType_example" // string | Sort Type，asc|desc，Default desc (optional)
-	page := int32(56) // int32 | Page, Start WIth 0 (optional)
+	page := int32(56) // int32 | Page, Start With 0 (optional)
 	count := int32(56) // int32 | Count Of Page (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
  **subscriptionId** | **string** | SubscriptionId | 
  **sortField** | **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | 
  **sortType** | **string** | Sort Type，asc|desc，Default desc | 
- **page** | **int32** | Page, Start WIth 0 | 
+ **page** | **int32** | Page, Start With 0 | 
  **count** | **int32** | Count Of Page | 
 
 ### Return type

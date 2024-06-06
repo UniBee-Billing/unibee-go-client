@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UserAccounts** | Pointer to [**[]UnibeeApiBeanUserAccountSimplify**](UnibeeApiBeanUserAccountSimplify.md) | User Account Object List | [optional] 
+**Total** | Pointer to **int32** | Total | [optional] 
+**UserAccounts** | Pointer to [**[]UnibeeApiBeanDetailUserAccountDetail**](UnibeeApiBeanDetailUserAccountDetail.md) | User Account Object List | [optional] 
 
 ## Methods
 
@@ -25,22 +26,47 @@ NewUnibeeApiMerchantUserListResWithDefaults instantiates a new UnibeeApiMerchant
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
+### GetTotal
+
+`func (o *UnibeeApiMerchantUserListRes) GetTotal() int32`
+
+GetTotal returns the Total field if non-nil, zero value otherwise.
+
+### GetTotalOk
+
+`func (o *UnibeeApiMerchantUserListRes) GetTotalOk() (*int32, bool)`
+
+GetTotalOk returns a tuple with the Total field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotal
+
+`func (o *UnibeeApiMerchantUserListRes) SetTotal(v int32)`
+
+SetTotal sets Total field to given value.
+
+### HasTotal
+
+`func (o *UnibeeApiMerchantUserListRes) HasTotal() bool`
+
+HasTotal returns a boolean if a field has been set.
+
 ### GetUserAccounts
 
-`func (o *UnibeeApiMerchantUserListRes) GetUserAccounts() []UnibeeApiBeanUserAccountSimplify`
+`func (o *UnibeeApiMerchantUserListRes) GetUserAccounts() []UnibeeApiBeanDetailUserAccountDetail`
 
 GetUserAccounts returns the UserAccounts field if non-nil, zero value otherwise.
 
 ### GetUserAccountsOk
 
-`func (o *UnibeeApiMerchantUserListRes) GetUserAccountsOk() (*[]UnibeeApiBeanUserAccountSimplify, bool)`
+`func (o *UnibeeApiMerchantUserListRes) GetUserAccountsOk() (*[]UnibeeApiBeanDetailUserAccountDetail, bool)`
 
 GetUserAccountsOk returns a tuple with the UserAccounts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserAccounts
 
-`func (o *UnibeeApiMerchantUserListRes) SetUserAccounts(v []UnibeeApiBeanUserAccountSimplify)`
+`func (o *UnibeeApiMerchantUserListRes) SetUserAccounts(v []UnibeeApiBeanDetailUserAccountDetail)`
 
 SetUserAccounts sets UserAccounts field to given value.
 

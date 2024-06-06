@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonIds** | Pointer to **[]int64** | Plan Ids Of Recurring Addon Type | [optional] 
 **Amount** | **int64** | Plan CaptureAmount | 
+**CancelAtTrialEnd** | Pointer to **int32** | whether cancel at subscription first trial end，0-false | 1-true, will pass to cancelAtPeriodEnd of subscription | [optional] 
 **Currency** | **string** | Plan Currency | 
 **Description** | Pointer to **string** | Description | [optional] 
 **GasPayer** | Pointer to **string** | who pay the gas for crypto payment, merchant|user | [optional] 
@@ -19,6 +20,9 @@ Name | Type | Description | Notes
 **PlanName** | **string** | Plan Name | 
 **ProductDescription** | Pointer to **string** | Default Copy Description | [optional] 
 **ProductName** | Pointer to **string** | Default Copy PlanName | [optional] 
+**TrialAmount** | Pointer to **int64** | price of trial period， not available for addon | [optional] 
+**TrialDemand** | Pointer to **string** | demand of trial， not available for addon, example, paymentMethod, payment method will ask for subscription trial start | [optional] 
+**TrialDurationTime** | Pointer to **int64** | duration of trial， not available for addon | [optional] 
 **Type** | Pointer to **int32** | The type of plan, 1-main plan，2-addon plan, 3-onetime plan, default main plan | [optional] [default to 1]
 
 ## Methods
@@ -84,6 +88,31 @@ and a boolean to check if the value has been set.
 
 SetAmount sets Amount field to given value.
 
+
+### GetCancelAtTrialEnd
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetCancelAtTrialEnd() int32`
+
+GetCancelAtTrialEnd returns the CancelAtTrialEnd field if non-nil, zero value otherwise.
+
+### GetCancelAtTrialEndOk
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetCancelAtTrialEndOk() (*int32, bool)`
+
+GetCancelAtTrialEndOk returns a tuple with the CancelAtTrialEnd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCancelAtTrialEnd
+
+`func (o *UnibeeApiMerchantPlanNewReq) SetCancelAtTrialEnd(v int32)`
+
+SetCancelAtTrialEnd sets CancelAtTrialEnd field to given value.
+
+### HasCancelAtTrialEnd
+
+`func (o *UnibeeApiMerchantPlanNewReq) HasCancelAtTrialEnd() bool`
+
+HasCancelAtTrialEnd returns a boolean if a field has been set.
 
 ### GetCurrency
 
@@ -399,6 +428,81 @@ SetProductName sets ProductName field to given value.
 `func (o *UnibeeApiMerchantPlanNewReq) HasProductName() bool`
 
 HasProductName returns a boolean if a field has been set.
+
+### GetTrialAmount
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetTrialAmount() int64`
+
+GetTrialAmount returns the TrialAmount field if non-nil, zero value otherwise.
+
+### GetTrialAmountOk
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetTrialAmountOk() (*int64, bool)`
+
+GetTrialAmountOk returns a tuple with the TrialAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrialAmount
+
+`func (o *UnibeeApiMerchantPlanNewReq) SetTrialAmount(v int64)`
+
+SetTrialAmount sets TrialAmount field to given value.
+
+### HasTrialAmount
+
+`func (o *UnibeeApiMerchantPlanNewReq) HasTrialAmount() bool`
+
+HasTrialAmount returns a boolean if a field has been set.
+
+### GetTrialDemand
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetTrialDemand() string`
+
+GetTrialDemand returns the TrialDemand field if non-nil, zero value otherwise.
+
+### GetTrialDemandOk
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetTrialDemandOk() (*string, bool)`
+
+GetTrialDemandOk returns a tuple with the TrialDemand field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrialDemand
+
+`func (o *UnibeeApiMerchantPlanNewReq) SetTrialDemand(v string)`
+
+SetTrialDemand sets TrialDemand field to given value.
+
+### HasTrialDemand
+
+`func (o *UnibeeApiMerchantPlanNewReq) HasTrialDemand() bool`
+
+HasTrialDemand returns a boolean if a field has been set.
+
+### GetTrialDurationTime
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetTrialDurationTime() int64`
+
+GetTrialDurationTime returns the TrialDurationTime field if non-nil, zero value otherwise.
+
+### GetTrialDurationTimeOk
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetTrialDurationTimeOk() (*int64, bool)`
+
+GetTrialDurationTimeOk returns a tuple with the TrialDurationTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrialDurationTime
+
+`func (o *UnibeeApiMerchantPlanNewReq) SetTrialDurationTime(v int64)`
+
+SetTrialDurationTime sets TrialDurationTime field to given value.
+
+### HasTrialDurationTime
+
+`func (o *UnibeeApiMerchantPlanNewReq) HasTrialDurationTime() bool`
+
+HasTrialDurationTime returns a boolean if a field has been set.
 
 ### GetType
 

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **GatewayId** | **int64** | The id of payment gateway | 
+**WebhookSecret** | Pointer to **string** | The secret of gateway webhook | [optional] 
 
 ## Methods
 
@@ -44,6 +45,31 @@ and a boolean to check if the value has been set.
 
 SetGatewayId sets GatewayId field to given value.
 
+
+### GetWebhookSecret
+
+`func (o *UnibeeApiMerchantGatewaySetupWebhookReq) GetWebhookSecret() string`
+
+GetWebhookSecret returns the WebhookSecret field if non-nil, zero value otherwise.
+
+### GetWebhookSecretOk
+
+`func (o *UnibeeApiMerchantGatewaySetupWebhookReq) GetWebhookSecretOk() (*string, bool)`
+
+GetWebhookSecretOk returns a tuple with the WebhookSecret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWebhookSecret
+
+`func (o *UnibeeApiMerchantGatewaySetupWebhookReq) SetWebhookSecret(v string)`
+
+SetWebhookSecret sets WebhookSecret field to given value.
+
+### HasWebhookSecret
+
+`func (o *UnibeeApiMerchantGatewaySetupWebhookReq) HasWebhookSecret() bool`
+
+HasWebhookSecret returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

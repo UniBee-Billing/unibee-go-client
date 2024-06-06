@@ -8,18 +8,19 @@ Name | Type | Description | Notes
 **DiscountAmount** | Pointer to **int32** | Amount of discount | [optional] 
 **DiscountCode** | Pointer to **string** | DiscountCode | [optional] 
 **DiscountPercentage** | Pointer to **int32** | Percentage of discount, 100&#x3D;1%, ignore if discountAmount provide | [optional] 
-**GatewayId** | Pointer to **int32** | GatewayId, use subscription&#39;s gateway if not provide | [optional] 
+**GatewayId** | Pointer to **int32** | GatewayId, use user&#39;s gateway if not provide | [optional] 
 **Metadata** | Pointer to **map[string]string** | Metadata，custom data | [optional] 
 **Quantity** | **int64** | Quantity, quantity of the new payment which one-time addon purchased | 
 **ReturnUrl** | Pointer to **string** | ReturnUrl, the addon&#39;s payment will redirect based on the returnUrl provided when it&#39;s back from gateway side | [optional] 
-**SubscriptionId** | **string** | SubscriptionId, id of subscription which addon will attached | 
+**SubscriptionId** | Pointer to **string** | SubscriptionId, id of subscription which addon will attached, either SubscriptionId or UserId needed, The only one active subscription of userId will attach the addon | [optional] 
 **TaxPercentage** | Pointer to **int32** | TaxPercentage，1000 &#x3D; 10%, use subscription&#39;s taxPercentage if not provide | [optional] 
+**UserId** | Pointer to **int64** | UserId, either SubscriptionId or UserId needed, The only one active subscription will update if userId provide instead of subscriptionId | [optional] 
 
 ## Methods
 
 ### NewUnibeeApiMerchantSubscriptionOnetimeAddonNewReq
 
-`func NewUnibeeApiMerchantSubscriptionOnetimeAddonNewReq(addonId int64, quantity int64, subscriptionId string, ) *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq`
+`func NewUnibeeApiMerchantSubscriptionOnetimeAddonNewReq(addonId int64, quantity int64, ) *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq`
 
 NewUnibeeApiMerchantSubscriptionOnetimeAddonNewReq instantiates a new UnibeeApiMerchantSubscriptionOnetimeAddonNewReq object
 This constructor will assign default values to properties that have it defined,
@@ -243,6 +244,11 @@ and a boolean to check if the value has been set.
 
 SetSubscriptionId sets SubscriptionId field to given value.
 
+### HasSubscriptionId
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) HasSubscriptionId() bool`
+
+HasSubscriptionId returns a boolean if a field has been set.
 
 ### GetTaxPercentage
 
@@ -268,6 +274,31 @@ SetTaxPercentage sets TaxPercentage field to given value.
 `func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) HasTaxPercentage() bool`
 
 HasTaxPercentage returns a boolean if a field has been set.
+
+### GetUserId
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetUserId() int64`
+
+GetUserId returns the UserId field if non-nil, zero value otherwise.
+
+### GetUserIdOk
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetUserIdOk() (*int64, bool)`
+
+GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserId
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) SetUserId(v int64)`
+
+SetUserId sets UserId field to given value.
+
+### HasUserId
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) HasUserId() bool`
+
+HasUserId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

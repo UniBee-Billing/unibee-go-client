@@ -5,27 +5,31 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonIds** | Pointer to **[]int64** | Plan Ids Of Recurring Addon Type | [optional] 
-**Amount** | **int64** | Plan CaptureAmount | 
-**Currency** | **string** | Plan Currency | 
-**Description** | Pointer to **string** | Description | [optional] 
+**Amount** | Pointer to **int32** | CaptureAmount of plan, not editable when plan is active | [optional] 
+**CancelAtTrialEnd** | Pointer to **int32** | whether cancel at subscripiton first trial end，0-false | 1-true, will pass to cancelAtPeriodEnd of subscription | [optional] 
+**Currency** | Pointer to **string** | Currency of plan, not editable when plan is active | [optional] 
+**Description** | Pointer to **string** | Description of plan | [optional] 
 **GasPayer** | Pointer to **string** | who pay the gas for crypto payment, merchant|user | [optional] 
 **HomeUrl** | Pointer to **string** | HomeUrl,Start With: http | [optional] 
 **ImageUrl** | Pointer to **string** | ImageUrl,Start With: http | [optional] 
-**IntervalCount** | Pointer to **int32** | Number Of IntervalUnit | [optional] 
-**IntervalUnit** | Pointer to **string** | Plan Interval Unit，em: day|month|year|week | [optional] 
+**IntervalCount** | Pointer to **int32** | Number,intervalUnit of plan, not editable when plan is active | [optional] 
+**IntervalUnit** | Pointer to **string** | Interval unit of plan，em: day|month|year|week, not editable when plan is active | [optional] 
 **Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
 **MetricLimits** | Pointer to [**[]UnibeeApiBeanBulkMetricLimitPlanBindingParam**](UnibeeApiBeanBulkMetricLimitPlanBindingParam.md) | Plan&#39;s MetricLimit List | [optional] 
 **OnetimeAddonIds** | Pointer to **[]int64** | Plan Ids Of Onetime Addon Type | [optional] 
-**PlanId** | **int64** | PlanId | 
-**PlanName** | **string** | Plan Name | 
-**ProductDescription** | Pointer to **string** | Default Copy Description | [optional] 
-**ProductName** | Pointer to **string** | Default Copy PlanName | [optional] 
+**PlanId** | **int64** | Id of plan | 
+**PlanName** | Pointer to **string** | Name of plan | [optional] 
+**ProductDescription** | Pointer to **string** | ProductDescription of plan, Default copy description | [optional] 
+**ProductName** | Pointer to **string** | ProductName of plan, Default copy planName | [optional] 
+**TrialAmount** | Pointer to **int32** | price of trial period， not available for addon | [optional] 
+**TrialDemand** | Pointer to **string** | demand of trial, not available for addon, example, paymentMethod, payment method will ask for subscription trial start | [optional] 
+**TrialDurationTime** | Pointer to **int32** | duration of trial， not available for addon | [optional] 
 
 ## Methods
 
 ### NewUnibeeApiMerchantPlanEditReq
 
-`func NewUnibeeApiMerchantPlanEditReq(amount int64, currency string, planId int64, planName string, ) *UnibeeApiMerchantPlanEditReq`
+`func NewUnibeeApiMerchantPlanEditReq(planId int64, ) *UnibeeApiMerchantPlanEditReq`
 
 NewUnibeeApiMerchantPlanEditReq instantiates a new UnibeeApiMerchantPlanEditReq object
 This constructor will assign default values to properties that have it defined,
@@ -67,23 +71,53 @@ HasAddonIds returns a boolean if a field has been set.
 
 ### GetAmount
 
-`func (o *UnibeeApiMerchantPlanEditReq) GetAmount() int64`
+`func (o *UnibeeApiMerchantPlanEditReq) GetAmount() int32`
 
 GetAmount returns the Amount field if non-nil, zero value otherwise.
 
 ### GetAmountOk
 
-`func (o *UnibeeApiMerchantPlanEditReq) GetAmountOk() (*int64, bool)`
+`func (o *UnibeeApiMerchantPlanEditReq) GetAmountOk() (*int32, bool)`
 
 GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmount
 
-`func (o *UnibeeApiMerchantPlanEditReq) SetAmount(v int64)`
+`func (o *UnibeeApiMerchantPlanEditReq) SetAmount(v int32)`
 
 SetAmount sets Amount field to given value.
 
+### HasAmount
+
+`func (o *UnibeeApiMerchantPlanEditReq) HasAmount() bool`
+
+HasAmount returns a boolean if a field has been set.
+
+### GetCancelAtTrialEnd
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetCancelAtTrialEnd() int32`
+
+GetCancelAtTrialEnd returns the CancelAtTrialEnd field if non-nil, zero value otherwise.
+
+### GetCancelAtTrialEndOk
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetCancelAtTrialEndOk() (*int32, bool)`
+
+GetCancelAtTrialEndOk returns a tuple with the CancelAtTrialEnd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCancelAtTrialEnd
+
+`func (o *UnibeeApiMerchantPlanEditReq) SetCancelAtTrialEnd(v int32)`
+
+SetCancelAtTrialEnd sets CancelAtTrialEnd field to given value.
+
+### HasCancelAtTrialEnd
+
+`func (o *UnibeeApiMerchantPlanEditReq) HasCancelAtTrialEnd() bool`
+
+HasCancelAtTrialEnd returns a boolean if a field has been set.
 
 ### GetCurrency
 
@@ -104,6 +138,11 @@ and a boolean to check if the value has been set.
 
 SetCurrency sets Currency field to given value.
 
+### HasCurrency
+
+`func (o *UnibeeApiMerchantPlanEditReq) HasCurrency() bool`
+
+HasCurrency returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -369,6 +408,11 @@ and a boolean to check if the value has been set.
 
 SetPlanName sets PlanName field to given value.
 
+### HasPlanName
+
+`func (o *UnibeeApiMerchantPlanEditReq) HasPlanName() bool`
+
+HasPlanName returns a boolean if a field has been set.
 
 ### GetProductDescription
 
@@ -419,6 +463,81 @@ SetProductName sets ProductName field to given value.
 `func (o *UnibeeApiMerchantPlanEditReq) HasProductName() bool`
 
 HasProductName returns a boolean if a field has been set.
+
+### GetTrialAmount
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetTrialAmount() int32`
+
+GetTrialAmount returns the TrialAmount field if non-nil, zero value otherwise.
+
+### GetTrialAmountOk
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetTrialAmountOk() (*int32, bool)`
+
+GetTrialAmountOk returns a tuple with the TrialAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrialAmount
+
+`func (o *UnibeeApiMerchantPlanEditReq) SetTrialAmount(v int32)`
+
+SetTrialAmount sets TrialAmount field to given value.
+
+### HasTrialAmount
+
+`func (o *UnibeeApiMerchantPlanEditReq) HasTrialAmount() bool`
+
+HasTrialAmount returns a boolean if a field has been set.
+
+### GetTrialDemand
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetTrialDemand() string`
+
+GetTrialDemand returns the TrialDemand field if non-nil, zero value otherwise.
+
+### GetTrialDemandOk
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetTrialDemandOk() (*string, bool)`
+
+GetTrialDemandOk returns a tuple with the TrialDemand field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrialDemand
+
+`func (o *UnibeeApiMerchantPlanEditReq) SetTrialDemand(v string)`
+
+SetTrialDemand sets TrialDemand field to given value.
+
+### HasTrialDemand
+
+`func (o *UnibeeApiMerchantPlanEditReq) HasTrialDemand() bool`
+
+HasTrialDemand returns a boolean if a field has been set.
+
+### GetTrialDurationTime
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetTrialDurationTime() int32`
+
+GetTrialDurationTime returns the TrialDurationTime field if non-nil, zero value otherwise.
+
+### GetTrialDurationTimeOk
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetTrialDurationTimeOk() (*int32, bool)`
+
+GetTrialDurationTimeOk returns a tuple with the TrialDurationTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrialDurationTime
+
+`func (o *UnibeeApiMerchantPlanEditReq) SetTrialDurationTime(v int32)`
+
+SetTrialDurationTime sets TrialDurationTime field to given value.
+
+### HasTrialDurationTime
+
+`func (o *UnibeeApiMerchantPlanEditReq) HasTrialDurationTime() bool`
+
+HasTrialDurationTime returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

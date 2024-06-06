@@ -1,26 +1,27 @@
 # \User
 
-All URIs are relative to *http://api.unibee.top*
+All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**UserFrozenUserPost**](User.md#UserFrozenUserPost) | **Post** /merchant/user/frozen_user | FrozenUser
+[**UserChangeGatewayPost**](User.md#UserChangeGatewayPost) | **Post** /merchant/user/change_gateway | ChangeUserDefaultGateway
 [**UserGetGet**](User.md#UserGetGet) | **Get** /merchant/user/get | GetUserProfile
 [**UserListGet**](User.md#UserListGet) | **Get** /merchant/user/list | UserList
 [**UserListPost**](User.md#UserListPost) | **Post** /merchant/user/list | UserList
 [**UserNewPost**](User.md#UserNewPost) | **Post** /merchant/user/new | NewUser
-[**UserReleaseUserPost**](User.md#UserReleaseUserPost) | **Post** /merchant/user/release_user | ReleaseUser
+[**UserResumeUserPost**](User.md#UserResumeUserPost) | **Post** /merchant/user/resume_user | ResumeUser
 [**UserSearchGet**](User.md#UserSearchGet) | **Get** /merchant/user/search | UserSearch
 [**UserSearchPost**](User.md#UserSearchPost) | **Post** /merchant/user/search | UserSearch
+[**UserSuspendUserPost**](User.md#UserSuspendUserPost) | **Post** /merchant/user/suspend_user | SuspendUser
 [**UserUpdatePost**](User.md#UserUpdatePost) | **Post** /merchant/user/update | UpdateUserProfile
 
 
 
-## UserFrozenUserPost
+## UserChangeGatewayPost
 
-> MerchantAuthSsoLoginOTPPost200Response UserFrozenUserPost(ctx).UnibeeApiMerchantUserFrozenReq(unibeeApiMerchantUserFrozenReq).Execute()
+> MerchantAuthSsoLoginOTPPost200Response UserChangeGatewayPost(ctx).UnibeeApiMerchantUserChangeGatewayReq(unibeeApiMerchantUserChangeGatewayReq).Execute()
 
-FrozenUser
+ChangeUserDefaultGateway
 
 ### Example
 
@@ -35,17 +36,17 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantUserFrozenReq := *openapiclient.NewUnibeeApiMerchantUserFrozenReq() // UnibeeApiMerchantUserFrozenReq | 
+	unibeeApiMerchantUserChangeGatewayReq := *openapiclient.NewUnibeeApiMerchantUserChangeGatewayReq(int64(123), int64(123)) // UnibeeApiMerchantUserChangeGatewayReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.User.UserFrozenUserPost(context.Background()).UnibeeApiMerchantUserFrozenReq(unibeeApiMerchantUserFrozenReq).Execute()
+	resp, r, err := apiClient.User.UserChangeGatewayPost(context.Background()).UnibeeApiMerchantUserChangeGatewayReq(unibeeApiMerchantUserChangeGatewayReq).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `User.UserFrozenUserPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `User.UserChangeGatewayPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UserFrozenUserPost`: MerchantAuthSsoLoginOTPPost200Response
-	fmt.Fprintf(os.Stdout, "Response from `User.UserFrozenUserPost`: %v\n", resp)
+	// response from `UserChangeGatewayPost`: MerchantAuthSsoLoginOTPPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `User.UserChangeGatewayPost`: %v\n", resp)
 }
 ```
 
@@ -55,12 +56,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUserFrozenUserPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUserChangeGatewayPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **unibeeApiMerchantUserFrozenReq** | [**UnibeeApiMerchantUserFrozenReq**](UnibeeApiMerchantUserFrozenReq.md) |  | 
+ **unibeeApiMerchantUserChangeGatewayReq** | [**UnibeeApiMerchantUserChangeGatewayReq**](UnibeeApiMerchantUserChangeGatewayReq.md) |  | 
 
 ### Return type
 
@@ -292,7 +293,7 @@ No authorization required
 
 ## UserNewPost
 
-> MerchantUserGetGet200Response UserNewPost(ctx).UnibeeApiMerchantUserNewReq(unibeeApiMerchantUserNewReq).Execute()
+> MerchantUserNewPost200Response UserNewPost(ctx).UnibeeApiMerchantUserNewReq(unibeeApiMerchantUserNewReq).Execute()
 
 NewUser
 
@@ -311,7 +312,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantUserNewReq := *openapiclient.NewUnibeeApiMerchantUserNewReq("Email_example", "ExternalUserId_example") // UnibeeApiMerchantUserNewReq | 
+	unibeeApiMerchantUserNewReq := *openapiclient.NewUnibeeApiMerchantUserNewReq("Email_example") // UnibeeApiMerchantUserNewReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -320,7 +321,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `User.UserNewPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UserNewPost`: MerchantUserGetGet200Response
+	// response from `UserNewPost`: MerchantUserNewPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `User.UserNewPost`: %v\n", resp)
 }
 ```
@@ -340,7 +341,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantUserGetGet200Response**](MerchantUserGetGet200Response.md)
+[**MerchantUserNewPost200Response**](MerchantUserNewPost200Response.md)
 
 ### Authorization
 
@@ -356,11 +357,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## UserReleaseUserPost
+## UserResumeUserPost
 
-> MerchantAuthSsoLoginOTPPost200Response UserReleaseUserPost(ctx).UnibeeApiMerchantUserReleaseReq(unibeeApiMerchantUserReleaseReq).Execute()
+> MerchantAuthSsoLoginOTPPost200Response UserResumeUserPost(ctx).UnibeeApiMerchantUserReleaseReq(unibeeApiMerchantUserReleaseReq).Execute()
 
-ReleaseUser
+ResumeUser
 
 ### Example
 
@@ -379,13 +380,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.User.UserReleaseUserPost(context.Background()).UnibeeApiMerchantUserReleaseReq(unibeeApiMerchantUserReleaseReq).Execute()
+	resp, r, err := apiClient.User.UserResumeUserPost(context.Background()).UnibeeApiMerchantUserReleaseReq(unibeeApiMerchantUserReleaseReq).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `User.UserReleaseUserPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `User.UserResumeUserPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UserReleaseUserPost`: MerchantAuthSsoLoginOTPPost200Response
-	fmt.Fprintf(os.Stdout, "Response from `User.UserReleaseUserPost`: %v\n", resp)
+	// response from `UserResumeUserPost`: MerchantAuthSsoLoginOTPPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `User.UserResumeUserPost`: %v\n", resp)
 }
 ```
 
@@ -395,7 +396,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUserReleaseUserPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUserResumeUserPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -548,9 +549,73 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## UserSuspendUserPost
+
+> MerchantAuthSsoLoginOTPPost200Response UserSuspendUserPost(ctx).UnibeeApiMerchantUserFrozenReq(unibeeApiMerchantUserFrozenReq).Execute()
+
+SuspendUser
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantUserFrozenReq := *openapiclient.NewUnibeeApiMerchantUserFrozenReq() // UnibeeApiMerchantUserFrozenReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.User.UserSuspendUserPost(context.Background()).UnibeeApiMerchantUserFrozenReq(unibeeApiMerchantUserFrozenReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `User.UserSuspendUserPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserSuspendUserPost`: MerchantAuthSsoLoginOTPPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `User.UserSuspendUserPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUserSuspendUserPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantUserFrozenReq** | [**UnibeeApiMerchantUserFrozenReq**](UnibeeApiMerchantUserFrozenReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## UserUpdatePost
 
-> MerchantAuthSsoLoginOTPPost200Response UserUpdatePost(ctx).UnibeeApiMerchantUserUpdateReq(unibeeApiMerchantUserUpdateReq).Execute()
+> MerchantUserGetGet200Response UserUpdatePost(ctx).UnibeeApiMerchantUserUpdateReq(unibeeApiMerchantUserUpdateReq).Execute()
 
 UpdateUserProfile
 
@@ -567,7 +632,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantUserUpdateReq := *openapiclient.NewUnibeeApiMerchantUserUpdateReq("Address_example", "CountryCode_example", "CountryName_example", "Email_example", "FirstName_example", "LastName_example", int64(123)) // UnibeeApiMerchantUserUpdateReq | 
+	unibeeApiMerchantUserUpdateReq := *openapiclient.NewUnibeeApiMerchantUserUpdateReq("Address_example", "Email_example", "FirstName_example", "LastName_example", int64(123)) // UnibeeApiMerchantUserUpdateReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -576,7 +641,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `User.UserUpdatePost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UserUpdatePost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `UserUpdatePost`: MerchantUserGetGet200Response
 	fmt.Fprintf(os.Stdout, "Response from `User.UserUpdatePost`: %v\n", resp)
 }
 ```
@@ -596,7 +661,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantUserGetGet200Response**](MerchantUserGetGet200Response.md)
 
 ### Authorization
 

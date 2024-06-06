@@ -1,13 +1,15 @@
 # \Payment
 
-All URIs are relative to *http://api.unibee.top*
+All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**PaymentCancelPost**](Payment.md#PaymentCancelPost) | **Post** /merchant/payment/cancel | CancelPayment
 [**PaymentCapturePost**](Payment.md#PaymentCapturePost) | **Post** /merchant/payment/capture | CapturePayment
 [**PaymentDetailGet**](Payment.md#PaymentDetailGet) | **Get** /merchant/payment/detail | PaymentDetail
+[**PaymentItemListGet**](Payment.md#PaymentItemListGet) | **Get** /merchant/payment/item/list | OneTimePaymentItemList
 [**PaymentListGet**](Payment.md#PaymentListGet) | **Get** /merchant/payment/list | PaymentList
+[**PaymentMethodDeletePost**](Payment.md#PaymentMethodDeletePost) | **Post** /merchant/payment/method_delete | Delete Payment Method From User
 [**PaymentMethodGetGet**](Payment.md#PaymentMethodGetGet) | **Get** /merchant/payment/method_get | PaymentMethod
 [**PaymentMethodListGet**](Payment.md#PaymentMethodListGet) | **Get** /merchant/payment/method_list | PaymentMethodList
 [**PaymentMethodNewPost**](Payment.md#PaymentMethodNewPost) | **Post** /merchant/payment/method_new | Create New Payment Method And Attach To User
@@ -103,7 +105,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantPaymentCaptureReq := *openapiclient.NewUnibeeApiMerchantPaymentCaptureReq(int64(123), "Currency_example", "ExternalCaptureId_example", "PaymentId_example") // UnibeeApiMerchantPaymentCaptureReq | 
+	unibeeApiMerchantPaymentCaptureReq := *openapiclient.NewUnibeeApiMerchantPaymentCaptureReq("ExternalCaptureId_example", "PaymentId_example") // UnibeeApiMerchantPaymentCaptureReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -212,6 +214,78 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## PaymentItemListGet
+
+> MerchantPaymentItemListGet200Response PaymentItemListGet(ctx).UserId(userId).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
+
+OneTimePaymentItemList
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	userId := int64(789) // int64 | Filter UserId, Default All (optional)
+	sortField := "sortField_example" // string | Sort，invoice_id|gmt_create|gmt_modify|period_end|total_amount，Default gmt_modify (optional)
+	sortType := "sortType_example" // string | Sort Type，asc|desc，Default desc (optional)
+	page := int32(56) // int32 | Page,Start 0 (optional)
+	count := int32(56) // int32 | Count Of Page (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Payment.PaymentItemListGet(context.Background()).UserId(userId).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Payment.PaymentItemListGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PaymentItemListGet`: MerchantPaymentItemListGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `Payment.PaymentItemListGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPaymentItemListGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **int64** | Filter UserId, Default All | 
+ **sortField** | **string** | Sort，invoice_id|gmt_create|gmt_modify|period_end|total_amount，Default gmt_modify | 
+ **sortType** | **string** | Sort Type，asc|desc，Default desc | 
+ **page** | **int32** | Page,Start 0 | 
+ **count** | **int32** | Count Of Page | 
+
+### Return type
+
+[**MerchantPaymentItemListGet200Response**](MerchantPaymentItemListGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## PaymentListGet
 
 > MerchantPaymentListGet200Response PaymentListGet(ctx).GatewayId(gatewayId).UserId(userId).Email(email).Status(status).Currency(currency).CountryCode(countryCode).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
@@ -287,6 +361,70 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PaymentMethodDeletePost
+
+> MerchantAuthSsoLoginOTPPost200Response PaymentMethodDeletePost(ctx).UnibeeApiMerchantPaymentMethodDeleteReq(unibeeApiMerchantPaymentMethodDeleteReq).Execute()
+
+Delete Payment Method From User
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantPaymentMethodDeleteReq := *openapiclient.NewUnibeeApiMerchantPaymentMethodDeleteReq(int64(123), "PaymentMethodId_example", int64(123)) // UnibeeApiMerchantPaymentMethodDeleteReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Payment.PaymentMethodDeletePost(context.Background()).UnibeeApiMerchantPaymentMethodDeleteReq(unibeeApiMerchantPaymentMethodDeleteReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Payment.PaymentMethodDeletePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PaymentMethodDeletePost`: MerchantAuthSsoLoginOTPPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Payment.PaymentMethodDeletePost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPaymentMethodDeletePostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantPaymentMethodDeleteReq** | [**UnibeeApiMerchantPaymentMethodDeleteReq**](UnibeeApiMerchantPaymentMethodDeleteReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -386,7 +524,7 @@ import (
 
 func main() {
 	gatewayId := int64(789) // int64 | The unique id of gateway
-	userId := int64(789) // int64 | The customer's unique id (optional)
+	userId := int64(789) // int64 | The id of user (optional)
 	paymentId := "paymentId_example" // string | The unique id of payment (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -413,7 +551,7 @@ Other parameters are passed through a pointer to a apiPaymentMethodListGetReques
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gatewayId** | **int64** | The unique id of gateway | 
- **userId** | **int64** | The customer&#39;s unique id | 
+ **userId** | **int64** | The id of user | 
  **paymentId** | **string** | The unique id of payment | 
 
 ### Return type
@@ -453,7 +591,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantPaymentMethodNewReq := *openapiclient.NewUnibeeApiMerchantPaymentMethodNewReq("Currency_example", int64(123), int64(123)) // UnibeeApiMerchantPaymentMethodNewReq | 
+	unibeeApiMerchantPaymentMethodNewReq := *openapiclient.NewUnibeeApiMerchantPaymentMethodNewReq(int64(123), int64(123)) // UnibeeApiMerchantPaymentMethodNewReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

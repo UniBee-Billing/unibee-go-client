@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **AvatarUrl** | Pointer to **string** | avator url | [optional] 
 **BillingType** | Pointer to **int32** | 1-recurring,2-one-time | [optional] 
 **Birthday** | Pointer to **string** | brithday | [optional] 
+**City** | Pointer to **string** | city | [optional] 
 **CompanyName** | Pointer to **string** | company name | [optional] 
 **CountryCode** | Pointer to **string** | country_code | [optional] 
 **CountryName** | Pointer to **string** | country_name | [optional] 
@@ -17,7 +18,7 @@ Name | Type | Description | Notes
 **ExternalUserId** | Pointer to **string** | external_user_id | [optional] 
 **Facebook** | Pointer to **string** | facebook | [optional] 
 **FirstName** | Pointer to **string** | first name | [optional] 
-**GatewayId** | Pointer to **string** | gateway_id | [optional] 
+**GatewayId** | Pointer to **int64** | gateway_id | [optional] 
 **Gender** | Pointer to **string** | gender | [optional] 
 **Id** | Pointer to **int64** | userId | [optional] 
 **IsRisk** | Pointer to **int32** | is risk account (deperated) | [optional] 
@@ -34,18 +35,21 @@ Name | Type | Description | Notes
 **ReMark** | Pointer to **string** | note | [optional] 
 **RecurringAmount** | Pointer to **int64** | total recurring amount, cent | [optional] 
 **School** | Pointer to **string** | school | [optional] 
-**Status** | Pointer to **int32** | 0-Active, 2-Frozen | [optional] 
+**Status** | Pointer to **int32** | 0-Active, 2-Suspend | [optional] 
 **SubscriptionId** | Pointer to **string** | subscription id | [optional] 
 **SubscriptionName** | Pointer to **string** | subscription name | [optional] 
-**SubscriptionStatus** | Pointer to **int32** | sub status，0-Init | 1-Pending｜2-Active｜3-PendingInActive | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | [optional] 
+**SubscriptionStatus** | Pointer to **int32** | sub status， 1-Pending｜2-Active｜3-PendingInActive | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | [optional] 
+**TaxPercentage** | Pointer to **int64** | taxPercentage，1000 &#x3D; 10% | [optional] 
 **Telegram** | Pointer to **string** | telegram | [optional] 
 **TikTok** | Pointer to **string** | tictok | [optional] 
 **TimeZone** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to **int64** | User type, 1-Individual|2-organization | [optional] 
 **UserName** | Pointer to **string** | user name | [optional] 
 **VATNumber** | Pointer to **string** | vat number | [optional] 
 **Version** | Pointer to **int32** | version | [optional] 
 **WeChat** | Pointer to **string** | wechat | [optional] 
 **WhatsAPP** | Pointer to **string** | whats app | [optional] 
+**ZipCode** | Pointer to **string** | zip_code | [optional] 
 
 ## Methods
 
@@ -165,6 +169,31 @@ SetBirthday sets Birthday field to given value.
 `func (o *UnibeeApiBeanUserAccountSimplify) HasBirthday() bool`
 
 HasBirthday returns a boolean if a field has been set.
+
+### GetCity
+
+`func (o *UnibeeApiBeanUserAccountSimplify) GetCity() string`
+
+GetCity returns the City field if non-nil, zero value otherwise.
+
+### GetCityOk
+
+`func (o *UnibeeApiBeanUserAccountSimplify) GetCityOk() (*string, bool)`
+
+GetCityOk returns a tuple with the City field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCity
+
+`func (o *UnibeeApiBeanUserAccountSimplify) SetCity(v string)`
+
+SetCity sets City field to given value.
+
+### HasCity
+
+`func (o *UnibeeApiBeanUserAccountSimplify) HasCity() bool`
+
+HasCity returns a boolean if a field has been set.
 
 ### GetCompanyName
 
@@ -393,20 +422,20 @@ HasFirstName returns a boolean if a field has been set.
 
 ### GetGatewayId
 
-`func (o *UnibeeApiBeanUserAccountSimplify) GetGatewayId() string`
+`func (o *UnibeeApiBeanUserAccountSimplify) GetGatewayId() int64`
 
 GetGatewayId returns the GatewayId field if non-nil, zero value otherwise.
 
 ### GetGatewayIdOk
 
-`func (o *UnibeeApiBeanUserAccountSimplify) GetGatewayIdOk() (*string, bool)`
+`func (o *UnibeeApiBeanUserAccountSimplify) GetGatewayIdOk() (*int64, bool)`
 
 GetGatewayIdOk returns a tuple with the GatewayId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGatewayId
 
-`func (o *UnibeeApiBeanUserAccountSimplify) SetGatewayId(v string)`
+`func (o *UnibeeApiBeanUserAccountSimplify) SetGatewayId(v int64)`
 
 SetGatewayId sets GatewayId field to given value.
 
@@ -916,6 +945,31 @@ SetSubscriptionStatus sets SubscriptionStatus field to given value.
 
 HasSubscriptionStatus returns a boolean if a field has been set.
 
+### GetTaxPercentage
+
+`func (o *UnibeeApiBeanUserAccountSimplify) GetTaxPercentage() int64`
+
+GetTaxPercentage returns the TaxPercentage field if non-nil, zero value otherwise.
+
+### GetTaxPercentageOk
+
+`func (o *UnibeeApiBeanUserAccountSimplify) GetTaxPercentageOk() (*int64, bool)`
+
+GetTaxPercentageOk returns a tuple with the TaxPercentage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTaxPercentage
+
+`func (o *UnibeeApiBeanUserAccountSimplify) SetTaxPercentage(v int64)`
+
+SetTaxPercentage sets TaxPercentage field to given value.
+
+### HasTaxPercentage
+
+`func (o *UnibeeApiBeanUserAccountSimplify) HasTaxPercentage() bool`
+
+HasTaxPercentage returns a boolean if a field has been set.
+
 ### GetTelegram
 
 `func (o *UnibeeApiBeanUserAccountSimplify) GetTelegram() string`
@@ -990,6 +1044,31 @@ SetTimeZone sets TimeZone field to given value.
 `func (o *UnibeeApiBeanUserAccountSimplify) HasTimeZone() bool`
 
 HasTimeZone returns a boolean if a field has been set.
+
+### GetType
+
+`func (o *UnibeeApiBeanUserAccountSimplify) GetType() int64`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *UnibeeApiBeanUserAccountSimplify) GetTypeOk() (*int64, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *UnibeeApiBeanUserAccountSimplify) SetType(v int64)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *UnibeeApiBeanUserAccountSimplify) HasType() bool`
+
+HasType returns a boolean if a field has been set.
 
 ### GetUserName
 
@@ -1115,6 +1194,31 @@ SetWhatsAPP sets WhatsAPP field to given value.
 `func (o *UnibeeApiBeanUserAccountSimplify) HasWhatsAPP() bool`
 
 HasWhatsAPP returns a boolean if a field has been set.
+
+### GetZipCode
+
+`func (o *UnibeeApiBeanUserAccountSimplify) GetZipCode() string`
+
+GetZipCode returns the ZipCode field if non-nil, zero value otherwise.
+
+### GetZipCodeOk
+
+`func (o *UnibeeApiBeanUserAccountSimplify) GetZipCodeOk() (*string, bool)`
+
+GetZipCodeOk returns a tuple with the ZipCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetZipCode
+
+`func (o *UnibeeApiBeanUserAccountSimplify) SetZipCode(v string)`
+
+SetZipCode sets ZipCode field to given value.
+
+### HasZipCode
+
+`func (o *UnibeeApiBeanUserAccountSimplify) HasZipCode() bool`
+
+HasZipCode returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,6 +1,6 @@
 # \Invoice
 
-All URIs are relative to *http://api.unibee.top*
+All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,8 +13,11 @@ Method | HTTP request | Description
 [**InvoiceListGet**](Invoice.md#InvoiceListGet) | **Get** /merchant/invoice/list | InvoiceList
 [**InvoiceListPost**](Invoice.md#InvoiceListPost) | **Post** /merchant/invoice/list | InvoiceList
 [**InvoiceMarkRefundPost**](Invoice.md#InvoiceMarkRefundPost) | **Post** /merchant/invoice/mark_refund | MarkInvoiceRefund
+[**InvoiceMarkRefundSuccessPost**](Invoice.md#InvoiceMarkRefundSuccessPost) | **Post** /merchant/invoice/mark_refund_success | MarkInvoiceRefundSuccess
+[**InvoiceMarkWireTransferSuccessPost**](Invoice.md#InvoiceMarkWireTransferSuccessPost) | **Post** /merchant/invoice/mark_wire_transfer_success | MarkWireTransferInvoiceSuccess
 [**InvoiceNewPost**](Invoice.md#InvoiceNewPost) | **Post** /merchant/invoice/new | NewInvoice
 [**InvoicePdfGeneratePost**](Invoice.md#InvoicePdfGeneratePost) | **Post** /merchant/invoice/pdf_generate | GenerateInvoicePDF
+[**InvoicePdfUpdatePost**](Invoice.md#InvoicePdfUpdatePost) | **Post** /merchant/invoice/pdf_update | UpdateInvoicePDF
 [**InvoiceReconvertCryptoAndSendEmailPost**](Invoice.md#InvoiceReconvertCryptoAndSendEmailPost) | **Post** /merchant/invoice/reconvert_crypto_and_send_email | Admin Reconvert Crypto Data and Send Invoice Email to User
 [**InvoiceRefundPost**](Invoice.md#InvoiceRefundPost) | **Post** /merchant/invoice/refund | CreateInvoiceRefund
 [**InvoiceSendEmailPost**](Invoice.md#InvoiceSendEmailPost) | **Post** /merchant/invoice/send_email | SendInvoiceEmail
@@ -637,6 +640,138 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## InvoiceMarkRefundSuccessPost
+
+> MerchantAuthSsoLoginOTPPost200Response InvoiceMarkRefundSuccessPost(ctx).UnibeeApiMerchantInvoiceMarkRefundInvoiceSuccessReq(unibeeApiMerchantInvoiceMarkRefundInvoiceSuccessReq).Execute()
+
+MarkInvoiceRefundSuccess
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantInvoiceMarkRefundInvoiceSuccessReq := *openapiclient.NewUnibeeApiMerchantInvoiceMarkRefundInvoiceSuccessReq("InvoiceId_example") // UnibeeApiMerchantInvoiceMarkRefundInvoiceSuccessReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Invoice.InvoiceMarkRefundSuccessPost(context.Background()).UnibeeApiMerchantInvoiceMarkRefundInvoiceSuccessReq(unibeeApiMerchantInvoiceMarkRefundInvoiceSuccessReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceMarkRefundSuccessPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `InvoiceMarkRefundSuccessPost`: MerchantAuthSsoLoginOTPPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceMarkRefundSuccessPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiInvoiceMarkRefundSuccessPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantInvoiceMarkRefundInvoiceSuccessReq** | [**UnibeeApiMerchantInvoiceMarkRefundInvoiceSuccessReq**](UnibeeApiMerchantInvoiceMarkRefundInvoiceSuccessReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## InvoiceMarkWireTransferSuccessPost
+
+> MerchantAuthSsoLoginOTPPost200Response InvoiceMarkWireTransferSuccessPost(ctx).UnibeeApiMerchantInvoiceMarkWireTransferSuccessReq(unibeeApiMerchantInvoiceMarkWireTransferSuccessReq).Execute()
+
+MarkWireTransferInvoiceSuccess
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantInvoiceMarkWireTransferSuccessReq := *openapiclient.NewUnibeeApiMerchantInvoiceMarkWireTransferSuccessReq("InvoiceId_example", "TransferNumber_example") // UnibeeApiMerchantInvoiceMarkWireTransferSuccessReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Invoice.InvoiceMarkWireTransferSuccessPost(context.Background()).UnibeeApiMerchantInvoiceMarkWireTransferSuccessReq(unibeeApiMerchantInvoiceMarkWireTransferSuccessReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceMarkWireTransferSuccessPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `InvoiceMarkWireTransferSuccessPost`: MerchantAuthSsoLoginOTPPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceMarkWireTransferSuccessPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiInvoiceMarkWireTransferSuccessPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantInvoiceMarkWireTransferSuccessReq** | [**UnibeeApiMerchantInvoiceMarkWireTransferSuccessReq**](UnibeeApiMerchantInvoiceMarkWireTransferSuccessReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## InvoiceNewPost
 
 > MerchantInvoiceDetailGet200Response InvoiceNewPost(ctx).UnibeeApiMerchantInvoiceNewReq(unibeeApiMerchantInvoiceNewReq).Execute()
@@ -746,6 +881,70 @@ Other parameters are passed through a pointer to a apiInvoicePdfGeneratePostRequ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **unibeeApiMerchantInvoicePdfGenerateReq** | [**UnibeeApiMerchantInvoicePdfGenerateReq**](UnibeeApiMerchantInvoicePdfGenerateReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## InvoicePdfUpdatePost
+
+> MerchantAuthSsoLoginOTPPost200Response InvoicePdfUpdatePost(ctx).UnibeeApiMerchantInvoicePdfUpdateReq(unibeeApiMerchantInvoicePdfUpdateReq).Execute()
+
+UpdateInvoicePDF
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantInvoicePdfUpdateReq := *openapiclient.NewUnibeeApiMerchantInvoicePdfUpdateReq("InvoiceId_example") // UnibeeApiMerchantInvoicePdfUpdateReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Invoice.InvoicePdfUpdatePost(context.Background()).UnibeeApiMerchantInvoicePdfUpdateReq(unibeeApiMerchantInvoicePdfUpdateReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoicePdfUpdatePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `InvoicePdfUpdatePost`: MerchantAuthSsoLoginOTPPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoicePdfUpdatePost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiInvoicePdfUpdatePostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantInvoicePdfUpdateReq** | [**UnibeeApiMerchantInvoicePdfUpdateReq**](UnibeeApiMerchantInvoicePdfUpdateReq.md) |  | 
 
 ### Return type
 

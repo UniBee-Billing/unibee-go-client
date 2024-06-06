@@ -6,28 +6,32 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **LinkedIn** | Pointer to **string** | LinkedIn | [optional] 
 **Address** | **string** | Billing Address | 
+**City** | Pointer to **string** | city | [optional] 
 **CompanyName** | Pointer to **string** | Company Name | [optional] 
-**CountryCode** | **string** | Country Code | 
-**CountryName** | **string** | Country Name | 
+**CountryCode** | Pointer to **string** | Country Code | [optional] 
+**CountryName** | Pointer to **string** | Country Name | [optional] 
 **Email** | **string** | Email | 
 **Facebook** | Pointer to **string** | Facebook | [optional] 
 **FirstName** | **string** | First name | 
+**GatewayId** | Pointer to **int32** | GatewayId | [optional] 
 **LastName** | **string** | Last Name | 
 **OtherSocialInfo** | Pointer to **string** | Other Social Info | [optional] 
-**PaymentMethod** | Pointer to **string** | Payment Method | [optional] 
+**PaymentMethodId** | Pointer to **string** | PaymentMethodId of gateway, available for card type gateway, payment automatic will enable if set | [optional] 
 **Phone** | Pointer to **string** | Phone | [optional] 
 **Telegram** | Pointer to **string** | Telegram | [optional] 
 **Tiktok** | Pointer to **string** | Tiktok | [optional] 
+**Type** | Pointer to **int32** | User type, 1-Individual|2-organization | [optional] 
 **UserId** | **int64** | User Id | 
 **VATNumber** | Pointer to **string** | VAT Number | [optional] 
 **WeChat** | Pointer to **string** | WeChat | [optional] 
 **WhatsApp** | Pointer to **string** | WhatsApp | [optional] 
+**ZipCode** | Pointer to **string** | zip_code | [optional] 
 
 ## Methods
 
 ### NewUnibeeApiMerchantUserUpdateReq
 
-`func NewUnibeeApiMerchantUserUpdateReq(address string, countryCode string, countryName string, email string, firstName string, lastName string, userId int64, ) *UnibeeApiMerchantUserUpdateReq`
+`func NewUnibeeApiMerchantUserUpdateReq(address string, email string, firstName string, lastName string, userId int64, ) *UnibeeApiMerchantUserUpdateReq`
 
 NewUnibeeApiMerchantUserUpdateReq instantiates a new UnibeeApiMerchantUserUpdateReq object
 This constructor will assign default values to properties that have it defined,
@@ -87,6 +91,31 @@ and a boolean to check if the value has been set.
 SetAddress sets Address field to given value.
 
 
+### GetCity
+
+`func (o *UnibeeApiMerchantUserUpdateReq) GetCity() string`
+
+GetCity returns the City field if non-nil, zero value otherwise.
+
+### GetCityOk
+
+`func (o *UnibeeApiMerchantUserUpdateReq) GetCityOk() (*string, bool)`
+
+GetCityOk returns a tuple with the City field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCity
+
+`func (o *UnibeeApiMerchantUserUpdateReq) SetCity(v string)`
+
+SetCity sets City field to given value.
+
+### HasCity
+
+`func (o *UnibeeApiMerchantUserUpdateReq) HasCity() bool`
+
+HasCity returns a boolean if a field has been set.
+
 ### GetCompanyName
 
 `func (o *UnibeeApiMerchantUserUpdateReq) GetCompanyName() string`
@@ -131,6 +160,11 @@ and a boolean to check if the value has been set.
 
 SetCountryCode sets CountryCode field to given value.
 
+### HasCountryCode
+
+`func (o *UnibeeApiMerchantUserUpdateReq) HasCountryCode() bool`
+
+HasCountryCode returns a boolean if a field has been set.
 
 ### GetCountryName
 
@@ -151,6 +185,11 @@ and a boolean to check if the value has been set.
 
 SetCountryName sets CountryName field to given value.
 
+### HasCountryName
+
+`func (o *UnibeeApiMerchantUserUpdateReq) HasCountryName() bool`
+
+HasCountryName returns a boolean if a field has been set.
 
 ### GetEmail
 
@@ -217,6 +256,31 @@ and a boolean to check if the value has been set.
 SetFirstName sets FirstName field to given value.
 
 
+### GetGatewayId
+
+`func (o *UnibeeApiMerchantUserUpdateReq) GetGatewayId() int32`
+
+GetGatewayId returns the GatewayId field if non-nil, zero value otherwise.
+
+### GetGatewayIdOk
+
+`func (o *UnibeeApiMerchantUserUpdateReq) GetGatewayIdOk() (*int32, bool)`
+
+GetGatewayIdOk returns a tuple with the GatewayId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayId
+
+`func (o *UnibeeApiMerchantUserUpdateReq) SetGatewayId(v int32)`
+
+SetGatewayId sets GatewayId field to given value.
+
+### HasGatewayId
+
+`func (o *UnibeeApiMerchantUserUpdateReq) HasGatewayId() bool`
+
+HasGatewayId returns a boolean if a field has been set.
+
 ### GetLastName
 
 `func (o *UnibeeApiMerchantUserUpdateReq) GetLastName() string`
@@ -262,30 +326,30 @@ SetOtherSocialInfo sets OtherSocialInfo field to given value.
 
 HasOtherSocialInfo returns a boolean if a field has been set.
 
-### GetPaymentMethod
+### GetPaymentMethodId
 
-`func (o *UnibeeApiMerchantUserUpdateReq) GetPaymentMethod() string`
+`func (o *UnibeeApiMerchantUserUpdateReq) GetPaymentMethodId() string`
 
-GetPaymentMethod returns the PaymentMethod field if non-nil, zero value otherwise.
+GetPaymentMethodId returns the PaymentMethodId field if non-nil, zero value otherwise.
 
-### GetPaymentMethodOk
+### GetPaymentMethodIdOk
 
-`func (o *UnibeeApiMerchantUserUpdateReq) GetPaymentMethodOk() (*string, bool)`
+`func (o *UnibeeApiMerchantUserUpdateReq) GetPaymentMethodIdOk() (*string, bool)`
 
-GetPaymentMethodOk returns a tuple with the PaymentMethod field if it's non-nil, zero value otherwise
+GetPaymentMethodIdOk returns a tuple with the PaymentMethodId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPaymentMethod
+### SetPaymentMethodId
 
-`func (o *UnibeeApiMerchantUserUpdateReq) SetPaymentMethod(v string)`
+`func (o *UnibeeApiMerchantUserUpdateReq) SetPaymentMethodId(v string)`
 
-SetPaymentMethod sets PaymentMethod field to given value.
+SetPaymentMethodId sets PaymentMethodId field to given value.
 
-### HasPaymentMethod
+### HasPaymentMethodId
 
-`func (o *UnibeeApiMerchantUserUpdateReq) HasPaymentMethod() bool`
+`func (o *UnibeeApiMerchantUserUpdateReq) HasPaymentMethodId() bool`
 
-HasPaymentMethod returns a boolean if a field has been set.
+HasPaymentMethodId returns a boolean if a field has been set.
 
 ### GetPhone
 
@@ -361,6 +425,31 @@ SetTiktok sets Tiktok field to given value.
 `func (o *UnibeeApiMerchantUserUpdateReq) HasTiktok() bool`
 
 HasTiktok returns a boolean if a field has been set.
+
+### GetType
+
+`func (o *UnibeeApiMerchantUserUpdateReq) GetType() int32`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *UnibeeApiMerchantUserUpdateReq) GetTypeOk() (*int32, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *UnibeeApiMerchantUserUpdateReq) SetType(v int32)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *UnibeeApiMerchantUserUpdateReq) HasType() bool`
+
+HasType returns a boolean if a field has been set.
 
 ### GetUserId
 
@@ -456,6 +545,31 @@ SetWhatsApp sets WhatsApp field to given value.
 `func (o *UnibeeApiMerchantUserUpdateReq) HasWhatsApp() bool`
 
 HasWhatsApp returns a boolean if a field has been set.
+
+### GetZipCode
+
+`func (o *UnibeeApiMerchantUserUpdateReq) GetZipCode() string`
+
+GetZipCode returns the ZipCode field if non-nil, zero value otherwise.
+
+### GetZipCodeOk
+
+`func (o *UnibeeApiMerchantUserUpdateReq) GetZipCodeOk() (*string, bool)`
+
+GetZipCodeOk returns a tuple with the ZipCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetZipCode
+
+`func (o *UnibeeApiMerchantUserUpdateReq) SetZipCode(v string)`
+
+SetZipCode sets ZipCode field to given value.
+
+### HasZipCode
+
+`func (o *UnibeeApiMerchantUserUpdateReq) HasZipCode() bool`
+
+HasZipCode returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

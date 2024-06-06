@@ -9,14 +9,19 @@ Name | Type | Description | Notes
 **ConfirmTotalAmount** | Pointer to **int64** | TotalAmount to verify if provide | [optional] 
 **Discount** | Pointer to [**UnibeeApiBeanExternalDiscountParam**](UnibeeApiBeanExternalDiscountParam.md) |  | [optional] 
 **DiscountCode** | Pointer to **string** | DiscountCode | [optional] 
-**GatewayId** | **int64** | Id | 
+**Email** | Pointer to **string** | Email, either ExternalUserId&amp;Email or UserId needed | [optional] 
+**ExternalUserId** | Pointer to **string** | ExternalUserId, unique, either ExternalUserId&amp;Email or UserId needed | [optional] 
+**GatewayId** | Pointer to **int32** | GatewayId | [optional] 
 **Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
 **PaymentMethodId** | Pointer to **string** | PaymentMethodId | [optional] 
 **PlanId** | **int64** | PlanId | 
+**ProductData** | Pointer to [**UnibeeApiBeanPlanProductParam**](UnibeeApiBeanPlanProductParam.md) |  | [optional] 
 **Quantity** | Pointer to **int64** | Quantity，Default 1 | [optional] 
 **ReturnUrl** | Pointer to **string** | ReturnUrl | [optional] 
+**StartIncomplete** | Pointer to **bool** | StartIncomplete, use now pay later, subscription will generate invoice and start with incomplete status if set | [optional] 
 **TaxPercentage** | Pointer to **int32** | TaxPercentage，1000 &#x3D; 10%, override subscription taxPercentage if provide | [optional] 
-**UserId** | **int64** | UserId | 
+**TrialEnd** | Pointer to **int64** | trial_end, utc time | [optional] 
+**UserId** | Pointer to **int64** | UserId | [optional] 
 **VatCountryCode** | Pointer to **string** | VatCountryCode, CountryName | [optional] 
 **VatNumber** | Pointer to **string** | VatNumber | [optional] 
 
@@ -24,7 +29,7 @@ Name | Type | Description | Notes
 
 ### NewUnibeeApiMerchantSubscriptionCreateReq
 
-`func NewUnibeeApiMerchantSubscriptionCreateReq(gatewayId int64, planId int64, userId int64, ) *UnibeeApiMerchantSubscriptionCreateReq`
+`func NewUnibeeApiMerchantSubscriptionCreateReq(planId int64, ) *UnibeeApiMerchantSubscriptionCreateReq`
 
 NewUnibeeApiMerchantSubscriptionCreateReq instantiates a new UnibeeApiMerchantSubscriptionCreateReq object
 This constructor will assign default values to properties that have it defined,
@@ -164,25 +169,80 @@ SetDiscountCode sets DiscountCode field to given value.
 
 HasDiscountCode returns a boolean if a field has been set.
 
+### GetEmail
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetEmail() string`
+
+GetEmail returns the Email field if non-nil, zero value otherwise.
+
+### GetEmailOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetEmailOk() (*string, bool)`
+
+GetEmailOk returns a tuple with the Email field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmail
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) SetEmail(v string)`
+
+SetEmail sets Email field to given value.
+
+### HasEmail
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) HasEmail() bool`
+
+HasEmail returns a boolean if a field has been set.
+
+### GetExternalUserId
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetExternalUserId() string`
+
+GetExternalUserId returns the ExternalUserId field if non-nil, zero value otherwise.
+
+### GetExternalUserIdOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetExternalUserIdOk() (*string, bool)`
+
+GetExternalUserIdOk returns a tuple with the ExternalUserId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalUserId
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) SetExternalUserId(v string)`
+
+SetExternalUserId sets ExternalUserId field to given value.
+
+### HasExternalUserId
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) HasExternalUserId() bool`
+
+HasExternalUserId returns a boolean if a field has been set.
+
 ### GetGatewayId
 
-`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetGatewayId() int64`
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetGatewayId() int32`
 
 GetGatewayId returns the GatewayId field if non-nil, zero value otherwise.
 
 ### GetGatewayIdOk
 
-`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetGatewayIdOk() (*int64, bool)`
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetGatewayIdOk() (*int32, bool)`
 
 GetGatewayIdOk returns a tuple with the GatewayId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGatewayId
 
-`func (o *UnibeeApiMerchantSubscriptionCreateReq) SetGatewayId(v int64)`
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) SetGatewayId(v int32)`
 
 SetGatewayId sets GatewayId field to given value.
 
+### HasGatewayId
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) HasGatewayId() bool`
+
+HasGatewayId returns a boolean if a field has been set.
 
 ### GetMetadata
 
@@ -254,6 +314,31 @@ and a boolean to check if the value has been set.
 SetPlanId sets PlanId field to given value.
 
 
+### GetProductData
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetProductData() UnibeeApiBeanPlanProductParam`
+
+GetProductData returns the ProductData field if non-nil, zero value otherwise.
+
+### GetProductDataOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetProductDataOk() (*UnibeeApiBeanPlanProductParam, bool)`
+
+GetProductDataOk returns a tuple with the ProductData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProductData
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) SetProductData(v UnibeeApiBeanPlanProductParam)`
+
+SetProductData sets ProductData field to given value.
+
+### HasProductData
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) HasProductData() bool`
+
+HasProductData returns a boolean if a field has been set.
+
 ### GetQuantity
 
 `func (o *UnibeeApiMerchantSubscriptionCreateReq) GetQuantity() int64`
@@ -304,6 +389,31 @@ SetReturnUrl sets ReturnUrl field to given value.
 
 HasReturnUrl returns a boolean if a field has been set.
 
+### GetStartIncomplete
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetStartIncomplete() bool`
+
+GetStartIncomplete returns the StartIncomplete field if non-nil, zero value otherwise.
+
+### GetStartIncompleteOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetStartIncompleteOk() (*bool, bool)`
+
+GetStartIncompleteOk returns a tuple with the StartIncomplete field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStartIncomplete
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) SetStartIncomplete(v bool)`
+
+SetStartIncomplete sets StartIncomplete field to given value.
+
+### HasStartIncomplete
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) HasStartIncomplete() bool`
+
+HasStartIncomplete returns a boolean if a field has been set.
+
 ### GetTaxPercentage
 
 `func (o *UnibeeApiMerchantSubscriptionCreateReq) GetTaxPercentage() int32`
@@ -329,6 +439,31 @@ SetTaxPercentage sets TaxPercentage field to given value.
 
 HasTaxPercentage returns a boolean if a field has been set.
 
+### GetTrialEnd
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetTrialEnd() int64`
+
+GetTrialEnd returns the TrialEnd field if non-nil, zero value otherwise.
+
+### GetTrialEndOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetTrialEndOk() (*int64, bool)`
+
+GetTrialEndOk returns a tuple with the TrialEnd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrialEnd
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) SetTrialEnd(v int64)`
+
+SetTrialEnd sets TrialEnd field to given value.
+
+### HasTrialEnd
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) HasTrialEnd() bool`
+
+HasTrialEnd returns a boolean if a field has been set.
+
 ### GetUserId
 
 `func (o *UnibeeApiMerchantSubscriptionCreateReq) GetUserId() int64`
@@ -348,6 +483,11 @@ and a boolean to check if the value has been set.
 
 SetUserId sets UserId field to given value.
 
+### HasUserId
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) HasUserId() bool`
+
+HasUserId returns a boolean if a field has been set.
 
 ### GetVatCountryCode
 

@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Currency** | **string** | The currency of payment method | 
-**Data** | Pointer to **map[string]interface{}** |  | [optional] 
+**Currency** | Pointer to **string** | The currency of payment method | [optional] 
 **GatewayId** | **int64** | The unique id of gateway | 
+**Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
 **RedirectUrl** | Pointer to **string** | The redirect url when method created return back | [optional] 
 **SubscriptionId** | Pointer to **string** | The id of subscription that want to attach | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewUnibeeApiMerchantPaymentMethodNewReq
 
-`func NewUnibeeApiMerchantPaymentMethodNewReq(currency string, gatewayId int64, userId int64, ) *UnibeeApiMerchantPaymentMethodNewReq`
+`func NewUnibeeApiMerchantPaymentMethodNewReq(gatewayId int64, userId int64, ) *UnibeeApiMerchantPaymentMethodNewReq`
 
 NewUnibeeApiMerchantPaymentMethodNewReq instantiates a new UnibeeApiMerchantPaymentMethodNewReq object
 This constructor will assign default values to properties that have it defined,
@@ -50,31 +50,11 @@ and a boolean to check if the value has been set.
 
 SetCurrency sets Currency field to given value.
 
+### HasCurrency
 
-### GetData
+`func (o *UnibeeApiMerchantPaymentMethodNewReq) HasCurrency() bool`
 
-`func (o *UnibeeApiMerchantPaymentMethodNewReq) GetData() map[string]interface{}`
-
-GetData returns the Data field if non-nil, zero value otherwise.
-
-### GetDataOk
-
-`func (o *UnibeeApiMerchantPaymentMethodNewReq) GetDataOk() (*map[string]interface{}, bool)`
-
-GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetData
-
-`func (o *UnibeeApiMerchantPaymentMethodNewReq) SetData(v map[string]interface{})`
-
-SetData sets Data field to given value.
-
-### HasData
-
-`func (o *UnibeeApiMerchantPaymentMethodNewReq) HasData() bool`
-
-HasData returns a boolean if a field has been set.
+HasCurrency returns a boolean if a field has been set.
 
 ### GetGatewayId
 
@@ -95,6 +75,31 @@ and a boolean to check if the value has been set.
 
 SetGatewayId sets GatewayId field to given value.
 
+
+### GetMetadata
+
+`func (o *UnibeeApiMerchantPaymentMethodNewReq) GetMetadata() map[string]string`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *UnibeeApiMerchantPaymentMethodNewReq) GetMetadataOk() (*map[string]string, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *UnibeeApiMerchantPaymentMethodNewReq) SetMetadata(v map[string]string)`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *UnibeeApiMerchantPaymentMethodNewReq) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
 
 ### GetRedirectUrl
 

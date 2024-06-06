@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **MerchantId** | Pointer to **int64** | merchantId | [optional] 
 **Metadata** | Pointer to **map[string]string** |  | [optional] 
 **Name** | Pointer to **string** | name | [optional] 
+**PlanIds** | Pointer to **[]int64** | Ids of plan which discount code can effect, default effect all plans if not set | [optional] 
 **StartTime** | Pointer to **int64** | start of discount available utc time | [optional] 
 **Status** | Pointer to **int32** | status, 1-editable, 2-active, 3-deactive, 4-expire | [optional] 
 
@@ -363,6 +364,31 @@ SetName sets Name field to given value.
 `func (o *UnibeeApiBeanMerchantDiscountCodeSimplify) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetPlanIds
+
+`func (o *UnibeeApiBeanMerchantDiscountCodeSimplify) GetPlanIds() []int64`
+
+GetPlanIds returns the PlanIds field if non-nil, zero value otherwise.
+
+### GetPlanIdsOk
+
+`func (o *UnibeeApiBeanMerchantDiscountCodeSimplify) GetPlanIdsOk() (*[]int64, bool)`
+
+GetPlanIdsOk returns a tuple with the PlanIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanIds
+
+`func (o *UnibeeApiBeanMerchantDiscountCodeSimplify) SetPlanIds(v []int64)`
+
+SetPlanIds sets PlanIds field to given value.
+
+### HasPlanIds
+
+`func (o *UnibeeApiBeanMerchantDiscountCodeSimplify) HasPlanIds() bool`
+
+HasPlanIds returns a boolean if a field has been set.
 
 ### GetStartTime
 

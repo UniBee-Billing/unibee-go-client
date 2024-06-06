@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **PlanId** | Pointer to **int64** | PlanId | [optional] 
 **ProrationAmount** | Pointer to **int64** | ProrationAmount,Cents | [optional] 
 **Quantity** | Pointer to **int64** | quantity | [optional] 
-**Status** | Pointer to **int32** | Status，0-Init | 1-Pending｜2-Finished｜3-Cancelled | [optional] 
+**Status** | Pointer to **int32** | Status，1-Pending｜2-Finished｜3-Cancelled | [optional] 
 **SubscriptionId** | Pointer to **string** | SubscriptionId | [optional] 
 **UpdateAddonData** | Pointer to **string** | UpdateAddonData | [optional] 
 **UpdateAddons** | Pointer to [**[]UnibeeApiBeanPlanAddonDetail**](UnibeeApiBeanPlanAddonDetail.md) | UpdateAddons | [optional] 

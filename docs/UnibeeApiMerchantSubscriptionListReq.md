@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Count** | Pointer to **int32** | Count Of Page | [optional] 
-**Page** | Pointer to **int32** | Page, Start WIth 0 | [optional] 
+**Page** | Pointer to **int32** | Page, Start With 0 | [optional] 
 **SortField** | Pointer to **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | [optional] 
 **SortType** | Pointer to **string** | Sort Type，asc|desc，Default desc | [optional] 
-**Status** | Pointer to **[]int32** | Filter, Default All，Status，0-Init | 1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | [optional] 
+**Status** | Pointer to **[]int32** | Filter, Default All，Status，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | [optional] 
 **UserId** | Pointer to **int64** | UserId | [optional] 
 
 ## Methods

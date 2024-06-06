@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCodeSimplify**](UnibeeApiBeanMerchantDiscountCodeSimplify.md) |  | [optional] 
+**Discount** | Pointer to [**UnibeeApiBeanDetailMerchantDiscountCodeDetail**](UnibeeApiBeanDetailMerchantDiscountCodeDetail.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDiscount
 
-`func (o *MerchantDiscountDetailGet200ResponseData) GetDiscount() UnibeeApiBeanMerchantDiscountCodeSimplify`
+`func (o *MerchantDiscountDetailGet200ResponseData) GetDiscount() UnibeeApiBeanDetailMerchantDiscountCodeDetail`
 
 GetDiscount returns the Discount field if non-nil, zero value otherwise.
 
 ### GetDiscountOk
 
-`func (o *MerchantDiscountDetailGet200ResponseData) GetDiscountOk() (*UnibeeApiBeanMerchantDiscountCodeSimplify, bool)`
+`func (o *MerchantDiscountDetailGet200ResponseData) GetDiscountOk() (*UnibeeApiBeanDetailMerchantDiscountCodeDetail, bool)`
 
 GetDiscountOk returns a tuple with the Discount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDiscount
 
-`func (o *MerchantDiscountDetailGet200ResponseData) SetDiscount(v UnibeeApiBeanMerchantDiscountCodeSimplify)`
+`func (o *MerchantDiscountDetailGet200ResponseData) SetDiscount(v UnibeeApiBeanDetailMerchantDiscountCodeDetail)`
 
 SetDiscount sets Discount field to given value.
 

@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **Plan** | Pointer to [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
 **PlanId** | Pointer to **int64** | PlanId | [optional] 
 **Quantity** | Pointer to **int64** | quantity | [optional] 
+**Status** | Pointer to **int32** | 1-processing,2-finish | [optional] 
 **SubscriptionId** | Pointer to **string** | subscription id | [optional] 
 **UniqueId** | Pointer to **string** | unique id | [optional] 
 **UserId** | Pointer to **int64** | userId | [optional] 
@@ -364,6 +365,31 @@ SetQuantity sets Quantity field to given value.
 `func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) HasQuantity() bool`
 
 HasQuantity returns a boolean if a field has been set.
+
+### GetStatus
+
+`func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetStatus() int32`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetStatusOk() (*int32, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) SetStatus(v int32)`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 ### GetSubscriptionId
 

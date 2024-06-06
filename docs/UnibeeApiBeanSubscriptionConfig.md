@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **DowngradeEffectImmediately** | Pointer to **bool** | DowngradeEffectImmediately, whether subscription update should effect immediately or at period end, default at period end | [optional] 
 **IncompleteExpireTime** | Pointer to **int64** | IncompleteExpireTime, em.. default 1day for plan of month type | [optional] 
 **InvoiceEmail** | Pointer to **bool** | InvoiceEmail, whether to send invoice email to user, default yes | [optional] 
+**InvoicePdfGenerate** | Pointer to **bool** | InvoicePdfGenerate, whether to generate invoice pdf to user, default yes | [optional] 
 **TryAutomaticPaymentBeforePeriodEnd** | Pointer to **int64** | TryAutomaticPaymentBeforePeriodEnd, default 30 min | [optional] 
 **UpgradeProration** | Pointer to **bool** | UpgradeProration, whether subscription update generation proration invoice or not, default yes | [optional] 
 
@@ -103,6 +104,31 @@ SetInvoiceEmail sets InvoiceEmail field to given value.
 `func (o *UnibeeApiBeanSubscriptionConfig) HasInvoiceEmail() bool`
 
 HasInvoiceEmail returns a boolean if a field has been set.
+
+### GetInvoicePdfGenerate
+
+`func (o *UnibeeApiBeanSubscriptionConfig) GetInvoicePdfGenerate() bool`
+
+GetInvoicePdfGenerate returns the InvoicePdfGenerate field if non-nil, zero value otherwise.
+
+### GetInvoicePdfGenerateOk
+
+`func (o *UnibeeApiBeanSubscriptionConfig) GetInvoicePdfGenerateOk() (*bool, bool)`
+
+GetInvoicePdfGenerateOk returns a tuple with the InvoicePdfGenerate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInvoicePdfGenerate
+
+`func (o *UnibeeApiBeanSubscriptionConfig) SetInvoicePdfGenerate(v bool)`
+
+SetInvoicePdfGenerate sets InvoicePdfGenerate field to given value.
+
+### HasInvoicePdfGenerate
+
+`func (o *UnibeeApiBeanSubscriptionConfig) HasInvoicePdfGenerate() bool`
+
+HasInvoicePdfGenerate returns a boolean if a field has been set.
 
 ### GetTryAutomaticPaymentBeforePeriodEnd
 

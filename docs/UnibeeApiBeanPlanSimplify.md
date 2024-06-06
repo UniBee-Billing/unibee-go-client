@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Amount** | Pointer to **int64** | amount, cent, without tax | [optional] 
 **BindingAddonIds** | Pointer to **string** | binded recurring addon planIds，split with , | [optional] 
 **BindingOnetimeAddonIds** | Pointer to **string** | binded onetime addon planIds，split with , | [optional] 
+**CancelAtTrialEnd** | Pointer to **int32** | whether cancel at subscripiton first trial end，0-false | 1-true, will pass to cancelAtPeriodEnd of subscription | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Currency** | Pointer to **string** | currency | [optional] 
 **Description** | Pointer to **string** | description | [optional] 
@@ -25,6 +26,9 @@ Name | Type | Description | Notes
 **PublishStatus** | Pointer to **int32** | 1-UnPublish,2-Publish, Use For Display Plan At UserPortal | [optional] 
 **Status** | Pointer to **int32** | status，1-editing，2-active，3-inactive，4-expired | [optional] 
 **TaxPercentage** | Pointer to **int32** | TaxPercentage 1000 &#x3D; 10% | [optional] 
+**TrialAmount** | Pointer to **int64** | price of trial period | [optional] 
+**TrialDemand** | Pointer to **string** |  | [optional] 
+**TrialDurationTime** | Pointer to **int64** | duration of trial | [optional] 
 **Type** | Pointer to **int32** | type，1-main plan，2-addon plan | [optional] 
 
 ## Methods
@@ -120,6 +124,31 @@ SetBindingOnetimeAddonIds sets BindingOnetimeAddonIds field to given value.
 `func (o *UnibeeApiBeanPlanSimplify) HasBindingOnetimeAddonIds() bool`
 
 HasBindingOnetimeAddonIds returns a boolean if a field has been set.
+
+### GetCancelAtTrialEnd
+
+`func (o *UnibeeApiBeanPlanSimplify) GetCancelAtTrialEnd() int32`
+
+GetCancelAtTrialEnd returns the CancelAtTrialEnd field if non-nil, zero value otherwise.
+
+### GetCancelAtTrialEndOk
+
+`func (o *UnibeeApiBeanPlanSimplify) GetCancelAtTrialEndOk() (*int32, bool)`
+
+GetCancelAtTrialEndOk returns a tuple with the CancelAtTrialEnd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCancelAtTrialEnd
+
+`func (o *UnibeeApiBeanPlanSimplify) SetCancelAtTrialEnd(v int32)`
+
+SetCancelAtTrialEnd sets CancelAtTrialEnd field to given value.
+
+### HasCancelAtTrialEnd
+
+`func (o *UnibeeApiBeanPlanSimplify) HasCancelAtTrialEnd() bool`
+
+HasCancelAtTrialEnd returns a boolean if a field has been set.
 
 ### GetCreateTime
 
@@ -570,6 +599,81 @@ SetTaxPercentage sets TaxPercentage field to given value.
 `func (o *UnibeeApiBeanPlanSimplify) HasTaxPercentage() bool`
 
 HasTaxPercentage returns a boolean if a field has been set.
+
+### GetTrialAmount
+
+`func (o *UnibeeApiBeanPlanSimplify) GetTrialAmount() int64`
+
+GetTrialAmount returns the TrialAmount field if non-nil, zero value otherwise.
+
+### GetTrialAmountOk
+
+`func (o *UnibeeApiBeanPlanSimplify) GetTrialAmountOk() (*int64, bool)`
+
+GetTrialAmountOk returns a tuple with the TrialAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrialAmount
+
+`func (o *UnibeeApiBeanPlanSimplify) SetTrialAmount(v int64)`
+
+SetTrialAmount sets TrialAmount field to given value.
+
+### HasTrialAmount
+
+`func (o *UnibeeApiBeanPlanSimplify) HasTrialAmount() bool`
+
+HasTrialAmount returns a boolean if a field has been set.
+
+### GetTrialDemand
+
+`func (o *UnibeeApiBeanPlanSimplify) GetTrialDemand() string`
+
+GetTrialDemand returns the TrialDemand field if non-nil, zero value otherwise.
+
+### GetTrialDemandOk
+
+`func (o *UnibeeApiBeanPlanSimplify) GetTrialDemandOk() (*string, bool)`
+
+GetTrialDemandOk returns a tuple with the TrialDemand field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrialDemand
+
+`func (o *UnibeeApiBeanPlanSimplify) SetTrialDemand(v string)`
+
+SetTrialDemand sets TrialDemand field to given value.
+
+### HasTrialDemand
+
+`func (o *UnibeeApiBeanPlanSimplify) HasTrialDemand() bool`
+
+HasTrialDemand returns a boolean if a field has been set.
+
+### GetTrialDurationTime
+
+`func (o *UnibeeApiBeanPlanSimplify) GetTrialDurationTime() int64`
+
+GetTrialDurationTime returns the TrialDurationTime field if non-nil, zero value otherwise.
+
+### GetTrialDurationTimeOk
+
+`func (o *UnibeeApiBeanPlanSimplify) GetTrialDurationTimeOk() (*int64, bool)`
+
+GetTrialDurationTimeOk returns a tuple with the TrialDurationTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrialDurationTime
+
+`func (o *UnibeeApiBeanPlanSimplify) SetTrialDurationTime(v int64)`
+
+SetTrialDurationTime sets TrialDurationTime field to given value.
+
+### HasTrialDurationTime
+
+`func (o *UnibeeApiBeanPlanSimplify) HasTrialDurationTime() bool`
+
+HasTrialDurationTime returns a boolean if a field has been set.
 
 ### GetType
 

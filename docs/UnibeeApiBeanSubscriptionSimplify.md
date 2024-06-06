@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **PlanId** | Pointer to **int64** | plan id | [optional] 
 **Quantity** | Pointer to **int64** | quantity | [optional] 
 **ReturnUrl** | Pointer to **string** |  | [optional] 
-**Status** | Pointer to **int32** | status，0-Init | 1-Pending｜2-Active｜3-PendingInActive | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | [optional] 
+**Status** | Pointer to **int32** | status，1-Pending｜2-Active｜3-PendingInActive | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | [optional] 
 **SubscriptionId** | Pointer to **string** | subscription id | [optional] 
 **TaskTime** | Pointer to **string** | task_time | [optional] 
 **TaxPercentage** | Pointer to **int64** | TaxPercentage，1000 &#x3D; 10% | [optional] 

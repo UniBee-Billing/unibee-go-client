@@ -1,6 +1,6 @@
 # \Gateway
 
-All URIs are relative to *http://api.unibee.top*
+All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,6 +9,8 @@ Method | HTTP request | Description
 [**GatewayListGet**](Gateway.md#GatewayListGet) | **Get** /merchant/gateway/list | PaymentGatewayList
 [**GatewaySetupPost**](Gateway.md#GatewaySetupPost) | **Post** /merchant/gateway/setup | PaymentGatewaySetup
 [**GatewaySetupWebhookPost**](Gateway.md#GatewaySetupWebhookPost) | **Post** /merchant/gateway/setup_webhook | PaymentGatewayWebhookSetup
+[**GatewayWireTransferEditPost**](Gateway.md#GatewayWireTransferEditPost) | **Post** /merchant/gateway/wire_transfer_edit | WireTransferEdit
+[**GatewayWireTransferSetupPost**](Gateway.md#GatewayWireTransferSetupPost) | **Post** /merchant/gateway/wire_transfer_setup | WireTransferSetup
 
 
 
@@ -80,7 +82,7 @@ No authorization required
 
 ## GatewayEditPost
 
-> MerchantAuthSsoLoginOTPPost200Response GatewayEditPost(ctx).UnibeeApiMerchantGatewayEditReq(unibeeApiMerchantGatewayEditReq).Execute()
+> MerchantGatewayEditPost200Response GatewayEditPost(ctx).UnibeeApiMerchantGatewayEditReq(unibeeApiMerchantGatewayEditReq).Execute()
 
 PaymentGatewayEdit
 
@@ -108,7 +110,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Gateway.GatewayEditPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GatewayEditPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `GatewayEditPost`: MerchantGatewayEditPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Gateway.GatewayEditPost`: %v\n", resp)
 }
 ```
@@ -128,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantGatewayEditPost200Response**](MerchantGatewayEditPost200Response.md)
 
 ### Authorization
 
@@ -205,7 +207,7 @@ No authorization required
 
 ## GatewaySetupPost
 
-> MerchantAuthSsoLoginOTPPost200Response GatewaySetupPost(ctx).UnibeeApiMerchantGatewaySetupReq(unibeeApiMerchantGatewaySetupReq).Execute()
+> MerchantGatewayEditPost200Response GatewaySetupPost(ctx).UnibeeApiMerchantGatewaySetupReq(unibeeApiMerchantGatewaySetupReq).Execute()
 
 PaymentGatewaySetup
 
@@ -233,7 +235,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Gateway.GatewaySetupPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GatewaySetupPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `GatewaySetupPost`: MerchantGatewayEditPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Gateway.GatewaySetupPost`: %v\n", resp)
 }
 ```
@@ -253,7 +255,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantGatewayEditPost200Response**](MerchantGatewayEditPost200Response.md)
 
 ### Authorization
 
@@ -318,6 +320,138 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantGatewaySetupWebhookPost200Response**](MerchantGatewaySetupWebhookPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GatewayWireTransferEditPost
+
+> MerchantAuthSsoLoginOTPPost200Response GatewayWireTransferEditPost(ctx).UnibeeApiMerchantGatewayWireTransferEditReq(unibeeApiMerchantGatewayWireTransferEditReq).Execute()
+
+WireTransferEdit
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantGatewayWireTransferEditReq := *openapiclient.NewUnibeeApiMerchantGatewayWireTransferEditReq("Currency_example", int64(123), int64(123)) // UnibeeApiMerchantGatewayWireTransferEditReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Gateway.GatewayWireTransferEditPost(context.Background()).UnibeeApiMerchantGatewayWireTransferEditReq(unibeeApiMerchantGatewayWireTransferEditReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Gateway.GatewayWireTransferEditPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GatewayWireTransferEditPost`: MerchantAuthSsoLoginOTPPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Gateway.GatewayWireTransferEditPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGatewayWireTransferEditPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantGatewayWireTransferEditReq** | [**UnibeeApiMerchantGatewayWireTransferEditReq**](UnibeeApiMerchantGatewayWireTransferEditReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GatewayWireTransferSetupPost
+
+> MerchantAuthSsoLoginOTPPost200Response GatewayWireTransferSetupPost(ctx).UnibeeApiMerchantGatewayWireTransferSetupReq(unibeeApiMerchantGatewayWireTransferSetupReq).Execute()
+
+WireTransferSetup
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantGatewayWireTransferSetupReq := *openapiclient.NewUnibeeApiMerchantGatewayWireTransferSetupReq("Currency_example", int64(123)) // UnibeeApiMerchantGatewayWireTransferSetupReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Gateway.GatewayWireTransferSetupPost(context.Background()).UnibeeApiMerchantGatewayWireTransferSetupReq(unibeeApiMerchantGatewayWireTransferSetupReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Gateway.GatewayWireTransferSetupPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GatewayWireTransferSetupPost`: MerchantAuthSsoLoginOTPPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Gateway.GatewayWireTransferSetupPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGatewayWireTransferSetupPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantGatewayWireTransferSetupReq** | [**UnibeeApiMerchantGatewayWireTransferSetupReq**](UnibeeApiMerchantGatewayWireTransferSetupReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
 
 ### Authorization
 

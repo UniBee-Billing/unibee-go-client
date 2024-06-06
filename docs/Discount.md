@@ -1,6 +1,6 @@
 # \Discount
 
-All URIs are relative to *http://api.unibee.top*
+All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -343,7 +343,7 @@ No authorization required
 
 ## DiscountEditPost
 
-> MerchantDiscountDetailGet200Response DiscountEditPost(ctx).UnibeeApiMerchantDiscountEditReq(unibeeApiMerchantDiscountEditReq).Execute()
+> MerchantDiscountEditPost200Response DiscountEditPost(ctx).UnibeeApiMerchantDiscountEditReq(unibeeApiMerchantDiscountEditReq).Execute()
 
 EditDiscountCode
 
@@ -371,7 +371,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Discount.DiscountEditPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DiscountEditPost`: MerchantDiscountDetailGet200Response
+	// response from `DiscountEditPost`: MerchantDiscountEditPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Discount.DiscountEditPost`: %v\n", resp)
 }
 ```
@@ -391,7 +391,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantDiscountDetailGet200Response**](MerchantDiscountDetailGet200Response.md)
+[**MerchantDiscountEditPost200Response**](MerchantDiscountEditPost200Response.md)
 
 ### Authorization
 
@@ -409,7 +409,7 @@ No authorization required
 
 ## DiscountListGet
 
-> MerchantDiscountListGet200Response DiscountListGet(ctx).Execute()
+> MerchantDiscountListGet200Response DiscountListGet(ctx).DiscountType(discountType).BillingType(billingType).Status(status).Code(code).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
 
 DiscountCodeList
 
@@ -428,10 +428,19 @@ import (
 )
 
 func main() {
+	discountType := []int32{int32(123)} // []int32 | discount_type, 1-percentage, 2-fixed_amount (optional)
+	billingType := []int32{int32(123)} // []int32 | billing_type, 1-one-time, 2-recurring (optional)
+	status := []int32{int32(123)} // []int32 | status, 1-editable, 2-active, 3-deactive, 4-expire (optional)
+	code := "code_example" // string | Filter Code (optional)
+	currency := "currency_example" // string | Filter Currency (optional)
+	sortField := "sortField_example" // string | Sort Field，gmt_create|gmt_modify，Default gmt_modify (optional)
+	sortType := "sortType_example" // string | Sort Type，asc|desc，Default desc (optional)
+	page := int32(56) // int32 | Page, Start 0 (optional)
+	count := int32(56) // int32 | Count Of Per Page (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Discount.DiscountListGet(context.Background()).Execute()
+	resp, r, err := apiClient.Discount.DiscountListGet(context.Background()).DiscountType(discountType).BillingType(billingType).Status(status).Code(code).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Discount.DiscountListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -443,12 +452,24 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDiscountListGetRequest struct via the builder pattern
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **discountType** | **[]int32** | discount_type, 1-percentage, 2-fixed_amount | 
+ **billingType** | **[]int32** | billing_type, 1-one-time, 2-recurring | 
+ **status** | **[]int32** | status, 1-editable, 2-active, 3-deactive, 4-expire | 
+ **code** | **string** | Filter Code | 
+ **currency** | **string** | Filter Currency | 
+ **sortField** | **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | 
+ **sortType** | **string** | Sort Type，asc|desc，Default desc | 
+ **page** | **int32** | Page, Start 0 | 
+ **count** | **int32** | Count Of Per Page | 
 
 ### Return type
 
@@ -470,7 +491,7 @@ No authorization required
 
 ## DiscountNewPost
 
-> MerchantDiscountDetailGet200Response DiscountNewPost(ctx).UnibeeApiMerchantDiscountNewReq(unibeeApiMerchantDiscountNewReq).Execute()
+> MerchantDiscountEditPost200Response DiscountNewPost(ctx).UnibeeApiMerchantDiscountNewReq(unibeeApiMerchantDiscountNewReq).Execute()
 
 NewDiscountCode
 
@@ -498,7 +519,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Discount.DiscountNewPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DiscountNewPost`: MerchantDiscountDetailGet200Response
+	// response from `DiscountNewPost`: MerchantDiscountEditPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Discount.DiscountNewPost`: %v\n", resp)
 }
 ```
@@ -518,7 +539,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantDiscountDetailGet200Response**](MerchantDiscountDetailGet200Response.md)
+[**MerchantDiscountEditPost200Response**](MerchantDiscountEditPost200Response.md)
 
 ### Authorization
 

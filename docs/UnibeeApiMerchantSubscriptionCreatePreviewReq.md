@@ -6,11 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | addonParams | [optional] 
 **DiscountCode** | Pointer to **string** | DiscountCode | [optional] 
-**GatewayId** | **int64** | Id | 
+**Email** | Pointer to **string** | Email, either ExternalUserId&amp;Email or UserId needed | [optional] 
+**ExternalUserId** | Pointer to **string** | ExternalUserId, unique, either ExternalUserId&amp;Email or UserId needed | [optional] 
+**GatewayId** | Pointer to **int32** | GatewayId | [optional] 
 **PlanId** | **int64** | PlanId | 
 **Quantity** | Pointer to **int64** | Quantity | [optional] 
 **TaxPercentage** | Pointer to **int32** | TaxPercentage，1000 &#x3D; 10% | [optional] 
-**UserId** | **int64** | UserId | 
+**TrialEnd** | Pointer to **int64** | trial_end, utc time | [optional] 
+**UserId** | Pointer to **int64** | UserId | [optional] 
 **VatCountryCode** | Pointer to **string** | VatCountryCode, CountryName | [optional] 
 **VatNumber** | Pointer to **string** | VatNumber | [optional] 
 
@@ -18,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewUnibeeApiMerchantSubscriptionCreatePreviewReq
 
-`func NewUnibeeApiMerchantSubscriptionCreatePreviewReq(gatewayId int64, planId int64, userId int64, ) *UnibeeApiMerchantSubscriptionCreatePreviewReq`
+`func NewUnibeeApiMerchantSubscriptionCreatePreviewReq(planId int64, ) *UnibeeApiMerchantSubscriptionCreatePreviewReq`
 
 NewUnibeeApiMerchantSubscriptionCreatePreviewReq instantiates a new UnibeeApiMerchantSubscriptionCreatePreviewReq object
 This constructor will assign default values to properties that have it defined,
@@ -83,25 +86,80 @@ SetDiscountCode sets DiscountCode field to given value.
 
 HasDiscountCode returns a boolean if a field has been set.
 
+### GetEmail
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) GetEmail() string`
+
+GetEmail returns the Email field if non-nil, zero value otherwise.
+
+### GetEmailOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) GetEmailOk() (*string, bool)`
+
+GetEmailOk returns a tuple with the Email field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmail
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) SetEmail(v string)`
+
+SetEmail sets Email field to given value.
+
+### HasEmail
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) HasEmail() bool`
+
+HasEmail returns a boolean if a field has been set.
+
+### GetExternalUserId
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) GetExternalUserId() string`
+
+GetExternalUserId returns the ExternalUserId field if non-nil, zero value otherwise.
+
+### GetExternalUserIdOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) GetExternalUserIdOk() (*string, bool)`
+
+GetExternalUserIdOk returns a tuple with the ExternalUserId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalUserId
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) SetExternalUserId(v string)`
+
+SetExternalUserId sets ExternalUserId field to given value.
+
+### HasExternalUserId
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) HasExternalUserId() bool`
+
+HasExternalUserId returns a boolean if a field has been set.
+
 ### GetGatewayId
 
-`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) GetGatewayId() int64`
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) GetGatewayId() int32`
 
 GetGatewayId returns the GatewayId field if non-nil, zero value otherwise.
 
 ### GetGatewayIdOk
 
-`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) GetGatewayIdOk() (*int64, bool)`
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) GetGatewayIdOk() (*int32, bool)`
 
 GetGatewayIdOk returns a tuple with the GatewayId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGatewayId
 
-`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) SetGatewayId(v int64)`
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) SetGatewayId(v int32)`
 
 SetGatewayId sets GatewayId field to given value.
 
+### HasGatewayId
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) HasGatewayId() bool`
+
+HasGatewayId returns a boolean if a field has been set.
 
 ### GetPlanId
 
@@ -173,6 +231,31 @@ SetTaxPercentage sets TaxPercentage field to given value.
 
 HasTaxPercentage returns a boolean if a field has been set.
 
+### GetTrialEnd
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) GetTrialEnd() int64`
+
+GetTrialEnd returns the TrialEnd field if non-nil, zero value otherwise.
+
+### GetTrialEndOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) GetTrialEndOk() (*int64, bool)`
+
+GetTrialEndOk returns a tuple with the TrialEnd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrialEnd
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) SetTrialEnd(v int64)`
+
+SetTrialEnd sets TrialEnd field to given value.
+
+### HasTrialEnd
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) HasTrialEnd() bool`
+
+HasTrialEnd returns a boolean if a field has been set.
+
 ### GetUserId
 
 `func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) GetUserId() int64`
@@ -192,6 +275,11 @@ and a boolean to check if the value has been set.
 
 SetUserId sets UserId field to given value.
 
+### HasUserId
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) HasUserId() bool`
+
+HasUserId returns a boolean if a field has been set.
 
 ### GetVatCountryCode
 

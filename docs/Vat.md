@@ -1,6 +1,6 @@
 # \Vat
 
-All URIs are relative to *http://api.unibee.top*
+All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## VatCountryListGet
 
-> MerchantVatCountryListGet200Response VatCountryListGet(ctx).MerchantId(merchantId).Execute()
+> MerchantVatCountryListGet200Response VatCountryListGet(ctx).Execute()
 
 VatCountryList
 
@@ -30,11 +30,10 @@ import (
 )
 
 func main() {
-	merchantId := int64(789) // int64 | MerchantId
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Vat.VatCountryListGet(context.Background()).MerchantId(merchantId).Execute()
+	resp, r, err := apiClient.Vat.VatCountryListGet(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Vat.VatCountryListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -46,16 +45,12 @@ func main() {
 
 ### Path Parameters
 
-
+This endpoint does not need any parameter.
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiVatCountryListGetRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **merchantId** | **int64** | MerchantId | 
 
 ### Return type
 
@@ -77,7 +72,7 @@ No authorization required
 
 ## VatCountryListPost
 
-> MerchantVatCountryListGet200Response VatCountryListPost(ctx).UnibeeApiMerchantVatCountryListReq(unibeeApiMerchantVatCountryListReq).Execute()
+> MerchantVatCountryListGet200Response VatCountryListPost(ctx).Body(body).Execute()
 
 VatCountryList
 
@@ -94,11 +89,11 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantVatCountryListReq := *openapiclient.NewUnibeeApiMerchantVatCountryListReq(int64(123)) // UnibeeApiMerchantVatCountryListReq | 
+	body := map[string]interface{}{ ... } // map[string]interface{} | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Vat.VatCountryListPost(context.Background()).UnibeeApiMerchantVatCountryListReq(unibeeApiMerchantVatCountryListReq).Execute()
+	resp, r, err := apiClient.Vat.VatCountryListPost(context.Background()).Body(body).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Vat.VatCountryListPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -119,7 +114,7 @@ Other parameters are passed through a pointer to a apiVatCountryListPostRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **unibeeApiMerchantVatCountryListReq** | [**UnibeeApiMerchantVatCountryListReq**](UnibeeApiMerchantVatCountryListReq.md) |  | 
+ **body** | **map[string]interface{}** |  | 
 
 ### Return type
 

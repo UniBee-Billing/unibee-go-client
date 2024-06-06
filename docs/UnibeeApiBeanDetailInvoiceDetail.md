@@ -4,12 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BillingCycleAnchor** | Pointer to **int64** | billing_cycle_anchor | [optional] 
+**CreateFrom** | Pointer to **string** | create from | [optional] 
 **CryptoAmount** | Pointer to **int64** | crypto_amount, cent | [optional] 
 **CryptoCurrency** | Pointer to **string** | crypto_currency | [optional] 
 **Currency** | Pointer to **string** | Currency | [optional] 
 **DayUtilDue** | Pointer to **int64** | day util due after finish | [optional] 
 **Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCodeSimplify**](UnibeeApiBeanMerchantDiscountCodeSimplify.md) |  | [optional] 
 **DiscountAmount** | Pointer to **int64** | DiscountAmount,Cents | [optional] 
+**DiscountCode** | Pointer to **string** |  | [optional] 
 **Gateway** | Pointer to [**UnibeeApiBeanGatewaySimplify**](UnibeeApiBeanGatewaySimplify.md) |  | [optional] 
 **GatewayId** | Pointer to **int64** | Id | [optional] 
 **GatewayInvoiceId** | Pointer to **string** | GatewayInvoiceId | [optional] 
@@ -27,6 +30,8 @@ Name | Type | Description | Notes
 **Link** | Pointer to **string** | Link | [optional] 
 **Merchant** | Pointer to [**UnibeeApiBeanMerchantSimplify**](UnibeeApiBeanMerchantSimplify.md) |  | [optional] 
 **MerchantId** | Pointer to **int64** | MerchantId | [optional] 
+**Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
+**OriginAmount** | Pointer to **int64** | OriginAmount,Cents | [optional] 
 **Payment** | Pointer to [**UnibeeApiBeanPaymentSimplify**](UnibeeApiBeanPaymentSimplify.md) |  | [optional] 
 **PaymentId** | Pointer to **string** | PaymentId | [optional] 
 **PeriodEnd** | Pointer to **int64** | period_end | [optional] 
@@ -37,8 +42,7 @@ Name | Type | Description | Notes
 **SendNote** | Pointer to **string** | SendNote | [optional] 
 **SendPdf** | Pointer to **string** | SendPdf | [optional] 
 **SendStatus** | Pointer to **int32** | SendStatus，0-No | 1- YES | [optional] 
-**SendTerms** | Pointer to **string** | SendTerms | [optional] 
-**Status** | Pointer to **int32** | Status，0-Init | 1-pending｜2-processing｜3-paid | 4-failed | 5-cancelled | [optional] 
+**Status** | Pointer to **int32** | Status，1-pending｜2-processing｜3-paid | 4-failed | 5-cancelled | [optional] 
 **Subscription** | Pointer to [**UnibeeApiBeanSubscriptionSimplify**](UnibeeApiBeanSubscriptionSimplify.md) |  | [optional] 
 **SubscriptionAmount** | Pointer to **int64** | SubscriptionAmount,Cents | [optional] 
 **SubscriptionAmountExcludingTax** | Pointer to **int64** | SubscriptionAmountExcludingTax,Cents | [optional] 
@@ -69,6 +73,56 @@ will change when the set of required properties is changed
 NewUnibeeApiBeanDetailInvoiceDetailWithDefaults instantiates a new UnibeeApiBeanDetailInvoiceDetail object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBillingCycleAnchor
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetBillingCycleAnchor() int64`
+
+GetBillingCycleAnchor returns the BillingCycleAnchor field if non-nil, zero value otherwise.
+
+### GetBillingCycleAnchorOk
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetBillingCycleAnchorOk() (*int64, bool)`
+
+GetBillingCycleAnchorOk returns a tuple with the BillingCycleAnchor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBillingCycleAnchor
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetBillingCycleAnchor(v int64)`
+
+SetBillingCycleAnchor sets BillingCycleAnchor field to given value.
+
+### HasBillingCycleAnchor
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) HasBillingCycleAnchor() bool`
+
+HasBillingCycleAnchor returns a boolean if a field has been set.
+
+### GetCreateFrom
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetCreateFrom() string`
+
+GetCreateFrom returns the CreateFrom field if non-nil, zero value otherwise.
+
+### GetCreateFromOk
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetCreateFromOk() (*string, bool)`
+
+GetCreateFromOk returns a tuple with the CreateFrom field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateFrom
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetCreateFrom(v string)`
+
+SetCreateFrom sets CreateFrom field to given value.
+
+### HasCreateFrom
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) HasCreateFrom() bool`
+
+HasCreateFrom returns a boolean if a field has been set.
 
 ### GetCryptoAmount
 
@@ -219,6 +273,31 @@ SetDiscountAmount sets DiscountAmount field to given value.
 `func (o *UnibeeApiBeanDetailInvoiceDetail) HasDiscountAmount() bool`
 
 HasDiscountAmount returns a boolean if a field has been set.
+
+### GetDiscountCode
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetDiscountCode() string`
+
+GetDiscountCode returns the DiscountCode field if non-nil, zero value otherwise.
+
+### GetDiscountCodeOk
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetDiscountCodeOk() (*string, bool)`
+
+GetDiscountCodeOk returns a tuple with the DiscountCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscountCode
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetDiscountCode(v string)`
+
+SetDiscountCode sets DiscountCode field to given value.
+
+### HasDiscountCode
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) HasDiscountCode() bool`
+
+HasDiscountCode returns a boolean if a field has been set.
 
 ### GetGateway
 
@@ -645,6 +724,56 @@ SetMerchantId sets MerchantId field to given value.
 
 HasMerchantId returns a boolean if a field has been set.
 
+### GetMetadata
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetMetadata() map[string]string`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetMetadataOk() (*map[string]string, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetMetadata(v map[string]string)`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
+
+### GetOriginAmount
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetOriginAmount() int64`
+
+GetOriginAmount returns the OriginAmount field if non-nil, zero value otherwise.
+
+### GetOriginAmountOk
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetOriginAmountOk() (*int64, bool)`
+
+GetOriginAmountOk returns a tuple with the OriginAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOriginAmount
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetOriginAmount(v int64)`
+
+SetOriginAmount sets OriginAmount field to given value.
+
+### HasOriginAmount
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) HasOriginAmount() bool`
+
+HasOriginAmount returns a boolean if a field has been set.
+
 ### GetPayment
 
 `func (o *UnibeeApiBeanDetailInvoiceDetail) GetPayment() UnibeeApiBeanPaymentSimplify`
@@ -894,31 +1023,6 @@ SetSendStatus sets SendStatus field to given value.
 `func (o *UnibeeApiBeanDetailInvoiceDetail) HasSendStatus() bool`
 
 HasSendStatus returns a boolean if a field has been set.
-
-### GetSendTerms
-
-`func (o *UnibeeApiBeanDetailInvoiceDetail) GetSendTerms() string`
-
-GetSendTerms returns the SendTerms field if non-nil, zero value otherwise.
-
-### GetSendTermsOk
-
-`func (o *UnibeeApiBeanDetailInvoiceDetail) GetSendTermsOk() (*string, bool)`
-
-GetSendTermsOk returns a tuple with the SendTerms field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSendTerms
-
-`func (o *UnibeeApiBeanDetailInvoiceDetail) SetSendTerms(v string)`
-
-SetSendTerms sets SendTerms field to given value.
-
-### HasSendTerms
-
-`func (o *UnibeeApiBeanDetailInvoiceDetail) HasSendTerms() bool`
-
-HasSendTerms returns a boolean if a field has been set.
 
 ### GetStatus
 

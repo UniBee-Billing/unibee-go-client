@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **ExternalRefundId** | Pointer to **string** | external_refund_id | [optional] 
 **GatewayId** | Pointer to **int64** | gateway_id | [optional] 
 **GatewayRefundId** | Pointer to **string** | gateway refund id | [optional] 
+**InvoiceId** | Pointer to **string** | invoice id | [optional] 
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
 **Metadata** | Pointer to **map[string]string** |  | [optional] 
 **PaymentId** | Pointer to **string** | relative payment id | [optional] 
@@ -20,6 +21,7 @@ Name | Type | Description | Notes
 **ReturnUrl** | Pointer to **string** | return url after refund success | [optional] 
 **Status** | Pointer to **int32** | status。10-pending，20-success，30-failure, 40-cancel | [optional] 
 **SubscriptionId** | Pointer to **string** | subscription id | [optional] 
+**Type** | Pointer to **int32** | 1-gateway refund,2-mark refund | [optional] 
 **UserId** | Pointer to **int64** | user_id | [optional] 
 
 ## Methods
@@ -190,6 +192,31 @@ SetGatewayRefundId sets GatewayRefundId field to given value.
 `func (o *UnibeeApiBeanRefundSimplify) HasGatewayRefundId() bool`
 
 HasGatewayRefundId returns a boolean if a field has been set.
+
+### GetInvoiceId
+
+`func (o *UnibeeApiBeanRefundSimplify) GetInvoiceId() string`
+
+GetInvoiceId returns the InvoiceId field if non-nil, zero value otherwise.
+
+### GetInvoiceIdOk
+
+`func (o *UnibeeApiBeanRefundSimplify) GetInvoiceIdOk() (*string, bool)`
+
+GetInvoiceIdOk returns a tuple with the InvoiceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInvoiceId
+
+`func (o *UnibeeApiBeanRefundSimplify) SetInvoiceId(v string)`
+
+SetInvoiceId sets InvoiceId field to given value.
+
+### HasInvoiceId
+
+`func (o *UnibeeApiBeanRefundSimplify) HasInvoiceId() bool`
+
+HasInvoiceId returns a boolean if a field has been set.
 
 ### GetMerchantId
 
@@ -440,6 +467,31 @@ SetSubscriptionId sets SubscriptionId field to given value.
 `func (o *UnibeeApiBeanRefundSimplify) HasSubscriptionId() bool`
 
 HasSubscriptionId returns a boolean if a field has been set.
+
+### GetType
+
+`func (o *UnibeeApiBeanRefundSimplify) GetType() int32`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *UnibeeApiBeanRefundSimplify) GetTypeOk() (*int32, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *UnibeeApiBeanRefundSimplify) SetType(v int32)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *UnibeeApiBeanRefundSimplify) HasType() bool`
+
+HasType returns a boolean if a field has been set.
 
 ### GetUserId
 

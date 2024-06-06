@@ -7,7 +7,8 @@ Name | Type | Description | Notes
 **Amount** | **int64** | item total amount, sum(item.amount) should equal to totalAmount, cent | 
 **AmountExcludingTax** | Pointer to **int64** | amountExcludingTax &#x3D; unitAmountExcludingTax * quantity | [optional] 
 **Currency** | Pointer to **string** | The item currency of payment | [optional] 
-**Description** | **string** | The item description of payment | 
+**Description** | Pointer to **string** | The item description of payment | [optional] 
+**Name** | Pointer to **string** | The item name of payment | [optional] 
 **Quantity** | Pointer to **int64** | The item quantity of payment | [optional] 
 **Tax** | Pointer to **int64** | tax &#x3D; amount - amountExcludingTax | [optional] 
 **TaxPercentage** | Pointer to **int64** | The tax percentage of payment，1000 &#x3D; 10% | [optional] 
@@ -17,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewUnibeeApiMerchantPaymentItem
 
-`func NewUnibeeApiMerchantPaymentItem(amount int64, description string, ) *UnibeeApiMerchantPaymentItem`
+`func NewUnibeeApiMerchantPaymentItem(amount int64, ) *UnibeeApiMerchantPaymentItem`
 
 NewUnibeeApiMerchantPaymentItem instantiates a new UnibeeApiMerchantPaymentItem object
 This constructor will assign default values to properties that have it defined,
@@ -121,6 +122,36 @@ and a boolean to check if the value has been set.
 
 SetDescription sets Description field to given value.
 
+### HasDescription
+
+`func (o *UnibeeApiMerchantPaymentItem) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *UnibeeApiMerchantPaymentItem) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *UnibeeApiMerchantPaymentItem) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *UnibeeApiMerchantPaymentItem) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *UnibeeApiMerchantPaymentItem) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetQuantity
 

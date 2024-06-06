@@ -5,9 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Currency** | Pointer to **string** |  | [optional] 
+**Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCodeSimplify**](UnibeeApiBeanMerchantDiscountCodeSimplify.md) |  | [optional] 
 **DiscountAmount** | Pointer to **int64** |  | [optional] 
 **Invoice** | Pointer to [**UnibeeApiBeanInvoiceSimplify**](UnibeeApiBeanInvoiceSimplify.md) |  | [optional] 
 **NextPeriodInvoice** | Pointer to [**UnibeeApiBeanInvoiceSimplify**](UnibeeApiBeanInvoiceSimplify.md) |  | [optional] 
+**OriginAmount** | Pointer to **int64** |  | [optional] 
 **ProrationDate** | Pointer to **int64** |  | [optional] 
 **TotalAmount** | Pointer to **int64** |  | [optional] 
 
@@ -54,6 +56,31 @@ SetCurrency sets Currency field to given value.
 `func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) HasCurrency() bool`
 
 HasCurrency returns a boolean if a field has been set.
+
+### GetDiscount
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) GetDiscount() UnibeeApiBeanMerchantDiscountCodeSimplify`
+
+GetDiscount returns the Discount field if non-nil, zero value otherwise.
+
+### GetDiscountOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) GetDiscountOk() (*UnibeeApiBeanMerchantDiscountCodeSimplify, bool)`
+
+GetDiscountOk returns a tuple with the Discount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscount
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) SetDiscount(v UnibeeApiBeanMerchantDiscountCodeSimplify)`
+
+SetDiscount sets Discount field to given value.
+
+### HasDiscount
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) HasDiscount() bool`
+
+HasDiscount returns a boolean if a field has been set.
 
 ### GetDiscountAmount
 
@@ -129,6 +156,31 @@ SetNextPeriodInvoice sets NextPeriodInvoice field to given value.
 `func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) HasNextPeriodInvoice() bool`
 
 HasNextPeriodInvoice returns a boolean if a field has been set.
+
+### GetOriginAmount
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) GetOriginAmount() int64`
+
+GetOriginAmount returns the OriginAmount field if non-nil, zero value otherwise.
+
+### GetOriginAmountOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) GetOriginAmountOk() (*int64, bool)`
+
+GetOriginAmountOk returns a tuple with the OriginAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOriginAmount
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) SetOriginAmount(v int64)`
+
+SetOriginAmount sets OriginAmount field to given value.
+
+### HasOriginAmount
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) HasOriginAmount() bool`
+
+HasOriginAmount returns a boolean if a field has been set.
 
 ### GetProrationDate
 

@@ -6,13 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **InvoiceNow** | Pointer to **bool** | Default false | [optional] 
 **Prorate** | Pointer to **bool** | Prorate Generate Invoice，Default false | [optional] 
-**SubscriptionId** | **string** | SubscriptionId | 
+**SubscriptionId** | Pointer to **string** | SubscriptionId, id of subscription, either SubscriptionId or UserId needed, The only one active subscription of userId will effect | [optional] 
+**UserId** | Pointer to **int64** | UserId, either SubscriptionId or UserId needed, The only one active subscription will effect if userId provide instead of subscriptionId | [optional] 
 
 ## Methods
 
 ### NewUnibeeApiMerchantSubscriptionCancelReq
 
-`func NewUnibeeApiMerchantSubscriptionCancelReq(subscriptionId string, ) *UnibeeApiMerchantSubscriptionCancelReq`
+`func NewUnibeeApiMerchantSubscriptionCancelReq() *UnibeeApiMerchantSubscriptionCancelReq`
 
 NewUnibeeApiMerchantSubscriptionCancelReq instantiates a new UnibeeApiMerchantSubscriptionCancelReq object
 This constructor will assign default values to properties that have it defined,
@@ -96,6 +97,36 @@ and a boolean to check if the value has been set.
 
 SetSubscriptionId sets SubscriptionId field to given value.
 
+### HasSubscriptionId
+
+`func (o *UnibeeApiMerchantSubscriptionCancelReq) HasSubscriptionId() bool`
+
+HasSubscriptionId returns a boolean if a field has been set.
+
+### GetUserId
+
+`func (o *UnibeeApiMerchantSubscriptionCancelReq) GetUserId() int64`
+
+GetUserId returns the UserId field if non-nil, zero value otherwise.
+
+### GetUserIdOk
+
+`func (o *UnibeeApiMerchantSubscriptionCancelReq) GetUserIdOk() (*int64, bool)`
+
+GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserId
+
+`func (o *UnibeeApiMerchantSubscriptionCancelReq) SetUserId(v int64)`
+
+SetUserId sets UserId field to given value.
+
+### HasUserId
+
+`func (o *UnibeeApiMerchantSubscriptionCancelReq) HasUserId() bool`
+
+HasUserId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

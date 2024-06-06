@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Count** | Pointer to **int32** | Count Of Page | [optional] 
-**Page** | Pointer to **int32** | Page, Start WIth 0 | [optional] 
+**Page** | Pointer to **int32** | Page, Start With 0 | [optional] 
 **SortField** | Pointer to **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | [optional] 
 **SortType** | Pointer to **string** | Sort Type，asc|desc，Default desc | [optional] 
 **UserId** | Pointer to **int64** | Filter UserId, Default All  | [optional] 

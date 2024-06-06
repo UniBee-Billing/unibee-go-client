@@ -1,9 +1,10 @@
 # \Subscription
 
-All URIs are relative to *http://api.unibee.top*
+All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**SubscriptionActiveTemporarilyPost**](Subscription.md#SubscriptionActiveTemporarilyPost) | **Post** /merchant/subscription/active_temporarily | SubscriptionActiveTemporarily
 [**SubscriptionAddNewTrialStartPost**](Subscription.md#SubscriptionAddNewTrialStartPost) | **Post** /merchant/subscription/add_new_trial_start | AppendSubscriptionTrialEnd
 [**SubscriptionCancelAtPeriodEndPost**](Subscription.md#SubscriptionCancelAtPeriodEndPost) | **Post** /merchant/subscription/cancel_at_period_end | CancelSubscriptionAtPeriodEnd
 [**SubscriptionCancelLastCancelAtPeriodEndPost**](Subscription.md#SubscriptionCancelLastCancelAtPeriodEndPost) | **Post** /merchant/subscription/cancel_last_cancel_at_period_end | CancelLastCancelSubscriptionAtPeriodEnd
@@ -19,14 +20,83 @@ Method | HTTP request | Description
 [**SubscriptionListPost**](Subscription.md#SubscriptionListPost) | **Post** /merchant/subscription/list | SubscriptionList
 [**SubscriptionNewOnetimeAddonPaymentPost**](Subscription.md#SubscriptionNewOnetimeAddonPaymentPost) | **Post** /merchant/subscription/new_onetime_addon_payment | NewSubscriptionOnetimeAddonPayment
 [**SubscriptionOnetimeAddonListGet**](Subscription.md#SubscriptionOnetimeAddonListGet) | **Get** /merchant/subscription/onetime_addon_list | SubscriptionOnetimeAddonList
+[**SubscriptionPaymentNewPost**](Subscription.md#SubscriptionPaymentNewPost) | **Post** /merchant/subscription/payment/new | NewSubscriptionPayment
 [**SubscriptionRenewPost**](Subscription.md#SubscriptionRenewPost) | **Post** /merchant/subscription/renew | RenewSubscription
 [**SubscriptionResumePost**](Subscription.md#SubscriptionResumePost) | **Post** /merchant/subscription/resume | Merchant Edit Subscription-Resume
 [**SubscriptionSuspendPost**](Subscription.md#SubscriptionSuspendPost) | **Post** /merchant/subscription/suspend | Merchant Edit Subscription-Stop
 [**SubscriptionUpdatePreviewPost**](Subscription.md#SubscriptionUpdatePreviewPost) | **Post** /merchant/subscription/update_preview | UpdateSubscriptionPreview
 [**SubscriptionUpdateSubmitPost**](Subscription.md#SubscriptionUpdateSubmitPost) | **Post** /merchant/subscription/update_submit | UpdateSubscription
-[**SubscriptionUserSubscriptionDetailGet**](Subscription.md#SubscriptionUserSubscriptionDetailGet) | **Get** /merchant/subscription/user_subscription_detail | SubscriptionDetail
-[**SubscriptionUserSubscriptionDetailPost**](Subscription.md#SubscriptionUserSubscriptionDetailPost) | **Post** /merchant/subscription/user_subscription_detail | SubscriptionDetail
+[**SubscriptionUserPendingCryptoSubscriptionDetailGet**](Subscription.md#SubscriptionUserPendingCryptoSubscriptionDetailGet) | **Get** /merchant/subscription/user_pending_crypto_subscription_detail | UserPendingCryptoSubscriptionDetail
+[**SubscriptionUserPendingCryptoSubscriptionDetailPost**](Subscription.md#SubscriptionUserPendingCryptoSubscriptionDetailPost) | **Post** /merchant/subscription/user_pending_crypto_subscription_detail | UserPendingCryptoSubscriptionDetail
+[**SubscriptionUserSubscriptionDetailGet**](Subscription.md#SubscriptionUserSubscriptionDetailGet) | **Get** /merchant/subscription/user_subscription_detail | UserSubscriptionDetail
+[**SubscriptionUserSubscriptionDetailPost**](Subscription.md#SubscriptionUserSubscriptionDetailPost) | **Post** /merchant/subscription/user_subscription_detail | UserSubscriptionDetail
 
+
+
+## SubscriptionActiveTemporarilyPost
+
+> MerchantAuthSsoLoginOTPPost200Response SubscriptionActiveTemporarilyPost(ctx).UnibeeApiMerchantSubscriptionActiveTemporarilyReq(unibeeApiMerchantSubscriptionActiveTemporarilyReq).Execute()
+
+SubscriptionActiveTemporarily
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantSubscriptionActiveTemporarilyReq := *openapiclient.NewUnibeeApiMerchantSubscriptionActiveTemporarilyReq(int64(123), "SubscriptionId_example") // UnibeeApiMerchantSubscriptionActiveTemporarilyReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Subscription.SubscriptionActiveTemporarilyPost(context.Background()).UnibeeApiMerchantSubscriptionActiveTemporarilyReq(unibeeApiMerchantSubscriptionActiveTemporarilyReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionActiveTemporarilyPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SubscriptionActiveTemporarilyPost`: MerchantAuthSsoLoginOTPPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionActiveTemporarilyPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSubscriptionActiveTemporarilyPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantSubscriptionActiveTemporarilyReq** | [**UnibeeApiMerchantSubscriptionActiveTemporarilyReq**](UnibeeApiMerchantSubscriptionActiveTemporarilyReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## SubscriptionAddNewTrialStartPost
@@ -114,7 +184,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantSubscriptionCancelAtPeriodEndReq := *openapiclient.NewUnibeeApiMerchantSubscriptionCancelAtPeriodEndReq("SubscriptionId_example") // UnibeeApiMerchantSubscriptionCancelAtPeriodEndReq | 
+	unibeeApiMerchantSubscriptionCancelAtPeriodEndReq := *openapiclient.NewUnibeeApiMerchantSubscriptionCancelAtPeriodEndReq() // UnibeeApiMerchantSubscriptionCancelAtPeriodEndReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +250,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantSubscriptionCancelLastCancelAtPeriodEndReq := *openapiclient.NewUnibeeApiMerchantSubscriptionCancelLastCancelAtPeriodEndReq("SubscriptionId_example") // UnibeeApiMerchantSubscriptionCancelLastCancelAtPeriodEndReq | 
+	unibeeApiMerchantSubscriptionCancelLastCancelAtPeriodEndReq := *openapiclient.NewUnibeeApiMerchantSubscriptionCancelLastCancelAtPeriodEndReq() // UnibeeApiMerchantSubscriptionCancelLastCancelAtPeriodEndReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -246,7 +316,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantSubscriptionCancelReq := *openapiclient.NewUnibeeApiMerchantSubscriptionCancelReq("SubscriptionId_example") // UnibeeApiMerchantSubscriptionCancelReq | 
+	unibeeApiMerchantSubscriptionCancelReq := *openapiclient.NewUnibeeApiMerchantSubscriptionCancelReq() // UnibeeApiMerchantSubscriptionCancelReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -505,7 +575,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantSubscriptionCreatePreviewReq := *openapiclient.NewUnibeeApiMerchantSubscriptionCreatePreviewReq(int64(123), int64(123), int64(123)) // UnibeeApiMerchantSubscriptionCreatePreviewReq | 
+	unibeeApiMerchantSubscriptionCreatePreviewReq := *openapiclient.NewUnibeeApiMerchantSubscriptionCreatePreviewReq(int64(123)) // UnibeeApiMerchantSubscriptionCreatePreviewReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -569,7 +639,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantSubscriptionCreateReq := *openapiclient.NewUnibeeApiMerchantSubscriptionCreateReq(int64(123), int64(123), int64(123)) // UnibeeApiMerchantSubscriptionCreateReq | 
+	unibeeApiMerchantSubscriptionCreateReq := *openapiclient.NewUnibeeApiMerchantSubscriptionCreateReq(int64(123)) // UnibeeApiMerchantSubscriptionCreateReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -762,10 +832,10 @@ import (
 
 func main() {
 	userId := int64(789) // int64 | UserId (optional)
-	status := []int32{int32(123)} // []int32 | Filter, Default All，Status，0-Init | 1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire (optional)
+	status := []int32{int32(123)} // []int32 | Filter, Default All，Status，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing (optional)
 	sortField := "sortField_example" // string | Sort Field，gmt_create|gmt_modify，Default gmt_modify (optional)
 	sortType := "sortType_example" // string | Sort Type，asc|desc，Default desc (optional)
-	page := int32(56) // int32 | Page, Start WIth 0 (optional)
+	page := int32(56) // int32 | Page, Start With 0 (optional)
 	count := int32(56) // int32 | Count Of Page (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -792,10 +862,10 @@ Other parameters are passed through a pointer to a apiSubscriptionListGetRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int64** | UserId | 
- **status** | **[]int32** | Filter, Default All，Status，0-Init | 1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 
+ **status** | **[]int32** | Filter, Default All，Status，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | 
  **sortField** | **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | 
  **sortType** | **string** | Sort Type，asc|desc，Default desc | 
- **page** | **int32** | Page, Start WIth 0 | 
+ **page** | **int32** | Page, Start With 0 | 
  **count** | **int32** | Count Of Page | 
 
 ### Return type
@@ -901,7 +971,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantSubscriptionOnetimeAddonNewReq := *openapiclient.NewUnibeeApiMerchantSubscriptionOnetimeAddonNewReq(int64(123), int64(123), "SubscriptionId_example") // UnibeeApiMerchantSubscriptionOnetimeAddonNewReq | 
+	unibeeApiMerchantSubscriptionOnetimeAddonNewReq := *openapiclient.NewUnibeeApiMerchantSubscriptionOnetimeAddonNewReq(int64(123), int64(123)) // UnibeeApiMerchantSubscriptionOnetimeAddonNewReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1014,6 +1084,70 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## SubscriptionPaymentNewPost
+
+> MerchantPaymentNewPost200Response SubscriptionPaymentNewPost(ctx).UnibeeApiMerchantSubscriptionNewPaymentReq(unibeeApiMerchantSubscriptionNewPaymentReq).Execute()
+
+NewSubscriptionPayment
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantSubscriptionNewPaymentReq := *openapiclient.NewUnibeeApiMerchantSubscriptionNewPaymentReq(int64(123)) // UnibeeApiMerchantSubscriptionNewPaymentReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Subscription.SubscriptionPaymentNewPost(context.Background()).UnibeeApiMerchantSubscriptionNewPaymentReq(unibeeApiMerchantSubscriptionNewPaymentReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionPaymentNewPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SubscriptionPaymentNewPost`: MerchantPaymentNewPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionPaymentNewPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSubscriptionPaymentNewPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantSubscriptionNewPaymentReq** | [**UnibeeApiMerchantSubscriptionNewPaymentReq**](UnibeeApiMerchantSubscriptionNewPaymentReq.md) |  | 
+
+### Return type
+
+[**MerchantPaymentNewPost200Response**](MerchantPaymentNewPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## SubscriptionRenewPost
 
 > MerchantSubscriptionCreateSubmitPost200Response SubscriptionRenewPost(ctx).UnibeeApiMerchantSubscriptionRenewReq(unibeeApiMerchantSubscriptionRenewReq).Execute()
@@ -1035,7 +1169,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantSubscriptionRenewReq := *openapiclient.NewUnibeeApiMerchantSubscriptionRenewReq("SubscriptionId_example", int64(123)) // UnibeeApiMerchantSubscriptionRenewReq | 
+	unibeeApiMerchantSubscriptionRenewReq := *openapiclient.NewUnibeeApiMerchantSubscriptionRenewReq() // UnibeeApiMerchantSubscriptionRenewReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1291,7 +1425,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantSubscriptionUpdateReq := *openapiclient.NewUnibeeApiMerchantSubscriptionUpdateReq(int64(123), int64(123), "SubscriptionId_example") // UnibeeApiMerchantSubscriptionUpdateReq | 
+	unibeeApiMerchantSubscriptionUpdateReq := *openapiclient.NewUnibeeApiMerchantSubscriptionUpdateReq(int64(123), int64(123)) // UnibeeApiMerchantSubscriptionUpdateReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1336,11 +1470,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## SubscriptionUserSubscriptionDetailGet
+## SubscriptionUserPendingCryptoSubscriptionDetailGet
 
-> MerchantSubscriptionUserSubscriptionDetailGet200Response SubscriptionUserSubscriptionDetailGet(ctx).UserId(userId).Execute()
+> MerchantSubscriptionUserPendingCryptoSubscriptionDetailGet200Response SubscriptionUserPendingCryptoSubscriptionDetailGet(ctx).UserId(userId).ExternalUserId(externalUserId).Execute()
 
-SubscriptionDetail
+UserPendingCryptoSubscriptionDetail
 
 ### Example
 
@@ -1355,11 +1489,142 @@ import (
 )
 
 func main() {
-	userId := int64(789) // int64 | UserId
+	userId := int64(789) // int64 | UserId (optional)
+	externalUserId := "externalUserId_example" // string | ExternalUserId, unique, either ExternalUserId&Email or UserId needed (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Subscription.SubscriptionUserSubscriptionDetailGet(context.Background()).UserId(userId).Execute()
+	resp, r, err := apiClient.Subscription.SubscriptionUserPendingCryptoSubscriptionDetailGet(context.Background()).UserId(userId).ExternalUserId(externalUserId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionUserPendingCryptoSubscriptionDetailGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SubscriptionUserPendingCryptoSubscriptionDetailGet`: MerchantSubscriptionUserPendingCryptoSubscriptionDetailGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionUserPendingCryptoSubscriptionDetailGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSubscriptionUserPendingCryptoSubscriptionDetailGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **int64** | UserId | 
+ **externalUserId** | **string** | ExternalUserId, unique, either ExternalUserId&amp;Email or UserId needed | 
+
+### Return type
+
+[**MerchantSubscriptionUserPendingCryptoSubscriptionDetailGet200Response**](MerchantSubscriptionUserPendingCryptoSubscriptionDetailGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SubscriptionUserPendingCryptoSubscriptionDetailPost
+
+> MerchantSubscriptionUserPendingCryptoSubscriptionDetailGet200Response SubscriptionUserPendingCryptoSubscriptionDetailPost(ctx).UnibeeApiMerchantSubscriptionUserPendingCryptoSubscriptionDetailReq(unibeeApiMerchantSubscriptionUserPendingCryptoSubscriptionDetailReq).Execute()
+
+UserPendingCryptoSubscriptionDetail
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantSubscriptionUserPendingCryptoSubscriptionDetailReq := *openapiclient.NewUnibeeApiMerchantSubscriptionUserPendingCryptoSubscriptionDetailReq() // UnibeeApiMerchantSubscriptionUserPendingCryptoSubscriptionDetailReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Subscription.SubscriptionUserPendingCryptoSubscriptionDetailPost(context.Background()).UnibeeApiMerchantSubscriptionUserPendingCryptoSubscriptionDetailReq(unibeeApiMerchantSubscriptionUserPendingCryptoSubscriptionDetailReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionUserPendingCryptoSubscriptionDetailPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SubscriptionUserPendingCryptoSubscriptionDetailPost`: MerchantSubscriptionUserPendingCryptoSubscriptionDetailGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionUserPendingCryptoSubscriptionDetailPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSubscriptionUserPendingCryptoSubscriptionDetailPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantSubscriptionUserPendingCryptoSubscriptionDetailReq** | [**UnibeeApiMerchantSubscriptionUserPendingCryptoSubscriptionDetailReq**](UnibeeApiMerchantSubscriptionUserPendingCryptoSubscriptionDetailReq.md) |  | 
+
+### Return type
+
+[**MerchantSubscriptionUserPendingCryptoSubscriptionDetailGet200Response**](MerchantSubscriptionUserPendingCryptoSubscriptionDetailGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SubscriptionUserSubscriptionDetailGet
+
+> MerchantSubscriptionUserSubscriptionDetailGet200Response SubscriptionUserSubscriptionDetailGet(ctx).UserId(userId).ExternalUserId(externalUserId).Execute()
+
+UserSubscriptionDetail
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniB-e-e/unibee-go-client"
+)
+
+func main() {
+	userId := int64(789) // int64 | UserId (optional)
+	externalUserId := "externalUserId_example" // string | ExternalUserId, unique, either ExternalUserId&Email or UserId needed (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Subscription.SubscriptionUserSubscriptionDetailGet(context.Background()).UserId(userId).ExternalUserId(externalUserId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionUserSubscriptionDetailGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1381,6 +1646,7 @@ Other parameters are passed through a pointer to a apiSubscriptionUserSubscripti
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int64** | UserId | 
+ **externalUserId** | **string** | ExternalUserId, unique, either ExternalUserId&amp;Email or UserId needed | 
 
 ### Return type
 
@@ -1404,7 +1670,7 @@ No authorization required
 
 > MerchantSubscriptionUserSubscriptionDetailGet200Response SubscriptionUserSubscriptionDetailPost(ctx).UnibeeApiMerchantSubscriptionUserSubscriptionDetailReq(unibeeApiMerchantSubscriptionUserSubscriptionDetailReq).Execute()
 
-SubscriptionDetail
+UserSubscriptionDetail
 
 ### Example
 
@@ -1419,7 +1685,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantSubscriptionUserSubscriptionDetailReq := *openapiclient.NewUnibeeApiMerchantSubscriptionUserSubscriptionDetailReq(int64(123)) // UnibeeApiMerchantSubscriptionUserSubscriptionDetailReq | 
+	unibeeApiMerchantSubscriptionUserSubscriptionDetailReq := *openapiclient.NewUnibeeApiMerchantSubscriptionUserSubscriptionDetailReq() // UnibeeApiMerchantSubscriptionUserSubscriptionDetailReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

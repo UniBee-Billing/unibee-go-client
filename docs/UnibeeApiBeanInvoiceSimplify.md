@@ -4,11 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BillingCycleAnchor** | Pointer to **int64** | billing_cycle_anchor | [optional] 
 **BizType** | Pointer to **int32** | biz type from payment 1-onetime payment, 3-subscription | [optional] 
+**CreateFrom** | Pointer to **string** | create from | [optional] 
 **CryptoAmount** | Pointer to **int64** | crypto_amount, cent | [optional] 
 **CryptoCurrency** | Pointer to **string** | crypto_currency | [optional] 
 **Currency** | Pointer to **string** |  | [optional] 
 **DayUtilDue** | Pointer to **int64** | day util due after finish | [optional] 
+**Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCodeSimplify**](UnibeeApiBeanMerchantDiscountCodeSimplify.md) |  | [optional] 
 **DiscountAmount** | Pointer to **int64** |  | [optional] 
 **DiscountCode** | Pointer to **string** |  | [optional] 
 **FinishTime** | Pointer to **int64** |  | [optional] 
@@ -17,20 +20,27 @@ Name | Type | Description | Notes
 **InvoiceName** | Pointer to **string** |  | [optional] 
 **Lines** | Pointer to [**[]UnibeeApiBeanInvoiceItemSimplify**](UnibeeApiBeanInvoiceItemSimplify.md) |  | [optional] 
 **Link** | Pointer to **string** | invoice link | [optional] 
+**Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
+**OriginAmount** | Pointer to **int64** |  | [optional] 
 **PaymentId** | Pointer to **string** | paymentId | [optional] 
 **PaymentLink** | Pointer to **string** | invoice payment link | [optional] 
 **PeriodEnd** | Pointer to **int64** |  | [optional] 
 **PeriodStart** | Pointer to **int64** |  | [optional] 
+**ProductName** | Pointer to **string** |  | [optional] 
 **ProrationDate** | Pointer to **int64** |  | [optional] 
 **ProrationScale** | Pointer to **int64** |  | [optional] 
+**RefundId** | Pointer to **string** | refundId | [optional] 
+**SendNote** | Pointer to **string** | send_note | [optional] 
 **SendStatus** | Pointer to **int32** | email send status，0-No | 1- YES| 2-Unnecessary | [optional] 
-**Status** | Pointer to **int32** | status，0-Init | 1-pending｜2-processing｜3-paid | 4-failed | 5-cancelled | [optional] 
+**Status** | Pointer to **int32** | status，1-pending｜2-processing｜3-paid | 4-failed | 5-cancelled | [optional] 
 **SubscriptionAmount** | Pointer to **int64** |  | [optional] 
 **SubscriptionAmountExcludingTax** | Pointer to **int64** |  | [optional] 
+**SubscriptionId** | Pointer to **string** | subscription_id | [optional] 
 **TaxAmount** | Pointer to **int64** |  | [optional] 
 **TaxPercentage** | Pointer to **int64** | TaxPercentage，1000 &#x3D; 10% | [optional] 
 **TotalAmount** | Pointer to **int64** |  | [optional] 
 **TotalAmountExcludingTax** | Pointer to **int64** |  | [optional] 
+**TrialEnd** | Pointer to **int64** | trial_end, utc time | [optional] 
 
 ## Methods
 
@@ -50,6 +60,31 @@ will change when the set of required properties is changed
 NewUnibeeApiBeanInvoiceSimplifyWithDefaults instantiates a new UnibeeApiBeanInvoiceSimplify object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBillingCycleAnchor
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetBillingCycleAnchor() int64`
+
+GetBillingCycleAnchor returns the BillingCycleAnchor field if non-nil, zero value otherwise.
+
+### GetBillingCycleAnchorOk
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetBillingCycleAnchorOk() (*int64, bool)`
+
+GetBillingCycleAnchorOk returns a tuple with the BillingCycleAnchor field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBillingCycleAnchor
+
+`func (o *UnibeeApiBeanInvoiceSimplify) SetBillingCycleAnchor(v int64)`
+
+SetBillingCycleAnchor sets BillingCycleAnchor field to given value.
+
+### HasBillingCycleAnchor
+
+`func (o *UnibeeApiBeanInvoiceSimplify) HasBillingCycleAnchor() bool`
+
+HasBillingCycleAnchor returns a boolean if a field has been set.
 
 ### GetBizType
 
@@ -75,6 +110,31 @@ SetBizType sets BizType field to given value.
 `func (o *UnibeeApiBeanInvoiceSimplify) HasBizType() bool`
 
 HasBizType returns a boolean if a field has been set.
+
+### GetCreateFrom
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetCreateFrom() string`
+
+GetCreateFrom returns the CreateFrom field if non-nil, zero value otherwise.
+
+### GetCreateFromOk
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetCreateFromOk() (*string, bool)`
+
+GetCreateFromOk returns a tuple with the CreateFrom field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateFrom
+
+`func (o *UnibeeApiBeanInvoiceSimplify) SetCreateFrom(v string)`
+
+SetCreateFrom sets CreateFrom field to given value.
+
+### HasCreateFrom
+
+`func (o *UnibeeApiBeanInvoiceSimplify) HasCreateFrom() bool`
+
+HasCreateFrom returns a boolean if a field has been set.
 
 ### GetCryptoAmount
 
@@ -175,6 +235,31 @@ SetDayUtilDue sets DayUtilDue field to given value.
 `func (o *UnibeeApiBeanInvoiceSimplify) HasDayUtilDue() bool`
 
 HasDayUtilDue returns a boolean if a field has been set.
+
+### GetDiscount
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetDiscount() UnibeeApiBeanMerchantDiscountCodeSimplify`
+
+GetDiscount returns the Discount field if non-nil, zero value otherwise.
+
+### GetDiscountOk
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetDiscountOk() (*UnibeeApiBeanMerchantDiscountCodeSimplify, bool)`
+
+GetDiscountOk returns a tuple with the Discount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscount
+
+`func (o *UnibeeApiBeanInvoiceSimplify) SetDiscount(v UnibeeApiBeanMerchantDiscountCodeSimplify)`
+
+SetDiscount sets Discount field to given value.
+
+### HasDiscount
+
+`func (o *UnibeeApiBeanInvoiceSimplify) HasDiscount() bool`
+
+HasDiscount returns a boolean if a field has been set.
 
 ### GetDiscountAmount
 
@@ -376,6 +461,56 @@ SetLink sets Link field to given value.
 
 HasLink returns a boolean if a field has been set.
 
+### GetMetadata
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetMetadata() map[string]string`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetMetadataOk() (*map[string]string, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *UnibeeApiBeanInvoiceSimplify) SetMetadata(v map[string]string)`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *UnibeeApiBeanInvoiceSimplify) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
+
+### GetOriginAmount
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetOriginAmount() int64`
+
+GetOriginAmount returns the OriginAmount field if non-nil, zero value otherwise.
+
+### GetOriginAmountOk
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetOriginAmountOk() (*int64, bool)`
+
+GetOriginAmountOk returns a tuple with the OriginAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOriginAmount
+
+`func (o *UnibeeApiBeanInvoiceSimplify) SetOriginAmount(v int64)`
+
+SetOriginAmount sets OriginAmount field to given value.
+
+### HasOriginAmount
+
+`func (o *UnibeeApiBeanInvoiceSimplify) HasOriginAmount() bool`
+
+HasOriginAmount returns a boolean if a field has been set.
+
 ### GetPaymentId
 
 `func (o *UnibeeApiBeanInvoiceSimplify) GetPaymentId() string`
@@ -476,6 +611,31 @@ SetPeriodStart sets PeriodStart field to given value.
 
 HasPeriodStart returns a boolean if a field has been set.
 
+### GetProductName
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetProductName() string`
+
+GetProductName returns the ProductName field if non-nil, zero value otherwise.
+
+### GetProductNameOk
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetProductNameOk() (*string, bool)`
+
+GetProductNameOk returns a tuple with the ProductName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProductName
+
+`func (o *UnibeeApiBeanInvoiceSimplify) SetProductName(v string)`
+
+SetProductName sets ProductName field to given value.
+
+### HasProductName
+
+`func (o *UnibeeApiBeanInvoiceSimplify) HasProductName() bool`
+
+HasProductName returns a boolean if a field has been set.
+
 ### GetProrationDate
 
 `func (o *UnibeeApiBeanInvoiceSimplify) GetProrationDate() int64`
@@ -525,6 +685,56 @@ SetProrationScale sets ProrationScale field to given value.
 `func (o *UnibeeApiBeanInvoiceSimplify) HasProrationScale() bool`
 
 HasProrationScale returns a boolean if a field has been set.
+
+### GetRefundId
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetRefundId() string`
+
+GetRefundId returns the RefundId field if non-nil, zero value otherwise.
+
+### GetRefundIdOk
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetRefundIdOk() (*string, bool)`
+
+GetRefundIdOk returns a tuple with the RefundId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRefundId
+
+`func (o *UnibeeApiBeanInvoiceSimplify) SetRefundId(v string)`
+
+SetRefundId sets RefundId field to given value.
+
+### HasRefundId
+
+`func (o *UnibeeApiBeanInvoiceSimplify) HasRefundId() bool`
+
+HasRefundId returns a boolean if a field has been set.
+
+### GetSendNote
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetSendNote() string`
+
+GetSendNote returns the SendNote field if non-nil, zero value otherwise.
+
+### GetSendNoteOk
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetSendNoteOk() (*string, bool)`
+
+GetSendNoteOk returns a tuple with the SendNote field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSendNote
+
+`func (o *UnibeeApiBeanInvoiceSimplify) SetSendNote(v string)`
+
+SetSendNote sets SendNote field to given value.
+
+### HasSendNote
+
+`func (o *UnibeeApiBeanInvoiceSimplify) HasSendNote() bool`
+
+HasSendNote returns a boolean if a field has been set.
 
 ### GetSendStatus
 
@@ -626,6 +836,31 @@ SetSubscriptionAmountExcludingTax sets SubscriptionAmountExcludingTax field to g
 
 HasSubscriptionAmountExcludingTax returns a boolean if a field has been set.
 
+### GetSubscriptionId
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetSubscriptionId() string`
+
+GetSubscriptionId returns the SubscriptionId field if non-nil, zero value otherwise.
+
+### GetSubscriptionIdOk
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetSubscriptionIdOk() (*string, bool)`
+
+GetSubscriptionIdOk returns a tuple with the SubscriptionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubscriptionId
+
+`func (o *UnibeeApiBeanInvoiceSimplify) SetSubscriptionId(v string)`
+
+SetSubscriptionId sets SubscriptionId field to given value.
+
+### HasSubscriptionId
+
+`func (o *UnibeeApiBeanInvoiceSimplify) HasSubscriptionId() bool`
+
+HasSubscriptionId returns a boolean if a field has been set.
+
 ### GetTaxAmount
 
 `func (o *UnibeeApiBeanInvoiceSimplify) GetTaxAmount() int64`
@@ -725,6 +960,31 @@ SetTotalAmountExcludingTax sets TotalAmountExcludingTax field to given value.
 `func (o *UnibeeApiBeanInvoiceSimplify) HasTotalAmountExcludingTax() bool`
 
 HasTotalAmountExcludingTax returns a boolean if a field has been set.
+
+### GetTrialEnd
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetTrialEnd() int64`
+
+GetTrialEnd returns the TrialEnd field if non-nil, zero value otherwise.
+
+### GetTrialEndOk
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetTrialEndOk() (*int64, bool)`
+
+GetTrialEndOk returns a tuple with the TrialEnd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrialEnd
+
+`func (o *UnibeeApiBeanInvoiceSimplify) SetTrialEnd(v int64)`
+
+SetTrialEnd sets TrialEnd field to given value.
+
+### HasTrialEnd
+
+`func (o *UnibeeApiBeanInvoiceSimplify) HasTrialEnd() bool`
+
+HasTrialEnd returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

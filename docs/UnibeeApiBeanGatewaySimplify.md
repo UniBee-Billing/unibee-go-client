@@ -4,13 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Bank** | Pointer to [**UnibeeApiBeanGatewayBank**](UnibeeApiBeanGatewayBank.md) |  | [optional] 
 **CountryConfig** | Pointer to **map[string]bool** |  | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
+**Currency** | Pointer to **string** | The currency of wire transfer  | [optional] 
 **GatewayId** | Pointer to **int64** |  | [optional] 
 **GatewayKey** | Pointer to **string** |  | [optional] 
 **GatewayLogo** | Pointer to **string** |  | [optional] 
 **GatewayName** | Pointer to **string** |  | [optional] 
-**GatewayType** | Pointer to **int64** | gateway type，1-Default｜ 2-Crypto | [optional] 
+**GatewayType** | Pointer to **int64** | gateway type，1-Bank Card ｜ 2-Crypto | 3 - Wire Transfer | [optional] 
+**MinimumAmount** | Pointer to **int64** | The minimum amount of wire transfer | [optional] 
+**WebhookEndpointUrl** | Pointer to **string** | The endpoint url of gateway webhook  | [optional] 
+**WebhookSecret** | Pointer to **string** | The secret of gateway webhook | [optional] 
 
 ## Methods
 
@@ -30,6 +35,31 @@ will change when the set of required properties is changed
 NewUnibeeApiBeanGatewaySimplifyWithDefaults instantiates a new UnibeeApiBeanGatewaySimplify object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBank
+
+`func (o *UnibeeApiBeanGatewaySimplify) GetBank() UnibeeApiBeanGatewayBank`
+
+GetBank returns the Bank field if non-nil, zero value otherwise.
+
+### GetBankOk
+
+`func (o *UnibeeApiBeanGatewaySimplify) GetBankOk() (*UnibeeApiBeanGatewayBank, bool)`
+
+GetBankOk returns a tuple with the Bank field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBank
+
+`func (o *UnibeeApiBeanGatewaySimplify) SetBank(v UnibeeApiBeanGatewayBank)`
+
+SetBank sets Bank field to given value.
+
+### HasBank
+
+`func (o *UnibeeApiBeanGatewaySimplify) HasBank() bool`
+
+HasBank returns a boolean if a field has been set.
 
 ### GetCountryConfig
 
@@ -80,6 +110,31 @@ SetCreateTime sets CreateTime field to given value.
 `func (o *UnibeeApiBeanGatewaySimplify) HasCreateTime() bool`
 
 HasCreateTime returns a boolean if a field has been set.
+
+### GetCurrency
+
+`func (o *UnibeeApiBeanGatewaySimplify) GetCurrency() string`
+
+GetCurrency returns the Currency field if non-nil, zero value otherwise.
+
+### GetCurrencyOk
+
+`func (o *UnibeeApiBeanGatewaySimplify) GetCurrencyOk() (*string, bool)`
+
+GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrency
+
+`func (o *UnibeeApiBeanGatewaySimplify) SetCurrency(v string)`
+
+SetCurrency sets Currency field to given value.
+
+### HasCurrency
+
+`func (o *UnibeeApiBeanGatewaySimplify) HasCurrency() bool`
+
+HasCurrency returns a boolean if a field has been set.
 
 ### GetGatewayId
 
@@ -205,6 +260,81 @@ SetGatewayType sets GatewayType field to given value.
 `func (o *UnibeeApiBeanGatewaySimplify) HasGatewayType() bool`
 
 HasGatewayType returns a boolean if a field has been set.
+
+### GetMinimumAmount
+
+`func (o *UnibeeApiBeanGatewaySimplify) GetMinimumAmount() int64`
+
+GetMinimumAmount returns the MinimumAmount field if non-nil, zero value otherwise.
+
+### GetMinimumAmountOk
+
+`func (o *UnibeeApiBeanGatewaySimplify) GetMinimumAmountOk() (*int64, bool)`
+
+GetMinimumAmountOk returns a tuple with the MinimumAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMinimumAmount
+
+`func (o *UnibeeApiBeanGatewaySimplify) SetMinimumAmount(v int64)`
+
+SetMinimumAmount sets MinimumAmount field to given value.
+
+### HasMinimumAmount
+
+`func (o *UnibeeApiBeanGatewaySimplify) HasMinimumAmount() bool`
+
+HasMinimumAmount returns a boolean if a field has been set.
+
+### GetWebhookEndpointUrl
+
+`func (o *UnibeeApiBeanGatewaySimplify) GetWebhookEndpointUrl() string`
+
+GetWebhookEndpointUrl returns the WebhookEndpointUrl field if non-nil, zero value otherwise.
+
+### GetWebhookEndpointUrlOk
+
+`func (o *UnibeeApiBeanGatewaySimplify) GetWebhookEndpointUrlOk() (*string, bool)`
+
+GetWebhookEndpointUrlOk returns a tuple with the WebhookEndpointUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWebhookEndpointUrl
+
+`func (o *UnibeeApiBeanGatewaySimplify) SetWebhookEndpointUrl(v string)`
+
+SetWebhookEndpointUrl sets WebhookEndpointUrl field to given value.
+
+### HasWebhookEndpointUrl
+
+`func (o *UnibeeApiBeanGatewaySimplify) HasWebhookEndpointUrl() bool`
+
+HasWebhookEndpointUrl returns a boolean if a field has been set.
+
+### GetWebhookSecret
+
+`func (o *UnibeeApiBeanGatewaySimplify) GetWebhookSecret() string`
+
+GetWebhookSecret returns the WebhookSecret field if non-nil, zero value otherwise.
+
+### GetWebhookSecretOk
+
+`func (o *UnibeeApiBeanGatewaySimplify) GetWebhookSecretOk() (*string, bool)`
+
+GetWebhookSecretOk returns a tuple with the WebhookSecret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWebhookSecret
+
+`func (o *UnibeeApiBeanGatewaySimplify) SetWebhookSecret(v string)`
+
+SetWebhookSecret sets WebhookSecret field to given value.
+
+### HasWebhookSecret
+
+`func (o *UnibeeApiBeanGatewaySimplify) HasWebhookSecret() bool`
+
+HasWebhookSecret returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

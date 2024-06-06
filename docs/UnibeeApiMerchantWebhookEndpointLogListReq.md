@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Count** | Pointer to **int32** | Count Of Page | [optional] 
 **EndpointId** | **int64** | EndpointId | 
-**Page** | Pointer to **int32** | Page, Start WIth 0 | [optional] 
+**Page** | Pointer to **int32** | Page, Start With 0 | [optional] 
 
 ## Methods
 

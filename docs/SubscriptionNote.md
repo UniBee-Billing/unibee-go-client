@@ -1,6 +1,6 @@
 # \SubscriptionNote
 
-All URIs are relative to *http://api.unibee.top*
+All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,7 +30,7 @@ import (
 
 func main() {
 	subscriptionId := "subscriptionId_example" // string | SubscriptionId
-	page := int32(56) // int32 | Page, Start WIth 0 (optional)
+	page := int32(56) // int32 | Page, Start With 0 (optional)
 	count := int32(56) // int32 | Count Of Page (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -57,7 +57,7 @@ Other parameters are passed through a pointer to a apiSubscriptionAdminNoteListG
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscriptionId** | **string** | SubscriptionId | 
- **page** | **int32** | Page, Start WIth 0 | 
+ **page** | **int32** | Page, Start With 0 | 
  **count** | **int32** | Count Of Page | 
 
 ### Return type
