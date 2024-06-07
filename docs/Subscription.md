@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**SubscriptionCancelPost**](Subscription.md#SubscriptionCancelPost) | **Post** /merchant/subscription/cancel | CancelSubscriptionImmediately
 [**SubscriptionChangeGatewayPost**](Subscription.md#SubscriptionChangeGatewayPost) | **Post** /merchant/subscription/change_gateway | ChangeSubscriptionGateway
 [**SubscriptionConfigGet**](Subscription.md#SubscriptionConfigGet) | **Get** /merchant/subscription/config | SubscriptionConfig
-[**SubscriptionConfigUpdateGet**](Subscription.md#SubscriptionConfigUpdateGet) | **Get** /merchant/subscription/config/update | Update Merchant Subscription Config
+[**SubscriptionConfigUpdatePost**](Subscription.md#SubscriptionConfigUpdatePost) | **Post** /merchant/subscription/config/update | Update Merchant Subscription Config
 [**SubscriptionCreatePreviewPost**](Subscription.md#SubscriptionCreatePreviewPost) | **Post** /merchant/subscription/create_preview | CreateSubscriptionPreview
 [**SubscriptionCreateSubmitPost**](Subscription.md#SubscriptionCreateSubmitPost) | **Post** /merchant/subscription/create_submit | CreateSubscription
 [**SubscriptionDetailGet**](Subscription.md#SubscriptionDetailGet) | **Get** /merchant/subscription/detail | SubscriptionDetail
@@ -484,9 +484,9 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## SubscriptionConfigUpdateGet
+## SubscriptionConfigUpdatePost
 
-> MerchantSubscriptionConfigGet200Response SubscriptionConfigUpdateGet(ctx).DowngradeEffectImmediately(downgradeEffectImmediately).UpgradeProration(upgradeProration).IncompleteExpireTime(incompleteExpireTime).InvoiceEmail(invoiceEmail).TryAutomaticPaymentBeforePeriodEnd(tryAutomaticPaymentBeforePeriodEnd).Execute()
+> MerchantSubscriptionConfigGet200Response SubscriptionConfigUpdatePost(ctx).UnibeeApiMerchantSubscriptionConfigUpdateReq(unibeeApiMerchantSubscriptionConfigUpdateReq).Execute()
 
 Update Merchant Subscription Config
 
@@ -503,21 +503,17 @@ import (
 )
 
 func main() {
-	downgradeEffectImmediately := true // bool | DowngradeEffectImmediately, whether subscription downgrade should effect immediately or at period end, default at period end (optional)
-	upgradeProration := true // bool | UpgradeProration, whether subscription update generation proration invoice or not, default yes (optional)
-	incompleteExpireTime := int32(56) // int32 | IncompleteExpireTime, em.. default 1day for plan of month type (optional)
-	invoiceEmail := true // bool | InvoiceEmail, whether to send invoice email to user, default yes (optional)
-	tryAutomaticPaymentBeforePeriodEnd := int32(56) // int32 | TryAutomaticPaymentBeforePeriodEnd, default 30 min (optional)
+	unibeeApiMerchantSubscriptionConfigUpdateReq := *openapiclient.NewUnibeeApiMerchantSubscriptionConfigUpdateReq() // UnibeeApiMerchantSubscriptionConfigUpdateReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Subscription.SubscriptionConfigUpdateGet(context.Background()).DowngradeEffectImmediately(downgradeEffectImmediately).UpgradeProration(upgradeProration).IncompleteExpireTime(incompleteExpireTime).InvoiceEmail(invoiceEmail).TryAutomaticPaymentBeforePeriodEnd(tryAutomaticPaymentBeforePeriodEnd).Execute()
+	resp, r, err := apiClient.Subscription.SubscriptionConfigUpdatePost(context.Background()).UnibeeApiMerchantSubscriptionConfigUpdateReq(unibeeApiMerchantSubscriptionConfigUpdateReq).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionConfigUpdateGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionConfigUpdatePost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SubscriptionConfigUpdateGet`: MerchantSubscriptionConfigGet200Response
-	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionConfigUpdateGet`: %v\n", resp)
+	// response from `SubscriptionConfigUpdatePost`: MerchantSubscriptionConfigGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionConfigUpdatePost`: %v\n", resp)
 }
 ```
 
@@ -527,16 +523,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSubscriptionConfigUpdateGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiSubscriptionConfigUpdatePostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **downgradeEffectImmediately** | **bool** | DowngradeEffectImmediately, whether subscription downgrade should effect immediately or at period end, default at period end | 
- **upgradeProration** | **bool** | UpgradeProration, whether subscription update generation proration invoice or not, default yes | 
- **incompleteExpireTime** | **int32** | IncompleteExpireTime, em.. default 1day for plan of month type | 
- **invoiceEmail** | **bool** | InvoiceEmail, whether to send invoice email to user, default yes | 
- **tryAutomaticPaymentBeforePeriodEnd** | **int32** | TryAutomaticPaymentBeforePeriodEnd, default 30 min | 
+ **unibeeApiMerchantSubscriptionConfigUpdateReq** | [**UnibeeApiMerchantSubscriptionConfigUpdateReq**](UnibeeApiMerchantSubscriptionConfigUpdateReq.md) |  | 
 
 ### Return type
 
@@ -548,7 +540,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

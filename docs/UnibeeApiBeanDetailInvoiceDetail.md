@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BillingCycleAnchor** | Pointer to **int64** | billing_cycle_anchor | [optional] 
+**CountryCode** | Pointer to **string** |  | [optional] 
 **CreateFrom** | Pointer to **string** | create from | [optional] 
 **CryptoAmount** | Pointer to **int64** | crypto_amount, cent | [optional] 
 **CryptoCurrency** | Pointer to **string** | crypto_currency | [optional] 
@@ -98,6 +99,31 @@ SetBillingCycleAnchor sets BillingCycleAnchor field to given value.
 `func (o *UnibeeApiBeanDetailInvoiceDetail) HasBillingCycleAnchor() bool`
 
 HasBillingCycleAnchor returns a boolean if a field has been set.
+
+### GetCountryCode
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetCountryCode() string`
+
+GetCountryCode returns the CountryCode field if non-nil, zero value otherwise.
+
+### GetCountryCodeOk
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetCountryCodeOk() (*string, bool)`
+
+GetCountryCodeOk returns a tuple with the CountryCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCountryCode
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetCountryCode(v string)`
+
+SetCountryCode sets CountryCode field to given value.
+
+### HasCountryCode
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) HasCountryCode() bool`
+
+HasCountryCode returns a boolean if a field has been set.
 
 ### GetCreateFrom
 

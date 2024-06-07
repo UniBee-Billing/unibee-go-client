@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BillingCycleAnchor** | Pointer to **int64** | billing_cycle_anchor | [optional] 
 **BizType** | Pointer to **int32** | biz type from payment 1-onetime payment, 3-subscription | [optional] 
+**CountryCode** | Pointer to **string** |  | [optional] 
 **CreateFrom** | Pointer to **string** | create from | [optional] 
 **CryptoAmount** | Pointer to **int64** | crypto_amount, cent | [optional] 
 **CryptoCurrency** | Pointer to **string** | crypto_currency | [optional] 
@@ -110,6 +111,31 @@ SetBizType sets BizType field to given value.
 `func (o *UnibeeApiBeanInvoiceSimplify) HasBizType() bool`
 
 HasBizType returns a boolean if a field has been set.
+
+### GetCountryCode
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetCountryCode() string`
+
+GetCountryCode returns the CountryCode field if non-nil, zero value otherwise.
+
+### GetCountryCodeOk
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetCountryCodeOk() (*string, bool)`
+
+GetCountryCodeOk returns a tuple with the CountryCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCountryCode
+
+`func (o *UnibeeApiBeanInvoiceSimplify) SetCountryCode(v string)`
+
+SetCountryCode sets CountryCode field to given value.
+
+### HasCountryCode
+
+`func (o *UnibeeApiBeanInvoiceSimplify) HasCountryCode() bool`
+
+HasCountryCode returns a boolean if a field has been set.
 
 ### GetCreateFrom
 

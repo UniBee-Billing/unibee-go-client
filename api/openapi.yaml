@@ -6,7 +6,7 @@ info:
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   title: OpenAPI UniBee
   version: |
-    buildtime:202406061803
+    buildtime:202406070109
 servers:
 - url: https://api.unibee.top
 security:
@@ -2827,70 +2827,13 @@ paths:
       tags:
       - Subscription
   /merchant/subscription/config/update:
-    get:
-      parameters:
-      - description: "DowngradeEffectImmediately, whether subscription downgrade should\
-          \ effect immediately or at period end, default at period end"
-        explode: true
-        in: query
-        name: downgradeEffectImmediately
-        required: false
-        schema:
-          description: "DowngradeEffectImmediately, whether subscription downgrade\
-            \ should effect immediately or at period end, default at period end"
-          format: '*bool'
-          properties: {}
-          type: boolean
-        style: form
-      - description: "UpgradeProration, whether subscription update generation proration\
-          \ invoice or not, default yes"
-        explode: true
-        in: query
-        name: upgradeProration
-        required: false
-        schema:
-          description: "UpgradeProration, whether subscription update generation proration\
-            \ invoice or not, default yes"
-          format: '*bool'
-          properties: {}
-          type: boolean
-        style: form
-      - description: "IncompleteExpireTime, em.. default 1day for plan of month type"
-        explode: true
-        in: query
-        name: incompleteExpireTime
-        required: false
-        schema:
-          description: "IncompleteExpireTime, em.. default 1day for plan of month\
-            \ type"
-          format: '*int64'
-          properties: {}
-          type: integer
-        style: form
-      - description: "InvoiceEmail, whether to send invoice email to user, default\
-          \ yes"
-        explode: true
-        in: query
-        name: invoiceEmail
-        required: false
-        schema:
-          description: "InvoiceEmail, whether to send invoice email to user, default\
-            \ yes"
-          format: '*bool'
-          properties: {}
-          type: boolean
-        style: form
-      - description: "TryAutomaticPaymentBeforePeriodEnd, default 30 min"
-        explode: true
-        in: query
-        name: tryAutomaticPaymentBeforePeriodEnd
-        required: false
-        schema:
-          description: "TryAutomaticPaymentBeforePeriodEnd, default 30 min"
-          format: '*int64'
-          properties: {}
-          type: integer
-        style: form
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/unibee.api.merchant.subscription.ConfigUpdateReq'
+        required: true
       responses:
         "200":
           content:
@@ -4411,6 +4354,7 @@ components:
         productName: productName
         createFrom: createFrom
         cryptoAmount: 5
+        countryCode: countryCode
         paymentId: paymentId
         totalAmountExcludingTax: 9
         currency: currency
@@ -4529,6 +4473,10 @@ components:
           format: int
           properties: {}
           type: integer
+        countryCode:
+          format: string
+          properties: {}
+          type: string
         createFrom:
           description: create from
           format: string
@@ -7093,6 +7041,7 @@ components:
         sendEmail: sendEmail
         isDeleted: 9
         cryptoAmount: 1
+        countryCode: countryCode
         totalAmountExcludingTax: 8
         currency: currency
         lines:
@@ -7214,6 +7163,10 @@ components:
           format: int64
           properties: {}
           type: integer
+        countryCode:
+          format: string
+          properties: {}
+          type: string
         createFrom:
           description: create from
           format: string
@@ -7920,6 +7873,7 @@ components:
           sendEmail: sendEmail
           isDeleted: 9
           cryptoAmount: 1
+          countryCode: countryCode
           totalAmountExcludingTax: 8
           currency: currency
           lines:
@@ -8633,6 +8587,7 @@ components:
           productName: productName
           createFrom: createFrom
           cryptoAmount: 5
+          countryCode: countryCode
           paymentId: paymentId
           totalAmountExcludingTax: 9
           currency: currency
@@ -17076,6 +17031,7 @@ components:
           sendEmail: sendEmail
           isDeleted: 9
           cryptoAmount: 1
+          countryCode: countryCode
           totalAmountExcludingTax: 8
           currency: currency
           lines:
@@ -17404,6 +17360,7 @@ components:
             sendEmail: sendEmail
             isDeleted: 9
             cryptoAmount: 1
+            countryCode: countryCode
             totalAmountExcludingTax: 8
             currency: currency
             lines:
@@ -17578,6 +17535,7 @@ components:
           productName: productName
           createFrom: createFrom
           cryptoAmount: 5
+          countryCode: countryCode
           paymentId: paymentId
           totalAmountExcludingTax: 9
           currency: currency
@@ -17729,6 +17687,7 @@ components:
             productName: productName
             createFrom: createFrom
             cryptoAmount: 5
+            countryCode: countryCode
             paymentId: paymentId
             totalAmountExcludingTax: 9
             currency: currency
@@ -18065,6 +18024,7 @@ components:
           sendEmail: sendEmail
           isDeleted: 9
           cryptoAmount: 1
+          countryCode: countryCode
           totalAmountExcludingTax: 8
           currency: currency
           lines:
@@ -18383,6 +18343,7 @@ components:
           sendEmail: sendEmail
           isDeleted: 9
           cryptoAmount: 1
+          countryCode: countryCode
           totalAmountExcludingTax: 8
           currency: currency
           lines:
@@ -18722,6 +18683,7 @@ components:
             sendEmail: sendEmail
             isDeleted: 9
             cryptoAmount: 1
+            countryCode: countryCode
             totalAmountExcludingTax: 8
             currency: currency
             lines:
@@ -19040,6 +19002,7 @@ components:
             sendEmail: sendEmail
             isDeleted: 9
             cryptoAmount: 1
+            countryCode: countryCode
             totalAmountExcludingTax: 8
             currency: currency
             lines:
@@ -20494,6 +20457,7 @@ components:
             sendEmail: sendEmail
             isDeleted: 9
             cryptoAmount: 1
+            countryCode: countryCode
             totalAmountExcludingTax: 8
             currency: currency
             lines:
@@ -20917,6 +20881,7 @@ components:
               sendEmail: sendEmail
               isDeleted: 9
               cryptoAmount: 1
+              countryCode: countryCode
               totalAmountExcludingTax: 8
               currency: currency
               lines:
@@ -21467,6 +21432,7 @@ components:
             sendEmail: sendEmail
             isDeleted: 9
             cryptoAmount: 1
+            countryCode: countryCode
             totalAmountExcludingTax: 8
             currency: currency
             lines:
@@ -21880,6 +21846,7 @@ components:
             sendEmail: sendEmail
             isDeleted: 9
             cryptoAmount: 1
+            countryCode: countryCode
             totalAmountExcludingTax: 8
             currency: currency
             lines:
@@ -22314,6 +22281,7 @@ components:
               sendEmail: sendEmail
               isDeleted: 9
               cryptoAmount: 1
+              countryCode: countryCode
               totalAmountExcludingTax: 8
               currency: currency
               lines:
@@ -22727,6 +22695,7 @@ components:
               sendEmail: sendEmail
               isDeleted: 9
               cryptoAmount: 1
+              countryCode: countryCode
               totalAmountExcludingTax: 8
               currency: currency
               lines:
@@ -25693,6 +25662,7 @@ components:
           productName: productName
           createFrom: createFrom
           cryptoAmount: 5
+          countryCode: countryCode
           paymentId: paymentId
           totalAmountExcludingTax: 9
           currency: currency
@@ -25834,6 +25804,7 @@ components:
           productName: productName
           createFrom: createFrom
           cryptoAmount: 5
+          countryCode: countryCode
           paymentId: paymentId
           totalAmountExcludingTax: 9
           currency: currency
@@ -26132,6 +26103,7 @@ components:
             productName: productName
             createFrom: createFrom
             cryptoAmount: 5
+            countryCode: countryCode
             paymentId: paymentId
             totalAmountExcludingTax: 9
             currency: currency
@@ -26273,6 +26245,7 @@ components:
             productName: productName
             createFrom: createFrom
             cryptoAmount: 5
+            countryCode: countryCode
             paymentId: paymentId
             totalAmountExcludingTax: 9
             currency: currency
@@ -26736,6 +26709,7 @@ components:
           productName: productName
           createFrom: createFrom
           cryptoAmount: 5
+          countryCode: countryCode
           paymentId: paymentId
           totalAmountExcludingTax: 9
           currency: currency
@@ -27115,6 +27089,7 @@ components:
             productName: productName
             createFrom: createFrom
             cryptoAmount: 5
+            countryCode: countryCode
             paymentId: paymentId
             totalAmountExcludingTax: 9
             currency: currency
@@ -27451,6 +27426,7 @@ components:
           productName: productName
           createFrom: createFrom
           cryptoAmount: 5
+          countryCode: countryCode
           paymentId: paymentId
           totalAmountExcludingTax: 9
           currency: currency
@@ -28031,6 +28007,7 @@ components:
             productName: productName
             createFrom: createFrom
             cryptoAmount: 5
+            countryCode: countryCode
             paymentId: paymentId
             totalAmountExcludingTax: 9
             currency: currency
@@ -28603,6 +28580,7 @@ components:
             productName: productName
             createFrom: createFrom
             cryptoAmount: 5
+            countryCode: countryCode
             paymentId: paymentId
             totalAmountExcludingTax: 9
             currency: currency
@@ -29171,6 +29149,7 @@ components:
             productName: productName
             createFrom: createFrom
             cryptoAmount: 5
+            countryCode: countryCode
             paymentId: paymentId
             totalAmountExcludingTax: 9
             currency: currency
@@ -29760,6 +29739,7 @@ components:
               productName: productName
               createFrom: createFrom
               cryptoAmount: 5
+              countryCode: countryCode
               paymentId: paymentId
               totalAmountExcludingTax: 9
               currency: currency
@@ -30328,6 +30308,7 @@ components:
               productName: productName
               createFrom: createFrom
               cryptoAmount: 5
+              countryCode: countryCode
               paymentId: paymentId
               totalAmountExcludingTax: 9
               currency: currency
@@ -30935,6 +30916,7 @@ components:
           productName: productName
           createFrom: createFrom
           cryptoAmount: 5
+          countryCode: countryCode
           paymentId: paymentId
           totalAmountExcludingTax: 9
           currency: currency
@@ -31115,6 +31097,7 @@ components:
             productName: productName
             createFrom: createFrom
             cryptoAmount: 5
+            countryCode: countryCode
             paymentId: paymentId
             totalAmountExcludingTax: 9
             currency: currency
@@ -33132,6 +33115,7 @@ components:
           productName: productName
           createFrom: createFrom
           cryptoAmount: 5
+          countryCode: countryCode
           paymentId: paymentId
           totalAmountExcludingTax: 9
           currency: currency
@@ -33274,6 +33258,7 @@ components:
           productName: productName
           createFrom: createFrom
           cryptoAmount: 5
+          countryCode: countryCode
           paymentId: paymentId
           totalAmountExcludingTax: 9
           currency: currency
@@ -33474,6 +33459,7 @@ components:
             productName: productName
             createFrom: createFrom
             cryptoAmount: 5
+            countryCode: countryCode
             paymentId: paymentId
             totalAmountExcludingTax: 9
             currency: currency
@@ -33616,6 +33602,7 @@ components:
             productName: productName
             createFrom: createFrom
             cryptoAmount: 5
+            countryCode: countryCode
             paymentId: paymentId
             totalAmountExcludingTax: 9
             currency: currency
@@ -34248,6 +34235,7 @@ components:
             productName: productName
             createFrom: createFrom
             cryptoAmount: 5
+            countryCode: countryCode
             paymentId: paymentId
             totalAmountExcludingTax: 9
             currency: currency
@@ -34826,6 +34814,7 @@ components:
               productName: productName
               createFrom: createFrom
               cryptoAmount: 5
+              countryCode: countryCode
               paymentId: paymentId
               totalAmountExcludingTax: 9
               currency: currency
