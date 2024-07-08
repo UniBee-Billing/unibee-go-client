@@ -11,10 +11,10 @@ package unibee
 
 import (
 	"context"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func Test_unibee_BalanceService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_unibee_BalanceService(t *testing.T) {
 
 	t.Run("Test BalanceService BalanceMerchantBalanceQueryGet", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Balance.BalanceMerchantBalanceQueryGet(context.Background()).Execute()
 
@@ -36,7 +36,7 @@ func Test_unibee_BalanceService(t *testing.T) {
 
 	t.Run("Test BalanceService BalanceMerchantBalanceQueryPost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Balance.BalanceMerchantBalanceQueryPost(context.Background()).Execute()
 
@@ -48,7 +48,7 @@ func Test_unibee_BalanceService(t *testing.T) {
 
 	t.Run("Test BalanceService BalanceUserBalanceQueryGet", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Balance.BalanceUserBalanceQueryGet(context.Background()).Execute()
 
@@ -60,7 +60,7 @@ func Test_unibee_BalanceService(t *testing.T) {
 
 	t.Run("Test BalanceService BalanceUserBalanceQueryPost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Balance.BalanceUserBalanceQueryPost(context.Background()).Execute()
 

@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **BillingType** | Pointer to **[]int32** | billing_type, 1-one-time, 2-recurring | [optional] 
 **Code** | Pointer to **string** | Filter Code | [optional] 
 **Count** | Pointer to **int32** | Count Of Per Page | [optional] 
+**CreateTimeEnd** | Pointer to **int64** | CreateTimeEnd | [optional] 
+**CreateTimeStart** | Pointer to **int64** | CreateTimeStart | [optional] 
 **Currency** | Pointer to **string** | Filter Currency | [optional] 
 **DiscountType** | Pointer to **[]int32** | discount_type, 1-percentage, 2-fixed_amount | [optional] 
 **Page** | Pointer to **int32** | Page, Start 0 | [optional] 
@@ -107,6 +109,56 @@ SetCount sets Count field to given value.
 `func (o *UnibeeApiMerchantDiscountListReq) HasCount() bool`
 
 HasCount returns a boolean if a field has been set.
+
+### GetCreateTimeEnd
+
+`func (o *UnibeeApiMerchantDiscountListReq) GetCreateTimeEnd() int64`
+
+GetCreateTimeEnd returns the CreateTimeEnd field if non-nil, zero value otherwise.
+
+### GetCreateTimeEndOk
+
+`func (o *UnibeeApiMerchantDiscountListReq) GetCreateTimeEndOk() (*int64, bool)`
+
+GetCreateTimeEndOk returns a tuple with the CreateTimeEnd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateTimeEnd
+
+`func (o *UnibeeApiMerchantDiscountListReq) SetCreateTimeEnd(v int64)`
+
+SetCreateTimeEnd sets CreateTimeEnd field to given value.
+
+### HasCreateTimeEnd
+
+`func (o *UnibeeApiMerchantDiscountListReq) HasCreateTimeEnd() bool`
+
+HasCreateTimeEnd returns a boolean if a field has been set.
+
+### GetCreateTimeStart
+
+`func (o *UnibeeApiMerchantDiscountListReq) GetCreateTimeStart() int64`
+
+GetCreateTimeStart returns the CreateTimeStart field if non-nil, zero value otherwise.
+
+### GetCreateTimeStartOk
+
+`func (o *UnibeeApiMerchantDiscountListReq) GetCreateTimeStartOk() (*int64, bool)`
+
+GetCreateTimeStartOk returns a tuple with the CreateTimeStart field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateTimeStart
+
+`func (o *UnibeeApiMerchantDiscountListReq) SetCreateTimeStart(v int64)`
+
+SetCreateTimeStart sets CreateTimeStart field to given value.
+
+### HasCreateTimeStart
+
+`func (o *UnibeeApiMerchantDiscountListReq) HasCreateTimeStart() bool`
+
+HasCreateTimeStart returns a boolean if a field has been set.
 
 ### GetCurrency
 

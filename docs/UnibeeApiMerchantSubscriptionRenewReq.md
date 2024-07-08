@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CancelUrl** | Pointer to **string** | CancelUrl | [optional] 
 **Discount** | Pointer to [**UnibeeApiBeanExternalDiscountParam**](UnibeeApiBeanExternalDiscountParam.md) |  | [optional] 
 **DiscountCode** | Pointer to **string** | DiscountCode, override subscription discount | [optional] 
 **GatewayId** | Pointer to **int32** | GatewayId, use subscription&#39;s gateway if not provide | [optional] 
@@ -33,6 +34,31 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantSubscriptionRenewReqWithDefaults instantiates a new UnibeeApiMerchantSubscriptionRenewReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCancelUrl
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) GetCancelUrl() string`
+
+GetCancelUrl returns the CancelUrl field if non-nil, zero value otherwise.
+
+### GetCancelUrlOk
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) GetCancelUrlOk() (*string, bool)`
+
+GetCancelUrlOk returns a tuple with the CancelUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCancelUrl
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) SetCancelUrl(v string)`
+
+SetCancelUrl sets CancelUrl field to given value.
+
+### HasCancelUrl
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) HasCancelUrl() bool`
+
+HasCancelUrl returns a boolean if a field has been set.
 
 ### GetDiscount
 

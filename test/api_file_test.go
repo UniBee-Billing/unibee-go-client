@@ -11,10 +11,10 @@ package unibee
 
 import (
 	"context"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func Test_unibee_FileService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_unibee_FileService(t *testing.T) {
 
 	t.Run("Test FileService OssFilePost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.File.OssFilePost(context.Background()).Execute()
 

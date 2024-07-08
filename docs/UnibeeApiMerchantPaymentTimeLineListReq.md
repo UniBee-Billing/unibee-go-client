@@ -4,10 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AmountEnd** | Pointer to **int32** | The filter end amount of timeline | [optional] 
+**AmountStart** | Pointer to **int32** | The filter start amount of timeline | [optional] 
 **Count** | Pointer to **int32** | Count Of Page | [optional] 
+**CreateTimeEnd** | Pointer to **int64** | CreateTimeEnd | [optional] 
+**CreateTimeStart** | Pointer to **int64** | CreateTimeStart | [optional] 
+**Currency** | Pointer to **string** | Currency | [optional] 
+**GatewayIds** | Pointer to **[]int64** | The filter ids of gateway | [optional] 
 **Page** | Pointer to **int32** | Page,Start 0 | [optional] 
 **SortField** | Pointer to **string** | Sort，invoice_id|gmt_create|gmt_modify|period_end|total_amount，Default gmt_modify | [optional] 
 **SortType** | Pointer to **string** | Sort Type，asc|desc，Default desc | [optional] 
+**Status** | Pointer to **[]int32** | The filter status, 0-pending, 1-success, 2-failure | [optional] 
+**TimelineTypes** | Pointer to **[]int32** | The filter timelineType, 0-pay, 1-refund | [optional] 
 **UserId** | Pointer to **int64** | Filter UserId, Default All | [optional] 
 
 ## Methods
@@ -28,6 +36,56 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantPaymentTimeLineListReqWithDefaults instantiates a new UnibeeApiMerchantPaymentTimeLineListReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAmountEnd
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetAmountEnd() int32`
+
+GetAmountEnd returns the AmountEnd field if non-nil, zero value otherwise.
+
+### GetAmountEndOk
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetAmountEndOk() (*int32, bool)`
+
+GetAmountEndOk returns a tuple with the AmountEnd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAmountEnd
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) SetAmountEnd(v int32)`
+
+SetAmountEnd sets AmountEnd field to given value.
+
+### HasAmountEnd
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) HasAmountEnd() bool`
+
+HasAmountEnd returns a boolean if a field has been set.
+
+### GetAmountStart
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetAmountStart() int32`
+
+GetAmountStart returns the AmountStart field if non-nil, zero value otherwise.
+
+### GetAmountStartOk
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetAmountStartOk() (*int32, bool)`
+
+GetAmountStartOk returns a tuple with the AmountStart field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAmountStart
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) SetAmountStart(v int32)`
+
+SetAmountStart sets AmountStart field to given value.
+
+### HasAmountStart
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) HasAmountStart() bool`
+
+HasAmountStart returns a boolean if a field has been set.
 
 ### GetCount
 
@@ -53,6 +111,106 @@ SetCount sets Count field to given value.
 `func (o *UnibeeApiMerchantPaymentTimeLineListReq) HasCount() bool`
 
 HasCount returns a boolean if a field has been set.
+
+### GetCreateTimeEnd
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetCreateTimeEnd() int64`
+
+GetCreateTimeEnd returns the CreateTimeEnd field if non-nil, zero value otherwise.
+
+### GetCreateTimeEndOk
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetCreateTimeEndOk() (*int64, bool)`
+
+GetCreateTimeEndOk returns a tuple with the CreateTimeEnd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateTimeEnd
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) SetCreateTimeEnd(v int64)`
+
+SetCreateTimeEnd sets CreateTimeEnd field to given value.
+
+### HasCreateTimeEnd
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) HasCreateTimeEnd() bool`
+
+HasCreateTimeEnd returns a boolean if a field has been set.
+
+### GetCreateTimeStart
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetCreateTimeStart() int64`
+
+GetCreateTimeStart returns the CreateTimeStart field if non-nil, zero value otherwise.
+
+### GetCreateTimeStartOk
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetCreateTimeStartOk() (*int64, bool)`
+
+GetCreateTimeStartOk returns a tuple with the CreateTimeStart field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateTimeStart
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) SetCreateTimeStart(v int64)`
+
+SetCreateTimeStart sets CreateTimeStart field to given value.
+
+### HasCreateTimeStart
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) HasCreateTimeStart() bool`
+
+HasCreateTimeStart returns a boolean if a field has been set.
+
+### GetCurrency
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetCurrency() string`
+
+GetCurrency returns the Currency field if non-nil, zero value otherwise.
+
+### GetCurrencyOk
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetCurrencyOk() (*string, bool)`
+
+GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrency
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) SetCurrency(v string)`
+
+SetCurrency sets Currency field to given value.
+
+### HasCurrency
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) HasCurrency() bool`
+
+HasCurrency returns a boolean if a field has been set.
+
+### GetGatewayIds
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetGatewayIds() []int64`
+
+GetGatewayIds returns the GatewayIds field if non-nil, zero value otherwise.
+
+### GetGatewayIdsOk
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetGatewayIdsOk() (*[]int64, bool)`
+
+GetGatewayIdsOk returns a tuple with the GatewayIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayIds
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) SetGatewayIds(v []int64)`
+
+SetGatewayIds sets GatewayIds field to given value.
+
+### HasGatewayIds
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) HasGatewayIds() bool`
+
+HasGatewayIds returns a boolean if a field has been set.
 
 ### GetPage
 
@@ -128,6 +286,56 @@ SetSortType sets SortType field to given value.
 `func (o *UnibeeApiMerchantPaymentTimeLineListReq) HasSortType() bool`
 
 HasSortType returns a boolean if a field has been set.
+
+### GetStatus
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetStatus() []int32`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetStatusOk() (*[]int32, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) SetStatus(v []int32)`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
+
+### GetTimelineTypes
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetTimelineTypes() []int32`
+
+GetTimelineTypes returns the TimelineTypes field if non-nil, zero value otherwise.
+
+### GetTimelineTypesOk
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetTimelineTypesOk() (*[]int32, bool)`
+
+GetTimelineTypesOk returns a tuple with the TimelineTypes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTimelineTypes
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) SetTimelineTypes(v []int32)`
+
+SetTimelineTypes sets TimelineTypes field to given value.
+
+### HasTimelineTypes
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) HasTimelineTypes() bool`
+
+HasTimelineTypes returns a boolean if a field has been set.
 
 ### GetUserId
 

@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Count** | Pointer to **int32** | Count OF Page | [optional] 
+**CreateTimeEnd** | Pointer to **int64** | CreateTimeEnd | [optional] 
+**CreateTimeStart** | Pointer to **int64** | CreateTimeStart | [optional] 
 **DeleteInclude** | Pointer to **bool** | Deleted Involved，Need Admin | [optional] 
 **Email** | Pointer to **string** | Search Filter Email | [optional] 
 **FirstName** | Pointer to **string** | Search FirstName | [optional] 
@@ -13,7 +15,9 @@ Name | Type | Description | Notes
 **SortField** | Pointer to **string** | Sort，user_id|gmt_create|email|user_name|subscription_name|subscription_status|payment_method|recurring_amount|billing_type，Default gmt_create | [optional] 
 **SortType** | Pointer to **string** | Sort Type，asc|desc，Default desc | [optional] 
 **Status** | Pointer to **[]int32** | Status, 0-Active｜2-Frozen | [optional] 
-**UserId** | Pointer to **int32** | Filter UserId | [optional] 
+**SubStatus** | Pointer to **[]int32** | Filter, Default All，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | [optional] 
+**SubscriptionId** | Pointer to **string** | Search Filter SubscriptionId | [optional] 
+**UserId** | Pointer to **int64** | Filter UserId | [optional] 
 
 ## Methods
 
@@ -58,6 +62,56 @@ SetCount sets Count field to given value.
 `func (o *UnibeeApiMerchantUserListReq) HasCount() bool`
 
 HasCount returns a boolean if a field has been set.
+
+### GetCreateTimeEnd
+
+`func (o *UnibeeApiMerchantUserListReq) GetCreateTimeEnd() int64`
+
+GetCreateTimeEnd returns the CreateTimeEnd field if non-nil, zero value otherwise.
+
+### GetCreateTimeEndOk
+
+`func (o *UnibeeApiMerchantUserListReq) GetCreateTimeEndOk() (*int64, bool)`
+
+GetCreateTimeEndOk returns a tuple with the CreateTimeEnd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateTimeEnd
+
+`func (o *UnibeeApiMerchantUserListReq) SetCreateTimeEnd(v int64)`
+
+SetCreateTimeEnd sets CreateTimeEnd field to given value.
+
+### HasCreateTimeEnd
+
+`func (o *UnibeeApiMerchantUserListReq) HasCreateTimeEnd() bool`
+
+HasCreateTimeEnd returns a boolean if a field has been set.
+
+### GetCreateTimeStart
+
+`func (o *UnibeeApiMerchantUserListReq) GetCreateTimeStart() int64`
+
+GetCreateTimeStart returns the CreateTimeStart field if non-nil, zero value otherwise.
+
+### GetCreateTimeStartOk
+
+`func (o *UnibeeApiMerchantUserListReq) GetCreateTimeStartOk() (*int64, bool)`
+
+GetCreateTimeStartOk returns a tuple with the CreateTimeStart field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateTimeStart
+
+`func (o *UnibeeApiMerchantUserListReq) SetCreateTimeStart(v int64)`
+
+SetCreateTimeStart sets CreateTimeStart field to given value.
+
+### HasCreateTimeStart
+
+`func (o *UnibeeApiMerchantUserListReq) HasCreateTimeStart() bool`
+
+HasCreateTimeStart returns a boolean if a field has been set.
 
 ### GetDeleteInclude
 
@@ -259,22 +313,72 @@ SetStatus sets Status field to given value.
 
 HasStatus returns a boolean if a field has been set.
 
+### GetSubStatus
+
+`func (o *UnibeeApiMerchantUserListReq) GetSubStatus() []int32`
+
+GetSubStatus returns the SubStatus field if non-nil, zero value otherwise.
+
+### GetSubStatusOk
+
+`func (o *UnibeeApiMerchantUserListReq) GetSubStatusOk() (*[]int32, bool)`
+
+GetSubStatusOk returns a tuple with the SubStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubStatus
+
+`func (o *UnibeeApiMerchantUserListReq) SetSubStatus(v []int32)`
+
+SetSubStatus sets SubStatus field to given value.
+
+### HasSubStatus
+
+`func (o *UnibeeApiMerchantUserListReq) HasSubStatus() bool`
+
+HasSubStatus returns a boolean if a field has been set.
+
+### GetSubscriptionId
+
+`func (o *UnibeeApiMerchantUserListReq) GetSubscriptionId() string`
+
+GetSubscriptionId returns the SubscriptionId field if non-nil, zero value otherwise.
+
+### GetSubscriptionIdOk
+
+`func (o *UnibeeApiMerchantUserListReq) GetSubscriptionIdOk() (*string, bool)`
+
+GetSubscriptionIdOk returns a tuple with the SubscriptionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubscriptionId
+
+`func (o *UnibeeApiMerchantUserListReq) SetSubscriptionId(v string)`
+
+SetSubscriptionId sets SubscriptionId field to given value.
+
+### HasSubscriptionId
+
+`func (o *UnibeeApiMerchantUserListReq) HasSubscriptionId() bool`
+
+HasSubscriptionId returns a boolean if a field has been set.
+
 ### GetUserId
 
-`func (o *UnibeeApiMerchantUserListReq) GetUserId() int32`
+`func (o *UnibeeApiMerchantUserListReq) GetUserId() int64`
 
 GetUserId returns the UserId field if non-nil, zero value otherwise.
 
 ### GetUserIdOk
 
-`func (o *UnibeeApiMerchantUserListReq) GetUserIdOk() (*int32, bool)`
+`func (o *UnibeeApiMerchantUserListReq) GetUserIdOk() (*int64, bool)`
 
 GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserId
 
-`func (o *UnibeeApiMerchantUserListReq) SetUserId(v int32)`
+`func (o *UnibeeApiMerchantUserListReq) SetUserId(v int64)`
 
 SetUserId sets UserId field to given value.
 

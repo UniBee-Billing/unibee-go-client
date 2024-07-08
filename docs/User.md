@@ -32,7 +32,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -96,7 +96,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -147,7 +147,7 @@ No authorization required
 
 ## UserListGet
 
-> MerchantUserListGet200Response UserListGet(ctx).UserId(userId).FirstName(firstName).LastName(lastName).Email(email).Status(status).DeleteInclude(deleteInclude).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
+> MerchantUserListGet200Response UserListGet(ctx).UserId(userId).FirstName(firstName).LastName(lastName).Email(email).SubscriptionId(subscriptionId).SubStatus(subStatus).Status(status).DeleteInclude(deleteInclude).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 
 UserList
 
@@ -160,24 +160,28 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
-	userId := int32(56) // int32 | Filter UserId (optional)
+	userId := int64(789) // int64 | Filter UserId (optional)
 	firstName := "firstName_example" // string | Search FirstName (optional)
 	lastName := "lastName_example" // string | Search LastName (optional)
 	email := "email_example" // string | Search Filter Email (optional)
+	subscriptionId := "subscriptionId_example" // string | Search Filter SubscriptionId (optional)
+	subStatus := []int32{int32(123)} // []int32 | Filter, Default All，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing (optional)
 	status := []int32{int32(123)} // []int32 | Status, 0-Active｜2-Frozen (optional)
 	deleteInclude := true // bool | Deleted Involved，Need Admin (optional)
 	sortField := "sortField_example" // string | Sort，user_id|gmt_create|email|user_name|subscription_name|subscription_status|payment_method|recurring_amount|billing_type，Default gmt_create (optional)
 	sortType := "sortType_example" // string | Sort Type，asc|desc，Default desc (optional)
 	page := int32(56) // int32 | Page,Start 0 (optional)
 	count := int32(56) // int32 | Count OF Page (optional)
+	createTimeStart := int64(789) // int64 | CreateTimeStart (optional)
+	createTimeEnd := int64(789) // int64 | CreateTimeEnd (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.User.UserListGet(context.Background()).UserId(userId).FirstName(firstName).LastName(lastName).Email(email).Status(status).DeleteInclude(deleteInclude).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
+	resp, r, err := apiClient.User.UserListGet(context.Background()).UserId(userId).FirstName(firstName).LastName(lastName).Email(email).SubscriptionId(subscriptionId).SubStatus(subStatus).Status(status).DeleteInclude(deleteInclude).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `User.UserListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -198,16 +202,20 @@ Other parameters are passed through a pointer to a apiUserListGetRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **int32** | Filter UserId | 
+ **userId** | **int64** | Filter UserId | 
  **firstName** | **string** | Search FirstName | 
  **lastName** | **string** | Search LastName | 
  **email** | **string** | Search Filter Email | 
+ **subscriptionId** | **string** | Search Filter SubscriptionId | 
+ **subStatus** | **[]int32** | Filter, Default All，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | 
  **status** | **[]int32** | Status, 0-Active｜2-Frozen | 
  **deleteInclude** | **bool** | Deleted Involved，Need Admin | 
  **sortField** | **string** | Sort，user_id|gmt_create|email|user_name|subscription_name|subscription_status|payment_method|recurring_amount|billing_type，Default gmt_create | 
  **sortType** | **string** | Sort Type，asc|desc，Default desc | 
  **page** | **int32** | Page,Start 0 | 
  **count** | **int32** | Count OF Page | 
+ **createTimeStart** | **int64** | CreateTimeStart | 
+ **createTimeEnd** | **int64** | CreateTimeEnd | 
 
 ### Return type
 
@@ -242,7 +250,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -308,7 +316,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -372,7 +380,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -436,7 +444,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -500,7 +508,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -564,7 +572,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -628,7 +636,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {

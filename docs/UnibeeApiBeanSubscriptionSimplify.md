@@ -16,10 +16,11 @@ Name | Type | Description | Notes
 **CurrentPeriodStart** | Pointer to **int64** | current_period_start, utc time | [optional] 
 **DefaultPaymentMethodId** | Pointer to **string** |  | [optional] 
 **DunningTime** | Pointer to **int64** | dunning_time, utc time | [optional] 
+**ExternalSubscriptionId** | Pointer to **string** | external_subscription_id | [optional] 
+**Features** | Pointer to **string** | features | [optional] 
 **FirstPaidTime** | Pointer to **int64** | first success payment time | [optional] 
 **GasPayer** | Pointer to **string** | who pay the gas, merchant|user | [optional] 
 **GatewayId** | Pointer to **int64** | gateway_id | [optional] 
-**GatewayItemData** | Pointer to **string** | gateway_item_data | [optional] 
 **GatewayStatus** | Pointer to **string** | gateway status，Stripe：https://stripe.com/docs/billing/subscriptions/webhooks  Paypal：https://developer.paypal.com/docs/api/subscriptions/v1/#subscriptions_get | [optional] 
 **Id** | Pointer to **int64** |  | [optional] 
 **LastUpdateTime** | Pointer to **int64** |  | [optional] 
@@ -360,6 +361,56 @@ SetDunningTime sets DunningTime field to given value.
 
 HasDunningTime returns a boolean if a field has been set.
 
+### GetExternalSubscriptionId
+
+`func (o *UnibeeApiBeanSubscriptionSimplify) GetExternalSubscriptionId() string`
+
+GetExternalSubscriptionId returns the ExternalSubscriptionId field if non-nil, zero value otherwise.
+
+### GetExternalSubscriptionIdOk
+
+`func (o *UnibeeApiBeanSubscriptionSimplify) GetExternalSubscriptionIdOk() (*string, bool)`
+
+GetExternalSubscriptionIdOk returns a tuple with the ExternalSubscriptionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalSubscriptionId
+
+`func (o *UnibeeApiBeanSubscriptionSimplify) SetExternalSubscriptionId(v string)`
+
+SetExternalSubscriptionId sets ExternalSubscriptionId field to given value.
+
+### HasExternalSubscriptionId
+
+`func (o *UnibeeApiBeanSubscriptionSimplify) HasExternalSubscriptionId() bool`
+
+HasExternalSubscriptionId returns a boolean if a field has been set.
+
+### GetFeatures
+
+`func (o *UnibeeApiBeanSubscriptionSimplify) GetFeatures() string`
+
+GetFeatures returns the Features field if non-nil, zero value otherwise.
+
+### GetFeaturesOk
+
+`func (o *UnibeeApiBeanSubscriptionSimplify) GetFeaturesOk() (*string, bool)`
+
+GetFeaturesOk returns a tuple with the Features field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFeatures
+
+`func (o *UnibeeApiBeanSubscriptionSimplify) SetFeatures(v string)`
+
+SetFeatures sets Features field to given value.
+
+### HasFeatures
+
+`func (o *UnibeeApiBeanSubscriptionSimplify) HasFeatures() bool`
+
+HasFeatures returns a boolean if a field has been set.
+
 ### GetFirstPaidTime
 
 `func (o *UnibeeApiBeanSubscriptionSimplify) GetFirstPaidTime() int64`
@@ -434,31 +485,6 @@ SetGatewayId sets GatewayId field to given value.
 `func (o *UnibeeApiBeanSubscriptionSimplify) HasGatewayId() bool`
 
 HasGatewayId returns a boolean if a field has been set.
-
-### GetGatewayItemData
-
-`func (o *UnibeeApiBeanSubscriptionSimplify) GetGatewayItemData() string`
-
-GetGatewayItemData returns the GatewayItemData field if non-nil, zero value otherwise.
-
-### GetGatewayItemDataOk
-
-`func (o *UnibeeApiBeanSubscriptionSimplify) GetGatewayItemDataOk() (*string, bool)`
-
-GetGatewayItemDataOk returns a tuple with the GatewayItemData field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGatewayItemData
-
-`func (o *UnibeeApiBeanSubscriptionSimplify) SetGatewayItemData(v string)`
-
-SetGatewayItemData sets GatewayItemData field to given value.
-
-### HasGatewayItemData
-
-`func (o *UnibeeApiBeanSubscriptionSimplify) HasGatewayItemData() bool`
-
-HasGatewayItemData returns a boolean if a field has been set.
 
 ### GetGatewayStatus
 

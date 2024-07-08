@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CancelUrl** | Pointer to **string** | CancelUrl | [optional] 
 **CountryCode** | Pointer to **string** | CountryCode | [optional] 
 **Currency** | Pointer to **string** | Currency, either Currency&amp;TotalAmount or PlanId needed | [optional] 
 **Description** | Pointer to **string** | Description | [optional] 
@@ -38,6 +39,31 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantSubscriptionNewPaymentReqWithDefaults instantiates a new UnibeeApiMerchantSubscriptionNewPaymentReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCancelUrl
+
+`func (o *UnibeeApiMerchantSubscriptionNewPaymentReq) GetCancelUrl() string`
+
+GetCancelUrl returns the CancelUrl field if non-nil, zero value otherwise.
+
+### GetCancelUrlOk
+
+`func (o *UnibeeApiMerchantSubscriptionNewPaymentReq) GetCancelUrlOk() (*string, bool)`
+
+GetCancelUrlOk returns a tuple with the CancelUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCancelUrl
+
+`func (o *UnibeeApiMerchantSubscriptionNewPaymentReq) SetCancelUrl(v string)`
+
+SetCancelUrl sets CancelUrl field to given value.
+
+### HasCancelUrl
+
+`func (o *UnibeeApiMerchantSubscriptionNewPaymentReq) HasCancelUrl() bool`
+
+HasCancelUrl returns a boolean if a field has been set.
 
 ### GetCountryCode
 

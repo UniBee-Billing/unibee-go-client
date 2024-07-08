@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
-**Id** | Pointer to **int64** | userId | [optional] 
+**Id** | Pointer to **int64** | id | [optional] 
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
 **Permissions** | Pointer to [**[]UnibeeApiBeanMerchantRolePermission**](UnibeeApiBeanMerchantRolePermission.md) | permissions | [optional] 
 **Role** | Pointer to **string** | role | [optional] 

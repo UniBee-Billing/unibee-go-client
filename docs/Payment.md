@@ -37,7 +37,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -101,7 +101,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -165,7 +165,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -229,7 +229,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -301,7 +301,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -383,7 +383,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -449,7 +449,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -519,7 +519,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -587,7 +587,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -651,7 +651,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -715,7 +715,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -779,7 +779,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -843,7 +843,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -917,7 +917,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -968,7 +968,7 @@ No authorization required
 
 ## PaymentTimelineListGet
 
-> MerchantPaymentTimelineListGet200Response PaymentTimelineListGet(ctx).UserId(userId).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
+> MerchantPaymentTimelineListGet200Response PaymentTimelineListGet(ctx).UserId(userId).AmountStart(amountStart).AmountEnd(amountEnd).Status(status).TimelineTypes(timelineTypes).GatewayIds(gatewayIds).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 
 PaymentTimeLineList
 
@@ -981,19 +981,27 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
 	userId := int64(789) // int64 | Filter UserId, Default All (optional)
+	amountStart := int32(56) // int32 | The filter start amount of timeline (optional)
+	amountEnd := int32(56) // int32 | The filter end amount of timeline (optional)
+	status := []int32{int32(123)} // []int32 | The filter status, 0-pending, 1-success, 2-failure (optional)
+	timelineTypes := []int32{int32(123)} // []int32 | The filter timelineType, 0-pay, 1-refund (optional)
+	gatewayIds := []int64{int64(123)} // []int64 | The filter ids of gateway (optional)
+	currency := "currency_example" // string | Currency (optional)
 	sortField := "sortField_example" // string | Sort，invoice_id|gmt_create|gmt_modify|period_end|total_amount，Default gmt_modify (optional)
 	sortType := "sortType_example" // string | Sort Type，asc|desc，Default desc (optional)
 	page := int32(56) // int32 | Page,Start 0 (optional)
 	count := int32(56) // int32 | Count Of Page (optional)
+	createTimeStart := int64(789) // int64 | CreateTimeStart (optional)
+	createTimeEnd := int64(789) // int64 | CreateTimeEnd (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Payment.PaymentTimelineListGet(context.Background()).UserId(userId).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
+	resp, r, err := apiClient.Payment.PaymentTimelineListGet(context.Background()).UserId(userId).AmountStart(amountStart).AmountEnd(amountEnd).Status(status).TimelineTypes(timelineTypes).GatewayIds(gatewayIds).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Payment.PaymentTimelineListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1015,10 +1023,18 @@ Other parameters are passed through a pointer to a apiPaymentTimelineListGetRequ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int64** | Filter UserId, Default All | 
+ **amountStart** | **int32** | The filter start amount of timeline | 
+ **amountEnd** | **int32** | The filter end amount of timeline | 
+ **status** | **[]int32** | The filter status, 0-pending, 1-success, 2-failure | 
+ **timelineTypes** | **[]int32** | The filter timelineType, 0-pay, 1-refund | 
+ **gatewayIds** | **[]int64** | The filter ids of gateway | 
+ **currency** | **string** | Currency | 
  **sortField** | **string** | Sort，invoice_id|gmt_create|gmt_modify|period_end|total_amount，Default gmt_modify | 
  **sortType** | **string** | Sort Type，asc|desc，Default desc | 
  **page** | **int32** | Page,Start 0 | 
  **count** | **int32** | Count Of Page | 
+ **createTimeStart** | **int64** | CreateTimeStart | 
+ **createTimeEnd** | **int64** | CreateTimeEnd | 
 
 ### Return type
 

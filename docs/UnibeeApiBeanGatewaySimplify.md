@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **CountryConfig** | Pointer to **map[string]bool** |  | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Currency** | Pointer to **string** | The currency of wire transfer  | [optional] 
+**DisplayName** | Pointer to **string** |  | [optional] 
 **GatewayId** | Pointer to **int64** |  | [optional] 
 **GatewayKey** | Pointer to **string** |  | [optional] 
 **GatewayLogo** | Pointer to **string** |  | [optional] 
@@ -135,6 +136,31 @@ SetCurrency sets Currency field to given value.
 `func (o *UnibeeApiBeanGatewaySimplify) HasCurrency() bool`
 
 HasCurrency returns a boolean if a field has been set.
+
+### GetDisplayName
+
+`func (o *UnibeeApiBeanGatewaySimplify) GetDisplayName() string`
+
+GetDisplayName returns the DisplayName field if non-nil, zero value otherwise.
+
+### GetDisplayNameOk
+
+`func (o *UnibeeApiBeanGatewaySimplify) GetDisplayNameOk() (*string, bool)`
+
+GetDisplayNameOk returns a tuple with the DisplayName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayName
+
+`func (o *UnibeeApiBeanGatewaySimplify) SetDisplayName(v string)`
+
+SetDisplayName sets DisplayName field to given value.
+
+### HasDisplayName
+
+`func (o *UnibeeApiBeanGatewaySimplify) HasDisplayName() bool`
+
+HasDisplayName returns a boolean if a field has been set.
 
 ### GetGatewayId
 

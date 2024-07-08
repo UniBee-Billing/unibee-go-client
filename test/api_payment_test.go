@@ -12,7 +12,7 @@ package unibee
 import (
 	"context"
 	"fmt"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

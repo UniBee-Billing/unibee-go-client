@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Role** | **string** | Role | 
+**Id** | **int64** | id | 
 
 ## Methods
 
 ### NewUnibeeApiMerchantRoleDeleteReq
 
-`func NewUnibeeApiMerchantRoleDeleteReq(role string, ) *UnibeeApiMerchantRoleDeleteReq`
+`func NewUnibeeApiMerchantRoleDeleteReq(id int64, ) *UnibeeApiMerchantRoleDeleteReq`
 
 NewUnibeeApiMerchantRoleDeleteReq instantiates a new UnibeeApiMerchantRoleDeleteReq object
 This constructor will assign default values to properties that have it defined,
@@ -25,24 +25,24 @@ NewUnibeeApiMerchantRoleDeleteReqWithDefaults instantiates a new UnibeeApiMercha
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetRole
+### GetId
 
-`func (o *UnibeeApiMerchantRoleDeleteReq) GetRole() string`
+`func (o *UnibeeApiMerchantRoleDeleteReq) GetId() int64`
 
-GetRole returns the Role field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetRoleOk
+### GetIdOk
 
-`func (o *UnibeeApiMerchantRoleDeleteReq) GetRoleOk() (*string, bool)`
+`func (o *UnibeeApiMerchantRoleDeleteReq) GetIdOk() (*int64, bool)`
 
-GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRole
+### SetId
 
-`func (o *UnibeeApiMerchantRoleDeleteReq) SetRole(v string)`
+`func (o *UnibeeApiMerchantRoleDeleteReq) SetId(v int64)`
 
-SetRole sets Role field to given value.
+SetId sets Id field to given value.
 
 
 

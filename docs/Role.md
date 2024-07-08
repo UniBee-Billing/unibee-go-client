@@ -26,11 +26,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
-	unibeeApiMerchantRoleDeleteReq := *openapiclient.NewUnibeeApiMerchantRoleDeleteReq("Role_example") // UnibeeApiMerchantRoleDeleteReq | 
+	unibeeApiMerchantRoleDeleteReq := *openapiclient.NewUnibeeApiMerchantRoleDeleteReq(int64(123)) // UnibeeApiMerchantRoleDeleteReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -90,11 +90,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
-	unibeeApiMerchantRoleEditReq := *openapiclient.NewUnibeeApiMerchantRoleEditReq([]openapiclient.UnibeeApiBeanMerchantRolePermission{*openapiclient.NewUnibeeApiBeanMerchantRolePermission()}, "Role_example") // UnibeeApiMerchantRoleEditReq | 
+	unibeeApiMerchantRoleEditReq := *openapiclient.NewUnibeeApiMerchantRoleEditReq(int64(123), []openapiclient.UnibeeApiBeanMerchantRolePermission{*openapiclient.NewUnibeeApiBeanMerchantRolePermission()}, "Role_example") // UnibeeApiMerchantRoleEditReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -154,7 +154,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -213,7 +213,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {

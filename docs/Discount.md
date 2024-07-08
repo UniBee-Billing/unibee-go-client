@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**DiscountEditPost**](Discount.md#DiscountEditPost) | **Post** /merchant/discount/edit | EditDiscountCode
 [**DiscountListGet**](Discount.md#DiscountListGet) | **Get** /merchant/discount/list | DiscountCodeList
 [**DiscountNewPost**](Discount.md#DiscountNewPost) | **Post** /merchant/discount/new | NewDiscountCode
+[**DiscountUserDiscountListGet**](Discount.md#DiscountUserDiscountListGet) | **Get** /merchant/discount/user_discount_list | UserDiscountCodeList
 
 
 
@@ -32,7 +33,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -98,7 +99,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -164,7 +165,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -228,7 +229,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -292,7 +293,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -358,7 +359,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -409,7 +410,7 @@ No authorization required
 
 ## DiscountListGet
 
-> MerchantDiscountListGet200Response DiscountListGet(ctx).DiscountType(discountType).BillingType(billingType).Status(status).Code(code).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
+> MerchantDiscountListGet200Response DiscountListGet(ctx).DiscountType(discountType).BillingType(billingType).Status(status).Code(code).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 
 DiscountCodeList
 
@@ -424,7 +425,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -437,10 +438,12 @@ func main() {
 	sortType := "sortType_example" // string | Sort Type，asc|desc，Default desc (optional)
 	page := int32(56) // int32 | Page, Start 0 (optional)
 	count := int32(56) // int32 | Count Of Per Page (optional)
+	createTimeStart := int64(789) // int64 | CreateTimeStart (optional)
+	createTimeEnd := int64(789) // int64 | CreateTimeEnd (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Discount.DiscountListGet(context.Background()).DiscountType(discountType).BillingType(billingType).Status(status).Code(code).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
+	resp, r, err := apiClient.Discount.DiscountListGet(context.Background()).DiscountType(discountType).BillingType(billingType).Status(status).Code(code).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Discount.DiscountListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -470,6 +473,8 @@ Name | Type | Description  | Notes
  **sortType** | **string** | Sort Type，asc|desc，Default desc | 
  **page** | **int32** | Page, Start 0 | 
  **count** | **int32** | Count Of Per Page | 
+ **createTimeStart** | **int64** | CreateTimeStart | 
+ **createTimeEnd** | **int64** | CreateTimeEnd | 
 
 ### Return type
 
@@ -506,7 +511,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -548,6 +553,84 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DiscountUserDiscountListGet
+
+> MerchantDiscountUserDiscountListGet200Response DiscountUserDiscountListGet(ctx).Id(id).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+
+UserDiscountCodeList
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	id := int64(789) // int64 | The discount's Id
+	sortField := "sortField_example" // string | Sort Field，gmt_create|gmt_modify，Default gmt_modify (optional)
+	sortType := "sortType_example" // string | Sort Type，asc|desc，Default desc (optional)
+	page := int32(56) // int32 | Page, Start 0 (optional)
+	count := int32(56) // int32 | Count Of Per Page (optional)
+	createTimeStart := int64(789) // int64 | CreateTimeStart (optional)
+	createTimeEnd := int64(789) // int64 | CreateTimeEnd (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Discount.DiscountUserDiscountListGet(context.Background()).Id(id).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Discount.DiscountUserDiscountListGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DiscountUserDiscountListGet`: MerchantDiscountUserDiscountListGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `Discount.DiscountUserDiscountListGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDiscountUserDiscountListGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int64** | The discount&#39;s Id | 
+ **sortField** | **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | 
+ **sortType** | **string** | Sort Type，asc|desc，Default desc | 
+ **page** | **int32** | Page, Start 0 | 
+ **count** | **int32** | Count Of Per Page | 
+ **createTimeStart** | **int64** | CreateTimeStart | 
+ **createTimeEnd** | **int64** | CreateTimeEnd | 
+
+### Return type
+
+[**MerchantDiscountUserDiscountListGet200Response**](MerchantDiscountUserDiscountListGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

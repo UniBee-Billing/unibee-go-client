@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Id** | **int64** | id | 
 **Permissions** | [**[]UnibeeApiBeanMerchantRolePermission**](UnibeeApiBeanMerchantRolePermission.md) | Permissions | 
 **Role** | **string** | Role | 
 
@@ -11,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewUnibeeApiMerchantRoleEditReq
 
-`func NewUnibeeApiMerchantRoleEditReq(permissions []UnibeeApiBeanMerchantRolePermission, role string, ) *UnibeeApiMerchantRoleEditReq`
+`func NewUnibeeApiMerchantRoleEditReq(id int64, permissions []UnibeeApiBeanMerchantRolePermission, role string, ) *UnibeeApiMerchantRoleEditReq`
 
 NewUnibeeApiMerchantRoleEditReq instantiates a new UnibeeApiMerchantRoleEditReq object
 This constructor will assign default values to properties that have it defined,
@@ -25,6 +26,26 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantRoleEditReqWithDefaults instantiates a new UnibeeApiMerchantRoleEditReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *UnibeeApiMerchantRoleEditReq) GetId() int64`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *UnibeeApiMerchantRoleEditReq) GetIdOk() (*int64, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *UnibeeApiMerchantRoleEditReq) SetId(v int64)`
+
+SetId sets Id field to given value.
+
 
 ### GetPermissions
 

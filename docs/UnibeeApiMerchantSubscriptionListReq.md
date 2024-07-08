@@ -4,8 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AmountEnd** | Pointer to **int32** | The filter end amount of subscription | [optional] 
+**AmountStart** | Pointer to **int32** | The filter start amount of subscription | [optional] 
 **Count** | Pointer to **int32** | Count Of Page | [optional] 
+**CreateTimeEnd** | Pointer to **int64** | CreateTimeEnd | [optional] 
+**CreateTimeStart** | Pointer to **int64** | CreateTimeStart | [optional] 
+**Currency** | Pointer to **string** | The currency of subscription | [optional] 
 **Page** | Pointer to **int32** | Page, Start With 0 | [optional] 
+**PlanIds** | Pointer to **[]int32** | The filter ids of plan | [optional] 
 **SortField** | Pointer to **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | [optional] 
 **SortType** | Pointer to **string** | Sort Type，asc|desc，Default desc | [optional] 
 **Status** | Pointer to **[]int32** | Filter, Default All，Status，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | [optional] 
@@ -29,6 +35,56 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantSubscriptionListReqWithDefaults instantiates a new UnibeeApiMerchantSubscriptionListReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAmountEnd
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) GetAmountEnd() int32`
+
+GetAmountEnd returns the AmountEnd field if non-nil, zero value otherwise.
+
+### GetAmountEndOk
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) GetAmountEndOk() (*int32, bool)`
+
+GetAmountEndOk returns a tuple with the AmountEnd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAmountEnd
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) SetAmountEnd(v int32)`
+
+SetAmountEnd sets AmountEnd field to given value.
+
+### HasAmountEnd
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) HasAmountEnd() bool`
+
+HasAmountEnd returns a boolean if a field has been set.
+
+### GetAmountStart
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) GetAmountStart() int32`
+
+GetAmountStart returns the AmountStart field if non-nil, zero value otherwise.
+
+### GetAmountStartOk
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) GetAmountStartOk() (*int32, bool)`
+
+GetAmountStartOk returns a tuple with the AmountStart field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAmountStart
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) SetAmountStart(v int32)`
+
+SetAmountStart sets AmountStart field to given value.
+
+### HasAmountStart
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) HasAmountStart() bool`
+
+HasAmountStart returns a boolean if a field has been set.
 
 ### GetCount
 
@@ -55,6 +111,81 @@ SetCount sets Count field to given value.
 
 HasCount returns a boolean if a field has been set.
 
+### GetCreateTimeEnd
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) GetCreateTimeEnd() int64`
+
+GetCreateTimeEnd returns the CreateTimeEnd field if non-nil, zero value otherwise.
+
+### GetCreateTimeEndOk
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) GetCreateTimeEndOk() (*int64, bool)`
+
+GetCreateTimeEndOk returns a tuple with the CreateTimeEnd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateTimeEnd
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) SetCreateTimeEnd(v int64)`
+
+SetCreateTimeEnd sets CreateTimeEnd field to given value.
+
+### HasCreateTimeEnd
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) HasCreateTimeEnd() bool`
+
+HasCreateTimeEnd returns a boolean if a field has been set.
+
+### GetCreateTimeStart
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) GetCreateTimeStart() int64`
+
+GetCreateTimeStart returns the CreateTimeStart field if non-nil, zero value otherwise.
+
+### GetCreateTimeStartOk
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) GetCreateTimeStartOk() (*int64, bool)`
+
+GetCreateTimeStartOk returns a tuple with the CreateTimeStart field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateTimeStart
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) SetCreateTimeStart(v int64)`
+
+SetCreateTimeStart sets CreateTimeStart field to given value.
+
+### HasCreateTimeStart
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) HasCreateTimeStart() bool`
+
+HasCreateTimeStart returns a boolean if a field has been set.
+
+### GetCurrency
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) GetCurrency() string`
+
+GetCurrency returns the Currency field if non-nil, zero value otherwise.
+
+### GetCurrencyOk
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) GetCurrencyOk() (*string, bool)`
+
+GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrency
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) SetCurrency(v string)`
+
+SetCurrency sets Currency field to given value.
+
+### HasCurrency
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) HasCurrency() bool`
+
+HasCurrency returns a boolean if a field has been set.
+
 ### GetPage
 
 `func (o *UnibeeApiMerchantSubscriptionListReq) GetPage() int32`
@@ -79,6 +210,31 @@ SetPage sets Page field to given value.
 `func (o *UnibeeApiMerchantSubscriptionListReq) HasPage() bool`
 
 HasPage returns a boolean if a field has been set.
+
+### GetPlanIds
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) GetPlanIds() []int32`
+
+GetPlanIds returns the PlanIds field if non-nil, zero value otherwise.
+
+### GetPlanIdsOk
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) GetPlanIdsOk() (*[]int32, bool)`
+
+GetPlanIdsOk returns a tuple with the PlanIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanIds
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) SetPlanIds(v []int32)`
+
+SetPlanIds sets PlanIds field to given value.
+
+### HasPlanIds
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) HasPlanIds() bool`
+
+HasPlanIds returns a boolean if a field has been set.
 
 ### GetSortField
 

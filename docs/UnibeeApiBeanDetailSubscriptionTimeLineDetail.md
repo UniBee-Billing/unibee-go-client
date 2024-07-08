@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **GatewayId** | Pointer to **int64** | gateway_id | [optional] 
 **InvoiceId** | Pointer to **string** | invoice id | [optional] 
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
+**PaymentId** | Pointer to **string** | payment id | [optional] 
 **PeriodEnd** | Pointer to **int64** | period_end | [optional] 
 **PeriodEndTime** | Pointer to **string** | period end (datatime) | [optional] 
 **PeriodStart** | Pointer to **int64** | period_start | [optional] 
@@ -17,7 +18,7 @@ Name | Type | Description | Notes
 **Plan** | Pointer to [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
 **PlanId** | Pointer to **int64** | PlanId | [optional] 
 **Quantity** | Pointer to **int64** | quantity | [optional] 
-**Status** | Pointer to **int32** | 1-processing,2-finish | [optional] 
+**Status** | Pointer to **int32** | 1-processing,2-finish,3-cancelled,4-expired | [optional] 
 **SubscriptionId** | Pointer to **string** | subscription id | [optional] 
 **UniqueId** | Pointer to **string** | unique id | [optional] 
 **UserId** | Pointer to **int64** | userId | [optional] 
@@ -190,6 +191,31 @@ SetMerchantId sets MerchantId field to given value.
 `func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) HasMerchantId() bool`
 
 HasMerchantId returns a boolean if a field has been set.
+
+### GetPaymentId
+
+`func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetPaymentId() string`
+
+GetPaymentId returns the PaymentId field if non-nil, zero value otherwise.
+
+### GetPaymentIdOk
+
+`func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetPaymentIdOk() (*string, bool)`
+
+GetPaymentIdOk returns a tuple with the PaymentId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaymentId
+
+`func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) SetPaymentId(v string)`
+
+SetPaymentId sets PaymentId field to given value.
+
+### HasPaymentId
+
+`func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) HasPaymentId() bool`
+
+HasPaymentId returns a boolean if a field has been set.
 
 ### GetPeriodEnd
 

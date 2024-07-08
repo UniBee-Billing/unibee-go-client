@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **CountryName** | Pointer to **string** |  | [optional] 
 **Gateway** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **int64** | TaxId | [optional] 
+**IsEU** | Pointer to **bool** |  | [optional] 
 **StandardTaxPercentage** | Pointer to **int64** | Tax税率，万分位，1000 表示 10% | [optional] 
 **VatSupport** | Pointer to **bool** | vat support,true or false | [optional] 
 
@@ -129,6 +130,31 @@ SetId sets Id field to given value.
 `func (o *UnibeeApiBeanVatCountryRate) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetIsEU
+
+`func (o *UnibeeApiBeanVatCountryRate) GetIsEU() bool`
+
+GetIsEU returns the IsEU field if non-nil, zero value otherwise.
+
+### GetIsEUOk
+
+`func (o *UnibeeApiBeanVatCountryRate) GetIsEUOk() (*bool, bool)`
+
+GetIsEUOk returns a tuple with the IsEU field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsEU
+
+`func (o *UnibeeApiBeanVatCountryRate) SetIsEU(v bool)`
+
+SetIsEU sets IsEU field to given value.
+
+### HasIsEU
+
+`func (o *UnibeeApiBeanVatCountryRate) HasIsEU() bool`
+
+HasIsEU returns a boolean if a field has been set.
 
 ### GetStandardTaxPercentage
 

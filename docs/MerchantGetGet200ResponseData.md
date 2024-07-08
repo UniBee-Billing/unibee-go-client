@@ -5,13 +5,17 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Currency** | Pointer to [**[]UnibeeApiBeanCurrency**](UnibeeApiBeanCurrency.md) | Currency List | [optional] 
+**MemberRoles** | Pointer to [**[]UnibeeApiBeanMerchantRoleSimplify**](UnibeeApiBeanMerchantRoleSimplify.md) | The member&#39;s role list&#39; | [optional] 
 **TimeZone** | Pointer to **[]string** | TimeZone List | [optional] 
 **Env** | Pointer to **string** | System Env, em: daily|stage|local|prod | [optional] 
 **Gateways** | Pointer to [**[]UnibeeApiBeanGatewaySimplify**](UnibeeApiBeanGatewaySimplify.md) | Gateway List | [optional] 
+**IsOwner** | Pointer to **bool** | Check Member is Owner | [optional] 
 **IsProd** | Pointer to **bool** | Check System Env Is Prod, true|false | [optional] 
 **Merchant** | Pointer to [**UnibeeApiBeanMerchantSimplify**](UnibeeApiBeanMerchantSimplify.md) |  | [optional] 
 **MerchantMember** | Pointer to [**UnibeeApiBeanDetailMerchantMemberDetail**](UnibeeApiBeanDetailMerchantMemberDetail.md) |  | [optional] 
 **OpenApiKey** | Pointer to **string** | OpenApiKey | [optional] 
+**SegmentServerSideKey** | Pointer to **string** | SegmentServerSideKey | [optional] 
+**SegmentUserPortalKey** | Pointer to **string** | SegmentUserPortalKey | [optional] 
 **SendGridKey** | Pointer to **string** | SendGridKey | [optional] 
 **VatSenseKey** | Pointer to **string** | VatSenseKey | [optional] 
 
@@ -58,6 +62,31 @@ SetCurrency sets Currency field to given value.
 `func (o *MerchantGetGet200ResponseData) HasCurrency() bool`
 
 HasCurrency returns a boolean if a field has been set.
+
+### GetMemberRoles
+
+`func (o *MerchantGetGet200ResponseData) GetMemberRoles() []UnibeeApiBeanMerchantRoleSimplify`
+
+GetMemberRoles returns the MemberRoles field if non-nil, zero value otherwise.
+
+### GetMemberRolesOk
+
+`func (o *MerchantGetGet200ResponseData) GetMemberRolesOk() (*[]UnibeeApiBeanMerchantRoleSimplify, bool)`
+
+GetMemberRolesOk returns a tuple with the MemberRoles field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMemberRoles
+
+`func (o *MerchantGetGet200ResponseData) SetMemberRoles(v []UnibeeApiBeanMerchantRoleSimplify)`
+
+SetMemberRoles sets MemberRoles field to given value.
+
+### HasMemberRoles
+
+`func (o *MerchantGetGet200ResponseData) HasMemberRoles() bool`
+
+HasMemberRoles returns a boolean if a field has been set.
 
 ### GetTimeZone
 
@@ -133,6 +162,31 @@ SetGateways sets Gateways field to given value.
 `func (o *MerchantGetGet200ResponseData) HasGateways() bool`
 
 HasGateways returns a boolean if a field has been set.
+
+### GetIsOwner
+
+`func (o *MerchantGetGet200ResponseData) GetIsOwner() bool`
+
+GetIsOwner returns the IsOwner field if non-nil, zero value otherwise.
+
+### GetIsOwnerOk
+
+`func (o *MerchantGetGet200ResponseData) GetIsOwnerOk() (*bool, bool)`
+
+GetIsOwnerOk returns a tuple with the IsOwner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsOwner
+
+`func (o *MerchantGetGet200ResponseData) SetIsOwner(v bool)`
+
+SetIsOwner sets IsOwner field to given value.
+
+### HasIsOwner
+
+`func (o *MerchantGetGet200ResponseData) HasIsOwner() bool`
+
+HasIsOwner returns a boolean if a field has been set.
 
 ### GetIsProd
 
@@ -233,6 +287,56 @@ SetOpenApiKey sets OpenApiKey field to given value.
 `func (o *MerchantGetGet200ResponseData) HasOpenApiKey() bool`
 
 HasOpenApiKey returns a boolean if a field has been set.
+
+### GetSegmentServerSideKey
+
+`func (o *MerchantGetGet200ResponseData) GetSegmentServerSideKey() string`
+
+GetSegmentServerSideKey returns the SegmentServerSideKey field if non-nil, zero value otherwise.
+
+### GetSegmentServerSideKeyOk
+
+`func (o *MerchantGetGet200ResponseData) GetSegmentServerSideKeyOk() (*string, bool)`
+
+GetSegmentServerSideKeyOk returns a tuple with the SegmentServerSideKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSegmentServerSideKey
+
+`func (o *MerchantGetGet200ResponseData) SetSegmentServerSideKey(v string)`
+
+SetSegmentServerSideKey sets SegmentServerSideKey field to given value.
+
+### HasSegmentServerSideKey
+
+`func (o *MerchantGetGet200ResponseData) HasSegmentServerSideKey() bool`
+
+HasSegmentServerSideKey returns a boolean if a field has been set.
+
+### GetSegmentUserPortalKey
+
+`func (o *MerchantGetGet200ResponseData) GetSegmentUserPortalKey() string`
+
+GetSegmentUserPortalKey returns the SegmentUserPortalKey field if non-nil, zero value otherwise.
+
+### GetSegmentUserPortalKeyOk
+
+`func (o *MerchantGetGet200ResponseData) GetSegmentUserPortalKeyOk() (*string, bool)`
+
+GetSegmentUserPortalKeyOk returns a tuple with the SegmentUserPortalKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSegmentUserPortalKey
+
+`func (o *MerchantGetGet200ResponseData) SetSegmentUserPortalKey(v string)`
+
+SetSegmentUserPortalKey sets SegmentUserPortalKey field to given value.
+
+### HasSegmentUserPortalKey
+
+`func (o *MerchantGetGet200ResponseData) HasSegmentUserPortalKey() bool`
+
+HasSegmentUserPortalKey returns a boolean if a field has been set.
 
 ### GetSendGridKey
 

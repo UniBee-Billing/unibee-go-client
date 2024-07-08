@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **CancelAtTrialEnd** | Pointer to **int32** | whether cancel at subscripiton first trial end，0-false | 1-true, will pass to cancelAtPeriodEnd of subscription | [optional] 
 **Currency** | Pointer to **string** | Currency of plan, not editable when plan is active | [optional] 
 **Description** | Pointer to **string** | Description of plan | [optional] 
+**ExternalPlanId** | Pointer to **string** | ExternalPlanId | [optional] 
 **GasPayer** | Pointer to **string** | who pay the gas for crypto payment, merchant|user | [optional] 
 **HomeUrl** | Pointer to **string** | HomeUrl,Start With: http | [optional] 
 **ImageUrl** | Pointer to **string** | ImageUrl,Start With: http | [optional] 
@@ -168,6 +169,31 @@ SetDescription sets Description field to given value.
 `func (o *UnibeeApiMerchantPlanEditReq) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetExternalPlanId
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetExternalPlanId() string`
+
+GetExternalPlanId returns the ExternalPlanId field if non-nil, zero value otherwise.
+
+### GetExternalPlanIdOk
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetExternalPlanIdOk() (*string, bool)`
+
+GetExternalPlanIdOk returns a tuple with the ExternalPlanId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalPlanId
+
+`func (o *UnibeeApiMerchantPlanEditReq) SetExternalPlanId(v string)`
+
+SetExternalPlanId sets ExternalPlanId field to given value.
+
+### HasExternalPlanId
+
+`func (o *UnibeeApiMerchantPlanEditReq) HasExternalPlanId() bool`
+
+HasExternalPlanId returns a boolean if a field has been set.
 
 ### GetGasPayer
 

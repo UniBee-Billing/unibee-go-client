@@ -7,7 +7,7 @@ java -jar openapi-generator-cli.jar generate \
 -g go \
 -o . \
 --git-repo-id unibee-go-client \
---git-user-id UniB-e-e \
+--git-user-id UniBee-Billing \
 -p packageName=unibee \
 -c config.yaml
 mv unibee.backup unibee.go

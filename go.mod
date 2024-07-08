@@ -1,4 +1,4 @@
-module github.com/UniB-e-e/unibee-go-client
+module github.com/UniBee-Billing/unibee-go-client
 
 go 1.18
 

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Currency** | Pointer to **string** | currency | [optional] 
 **Description** | Pointer to **string** | description | [optional] 
+**ExternalPlanId** | Pointer to **string** | external_user_id | [optional] 
 **ExtraMetricData** | Pointer to **string** |  | [optional] 
 **GasPayer** | Pointer to **string** | who pay the gas, merchant|user | [optional] 
 **HomeUrl** | Pointer to **string** | home_url | [optional] 
@@ -224,6 +225,31 @@ SetDescription sets Description field to given value.
 `func (o *UnibeeApiBeanPlanSimplify) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetExternalPlanId
+
+`func (o *UnibeeApiBeanPlanSimplify) GetExternalPlanId() string`
+
+GetExternalPlanId returns the ExternalPlanId field if non-nil, zero value otherwise.
+
+### GetExternalPlanIdOk
+
+`func (o *UnibeeApiBeanPlanSimplify) GetExternalPlanIdOk() (*string, bool)`
+
+GetExternalPlanIdOk returns a tuple with the ExternalPlanId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalPlanId
+
+`func (o *UnibeeApiBeanPlanSimplify) SetExternalPlanId(v string)`
+
+SetExternalPlanId sets ExternalPlanId field to given value.
+
+### HasExternalPlanId
+
+`func (o *UnibeeApiBeanPlanSimplify) HasExternalPlanId() bool`
+
+HasExternalPlanId returns a boolean if a field has been set.
 
 ### GetExtraMetricData
 

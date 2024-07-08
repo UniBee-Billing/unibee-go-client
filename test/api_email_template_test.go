@@ -11,10 +11,10 @@ package unibee
 
 import (
 	"context"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func Test_unibee_EmailTemplateService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_unibee_EmailTemplateService(t *testing.T) {
 
 	t.Run("Test EmailTemplateService EmailTemplateActivatePost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.EmailTemplate.EmailTemplateActivatePost(context.Background()).Execute()
 
@@ -36,7 +36,7 @@ func Test_unibee_EmailTemplateService(t *testing.T) {
 
 	t.Run("Test EmailTemplateService EmailTemplateDeactivatePost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.EmailTemplate.EmailTemplateDeactivatePost(context.Background()).Execute()
 
@@ -48,7 +48,7 @@ func Test_unibee_EmailTemplateService(t *testing.T) {
 
 	t.Run("Test EmailTemplateService EmailTemplateListGet", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.EmailTemplate.EmailTemplateListGet(context.Background()).Execute()
 
@@ -60,7 +60,7 @@ func Test_unibee_EmailTemplateService(t *testing.T) {
 
 	t.Run("Test EmailTemplateService EmailTemplateSetDefaultPost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.EmailTemplate.EmailTemplateSetDefaultPost(context.Background()).Execute()
 
@@ -72,7 +72,7 @@ func Test_unibee_EmailTemplateService(t *testing.T) {
 
 	t.Run("Test EmailTemplateService EmailTemplateUpdatePost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.EmailTemplate.EmailTemplateUpdatePost(context.Background()).Execute()
 

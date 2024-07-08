@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MemberId** | Pointer to **int64** | The unique id of member | [optional] 
-**Role** | Pointer to **string** | The permission role of member | [optional] 
+**RoleIds** | Pointer to **[]int64** | The id list of role | [optional] 
 
 ## Methods
 
@@ -51,30 +51,30 @@ SetMemberId sets MemberId field to given value.
 
 HasMemberId returns a boolean if a field has been set.
 
-### GetRole
+### GetRoleIds
 
-`func (o *UnibeeApiMerchantMemberUpdateMemberRoleReq) GetRole() string`
+`func (o *UnibeeApiMerchantMemberUpdateMemberRoleReq) GetRoleIds() []int64`
 
-GetRole returns the Role field if non-nil, zero value otherwise.
+GetRoleIds returns the RoleIds field if non-nil, zero value otherwise.
 
-### GetRoleOk
+### GetRoleIdsOk
 
-`func (o *UnibeeApiMerchantMemberUpdateMemberRoleReq) GetRoleOk() (*string, bool)`
+`func (o *UnibeeApiMerchantMemberUpdateMemberRoleReq) GetRoleIdsOk() (*[]int64, bool)`
 
-GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
+GetRoleIdsOk returns a tuple with the RoleIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRole
+### SetRoleIds
 
-`func (o *UnibeeApiMerchantMemberUpdateMemberRoleReq) SetRole(v string)`
+`func (o *UnibeeApiMerchantMemberUpdateMemberRoleReq) SetRoleIds(v []int64)`
 
-SetRole sets Role field to given value.
+SetRoleIds sets RoleIds field to given value.
 
-### HasRole
+### HasRoleIds
 
-`func (o *UnibeeApiMerchantMemberUpdateMemberRoleReq) HasRole() bool`
+`func (o *UnibeeApiMerchantMemberUpdateMemberRoleReq) HasRoleIds() bool`
 
-HasRole returns a boolean if a field has been set.
+HasRoleIds returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

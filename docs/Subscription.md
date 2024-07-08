@@ -50,7 +50,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -114,7 +114,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -180,7 +180,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -246,7 +246,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -312,7 +312,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -376,7 +376,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -440,7 +440,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -499,7 +499,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -563,7 +563,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -627,7 +627,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -691,7 +691,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -755,7 +755,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -806,7 +806,7 @@ No authorization required
 
 ## SubscriptionListGet
 
-> MerchantSubscriptionListGet200Response SubscriptionListGet(ctx).UserId(userId).Status(status).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
+> MerchantSubscriptionListGet200Response SubscriptionListGet(ctx).UserId(userId).Status(status).Currency(currency).PlanIds(planIds).AmountStart(amountStart).AmountEnd(amountEnd).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 
 SubscriptionList
 
@@ -819,20 +819,26 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
 	userId := int64(789) // int64 | UserId (optional)
 	status := []int32{int32(123)} // []int32 | Filter, Default All，Status，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing (optional)
+	currency := "currency_example" // string | The currency of subscription (optional)
+	planIds := []int32{int32(123)} // []int32 | The filter ids of plan (optional)
+	amountStart := int32(56) // int32 | The filter start amount of subscription (optional)
+	amountEnd := int32(56) // int32 | The filter end amount of subscription (optional)
 	sortField := "sortField_example" // string | Sort Field，gmt_create|gmt_modify，Default gmt_modify (optional)
 	sortType := "sortType_example" // string | Sort Type，asc|desc，Default desc (optional)
 	page := int32(56) // int32 | Page, Start With 0 (optional)
 	count := int32(56) // int32 | Count Of Page (optional)
+	createTimeStart := int64(789) // int64 | CreateTimeStart (optional)
+	createTimeEnd := int64(789) // int64 | CreateTimeEnd (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Subscription.SubscriptionListGet(context.Background()).UserId(userId).Status(status).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
+	resp, r, err := apiClient.Subscription.SubscriptionListGet(context.Background()).UserId(userId).Status(status).Currency(currency).PlanIds(planIds).AmountStart(amountStart).AmountEnd(amountEnd).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -855,10 +861,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int64** | UserId | 
  **status** | **[]int32** | Filter, Default All，Status，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | 
+ **currency** | **string** | The currency of subscription | 
+ **planIds** | **[]int32** | The filter ids of plan | 
+ **amountStart** | **int32** | The filter start amount of subscription | 
+ **amountEnd** | **int32** | The filter end amount of subscription | 
  **sortField** | **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | 
  **sortType** | **string** | Sort Type，asc|desc，Default desc | 
  **page** | **int32** | Page, Start With 0 | 
  **count** | **int32** | Count Of Page | 
+ **createTimeStart** | **int64** | CreateTimeStart | 
+ **createTimeEnd** | **int64** | CreateTimeEnd | 
 
 ### Return type
 
@@ -893,7 +905,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -959,7 +971,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -1023,7 +1035,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -1091,7 +1103,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -1157,7 +1169,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -1221,7 +1233,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -1285,7 +1297,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -1349,7 +1361,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -1413,7 +1425,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -1477,7 +1489,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -1543,7 +1555,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -1607,7 +1619,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {
@@ -1673,7 +1685,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func main() {

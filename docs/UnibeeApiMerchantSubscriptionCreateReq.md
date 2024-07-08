@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | addonParams | [optional] 
+**CancelUrl** | Pointer to **string** | CancelUrl | [optional] 
 **ConfirmCurrency** | Pointer to **string** | Currency to verify if provide | [optional] 
 **ConfirmTotalAmount** | Pointer to **int64** | TotalAmount to verify if provide | [optional] 
 **Discount** | Pointer to [**UnibeeApiBeanExternalDiscountParam**](UnibeeApiBeanExternalDiscountParam.md) |  | [optional] 
@@ -68,6 +69,31 @@ SetAddonParams sets AddonParams field to given value.
 `func (o *UnibeeApiMerchantSubscriptionCreateReq) HasAddonParams() bool`
 
 HasAddonParams returns a boolean if a field has been set.
+
+### GetCancelUrl
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetCancelUrl() string`
+
+GetCancelUrl returns the CancelUrl field if non-nil, zero value otherwise.
+
+### GetCancelUrlOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetCancelUrlOk() (*string, bool)`
+
+GetCancelUrlOk returns a tuple with the CancelUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCancelUrl
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) SetCancelUrl(v string)`
+
+SetCancelUrl sets CancelUrl field to given value.
+
+### HasCancelUrl
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) HasCancelUrl() bool`
+
+HasCancelUrl returns a boolean if a field has been set.
 
 ### GetConfirmCurrency
 

@@ -4,9 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AmountEnd** | Pointer to **int64** | The filter end amount of invoice | [optional] 
-**AmountStart** | Pointer to **int64** | The filter start amount of invoice | [optional] 
+**AmountEnd** | Pointer to **int32** | The filter end amount of invoice | [optional] 
+**AmountStart** | Pointer to **int32** | The filter start amount of invoice | [optional] 
 **Count** | Pointer to **int32** | Count By Page | [optional] 
+**CreateTimeEnd** | Pointer to **int64** | CreateTimeEnd | [optional] 
+**CreateTimeStart** | Pointer to **int64** | CreateTimeStart | [optional] 
 **Currency** | Pointer to **string** | The currency of invoice | [optional] 
 **DeleteInclude** | Pointer to **bool** | Deleted Involved，Need Admin Permission | [optional] 
 **FirstName** | Pointer to **string** | The firstName of invoice | [optional] 
@@ -16,6 +18,7 @@ Name | Type | Description | Notes
 **SortField** | Pointer to **string** | Filter，em. invoice_id|gmt_create|gmt_modify|period_end|total_amount，Default gmt_modify | [optional] 
 **SortType** | Pointer to **string** | Sort，asc|desc，Default desc | [optional] 
 **Status** | Pointer to **[]int32** | The status of invoice, 1-pending｜2-processing｜3-paid | 4-failed | 5-cancelled | [optional] 
+**Type** | Pointer to **int32** | invoice Type, 0-payment, 1-refund | [optional] 
 **UserId** | Pointer to **int64** | The filter userid of invoice | [optional] 
 
 ## Methods
@@ -39,20 +42,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAmountEnd
 
-`func (o *UnibeeApiMerchantInvoiceListReq) GetAmountEnd() int64`
+`func (o *UnibeeApiMerchantInvoiceListReq) GetAmountEnd() int32`
 
 GetAmountEnd returns the AmountEnd field if non-nil, zero value otherwise.
 
 ### GetAmountEndOk
 
-`func (o *UnibeeApiMerchantInvoiceListReq) GetAmountEndOk() (*int64, bool)`
+`func (o *UnibeeApiMerchantInvoiceListReq) GetAmountEndOk() (*int32, bool)`
 
 GetAmountEndOk returns a tuple with the AmountEnd field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmountEnd
 
-`func (o *UnibeeApiMerchantInvoiceListReq) SetAmountEnd(v int64)`
+`func (o *UnibeeApiMerchantInvoiceListReq) SetAmountEnd(v int32)`
 
 SetAmountEnd sets AmountEnd field to given value.
 
@@ -64,20 +67,20 @@ HasAmountEnd returns a boolean if a field has been set.
 
 ### GetAmountStart
 
-`func (o *UnibeeApiMerchantInvoiceListReq) GetAmountStart() int64`
+`func (o *UnibeeApiMerchantInvoiceListReq) GetAmountStart() int32`
 
 GetAmountStart returns the AmountStart field if non-nil, zero value otherwise.
 
 ### GetAmountStartOk
 
-`func (o *UnibeeApiMerchantInvoiceListReq) GetAmountStartOk() (*int64, bool)`
+`func (o *UnibeeApiMerchantInvoiceListReq) GetAmountStartOk() (*int32, bool)`
 
 GetAmountStartOk returns a tuple with the AmountStart field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAmountStart
 
-`func (o *UnibeeApiMerchantInvoiceListReq) SetAmountStart(v int64)`
+`func (o *UnibeeApiMerchantInvoiceListReq) SetAmountStart(v int32)`
 
 SetAmountStart sets AmountStart field to given value.
 
@@ -111,6 +114,56 @@ SetCount sets Count field to given value.
 `func (o *UnibeeApiMerchantInvoiceListReq) HasCount() bool`
 
 HasCount returns a boolean if a field has been set.
+
+### GetCreateTimeEnd
+
+`func (o *UnibeeApiMerchantInvoiceListReq) GetCreateTimeEnd() int64`
+
+GetCreateTimeEnd returns the CreateTimeEnd field if non-nil, zero value otherwise.
+
+### GetCreateTimeEndOk
+
+`func (o *UnibeeApiMerchantInvoiceListReq) GetCreateTimeEndOk() (*int64, bool)`
+
+GetCreateTimeEndOk returns a tuple with the CreateTimeEnd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateTimeEnd
+
+`func (o *UnibeeApiMerchantInvoiceListReq) SetCreateTimeEnd(v int64)`
+
+SetCreateTimeEnd sets CreateTimeEnd field to given value.
+
+### HasCreateTimeEnd
+
+`func (o *UnibeeApiMerchantInvoiceListReq) HasCreateTimeEnd() bool`
+
+HasCreateTimeEnd returns a boolean if a field has been set.
+
+### GetCreateTimeStart
+
+`func (o *UnibeeApiMerchantInvoiceListReq) GetCreateTimeStart() int64`
+
+GetCreateTimeStart returns the CreateTimeStart field if non-nil, zero value otherwise.
+
+### GetCreateTimeStartOk
+
+`func (o *UnibeeApiMerchantInvoiceListReq) GetCreateTimeStartOk() (*int64, bool)`
+
+GetCreateTimeStartOk returns a tuple with the CreateTimeStart field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateTimeStart
+
+`func (o *UnibeeApiMerchantInvoiceListReq) SetCreateTimeStart(v int64)`
+
+SetCreateTimeStart sets CreateTimeStart field to given value.
+
+### HasCreateTimeStart
+
+`func (o *UnibeeApiMerchantInvoiceListReq) HasCreateTimeStart() bool`
+
+HasCreateTimeStart returns a boolean if a field has been set.
 
 ### GetCurrency
 
@@ -336,6 +389,31 @@ SetStatus sets Status field to given value.
 `func (o *UnibeeApiMerchantInvoiceListReq) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
+
+### GetType
+
+`func (o *UnibeeApiMerchantInvoiceListReq) GetType() int32`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *UnibeeApiMerchantInvoiceListReq) GetTypeOk() (*int32, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *UnibeeApiMerchantInvoiceListReq) SetType(v int32)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *UnibeeApiMerchantInvoiceListReq) HasType() bool`
+
+HasType returns a boolean if a field has been set.
 
 ### GetUserId
 

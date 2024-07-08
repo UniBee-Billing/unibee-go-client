@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Currency** | **string** | The currency of invoice | 
 **Finish** | Pointer to **bool** |  | [optional] 
-**GatewayId** | **int64** | The gateway id of invoice | 
+**GatewayId** | Pointer to **int64** | The gateway id of invoice | [optional] 
 **Lines** | Pointer to [**[]UnibeeApiMerchantInvoiceNewInvoiceItemParam**](UnibeeApiMerchantInvoiceNewInvoiceItemParam.md) |  | [optional] 
 **Name** | Pointer to **string** | The name of invoice | [optional] 
 **TaxPercentage** | **int64** | The tax percentage of invoice，1000&#x3D;10% | 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewUnibeeApiMerchantInvoiceNewReq
 
-`func NewUnibeeApiMerchantInvoiceNewReq(currency string, gatewayId int64, taxPercentage int64, userId int64, ) *UnibeeApiMerchantInvoiceNewReq`
+`func NewUnibeeApiMerchantInvoiceNewReq(currency string, taxPercentage int64, userId int64, ) *UnibeeApiMerchantInvoiceNewReq`
 
 NewUnibeeApiMerchantInvoiceNewReq instantiates a new UnibeeApiMerchantInvoiceNewReq object
 This constructor will assign default values to properties that have it defined,
@@ -95,6 +95,11 @@ and a boolean to check if the value has been set.
 
 SetGatewayId sets GatewayId field to given value.
 
+### HasGatewayId
+
+`func (o *UnibeeApiMerchantInvoiceNewReq) HasGatewayId() bool`
+
+HasGatewayId returns a boolean if a field has been set.
 
 ### GetLines
 

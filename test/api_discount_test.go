@@ -11,10 +11,10 @@ package unibee
 
 import (
 	"context"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func Test_unibee_DiscountService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_unibee_DiscountService(t *testing.T) {
 
 	t.Run("Test DiscountService DiscountActivatePost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Discount.DiscountActivatePost(context.Background()).Execute()
 
@@ -36,7 +36,7 @@ func Test_unibee_DiscountService(t *testing.T) {
 
 	t.Run("Test DiscountService DiscountDeactivatePost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Discount.DiscountDeactivatePost(context.Background()).Execute()
 
@@ -48,7 +48,7 @@ func Test_unibee_DiscountService(t *testing.T) {
 
 	t.Run("Test DiscountService DiscountDeletePost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Discount.DiscountDeletePost(context.Background()).Execute()
 
@@ -60,7 +60,7 @@ func Test_unibee_DiscountService(t *testing.T) {
 
 	t.Run("Test DiscountService DiscountEditPost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Discount.DiscountEditPost(context.Background()).Execute()
 
@@ -72,7 +72,7 @@ func Test_unibee_DiscountService(t *testing.T) {
 
 	t.Run("Test DiscountService DiscountListGet", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Discount.DiscountListGet(context.Background()).Execute()
 
@@ -84,7 +84,7 @@ func Test_unibee_DiscountService(t *testing.T) {
 
 	t.Run("Test DiscountService DiscountNewPost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Discount.DiscountNewPost(context.Background()).Execute()
 

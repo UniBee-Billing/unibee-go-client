@@ -7,13 +7,13 @@ Name | Type | Description | Notes
 **Email** | **string** | The email of member | 
 **FirstName** | Pointer to **string** | The firstName of member | [optional] 
 **LastName** | Pointer to **string** | The lastName of member | [optional] 
-**Role** | **string** | The permission role of member | 
+**RoleIds** | **[]int64** | The id list of role | 
 
 ## Methods
 
 ### NewUnibeeApiMerchantMemberNewMemberReq
 
-`func NewUnibeeApiMerchantMemberNewMemberReq(email string, role string, ) *UnibeeApiMerchantMemberNewMemberReq`
+`func NewUnibeeApiMerchantMemberNewMemberReq(email string, roleIds []int64, ) *UnibeeApiMerchantMemberNewMemberReq`
 
 NewUnibeeApiMerchantMemberNewMemberReq instantiates a new UnibeeApiMerchantMemberNewMemberReq object
 This constructor will assign default values to properties that have it defined,
@@ -98,24 +98,24 @@ SetLastName sets LastName field to given value.
 
 HasLastName returns a boolean if a field has been set.
 
-### GetRole
+### GetRoleIds
 
-`func (o *UnibeeApiMerchantMemberNewMemberReq) GetRole() string`
+`func (o *UnibeeApiMerchantMemberNewMemberReq) GetRoleIds() []int64`
 
-GetRole returns the Role field if non-nil, zero value otherwise.
+GetRoleIds returns the RoleIds field if non-nil, zero value otherwise.
 
-### GetRoleOk
+### GetRoleIdsOk
 
-`func (o *UnibeeApiMerchantMemberNewMemberReq) GetRoleOk() (*string, bool)`
+`func (o *UnibeeApiMerchantMemberNewMemberReq) GetRoleIdsOk() (*[]int64, bool)`
 
-GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
+GetRoleIdsOk returns a tuple with the RoleIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRole
+### SetRoleIds
 
-`func (o *UnibeeApiMerchantMemberNewMemberReq) SetRole(v string)`
+`func (o *UnibeeApiMerchantMemberNewMemberReq) SetRoleIds(v []int64)`
 
-SetRole sets Role field to given value.
+SetRoleIds sets RoleIds field to given value.
 
 
 

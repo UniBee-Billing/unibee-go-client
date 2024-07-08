@@ -11,10 +11,10 @@ package unibee
 
 import (
 	"context"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func Test_unibee_AuthService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_unibee_AuthService(t *testing.T) {
 
 	t.Run("Test AuthService AuthSsoLoginOTPPost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Auth.AuthSsoLoginOTPPost(context.Background()).Execute()
 
@@ -36,7 +36,7 @@ func Test_unibee_AuthService(t *testing.T) {
 
 	t.Run("Test AuthService AuthSsoLoginOTPVerifyPost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Auth.AuthSsoLoginOTPVerifyPost(context.Background()).Execute()
 
@@ -48,7 +48,7 @@ func Test_unibee_AuthService(t *testing.T) {
 
 	t.Run("Test AuthService AuthSsoLoginPost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Auth.AuthSsoLoginPost(context.Background()).Execute()
 
@@ -60,7 +60,7 @@ func Test_unibee_AuthService(t *testing.T) {
 
 	t.Run("Test AuthService AuthSsoPasswordForgetOTPPost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Auth.AuthSsoPasswordForgetOTPPost(context.Background()).Execute()
 
@@ -72,7 +72,7 @@ func Test_unibee_AuthService(t *testing.T) {
 
 	t.Run("Test AuthService AuthSsoPasswordForgetOTPVerifyPost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Auth.AuthSsoPasswordForgetOTPVerifyPost(context.Background()).Execute()
 
@@ -84,7 +84,7 @@ func Test_unibee_AuthService(t *testing.T) {
 
 	t.Run("Test AuthService AuthSsoRegisterPost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Auth.AuthSsoRegisterPost(context.Background()).Execute()
 
@@ -96,7 +96,7 @@ func Test_unibee_AuthService(t *testing.T) {
 
 	t.Run("Test AuthService AuthSsoRegisterVerifyPost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Auth.AuthSsoRegisterVerifyPost(context.Background()).Execute()
 

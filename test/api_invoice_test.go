@@ -11,10 +11,10 @@ package unibee
 
 import (
 	"context"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/UniB-e-e/unibee-go-client"
 )
 
 func Test_unibee_InvoiceService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_unibee_InvoiceService(t *testing.T) {
 
 	t.Run("Test InvoiceService InvoiceCancelPost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Invoice.InvoiceCancelPost(context.Background()).Execute()
 
@@ -36,7 +36,7 @@ func Test_unibee_InvoiceService(t *testing.T) {
 
 	t.Run("Test InvoiceService InvoiceDeletePost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Invoice.InvoiceDeletePost(context.Background()).Execute()
 
@@ -48,7 +48,7 @@ func Test_unibee_InvoiceService(t *testing.T) {
 
 	t.Run("Test InvoiceService InvoiceDetailGet", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Invoice.InvoiceDetailGet(context.Background()).Execute()
 
@@ -60,7 +60,7 @@ func Test_unibee_InvoiceService(t *testing.T) {
 
 	t.Run("Test InvoiceService InvoiceDetailPost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Invoice.InvoiceDetailPost(context.Background()).Execute()
 
@@ -72,7 +72,7 @@ func Test_unibee_InvoiceService(t *testing.T) {
 
 	t.Run("Test InvoiceService InvoiceEditPost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Invoice.InvoiceEditPost(context.Background()).Execute()
 
@@ -84,7 +84,7 @@ func Test_unibee_InvoiceService(t *testing.T) {
 
 	t.Run("Test InvoiceService InvoiceFinishPost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Invoice.InvoiceFinishPost(context.Background()).Execute()
 
@@ -96,7 +96,7 @@ func Test_unibee_InvoiceService(t *testing.T) {
 
 	t.Run("Test InvoiceService InvoiceListGet", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Invoice.InvoiceListGet(context.Background()).Execute()
 
@@ -108,7 +108,7 @@ func Test_unibee_InvoiceService(t *testing.T) {
 
 	t.Run("Test InvoiceService InvoiceListPost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Invoice.InvoiceListPost(context.Background()).Execute()
 
@@ -120,7 +120,7 @@ func Test_unibee_InvoiceService(t *testing.T) {
 
 	t.Run("Test InvoiceService InvoiceNewPost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Invoice.InvoiceNewPost(context.Background()).Execute()
 
@@ -132,7 +132,7 @@ func Test_unibee_InvoiceService(t *testing.T) {
 
 	t.Run("Test InvoiceService InvoicePdfGeneratePost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Invoice.InvoicePdfGeneratePost(context.Background()).Execute()
 
@@ -144,7 +144,7 @@ func Test_unibee_InvoiceService(t *testing.T) {
 
 	t.Run("Test InvoiceService InvoiceRefundPost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Invoice.InvoiceRefundPost(context.Background()).Execute()
 
@@ -156,7 +156,7 @@ func Test_unibee_InvoiceService(t *testing.T) {
 
 	t.Run("Test InvoiceService InvoiceSendEmailPost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.Invoice.InvoiceSendEmailPost(context.Background()).Execute()
 

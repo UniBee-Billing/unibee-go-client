@@ -4,15 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**MemberRoles** | Pointer to [**[]UnibeeApiBeanMerchantRoleSimplify**](UnibeeApiBeanMerchantRoleSimplify.md) | The member&#39;s role list&#39; | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Email** | Pointer to **string** | email | [optional] 
 **FirstName** | Pointer to **string** | first name | [optional] 
 **Id** | Pointer to **int64** | userId | [optional] 
+**IsOwner** | Pointer to **bool** | Check Member is Owner | [optional] 
 **LastName** | Pointer to **string** | last name | [optional] 
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
 **Mobile** | Pointer to **string** | mobile | [optional] 
-**Permissions** | Pointer to [**[]UnibeeApiBeanMerchantRolePermission**](UnibeeApiBeanMerchantRolePermission.md) | permissions | [optional] 
-**Role** | Pointer to **string** | role | [optional] 
+**Status** | Pointer to **int32** | 0-Active, 2-Suspend | [optional] 
 
 ## Methods
 
@@ -32,6 +33,31 @@ will change when the set of required properties is changed
 NewUnibeeApiBeanDetailMerchantMemberDetailWithDefaults instantiates a new UnibeeApiBeanDetailMerchantMemberDetail object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetMemberRoles
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetMemberRoles() []UnibeeApiBeanMerchantRoleSimplify`
+
+GetMemberRoles returns the MemberRoles field if non-nil, zero value otherwise.
+
+### GetMemberRolesOk
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetMemberRolesOk() (*[]UnibeeApiBeanMerchantRoleSimplify, bool)`
+
+GetMemberRolesOk returns a tuple with the MemberRoles field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMemberRoles
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) SetMemberRoles(v []UnibeeApiBeanMerchantRoleSimplify)`
+
+SetMemberRoles sets MemberRoles field to given value.
+
+### HasMemberRoles
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) HasMemberRoles() bool`
+
+HasMemberRoles returns a boolean if a field has been set.
 
 ### GetCreateTime
 
@@ -133,6 +159,31 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
+### GetIsOwner
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetIsOwner() bool`
+
+GetIsOwner returns the IsOwner field if non-nil, zero value otherwise.
+
+### GetIsOwnerOk
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetIsOwnerOk() (*bool, bool)`
+
+GetIsOwnerOk returns a tuple with the IsOwner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsOwner
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) SetIsOwner(v bool)`
+
+SetIsOwner sets IsOwner field to given value.
+
+### HasIsOwner
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) HasIsOwner() bool`
+
+HasIsOwner returns a boolean if a field has been set.
+
 ### GetLastName
 
 `func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetLastName() string`
@@ -208,55 +259,30 @@ SetMobile sets Mobile field to given value.
 
 HasMobile returns a boolean if a field has been set.
 
-### GetPermissions
+### GetStatus
 
-`func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetPermissions() []UnibeeApiBeanMerchantRolePermission`
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetStatus() int32`
 
-GetPermissions returns the Permissions field if non-nil, zero value otherwise.
+GetStatus returns the Status field if non-nil, zero value otherwise.
 
-### GetPermissionsOk
+### GetStatusOk
 
-`func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetPermissionsOk() (*[]UnibeeApiBeanMerchantRolePermission, bool)`
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetStatusOk() (*int32, bool)`
 
-GetPermissionsOk returns a tuple with the Permissions field if it's non-nil, zero value otherwise
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPermissions
+### SetStatus
 
-`func (o *UnibeeApiBeanDetailMerchantMemberDetail) SetPermissions(v []UnibeeApiBeanMerchantRolePermission)`
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) SetStatus(v int32)`
 
-SetPermissions sets Permissions field to given value.
+SetStatus sets Status field to given value.
 
-### HasPermissions
+### HasStatus
 
-`func (o *UnibeeApiBeanDetailMerchantMemberDetail) HasPermissions() bool`
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) HasStatus() bool`
 
-HasPermissions returns a boolean if a field has been set.
-
-### GetRole
-
-`func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetRole() string`
-
-GetRole returns the Role field if non-nil, zero value otherwise.
-
-### GetRoleOk
-
-`func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetRoleOk() (*string, bool)`
-
-GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRole
-
-`func (o *UnibeeApiBeanDetailMerchantMemberDetail) SetRole(v string)`
-
-SetRole sets Role field to given value.
-
-### HasRole
-
-`func (o *UnibeeApiBeanDetailMerchantMemberDetail) HasRole() bool`
-
-HasRole returns a boolean if a field has been set.
+HasStatus returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCodeSimplify**](UnibeeApiBeanMerchantDiscountCodeSimplify.md) |  | [optional] 
 **DiscountAmount** | Pointer to **int64** | DiscountAmount,Cents | [optional] 
 **DiscountCode** | Pointer to **string** |  | [optional] 
+**FinishTime** | Pointer to **int64** |  | [optional] 
 **Gateway** | Pointer to [**UnibeeApiBeanGatewaySimplify**](UnibeeApiBeanGatewaySimplify.md) |  | [optional] 
 **GatewayId** | Pointer to **int64** | Id | [optional] 
 **GatewayInvoiceId** | Pointer to **string** | GatewayInvoiceId | [optional] 
@@ -37,6 +38,8 @@ Name | Type | Description | Notes
 **PaymentId** | Pointer to **string** | PaymentId | [optional] 
 **PeriodEnd** | Pointer to **int64** | period_end | [optional] 
 **PeriodStart** | Pointer to **int64** | period_start | [optional] 
+**ProductName** | Pointer to **string** |  | [optional] 
+**ProrationDate** | Pointer to **int64** |  | [optional] 
 **Refund** | Pointer to [**UnibeeApiBeanRefundSimplify**](UnibeeApiBeanRefundSimplify.md) |  | [optional] 
 **RefundId** | Pointer to **string** | refundId | [optional] 
 **SendEmail** | Pointer to **string** | SendEmail | [optional] 
@@ -52,6 +55,7 @@ Name | Type | Description | Notes
 **TaxPercentage** | Pointer to **int64** | TaxPercentage，1000 &#x3D; 10% | [optional] 
 **TotalAmount** | Pointer to **int64** | TotalAmount,Cents | [optional] 
 **TotalAmountExcludingTax** | Pointer to **int64** | TotalAmountExcludingTax,Cents | [optional] 
+**TrialEnd** | Pointer to **int64** | trial_end, utc time | [optional] 
 **UniqueId** | Pointer to **string** | UniqueId | [optional] 
 **UserAccount** | Pointer to [**UnibeeApiBeanUserAccountSimplify**](UnibeeApiBeanUserAccountSimplify.md) |  | [optional] 
 **UserId** | Pointer to **int64** | UserId | [optional] 
@@ -324,6 +328,31 @@ SetDiscountCode sets DiscountCode field to given value.
 `func (o *UnibeeApiBeanDetailInvoiceDetail) HasDiscountCode() bool`
 
 HasDiscountCode returns a boolean if a field has been set.
+
+### GetFinishTime
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetFinishTime() int64`
+
+GetFinishTime returns the FinishTime field if non-nil, zero value otherwise.
+
+### GetFinishTimeOk
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetFinishTimeOk() (*int64, bool)`
+
+GetFinishTimeOk returns a tuple with the FinishTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFinishTime
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetFinishTime(v int64)`
+
+SetFinishTime sets FinishTime field to given value.
+
+### HasFinishTime
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) HasFinishTime() bool`
+
+HasFinishTime returns a boolean if a field has been set.
 
 ### GetGateway
 
@@ -900,6 +929,56 @@ SetPeriodStart sets PeriodStart field to given value.
 
 HasPeriodStart returns a boolean if a field has been set.
 
+### GetProductName
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetProductName() string`
+
+GetProductName returns the ProductName field if non-nil, zero value otherwise.
+
+### GetProductNameOk
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetProductNameOk() (*string, bool)`
+
+GetProductNameOk returns a tuple with the ProductName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProductName
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetProductName(v string)`
+
+SetProductName sets ProductName field to given value.
+
+### HasProductName
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) HasProductName() bool`
+
+HasProductName returns a boolean if a field has been set.
+
+### GetProrationDate
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetProrationDate() int64`
+
+GetProrationDate returns the ProrationDate field if non-nil, zero value otherwise.
+
+### GetProrationDateOk
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetProrationDateOk() (*int64, bool)`
+
+GetProrationDateOk returns a tuple with the ProrationDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProrationDate
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetProrationDate(v int64)`
+
+SetProrationDate sets ProrationDate field to given value.
+
+### HasProrationDate
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) HasProrationDate() bool`
+
+HasProrationDate returns a boolean if a field has been set.
+
 ### GetRefund
 
 `func (o *UnibeeApiBeanDetailInvoiceDetail) GetRefund() UnibeeApiBeanRefundSimplify`
@@ -1274,6 +1353,31 @@ SetTotalAmountExcludingTax sets TotalAmountExcludingTax field to given value.
 `func (o *UnibeeApiBeanDetailInvoiceDetail) HasTotalAmountExcludingTax() bool`
 
 HasTotalAmountExcludingTax returns a boolean if a field has been set.
+
+### GetTrialEnd
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetTrialEnd() int64`
+
+GetTrialEnd returns the TrialEnd field if non-nil, zero value otherwise.
+
+### GetTrialEndOk
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetTrialEndOk() (*int64, bool)`
+
+GetTrialEndOk returns a tuple with the TrialEnd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrialEnd
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetTrialEnd(v int64)`
+
+SetTrialEnd sets TrialEnd field to given value.
+
+### HasTrialEnd
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) HasTrialEnd() bool`
+
+HasTrialEnd returns a boolean if a field has been set.
 
 ### GetUniqueId
 
