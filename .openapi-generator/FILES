@@ -914,6 +914,4 @@ model_unibee_api_system_refund_bulk_channel_sync_req.go
 model_unibee_api_system_subscription_test_clock_walk_req.go
 model_unibee_internal_logic_gateway_gateway_bean_gateway_balance.go
 response.go
-test/api_task_test.go
-test/api_track_test.go
 utils.go
