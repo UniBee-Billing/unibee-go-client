@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **IssueRegNumber** | Pointer to **string** | IssueRegNumber | [optional] 
 **IssueVatNumber** | Pointer to **string** | IssueVatNumber | [optional] 
 **LocalizedCurrency** | Pointer to **string** | LocalizedCurrency, To display localized currency amount | [optional] 
-**LocalizedExchangeRate** | Pointer to **string** | LocalizedExchangeRate, exchange rate must set while LocalizedCurrency enabled | [optional] 
+**LocalizedExchangeRate** | Pointer to **float32** | LocalizedExchangeRate, exchange rate must set while LocalizedCurrency enabled | [optional] 
 **SendUserEmail** | Pointer to **bool** | Whether sen invoice email to user or not，default false | [optional] [default to false]
 **ShowDetailItem** | Pointer to **bool** | ShowDetailItem, whether to display detail item information in pdf generate, unitAmount, quantity, etc. | [optional] [default to false]
 
@@ -180,20 +180,20 @@ HasLocalizedCurrency returns a boolean if a field has been set.
 
 ### GetLocalizedExchangeRate
 
-`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) GetLocalizedExchangeRate() string`
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) GetLocalizedExchangeRate() float32`
 
 GetLocalizedExchangeRate returns the LocalizedExchangeRate field if non-nil, zero value otherwise.
 
 ### GetLocalizedExchangeRateOk
 
-`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) GetLocalizedExchangeRateOk() (*string, bool)`
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) GetLocalizedExchangeRateOk() (*float32, bool)`
 
 GetLocalizedExchangeRateOk returns a tuple with the LocalizedExchangeRate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLocalizedExchangeRate
 
-`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) SetLocalizedExchangeRate(v string)`
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) SetLocalizedExchangeRate(v float32)`
 
 SetLocalizedExchangeRate sets LocalizedExchangeRate field to given value.
 

@@ -6,7 +6,7 @@ info:
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   title: OpenAPI UniBee
   version: |
-    buildtime:202407240454
+    buildtime:202407240509
 servers:
 - url: https://api.unibee.top
 - url: http://127.0.0.1:8080
@@ -13082,9 +13082,9 @@ components:
         localizedExchangeRate:
           description: "LocalizedExchangeRate, exchange rate must set while LocalizedCurrency\
             \ enabled"
-          format: '*string'
+          format: '*float64'
           properties: {}
-          type: string
+          type: number
         sendUserEmail:
           default: false
           description: Whether sen invoice email to user or not，default false
