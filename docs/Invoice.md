@@ -288,7 +288,7 @@ No authorization required
 
 ## InvoiceEditPost
 
-> MerchantInvoiceDetailGet200Response InvoiceEditPost(ctx).UnibeeApiMerchantInvoiceEditReq(unibeeApiMerchantInvoiceEditReq).Execute()
+> MerchantInvoiceEditPost200Response InvoiceEditPost(ctx).UnibeeApiMerchantInvoiceEditReq(unibeeApiMerchantInvoiceEditReq).Execute()
 
 InvoiceEdit
 
@@ -316,7 +316,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceEditPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `InvoiceEditPost`: MerchantInvoiceDetailGet200Response
+	// response from `InvoiceEditPost`: MerchantInvoiceEditPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceEditPost`: %v\n", resp)
 }
 ```
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantInvoiceDetailGet200Response**](MerchantInvoiceDetailGet200Response.md)
+[**MerchantInvoiceEditPost200Response**](MerchantInvoiceEditPost200Response.md)
 
 ### Authorization
 
@@ -420,7 +420,7 @@ No authorization required
 
 ## InvoiceListGet
 
-> MerchantInvoiceListGet200Response InvoiceListGet(ctx).FirstName(firstName).LastName(lastName).Currency(currency).Status(status).AmountStart(amountStart).AmountEnd(amountEnd).UserId(userId).SendEmail(sendEmail).SortField(sortField).SortType(sortType).DeleteInclude(deleteInclude).Type_(type_).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+> MerchantInvoiceListGet200Response InvoiceListGet(ctx).FirstName(firstName).LastName(lastName).Currency(currency).Status(status).AmountStart(amountStart).AmountEnd(amountEnd).UserId(userId).SendEmail(sendEmail).SortField(sortField).SortType(sortType).DeleteInclude(deleteInclude).Type_(type_).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).ReportTimeStart(reportTimeStart).ReportTimeEnd(reportTimeEnd).Execute()
 
 InvoiceList
 
@@ -455,10 +455,12 @@ func main() {
 	count := int32(56) // int32 | Count By Page (optional)
 	createTimeStart := int64(789) // int64 | CreateTimeStart (optional)
 	createTimeEnd := int64(789) // int64 | CreateTimeEnd (optional)
+	reportTimeStart := int64(789) // int64 | ReportTimeStart (optional)
+	reportTimeEnd := int64(789) // int64 | ReportTimeEnd (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Invoice.InvoiceListGet(context.Background()).FirstName(firstName).LastName(lastName).Currency(currency).Status(status).AmountStart(amountStart).AmountEnd(amountEnd).UserId(userId).SendEmail(sendEmail).SortField(sortField).SortType(sortType).DeleteInclude(deleteInclude).Type_(type_).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+	resp, r, err := apiClient.Invoice.InvoiceListGet(context.Background()).FirstName(firstName).LastName(lastName).Currency(currency).Status(status).AmountStart(amountStart).AmountEnd(amountEnd).UserId(userId).SendEmail(sendEmail).SortField(sortField).SortType(sortType).DeleteInclude(deleteInclude).Type_(type_).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).ReportTimeStart(reportTimeStart).ReportTimeEnd(reportTimeEnd).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -495,6 +497,8 @@ Name | Type | Description  | Notes
  **count** | **int32** | Count By Page | 
  **createTimeStart** | **int64** | CreateTimeStart | 
  **createTimeEnd** | **int64** | CreateTimeEnd | 
+ **reportTimeStart** | **int64** | ReportTimeStart | 
+ **reportTimeEnd** | **int64** | ReportTimeEnd | 
 
 ### Return type
 
@@ -780,7 +784,7 @@ No authorization required
 
 ## InvoiceNewPost
 
-> MerchantInvoiceDetailGet200Response InvoiceNewPost(ctx).UnibeeApiMerchantInvoiceNewReq(unibeeApiMerchantInvoiceNewReq).Execute()
+> MerchantInvoiceEditPost200Response InvoiceNewPost(ctx).UnibeeApiMerchantInvoiceNewReq(unibeeApiMerchantInvoiceNewReq).Execute()
 
 NewInvoice
 
@@ -806,7 +810,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceNewPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `InvoiceNewPost`: MerchantInvoiceDetailGet200Response
+	// response from `InvoiceNewPost`: MerchantInvoiceEditPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceNewPost`: %v\n", resp)
 }
 ```
@@ -826,7 +830,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantInvoiceDetailGet200Response**](MerchantInvoiceDetailGet200Response.md)
+[**MerchantInvoiceEditPost200Response**](MerchantInvoiceEditPost200Response.md)
 
 ### Authorization
 

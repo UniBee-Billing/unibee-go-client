@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **OtherSocialInfo** | Pointer to **string** |  | [optional] 
 **PaymentMethod** | Pointer to **string** |  | [optional] 
 **Phone** | Pointer to **string** | phone | [optional] 
+**PlanId** | Pointer to **int64** | PlanId | [optional] 
 **Profession** | Pointer to **string** | profession | [optional] 
 **ReMark** | Pointer to **string** | note | [optional] 
 **RecurringAmount** | Pointer to **int64** | total recurring amount, cent | [optional] 
@@ -39,7 +40,7 @@ Name | Type | Description | Notes
 **Status** | Pointer to **int32** | 0-Active, 2-Suspend | [optional] 
 **SubscriptionId** | Pointer to **string** | subscription id | [optional] 
 **SubscriptionName** | Pointer to **string** | subscription name | [optional] 
-**SubscriptionStatus** | Pointer to **int32** | sub status， 1-Pending｜2-Active｜3-PendingInActive | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | [optional] 
+**SubscriptionStatus** | Pointer to **int32** | sub status， 1-Pending｜2-Active｜3-PendingInActive | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | 9-Failed | [optional] 
 **TaxPercentage** | Pointer to **int64** | taxPercentage，1000 &#x3D; 10% | [optional] 
 **Telegram** | Pointer to **string** | telegram | [optional] 
 **TikTok** | Pointer to **string** | tictok | [optional] 
@@ -770,6 +771,31 @@ SetPhone sets Phone field to given value.
 `func (o *UnibeeApiBeanDetailUserAccountDetail) HasPhone() bool`
 
 HasPhone returns a boolean if a field has been set.
+
+### GetPlanId
+
+`func (o *UnibeeApiBeanDetailUserAccountDetail) GetPlanId() int64`
+
+GetPlanId returns the PlanId field if non-nil, zero value otherwise.
+
+### GetPlanIdOk
+
+`func (o *UnibeeApiBeanDetailUserAccountDetail) GetPlanIdOk() (*int64, bool)`
+
+GetPlanIdOk returns a tuple with the PlanId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanId
+
+`func (o *UnibeeApiBeanDetailUserAccountDetail) SetPlanId(v int64)`
+
+SetPlanId sets PlanId field to given value.
+
+### HasPlanId
+
+`func (o *UnibeeApiBeanDetailUserAccountDetail) HasPlanId() bool`
+
+HasPlanId returns a boolean if a field has been set.
 
 ### GetProfession
 

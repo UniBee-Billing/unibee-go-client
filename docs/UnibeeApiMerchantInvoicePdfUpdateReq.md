@@ -9,7 +9,10 @@ Name | Type | Description | Notes
 **IssueCompanyName** | Pointer to **string** | IssueCompanyName | [optional] 
 **IssueRegNumber** | Pointer to **string** | IssueRegNumber | [optional] 
 **IssueVatNumber** | Pointer to **string** | IssueVatNumber | [optional] 
+**LocalizedCurrency** | Pointer to **string** | LocalizedCurrency, To display localized currency amount | [optional] 
+**LocalizedExchangeRate** | Pointer to **string** | LocalizedExchangeRate, exchange rate must set while LocalizedCurrency enabled | [optional] 
 **SendUserEmail** | Pointer to **bool** | Whether sen invoice email to user or not，default false | [optional] [default to false]
+**ShowDetailItem** | Pointer to **bool** | ShowDetailItem, whether to display detail item information in pdf generate, unitAmount, quantity, etc. | [optional] [default to false]
 
 ## Methods
 
@@ -150,6 +153,56 @@ SetIssueVatNumber sets IssueVatNumber field to given value.
 
 HasIssueVatNumber returns a boolean if a field has been set.
 
+### GetLocalizedCurrency
+
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) GetLocalizedCurrency() string`
+
+GetLocalizedCurrency returns the LocalizedCurrency field if non-nil, zero value otherwise.
+
+### GetLocalizedCurrencyOk
+
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) GetLocalizedCurrencyOk() (*string, bool)`
+
+GetLocalizedCurrencyOk returns a tuple with the LocalizedCurrency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLocalizedCurrency
+
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) SetLocalizedCurrency(v string)`
+
+SetLocalizedCurrency sets LocalizedCurrency field to given value.
+
+### HasLocalizedCurrency
+
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) HasLocalizedCurrency() bool`
+
+HasLocalizedCurrency returns a boolean if a field has been set.
+
+### GetLocalizedExchangeRate
+
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) GetLocalizedExchangeRate() string`
+
+GetLocalizedExchangeRate returns the LocalizedExchangeRate field if non-nil, zero value otherwise.
+
+### GetLocalizedExchangeRateOk
+
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) GetLocalizedExchangeRateOk() (*string, bool)`
+
+GetLocalizedExchangeRateOk returns a tuple with the LocalizedExchangeRate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLocalizedExchangeRate
+
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) SetLocalizedExchangeRate(v string)`
+
+SetLocalizedExchangeRate sets LocalizedExchangeRate field to given value.
+
+### HasLocalizedExchangeRate
+
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) HasLocalizedExchangeRate() bool`
+
+HasLocalizedExchangeRate returns a boolean if a field has been set.
+
 ### GetSendUserEmail
 
 `func (o *UnibeeApiMerchantInvoicePdfUpdateReq) GetSendUserEmail() bool`
@@ -174,6 +227,31 @@ SetSendUserEmail sets SendUserEmail field to given value.
 `func (o *UnibeeApiMerchantInvoicePdfUpdateReq) HasSendUserEmail() bool`
 
 HasSendUserEmail returns a boolean if a field has been set.
+
+### GetShowDetailItem
+
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) GetShowDetailItem() bool`
+
+GetShowDetailItem returns the ShowDetailItem field if non-nil, zero value otherwise.
+
+### GetShowDetailItemOk
+
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) GetShowDetailItemOk() (*bool, bool)`
+
+GetShowDetailItemOk returns a tuple with the ShowDetailItem field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShowDetailItem
+
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) SetShowDetailItem(v bool)`
+
+SetShowDetailItem sets ShowDetailItem field to given value.
+
+### HasShowDetailItem
+
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) HasShowDetailItem() bool`
+
+HasShowDetailItem returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

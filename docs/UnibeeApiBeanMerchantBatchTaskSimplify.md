@@ -6,8 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **DownloadUrl** | Pointer to **string** | download_file_url | [optional] 
-**FailReason** | Pointer to **string** | reason of failure | [optional] 
+**FailureReason** | Pointer to **string** | reason of failure | [optional] 
 **FinishTime** | Pointer to **int64** | task_finish_time | [optional] 
+**Format** | Pointer to **string** | format of file | [optional] 
 **Id** | Pointer to **int64** | id | [optional] 
 **LastUpdateTime** | Pointer to **int64** | last update utc time | [optional] 
 **MemberId** | Pointer to **int64** | member_id | [optional] 
@@ -90,30 +91,30 @@ SetDownloadUrl sets DownloadUrl field to given value.
 
 HasDownloadUrl returns a boolean if a field has been set.
 
-### GetFailReason
+### GetFailureReason
 
-`func (o *UnibeeApiBeanMerchantBatchTaskSimplify) GetFailReason() string`
+`func (o *UnibeeApiBeanMerchantBatchTaskSimplify) GetFailureReason() string`
 
-GetFailReason returns the FailReason field if non-nil, zero value otherwise.
+GetFailureReason returns the FailureReason field if non-nil, zero value otherwise.
 
-### GetFailReasonOk
+### GetFailureReasonOk
 
-`func (o *UnibeeApiBeanMerchantBatchTaskSimplify) GetFailReasonOk() (*string, bool)`
+`func (o *UnibeeApiBeanMerchantBatchTaskSimplify) GetFailureReasonOk() (*string, bool)`
 
-GetFailReasonOk returns a tuple with the FailReason field if it's non-nil, zero value otherwise
+GetFailureReasonOk returns a tuple with the FailureReason field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFailReason
+### SetFailureReason
 
-`func (o *UnibeeApiBeanMerchantBatchTaskSimplify) SetFailReason(v string)`
+`func (o *UnibeeApiBeanMerchantBatchTaskSimplify) SetFailureReason(v string)`
 
-SetFailReason sets FailReason field to given value.
+SetFailureReason sets FailureReason field to given value.
 
-### HasFailReason
+### HasFailureReason
 
-`func (o *UnibeeApiBeanMerchantBatchTaskSimplify) HasFailReason() bool`
+`func (o *UnibeeApiBeanMerchantBatchTaskSimplify) HasFailureReason() bool`
 
-HasFailReason returns a boolean if a field has been set.
+HasFailureReason returns a boolean if a field has been set.
 
 ### GetFinishTime
 
@@ -139,6 +140,31 @@ SetFinishTime sets FinishTime field to given value.
 `func (o *UnibeeApiBeanMerchantBatchTaskSimplify) HasFinishTime() bool`
 
 HasFinishTime returns a boolean if a field has been set.
+
+### GetFormat
+
+`func (o *UnibeeApiBeanMerchantBatchTaskSimplify) GetFormat() string`
+
+GetFormat returns the Format field if non-nil, zero value otherwise.
+
+### GetFormatOk
+
+`func (o *UnibeeApiBeanMerchantBatchTaskSimplify) GetFormatOk() (*string, bool)`
+
+GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormat
+
+`func (o *UnibeeApiBeanMerchantBatchTaskSimplify) SetFormat(v string)`
+
+SetFormat sets Format field to given value.
+
+### HasFormat
+
+`func (o *UnibeeApiBeanMerchantBatchTaskSimplify) HasFormat() bool`
+
+HasFormat returns a boolean if a field has been set.
 
 ### GetId
 

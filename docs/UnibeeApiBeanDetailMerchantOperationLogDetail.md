@@ -11,6 +11,9 @@ Name | Type | Description | Notes
 **Member** | Pointer to [**UnibeeApiBeanDetailMerchantMemberDetail**](UnibeeApiBeanDetailMerchantMemberDetail.md) |  | [optional] 
 **MemberId** | Pointer to **int64** | member_id | [optional] 
 **MerchantId** | Pointer to **int64** | merchant Id | [optional] 
+**OptAccount** | Pointer to **string** | operation Account | [optional] 
+**OptAccountId** | Pointer to **string** | operation account id | [optional] 
+**OptAccountType** | Pointer to **int32** | opt_account_type, 0-Member|1-User|2-OpenApi|3-System | [optional] 
 **OptContent** | Pointer to **string** | operation content | [optional] 
 **OptTarget** | Pointer to **string** | operation target | [optional] 
 **PlanId** | Pointer to **int64** | plan id | [optional] 
@@ -210,6 +213,81 @@ SetMerchantId sets MerchantId field to given value.
 `func (o *UnibeeApiBeanDetailMerchantOperationLogDetail) HasMerchantId() bool`
 
 HasMerchantId returns a boolean if a field has been set.
+
+### GetOptAccount
+
+`func (o *UnibeeApiBeanDetailMerchantOperationLogDetail) GetOptAccount() string`
+
+GetOptAccount returns the OptAccount field if non-nil, zero value otherwise.
+
+### GetOptAccountOk
+
+`func (o *UnibeeApiBeanDetailMerchantOperationLogDetail) GetOptAccountOk() (*string, bool)`
+
+GetOptAccountOk returns a tuple with the OptAccount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOptAccount
+
+`func (o *UnibeeApiBeanDetailMerchantOperationLogDetail) SetOptAccount(v string)`
+
+SetOptAccount sets OptAccount field to given value.
+
+### HasOptAccount
+
+`func (o *UnibeeApiBeanDetailMerchantOperationLogDetail) HasOptAccount() bool`
+
+HasOptAccount returns a boolean if a field has been set.
+
+### GetOptAccountId
+
+`func (o *UnibeeApiBeanDetailMerchantOperationLogDetail) GetOptAccountId() string`
+
+GetOptAccountId returns the OptAccountId field if non-nil, zero value otherwise.
+
+### GetOptAccountIdOk
+
+`func (o *UnibeeApiBeanDetailMerchantOperationLogDetail) GetOptAccountIdOk() (*string, bool)`
+
+GetOptAccountIdOk returns a tuple with the OptAccountId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOptAccountId
+
+`func (o *UnibeeApiBeanDetailMerchantOperationLogDetail) SetOptAccountId(v string)`
+
+SetOptAccountId sets OptAccountId field to given value.
+
+### HasOptAccountId
+
+`func (o *UnibeeApiBeanDetailMerchantOperationLogDetail) HasOptAccountId() bool`
+
+HasOptAccountId returns a boolean if a field has been set.
+
+### GetOptAccountType
+
+`func (o *UnibeeApiBeanDetailMerchantOperationLogDetail) GetOptAccountType() int32`
+
+GetOptAccountType returns the OptAccountType field if non-nil, zero value otherwise.
+
+### GetOptAccountTypeOk
+
+`func (o *UnibeeApiBeanDetailMerchantOperationLogDetail) GetOptAccountTypeOk() (*int32, bool)`
+
+GetOptAccountTypeOk returns a tuple with the OptAccountType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOptAccountType
+
+`func (o *UnibeeApiBeanDetailMerchantOperationLogDetail) SetOptAccountType(v int32)`
+
+SetOptAccountType sets OptAccountType field to given value.
+
+### HasOptAccountType
+
+`func (o *UnibeeApiBeanDetailMerchantOperationLogDetail) HasOptAccountType() bool`
+
+HasOptAccountType returns a boolean if a field has been set.
 
 ### GetOptContent
 

@@ -5,8 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BillingCycleAnchor** | Pointer to **int64** | billing_cycle_anchor | [optional] 
+**BizType** | Pointer to **int32** |  | [optional] 
 **CountryCode** | Pointer to **string** |  | [optional] 
 **CreateFrom** | Pointer to **string** | create from | [optional] 
+**CreateTime** | Pointer to **int64** |  | [optional] 
 **CryptoAmount** | Pointer to **int64** | crypto_amount, cent | [optional] 
 **CryptoCurrency** | Pointer to **string** | crypto_currency | [optional] 
 **Currency** | Pointer to **string** | Currency | [optional] 
@@ -59,6 +61,8 @@ Name | Type | Description | Notes
 **UniqueId** | Pointer to **string** | UniqueId | [optional] 
 **UserAccount** | Pointer to [**UnibeeApiBeanUserAccountSimplify**](UnibeeApiBeanUserAccountSimplify.md) |  | [optional] 
 **UserId** | Pointer to **int64** | UserId | [optional] 
+**UserSnapshot** | Pointer to [**UnibeeApiBeanUserAccountSimplify**](UnibeeApiBeanUserAccountSimplify.md) |  | [optional] 
+**VatNumber** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -103,6 +107,31 @@ SetBillingCycleAnchor sets BillingCycleAnchor field to given value.
 `func (o *UnibeeApiBeanDetailInvoiceDetail) HasBillingCycleAnchor() bool`
 
 HasBillingCycleAnchor returns a boolean if a field has been set.
+
+### GetBizType
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetBizType() int32`
+
+GetBizType returns the BizType field if non-nil, zero value otherwise.
+
+### GetBizTypeOk
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetBizTypeOk() (*int32, bool)`
+
+GetBizTypeOk returns a tuple with the BizType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBizType
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetBizType(v int32)`
+
+SetBizType sets BizType field to given value.
+
+### HasBizType
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) HasBizType() bool`
+
+HasBizType returns a boolean if a field has been set.
 
 ### GetCountryCode
 
@@ -153,6 +182,31 @@ SetCreateFrom sets CreateFrom field to given value.
 `func (o *UnibeeApiBeanDetailInvoiceDetail) HasCreateFrom() bool`
 
 HasCreateFrom returns a boolean if a field has been set.
+
+### GetCreateTime
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetCreateTime() int64`
+
+GetCreateTime returns the CreateTime field if non-nil, zero value otherwise.
+
+### GetCreateTimeOk
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetCreateTimeOk() (*int64, bool)`
+
+GetCreateTimeOk returns a tuple with the CreateTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateTime
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetCreateTime(v int64)`
+
+SetCreateTime sets CreateTime field to given value.
+
+### HasCreateTime
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) HasCreateTime() bool`
+
+HasCreateTime returns a boolean if a field has been set.
 
 ### GetCryptoAmount
 
@@ -1453,6 +1507,56 @@ SetUserId sets UserId field to given value.
 `func (o *UnibeeApiBeanDetailInvoiceDetail) HasUserId() bool`
 
 HasUserId returns a boolean if a field has been set.
+
+### GetUserSnapshot
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetUserSnapshot() UnibeeApiBeanUserAccountSimplify`
+
+GetUserSnapshot returns the UserSnapshot field if non-nil, zero value otherwise.
+
+### GetUserSnapshotOk
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetUserSnapshotOk() (*UnibeeApiBeanUserAccountSimplify, bool)`
+
+GetUserSnapshotOk returns a tuple with the UserSnapshot field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserSnapshot
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetUserSnapshot(v UnibeeApiBeanUserAccountSimplify)`
+
+SetUserSnapshot sets UserSnapshot field to given value.
+
+### HasUserSnapshot
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) HasUserSnapshot() bool`
+
+HasUserSnapshot returns a boolean if a field has been set.
+
+### GetVatNumber
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetVatNumber() string`
+
+GetVatNumber returns the VatNumber field if non-nil, zero value otherwise.
+
+### GetVatNumberOk
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetVatNumberOk() (*string, bool)`
+
+GetVatNumberOk returns a tuple with the VatNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVatNumber
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetVatNumber(v string)`
+
+SetVatNumber sets VatNumber field to given value.
+
+### HasVatNumber
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) HasVatNumber() bool`
+
+HasVatNumber returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

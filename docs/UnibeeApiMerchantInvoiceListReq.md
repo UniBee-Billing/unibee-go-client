@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **FirstName** | Pointer to **string** | The firstName of invoice | [optional] 
 **LastName** | Pointer to **string** | The lastName of invoice | [optional] 
 **Page** | Pointer to **int32** | Page, Start 0 | [optional] 
+**ReportTimeEnd** | Pointer to **int64** | ReportTimeEnd | [optional] 
+**ReportTimeStart** | Pointer to **int64** | ReportTimeStart | [optional] 
 **SendEmail** | Pointer to **string** | The filter email of invoice | [optional] 
 **SortField** | Pointer to **string** | Filter，em. invoice_id|gmt_create|gmt_modify|period_end|total_amount，Default gmt_modify | [optional] 
 **SortType** | Pointer to **string** | Sort，asc|desc，Default desc | [optional] 
@@ -289,6 +291,56 @@ SetPage sets Page field to given value.
 `func (o *UnibeeApiMerchantInvoiceListReq) HasPage() bool`
 
 HasPage returns a boolean if a field has been set.
+
+### GetReportTimeEnd
+
+`func (o *UnibeeApiMerchantInvoiceListReq) GetReportTimeEnd() int64`
+
+GetReportTimeEnd returns the ReportTimeEnd field if non-nil, zero value otherwise.
+
+### GetReportTimeEndOk
+
+`func (o *UnibeeApiMerchantInvoiceListReq) GetReportTimeEndOk() (*int64, bool)`
+
+GetReportTimeEndOk returns a tuple with the ReportTimeEnd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReportTimeEnd
+
+`func (o *UnibeeApiMerchantInvoiceListReq) SetReportTimeEnd(v int64)`
+
+SetReportTimeEnd sets ReportTimeEnd field to given value.
+
+### HasReportTimeEnd
+
+`func (o *UnibeeApiMerchantInvoiceListReq) HasReportTimeEnd() bool`
+
+HasReportTimeEnd returns a boolean if a field has been set.
+
+### GetReportTimeStart
+
+`func (o *UnibeeApiMerchantInvoiceListReq) GetReportTimeStart() int64`
+
+GetReportTimeStart returns the ReportTimeStart field if non-nil, zero value otherwise.
+
+### GetReportTimeStartOk
+
+`func (o *UnibeeApiMerchantInvoiceListReq) GetReportTimeStartOk() (*int64, bool)`
+
+GetReportTimeStartOk returns a tuple with the ReportTimeStart field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReportTimeStart
+
+`func (o *UnibeeApiMerchantInvoiceListReq) SetReportTimeStart(v int64)`
+
+SetReportTimeStart sets ReportTimeStart field to given value.
+
+### HasReportTimeStart
+
+`func (o *UnibeeApiMerchantInvoiceListReq) HasReportTimeStart() bool`
+
+HasReportTimeStart returns a boolean if a field has been set.
 
 ### GetSendEmail
 

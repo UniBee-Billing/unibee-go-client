@@ -12,10 +12,11 @@ Name | Type | Description | Notes
 **FirstName** | Pointer to **string** | Search FirstName | [optional] 
 **LastName** | Pointer to **string** | Search LastName | [optional] 
 **Page** | Pointer to **int32** | Page,Start 0 | [optional] 
+**PlanIds** | Pointer to **[]int32** | PlanIds, Search Filter PlanIds | [optional] 
 **SortField** | Pointer to **string** | Sort，user_id|gmt_create|email|user_name|subscription_name|subscription_status|payment_method|recurring_amount|billing_type，Default gmt_create | [optional] 
 **SortType** | Pointer to **string** | Sort Type，asc|desc，Default desc | [optional] 
 **Status** | Pointer to **[]int32** | Status, 0-Active｜2-Frozen | [optional] 
-**SubStatus** | Pointer to **[]int32** | Filter, Default All，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | [optional] 
+**SubStatus** | Pointer to **[]int32** | Filter, Default All，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | 9-Failed | [optional] 
 **SubscriptionId** | Pointer to **string** | Search Filter SubscriptionId | [optional] 
 **UserId** | Pointer to **int64** | Filter UserId | [optional] 
 
@@ -237,6 +238,31 @@ SetPage sets Page field to given value.
 `func (o *UnibeeApiMerchantUserListReq) HasPage() bool`
 
 HasPage returns a boolean if a field has been set.
+
+### GetPlanIds
+
+`func (o *UnibeeApiMerchantUserListReq) GetPlanIds() []int32`
+
+GetPlanIds returns the PlanIds field if non-nil, zero value otherwise.
+
+### GetPlanIdsOk
+
+`func (o *UnibeeApiMerchantUserListReq) GetPlanIdsOk() (*[]int32, bool)`
+
+GetPlanIdsOk returns a tuple with the PlanIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanIds
+
+`func (o *UnibeeApiMerchantUserListReq) SetPlanIds(v []int32)`
+
+SetPlanIds sets PlanIds field to given value.
+
+### HasPlanIds
+
+`func (o *UnibeeApiMerchantUserListReq) HasPlanIds() bool`
+
+HasPlanIds returns a boolean if a field has been set.
 
 ### GetSortField
 

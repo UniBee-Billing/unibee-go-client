@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ColumnComments** | Pointer to **map[string]string** | Export Column Comments | [optional] 
 **Columns** | Pointer to **[]map[string]interface{}** | Export Column List | [optional] 
 
 ## Methods
@@ -24,6 +25,31 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantTaskExportColumnListResWithDefaults instantiates a new UnibeeApiMerchantTaskExportColumnListRes object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetColumnComments
+
+`func (o *UnibeeApiMerchantTaskExportColumnListRes) GetColumnComments() map[string]string`
+
+GetColumnComments returns the ColumnComments field if non-nil, zero value otherwise.
+
+### GetColumnCommentsOk
+
+`func (o *UnibeeApiMerchantTaskExportColumnListRes) GetColumnCommentsOk() (*map[string]string, bool)`
+
+GetColumnCommentsOk returns a tuple with the ColumnComments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetColumnComments
+
+`func (o *UnibeeApiMerchantTaskExportColumnListRes) SetColumnComments(v map[string]string)`
+
+SetColumnComments sets ColumnComments field to given value.
+
+### HasColumnComments
+
+`func (o *UnibeeApiMerchantTaskExportColumnListRes) HasColumnComments() bool`
+
+HasColumnComments returns a boolean if a field has been set.
 
 ### GetColumns
 

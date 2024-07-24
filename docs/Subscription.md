@@ -824,7 +824,7 @@ import (
 
 func main() {
 	userId := int64(789) // int64 | UserId (optional)
-	status := []int32{int32(123)} // []int32 | Filter, Default All，Status，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing (optional)
+	status := []int32{int32(123)} // []int32 | Filter, Default All，Status，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | 9-Failed (optional)
 	currency := "currency_example" // string | The currency of subscription (optional)
 	planIds := []int32{int32(123)} // []int32 | The filter ids of plan (optional)
 	amountStart := int32(56) // int32 | The filter start amount of subscription (optional)
@@ -860,7 +860,7 @@ Other parameters are passed through a pointer to a apiSubscriptionListGetRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int64** | UserId | 
- **status** | **[]int32** | Filter, Default All，Status，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | 
+ **status** | **[]int32** | Filter, Default All，Status，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | 9-Failed | 
  **currency** | **string** | The currency of subscription | 
  **planIds** | **[]int32** | The filter ids of plan | 
  **amountStart** | **int32** | The filter start amount of subscription | 

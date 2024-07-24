@@ -4,15 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ExportColumns** | Pointer to **[]string** | ExportColumns, the export file column list, will export all columns if not specified | [optional] 
+**Format** | Pointer to **string** | The format of export file, xlsx|csv, will be xlsx if not specified | [optional] 
 **Payload** | Pointer to **map[string]string** | Payload | [optional] 
-**SkipColumnIndexes** | Pointer to **[]int32** | SkipColumnIndexes, the column will be skipped in the export file if its index specified, start from 0 | [optional] 
-**Task** | Pointer to **string** | Task,InvoiceExport|UserExport|SubscriptionExport|TransactionExport|DiscountExport|UserDiscountExport | [optional] 
+**Task** | **string** | Task,InvoiceExport|UserExport|SubscriptionExport|TransactionExport|DiscountExport|UserDiscountExport | 
 
 ## Methods
 
 ### NewUnibeeApiMerchantTaskNewReq
 
-`func NewUnibeeApiMerchantTaskNewReq() *UnibeeApiMerchantTaskNewReq`
+`func NewUnibeeApiMerchantTaskNewReq(task string, ) *UnibeeApiMerchantTaskNewReq`
 
 NewUnibeeApiMerchantTaskNewReq instantiates a new UnibeeApiMerchantTaskNewReq object
 This constructor will assign default values to properties that have it defined,
@@ -26,6 +27,56 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantTaskNewReqWithDefaults instantiates a new UnibeeApiMerchantTaskNewReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetExportColumns
+
+`func (o *UnibeeApiMerchantTaskNewReq) GetExportColumns() []string`
+
+GetExportColumns returns the ExportColumns field if non-nil, zero value otherwise.
+
+### GetExportColumnsOk
+
+`func (o *UnibeeApiMerchantTaskNewReq) GetExportColumnsOk() (*[]string, bool)`
+
+GetExportColumnsOk returns a tuple with the ExportColumns field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExportColumns
+
+`func (o *UnibeeApiMerchantTaskNewReq) SetExportColumns(v []string)`
+
+SetExportColumns sets ExportColumns field to given value.
+
+### HasExportColumns
+
+`func (o *UnibeeApiMerchantTaskNewReq) HasExportColumns() bool`
+
+HasExportColumns returns a boolean if a field has been set.
+
+### GetFormat
+
+`func (o *UnibeeApiMerchantTaskNewReq) GetFormat() string`
+
+GetFormat returns the Format field if non-nil, zero value otherwise.
+
+### GetFormatOk
+
+`func (o *UnibeeApiMerchantTaskNewReq) GetFormatOk() (*string, bool)`
+
+GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormat
+
+`func (o *UnibeeApiMerchantTaskNewReq) SetFormat(v string)`
+
+SetFormat sets Format field to given value.
+
+### HasFormat
+
+`func (o *UnibeeApiMerchantTaskNewReq) HasFormat() bool`
+
+HasFormat returns a boolean if a field has been set.
 
 ### GetPayload
 
@@ -52,31 +103,6 @@ SetPayload sets Payload field to given value.
 
 HasPayload returns a boolean if a field has been set.
 
-### GetSkipColumnIndexes
-
-`func (o *UnibeeApiMerchantTaskNewReq) GetSkipColumnIndexes() []int32`
-
-GetSkipColumnIndexes returns the SkipColumnIndexes field if non-nil, zero value otherwise.
-
-### GetSkipColumnIndexesOk
-
-`func (o *UnibeeApiMerchantTaskNewReq) GetSkipColumnIndexesOk() (*[]int32, bool)`
-
-GetSkipColumnIndexesOk returns a tuple with the SkipColumnIndexes field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSkipColumnIndexes
-
-`func (o *UnibeeApiMerchantTaskNewReq) SetSkipColumnIndexes(v []int32)`
-
-SetSkipColumnIndexes sets SkipColumnIndexes field to given value.
-
-### HasSkipColumnIndexes
-
-`func (o *UnibeeApiMerchantTaskNewReq) HasSkipColumnIndexes() bool`
-
-HasSkipColumnIndexes returns a boolean if a field has been set.
-
 ### GetTask
 
 `func (o *UnibeeApiMerchantTaskNewReq) GetTask() string`
@@ -96,11 +122,6 @@ and a boolean to check if the value has been set.
 
 SetTask sets Task field to given value.
 
-### HasTask
-
-`func (o *UnibeeApiMerchantTaskNewReq) HasTask() bool`
-
-HasTask returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

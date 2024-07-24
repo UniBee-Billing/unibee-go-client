@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **CryptoAmount** | Pointer to **int64** | crypto_amount, cent | [optional] 
 **CryptoCurrency** | Pointer to **string** | crypto_currency | [optional] 
 **Currency** | Pointer to **string** |  | [optional] 
+**Data** | Pointer to **string** |  | [optional] 
 **DayUtilDue** | Pointer to **int64** | day util due after finish | [optional] 
 **Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCodeSimplify**](UnibeeApiBeanMerchantDiscountCodeSimplify.md) |  | [optional] 
 **DiscountAmount** | Pointer to **int64** |  | [optional] 
@@ -42,6 +43,7 @@ Name | Type | Description | Notes
 **TotalAmount** | Pointer to **int64** |  | [optional] 
 **TotalAmountExcludingTax** | Pointer to **int64** |  | [optional] 
 **TrialEnd** | Pointer to **int64** | trial_end, utc time | [optional] 
+**VatNumber** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -236,6 +238,31 @@ SetCurrency sets Currency field to given value.
 `func (o *UnibeeApiBeanInvoiceSimplify) HasCurrency() bool`
 
 HasCurrency returns a boolean if a field has been set.
+
+### GetData
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetData() string`
+
+GetData returns the Data field if non-nil, zero value otherwise.
+
+### GetDataOk
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetDataOk() (*string, bool)`
+
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetData
+
+`func (o *UnibeeApiBeanInvoiceSimplify) SetData(v string)`
+
+SetData sets Data field to given value.
+
+### HasData
+
+`func (o *UnibeeApiBeanInvoiceSimplify) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 ### GetDayUtilDue
 
@@ -1011,6 +1038,31 @@ SetTrialEnd sets TrialEnd field to given value.
 `func (o *UnibeeApiBeanInvoiceSimplify) HasTrialEnd() bool`
 
 HasTrialEnd returns a boolean if a field has been set.
+
+### GetVatNumber
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetVatNumber() string`
+
+GetVatNumber returns the VatNumber field if non-nil, zero value otherwise.
+
+### GetVatNumberOk
+
+`func (o *UnibeeApiBeanInvoiceSimplify) GetVatNumberOk() (*string, bool)`
+
+GetVatNumberOk returns a tuple with the VatNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVatNumber
+
+`func (o *UnibeeApiBeanInvoiceSimplify) SetVatNumber(v string)`
+
+SetVatNumber sets VatNumber field to given value.
+
+### HasVatNumber
+
+`func (o *UnibeeApiBeanInvoiceSimplify) HasVatNumber() bool`
+
+HasVatNumber returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
