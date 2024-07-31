@@ -5,11 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonIds** | Pointer to **[]int64** | AddonIds | [optional] 
-**Addons** | Pointer to [**[]UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) | Addons | [optional] 
+**Addons** | Pointer to [**[]UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) | Addons | [optional] 
 **MetricPlanLimits** | Pointer to [**[]UnibeeApiBeanMerchantMetricPlanLimit**](UnibeeApiBeanMerchantMetricPlanLimit.md) | MetricPlanLimits | [optional] 
 **OnetimeAddonIds** | Pointer to **[]int64** | OneTimeAddonIds | [optional] 
-**OnetimeAddons** | Pointer to [**[]UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) | OneTimeAddons | [optional] 
-**Plan** | Pointer to [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
+**OnetimeAddons** | Pointer to [**[]UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) | OneTimeAddons | [optional] 
+**Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
+**Product** | Pointer to [**UnibeeApiBeanProduct**](UnibeeApiBeanProduct.md) |  | [optional] 
 
 ## Methods
 
@@ -57,20 +58,20 @@ HasAddonIds returns a boolean if a field has been set.
 
 ### GetAddons
 
-`func (o *UnibeeApiBeanDetailPlanDetail) GetAddons() []UnibeeApiBeanPlanSimplify`
+`func (o *UnibeeApiBeanDetailPlanDetail) GetAddons() []UnibeeApiBeanPlan`
 
 GetAddons returns the Addons field if non-nil, zero value otherwise.
 
 ### GetAddonsOk
 
-`func (o *UnibeeApiBeanDetailPlanDetail) GetAddonsOk() (*[]UnibeeApiBeanPlanSimplify, bool)`
+`func (o *UnibeeApiBeanDetailPlanDetail) GetAddonsOk() (*[]UnibeeApiBeanPlan, bool)`
 
 GetAddonsOk returns a tuple with the Addons field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddons
 
-`func (o *UnibeeApiBeanDetailPlanDetail) SetAddons(v []UnibeeApiBeanPlanSimplify)`
+`func (o *UnibeeApiBeanDetailPlanDetail) SetAddons(v []UnibeeApiBeanPlan)`
 
 SetAddons sets Addons field to given value.
 
@@ -132,20 +133,20 @@ HasOnetimeAddonIds returns a boolean if a field has been set.
 
 ### GetOnetimeAddons
 
-`func (o *UnibeeApiBeanDetailPlanDetail) GetOnetimeAddons() []UnibeeApiBeanPlanSimplify`
+`func (o *UnibeeApiBeanDetailPlanDetail) GetOnetimeAddons() []UnibeeApiBeanPlan`
 
 GetOnetimeAddons returns the OnetimeAddons field if non-nil, zero value otherwise.
 
 ### GetOnetimeAddonsOk
 
-`func (o *UnibeeApiBeanDetailPlanDetail) GetOnetimeAddonsOk() (*[]UnibeeApiBeanPlanSimplify, bool)`
+`func (o *UnibeeApiBeanDetailPlanDetail) GetOnetimeAddonsOk() (*[]UnibeeApiBeanPlan, bool)`
 
 GetOnetimeAddonsOk returns a tuple with the OnetimeAddons field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOnetimeAddons
 
-`func (o *UnibeeApiBeanDetailPlanDetail) SetOnetimeAddons(v []UnibeeApiBeanPlanSimplify)`
+`func (o *UnibeeApiBeanDetailPlanDetail) SetOnetimeAddons(v []UnibeeApiBeanPlan)`
 
 SetOnetimeAddons sets OnetimeAddons field to given value.
 
@@ -157,20 +158,20 @@ HasOnetimeAddons returns a boolean if a field has been set.
 
 ### GetPlan
 
-`func (o *UnibeeApiBeanDetailPlanDetail) GetPlan() UnibeeApiBeanPlanSimplify`
+`func (o *UnibeeApiBeanDetailPlanDetail) GetPlan() UnibeeApiBeanPlan`
 
 GetPlan returns the Plan field if non-nil, zero value otherwise.
 
 ### GetPlanOk
 
-`func (o *UnibeeApiBeanDetailPlanDetail) GetPlanOk() (*UnibeeApiBeanPlanSimplify, bool)`
+`func (o *UnibeeApiBeanDetailPlanDetail) GetPlanOk() (*UnibeeApiBeanPlan, bool)`
 
 GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlan
 
-`func (o *UnibeeApiBeanDetailPlanDetail) SetPlan(v UnibeeApiBeanPlanSimplify)`
+`func (o *UnibeeApiBeanDetailPlanDetail) SetPlan(v UnibeeApiBeanPlan)`
 
 SetPlan sets Plan field to given value.
 
@@ -179,6 +180,31 @@ SetPlan sets Plan field to given value.
 `func (o *UnibeeApiBeanDetailPlanDetail) HasPlan() bool`
 
 HasPlan returns a boolean if a field has been set.
+
+### GetProduct
+
+`func (o *UnibeeApiBeanDetailPlanDetail) GetProduct() UnibeeApiBeanProduct`
+
+GetProduct returns the Product field if non-nil, zero value otherwise.
+
+### GetProductOk
+
+`func (o *UnibeeApiBeanDetailPlanDetail) GetProductOk() (*UnibeeApiBeanProduct, bool)`
+
+GetProductOk returns a tuple with the Product field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProduct
+
+`func (o *UnibeeApiBeanDetailPlanDetail) SetProduct(v UnibeeApiBeanProduct)`
+
+SetProduct sets Product field to given value.
+
+### HasProduct
+
+`func (o *UnibeeApiBeanDetailPlanDetail) HasProduct() bool`
+
+HasProduct returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

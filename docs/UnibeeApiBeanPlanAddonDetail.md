@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AddonPlan** | Pointer to [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
+**AddonPlan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
 **Quantity** | Pointer to **int64** | Quantity | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAddonPlan
 
-`func (o *UnibeeApiBeanPlanAddonDetail) GetAddonPlan() UnibeeApiBeanPlanSimplify`
+`func (o *UnibeeApiBeanPlanAddonDetail) GetAddonPlan() UnibeeApiBeanPlan`
 
 GetAddonPlan returns the AddonPlan field if non-nil, zero value otherwise.
 
 ### GetAddonPlanOk
 
-`func (o *UnibeeApiBeanPlanAddonDetail) GetAddonPlanOk() (*UnibeeApiBeanPlanSimplify, bool)`
+`func (o *UnibeeApiBeanPlanAddonDetail) GetAddonPlanOk() (*UnibeeApiBeanPlan, bool)`
 
 GetAddonPlanOk returns a tuple with the AddonPlan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddonPlan
 
-`func (o *UnibeeApiBeanPlanAddonDetail) SetAddonPlan(v UnibeeApiBeanPlanSimplify)`
+`func (o *UnibeeApiBeanPlanAddonDetail) SetAddonPlan(v UnibeeApiBeanPlan)`
 
 SetAddonPlan sets AddonPlan field to given value.
 

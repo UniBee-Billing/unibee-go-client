@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Templates** | Pointer to [**[]UnibeeApiBeanMerchantBatchExportTemplateSimplify**](UnibeeApiBeanMerchantBatchExportTemplateSimplify.md) | Merchant Member Export Template List | [optional] 
+**Templates** | Pointer to [**[]UnibeeApiBeanMerchantBatchExportTemplate**](UnibeeApiBeanMerchantBatchExportTemplate.md) | Merchant Member Export Template List | [optional] 
 **Total** | Pointer to **int32** | Total | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetTemplates
 
-`func (o *UnibeeApiMerchantTaskExportTemplateListRes) GetTemplates() []UnibeeApiBeanMerchantBatchExportTemplateSimplify`
+`func (o *UnibeeApiMerchantTaskExportTemplateListRes) GetTemplates() []UnibeeApiBeanMerchantBatchExportTemplate`
 
 GetTemplates returns the Templates field if non-nil, zero value otherwise.
 
 ### GetTemplatesOk
 
-`func (o *UnibeeApiMerchantTaskExportTemplateListRes) GetTemplatesOk() (*[]UnibeeApiBeanMerchantBatchExportTemplateSimplify, bool)`
+`func (o *UnibeeApiMerchantTaskExportTemplateListRes) GetTemplatesOk() (*[]UnibeeApiBeanMerchantBatchExportTemplate, bool)`
 
 GetTemplatesOk returns a tuple with the Templates field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTemplates
 
-`func (o *UnibeeApiMerchantTaskExportTemplateListRes) SetTemplates(v []UnibeeApiBeanMerchantBatchExportTemplateSimplify)`
+`func (o *UnibeeApiMerchantTaskExportTemplateListRes) SetTemplates(v []UnibeeApiBeanMerchantBatchExportTemplate)`
 
 SetTemplates sets Templates field to given value.
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**User** | Pointer to [**UnibeeApiBeanUserAccountSimplify**](UnibeeApiBeanUserAccountSimplify.md) |  | [optional] 
+**User** | Pointer to [**UnibeeApiBeanUserAccount**](UnibeeApiBeanUserAccount.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetUser
 
-`func (o *UnibeeApiMerchantUserNewRes) GetUser() UnibeeApiBeanUserAccountSimplify`
+`func (o *UnibeeApiMerchantUserNewRes) GetUser() UnibeeApiBeanUserAccount`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *UnibeeApiMerchantUserNewRes) GetUserOk() (*UnibeeApiBeanUserAccountSimplify, bool)`
+`func (o *UnibeeApiMerchantUserNewRes) GetUserOk() (*UnibeeApiBeanUserAccount, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *UnibeeApiMerchantUserNewRes) SetUser(v UnibeeApiBeanUserAccountSimplify)`
+`func (o *UnibeeApiMerchantUserNewRes) SetUser(v UnibeeApiBeanUserAccount)`
 
 SetUser sets User field to given value.
 

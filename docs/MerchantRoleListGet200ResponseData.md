@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MerchantRoles** | Pointer to [**[]UnibeeApiBeanMerchantRoleSimplify**](UnibeeApiBeanMerchantRoleSimplify.md) | Merchant Roles | [optional] 
+**MerchantRoles** | Pointer to [**[]UnibeeApiBeanMerchantRole**](UnibeeApiBeanMerchantRole.md) | Merchant Roles | [optional] 
 **Total** | Pointer to **int32** | Total | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMerchantRoles
 
-`func (o *MerchantRoleListGet200ResponseData) GetMerchantRoles() []UnibeeApiBeanMerchantRoleSimplify`
+`func (o *MerchantRoleListGet200ResponseData) GetMerchantRoles() []UnibeeApiBeanMerchantRole`
 
 GetMerchantRoles returns the MerchantRoles field if non-nil, zero value otherwise.
 
 ### GetMerchantRolesOk
 
-`func (o *MerchantRoleListGet200ResponseData) GetMerchantRolesOk() (*[]UnibeeApiBeanMerchantRoleSimplify, bool)`
+`func (o *MerchantRoleListGet200ResponseData) GetMerchantRolesOk() (*[]UnibeeApiBeanMerchantRole, bool)`
 
 GetMerchantRolesOk returns a tuple with the MerchantRoles field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantRoles
 
-`func (o *MerchantRoleListGet200ResponseData) SetMerchantRoles(v []UnibeeApiBeanMerchantRoleSimplify)`
+`func (o *MerchantRoleListGet200ResponseData) SetMerchantRoles(v []UnibeeApiBeanMerchantRole)`
 
 SetMerchantRoles sets MerchantRoles field to given value.
 

@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Currency** | Pointer to [**[]UnibeeApiBeanCurrency**](UnibeeApiBeanCurrency.md) | Currency List | [optional] 
-**MemberRoles** | Pointer to [**[]UnibeeApiBeanMerchantRoleSimplify**](UnibeeApiBeanMerchantRoleSimplify.md) | The member&#39;s role list&#39; | [optional] 
+**MemberRoles** | Pointer to [**[]UnibeeApiBeanMerchantRole**](UnibeeApiBeanMerchantRole.md) | The member&#39;s role list&#39; | [optional] 
 **TimeZone** | Pointer to **[]string** | TimeZone List | [optional] 
 **Env** | Pointer to **string** | System Env, em: daily|stage|local|prod | [optional] 
-**Gateways** | Pointer to [**[]UnibeeApiBeanGatewaySimplify**](UnibeeApiBeanGatewaySimplify.md) | Gateway List | [optional] 
+**Gateways** | Pointer to [**[]UnibeeApiBeanGateway**](UnibeeApiBeanGateway.md) | Gateway List | [optional] 
 **IsOwner** | Pointer to **bool** | Check Member is Owner | [optional] 
 **IsProd** | Pointer to **bool** | Check System Env Is Prod, true|false | [optional] 
-**Merchant** | Pointer to [**UnibeeApiBeanMerchantSimplify**](UnibeeApiBeanMerchantSimplify.md) |  | [optional] 
+**Merchant** | Pointer to [**UnibeeApiBeanMerchant**](UnibeeApiBeanMerchant.md) |  | [optional] 
 **MerchantMember** | Pointer to [**UnibeeApiBeanDetailMerchantMemberDetail**](UnibeeApiBeanDetailMerchantMemberDetail.md) |  | [optional] 
 **OpenApiKey** | Pointer to **string** | OpenApiKey | [optional] 
 **SegmentServerSideKey** | Pointer to **string** | SegmentServerSideKey | [optional] 
@@ -65,20 +65,20 @@ HasCurrency returns a boolean if a field has been set.
 
 ### GetMemberRoles
 
-`func (o *UnibeeApiMerchantProfileGetRes) GetMemberRoles() []UnibeeApiBeanMerchantRoleSimplify`
+`func (o *UnibeeApiMerchantProfileGetRes) GetMemberRoles() []UnibeeApiBeanMerchantRole`
 
 GetMemberRoles returns the MemberRoles field if non-nil, zero value otherwise.
 
 ### GetMemberRolesOk
 
-`func (o *UnibeeApiMerchantProfileGetRes) GetMemberRolesOk() (*[]UnibeeApiBeanMerchantRoleSimplify, bool)`
+`func (o *UnibeeApiMerchantProfileGetRes) GetMemberRolesOk() (*[]UnibeeApiBeanMerchantRole, bool)`
 
 GetMemberRolesOk returns a tuple with the MemberRoles field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMemberRoles
 
-`func (o *UnibeeApiMerchantProfileGetRes) SetMemberRoles(v []UnibeeApiBeanMerchantRoleSimplify)`
+`func (o *UnibeeApiMerchantProfileGetRes) SetMemberRoles(v []UnibeeApiBeanMerchantRole)`
 
 SetMemberRoles sets MemberRoles field to given value.
 
@@ -140,20 +140,20 @@ HasEnv returns a boolean if a field has been set.
 
 ### GetGateways
 
-`func (o *UnibeeApiMerchantProfileGetRes) GetGateways() []UnibeeApiBeanGatewaySimplify`
+`func (o *UnibeeApiMerchantProfileGetRes) GetGateways() []UnibeeApiBeanGateway`
 
 GetGateways returns the Gateways field if non-nil, zero value otherwise.
 
 ### GetGatewaysOk
 
-`func (o *UnibeeApiMerchantProfileGetRes) GetGatewaysOk() (*[]UnibeeApiBeanGatewaySimplify, bool)`
+`func (o *UnibeeApiMerchantProfileGetRes) GetGatewaysOk() (*[]UnibeeApiBeanGateway, bool)`
 
 GetGatewaysOk returns a tuple with the Gateways field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGateways
 
-`func (o *UnibeeApiMerchantProfileGetRes) SetGateways(v []UnibeeApiBeanGatewaySimplify)`
+`func (o *UnibeeApiMerchantProfileGetRes) SetGateways(v []UnibeeApiBeanGateway)`
 
 SetGateways sets Gateways field to given value.
 
@@ -215,20 +215,20 @@ HasIsProd returns a boolean if a field has been set.
 
 ### GetMerchant
 
-`func (o *UnibeeApiMerchantProfileGetRes) GetMerchant() UnibeeApiBeanMerchantSimplify`
+`func (o *UnibeeApiMerchantProfileGetRes) GetMerchant() UnibeeApiBeanMerchant`
 
 GetMerchant returns the Merchant field if non-nil, zero value otherwise.
 
 ### GetMerchantOk
 
-`func (o *UnibeeApiMerchantProfileGetRes) GetMerchantOk() (*UnibeeApiBeanMerchantSimplify, bool)`
+`func (o *UnibeeApiMerchantProfileGetRes) GetMerchantOk() (*UnibeeApiBeanMerchant, bool)`
 
 GetMerchantOk returns a tuple with the Merchant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchant
 
-`func (o *UnibeeApiMerchantProfileGetRes) SetMerchant(v UnibeeApiBeanMerchantSimplify)`
+`func (o *UnibeeApiMerchantProfileGetRes) SetMerchant(v UnibeeApiBeanMerchant)`
 
 SetMerchant sets Merchant field to given value.
 

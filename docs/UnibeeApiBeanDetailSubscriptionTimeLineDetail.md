@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **PeriodEndTime** | Pointer to **string** | period end (datatime) | [optional] 
 **PeriodStart** | Pointer to **int64** | period_start | [optional] 
 **PeriodStartTime** | Pointer to **string** | period start (datetime) | [optional] 
-**Plan** | Pointer to [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
+**Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
 **PlanId** | Pointer to **int64** | PlanId | [optional] 
 **Quantity** | Pointer to **int64** | quantity | [optional] 
 **Status** | Pointer to **int32** | 1-processing,2-finish,3-cancelled,4-expired | [optional] 
@@ -319,20 +319,20 @@ HasPeriodStartTime returns a boolean if a field has been set.
 
 ### GetPlan
 
-`func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetPlan() UnibeeApiBeanPlanSimplify`
+`func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetPlan() UnibeeApiBeanPlan`
 
 GetPlan returns the Plan field if non-nil, zero value otherwise.
 
 ### GetPlanOk
 
-`func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetPlanOk() (*UnibeeApiBeanPlanSimplify, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) GetPlanOk() (*UnibeeApiBeanPlan, bool)`
 
 GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlan
 
-`func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) SetPlan(v UnibeeApiBeanPlanSimplify)`
+`func (o *UnibeeApiBeanDetailSubscriptionTimeLineDetail) SetPlan(v UnibeeApiBeanPlan)`
 
 SetPlan sets Plan field to given value.
 

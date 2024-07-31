@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Configs** | Pointer to [**[]UnibeeApiBeanMerchantCountryConfigSimplify**](UnibeeApiBeanMerchantCountryConfigSimplify.md) | Configs | [optional] 
+**Configs** | Pointer to [**[]UnibeeApiBeanMerchantCountryConfig**](UnibeeApiBeanMerchantCountryConfig.md) | Configs | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetConfigs
 
-`func (o *UnibeeApiMerchantProfileCountryConfigListRes) GetConfigs() []UnibeeApiBeanMerchantCountryConfigSimplify`
+`func (o *UnibeeApiMerchantProfileCountryConfigListRes) GetConfigs() []UnibeeApiBeanMerchantCountryConfig`
 
 GetConfigs returns the Configs field if non-nil, zero value otherwise.
 
 ### GetConfigsOk
 
-`func (o *UnibeeApiMerchantProfileCountryConfigListRes) GetConfigsOk() (*[]UnibeeApiBeanMerchantCountryConfigSimplify, bool)`
+`func (o *UnibeeApiMerchantProfileCountryConfigListRes) GetConfigsOk() (*[]UnibeeApiBeanMerchantCountryConfig, bool)`
 
 GetConfigsOk returns a tuple with the Configs field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfigs
 
-`func (o *UnibeeApiMerchantProfileCountryConfigListRes) SetConfigs(v []UnibeeApiBeanMerchantCountryConfigSimplify)`
+`func (o *UnibeeApiMerchantProfileCountryConfigListRes) SetConfigs(v []UnibeeApiBeanMerchantCountryConfig)`
 
 SetConfigs sets Configs field to given value.
 

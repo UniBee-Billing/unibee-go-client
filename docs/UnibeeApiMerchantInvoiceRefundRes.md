@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Refund** | Pointer to [**UnibeeApiBeanRefundSimplify**](UnibeeApiBeanRefundSimplify.md) |  | [optional] 
+**Refund** | Pointer to [**UnibeeApiBeanRefund**](UnibeeApiBeanRefund.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRefund
 
-`func (o *UnibeeApiMerchantInvoiceRefundRes) GetRefund() UnibeeApiBeanRefundSimplify`
+`func (o *UnibeeApiMerchantInvoiceRefundRes) GetRefund() UnibeeApiBeanRefund`
 
 GetRefund returns the Refund field if non-nil, zero value otherwise.
 
 ### GetRefundOk
 
-`func (o *UnibeeApiMerchantInvoiceRefundRes) GetRefundOk() (*UnibeeApiBeanRefundSimplify, bool)`
+`func (o *UnibeeApiMerchantInvoiceRefundRes) GetRefundOk() (*UnibeeApiBeanRefund, bool)`
 
 GetRefundOk returns a tuple with the Refund field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRefund
 
-`func (o *UnibeeApiMerchantInvoiceRefundRes) SetRefund(v UnibeeApiBeanRefundSimplify)`
+`func (o *UnibeeApiMerchantInvoiceRefundRes) SetRefund(v UnibeeApiBeanRefund)`
 
 SetRefund sets Refund field to given value.
 

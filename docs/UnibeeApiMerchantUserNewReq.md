@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Email** | **string** | Email | 
 **ExternalUserId** | Pointer to **string** | ExternalUserId | [optional] 
 **FirstName** | Pointer to **string** | First Name | [optional] 
+**Language** | Pointer to **string** | Language | [optional] 
 **LastName** | Pointer to **string** | Last Name | [optional] 
 **Password** | Pointer to **string** | Password | [optional] 
 **Phone** | Pointer to **string** | Phone | [optional] 
@@ -125,6 +126,31 @@ SetFirstName sets FirstName field to given value.
 `func (o *UnibeeApiMerchantUserNewReq) HasFirstName() bool`
 
 HasFirstName returns a boolean if a field has been set.
+
+### GetLanguage
+
+`func (o *UnibeeApiMerchantUserNewReq) GetLanguage() string`
+
+GetLanguage returns the Language field if non-nil, zero value otherwise.
+
+### GetLanguageOk
+
+`func (o *UnibeeApiMerchantUserNewReq) GetLanguageOk() (*string, bool)`
+
+GetLanguageOk returns a tuple with the Language field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLanguage
+
+`func (o *UnibeeApiMerchantUserNewReq) SetLanguage(v string)`
+
+SetLanguage sets Language field to given value.
+
+### HasLanguage
+
+`func (o *UnibeeApiMerchantUserNewReq) HasLanguage() bool`
+
+HasLanguage returns a boolean if a field has been set.
 
 ### GetLastName
 

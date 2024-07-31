@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**DiscountEditPost**](Discount.md#DiscountEditPost) | **Post** /merchant/discount/edit | EditDiscountCode
 [**DiscountListGet**](Discount.md#DiscountListGet) | **Get** /merchant/discount/list | DiscountCodeList
 [**DiscountNewPost**](Discount.md#DiscountNewPost) | **Post** /merchant/discount/new | NewDiscountCode
+[**DiscountPlanApplyPreviewPost**](Discount.md#DiscountPlanApplyPreviewPost) | **Post** /merchant/discount/plan_apply_preview | PlanApplyPreview
 [**DiscountUserDiscountListGet**](Discount.md#DiscountUserDiscountListGet) | **Get** /merchant/discount/user_discount_list | UserDiscountCodeList
 
 
@@ -545,6 +546,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantDiscountEditPost200Response**](MerchantDiscountEditPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DiscountPlanApplyPreviewPost
+
+> MerchantDiscountPlanApplyPreviewPost200Response DiscountPlanApplyPreviewPost(ctx).UnibeeApiMerchantDiscountPlanApplyPreviewReq(unibeeApiMerchantDiscountPlanApplyPreviewReq).Execute()
+
+PlanApplyPreview
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantDiscountPlanApplyPreviewReq := *openapiclient.NewUnibeeApiMerchantDiscountPlanApplyPreviewReq("Code_example") // UnibeeApiMerchantDiscountPlanApplyPreviewReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Discount.DiscountPlanApplyPreviewPost(context.Background()).UnibeeApiMerchantDiscountPlanApplyPreviewReq(unibeeApiMerchantDiscountPlanApplyPreviewReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Discount.DiscountPlanApplyPreviewPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DiscountPlanApplyPreviewPost`: MerchantDiscountPlanApplyPreviewPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Discount.DiscountPlanApplyPreviewPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDiscountPlanApplyPreviewPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantDiscountPlanApplyPreviewReq** | [**UnibeeApiMerchantDiscountPlanApplyPreviewReq**](UnibeeApiMerchantDiscountPlanApplyPreviewReq.md) |  | 
+
+### Return type
+
+[**MerchantDiscountPlanApplyPreviewPost200Response**](MerchantDiscountPlanApplyPreviewPost200Response.md)
 
 ### Authorization
 

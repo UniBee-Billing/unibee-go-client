@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MatchInvoice** | Pointer to [**[]UnibeeApiBeanInvoiceSimplify**](UnibeeApiBeanInvoiceSimplify.md) | MatchInvoice | [optional] 
+**MatchInvoice** | Pointer to [**[]UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) | MatchInvoice | [optional] 
 **MatchUserAccounts** | Pointer to [**[]UnibeeApiBeanDetailUserAccountDetail**](UnibeeApiBeanDetailUserAccountDetail.md) | MatchUserAccounts | [optional] 
 **PrecisionMatchObject** | Pointer to [**UnibeeApiMerchantSearchPrecisionMatchObject**](UnibeeApiMerchantSearchPrecisionMatchObject.md) |  | [optional] 
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMatchInvoice
 
-`func (o *UnibeeApiMerchantSearchSearchRes) GetMatchInvoice() []UnibeeApiBeanInvoiceSimplify`
+`func (o *UnibeeApiMerchantSearchSearchRes) GetMatchInvoice() []UnibeeApiBeanInvoice`
 
 GetMatchInvoice returns the MatchInvoice field if non-nil, zero value otherwise.
 
 ### GetMatchInvoiceOk
 
-`func (o *UnibeeApiMerchantSearchSearchRes) GetMatchInvoiceOk() (*[]UnibeeApiBeanInvoiceSimplify, bool)`
+`func (o *UnibeeApiMerchantSearchSearchRes) GetMatchInvoiceOk() (*[]UnibeeApiBeanInvoice, bool)`
 
 GetMatchInvoiceOk returns a tuple with the MatchInvoice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMatchInvoice
 
-`func (o *UnibeeApiMerchantSearchSearchRes) SetMatchInvoice(v []UnibeeApiBeanInvoiceSimplify)`
+`func (o *UnibeeApiMerchantSearchSearchRes) SetMatchInvoice(v []UnibeeApiBeanInvoice)`
 
 SetMatchInvoice sets MatchInvoice field to given value.
 

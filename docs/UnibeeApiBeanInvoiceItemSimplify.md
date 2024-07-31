@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **OriginAmount** | Pointer to **int64** |  | [optional] 
 **PeriodEnd** | Pointer to **int64** |  | [optional] 
 **PeriodStart** | Pointer to **int64** |  | [optional] 
-**Plan** | Pointer to [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
+**Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
 **Proration** | Pointer to **bool** |  | [optional] 
 **Quantity** | Pointer to **int64** |  | [optional] 
 **Tax** | Pointer to **int64** |  | [optional] 
@@ -266,20 +266,20 @@ HasPeriodStart returns a boolean if a field has been set.
 
 ### GetPlan
 
-`func (o *UnibeeApiBeanInvoiceItemSimplify) GetPlan() UnibeeApiBeanPlanSimplify`
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetPlan() UnibeeApiBeanPlan`
 
 GetPlan returns the Plan field if non-nil, zero value otherwise.
 
 ### GetPlanOk
 
-`func (o *UnibeeApiBeanInvoiceItemSimplify) GetPlanOk() (*UnibeeApiBeanPlanSimplify, bool)`
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetPlanOk() (*UnibeeApiBeanPlan, bool)`
 
 GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlan
 
-`func (o *UnibeeApiBeanInvoiceItemSimplify) SetPlan(v UnibeeApiBeanPlanSimplify)`
+`func (o *UnibeeApiBeanInvoiceItemSimplify) SetPlan(v UnibeeApiBeanPlan)`
 
 SetPlan sets Plan field to given value.
 

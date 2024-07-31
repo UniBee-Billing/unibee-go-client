@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MerchantMetrics** | Pointer to [**[]UnibeeApiBeanMerchantMetricSimplify**](UnibeeApiBeanMerchantMetricSimplify.md) | MerchantMetrics | [optional] 
+**MerchantMetrics** | Pointer to [**[]UnibeeApiBeanMerchantMetric**](UnibeeApiBeanMerchantMetric.md) | MerchantMetrics | [optional] 
 **Total** | Pointer to **int32** | Total | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMerchantMetrics
 
-`func (o *UnibeeApiMerchantMetricListRes) GetMerchantMetrics() []UnibeeApiBeanMerchantMetricSimplify`
+`func (o *UnibeeApiMerchantMetricListRes) GetMerchantMetrics() []UnibeeApiBeanMerchantMetric`
 
 GetMerchantMetrics returns the MerchantMetrics field if non-nil, zero value otherwise.
 
 ### GetMerchantMetricsOk
 
-`func (o *UnibeeApiMerchantMetricListRes) GetMerchantMetricsOk() (*[]UnibeeApiBeanMerchantMetricSimplify, bool)`
+`func (o *UnibeeApiMerchantMetricListRes) GetMerchantMetricsOk() (*[]UnibeeApiBeanMerchantMetric, bool)`
 
 GetMerchantMetricsOk returns a tuple with the MerchantMetrics field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantMetrics
 
-`func (o *UnibeeApiMerchantMetricListRes) SetMerchantMetrics(v []UnibeeApiBeanMerchantMetricSimplify)`
+`func (o *UnibeeApiMerchantMetricListRes) SetMerchantMetrics(v []UnibeeApiBeanMerchantMetric)`
 
 SetMerchantMetrics sets MerchantMetrics field to given value.
 

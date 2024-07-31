@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **ConfirmTotalAmount** | Pointer to **int64** | TotalAmount to verify if provide | [optional] 
 **Discount** | Pointer to [**UnibeeApiBeanExternalDiscountParam**](UnibeeApiBeanExternalDiscountParam.md) |  | [optional] 
 **DiscountCode** | Pointer to **string** | DiscountCode | [optional] 
-**Email** | Pointer to **string** | Email, either ExternalUserId&amp;Email or UserId needed | [optional] 
-**ExternalUserId** | Pointer to **string** | ExternalUserId, unique, either ExternalUserId&amp;Email or UserId needed | [optional] 
+**Email** | Pointer to **string** | Email, one of ExternalUserId&amp;Email, UserId or User needed | [optional] 
+**ExternalUserId** | Pointer to **string** | ExternalUserId, unique, one of ExternalUserId&amp;Email, UserId or User needed | [optional] 
 **GatewayId** | Pointer to **int32** | GatewayId | [optional] 
 **Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
 **PaymentMethodId** | Pointer to **string** | PaymentMethodId | [optional] 
@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **StartIncomplete** | Pointer to **bool** | StartIncomplete, use now pay later, subscription will generate invoice and start with incomplete status if set | [optional] 
 **TaxPercentage** | Pointer to **int32** | TaxPercentage，1000 &#x3D; 10%, override subscription taxPercentage if provide | [optional] 
 **TrialEnd** | Pointer to **int64** | trial_end, utc time | [optional] 
+**User** | Pointer to [**UnibeeApiBeanNewUser**](UnibeeApiBeanNewUser.md) |  | [optional] 
 **UserId** | Pointer to **int64** | UserId | [optional] 
 **VatCountryCode** | Pointer to **string** | VatCountryCode, CountryName | [optional] 
 **VatNumber** | Pointer to **string** | VatNumber | [optional] 
@@ -489,6 +490,31 @@ SetTrialEnd sets TrialEnd field to given value.
 `func (o *UnibeeApiMerchantSubscriptionCreateReq) HasTrialEnd() bool`
 
 HasTrialEnd returns a boolean if a field has been set.
+
+### GetUser
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetUser() UnibeeApiBeanNewUser`
+
+GetUser returns the User field if non-nil, zero value otherwise.
+
+### GetUserOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetUserOk() (*UnibeeApiBeanNewUser, bool)`
+
+GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUser
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) SetUser(v UnibeeApiBeanNewUser)`
+
+SetUser sets User field to given value.
+
+### HasUser
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) HasUser() bool`
+
+HasUser returns a boolean if a field has been set.
 
 ### GetUserId
 

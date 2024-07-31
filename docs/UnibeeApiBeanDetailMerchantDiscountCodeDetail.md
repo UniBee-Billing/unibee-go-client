@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **Metadata** | Pointer to **map[string]string** |  | [optional] 
 **Name** | Pointer to **string** | name | [optional] 
 **PlanIds** | Pointer to **[]int64** | Ids of plan which discount code can effect, default effect all plans if not set | [optional] 
-**Plans** | Pointer to [**[]UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) | plans which discount code can effect, default effect all plans if not set | [optional] 
+**Plans** | Pointer to [**[]UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) | plans which discount code can effect, default effect all plans if not set | [optional] 
 **StartTime** | Pointer to **int64** | start of discount available utc time | [optional] 
 **Status** | Pointer to **int32** | status, 1-editable, 2-active, 3-deactive, 4-expire | [optional] 
 
@@ -393,20 +393,20 @@ HasPlanIds returns a boolean if a field has been set.
 
 ### GetPlans
 
-`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetPlans() []UnibeeApiBeanPlanSimplify`
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetPlans() []UnibeeApiBeanPlan`
 
 GetPlans returns the Plans field if non-nil, zero value otherwise.
 
 ### GetPlansOk
 
-`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetPlansOk() (*[]UnibeeApiBeanPlanSimplify, bool)`
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetPlansOk() (*[]UnibeeApiBeanPlan, bool)`
 
 GetPlansOk returns a tuple with the Plans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlans
 
-`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) SetPlans(v []UnibeeApiBeanPlanSimplify)`
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) SetPlans(v []UnibeeApiBeanPlan)`
 
 SetPlans sets Plans field to given value.
 

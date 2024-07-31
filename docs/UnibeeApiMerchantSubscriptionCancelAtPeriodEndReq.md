@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ProductId** | Pointer to **int64** | default product will use if productId not specified and subscriptionId is blank | [optional] 
 **SubscriptionId** | Pointer to **string** | SubscriptionId, id of subscription, either SubscriptionId or UserId needed, The only one active subscription of userId will effect | [optional] 
 **UserId** | Pointer to **int64** | UserId, either SubscriptionId or UserId needed, The only one active subscription will effect if userId provide instead of subscriptionId | [optional] 
 
@@ -25,6 +26,31 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantSubscriptionCancelAtPeriodEndReqWithDefaults instantiates a new UnibeeApiMerchantSubscriptionCancelAtPeriodEndReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetProductId
+
+`func (o *UnibeeApiMerchantSubscriptionCancelAtPeriodEndReq) GetProductId() int64`
+
+GetProductId returns the ProductId field if non-nil, zero value otherwise.
+
+### GetProductIdOk
+
+`func (o *UnibeeApiMerchantSubscriptionCancelAtPeriodEndReq) GetProductIdOk() (*int64, bool)`
+
+GetProductIdOk returns a tuple with the ProductId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProductId
+
+`func (o *UnibeeApiMerchantSubscriptionCancelAtPeriodEndReq) SetProductId(v int64)`
+
+SetProductId sets ProductId field to given value.
+
+### HasProductId
+
+`func (o *UnibeeApiMerchantSubscriptionCancelAtPeriodEndReq) HasProductId() bool`
+
+HasProductId returns a boolean if a field has been set.
 
 ### GetSubscriptionId
 

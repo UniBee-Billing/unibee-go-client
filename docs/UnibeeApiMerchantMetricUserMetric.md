@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Addons** | Pointer to [**[]UnibeeApiBeanPlanAddonDetail**](UnibeeApiBeanPlanAddonDetail.md) | Addon | [optional] 
 **IsPaid** | Pointer to **bool** | IsPaid | [optional] 
-**Plan** | Pointer to [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
-**Subscription** | Pointer to [**UnibeeApiBeanSubscriptionSimplify**](UnibeeApiBeanSubscriptionSimplify.md) |  | [optional] 
-**User** | Pointer to [**UnibeeApiBeanUserAccountSimplify**](UnibeeApiBeanUserAccountSimplify.md) |  | [optional] 
+**Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
+**Subscription** | Pointer to [**UnibeeApiBeanSubscription**](UnibeeApiBeanSubscription.md) |  | [optional] 
+**User** | Pointer to [**UnibeeApiBeanUserAccount**](UnibeeApiBeanUserAccount.md) |  | [optional] 
 **UserMerchantMetricStats** | Pointer to [**[]UnibeeApiBeanUserMerchantMetricStat**](UnibeeApiBeanUserMerchantMetricStat.md) | UserMerchantMetricStats | [optional] 
 
 ## Methods
@@ -82,20 +82,20 @@ HasIsPaid returns a boolean if a field has been set.
 
 ### GetPlan
 
-`func (o *UnibeeApiMerchantMetricUserMetric) GetPlan() UnibeeApiBeanPlanSimplify`
+`func (o *UnibeeApiMerchantMetricUserMetric) GetPlan() UnibeeApiBeanPlan`
 
 GetPlan returns the Plan field if non-nil, zero value otherwise.
 
 ### GetPlanOk
 
-`func (o *UnibeeApiMerchantMetricUserMetric) GetPlanOk() (*UnibeeApiBeanPlanSimplify, bool)`
+`func (o *UnibeeApiMerchantMetricUserMetric) GetPlanOk() (*UnibeeApiBeanPlan, bool)`
 
 GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlan
 
-`func (o *UnibeeApiMerchantMetricUserMetric) SetPlan(v UnibeeApiBeanPlanSimplify)`
+`func (o *UnibeeApiMerchantMetricUserMetric) SetPlan(v UnibeeApiBeanPlan)`
 
 SetPlan sets Plan field to given value.
 
@@ -107,20 +107,20 @@ HasPlan returns a boolean if a field has been set.
 
 ### GetSubscription
 
-`func (o *UnibeeApiMerchantMetricUserMetric) GetSubscription() UnibeeApiBeanSubscriptionSimplify`
+`func (o *UnibeeApiMerchantMetricUserMetric) GetSubscription() UnibeeApiBeanSubscription`
 
 GetSubscription returns the Subscription field if non-nil, zero value otherwise.
 
 ### GetSubscriptionOk
 
-`func (o *UnibeeApiMerchantMetricUserMetric) GetSubscriptionOk() (*UnibeeApiBeanSubscriptionSimplify, bool)`
+`func (o *UnibeeApiMerchantMetricUserMetric) GetSubscriptionOk() (*UnibeeApiBeanSubscription, bool)`
 
 GetSubscriptionOk returns a tuple with the Subscription field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubscription
 
-`func (o *UnibeeApiMerchantMetricUserMetric) SetSubscription(v UnibeeApiBeanSubscriptionSimplify)`
+`func (o *UnibeeApiMerchantMetricUserMetric) SetSubscription(v UnibeeApiBeanSubscription)`
 
 SetSubscription sets Subscription field to given value.
 
@@ -132,20 +132,20 @@ HasSubscription returns a boolean if a field has been set.
 
 ### GetUser
 
-`func (o *UnibeeApiMerchantMetricUserMetric) GetUser() UnibeeApiBeanUserAccountSimplify`
+`func (o *UnibeeApiMerchantMetricUserMetric) GetUser() UnibeeApiBeanUserAccount`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *UnibeeApiMerchantMetricUserMetric) GetUserOk() (*UnibeeApiBeanUserAccountSimplify, bool)`
+`func (o *UnibeeApiMerchantMetricUserMetric) GetUserOk() (*UnibeeApiBeanUserAccount, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *UnibeeApiMerchantMetricUserMetric) SetUser(v UnibeeApiBeanUserAccountSimplify)`
+`func (o *UnibeeApiMerchantMetricUserMetric) SetUser(v UnibeeApiBeanUserAccount)`
 
 SetUser sets User field to given value.
 

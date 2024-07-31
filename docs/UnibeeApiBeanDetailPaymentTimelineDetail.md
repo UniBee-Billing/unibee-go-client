@@ -12,9 +12,9 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **InvoiceId** | Pointer to **string** | invoice id | [optional] 
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
-**Payment** | Pointer to [**UnibeeApiBeanPaymentSimplify**](UnibeeApiBeanPaymentSimplify.md) |  | [optional] 
+**Payment** | Pointer to [**UnibeeApiBeanPayment**](UnibeeApiBeanPayment.md) |  | [optional] 
 **PaymentId** | Pointer to **string** | PaymentId | [optional] 
-**Refund** | Pointer to [**UnibeeApiBeanRefundSimplify**](UnibeeApiBeanRefundSimplify.md) |  | [optional] 
+**Refund** | Pointer to [**UnibeeApiBeanRefund**](UnibeeApiBeanRefund.md) |  | [optional] 
 **RefundId** | Pointer to **string** | refund id | [optional] 
 **Status** | Pointer to **int32** | 0-pending, 1-success, 2-failure | [optional] 
 **SubscriptionId** | Pointer to **string** | subscription id | [optional] 
@@ -244,20 +244,20 @@ HasMerchantId returns a boolean if a field has been set.
 
 ### GetPayment
 
-`func (o *UnibeeApiBeanDetailPaymentTimelineDetail) GetPayment() UnibeeApiBeanPaymentSimplify`
+`func (o *UnibeeApiBeanDetailPaymentTimelineDetail) GetPayment() UnibeeApiBeanPayment`
 
 GetPayment returns the Payment field if non-nil, zero value otherwise.
 
 ### GetPaymentOk
 
-`func (o *UnibeeApiBeanDetailPaymentTimelineDetail) GetPaymentOk() (*UnibeeApiBeanPaymentSimplify, bool)`
+`func (o *UnibeeApiBeanDetailPaymentTimelineDetail) GetPaymentOk() (*UnibeeApiBeanPayment, bool)`
 
 GetPaymentOk returns a tuple with the Payment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPayment
 
-`func (o *UnibeeApiBeanDetailPaymentTimelineDetail) SetPayment(v UnibeeApiBeanPaymentSimplify)`
+`func (o *UnibeeApiBeanDetailPaymentTimelineDetail) SetPayment(v UnibeeApiBeanPayment)`
 
 SetPayment sets Payment field to given value.
 
@@ -294,20 +294,20 @@ HasPaymentId returns a boolean if a field has been set.
 
 ### GetRefund
 
-`func (o *UnibeeApiBeanDetailPaymentTimelineDetail) GetRefund() UnibeeApiBeanRefundSimplify`
+`func (o *UnibeeApiBeanDetailPaymentTimelineDetail) GetRefund() UnibeeApiBeanRefund`
 
 GetRefund returns the Refund field if non-nil, zero value otherwise.
 
 ### GetRefundOk
 
-`func (o *UnibeeApiBeanDetailPaymentTimelineDetail) GetRefundOk() (*UnibeeApiBeanRefundSimplify, bool)`
+`func (o *UnibeeApiBeanDetailPaymentTimelineDetail) GetRefundOk() (*UnibeeApiBeanRefund, bool)`
 
 GetRefundOk returns a tuple with the Refund field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRefund
 
-`func (o *UnibeeApiBeanDetailPaymentTimelineDetail) SetRefund(v UnibeeApiBeanRefundSimplify)`
+`func (o *UnibeeApiBeanDetailPaymentTimelineDetail) SetRefund(v UnibeeApiBeanRefund)`
 
 SetRefund sets Refund field to given value.
 

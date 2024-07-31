@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Addon** | Pointer to [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
+**Addon** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
 **AddonId** | Pointer to **int64** | onetime addonId | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Id** | Pointer to **int64** | id | [optional] 
 **Metadata** | Pointer to **map[string]string** | Metadata | [optional] 
-**Payment** | Pointer to [**UnibeeApiBeanPaymentSimplify**](UnibeeApiBeanPaymentSimplify.md) |  | [optional] 
+**Payment** | Pointer to [**UnibeeApiBeanPayment**](UnibeeApiBeanPayment.md) |  | [optional] 
 **Quantity** | Pointer to **int64** | quantity | [optional] 
 **Status** | Pointer to **int32** | status, 1-create, 2-paid, 3-cancel, 4-expired | [optional] 
 **SubscriptionId** | Pointer to **string** | subscription_id | [optional] 
-**User** | Pointer to [**UnibeeApiBeanUserAccountSimplify**](UnibeeApiBeanUserAccountSimplify.md) |  | [optional] 
+**User** | Pointer to [**UnibeeApiBeanUserAccount**](UnibeeApiBeanUserAccount.md) |  | [optional] 
 
 ## Methods
 
@@ -36,20 +36,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAddon
 
-`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) GetAddon() UnibeeApiBeanPlanSimplify`
+`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) GetAddon() UnibeeApiBeanPlan`
 
 GetAddon returns the Addon field if non-nil, zero value otherwise.
 
 ### GetAddonOk
 
-`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) GetAddonOk() (*UnibeeApiBeanPlanSimplify, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) GetAddonOk() (*UnibeeApiBeanPlan, bool)`
 
 GetAddonOk returns a tuple with the Addon field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddon
 
-`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) SetAddon(v UnibeeApiBeanPlanSimplify)`
+`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) SetAddon(v UnibeeApiBeanPlan)`
 
 SetAddon sets Addon field to given value.
 
@@ -161,20 +161,20 @@ HasMetadata returns a boolean if a field has been set.
 
 ### GetPayment
 
-`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) GetPayment() UnibeeApiBeanPaymentSimplify`
+`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) GetPayment() UnibeeApiBeanPayment`
 
 GetPayment returns the Payment field if non-nil, zero value otherwise.
 
 ### GetPaymentOk
 
-`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) GetPaymentOk() (*UnibeeApiBeanPaymentSimplify, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) GetPaymentOk() (*UnibeeApiBeanPayment, bool)`
 
 GetPaymentOk returns a tuple with the Payment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPayment
 
-`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) SetPayment(v UnibeeApiBeanPaymentSimplify)`
+`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) SetPayment(v UnibeeApiBeanPayment)`
 
 SetPayment sets Payment field to given value.
 
@@ -261,20 +261,20 @@ HasSubscriptionId returns a boolean if a field has been set.
 
 ### GetUser
 
-`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) GetUser() UnibeeApiBeanUserAccountSimplify`
+`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) GetUser() UnibeeApiBeanUserAccount`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) GetUserOk() (*UnibeeApiBeanUserAccountSimplify, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) GetUserOk() (*UnibeeApiBeanUserAccount, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) SetUser(v UnibeeApiBeanUserAccountSimplify)`
+`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) SetUser(v UnibeeApiBeanUserAccount)`
 
 SetUser sets User field to given value.
 

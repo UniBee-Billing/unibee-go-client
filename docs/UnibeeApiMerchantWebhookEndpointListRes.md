@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EndpointList** | Pointer to [**[]UnibeeApiBeanMerchantWebhookEndpointSimplify**](UnibeeApiBeanMerchantWebhookEndpointSimplify.md) | EndpointList | [optional] 
+**EndpointList** | Pointer to [**[]UnibeeApiBeanMerchantWebhookEndpoint**](UnibeeApiBeanMerchantWebhookEndpoint.md) | EndpointList | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetEndpointList
 
-`func (o *UnibeeApiMerchantWebhookEndpointListRes) GetEndpointList() []UnibeeApiBeanMerchantWebhookEndpointSimplify`
+`func (o *UnibeeApiMerchantWebhookEndpointListRes) GetEndpointList() []UnibeeApiBeanMerchantWebhookEndpoint`
 
 GetEndpointList returns the EndpointList field if non-nil, zero value otherwise.
 
 ### GetEndpointListOk
 
-`func (o *UnibeeApiMerchantWebhookEndpointListRes) GetEndpointListOk() (*[]UnibeeApiBeanMerchantWebhookEndpointSimplify, bool)`
+`func (o *UnibeeApiMerchantWebhookEndpointListRes) GetEndpointListOk() (*[]UnibeeApiBeanMerchantWebhookEndpoint, bool)`
 
 GetEndpointListOk returns a tuple with the EndpointList field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEndpointList
 
-`func (o *UnibeeApiMerchantWebhookEndpointListRes) SetEndpointList(v []UnibeeApiBeanMerchantWebhookEndpointSimplify)`
+`func (o *UnibeeApiMerchantWebhookEndpointListRes) SetEndpointList(v []UnibeeApiBeanMerchantWebhookEndpoint)`
 
 SetEndpointList sets EndpointList field to given value.
 

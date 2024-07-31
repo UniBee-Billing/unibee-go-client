@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EndpointLogList** | Pointer to [**[]UnibeeApiBeanMerchantWebhookLogSimplify**](UnibeeApiBeanMerchantWebhookLogSimplify.md) | EndpointLogList | [optional] 
+**EndpointLogList** | Pointer to [**[]UnibeeApiBeanMerchantWebhookLog**](UnibeeApiBeanMerchantWebhookLog.md) | EndpointLogList | [optional] 
 **Total** | Pointer to **int32** | Total | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetEndpointLogList
 
-`func (o *MerchantWebhookEndpointLogListGet200ResponseData) GetEndpointLogList() []UnibeeApiBeanMerchantWebhookLogSimplify`
+`func (o *MerchantWebhookEndpointLogListGet200ResponseData) GetEndpointLogList() []UnibeeApiBeanMerchantWebhookLog`
 
 GetEndpointLogList returns the EndpointLogList field if non-nil, zero value otherwise.
 
 ### GetEndpointLogListOk
 
-`func (o *MerchantWebhookEndpointLogListGet200ResponseData) GetEndpointLogListOk() (*[]UnibeeApiBeanMerchantWebhookLogSimplify, bool)`
+`func (o *MerchantWebhookEndpointLogListGet200ResponseData) GetEndpointLogListOk() (*[]UnibeeApiBeanMerchantWebhookLog, bool)`
 
 GetEndpointLogListOk returns a tuple with the EndpointLogList field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEndpointLogList
 
-`func (o *MerchantWebhookEndpointLogListGet200ResponseData) SetEndpointLogList(v []UnibeeApiBeanMerchantWebhookLogSimplify)`
+`func (o *MerchantWebhookEndpointLogListGet200ResponseData) SetEndpointLogList(v []UnibeeApiBeanMerchantWebhookLog)`
 
 SetEndpointLogList sets EndpointLogList field to given value.
 

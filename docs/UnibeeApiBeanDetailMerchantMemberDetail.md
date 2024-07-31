@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MemberRoles** | Pointer to [**[]UnibeeApiBeanMerchantRoleSimplify**](UnibeeApiBeanMerchantRoleSimplify.md) | The member&#39;s role list&#39; | [optional] 
+**MemberRoles** | Pointer to [**[]UnibeeApiBeanMerchantRole**](UnibeeApiBeanMerchantRole.md) | The member&#39;s role list&#39; | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Email** | Pointer to **string** | email | [optional] 
 **FirstName** | Pointer to **string** | first name | [optional] 
@@ -36,20 +36,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMemberRoles
 
-`func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetMemberRoles() []UnibeeApiBeanMerchantRoleSimplify`
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetMemberRoles() []UnibeeApiBeanMerchantRole`
 
 GetMemberRoles returns the MemberRoles field if non-nil, zero value otherwise.
 
 ### GetMemberRolesOk
 
-`func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetMemberRolesOk() (*[]UnibeeApiBeanMerchantRoleSimplify, bool)`
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetMemberRolesOk() (*[]UnibeeApiBeanMerchantRole, bool)`
 
 GetMemberRolesOk returns a tuple with the MemberRoles field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMemberRoles
 
-`func (o *UnibeeApiBeanDetailMerchantMemberDetail) SetMemberRoles(v []UnibeeApiBeanMerchantRoleSimplify)`
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) SetMemberRoles(v []UnibeeApiBeanMerchantRole)`
 
 SetMemberRoles sets MemberRoles field to given value.
 

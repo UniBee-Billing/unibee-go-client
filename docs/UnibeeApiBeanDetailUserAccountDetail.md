@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **ExternalUserId** | Pointer to **string** | external_user_id | [optional] 
 **Facebook** | Pointer to **string** | facebook | [optional] 
 **FirstName** | Pointer to **string** | first name | [optional] 
-**Gateway** | Pointer to [**UnibeeApiBeanGatewaySimplify**](UnibeeApiBeanGatewaySimplify.md) |  | [optional] 
+**Gateway** | Pointer to [**UnibeeApiBeanGateway**](UnibeeApiBeanGateway.md) |  | [optional] 
 **GatewayId** | Pointer to **int64** | gateway_id | [optional] 
 **Gender** | Pointer to **string** | gender | [optional] 
 **Id** | Pointer to **int64** | userId | [optional] 
@@ -424,20 +424,20 @@ HasFirstName returns a boolean if a field has been set.
 
 ### GetGateway
 
-`func (o *UnibeeApiBeanDetailUserAccountDetail) GetGateway() UnibeeApiBeanGatewaySimplify`
+`func (o *UnibeeApiBeanDetailUserAccountDetail) GetGateway() UnibeeApiBeanGateway`
 
 GetGateway returns the Gateway field if non-nil, zero value otherwise.
 
 ### GetGatewayOk
 
-`func (o *UnibeeApiBeanDetailUserAccountDetail) GetGatewayOk() (*UnibeeApiBeanGatewaySimplify, bool)`
+`func (o *UnibeeApiBeanDetailUserAccountDetail) GetGatewayOk() (*UnibeeApiBeanGateway, bool)`
 
 GetGatewayOk returns a tuple with the Gateway field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGateway
 
-`func (o *UnibeeApiBeanDetailUserAccountDetail) SetGateway(v UnibeeApiBeanGatewaySimplify)`
+`func (o *UnibeeApiBeanDetailUserAccountDetail) SetGateway(v UnibeeApiBeanGateway)`
 
 SetGateway sets Gateway field to given value.
 

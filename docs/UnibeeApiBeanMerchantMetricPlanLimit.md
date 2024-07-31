@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **GmtModify** | Pointer to **int64** | update time | [optional] 
 **Id** | Pointer to **int64** | id | [optional] 
 **MerchantId** | Pointer to **int64** | merchantId | [optional] 
-**MerchantMetricVo** | Pointer to [**UnibeeApiBeanMerchantMetricSimplify**](UnibeeApiBeanMerchantMetricSimplify.md) |  | [optional] 
+**MerchantMetricVo** | Pointer to [**UnibeeApiBeanMerchantMetric**](UnibeeApiBeanMerchantMetric.md) |  | [optional] 
 **MetricId** | Pointer to **int64** | metricId | [optional] 
 **MetricLimit** | Pointer to **int64** | plan metric limit | [optional] 
 **PlanId** | Pointer to **int64** | plan_id | [optional] 
@@ -134,20 +134,20 @@ HasMerchantId returns a boolean if a field has been set.
 
 ### GetMerchantMetricVo
 
-`func (o *UnibeeApiBeanMerchantMetricPlanLimit) GetMerchantMetricVo() UnibeeApiBeanMerchantMetricSimplify`
+`func (o *UnibeeApiBeanMerchantMetricPlanLimit) GetMerchantMetricVo() UnibeeApiBeanMerchantMetric`
 
 GetMerchantMetricVo returns the MerchantMetricVo field if non-nil, zero value otherwise.
 
 ### GetMerchantMetricVoOk
 
-`func (o *UnibeeApiBeanMerchantMetricPlanLimit) GetMerchantMetricVoOk() (*UnibeeApiBeanMerchantMetricSimplify, bool)`
+`func (o *UnibeeApiBeanMerchantMetricPlanLimit) GetMerchantMetricVoOk() (*UnibeeApiBeanMerchantMetric, bool)`
 
 GetMerchantMetricVoOk returns a tuple with the MerchantMetricVo field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantMetricVo
 
-`func (o *UnibeeApiBeanMerchantMetricPlanLimit) SetMerchantMetricVo(v UnibeeApiBeanMerchantMetricSimplify)`
+`func (o *UnibeeApiBeanMerchantMetricPlanLimit) SetMerchantMetricVo(v UnibeeApiBeanMerchantMetric)`
 
 SetMerchantMetricVo sets MerchantMetricVo field to given value.
 

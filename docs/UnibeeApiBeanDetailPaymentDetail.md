@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Gateway** | Pointer to [**UnibeeApiBeanGatewaySimplify**](UnibeeApiBeanGatewaySimplify.md) |  | [optional] 
+**Gateway** | Pointer to [**UnibeeApiBeanGateway**](UnibeeApiBeanGateway.md) |  | [optional] 
 **Invoice** | Pointer to [**UnibeeApiBeanDetailInvoiceDetail**](UnibeeApiBeanDetailInvoiceDetail.md) |  | [optional] 
-**Payment** | Pointer to [**UnibeeApiBeanPaymentSimplify**](UnibeeApiBeanPaymentSimplify.md) |  | [optional] 
-**User** | Pointer to [**UnibeeApiBeanUserAccountSimplify**](UnibeeApiBeanUserAccountSimplify.md) |  | [optional] 
+**Payment** | Pointer to [**UnibeeApiBeanPayment**](UnibeeApiBeanPayment.md) |  | [optional] 
+**User** | Pointer to [**UnibeeApiBeanUserAccount**](UnibeeApiBeanUserAccount.md) |  | [optional] 
 
 ## Methods
 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetGateway
 
-`func (o *UnibeeApiBeanDetailPaymentDetail) GetGateway() UnibeeApiBeanGatewaySimplify`
+`func (o *UnibeeApiBeanDetailPaymentDetail) GetGateway() UnibeeApiBeanGateway`
 
 GetGateway returns the Gateway field if non-nil, zero value otherwise.
 
 ### GetGatewayOk
 
-`func (o *UnibeeApiBeanDetailPaymentDetail) GetGatewayOk() (*UnibeeApiBeanGatewaySimplify, bool)`
+`func (o *UnibeeApiBeanDetailPaymentDetail) GetGatewayOk() (*UnibeeApiBeanGateway, bool)`
 
 GetGatewayOk returns a tuple with the Gateway field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGateway
 
-`func (o *UnibeeApiBeanDetailPaymentDetail) SetGateway(v UnibeeApiBeanGatewaySimplify)`
+`func (o *UnibeeApiBeanDetailPaymentDetail) SetGateway(v UnibeeApiBeanGateway)`
 
 SetGateway sets Gateway field to given value.
 
@@ -80,20 +80,20 @@ HasInvoice returns a boolean if a field has been set.
 
 ### GetPayment
 
-`func (o *UnibeeApiBeanDetailPaymentDetail) GetPayment() UnibeeApiBeanPaymentSimplify`
+`func (o *UnibeeApiBeanDetailPaymentDetail) GetPayment() UnibeeApiBeanPayment`
 
 GetPayment returns the Payment field if non-nil, zero value otherwise.
 
 ### GetPaymentOk
 
-`func (o *UnibeeApiBeanDetailPaymentDetail) GetPaymentOk() (*UnibeeApiBeanPaymentSimplify, bool)`
+`func (o *UnibeeApiBeanDetailPaymentDetail) GetPaymentOk() (*UnibeeApiBeanPayment, bool)`
 
 GetPaymentOk returns a tuple with the Payment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPayment
 
-`func (o *UnibeeApiBeanDetailPaymentDetail) SetPayment(v UnibeeApiBeanPaymentSimplify)`
+`func (o *UnibeeApiBeanDetailPaymentDetail) SetPayment(v UnibeeApiBeanPayment)`
 
 SetPayment sets Payment field to given value.
 
@@ -105,20 +105,20 @@ HasPayment returns a boolean if a field has been set.
 
 ### GetUser
 
-`func (o *UnibeeApiBeanDetailPaymentDetail) GetUser() UnibeeApiBeanUserAccountSimplify`
+`func (o *UnibeeApiBeanDetailPaymentDetail) GetUser() UnibeeApiBeanUserAccount`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *UnibeeApiBeanDetailPaymentDetail) GetUserOk() (*UnibeeApiBeanUserAccountSimplify, bool)`
+`func (o *UnibeeApiBeanDetailPaymentDetail) GetUserOk() (*UnibeeApiBeanUserAccount, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *UnibeeApiBeanDetailPaymentDetail) SetUser(v UnibeeApiBeanUserAccountSimplify)`
+`func (o *UnibeeApiBeanDetailPaymentDetail) SetUser(v UnibeeApiBeanUserAccount)`
 
 SetUser sets User field to given value.
 

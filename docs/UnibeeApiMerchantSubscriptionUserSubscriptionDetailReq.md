@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ExternalUserId** | Pointer to **string** | ExternalUserId, unique, either ExternalUserId&amp;Email or UserId needed | [optional] 
+**ProductId** | Pointer to **int64** | default product will use if productId not specified and subscriptionId is blank | [optional] 
 **UserId** | Pointer to **int64** | UserId | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetExternalUserId sets ExternalUserId field to given value.
 `func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailReq) HasExternalUserId() bool`
 
 HasExternalUserId returns a boolean if a field has been set.
+
+### GetProductId
+
+`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailReq) GetProductId() int64`
+
+GetProductId returns the ProductId field if non-nil, zero value otherwise.
+
+### GetProductIdOk
+
+`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailReq) GetProductIdOk() (*int64, bool)`
+
+GetProductIdOk returns a tuple with the ProductId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProductId
+
+`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailReq) SetProductId(v int64)`
+
+SetProductId sets ProductId field to given value.
+
+### HasProductId
+
+`func (o *UnibeeApiMerchantSubscriptionUserSubscriptionDetailReq) HasProductId() bool`
+
+HasProductId returns a boolean if a field has been set.
 
 ### GetUserId
 

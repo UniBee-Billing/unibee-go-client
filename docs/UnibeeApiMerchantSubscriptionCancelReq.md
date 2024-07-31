@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **InvoiceNow** | Pointer to **bool** | Default false | [optional] 
+**ProductId** | Pointer to **int64** | default product will use if productId not specified and subscriptionId is blank | [optional] 
 **Prorate** | Pointer to **bool** | Prorate Generate Invoice，Default false | [optional] 
 **SubscriptionId** | Pointer to **string** | SubscriptionId, id of subscription, either SubscriptionId or UserId needed, The only one active subscription of userId will effect | [optional] 
 **UserId** | Pointer to **int64** | UserId, either SubscriptionId or UserId needed, The only one active subscription will effect if userId provide instead of subscriptionId | [optional] 
@@ -52,6 +53,31 @@ SetInvoiceNow sets InvoiceNow field to given value.
 `func (o *UnibeeApiMerchantSubscriptionCancelReq) HasInvoiceNow() bool`
 
 HasInvoiceNow returns a boolean if a field has been set.
+
+### GetProductId
+
+`func (o *UnibeeApiMerchantSubscriptionCancelReq) GetProductId() int64`
+
+GetProductId returns the ProductId field if non-nil, zero value otherwise.
+
+### GetProductIdOk
+
+`func (o *UnibeeApiMerchantSubscriptionCancelReq) GetProductIdOk() (*int64, bool)`
+
+GetProductIdOk returns a tuple with the ProductId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProductId
+
+`func (o *UnibeeApiMerchantSubscriptionCancelReq) SetProductId(v int64)`
+
+SetProductId sets ProductId field to given value.
+
+### HasProductId
+
+`func (o *UnibeeApiMerchantSubscriptionCancelReq) HasProductId() bool`
+
+HasProductId returns a boolean if a field has been set.
 
 ### GetProrate
 

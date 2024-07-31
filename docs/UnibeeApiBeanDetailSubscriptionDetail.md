@@ -7,13 +7,13 @@ Name | Type | Description | Notes
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | AddonParams | [optional] 
 **Addons** | Pointer to [**[]UnibeeApiBeanPlanAddonDetail**](UnibeeApiBeanPlanAddonDetail.md) | Addon | [optional] 
 **DayLeft** | Pointer to **int32** | DayLeft util the period end, only available for webhook | [optional] 
-**Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCodeSimplify**](UnibeeApiBeanMerchantDiscountCodeSimplify.md) |  | [optional] 
-**Gateway** | Pointer to [**UnibeeApiBeanGatewaySimplify**](UnibeeApiBeanGatewaySimplify.md) |  | [optional] 
-**LatestInvoice** | Pointer to [**UnibeeApiBeanInvoiceSimplify**](UnibeeApiBeanInvoiceSimplify.md) |  | [optional] 
-**Plan** | Pointer to [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
-**Subscription** | Pointer to [**UnibeeApiBeanSubscriptionSimplify**](UnibeeApiBeanSubscriptionSimplify.md) |  | [optional] 
+**Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCode**](UnibeeApiBeanMerchantDiscountCode.md) |  | [optional] 
+**Gateway** | Pointer to [**UnibeeApiBeanGateway**](UnibeeApiBeanGateway.md) |  | [optional] 
+**LatestInvoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
+**Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
+**Subscription** | Pointer to [**UnibeeApiBeanSubscription**](UnibeeApiBeanSubscription.md) |  | [optional] 
 **UnfinishedSubscriptionPendingUpdate** | Pointer to [**UnibeeApiBeanDetailSubscriptionPendingUpdateDetail**](UnibeeApiBeanDetailSubscriptionPendingUpdateDetail.md) |  | [optional] 
-**User** | Pointer to [**UnibeeApiBeanUserAccountSimplify**](UnibeeApiBeanUserAccountSimplify.md) |  | [optional] 
+**User** | Pointer to [**UnibeeApiBeanUserAccount**](UnibeeApiBeanUserAccount.md) |  | [optional] 
 
 ## Methods
 
@@ -111,20 +111,20 @@ HasDayLeft returns a boolean if a field has been set.
 
 ### GetDiscount
 
-`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetDiscount() UnibeeApiBeanMerchantDiscountCodeSimplify`
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetDiscount() UnibeeApiBeanMerchantDiscountCode`
 
 GetDiscount returns the Discount field if non-nil, zero value otherwise.
 
 ### GetDiscountOk
 
-`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetDiscountOk() (*UnibeeApiBeanMerchantDiscountCodeSimplify, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetDiscountOk() (*UnibeeApiBeanMerchantDiscountCode, bool)`
 
 GetDiscountOk returns a tuple with the Discount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDiscount
 
-`func (o *UnibeeApiBeanDetailSubscriptionDetail) SetDiscount(v UnibeeApiBeanMerchantDiscountCodeSimplify)`
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) SetDiscount(v UnibeeApiBeanMerchantDiscountCode)`
 
 SetDiscount sets Discount field to given value.
 
@@ -136,20 +136,20 @@ HasDiscount returns a boolean if a field has been set.
 
 ### GetGateway
 
-`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetGateway() UnibeeApiBeanGatewaySimplify`
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetGateway() UnibeeApiBeanGateway`
 
 GetGateway returns the Gateway field if non-nil, zero value otherwise.
 
 ### GetGatewayOk
 
-`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetGatewayOk() (*UnibeeApiBeanGatewaySimplify, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetGatewayOk() (*UnibeeApiBeanGateway, bool)`
 
 GetGatewayOk returns a tuple with the Gateway field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGateway
 
-`func (o *UnibeeApiBeanDetailSubscriptionDetail) SetGateway(v UnibeeApiBeanGatewaySimplify)`
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) SetGateway(v UnibeeApiBeanGateway)`
 
 SetGateway sets Gateway field to given value.
 
@@ -161,20 +161,20 @@ HasGateway returns a boolean if a field has been set.
 
 ### GetLatestInvoice
 
-`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetLatestInvoice() UnibeeApiBeanInvoiceSimplify`
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetLatestInvoice() UnibeeApiBeanInvoice`
 
 GetLatestInvoice returns the LatestInvoice field if non-nil, zero value otherwise.
 
 ### GetLatestInvoiceOk
 
-`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetLatestInvoiceOk() (*UnibeeApiBeanInvoiceSimplify, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetLatestInvoiceOk() (*UnibeeApiBeanInvoice, bool)`
 
 GetLatestInvoiceOk returns a tuple with the LatestInvoice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLatestInvoice
 
-`func (o *UnibeeApiBeanDetailSubscriptionDetail) SetLatestInvoice(v UnibeeApiBeanInvoiceSimplify)`
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) SetLatestInvoice(v UnibeeApiBeanInvoice)`
 
 SetLatestInvoice sets LatestInvoice field to given value.
 
@@ -186,20 +186,20 @@ HasLatestInvoice returns a boolean if a field has been set.
 
 ### GetPlan
 
-`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetPlan() UnibeeApiBeanPlanSimplify`
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetPlan() UnibeeApiBeanPlan`
 
 GetPlan returns the Plan field if non-nil, zero value otherwise.
 
 ### GetPlanOk
 
-`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetPlanOk() (*UnibeeApiBeanPlanSimplify, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetPlanOk() (*UnibeeApiBeanPlan, bool)`
 
 GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlan
 
-`func (o *UnibeeApiBeanDetailSubscriptionDetail) SetPlan(v UnibeeApiBeanPlanSimplify)`
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) SetPlan(v UnibeeApiBeanPlan)`
 
 SetPlan sets Plan field to given value.
 
@@ -211,20 +211,20 @@ HasPlan returns a boolean if a field has been set.
 
 ### GetSubscription
 
-`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetSubscription() UnibeeApiBeanSubscriptionSimplify`
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetSubscription() UnibeeApiBeanSubscription`
 
 GetSubscription returns the Subscription field if non-nil, zero value otherwise.
 
 ### GetSubscriptionOk
 
-`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetSubscriptionOk() (*UnibeeApiBeanSubscriptionSimplify, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetSubscriptionOk() (*UnibeeApiBeanSubscription, bool)`
 
 GetSubscriptionOk returns a tuple with the Subscription field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubscription
 
-`func (o *UnibeeApiBeanDetailSubscriptionDetail) SetSubscription(v UnibeeApiBeanSubscriptionSimplify)`
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) SetSubscription(v UnibeeApiBeanSubscription)`
 
 SetSubscription sets Subscription field to given value.
 
@@ -261,20 +261,20 @@ HasUnfinishedSubscriptionPendingUpdate returns a boolean if a field has been set
 
 ### GetUser
 
-`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetUser() UnibeeApiBeanUserAccountSimplify`
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetUser() UnibeeApiBeanUserAccount`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetUserOk() (*UnibeeApiBeanUserAccountSimplify, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetUserOk() (*UnibeeApiBeanUserAccount, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *UnibeeApiBeanDetailSubscriptionDetail) SetUser(v UnibeeApiBeanUserAccountSimplify)`
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) SetUser(v UnibeeApiBeanUserAccount)`
 
 SetUser sets User field to given value.
 

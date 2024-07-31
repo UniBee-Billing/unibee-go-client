@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **ExternalUserId** | **string** | ExternalUserId | 
 **MetricCode** | **string** | MetricCode | 
 **MetricProperties** | Pointer to **map[string]interface{}** |  | [optional] 
+**ProductId** | Pointer to **int64** | default product will use if productId not specified and subscriptionId is blank | [optional] 
 
 ## Methods
 
@@ -112,6 +113,31 @@ SetMetricProperties sets MetricProperties field to given value.
 `func (o *UnibeeApiMerchantMetricNewEventReq) HasMetricProperties() bool`
 
 HasMetricProperties returns a boolean if a field has been set.
+
+### GetProductId
+
+`func (o *UnibeeApiMerchantMetricNewEventReq) GetProductId() int64`
+
+GetProductId returns the ProductId field if non-nil, zero value otherwise.
+
+### GetProductIdOk
+
+`func (o *UnibeeApiMerchantMetricNewEventReq) GetProductIdOk() (*int64, bool)`
+
+GetProductIdOk returns a tuple with the ProductId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProductId
+
+`func (o *UnibeeApiMerchantMetricNewEventReq) SetProductId(v int64)`
+
+SetProductId sets ProductId field to given value.
+
+### HasProductId
+
+`func (o *UnibeeApiMerchantMetricNewEventReq) HasProductId() bool`
+
+HasProductId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

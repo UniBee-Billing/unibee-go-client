@@ -6,7 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Link** | Pointer to **string** |  | [optional] 
 **Paid** | Pointer to **bool** |  | [optional] 
-**Subscription** | Pointer to [**UnibeeApiBeanSubscriptionSimplify**](UnibeeApiBeanSubscriptionSimplify.md) |  | [optional] 
+**Subscription** | Pointer to [**UnibeeApiBeanSubscription**](UnibeeApiBeanSubscription.md) |  | [optional] 
+**Token** | Pointer to **string** | token | [optional] 
+**User** | Pointer to [**UnibeeApiBeanUserAccount**](UnibeeApiBeanUserAccount.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +81,20 @@ HasPaid returns a boolean if a field has been set.
 
 ### GetSubscription
 
-`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) GetSubscription() UnibeeApiBeanSubscriptionSimplify`
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) GetSubscription() UnibeeApiBeanSubscription`
 
 GetSubscription returns the Subscription field if non-nil, zero value otherwise.
 
 ### GetSubscriptionOk
 
-`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) GetSubscriptionOk() (*UnibeeApiBeanSubscriptionSimplify, bool)`
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) GetSubscriptionOk() (*UnibeeApiBeanSubscription, bool)`
 
 GetSubscriptionOk returns a tuple with the Subscription field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubscription
 
-`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) SetSubscription(v UnibeeApiBeanSubscriptionSimplify)`
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) SetSubscription(v UnibeeApiBeanSubscription)`
 
 SetSubscription sets Subscription field to given value.
 
@@ -101,6 +103,56 @@ SetSubscription sets Subscription field to given value.
 `func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) HasSubscription() bool`
 
 HasSubscription returns a boolean if a field has been set.
+
+### GetToken
+
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) GetToken() string`
+
+GetToken returns the Token field if non-nil, zero value otherwise.
+
+### GetTokenOk
+
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) GetTokenOk() (*string, bool)`
+
+GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetToken
+
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) SetToken(v string)`
+
+SetToken sets Token field to given value.
+
+### HasToken
+
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) HasToken() bool`
+
+HasToken returns a boolean if a field has been set.
+
+### GetUser
+
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) GetUser() UnibeeApiBeanUserAccount`
+
+GetUser returns the User field if non-nil, zero value otherwise.
+
+### GetUserOk
+
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) GetUserOk() (*UnibeeApiBeanUserAccount, bool)`
+
+GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUser
+
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) SetUser(v UnibeeApiBeanUserAccount)`
+
+SetUser sets User field to given value.
+
+### HasUser
+
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) HasUser() bool`
+
+HasUser returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

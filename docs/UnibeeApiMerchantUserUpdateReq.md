@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Facebook** | Pointer to **string** | Facebook | [optional] 
 **FirstName** | **string** | First name | 
 **GatewayId** | Pointer to **int32** | GatewayId | [optional] 
+**Language** | Pointer to **string** | Language | [optional] 
 **LastName** | **string** | Last Name | 
 **OtherSocialInfo** | Pointer to **string** | Other Social Info | [optional] 
 **PaymentMethodId** | Pointer to **string** | PaymentMethodId of gateway, available for card type gateway, payment automatic will enable if set | [optional] 
@@ -280,6 +281,31 @@ SetGatewayId sets GatewayId field to given value.
 `func (o *UnibeeApiMerchantUserUpdateReq) HasGatewayId() bool`
 
 HasGatewayId returns a boolean if a field has been set.
+
+### GetLanguage
+
+`func (o *UnibeeApiMerchantUserUpdateReq) GetLanguage() string`
+
+GetLanguage returns the Language field if non-nil, zero value otherwise.
+
+### GetLanguageOk
+
+`func (o *UnibeeApiMerchantUserUpdateReq) GetLanguageOk() (*string, bool)`
+
+GetLanguageOk returns a tuple with the Language field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLanguage
+
+`func (o *UnibeeApiMerchantUserUpdateReq) SetLanguage(v string)`
+
+SetLanguage sets Language field to given value.
+
+### HasLanguage
+
+`func (o *UnibeeApiMerchantUserUpdateReq) HasLanguage() bool`
+
+HasLanguage returns a boolean if a field has been set.
 
 ### GetLastName
 

@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Currency** | Pointer to **string** |  | [optional] 
-**Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCodeSimplify**](UnibeeApiBeanMerchantDiscountCodeSimplify.md) |  | [optional] 
+**Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCode**](UnibeeApiBeanMerchantDiscountCode.md) |  | [optional] 
 **DiscountAmount** | Pointer to **int64** |  | [optional] 
-**Invoice** | Pointer to [**UnibeeApiBeanInvoiceSimplify**](UnibeeApiBeanInvoiceSimplify.md) |  | [optional] 
-**NextPeriodInvoice** | Pointer to [**UnibeeApiBeanInvoiceSimplify**](UnibeeApiBeanInvoiceSimplify.md) |  | [optional] 
+**Invoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
+**NextPeriodInvoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
 **OriginAmount** | Pointer to **int64** |  | [optional] 
 **ProrationDate** | Pointer to **int64** |  | [optional] 
 **TotalAmount** | Pointer to **int64** |  | [optional] 
@@ -59,20 +59,20 @@ HasCurrency returns a boolean if a field has been set.
 
 ### GetDiscount
 
-`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) GetDiscount() UnibeeApiBeanMerchantDiscountCodeSimplify`
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) GetDiscount() UnibeeApiBeanMerchantDiscountCode`
 
 GetDiscount returns the Discount field if non-nil, zero value otherwise.
 
 ### GetDiscountOk
 
-`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) GetDiscountOk() (*UnibeeApiBeanMerchantDiscountCodeSimplify, bool)`
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) GetDiscountOk() (*UnibeeApiBeanMerchantDiscountCode, bool)`
 
 GetDiscountOk returns a tuple with the Discount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDiscount
 
-`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) SetDiscount(v UnibeeApiBeanMerchantDiscountCodeSimplify)`
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) SetDiscount(v UnibeeApiBeanMerchantDiscountCode)`
 
 SetDiscount sets Discount field to given value.
 
@@ -109,20 +109,20 @@ HasDiscountAmount returns a boolean if a field has been set.
 
 ### GetInvoice
 
-`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) GetInvoice() UnibeeApiBeanInvoiceSimplify`
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) GetInvoice() UnibeeApiBeanInvoice`
 
 GetInvoice returns the Invoice field if non-nil, zero value otherwise.
 
 ### GetInvoiceOk
 
-`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) GetInvoiceOk() (*UnibeeApiBeanInvoiceSimplify, bool)`
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) GetInvoiceOk() (*UnibeeApiBeanInvoice, bool)`
 
 GetInvoiceOk returns a tuple with the Invoice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInvoice
 
-`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) SetInvoice(v UnibeeApiBeanInvoiceSimplify)`
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) SetInvoice(v UnibeeApiBeanInvoice)`
 
 SetInvoice sets Invoice field to given value.
 
@@ -134,20 +134,20 @@ HasInvoice returns a boolean if a field has been set.
 
 ### GetNextPeriodInvoice
 
-`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) GetNextPeriodInvoice() UnibeeApiBeanInvoiceSimplify`
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) GetNextPeriodInvoice() UnibeeApiBeanInvoice`
 
 GetNextPeriodInvoice returns the NextPeriodInvoice field if non-nil, zero value otherwise.
 
 ### GetNextPeriodInvoiceOk
 
-`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) GetNextPeriodInvoiceOk() (*UnibeeApiBeanInvoiceSimplify, bool)`
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) GetNextPeriodInvoiceOk() (*UnibeeApiBeanInvoice, bool)`
 
 GetNextPeriodInvoiceOk returns a tuple with the NextPeriodInvoice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNextPeriodInvoice
 
-`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) SetNextPeriodInvoice(v UnibeeApiBeanInvoiceSimplify)`
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewRes) SetNextPeriodInvoice(v UnibeeApiBeanInvoice)`
 
 SetNextPeriodInvoice sets NextPeriodInvoice field to given value.
 

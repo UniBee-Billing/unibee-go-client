@@ -13,11 +13,11 @@ Name | Type | Description | Notes
 **CryptoCurrency** | Pointer to **string** | crypto_currency | [optional] 
 **Currency** | Pointer to **string** | Currency | [optional] 
 **DayUtilDue** | Pointer to **int64** | day util due after finish | [optional] 
-**Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCodeSimplify**](UnibeeApiBeanMerchantDiscountCodeSimplify.md) |  | [optional] 
+**Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCode**](UnibeeApiBeanMerchantDiscountCode.md) |  | [optional] 
 **DiscountAmount** | Pointer to **int64** | DiscountAmount,Cents | [optional] 
 **DiscountCode** | Pointer to **string** |  | [optional] 
 **FinishTime** | Pointer to **int64** |  | [optional] 
-**Gateway** | Pointer to [**UnibeeApiBeanGatewaySimplify**](UnibeeApiBeanGatewaySimplify.md) |  | [optional] 
+**Gateway** | Pointer to [**UnibeeApiBeanGateway**](UnibeeApiBeanGateway.md) |  | [optional] 
 **GatewayId** | Pointer to **int64** | Id | [optional] 
 **GatewayInvoiceId** | Pointer to **string** | GatewayInvoiceId | [optional] 
 **GatewayInvoicePdf** | Pointer to **string** | GatewayInvoicePdf pdf | [optional] 
@@ -32,24 +32,24 @@ Name | Type | Description | Notes
 **IsDeleted** | Pointer to **int32** |  | [optional] 
 **Lines** | Pointer to [**[]UnibeeApiBeanInvoiceItemSimplify**](UnibeeApiBeanInvoiceItemSimplify.md) | lines json data | [optional] 
 **Link** | Pointer to **string** | Link | [optional] 
-**Merchant** | Pointer to [**UnibeeApiBeanMerchantSimplify**](UnibeeApiBeanMerchantSimplify.md) |  | [optional] 
+**Merchant** | Pointer to [**UnibeeApiBeanMerchant**](UnibeeApiBeanMerchant.md) |  | [optional] 
 **MerchantId** | Pointer to **int64** | MerchantId | [optional] 
 **Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
 **OriginAmount** | Pointer to **int64** | OriginAmount,Cents | [optional] 
-**Payment** | Pointer to [**UnibeeApiBeanPaymentSimplify**](UnibeeApiBeanPaymentSimplify.md) |  | [optional] 
+**Payment** | Pointer to [**UnibeeApiBeanPayment**](UnibeeApiBeanPayment.md) |  | [optional] 
 **PaymentId** | Pointer to **string** | PaymentId | [optional] 
 **PeriodEnd** | Pointer to **int64** | period_end | [optional] 
 **PeriodStart** | Pointer to **int64** | period_start | [optional] 
 **ProductName** | Pointer to **string** |  | [optional] 
 **ProrationDate** | Pointer to **int64** |  | [optional] 
-**Refund** | Pointer to [**UnibeeApiBeanRefundSimplify**](UnibeeApiBeanRefundSimplify.md) |  | [optional] 
+**Refund** | Pointer to [**UnibeeApiBeanRefund**](UnibeeApiBeanRefund.md) |  | [optional] 
 **RefundId** | Pointer to **string** | refundId | [optional] 
 **SendEmail** | Pointer to **string** | SendEmail | [optional] 
 **SendNote** | Pointer to **string** | SendNote | [optional] 
 **SendPdf** | Pointer to **string** | SendPdf | [optional] 
 **SendStatus** | Pointer to **int32** | SendStatus，0-No | 1- YES | [optional] 
 **Status** | Pointer to **int32** | Status，1-pending｜2-processing｜3-paid | 4-failed | 5-cancelled | [optional] 
-**Subscription** | Pointer to [**UnibeeApiBeanSubscriptionSimplify**](UnibeeApiBeanSubscriptionSimplify.md) |  | [optional] 
+**Subscription** | Pointer to [**UnibeeApiBeanSubscription**](UnibeeApiBeanSubscription.md) |  | [optional] 
 **SubscriptionAmount** | Pointer to **int64** | SubscriptionAmount,Cents | [optional] 
 **SubscriptionAmountExcludingTax** | Pointer to **int64** | SubscriptionAmountExcludingTax,Cents | [optional] 
 **SubscriptionId** | Pointer to **string** | SubscriptionId | [optional] 
@@ -59,9 +59,9 @@ Name | Type | Description | Notes
 **TotalAmountExcludingTax** | Pointer to **int64** | TotalAmountExcludingTax,Cents | [optional] 
 **TrialEnd** | Pointer to **int64** | trial_end, utc time | [optional] 
 **UniqueId** | Pointer to **string** | UniqueId | [optional] 
-**UserAccount** | Pointer to [**UnibeeApiBeanUserAccountSimplify**](UnibeeApiBeanUserAccountSimplify.md) |  | [optional] 
+**UserAccount** | Pointer to [**UnibeeApiBeanUserAccount**](UnibeeApiBeanUserAccount.md) |  | [optional] 
 **UserId** | Pointer to **int64** | UserId | [optional] 
-**UserSnapshot** | Pointer to [**UnibeeApiBeanUserAccountSimplify**](UnibeeApiBeanUserAccountSimplify.md) |  | [optional] 
+**UserSnapshot** | Pointer to [**UnibeeApiBeanUserAccount**](UnibeeApiBeanUserAccount.md) |  | [optional] 
 **VatNumber** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -310,20 +310,20 @@ HasDayUtilDue returns a boolean if a field has been set.
 
 ### GetDiscount
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) GetDiscount() UnibeeApiBeanMerchantDiscountCodeSimplify`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetDiscount() UnibeeApiBeanMerchantDiscountCode`
 
 GetDiscount returns the Discount field if non-nil, zero value otherwise.
 
 ### GetDiscountOk
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) GetDiscountOk() (*UnibeeApiBeanMerchantDiscountCodeSimplify, bool)`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetDiscountOk() (*UnibeeApiBeanMerchantDiscountCode, bool)`
 
 GetDiscountOk returns a tuple with the Discount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDiscount
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) SetDiscount(v UnibeeApiBeanMerchantDiscountCodeSimplify)`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetDiscount(v UnibeeApiBeanMerchantDiscountCode)`
 
 SetDiscount sets Discount field to given value.
 
@@ -410,20 +410,20 @@ HasFinishTime returns a boolean if a field has been set.
 
 ### GetGateway
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) GetGateway() UnibeeApiBeanGatewaySimplify`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetGateway() UnibeeApiBeanGateway`
 
 GetGateway returns the Gateway field if non-nil, zero value otherwise.
 
 ### GetGatewayOk
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) GetGatewayOk() (*UnibeeApiBeanGatewaySimplify, bool)`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetGatewayOk() (*UnibeeApiBeanGateway, bool)`
 
 GetGatewayOk returns a tuple with the Gateway field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGateway
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) SetGateway(v UnibeeApiBeanGatewaySimplify)`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetGateway(v UnibeeApiBeanGateway)`
 
 SetGateway sets Gateway field to given value.
 
@@ -785,20 +785,20 @@ HasLink returns a boolean if a field has been set.
 
 ### GetMerchant
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) GetMerchant() UnibeeApiBeanMerchantSimplify`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetMerchant() UnibeeApiBeanMerchant`
 
 GetMerchant returns the Merchant field if non-nil, zero value otherwise.
 
 ### GetMerchantOk
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) GetMerchantOk() (*UnibeeApiBeanMerchantSimplify, bool)`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetMerchantOk() (*UnibeeApiBeanMerchant, bool)`
 
 GetMerchantOk returns a tuple with the Merchant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchant
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) SetMerchant(v UnibeeApiBeanMerchantSimplify)`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetMerchant(v UnibeeApiBeanMerchant)`
 
 SetMerchant sets Merchant field to given value.
 
@@ -885,20 +885,20 @@ HasOriginAmount returns a boolean if a field has been set.
 
 ### GetPayment
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) GetPayment() UnibeeApiBeanPaymentSimplify`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetPayment() UnibeeApiBeanPayment`
 
 GetPayment returns the Payment field if non-nil, zero value otherwise.
 
 ### GetPaymentOk
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) GetPaymentOk() (*UnibeeApiBeanPaymentSimplify, bool)`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetPaymentOk() (*UnibeeApiBeanPayment, bool)`
 
 GetPaymentOk returns a tuple with the Payment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPayment
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) SetPayment(v UnibeeApiBeanPaymentSimplify)`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetPayment(v UnibeeApiBeanPayment)`
 
 SetPayment sets Payment field to given value.
 
@@ -1035,20 +1035,20 @@ HasProrationDate returns a boolean if a field has been set.
 
 ### GetRefund
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) GetRefund() UnibeeApiBeanRefundSimplify`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetRefund() UnibeeApiBeanRefund`
 
 GetRefund returns the Refund field if non-nil, zero value otherwise.
 
 ### GetRefundOk
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) GetRefundOk() (*UnibeeApiBeanRefundSimplify, bool)`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetRefundOk() (*UnibeeApiBeanRefund, bool)`
 
 GetRefundOk returns a tuple with the Refund field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRefund
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) SetRefund(v UnibeeApiBeanRefundSimplify)`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetRefund(v UnibeeApiBeanRefund)`
 
 SetRefund sets Refund field to given value.
 
@@ -1210,20 +1210,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetSubscription
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) GetSubscription() UnibeeApiBeanSubscriptionSimplify`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetSubscription() UnibeeApiBeanSubscription`
 
 GetSubscription returns the Subscription field if non-nil, zero value otherwise.
 
 ### GetSubscriptionOk
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) GetSubscriptionOk() (*UnibeeApiBeanSubscriptionSimplify, bool)`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetSubscriptionOk() (*UnibeeApiBeanSubscription, bool)`
 
 GetSubscriptionOk returns a tuple with the Subscription field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubscription
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) SetSubscription(v UnibeeApiBeanSubscriptionSimplify)`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetSubscription(v UnibeeApiBeanSubscription)`
 
 SetSubscription sets Subscription field to given value.
 
@@ -1460,20 +1460,20 @@ HasUniqueId returns a boolean if a field has been set.
 
 ### GetUserAccount
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) GetUserAccount() UnibeeApiBeanUserAccountSimplify`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetUserAccount() UnibeeApiBeanUserAccount`
 
 GetUserAccount returns the UserAccount field if non-nil, zero value otherwise.
 
 ### GetUserAccountOk
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) GetUserAccountOk() (*UnibeeApiBeanUserAccountSimplify, bool)`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetUserAccountOk() (*UnibeeApiBeanUserAccount, bool)`
 
 GetUserAccountOk returns a tuple with the UserAccount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserAccount
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) SetUserAccount(v UnibeeApiBeanUserAccountSimplify)`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetUserAccount(v UnibeeApiBeanUserAccount)`
 
 SetUserAccount sets UserAccount field to given value.
 
@@ -1510,20 +1510,20 @@ HasUserId returns a boolean if a field has been set.
 
 ### GetUserSnapshot
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) GetUserSnapshot() UnibeeApiBeanUserAccountSimplify`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetUserSnapshot() UnibeeApiBeanUserAccount`
 
 GetUserSnapshot returns the UserSnapshot field if non-nil, zero value otherwise.
 
 ### GetUserSnapshotOk
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) GetUserSnapshotOk() (*UnibeeApiBeanUserAccountSimplify, bool)`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetUserSnapshotOk() (*UnibeeApiBeanUserAccount, bool)`
 
 GetUserSnapshotOk returns a tuple with the UserSnapshot field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserSnapshot
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) SetUserSnapshot(v UnibeeApiBeanUserAccountSimplify)`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetUserSnapshot(v UnibeeApiBeanUserAccount)`
 
 SetUserSnapshot sets UserSnapshot field to given value.
 

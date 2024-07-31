@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MerchantMetricEvent** | Pointer to [**UnibeeApiBeanMerchantMetricEventSimplify**](UnibeeApiBeanMerchantMetricEventSimplify.md) |  | [optional] 
+**MerchantMetricEvent** | Pointer to [**UnibeeApiBeanMerchantMetricEvent**](UnibeeApiBeanMerchantMetricEvent.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMerchantMetricEvent
 
-`func (o *UnibeeApiMerchantMetricNewEventRes) GetMerchantMetricEvent() UnibeeApiBeanMerchantMetricEventSimplify`
+`func (o *UnibeeApiMerchantMetricNewEventRes) GetMerchantMetricEvent() UnibeeApiBeanMerchantMetricEvent`
 
 GetMerchantMetricEvent returns the MerchantMetricEvent field if non-nil, zero value otherwise.
 
 ### GetMerchantMetricEventOk
 
-`func (o *UnibeeApiMerchantMetricNewEventRes) GetMerchantMetricEventOk() (*UnibeeApiBeanMerchantMetricEventSimplify, bool)`
+`func (o *UnibeeApiMerchantMetricNewEventRes) GetMerchantMetricEventOk() (*UnibeeApiBeanMerchantMetricEvent, bool)`
 
 GetMerchantMetricEventOk returns a tuple with the MerchantMetricEvent field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantMetricEvent
 
-`func (o *UnibeeApiMerchantMetricNewEventRes) SetMerchantMetricEvent(v UnibeeApiBeanMerchantMetricEventSimplify)`
+`func (o *UnibeeApiMerchantMetricNewEventRes) SetMerchantMetricEvent(v UnibeeApiBeanMerchantMetricEvent)`
 
 SetMerchantMetricEvent sets MerchantMetricEvent field to given value.
 

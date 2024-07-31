@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Count** | Pointer to **int32** | Count Of Per Page | [optional] 
 **Currency** | Pointer to **string** | Filter Currency | [optional] 
 **Page** | Pointer to **int32** | Page, Start 0 | [optional] 
+**ProductIds** | Pointer to **[]int64** | filter id list of product, default all | [optional] 
 **PublishStatus** | Pointer to **int32** | Filter, Default All，PublishStatus，1-UnPublished，2-Published | [optional] 
 **SortField** | Pointer to **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | [optional] 
 **SortType** | Pointer to **string** | Sort Type，asc|desc，Default desc | [optional] 
@@ -106,6 +107,31 @@ SetPage sets Page field to given value.
 `func (o *UnibeeApiMerchantPlanListReq) HasPage() bool`
 
 HasPage returns a boolean if a field has been set.
+
+### GetProductIds
+
+`func (o *UnibeeApiMerchantPlanListReq) GetProductIds() []int64`
+
+GetProductIds returns the ProductIds field if non-nil, zero value otherwise.
+
+### GetProductIdsOk
+
+`func (o *UnibeeApiMerchantPlanListReq) GetProductIdsOk() (*[]int64, bool)`
+
+GetProductIdsOk returns a tuple with the ProductIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProductIds
+
+`func (o *UnibeeApiMerchantPlanListReq) SetProductIds(v []int64)`
+
+SetProductIds sets ProductIds field to given value.
+
+### HasProductIds
+
+`func (o *UnibeeApiMerchantPlanListReq) HasProductIds() bool`
+
+HasProductIds returns a boolean if a field has been set.
 
 ### GetPublishStatus
 

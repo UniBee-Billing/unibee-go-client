@@ -1154,7 +1154,7 @@ No authorization required
 
 ## SubscriptionRenewPost
 
-> MerchantSubscriptionCreateSubmitPost200Response SubscriptionRenewPost(ctx).UnibeeApiMerchantSubscriptionRenewReq(unibeeApiMerchantSubscriptionRenewReq).Execute()
+> MerchantSubscriptionRenewPost200Response SubscriptionRenewPost(ctx).UnibeeApiMerchantSubscriptionRenewReq(unibeeApiMerchantSubscriptionRenewReq).Execute()
 
 RenewSubscription
 
@@ -1182,7 +1182,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionRenewPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SubscriptionRenewPost`: MerchantSubscriptionCreateSubmitPost200Response
+	// response from `SubscriptionRenewPost`: MerchantSubscriptionRenewPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionRenewPost`: %v\n", resp)
 }
 ```
@@ -1202,7 +1202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantSubscriptionCreateSubmitPost200Response**](MerchantSubscriptionCreateSubmitPost200Response.md)
+[**MerchantSubscriptionRenewPost200Response**](MerchantSubscriptionRenewPost200Response.md)
 
 ### Authorization
 
@@ -1476,7 +1476,7 @@ No authorization required
 
 ## SubscriptionUserPendingCryptoSubscriptionDetailGet
 
-> MerchantSubscriptionUserPendingCryptoSubscriptionDetailGet200Response SubscriptionUserPendingCryptoSubscriptionDetailGet(ctx).UserId(userId).ExternalUserId(externalUserId).Execute()
+> MerchantSubscriptionUserPendingCryptoSubscriptionDetailGet200Response SubscriptionUserPendingCryptoSubscriptionDetailGet(ctx).UserId(userId).ExternalUserId(externalUserId).ProductId(productId).Execute()
 
 UserPendingCryptoSubscriptionDetail
 
@@ -1495,10 +1495,11 @@ import (
 func main() {
 	userId := int64(789) // int64 | UserId (optional)
 	externalUserId := "externalUserId_example" // string | ExternalUserId, unique, either ExternalUserId&Email or UserId needed (optional)
+	productId := int64(789) // int64 | default product will use if productId not specified and subscriptionId is blank (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Subscription.SubscriptionUserPendingCryptoSubscriptionDetailGet(context.Background()).UserId(userId).ExternalUserId(externalUserId).Execute()
+	resp, r, err := apiClient.Subscription.SubscriptionUserPendingCryptoSubscriptionDetailGet(context.Background()).UserId(userId).ExternalUserId(externalUserId).ProductId(productId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionUserPendingCryptoSubscriptionDetailGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1521,6 +1522,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int64** | UserId | 
  **externalUserId** | **string** | ExternalUserId, unique, either ExternalUserId&amp;Email or UserId needed | 
+ **productId** | **int64** | default product will use if productId not specified and subscriptionId is blank | 
 
 ### Return type
 
@@ -1606,7 +1608,7 @@ No authorization required
 
 ## SubscriptionUserSubscriptionDetailGet
 
-> MerchantSubscriptionUserSubscriptionDetailGet200Response SubscriptionUserSubscriptionDetailGet(ctx).UserId(userId).ExternalUserId(externalUserId).Execute()
+> MerchantSubscriptionUserSubscriptionDetailGet200Response SubscriptionUserSubscriptionDetailGet(ctx).UserId(userId).ExternalUserId(externalUserId).ProductId(productId).Execute()
 
 UserSubscriptionDetail
 
@@ -1625,10 +1627,11 @@ import (
 func main() {
 	userId := int64(789) // int64 | UserId (optional)
 	externalUserId := "externalUserId_example" // string | ExternalUserId, unique, either ExternalUserId&Email or UserId needed (optional)
+	productId := int64(789) // int64 | default product will use if productId not specified and subscriptionId is blank (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Subscription.SubscriptionUserSubscriptionDetailGet(context.Background()).UserId(userId).ExternalUserId(externalUserId).Execute()
+	resp, r, err := apiClient.Subscription.SubscriptionUserSubscriptionDetailGet(context.Background()).UserId(userId).ExternalUserId(externalUserId).ProductId(productId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionUserSubscriptionDetailGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1651,6 +1654,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int64** | UserId | 
  **externalUserId** | **string** | ExternalUserId, unique, either ExternalUserId&amp;Email or UserId needed | 
+ **productId** | **int64** | default product will use if productId not specified and subscriptionId is blank | 
 
 ### Return type
 

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ColumnComments** | Pointer to **map[string]string** | Export Column Comments | [optional] 
+**ColumnHeaders** | Pointer to **map[string]string** | Export Column Headers | [optional] 
 **Columns** | Pointer to **[]map[string]interface{}** | Export Column List | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetColumnComments sets ColumnComments field to given value.
 `func (o *MerchantTaskExportColumnListPost200ResponseData) HasColumnComments() bool`
 
 HasColumnComments returns a boolean if a field has been set.
+
+### GetColumnHeaders
+
+`func (o *MerchantTaskExportColumnListPost200ResponseData) GetColumnHeaders() map[string]string`
+
+GetColumnHeaders returns the ColumnHeaders field if non-nil, zero value otherwise.
+
+### GetColumnHeadersOk
+
+`func (o *MerchantTaskExportColumnListPost200ResponseData) GetColumnHeadersOk() (*map[string]string, bool)`
+
+GetColumnHeadersOk returns a tuple with the ColumnHeaders field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetColumnHeaders
+
+`func (o *MerchantTaskExportColumnListPost200ResponseData) SetColumnHeaders(v map[string]string)`
+
+SetColumnHeaders sets ColumnHeaders field to given value.
+
+### HasColumnHeaders
+
+`func (o *MerchantTaskExportColumnListPost200ResponseData) HasColumnHeaders() bool`
+
+HasColumnHeaders returns a boolean if a field has been set.
 
 ### GetColumns
 

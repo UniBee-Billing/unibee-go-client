@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **OnetimeAddonIds** | Pointer to **[]int64** | Plan Ids Of Onetime Addon Type | [optional] 
 **PlanName** | **string** | Plan Name | 
 **ProductDescription** | Pointer to **string** | Default Copy Description | [optional] 
+**ProductId** | Pointer to **int64** | Id of product which plan to linked | [optional] 
 **ProductName** | Pointer to **string** | Default Copy PlanName | [optional] 
 **TrialAmount** | Pointer to **int64** | price of trial period， not available for addon | [optional] 
 **TrialDemand** | Pointer to **string** | demand of trial， not available for addon, example, paymentMethod, payment method will ask for subscription trial start | [optional] 
@@ -429,6 +430,31 @@ SetProductDescription sets ProductDescription field to given value.
 `func (o *UnibeeApiMerchantPlanNewReq) HasProductDescription() bool`
 
 HasProductDescription returns a boolean if a field has been set.
+
+### GetProductId
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetProductId() int64`
+
+GetProductId returns the ProductId field if non-nil, zero value otherwise.
+
+### GetProductIdOk
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetProductIdOk() (*int64, bool)`
+
+GetProductIdOk returns a tuple with the ProductId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProductId
+
+`func (o *UnibeeApiMerchantPlanNewReq) SetProductId(v int64)`
+
+SetProductId sets ProductId field to given value.
+
+### HasProductId
+
+`func (o *UnibeeApiMerchantPlanNewReq) HasProductId() bool`
+
+HasProductId returns a boolean if a field has been set.
 
 ### GetProductName
 

@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **Note** | Pointer to **string** | Update Note | [optional] 
 **Paid** | Pointer to **int32** | Paid | [optional] 
 **PendingUpdateId** | Pointer to **string** | PendingUpdateId | [optional] 
-**Plan** | Pointer to [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
+**Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
 **PlanId** | Pointer to **int64** | PlanId | [optional] 
 **ProrationAmount** | Pointer to **int64** | ProrationAmount,Cents | [optional] 
 **Quantity** | Pointer to **int64** | quantity | [optional] 
@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **UpdateAddons** | Pointer to [**[]UnibeeApiBeanPlanAddonDetail**](UnibeeApiBeanPlanAddonDetail.md) | UpdateAddons | [optional] 
 **UpdateAmount** | Pointer to **int64** | UpdateAmount, Cents | [optional] 
 **UpdateCurrency** | Pointer to **string** | UpdateCurrency | [optional] 
-**UpdatePlan** | Pointer to [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
+**UpdatePlan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
 **UpdatePlanId** | Pointer to **int64** | UpdatePlanId | [optional] 
 **UpdateQuantity** | Pointer to **int64** | UpdateQuantity | [optional] 
 **UserId** | Pointer to **int64** | UserId | [optional] 
@@ -456,20 +456,20 @@ HasPendingUpdateId returns a boolean if a field has been set.
 
 ### GetPlan
 
-`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetPlan() UnibeeApiBeanPlanSimplify`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetPlan() UnibeeApiBeanPlan`
 
 GetPlan returns the Plan field if non-nil, zero value otherwise.
 
 ### GetPlanOk
 
-`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetPlanOk() (*UnibeeApiBeanPlanSimplify, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetPlanOk() (*UnibeeApiBeanPlan, bool)`
 
 GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlan
 
-`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetPlan(v UnibeeApiBeanPlanSimplify)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetPlan(v UnibeeApiBeanPlan)`
 
 SetPlan sets Plan field to given value.
 
@@ -706,20 +706,20 @@ HasUpdateCurrency returns a boolean if a field has been set.
 
 ### GetUpdatePlan
 
-`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdatePlan() UnibeeApiBeanPlanSimplify`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdatePlan() UnibeeApiBeanPlan`
 
 GetUpdatePlan returns the UpdatePlan field if non-nil, zero value otherwise.
 
 ### GetUpdatePlanOk
 
-`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdatePlanOk() (*UnibeeApiBeanPlanSimplify, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetUpdatePlanOk() (*UnibeeApiBeanPlan, bool)`
 
 GetUpdatePlanOk returns a tuple with the UpdatePlan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdatePlan
 
-`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetUpdatePlan(v UnibeeApiBeanPlanSimplify)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetUpdatePlan(v UnibeeApiBeanPlan)`
 
 SetUpdatePlan sets UpdatePlan field to given value.
 

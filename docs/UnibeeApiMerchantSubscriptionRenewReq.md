@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **ManualPayment** | Pointer to **bool** | ManualPayment | [optional] 
 **Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
 **ProductData** | Pointer to [**UnibeeApiBeanPlanProductParam**](UnibeeApiBeanPlanProductParam.md) |  | [optional] 
+**ProductId** | Pointer to **int64** | default product will use if not specified | [optional] 
 **ReturnUrl** | Pointer to **string** | ReturnUrl | [optional] 
 **SubscriptionId** | Pointer to **string** | SubscriptionId, id of subscription which addon will attached, either SubscriptionId or UserId needed, The only one active subscription or latest subscription will renew if userId provide instead of subscriptionId | [optional] 
 **TaxPercentage** | Pointer to **int32** | TaxPercentage，1000 &#x3D; 10%, override subscription taxPercentage if provide | [optional] 
@@ -209,6 +210,31 @@ SetProductData sets ProductData field to given value.
 `func (o *UnibeeApiMerchantSubscriptionRenewReq) HasProductData() bool`
 
 HasProductData returns a boolean if a field has been set.
+
+### GetProductId
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) GetProductId() int64`
+
+GetProductId returns the ProductId field if non-nil, zero value otherwise.
+
+### GetProductIdOk
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) GetProductIdOk() (*int64, bool)`
+
+GetProductIdOk returns a tuple with the ProductId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProductId
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) SetProductId(v int64)`
+
+SetProductId sets ProductId field to given value.
+
+### HasProductId
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) HasProductId() bool`
+
+HasProductId returns a boolean if a field has been set.
 
 ### GetReturnUrl
 

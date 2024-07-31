@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PaymentItems** | Pointer to [**[]UnibeeApiBeanPaymentItemSimplify**](UnibeeApiBeanPaymentItemSimplify.md) | Payment Item Object List | [optional] 
+**PaymentItems** | Pointer to [**[]UnibeeApiBeanPaymentItem**](UnibeeApiBeanPaymentItem.md) | Payment Item Object List | [optional] 
 **Total** | Pointer to **int32** | Total | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPaymentItems
 
-`func (o *UnibeeApiMerchantPaymentItemListRes) GetPaymentItems() []UnibeeApiBeanPaymentItemSimplify`
+`func (o *UnibeeApiMerchantPaymentItemListRes) GetPaymentItems() []UnibeeApiBeanPaymentItem`
 
 GetPaymentItems returns the PaymentItems field if non-nil, zero value otherwise.
 
 ### GetPaymentItemsOk
 
-`func (o *UnibeeApiMerchantPaymentItemListRes) GetPaymentItemsOk() (*[]UnibeeApiBeanPaymentItemSimplify, bool)`
+`func (o *UnibeeApiMerchantPaymentItemListRes) GetPaymentItemsOk() (*[]UnibeeApiBeanPaymentItem, bool)`
 
 GetPaymentItemsOk returns a tuple with the PaymentItems field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPaymentItems
 
-`func (o *UnibeeApiMerchantPaymentItemListRes) SetPaymentItems(v []UnibeeApiBeanPaymentItemSimplify)`
+`func (o *UnibeeApiMerchantPaymentItemListRes) SetPaymentItems(v []UnibeeApiBeanPaymentItem)`
 
 SetPaymentItems sets PaymentItems field to given value.
 

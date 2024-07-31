@@ -7,14 +7,14 @@ Name | Type | Description | Notes
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) |  | [optional] 
 **Addons** | Pointer to [**[]UnibeeApiBeanPlanAddonDetail**](UnibeeApiBeanPlanAddonDetail.md) |  | [optional] 
 **Currency** | Pointer to **string** |  | [optional] 
-**Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCodeSimplify**](UnibeeApiBeanMerchantDiscountCodeSimplify.md) |  | [optional] 
+**Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCode**](UnibeeApiBeanMerchantDiscountCode.md) |  | [optional] 
 **DiscountAmount** | Pointer to **int64** |  | [optional] 
 **DiscountMessage** | Pointer to **string** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
-**Gateway** | Pointer to [**UnibeeApiBeanGatewaySimplify**](UnibeeApiBeanGatewaySimplify.md) |  | [optional] 
-**Invoice** | Pointer to [**UnibeeApiBeanInvoiceSimplify**](UnibeeApiBeanInvoiceSimplify.md) |  | [optional] 
+**Gateway** | Pointer to [**UnibeeApiBeanGateway**](UnibeeApiBeanGateway.md) |  | [optional] 
+**Invoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
 **OriginAmount** | Pointer to **int64** |  | [optional] 
-**Plan** | Pointer to [**UnibeeApiBeanPlanSimplify**](UnibeeApiBeanPlanSimplify.md) |  | [optional] 
+**Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
 **Quantity** | Pointer to **int64** |  | [optional] 
 **TaxPercentage** | Pointer to **int64** |  | [optional] 
 **TotalAmount** | Pointer to **int64** |  | [optional] 
@@ -122,20 +122,20 @@ HasCurrency returns a boolean if a field has been set.
 
 ### GetDiscount
 
-`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetDiscount() UnibeeApiBeanMerchantDiscountCodeSimplify`
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetDiscount() UnibeeApiBeanMerchantDiscountCode`
 
 GetDiscount returns the Discount field if non-nil, zero value otherwise.
 
 ### GetDiscountOk
 
-`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetDiscountOk() (*UnibeeApiBeanMerchantDiscountCodeSimplify, bool)`
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetDiscountOk() (*UnibeeApiBeanMerchantDiscountCode, bool)`
 
 GetDiscountOk returns a tuple with the Discount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDiscount
 
-`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) SetDiscount(v UnibeeApiBeanMerchantDiscountCodeSimplify)`
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) SetDiscount(v UnibeeApiBeanMerchantDiscountCode)`
 
 SetDiscount sets Discount field to given value.
 
@@ -222,20 +222,20 @@ HasEmail returns a boolean if a field has been set.
 
 ### GetGateway
 
-`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetGateway() UnibeeApiBeanGatewaySimplify`
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetGateway() UnibeeApiBeanGateway`
 
 GetGateway returns the Gateway field if non-nil, zero value otherwise.
 
 ### GetGatewayOk
 
-`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetGatewayOk() (*UnibeeApiBeanGatewaySimplify, bool)`
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetGatewayOk() (*UnibeeApiBeanGateway, bool)`
 
 GetGatewayOk returns a tuple with the Gateway field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGateway
 
-`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) SetGateway(v UnibeeApiBeanGatewaySimplify)`
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) SetGateway(v UnibeeApiBeanGateway)`
 
 SetGateway sets Gateway field to given value.
 
@@ -247,20 +247,20 @@ HasGateway returns a boolean if a field has been set.
 
 ### GetInvoice
 
-`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetInvoice() UnibeeApiBeanInvoiceSimplify`
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetInvoice() UnibeeApiBeanInvoice`
 
 GetInvoice returns the Invoice field if non-nil, zero value otherwise.
 
 ### GetInvoiceOk
 
-`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetInvoiceOk() (*UnibeeApiBeanInvoiceSimplify, bool)`
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetInvoiceOk() (*UnibeeApiBeanInvoice, bool)`
 
 GetInvoiceOk returns a tuple with the Invoice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInvoice
 
-`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) SetInvoice(v UnibeeApiBeanInvoiceSimplify)`
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) SetInvoice(v UnibeeApiBeanInvoice)`
 
 SetInvoice sets Invoice field to given value.
 
@@ -297,20 +297,20 @@ HasOriginAmount returns a boolean if a field has been set.
 
 ### GetPlan
 
-`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetPlan() UnibeeApiBeanPlanSimplify`
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetPlan() UnibeeApiBeanPlan`
 
 GetPlan returns the Plan field if non-nil, zero value otherwise.
 
 ### GetPlanOk
 
-`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetPlanOk() (*UnibeeApiBeanPlanSimplify, bool)`
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetPlanOk() (*UnibeeApiBeanPlan, bool)`
 
 GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlan
 
-`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) SetPlan(v UnibeeApiBeanPlanSimplify)`
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) SetPlan(v UnibeeApiBeanPlan)`
 
 SetPlan sets Plan field to given value.
 
