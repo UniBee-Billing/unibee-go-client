@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**VatCountryListPost**](Vat.md#VatCountryListPost) | **Post** /merchant/vat/country_list | VatCountryList
 [**VatInitDefaultGatewayPost**](Vat.md#VatInitDefaultGatewayPost) | **Post** /merchant/vat/init_default_gateway | InitDefaultVatGateway
 [**VatSetupGatewayPost**](Vat.md#VatSetupGatewayPost) | **Post** /merchant/vat/setup_gateway | VatGatewaySetup
+[**VatVatNumberValidatePost**](Vat.md#VatVatNumberValidatePost) | **Post** /merchant/vat/vat_number_validate | Vat Number Validate
 
 
 
@@ -247,6 +248,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VatVatNumberValidatePost
+
+> MerchantVatVatNumberValidatePost200Response VatVatNumberValidatePost(ctx).UnibeeApiMerchantVatNumberValidateReq(unibeeApiMerchantVatNumberValidateReq).Execute()
+
+Vat Number Validate
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantVatNumberValidateReq := *openapiclient.NewUnibeeApiMerchantVatNumberValidateReq("VatNumber_example") // UnibeeApiMerchantVatNumberValidateReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Vat.VatVatNumberValidatePost(context.Background()).UnibeeApiMerchantVatNumberValidateReq(unibeeApiMerchantVatNumberValidateReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Vat.VatVatNumberValidatePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VatVatNumberValidatePost`: MerchantVatVatNumberValidatePost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Vat.VatVatNumberValidatePost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVatVatNumberValidatePostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantVatNumberValidateReq** | [**UnibeeApiMerchantVatNumberValidateReq**](UnibeeApiMerchantVatNumberValidateReq.md) |  | 
+
+### Return type
+
+[**MerchantVatVatNumberValidatePost200Response**](MerchantVatVatNumberValidatePost200Response.md)
 
 ### Authorization
 

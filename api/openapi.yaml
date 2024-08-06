@@ -6,7 +6,7 @@ info:
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   title: OpenAPI UniBee
   version: |
-    buildtime:202408060614
+    buildtime:202408060911
 servers:
 - url: https://api.unibee.top
 - url: http://127.0.0.1:8080
@@ -5072,6 +5072,24 @@ paths:
                 $ref: '#/components/schemas/_merchant_auth_sso_loginOTP_post_200_response'
           description: ""
       summary: VatGatewaySetup
+      tags:
+      - Vat
+  /merchant/vat/vat_number_validate:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/unibee.api.merchant.vat.NumberValidateReq'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_vat_vat_number_validate_post_200_response'
+          description: ""
+      summary: Vat Number Validate
       tags:
       - Vat
   /merchant/webhook/delete_endpoint:
@@ -18328,6 +18346,21 @@ components:
       type: object
     unibee.api.merchant.vat.InitDefaultGatewayRes:
       properties: {}
+      type: object
+    unibee.api.merchant.vat.NumberValidateReq:
+      properties:
+        vatNumber:
+          description: VatNumber
+          format: string
+          properties: {}
+          type: string
+      required:
+      - vatNumber
+      type: object
+    unibee.api.merchant.vat.NumberValidateRes:
+      properties:
+        vatNumberValidate:
+          $ref: '#/components/schemas/unibee.api.bean.ValidResult'
       type: object
     unibee.api.merchant.vat.SetupGatewayReq:
       properties:
@@ -45820,6 +45853,53 @@ components:
           type: integer
         data:
           $ref: '#/components/schemas/_merchant_vat_country_list_get_200_response_data'
+        message:
+          format: string
+          properties: {}
+          type: string
+        redirect:
+          format: string
+          properties: {}
+          type: string
+        requestId:
+          format: string
+          properties: {}
+          type: string
+      type: object
+    _merchant_vat_vat_number_validate_post_200_response_data:
+      example:
+        vatNumberValidate:
+          valid: true
+          countryCode: countryCode
+          companyAddress: companyAddress
+          companyName: companyName
+          validateMessage: validateMessage
+          vatNumber: vatNumber
+      properties:
+        vatNumberValidate:
+          $ref: '#/components/schemas/unibee.api.bean.ValidResult'
+      type: object
+    _merchant_vat_vat_number_validate_post_200_response:
+      example:
+        redirect: redirect
+        code: 0
+        data:
+          vatNumberValidate:
+            valid: true
+            countryCode: countryCode
+            companyAddress: companyAddress
+            companyName: companyName
+            validateMessage: validateMessage
+            vatNumber: vatNumber
+        requestId: requestId
+        message: message
+      properties:
+        code:
+          format: int
+          properties: {}
+          type: integer
+        data:
+          $ref: '#/components/schemas/_merchant_vat_vat_number_validate_post_200_response_data'
         message:
           format: string
           properties: {}
