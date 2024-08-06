@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Quantity** | Pointer to **int64** | Quantity | [optional] 
 **TaxPercentage** | Pointer to **int32** | TaxPercentage，1000 &#x3D; 10% | [optional] 
 **TrialEnd** | Pointer to **int64** | trial_end, utc time | [optional] 
+**User** | Pointer to [**UnibeeApiBeanNewUser**](UnibeeApiBeanNewUser.md) |  | [optional] 
 **UserId** | Pointer to **int64** | UserId | [optional] 
 **VatCountryCode** | Pointer to **string** | VatCountryCode, CountryName | [optional] 
 **VatNumber** | Pointer to **string** | VatNumber | [optional] 
@@ -255,6 +256,31 @@ SetTrialEnd sets TrialEnd field to given value.
 `func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) HasTrialEnd() bool`
 
 HasTrialEnd returns a boolean if a field has been set.
+
+### GetUser
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) GetUser() UnibeeApiBeanNewUser`
+
+GetUser returns the User field if non-nil, zero value otherwise.
+
+### GetUserOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) GetUserOk() (*UnibeeApiBeanNewUser, bool)`
+
+GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUser
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) SetUser(v UnibeeApiBeanNewUser)`
+
+SetUser sets User field to given value.
+
+### HasUser
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) HasUser() bool`
+
+HasUser returns a boolean if a field has been set.
 
 ### GetUserId
 

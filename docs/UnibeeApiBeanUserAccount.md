@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** | userId | [optional] 
 **IsRisk** | Pointer to **int32** | is risk account (deperated) | [optional] 
 **IsSpecial** | Pointer to **int32** | is special account（0.no，1.yes）- deperated | [optional] 
-**Language** | Pointer to **string** | Language | [optional] 
+**Language** | Pointer to **string** | User Language, en|ru|cn|vi|bp | [optional] 
 **LastLoginAt** | Pointer to **int64** | last login time, utc time | [optional] 
 **LastName** | Pointer to **string** | last name | [optional] 
 **LinkedIn** | Pointer to **string** | linkedin | [optional] 

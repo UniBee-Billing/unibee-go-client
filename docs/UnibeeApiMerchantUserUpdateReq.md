@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Facebook** | Pointer to **string** | Facebook | [optional] 
 **FirstName** | **string** | First name | 
 **GatewayId** | Pointer to **int32** | GatewayId | [optional] 
-**Language** | Pointer to **string** | Language | [optional] 
+**Language** | Pointer to **string** | User Language, en|ru|cn|vi|bp | [optional] 
 **LastName** | **string** | Last Name | 
 **OtherSocialInfo** | Pointer to **string** | Other Social Info | [optional] 
 **PaymentMethodId** | Pointer to **string** | PaymentMethodId of gateway, available for card type gateway, payment automatic will enable if set | [optional] 

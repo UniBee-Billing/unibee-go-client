@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Email** | **string** | Email | 
 **ExternalUserId** | Pointer to **string** | ExternalUserId | [optional] 
 **FirstName** | Pointer to **string** | First Name | [optional] 
+**Language** | Pointer to **string** | User Language, en|ru|cn|vi|bp | [optional] 
 **LastName** | Pointer to **string** | Last Name | [optional] 
 **Phone** | Pointer to **string** | Phone | [optional] 
 **Type** | Pointer to **int64** | User type, 1-Individual|2-organization | [optional] 
@@ -206,6 +207,31 @@ SetFirstName sets FirstName field to given value.
 `func (o *UnibeeApiBeanNewUser) HasFirstName() bool`
 
 HasFirstName returns a boolean if a field has been set.
+
+### GetLanguage
+
+`func (o *UnibeeApiBeanNewUser) GetLanguage() string`
+
+GetLanguage returns the Language field if non-nil, zero value otherwise.
+
+### GetLanguageOk
+
+`func (o *UnibeeApiBeanNewUser) GetLanguageOk() (*string, bool)`
+
+GetLanguageOk returns a tuple with the Language field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLanguage
+
+`func (o *UnibeeApiBeanNewUser) SetLanguage(v string)`
+
+SetLanguage sets Language field to given value.
+
+### HasLanguage
+
+`func (o *UnibeeApiBeanNewUser) HasLanguage() bool`
+
+HasLanguage returns a boolean if a field has been set.
 
 ### GetLastName
 
