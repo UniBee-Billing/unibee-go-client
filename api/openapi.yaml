@@ -5,10 +5,11 @@ info:
     name: Apache-2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   title: OpenAPI UniBee
-  version: develop
+  version: |
+    buildtime:202408081000
 servers:
 - url: https://api.unibee.top
-- url: http://127.0.0.1:8088
+- url: http://127.0.0.1:8080
 paths:
   /merchant/auth/sso/login:
     post:
@@ -5304,7 +5305,7 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "interface {}"
+          format: "map[string]interface {}"
           properties: {}
           type: object
         recurring:
@@ -5658,7 +5659,7 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "interface {}"
+          format: "map[string]interface {}"
           properties: {}
           type: object
         originAmount:
@@ -6013,7 +6014,7 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/interface'
           description: Payload
-          format: "interface {}"
+          format: "map[string]interface {}"
           properties: {}
           type: object
         task:
@@ -6234,7 +6235,7 @@ components:
         metadata:
           additionalProperties:
             $ref: '#/components/schemas/interface'
-          format: "interface {}"
+          format: "map[string]interface {}"
           properties: {}
           type: object
         name:
@@ -6898,7 +6899,7 @@ components:
         metadata:
           additionalProperties:
             $ref: '#/components/schemas/interface'
-          format: "interface {}"
+          format: "map[string]interface {}"
           properties: {}
           type: object
         paidTime:
@@ -7176,7 +7177,7 @@ components:
         metadata:
           additionalProperties:
             $ref: '#/components/schemas/interface'
-          format: "interface {}"
+          format: "map[string]interface {}"
           properties: {}
           type: object
         planName:
@@ -7520,7 +7521,7 @@ components:
         metadata:
           additionalProperties:
             $ref: '#/components/schemas/interface'
-          format: "interface {}"
+          format: "map[string]interface {}"
           properties: {}
           type: object
         paymentId:
@@ -7728,7 +7729,7 @@ components:
         metadata:
           additionalProperties:
             $ref: '#/components/schemas/interface'
-          format: "interface {}"
+          format: "map[string]interface {}"
           properties: {}
           type: object
         pendingUpdateId:
@@ -7888,7 +7889,7 @@ components:
         metadata:
           additionalProperties:
             $ref: '#/components/schemas/interface'
-          format: "interface {}"
+          format: "map[string]interface {}"
           properties: {}
           type: object
         paymentId:
@@ -8856,7 +8857,7 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "interface {}"
+          format: "map[string]interface {}"
           properties: {}
           type: object
         originAmount:
@@ -9118,7 +9119,7 @@ components:
         metadata:
           additionalProperties:
             $ref: '#/components/schemas/interface'
-          format: "interface {}"
+          format: "map[string]interface {}"
           properties: {}
           type: object
         name:
@@ -11276,7 +11277,7 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/interface'
           description: Metadata
-          format: "interface {}"
+          format: "map[string]interface {}"
           properties: {}
           type: object
         payment:
@@ -11601,7 +11602,7 @@ components:
         metadata:
           additionalProperties:
             $ref: '#/components/schemas/interface'
-          format: "interface {}"
+          format: "map[string]interface {}"
           properties: {}
           type: object
         note:
@@ -12550,7 +12551,7 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "interface {}"
+          format: "map[string]interface {}"
           properties: {}
           type: object
         name:
@@ -12725,7 +12726,7 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "interface {}"
+          format: "map[string]interface {}"
           properties: {}
           type: object
         name:
@@ -14757,7 +14758,7 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "interface {}"
+          format: "map[string]interface {}"
           properties: {}
           type: object
         redirectUrl:
@@ -14809,7 +14810,7 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "interface {}"
+          format: "map[string]interface {}"
           properties: {}
           type: object
         paymentId:
@@ -14915,7 +14916,7 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "interface {}"
+          format: "map[string]interface {}"
           properties: {}
           type: object
         name:
@@ -15316,7 +15317,7 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "*interface {}"
+          format: "*map[string]interface {}"
           properties: {}
           type: object
         metricLimits:
@@ -15545,7 +15546,7 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "interface {}"
+          format: "map[string]interface {}"
           properties: {}
           type: object
         metricLimits:
@@ -15724,7 +15725,7 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "*interface {}"
+          format: "*map[string]interface {}"
           properties: {}
           type: object
         productId:
@@ -15831,7 +15832,7 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "*interface {}"
+          format: "*map[string]interface {}"
           properties: {}
           type: object
         productName:
@@ -16719,7 +16720,7 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "interface {}"
+          format: "map[string]interface {}"
           properties: {}
           type: object
         paymentMethodId:
@@ -17005,7 +17006,7 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "interface {}"
+          format: "map[string]interface {}"
           properties: {}
           type: object
         name:
@@ -17125,7 +17126,7 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/interface'
           description: Metadata，custom data
-          format: "interface {}"
+          format: "map[string]interface {}"
           properties: {}
           type: object
         quantity:
@@ -17257,7 +17258,7 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "interface {}"
+          format: "map[string]interface {}"
           properties: {}
           type: object
         productData:
@@ -17499,7 +17500,7 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "interface {}"
+          format: "map[string]interface {}"
           properties: {}
           type: object
         newPlanId:
@@ -17667,7 +17668,7 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/interface'
           description: Payload
-          format: "*interface {}"
+          format: "*map[string]interface {}"
           properties: {}
           type: object
         task:
@@ -17825,7 +17826,7 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/interface'
           description: Payload
-          format: "interface {}"
+          format: "map[string]interface {}"
           properties: {}
           type: object
         task:
@@ -17865,7 +17866,7 @@ components:
           additionalProperties:
             $ref: '#/components/schemas/interface'
           description: Payload
-          format: "interface {}"
+          format: "map[string]interface {}"
           properties: {}
           type: object
         task:
