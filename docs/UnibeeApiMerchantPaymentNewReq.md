@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **GasPayer** | Pointer to **string** | who pay the gas, merchant|user | [optional] 
 **GatewayId** | **int64** | GatewayId | 
 **Items** | Pointer to [**[]UnibeeApiMerchantPaymentItem**](UnibeeApiMerchantPaymentItem.md) | Items | [optional] 
-**Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
+**Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **Name** | Pointer to **string** | Name | [optional] 
 **PlanId** | Pointer to **int64** | PlanId, either TotalAmount&amp;Currency or PlanId needed | [optional] 
 **RedirectUrl** | Pointer to **string** | Redirect Url | [optional] 
@@ -288,20 +288,20 @@ HasItems returns a boolean if a field has been set.
 
 ### GetMetadata
 
-`func (o *UnibeeApiMerchantPaymentNewReq) GetMetadata() map[string]string`
+`func (o *UnibeeApiMerchantPaymentNewReq) GetMetadata() map[string]map[string]interface{}`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *UnibeeApiMerchantPaymentNewReq) GetMetadataOk() (*map[string]string, bool)`
+`func (o *UnibeeApiMerchantPaymentNewReq) GetMetadataOk() (*map[string]map[string]interface{}, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *UnibeeApiMerchantPaymentNewReq) SetMetadata(v map[string]string)`
+`func (o *UnibeeApiMerchantPaymentNewReq) SetMetadata(v map[string]map[string]interface{})`
 
 SetMetadata sets Metadata field to given value.
 

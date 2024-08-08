@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **DiscountCode** | Pointer to **string** | DiscountCode | [optional] 
 **DiscountPercentage** | Pointer to **int32** | Percentage of discount, 100&#x3D;1%, ignore if discountAmount provide | [optional] 
 **GatewayId** | Pointer to **int32** | GatewayId, use user&#39;s gateway if not provide | [optional] 
-**Metadata** | Pointer to **map[string]string** | Metadata，custom data | [optional] 
+**Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，custom data | [optional] 
 **Quantity** | **int64** | Quantity, quantity of the new payment which one-time addon purchased | 
 **ReturnUrl** | Pointer to **string** | ReturnUrl, the addon&#39;s payment will redirect based on the returnUrl provided when it&#39;s back from gateway side | [optional] 
 **SubscriptionId** | Pointer to **string** | SubscriptionId, id of subscription which addon will attached, either SubscriptionId or UserId needed, The only one active subscription of userId will attach the addon | [optional] 
@@ -157,20 +157,20 @@ HasGatewayId returns a boolean if a field has been set.
 
 ### GetMetadata
 
-`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetMetadata() map[string]string`
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetMetadata() map[string]map[string]interface{}`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetMetadataOk() (*map[string]string, bool)`
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetMetadataOk() (*map[string]map[string]interface{}, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) SetMetadata(v map[string]string)`
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) SetMetadata(v map[string]map[string]interface{})`
 
 SetMetadata sets Metadata field to given value.
 

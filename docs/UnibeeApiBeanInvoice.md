@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **InvoiceName** | Pointer to **string** |  | [optional] 
 **Lines** | Pointer to [**[]UnibeeApiBeanInvoiceItemSimplify**](UnibeeApiBeanInvoiceItemSimplify.md) |  | [optional] 
 **Link** | Pointer to **string** | invoice link | [optional] 
-**Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
+**Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **OriginAmount** | Pointer to **int64** |  | [optional] 
 **PaymentId** | Pointer to **string** | paymentId | [optional] 
 **PaymentLink** | Pointer to **string** | invoice payment link | [optional] 
@@ -516,20 +516,20 @@ HasLink returns a boolean if a field has been set.
 
 ### GetMetadata
 
-`func (o *UnibeeApiBeanInvoice) GetMetadata() map[string]string`
+`func (o *UnibeeApiBeanInvoice) GetMetadata() map[string]map[string]interface{}`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *UnibeeApiBeanInvoice) GetMetadataOk() (*map[string]string, bool)`
+`func (o *UnibeeApiBeanInvoice) GetMetadataOk() (*map[string]map[string]interface{}, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *UnibeeApiBeanInvoice) SetMetadata(v map[string]string)`
+`func (o *UnibeeApiBeanInvoice) SetMetadata(v map[string]map[string]interface{})`
 
 SetMetadata sets Metadata field to given value.
 

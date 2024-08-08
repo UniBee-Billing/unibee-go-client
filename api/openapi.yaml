@@ -5,11 +5,10 @@ info:
     name: Apache-2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   title: OpenAPI UniBee
-  version: |
-    buildtime:202408060911
+  version: develop
 servers:
 - url: https://api.unibee.top
-- url: http://127.0.0.1:8080
+- url: http://127.0.0.1:8088
 paths:
   /merchant/auth/sso/login:
     post:
@@ -5303,11 +5302,9 @@ components:
           type: integer
         metadata:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
+            $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "map[string]string"
+          format: "interface {}"
           properties: {}
           type: object
         recurring:
@@ -5434,7 +5431,7 @@ components:
     unibee.api.bean.Invoice:
       example:
         metadata:
-          key: metadata
+          key: {}
         bizType: 1
         invoiceName: invoiceName
         prorationScale: 1
@@ -5446,7 +5443,7 @@ components:
           - 4
           - 4
           metadata:
-            key: metadata
+            key: {}
           code: code
           discountAmount: 5
           discountPercentage: 2
@@ -5489,7 +5486,7 @@ components:
           periodStart: 7
           plan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -5531,7 +5528,7 @@ components:
           periodStart: 7
           plan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -5659,11 +5656,9 @@ components:
           type: string
         metadata:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
+            $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "map[string]string"
+          format: "interface {}"
           properties: {}
           type: object
         originAmount:
@@ -5777,7 +5772,7 @@ components:
         periodStart: 7
         plan:
           metadata:
-            key: metadata
+            key: {}
           intervalUnit: intervalUnit
           description: description
           planName: planName
@@ -5970,7 +5965,7 @@ components:
         createTime: 6
         merchantId: 5
         payload:
-          key: payload
+          key: {}
         format: format
         name: name
         exportColumns:
@@ -6016,11 +6011,9 @@ components:
           type: string
         payload:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
+            $ref: '#/components/schemas/interface'
           description: Payload
-          format: "map[string]string"
+          format: "interface {}"
           properties: {}
           type: object
         task:
@@ -6166,7 +6159,7 @@ components:
         - 4
         - 4
         metadata:
-          key: metadata
+          key: {}
         code: code
         discountAmount: 5
         discountPercentage: 2
@@ -6240,10 +6233,8 @@ components:
           type: integer
         metadata:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
-          format: "map[string]string"
+            $ref: '#/components/schemas/interface'
+          format: "interface {}"
           properties: {}
           type: object
         name:
@@ -6796,7 +6787,7 @@ components:
     unibee.api.bean.Payment:
       example:
         metadata:
-          key: metadata
+          key: {}
         authorizeReason: authorizeReason
         billingReason: billingReason
         link: link
@@ -6906,10 +6897,8 @@ components:
           type: integer
         metadata:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
-          format: "map[string]string"
+            $ref: '#/components/schemas/interface'
+          format: "interface {}"
           properties: {}
           type: object
         paidTime:
@@ -7078,7 +7067,7 @@ components:
     unibee.api.bean.Plan:
       example:
         metadata:
-          key: metadata
+          key: {}
         intervalUnit: intervalUnit
         description: description
         planName: planName
@@ -7186,10 +7175,8 @@ components:
           type: integer
         metadata:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
-          format: "map[string]string"
+            $ref: '#/components/schemas/interface'
+          format: "interface {}"
           properties: {}
           type: object
         planName:
@@ -7242,7 +7229,7 @@ components:
         quantity: 6
         addonPlan:
           metadata:
-            key: metadata
+            key: {}
           intervalUnit: intervalUnit
           description: description
           planName: planName
@@ -7470,7 +7457,7 @@ components:
     unibee.api.bean.Refund:
       example:
         metadata:
-          key: metadata
+          key: {}
         refundTime: 7
         externalRefundId: externalRefundId
         type: 3
@@ -7532,10 +7519,8 @@ components:
           type: integer
         metadata:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
-          format: "map[string]string"
+            $ref: '#/components/schemas/interface'
+          format: "interface {}"
           properties: {}
           type: object
         paymentId:
@@ -7592,7 +7577,7 @@ components:
     unibee.api.bean.Subscription:
       example:
         metadata:
-          key: metadata
+          key: {}
         testClock: 3
         currentPeriodEnd: 1
         link: link
@@ -7742,10 +7727,8 @@ components:
           type: integer
         metadata:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
-          format: "map[string]string"
+            $ref: '#/components/schemas/interface'
+          format: "interface {}"
           properties: {}
           type: object
         pendingUpdateId:
@@ -7871,7 +7854,7 @@ components:
     unibee.api.bean.SubscriptionOnetimeAddon:
       example:
         metadata:
-          key: metadata
+          key: {}
         quantity: 2
         isDeleted: 5
         createTime: 1
@@ -7904,10 +7887,8 @@ components:
           type: integer
         metadata:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
-          format: "map[string]string"
+            $ref: '#/components/schemas/interface'
+          format: "interface {}"
           properties: {}
           type: object
         paymentId:
@@ -8357,13 +8338,13 @@ components:
     unibee.api.bean.detail.InvoiceDetail:
       example:
         metadata:
-          key: metadata
+          key: {}
         discount:
           planIds:
           - 4
           - 4
           metadata:
-            key: metadata
+            key: {}
           code: code
           discountAmount: 5
           discountPercentage: 2
@@ -8385,7 +8366,7 @@ components:
         paymentId: paymentId
         payment:
           metadata:
-            key: metadata
+            key: {}
           authorizeReason: authorizeReason
           billingReason: billingReason
           link: link
@@ -8542,7 +8523,7 @@ components:
         uniqueId: uniqueId
         refund:
           metadata:
-            key: metadata
+            key: {}
           refundTime: 7
           externalRefundId: externalRefundId
           type: 3
@@ -8572,7 +8553,7 @@ components:
         gatewayInvoicePdf: gatewayInvoicePdf
         subscription:
           metadata:
-            key: metadata
+            key: {}
           testClock: 3
           currentPeriodEnd: 1
           link: link
@@ -8635,7 +8616,7 @@ components:
           periodStart: 7
           plan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -8677,7 +8658,7 @@ components:
           periodStart: 7
           plan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -8873,11 +8854,9 @@ components:
           type: integer
         metadata:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
+            $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "map[string]string"
+          format: "interface {}"
           properties: {}
           type: object
         originAmount:
@@ -9009,7 +8988,7 @@ components:
         - 4
         - 4
         metadata:
-          key: metadata
+          key: {}
         code: code
         discountAmount: 5
         discountPercentage: 2
@@ -9018,7 +8997,7 @@ components:
         merchantId: 2
         plans:
         - metadata:
-            key: metadata
+            key: {}
           intervalUnit: intervalUnit
           description: description
           planName: planName
@@ -9045,7 +9024,7 @@ components:
           bindingOnetimeAddonIds: bindingOnetimeAddonIds
           status: 5
         - metadata:
-            key: metadata
+            key: {}
           intervalUnit: intervalUnit
           description: description
           planName: planName
@@ -9138,10 +9117,8 @@ components:
           type: integer
         metadata:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
-          format: "map[string]string"
+            $ref: '#/components/schemas/interface'
+          format: "interface {}"
           properties: {}
           type: object
         name:
@@ -9409,7 +9386,7 @@ components:
         subscriptionId: subscriptionId
         plan:
           metadata:
-            key: metadata
+            key: {}
           intervalUnit: intervalUnit
           description: description
           planName: planName
@@ -9539,7 +9516,7 @@ components:
       example:
         payment:
           metadata:
-            key: metadata
+            key: {}
           authorizeReason: authorizeReason
           billingReason: billingReason
           link: link
@@ -9568,13 +9545,13 @@ components:
           status: 6
         invoice:
           metadata:
-            key: metadata
+            key: {}
           discount:
             planIds:
             - 4
             - 4
             metadata:
-              key: metadata
+              key: {}
             code: code
             discountAmount: 5
             discountPercentage: 2
@@ -9596,7 +9573,7 @@ components:
           paymentId: paymentId
           payment:
             metadata:
-              key: metadata
+              key: {}
             authorizeReason: authorizeReason
             billingReason: billingReason
             link: link
@@ -9753,7 +9730,7 @@ components:
           uniqueId: uniqueId
           refund:
             metadata:
-              key: metadata
+              key: {}
             refundTime: 7
             externalRefundId: externalRefundId
             type: 3
@@ -9783,7 +9760,7 @@ components:
           gatewayInvoicePdf: gatewayInvoicePdf
           subscription:
             metadata:
-              key: metadata
+              key: {}
             testClock: 3
             currentPeriodEnd: 1
             link: link
@@ -9846,7 +9823,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -9888,7 +9865,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -10036,7 +10013,7 @@ components:
         invoiceId: invoiceId
         payment:
           metadata:
-            key: metadata
+            key: {}
           authorizeReason: authorizeReason
           billingReason: billingReason
           link: link
@@ -10070,7 +10047,7 @@ components:
         refundId: refundId
         refund:
           metadata:
-            key: metadata
+            key: {}
           refundTime: 7
           externalRefundId: externalRefundId
           type: 3
@@ -10190,7 +10167,7 @@ components:
           status: 9
         addons:
         - metadata:
-            key: metadata
+            key: {}
           intervalUnit: intervalUnit
           description: description
           planName: planName
@@ -10217,7 +10194,7 @@ components:
           bindingOnetimeAddonIds: bindingOnetimeAddonIds
           status: 5
         - metadata:
-            key: metadata
+            key: {}
           intervalUnit: intervalUnit
           description: description
           planName: planName
@@ -10251,7 +10228,7 @@ components:
         - 6
         plan:
           metadata:
-            key: metadata
+            key: {}
           intervalUnit: intervalUnit
           description: description
           planName: planName
@@ -10316,7 +10293,7 @@ components:
           metricLimit: 7
         onetimeAddons:
         - metadata:
-            key: metadata
+            key: {}
           intervalUnit: intervalUnit
           description: description
           planName: planName
@@ -10343,7 +10320,7 @@ components:
           bindingOnetimeAddonIds: bindingOnetimeAddonIds
           status: 5
         - metadata:
-            key: metadata
+            key: {}
           intervalUnit: intervalUnit
           description: description
           planName: planName
@@ -10418,7 +10395,7 @@ components:
       example:
         payment:
           metadata:
-            key: metadata
+            key: {}
           authorizeReason: authorizeReason
           billingReason: billingReason
           link: link
@@ -10495,7 +10472,7 @@ components:
           status: 6
         refund:
           metadata:
-            key: metadata
+            key: {}
           refundTime: 7
           externalRefundId: externalRefundId
           type: 3
@@ -10526,7 +10503,7 @@ components:
       example:
         latestInvoice:
           metadata:
-            key: metadata
+            key: {}
           bizType: 1
           invoiceName: invoiceName
           prorationScale: 1
@@ -10538,7 +10515,7 @@ components:
             - 4
             - 4
             metadata:
-              key: metadata
+              key: {}
             code: code
             discountAmount: 5
             discountPercentage: 2
@@ -10581,7 +10558,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -10623,7 +10600,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -10673,14 +10650,14 @@ components:
         unfinishedSubscriptionPendingUpdate:
           note: note
           metadata:
-            key: metadata
+            key: {}
           gmtModify: gmtModify
           updateAddonData: updateAddonData
           addons:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -10709,7 +10686,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -10738,7 +10715,7 @@ components:
           link: link
           updatePlan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -10769,7 +10746,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -10798,7 +10775,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -10832,7 +10809,7 @@ components:
           planId: 9
           plan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -10917,7 +10894,7 @@ components:
         - quantity: 6
           addonPlan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -10946,7 +10923,7 @@ components:
         - quantity: 6
           addonPlan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -10977,7 +10954,7 @@ components:
           - 4
           - 4
           metadata:
-            key: metadata
+            key: {}
           code: code
           discountAmount: 5
           discountPercentage: 2
@@ -10994,7 +10971,7 @@ components:
           status: 1
         subscription:
           metadata:
-            key: metadata
+            key: {}
           testClock: 3
           currentPeriodEnd: 1
           link: link
@@ -11034,7 +11011,7 @@ components:
           vatNumber: vatNumber
         plan:
           metadata:
-            key: metadata
+            key: {}
           intervalUnit: intervalUnit
           description: description
           planName: planName
@@ -11165,11 +11142,11 @@ components:
     unibee.api.bean.detail.SubscriptionOnetimeAddonDetail:
       example:
         metadata:
-          key: metadata
+          key: {}
         quantity: 5
         addon:
           metadata:
-            key: metadata
+            key: {}
           intervalUnit: intervalUnit
           description: description
           planName: planName
@@ -11198,7 +11175,7 @@ components:
         createTime: 1
         payment:
           metadata:
-            key: metadata
+            key: {}
           authorizeReason: authorizeReason
           billingReason: billingReason
           link: link
@@ -11297,11 +11274,9 @@ components:
           type: integer
         metadata:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
+            $ref: '#/components/schemas/interface'
           description: Metadata
-          format: "map[string]string"
+          format: "interface {}"
           properties: {}
           type: object
         payment:
@@ -11328,14 +11303,14 @@ components:
       example:
         note: note
         metadata:
-          key: metadata
+          key: {}
         gmtModify: gmtModify
         updateAddonData: updateAddonData
         addons:
         - quantity: 6
           addonPlan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -11364,7 +11339,7 @@ components:
         - quantity: 6
           addonPlan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -11393,7 +11368,7 @@ components:
         link: link
         updatePlan:
           metadata:
-            key: metadata
+            key: {}
           intervalUnit: intervalUnit
           description: description
           planName: planName
@@ -11424,7 +11399,7 @@ components:
         - quantity: 6
           addonPlan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -11453,7 +11428,7 @@ components:
         - quantity: 6
           addonPlan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -11487,7 +11462,7 @@ components:
         planId: 9
         plan:
           metadata:
-            key: metadata
+            key: {}
           intervalUnit: intervalUnit
           description: description
           planName: planName
@@ -11625,10 +11600,8 @@ components:
           $ref: '#/components/schemas/unibee.api.bean.detail.MerchantMemberDetail'
         metadata:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
-          format: "map[string]string"
+            $ref: '#/components/schemas/interface'
+          format: "interface {}"
           properties: {}
           type: object
         note:
@@ -11720,7 +11693,7 @@ components:
         - quantity: 6
           addonPlan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -11749,7 +11722,7 @@ components:
         - quantity: 6
           addonPlan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -11788,7 +11761,7 @@ components:
         periodStart: 2
         plan:
           metadata:
-            key: metadata
+            key: {}
           intervalUnit: intervalUnit
           description: description
           planName: planName
@@ -12575,11 +12548,9 @@ components:
           type: integer
         metadata:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
+            $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "map[string]string"
+          format: "interface {}"
           properties: {}
           type: object
         name:
@@ -12752,11 +12723,9 @@ components:
           type: integer
         metadata:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
+            $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "map[string]string"
+          format: "interface {}"
           properties: {}
           type: object
         name:
@@ -14241,7 +14210,7 @@ components:
         - quantity: 6
           addonPlan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -14270,7 +14239,7 @@ components:
         - quantity: 6
           addonPlan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -14298,7 +14267,7 @@ components:
             status: 5
         subscription:
           metadata:
-            key: metadata
+            key: {}
           testClock: 3
           currentPeriodEnd: 1
           link: link
@@ -14338,7 +14307,7 @@ components:
           vatNumber: vatNumber
         plan:
           metadata:
-            key: metadata
+            key: {}
           intervalUnit: intervalUnit
           description: description
           planName: planName
@@ -14786,11 +14755,9 @@ components:
           type: integer
         metadata:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
+            $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "map[string]string"
+          format: "interface {}"
           properties: {}
           type: object
         redirectUrl:
@@ -14840,11 +14807,9 @@ components:
           type: string
         metadata:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
+            $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "map[string]string"
+          format: "interface {}"
           properties: {}
           type: object
         paymentId:
@@ -14948,11 +14913,9 @@ components:
           type: array
         metadata:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
+            $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "map[string]string"
+          format: "interface {}"
           properties: {}
           type: object
         name:
@@ -15351,11 +15314,9 @@ components:
           type: string
         metadata:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
+            $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "*map[string]string"
+          format: "*interface {}"
           properties: {}
           type: object
         metricLimits:
@@ -15582,11 +15543,9 @@ components:
           type: string
         metadata:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
+            $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "map[string]string"
+          format: "interface {}"
           properties: {}
           type: object
         metricLimits:
@@ -15763,11 +15722,9 @@ components:
           type: string
         metadata:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
+            $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "*map[string]string"
+          format: "*interface {}"
           properties: {}
           type: object
         productId:
@@ -15872,11 +15829,9 @@ components:
           type: string
         metadata:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
+            $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "*map[string]string"
+          format: "*interface {}"
           properties: {}
           type: object
         productName:
@@ -16147,7 +16102,7 @@ components:
       type: object
     unibee.api.merchant.search.PrecisionMatchObject:
       example:
-        data: "{}"
+        data: {}
         id: id
         type: type
       properties:
@@ -16762,11 +16717,9 @@ components:
           type: integer
         metadata:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
+            $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "map[string]string"
+          format: "interface {}"
           properties: {}
           type: object
         paymentMethodId:
@@ -17050,11 +17003,9 @@ components:
           type: array
         metadata:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
+            $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "map[string]string"
+          format: "interface {}"
           properties: {}
           type: object
         name:
@@ -17172,11 +17123,9 @@ components:
           type: integer
         metadata:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
+            $ref: '#/components/schemas/interface'
           description: Metadata，custom data
-          format: "map[string]string"
+          format: "interface {}"
           properties: {}
           type: object
         quantity:
@@ -17306,11 +17255,9 @@ components:
           type: boolean
         metadata:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
+            $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "map[string]string"
+          format: "interface {}"
           properties: {}
           type: object
         productData:
@@ -17550,11 +17497,9 @@ components:
           type: boolean
         metadata:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
+            $ref: '#/components/schemas/interface'
           description: Metadata，Map
-          format: "map[string]string"
+          format: "interface {}"
           properties: {}
           type: object
         newPlanId:
@@ -17720,11 +17665,9 @@ components:
           type: string
         payload:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
+            $ref: '#/components/schemas/interface'
           description: Payload
-          format: "*map[string]string"
+          format: "*interface {}"
           properties: {}
           type: object
         task:
@@ -17880,11 +17823,9 @@ components:
           type: string
         payload:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
+            $ref: '#/components/schemas/interface'
           description: Payload
-          format: "map[string]string"
+          format: "interface {}"
           properties: {}
           type: object
         task:
@@ -17922,11 +17863,9 @@ components:
           type: string
         payload:
           additionalProperties:
-            format: string
-            properties: {}
-            type: string
+            $ref: '#/components/schemas/interface'
           description: Payload
-          format: "map[string]string"
+          format: "interface {}"
           properties: {}
           type: object
         task:
@@ -19134,7 +19073,7 @@ components:
           - 4
           - 4
           metadata:
-            key: metadata
+            key: {}
           code: code
           discountAmount: 5
           discountPercentage: 2
@@ -19143,7 +19082,7 @@ components:
           merchantId: 2
           plans:
           - metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -19170,7 +19109,7 @@ components:
             bindingOnetimeAddonIds: bindingOnetimeAddonIds
             status: 5
           - metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -19218,7 +19157,7 @@ components:
             - 4
             - 4
             metadata:
-              key: metadata
+              key: {}
             code: code
             discountAmount: 5
             discountPercentage: 2
@@ -19227,7 +19166,7 @@ components:
             merchantId: 2
             plans:
             - metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -19254,7 +19193,7 @@ components:
               bindingOnetimeAddonIds: bindingOnetimeAddonIds
               status: 5
             - metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -19317,7 +19256,7 @@ components:
           - 4
           - 4
           metadata:
-            key: metadata
+            key: {}
           code: code
           discountAmount: 5
           discountPercentage: 2
@@ -19346,7 +19285,7 @@ components:
             - 4
             - 4
             metadata:
-              key: metadata
+              key: {}
             code: code
             discountAmount: 5
             discountPercentage: 2
@@ -19391,7 +19330,7 @@ components:
           - 4
           - 4
           metadata:
-            key: metadata
+            key: {}
           code: code
           discountAmount: 5
           discountPercentage: 2
@@ -19410,7 +19349,7 @@ components:
           - 4
           - 4
           metadata:
-            key: metadata
+            key: {}
           code: code
           discountAmount: 5
           discountPercentage: 2
@@ -19450,7 +19389,7 @@ components:
             - 4
             - 4
             metadata:
-              key: metadata
+              key: {}
             code: code
             discountAmount: 5
             discountPercentage: 2
@@ -19469,7 +19408,7 @@ components:
             - 4
             - 4
             metadata:
-              key: metadata
+              key: {}
             code: code
             discountAmount: 5
             discountPercentage: 2
@@ -19514,7 +19453,7 @@ components:
           - 4
           - 4
           metadata:
-            key: metadata
+            key: {}
           code: code
           discountAmount: 5
           discountPercentage: 2
@@ -19561,7 +19500,7 @@ components:
             - 4
             - 4
             metadata:
-              key: metadata
+              key: {}
             code: code
             discountAmount: 5
             discountPercentage: 2
@@ -19613,7 +19552,7 @@ components:
           subscriptionId: subscriptionId
           plan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -19698,7 +19637,7 @@ components:
           subscriptionId: subscriptionId
           plan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -19804,7 +19743,7 @@ components:
             subscriptionId: subscriptionId
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -19889,7 +19828,7 @@ components:
             subscriptionId: subscriptionId
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -20677,13 +20616,13 @@ components:
       example:
         creditNotes:
         - metadata:
-            key: metadata
+            key: {}
           discount:
             planIds:
             - 4
             - 4
             metadata:
-              key: metadata
+              key: {}
             code: code
             discountAmount: 5
             discountPercentage: 2
@@ -20705,7 +20644,7 @@ components:
           paymentId: paymentId
           payment:
             metadata:
-              key: metadata
+              key: {}
             authorizeReason: authorizeReason
             billingReason: billingReason
             link: link
@@ -20862,7 +20801,7 @@ components:
           uniqueId: uniqueId
           refund:
             metadata:
-              key: metadata
+              key: {}
             refundTime: 7
             externalRefundId: externalRefundId
             type: 3
@@ -20892,7 +20831,7 @@ components:
           gatewayInvoicePdf: gatewayInvoicePdf
           subscription:
             metadata:
-              key: metadata
+              key: {}
             testClock: 3
             currentPeriodEnd: 1
             link: link
@@ -20955,7 +20894,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -20997,7 +20936,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -21055,13 +20994,13 @@ components:
           gatewayInvoiceId: gatewayInvoiceId
           refundId: refundId
         - metadata:
-            key: metadata
+            key: {}
           discount:
             planIds:
             - 4
             - 4
             metadata:
-              key: metadata
+              key: {}
             code: code
             discountAmount: 5
             discountPercentage: 2
@@ -21083,7 +21022,7 @@ components:
           paymentId: paymentId
           payment:
             metadata:
-              key: metadata
+              key: {}
             authorizeReason: authorizeReason
             billingReason: billingReason
             link: link
@@ -21240,7 +21179,7 @@ components:
           uniqueId: uniqueId
           refund:
             metadata:
-              key: metadata
+              key: {}
             refundTime: 7
             externalRefundId: externalRefundId
             type: 3
@@ -21270,7 +21209,7 @@ components:
           gatewayInvoicePdf: gatewayInvoicePdf
           subscription:
             metadata:
-              key: metadata
+              key: {}
             testClock: 3
             currentPeriodEnd: 1
             link: link
@@ -21333,7 +21272,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -21375,7 +21314,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -21434,13 +21373,13 @@ components:
           refundId: refundId
         invoice:
           metadata:
-            key: metadata
+            key: {}
           discount:
             planIds:
             - 4
             - 4
             metadata:
-              key: metadata
+              key: {}
             code: code
             discountAmount: 5
             discountPercentage: 2
@@ -21462,7 +21401,7 @@ components:
           paymentId: paymentId
           payment:
             metadata:
-              key: metadata
+              key: {}
             authorizeReason: authorizeReason
             billingReason: billingReason
             link: link
@@ -21619,7 +21558,7 @@ components:
           uniqueId: uniqueId
           refund:
             metadata:
-              key: metadata
+              key: {}
             refundTime: 7
             externalRefundId: externalRefundId
             type: 3
@@ -21649,7 +21588,7 @@ components:
           gatewayInvoicePdf: gatewayInvoicePdf
           subscription:
             metadata:
-              key: metadata
+              key: {}
             testClock: 3
             currentPeriodEnd: 1
             link: link
@@ -21712,7 +21651,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -21754,7 +21693,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -21829,13 +21768,13 @@ components:
         data:
           creditNotes:
           - metadata:
-              key: metadata
+              key: {}
             discount:
               planIds:
               - 4
               - 4
               metadata:
-                key: metadata
+                key: {}
               code: code
               discountAmount: 5
               discountPercentage: 2
@@ -21857,7 +21796,7 @@ components:
             paymentId: paymentId
             payment:
               metadata:
-                key: metadata
+                key: {}
               authorizeReason: authorizeReason
               billingReason: billingReason
               link: link
@@ -22014,7 +21953,7 @@ components:
             uniqueId: uniqueId
             refund:
               metadata:
-                key: metadata
+                key: {}
               refundTime: 7
               externalRefundId: externalRefundId
               type: 3
@@ -22044,7 +21983,7 @@ components:
             gatewayInvoicePdf: gatewayInvoicePdf
             subscription:
               metadata:
-                key: metadata
+                key: {}
               testClock: 3
               currentPeriodEnd: 1
               link: link
@@ -22107,7 +22046,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -22149,7 +22088,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -22207,13 +22146,13 @@ components:
             gatewayInvoiceId: gatewayInvoiceId
             refundId: refundId
           - metadata:
-              key: metadata
+              key: {}
             discount:
               planIds:
               - 4
               - 4
               metadata:
-                key: metadata
+                key: {}
               code: code
               discountAmount: 5
               discountPercentage: 2
@@ -22235,7 +22174,7 @@ components:
             paymentId: paymentId
             payment:
               metadata:
-                key: metadata
+                key: {}
               authorizeReason: authorizeReason
               billingReason: billingReason
               link: link
@@ -22392,7 +22331,7 @@ components:
             uniqueId: uniqueId
             refund:
               metadata:
-                key: metadata
+                key: {}
               refundTime: 7
               externalRefundId: externalRefundId
               type: 3
@@ -22422,7 +22361,7 @@ components:
             gatewayInvoicePdf: gatewayInvoicePdf
             subscription:
               metadata:
-                key: metadata
+                key: {}
               testClock: 3
               currentPeriodEnd: 1
               link: link
@@ -22485,7 +22424,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -22527,7 +22466,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -22586,13 +22525,13 @@ components:
             refundId: refundId
           invoice:
             metadata:
-              key: metadata
+              key: {}
             discount:
               planIds:
               - 4
               - 4
               metadata:
-                key: metadata
+                key: {}
               code: code
               discountAmount: 5
               discountPercentage: 2
@@ -22614,7 +22553,7 @@ components:
             paymentId: paymentId
             payment:
               metadata:
-                key: metadata
+                key: {}
               authorizeReason: authorizeReason
               billingReason: billingReason
               link: link
@@ -22771,7 +22710,7 @@ components:
             uniqueId: uniqueId
             refund:
               metadata:
-                key: metadata
+                key: {}
               refundTime: 7
               externalRefundId: externalRefundId
               type: 3
@@ -22801,7 +22740,7 @@ components:
             gatewayInvoicePdf: gatewayInvoicePdf
             subscription:
               metadata:
-                key: metadata
+                key: {}
               testClock: 3
               currentPeriodEnd: 1
               link: link
@@ -22864,7 +22803,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -22906,7 +22845,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -22989,13 +22928,13 @@ components:
       example:
         invoice:
           metadata:
-            key: metadata
+            key: {}
           discount:
             planIds:
             - 4
             - 4
             metadata:
-              key: metadata
+              key: {}
             code: code
             discountAmount: 5
             discountPercentage: 2
@@ -23017,7 +22956,7 @@ components:
           paymentId: paymentId
           payment:
             metadata:
-              key: metadata
+              key: {}
             authorizeReason: authorizeReason
             billingReason: billingReason
             link: link
@@ -23174,7 +23113,7 @@ components:
           uniqueId: uniqueId
           refund:
             metadata:
-              key: metadata
+              key: {}
             refundTime: 7
             externalRefundId: externalRefundId
             type: 3
@@ -23204,7 +23143,7 @@ components:
           gatewayInvoicePdf: gatewayInvoicePdf
           subscription:
             metadata:
-              key: metadata
+              key: {}
             testClock: 3
             currentPeriodEnd: 1
             link: link
@@ -23267,7 +23206,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -23309,7 +23248,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -23377,13 +23316,13 @@ components:
         data:
           invoice:
             metadata:
-              key: metadata
+              key: {}
             discount:
               planIds:
               - 4
               - 4
               metadata:
-                key: metadata
+                key: {}
               code: code
               discountAmount: 5
               discountPercentage: 2
@@ -23405,7 +23344,7 @@ components:
             paymentId: paymentId
             payment:
               metadata:
-                key: metadata
+                key: {}
               authorizeReason: authorizeReason
               billingReason: billingReason
               link: link
@@ -23562,7 +23501,7 @@ components:
             uniqueId: uniqueId
             refund:
               metadata:
-                key: metadata
+                key: {}
               refundTime: 7
               externalRefundId: externalRefundId
               type: 3
@@ -23592,7 +23531,7 @@ components:
             gatewayInvoicePdf: gatewayInvoicePdf
             subscription:
               metadata:
-                key: metadata
+                key: {}
               testClock: 3
               currentPeriodEnd: 1
               link: link
@@ -23655,7 +23594,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -23697,7 +23636,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -23780,7 +23719,7 @@ components:
       example:
         invoice:
           metadata:
-            key: metadata
+            key: {}
           bizType: 1
           invoiceName: invoiceName
           prorationScale: 1
@@ -23792,7 +23731,7 @@ components:
             - 4
             - 4
             metadata:
-              key: metadata
+              key: {}
             code: code
             discountAmount: 5
             discountPercentage: 2
@@ -23835,7 +23774,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -23877,7 +23816,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -23934,7 +23873,7 @@ components:
         data:
           invoice:
             metadata:
-              key: metadata
+              key: {}
             bizType: 1
             invoiceName: invoiceName
             prorationScale: 1
@@ -23946,7 +23885,7 @@ components:
               - 4
               - 4
               metadata:
-                key: metadata
+                key: {}
               code: code
               discountAmount: 5
               discountPercentage: 2
@@ -23989,7 +23928,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -24031,7 +23970,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -24104,13 +24043,13 @@ components:
         total: 6
         invoices:
         - metadata:
-            key: metadata
+            key: {}
           discount:
             planIds:
             - 4
             - 4
             metadata:
-              key: metadata
+              key: {}
             code: code
             discountAmount: 5
             discountPercentage: 2
@@ -24132,7 +24071,7 @@ components:
           paymentId: paymentId
           payment:
             metadata:
-              key: metadata
+              key: {}
             authorizeReason: authorizeReason
             billingReason: billingReason
             link: link
@@ -24289,7 +24228,7 @@ components:
           uniqueId: uniqueId
           refund:
             metadata:
-              key: metadata
+              key: {}
             refundTime: 7
             externalRefundId: externalRefundId
             type: 3
@@ -24319,7 +24258,7 @@ components:
           gatewayInvoicePdf: gatewayInvoicePdf
           subscription:
             metadata:
-              key: metadata
+              key: {}
             testClock: 3
             currentPeriodEnd: 1
             link: link
@@ -24382,7 +24321,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -24424,7 +24363,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -24482,13 +24421,13 @@ components:
           gatewayInvoiceId: gatewayInvoiceId
           refundId: refundId
         - metadata:
-            key: metadata
+            key: {}
           discount:
             planIds:
             - 4
             - 4
             metadata:
-              key: metadata
+              key: {}
             code: code
             discountAmount: 5
             discountPercentage: 2
@@ -24510,7 +24449,7 @@ components:
           paymentId: paymentId
           payment:
             metadata:
-              key: metadata
+              key: {}
             authorizeReason: authorizeReason
             billingReason: billingReason
             link: link
@@ -24667,7 +24606,7 @@ components:
           uniqueId: uniqueId
           refund:
             metadata:
-              key: metadata
+              key: {}
             refundTime: 7
             externalRefundId: externalRefundId
             type: 3
@@ -24697,7 +24636,7 @@ components:
           gatewayInvoicePdf: gatewayInvoicePdf
           subscription:
             metadata:
-              key: metadata
+              key: {}
             testClock: 3
             currentPeriodEnd: 1
             link: link
@@ -24760,7 +24699,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -24802,7 +24741,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -24881,13 +24820,13 @@ components:
           total: 6
           invoices:
           - metadata:
-              key: metadata
+              key: {}
             discount:
               planIds:
               - 4
               - 4
               metadata:
-                key: metadata
+                key: {}
               code: code
               discountAmount: 5
               discountPercentage: 2
@@ -24909,7 +24848,7 @@ components:
             paymentId: paymentId
             payment:
               metadata:
-                key: metadata
+                key: {}
               authorizeReason: authorizeReason
               billingReason: billingReason
               link: link
@@ -25066,7 +25005,7 @@ components:
             uniqueId: uniqueId
             refund:
               metadata:
-                key: metadata
+                key: {}
               refundTime: 7
               externalRefundId: externalRefundId
               type: 3
@@ -25096,7 +25035,7 @@ components:
             gatewayInvoicePdf: gatewayInvoicePdf
             subscription:
               metadata:
-                key: metadata
+                key: {}
               testClock: 3
               currentPeriodEnd: 1
               link: link
@@ -25159,7 +25098,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -25201,7 +25140,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -25259,13 +25198,13 @@ components:
             gatewayInvoiceId: gatewayInvoiceId
             refundId: refundId
           - metadata:
-              key: metadata
+              key: {}
             discount:
               planIds:
               - 4
               - 4
               metadata:
-                key: metadata
+                key: {}
               code: code
               discountAmount: 5
               discountPercentage: 2
@@ -25287,7 +25226,7 @@ components:
             paymentId: paymentId
             payment:
               metadata:
-                key: metadata
+                key: {}
               authorizeReason: authorizeReason
               billingReason: billingReason
               link: link
@@ -25444,7 +25383,7 @@ components:
             uniqueId: uniqueId
             refund:
               metadata:
-                key: metadata
+                key: {}
               refundTime: 7
               externalRefundId: externalRefundId
               type: 3
@@ -25474,7 +25413,7 @@ components:
             gatewayInvoicePdf: gatewayInvoicePdf
             subscription:
               metadata:
-                key: metadata
+                key: {}
               testClock: 3
               currentPeriodEnd: 1
               link: link
@@ -25537,7 +25476,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -25579,7 +25518,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -25662,7 +25601,7 @@ components:
       example:
         refund:
           metadata:
-            key: metadata
+            key: {}
           refundTime: 7
           externalRefundId: externalRefundId
           type: 3
@@ -25692,7 +25631,7 @@ components:
         data:
           refund:
             metadata:
-              key: metadata
+              key: {}
             refundTime: 7
             externalRefundId: externalRefundId
             type: 3
@@ -26556,7 +26495,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -26585,7 +26524,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -26613,7 +26552,7 @@ components:
               status: 5
           subscription:
             metadata:
-              key: metadata
+              key: {}
             testClock: 3
             currentPeriodEnd: 1
             link: link
@@ -26653,7 +26592,7 @@ components:
             vatNumber: vatNumber
           plan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -26839,7 +26778,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -26868,7 +26807,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -26896,7 +26835,7 @@ components:
                 status: 5
             subscription:
               metadata:
-                key: metadata
+                key: {}
               testClock: 3
               currentPeriodEnd: 1
               link: link
@@ -26936,7 +26875,7 @@ components:
               vatNumber: vatNumber
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -27113,7 +27052,7 @@ components:
         paymentDetail:
           payment:
             metadata:
-              key: metadata
+              key: {}
             authorizeReason: authorizeReason
             billingReason: billingReason
             link: link
@@ -27142,13 +27081,13 @@ components:
             status: 6
           invoice:
             metadata:
-              key: metadata
+              key: {}
             discount:
               planIds:
               - 4
               - 4
               metadata:
-                key: metadata
+                key: {}
               code: code
               discountAmount: 5
               discountPercentage: 2
@@ -27170,7 +27109,7 @@ components:
             paymentId: paymentId
             payment:
               metadata:
-                key: metadata
+                key: {}
               authorizeReason: authorizeReason
               billingReason: billingReason
               link: link
@@ -27327,7 +27266,7 @@ components:
             uniqueId: uniqueId
             refund:
               metadata:
-                key: metadata
+                key: {}
               refundTime: 7
               externalRefundId: externalRefundId
               type: 3
@@ -27357,7 +27296,7 @@ components:
             gatewayInvoicePdf: gatewayInvoicePdf
             subscription:
               metadata:
-                key: metadata
+                key: {}
               testClock: 3
               currentPeriodEnd: 1
               link: link
@@ -27420,7 +27359,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -27462,7 +27401,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -27598,7 +27537,7 @@ components:
           paymentDetail:
             payment:
               metadata:
-                key: metadata
+                key: {}
               authorizeReason: authorizeReason
               billingReason: billingReason
               link: link
@@ -27627,13 +27566,13 @@ components:
               status: 6
             invoice:
               metadata:
-                key: metadata
+                key: {}
               discount:
                 planIds:
                 - 4
                 - 4
                 metadata:
-                  key: metadata
+                  key: {}
                 code: code
                 discountAmount: 5
                 discountPercentage: 2
@@ -27655,7 +27594,7 @@ components:
               paymentId: paymentId
               payment:
                 metadata:
-                  key: metadata
+                  key: {}
                 authorizeReason: authorizeReason
                 billingReason: billingReason
                 link: link
@@ -27812,7 +27751,7 @@ components:
               uniqueId: uniqueId
               refund:
                 metadata:
-                  key: metadata
+                  key: {}
                 refundTime: 7
                 externalRefundId: externalRefundId
                 type: 3
@@ -27842,7 +27781,7 @@ components:
               gatewayInvoicePdf: gatewayInvoicePdf
               subscription:
                 metadata:
-                  key: metadata
+                  key: {}
                 testClock: 3
                 currentPeriodEnd: 1
                 link: link
@@ -27905,7 +27844,7 @@ components:
                 periodStart: 7
                 plan:
                   metadata:
-                    key: metadata
+                    key: {}
                   intervalUnit: intervalUnit
                   description: description
                   planName: planName
@@ -27947,7 +27886,7 @@ components:
                 periodStart: 7
                 plan:
                   metadata:
-                    key: metadata
+                    key: {}
                   intervalUnit: intervalUnit
                   description: description
                   planName: planName
@@ -28210,7 +28149,7 @@ components:
         paymentDetails:
         - payment:
             metadata:
-              key: metadata
+              key: {}
             authorizeReason: authorizeReason
             billingReason: billingReason
             link: link
@@ -28239,13 +28178,13 @@ components:
             status: 6
           invoice:
             metadata:
-              key: metadata
+              key: {}
             discount:
               planIds:
               - 4
               - 4
               metadata:
-                key: metadata
+                key: {}
               code: code
               discountAmount: 5
               discountPercentage: 2
@@ -28267,7 +28206,7 @@ components:
             paymentId: paymentId
             payment:
               metadata:
-                key: metadata
+                key: {}
               authorizeReason: authorizeReason
               billingReason: billingReason
               link: link
@@ -28424,7 +28363,7 @@ components:
             uniqueId: uniqueId
             refund:
               metadata:
-                key: metadata
+                key: {}
               refundTime: 7
               externalRefundId: externalRefundId
               type: 3
@@ -28454,7 +28393,7 @@ components:
             gatewayInvoicePdf: gatewayInvoicePdf
             subscription:
               metadata:
-                key: metadata
+                key: {}
               testClock: 3
               currentPeriodEnd: 1
               link: link
@@ -28517,7 +28456,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -28559,7 +28498,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -28685,7 +28624,7 @@ components:
             gatewayId: 1
         - payment:
             metadata:
-              key: metadata
+              key: {}
             authorizeReason: authorizeReason
             billingReason: billingReason
             link: link
@@ -28714,13 +28653,13 @@ components:
             status: 6
           invoice:
             metadata:
-              key: metadata
+              key: {}
             discount:
               planIds:
               - 4
               - 4
               metadata:
-                key: metadata
+                key: {}
               code: code
               discountAmount: 5
               discountPercentage: 2
@@ -28742,7 +28681,7 @@ components:
             paymentId: paymentId
             payment:
               metadata:
-                key: metadata
+                key: {}
               authorizeReason: authorizeReason
               billingReason: billingReason
               link: link
@@ -28899,7 +28838,7 @@ components:
             uniqueId: uniqueId
             refund:
               metadata:
-                key: metadata
+                key: {}
               refundTime: 7
               externalRefundId: externalRefundId
               type: 3
@@ -28929,7 +28868,7 @@ components:
             gatewayInvoicePdf: gatewayInvoicePdf
             subscription:
               metadata:
-                key: metadata
+                key: {}
               testClock: 3
               currentPeriodEnd: 1
               link: link
@@ -28992,7 +28931,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -29034,7 +28973,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -29181,7 +29120,7 @@ components:
           paymentDetails:
           - payment:
               metadata:
-                key: metadata
+                key: {}
               authorizeReason: authorizeReason
               billingReason: billingReason
               link: link
@@ -29210,13 +29149,13 @@ components:
               status: 6
             invoice:
               metadata:
-                key: metadata
+                key: {}
               discount:
                 planIds:
                 - 4
                 - 4
                 metadata:
-                  key: metadata
+                  key: {}
                 code: code
                 discountAmount: 5
                 discountPercentage: 2
@@ -29238,7 +29177,7 @@ components:
               paymentId: paymentId
               payment:
                 metadata:
-                  key: metadata
+                  key: {}
                 authorizeReason: authorizeReason
                 billingReason: billingReason
                 link: link
@@ -29395,7 +29334,7 @@ components:
               uniqueId: uniqueId
               refund:
                 metadata:
-                  key: metadata
+                  key: {}
                 refundTime: 7
                 externalRefundId: externalRefundId
                 type: 3
@@ -29425,7 +29364,7 @@ components:
               gatewayInvoicePdf: gatewayInvoicePdf
               subscription:
                 metadata:
-                  key: metadata
+                  key: {}
                 testClock: 3
                 currentPeriodEnd: 1
                 link: link
@@ -29488,7 +29427,7 @@ components:
                 periodStart: 7
                 plan:
                   metadata:
-                    key: metadata
+                    key: {}
                   intervalUnit: intervalUnit
                   description: description
                   planName: planName
@@ -29530,7 +29469,7 @@ components:
                 periodStart: 7
                 plan:
                   metadata:
-                    key: metadata
+                    key: {}
                   intervalUnit: intervalUnit
                   description: description
                   planName: planName
@@ -29656,7 +29595,7 @@ components:
               gatewayId: 1
           - payment:
               metadata:
-                key: metadata
+                key: {}
               authorizeReason: authorizeReason
               billingReason: billingReason
               link: link
@@ -29685,13 +29624,13 @@ components:
               status: 6
             invoice:
               metadata:
-                key: metadata
+                key: {}
               discount:
                 planIds:
                 - 4
                 - 4
                 metadata:
-                  key: metadata
+                  key: {}
                 code: code
                 discountAmount: 5
                 discountPercentage: 2
@@ -29713,7 +29652,7 @@ components:
               paymentId: paymentId
               payment:
                 metadata:
-                  key: metadata
+                  key: {}
                 authorizeReason: authorizeReason
                 billingReason: billingReason
                 link: link
@@ -29870,7 +29809,7 @@ components:
               uniqueId: uniqueId
               refund:
                 metadata:
-                  key: metadata
+                  key: {}
                 refundTime: 7
                 externalRefundId: externalRefundId
                 type: 3
@@ -29900,7 +29839,7 @@ components:
               gatewayInvoicePdf: gatewayInvoicePdf
               subscription:
                 metadata:
-                  key: metadata
+                  key: {}
                 testClock: 3
                 currentPeriodEnd: 1
                 link: link
@@ -29963,7 +29902,7 @@ components:
                 periodStart: 7
                 plan:
                   metadata:
-                    key: metadata
+                    key: {}
                   intervalUnit: intervalUnit
                   description: description
                   planName: planName
@@ -30005,7 +29944,7 @@ components:
                 periodStart: 7
                 plan:
                   metadata:
-                    key: metadata
+                    key: {}
                   intervalUnit: intervalUnit
                   description: description
                   planName: planName
@@ -30360,7 +30299,7 @@ components:
         refundDetail:
           payment:
             metadata:
-              key: metadata
+              key: {}
             authorizeReason: authorizeReason
             billingReason: billingReason
             link: link
@@ -30437,7 +30376,7 @@ components:
             status: 6
           refund:
             metadata:
-              key: metadata
+              key: {}
             refundTime: 7
             externalRefundId: externalRefundId
             type: 3
@@ -30468,7 +30407,7 @@ components:
           refundDetail:
             payment:
               metadata:
-                key: metadata
+                key: {}
               authorizeReason: authorizeReason
               billingReason: billingReason
               link: link
@@ -30545,7 +30484,7 @@ components:
               status: 6
             refund:
               metadata:
-                key: metadata
+                key: {}
               refundTime: 7
               externalRefundId: externalRefundId
               type: 3
@@ -30592,7 +30531,7 @@ components:
         refundDetails:
         - payment:
             metadata:
-              key: metadata
+              key: {}
             authorizeReason: authorizeReason
             billingReason: billingReason
             link: link
@@ -30669,7 +30608,7 @@ components:
             status: 6
           refund:
             metadata:
-              key: metadata
+              key: {}
             refundTime: 7
             externalRefundId: externalRefundId
             type: 3
@@ -30690,7 +30629,7 @@ components:
             status: 3
         - payment:
             metadata:
-              key: metadata
+              key: {}
             authorizeReason: authorizeReason
             billingReason: billingReason
             link: link
@@ -30767,7 +30706,7 @@ components:
             status: 6
           refund:
             metadata:
-              key: metadata
+              key: {}
             refundTime: 7
             externalRefundId: externalRefundId
             type: 3
@@ -30809,7 +30748,7 @@ components:
           refundDetails:
           - payment:
               metadata:
-                key: metadata
+                key: {}
               authorizeReason: authorizeReason
               billingReason: billingReason
               link: link
@@ -30886,7 +30825,7 @@ components:
               status: 6
             refund:
               metadata:
-                key: metadata
+                key: {}
               refundTime: 7
               externalRefundId: externalRefundId
               type: 3
@@ -30907,7 +30846,7 @@ components:
               status: 3
           - payment:
               metadata:
-                key: metadata
+                key: {}
               authorizeReason: authorizeReason
               billingReason: billingReason
               link: link
@@ -30984,7 +30923,7 @@ components:
               status: 6
             refund:
               metadata:
-                key: metadata
+                key: {}
               refundTime: 7
               externalRefundId: externalRefundId
               type: 3
@@ -31100,7 +31039,7 @@ components:
           invoiceId: invoiceId
           payment:
             metadata:
-              key: metadata
+              key: {}
             authorizeReason: authorizeReason
             billingReason: billingReason
             link: link
@@ -31134,7 +31073,7 @@ components:
           refundId: refundId
           refund:
             metadata:
-              key: metadata
+              key: {}
             refundTime: 7
             externalRefundId: externalRefundId
             type: 3
@@ -31166,7 +31105,7 @@ components:
           invoiceId: invoiceId
           payment:
             metadata:
-              key: metadata
+              key: {}
             authorizeReason: authorizeReason
             billingReason: billingReason
             link: link
@@ -31200,7 +31139,7 @@ components:
           refundId: refundId
           refund:
             metadata:
-              key: metadata
+              key: {}
             refundTime: 7
             externalRefundId: externalRefundId
             type: 3
@@ -31253,7 +31192,7 @@ components:
             invoiceId: invoiceId
             payment:
               metadata:
-                key: metadata
+                key: {}
               authorizeReason: authorizeReason
               billingReason: billingReason
               link: link
@@ -31287,7 +31226,7 @@ components:
             refundId: refundId
             refund:
               metadata:
-                key: metadata
+                key: {}
               refundTime: 7
               externalRefundId: externalRefundId
               type: 3
@@ -31319,7 +31258,7 @@ components:
             invoiceId: invoiceId
             payment:
               metadata:
-                key: metadata
+                key: {}
               authorizeReason: authorizeReason
               billingReason: billingReason
               link: link
@@ -31353,7 +31292,7 @@ components:
             refundId: refundId
             refund:
               metadata:
-                key: metadata
+                key: {}
               refundTime: 7
               externalRefundId: externalRefundId
               type: 3
@@ -31399,7 +31338,7 @@ components:
       example:
         plan:
           metadata:
-            key: metadata
+            key: {}
           intervalUnit: intervalUnit
           description: description
           planName: planName
@@ -31436,7 +31375,7 @@ components:
         data:
           plan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -31500,7 +31439,7 @@ components:
             status: 9
           addons:
           - metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -31527,7 +31466,7 @@ components:
             bindingOnetimeAddonIds: bindingOnetimeAddonIds
             status: 5
           - metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -31561,7 +31500,7 @@ components:
           - 6
           plan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -31626,7 +31565,7 @@ components:
             metricLimit: 7
           onetimeAddons:
           - metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -31653,7 +31592,7 @@ components:
             bindingOnetimeAddonIds: bindingOnetimeAddonIds
             status: 5
           - metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -31702,7 +31641,7 @@ components:
               status: 9
             addons:
             - metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -31729,7 +31668,7 @@ components:
               bindingOnetimeAddonIds: bindingOnetimeAddonIds
               status: 5
             - metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -31763,7 +31702,7 @@ components:
             - 6
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -31828,7 +31767,7 @@ components:
               metricLimit: 7
             onetimeAddons:
             - metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -31855,7 +31794,7 @@ components:
               bindingOnetimeAddonIds: bindingOnetimeAddonIds
               status: 5
             - metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -31920,7 +31859,7 @@ components:
             status: 9
           addons:
           - metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -31947,7 +31886,7 @@ components:
             bindingOnetimeAddonIds: bindingOnetimeAddonIds
             status: 5
           - metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -31981,7 +31920,7 @@ components:
           - 6
           plan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -32046,7 +31985,7 @@ components:
             metricLimit: 7
           onetimeAddons:
           - metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -32073,7 +32012,7 @@ components:
             bindingOnetimeAddonIds: bindingOnetimeAddonIds
             status: 5
           - metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -32112,7 +32051,7 @@ components:
             status: 9
           addons:
           - metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -32139,7 +32078,7 @@ components:
             bindingOnetimeAddonIds: bindingOnetimeAddonIds
             status: 5
           - metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -32173,7 +32112,7 @@ components:
           - 6
           plan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -32238,7 +32177,7 @@ components:
             metricLimit: 7
           onetimeAddons:
           - metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -32265,7 +32204,7 @@ components:
             bindingOnetimeAddonIds: bindingOnetimeAddonIds
             status: 5
           - metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -32325,7 +32264,7 @@ components:
               status: 9
             addons:
             - metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -32352,7 +32291,7 @@ components:
               bindingOnetimeAddonIds: bindingOnetimeAddonIds
               status: 5
             - metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -32386,7 +32325,7 @@ components:
             - 6
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -32451,7 +32390,7 @@ components:
               metricLimit: 7
             onetimeAddons:
             - metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -32478,7 +32417,7 @@ components:
               bindingOnetimeAddonIds: bindingOnetimeAddonIds
               status: 5
             - metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -32517,7 +32456,7 @@ components:
               status: 9
             addons:
             - metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -32544,7 +32483,7 @@ components:
               bindingOnetimeAddonIds: bindingOnetimeAddonIds
               status: 5
             - metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -32578,7 +32517,7 @@ components:
             - 6
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -32643,7 +32582,7 @@ components:
               metricLimit: 7
             onetimeAddons:
             - metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -32670,7 +32609,7 @@ components:
               bindingOnetimeAddonIds: bindingOnetimeAddonIds
               status: 5
             - metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -33097,12 +33036,12 @@ components:
               key: true
             gatewayId: 1
         precisionMatchObject:
-          data: "{}"
+          data: {}
           id: id
           type: type
         matchInvoice:
         - metadata:
-            key: metadata
+            key: {}
           bizType: 1
           invoiceName: invoiceName
           prorationScale: 1
@@ -33114,7 +33053,7 @@ components:
             - 4
             - 4
             metadata:
-              key: metadata
+              key: {}
             code: code
             discountAmount: 5
             discountPercentage: 2
@@ -33157,7 +33096,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -33199,7 +33138,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -33246,7 +33185,7 @@ components:
           status: 1
           vatNumber: vatNumber
         - metadata:
-            key: metadata
+            key: {}
           bizType: 1
           invoiceName: invoiceName
           prorationScale: 1
@@ -33258,7 +33197,7 @@ components:
             - 4
             - 4
             metadata:
-              key: metadata
+              key: {}
             code: code
             discountAmount: 5
             discountPercentage: 2
@@ -33301,7 +33240,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -33343,7 +33282,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -33548,12 +33487,12 @@ components:
                 key: true
               gatewayId: 1
           precisionMatchObject:
-            data: "{}"
+            data: {}
             id: id
             type: type
           matchInvoice:
           - metadata:
-              key: metadata
+              key: {}
             bizType: 1
             invoiceName: invoiceName
             prorationScale: 1
@@ -33565,7 +33504,7 @@ components:
               - 4
               - 4
               metadata:
-                key: metadata
+                key: {}
               code: code
               discountAmount: 5
               discountPercentage: 2
@@ -33608,7 +33547,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -33650,7 +33589,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -33697,7 +33636,7 @@ components:
             status: 1
             vatNumber: vatNumber
           - metadata:
-              key: metadata
+              key: {}
             bizType: 1
             invoiceName: invoiceName
             prorationScale: 1
@@ -33709,7 +33648,7 @@ components:
               - 4
               - 4
               metadata:
-                key: metadata
+                key: {}
               code: code
               discountAmount: 5
               discountPercentage: 2
@@ -33752,7 +33691,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -33794,7 +33733,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -34068,7 +34007,7 @@ components:
         - quantity: 6
           addonPlan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -34097,7 +34036,7 @@ components:
         - quantity: 6
           addonPlan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -34129,7 +34068,7 @@ components:
           - 4
           - 4
           metadata:
-            key: metadata
+            key: {}
           code: code
           discountAmount: 5
           discountPercentage: 2
@@ -34165,7 +34104,7 @@ components:
         currency: currency
         invoice:
           metadata:
-            key: metadata
+            key: {}
           bizType: 1
           invoiceName: invoiceName
           prorationScale: 1
@@ -34177,7 +34116,7 @@ components:
             - 4
             - 4
             metadata:
-              key: metadata
+              key: {}
             code: code
             discountAmount: 5
             discountPercentage: 2
@@ -34220,7 +34159,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -34262,7 +34201,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -34311,7 +34250,7 @@ components:
         vatCountryName: vatCountryName
         plan:
           metadata:
-            key: metadata
+            key: {}
           intervalUnit: intervalUnit
           description: description
           planName: planName
@@ -34451,7 +34390,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -34480,7 +34419,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -34512,7 +34451,7 @@ components:
             - 4
             - 4
             metadata:
-              key: metadata
+              key: {}
             code: code
             discountAmount: 5
             discountPercentage: 2
@@ -34548,7 +34487,7 @@ components:
           currency: currency
           invoice:
             metadata:
-              key: metadata
+              key: {}
             bizType: 1
             invoiceName: invoiceName
             prorationScale: 1
@@ -34560,7 +34499,7 @@ components:
               - 4
               - 4
               metadata:
-                key: metadata
+                key: {}
               code: code
               discountAmount: 5
               discountPercentage: 2
@@ -34603,7 +34542,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -34645,7 +34584,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -34694,7 +34633,7 @@ components:
           vatCountryName: vatCountryName
           plan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -34769,7 +34708,7 @@ components:
         paid: true
         subscription:
           metadata:
-            key: metadata
+            key: {}
           testClock: 3
           currentPeriodEnd: 1
           link: link
@@ -34884,7 +34823,7 @@ components:
           paid: true
           subscription:
             metadata:
-              key: metadata
+              key: {}
             testClock: 3
             currentPeriodEnd: 1
             link: link
@@ -34997,7 +34936,7 @@ components:
       example:
         latestInvoice:
           metadata:
-            key: metadata
+            key: {}
           bizType: 1
           invoiceName: invoiceName
           prorationScale: 1
@@ -35009,7 +34948,7 @@ components:
             - 4
             - 4
             metadata:
-              key: metadata
+              key: {}
             code: code
             discountAmount: 5
             discountPercentage: 2
@@ -35052,7 +34991,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -35094,7 +35033,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -35143,14 +35082,14 @@ components:
         unfinishedSubscriptionPendingUpdate:
           note: note
           metadata:
-            key: metadata
+            key: {}
           gmtModify: gmtModify
           updateAddonData: updateAddonData
           addons:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -35179,7 +35118,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -35208,7 +35147,7 @@ components:
           link: link
           updatePlan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -35239,7 +35178,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -35268,7 +35207,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -35302,7 +35241,7 @@ components:
           planId: 9
           plan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -35387,7 +35326,7 @@ components:
         - quantity: 6
           addonPlan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -35416,7 +35355,7 @@ components:
         - quantity: 6
           addonPlan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -35444,7 +35383,7 @@ components:
             status: 5
         subscription:
           metadata:
-            key: metadata
+            key: {}
           testClock: 3
           currentPeriodEnd: 1
           link: link
@@ -35484,7 +35423,7 @@ components:
           vatNumber: vatNumber
         plan:
           metadata:
-            key: metadata
+            key: {}
           intervalUnit: intervalUnit
           description: description
           planName: planName
@@ -35612,7 +35551,7 @@ components:
         data:
           latestInvoice:
             metadata:
-              key: metadata
+              key: {}
             bizType: 1
             invoiceName: invoiceName
             prorationScale: 1
@@ -35624,7 +35563,7 @@ components:
               - 4
               - 4
               metadata:
-                key: metadata
+                key: {}
               code: code
               discountAmount: 5
               discountPercentage: 2
@@ -35667,7 +35606,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -35709,7 +35648,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -35758,14 +35697,14 @@ components:
           unfinishedSubscriptionPendingUpdate:
             note: note
             metadata:
-              key: metadata
+              key: {}
             gmtModify: gmtModify
             updateAddonData: updateAddonData
             addons:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -35794,7 +35733,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -35823,7 +35762,7 @@ components:
             link: link
             updatePlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -35854,7 +35793,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -35883,7 +35822,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -35917,7 +35856,7 @@ components:
             planId: 9
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -36002,7 +35941,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -36031,7 +35970,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -36059,7 +35998,7 @@ components:
               status: 5
           subscription:
             metadata:
-              key: metadata
+              key: {}
             testClock: 3
             currentPeriodEnd: 1
             link: link
@@ -36099,7 +36038,7 @@ components:
             vatNumber: vatNumber
           plan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -36219,7 +36158,7 @@ components:
         subscriptions:
         - latestInvoice:
             metadata:
-              key: metadata
+              key: {}
             bizType: 1
             invoiceName: invoiceName
             prorationScale: 1
@@ -36231,7 +36170,7 @@ components:
               - 4
               - 4
               metadata:
-                key: metadata
+                key: {}
               code: code
               discountAmount: 5
               discountPercentage: 2
@@ -36274,7 +36213,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -36316,7 +36255,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -36366,14 +36305,14 @@ components:
           unfinishedSubscriptionPendingUpdate:
             note: note
             metadata:
-              key: metadata
+              key: {}
             gmtModify: gmtModify
             updateAddonData: updateAddonData
             addons:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -36402,7 +36341,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -36431,7 +36370,7 @@ components:
             link: link
             updatePlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -36462,7 +36401,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -36491,7 +36430,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -36525,7 +36464,7 @@ components:
             planId: 9
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -36610,7 +36549,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -36639,7 +36578,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -36670,7 +36609,7 @@ components:
             - 4
             - 4
             metadata:
-              key: metadata
+              key: {}
             code: code
             discountAmount: 5
             discountPercentage: 2
@@ -36687,7 +36626,7 @@ components:
             status: 1
           subscription:
             metadata:
-              key: metadata
+              key: {}
             testClock: 3
             currentPeriodEnd: 1
             link: link
@@ -36727,7 +36666,7 @@ components:
             vatNumber: vatNumber
           plan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -36822,7 +36761,7 @@ components:
             gatewayId: 1
         - latestInvoice:
             metadata:
-              key: metadata
+              key: {}
             bizType: 1
             invoiceName: invoiceName
             prorationScale: 1
@@ -36834,7 +36773,7 @@ components:
               - 4
               - 4
               metadata:
-                key: metadata
+                key: {}
               code: code
               discountAmount: 5
               discountPercentage: 2
@@ -36877,7 +36816,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -36919,7 +36858,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -36969,14 +36908,14 @@ components:
           unfinishedSubscriptionPendingUpdate:
             note: note
             metadata:
-              key: metadata
+              key: {}
             gmtModify: gmtModify
             updateAddonData: updateAddonData
             addons:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -37005,7 +36944,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -37034,7 +36973,7 @@ components:
             link: link
             updatePlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -37065,7 +37004,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -37094,7 +37033,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -37128,7 +37067,7 @@ components:
             planId: 9
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -37213,7 +37152,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -37242,7 +37181,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -37273,7 +37212,7 @@ components:
             - 4
             - 4
             metadata:
-              key: metadata
+              key: {}
             code: code
             discountAmount: 5
             discountPercentage: 2
@@ -37290,7 +37229,7 @@ components:
             status: 1
           subscription:
             metadata:
-              key: metadata
+              key: {}
             testClock: 3
             currentPeriodEnd: 1
             link: link
@@ -37330,7 +37269,7 @@ components:
             vatNumber: vatNumber
           plan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -37446,7 +37385,7 @@ components:
           subscriptions:
           - latestInvoice:
               metadata:
-                key: metadata
+                key: {}
               bizType: 1
               invoiceName: invoiceName
               prorationScale: 1
@@ -37458,7 +37397,7 @@ components:
                 - 4
                 - 4
                 metadata:
-                  key: metadata
+                  key: {}
                 code: code
                 discountAmount: 5
                 discountPercentage: 2
@@ -37501,7 +37440,7 @@ components:
                 periodStart: 7
                 plan:
                   metadata:
-                    key: metadata
+                    key: {}
                   intervalUnit: intervalUnit
                   description: description
                   planName: planName
@@ -37543,7 +37482,7 @@ components:
                 periodStart: 7
                 plan:
                   metadata:
-                    key: metadata
+                    key: {}
                   intervalUnit: intervalUnit
                   description: description
                   planName: planName
@@ -37593,14 +37532,14 @@ components:
             unfinishedSubscriptionPendingUpdate:
               note: note
               metadata:
-                key: metadata
+                key: {}
               gmtModify: gmtModify
               updateAddonData: updateAddonData
               addons:
               - quantity: 6
                 addonPlan:
                   metadata:
-                    key: metadata
+                    key: {}
                   intervalUnit: intervalUnit
                   description: description
                   planName: planName
@@ -37629,7 +37568,7 @@ components:
               - quantity: 6
                 addonPlan:
                   metadata:
-                    key: metadata
+                    key: {}
                   intervalUnit: intervalUnit
                   description: description
                   planName: planName
@@ -37658,7 +37597,7 @@ components:
               link: link
               updatePlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -37689,7 +37628,7 @@ components:
               - quantity: 6
                 addonPlan:
                   metadata:
-                    key: metadata
+                    key: {}
                   intervalUnit: intervalUnit
                   description: description
                   planName: planName
@@ -37718,7 +37657,7 @@ components:
               - quantity: 6
                 addonPlan:
                   metadata:
-                    key: metadata
+                    key: {}
                   intervalUnit: intervalUnit
                   description: description
                   planName: planName
@@ -37752,7 +37691,7 @@ components:
               planId: 9
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -37837,7 +37776,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -37866,7 +37805,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -37897,7 +37836,7 @@ components:
               - 4
               - 4
               metadata:
-                key: metadata
+                key: {}
               code: code
               discountAmount: 5
               discountPercentage: 2
@@ -37914,7 +37853,7 @@ components:
               status: 1
             subscription:
               metadata:
-                key: metadata
+                key: {}
               testClock: 3
               currentPeriodEnd: 1
               link: link
@@ -37954,7 +37893,7 @@ components:
               vatNumber: vatNumber
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -38049,7 +37988,7 @@ components:
               gatewayId: 1
           - latestInvoice:
               metadata:
-                key: metadata
+                key: {}
               bizType: 1
               invoiceName: invoiceName
               prorationScale: 1
@@ -38061,7 +38000,7 @@ components:
                 - 4
                 - 4
                 metadata:
-                  key: metadata
+                  key: {}
                 code: code
                 discountAmount: 5
                 discountPercentage: 2
@@ -38104,7 +38043,7 @@ components:
                 periodStart: 7
                 plan:
                   metadata:
-                    key: metadata
+                    key: {}
                   intervalUnit: intervalUnit
                   description: description
                   planName: planName
@@ -38146,7 +38085,7 @@ components:
                 periodStart: 7
                 plan:
                   metadata:
-                    key: metadata
+                    key: {}
                   intervalUnit: intervalUnit
                   description: description
                   planName: planName
@@ -38196,14 +38135,14 @@ components:
             unfinishedSubscriptionPendingUpdate:
               note: note
               metadata:
-                key: metadata
+                key: {}
               gmtModify: gmtModify
               updateAddonData: updateAddonData
               addons:
               - quantity: 6
                 addonPlan:
                   metadata:
-                    key: metadata
+                    key: {}
                   intervalUnit: intervalUnit
                   description: description
                   planName: planName
@@ -38232,7 +38171,7 @@ components:
               - quantity: 6
                 addonPlan:
                   metadata:
-                    key: metadata
+                    key: {}
                   intervalUnit: intervalUnit
                   description: description
                   planName: planName
@@ -38261,7 +38200,7 @@ components:
               link: link
               updatePlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -38292,7 +38231,7 @@ components:
               - quantity: 6
                 addonPlan:
                   metadata:
-                    key: metadata
+                    key: {}
                   intervalUnit: intervalUnit
                   description: description
                   planName: planName
@@ -38321,7 +38260,7 @@ components:
               - quantity: 6
                 addonPlan:
                   metadata:
-                    key: metadata
+                    key: {}
                   intervalUnit: intervalUnit
                   description: description
                   planName: planName
@@ -38355,7 +38294,7 @@ components:
               planId: 9
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -38440,7 +38379,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -38469,7 +38408,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -38500,7 +38439,7 @@ components:
               - 4
               - 4
               metadata:
-                key: metadata
+                key: {}
               code: code
               discountAmount: 5
               discountPercentage: 2
@@ -38517,7 +38456,7 @@ components:
               status: 1
             subscription:
               metadata:
-                key: metadata
+                key: {}
               testClock: 3
               currentPeriodEnd: 1
               link: link
@@ -38557,7 +38496,7 @@ components:
               vatNumber: vatNumber
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -38679,7 +38618,7 @@ components:
         paid: true
         subscriptionOnetimeAddon:
           metadata:
-            key: metadata
+            key: {}
           quantity: 2
           isDeleted: 5
           createTime: 1
@@ -38691,7 +38630,7 @@ components:
           status: 7
         invoice:
           metadata:
-            key: metadata
+            key: {}
           bizType: 1
           invoiceName: invoiceName
           prorationScale: 1
@@ -38703,7 +38642,7 @@ components:
             - 4
             - 4
             metadata:
-              key: metadata
+              key: {}
             code: code
             discountAmount: 5
             discountPercentage: 2
@@ -38746,7 +38685,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -38788,7 +38727,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -38862,7 +38801,7 @@ components:
           paid: true
           subscriptionOnetimeAddon:
             metadata:
-              key: metadata
+              key: {}
             quantity: 2
             isDeleted: 5
             createTime: 1
@@ -38874,7 +38813,7 @@ components:
             status: 7
           invoice:
             metadata:
-              key: metadata
+              key: {}
             bizType: 1
             invoiceName: invoiceName
             prorationScale: 1
@@ -38886,7 +38825,7 @@ components:
               - 4
               - 4
               metadata:
-                key: metadata
+                key: {}
               code: code
               discountAmount: 5
               discountPercentage: 2
@@ -38929,7 +38868,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -38971,7 +38910,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -39043,11 +38982,11 @@ components:
       example:
         subscriptionOnetimeAddons:
         - metadata:
-            key: metadata
+            key: {}
           quantity: 5
           addon:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -39076,7 +39015,7 @@ components:
           createTime: 1
           payment:
             metadata:
-              key: metadata
+              key: {}
             authorizeReason: authorizeReason
             billingReason: billingReason
             link: link
@@ -39156,11 +39095,11 @@ components:
             status: 6
           status: 2
         - metadata:
-            key: metadata
+            key: {}
           quantity: 5
           addon:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -39189,7 +39128,7 @@ components:
           createTime: 1
           payment:
             metadata:
-              key: metadata
+              key: {}
             authorizeReason: authorizeReason
             billingReason: billingReason
             link: link
@@ -39284,11 +39223,11 @@ components:
         data:
           subscriptionOnetimeAddons:
           - metadata:
-              key: metadata
+              key: {}
             quantity: 5
             addon:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -39317,7 +39256,7 @@ components:
             createTime: 1
             payment:
               metadata:
-                key: metadata
+                key: {}
               authorizeReason: authorizeReason
               billingReason: billingReason
               link: link
@@ -39397,11 +39336,11 @@ components:
               status: 6
             status: 2
           - metadata:
-              key: metadata
+              key: {}
             quantity: 5
             addon:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -39430,7 +39369,7 @@ components:
             createTime: 1
             payment:
               metadata:
-                key: metadata
+                key: {}
               authorizeReason: authorizeReason
               billingReason: billingReason
               link: link
@@ -39536,14 +39475,14 @@ components:
         subscriptionPendingUpdateDetails:
         - note: note
           metadata:
-            key: metadata
+            key: {}
           gmtModify: gmtModify
           updateAddonData: updateAddonData
           addons:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -39572,7 +39511,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -39601,7 +39540,7 @@ components:
           link: link
           updatePlan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -39632,7 +39571,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -39661,7 +39600,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -39695,7 +39634,7 @@ components:
           planId: 9
           plan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -39773,14 +39712,14 @@ components:
           status: 4
         - note: note
           metadata:
-            key: metadata
+            key: {}
           gmtModify: gmtModify
           updateAddonData: updateAddonData
           addons:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -39809,7 +39748,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -39838,7 +39777,7 @@ components:
           link: link
           updatePlan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -39869,7 +39808,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -39898,7 +39837,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -39932,7 +39871,7 @@ components:
           planId: 9
           plan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -40031,14 +39970,14 @@ components:
           subscriptionPendingUpdateDetails:
           - note: note
             metadata:
-              key: metadata
+              key: {}
             gmtModify: gmtModify
             updateAddonData: updateAddonData
             addons:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -40067,7 +40006,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -40096,7 +40035,7 @@ components:
             link: link
             updatePlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -40127,7 +40066,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -40156,7 +40095,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -40190,7 +40129,7 @@ components:
             planId: 9
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -40268,14 +40207,14 @@ components:
             status: 4
           - note: note
             metadata:
-              key: metadata
+              key: {}
             gmtModify: gmtModify
             updateAddonData: updateAddonData
             addons:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -40304,7 +40243,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -40333,7 +40272,7 @@ components:
             link: link
             updatePlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -40364,7 +40303,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -40393,7 +40332,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -40427,7 +40366,7 @@ components:
             planId: 9
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -40532,7 +40471,7 @@ components:
         paid: true
         subscription:
           metadata:
-            key: metadata
+            key: {}
           testClock: 3
           currentPeriodEnd: 1
           link: link
@@ -40591,7 +40530,7 @@ components:
           paid: true
           subscription:
             metadata:
-              key: metadata
+              key: {}
             testClock: 3
             currentPeriodEnd: 1
             link: link
@@ -40660,7 +40599,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -40689,7 +40628,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -40728,7 +40667,7 @@ components:
           periodStart: 2
           plan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -40763,7 +40702,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -40792,7 +40731,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -40831,7 +40770,7 @@ components:
           periodStart: 2
           plan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -40887,7 +40826,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -40916,7 +40855,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -40955,7 +40894,7 @@ components:
             periodStart: 2
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -40990,7 +40929,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -41019,7 +40958,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -41058,7 +40997,7 @@ components:
             periodStart: 2
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -41120,7 +41059,7 @@ components:
           - 4
           - 4
           metadata:
-            key: metadata
+            key: {}
           code: code
           discountAmount: 5
           discountPercentage: 2
@@ -41139,7 +41078,7 @@ components:
         currency: currency
         invoice:
           metadata:
-            key: metadata
+            key: {}
           bizType: 1
           invoiceName: invoiceName
           prorationScale: 1
@@ -41151,7 +41090,7 @@ components:
             - 4
             - 4
             metadata:
-              key: metadata
+              key: {}
             code: code
             discountAmount: 5
             discountPercentage: 2
@@ -41194,7 +41133,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -41236,7 +41175,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -41284,7 +41223,7 @@ components:
           vatNumber: vatNumber
         nextPeriodInvoice:
           metadata:
-            key: metadata
+            key: {}
           bizType: 1
           invoiceName: invoiceName
           prorationScale: 1
@@ -41296,7 +41235,7 @@ components:
             - 4
             - 4
             metadata:
-              key: metadata
+              key: {}
             code: code
             discountAmount: 5
             discountPercentage: 2
@@ -41339,7 +41278,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -41381,7 +41320,7 @@ components:
             periodStart: 7
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -41468,7 +41407,7 @@ components:
             - 4
             - 4
             metadata:
-              key: metadata
+              key: {}
             code: code
             discountAmount: 5
             discountPercentage: 2
@@ -41487,7 +41426,7 @@ components:
           currency: currency
           invoice:
             metadata:
-              key: metadata
+              key: {}
             bizType: 1
             invoiceName: invoiceName
             prorationScale: 1
@@ -41499,7 +41438,7 @@ components:
               - 4
               - 4
               metadata:
-                key: metadata
+                key: {}
               code: code
               discountAmount: 5
               discountPercentage: 2
@@ -41542,7 +41481,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -41584,7 +41523,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -41632,7 +41571,7 @@ components:
             vatNumber: vatNumber
           nextPeriodInvoice:
             metadata:
-              key: metadata
+              key: {}
             bizType: 1
             invoiceName: invoiceName
             prorationScale: 1
@@ -41644,7 +41583,7 @@ components:
               - 4
               - 4
               metadata:
-                key: metadata
+                key: {}
               code: code
               discountAmount: 5
               discountPercentage: 2
@@ -41687,7 +41626,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -41729,7 +41668,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -41804,14 +41743,14 @@ components:
         subscriptionPendingUpdate:
           note: note
           metadata:
-            key: metadata
+            key: {}
           gmtModify: gmtModify
           updateAddonData: updateAddonData
           addons:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -41840,7 +41779,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -41869,7 +41808,7 @@ components:
           link: link
           updatePlan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -41900,7 +41839,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -41929,7 +41868,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -41963,7 +41902,7 @@ components:
           planId: 9
           plan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -42061,14 +42000,14 @@ components:
           subscriptionPendingUpdate:
             note: note
             metadata:
-              key: metadata
+              key: {}
             gmtModify: gmtModify
             updateAddonData: updateAddonData
             addons:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -42097,7 +42036,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -42126,7 +42065,7 @@ components:
             link: link
             updatePlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -42157,7 +42096,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -42186,7 +42125,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -42220,7 +42159,7 @@ components:
             planId: 9
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -42323,7 +42262,7 @@ components:
         subscription:
           latestInvoice:
             metadata:
-              key: metadata
+              key: {}
             bizType: 1
             invoiceName: invoiceName
             prorationScale: 1
@@ -42335,7 +42274,7 @@ components:
               - 4
               - 4
               metadata:
-                key: metadata
+                key: {}
               code: code
               discountAmount: 5
               discountPercentage: 2
@@ -42378,7 +42317,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -42420,7 +42359,7 @@ components:
               periodStart: 7
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -42470,14 +42409,14 @@ components:
           unfinishedSubscriptionPendingUpdate:
             note: note
             metadata:
-              key: metadata
+              key: {}
             gmtModify: gmtModify
             updateAddonData: updateAddonData
             addons:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -42506,7 +42445,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -42535,7 +42474,7 @@ components:
             link: link
             updatePlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -42566,7 +42505,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -42595,7 +42534,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -42629,7 +42568,7 @@ components:
             planId: 9
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -42714,7 +42653,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -42743,7 +42682,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -42774,7 +42713,7 @@ components:
             - 4
             - 4
             metadata:
-              key: metadata
+              key: {}
             code: code
             discountAmount: 5
             discountPercentage: 2
@@ -42791,7 +42730,7 @@ components:
             status: 1
           subscription:
             metadata:
-              key: metadata
+              key: {}
             testClock: 3
             currentPeriodEnd: 1
             link: link
@@ -42831,7 +42770,7 @@ components:
             vatNumber: vatNumber
           plan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -42936,7 +42875,7 @@ components:
           subscription:
             latestInvoice:
               metadata:
-                key: metadata
+                key: {}
               bizType: 1
               invoiceName: invoiceName
               prorationScale: 1
@@ -42948,7 +42887,7 @@ components:
                 - 4
                 - 4
                 metadata:
-                  key: metadata
+                  key: {}
                 code: code
                 discountAmount: 5
                 discountPercentage: 2
@@ -42991,7 +42930,7 @@ components:
                 periodStart: 7
                 plan:
                   metadata:
-                    key: metadata
+                    key: {}
                   intervalUnit: intervalUnit
                   description: description
                   planName: planName
@@ -43033,7 +42972,7 @@ components:
                 periodStart: 7
                 plan:
                   metadata:
-                    key: metadata
+                    key: {}
                   intervalUnit: intervalUnit
                   description: description
                   planName: planName
@@ -43083,14 +43022,14 @@ components:
             unfinishedSubscriptionPendingUpdate:
               note: note
               metadata:
-                key: metadata
+                key: {}
               gmtModify: gmtModify
               updateAddonData: updateAddonData
               addons:
               - quantity: 6
                 addonPlan:
                   metadata:
-                    key: metadata
+                    key: {}
                   intervalUnit: intervalUnit
                   description: description
                   planName: planName
@@ -43119,7 +43058,7 @@ components:
               - quantity: 6
                 addonPlan:
                   metadata:
-                    key: metadata
+                    key: {}
                   intervalUnit: intervalUnit
                   description: description
                   planName: planName
@@ -43148,7 +43087,7 @@ components:
               link: link
               updatePlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -43179,7 +43118,7 @@ components:
               - quantity: 6
                 addonPlan:
                   metadata:
-                    key: metadata
+                    key: {}
                   intervalUnit: intervalUnit
                   description: description
                   planName: planName
@@ -43208,7 +43147,7 @@ components:
               - quantity: 6
                 addonPlan:
                   metadata:
-                    key: metadata
+                    key: {}
                   intervalUnit: intervalUnit
                   description: description
                   planName: planName
@@ -43242,7 +43181,7 @@ components:
               planId: 9
               plan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -43327,7 +43266,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -43356,7 +43295,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -43387,7 +43326,7 @@ components:
               - 4
               - 4
               metadata:
-                key: metadata
+                key: {}
               code: code
               discountAmount: 5
               discountPercentage: 2
@@ -43404,7 +43343,7 @@ components:
               status: 1
             subscription:
               metadata:
-                key: metadata
+                key: {}
               testClock: 3
               currentPeriodEnd: 1
               link: link
@@ -43444,7 +43383,7 @@ components:
               vatNumber: vatNumber
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -43564,14 +43503,14 @@ components:
         unfinishedSubscriptionPendingUpdate:
           note: note
           metadata:
-            key: metadata
+            key: {}
           gmtModify: gmtModify
           updateAddonData: updateAddonData
           addons:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -43600,7 +43539,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -43629,7 +43568,7 @@ components:
           link: link
           updatePlan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -43660,7 +43599,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -43689,7 +43628,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -43723,7 +43662,7 @@ components:
           planId: 9
           plan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -43803,7 +43742,7 @@ components:
         - quantity: 6
           addonPlan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -43832,7 +43771,7 @@ components:
         - quantity: 6
           addonPlan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -43860,7 +43799,7 @@ components:
             status: 5
         subscription:
           metadata:
-            key: metadata
+            key: {}
           testClock: 3
           currentPeriodEnd: 1
           link: link
@@ -43900,7 +43839,7 @@ components:
           vatNumber: vatNumber
         plan:
           metadata:
-            key: metadata
+            key: {}
           intervalUnit: intervalUnit
           description: description
           planName: planName
@@ -44020,14 +43959,14 @@ components:
           unfinishedSubscriptionPendingUpdate:
             note: note
             metadata:
-              key: metadata
+              key: {}
             gmtModify: gmtModify
             updateAddonData: updateAddonData
             addons:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -44056,7 +43995,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -44085,7 +44024,7 @@ components:
             link: link
             updatePlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -44116,7 +44055,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -44145,7 +44084,7 @@ components:
             - quantity: 6
               addonPlan:
                 metadata:
-                  key: metadata
+                  key: {}
                 intervalUnit: intervalUnit
                 description: description
                 planName: planName
@@ -44179,7 +44118,7 @@ components:
             planId: 9
             plan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -44259,7 +44198,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -44288,7 +44227,7 @@ components:
           - quantity: 6
             addonPlan:
               metadata:
-                key: metadata
+                key: {}
               intervalUnit: intervalUnit
               description: description
               planName: planName
@@ -44316,7 +44255,7 @@ components:
               status: 5
           subscription:
             metadata:
-              key: metadata
+              key: {}
             testClock: 3
             currentPeriodEnd: 1
             link: link
@@ -44356,7 +44295,7 @@ components:
             vatNumber: vatNumber
           plan:
             metadata:
-              key: metadata
+              key: {}
             intervalUnit: intervalUnit
             description: description
             planName: planName
@@ -44478,7 +44417,7 @@ components:
           createTime: 6
           merchantId: 5
           payload:
-            key: payload
+            key: {}
           format: format
           name: name
           exportColumns:
@@ -44500,7 +44439,7 @@ components:
             createTime: 6
             merchantId: 5
             payload:
-              key: payload
+              key: {}
             format: format
             name: name
             exportColumns:
@@ -44608,7 +44547,7 @@ components:
           createTime: 6
           merchantId: 5
           payload:
-            key: payload
+            key: {}
           format: format
           name: name
           exportColumns:
@@ -44620,7 +44559,7 @@ components:
           createTime: 6
           merchantId: 5
           payload:
-            key: payload
+            key: {}
           format: format
           name: name
           exportColumns:
@@ -44653,7 +44592,7 @@ components:
             createTime: 6
             merchantId: 5
             payload:
-              key: payload
+              key: {}
             format: format
             name: name
             exportColumns:
@@ -44665,7 +44604,7 @@ components:
             createTime: 6
             merchantId: 5
             payload:
-              key: payload
+              key: {}
             format: format
             name: name
             exportColumns:

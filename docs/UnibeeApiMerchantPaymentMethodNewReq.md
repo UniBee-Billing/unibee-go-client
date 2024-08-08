@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Currency** | Pointer to **string** | The currency of payment method | [optional] 
 **GatewayId** | **int64** | The unique id of gateway | 
-**Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
+**Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **RedirectUrl** | Pointer to **string** | The redirect url when method created return back | [optional] 
 **SubscriptionId** | Pointer to **string** | The id of subscription that want to attach | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
@@ -78,20 +78,20 @@ SetGatewayId sets GatewayId field to given value.
 
 ### GetMetadata
 
-`func (o *UnibeeApiMerchantPaymentMethodNewReq) GetMetadata() map[string]string`
+`func (o *UnibeeApiMerchantPaymentMethodNewReq) GetMetadata() map[string]map[string]interface{}`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *UnibeeApiMerchantPaymentMethodNewReq) GetMetadataOk() (*map[string]string, bool)`
+`func (o *UnibeeApiMerchantPaymentMethodNewReq) GetMetadataOk() (*map[string]map[string]interface{}, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *UnibeeApiMerchantPaymentMethodNewReq) SetMetadata(v map[string]string)`
+`func (o *UnibeeApiMerchantPaymentMethodNewReq) SetMetadata(v map[string]map[string]interface{})`
 
 SetMetadata sets Metadata field to given value.
 

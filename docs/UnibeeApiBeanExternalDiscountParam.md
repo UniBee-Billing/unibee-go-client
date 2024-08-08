@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **DiscountAmount** | Pointer to **int32** | Amount of discount | [optional] 
 **DiscountPercentage** | Pointer to **int32** | Percentage of discount, 100&#x3D;1%, ignore if discountAmount set | [optional] 
 **EndTime** | Pointer to **int32** | end of discount available utc time | [optional] 
-**Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
+**Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **Recurring** | Pointer to **bool** | Discount recurring enable, default false | [optional] 
 
 ## Methods
@@ -132,20 +132,20 @@ HasEndTime returns a boolean if a field has been set.
 
 ### GetMetadata
 
-`func (o *UnibeeApiBeanExternalDiscountParam) GetMetadata() map[string]string`
+`func (o *UnibeeApiBeanExternalDiscountParam) GetMetadata() map[string]map[string]interface{}`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *UnibeeApiBeanExternalDiscountParam) GetMetadataOk() (*map[string]string, bool)`
+`func (o *UnibeeApiBeanExternalDiscountParam) GetMetadataOk() (*map[string]map[string]interface{}, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *UnibeeApiBeanExternalDiscountParam) SetMetadata(v map[string]string)`
+`func (o *UnibeeApiBeanExternalDiscountParam) SetMetadata(v map[string]map[string]interface{})`
 
 SetMetadata sets Metadata field to given value.
 

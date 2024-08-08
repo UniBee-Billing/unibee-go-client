@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **MemberId** | Pointer to **int64** | member_id | [optional] 
 **MerchantId** | Pointer to **int64** | merchant_id | [optional] 
 **Name** | Pointer to **string** | name | [optional] 
-**Payload** | Pointer to **map[string]string** | Payload | [optional] 
+**Payload** | Pointer to **map[string]map[string]interface{}** | Payload | [optional] 
 **Task** | Pointer to **string** | Task,InvoiceExport|UserExport|SubscriptionExport|TransactionExport|DiscountExport|UserDiscountExport | [optional] 
 **TemplateId** | Pointer to **int64** | templateId | [optional] 
 
@@ -185,20 +185,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetPayload
 
-`func (o *UnibeeApiBeanMerchantBatchExportTemplate) GetPayload() map[string]string`
+`func (o *UnibeeApiBeanMerchantBatchExportTemplate) GetPayload() map[string]map[string]interface{}`
 
 GetPayload returns the Payload field if non-nil, zero value otherwise.
 
 ### GetPayloadOk
 
-`func (o *UnibeeApiBeanMerchantBatchExportTemplate) GetPayloadOk() (*map[string]string, bool)`
+`func (o *UnibeeApiBeanMerchantBatchExportTemplate) GetPayloadOk() (*map[string]map[string]interface{}, bool)`
 
 GetPayloadOk returns a tuple with the Payload field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPayload
 
-`func (o *UnibeeApiBeanMerchantBatchExportTemplate) SetPayload(v map[string]string)`
+`func (o *UnibeeApiBeanMerchantBatchExportTemplate) SetPayload(v map[string]map[string]interface{})`
 
 SetPayload sets Payload field to given value.
 

@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **Link** | Pointer to **string** | Link | [optional] 
 **MerchantId** | Pointer to **int64** | MerchantId | [optional] 
 **MerchantMember** | Pointer to [**UnibeeApiBeanDetailMerchantMemberDetail**](UnibeeApiBeanDetailMerchantMemberDetail.md) |  | [optional] 
-**Metadata** | Pointer to **map[string]string** |  | [optional] 
+**Metadata** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
 **Note** | Pointer to **string** | Update Note | [optional] 
 **Paid** | Pointer to **int32** | Paid | [optional] 
 **PendingUpdateId** | Pointer to **string** | PendingUpdateId | [optional] 
@@ -356,20 +356,20 @@ HasMerchantMember returns a boolean if a field has been set.
 
 ### GetMetadata
 
-`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetMetadata() map[string]string`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetMetadata() map[string]map[string]interface{}`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetMetadataOk() (*map[string]string, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetMetadataOk() (*map[string]map[string]interface{}, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetMetadata(v map[string]string)`
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetMetadata(v map[string]map[string]interface{})`
 
 SetMetadata sets Metadata field to given value.
 

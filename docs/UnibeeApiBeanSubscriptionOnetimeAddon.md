@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Id** | Pointer to **int64** | id | [optional] 
 **IsDeleted** | Pointer to **int32** | 0-UnDeleted，1-Deleted | [optional] 
-**Metadata** | Pointer to **map[string]string** |  | [optional] 
+**Metadata** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
 **PaymentId** | Pointer to **string** | PaymentId | [optional] 
 **PaymentLink** | Pointer to **string** | PaymentLink | [optional] 
 **Quantity** | Pointer to **int64** | quantity | [optional] 
@@ -136,20 +136,20 @@ HasIsDeleted returns a boolean if a field has been set.
 
 ### GetMetadata
 
-`func (o *UnibeeApiBeanSubscriptionOnetimeAddon) GetMetadata() map[string]string`
+`func (o *UnibeeApiBeanSubscriptionOnetimeAddon) GetMetadata() map[string]map[string]interface{}`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *UnibeeApiBeanSubscriptionOnetimeAddon) GetMetadataOk() (*map[string]string, bool)`
+`func (o *UnibeeApiBeanSubscriptionOnetimeAddon) GetMetadataOk() (*map[string]map[string]interface{}, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *UnibeeApiBeanSubscriptionOnetimeAddon) SetMetadata(v map[string]string)`
+`func (o *UnibeeApiBeanSubscriptionOnetimeAddon) SetMetadata(v map[string]map[string]interface{})`
 
 SetMetadata sets Metadata field to given value.
 

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **DiscountType** | Pointer to **int32** | The discount type of the discount code, 1-percentage, 2-fixed_amount, the discountType of code, the discountPercentage will be effect when discountType is percentage, the discountAmount and currency will be effect when discountTYpe is fixed_amount | [optional] 
 **EndTime** | Pointer to **int64** | The end time of discount code can effect, utc time | [optional] 
 **Id** | **int64** | The discount&#39;s Id | 
-**Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
+**Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **Name** | Pointer to **string** | The discount&#39;s name | [optional] 
 **PlanIds** | Pointer to **[]int64** | Ids of plan which discount code can effect, default effect all plans if not set | [optional] 
 **StartTime** | Pointer to **int64** | The start time of discount code can effect, utc time | [optional] 
@@ -233,20 +233,20 @@ SetId sets Id field to given value.
 
 ### GetMetadata
 
-`func (o *UnibeeApiMerchantDiscountEditReq) GetMetadata() map[string]string`
+`func (o *UnibeeApiMerchantDiscountEditReq) GetMetadata() map[string]map[string]interface{}`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *UnibeeApiMerchantDiscountEditReq) GetMetadataOk() (*map[string]string, bool)`
+`func (o *UnibeeApiMerchantDiscountEditReq) GetMetadataOk() (*map[string]map[string]interface{}, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *UnibeeApiMerchantDiscountEditReq) SetMetadata(v map[string]string)`
+`func (o *UnibeeApiMerchantDiscountEditReq) SetMetadata(v map[string]map[string]interface{})`
 
 SetMetadata sets Metadata field to given value.
 

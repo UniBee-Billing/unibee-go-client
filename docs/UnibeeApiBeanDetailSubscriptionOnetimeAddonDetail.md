@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **AddonId** | Pointer to **int64** | onetime addonId | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Id** | Pointer to **int64** | id | [optional] 
-**Metadata** | Pointer to **map[string]string** | Metadata | [optional] 
+**Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata | [optional] 
 **Payment** | Pointer to [**UnibeeApiBeanPayment**](UnibeeApiBeanPayment.md) |  | [optional] 
 **Quantity** | Pointer to **int64** | quantity | [optional] 
 **Status** | Pointer to **int32** | status, 1-create, 2-paid, 3-cancel, 4-expired | [optional] 
@@ -136,20 +136,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetMetadata
 
-`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) GetMetadata() map[string]string`
+`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) GetMetadata() map[string]map[string]interface{}`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) GetMetadataOk() (*map[string]string, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) GetMetadataOk() (*map[string]map[string]interface{}, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) SetMetadata(v map[string]string)`
+`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) SetMetadata(v map[string]map[string]interface{})`
 
 SetMetadata sets Metadata field to given value.
 

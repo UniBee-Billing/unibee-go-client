@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | description | [optional] 
 **HomeUrl** | Pointer to **string** | home_url | [optional] 
 **ImageUrl** | Pointer to **string** | image_url | [optional] 
-**Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
+**Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **ProductId** | **int64** | Id of product | 
 **ProductName** | Pointer to **string** | ProductName | [optional] 
 **Status** | Pointer to **int32** | status，1-active，2-inactive, default active | [optional] 
@@ -108,20 +108,20 @@ HasImageUrl returns a boolean if a field has been set.
 
 ### GetMetadata
 
-`func (o *UnibeeApiMerchantProductEditReq) GetMetadata() map[string]string`
+`func (o *UnibeeApiMerchantProductEditReq) GetMetadata() map[string]map[string]interface{}`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *UnibeeApiMerchantProductEditReq) GetMetadataOk() (*map[string]string, bool)`
+`func (o *UnibeeApiMerchantProductEditReq) GetMetadataOk() (*map[string]map[string]interface{}, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *UnibeeApiMerchantProductEditReq) SetMetadata(v map[string]string)`
+`func (o *UnibeeApiMerchantProductEditReq) SetMetadata(v map[string]map[string]interface{})`
 
 SetMetadata sets Metadata field to given value.
 

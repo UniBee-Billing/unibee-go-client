@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Email** | Pointer to **string** | Email, one of ExternalUserId&amp;Email, UserId or User needed | [optional] 
 **ExternalUserId** | Pointer to **string** | ExternalUserId, unique, one of ExternalUserId&amp;Email, UserId or User needed | [optional] 
 **GatewayId** | Pointer to **int32** | GatewayId | [optional] 
-**Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
+**Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **PaymentMethodId** | Pointer to **string** | PaymentMethodId | [optional] 
 **PlanId** | **int64** | PlanId | 
 **ProductData** | Pointer to [**UnibeeApiBeanPlanProductParam**](UnibeeApiBeanPlanProductParam.md) |  | [optional] 
@@ -273,20 +273,20 @@ HasGatewayId returns a boolean if a field has been set.
 
 ### GetMetadata
 
-`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetMetadata() map[string]string`
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetMetadata() map[string]map[string]interface{}`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetMetadataOk() (*map[string]string, bool)`
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetMetadataOk() (*map[string]map[string]interface{}, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *UnibeeApiMerchantSubscriptionCreateReq) SetMetadata(v map[string]string)`
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) SetMetadata(v map[string]map[string]interface{})`
 
 SetMetadata sets Metadata field to given value.
 

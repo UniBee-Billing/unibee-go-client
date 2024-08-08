@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Currency** | **string** | Currency | 
 **ExternalRefundId** | **string** | ExternalRefundId | 
-**Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
+**Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **PaymentId** | **string** | PaymentId | 
 **Reason** | Pointer to **string** | Reason | [optional] 
 **RefundAmount** | **int64** | RefundAmount, Cent | 
@@ -72,20 +72,20 @@ SetExternalRefundId sets ExternalRefundId field to given value.
 
 ### GetMetadata
 
-`func (o *UnibeeApiMerchantPaymentNewPaymentRefundReq) GetMetadata() map[string]string`
+`func (o *UnibeeApiMerchantPaymentNewPaymentRefundReq) GetMetadata() map[string]map[string]interface{}`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *UnibeeApiMerchantPaymentNewPaymentRefundReq) GetMetadataOk() (*map[string]string, bool)`
+`func (o *UnibeeApiMerchantPaymentNewPaymentRefundReq) GetMetadataOk() (*map[string]map[string]interface{}, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *UnibeeApiMerchantPaymentNewPaymentRefundReq) SetMetadata(v map[string]string)`
+`func (o *UnibeeApiMerchantPaymentNewPaymentRefundReq) SetMetadata(v map[string]map[string]interface{})`
 
 SetMetadata sets Metadata field to given value.
 

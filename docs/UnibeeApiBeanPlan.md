@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **IntervalCount** | Pointer to **int32** | period unit count | [optional] 
 **IntervalUnit** | Pointer to **string** | period unit,day|month|year|week | [optional] 
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
-**Metadata** | Pointer to **map[string]string** |  | [optional] 
+**Metadata** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
 **PlanName** | Pointer to **string** | PlanName | [optional] 
 **ProductId** | Pointer to **int64** | product id | [optional] 
 **PublishStatus** | Pointer to **int32** | 1-UnPublish,2-Publish, Use For Display Plan At UserPortal | [optional] 
@@ -452,20 +452,20 @@ HasMerchantId returns a boolean if a field has been set.
 
 ### GetMetadata
 
-`func (o *UnibeeApiBeanPlan) GetMetadata() map[string]string`
+`func (o *UnibeeApiBeanPlan) GetMetadata() map[string]map[string]interface{}`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *UnibeeApiBeanPlan) GetMetadataOk() (*map[string]string, bool)`
+`func (o *UnibeeApiBeanPlan) GetMetadataOk() (*map[string]map[string]interface{}, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *UnibeeApiBeanPlan) SetMetadata(v map[string]string)`
+`func (o *UnibeeApiBeanPlan) SetMetadata(v map[string]map[string]interface{})`
 
 SetMetadata sets Metadata field to given value.
 

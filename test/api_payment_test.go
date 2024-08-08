@@ -92,7 +92,7 @@ func Test_unibee_PaymentService(t *testing.T) {
 			ExternalUserId:    openapiclient.String("1709272139"),
 			GatewayId:         29,
 			Items:             nil, // without items
-			Metadata:          &map[string]string{"key1": "value1", "key2": "value2"},
+			Metadata:          &map[string]interface{}{"key1": "value1", "key2": "value2"},
 			RedirectUrl:       openapiclient.String("http://user.unibee.top/paymentResult"),
 			GasPayer:          openapiclient.String("user"),
 		}).Execute()

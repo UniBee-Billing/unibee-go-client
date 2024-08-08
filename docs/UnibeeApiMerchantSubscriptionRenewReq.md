@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **DiscountCode** | Pointer to **string** | DiscountCode, override subscription discount | [optional] 
 **GatewayId** | Pointer to **int32** | GatewayId, use subscription&#39;s gateway if not provide | [optional] 
 **ManualPayment** | Pointer to **bool** | ManualPayment | [optional] 
-**Metadata** | Pointer to **map[string]string** | Metadata，Map | [optional] 
+**Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **ProductData** | Pointer to [**UnibeeApiBeanPlanProductParam**](UnibeeApiBeanPlanProductParam.md) |  | [optional] 
 **ProductId** | Pointer to **int64** | default product will use if not specified | [optional] 
 **ReturnUrl** | Pointer to **string** | ReturnUrl | [optional] 
@@ -163,20 +163,20 @@ HasManualPayment returns a boolean if a field has been set.
 
 ### GetMetadata
 
-`func (o *UnibeeApiMerchantSubscriptionRenewReq) GetMetadata() map[string]string`
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) GetMetadata() map[string]map[string]interface{}`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *UnibeeApiMerchantSubscriptionRenewReq) GetMetadataOk() (*map[string]string, bool)`
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) GetMetadataOk() (*map[string]map[string]interface{}, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *UnibeeApiMerchantSubscriptionRenewReq) SetMetadata(v map[string]string)`
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) SetMetadata(v map[string]map[string]interface{})`
 
 SetMetadata sets Metadata field to given value.
 
