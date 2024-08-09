@@ -642,7 +642,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantUserUpdateReq := *openapiclient.NewUnibeeApiMerchantUserUpdateReq("Address_example", "Email_example", "FirstName_example", "LastName_example", int64(123)) // UnibeeApiMerchantUserUpdateReq | 
+	unibeeApiMerchantUserUpdateReq := *openapiclient.NewUnibeeApiMerchantUserUpdateReq() // UnibeeApiMerchantUserUpdateReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

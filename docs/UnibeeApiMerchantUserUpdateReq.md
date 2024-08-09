@@ -5,24 +5,26 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **LinkedIn** | Pointer to **string** | LinkedIn | [optional] 
-**Address** | **string** | Billing Address | 
+**Address** | Pointer to **string** | Billing Address | [optional] 
 **City** | Pointer to **string** | city | [optional] 
 **CompanyName** | Pointer to **string** | Company Name | [optional] 
 **CountryCode** | Pointer to **string** | Country Code | [optional] 
 **CountryName** | Pointer to **string** | Country Name | [optional] 
-**Email** | **string** | Email | 
+**Email** | Pointer to **string** | The email of user, either Email or UserId needed | [optional] 
+**ExternalUserId** | Pointer to **string** | ExternalUserId | [optional] 
 **Facebook** | Pointer to **string** | Facebook | [optional] 
-**FirstName** | **string** | First name | 
+**FirstName** | Pointer to **string** | First name | [optional] 
 **GatewayId** | Pointer to **int32** | GatewayId | [optional] 
 **Language** | Pointer to **string** | User Language, en|ru|cn|vi|bp | [optional] 
-**LastName** | **string** | Last Name | 
+**LastName** | Pointer to **string** | Last Name | [optional] 
+**Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **OtherSocialInfo** | Pointer to **string** | Other Social Info | [optional] 
 **PaymentMethodId** | Pointer to **string** | PaymentMethodId of gateway, available for card type gateway, payment automatic will enable if set | [optional] 
 **Phone** | Pointer to **string** | Phone | [optional] 
 **Telegram** | Pointer to **string** | Telegram | [optional] 
 **Tiktok** | Pointer to **string** | Tiktok | [optional] 
 **Type** | Pointer to **int32** | User type, 1-Individual|2-organization | [optional] 
-**UserId** | **int64** | User Id | 
+**UserId** | Pointer to **int32** | The id of user, either Email or UserId needed | [optional] 
 **VATNumber** | Pointer to **string** | VAT Number | [optional] 
 **WeChat** | Pointer to **string** | WeChat | [optional] 
 **WhatsApp** | Pointer to **string** | WhatsApp | [optional] 
@@ -32,7 +34,7 @@ Name | Type | Description | Notes
 
 ### NewUnibeeApiMerchantUserUpdateReq
 
-`func NewUnibeeApiMerchantUserUpdateReq(address string, email string, firstName string, lastName string, userId int64, ) *UnibeeApiMerchantUserUpdateReq`
+`func NewUnibeeApiMerchantUserUpdateReq() *UnibeeApiMerchantUserUpdateReq`
 
 NewUnibeeApiMerchantUserUpdateReq instantiates a new UnibeeApiMerchantUserUpdateReq object
 This constructor will assign default values to properties that have it defined,
@@ -91,6 +93,11 @@ and a boolean to check if the value has been set.
 
 SetAddress sets Address field to given value.
 
+### HasAddress
+
+`func (o *UnibeeApiMerchantUserUpdateReq) HasAddress() bool`
+
+HasAddress returns a boolean if a field has been set.
 
 ### GetCity
 
@@ -211,6 +218,36 @@ and a boolean to check if the value has been set.
 
 SetEmail sets Email field to given value.
 
+### HasEmail
+
+`func (o *UnibeeApiMerchantUserUpdateReq) HasEmail() bool`
+
+HasEmail returns a boolean if a field has been set.
+
+### GetExternalUserId
+
+`func (o *UnibeeApiMerchantUserUpdateReq) GetExternalUserId() string`
+
+GetExternalUserId returns the ExternalUserId field if non-nil, zero value otherwise.
+
+### GetExternalUserIdOk
+
+`func (o *UnibeeApiMerchantUserUpdateReq) GetExternalUserIdOk() (*string, bool)`
+
+GetExternalUserIdOk returns a tuple with the ExternalUserId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalUserId
+
+`func (o *UnibeeApiMerchantUserUpdateReq) SetExternalUserId(v string)`
+
+SetExternalUserId sets ExternalUserId field to given value.
+
+### HasExternalUserId
+
+`func (o *UnibeeApiMerchantUserUpdateReq) HasExternalUserId() bool`
+
+HasExternalUserId returns a boolean if a field has been set.
 
 ### GetFacebook
 
@@ -256,6 +293,11 @@ and a boolean to check if the value has been set.
 
 SetFirstName sets FirstName field to given value.
 
+### HasFirstName
+
+`func (o *UnibeeApiMerchantUserUpdateReq) HasFirstName() bool`
+
+HasFirstName returns a boolean if a field has been set.
 
 ### GetGatewayId
 
@@ -326,6 +368,36 @@ and a boolean to check if the value has been set.
 
 SetLastName sets LastName field to given value.
 
+### HasLastName
+
+`func (o *UnibeeApiMerchantUserUpdateReq) HasLastName() bool`
+
+HasLastName returns a boolean if a field has been set.
+
+### GetMetadata
+
+`func (o *UnibeeApiMerchantUserUpdateReq) GetMetadata() map[string]map[string]interface{}`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *UnibeeApiMerchantUserUpdateReq) GetMetadataOk() (*map[string]map[string]interface{}, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *UnibeeApiMerchantUserUpdateReq) SetMetadata(v map[string]map[string]interface{})`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *UnibeeApiMerchantUserUpdateReq) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
 
 ### GetOtherSocialInfo
 
@@ -479,23 +551,28 @@ HasType returns a boolean if a field has been set.
 
 ### GetUserId
 
-`func (o *UnibeeApiMerchantUserUpdateReq) GetUserId() int64`
+`func (o *UnibeeApiMerchantUserUpdateReq) GetUserId() int32`
 
 GetUserId returns the UserId field if non-nil, zero value otherwise.
 
 ### GetUserIdOk
 
-`func (o *UnibeeApiMerchantUserUpdateReq) GetUserIdOk() (*int64, bool)`
+`func (o *UnibeeApiMerchantUserUpdateReq) GetUserIdOk() (*int32, bool)`
 
 GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUserId
 
-`func (o *UnibeeApiMerchantUserUpdateReq) SetUserId(v int64)`
+`func (o *UnibeeApiMerchantUserUpdateReq) SetUserId(v int32)`
 
 SetUserId sets UserId field to given value.
 
+### HasUserId
+
+`func (o *UnibeeApiMerchantUserUpdateReq) HasUserId() bool`
+
+HasUserId returns a boolean if a field has been set.
 
 ### GetVATNumber
 

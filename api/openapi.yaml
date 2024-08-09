@@ -6,7 +6,7 @@ info:
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   title: OpenAPI UniBee
   version: |
-    buildtime:202408081000
+    buildtime:202408090936
 servers:
 - url: https://api.unibee.top
 - url: http://127.0.0.1:8080
@@ -7923,6 +7923,8 @@ components:
         birthday: birthday
         lastName: lastName
         zipCode: zipCode
+        metadata:
+          key: {}
         gender: gender
         city: city
         companyName: companyName
@@ -8088,6 +8090,12 @@ components:
           format: int64
           properties: {}
           type: integer
+        metadata:
+          additionalProperties:
+            $ref: '#/components/schemas/interface'
+          format: "map[string]interface {}"
+          properties: {}
+          type: object
         mobile:
           description: mobile
           format: string
@@ -8398,6 +8406,8 @@ components:
           birthday: birthday
           lastName: lastName
           zipCode: zipCode
+          metadata:
+            key: {}
           gender: gender
           city: city
           companyName: companyName
@@ -8472,6 +8482,8 @@ components:
           birthday: birthday
           lastName: lastName
           zipCode: zipCode
+          metadata:
+            key: {}
           gender: gender
           city: city
           companyName: companyName
@@ -9417,6 +9429,8 @@ components:
           birthday: birthday
           lastName: lastName
           zipCode: zipCode
+          metadata:
+            key: {}
           gender: gender
           city: city
           companyName: companyName
@@ -9605,6 +9619,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -9679,6 +9695,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -9927,6 +9945,8 @@ components:
           birthday: birthday
           lastName: lastName
           zipCode: zipCode
+          metadata:
+            key: {}
           gender: gender
           city: city
           companyName: companyName
@@ -10427,6 +10447,8 @@ components:
           birthday: birthday
           lastName: lastName
           zipCode: zipCode
+          metadata:
+            key: {}
           gender: gender
           city: city
           companyName: companyName
@@ -11042,6 +11064,8 @@ components:
           birthday: birthday
           lastName: lastName
           zipCode: zipCode
+          metadata:
+            key: {}
           gender: gender
           city: city
           companyName: companyName
@@ -11210,6 +11234,8 @@ components:
           birthday: birthday
           lastName: lastName
           zipCode: zipCode
+          metadata:
+            key: {}
           gender: gender
           city: city
           companyName: companyName
@@ -11886,6 +11912,8 @@ components:
     unibee.api.bean.detail.UserAccountDetail:
       example:
         zipCode: zipCode
+        metadata:
+          key: {}
         companyName: companyName
         language: language
         type: 1
@@ -12075,6 +12103,12 @@ components:
           format: int64
           properties: {}
           type: integer
+        metadata:
+          additionalProperties:
+            $ref: '#/components/schemas/interface'
+          format: "map[string]interface {}"
+          properties: {}
+          type: object
         mobile:
           description: mobile
           format: string
@@ -14338,6 +14372,8 @@ components:
           birthday: birthday
           lastName: lastName
           zipCode: zipCode
+          metadata:
+            key: {}
           gender: gender
           city: city
           companyName: companyName
@@ -18142,22 +18178,22 @@ components:
       properties:
         LinkedIn:
           description: LinkedIn
-          format: string
+          format: '*string'
           properties: {}
           type: string
         address:
           description: Billing Address
-          format: string
+          format: '*string'
           properties: {}
           type: string
         city:
           description: city
-          format: string
+          format: '*string'
           properties: {}
           type: string
         companyName:
           description: Company Name
-          format: string
+          format: '*string'
           properties: {}
           type: string
         countryCode:
@@ -18171,18 +18207,23 @@ components:
           properties: {}
           type: string
         email:
-          description: Email
-          format: string
+          description: "The email of user, either Email or UserId needed"
+          format: '*string'
+          properties: {}
+          type: string
+        externalUserId:
+          description: ExternalUserId
+          format: '*string'
           properties: {}
           type: string
         facebook:
           description: Facebook
-          format: string
+          format: '*string'
           properties: {}
           type: string
         firstName:
           description: First name
-          format: string
+          format: '*string'
           properties: {}
           type: string
         gatewayId:
@@ -18192,17 +18233,24 @@ components:
           type: integer
         language:
           description: "User Language, en|ru|cn|vi|bp"
-          format: string
+          format: '*string'
           properties: {}
           type: string
         lastName:
           description: Last Name
-          format: string
+          format: '*string'
           properties: {}
           type: string
+        metadata:
+          additionalProperties:
+            $ref: '#/components/schemas/interface'
+          description: Metadata，Map
+          format: "*map[string]interface {}"
+          properties: {}
+          type: object
         otherSocialInfo:
           description: Other Social Info
-          format: string
+          format: '*string'
           properties: {}
           type: string
         paymentMethodId:
@@ -18213,17 +18261,17 @@ components:
           type: string
         phone:
           description: Phone
-          format: string
+          format: '*string'
           properties: {}
           type: string
         telegram:
           description: Telegram
-          format: string
+          format: '*string'
           properties: {}
           type: string
         tiktok:
           description: Tiktok
-          format: string
+          format: '*string'
           properties: {}
           type: string
         type:
@@ -18232,8 +18280,8 @@ components:
           properties: {}
           type: integer
         userId:
-          description: User Id
-          format: int64
+          description: "The id of user, either Email or UserId needed"
+          format: '*int64'
           properties: {}
           type: integer
         vATNumber:
@@ -18243,25 +18291,19 @@ components:
           type: string
         weChat:
           description: WeChat
-          format: string
+          format: '*string'
           properties: {}
           type: string
         whatsApp:
           description: WhatsApp
-          format: string
+          format: '*string'
           properties: {}
           type: string
         zipCode:
           description: zip_code
-          format: string
+          format: '*string'
           properties: {}
           type: string
-      required:
-      - address
-      - email
-      - firstName
-      - lastName
-      - userId
       type: object
     unibee.api.merchant.user.UpdateRes:
       properties:
@@ -19583,6 +19625,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -19668,6 +19712,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -19774,6 +19820,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -19859,6 +19907,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -20676,6 +20726,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -20750,6 +20802,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -21054,6 +21108,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -21128,6 +21184,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -21433,6 +21491,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -21507,6 +21567,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -21828,6 +21890,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -21902,6 +21966,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -22206,6 +22272,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -22280,6 +22348,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -22585,6 +22655,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -22659,6 +22731,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -22988,6 +23062,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -23062,6 +23138,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -23376,6 +23454,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -23450,6 +23530,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -24103,6 +24185,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -24177,6 +24261,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -24481,6 +24567,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -24555,6 +24643,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -24880,6 +24970,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -24954,6 +25046,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -25258,6 +25352,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -25332,6 +25428,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -26623,6 +26721,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -26906,6 +27006,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -27141,6 +27243,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -27215,6 +27319,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -27463,6 +27569,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -27626,6 +27734,8 @@ components:
                 birthday: birthday
                 lastName: lastName
                 zipCode: zipCode
+                metadata:
+                  key: {}
                 gender: gender
                 city: city
                 companyName: companyName
@@ -27700,6 +27810,8 @@ components:
                 birthday: birthday
                 lastName: lastName
                 zipCode: zipCode
+                metadata:
+                  key: {}
                 gender: gender
                 city: city
                 companyName: companyName
@@ -27948,6 +28060,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -28238,6 +28352,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -28312,6 +28428,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -28560,6 +28678,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -28713,6 +28833,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -28787,6 +28909,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -29035,6 +29159,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -29209,6 +29335,8 @@ components:
                 birthday: birthday
                 lastName: lastName
                 zipCode: zipCode
+                metadata:
+                  key: {}
                 gender: gender
                 city: city
                 companyName: companyName
@@ -29283,6 +29411,8 @@ components:
                 birthday: birthday
                 lastName: lastName
                 zipCode: zipCode
+                metadata:
+                  key: {}
                 gender: gender
                 city: city
                 companyName: companyName
@@ -29531,6 +29661,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -29684,6 +29816,8 @@ components:
                 birthday: birthday
                 lastName: lastName
                 zipCode: zipCode
+                metadata:
+                  key: {}
                 gender: gender
                 city: city
                 companyName: companyName
@@ -29758,6 +29892,8 @@ components:
                 birthday: birthday
                 lastName: lastName
                 zipCode: zipCode
+                metadata:
+                  key: {}
                 gender: gender
                 city: city
                 companyName: companyName
@@ -30006,6 +30142,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -30331,6 +30469,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -30439,6 +30579,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -30563,6 +30705,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -30661,6 +30805,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -30780,6 +30926,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -30878,6 +31026,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -32903,6 +33053,8 @@ components:
       example:
         matchUserAccounts:
         - zipCode: zipCode
+          metadata:
+            key: {}
           companyName: companyName
           language: language
           type: 1
@@ -32970,6 +33122,8 @@ components:
               key: true
             gatewayId: 1
         - zipCode: zipCode
+          metadata:
+            key: {}
           companyName: companyName
           language: language
           type: 1
@@ -33354,6 +33508,8 @@ components:
         data:
           matchUserAccounts:
           - zipCode: zipCode
+            metadata:
+              key: {}
             companyName: companyName
             language: language
             type: 1
@@ -33421,6 +33577,8 @@ components:
                 key: true
               gatewayId: 1
           - zipCode: zipCode
+            metadata:
+              key: {}
             companyName: companyName
             language: language
             type: 1
@@ -34751,6 +34909,8 @@ components:
           birthday: birthday
           lastName: lastName
           zipCode: zipCode
+          metadata:
+            key: {}
           gender: gender
           city: city
           companyName: companyName
@@ -34866,6 +35026,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -35454,6 +35616,8 @@ components:
           birthday: birthday
           lastName: lastName
           zipCode: zipCode
+          metadata:
+            key: {}
           gender: gender
           city: city
           companyName: companyName
@@ -36069,6 +36233,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -36697,6 +36863,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -37300,6 +37468,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -37924,6 +38094,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -38527,6 +38699,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -39050,6 +39224,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -39163,6 +39339,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -39291,6 +39469,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -39404,6 +39584,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -42801,6 +42983,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -43414,6 +43598,8 @@ components:
               birthday: birthday
               lastName: lastName
               zipCode: zipCode
+              metadata:
+                key: {}
               gender: gender
               city: city
               companyName: companyName
@@ -43870,6 +44056,8 @@ components:
           birthday: birthday
           lastName: lastName
           zipCode: zipCode
+          metadata:
+            key: {}
           gender: gender
           city: city
           companyName: companyName
@@ -44326,6 +44514,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -44821,6 +45011,8 @@ components:
       example:
         user:
           zipCode: zipCode
+          metadata:
+            key: {}
           companyName: companyName
           language: language
           type: 1
@@ -44898,6 +45090,8 @@ components:
         data:
           user:
             zipCode: zipCode
+            metadata:
+              key: {}
             companyName: companyName
             language: language
             type: 1
@@ -44991,6 +45185,8 @@ components:
         total: 6
         userAccounts:
         - zipCode: zipCode
+          metadata:
+            key: {}
           companyName: companyName
           language: language
           type: 1
@@ -45058,6 +45254,8 @@ components:
               key: true
             gatewayId: 1
         - zipCode: zipCode
+          metadata:
+            key: {}
           companyName: companyName
           language: language
           type: 1
@@ -45146,6 +45344,8 @@ components:
           total: 6
           userAccounts:
           - zipCode: zipCode
+            metadata:
+              key: {}
             companyName: companyName
             language: language
             type: 1
@@ -45213,6 +45413,8 @@ components:
                 key: true
               gatewayId: 1
           - zipCode: zipCode
+            metadata:
+              key: {}
             companyName: companyName
             language: language
             type: 1
@@ -45307,6 +45509,8 @@ components:
           birthday: birthday
           lastName: lastName
           zipCode: zipCode
+          metadata:
+            key: {}
           gender: gender
           city: city
           companyName: companyName
@@ -45364,6 +45568,8 @@ components:
             birthday: birthday
             lastName: lastName
             zipCode: zipCode
+            metadata:
+              key: {}
             gender: gender
             city: city
             companyName: companyName
@@ -45434,6 +45640,8 @@ components:
       example:
         userAccounts:
         - zipCode: zipCode
+          metadata:
+            key: {}
           companyName: companyName
           language: language
           type: 1
@@ -45501,6 +45709,8 @@ components:
               key: true
             gatewayId: 1
         - zipCode: zipCode
+          metadata:
+            key: {}
           companyName: companyName
           language: language
           type: 1
@@ -45583,6 +45793,8 @@ components:
         data:
           userAccounts:
           - zipCode: zipCode
+            metadata:
+              key: {}
             companyName: companyName
             language: language
             type: 1
@@ -45650,6 +45862,8 @@ components:
                 key: true
               gatewayId: 1
           - zipCode: zipCode
+            metadata:
+              key: {}
             companyName: companyName
             language: language
             type: 1
