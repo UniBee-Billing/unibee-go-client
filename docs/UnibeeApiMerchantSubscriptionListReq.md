@@ -11,7 +11,8 @@ Name | Type | Description | Notes
 **CreateTimeStart** | Pointer to **int64** | CreateTimeStart | [optional] 
 **Currency** | Pointer to **string** | The currency of subscription | [optional] 
 **Page** | Pointer to **int32** | Page, Start With 0 | [optional] 
-**PlanIds** | Pointer to **[]int32** | The filter ids of plan | [optional] 
+**PlanIds** | Pointer to **[]int64** | The filter ids of plan | [optional] 
+**ProductIds** | Pointer to **[]int64** | The filter ids of product | [optional] 
 **SortField** | Pointer to **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | [optional] 
 **SortType** | Pointer to **string** | Sort Type，asc|desc，Default desc | [optional] 
 **Status** | Pointer to **[]int32** | Filter, Default All，Status，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | 9-Failed | [optional] 
@@ -213,20 +214,20 @@ HasPage returns a boolean if a field has been set.
 
 ### GetPlanIds
 
-`func (o *UnibeeApiMerchantSubscriptionListReq) GetPlanIds() []int32`
+`func (o *UnibeeApiMerchantSubscriptionListReq) GetPlanIds() []int64`
 
 GetPlanIds returns the PlanIds field if non-nil, zero value otherwise.
 
 ### GetPlanIdsOk
 
-`func (o *UnibeeApiMerchantSubscriptionListReq) GetPlanIdsOk() (*[]int32, bool)`
+`func (o *UnibeeApiMerchantSubscriptionListReq) GetPlanIdsOk() (*[]int64, bool)`
 
 GetPlanIdsOk returns a tuple with the PlanIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlanIds
 
-`func (o *UnibeeApiMerchantSubscriptionListReq) SetPlanIds(v []int32)`
+`func (o *UnibeeApiMerchantSubscriptionListReq) SetPlanIds(v []int64)`
 
 SetPlanIds sets PlanIds field to given value.
 
@@ -235,6 +236,31 @@ SetPlanIds sets PlanIds field to given value.
 `func (o *UnibeeApiMerchantSubscriptionListReq) HasPlanIds() bool`
 
 HasPlanIds returns a boolean if a field has been set.
+
+### GetProductIds
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) GetProductIds() []int64`
+
+GetProductIds returns the ProductIds field if non-nil, zero value otherwise.
+
+### GetProductIdsOk
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) GetProductIdsOk() (*[]int64, bool)`
+
+GetProductIdsOk returns a tuple with the ProductIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProductIds
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) SetProductIds(v []int64)`
+
+SetProductIds sets ProductIds field to given value.
+
+### HasProductIds
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) HasProductIds() bool`
+
+HasProductIds returns a boolean if a field has been set.
 
 ### GetSortField
 

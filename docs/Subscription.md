@@ -806,7 +806,7 @@ No authorization required
 
 ## SubscriptionListGet
 
-> MerchantSubscriptionListGet200Response SubscriptionListGet(ctx).UserId(userId).Status(status).Currency(currency).PlanIds(planIds).AmountStart(amountStart).AmountEnd(amountEnd).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+> MerchantSubscriptionListGet200Response SubscriptionListGet(ctx).UserId(userId).Status(status).Currency(currency).PlanIds(planIds).ProductIds(productIds).AmountStart(amountStart).AmountEnd(amountEnd).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 
 SubscriptionList
 
@@ -826,7 +826,8 @@ func main() {
 	userId := int64(789) // int64 | UserId (optional)
 	status := []int32{int32(123)} // []int32 | Filter, Default All，Status，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | 9-Failed (optional)
 	currency := "currency_example" // string | The currency of subscription (optional)
-	planIds := []int32{int32(123)} // []int32 | The filter ids of plan (optional)
+	planIds := []int64{int64(123)} // []int64 | The filter ids of plan (optional)
+	productIds := []int64{int64(123)} // []int64 | The filter ids of product (optional)
 	amountStart := int32(56) // int32 | The filter start amount of subscription (optional)
 	amountEnd := int32(56) // int32 | The filter end amount of subscription (optional)
 	sortField := "sortField_example" // string | Sort Field，gmt_create|gmt_modify，Default gmt_modify (optional)
@@ -838,7 +839,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Subscription.SubscriptionListGet(context.Background()).UserId(userId).Status(status).Currency(currency).PlanIds(planIds).AmountStart(amountStart).AmountEnd(amountEnd).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+	resp, r, err := apiClient.Subscription.SubscriptionListGet(context.Background()).UserId(userId).Status(status).Currency(currency).PlanIds(planIds).ProductIds(productIds).AmountStart(amountStart).AmountEnd(amountEnd).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -862,7 +863,8 @@ Name | Type | Description  | Notes
  **userId** | **int64** | UserId | 
  **status** | **[]int32** | Filter, Default All，Status，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | 9-Failed | 
  **currency** | **string** | The currency of subscription | 
- **planIds** | **[]int32** | The filter ids of plan | 
+ **planIds** | **[]int64** | The filter ids of plan | 
+ **productIds** | **[]int64** | The filter ids of product | 
  **amountStart** | **int32** | The filter start amount of subscription | 
  **amountEnd** | **int32** | The filter end amount of subscription | 
  **sortField** | **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | 

@@ -6,7 +6,7 @@ info:
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   title: OpenAPI UniBee
   version: |
-    buildtime:202408090936
+    buildtime:202408141003
 servers:
 - url: https://api.unibee.top
 - url: http://127.0.0.1:8080
@@ -1982,24 +1982,6 @@ paths:
       summary: GenerateNewApiKey
       tags:
       - Profile
-  /merchant/oss/file:
-    post:
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/unibee.api.merchant.oss.FileUploadReq'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/_merchant_oss_file_post_200_response'
-          description: ""
-      summary: Upload File
-      tags:
-      - File
   /merchant/payment/cancel:
     post:
       requestBody:
@@ -3762,9 +3744,24 @@ paths:
         required: false
         schema:
           description: The filter ids of plan
-          format: "[]int"
+          format: "[]int64"
           items:
-            format: int
+            format: int64
+            properties: {}
+            type: integer
+          properties: {}
+          type: array
+        style: form
+      - description: The filter ids of product
+        explode: true
+        in: query
+        name: productIds
+        required: false
+        schema:
+          description: The filter ids of product
+          format: "[]int64"
+          items:
+            format: int64
             properties: {}
             type: integer
           properties: {}
@@ -4383,229 +4380,6 @@ paths:
       summary: UserSubscriptionDetail
       tags:
       - Subscription
-  /merchant/task/delete_export_template:
-    post:
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/unibee.api.merchant.task.DeleteTemplateReq'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/_merchant_auth_sso_loginOTP_post_200_response'
-          description: ""
-      summary: DeleteExportTemplate
-      tags:
-      - Task
-  /merchant/task/edit_export_template:
-    post:
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/unibee.api.merchant.task.EditTemplateReq'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/_merchant_task_edit_export_template_post_200_response'
-          description: ""
-      summary: EditExportTemplate
-      tags:
-      - Task
-  /merchant/task/export_column_list:
-    post:
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/unibee.api.merchant.task.ExportColumnListReq'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/_merchant_task_export_column_list_post_200_response'
-          description: ""
-      summary: ExportColumnList
-      tags:
-      - Task
-  /merchant/task/export_template_list:
-    get:
-      parameters:
-      - description: "Filter Task, Optional, InvoiceExport|UserExport|SubscriptionExport|TransactionExport|DiscountExport|UserDiscountExport"
-        explode: true
-        in: query
-        name: task
-        required: false
-        schema:
-          description: "Filter Task, Optional, InvoiceExport|UserExport|SubscriptionExport|TransactionExport|DiscountExport|UserDiscountExport"
-          format: string
-          properties: {}
-          type: string
-        style: form
-      - description: "Page, Start With 0"
-        explode: true
-        in: query
-        name: page
-        required: false
-        schema:
-          description: "Page, Start With 0"
-          format: int
-          properties: {}
-          type: integer
-        style: form
-      - description: Count Of Page
-        explode: true
-        in: query
-        name: count
-        required: false
-        schema:
-          description: Count Of Page
-          format: int
-          properties: {}
-          type: integer
-        style: form
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/_merchant_task_export_template_list_get_200_response'
-          description: ""
-      summary: GetExportTemplateList
-      tags:
-      - Task
-    post:
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/unibee.api.merchant.task.ExportTemplateListReq'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/_merchant_task_export_template_list_get_200_response'
-          description: ""
-      summary: GetExportTemplateList
-      tags:
-      - Task
-  /merchant/task/list:
-    get:
-      parameters:
-      - description: "Page, Start With 0"
-        explode: true
-        in: query
-        name: page
-        required: false
-        schema:
-          description: "Page, Start With 0"
-          format: int
-          properties: {}
-          type: integer
-        style: form
-      - description: Count Of Page
-        explode: true
-        in: query
-        name: count
-        required: false
-        schema:
-          description: Count Of Page
-          format: int
-          properties: {}
-          type: integer
-        style: form
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/_merchant_task_list_get_200_response'
-          description: ""
-      summary: GetTaskList
-      tags:
-      - Task
-    post:
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/unibee.api.merchant.task.ListReq'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/_merchant_task_list_get_200_response'
-          description: ""
-      summary: GetTaskList
-      tags:
-      - Task
-  /merchant/task/new_export:
-    post:
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/unibee.api.merchant.task.NewReq'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/_merchant_auth_sso_loginOTP_post_200_response'
-          description: ""
-      summary: NewExport
-      tags:
-      - Task
-  /merchant/task/new_export_template:
-    post:
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/unibee.api.merchant.task.NewTemplateReq'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/_merchant_task_edit_export_template_post_200_response'
-          description: ""
-      summary: NewExportTemplate
-      tags:
-      - Task
-  /merchant/task/new_import:
-    post:
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/unibee.api.merchant.task.NewImportReq'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/_merchant_auth_sso_loginOTP_post_200_response'
-          description: ""
-      summary: NewImport
-      tags:
-      - Task
   /merchant/track/setup_segment:
     post:
       requestBody:
@@ -5961,19 +5735,6 @@ components:
           type: integer
       type: object
     unibee.api.bean.MerchantBatchExportTemplate:
-      example:
-        task: task
-        createTime: 6
-        merchantId: 5
-        payload:
-          key: {}
-        format: format
-        name: name
-        exportColumns:
-        - exportColumns
-        - exportColumns
-        templateId: 5
-        memberId: 1
       properties:
         createTime:
           description: create utc time
@@ -6029,24 +5790,6 @@ components:
           type: integer
       type: object
     unibee.api.bean.MerchantBatchTask:
-      example:
-        uploadFileUrl: uploadFileUrl
-        finishTime: 1
-        downloadUrl: downloadUrl
-        format: format
-        taskType: 7
-        taskCost: 4
-        createTime: 6
-        merchantId: 7
-        payload: payload
-        failureReason: failureReason
-        successCount: 2
-        startTime: 9
-        taskName: taskName
-        id: 5
-        lastUpdateTime: 5
-        memberId: 2
-        status: 3
       properties:
         createTime:
           description: create utc time
@@ -14469,22 +14212,6 @@ components:
         userMetric:
           $ref: '#/components/schemas/unibee.api.merchant.metric.UserMetric'
       type: object
-    unibee.api.merchant.oss.FileUploadReq:
-      properties:
-        file:
-          description: File To Upload
-          format: '*ghttp.UploadFile'
-          properties: {}
-          type: file
-      type: object
-    unibee.api.merchant.oss.FileUploadRes:
-      properties:
-        url:
-          description: URL Of File Or Image
-          format: string
-          properties: {}
-          type: string
-      type: object
     unibee.api.merchant.payment.CancelReq:
       properties:
         paymentId:
@@ -16916,9 +16643,18 @@ components:
           type: integer
         planIds:
           description: The filter ids of plan
-          format: "[]int"
+          format: "[]int64"
           items:
-            format: int
+            format: int64
+            properties: {}
+            type: integer
+          properties: {}
+          type: array
+        productIds:
+          description: The filter ids of product
+          format: "[]int64"
+          items:
+            format: int64
             properties: {}
             type: integer
           properties: {}
@@ -17660,264 +17396,6 @@ components:
           $ref: '#/components/schemas/unibee.api.bean.detail.SubscriptionPendingUpdateDetail'
         user:
           $ref: '#/components/schemas/unibee.api.bean.UserAccount'
-      type: object
-    unibee.api.merchant.task.DeleteTemplateReq:
-      properties:
-        templateId:
-          description: templateId
-          format: int64
-          properties: {}
-          type: integer
-      required:
-      - templateId
-      type: object
-    unibee.api.merchant.task.DeleteTemplateRes:
-      properties: {}
-      type: object
-    unibee.api.merchant.task.EditTemplateReq:
-      properties:
-        exportColumns:
-          description: "ExportColumns, the export file column list, will export all\
-            \ columns if not specified"
-          format: "*[]string"
-          items:
-            format: "[]string"
-            items:
-              format: string
-              properties: {}
-              type: string
-            properties: {}
-            type: array
-          properties: {}
-          type: array
-        format:
-          description: "The format of export file, xlsx|csv, will be xlsx if not specified"
-          format: '*string'
-          properties: {}
-          type: string
-        name:
-          description: name
-          format: '*string'
-          properties: {}
-          type: string
-        payload:
-          additionalProperties:
-            $ref: '#/components/schemas/interface'
-          description: Payload
-          format: "*map[string]interface {}"
-          properties: {}
-          type: object
-        task:
-          description: "Task,InvoiceExport|UserExport|SubscriptionExport|TransactionExport|DiscountExport|UserDiscountExport"
-          format: '*string'
-          properties: {}
-          type: string
-        templateId:
-          description: templateId
-          format: int64
-          properties: {}
-          type: integer
-      required:
-      - templateId
-      type: object
-    unibee.api.merchant.task.EditTemplateRes:
-      properties:
-        template:
-          $ref: '#/components/schemas/unibee.api.bean.MerchantBatchExportTemplate'
-      type: object
-    unibee.api.merchant.task.ExportColumnListReq:
-      properties:
-        task:
-          description: "Task,InvoiceExport|UserExport|SubscriptionExport|TransactionExport|DiscountExport|UserDiscountExport"
-          format: string
-          properties: {}
-          type: string
-      type: object
-    unibee.api.merchant.task.ExportColumnListRes:
-      properties:
-        columnComments:
-          additionalProperties:
-            format: string
-            properties: {}
-            type: string
-          description: Export Column Comments
-          format: "map[string]string"
-          properties: {}
-          type: object
-        columnHeaders:
-          additionalProperties:
-            format: string
-            properties: {}
-            type: string
-          description: Export Column Headers
-          format: "map[string]string"
-          properties: {}
-          type: object
-        columns:
-          description: Export Column List
-          format: "[]interface {}"
-          items:
-            $ref: '#/components/schemas/interface'
-          properties: {}
-          type: array
-      type: object
-    unibee.api.merchant.task.ExportTemplateListReq:
-      properties:
-        count:
-          description: Count Of Page
-          format: int
-          properties: {}
-          type: integer
-        page:
-          description: "Page, Start With 0"
-          format: int
-          properties: {}
-          type: integer
-        task:
-          description: "Filter Task, Optional, InvoiceExport|UserExport|SubscriptionExport|TransactionExport|DiscountExport|UserDiscountExport"
-          format: string
-          properties: {}
-          type: string
-      type: object
-    unibee.api.merchant.task.ExportTemplateListRes:
-      properties:
-        templates:
-          description: Merchant Member Export Template List
-          format: "[]*bean.MerchantBatchExportTemplate"
-          items:
-            $ref: '#/components/schemas/unibee.api.bean.MerchantBatchExportTemplate'
-          properties: {}
-          type: array
-        total:
-          description: Total
-          format: int
-          properties: {}
-          type: integer
-      type: object
-    unibee.api.merchant.task.ListReq:
-      properties:
-        count:
-          description: Count Of Page
-          format: int
-          properties: {}
-          type: integer
-        page:
-          description: "Page, Start With 0"
-          format: int
-          properties: {}
-          type: integer
-      type: object
-    unibee.api.merchant.task.ListRes:
-      properties:
-        downloads:
-          description: Merchant Member Task List
-          format: "[]*bean.MerchantBatchTask"
-          items:
-            $ref: '#/components/schemas/unibee.api.bean.MerchantBatchTask'
-          properties: {}
-          type: array
-        total:
-          description: Total
-          format: int
-          properties: {}
-          type: integer
-      type: object
-    unibee.api.merchant.task.NewImportReq:
-      properties:
-        file:
-          description: File To Upload
-          format: '*ghttp.UploadFile'
-          properties: {}
-          type: file
-        task:
-          description: "Task,UserImport|ActiveSubscriptionImport|HistorySubscriptionImport"
-          format: string
-          properties: {}
-          type: string
-      required:
-      - file
-      - task
-      type: object
-    unibee.api.merchant.task.NewImportRes:
-      properties: {}
-      type: object
-    unibee.api.merchant.task.NewReq:
-      properties:
-        exportColumns:
-          description: "ExportColumns, the export file column list, will export all\
-            \ columns if not specified"
-          format: "[]string"
-          items:
-            format: string
-            properties: {}
-            type: string
-          properties: {}
-          type: array
-        format:
-          description: "The format of export file, xlsx|csv, will be xlsx if not specified"
-          format: string
-          properties: {}
-          type: string
-        payload:
-          additionalProperties:
-            $ref: '#/components/schemas/interface'
-          description: Payload
-          format: "map[string]interface {}"
-          properties: {}
-          type: object
-        task:
-          description: "Task,InvoiceExport|UserExport|SubscriptionExport|TransactionExport|DiscountExport|UserDiscountExport"
-          format: string
-          properties: {}
-          type: string
-      required:
-      - task
-      type: object
-    unibee.api.merchant.task.NewRes:
-      properties: {}
-      type: object
-    unibee.api.merchant.task.NewTemplateReq:
-      properties:
-        exportColumns:
-          description: "ExportColumns, the export file column list, will export all\
-            \ columns if not specified, first char should lower case"
-          format: "[]string"
-          items:
-            format: string
-            properties: {}
-            type: string
-          properties: {}
-          type: array
-        format:
-          description: "The format of export file, xlsx|csv, will be xlsx if not specified"
-          format: string
-          properties: {}
-          type: string
-        name:
-          description: name
-          format: string
-          properties: {}
-          type: string
-        payload:
-          additionalProperties:
-            $ref: '#/components/schemas/interface'
-          description: Payload
-          format: "map[string]interface {}"
-          properties: {}
-          type: object
-        task:
-          description: "Task,InvoiceExport|UserExport|SubscriptionExport|TransactionExport|DiscountExport|UserDiscountExport"
-          format: string
-          properties: {}
-          type: string
-      required:
-      - name
-      - task
-      type: object
-    unibee.api.merchant.task.NewTemplateRes:
-      properties:
-        template:
-          $ref: '#/components/schemas/unibee.api.bean.MerchantBatchExportTemplate'
       type: object
     unibee.api.merchant.track.SetupSegmentReq:
       properties:
@@ -27099,44 +26577,6 @@ components:
           type: integer
         data:
           $ref: '#/components/schemas/_merchant_new_apikey_post_200_response_data'
-        message:
-          format: string
-          properties: {}
-          type: string
-        redirect:
-          format: string
-          properties: {}
-          type: string
-        requestId:
-          format: string
-          properties: {}
-          type: string
-      type: object
-    _merchant_oss_file_post_200_response_data:
-      example:
-        url: url
-      properties:
-        url:
-          description: URL Of File Or Image
-          format: string
-          properties: {}
-          type: string
-      type: object
-    _merchant_oss_file_post_200_response:
-      example:
-        redirect: redirect
-        code: 0
-        data:
-          url: url
-        requestId: requestId
-        message: message
-      properties:
-        code:
-          format: int
-          properties: {}
-          type: integer
-        data:
-          $ref: '#/components/schemas/_merchant_oss_file_post_200_response_data'
         message:
           format: string
           properties: {}
@@ -44588,345 +44028,6 @@ components:
           type: integer
         data:
           $ref: '#/components/schemas/_merchant_subscription_user_subscription_detail_get_200_response_data'
-        message:
-          format: string
-          properties: {}
-          type: string
-        redirect:
-          format: string
-          properties: {}
-          type: string
-        requestId:
-          format: string
-          properties: {}
-          type: string
-      type: object
-    _merchant_task_edit_export_template_post_200_response_data:
-      example:
-        template:
-          task: task
-          createTime: 6
-          merchantId: 5
-          payload:
-            key: {}
-          format: format
-          name: name
-          exportColumns:
-          - exportColumns
-          - exportColumns
-          templateId: 5
-          memberId: 1
-      properties:
-        template:
-          $ref: '#/components/schemas/unibee.api.bean.MerchantBatchExportTemplate'
-      type: object
-    _merchant_task_edit_export_template_post_200_response:
-      example:
-        redirect: redirect
-        code: 0
-        data:
-          template:
-            task: task
-            createTime: 6
-            merchantId: 5
-            payload:
-              key: {}
-            format: format
-            name: name
-            exportColumns:
-            - exportColumns
-            - exportColumns
-            templateId: 5
-            memberId: 1
-        requestId: requestId
-        message: message
-      properties:
-        code:
-          format: int
-          properties: {}
-          type: integer
-        data:
-          $ref: '#/components/schemas/_merchant_task_edit_export_template_post_200_response_data'
-        message:
-          format: string
-          properties: {}
-          type: string
-        redirect:
-          format: string
-          properties: {}
-          type: string
-        requestId:
-          format: string
-          properties: {}
-          type: string
-      type: object
-    _merchant_task_export_column_list_post_200_response_data:
-      example:
-        columnComments:
-          key: columnComments
-        columnHeaders:
-          key: columnHeaders
-        columns:
-        - {}
-        - {}
-      properties:
-        columnComments:
-          additionalProperties:
-            format: string
-            properties: {}
-            type: string
-          description: Export Column Comments
-          format: "map[string]string"
-          properties: {}
-          type: object
-        columnHeaders:
-          additionalProperties:
-            format: string
-            properties: {}
-            type: string
-          description: Export Column Headers
-          format: "map[string]string"
-          properties: {}
-          type: object
-        columns:
-          description: Export Column List
-          format: "[]interface {}"
-          items:
-            $ref: '#/components/schemas/interface'
-          properties: {}
-          type: array
-      type: object
-    _merchant_task_export_column_list_post_200_response:
-      example:
-        redirect: redirect
-        code: 0
-        data:
-          columnComments:
-            key: columnComments
-          columnHeaders:
-            key: columnHeaders
-          columns:
-          - {}
-          - {}
-        requestId: requestId
-        message: message
-      properties:
-        code:
-          format: int
-          properties: {}
-          type: integer
-        data:
-          $ref: '#/components/schemas/_merchant_task_export_column_list_post_200_response_data'
-        message:
-          format: string
-          properties: {}
-          type: string
-        redirect:
-          format: string
-          properties: {}
-          type: string
-        requestId:
-          format: string
-          properties: {}
-          type: string
-      type: object
-    _merchant_task_export_template_list_get_200_response_data:
-      example:
-        total: 6
-        templates:
-        - task: task
-          createTime: 6
-          merchantId: 5
-          payload:
-            key: {}
-          format: format
-          name: name
-          exportColumns:
-          - exportColumns
-          - exportColumns
-          templateId: 5
-          memberId: 1
-        - task: task
-          createTime: 6
-          merchantId: 5
-          payload:
-            key: {}
-          format: format
-          name: name
-          exportColumns:
-          - exportColumns
-          - exportColumns
-          templateId: 5
-          memberId: 1
-      properties:
-        templates:
-          description: Merchant Member Export Template List
-          format: "[]*bean.MerchantBatchExportTemplate"
-          items:
-            $ref: '#/components/schemas/unibee.api.bean.MerchantBatchExportTemplate'
-          properties: {}
-          type: array
-        total:
-          description: Total
-          format: int
-          properties: {}
-          type: integer
-      type: object
-    _merchant_task_export_template_list_get_200_response:
-      example:
-        redirect: redirect
-        code: 0
-        data:
-          total: 6
-          templates:
-          - task: task
-            createTime: 6
-            merchantId: 5
-            payload:
-              key: {}
-            format: format
-            name: name
-            exportColumns:
-            - exportColumns
-            - exportColumns
-            templateId: 5
-            memberId: 1
-          - task: task
-            createTime: 6
-            merchantId: 5
-            payload:
-              key: {}
-            format: format
-            name: name
-            exportColumns:
-            - exportColumns
-            - exportColumns
-            templateId: 5
-            memberId: 1
-        requestId: requestId
-        message: message
-      properties:
-        code:
-          format: int
-          properties: {}
-          type: integer
-        data:
-          $ref: '#/components/schemas/_merchant_task_export_template_list_get_200_response_data'
-        message:
-          format: string
-          properties: {}
-          type: string
-        redirect:
-          format: string
-          properties: {}
-          type: string
-        requestId:
-          format: string
-          properties: {}
-          type: string
-      type: object
-    _merchant_task_list_get_200_response_data:
-      example:
-        total: 1
-        downloads:
-        - uploadFileUrl: uploadFileUrl
-          finishTime: 1
-          downloadUrl: downloadUrl
-          format: format
-          taskType: 7
-          taskCost: 4
-          createTime: 6
-          merchantId: 7
-          payload: payload
-          failureReason: failureReason
-          successCount: 2
-          startTime: 9
-          taskName: taskName
-          id: 5
-          lastUpdateTime: 5
-          memberId: 2
-          status: 3
-        - uploadFileUrl: uploadFileUrl
-          finishTime: 1
-          downloadUrl: downloadUrl
-          format: format
-          taskType: 7
-          taskCost: 4
-          createTime: 6
-          merchantId: 7
-          payload: payload
-          failureReason: failureReason
-          successCount: 2
-          startTime: 9
-          taskName: taskName
-          id: 5
-          lastUpdateTime: 5
-          memberId: 2
-          status: 3
-      properties:
-        downloads:
-          description: Merchant Member Task List
-          format: "[]*bean.MerchantBatchTask"
-          items:
-            $ref: '#/components/schemas/unibee.api.bean.MerchantBatchTask'
-          properties: {}
-          type: array
-        total:
-          description: Total
-          format: int
-          properties: {}
-          type: integer
-      type: object
-    _merchant_task_list_get_200_response:
-      example:
-        redirect: redirect
-        code: 0
-        data:
-          total: 1
-          downloads:
-          - uploadFileUrl: uploadFileUrl
-            finishTime: 1
-            downloadUrl: downloadUrl
-            format: format
-            taskType: 7
-            taskCost: 4
-            createTime: 6
-            merchantId: 7
-            payload: payload
-            failureReason: failureReason
-            successCount: 2
-            startTime: 9
-            taskName: taskName
-            id: 5
-            lastUpdateTime: 5
-            memberId: 2
-            status: 3
-          - uploadFileUrl: uploadFileUrl
-            finishTime: 1
-            downloadUrl: downloadUrl
-            format: format
-            taskType: 7
-            taskCost: 4
-            createTime: 6
-            merchantId: 7
-            payload: payload
-            failureReason: failureReason
-            successCount: 2
-            startTime: 9
-            taskName: taskName
-            id: 5
-            lastUpdateTime: 5
-            memberId: 2
-            status: 3
-        requestId: requestId
-        message: message
-      properties:
-        code:
-          format: int
-          properties: {}
-          type: integer
-        data:
-          $ref: '#/components/schemas/_merchant_task_list_get_200_response_data'
         message:
           format: string
           properties: {}
