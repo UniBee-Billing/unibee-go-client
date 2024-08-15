@@ -6,7 +6,7 @@ info:
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   title: OpenAPI UniBee
   version: |
-    buildtime:202408141003
+    buildtime:202408150845
 servers:
 - url: https://api.unibee.top
 - url: http://127.0.0.1:8080
@@ -6016,7 +6016,9 @@ components:
         templateContent: templateContent
         updateTime: 5
         id: 1
+        languageData: languageData
         templateTitle: templateTitle
+        gatewayTemplateId: gatewayTemplateId
         templateAttachName: templateAttachName
         status: status
       properties:
@@ -6025,10 +6027,18 @@ components:
           format: int64
           properties: {}
           type: integer
+        gatewayTemplateId:
+          format: string
+          properties: {}
+          type: string
         id:
           format: int64
           properties: {}
           type: integer
+        languageData:
+          format: string
+          properties: {}
+          type: string
         merchantId:
           format: int64
           properties: {}
@@ -19466,7 +19476,9 @@ components:
           templateContent: templateContent
           updateTime: 5
           id: 1
+          languageData: languageData
           templateTitle: templateTitle
+          gatewayTemplateId: gatewayTemplateId
           templateAttachName: templateAttachName
           status: status
         - createTime: 6
@@ -19476,7 +19488,9 @@ components:
           templateContent: templateContent
           updateTime: 5
           id: 1
+          languageData: languageData
           templateTitle: templateTitle
+          gatewayTemplateId: gatewayTemplateId
           templateAttachName: templateAttachName
           status: status
       properties:
@@ -19507,7 +19521,9 @@ components:
             templateContent: templateContent
             updateTime: 5
             id: 1
+            languageData: languageData
             templateTitle: templateTitle
+            gatewayTemplateId: gatewayTemplateId
             templateAttachName: templateAttachName
             status: status
           - createTime: 6
@@ -19517,7 +19533,9 @@ components:
             templateContent: templateContent
             updateTime: 5
             id: 1
+            languageData: languageData
             templateTitle: templateTitle
+            gatewayTemplateId: gatewayTemplateId
             templateAttachName: templateAttachName
             status: status
         requestId: requestId

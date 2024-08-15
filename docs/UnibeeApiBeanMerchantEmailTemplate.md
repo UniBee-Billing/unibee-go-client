@@ -5,7 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
+**GatewayTemplateId** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **int64** |  | [optional] 
+**LanguageData** | Pointer to **string** |  | [optional] 
 **MerchantId** | Pointer to **int64** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **TemplateAttachName** | Pointer to **string** |  | [optional] 
@@ -59,6 +61,31 @@ SetCreateTime sets CreateTime field to given value.
 
 HasCreateTime returns a boolean if a field has been set.
 
+### GetGatewayTemplateId
+
+`func (o *UnibeeApiBeanMerchantEmailTemplate) GetGatewayTemplateId() string`
+
+GetGatewayTemplateId returns the GatewayTemplateId field if non-nil, zero value otherwise.
+
+### GetGatewayTemplateIdOk
+
+`func (o *UnibeeApiBeanMerchantEmailTemplate) GetGatewayTemplateIdOk() (*string, bool)`
+
+GetGatewayTemplateIdOk returns a tuple with the GatewayTemplateId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayTemplateId
+
+`func (o *UnibeeApiBeanMerchantEmailTemplate) SetGatewayTemplateId(v string)`
+
+SetGatewayTemplateId sets GatewayTemplateId field to given value.
+
+### HasGatewayTemplateId
+
+`func (o *UnibeeApiBeanMerchantEmailTemplate) HasGatewayTemplateId() bool`
+
+HasGatewayTemplateId returns a boolean if a field has been set.
+
 ### GetId
 
 `func (o *UnibeeApiBeanMerchantEmailTemplate) GetId() int64`
@@ -83,6 +110,31 @@ SetId sets Id field to given value.
 `func (o *UnibeeApiBeanMerchantEmailTemplate) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetLanguageData
+
+`func (o *UnibeeApiBeanMerchantEmailTemplate) GetLanguageData() string`
+
+GetLanguageData returns the LanguageData field if non-nil, zero value otherwise.
+
+### GetLanguageDataOk
+
+`func (o *UnibeeApiBeanMerchantEmailTemplate) GetLanguageDataOk() (*string, bool)`
+
+GetLanguageDataOk returns a tuple with the LanguageData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLanguageData
+
+`func (o *UnibeeApiBeanMerchantEmailTemplate) SetLanguageData(v string)`
+
+SetLanguageData sets LanguageData field to given value.
+
+### HasLanguageData
+
+`func (o *UnibeeApiBeanMerchantEmailTemplate) HasLanguageData() bool`
+
+HasLanguageData returns a boolean if a field has been set.
 
 ### GetMerchantId
 
