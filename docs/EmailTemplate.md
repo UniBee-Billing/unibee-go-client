@@ -4,12 +4,79 @@ All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**EmailCustomLocalizationTemplateSyncPost**](EmailTemplate.md#EmailCustomLocalizationTemplateSyncPost) | **Post** /merchant/email/custom_localization_template_sync | CustomizeLocalizationTemplateSync
 [**EmailTemplateActivatePost**](EmailTemplate.md#EmailTemplateActivatePost) | **Post** /merchant/email/template_activate | EmailTemplateActivate
 [**EmailTemplateDeactivatePost**](EmailTemplate.md#EmailTemplateDeactivatePost) | **Post** /merchant/email/template_deactivate | EmailTemplateDeactivate
 [**EmailTemplateListGet**](EmailTemplate.md#EmailTemplateListGet) | **Get** /merchant/email/template_list | EmailTemplateList
 [**EmailTemplateSetDefaultPost**](EmailTemplate.md#EmailTemplateSetDefaultPost) | **Post** /merchant/email/template_set_default | EmailTemplateSetDefault
 [**EmailTemplateUpdatePost**](EmailTemplate.md#EmailTemplateUpdatePost) | **Post** /merchant/email/template_update | EmailTemplateUpdate
 
+
+
+## EmailCustomLocalizationTemplateSyncPost
+
+> MerchantAuthSsoLoginOTPPost200Response EmailCustomLocalizationTemplateSyncPost(ctx).UnibeeApiMerchantEmailCustomizeLocalizationTemplateSyncReq(unibeeApiMerchantEmailCustomizeLocalizationTemplateSyncReq).Execute()
+
+CustomizeLocalizationTemplateSync
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantEmailCustomizeLocalizationTemplateSyncReq := *openapiclient.NewUnibeeApiMerchantEmailCustomizeLocalizationTemplateSyncReq([]openapiclient.UnibeeApiBeanMerchantLocalizationEmailTemplate{*openapiclient.NewUnibeeApiBeanMerchantLocalizationEmailTemplate()}) // UnibeeApiMerchantEmailCustomizeLocalizationTemplateSyncReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.EmailTemplate.EmailCustomLocalizationTemplateSyncPost(context.Background()).UnibeeApiMerchantEmailCustomizeLocalizationTemplateSyncReq(unibeeApiMerchantEmailCustomizeLocalizationTemplateSyncReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `EmailTemplate.EmailCustomLocalizationTemplateSyncPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `EmailCustomLocalizationTemplateSyncPost`: MerchantAuthSsoLoginOTPPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `EmailTemplate.EmailCustomLocalizationTemplateSyncPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiEmailCustomLocalizationTemplateSyncPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantEmailCustomizeLocalizationTemplateSyncReq** | [**UnibeeApiMerchantEmailCustomizeLocalizationTemplateSyncReq**](UnibeeApiMerchantEmailCustomizeLocalizationTemplateSyncReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## EmailTemplateActivatePost

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **LocalizedExchangeRate** | Pointer to **float32** | LocalizedExchangeRate, exchange rate must set while LocalizedCurrency enabled | [optional] 
 **SendUserEmail** | Pointer to **bool** | Whether sen invoice email to user or not，default false | [optional] [default to false]
 **ShowDetailItem** | Pointer to **bool** | ShowDetailItem, whether to display detail item information in pdf generate, unitAmount, quantity, etc. | [optional] [default to false]
+**Template** | Pointer to **string** | Template | [optional] 
 
 ## Methods
 
@@ -252,6 +253,31 @@ SetShowDetailItem sets ShowDetailItem field to given value.
 `func (o *UnibeeApiMerchantInvoicePdfUpdateReq) HasShowDetailItem() bool`
 
 HasShowDetailItem returns a boolean if a field has been set.
+
+### GetTemplate
+
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) GetTemplate() string`
+
+GetTemplate returns the Template field if non-nil, zero value otherwise.
+
+### GetTemplateOk
+
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) GetTemplateOk() (*string, bool)`
+
+GetTemplateOk returns a tuple with the Template field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTemplate
+
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) SetTemplate(v string)`
+
+SetTemplate sets Template field to given value.
+
+### HasTemplate
+
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) HasTemplate() bool`
+
+HasTemplate returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

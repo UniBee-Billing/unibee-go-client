@@ -6,7 +6,7 @@ info:
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   title: OpenAPI UniBee
   version: |
-    buildtime:202408150845
+    buildtime:202408160545
 servers:
 - url: https://api.unibee.top
 - url: http://127.0.0.1:8080
@@ -641,6 +641,25 @@ paths:
       summary: CountryConfigList
       tags:
       - Profile
+  /merchant/email/custom_localization_template_sync:
+    post:
+      description: Sync the custom localization email template to gateway (sendgrid)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/unibee.api.merchant.email.CustomizeLocalizationTemplateSyncReq'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_auth_sso_loginOTP_post_200_response'
+          description: ""
+      summary: CustomizeLocalizationTemplateSync
+      tags:
+      - EmailTemplate
   /merchant/email/gateway_setup:
     post:
       requestBody:
@@ -657,6 +676,24 @@ paths:
                 $ref: '#/components/schemas/_merchant_auth_sso_loginOTP_post_200_response'
           description: ""
       summary: EmailGatewaySetup
+      tags:
+      - Email
+  /merchant/email/send_template_email_to_user:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/unibee.api.merchant.email.SendTemplateEmailToUserReq'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_auth_sso_loginOTP_post_200_response'
+          description: ""
+      summary: SendTemplateEmailToUser
       tags:
       - Email
   /merchant/email/template_activate:
@@ -5052,6 +5089,21 @@ components:
           properties: {}
           type: string
       type: object
+    unibee.api.bean.EmailLocalizationTemplate:
+      properties:
+        content:
+          format: string
+          properties: {}
+          type: string
+        language:
+          format: string
+          properties: {}
+          type: string
+        title:
+          format: string
+          properties: {}
+          type: string
+      type: object
     unibee.api.bean.ExternalDiscountParam:
       properties:
         cycleLimit:
@@ -6072,6 +6124,27 @@ components:
           format: int64
           properties: {}
           type: integer
+      type: object
+    unibee.api.bean.MerchantLocalizationEmailTemplate:
+      properties:
+        attach:
+          format: string
+          properties: {}
+          type: string
+        localizations:
+          format: "[]*bean.EmailLocalizationTemplate"
+          items:
+            $ref: '#/components/schemas/unibee.api.bean.EmailLocalizationTemplate'
+          properties: {}
+          type: array
+        templateDescription:
+          format: string
+          properties: {}
+          type: string
+        templateName:
+          format: string
+          properties: {}
+          type: string
       type: object
     unibee.api.bean.MerchantMetric:
       example:
@@ -12648,6 +12721,22 @@ components:
           properties: {}
           type: array
       type: object
+    unibee.api.merchant.email.CustomizeLocalizationTemplateSyncReq:
+      description: Sync the custom localization email template to gateway (sendgrid)
+      properties:
+        templateData:
+          description: TemplateData
+          format: "[]bean.MerchantLocalizationEmailTemplate"
+          items:
+            $ref: '#/components/schemas/unibee.api.bean.MerchantLocalizationEmailTemplate'
+          properties: {}
+          type: array
+      required:
+      - templateData
+      type: object
+    unibee.api.merchant.email.CustomizeLocalizationTemplateSyncRes:
+      properties: {}
+      type: object
     unibee.api.merchant.email.GatewaySetupReq:
       properties:
         IsDefault:
@@ -12672,6 +12761,32 @@ components:
       - gatewayName
       type: object
     unibee.api.merchant.email.GatewaySetupRes:
+      properties: {}
+      type: object
+    unibee.api.merchant.email.SendTemplateEmailToUserReq:
+      properties:
+        templateName:
+          description: The name of email template
+          format: string
+          properties: {}
+          type: string
+        userId:
+          description: UserId
+          format: int64
+          properties: {}
+          type: integer
+        variables:
+          additionalProperties:
+            $ref: '#/components/schemas/interface'
+          description: Variables，Map
+          format: "map[string]interface {}"
+          properties: {}
+          type: object
+      required:
+      - templateName
+      - userId
+      type: object
+    unibee.api.merchant.email.SendTemplateEmailToUserRes:
       properties: {}
       type: object
     unibee.api.merchant.email.TemplateActivateReq:
@@ -13370,6 +13485,11 @@ components:
           format: '*bool'
           properties: {}
           type: boolean
+        template:
+          description: Template
+          format: string
+          properties: {}
+          type: string
       required:
       - invoiceId
       type: object
