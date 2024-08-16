@@ -6,7 +6,7 @@ info:
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   title: OpenAPI UniBee
   version: |
-    buildtime:202408160545
+    buildtime:202408161355
 servers:
 - url: https://api.unibee.top
 - url: http://127.0.0.1:8080
@@ -12731,6 +12731,11 @@ components:
             $ref: '#/components/schemas/unibee.api.bean.MerchantLocalizationEmailTemplate'
           properties: {}
           type: array
+        versionEnable:
+          description: VersionEnable
+          format: bool
+          properties: {}
+          type: boolean
       required:
       - templateData
       type: object
@@ -16381,6 +16386,10 @@ components:
           format: '*bool'
           properties: {}
           type: boolean
+        gatewayVATRule:
+          format: '*string'
+          properties: {}
+          type: string
         incompleteExpireTime:
           description: "IncompleteExpireTime, em.. default 1day for plan of month\
             \ type"

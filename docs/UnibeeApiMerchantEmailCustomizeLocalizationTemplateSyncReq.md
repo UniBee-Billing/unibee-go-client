@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **TemplateData** | [**[]UnibeeApiBeanMerchantLocalizationEmailTemplate**](UnibeeApiBeanMerchantLocalizationEmailTemplate.md) | TemplateData | 
+**VersionEnable** | Pointer to **bool** | VersionEnable | [optional] 
 
 ## Methods
 
@@ -44,6 +45,31 @@ and a boolean to check if the value has been set.
 
 SetTemplateData sets TemplateData field to given value.
 
+
+### GetVersionEnable
+
+`func (o *UnibeeApiMerchantEmailCustomizeLocalizationTemplateSyncReq) GetVersionEnable() bool`
+
+GetVersionEnable returns the VersionEnable field if non-nil, zero value otherwise.
+
+### GetVersionEnableOk
+
+`func (o *UnibeeApiMerchantEmailCustomizeLocalizationTemplateSyncReq) GetVersionEnableOk() (*bool, bool)`
+
+GetVersionEnableOk returns a tuple with the VersionEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersionEnable
+
+`func (o *UnibeeApiMerchantEmailCustomizeLocalizationTemplateSyncReq) SetVersionEnable(v bool)`
+
+SetVersionEnable sets VersionEnable field to given value.
+
+### HasVersionEnable
+
+`func (o *UnibeeApiMerchantEmailCustomizeLocalizationTemplateSyncReq) HasVersionEnable() bool`
+
+HasVersionEnable returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

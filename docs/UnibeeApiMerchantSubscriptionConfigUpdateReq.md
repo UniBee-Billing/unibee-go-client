@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DowngradeEffectImmediately** | Pointer to **bool** | DowngradeEffectImmediately, whether subscription downgrade should effect immediately or at period end, default at period end | [optional] 
+**GatewayVATRule** | Pointer to **string** |  | [optional] 
 **IncompleteExpireTime** | Pointer to **int32** | IncompleteExpireTime, em.. default 1day for plan of month type | [optional] 
 **InvoiceEmail** | Pointer to **bool** | InvoiceEmail, whether to send invoice email to user, default yes | [optional] 
 **TryAutomaticPaymentBeforePeriodEnd** | Pointer to **int32** | TryAutomaticPaymentBeforePeriodEnd, default 30 min | [optional] 
@@ -53,6 +54,31 @@ SetDowngradeEffectImmediately sets DowngradeEffectImmediately field to given val
 `func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) HasDowngradeEffectImmediately() bool`
 
 HasDowngradeEffectImmediately returns a boolean if a field has been set.
+
+### GetGatewayVATRule
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) GetGatewayVATRule() string`
+
+GetGatewayVATRule returns the GatewayVATRule field if non-nil, zero value otherwise.
+
+### GetGatewayVATRuleOk
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) GetGatewayVATRuleOk() (*string, bool)`
+
+GetGatewayVATRuleOk returns a tuple with the GatewayVATRule field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayVATRule
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) SetGatewayVATRule(v string)`
+
+SetGatewayVATRule sets GatewayVATRule field to given value.
+
+### HasGatewayVATRule
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) HasGatewayVATRule() bool`
+
+HasGatewayVATRule returns a boolean if a field has been set.
 
 ### GetIncompleteExpireTime
 
