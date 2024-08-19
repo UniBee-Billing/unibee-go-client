@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Language** | Pointer to **string** | User Language, en|ru|cn|vi|bp | [optional] 
 **LastName** | Pointer to **string** | Last Name | [optional] 
 **Phone** | Pointer to **string** | Phone | [optional] 
+**RegistrationNumber** | Pointer to **string** | RegistrationNumber | [optional] 
 **Type** | Pointer to **int64** | User type, 1-Individual|2-organization | [optional] 
 **UserName** | Pointer to **string** | UserName | [optional] 
 **VatNumber** | Pointer to **string** | vat number | [optional] 
@@ -282,6 +283,31 @@ SetPhone sets Phone field to given value.
 `func (o *UnibeeApiBeanNewUser) HasPhone() bool`
 
 HasPhone returns a boolean if a field has been set.
+
+### GetRegistrationNumber
+
+`func (o *UnibeeApiBeanNewUser) GetRegistrationNumber() string`
+
+GetRegistrationNumber returns the RegistrationNumber field if non-nil, zero value otherwise.
+
+### GetRegistrationNumberOk
+
+`func (o *UnibeeApiBeanNewUser) GetRegistrationNumberOk() (*string, bool)`
+
+GetRegistrationNumberOk returns a tuple with the RegistrationNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRegistrationNumber
+
+`func (o *UnibeeApiBeanNewUser) SetRegistrationNumber(v string)`
+
+SetRegistrationNumber sets RegistrationNumber field to given value.
+
+### HasRegistrationNumber
+
+`func (o *UnibeeApiBeanNewUser) HasRegistrationNumber() bool`
+
+HasRegistrationNumber returns a boolean if a field has been set.
 
 ### GetType
 

@@ -6,7 +6,7 @@ info:
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   title: OpenAPI UniBee
   version: |
-    buildtime:202408161355
+    buildtime:202408190753
 servers:
 - url: https://api.unibee.top
 - url: http://127.0.0.1:8080
@@ -6585,6 +6585,11 @@ components:
           type: string
         phone:
           description: Phone
+          format: string
+          properties: {}
+          type: string
+        registrationNumber:
+          description: RegistrationNumber
           format: string
           properties: {}
           type: string
@@ -17878,6 +17883,11 @@ components:
           type: string
         phone:
           description: Phone
+          format: '*string'
+          properties: {}
+          type: string
+        registrationNumber:
+          description: RegistrationNumber
           format: '*string'
           properties: {}
           type: string

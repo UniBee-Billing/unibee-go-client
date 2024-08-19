@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **OtherSocialInfo** | Pointer to **string** | Other Social Info | [optional] 
 **PaymentMethodId** | Pointer to **string** | PaymentMethodId of gateway, available for card type gateway, payment automatic will enable if set | [optional] 
 **Phone** | Pointer to **string** | Phone | [optional] 
+**RegistrationNumber** | Pointer to **string** | RegistrationNumber | [optional] 
 **Telegram** | Pointer to **string** | Telegram | [optional] 
 **Tiktok** | Pointer to **string** | Tiktok | [optional] 
 **Type** | Pointer to **int32** | User type, 1-Individual|2-organization | [optional] 
@@ -473,6 +474,31 @@ SetPhone sets Phone field to given value.
 `func (o *UnibeeApiMerchantUserUpdateReq) HasPhone() bool`
 
 HasPhone returns a boolean if a field has been set.
+
+### GetRegistrationNumber
+
+`func (o *UnibeeApiMerchantUserUpdateReq) GetRegistrationNumber() string`
+
+GetRegistrationNumber returns the RegistrationNumber field if non-nil, zero value otherwise.
+
+### GetRegistrationNumberOk
+
+`func (o *UnibeeApiMerchantUserUpdateReq) GetRegistrationNumberOk() (*string, bool)`
+
+GetRegistrationNumberOk returns a tuple with the RegistrationNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRegistrationNumber
+
+`func (o *UnibeeApiMerchantUserUpdateReq) SetRegistrationNumber(v string)`
+
+SetRegistrationNumber sets RegistrationNumber field to given value.
+
+### HasRegistrationNumber
+
+`func (o *UnibeeApiMerchantUserUpdateReq) HasRegistrationNumber() bool`
+
+HasRegistrationNumber returns a boolean if a field has been set.
 
 ### GetTelegram
 
