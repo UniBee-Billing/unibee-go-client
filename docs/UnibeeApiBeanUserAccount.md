@@ -36,6 +36,7 @@ Name | Type | Description | Notes
 **Profession** | Pointer to **string** | profession | [optional] 
 **ReMark** | Pointer to **string** | note | [optional] 
 **RecurringAmount** | Pointer to **int64** | total recurring amount, cent | [optional] 
+**RegistrationNumber** | Pointer to **string** | RegistrationNumber | [optional] 
 **School** | Pointer to **string** | school | [optional] 
 **Status** | Pointer to **int32** | 0-Active, 2-Suspend | [optional] 
 **SubscriptionId** | Pointer to **string** | subscription id | [optional] 
@@ -871,6 +872,31 @@ SetRecurringAmount sets RecurringAmount field to given value.
 `func (o *UnibeeApiBeanUserAccount) HasRecurringAmount() bool`
 
 HasRecurringAmount returns a boolean if a field has been set.
+
+### GetRegistrationNumber
+
+`func (o *UnibeeApiBeanUserAccount) GetRegistrationNumber() string`
+
+GetRegistrationNumber returns the RegistrationNumber field if non-nil, zero value otherwise.
+
+### GetRegistrationNumberOk
+
+`func (o *UnibeeApiBeanUserAccount) GetRegistrationNumberOk() (*string, bool)`
+
+GetRegistrationNumberOk returns a tuple with the RegistrationNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRegistrationNumber
+
+`func (o *UnibeeApiBeanUserAccount) SetRegistrationNumber(v string)`
+
+SetRegistrationNumber sets RegistrationNumber field to given value.
+
+### HasRegistrationNumber
+
+`func (o *UnibeeApiBeanUserAccount) HasRegistrationNumber() bool`
+
+HasRegistrationNumber returns a boolean if a field has been set.
 
 ### GetSchool
 

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Gateway** | Pointer to [**UnibeeApiBeanGateway**](UnibeeApiBeanGateway.md) |  | [optional] 
 **Invoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
 **OriginAmount** | Pointer to **int64** |  | [optional] 
+**OtherPendingCryptoSubscription** | Pointer to [**UnibeeApiBeanDetailSubscriptionDetail**](UnibeeApiBeanDetailSubscriptionDetail.md) |  | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
 **Quantity** | Pointer to **int64** |  | [optional] 
 **TaxPercentage** | Pointer to **int64** |  | [optional] 
@@ -294,6 +295,31 @@ SetOriginAmount sets OriginAmount field to given value.
 `func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) HasOriginAmount() bool`
 
 HasOriginAmount returns a boolean if a field has been set.
+
+### GetOtherPendingCryptoSubscription
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) GetOtherPendingCryptoSubscription() UnibeeApiBeanDetailSubscriptionDetail`
+
+GetOtherPendingCryptoSubscription returns the OtherPendingCryptoSubscription field if non-nil, zero value otherwise.
+
+### GetOtherPendingCryptoSubscriptionOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) GetOtherPendingCryptoSubscriptionOk() (*UnibeeApiBeanDetailSubscriptionDetail, bool)`
+
+GetOtherPendingCryptoSubscriptionOk returns a tuple with the OtherPendingCryptoSubscription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOtherPendingCryptoSubscription
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) SetOtherPendingCryptoSubscription(v UnibeeApiBeanDetailSubscriptionDetail)`
+
+SetOtherPendingCryptoSubscription sets OtherPendingCryptoSubscription field to given value.
+
+### HasOtherPendingCryptoSubscription
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) HasOtherPendingCryptoSubscription() bool`
+
+HasOtherPendingCryptoSubscription returns a boolean if a field has been set.
 
 ### GetPlan
 
