@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Link** | Pointer to **string** |  | [optional] 
+**OtherPendingCryptoSubscription** | Pointer to [**UnibeeApiBeanDetailSubscriptionDetail**](UnibeeApiBeanDetailSubscriptionDetail.md) |  | [optional] 
 **Paid** | Pointer to **bool** |  | [optional] 
 **Subscription** | Pointer to [**UnibeeApiBeanSubscription**](UnibeeApiBeanSubscription.md) |  | [optional] 
 **Token** | Pointer to **string** | token | [optional] 
@@ -53,6 +54,31 @@ SetLink sets Link field to given value.
 `func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) HasLink() bool`
 
 HasLink returns a boolean if a field has been set.
+
+### GetOtherPendingCryptoSubscription
+
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) GetOtherPendingCryptoSubscription() UnibeeApiBeanDetailSubscriptionDetail`
+
+GetOtherPendingCryptoSubscription returns the OtherPendingCryptoSubscription field if non-nil, zero value otherwise.
+
+### GetOtherPendingCryptoSubscriptionOk
+
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) GetOtherPendingCryptoSubscriptionOk() (*UnibeeApiBeanDetailSubscriptionDetail, bool)`
+
+GetOtherPendingCryptoSubscriptionOk returns a tuple with the OtherPendingCryptoSubscription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOtherPendingCryptoSubscription
+
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) SetOtherPendingCryptoSubscription(v UnibeeApiBeanDetailSubscriptionDetail)`
+
+SetOtherPendingCryptoSubscription sets OtherPendingCryptoSubscription field to given value.
+
+### HasOtherPendingCryptoSubscription
+
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) HasOtherPendingCryptoSubscription() bool`
+
+HasOtherPendingCryptoSubscription returns a boolean if a field has been set.
 
 ### GetPaid
 

@@ -6,7 +6,7 @@ info:
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   title: OpenAPI UniBee
   version: |
-    buildtime:202408200913
+    buildtime:202408210718
 servers:
 - url: https://api.unibee.top
 - url: http://127.0.0.1:8080
@@ -16719,6 +16719,8 @@ components:
           format: string
           properties: {}
           type: string
+        otherPendingCryptoSubscription:
+          $ref: '#/components/schemas/unibee.api.bean.detail.SubscriptionDetail'
         paid:
           format: bool
           properties: {}
@@ -35851,12 +35853,621 @@ components:
           registrationNumber: registrationNumber
           subscriptionName: subscriptionName
           weChat: weChat
+        otherPendingCryptoSubscription:
+          latestInvoice:
+            metadata:
+              key: {}
+            bizType: 1
+            invoiceName: invoiceName
+            prorationScale: 1
+            data: data
+            subscriptionAmountExcludingTax: 7
+            link: link
+            discount:
+              planIds:
+              - 4
+              - 4
+              metadata:
+                key: {}
+              code: code
+              discountAmount: 5
+              discountPercentage: 2
+              billingType: 6
+              createTime: 1
+              merchantId: 2
+              name: name
+              currency: currency
+              discountType: 7
+              startTime: 7
+              cycleLimit: 5
+              endTime: 9
+              id: 3
+              status: 1
+            discountAmount: 2
+            paymentLink: paymentLink
+            sendNote: sendNote
+            cryptoCurrency: cryptoCurrency
+            productName: productName
+            createFrom: createFrom
+            cryptoAmount: 5
+            countryCode: countryCode
+            paymentId: paymentId
+            totalAmountExcludingTax: 9
+            currency: currency
+            id: 9
+            lines:
+            - amount: 7
+              quantity: 1
+              amountExcludingTax: 1
+              taxPercentage: 5
+              description: description
+              discountAmount: 1
+              tax: 4
+              unitAmountExcludingTax: 9
+              proration: true
+              originAmount: 1
+              name: name
+              currency: currency
+              periodStart: 7
+              plan:
+                metadata:
+                  key: {}
+                intervalUnit: intervalUnit
+                description: description
+                planName: planName
+                type: 8
+                cancelAtTrialEnd: 1
+                gasPayer: gasPayer
+                merchantId: 7
+                imageUrl: imageUrl
+                intervalCount: 6
+                externalPlanId: externalPlanId
+                currency: currency
+                id: 1
+                trialDurationTime: 6
+                publishStatus: 4
+                amount: 7
+                productId: 1
+                trialDemand: trialDemand
+                extraMetricData: extraMetricData
+                bindingAddonIds: bindingAddonIds
+                taxPercentage: 9
+                homeUrl: homeUrl
+                createTime: 1
+                trialAmount: 9
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
+                status: 5
+              periodEnd: 6
+            - amount: 7
+              quantity: 1
+              amountExcludingTax: 1
+              taxPercentage: 5
+              description: description
+              discountAmount: 1
+              tax: 4
+              unitAmountExcludingTax: 9
+              proration: true
+              originAmount: 1
+              name: name
+              currency: currency
+              periodStart: 7
+              plan:
+                metadata:
+                  key: {}
+                intervalUnit: intervalUnit
+                description: description
+                planName: planName
+                type: 8
+                cancelAtTrialEnd: 1
+                gasPayer: gasPayer
+                merchantId: 7
+                imageUrl: imageUrl
+                intervalCount: 6
+                externalPlanId: externalPlanId
+                currency: currency
+                id: 1
+                trialDurationTime: 6
+                publishStatus: 4
+                amount: 7
+                productId: 1
+                trialDemand: trialDemand
+                extraMetricData: extraMetricData
+                bindingAddonIds: bindingAddonIds
+                taxPercentage: 9
+                homeUrl: homeUrl
+                createTime: 1
+                trialAmount: 9
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
+                status: 5
+              periodEnd: 6
+            periodEnd: 2
+            billingCycleAnchor: 6
+            trialEnd: 9
+            finishTime: 7
+            taxPercentage: 4
+            originAmount: 3
+            totalAmount: 5
+            discountCode: discountCode
+            subscriptionAmount: 6
+            prorationDate: 7
+            invoiceId: invoiceId
+            sendStatus: 1
+            dayUtilDue: 5
+            subscriptionId: subscriptionId
+            taxAmount: 1
+            periodStart: 4
+            refundId: refundId
+            status: 1
+            vatNumber: vatNumber
+          dayLeft: 2
+          unfinishedSubscriptionPendingUpdate:
+            note: note
+            metadata:
+              key: {}
+            gmtModify: gmtModify
+            updateAddonData: updateAddonData
+            addons:
+            - quantity: 6
+              addonPlan:
+                metadata:
+                  key: {}
+                intervalUnit: intervalUnit
+                description: description
+                planName: planName
+                type: 8
+                cancelAtTrialEnd: 1
+                gasPayer: gasPayer
+                merchantId: 7
+                imageUrl: imageUrl
+                intervalCount: 6
+                externalPlanId: externalPlanId
+                currency: currency
+                id: 1
+                trialDurationTime: 6
+                publishStatus: 4
+                amount: 7
+                productId: 1
+                trialDemand: trialDemand
+                extraMetricData: extraMetricData
+                bindingAddonIds: bindingAddonIds
+                taxPercentage: 9
+                homeUrl: homeUrl
+                createTime: 1
+                trialAmount: 9
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
+                status: 5
+            - quantity: 6
+              addonPlan:
+                metadata:
+                  key: {}
+                intervalUnit: intervalUnit
+                description: description
+                planName: planName
+                type: 8
+                cancelAtTrialEnd: 1
+                gasPayer: gasPayer
+                merchantId: 7
+                imageUrl: imageUrl
+                intervalCount: 6
+                externalPlanId: externalPlanId
+                currency: currency
+                id: 1
+                trialDurationTime: 6
+                publishStatus: 4
+                amount: 7
+                productId: 1
+                trialDemand: trialDemand
+                extraMetricData: extraMetricData
+                bindingAddonIds: bindingAddonIds
+                taxPercentage: 9
+                homeUrl: homeUrl
+                createTime: 1
+                trialAmount: 9
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
+                status: 5
+            link: link
+            updatePlan:
+              metadata:
+                key: {}
+              intervalUnit: intervalUnit
+              description: description
+              planName: planName
+              type: 8
+              cancelAtTrialEnd: 1
+              gasPayer: gasPayer
+              merchantId: 7
+              imageUrl: imageUrl
+              intervalCount: 6
+              externalPlanId: externalPlanId
+              currency: currency
+              id: 1
+              trialDurationTime: 6
+              publishStatus: 4
+              amount: 7
+              productId: 1
+              trialDemand: trialDemand
+              extraMetricData: extraMetricData
+              bindingAddonIds: bindingAddonIds
+              taxPercentage: 9
+              homeUrl: homeUrl
+              createTime: 1
+              trialAmount: 9
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
+              status: 5
+            effectImmediate: 9
+            updateAddons:
+            - quantity: 6
+              addonPlan:
+                metadata:
+                  key: {}
+                intervalUnit: intervalUnit
+                description: description
+                planName: planName
+                type: 8
+                cancelAtTrialEnd: 1
+                gasPayer: gasPayer
+                merchantId: 7
+                imageUrl: imageUrl
+                intervalCount: 6
+                externalPlanId: externalPlanId
+                currency: currency
+                id: 1
+                trialDurationTime: 6
+                publishStatus: 4
+                amount: 7
+                productId: 1
+                trialDemand: trialDemand
+                extraMetricData: extraMetricData
+                bindingAddonIds: bindingAddonIds
+                taxPercentage: 9
+                homeUrl: homeUrl
+                createTime: 1
+                trialAmount: 9
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
+                status: 5
+            - quantity: 6
+              addonPlan:
+                metadata:
+                  key: {}
+                intervalUnit: intervalUnit
+                description: description
+                planName: planName
+                type: 8
+                cancelAtTrialEnd: 1
+                gasPayer: gasPayer
+                merchantId: 7
+                imageUrl: imageUrl
+                intervalCount: 6
+                externalPlanId: externalPlanId
+                currency: currency
+                id: 1
+                trialDurationTime: 6
+                publishStatus: 4
+                amount: 7
+                productId: 1
+                trialDemand: trialDemand
+                extraMetricData: extraMetricData
+                bindingAddonIds: bindingAddonIds
+                taxPercentage: 9
+                homeUrl: homeUrl
+                createTime: 1
+                trialAmount: 9
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
+                status: 5
+            updateCurrency: updateCurrency
+            updatePlanId: 1
+            merchantId: 4
+            updateAmount: 7
+            currency: currency
+            planId: 1
+            plan:
+              metadata:
+                key: {}
+              intervalUnit: intervalUnit
+              description: description
+              planName: planName
+              type: 8
+              cancelAtTrialEnd: 1
+              gasPayer: gasPayer
+              merchantId: 7
+              imageUrl: imageUrl
+              intervalCount: 6
+              externalPlanId: externalPlanId
+              currency: currency
+              id: 1
+              trialDurationTime: 6
+              publishStatus: 4
+              amount: 7
+              productId: 1
+              trialDemand: trialDemand
+              extraMetricData: extraMetricData
+              bindingAddonIds: bindingAddonIds
+              taxPercentage: 9
+              homeUrl: homeUrl
+              createTime: 1
+              trialAmount: 9
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
+              status: 5
+            addonData: addonData
+            amount: 7
+            quantity: 1
+            gmtCreate: gmtCreate
+            userId: 5
+            merchantMember:
+              firstName: firstName
+              lastName: lastName
+              createTime: 5
+              isOwner: true
+              merchantId: 7
+              mobile: mobile
+              id: 2
+              MemberRoles:
+              - role: role
+                createTime: 6
+                merchantId: 5
+                permissions:
+                - permissions:
+                  - permissions
+                  - permissions
+                  group: group
+                - permissions:
+                  - permissions
+                  - permissions
+                  group: group
+                id: 1
+              - role: role
+                createTime: 6
+                merchantId: 5
+                permissions:
+                - permissions:
+                  - permissions
+                  - permissions
+                  group: group
+                - permissions:
+                  - permissions
+                  - permissions
+                  group: group
+                id: 1
+              email: email
+              status: 9
+            updateQuantity: 4
+            prorationAmount: 1
+            paid: 7
+            effectTime: 3
+            subscriptionId: subscriptionId
+            gatewayId: 2
+            pendingUpdateId: pendingUpdateId
+            status: 6
+          addonParams:
+          - addonPlanId: 6
+            quantity: 1
+          - addonPlanId: 6
+            quantity: 1
+          addons:
+          - quantity: 6
+            addonPlan:
+              metadata:
+                key: {}
+              intervalUnit: intervalUnit
+              description: description
+              planName: planName
+              type: 8
+              cancelAtTrialEnd: 1
+              gasPayer: gasPayer
+              merchantId: 7
+              imageUrl: imageUrl
+              intervalCount: 6
+              externalPlanId: externalPlanId
+              currency: currency
+              id: 1
+              trialDurationTime: 6
+              publishStatus: 4
+              amount: 7
+              productId: 1
+              trialDemand: trialDemand
+              extraMetricData: extraMetricData
+              bindingAddonIds: bindingAddonIds
+              taxPercentage: 9
+              homeUrl: homeUrl
+              createTime: 1
+              trialAmount: 9
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
+              status: 5
+          - quantity: 6
+            addonPlan:
+              metadata:
+                key: {}
+              intervalUnit: intervalUnit
+              description: description
+              planName: planName
+              type: 8
+              cancelAtTrialEnd: 1
+              gasPayer: gasPayer
+              merchantId: 7
+              imageUrl: imageUrl
+              intervalCount: 6
+              externalPlanId: externalPlanId
+              currency: currency
+              id: 1
+              trialDurationTime: 6
+              publishStatus: 4
+              amount: 7
+              productId: 1
+              trialDemand: trialDemand
+              extraMetricData: extraMetricData
+              bindingAddonIds: bindingAddonIds
+              taxPercentage: 9
+              homeUrl: homeUrl
+              createTime: 1
+              trialAmount: 9
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
+              status: 5
+          discount:
+            planIds:
+            - 4
+            - 4
+            metadata:
+              key: {}
+            code: code
+            discountAmount: 5
+            discountPercentage: 2
+            billingType: 6
+            createTime: 1
+            merchantId: 2
+            name: name
+            currency: currency
+            discountType: 7
+            startTime: 7
+            cycleLimit: 5
+            endTime: 9
+            id: 3
+            status: 1
+          subscription:
+            metadata:
+              key: {}
+            testClock: 3
+            currentPeriodEnd: 1
+            link: link
+            type: 2
+            firstPaidTime: 9
+            features: features
+            gasPayer: gasPayer
+            merchantId: 7
+            countryCode: countryCode
+            dunningTime: 7
+            currency: currency
+            planId: 5
+            id: 9
+            cancelReason: cancelReason
+            returnUrl: returnUrl
+            gatewayStatus: gatewayStatus
+            addonData: addonData
+            billingCycleAnchor: 0
+            currentPeriodStart: 4
+            trialEnd: 0
+            amount: 4
+            quantity: 6
+            productId: 4
+            taxPercentage: 4
+            userId: 1
+            defaultPaymentMethodId: defaultPaymentMethodId
+            createTime: 4
+            latestInvoiceId: latestInvoiceId
+            cancelAtPeriodEnd: 6
+            externalSubscriptionId: externalSubscriptionId
+            subscriptionId: subscriptionId
+            gatewayId: 0
+            lastUpdateTime: 0
+            pendingUpdateId: pendingUpdateId
+            status: 8
+            taskTime: taskTime
+            vatNumber: vatNumber
+          plan:
+            metadata:
+              key: {}
+            intervalUnit: intervalUnit
+            description: description
+            planName: planName
+            type: 8
+            cancelAtTrialEnd: 1
+            gasPayer: gasPayer
+            merchantId: 7
+            imageUrl: imageUrl
+            intervalCount: 6
+            externalPlanId: externalPlanId
+            currency: currency
+            id: 1
+            trialDurationTime: 6
+            publishStatus: 4
+            amount: 7
+            productId: 1
+            trialDemand: trialDemand
+            extraMetricData: extraMetricData
+            bindingAddonIds: bindingAddonIds
+            taxPercentage: 9
+            homeUrl: homeUrl
+            createTime: 1
+            trialAmount: 9
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
+            status: 5
+          user:
+            zipCode: zipCode
+            metadata:
+              key: {}
+            companyName: companyName
+            language: language
+            type: 4
+            otherSocialInfo: otherSocialInfo
+            isSpecial: 7
+            merchantId: 1
+            school: school
+            id: 2
+            reMark: reMark
+            profession: profession
+            whatsAPP: whatsAPP
+            recurringAmount: 1
+            avatarUrl: avatarUrl
+            timeZone: timeZone
+            linkedIn: linkedIn
+            version: 5
+            firstName: firstName
+            isRisk: 4
+            tikTok: tikTok
+            lastLoginAt: 1
+            externalUserId: externalUserId
+            phone: phone
+            paymentMethod: paymentMethod
+            countryName: countryName
+            subscriptionId: subscriptionId
+            gatewayId: 3
+            status: 6
+            birthday: birthday
+            lastName: lastName
+            gender: gender
+            city: city
+            vATNumber: vATNumber
+            billingType: 7
+            countryCode: countryCode
+            subscriptionStatus: 7
+            email: email
+            address: address
+            custom: custom
+            facebook: facebook
+            taxPercentage: 1
+            mobile: mobile
+            telegram: telegram
+            userName: userName
+            createTime: 9
+            registrationNumber: registrationNumber
+            subscriptionName: subscriptionName
+            weChat: weChat
+          gateway:
+            gatewayKey: gatewayKey
+            gatewayName: gatewayName
+            displayName: displayName
+            gatewayLogo: gatewayLogo
+            webhookSecret: webhookSecret
+            bank:
+              accountHolder: accountHolder
+              address: address
+              iban: iban
+              bic: bic
+            gatewayType: 5
+            createTime: 6
+            minimumAmount: 5
+            currency: currency
+            webhookEndpointUrl: webhookEndpointUrl
+            countryConfig:
+              key: true
+            gatewayId: 1
         token: token
       properties:
         link:
           format: string
           properties: {}
           type: string
+        otherPendingCryptoSubscription:
+          $ref: '#/components/schemas/unibee.api.bean.detail.SubscriptionDetail'
         paid:
           format: bool
           properties: {}
@@ -35969,6 +36580,613 @@ components:
             registrationNumber: registrationNumber
             subscriptionName: subscriptionName
             weChat: weChat
+          otherPendingCryptoSubscription:
+            latestInvoice:
+              metadata:
+                key: {}
+              bizType: 1
+              invoiceName: invoiceName
+              prorationScale: 1
+              data: data
+              subscriptionAmountExcludingTax: 7
+              link: link
+              discount:
+                planIds:
+                - 4
+                - 4
+                metadata:
+                  key: {}
+                code: code
+                discountAmount: 5
+                discountPercentage: 2
+                billingType: 6
+                createTime: 1
+                merchantId: 2
+                name: name
+                currency: currency
+                discountType: 7
+                startTime: 7
+                cycleLimit: 5
+                endTime: 9
+                id: 3
+                status: 1
+              discountAmount: 2
+              paymentLink: paymentLink
+              sendNote: sendNote
+              cryptoCurrency: cryptoCurrency
+              productName: productName
+              createFrom: createFrom
+              cryptoAmount: 5
+              countryCode: countryCode
+              paymentId: paymentId
+              totalAmountExcludingTax: 9
+              currency: currency
+              id: 9
+              lines:
+              - amount: 7
+                quantity: 1
+                amountExcludingTax: 1
+                taxPercentage: 5
+                description: description
+                discountAmount: 1
+                tax: 4
+                unitAmountExcludingTax: 9
+                proration: true
+                originAmount: 1
+                name: name
+                currency: currency
+                periodStart: 7
+                plan:
+                  metadata:
+                    key: {}
+                  intervalUnit: intervalUnit
+                  description: description
+                  planName: planName
+                  type: 8
+                  cancelAtTrialEnd: 1
+                  gasPayer: gasPayer
+                  merchantId: 7
+                  imageUrl: imageUrl
+                  intervalCount: 6
+                  externalPlanId: externalPlanId
+                  currency: currency
+                  id: 1
+                  trialDurationTime: 6
+                  publishStatus: 4
+                  amount: 7
+                  productId: 1
+                  trialDemand: trialDemand
+                  extraMetricData: extraMetricData
+                  bindingAddonIds: bindingAddonIds
+                  taxPercentage: 9
+                  homeUrl: homeUrl
+                  createTime: 1
+                  trialAmount: 9
+                  bindingOnetimeAddonIds: bindingOnetimeAddonIds
+                  status: 5
+                periodEnd: 6
+              - amount: 7
+                quantity: 1
+                amountExcludingTax: 1
+                taxPercentage: 5
+                description: description
+                discountAmount: 1
+                tax: 4
+                unitAmountExcludingTax: 9
+                proration: true
+                originAmount: 1
+                name: name
+                currency: currency
+                periodStart: 7
+                plan:
+                  metadata:
+                    key: {}
+                  intervalUnit: intervalUnit
+                  description: description
+                  planName: planName
+                  type: 8
+                  cancelAtTrialEnd: 1
+                  gasPayer: gasPayer
+                  merchantId: 7
+                  imageUrl: imageUrl
+                  intervalCount: 6
+                  externalPlanId: externalPlanId
+                  currency: currency
+                  id: 1
+                  trialDurationTime: 6
+                  publishStatus: 4
+                  amount: 7
+                  productId: 1
+                  trialDemand: trialDemand
+                  extraMetricData: extraMetricData
+                  bindingAddonIds: bindingAddonIds
+                  taxPercentage: 9
+                  homeUrl: homeUrl
+                  createTime: 1
+                  trialAmount: 9
+                  bindingOnetimeAddonIds: bindingOnetimeAddonIds
+                  status: 5
+                periodEnd: 6
+              periodEnd: 2
+              billingCycleAnchor: 6
+              trialEnd: 9
+              finishTime: 7
+              taxPercentage: 4
+              originAmount: 3
+              totalAmount: 5
+              discountCode: discountCode
+              subscriptionAmount: 6
+              prorationDate: 7
+              invoiceId: invoiceId
+              sendStatus: 1
+              dayUtilDue: 5
+              subscriptionId: subscriptionId
+              taxAmount: 1
+              periodStart: 4
+              refundId: refundId
+              status: 1
+              vatNumber: vatNumber
+            dayLeft: 2
+            unfinishedSubscriptionPendingUpdate:
+              note: note
+              metadata:
+                key: {}
+              gmtModify: gmtModify
+              updateAddonData: updateAddonData
+              addons:
+              - quantity: 6
+                addonPlan:
+                  metadata:
+                    key: {}
+                  intervalUnit: intervalUnit
+                  description: description
+                  planName: planName
+                  type: 8
+                  cancelAtTrialEnd: 1
+                  gasPayer: gasPayer
+                  merchantId: 7
+                  imageUrl: imageUrl
+                  intervalCount: 6
+                  externalPlanId: externalPlanId
+                  currency: currency
+                  id: 1
+                  trialDurationTime: 6
+                  publishStatus: 4
+                  amount: 7
+                  productId: 1
+                  trialDemand: trialDemand
+                  extraMetricData: extraMetricData
+                  bindingAddonIds: bindingAddonIds
+                  taxPercentage: 9
+                  homeUrl: homeUrl
+                  createTime: 1
+                  trialAmount: 9
+                  bindingOnetimeAddonIds: bindingOnetimeAddonIds
+                  status: 5
+              - quantity: 6
+                addonPlan:
+                  metadata:
+                    key: {}
+                  intervalUnit: intervalUnit
+                  description: description
+                  planName: planName
+                  type: 8
+                  cancelAtTrialEnd: 1
+                  gasPayer: gasPayer
+                  merchantId: 7
+                  imageUrl: imageUrl
+                  intervalCount: 6
+                  externalPlanId: externalPlanId
+                  currency: currency
+                  id: 1
+                  trialDurationTime: 6
+                  publishStatus: 4
+                  amount: 7
+                  productId: 1
+                  trialDemand: trialDemand
+                  extraMetricData: extraMetricData
+                  bindingAddonIds: bindingAddonIds
+                  taxPercentage: 9
+                  homeUrl: homeUrl
+                  createTime: 1
+                  trialAmount: 9
+                  bindingOnetimeAddonIds: bindingOnetimeAddonIds
+                  status: 5
+              link: link
+              updatePlan:
+                metadata:
+                  key: {}
+                intervalUnit: intervalUnit
+                description: description
+                planName: planName
+                type: 8
+                cancelAtTrialEnd: 1
+                gasPayer: gasPayer
+                merchantId: 7
+                imageUrl: imageUrl
+                intervalCount: 6
+                externalPlanId: externalPlanId
+                currency: currency
+                id: 1
+                trialDurationTime: 6
+                publishStatus: 4
+                amount: 7
+                productId: 1
+                trialDemand: trialDemand
+                extraMetricData: extraMetricData
+                bindingAddonIds: bindingAddonIds
+                taxPercentage: 9
+                homeUrl: homeUrl
+                createTime: 1
+                trialAmount: 9
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
+                status: 5
+              effectImmediate: 9
+              updateAddons:
+              - quantity: 6
+                addonPlan:
+                  metadata:
+                    key: {}
+                  intervalUnit: intervalUnit
+                  description: description
+                  planName: planName
+                  type: 8
+                  cancelAtTrialEnd: 1
+                  gasPayer: gasPayer
+                  merchantId: 7
+                  imageUrl: imageUrl
+                  intervalCount: 6
+                  externalPlanId: externalPlanId
+                  currency: currency
+                  id: 1
+                  trialDurationTime: 6
+                  publishStatus: 4
+                  amount: 7
+                  productId: 1
+                  trialDemand: trialDemand
+                  extraMetricData: extraMetricData
+                  bindingAddonIds: bindingAddonIds
+                  taxPercentage: 9
+                  homeUrl: homeUrl
+                  createTime: 1
+                  trialAmount: 9
+                  bindingOnetimeAddonIds: bindingOnetimeAddonIds
+                  status: 5
+              - quantity: 6
+                addonPlan:
+                  metadata:
+                    key: {}
+                  intervalUnit: intervalUnit
+                  description: description
+                  planName: planName
+                  type: 8
+                  cancelAtTrialEnd: 1
+                  gasPayer: gasPayer
+                  merchantId: 7
+                  imageUrl: imageUrl
+                  intervalCount: 6
+                  externalPlanId: externalPlanId
+                  currency: currency
+                  id: 1
+                  trialDurationTime: 6
+                  publishStatus: 4
+                  amount: 7
+                  productId: 1
+                  trialDemand: trialDemand
+                  extraMetricData: extraMetricData
+                  bindingAddonIds: bindingAddonIds
+                  taxPercentage: 9
+                  homeUrl: homeUrl
+                  createTime: 1
+                  trialAmount: 9
+                  bindingOnetimeAddonIds: bindingOnetimeAddonIds
+                  status: 5
+              updateCurrency: updateCurrency
+              updatePlanId: 1
+              merchantId: 4
+              updateAmount: 7
+              currency: currency
+              planId: 1
+              plan:
+                metadata:
+                  key: {}
+                intervalUnit: intervalUnit
+                description: description
+                planName: planName
+                type: 8
+                cancelAtTrialEnd: 1
+                gasPayer: gasPayer
+                merchantId: 7
+                imageUrl: imageUrl
+                intervalCount: 6
+                externalPlanId: externalPlanId
+                currency: currency
+                id: 1
+                trialDurationTime: 6
+                publishStatus: 4
+                amount: 7
+                productId: 1
+                trialDemand: trialDemand
+                extraMetricData: extraMetricData
+                bindingAddonIds: bindingAddonIds
+                taxPercentage: 9
+                homeUrl: homeUrl
+                createTime: 1
+                trialAmount: 9
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
+                status: 5
+              addonData: addonData
+              amount: 7
+              quantity: 1
+              gmtCreate: gmtCreate
+              userId: 5
+              merchantMember:
+                firstName: firstName
+                lastName: lastName
+                createTime: 5
+                isOwner: true
+                merchantId: 7
+                mobile: mobile
+                id: 2
+                MemberRoles:
+                - role: role
+                  createTime: 6
+                  merchantId: 5
+                  permissions:
+                  - permissions:
+                    - permissions
+                    - permissions
+                    group: group
+                  - permissions:
+                    - permissions
+                    - permissions
+                    group: group
+                  id: 1
+                - role: role
+                  createTime: 6
+                  merchantId: 5
+                  permissions:
+                  - permissions:
+                    - permissions
+                    - permissions
+                    group: group
+                  - permissions:
+                    - permissions
+                    - permissions
+                    group: group
+                  id: 1
+                email: email
+                status: 9
+              updateQuantity: 4
+              prorationAmount: 1
+              paid: 7
+              effectTime: 3
+              subscriptionId: subscriptionId
+              gatewayId: 2
+              pendingUpdateId: pendingUpdateId
+              status: 6
+            addonParams:
+            - addonPlanId: 6
+              quantity: 1
+            - addonPlanId: 6
+              quantity: 1
+            addons:
+            - quantity: 6
+              addonPlan:
+                metadata:
+                  key: {}
+                intervalUnit: intervalUnit
+                description: description
+                planName: planName
+                type: 8
+                cancelAtTrialEnd: 1
+                gasPayer: gasPayer
+                merchantId: 7
+                imageUrl: imageUrl
+                intervalCount: 6
+                externalPlanId: externalPlanId
+                currency: currency
+                id: 1
+                trialDurationTime: 6
+                publishStatus: 4
+                amount: 7
+                productId: 1
+                trialDemand: trialDemand
+                extraMetricData: extraMetricData
+                bindingAddonIds: bindingAddonIds
+                taxPercentage: 9
+                homeUrl: homeUrl
+                createTime: 1
+                trialAmount: 9
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
+                status: 5
+            - quantity: 6
+              addonPlan:
+                metadata:
+                  key: {}
+                intervalUnit: intervalUnit
+                description: description
+                planName: planName
+                type: 8
+                cancelAtTrialEnd: 1
+                gasPayer: gasPayer
+                merchantId: 7
+                imageUrl: imageUrl
+                intervalCount: 6
+                externalPlanId: externalPlanId
+                currency: currency
+                id: 1
+                trialDurationTime: 6
+                publishStatus: 4
+                amount: 7
+                productId: 1
+                trialDemand: trialDemand
+                extraMetricData: extraMetricData
+                bindingAddonIds: bindingAddonIds
+                taxPercentage: 9
+                homeUrl: homeUrl
+                createTime: 1
+                trialAmount: 9
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
+                status: 5
+            discount:
+              planIds:
+              - 4
+              - 4
+              metadata:
+                key: {}
+              code: code
+              discountAmount: 5
+              discountPercentage: 2
+              billingType: 6
+              createTime: 1
+              merchantId: 2
+              name: name
+              currency: currency
+              discountType: 7
+              startTime: 7
+              cycleLimit: 5
+              endTime: 9
+              id: 3
+              status: 1
+            subscription:
+              metadata:
+                key: {}
+              testClock: 3
+              currentPeriodEnd: 1
+              link: link
+              type: 2
+              firstPaidTime: 9
+              features: features
+              gasPayer: gasPayer
+              merchantId: 7
+              countryCode: countryCode
+              dunningTime: 7
+              currency: currency
+              planId: 5
+              id: 9
+              cancelReason: cancelReason
+              returnUrl: returnUrl
+              gatewayStatus: gatewayStatus
+              addonData: addonData
+              billingCycleAnchor: 0
+              currentPeriodStart: 4
+              trialEnd: 0
+              amount: 4
+              quantity: 6
+              productId: 4
+              taxPercentage: 4
+              userId: 1
+              defaultPaymentMethodId: defaultPaymentMethodId
+              createTime: 4
+              latestInvoiceId: latestInvoiceId
+              cancelAtPeriodEnd: 6
+              externalSubscriptionId: externalSubscriptionId
+              subscriptionId: subscriptionId
+              gatewayId: 0
+              lastUpdateTime: 0
+              pendingUpdateId: pendingUpdateId
+              status: 8
+              taskTime: taskTime
+              vatNumber: vatNumber
+            plan:
+              metadata:
+                key: {}
+              intervalUnit: intervalUnit
+              description: description
+              planName: planName
+              type: 8
+              cancelAtTrialEnd: 1
+              gasPayer: gasPayer
+              merchantId: 7
+              imageUrl: imageUrl
+              intervalCount: 6
+              externalPlanId: externalPlanId
+              currency: currency
+              id: 1
+              trialDurationTime: 6
+              publishStatus: 4
+              amount: 7
+              productId: 1
+              trialDemand: trialDemand
+              extraMetricData: extraMetricData
+              bindingAddonIds: bindingAddonIds
+              taxPercentage: 9
+              homeUrl: homeUrl
+              createTime: 1
+              trialAmount: 9
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
+              status: 5
+            user:
+              zipCode: zipCode
+              metadata:
+                key: {}
+              companyName: companyName
+              language: language
+              type: 4
+              otherSocialInfo: otherSocialInfo
+              isSpecial: 7
+              merchantId: 1
+              school: school
+              id: 2
+              reMark: reMark
+              profession: profession
+              whatsAPP: whatsAPP
+              recurringAmount: 1
+              avatarUrl: avatarUrl
+              timeZone: timeZone
+              linkedIn: linkedIn
+              version: 5
+              firstName: firstName
+              isRisk: 4
+              tikTok: tikTok
+              lastLoginAt: 1
+              externalUserId: externalUserId
+              phone: phone
+              paymentMethod: paymentMethod
+              countryName: countryName
+              subscriptionId: subscriptionId
+              gatewayId: 3
+              status: 6
+              birthday: birthday
+              lastName: lastName
+              gender: gender
+              city: city
+              vATNumber: vATNumber
+              billingType: 7
+              countryCode: countryCode
+              subscriptionStatus: 7
+              email: email
+              address: address
+              custom: custom
+              facebook: facebook
+              taxPercentage: 1
+              mobile: mobile
+              telegram: telegram
+              userName: userName
+              createTime: 9
+              registrationNumber: registrationNumber
+              subscriptionName: subscriptionName
+              weChat: weChat
+            gateway:
+              gatewayKey: gatewayKey
+              gatewayName: gatewayName
+              displayName: displayName
+              gatewayLogo: gatewayLogo
+              webhookSecret: webhookSecret
+              bank:
+                accountHolder: accountHolder
+                address: address
+                iban: iban
+                bic: bic
+              gatewayType: 5
+              createTime: 6
+              minimumAmount: 5
+              currency: currency
+              webhookEndpointUrl: webhookEndpointUrl
+              countryConfig:
+                key: true
+              gatewayId: 1
           token: token
         requestId: requestId
         message: message
