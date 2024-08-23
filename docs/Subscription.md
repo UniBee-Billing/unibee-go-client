@@ -21,6 +21,7 @@ Method | HTTP request | Description
 [**SubscriptionNewOnetimeAddonPaymentPost**](Subscription.md#SubscriptionNewOnetimeAddonPaymentPost) | **Post** /merchant/subscription/new_onetime_addon_payment | NewSubscriptionOnetimeAddonPayment
 [**SubscriptionOnetimeAddonListGet**](Subscription.md#SubscriptionOnetimeAddonListGet) | **Get** /merchant/subscription/onetime_addon_list | SubscriptionOnetimeAddonList
 [**SubscriptionPaymentNewPost**](Subscription.md#SubscriptionPaymentNewPost) | **Post** /merchant/subscription/payment/new | NewSubscriptionPayment
+[**SubscriptionPendingUpdateDetailGet**](Subscription.md#SubscriptionPendingUpdateDetailGet) | **Get** /merchant/subscription/pending_update_detail | SubscriptionPendingUpdateDetail
 [**SubscriptionRenewPost**](Subscription.md#SubscriptionRenewPost) | **Post** /merchant/subscription/renew | RenewSubscription
 [**SubscriptionResumePost**](Subscription.md#SubscriptionResumePost) | **Post** /merchant/subscription/resume | Merchant Edit Subscription-Resume
 [**SubscriptionSuspendPost**](Subscription.md#SubscriptionSuspendPost) | **Post** /merchant/subscription/suspend | Merchant Edit Subscription-Stop
@@ -1147,6 +1148,70 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SubscriptionPendingUpdateDetailGet
+
+> MerchantSubscriptionPendingUpdateDetailGet200Response SubscriptionPendingUpdateDetailGet(ctx).SubscriptionPendingUpdateId(subscriptionPendingUpdateId).Execute()
+
+SubscriptionPendingUpdateDetail
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	subscriptionPendingUpdateId := "subscriptionPendingUpdateId_example" // string | SubscriptionPendingUpdateId
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Subscription.SubscriptionPendingUpdateDetailGet(context.Background()).SubscriptionPendingUpdateId(subscriptionPendingUpdateId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionPendingUpdateDetailGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SubscriptionPendingUpdateDetailGet`: MerchantSubscriptionPendingUpdateDetailGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionPendingUpdateDetailGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSubscriptionPendingUpdateDetailGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subscriptionPendingUpdateId** | **string** | SubscriptionPendingUpdateId | 
+
+### Return type
+
+[**MerchantSubscriptionPendingUpdateDetailGet200Response**](MerchantSubscriptionPendingUpdateDetailGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

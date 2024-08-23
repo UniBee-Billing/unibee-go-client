@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **InvoiceNow** | Pointer to **bool** | Default false | [optional] 
 **ProductId** | Pointer to **int64** | default product will use if productId not specified and subscriptionId is blank | [optional] 
 **Prorate** | Pointer to **bool** | Prorate Generate Invoice，Default false | [optional] 
+**Reason** | Pointer to **string** | Reason | [optional] 
 **SubscriptionId** | Pointer to **string** | SubscriptionId, id of subscription, either SubscriptionId or UserId needed, The only one active subscription of userId will effect | [optional] 
 **UserId** | Pointer to **int64** | UserId, either SubscriptionId or UserId needed, The only one active subscription will effect if userId provide instead of subscriptionId | [optional] 
 
@@ -103,6 +104,31 @@ SetProrate sets Prorate field to given value.
 `func (o *UnibeeApiMerchantSubscriptionCancelReq) HasProrate() bool`
 
 HasProrate returns a boolean if a field has been set.
+
+### GetReason
+
+`func (o *UnibeeApiMerchantSubscriptionCancelReq) GetReason() string`
+
+GetReason returns the Reason field if non-nil, zero value otherwise.
+
+### GetReasonOk
+
+`func (o *UnibeeApiMerchantSubscriptionCancelReq) GetReasonOk() (*string, bool)`
+
+GetReasonOk returns a tuple with the Reason field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReason
+
+`func (o *UnibeeApiMerchantSubscriptionCancelReq) SetReason(v string)`
+
+SetReason sets Reason field to given value.
+
+### HasReason
+
+`func (o *UnibeeApiMerchantSubscriptionCancelReq) HasReason() bool`
+
+HasReason returns a boolean if a field has been set.
 
 ### GetSubscriptionId
 

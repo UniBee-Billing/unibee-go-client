@@ -6,7 +6,7 @@ info:
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   title: OpenAPI UniBee
   version: |
-    buildtime:202408210718
+    buildtime:202408231424
 servers:
 - url: https://api.unibee.top
 - url: http://127.0.0.1:8080
@@ -4018,6 +4018,30 @@ paths:
                 $ref: '#/components/schemas/_merchant_payment_new_post_200_response'
           description: ""
       summary: NewSubscriptionPayment
+      tags:
+      - Subscription
+  /merchant/subscription/pending_update_detail:
+    get:
+      parameters:
+      - description: SubscriptionPendingUpdateId
+        explode: true
+        in: query
+        name: subscriptionPendingUpdateId
+        required: true
+        schema:
+          description: SubscriptionPendingUpdateId
+          format: string
+          properties: {}
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_subscription_pending_update_detail_get_200_response'
+          description: ""
+      summary: SubscriptionPendingUpdateDetail
       tags:
       - Subscription
   /merchant/subscription/pending_update_list:
@@ -16357,6 +16381,11 @@ components:
           format: bool
           properties: {}
           type: boolean
+        reason:
+          description: Reason
+          format: string
+          properties: {}
+          type: string
         subscriptionId:
           description: "SubscriptionId, id of subscription, either SubscriptionId\
             \ or UserId needed, The only one active subscription of userId will effect"
@@ -17125,6 +17154,21 @@ components:
           type: boolean
         subscriptionOnetimeAddon:
           $ref: '#/components/schemas/unibee.api.bean.SubscriptionOnetimeAddon'
+      type: object
+    unibee.api.merchant.subscription.PendingUpdateDetailReq:
+      properties:
+        subscriptionPendingUpdateId:
+          description: SubscriptionPendingUpdateId
+          format: string
+          properties: {}
+          type: string
+      required:
+      - subscriptionPendingUpdateId
+      type: object
+    unibee.api.merchant.subscription.PendingUpdateDetailRes:
+      properties:
+        SubscriptionPendingUpdate:
+          $ref: '#/components/schemas/unibee.api.bean.detail.SubscriptionPendingUpdateDetail'
       type: object
     unibee.api.merchant.subscription.PendingUpdateListReq:
       properties:
@@ -41765,6 +41809,515 @@ components:
           type: integer
         data:
           $ref: '#/components/schemas/_merchant_subscription_onetime_addon_list_get_200_response_data'
+        message:
+          format: string
+          properties: {}
+          type: string
+        redirect:
+          format: string
+          properties: {}
+          type: string
+        requestId:
+          format: string
+          properties: {}
+          type: string
+      type: object
+    _merchant_subscription_pending_update_detail_get_200_response_data:
+      example:
+        SubscriptionPendingUpdate:
+          note: note
+          metadata:
+            key: {}
+          gmtModify: gmtModify
+          updateAddonData: updateAddonData
+          addons:
+          - quantity: 6
+            addonPlan:
+              metadata:
+                key: {}
+              intervalUnit: intervalUnit
+              description: description
+              planName: planName
+              type: 8
+              cancelAtTrialEnd: 1
+              gasPayer: gasPayer
+              merchantId: 7
+              imageUrl: imageUrl
+              intervalCount: 6
+              externalPlanId: externalPlanId
+              currency: currency
+              id: 1
+              trialDurationTime: 6
+              publishStatus: 4
+              amount: 7
+              productId: 1
+              trialDemand: trialDemand
+              extraMetricData: extraMetricData
+              bindingAddonIds: bindingAddonIds
+              taxPercentage: 9
+              homeUrl: homeUrl
+              createTime: 1
+              trialAmount: 9
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
+              status: 5
+          - quantity: 6
+            addonPlan:
+              metadata:
+                key: {}
+              intervalUnit: intervalUnit
+              description: description
+              planName: planName
+              type: 8
+              cancelAtTrialEnd: 1
+              gasPayer: gasPayer
+              merchantId: 7
+              imageUrl: imageUrl
+              intervalCount: 6
+              externalPlanId: externalPlanId
+              currency: currency
+              id: 1
+              trialDurationTime: 6
+              publishStatus: 4
+              amount: 7
+              productId: 1
+              trialDemand: trialDemand
+              extraMetricData: extraMetricData
+              bindingAddonIds: bindingAddonIds
+              taxPercentage: 9
+              homeUrl: homeUrl
+              createTime: 1
+              trialAmount: 9
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
+              status: 5
+          link: link
+          updatePlan:
+            metadata:
+              key: {}
+            intervalUnit: intervalUnit
+            description: description
+            planName: planName
+            type: 8
+            cancelAtTrialEnd: 1
+            gasPayer: gasPayer
+            merchantId: 7
+            imageUrl: imageUrl
+            intervalCount: 6
+            externalPlanId: externalPlanId
+            currency: currency
+            id: 1
+            trialDurationTime: 6
+            publishStatus: 4
+            amount: 7
+            productId: 1
+            trialDemand: trialDemand
+            extraMetricData: extraMetricData
+            bindingAddonIds: bindingAddonIds
+            taxPercentage: 9
+            homeUrl: homeUrl
+            createTime: 1
+            trialAmount: 9
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
+            status: 5
+          effectImmediate: 9
+          updateAddons:
+          - quantity: 6
+            addonPlan:
+              metadata:
+                key: {}
+              intervalUnit: intervalUnit
+              description: description
+              planName: planName
+              type: 8
+              cancelAtTrialEnd: 1
+              gasPayer: gasPayer
+              merchantId: 7
+              imageUrl: imageUrl
+              intervalCount: 6
+              externalPlanId: externalPlanId
+              currency: currency
+              id: 1
+              trialDurationTime: 6
+              publishStatus: 4
+              amount: 7
+              productId: 1
+              trialDemand: trialDemand
+              extraMetricData: extraMetricData
+              bindingAddonIds: bindingAddonIds
+              taxPercentage: 9
+              homeUrl: homeUrl
+              createTime: 1
+              trialAmount: 9
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
+              status: 5
+          - quantity: 6
+            addonPlan:
+              metadata:
+                key: {}
+              intervalUnit: intervalUnit
+              description: description
+              planName: planName
+              type: 8
+              cancelAtTrialEnd: 1
+              gasPayer: gasPayer
+              merchantId: 7
+              imageUrl: imageUrl
+              intervalCount: 6
+              externalPlanId: externalPlanId
+              currency: currency
+              id: 1
+              trialDurationTime: 6
+              publishStatus: 4
+              amount: 7
+              productId: 1
+              trialDemand: trialDemand
+              extraMetricData: extraMetricData
+              bindingAddonIds: bindingAddonIds
+              taxPercentage: 9
+              homeUrl: homeUrl
+              createTime: 1
+              trialAmount: 9
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
+              status: 5
+          updateCurrency: updateCurrency
+          updatePlanId: 1
+          merchantId: 4
+          updateAmount: 7
+          currency: currency
+          planId: 1
+          plan:
+            metadata:
+              key: {}
+            intervalUnit: intervalUnit
+            description: description
+            planName: planName
+            type: 8
+            cancelAtTrialEnd: 1
+            gasPayer: gasPayer
+            merchantId: 7
+            imageUrl: imageUrl
+            intervalCount: 6
+            externalPlanId: externalPlanId
+            currency: currency
+            id: 1
+            trialDurationTime: 6
+            publishStatus: 4
+            amount: 7
+            productId: 1
+            trialDemand: trialDemand
+            extraMetricData: extraMetricData
+            bindingAddonIds: bindingAddonIds
+            taxPercentage: 9
+            homeUrl: homeUrl
+            createTime: 1
+            trialAmount: 9
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
+            status: 5
+          addonData: addonData
+          amount: 7
+          quantity: 1
+          gmtCreate: gmtCreate
+          userId: 5
+          merchantMember:
+            firstName: firstName
+            lastName: lastName
+            createTime: 5
+            isOwner: true
+            merchantId: 7
+            mobile: mobile
+            id: 2
+            MemberRoles:
+            - role: role
+              createTime: 6
+              merchantId: 5
+              permissions:
+              - permissions:
+                - permissions
+                - permissions
+                group: group
+              - permissions:
+                - permissions
+                - permissions
+                group: group
+              id: 1
+            - role: role
+              createTime: 6
+              merchantId: 5
+              permissions:
+              - permissions:
+                - permissions
+                - permissions
+                group: group
+              - permissions:
+                - permissions
+                - permissions
+                group: group
+              id: 1
+            email: email
+            status: 9
+          updateQuantity: 4
+          prorationAmount: 1
+          paid: 7
+          effectTime: 3
+          subscriptionId: subscriptionId
+          gatewayId: 2
+          pendingUpdateId: pendingUpdateId
+          status: 6
+      properties:
+        SubscriptionPendingUpdate:
+          $ref: '#/components/schemas/unibee.api.bean.detail.SubscriptionPendingUpdateDetail'
+      type: object
+    _merchant_subscription_pending_update_detail_get_200_response:
+      example:
+        redirect: redirect
+        code: 0
+        data:
+          SubscriptionPendingUpdate:
+            note: note
+            metadata:
+              key: {}
+            gmtModify: gmtModify
+            updateAddonData: updateAddonData
+            addons:
+            - quantity: 6
+              addonPlan:
+                metadata:
+                  key: {}
+                intervalUnit: intervalUnit
+                description: description
+                planName: planName
+                type: 8
+                cancelAtTrialEnd: 1
+                gasPayer: gasPayer
+                merchantId: 7
+                imageUrl: imageUrl
+                intervalCount: 6
+                externalPlanId: externalPlanId
+                currency: currency
+                id: 1
+                trialDurationTime: 6
+                publishStatus: 4
+                amount: 7
+                productId: 1
+                trialDemand: trialDemand
+                extraMetricData: extraMetricData
+                bindingAddonIds: bindingAddonIds
+                taxPercentage: 9
+                homeUrl: homeUrl
+                createTime: 1
+                trialAmount: 9
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
+                status: 5
+            - quantity: 6
+              addonPlan:
+                metadata:
+                  key: {}
+                intervalUnit: intervalUnit
+                description: description
+                planName: planName
+                type: 8
+                cancelAtTrialEnd: 1
+                gasPayer: gasPayer
+                merchantId: 7
+                imageUrl: imageUrl
+                intervalCount: 6
+                externalPlanId: externalPlanId
+                currency: currency
+                id: 1
+                trialDurationTime: 6
+                publishStatus: 4
+                amount: 7
+                productId: 1
+                trialDemand: trialDemand
+                extraMetricData: extraMetricData
+                bindingAddonIds: bindingAddonIds
+                taxPercentage: 9
+                homeUrl: homeUrl
+                createTime: 1
+                trialAmount: 9
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
+                status: 5
+            link: link
+            updatePlan:
+              metadata:
+                key: {}
+              intervalUnit: intervalUnit
+              description: description
+              planName: planName
+              type: 8
+              cancelAtTrialEnd: 1
+              gasPayer: gasPayer
+              merchantId: 7
+              imageUrl: imageUrl
+              intervalCount: 6
+              externalPlanId: externalPlanId
+              currency: currency
+              id: 1
+              trialDurationTime: 6
+              publishStatus: 4
+              amount: 7
+              productId: 1
+              trialDemand: trialDemand
+              extraMetricData: extraMetricData
+              bindingAddonIds: bindingAddonIds
+              taxPercentage: 9
+              homeUrl: homeUrl
+              createTime: 1
+              trialAmount: 9
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
+              status: 5
+            effectImmediate: 9
+            updateAddons:
+            - quantity: 6
+              addonPlan:
+                metadata:
+                  key: {}
+                intervalUnit: intervalUnit
+                description: description
+                planName: planName
+                type: 8
+                cancelAtTrialEnd: 1
+                gasPayer: gasPayer
+                merchantId: 7
+                imageUrl: imageUrl
+                intervalCount: 6
+                externalPlanId: externalPlanId
+                currency: currency
+                id: 1
+                trialDurationTime: 6
+                publishStatus: 4
+                amount: 7
+                productId: 1
+                trialDemand: trialDemand
+                extraMetricData: extraMetricData
+                bindingAddonIds: bindingAddonIds
+                taxPercentage: 9
+                homeUrl: homeUrl
+                createTime: 1
+                trialAmount: 9
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
+                status: 5
+            - quantity: 6
+              addonPlan:
+                metadata:
+                  key: {}
+                intervalUnit: intervalUnit
+                description: description
+                planName: planName
+                type: 8
+                cancelAtTrialEnd: 1
+                gasPayer: gasPayer
+                merchantId: 7
+                imageUrl: imageUrl
+                intervalCount: 6
+                externalPlanId: externalPlanId
+                currency: currency
+                id: 1
+                trialDurationTime: 6
+                publishStatus: 4
+                amount: 7
+                productId: 1
+                trialDemand: trialDemand
+                extraMetricData: extraMetricData
+                bindingAddonIds: bindingAddonIds
+                taxPercentage: 9
+                homeUrl: homeUrl
+                createTime: 1
+                trialAmount: 9
+                bindingOnetimeAddonIds: bindingOnetimeAddonIds
+                status: 5
+            updateCurrency: updateCurrency
+            updatePlanId: 1
+            merchantId: 4
+            updateAmount: 7
+            currency: currency
+            planId: 1
+            plan:
+              metadata:
+                key: {}
+              intervalUnit: intervalUnit
+              description: description
+              planName: planName
+              type: 8
+              cancelAtTrialEnd: 1
+              gasPayer: gasPayer
+              merchantId: 7
+              imageUrl: imageUrl
+              intervalCount: 6
+              externalPlanId: externalPlanId
+              currency: currency
+              id: 1
+              trialDurationTime: 6
+              publishStatus: 4
+              amount: 7
+              productId: 1
+              trialDemand: trialDemand
+              extraMetricData: extraMetricData
+              bindingAddonIds: bindingAddonIds
+              taxPercentage: 9
+              homeUrl: homeUrl
+              createTime: 1
+              trialAmount: 9
+              bindingOnetimeAddonIds: bindingOnetimeAddonIds
+              status: 5
+            addonData: addonData
+            amount: 7
+            quantity: 1
+            gmtCreate: gmtCreate
+            userId: 5
+            merchantMember:
+              firstName: firstName
+              lastName: lastName
+              createTime: 5
+              isOwner: true
+              merchantId: 7
+              mobile: mobile
+              id: 2
+              MemberRoles:
+              - role: role
+                createTime: 6
+                merchantId: 5
+                permissions:
+                - permissions:
+                  - permissions
+                  - permissions
+                  group: group
+                - permissions:
+                  - permissions
+                  - permissions
+                  group: group
+                id: 1
+              - role: role
+                createTime: 6
+                merchantId: 5
+                permissions:
+                - permissions:
+                  - permissions
+                  - permissions
+                  group: group
+                - permissions:
+                  - permissions
+                  - permissions
+                  group: group
+                id: 1
+              email: email
+              status: 9
+            updateQuantity: 4
+            prorationAmount: 1
+            paid: 7
+            effectTime: 3
+            subscriptionId: subscriptionId
+            gatewayId: 2
+            pendingUpdateId: pendingUpdateId
+            status: 6
+        requestId: requestId
+        message: message
+      properties:
+        code:
+          format: int
+          properties: {}
+          type: integer
+        data:
+          $ref: '#/components/schemas/_merchant_subscription_pending_update_detail_get_200_response_data'
         message:
           format: string
           properties: {}
