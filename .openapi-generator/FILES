@@ -233,6 +233,7 @@ docs/UnibeeApiBeanMerchantMetricEvent.md
 docs/UnibeeApiBeanMerchantMetricPlanLimit.md
 docs/UnibeeApiBeanMerchantRole.md
 docs/UnibeeApiBeanMerchantRolePermission.md
+docs/UnibeeApiBeanMerchantVatRule.md
 docs/UnibeeApiBeanMerchantWebhookEndpoint.md
 docs/UnibeeApiBeanMerchantWebhookLog.md
 docs/UnibeeApiBeanNewUser.md
@@ -697,6 +698,7 @@ model_unibee_api_bean_merchant_metric_event.go
 model_unibee_api_bean_merchant_metric_plan_limit.go
 model_unibee_api_bean_merchant_role.go
 model_unibee_api_bean_merchant_role_permission.go
+model_unibee_api_bean_merchant_vat_rule.go
 model_unibee_api_bean_merchant_webhook_endpoint.go
 model_unibee_api_bean_merchant_webhook_log.go
 model_unibee_api_bean_new_user.go

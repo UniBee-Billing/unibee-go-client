@@ -6,7 +6,7 @@ info:
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   title: OpenAPI UniBee
   version: |
-    buildtime:202408231424
+    buildtime:202408240451
 servers:
 - url: https://api.unibee.top
 - url: http://127.0.0.1:8080
@@ -6445,6 +6445,25 @@ components:
             type: string
           properties: {}
           type: array
+      type: object
+    unibee.api.bean.MerchantVatRule:
+      properties:
+        gatewayNames:
+          format: string
+          properties: {}
+          type: string
+        ignoreVatNumber:
+          format: bool
+          properties: {}
+          type: boolean
+        taxPercentage:
+          format: '*int64'
+          properties: {}
+          type: integer
+        validCountryCodes:
+          format: string
+          properties: {}
+          type: string
       type: object
     unibee.api.bean.MerchantWebhookEndpoint:
       example:
@@ -16443,9 +16462,15 @@ components:
           properties: {}
           type: boolean
         gatewayVATRule:
-          format: '*string'
+          format: "*[]*bean.MerchantVatRule"
+          items:
+            format: "[]*bean.MerchantVatRule"
+            items:
+              $ref: '#/components/schemas/unibee.api.bean.MerchantVatRule'
+            properties: {}
+            type: array
           properties: {}
-          type: string
+          type: array
         incompleteExpireTime:
           description: "IncompleteExpireTime, em.. default 1day for plan of month\
             \ type"
