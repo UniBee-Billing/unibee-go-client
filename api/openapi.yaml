@@ -6,7 +6,7 @@ info:
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   title: OpenAPI UniBee
   version: |
-    buildtime:202408240451
+    buildtime:202408240519
 servers:
 - url: https://api.unibee.top
 - url: http://127.0.0.1:8080
@@ -16462,13 +16462,9 @@ components:
           properties: {}
           type: boolean
         gatewayVATRule:
-          format: "*[]*bean.MerchantVatRule"
+          format: "[]*bean.MerchantVatRule"
           items:
-            format: "[]*bean.MerchantVatRule"
-            items:
-              $ref: '#/components/schemas/unibee.api.bean.MerchantVatRule'
-            properties: {}
-            type: array
+            $ref: '#/components/schemas/unibee.api.bean.MerchantVatRule'
           properties: {}
           type: array
         incompleteExpireTime:
