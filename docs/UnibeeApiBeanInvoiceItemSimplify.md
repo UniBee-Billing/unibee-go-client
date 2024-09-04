@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **DiscountAmount** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **OriginAmount** | Pointer to **int64** |  | [optional] 
+**PdfDescription** | Pointer to **string** |  | [optional] 
 **PeriodEnd** | Pointer to **int64** |  | [optional] 
 **PeriodStart** | Pointer to **int64** |  | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
@@ -213,6 +214,31 @@ SetOriginAmount sets OriginAmount field to given value.
 `func (o *UnibeeApiBeanInvoiceItemSimplify) HasOriginAmount() bool`
 
 HasOriginAmount returns a boolean if a field has been set.
+
+### GetPdfDescription
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetPdfDescription() string`
+
+GetPdfDescription returns the PdfDescription field if non-nil, zero value otherwise.
+
+### GetPdfDescriptionOk
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetPdfDescriptionOk() (*string, bool)`
+
+GetPdfDescriptionOk returns a tuple with the PdfDescription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPdfDescription
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) SetPdfDescription(v string)`
+
+SetPdfDescription sets PdfDescription field to given value.
+
+### HasPdfDescription
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) HasPdfDescription() bool`
+
+HasPdfDescription returns a boolean if a field has been set.
 
 ### GetPeriodEnd
 

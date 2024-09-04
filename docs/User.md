@@ -4,6 +4,7 @@ All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**UserChangeEmailPost**](User.md#UserChangeEmailPost) | **Post** /merchant/user/change_email | ChangeUserEmail
 [**UserChangeGatewayPost**](User.md#UserChangeGatewayPost) | **Post** /merchant/user/change_gateway | ChangeUserDefaultGateway
 [**UserGetGet**](User.md#UserGetGet) | **Get** /merchant/user/get | GetUserProfile
 [**UserListGet**](User.md#UserListGet) | **Get** /merchant/user/list | UserList
@@ -15,6 +16,70 @@ Method | HTTP request | Description
 [**UserSuspendUserPost**](User.md#UserSuspendUserPost) | **Post** /merchant/user/suspend_user | SuspendUser
 [**UserUpdatePost**](User.md#UserUpdatePost) | **Post** /merchant/user/update | UpdateUserProfile
 
+
+
+## UserChangeEmailPost
+
+> MerchantAuthSsoLoginOTPPost200Response UserChangeEmailPost(ctx).UnibeeApiMerchantUserChangeEmailReq(unibeeApiMerchantUserChangeEmailReq).Execute()
+
+ChangeUserEmail
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantUserChangeEmailReq := *openapiclient.NewUnibeeApiMerchantUserChangeEmailReq("NewEmail_example") // UnibeeApiMerchantUserChangeEmailReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.User.UserChangeEmailPost(context.Background()).UnibeeApiMerchantUserChangeEmailReq(unibeeApiMerchantUserChangeEmailReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `User.UserChangeEmailPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserChangeEmailPost`: MerchantAuthSsoLoginOTPPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `User.UserChangeEmailPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUserChangeEmailPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantUserChangeEmailReq** | [**UnibeeApiMerchantUserChangeEmailReq**](UnibeeApiMerchantUserChangeEmailReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## UserChangeGatewayPost

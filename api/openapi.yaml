@@ -6,7 +6,7 @@ info:
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   title: OpenAPI UniBee
   version: |
-    buildtime:202408240519
+    buildtime:202409040645
 servers:
 - url: https://api.unibee.top
 - url: http://127.0.0.1:8080
@@ -4477,6 +4477,24 @@ paths:
       summary: UpdateMerchantProfile
       tags:
       - Profile
+  /merchant/user/change_email:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/unibee.api.merchant.user.ChangeEmailReq'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_auth_sso_loginOTP_post_200_response'
+          description: ""
+      summary: ChangeUserEmail
+      tags:
+      - User
   /merchant/user/change_gateway:
     post:
       requestBody:
@@ -5332,6 +5350,7 @@ components:
           unitAmountExcludingTax: 9
           proration: true
           originAmount: 1
+          pdfDescription: pdfDescription
           name: name
           currency: currency
           periodStart: 7
@@ -5374,6 +5393,7 @@ components:
           unitAmountExcludingTax: 9
           proration: true
           originAmount: 1
+          pdfDescription: pdfDescription
           name: name
           currency: currency
           periodStart: 7
@@ -5618,6 +5638,7 @@ components:
         unitAmountExcludingTax: 9
         proration: true
         originAmount: 1
+        pdfDescription: pdfDescription
         name: name
         currency: currency
         periodStart: 7
@@ -5679,6 +5700,10 @@ components:
           format: int64
           properties: {}
           type: integer
+        pdfDescription:
+          format: string
+          properties: {}
+          type: string
         periodEnd:
           format: int64
           properties: {}
@@ -6923,6 +6948,7 @@ components:
       type: object
     unibee.api.bean.PaymentMethod:
       example:
+        isDefault: true
         data: "{}"
         id: id
         type: type
@@ -6934,6 +6960,10 @@ components:
           format: string
           properties: {}
           type: string
+        isDefault:
+          format: bool
+          properties: {}
+          type: boolean
         type:
           format: string
           properties: {}
@@ -8506,6 +8536,7 @@ components:
           unitAmountExcludingTax: 9
           proration: true
           originAmount: 1
+          pdfDescription: pdfDescription
           name: name
           currency: currency
           periodStart: 7
@@ -8548,6 +8579,7 @@ components:
           unitAmountExcludingTax: 9
           proration: true
           originAmount: 1
+          pdfDescription: pdfDescription
           name: name
           currency: currency
           periodStart: 7
@@ -9722,6 +9754,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -9764,6 +9797,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -10463,6 +10497,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -10505,6 +10540,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -17651,6 +17687,30 @@ components:
     unibee.api.merchant.track.SetupSegmentRes:
       properties: {}
       type: object
+    unibee.api.merchant.user.ChangeEmailReq:
+      properties:
+        externalUserId:
+          description: "The externalUserId of user, either ExternalUserId or UserId\
+            \ needed"
+          format: string
+          properties: {}
+          type: string
+        newEmail:
+          description: Target Email want to change
+          format: string
+          properties: {}
+          type: string
+        userId:
+          description: "The id of user, either ExternalUserId or UserId needed"
+          format: int64
+          properties: {}
+          type: integer
+      required:
+      - newEmail
+      type: object
+    unibee.api.merchant.user.ChangeEmailRes:
+      properties: {}
+      type: object
     unibee.api.merchant.user.ChangeGatewayReq:
       properties:
         gatewayId:
@@ -18236,6 +18296,11 @@ components:
       type: object
     unibee.api.system.information.GetRes:
       properties:
+        buildVersion:
+          description: System Build Version
+          format: string
+          properties: {}
+          type: string
         env:
           description: "System Env, em: daily|stage|local|prod"
           format: string
@@ -18253,6 +18318,11 @@ components:
           format: bool
           properties: {}
           type: boolean
+        mode:
+          description: System Mode
+          format: string
+          properties: {}
+          type: string
         supportCurrency:
           description: Support Currency List
           format: "[]*bean.Currency"
@@ -20676,6 +20746,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -20718,6 +20789,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -21060,6 +21132,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -21102,6 +21175,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -21445,6 +21519,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -21487,6 +21562,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -21846,6 +21922,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -21888,6 +21965,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -22230,6 +22308,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -22272,6 +22351,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -22615,6 +22695,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -22657,6 +22738,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -23024,6 +23106,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -23066,6 +23149,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -23418,6 +23502,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -23460,6 +23545,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -23598,6 +23684,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -23640,6 +23727,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -23752,6 +23840,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -23794,6 +23883,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -24151,6 +24241,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -24193,6 +24284,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -24535,6 +24627,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -24577,6 +24670,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -24940,6 +25034,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -24982,6 +25077,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -25324,6 +25420,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -25366,6 +25463,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -27181,6 +27279,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -27223,6 +27322,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -27675,6 +27775,7 @@ components:
                 unitAmountExcludingTax: 9
                 proration: true
                 originAmount: 1
+                pdfDescription: pdfDescription
                 name: name
                 currency: currency
                 periodStart: 7
@@ -27717,6 +27818,7 @@ components:
                 unitAmountExcludingTax: 9
                 proration: true
                 originAmount: 1
+                pdfDescription: pdfDescription
                 name: name
                 currency: currency
                 periodStart: 7
@@ -28296,6 +28398,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -28338,6 +28441,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -28780,6 +28884,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -28822,6 +28927,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -29285,6 +29391,7 @@ components:
                 unitAmountExcludingTax: 9
                 proration: true
                 originAmount: 1
+                pdfDescription: pdfDescription
                 name: name
                 currency: currency
                 periodStart: 7
@@ -29327,6 +29434,7 @@ components:
                 unitAmountExcludingTax: 9
                 proration: true
                 originAmount: 1
+                pdfDescription: pdfDescription
                 name: name
                 currency: currency
                 periodStart: 7
@@ -29769,6 +29877,7 @@ components:
                 unitAmountExcludingTax: 9
                 proration: true
                 originAmount: 1
+                pdfDescription: pdfDescription
                 name: name
                 currency: currency
                 periodStart: 7
@@ -29811,6 +29920,7 @@ components:
                 unitAmountExcludingTax: 9
                 proration: true
                 originAmount: 1
+                pdfDescription: pdfDescription
                 name: name
                 currency: currency
                 periodStart: 7
@@ -29968,6 +30078,7 @@ components:
     _merchant_payment_method_get_get_200_response_data:
       example:
         method:
+          isDefault: true
           data: "{}"
           id: id
           type: type
@@ -29981,6 +30092,7 @@ components:
         code: 0
         data:
           method:
+            isDefault: true
             data: "{}"
             id: id
             type: type
@@ -30009,10 +30121,12 @@ components:
     _merchant_payment_method_list_get_200_response_data:
       example:
         methodList:
-        - data: "{}"
+        - isDefault: true
+          data: "{}"
           id: id
           type: type
-        - data: "{}"
+        - isDefault: true
+          data: "{}"
           id: id
           type: type
       properties:
@@ -30030,10 +30144,12 @@ components:
         code: 0
         data:
           methodList:
-          - data: "{}"
+          - isDefault: true
+            data: "{}"
             id: id
             type: type
-          - data: "{}"
+          - isDefault: true
+            data: "{}"
             id: id
             type: type
         requestId: requestId
@@ -30061,6 +30177,7 @@ components:
     _merchant_payment_method_new_post_200_response_data:
       example:
         method:
+          isDefault: true
           data: "{}"
           id: id
           type: type
@@ -30080,6 +30197,7 @@ components:
         code: 0
         data:
           method:
+            isDefault: true
             data: "{}"
             id: id
             type: type
@@ -32990,6 +33108,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -33032,6 +33151,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -33134,6 +33254,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -33176,6 +33297,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -33447,6 +33569,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -33489,6 +33612,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -33591,6 +33715,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -33633,6 +33758,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -34045,6 +34171,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -34087,6 +34214,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -34666,6 +34794,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -34708,6 +34837,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -35037,6 +35167,7 @@ components:
                 unitAmountExcludingTax: 9
                 proration: true
                 originAmount: 1
+                pdfDescription: pdfDescription
                 name: name
                 currency: currency
                 periodStart: 7
@@ -35079,6 +35210,7 @@ components:
                 unitAmountExcludingTax: 9
                 proration: true
                 originAmount: 1
+                pdfDescription: pdfDescription
                 name: name
                 currency: currency
                 periodStart: 7
@@ -35658,6 +35790,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -35700,6 +35833,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -35971,6 +36105,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -36013,6 +36148,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -36698,6 +36834,7 @@ components:
                 unitAmountExcludingTax: 9
                 proration: true
                 originAmount: 1
+                pdfDescription: pdfDescription
                 name: name
                 currency: currency
                 periodStart: 7
@@ -36740,6 +36877,7 @@ components:
                 unitAmountExcludingTax: 9
                 proration: true
                 originAmount: 1
+                pdfDescription: pdfDescription
                 name: name
                 currency: currency
                 periodStart: 7
@@ -37329,6 +37467,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -37371,6 +37510,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -37947,6 +38087,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -37989,6 +38130,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -38557,6 +38699,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -38599,6 +38742,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -39163,6 +39307,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -39205,6 +39350,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -39790,6 +39936,7 @@ components:
                 unitAmountExcludingTax: 9
                 proration: true
                 originAmount: 1
+                pdfDescription: pdfDescription
                 name: name
                 currency: currency
                 periodStart: 7
@@ -39832,6 +39979,7 @@ components:
                 unitAmountExcludingTax: 9
                 proration: true
                 originAmount: 1
+                pdfDescription: pdfDescription
                 name: name
                 currency: currency
                 periodStart: 7
@@ -40396,6 +40544,7 @@ components:
                 unitAmountExcludingTax: 9
                 proration: true
                 originAmount: 1
+                pdfDescription: pdfDescription
                 name: name
                 currency: currency
                 periodStart: 7
@@ -40438,6 +40587,7 @@ components:
                 unitAmountExcludingTax: 9
                 proration: true
                 originAmount: 1
+                pdfDescription: pdfDescription
                 name: name
                 currency: currency
                 periodStart: 7
@@ -41041,6 +41191,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -41083,6 +41234,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -41224,6 +41376,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -41266,6 +41419,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -44010,6 +44164,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -44052,6 +44207,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -44155,6 +44311,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -44197,6 +44354,7 @@ components:
             unitAmountExcludingTax: 9
             proration: true
             originAmount: 1
+            pdfDescription: pdfDescription
             name: name
             currency: currency
             periodStart: 7
@@ -44358,6 +44516,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -44400,6 +44559,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -44503,6 +44663,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -44545,6 +44706,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -45194,6 +45356,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -45236,6 +45399,7 @@ components:
               unitAmountExcludingTax: 9
               proration: true
               originAmount: 1
+              pdfDescription: pdfDescription
               name: name
               currency: currency
               periodStart: 7
@@ -45810,6 +45974,7 @@ components:
                 unitAmountExcludingTax: 9
                 proration: true
                 originAmount: 1
+                pdfDescription: pdfDescription
                 name: name
                 currency: currency
                 periodStart: 7
@@ -45852,6 +46017,7 @@ components:
                 unitAmountExcludingTax: 9
                 proration: true
                 originAmount: 1
+                pdfDescription: pdfDescription
                 name: name
                 currency: currency
                 periodStart: 7

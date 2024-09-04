@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Data** | Pointer to **map[string]interface{}** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
+**IsDefault** | Pointer to **bool** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -76,6 +77,31 @@ SetId sets Id field to given value.
 `func (o *UnibeeApiBeanPaymentMethod) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetIsDefault
+
+`func (o *UnibeeApiBeanPaymentMethod) GetIsDefault() bool`
+
+GetIsDefault returns the IsDefault field if non-nil, zero value otherwise.
+
+### GetIsDefaultOk
+
+`func (o *UnibeeApiBeanPaymentMethod) GetIsDefaultOk() (*bool, bool)`
+
+GetIsDefaultOk returns a tuple with the IsDefault field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsDefault
+
+`func (o *UnibeeApiBeanPaymentMethod) SetIsDefault(v bool)`
+
+SetIsDefault sets IsDefault field to given value.
+
+### HasIsDefault
+
+`func (o *UnibeeApiBeanPaymentMethod) HasIsDefault() bool`
+
+HasIsDefault returns a boolean if a field has been set.
 
 ### GetType
 

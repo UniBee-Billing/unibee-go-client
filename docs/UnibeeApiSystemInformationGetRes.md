@@ -4,9 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BuildVersion** | Pointer to **string** | System Build Version | [optional] 
 **Env** | Pointer to **string** | System Env, em: daily|stage|local|prod | [optional] 
 **Gateway** | Pointer to [**[]UnibeeApiBeanGateway**](UnibeeApiBeanGateway.md) | Support Currency List | [optional] 
 **IsProd** | Pointer to **bool** | Check System Env Is Prod, true|false | [optional] 
+**Mode** | Pointer to **string** | System Mode | [optional] 
 **SupportCurrency** | Pointer to [**[]UnibeeApiBeanCurrency**](UnibeeApiBeanCurrency.md) | Support Currency List | [optional] 
 **SupportTimeZone** | Pointer to **[]string** | Support TimeZone List | [optional] 
 
@@ -28,6 +30,31 @@ will change when the set of required properties is changed
 NewUnibeeApiSystemInformationGetResWithDefaults instantiates a new UnibeeApiSystemInformationGetRes object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBuildVersion
+
+`func (o *UnibeeApiSystemInformationGetRes) GetBuildVersion() string`
+
+GetBuildVersion returns the BuildVersion field if non-nil, zero value otherwise.
+
+### GetBuildVersionOk
+
+`func (o *UnibeeApiSystemInformationGetRes) GetBuildVersionOk() (*string, bool)`
+
+GetBuildVersionOk returns a tuple with the BuildVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBuildVersion
+
+`func (o *UnibeeApiSystemInformationGetRes) SetBuildVersion(v string)`
+
+SetBuildVersion sets BuildVersion field to given value.
+
+### HasBuildVersion
+
+`func (o *UnibeeApiSystemInformationGetRes) HasBuildVersion() bool`
+
+HasBuildVersion returns a boolean if a field has been set.
 
 ### GetEnv
 
@@ -103,6 +130,31 @@ SetIsProd sets IsProd field to given value.
 `func (o *UnibeeApiSystemInformationGetRes) HasIsProd() bool`
 
 HasIsProd returns a boolean if a field has been set.
+
+### GetMode
+
+`func (o *UnibeeApiSystemInformationGetRes) GetMode() string`
+
+GetMode returns the Mode field if non-nil, zero value otherwise.
+
+### GetModeOk
+
+`func (o *UnibeeApiSystemInformationGetRes) GetModeOk() (*string, bool)`
+
+GetModeOk returns a tuple with the Mode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMode
+
+`func (o *UnibeeApiSystemInformationGetRes) SetMode(v string)`
+
+SetMode sets Mode field to given value.
+
+### HasMode
+
+`func (o *UnibeeApiSystemInformationGetRes) HasMode() bool`
+
+HasMode returns a boolean if a field has been set.
 
 ### GetSupportCurrency
 
