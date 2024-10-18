@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **IssueVatNumber** | Pointer to **string** | IssueVatNumber | [optional] 
 **LocalizedCurrency** | Pointer to **string** | LocalizedCurrency, To display localized currency amount | [optional] 
 **LocalizedExchangeRate** | Pointer to **float32** | LocalizedExchangeRate, exchange rate must set while LocalizedCurrency enabled | [optional] 
+**LocalizedExchangeRateDescription** | Pointer to **float32** | LocalizedExchangeRateDescription | [optional] 
 **SendUserEmail** | Pointer to **bool** | Whether sen invoice email to user or not，default false | [optional] [default to false]
 **ShowDetailItem** | Pointer to **bool** | ShowDetailItem, whether to display detail item information in pdf generate, unitAmount, quantity, etc. | [optional] [default to false]
 **Template** | Pointer to **string** | Template | [optional] 
@@ -203,6 +204,31 @@ SetLocalizedExchangeRate sets LocalizedExchangeRate field to given value.
 `func (o *UnibeeApiMerchantInvoicePdfUpdateReq) HasLocalizedExchangeRate() bool`
 
 HasLocalizedExchangeRate returns a boolean if a field has been set.
+
+### GetLocalizedExchangeRateDescription
+
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) GetLocalizedExchangeRateDescription() float32`
+
+GetLocalizedExchangeRateDescription returns the LocalizedExchangeRateDescription field if non-nil, zero value otherwise.
+
+### GetLocalizedExchangeRateDescriptionOk
+
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) GetLocalizedExchangeRateDescriptionOk() (*float32, bool)`
+
+GetLocalizedExchangeRateDescriptionOk returns a tuple with the LocalizedExchangeRateDescription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLocalizedExchangeRateDescription
+
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) SetLocalizedExchangeRateDescription(v float32)`
+
+SetLocalizedExchangeRateDescription sets LocalizedExchangeRateDescription field to given value.
+
+### HasLocalizedExchangeRateDescription
+
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) HasLocalizedExchangeRateDescription() bool`
+
+HasLocalizedExchangeRateDescription returns a boolean if a field has been set.
 
 ### GetSendUserEmail
 

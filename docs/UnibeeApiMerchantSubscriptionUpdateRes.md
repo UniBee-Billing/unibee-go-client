@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Link** | Pointer to **string** |  | [optional] 
+**Note** | Pointer to **string** | note | [optional] 
 **Paid** | Pointer to **bool** |  | [optional] 
 **SubscriptionPendingUpdate** | Pointer to [**UnibeeApiBeanDetailSubscriptionPendingUpdateDetail**](UnibeeApiBeanDetailSubscriptionPendingUpdateDetail.md) |  | [optional] 
 
@@ -51,6 +52,31 @@ SetLink sets Link field to given value.
 `func (o *UnibeeApiMerchantSubscriptionUpdateRes) HasLink() bool`
 
 HasLink returns a boolean if a field has been set.
+
+### GetNote
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) GetNote() string`
+
+GetNote returns the Note field if non-nil, zero value otherwise.
+
+### GetNoteOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) GetNoteOk() (*string, bool)`
+
+GetNoteOk returns a tuple with the Note field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNote
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) SetNote(v string)`
+
+SetNote sets Note field to given value.
+
+### HasNote
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) HasNote() bool`
+
+HasNote returns a boolean if a field has been set.
 
 ### GetPaid
 

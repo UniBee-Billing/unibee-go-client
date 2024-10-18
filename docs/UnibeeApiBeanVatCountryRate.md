@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **CountryCode** | Pointer to **string** |  | [optional] 
 **CountryName** | Pointer to **string** |  | [optional] 
 **Gateway** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **int64** | TaxId | [optional] 
+**Id** | Pointer to **int64** |  | [optional] 
 **IsEU** | Pointer to **bool** |  | [optional] 
-**StandardTaxPercentage** | Pointer to **int64** | Tax税率，万分位，1000 表示 10% | [optional] 
-**VatSupport** | Pointer to **bool** | vat support,true or false | [optional] 
+**StandardTaxPercentage** | Pointer to **int64** |  | [optional] 
+**VatSupport** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 

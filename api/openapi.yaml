@@ -5,8 +5,7 @@ info:
     name: Apache-2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   title: OpenAPI UniBee
-  version: |
-    buildtime:202409040645
+  version: "daily,buildtime:202410181820"
 servers:
 - url: https://api.unibee.top
 - url: http://127.0.0.1:8080
@@ -7709,6 +7708,7 @@ components:
     unibee.api.bean.SubscriptionConfig:
       example:
         invoicePdfGenerate: true
+        showZeroInvoice: true
         tryAutomaticPaymentBeforePeriodEnd: 1
         gatewayVATRule: gatewayVATRule
         incompleteExpireTime: 6
@@ -7741,6 +7741,11 @@ components:
         invoicePdfGenerate:
           description: "InvoicePdfGenerate, whether to generate invoice pdf to user,\
             \ default yes"
+          format: bool
+          properties: {}
+          type: boolean
+        showZeroInvoice:
+          description: "ShowZeroInvoice, show zero invoice or not, default no"
           format: bool
           properties: {}
           type: boolean
@@ -8235,7 +8240,6 @@ components:
           properties: {}
           type: string
         id:
-          description: TaxId
           format: int64
           properties: {}
           type: integer
@@ -8244,12 +8248,10 @@ components:
           properties: {}
           type: boolean
         standardTaxPercentage:
-          description: Tax税率，万分位，1000 表示 10%
           format: int64
           properties: {}
           type: integer
         vatSupport:
-          description: "vat support,true or false"
           format: bool
           properties: {}
           type: boolean
@@ -10826,6 +10828,7 @@ components:
           updateQuantity: 4
           prorationAmount: 1
           paid: 7
+          invoiceId: invoiceId
           effectTime: 3
           subscriptionId: subscriptionId
           gatewayId: 2
@@ -11485,6 +11488,7 @@ components:
         updateQuantity: 4
         prorationAmount: 1
         paid: 7
+        invoiceId: invoiceId
         effectTime: 3
         subscriptionId: subscriptionId
         gatewayId: 2
@@ -11536,6 +11540,11 @@ components:
         gmtModify:
           description: GmtModify
           format: '*gtime.Time'
+          properties: {}
+          type: string
+        invoiceId:
+          description: invoice id
+          format: string
           properties: {}
           type: string
         link:
@@ -13579,6 +13588,11 @@ components:
         localizedExchangeRate:
           description: "LocalizedExchangeRate, exchange rate must set while LocalizedCurrency\
             \ enabled"
+          format: '*float64'
+          properties: {}
+          type: number
+        localizedExchangeRateDescription:
+          description: LocalizedExchangeRateDescription
           format: '*float64'
           properties: {}
           type: number
@@ -16492,8 +16506,8 @@ components:
     unibee.api.merchant.subscription.ConfigUpdateReq:
       properties:
         downgradeEffectImmediately:
-          description: "DowngradeEffectImmediately, whether subscription downgrade\
-            \ should effect immediately or at period end, default at period end"
+          description: "DowngradeEffectImmediately, Immediate Downgrade (by default,\
+            \ the downgrades takes effect at the end of the period ）"
           format: '*bool'
           properties: {}
           type: boolean
@@ -16504,25 +16518,33 @@ components:
           properties: {}
           type: array
         incompleteExpireTime:
-          description: "IncompleteExpireTime, em.. default 1day for plan of month\
-            \ type"
+          description: "IncompleteExpireTime, seconds, Incomplete Status Duration(The\
+            \ period during which subscription remains in “incomplete”)"
           format: '*int64'
           properties: {}
           type: integer
         invoiceEmail:
-          description: "InvoiceEmail, whether to send invoice email to user, default\
-            \ yes"
+          description: "InvoiceEmail, Enable Invoice Email (Toggle to send invoice\
+            \ email to customers)"
+          format: '*bool'
+          properties: {}
+          type: boolean
+        showZeroInvoice:
+          description: "ShowZeroInvoice, Display Invoices With Zero Amount (Invoice\
+            \ With Zero Amount will hidden in list by default)"
           format: '*bool'
           properties: {}
           type: boolean
         tryAutomaticPaymentBeforePeriodEnd:
-          description: "TryAutomaticPaymentBeforePeriodEnd, default 30 min"
+          description: "TryAutomaticPaymentBeforePeriodEnd, Auto-charge Start Before\
+            \ Period End （Time Difference for Auto-Payment Activation Before Period\
+            \ End）"
           format: '*int64'
           properties: {}
           type: integer
         upgradeProration:
-          description: "UpgradeProration, whether subscription update generation proration\
-            \ invoice or not, default yes"
+          description: "UpgradeProration, Prorated Upgrade Invoices(Upgrades will\
+            \ generate prorated invoice by default)"
           format: '*bool'
           properties: {}
           type: boolean
@@ -16642,6 +16664,11 @@ components:
           format: int64
           properties: {}
           type: integer
+        otherActiveSubscriptionId:
+          description: 'other active or incomplete subscription id '
+          format: string
+          properties: {}
+          type: string
         otherPendingCryptoSubscription:
           $ref: '#/components/schemas/unibee.api.bean.detail.SubscriptionDetail'
         plan:
@@ -17525,7 +17552,8 @@ components:
           properties: {}
           type: string
         effectImmediate:
-          description: Effect Immediate，1-Immediate，2-Next Period
+          description: "Force Effect Immediate，1-Immediate，2-Next Period, this api\
+            \ will check upgrade|downgrade automatically"
           format: int
           properties: {}
           type: integer
@@ -17593,6 +17621,11 @@ components:
     unibee.api.merchant.subscription.UpdateRes:
       properties:
         link:
+          format: string
+          properties: {}
+          type: string
+        note:
+          description: note
           format: string
           properties: {}
           type: string
@@ -18371,6 +18404,55 @@ components:
       type: object
     unibee.api.system.invoice.ChannelSyncRes:
       properties: {}
+      type: object
+    unibee.api.system.invoice.InternalWebhookSyncReq:
+      description: "Giving startId or startTime which data from, and endId or endTime\
+        \ which data to, unibee-api will create thread to sync data paging by count\
+        \ 100 to the giving end"
+      properties:
+        endId:
+          description: The end Id of invoice to sync data
+          format: '*string'
+          properties: {}
+          type: string
+        endTime:
+          description: "The end time to sync data, ignore if EndId provided"
+          format: '*int64'
+          properties: {}
+          type: integer
+        isSynchronous:
+          description: "Synchronous or not, default false"
+          format: bool
+          properties: {}
+          type: boolean
+        startId:
+          description: The start Id of invoice to sync data
+          format: '*string'
+          properties: {}
+          type: string
+        startTime:
+          description: "The start time to sync data, ignore if StartId provided"
+          format: '*int64'
+          properties: {}
+          type: integer
+      type: object
+    unibee.api.system.invoice.InternalWebhookSyncRes:
+      properties:
+        firstId:
+          description: "The first invoiceId of sync data, only output when isSynchronous=true"
+          format: string
+          properties: {}
+          type: string
+        lastId:
+          description: "The last invoiceId of sync data, only output when isSynchronous=true"
+          format: string
+          properties: {}
+          type: string
+        total:
+          description: "The total of sync, only output when isSynchronous=true"
+          format: int
+          properties: {}
+          type: integer
       type: object
     unibee.api.system.payment.PaymentCallbackAgainReq:
       properties:
@@ -33984,6 +34066,7 @@ components:
       example:
         config:
           invoicePdfGenerate: true
+          showZeroInvoice: true
           tryAutomaticPaymentBeforePeriodEnd: 1
           gatewayVATRule: gatewayVATRule
           incompleteExpireTime: 6
@@ -34001,6 +34084,7 @@ components:
         data:
           config:
             invoicePdfGenerate: true
+            showZeroInvoice: true
             tryAutomaticPaymentBeforePeriodEnd: 1
             gatewayVATRule: gatewayVATRule
             incompleteExpireTime: 6
@@ -34094,6 +34178,7 @@ components:
             bindingOnetimeAddonIds: bindingOnetimeAddonIds
             status: 5
         taxPercentage: 9
+        otherActiveSubscriptionId: otherActiveSubscriptionId
         discount:
           planIds:
           - 4
@@ -34500,6 +34585,7 @@ components:
             updateQuantity: 4
             prorationAmount: 1
             paid: 7
+            invoiceId: invoiceId
             effectTime: 3
             subscriptionId: subscriptionId
             gatewayId: 2
@@ -34978,6 +35064,11 @@ components:
           format: int64
           properties: {}
           type: integer
+        otherActiveSubscriptionId:
+          description: 'other active or incomplete subscription id '
+          format: string
+          properties: {}
+          type: string
         otherPendingCryptoSubscription:
           $ref: '#/components/schemas/unibee.api.bean.detail.SubscriptionDetail'
         plan:
@@ -35090,6 +35181,7 @@ components:
               bindingOnetimeAddonIds: bindingOnetimeAddonIds
               status: 5
           taxPercentage: 9
+          otherActiveSubscriptionId: otherActiveSubscriptionId
           discount:
             planIds:
             - 4
@@ -35496,6 +35588,7 @@ components:
               updateQuantity: 4
               prorationAmount: 1
               paid: 7
+              invoiceId: invoiceId
               effectTime: 3
               subscriptionId: subscriptionId
               gatewayId: 2
@@ -36434,6 +36527,7 @@ components:
             updateQuantity: 4
             prorationAmount: 1
             paid: 7
+            invoiceId: invoiceId
             effectTime: 3
             subscriptionId: subscriptionId
             gatewayId: 2
@@ -37163,6 +37257,7 @@ components:
               updateQuantity: 4
               prorationAmount: 1
               paid: 7
+              invoiceId: invoiceId
               effectTime: 3
               subscriptionId: subscriptionId
               gatewayId: 2
@@ -37795,6 +37890,7 @@ components:
           updateQuantity: 4
           prorationAmount: 1
           paid: 7
+          invoiceId: invoiceId
           effectTime: 3
           subscriptionId: subscriptionId
           gatewayId: 2
@@ -38415,6 +38511,7 @@ components:
             updateQuantity: 4
             prorationAmount: 1
             paid: 7
+            invoiceId: invoiceId
             effectTime: 3
             subscriptionId: subscriptionId
             gatewayId: 2
@@ -39028,6 +39125,7 @@ components:
             updateQuantity: 4
             prorationAmount: 1
             paid: 7
+            invoiceId: invoiceId
             effectTime: 3
             subscriptionId: subscriptionId
             gatewayId: 2
@@ -39636,6 +39734,7 @@ components:
             updateQuantity: 4
             prorationAmount: 1
             paid: 7
+            invoiceId: invoiceId
             effectTime: 3
             subscriptionId: subscriptionId
             gatewayId: 2
@@ -40265,6 +40364,7 @@ components:
               updateQuantity: 4
               prorationAmount: 1
               paid: 7
+              invoiceId: invoiceId
               effectTime: 3
               subscriptionId: subscriptionId
               gatewayId: 2
@@ -40873,6 +40973,7 @@ components:
               updateQuantity: 4
               prorationAmount: 1
               paid: 7
+              invoiceId: invoiceId
               effectTime: 3
               subscriptionId: subscriptionId
               gatewayId: 2
@@ -42232,6 +42333,7 @@ components:
           updateQuantity: 4
           prorationAmount: 1
           paid: 7
+          invoiceId: invoiceId
           effectTime: 3
           subscriptionId: subscriptionId
           gatewayId: 2
@@ -42479,6 +42581,7 @@ components:
             updateQuantity: 4
             prorationAmount: 1
             paid: 7
+            invoiceId: invoiceId
             effectTime: 3
             subscriptionId: subscriptionId
             gatewayId: 2
@@ -42741,6 +42844,7 @@ components:
           updateQuantity: 4
           prorationAmount: 1
           paid: 7
+          invoiceId: invoiceId
           effectTime: 3
           subscriptionId: subscriptionId
           gatewayId: 2
@@ -42978,6 +43082,7 @@ components:
           updateQuantity: 4
           prorationAmount: 1
           paid: 7
+          invoiceId: invoiceId
           effectTime: 3
           subscriptionId: subscriptionId
           gatewayId: 2
@@ -43236,6 +43341,7 @@ components:
             updateQuantity: 4
             prorationAmount: 1
             paid: 7
+            invoiceId: invoiceId
             effectTime: 3
             subscriptionId: subscriptionId
             gatewayId: 2
@@ -43473,6 +43579,7 @@ components:
             updateQuantity: 4
             prorationAmount: 1
             paid: 7
+            invoiceId: invoiceId
             effectTime: 3
             subscriptionId: subscriptionId
             gatewayId: 2
@@ -44782,6 +44889,7 @@ components:
       type: object
     _merchant_subscription_update_submit_post_200_response_data:
       example:
+        note: note
         link: link
         paid: true
         subscriptionPendingUpdate:
@@ -45017,6 +45125,7 @@ components:
           updateQuantity: 4
           prorationAmount: 1
           paid: 7
+          invoiceId: invoiceId
           effectTime: 3
           subscriptionId: subscriptionId
           gatewayId: 2
@@ -45024,6 +45133,11 @@ components:
           status: 6
       properties:
         link:
+          format: string
+          properties: {}
+          type: string
+        note:
+          description: note
           format: string
           properties: {}
           type: string
@@ -45039,6 +45153,7 @@ components:
         redirect: redirect
         code: 0
         data:
+          note: note
           link: link
           paid: true
           subscriptionPendingUpdate:
@@ -45274,6 +45389,7 @@ components:
             updateQuantity: 4
             prorationAmount: 1
             paid: 7
+            invoiceId: invoiceId
             effectTime: 3
             subscriptionId: subscriptionId
             gatewayId: 2
@@ -45685,6 +45801,7 @@ components:
             updateQuantity: 4
             prorationAmount: 1
             paid: 7
+            invoiceId: invoiceId
             effectTime: 3
             subscriptionId: subscriptionId
             gatewayId: 2
@@ -46303,6 +46420,7 @@ components:
               updateQuantity: 4
               prorationAmount: 1
               paid: 7
+              invoiceId: invoiceId
               effectTime: 3
               subscriptionId: subscriptionId
               gatewayId: 2
@@ -46787,6 +46905,7 @@ components:
           updateQuantity: 4
           prorationAmount: 1
           paid: 7
+          invoiceId: invoiceId
           effectTime: 3
           subscriptionId: subscriptionId
           gatewayId: 2
@@ -47246,6 +47365,7 @@ components:
             updateQuantity: 4
             prorationAmount: 1
             paid: 7
+            invoiceId: invoiceId
             effectTime: 3
             subscriptionId: subscriptionId
             gatewayId: 2

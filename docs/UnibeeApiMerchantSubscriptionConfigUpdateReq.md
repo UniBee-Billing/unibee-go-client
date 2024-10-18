@@ -4,12 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DowngradeEffectImmediately** | Pointer to **bool** | DowngradeEffectImmediately, whether subscription downgrade should effect immediately or at period end, default at period end | [optional] 
+**DowngradeEffectImmediately** | Pointer to **bool** | DowngradeEffectImmediately, Immediate Downgrade (by default, the downgrades takes effect at the end of the period ） | [optional] 
 **GatewayVATRule** | Pointer to [**[]UnibeeApiBeanMerchantVatRule**](UnibeeApiBeanMerchantVatRule.md) |  | [optional] 
-**IncompleteExpireTime** | Pointer to **int32** | IncompleteExpireTime, em.. default 1day for plan of month type | [optional] 
-**InvoiceEmail** | Pointer to **bool** | InvoiceEmail, whether to send invoice email to user, default yes | [optional] 
-**TryAutomaticPaymentBeforePeriodEnd** | Pointer to **int32** | TryAutomaticPaymentBeforePeriodEnd, default 30 min | [optional] 
-**UpgradeProration** | Pointer to **bool** | UpgradeProration, whether subscription update generation proration invoice or not, default yes | [optional] 
+**IncompleteExpireTime** | Pointer to **int32** | IncompleteExpireTime, seconds, Incomplete Status Duration(The period during which subscription remains in “incomplete”) | [optional] 
+**InvoiceEmail** | Pointer to **bool** | InvoiceEmail, Enable Invoice Email (Toggle to send invoice email to customers) | [optional] 
+**ShowZeroInvoice** | Pointer to **bool** | ShowZeroInvoice, Display Invoices With Zero Amount (Invoice With Zero Amount will hidden in list by default) | [optional] 
+**TryAutomaticPaymentBeforePeriodEnd** | Pointer to **int32** | TryAutomaticPaymentBeforePeriodEnd, Auto-charge Start Before Period End （Time Difference for Auto-Payment Activation Before Period End） | [optional] 
+**UpgradeProration** | Pointer to **bool** | UpgradeProration, Prorated Upgrade Invoices(Upgrades will generate prorated invoice by default) | [optional] 
 
 ## Methods
 
@@ -129,6 +130,31 @@ SetInvoiceEmail sets InvoiceEmail field to given value.
 `func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) HasInvoiceEmail() bool`
 
 HasInvoiceEmail returns a boolean if a field has been set.
+
+### GetShowZeroInvoice
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) GetShowZeroInvoice() bool`
+
+GetShowZeroInvoice returns the ShowZeroInvoice field if non-nil, zero value otherwise.
+
+### GetShowZeroInvoiceOk
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) GetShowZeroInvoiceOk() (*bool, bool)`
+
+GetShowZeroInvoiceOk returns a tuple with the ShowZeroInvoice field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShowZeroInvoice
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) SetShowZeroInvoice(v bool)`
+
+SetShowZeroInvoice sets ShowZeroInvoice field to given value.
+
+### HasShowZeroInvoice
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) HasShowZeroInvoice() bool`
+
+HasShowZeroInvoice returns a boolean if a field has been set.
 
 ### GetTryAutomaticPaymentBeforePeriodEnd
 

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Gateway** | Pointer to [**UnibeeApiBeanGateway**](UnibeeApiBeanGateway.md) |  | [optional] 
 **Invoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
 **OriginAmount** | Pointer to **int64** |  | [optional] 
+**OtherActiveSubscriptionId** | Pointer to **string** | other active or incomplete subscription id  | [optional] 
 **OtherPendingCryptoSubscription** | Pointer to [**UnibeeApiBeanDetailSubscriptionDetail**](UnibeeApiBeanDetailSubscriptionDetail.md) |  | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
 **Quantity** | Pointer to **int64** |  | [optional] 
@@ -295,6 +296,31 @@ SetOriginAmount sets OriginAmount field to given value.
 `func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) HasOriginAmount() bool`
 
 HasOriginAmount returns a boolean if a field has been set.
+
+### GetOtherActiveSubscriptionId
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) GetOtherActiveSubscriptionId() string`
+
+GetOtherActiveSubscriptionId returns the OtherActiveSubscriptionId field if non-nil, zero value otherwise.
+
+### GetOtherActiveSubscriptionIdOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) GetOtherActiveSubscriptionIdOk() (*string, bool)`
+
+GetOtherActiveSubscriptionIdOk returns a tuple with the OtherActiveSubscriptionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOtherActiveSubscriptionId
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) SetOtherActiveSubscriptionId(v string)`
+
+SetOtherActiveSubscriptionId sets OtherActiveSubscriptionId field to given value.
+
+### HasOtherActiveSubscriptionId
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) HasOtherActiveSubscriptionId() bool`
+
+HasOtherActiveSubscriptionId returns a boolean if a field has been set.
 
 ### GetOtherPendingCryptoSubscription
 

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **IncompleteExpireTime** | Pointer to **int64** | IncompleteExpireTime, em.. default 1day for plan of month type | [optional] 
 **InvoiceEmail** | Pointer to **bool** | InvoiceEmail, whether to send invoice email to user, default yes | [optional] 
 **InvoicePdfGenerate** | Pointer to **bool** | InvoicePdfGenerate, whether to generate invoice pdf to user, default yes | [optional] 
+**ShowZeroInvoice** | Pointer to **bool** | ShowZeroInvoice, show zero invoice or not, default no | [optional] 
 **TryAutomaticPaymentBeforePeriodEnd** | Pointer to **int64** | TryAutomaticPaymentBeforePeriodEnd, default 30 min | [optional] 
 **UpgradeProration** | Pointer to **bool** | UpgradeProration, whether subscription update generation proration invoice or not, default yes | [optional] 
 
@@ -155,6 +156,31 @@ SetInvoicePdfGenerate sets InvoicePdfGenerate field to given value.
 `func (o *UnibeeApiBeanSubscriptionConfig) HasInvoicePdfGenerate() bool`
 
 HasInvoicePdfGenerate returns a boolean if a field has been set.
+
+### GetShowZeroInvoice
+
+`func (o *UnibeeApiBeanSubscriptionConfig) GetShowZeroInvoice() bool`
+
+GetShowZeroInvoice returns the ShowZeroInvoice field if non-nil, zero value otherwise.
+
+### GetShowZeroInvoiceOk
+
+`func (o *UnibeeApiBeanSubscriptionConfig) GetShowZeroInvoiceOk() (*bool, bool)`
+
+GetShowZeroInvoiceOk returns a tuple with the ShowZeroInvoice field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShowZeroInvoice
+
+`func (o *UnibeeApiBeanSubscriptionConfig) SetShowZeroInvoice(v bool)`
+
+SetShowZeroInvoice sets ShowZeroInvoice field to given value.
+
+### HasShowZeroInvoice
+
+`func (o *UnibeeApiBeanSubscriptionConfig) HasShowZeroInvoice() bool`
+
+HasShowZeroInvoice returns a boolean if a field has been set.
 
 ### GetTryAutomaticPaymentBeforePeriodEnd
 

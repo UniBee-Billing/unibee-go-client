@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **ConfirmTotalAmount** | Pointer to **int64** | TotalAmount to verify if provide | [optional] 
 **Discount** | Pointer to [**UnibeeApiBeanExternalDiscountParam**](UnibeeApiBeanExternalDiscountParam.md) |  | [optional] 
 **DiscountCode** | Pointer to **string** | DiscountCode | [optional] 
-**EffectImmediate** | Pointer to **int32** | Effect Immediate，1-Immediate，2-Next Period | [optional] 
+**EffectImmediate** | Pointer to **int32** | Force Effect Immediate，1-Immediate，2-Next Period, this api will check upgrade|downgrade automatically | [optional] 
 **GatewayId** | Pointer to **int32** | Id of gateway | [optional] 
 **ManualPayment** | Pointer to **bool** | ManualPayment | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 

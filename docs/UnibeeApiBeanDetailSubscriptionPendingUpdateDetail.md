@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **GatewayId** | Pointer to **int64** | Id | [optional] 
 **GmtCreate** | Pointer to **string** | GmtCreate | [optional] 
 **GmtModify** | Pointer to **string** | GmtModify | [optional] 
+**InvoiceId** | Pointer to **string** | invoice id | [optional] 
 **Link** | Pointer to **string** | Link | [optional] 
 **MerchantId** | Pointer to **int64** | MerchantId | [optional] 
 **MerchantMember** | Pointer to [**UnibeeApiBeanDetailMerchantMemberDetail**](UnibeeApiBeanDetailMerchantMemberDetail.md) |  | [optional] 
@@ -278,6 +279,31 @@ SetGmtModify sets GmtModify field to given value.
 `func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasGmtModify() bool`
 
 HasGmtModify returns a boolean if a field has been set.
+
+### GetInvoiceId
+
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetInvoiceId() string`
+
+GetInvoiceId returns the InvoiceId field if non-nil, zero value otherwise.
+
+### GetInvoiceIdOk
+
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetInvoiceIdOk() (*string, bool)`
+
+GetInvoiceIdOk returns a tuple with the InvoiceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInvoiceId
+
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetInvoiceId(v string)`
+
+SetInvoiceId sets InvoiceId field to given value.
+
+### HasInvoiceId
+
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasInvoiceId() bool`
+
+HasInvoiceId returns a boolean if a field has been set.
 
 ### GetLink
 
