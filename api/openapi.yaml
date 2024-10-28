@@ -5,7 +5,7 @@ info:
     name: Apache-2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   title: OpenAPI UniBee
-  version: "daily,buildtime:202410181820"
+  version: "daily,buildtime:202410280512"
 servers:
 - url: https://api.unibee.top
 - url: http://127.0.0.1:8080
@@ -659,6 +659,24 @@ paths:
       summary: CustomizeLocalizationTemplateSync
       tags:
       - EmailTemplate
+  /merchant/email/email_sender_setup:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/unibee.api.merchant.email.SenderSetupReq'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_auth_sso_loginOTP_post_200_response'
+          description: ""
+      summary: EmailSenderSetup
+      tags:
+      - Email
   /merchant/email/gateway_setup:
     post:
       requestBody:
@@ -7186,15 +7204,15 @@ components:
       type: object
     unibee.api.bean.PlanMetricLimitDetail:
       example:
-        MetricId: 5
-        TotalLimit: 2
-        aggregationType: 9
+        MetricId: 2
+        TotalLimit: 4
+        aggregationType: 1
         aggregationProperty: aggregationProperty
         code: code
         metricName: metricName
         UserId: 7
-        MerchantId: 5
-        type: 3
+        MerchantId: 3
+        type: 1
         PlanLimits:
         - gmtModify: 1
           metricId: 2
@@ -7299,14 +7317,14 @@ components:
       example:
         homeUrl: homeUrl
         metaData: metaData
-        isDeleted: 2
-        createTime: 5
-        merchantId: 7
+        isDeleted: 5
+        createTime: 1
+        merchantId: 2
         imageUrl: imageUrl
         description: description
         id: 5
         productName: productName
-        status: 9
+        status: 7
       properties:
         createTime:
           description: create utc time
@@ -7477,6 +7495,22 @@ components:
           format: int64
           properties: {}
           type: integer
+      type: object
+    unibee.api.bean.Sender:
+      example:
+        address: address
+        name: name
+      properties:
+        address:
+          description: address
+          format: string
+          properties: {}
+          type: string
+        name:
+          description: name
+          format: string
+          properties: {}
+          type: string
       type: object
     unibee.api.bean.Subscription:
       example:
@@ -8128,15 +8162,15 @@ components:
     unibee.api.bean.UserMerchantMetricStat:
       example:
         MetricLimit:
-          MetricId: 5
-          TotalLimit: 2
-          aggregationType: 9
+          MetricId: 2
+          TotalLimit: 4
+          aggregationType: 1
           aggregationProperty: aggregationProperty
           code: code
           metricName: metricName
           UserId: 7
-          MerchantId: 5
-          type: 3
+          MerchantId: 3
+          type: 1
           PlanLimits:
           - gmtModify: 1
             metricId: 2
@@ -8174,7 +8208,7 @@ components:
             planId: 9
             id: 5
             metricLimit: 7
-        CurrentUseValue: 1
+        CurrentUseValue: 9
       properties:
         CurrentUseValue:
           format: int64
@@ -10100,14 +10134,14 @@ components:
         product:
           homeUrl: homeUrl
           metaData: metaData
-          isDeleted: 2
-          createTime: 5
-          merchantId: 7
+          isDeleted: 5
+          createTime: 1
+          merchantId: 2
           imageUrl: imageUrl
           description: description
           id: 5
           productName: productName
-          status: 9
+          status: 7
         addons:
         - metadata:
             key: {}
@@ -12908,6 +12942,25 @@ components:
     unibee.api.merchant.email.SendTemplateEmailToUserRes:
       properties: {}
       type: object
+    unibee.api.merchant.email.SenderSetupReq:
+      properties:
+        address:
+          description: "The address of email sender, like 'no-reply@unibee.dev'"
+          format: string
+          properties: {}
+          type: string
+        name:
+          description: "The name of email sender, like 'no-reply'"
+          format: string
+          properties: {}
+          type: string
+      required:
+      - address
+      - name
+      type: object
+    unibee.api.merchant.email.SenderSetupRes:
+      properties: {}
+      type: object
     unibee.api.merchant.email.TemplateActivateReq:
       description: Activate the email template
       properties:
@@ -13596,6 +13649,13 @@ components:
           format: '*float64'
           properties: {}
           type: number
+        metadata:
+          additionalProperties:
+            $ref: '#/components/schemas/interface'
+          description: Metadata，Map
+          format: "map[string]interface {}"
+          properties: {}
+          type: object
         sendUserEmail:
           default: false
           description: Whether sen invoice email to user or not，default false
@@ -14143,15 +14203,15 @@ components:
         isPaid: true
         userMerchantMetricStats:
         - MetricLimit:
-            MetricId: 5
-            TotalLimit: 2
-            aggregationType: 9
+            MetricId: 2
+            TotalLimit: 4
+            aggregationType: 1
             aggregationProperty: aggregationProperty
             code: code
             metricName: metricName
             UserId: 7
-            MerchantId: 5
-            type: 3
+            MerchantId: 3
+            type: 1
             PlanLimits:
             - gmtModify: 1
               metricId: 2
@@ -14189,17 +14249,17 @@ components:
               planId: 9
               id: 5
               metricLimit: 7
-          CurrentUseValue: 1
+          CurrentUseValue: 9
         - MetricLimit:
-            MetricId: 5
-            TotalLimit: 2
-            aggregationType: 9
+            MetricId: 2
+            TotalLimit: 4
+            aggregationType: 1
             aggregationProperty: aggregationProperty
             code: code
             metricName: metricName
             UserId: 7
-            MerchantId: 5
-            type: 3
+            MerchantId: 3
+            type: 1
             PlanLimits:
             - gmtModify: 1
               metricId: 2
@@ -14237,7 +14297,18 @@ components:
               planId: 9
               id: 5
               metricLimit: 7
-          CurrentUseValue: 1
+          CurrentUseValue: 9
+        product:
+          homeUrl: homeUrl
+          metaData: metaData
+          isDeleted: 5
+          createTime: 1
+          merchantId: 2
+          imageUrl: imageUrl
+          description: description
+          id: 5
+          productName: productName
+          status: 7
         addons:
         - quantity: 6
           addonPlan:
@@ -14297,6 +14368,7 @@ components:
             trialAmount: 9
             bindingOnetimeAddonIds: bindingOnetimeAddonIds
             status: 5
+        description: description
         subscription:
           metadata:
             key: {}
@@ -14424,6 +14496,11 @@ components:
             $ref: '#/components/schemas/unibee.api.bean.PlanAddonDetail'
           properties: {}
           type: array
+        description:
+          description: description
+          format: string
+          properties: {}
+          type: string
         isPaid:
           description: IsPaid
           format: bool
@@ -14431,6 +14508,8 @@ components:
           type: boolean
         plan:
           $ref: '#/components/schemas/unibee.api.bean.Plan'
+        product:
+          $ref: '#/components/schemas/unibee.api.bean.Product'
         subscription:
           $ref: '#/components/schemas/unibee.api.bean.Subscription'
         user:
@@ -15933,6 +16012,8 @@ components:
             type: string
           properties: {}
           type: array
+        emailSender:
+          $ref: '#/components/schemas/unibee.api.bean.Sender'
         env:
           description: "System Env, em: daily|stage|local|prod"
           format: string
@@ -16674,6 +16755,14 @@ components:
         plan:
           $ref: '#/components/schemas/unibee.api.bean.Plan'
         quantity:
+          format: int64
+          properties: {}
+          type: integer
+        subscriptionAmountExcludingTax:
+          format: int64
+          properties: {}
+          type: integer
+        taxAmount:
           format: int64
           properties: {}
           type: integer
@@ -20306,6 +20395,9 @@ components:
         segmentUserPortalKey: segmentUserPortalKey
         openApiKey: openApiKey
         sendGridKey: sendGridKey
+        emailSender:
+          address: address
+          name: name
       properties:
         Currency:
           description: Currency List
@@ -20330,6 +20422,8 @@ components:
             type: string
           properties: {}
           type: array
+        emailSender:
+          $ref: '#/components/schemas/unibee.api.bean.Sender'
         env:
           description: "System Env, em: daily|stage|local|prod"
           format: string
@@ -20523,6 +20617,9 @@ components:
           segmentUserPortalKey: segmentUserPortalKey
           openApiKey: openApiKey
           sendGridKey: sendGridKey
+          emailSender:
+            address: address
+            name: name
         requestId: requestId
         message: message
       properties:
@@ -26429,15 +26526,15 @@ components:
           isPaid: true
           userMerchantMetricStats:
           - MetricLimit:
-              MetricId: 5
-              TotalLimit: 2
-              aggregationType: 9
+              MetricId: 2
+              TotalLimit: 4
+              aggregationType: 1
               aggregationProperty: aggregationProperty
               code: code
               metricName: metricName
               UserId: 7
-              MerchantId: 5
-              type: 3
+              MerchantId: 3
+              type: 1
               PlanLimits:
               - gmtModify: 1
                 metricId: 2
@@ -26475,17 +26572,17 @@ components:
                 planId: 9
                 id: 5
                 metricLimit: 7
-            CurrentUseValue: 1
+            CurrentUseValue: 9
           - MetricLimit:
-              MetricId: 5
-              TotalLimit: 2
-              aggregationType: 9
+              MetricId: 2
+              TotalLimit: 4
+              aggregationType: 1
               aggregationProperty: aggregationProperty
               code: code
               metricName: metricName
               UserId: 7
-              MerchantId: 5
-              type: 3
+              MerchantId: 3
+              type: 1
               PlanLimits:
               - gmtModify: 1
                 metricId: 2
@@ -26523,7 +26620,18 @@ components:
                 planId: 9
                 id: 5
                 metricLimit: 7
-            CurrentUseValue: 1
+            CurrentUseValue: 9
+          product:
+            homeUrl: homeUrl
+            metaData: metaData
+            isDeleted: 5
+            createTime: 1
+            merchantId: 2
+            imageUrl: imageUrl
+            description: description
+            id: 5
+            productName: productName
+            status: 7
           addons:
           - quantity: 6
             addonPlan:
@@ -26583,6 +26691,7 @@ components:
               trialAmount: 9
               bindingOnetimeAddonIds: bindingOnetimeAddonIds
               status: 5
+          description: description
           subscription:
             metadata:
               key: {}
@@ -26715,15 +26824,15 @@ components:
             isPaid: true
             userMerchantMetricStats:
             - MetricLimit:
-                MetricId: 5
-                TotalLimit: 2
-                aggregationType: 9
+                MetricId: 2
+                TotalLimit: 4
+                aggregationType: 1
                 aggregationProperty: aggregationProperty
                 code: code
                 metricName: metricName
                 UserId: 7
-                MerchantId: 5
-                type: 3
+                MerchantId: 3
+                type: 1
                 PlanLimits:
                 - gmtModify: 1
                   metricId: 2
@@ -26761,17 +26870,17 @@ components:
                   planId: 9
                   id: 5
                   metricLimit: 7
-              CurrentUseValue: 1
+              CurrentUseValue: 9
             - MetricLimit:
-                MetricId: 5
-                TotalLimit: 2
-                aggregationType: 9
+                MetricId: 2
+                TotalLimit: 4
+                aggregationType: 1
                 aggregationProperty: aggregationProperty
                 code: code
                 metricName: metricName
                 UserId: 7
-                MerchantId: 5
-                type: 3
+                MerchantId: 3
+                type: 1
                 PlanLimits:
                 - gmtModify: 1
                   metricId: 2
@@ -26809,7 +26918,18 @@ components:
                   planId: 9
                   id: 5
                   metricLimit: 7
-              CurrentUseValue: 1
+              CurrentUseValue: 9
+            product:
+              homeUrl: homeUrl
+              metaData: metaData
+              isDeleted: 5
+              createTime: 1
+              merchantId: 2
+              imageUrl: imageUrl
+              description: description
+              id: 5
+              productName: productName
+              status: 7
             addons:
             - quantity: 6
               addonPlan:
@@ -26869,6 +26989,7 @@ components:
                 trialAmount: 9
                 bindingOnetimeAddonIds: bindingOnetimeAddonIds
                 status: 5
+            description: description
             subscription:
               metadata:
                 key: {}
@@ -31522,14 +31643,14 @@ components:
           product:
             homeUrl: homeUrl
             metaData: metaData
-            isDeleted: 2
-            createTime: 5
-            merchantId: 7
+            isDeleted: 5
+            createTime: 1
+            merchantId: 2
             imageUrl: imageUrl
             description: description
             id: 5
             productName: productName
-            status: 9
+            status: 7
           addons:
           - metadata:
               key: {}
@@ -31724,14 +31845,14 @@ components:
             product:
               homeUrl: homeUrl
               metaData: metaData
-              isDeleted: 2
-              createTime: 5
-              merchantId: 7
+              isDeleted: 5
+              createTime: 1
+              merchantId: 2
               imageUrl: imageUrl
               description: description
               id: 5
               productName: productName
-              status: 9
+              status: 7
             addons:
             - metadata:
                 key: {}
@@ -31942,14 +32063,14 @@ components:
         - product:
             homeUrl: homeUrl
             metaData: metaData
-            isDeleted: 2
-            createTime: 5
-            merchantId: 7
+            isDeleted: 5
+            createTime: 1
+            merchantId: 2
             imageUrl: imageUrl
             description: description
             id: 5
             productName: productName
-            status: 9
+            status: 7
           addons:
           - metadata:
               key: {}
@@ -32134,14 +32255,14 @@ components:
         - product:
             homeUrl: homeUrl
             metaData: metaData
-            isDeleted: 2
-            createTime: 5
-            merchantId: 7
+            isDeleted: 5
+            createTime: 1
+            merchantId: 2
             imageUrl: imageUrl
             description: description
             id: 5
             productName: productName
-            status: 9
+            status: 7
           addons:
           - metadata:
               key: {}
@@ -32347,14 +32468,14 @@ components:
           - product:
               homeUrl: homeUrl
               metaData: metaData
-              isDeleted: 2
-              createTime: 5
-              merchantId: 7
+              isDeleted: 5
+              createTime: 1
+              merchantId: 2
               imageUrl: imageUrl
               description: description
               id: 5
               productName: productName
-              status: 9
+              status: 7
             addons:
             - metadata:
                 key: {}
@@ -32539,14 +32660,14 @@ components:
           - product:
               homeUrl: homeUrl
               metaData: metaData
-              isDeleted: 2
-              createTime: 5
-              merchantId: 7
+              isDeleted: 5
+              createTime: 1
+              merchantId: 2
               imageUrl: imageUrl
               description: description
               id: 5
               productName: productName
-              status: 9
+              status: 7
             addons:
             - metadata:
                 key: {}
@@ -32755,14 +32876,14 @@ components:
         product:
           homeUrl: homeUrl
           metaData: metaData
-          isDeleted: 2
-          createTime: 5
-          merchantId: 7
+          isDeleted: 5
+          createTime: 1
+          merchantId: 2
           imageUrl: imageUrl
           description: description
           id: 5
           productName: productName
-          status: 9
+          status: 7
       properties:
         product:
           $ref: '#/components/schemas/unibee.api.bean.Product'
@@ -32775,14 +32896,14 @@ components:
           product:
             homeUrl: homeUrl
             metaData: metaData
-            isDeleted: 2
-            createTime: 5
-            merchantId: 7
+            isDeleted: 5
+            createTime: 1
+            merchantId: 2
             imageUrl: imageUrl
             description: description
             id: 5
             productName: productName
-            status: 9
+            status: 7
         requestId: requestId
         message: message
       properties:
@@ -32811,24 +32932,24 @@ components:
         products:
         - homeUrl: homeUrl
           metaData: metaData
-          isDeleted: 2
-          createTime: 5
-          merchantId: 7
+          isDeleted: 5
+          createTime: 1
+          merchantId: 2
           imageUrl: imageUrl
           description: description
           id: 5
           productName: productName
-          status: 9
+          status: 7
         - homeUrl: homeUrl
           metaData: metaData
-          isDeleted: 2
-          createTime: 5
-          merchantId: 7
+          isDeleted: 5
+          createTime: 1
+          merchantId: 2
           imageUrl: imageUrl
           description: description
           id: 5
           productName: productName
-          status: 9
+          status: 7
       properties:
         products:
           description: Product Object List
@@ -32852,24 +32973,24 @@ components:
           products:
           - homeUrl: homeUrl
             metaData: metaData
-            isDeleted: 2
-            createTime: 5
-            merchantId: 7
+            isDeleted: 5
+            createTime: 1
+            merchantId: 2
             imageUrl: imageUrl
             description: description
             id: 5
             productName: productName
-            status: 9
+            status: 7
           - homeUrl: homeUrl
             metaData: metaData
-            isDeleted: 2
-            createTime: 5
-            merchantId: 7
+            isDeleted: 5
+            createTime: 1
+            merchantId: 2
             imageUrl: imageUrl
             description: description
             id: 5
             productName: productName
-            status: 9
+            status: 7
         requestId: requestId
         message: message
       properties:
@@ -34115,8 +34236,6 @@ components:
       type: object
     _merchant_subscription_create_preview_post_200_response_data:
       example:
-        trialEnd: 8
-        quantity: 9
         vatCountryCode: vatCountryCode
         addons:
         - quantity: 6
@@ -34177,7 +34296,7 @@ components:
             trialAmount: 9
             bindingOnetimeAddonIds: bindingOnetimeAddonIds
             status: 5
-        taxPercentage: 9
+        subscriptionAmountExcludingTax: 9
         otherActiveSubscriptionId: otherActiveSubscriptionId
         discount:
           planIds:
@@ -34201,7 +34320,6 @@ components:
           status: 1
         discountAmount: 5
         vatNumberValidateMessage: vatNumberValidateMessage
-        userId: 9
         discountMessage: discountMessage
         otherPendingCryptoSubscription:
           latestInvoice:
@@ -34813,8 +34931,48 @@ components:
             countryConfig:
               key: true
             gatewayId: 1
+        addonParams:
+        - addonPlanId: 6
+          quantity: 1
+        - addonPlanId: 6
+          quantity: 1
+        currency: currency
+        vatCountryName: vatCountryName
+        plan:
+          metadata:
+            key: {}
+          intervalUnit: intervalUnit
+          description: description
+          planName: planName
+          type: 8
+          cancelAtTrialEnd: 1
+          gasPayer: gasPayer
+          merchantId: 7
+          imageUrl: imageUrl
+          intervalCount: 6
+          externalPlanId: externalPlanId
+          currency: currency
+          id: 1
+          trialDurationTime: 6
+          publishStatus: 4
+          amount: 7
+          productId: 1
+          trialDemand: trialDemand
+          extraMetricData: extraMetricData
+          bindingAddonIds: bindingAddonIds
+          taxPercentage: 9
+          homeUrl: homeUrl
+          createTime: 1
+          trialAmount: 9
+          bindingOnetimeAddonIds: bindingOnetimeAddonIds
+          status: 5
+        email: email
+        trialEnd: 6
+        quantity: 9
+        taxPercentage: 8
+        userId: 3
         originAmount: 5
-        totalAmount: 6
+        totalAmount: 9
         vatNumberValidate:
           valid: true
           countryCode: countryCode
@@ -34822,12 +34980,6 @@ components:
           companyName: companyName
           validateMessage: validateMessage
           vatNumber: vatNumber
-        addonParams:
-        - addonPlanId: 6
-          quantity: 1
-        - addonPlanId: 6
-          quantity: 1
-        currency: currency
         invoice:
           metadata:
             key: {}
@@ -34975,36 +35127,7 @@ components:
           refundId: refundId
           status: 1
           vatNumber: vatNumber
-        vatCountryName: vatCountryName
-        plan:
-          metadata:
-            key: {}
-          intervalUnit: intervalUnit
-          description: description
-          planName: planName
-          type: 8
-          cancelAtTrialEnd: 1
-          gasPayer: gasPayer
-          merchantId: 7
-          imageUrl: imageUrl
-          intervalCount: 6
-          externalPlanId: externalPlanId
-          currency: currency
-          id: 1
-          trialDurationTime: 6
-          publishStatus: 4
-          amount: 7
-          productId: 1
-          trialDemand: trialDemand
-          extraMetricData: extraMetricData
-          bindingAddonIds: bindingAddonIds
-          taxPercentage: 9
-          homeUrl: homeUrl
-          createTime: 1
-          trialAmount: 9
-          bindingOnetimeAddonIds: bindingOnetimeAddonIds
-          status: 5
-        email: email
+        taxAmount: 6
         gateway:
           gatewayKey: gatewayKey
           gatewayName: gatewayName
@@ -35077,6 +35200,14 @@ components:
           format: int64
           properties: {}
           type: integer
+        subscriptionAmountExcludingTax:
+          format: int64
+          properties: {}
+          type: integer
+        taxAmount:
+          format: int64
+          properties: {}
+          type: integer
         taxPercentage:
           format: int64
           properties: {}
@@ -35118,8 +35249,6 @@ components:
         redirect: redirect
         code: 0
         data:
-          trialEnd: 8
-          quantity: 9
           vatCountryCode: vatCountryCode
           addons:
           - quantity: 6
@@ -35180,7 +35309,7 @@ components:
               trialAmount: 9
               bindingOnetimeAddonIds: bindingOnetimeAddonIds
               status: 5
-          taxPercentage: 9
+          subscriptionAmountExcludingTax: 9
           otherActiveSubscriptionId: otherActiveSubscriptionId
           discount:
             planIds:
@@ -35204,7 +35333,6 @@ components:
             status: 1
           discountAmount: 5
           vatNumberValidateMessage: vatNumberValidateMessage
-          userId: 9
           discountMessage: discountMessage
           otherPendingCryptoSubscription:
             latestInvoice:
@@ -35816,8 +35944,48 @@ components:
               countryConfig:
                 key: true
               gatewayId: 1
+          addonParams:
+          - addonPlanId: 6
+            quantity: 1
+          - addonPlanId: 6
+            quantity: 1
+          currency: currency
+          vatCountryName: vatCountryName
+          plan:
+            metadata:
+              key: {}
+            intervalUnit: intervalUnit
+            description: description
+            planName: planName
+            type: 8
+            cancelAtTrialEnd: 1
+            gasPayer: gasPayer
+            merchantId: 7
+            imageUrl: imageUrl
+            intervalCount: 6
+            externalPlanId: externalPlanId
+            currency: currency
+            id: 1
+            trialDurationTime: 6
+            publishStatus: 4
+            amount: 7
+            productId: 1
+            trialDemand: trialDemand
+            extraMetricData: extraMetricData
+            bindingAddonIds: bindingAddonIds
+            taxPercentage: 9
+            homeUrl: homeUrl
+            createTime: 1
+            trialAmount: 9
+            bindingOnetimeAddonIds: bindingOnetimeAddonIds
+            status: 5
+          email: email
+          trialEnd: 6
+          quantity: 9
+          taxPercentage: 8
+          userId: 3
           originAmount: 5
-          totalAmount: 6
+          totalAmount: 9
           vatNumberValidate:
             valid: true
             countryCode: countryCode
@@ -35825,12 +35993,6 @@ components:
             companyName: companyName
             validateMessage: validateMessage
             vatNumber: vatNumber
-          addonParams:
-          - addonPlanId: 6
-            quantity: 1
-          - addonPlanId: 6
-            quantity: 1
-          currency: currency
           invoice:
             metadata:
               key: {}
@@ -35978,36 +36140,7 @@ components:
             refundId: refundId
             status: 1
             vatNumber: vatNumber
-          vatCountryName: vatCountryName
-          plan:
-            metadata:
-              key: {}
-            intervalUnit: intervalUnit
-            description: description
-            planName: planName
-            type: 8
-            cancelAtTrialEnd: 1
-            gasPayer: gasPayer
-            merchantId: 7
-            imageUrl: imageUrl
-            intervalCount: 6
-            externalPlanId: externalPlanId
-            currency: currency
-            id: 1
-            trialDurationTime: 6
-            publishStatus: 4
-            amount: 7
-            productId: 1
-            trialDemand: trialDemand
-            extraMetricData: extraMetricData
-            bindingAddonIds: bindingAddonIds
-            taxPercentage: 9
-            homeUrl: homeUrl
-            createTime: 1
-            trialAmount: 9
-            bindingOnetimeAddonIds: bindingOnetimeAddonIds
-            status: 5
-          email: email
+          taxAmount: 6
           gateway:
             gatewayKey: gatewayKey
             gatewayName: gatewayName

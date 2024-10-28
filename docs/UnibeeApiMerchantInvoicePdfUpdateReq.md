@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **LocalizedCurrency** | Pointer to **string** | LocalizedCurrency, To display localized currency amount | [optional] 
 **LocalizedExchangeRate** | Pointer to **float32** | LocalizedExchangeRate, exchange rate must set while LocalizedCurrency enabled | [optional] 
 **LocalizedExchangeRateDescription** | Pointer to **float32** | LocalizedExchangeRateDescription | [optional] 
+**Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **SendUserEmail** | Pointer to **bool** | Whether sen invoice email to user or not，default false | [optional] [default to false]
 **ShowDetailItem** | Pointer to **bool** | ShowDetailItem, whether to display detail item information in pdf generate, unitAmount, quantity, etc. | [optional] [default to false]
 **Template** | Pointer to **string** | Template | [optional] 
@@ -229,6 +230,31 @@ SetLocalizedExchangeRateDescription sets LocalizedExchangeRateDescription field 
 `func (o *UnibeeApiMerchantInvoicePdfUpdateReq) HasLocalizedExchangeRateDescription() bool`
 
 HasLocalizedExchangeRateDescription returns a boolean if a field has been set.
+
+### GetMetadata
+
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) GetMetadata() map[string]map[string]interface{}`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) GetMetadataOk() (*map[string]map[string]interface{}, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) SetMetadata(v map[string]map[string]interface{})`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *UnibeeApiMerchantInvoicePdfUpdateReq) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
 
 ### GetSendUserEmail
 

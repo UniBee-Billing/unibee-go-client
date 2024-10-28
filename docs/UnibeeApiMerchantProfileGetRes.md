@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Currency** | Pointer to [**[]UnibeeApiBeanCurrency**](UnibeeApiBeanCurrency.md) | Currency List | [optional] 
 **MemberRoles** | Pointer to [**[]UnibeeApiBeanMerchantRole**](UnibeeApiBeanMerchantRole.md) | The member&#39;s role list&#39; | [optional] 
 **TimeZone** | Pointer to **[]string** | TimeZone List | [optional] 
+**EmailSender** | Pointer to [**UnibeeApiBeanSender**](UnibeeApiBeanSender.md) |  | [optional] 
 **Env** | Pointer to **string** | System Env, em: daily|stage|local|prod | [optional] 
 **Gateways** | Pointer to [**[]UnibeeApiBeanGateway**](UnibeeApiBeanGateway.md) | Gateway List | [optional] 
 **IsOwner** | Pointer to **bool** | Check Member is Owner | [optional] 
@@ -112,6 +113,31 @@ SetTimeZone sets TimeZone field to given value.
 `func (o *UnibeeApiMerchantProfileGetRes) HasTimeZone() bool`
 
 HasTimeZone returns a boolean if a field has been set.
+
+### GetEmailSender
+
+`func (o *UnibeeApiMerchantProfileGetRes) GetEmailSender() UnibeeApiBeanSender`
+
+GetEmailSender returns the EmailSender field if non-nil, zero value otherwise.
+
+### GetEmailSenderOk
+
+`func (o *UnibeeApiMerchantProfileGetRes) GetEmailSenderOk() (*UnibeeApiBeanSender, bool)`
+
+GetEmailSenderOk returns a tuple with the EmailSender field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmailSender
+
+`func (o *UnibeeApiMerchantProfileGetRes) SetEmailSender(v UnibeeApiBeanSender)`
+
+SetEmailSender sets EmailSender field to given value.
+
+### HasEmailSender
+
+`func (o *UnibeeApiMerchantProfileGetRes) HasEmailSender() bool`
+
+HasEmailSender returns a boolean if a field has been set.
 
 ### GetEnv
 

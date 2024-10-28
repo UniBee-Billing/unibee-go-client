@@ -5,8 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Addons** | Pointer to [**[]UnibeeApiBeanPlanAddonDetail**](UnibeeApiBeanPlanAddonDetail.md) | Addon | [optional] 
+**Description** | Pointer to **string** | description | [optional] 
 **IsPaid** | Pointer to **bool** | IsPaid | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
+**Product** | Pointer to [**UnibeeApiBeanProduct**](UnibeeApiBeanProduct.md) |  | [optional] 
 **Subscription** | Pointer to [**UnibeeApiBeanSubscription**](UnibeeApiBeanSubscription.md) |  | [optional] 
 **User** | Pointer to [**UnibeeApiBeanUserAccount**](UnibeeApiBeanUserAccount.md) |  | [optional] 
 **UserMerchantMetricStats** | Pointer to [**[]UnibeeApiBeanUserMerchantMetricStat**](UnibeeApiBeanUserMerchantMetricStat.md) | UserMerchantMetricStats | [optional] 
@@ -54,6 +56,31 @@ SetAddons sets Addons field to given value.
 `func (o *UnibeeApiMerchantMetricUserMetric) HasAddons() bool`
 
 HasAddons returns a boolean if a field has been set.
+
+### GetDescription
+
+`func (o *UnibeeApiMerchantMetricUserMetric) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *UnibeeApiMerchantMetricUserMetric) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *UnibeeApiMerchantMetricUserMetric) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *UnibeeApiMerchantMetricUserMetric) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
 
 ### GetIsPaid
 
@@ -104,6 +131,31 @@ SetPlan sets Plan field to given value.
 `func (o *UnibeeApiMerchantMetricUserMetric) HasPlan() bool`
 
 HasPlan returns a boolean if a field has been set.
+
+### GetProduct
+
+`func (o *UnibeeApiMerchantMetricUserMetric) GetProduct() UnibeeApiBeanProduct`
+
+GetProduct returns the Product field if non-nil, zero value otherwise.
+
+### GetProductOk
+
+`func (o *UnibeeApiMerchantMetricUserMetric) GetProductOk() (*UnibeeApiBeanProduct, bool)`
+
+GetProductOk returns a tuple with the Product field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProduct
+
+`func (o *UnibeeApiMerchantMetricUserMetric) SetProduct(v UnibeeApiBeanProduct)`
+
+SetProduct sets Product field to given value.
+
+### HasProduct
+
+`func (o *UnibeeApiMerchantMetricUserMetric) HasProduct() bool`
+
+HasProduct returns a boolean if a field has been set.
 
 ### GetSubscription
 

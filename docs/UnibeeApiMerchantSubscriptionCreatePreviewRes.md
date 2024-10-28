@@ -18,6 +18,8 @@ Name | Type | Description | Notes
 **OtherPendingCryptoSubscription** | Pointer to [**UnibeeApiBeanDetailSubscriptionDetail**](UnibeeApiBeanDetailSubscriptionDetail.md) |  | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
 **Quantity** | Pointer to **int64** |  | [optional] 
+**SubscriptionAmountExcludingTax** | Pointer to **int64** |  | [optional] 
+**TaxAmount** | Pointer to **int64** |  | [optional] 
 **TaxPercentage** | Pointer to **int64** |  | [optional] 
 **TotalAmount** | Pointer to **int64** |  | [optional] 
 **TrialEnd** | Pointer to **int64** | trial_end, utc time | [optional] 
@@ -396,6 +398,56 @@ SetQuantity sets Quantity field to given value.
 `func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) HasQuantity() bool`
 
 HasQuantity returns a boolean if a field has been set.
+
+### GetSubscriptionAmountExcludingTax
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) GetSubscriptionAmountExcludingTax() int64`
+
+GetSubscriptionAmountExcludingTax returns the SubscriptionAmountExcludingTax field if non-nil, zero value otherwise.
+
+### GetSubscriptionAmountExcludingTaxOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) GetSubscriptionAmountExcludingTaxOk() (*int64, bool)`
+
+GetSubscriptionAmountExcludingTaxOk returns a tuple with the SubscriptionAmountExcludingTax field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubscriptionAmountExcludingTax
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) SetSubscriptionAmountExcludingTax(v int64)`
+
+SetSubscriptionAmountExcludingTax sets SubscriptionAmountExcludingTax field to given value.
+
+### HasSubscriptionAmountExcludingTax
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) HasSubscriptionAmountExcludingTax() bool`
+
+HasSubscriptionAmountExcludingTax returns a boolean if a field has been set.
+
+### GetTaxAmount
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) GetTaxAmount() int64`
+
+GetTaxAmount returns the TaxAmount field if non-nil, zero value otherwise.
+
+### GetTaxAmountOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) GetTaxAmountOk() (*int64, bool)`
+
+GetTaxAmountOk returns a tuple with the TaxAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTaxAmount
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) SetTaxAmount(v int64)`
+
+SetTaxAmount sets TaxAmount field to given value.
+
+### HasTaxAmount
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) HasTaxAmount() bool`
+
+HasTaxAmount returns a boolean if a field has been set.
 
 ### GetTaxPercentage
 
