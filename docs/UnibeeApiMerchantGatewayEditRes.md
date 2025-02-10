@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Gateway** | Pointer to [**UnibeeApiBeanGateway**](UnibeeApiBeanGateway.md) |  | [optional] 
+**Gateway** | Pointer to [**UnibeeApiBeanDetailGateway**](UnibeeApiBeanDetailGateway.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetGateway
 
-`func (o *UnibeeApiMerchantGatewayEditRes) GetGateway() UnibeeApiBeanGateway`
+`func (o *UnibeeApiMerchantGatewayEditRes) GetGateway() UnibeeApiBeanDetailGateway`
 
 GetGateway returns the Gateway field if non-nil, zero value otherwise.
 
 ### GetGatewayOk
 
-`func (o *UnibeeApiMerchantGatewayEditRes) GetGatewayOk() (*UnibeeApiBeanGateway, bool)`
+`func (o *UnibeeApiMerchantGatewayEditRes) GetGatewayOk() (*UnibeeApiBeanDetailGateway, bool)`
 
 GetGatewayOk returns a tuple with the Gateway field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGateway
 
-`func (o *UnibeeApiMerchantGatewayEditRes) SetGateway(v UnibeeApiBeanGateway)`
+`func (o *UnibeeApiMerchantGatewayEditRes) SetGateway(v UnibeeApiBeanDetailGateway)`
 
 SetGateway sets Gateway field to given value.
 

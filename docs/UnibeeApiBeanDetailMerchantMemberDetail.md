@@ -4,11 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MemberRoles** | Pointer to [**[]UnibeeApiBeanMerchantRole**](UnibeeApiBeanMerchantRole.md) | The member&#39;s role list&#39; | [optional] 
+**MemberGroupPermission** | Pointer to [**map[string]UnibeeApiBeanMerchantRolePermission**](UnibeeApiBeanMerchantRolePermission.md) | The member group permission map&#39; | [optional] 
+**MemberRoles** | Pointer to [**[]UnibeeApiBeanMerchantRole**](UnibeeApiBeanMerchantRole.md) | The member role list&#39; | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Email** | Pointer to **string** | email | [optional] 
 **FirstName** | Pointer to **string** | first name | [optional] 
 **Id** | Pointer to **int64** | userId | [optional] 
+**IsBlankPasswd** | Pointer to **bool** | is blank password | [optional] 
 **IsOwner** | Pointer to **bool** | Check Member is Owner | [optional] 
 **LastName** | Pointer to **string** | last name | [optional] 
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
@@ -33,6 +35,31 @@ will change when the set of required properties is changed
 NewUnibeeApiBeanDetailMerchantMemberDetailWithDefaults instantiates a new UnibeeApiBeanDetailMerchantMemberDetail object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetMemberGroupPermission
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetMemberGroupPermission() map[string]UnibeeApiBeanMerchantRolePermission`
+
+GetMemberGroupPermission returns the MemberGroupPermission field if non-nil, zero value otherwise.
+
+### GetMemberGroupPermissionOk
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetMemberGroupPermissionOk() (*map[string]UnibeeApiBeanMerchantRolePermission, bool)`
+
+GetMemberGroupPermissionOk returns a tuple with the MemberGroupPermission field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMemberGroupPermission
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) SetMemberGroupPermission(v map[string]UnibeeApiBeanMerchantRolePermission)`
+
+SetMemberGroupPermission sets MemberGroupPermission field to given value.
+
+### HasMemberGroupPermission
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) HasMemberGroupPermission() bool`
+
+HasMemberGroupPermission returns a boolean if a field has been set.
 
 ### GetMemberRoles
 
@@ -158,6 +185,31 @@ SetId sets Id field to given value.
 `func (o *UnibeeApiBeanDetailMerchantMemberDetail) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetIsBlankPasswd
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetIsBlankPasswd() bool`
+
+GetIsBlankPasswd returns the IsBlankPasswd field if non-nil, zero value otherwise.
+
+### GetIsBlankPasswdOk
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetIsBlankPasswdOk() (*bool, bool)`
+
+GetIsBlankPasswdOk returns a tuple with the IsBlankPasswd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsBlankPasswd
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) SetIsBlankPasswd(v bool)`
+
+SetIsBlankPasswd sets IsBlankPasswd field to given value.
+
+### HasIsBlankPasswd
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) HasIsBlankPasswd() bool`
+
+HasIsBlankPasswd returns a boolean if a field has been set.
 
 ### GetIsOwner
 

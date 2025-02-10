@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **DiscountAmount** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **OriginAmount** | Pointer to **int64** |  | [optional] 
+**OriginUnitAmountExcludeTax** | Pointer to **int64** |  | [optional] 
 **PdfDescription** | Pointer to **string** |  | [optional] 
 **PeriodEnd** | Pointer to **int64** |  | [optional] 
 **PeriodStart** | Pointer to **int64** |  | [optional] 
@@ -214,6 +215,31 @@ SetOriginAmount sets OriginAmount field to given value.
 `func (o *UnibeeApiBeanInvoiceItemSimplify) HasOriginAmount() bool`
 
 HasOriginAmount returns a boolean if a field has been set.
+
+### GetOriginUnitAmountExcludeTax
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetOriginUnitAmountExcludeTax() int64`
+
+GetOriginUnitAmountExcludeTax returns the OriginUnitAmountExcludeTax field if non-nil, zero value otherwise.
+
+### GetOriginUnitAmountExcludeTaxOk
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetOriginUnitAmountExcludeTaxOk() (*int64, bool)`
+
+GetOriginUnitAmountExcludeTaxOk returns a tuple with the OriginUnitAmountExcludeTax field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOriginUnitAmountExcludeTax
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) SetOriginUnitAmountExcludeTax(v int64)`
+
+SetOriginUnitAmountExcludeTax sets OriginUnitAmountExcludeTax field to given value.
+
+### HasOriginUnitAmountExcludeTax
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) HasOriginUnitAmountExcludeTax() bool`
+
+HasOriginUnitAmountExcludeTax returns a boolean if a field has been set.
 
 ### GetPdfDescription
 

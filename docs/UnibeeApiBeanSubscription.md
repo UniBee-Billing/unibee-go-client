@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Amount** | Pointer to **int64** | amount, cent | [optional] 
 **BillingCycleAnchor** | Pointer to **int64** | billing_cycle_anchor | [optional] 
 **CancelAtPeriodEnd** | Pointer to **int32** | whether cancel at period end，0-false | 1-true | [optional] 
+**CancelOrExpireTime** | Pointer to **int64** | the cancel or expire time, utc time, 0 if subscription not in cancelled or expired status | [optional] 
 **CancelReason** | Pointer to **string** |  | [optional] 
 **CountryCode** | Pointer to **string** |  | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
@@ -28,6 +29,7 @@ Name | Type | Description | Notes
 **Link** | Pointer to **string** |  | [optional] 
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**OriginalPeriodEnd** | Pointer to **int64** | original_period_end, utc time | [optional] 
 **PendingUpdateId** | Pointer to **string** |  | [optional] 
 **PlanId** | Pointer to **int64** | plan id | [optional] 
 **ProductId** | Pointer to **int64** | product id | [optional] 
@@ -161,6 +163,31 @@ SetCancelAtPeriodEnd sets CancelAtPeriodEnd field to given value.
 `func (o *UnibeeApiBeanSubscription) HasCancelAtPeriodEnd() bool`
 
 HasCancelAtPeriodEnd returns a boolean if a field has been set.
+
+### GetCancelOrExpireTime
+
+`func (o *UnibeeApiBeanSubscription) GetCancelOrExpireTime() int64`
+
+GetCancelOrExpireTime returns the CancelOrExpireTime field if non-nil, zero value otherwise.
+
+### GetCancelOrExpireTimeOk
+
+`func (o *UnibeeApiBeanSubscription) GetCancelOrExpireTimeOk() (*int64, bool)`
+
+GetCancelOrExpireTimeOk returns a tuple with the CancelOrExpireTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCancelOrExpireTime
+
+`func (o *UnibeeApiBeanSubscription) SetCancelOrExpireTime(v int64)`
+
+SetCancelOrExpireTime sets CancelOrExpireTime field to given value.
+
+### HasCancelOrExpireTime
+
+`func (o *UnibeeApiBeanSubscription) HasCancelOrExpireTime() bool`
+
+HasCancelOrExpireTime returns a boolean if a field has been set.
 
 ### GetCancelReason
 
@@ -661,6 +688,31 @@ SetMetadata sets Metadata field to given value.
 `func (o *UnibeeApiBeanSubscription) HasMetadata() bool`
 
 HasMetadata returns a boolean if a field has been set.
+
+### GetOriginalPeriodEnd
+
+`func (o *UnibeeApiBeanSubscription) GetOriginalPeriodEnd() int64`
+
+GetOriginalPeriodEnd returns the OriginalPeriodEnd field if non-nil, zero value otherwise.
+
+### GetOriginalPeriodEndOk
+
+`func (o *UnibeeApiBeanSubscription) GetOriginalPeriodEndOk() (*int64, bool)`
+
+GetOriginalPeriodEndOk returns a tuple with the OriginalPeriodEnd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOriginalPeriodEnd
+
+`func (o *UnibeeApiBeanSubscription) SetOriginalPeriodEnd(v int64)`
+
+SetOriginalPeriodEnd sets OriginalPeriodEnd field to given value.
+
+### HasOriginalPeriodEnd
+
+`func (o *UnibeeApiBeanSubscription) HasOriginalPeriodEnd() bool`
+
+HasOriginalPeriodEnd returns a boolean if a field has been set.
 
 ### GetPendingUpdateId
 

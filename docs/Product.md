@@ -4,16 +4,16 @@ All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ProductActivatePost**](Product.md#ProductActivatePost) | **Post** /merchant/product/activate | ActivateProduct
-[**ProductCopyPost**](Product.md#ProductCopyPost) | **Post** /merchant/product/copy | CopyProduct
-[**ProductDeletePost**](Product.md#ProductDeletePost) | **Post** /merchant/product/delete | DeleteProduct
-[**ProductDetailGet**](Product.md#ProductDetailGet) | **Get** /merchant/product/detail | ProductDetail
-[**ProductDetailPost**](Product.md#ProductDetailPost) | **Post** /merchant/product/detail | ProductDetail
-[**ProductEditPost**](Product.md#ProductEditPost) | **Post** /merchant/product/edit | EditProduct
-[**ProductInactivatePost**](Product.md#ProductInactivatePost) | **Post** /merchant/product/inactivate | InactivateProduct
-[**ProductListGet**](Product.md#ProductListGet) | **Get** /merchant/product/list | ProductList
-[**ProductListPost**](Product.md#ProductListPost) | **Post** /merchant/product/list | ProductList
-[**ProductNewPost**](Product.md#ProductNewPost) | **Post** /merchant/product/new | CreateProduct
+[**ProductActivatePost**](Product.md#ProductActivatePost) | **Post** /merchant/product/activate | Activate Product
+[**ProductCopyPost**](Product.md#ProductCopyPost) | **Post** /merchant/product/copy | Copy Product
+[**ProductDeletePost**](Product.md#ProductDeletePost) | **Post** /merchant/product/delete | Delete Product
+[**ProductDetailGet**](Product.md#ProductDetailGet) | **Get** /merchant/product/detail | Product Detail
+[**ProductDetailPost**](Product.md#ProductDetailPost) | **Post** /merchant/product/detail | Product Detail
+[**ProductEditPost**](Product.md#ProductEditPost) | **Post** /merchant/product/edit | Edit Product
+[**ProductInactivatePost**](Product.md#ProductInactivatePost) | **Post** /merchant/product/inactivate | Inactivate Product
+[**ProductListGet**](Product.md#ProductListGet) | **Get** /merchant/product/list | Get Product List
+[**ProductListPost**](Product.md#ProductListPost) | **Post** /merchant/product/list | Get Product List
+[**ProductNewPost**](Product.md#ProductNewPost) | **Post** /merchant/product/new | Create Product
 
 
 
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 > MerchantAuthSsoLoginOTPPost200Response ProductActivatePost(ctx).UnibeeApiMerchantProductActivateReq(unibeeApiMerchantProductActivateReq).Execute()
 
-ActivateProduct
+Activate Product
 
 ### Example
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -85,7 +85,7 @@ No authorization required
 
 > MerchantProductCopyPost200Response ProductCopyPost(ctx).UnibeeApiMerchantProductCopyReq(unibeeApiMerchantProductCopyReq).Execute()
 
-CopyProduct
+Copy Product
 
 ### Example
 
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -149,7 +149,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response ProductDeletePost(ctx).UnibeeApiMerchantProductDeleteReq(unibeeApiMerchantProductDeleteReq).Execute()
 
-DeleteProduct
+Delete Product
 
 
 
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -215,7 +215,7 @@ No authorization required
 
 > MerchantProductCopyPost200Response ProductDetailGet(ctx).ProductId(productId).Execute()
 
-ProductDetail
+Product Detail
 
 ### Example
 
@@ -263,7 +263,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -279,7 +279,7 @@ No authorization required
 
 > MerchantProductCopyPost200Response ProductDetailPost(ctx).UnibeeApiMerchantProductDetailReq(unibeeApiMerchantProductDetailReq).Execute()
 
-ProductDetail
+Product Detail
 
 ### Example
 
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -343,7 +343,7 @@ No authorization required
 
 > MerchantProductCopyPost200Response ProductEditPost(ctx).UnibeeApiMerchantProductEditReq(unibeeApiMerchantProductEditReq).Execute()
 
-EditProduct
+Edit Product
 
 
 
@@ -393,7 +393,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -409,7 +409,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response ProductInactivatePost(ctx).UnibeeApiMerchantProductInactiveReq(unibeeApiMerchantProductInactiveReq).Execute()
 
-InactivateProduct
+Inactivate Product
 
 ### Example
 
@@ -457,7 +457,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -473,7 +473,7 @@ No authorization required
 
 > MerchantProductListGet200Response ProductListGet(ctx).Status(status).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
 
-ProductList
+Get Product List
 
 ### Example
 
@@ -529,7 +529,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -545,7 +545,7 @@ No authorization required
 
 > MerchantProductListGet200Response ProductListPost(ctx).UnibeeApiMerchantProductListReq(unibeeApiMerchantProductListReq).Execute()
 
-ProductList
+Get Product List
 
 ### Example
 
@@ -593,7 +593,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -609,7 +609,7 @@ No authorization required
 
 > MerchantProductCopyPost200Response ProductNewPost(ctx).UnibeeApiMerchantProductNewReq(unibeeApiMerchantProductNewReq).Execute()
 
-CreateProduct
+Create Product
 
 ### Example
 
@@ -657,7 +657,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

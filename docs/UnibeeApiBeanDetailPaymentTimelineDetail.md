@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AutoCharge** | Pointer to **bool** |  | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Currency** | Pointer to **string** | currency | [optional] 
 **ExternalTransactionId** | Pointer to **string** | ExternalTransactionId | [optional] 
@@ -16,7 +17,7 @@ Name | Type | Description | Notes
 **PaymentId** | Pointer to **string** | PaymentId | [optional] 
 **Refund** | Pointer to [**UnibeeApiBeanRefund**](UnibeeApiBeanRefund.md) |  | [optional] 
 **RefundId** | Pointer to **string** | refund id | [optional] 
-**Status** | Pointer to **int32** | 0-pending, 1-success, 2-failure | [optional] 
+**Status** | Pointer to **int32** | 0-pending, 1-success, 2-failure，3-cancel | [optional] 
 **SubscriptionId** | Pointer to **string** | subscription id | [optional] 
 **TimelineType** | Pointer to **int32** | 0-pay, 1-refund | [optional] 
 **TotalAmount** | Pointer to **int64** | total amount | [optional] 
@@ -41,6 +42,31 @@ will change when the set of required properties is changed
 NewUnibeeApiBeanDetailPaymentTimelineDetailWithDefaults instantiates a new UnibeeApiBeanDetailPaymentTimelineDetail object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAutoCharge
+
+`func (o *UnibeeApiBeanDetailPaymentTimelineDetail) GetAutoCharge() bool`
+
+GetAutoCharge returns the AutoCharge field if non-nil, zero value otherwise.
+
+### GetAutoChargeOk
+
+`func (o *UnibeeApiBeanDetailPaymentTimelineDetail) GetAutoChargeOk() (*bool, bool)`
+
+GetAutoChargeOk returns a tuple with the AutoCharge field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoCharge
+
+`func (o *UnibeeApiBeanDetailPaymentTimelineDetail) SetAutoCharge(v bool)`
+
+SetAutoCharge sets AutoCharge field to given value.
+
+### HasAutoCharge
+
+`func (o *UnibeeApiBeanDetailPaymentTimelineDetail) HasAutoCharge() bool`
+
+HasAutoCharge returns a boolean if a field has been set.
 
 ### GetCreateTime
 

@@ -4,25 +4,161 @@ All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**UserChangeEmailPost**](User.md#UserChangeEmailPost) | **Post** /merchant/user/change_email | ChangeUserEmail
-[**UserChangeGatewayPost**](User.md#UserChangeGatewayPost) | **Post** /merchant/user/change_gateway | ChangeUserDefaultGateway
-[**UserGetGet**](User.md#UserGetGet) | **Get** /merchant/user/get | GetUserProfile
-[**UserListGet**](User.md#UserListGet) | **Get** /merchant/user/list | UserList
-[**UserListPost**](User.md#UserListPost) | **Post** /merchant/user/list | UserList
-[**UserNewPost**](User.md#UserNewPost) | **Post** /merchant/user/new | NewUser
-[**UserResumeUserPost**](User.md#UserResumeUserPost) | **Post** /merchant/user/resume_user | ResumeUser
-[**UserSearchGet**](User.md#UserSearchGet) | **Get** /merchant/user/search | UserSearch
-[**UserSearchPost**](User.md#UserSearchPost) | **Post** /merchant/user/search | UserSearch
-[**UserSuspendUserPost**](User.md#UserSuspendUserPost) | **Post** /merchant/user/suspend_user | SuspendUser
-[**UserUpdatePost**](User.md#UserUpdatePost) | **Post** /merchant/user/update | UpdateUserProfile
+[**UserAdminNoteListGet**](User.md#UserAdminNoteListGet) | **Get** /merchant/user/admin_note_list | Get User Admin Note List
+[**UserAdminNoteListPost**](User.md#UserAdminNoteListPost) | **Post** /merchant/user/admin_note_list | Get User Admin Note List
+[**UserChangeEmailPost**](User.md#UserChangeEmailPost) | **Post** /merchant/user/change_email | Change User Email
+[**UserChangeGatewayPost**](User.md#UserChangeGatewayPost) | **Post** /merchant/user/change_gateway | Change User Default Gateway
+[**UserClearAutoChargeMethodPost**](User.md#UserClearAutoChargeMethodPost) | **Post** /merchant/user/clear_auto_charge_method | Clear AutoCharge Method
+[**UserGetGet**](User.md#UserGetGet) | **Get** /merchant/user/get | Get User Profile
+[**UserListGet**](User.md#UserListGet) | **Get** /merchant/user/list | User List
+[**UserListPost**](User.md#UserListPost) | **Post** /merchant/user/list | User List
+[**UserNewAdminNotePost**](User.md#UserNewAdminNotePost) | **Post** /merchant/user/new_admin_note | New Admin Note
+[**UserNewPost**](User.md#UserNewPost) | **Post** /merchant/user/new | New User
+[**UserResumeUserPost**](User.md#UserResumeUserPost) | **Post** /merchant/user/resume_user | Resume User
+[**UserSearchGet**](User.md#UserSearchGet) | **Get** /merchant/user/search | User Search
+[**UserSearchPost**](User.md#UserSearchPost) | **Post** /merchant/user/search | User Search
+[**UserSuspendUserPost**](User.md#UserSuspendUserPost) | **Post** /merchant/user/suspend_user | Suspend User
+[**UserUpdatePost**](User.md#UserUpdatePost) | **Post** /merchant/user/update | Update User Profile
 
+
+
+## UserAdminNoteListGet
+
+> MerchantUserAdminNoteListGet200Response UserAdminNoteListGet(ctx).UserId(userId).Page(page).Count(count).Execute()
+
+Get User Admin Note List
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	userId := int64(789) // int64 | The id of user, either ExternalUserId or UserId needed
+	page := int32(56) // int32 | Page, Start With 0 (optional)
+	count := int32(56) // int32 | Count Of Page (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.User.UserAdminNoteListGet(context.Background()).UserId(userId).Page(page).Count(count).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `User.UserAdminNoteListGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserAdminNoteListGet`: MerchantUserAdminNoteListGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `User.UserAdminNoteListGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUserAdminNoteListGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **int64** | The id of user, either ExternalUserId or UserId needed | 
+ **page** | **int32** | Page, Start With 0 | 
+ **count** | **int32** | Count Of Page | 
+
+### Return type
+
+[**MerchantUserAdminNoteListGet200Response**](MerchantUserAdminNoteListGet200Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UserAdminNoteListPost
+
+> MerchantUserAdminNoteListGet200Response UserAdminNoteListPost(ctx).UnibeeApiMerchantUserAdminNoteListReq(unibeeApiMerchantUserAdminNoteListReq).Execute()
+
+Get User Admin Note List
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantUserAdminNoteListReq := *openapiclient.NewUnibeeApiMerchantUserAdminNoteListReq(int64(123)) // UnibeeApiMerchantUserAdminNoteListReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.User.UserAdminNoteListPost(context.Background()).UnibeeApiMerchantUserAdminNoteListReq(unibeeApiMerchantUserAdminNoteListReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `User.UserAdminNoteListPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserAdminNoteListPost`: MerchantUserAdminNoteListGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `User.UserAdminNoteListPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUserAdminNoteListPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantUserAdminNoteListReq** | [**UnibeeApiMerchantUserAdminNoteListReq**](UnibeeApiMerchantUserAdminNoteListReq.md) |  | 
+
+### Return type
+
+[**MerchantUserAdminNoteListGet200Response**](MerchantUserAdminNoteListGet200Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## UserChangeEmailPost
 
 > MerchantAuthSsoLoginOTPPost200Response UserChangeEmailPost(ctx).UnibeeApiMerchantUserChangeEmailReq(unibeeApiMerchantUserChangeEmailReq).Execute()
 
-ChangeUserEmail
+Change User Email
 
 ### Example
 
@@ -70,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -86,7 +222,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response UserChangeGatewayPost(ctx).UnibeeApiMerchantUserChangeGatewayReq(unibeeApiMerchantUserChangeGatewayReq).Execute()
 
-ChangeUserDefaultGateway
+Change User Default Gateway
 
 ### Example
 
@@ -134,7 +270,71 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UserClearAutoChargeMethodPost
+
+> MerchantAuthSsoLoginOTPPost200Response UserClearAutoChargeMethodPost(ctx).UnibeeApiMerchantUserClearAutoChargeMethodReq(unibeeApiMerchantUserClearAutoChargeMethodReq).Execute()
+
+Clear AutoCharge Method
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantUserClearAutoChargeMethodReq := *openapiclient.NewUnibeeApiMerchantUserClearAutoChargeMethodReq(int64(123)) // UnibeeApiMerchantUserClearAutoChargeMethodReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.User.UserClearAutoChargeMethodPost(context.Background()).UnibeeApiMerchantUserClearAutoChargeMethodReq(unibeeApiMerchantUserClearAutoChargeMethodReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `User.UserClearAutoChargeMethodPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserClearAutoChargeMethodPost`: MerchantAuthSsoLoginOTPPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `User.UserClearAutoChargeMethodPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUserClearAutoChargeMethodPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantUserClearAutoChargeMethodReq** | [**UnibeeApiMerchantUserClearAutoChargeMethodReq**](UnibeeApiMerchantUserClearAutoChargeMethodReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -150,7 +350,7 @@ No authorization required
 
 > MerchantUserGetGet200Response UserGetGet(ctx).UserId(userId).Execute()
 
-GetUserProfile
+Get User Profile
 
 ### Example
 
@@ -198,7 +398,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -214,7 +414,7 @@ No authorization required
 
 > MerchantUserListGet200Response UserListGet(ctx).UserId(userId).FirstName(firstName).LastName(lastName).Email(email).PlanIds(planIds).SubscriptionId(subscriptionId).SubStatus(subStatus).Status(status).DeleteInclude(deleteInclude).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 
-UserList
+User List
 
 ### Example
 
@@ -290,7 +490,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -306,7 +506,7 @@ No authorization required
 
 > MerchantUserListGet200Response UserListPost(ctx).UnibeeApiMerchantUserListReq(unibeeApiMerchantUserListReq).Execute()
 
-UserList
+User List
 
 ### Example
 
@@ -354,7 +554,71 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UserNewAdminNotePost
+
+> MerchantAuthSsoLoginOTPPost200Response UserNewAdminNotePost(ctx).UnibeeApiMerchantUserNewAdminNoteReq(unibeeApiMerchantUserNewAdminNoteReq).Execute()
+
+New Admin Note
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantUserNewAdminNoteReq := *openapiclient.NewUnibeeApiMerchantUserNewAdminNoteReq("Note_example", int64(123)) // UnibeeApiMerchantUserNewAdminNoteReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.User.UserNewAdminNotePost(context.Background()).UnibeeApiMerchantUserNewAdminNoteReq(unibeeApiMerchantUserNewAdminNoteReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `User.UserNewAdminNotePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserNewAdminNotePost`: MerchantAuthSsoLoginOTPPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `User.UserNewAdminNotePost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUserNewAdminNotePostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantUserNewAdminNoteReq** | [**UnibeeApiMerchantUserNewAdminNoteReq**](UnibeeApiMerchantUserNewAdminNoteReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -370,7 +634,7 @@ No authorization required
 
 > MerchantUserNewPost200Response UserNewPost(ctx).UnibeeApiMerchantUserNewReq(unibeeApiMerchantUserNewReq).Execute()
 
-NewUser
+New User
 
 
 
@@ -420,7 +684,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -436,7 +700,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response UserResumeUserPost(ctx).UnibeeApiMerchantUserReleaseReq(unibeeApiMerchantUserReleaseReq).Execute()
 
-ResumeUser
+Resume User
 
 ### Example
 
@@ -484,7 +748,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -500,7 +764,7 @@ No authorization required
 
 > MerchantUserSearchGet200Response UserSearchGet(ctx).SearchKey(searchKey).Execute()
 
-UserSearch
+User Search
 
 ### Example
 
@@ -548,7 +812,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -564,7 +828,7 @@ No authorization required
 
 > MerchantUserSearchGet200Response UserSearchPost(ctx).UnibeeApiMerchantUserSearchReq(unibeeApiMerchantUserSearchReq).Execute()
 
-UserSearch
+User Search
 
 ### Example
 
@@ -612,7 +876,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -628,7 +892,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response UserSuspendUserPost(ctx).UnibeeApiMerchantUserFrozenReq(unibeeApiMerchantUserFrozenReq).Execute()
 
-SuspendUser
+Suspend User
 
 ### Example
 
@@ -676,7 +940,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -692,7 +956,7 @@ No authorization required
 
 > MerchantUserGetGet200Response UserUpdatePost(ctx).UnibeeApiMerchantUserUpdateReq(unibeeApiMerchantUserUpdateReq).Execute()
 
-UpdateUserProfile
+Update User Profile
 
 ### Example
 
@@ -740,7 +1004,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

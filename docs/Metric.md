@@ -7,9 +7,7 @@ Method | HTTP request | Description
 [**MetricDeletePost**](Metric.md#MetricDeletePost) | **Post** /merchant/metric/delete | Delete Merchant Metric
 [**MetricDetailPost**](Metric.md#MetricDetailPost) | **Post** /merchant/metric/detail | Merchant Metric Detail
 [**MetricEditPost**](Metric.md#MetricEditPost) | **Post** /merchant/metric/edit | Edit Merchant Metric
-[**MetricEventDeletePost**](Metric.md#MetricEventDeletePost) | **Post** /merchant/metric/event/delete | Del Merchant Metric Event
-[**MetricEventNewPost**](Metric.md#MetricEventNewPost) | **Post** /merchant/metric/event/new | Merchant Metric Event
-[**MetricListGet**](Metric.md#MetricListGet) | **Get** /merchant/metric/list | Merchant Metric list
+[**MetricListGet**](Metric.md#MetricListGet) | **Get** /merchant/metric/list | Get Merchant Metric list
 [**MetricNewPost**](Metric.md#MetricNewPost) | **Post** /merchant/metric/new | New Merchant Metric
 [**MetricPlanLimitDeletePost**](Metric.md#MetricPlanLimitDeletePost) | **Post** /merchant/metric/plan/limit/delete | Delete Merchant Metric Plan TotalLimit
 [**MetricPlanLimitEditPost**](Metric.md#MetricPlanLimitEditPost) | **Post** /merchant/metric/plan/limit/edit | Edit Merchant Metric Plan TotalLimit
@@ -69,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -133,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -197,135 +195,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## MetricEventDeletePost
-
-> MerchantAuthSsoLoginOTPPost200Response MetricEventDeletePost(ctx).UnibeeApiMerchantMetricDeleteEventReq(unibeeApiMerchantMetricDeleteEventReq).Execute()
-
-Del Merchant Metric Event
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/UniBee-Billing/unibee-go-client"
-)
-
-func main() {
-	unibeeApiMerchantMetricDeleteEventReq := *openapiclient.NewUnibeeApiMerchantMetricDeleteEventReq("ExternalEventId_example", "ExternalUserId_example", "MetricCode_example") // UnibeeApiMerchantMetricDeleteEventReq | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Metric.MetricEventDeletePost(context.Background()).UnibeeApiMerchantMetricDeleteEventReq(unibeeApiMerchantMetricDeleteEventReq).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `Metric.MetricEventDeletePost``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `MetricEventDeletePost`: MerchantAuthSsoLoginOTPPost200Response
-	fmt.Fprintf(os.Stdout, "Response from `Metric.MetricEventDeletePost`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiMetricEventDeletePostRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **unibeeApiMerchantMetricDeleteEventReq** | [**UnibeeApiMerchantMetricDeleteEventReq**](UnibeeApiMerchantMetricDeleteEventReq.md) |  | 
-
-### Return type
-
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## MetricEventNewPost
-
-> MerchantMetricEventNewPost200Response MetricEventNewPost(ctx).UnibeeApiMerchantMetricNewEventReq(unibeeApiMerchantMetricNewEventReq).Execute()
-
-Merchant Metric Event
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/UniBee-Billing/unibee-go-client"
-)
-
-func main() {
-	unibeeApiMerchantMetricNewEventReq := *openapiclient.NewUnibeeApiMerchantMetricNewEventReq("ExternalEventId_example", "ExternalUserId_example", "MetricCode_example") // UnibeeApiMerchantMetricNewEventReq | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Metric.MetricEventNewPost(context.Background()).UnibeeApiMerchantMetricNewEventReq(unibeeApiMerchantMetricNewEventReq).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `Metric.MetricEventNewPost``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `MetricEventNewPost`: MerchantMetricEventNewPost200Response
-	fmt.Fprintf(os.Stdout, "Response from `Metric.MetricEventNewPost`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiMetricEventNewPostRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **unibeeApiMerchantMetricNewEventReq** | [**UnibeeApiMerchantMetricNewEventReq**](UnibeeApiMerchantMetricNewEventReq.md) |  | 
-
-### Return type
-
-[**MerchantMetricEventNewPost200Response**](MerchantMetricEventNewPost200Response.md)
-
-### Authorization
-
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -341,7 +211,7 @@ No authorization required
 
 > MerchantMetricListGet200Response MetricListGet(ctx).Execute()
 
-Merchant Metric list
+Get Merchant Metric list
 
 ### Example
 
@@ -384,7 +254,7 @@ Other parameters are passed through a pointer to a apiMetricListGetRequest struc
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -448,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -512,7 +382,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -576,7 +446,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -640,7 +510,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

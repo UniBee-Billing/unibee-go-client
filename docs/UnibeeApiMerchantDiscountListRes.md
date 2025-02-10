@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Discounts** | Pointer to [**[]UnibeeApiBeanMerchantDiscountCode**](UnibeeApiBeanMerchantDiscountCode.md) | Discount Object List | [optional] 
+**Discounts** | Pointer to [**[]UnibeeApiBeanDetailMerchantDiscountCodeDetail**](UnibeeApiBeanDetailMerchantDiscountCodeDetail.md) | Discount Object List | [optional] 
 **Total** | Pointer to **int32** | Total | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDiscounts
 
-`func (o *UnibeeApiMerchantDiscountListRes) GetDiscounts() []UnibeeApiBeanMerchantDiscountCode`
+`func (o *UnibeeApiMerchantDiscountListRes) GetDiscounts() []UnibeeApiBeanDetailMerchantDiscountCodeDetail`
 
 GetDiscounts returns the Discounts field if non-nil, zero value otherwise.
 
 ### GetDiscountsOk
 
-`func (o *UnibeeApiMerchantDiscountListRes) GetDiscountsOk() (*[]UnibeeApiBeanMerchantDiscountCode, bool)`
+`func (o *UnibeeApiMerchantDiscountListRes) GetDiscountsOk() (*[]UnibeeApiBeanDetailMerchantDiscountCodeDetail, bool)`
 
 GetDiscountsOk returns a tuple with the Discounts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDiscounts
 
-`func (o *UnibeeApiMerchantDiscountListRes) SetDiscounts(v []UnibeeApiBeanMerchantDiscountCode)`
+`func (o *UnibeeApiMerchantDiscountListRes) SetDiscounts(v []UnibeeApiBeanDetailMerchantDiscountCodeDetail)`
 
 SetDiscounts sets Discounts field to given value.
 

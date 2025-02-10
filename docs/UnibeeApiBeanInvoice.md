@@ -4,10 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AutoCharge** | Pointer to **bool** |  | [optional] 
 **BillingCycleAnchor** | Pointer to **int64** | billing_cycle_anchor | [optional] 
 **BizType** | Pointer to **int32** | biz type from payment 1-onetime payment, 3-subscription | [optional] 
 **CountryCode** | Pointer to **string** |  | [optional] 
 **CreateFrom** | Pointer to **string** | create from | [optional] 
+**CreditAccount** | Pointer to [**UnibeeApiBeanCreditAccount**](UnibeeApiBeanCreditAccount.md) |  | [optional] 
+**CreditPayout** | Pointer to [**UnibeeApiBeanCreditPayout**](UnibeeApiBeanCreditPayout.md) |  | [optional] 
 **CryptoAmount** | Pointer to **int64** | crypto_amount, cent | [optional] 
 **CryptoCurrency** | Pointer to **string** | crypto_currency | [optional] 
 **Currency** | Pointer to **string** |  | [optional] 
@@ -24,11 +27,16 @@ Name | Type | Description | Notes
 **Link** | Pointer to **string** | invoice link | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **OriginAmount** | Pointer to **int64** |  | [optional] 
+**PartialCreditPaidAmount** | Pointer to **int64** | partial credit paid amount | [optional] 
 **PaymentId** | Pointer to **string** | paymentId | [optional] 
 **PaymentLink** | Pointer to **string** | invoice payment link | [optional] 
 **PeriodEnd** | Pointer to **int64** |  | [optional] 
 **PeriodStart** | Pointer to **int64** |  | [optional] 
 **ProductName** | Pointer to **string** |  | [optional] 
+**PromoCreditAccount** | Pointer to [**UnibeeApiBeanCreditAccount**](UnibeeApiBeanCreditAccount.md) |  | [optional] 
+**PromoCreditDiscountAmount** | Pointer to **int64** | promo credit discount amount | [optional] 
+**PromoCreditPayout** | Pointer to [**UnibeeApiBeanCreditPayout**](UnibeeApiBeanCreditPayout.md) |  | [optional] 
+**PromoCreditTransaction** | Pointer to [**UnibeeApiBeanCreditTransaction**](UnibeeApiBeanCreditTransaction.md) |  | [optional] 
 **ProrationDate** | Pointer to **int64** |  | [optional] 
 **ProrationScale** | Pointer to **int64** |  | [optional] 
 **RefundId** | Pointer to **string** | refundId | [optional] 
@@ -43,6 +51,7 @@ Name | Type | Description | Notes
 **TotalAmount** | Pointer to **int64** |  | [optional] 
 **TotalAmountExcludingTax** | Pointer to **int64** |  | [optional] 
 **TrialEnd** | Pointer to **int64** | trial_end, utc time | [optional] 
+**UserId** | Pointer to **int64** | UserId | [optional] 
 **VatNumber** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -63,6 +72,31 @@ will change when the set of required properties is changed
 NewUnibeeApiBeanInvoiceWithDefaults instantiates a new UnibeeApiBeanInvoice object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAutoCharge
+
+`func (o *UnibeeApiBeanInvoice) GetAutoCharge() bool`
+
+GetAutoCharge returns the AutoCharge field if non-nil, zero value otherwise.
+
+### GetAutoChargeOk
+
+`func (o *UnibeeApiBeanInvoice) GetAutoChargeOk() (*bool, bool)`
+
+GetAutoChargeOk returns a tuple with the AutoCharge field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoCharge
+
+`func (o *UnibeeApiBeanInvoice) SetAutoCharge(v bool)`
+
+SetAutoCharge sets AutoCharge field to given value.
+
+### HasAutoCharge
+
+`func (o *UnibeeApiBeanInvoice) HasAutoCharge() bool`
+
+HasAutoCharge returns a boolean if a field has been set.
 
 ### GetBillingCycleAnchor
 
@@ -163,6 +197,56 @@ SetCreateFrom sets CreateFrom field to given value.
 `func (o *UnibeeApiBeanInvoice) HasCreateFrom() bool`
 
 HasCreateFrom returns a boolean if a field has been set.
+
+### GetCreditAccount
+
+`func (o *UnibeeApiBeanInvoice) GetCreditAccount() UnibeeApiBeanCreditAccount`
+
+GetCreditAccount returns the CreditAccount field if non-nil, zero value otherwise.
+
+### GetCreditAccountOk
+
+`func (o *UnibeeApiBeanInvoice) GetCreditAccountOk() (*UnibeeApiBeanCreditAccount, bool)`
+
+GetCreditAccountOk returns a tuple with the CreditAccount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreditAccount
+
+`func (o *UnibeeApiBeanInvoice) SetCreditAccount(v UnibeeApiBeanCreditAccount)`
+
+SetCreditAccount sets CreditAccount field to given value.
+
+### HasCreditAccount
+
+`func (o *UnibeeApiBeanInvoice) HasCreditAccount() bool`
+
+HasCreditAccount returns a boolean if a field has been set.
+
+### GetCreditPayout
+
+`func (o *UnibeeApiBeanInvoice) GetCreditPayout() UnibeeApiBeanCreditPayout`
+
+GetCreditPayout returns the CreditPayout field if non-nil, zero value otherwise.
+
+### GetCreditPayoutOk
+
+`func (o *UnibeeApiBeanInvoice) GetCreditPayoutOk() (*UnibeeApiBeanCreditPayout, bool)`
+
+GetCreditPayoutOk returns a tuple with the CreditPayout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreditPayout
+
+`func (o *UnibeeApiBeanInvoice) SetCreditPayout(v UnibeeApiBeanCreditPayout)`
+
+SetCreditPayout sets CreditPayout field to given value.
+
+### HasCreditPayout
+
+`func (o *UnibeeApiBeanInvoice) HasCreditPayout() bool`
+
+HasCreditPayout returns a boolean if a field has been set.
 
 ### GetCryptoAmount
 
@@ -564,6 +648,31 @@ SetOriginAmount sets OriginAmount field to given value.
 
 HasOriginAmount returns a boolean if a field has been set.
 
+### GetPartialCreditPaidAmount
+
+`func (o *UnibeeApiBeanInvoice) GetPartialCreditPaidAmount() int64`
+
+GetPartialCreditPaidAmount returns the PartialCreditPaidAmount field if non-nil, zero value otherwise.
+
+### GetPartialCreditPaidAmountOk
+
+`func (o *UnibeeApiBeanInvoice) GetPartialCreditPaidAmountOk() (*int64, bool)`
+
+GetPartialCreditPaidAmountOk returns a tuple with the PartialCreditPaidAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPartialCreditPaidAmount
+
+`func (o *UnibeeApiBeanInvoice) SetPartialCreditPaidAmount(v int64)`
+
+SetPartialCreditPaidAmount sets PartialCreditPaidAmount field to given value.
+
+### HasPartialCreditPaidAmount
+
+`func (o *UnibeeApiBeanInvoice) HasPartialCreditPaidAmount() bool`
+
+HasPartialCreditPaidAmount returns a boolean if a field has been set.
+
 ### GetPaymentId
 
 `func (o *UnibeeApiBeanInvoice) GetPaymentId() string`
@@ -688,6 +797,106 @@ SetProductName sets ProductName field to given value.
 `func (o *UnibeeApiBeanInvoice) HasProductName() bool`
 
 HasProductName returns a boolean if a field has been set.
+
+### GetPromoCreditAccount
+
+`func (o *UnibeeApiBeanInvoice) GetPromoCreditAccount() UnibeeApiBeanCreditAccount`
+
+GetPromoCreditAccount returns the PromoCreditAccount field if non-nil, zero value otherwise.
+
+### GetPromoCreditAccountOk
+
+`func (o *UnibeeApiBeanInvoice) GetPromoCreditAccountOk() (*UnibeeApiBeanCreditAccount, bool)`
+
+GetPromoCreditAccountOk returns a tuple with the PromoCreditAccount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPromoCreditAccount
+
+`func (o *UnibeeApiBeanInvoice) SetPromoCreditAccount(v UnibeeApiBeanCreditAccount)`
+
+SetPromoCreditAccount sets PromoCreditAccount field to given value.
+
+### HasPromoCreditAccount
+
+`func (o *UnibeeApiBeanInvoice) HasPromoCreditAccount() bool`
+
+HasPromoCreditAccount returns a boolean if a field has been set.
+
+### GetPromoCreditDiscountAmount
+
+`func (o *UnibeeApiBeanInvoice) GetPromoCreditDiscountAmount() int64`
+
+GetPromoCreditDiscountAmount returns the PromoCreditDiscountAmount field if non-nil, zero value otherwise.
+
+### GetPromoCreditDiscountAmountOk
+
+`func (o *UnibeeApiBeanInvoice) GetPromoCreditDiscountAmountOk() (*int64, bool)`
+
+GetPromoCreditDiscountAmountOk returns a tuple with the PromoCreditDiscountAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPromoCreditDiscountAmount
+
+`func (o *UnibeeApiBeanInvoice) SetPromoCreditDiscountAmount(v int64)`
+
+SetPromoCreditDiscountAmount sets PromoCreditDiscountAmount field to given value.
+
+### HasPromoCreditDiscountAmount
+
+`func (o *UnibeeApiBeanInvoice) HasPromoCreditDiscountAmount() bool`
+
+HasPromoCreditDiscountAmount returns a boolean if a field has been set.
+
+### GetPromoCreditPayout
+
+`func (o *UnibeeApiBeanInvoice) GetPromoCreditPayout() UnibeeApiBeanCreditPayout`
+
+GetPromoCreditPayout returns the PromoCreditPayout field if non-nil, zero value otherwise.
+
+### GetPromoCreditPayoutOk
+
+`func (o *UnibeeApiBeanInvoice) GetPromoCreditPayoutOk() (*UnibeeApiBeanCreditPayout, bool)`
+
+GetPromoCreditPayoutOk returns a tuple with the PromoCreditPayout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPromoCreditPayout
+
+`func (o *UnibeeApiBeanInvoice) SetPromoCreditPayout(v UnibeeApiBeanCreditPayout)`
+
+SetPromoCreditPayout sets PromoCreditPayout field to given value.
+
+### HasPromoCreditPayout
+
+`func (o *UnibeeApiBeanInvoice) HasPromoCreditPayout() bool`
+
+HasPromoCreditPayout returns a boolean if a field has been set.
+
+### GetPromoCreditTransaction
+
+`func (o *UnibeeApiBeanInvoice) GetPromoCreditTransaction() UnibeeApiBeanCreditTransaction`
+
+GetPromoCreditTransaction returns the PromoCreditTransaction field if non-nil, zero value otherwise.
+
+### GetPromoCreditTransactionOk
+
+`func (o *UnibeeApiBeanInvoice) GetPromoCreditTransactionOk() (*UnibeeApiBeanCreditTransaction, bool)`
+
+GetPromoCreditTransactionOk returns a tuple with the PromoCreditTransaction field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPromoCreditTransaction
+
+`func (o *UnibeeApiBeanInvoice) SetPromoCreditTransaction(v UnibeeApiBeanCreditTransaction)`
+
+SetPromoCreditTransaction sets PromoCreditTransaction field to given value.
+
+### HasPromoCreditTransaction
+
+`func (o *UnibeeApiBeanInvoice) HasPromoCreditTransaction() bool`
+
+HasPromoCreditTransaction returns a boolean if a field has been set.
 
 ### GetProrationDate
 
@@ -1038,6 +1247,31 @@ SetTrialEnd sets TrialEnd field to given value.
 `func (o *UnibeeApiBeanInvoice) HasTrialEnd() bool`
 
 HasTrialEnd returns a boolean if a field has been set.
+
+### GetUserId
+
+`func (o *UnibeeApiBeanInvoice) GetUserId() int64`
+
+GetUserId returns the UserId field if non-nil, zero value otherwise.
+
+### GetUserIdOk
+
+`func (o *UnibeeApiBeanInvoice) GetUserIdOk() (*int64, bool)`
+
+GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserId
+
+`func (o *UnibeeApiBeanInvoice) SetUserId(v int64)`
+
+SetUserId sets UserId field to given value.
+
+### HasUserId
+
+`func (o *UnibeeApiBeanInvoice) HasUserId() bool`
+
+HasUserId returns a boolean if a field has been set.
 
 ### GetVatNumber
 

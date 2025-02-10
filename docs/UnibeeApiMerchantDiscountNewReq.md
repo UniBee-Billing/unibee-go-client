@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Advance** | Pointer to **bool** | AdvanceConfig, 0-false,1-true, will enable all advance config if set true | [optional] 
 **BillingType** | **int32** | The billing type of the discount code, 1-one-time, 2-recurring, define the situation the code can be used, the code of one-time billing_type can used for all situation that effect only once, the code of recurring billing_tye can only used for subscription purchase | 
 **Code** | **string** | The discount&#39;s unique code, customize by merchant | 
 **Currency** | Pointer to **string** | The discount currency of discount code, available when discount_type is fixed_amount | [optional] 
@@ -11,17 +12,23 @@ Name | Type | Description | Notes
 **DiscountAmount** | Pointer to **int64** | The discount amount of the discount code, available when discount_type is fixed_amount | [optional] 
 **DiscountPercentage** | Pointer to **int64** | The discount percentage of discount code, 100&#x3D;1%, available when discount_type is percentage | [optional] 
 **DiscountType** | **int32** | The discount type of the discount code, 1-percentage, 2-fixed_amount, the discountType of code, the discountPercentage will be effect when discountType is percentage, the discountAmount and currency will be effect when discountTYpe is fixed_amount | 
-**EndTime** | **int64** | The end time of discount code can effect, utc time | 
+**EndTime** | **int32** | The end time of discount code can effect, utc time | 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **Name** | Pointer to **string** | The discount&#39;s name | [optional] 
+**PlanApplyType** | Pointer to **int32** | plan apply type, 0-apply for all, 1-apply for plans specified, 2-exclude for plans specified | [optional] 
 **PlanIds** | Pointer to **[]int64** | Ids of plan which discount code can effect, default effect all plans if not set | [optional] 
-**StartTime** | **int64** | The start time of discount code can effect, utc time | 
+**Quantity** | Pointer to **int32** | Quantity of code, default 0, set 0 to disable quantity management | [optional] 
+**StartTime** | **int32** | The start time of discount code can effect, utc time | 
+**UpgradeLongPlanOnly** | Pointer to **bool** | AdvanceConfig, true or false, will forbid for all except upgrade to longer plan if set true | [optional] 
+**UpgradeOnly** | Pointer to **bool** | AdvanceConfig, true or false, will forbid for all except same interval upgrade action if set true | [optional] 
+**UserLimit** | Pointer to **int32** | AdvanceConfig, The limit of every customer can apply, the recurring apply not involved, 0-unlimited | [optional] 
+**UserScope** | Pointer to **int32** | AdvanceConfig, Apply user scope,0-for all, 1-for only new user, 2-for only renewals, renewals is upgrade&amp;downgrade&amp;renew | [optional] 
 
 ## Methods
 
 ### NewUnibeeApiMerchantDiscountNewReq
 
-`func NewUnibeeApiMerchantDiscountNewReq(billingType int32, code string, discountType int32, endTime int64, startTime int64, ) *UnibeeApiMerchantDiscountNewReq`
+`func NewUnibeeApiMerchantDiscountNewReq(billingType int32, code string, discountType int32, endTime int32, startTime int32, ) *UnibeeApiMerchantDiscountNewReq`
 
 NewUnibeeApiMerchantDiscountNewReq instantiates a new UnibeeApiMerchantDiscountNewReq object
 This constructor will assign default values to properties that have it defined,
@@ -35,6 +42,31 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantDiscountNewReqWithDefaults instantiates a new UnibeeApiMerchantDiscountNewReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAdvance
+
+`func (o *UnibeeApiMerchantDiscountNewReq) GetAdvance() bool`
+
+GetAdvance returns the Advance field if non-nil, zero value otherwise.
+
+### GetAdvanceOk
+
+`func (o *UnibeeApiMerchantDiscountNewReq) GetAdvanceOk() (*bool, bool)`
+
+GetAdvanceOk returns a tuple with the Advance field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAdvance
+
+`func (o *UnibeeApiMerchantDiscountNewReq) SetAdvance(v bool)`
+
+SetAdvance sets Advance field to given value.
+
+### HasAdvance
+
+`func (o *UnibeeApiMerchantDiscountNewReq) HasAdvance() bool`
+
+HasAdvance returns a boolean if a field has been set.
 
 ### GetBillingType
 
@@ -198,20 +230,20 @@ SetDiscountType sets DiscountType field to given value.
 
 ### GetEndTime
 
-`func (o *UnibeeApiMerchantDiscountNewReq) GetEndTime() int64`
+`func (o *UnibeeApiMerchantDiscountNewReq) GetEndTime() int32`
 
 GetEndTime returns the EndTime field if non-nil, zero value otherwise.
 
 ### GetEndTimeOk
 
-`func (o *UnibeeApiMerchantDiscountNewReq) GetEndTimeOk() (*int64, bool)`
+`func (o *UnibeeApiMerchantDiscountNewReq) GetEndTimeOk() (*int32, bool)`
 
 GetEndTimeOk returns a tuple with the EndTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEndTime
 
-`func (o *UnibeeApiMerchantDiscountNewReq) SetEndTime(v int64)`
+`func (o *UnibeeApiMerchantDiscountNewReq) SetEndTime(v int32)`
 
 SetEndTime sets EndTime field to given value.
 
@@ -266,6 +298,31 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
+### GetPlanApplyType
+
+`func (o *UnibeeApiMerchantDiscountNewReq) GetPlanApplyType() int32`
+
+GetPlanApplyType returns the PlanApplyType field if non-nil, zero value otherwise.
+
+### GetPlanApplyTypeOk
+
+`func (o *UnibeeApiMerchantDiscountNewReq) GetPlanApplyTypeOk() (*int32, bool)`
+
+GetPlanApplyTypeOk returns a tuple with the PlanApplyType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanApplyType
+
+`func (o *UnibeeApiMerchantDiscountNewReq) SetPlanApplyType(v int32)`
+
+SetPlanApplyType sets PlanApplyType field to given value.
+
+### HasPlanApplyType
+
+`func (o *UnibeeApiMerchantDiscountNewReq) HasPlanApplyType() bool`
+
+HasPlanApplyType returns a boolean if a field has been set.
+
 ### GetPlanIds
 
 `func (o *UnibeeApiMerchantDiscountNewReq) GetPlanIds() []int64`
@@ -291,25 +348,150 @@ SetPlanIds sets PlanIds field to given value.
 
 HasPlanIds returns a boolean if a field has been set.
 
+### GetQuantity
+
+`func (o *UnibeeApiMerchantDiscountNewReq) GetQuantity() int32`
+
+GetQuantity returns the Quantity field if non-nil, zero value otherwise.
+
+### GetQuantityOk
+
+`func (o *UnibeeApiMerchantDiscountNewReq) GetQuantityOk() (*int32, bool)`
+
+GetQuantityOk returns a tuple with the Quantity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuantity
+
+`func (o *UnibeeApiMerchantDiscountNewReq) SetQuantity(v int32)`
+
+SetQuantity sets Quantity field to given value.
+
+### HasQuantity
+
+`func (o *UnibeeApiMerchantDiscountNewReq) HasQuantity() bool`
+
+HasQuantity returns a boolean if a field has been set.
+
 ### GetStartTime
 
-`func (o *UnibeeApiMerchantDiscountNewReq) GetStartTime() int64`
+`func (o *UnibeeApiMerchantDiscountNewReq) GetStartTime() int32`
 
 GetStartTime returns the StartTime field if non-nil, zero value otherwise.
 
 ### GetStartTimeOk
 
-`func (o *UnibeeApiMerchantDiscountNewReq) GetStartTimeOk() (*int64, bool)`
+`func (o *UnibeeApiMerchantDiscountNewReq) GetStartTimeOk() (*int32, bool)`
 
 GetStartTimeOk returns a tuple with the StartTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStartTime
 
-`func (o *UnibeeApiMerchantDiscountNewReq) SetStartTime(v int64)`
+`func (o *UnibeeApiMerchantDiscountNewReq) SetStartTime(v int32)`
 
 SetStartTime sets StartTime field to given value.
 
+
+### GetUpgradeLongPlanOnly
+
+`func (o *UnibeeApiMerchantDiscountNewReq) GetUpgradeLongPlanOnly() bool`
+
+GetUpgradeLongPlanOnly returns the UpgradeLongPlanOnly field if non-nil, zero value otherwise.
+
+### GetUpgradeLongPlanOnlyOk
+
+`func (o *UnibeeApiMerchantDiscountNewReq) GetUpgradeLongPlanOnlyOk() (*bool, bool)`
+
+GetUpgradeLongPlanOnlyOk returns a tuple with the UpgradeLongPlanOnly field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpgradeLongPlanOnly
+
+`func (o *UnibeeApiMerchantDiscountNewReq) SetUpgradeLongPlanOnly(v bool)`
+
+SetUpgradeLongPlanOnly sets UpgradeLongPlanOnly field to given value.
+
+### HasUpgradeLongPlanOnly
+
+`func (o *UnibeeApiMerchantDiscountNewReq) HasUpgradeLongPlanOnly() bool`
+
+HasUpgradeLongPlanOnly returns a boolean if a field has been set.
+
+### GetUpgradeOnly
+
+`func (o *UnibeeApiMerchantDiscountNewReq) GetUpgradeOnly() bool`
+
+GetUpgradeOnly returns the UpgradeOnly field if non-nil, zero value otherwise.
+
+### GetUpgradeOnlyOk
+
+`func (o *UnibeeApiMerchantDiscountNewReq) GetUpgradeOnlyOk() (*bool, bool)`
+
+GetUpgradeOnlyOk returns a tuple with the UpgradeOnly field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpgradeOnly
+
+`func (o *UnibeeApiMerchantDiscountNewReq) SetUpgradeOnly(v bool)`
+
+SetUpgradeOnly sets UpgradeOnly field to given value.
+
+### HasUpgradeOnly
+
+`func (o *UnibeeApiMerchantDiscountNewReq) HasUpgradeOnly() bool`
+
+HasUpgradeOnly returns a boolean if a field has been set.
+
+### GetUserLimit
+
+`func (o *UnibeeApiMerchantDiscountNewReq) GetUserLimit() int32`
+
+GetUserLimit returns the UserLimit field if non-nil, zero value otherwise.
+
+### GetUserLimitOk
+
+`func (o *UnibeeApiMerchantDiscountNewReq) GetUserLimitOk() (*int32, bool)`
+
+GetUserLimitOk returns a tuple with the UserLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserLimit
+
+`func (o *UnibeeApiMerchantDiscountNewReq) SetUserLimit(v int32)`
+
+SetUserLimit sets UserLimit field to given value.
+
+### HasUserLimit
+
+`func (o *UnibeeApiMerchantDiscountNewReq) HasUserLimit() bool`
+
+HasUserLimit returns a boolean if a field has been set.
+
+### GetUserScope
+
+`func (o *UnibeeApiMerchantDiscountNewReq) GetUserScope() int32`
+
+GetUserScope returns the UserScope field if non-nil, zero value otherwise.
+
+### GetUserScopeOk
+
+`func (o *UnibeeApiMerchantDiscountNewReq) GetUserScopeOk() (*int32, bool)`
+
+GetUserScopeOk returns a tuple with the UserScope field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserScope
+
+`func (o *UnibeeApiMerchantDiscountNewReq) SetUserScope(v int32)`
+
+SetUserScope sets UserScope field to given value.
+
+### HasUserScope
+
+`func (o *UnibeeApiMerchantDiscountNewReq) HasUserScope() bool`
+
+HasUserScope returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -4,7 +4,7 @@ All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SessionNewSessionPost**](Session.md#SessionNewSessionPost) | **Post** /merchant/session/new_session | NewSession
+[**SessionNewSessionPost**](Session.md#SessionNewSessionPost) | **Post** /merchant/session/new_session | New Session
 
 
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 > MerchantSessionNewSessionPost200Response SessionNewSessionPost(ctx).UnibeeApiMerchantSessionNewReq(unibeeApiMerchantSessionNewReq).Execute()
 
-NewSession
+New Session
 
 
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

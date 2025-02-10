@@ -4,9 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ApplyPromoCredit** | Pointer to **bool** | apply promo credit or not | [optional] 
 **Currency** | Pointer to **string** |  | [optional] 
 **Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCode**](UnibeeApiBeanMerchantDiscountCode.md) |  | [optional] 
 **DiscountAmount** | Pointer to **int64** |  | [optional] 
+**DiscountMessage** | Pointer to **string** |  | [optional] 
 **Invoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
 **NextPeriodInvoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
 **OriginAmount** | Pointer to **int64** |  | [optional] 
@@ -31,6 +33,31 @@ will change when the set of required properties is changed
 NewMerchantSubscriptionUpdatePreviewPost200ResponseDataWithDefaults instantiates a new MerchantSubscriptionUpdatePreviewPost200ResponseData object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetApplyPromoCredit
+
+`func (o *MerchantSubscriptionUpdatePreviewPost200ResponseData) GetApplyPromoCredit() bool`
+
+GetApplyPromoCredit returns the ApplyPromoCredit field if non-nil, zero value otherwise.
+
+### GetApplyPromoCreditOk
+
+`func (o *MerchantSubscriptionUpdatePreviewPost200ResponseData) GetApplyPromoCreditOk() (*bool, bool)`
+
+GetApplyPromoCreditOk returns a tuple with the ApplyPromoCredit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplyPromoCredit
+
+`func (o *MerchantSubscriptionUpdatePreviewPost200ResponseData) SetApplyPromoCredit(v bool)`
+
+SetApplyPromoCredit sets ApplyPromoCredit field to given value.
+
+### HasApplyPromoCredit
+
+`func (o *MerchantSubscriptionUpdatePreviewPost200ResponseData) HasApplyPromoCredit() bool`
+
+HasApplyPromoCredit returns a boolean if a field has been set.
 
 ### GetCurrency
 
@@ -106,6 +133,31 @@ SetDiscountAmount sets DiscountAmount field to given value.
 `func (o *MerchantSubscriptionUpdatePreviewPost200ResponseData) HasDiscountAmount() bool`
 
 HasDiscountAmount returns a boolean if a field has been set.
+
+### GetDiscountMessage
+
+`func (o *MerchantSubscriptionUpdatePreviewPost200ResponseData) GetDiscountMessage() string`
+
+GetDiscountMessage returns the DiscountMessage field if non-nil, zero value otherwise.
+
+### GetDiscountMessageOk
+
+`func (o *MerchantSubscriptionUpdatePreviewPost200ResponseData) GetDiscountMessageOk() (*string, bool)`
+
+GetDiscountMessageOk returns a tuple with the DiscountMessage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscountMessage
+
+`func (o *MerchantSubscriptionUpdatePreviewPost200ResponseData) SetDiscountMessage(v string)`
+
+SetDiscountMessage sets DiscountMessage field to given value.
+
+### HasDiscountMessage
+
+`func (o *MerchantSubscriptionUpdatePreviewPost200ResponseData) HasDiscountMessage() bool`
+
+HasDiscountMessage returns a boolean if a field has been set.
 
 ### GetInvoice
 

@@ -4,23 +4,23 @@ All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**InvoiceCancelPost**](Invoice.md#InvoiceCancelPost) | **Post** /merchant/invoice/cancel | Admin Cancel Invoice Of Processing Status
-[**InvoiceDeletePost**](Invoice.md#InvoiceDeletePost) | **Post** /merchant/invoice/delete | DeletePendingInvoice
-[**InvoiceDetailGet**](Invoice.md#InvoiceDetailGet) | **Get** /merchant/invoice/detail | InvoiceDetail
-[**InvoiceDetailPost**](Invoice.md#InvoiceDetailPost) | **Post** /merchant/invoice/detail | InvoiceDetail
-[**InvoiceEditPost**](Invoice.md#InvoiceEditPost) | **Post** /merchant/invoice/edit | InvoiceEdit
-[**InvoiceFinishPost**](Invoice.md#InvoiceFinishPost) | **Post** /merchant/invoice/finish | FinishInvoice
-[**InvoiceListGet**](Invoice.md#InvoiceListGet) | **Get** /merchant/invoice/list | InvoiceList
-[**InvoiceListPost**](Invoice.md#InvoiceListPost) | **Post** /merchant/invoice/list | InvoiceList
-[**InvoiceMarkRefundPost**](Invoice.md#InvoiceMarkRefundPost) | **Post** /merchant/invoice/mark_refund | MarkInvoiceRefund
-[**InvoiceMarkRefundSuccessPost**](Invoice.md#InvoiceMarkRefundSuccessPost) | **Post** /merchant/invoice/mark_refund_success | MarkInvoiceRefundSuccess
-[**InvoiceMarkWireTransferSuccessPost**](Invoice.md#InvoiceMarkWireTransferSuccessPost) | **Post** /merchant/invoice/mark_wire_transfer_success | MarkWireTransferInvoiceSuccess
-[**InvoiceNewPost**](Invoice.md#InvoiceNewPost) | **Post** /merchant/invoice/new | NewInvoice
-[**InvoicePdfGeneratePost**](Invoice.md#InvoicePdfGeneratePost) | **Post** /merchant/invoice/pdf_generate | GenerateInvoicePDF
-[**InvoicePdfUpdatePost**](Invoice.md#InvoicePdfUpdatePost) | **Post** /merchant/invoice/pdf_update | UpdateInvoicePDF
-[**InvoiceReconvertCryptoAndSendEmailPost**](Invoice.md#InvoiceReconvertCryptoAndSendEmailPost) | **Post** /merchant/invoice/reconvert_crypto_and_send_email | Admin Reconvert Crypto Data and Send Invoice Email to User
-[**InvoiceRefundPost**](Invoice.md#InvoiceRefundPost) | **Post** /merchant/invoice/refund | CreateInvoiceRefund
-[**InvoiceSendEmailPost**](Invoice.md#InvoiceSendEmailPost) | **Post** /merchant/invoice/send_email | SendInvoiceEmail
+[**InvoiceCancelPost**](Invoice.md#InvoiceCancelPost) | **Post** /merchant/invoice/cancel | Admin Cancel Invoice
+[**InvoiceDeletePost**](Invoice.md#InvoiceDeletePost) | **Post** /merchant/invoice/delete | Delete Pending Invoice
+[**InvoiceDetailGet**](Invoice.md#InvoiceDetailGet) | **Get** /merchant/invoice/detail | Invoice Detail
+[**InvoiceDetailPost**](Invoice.md#InvoiceDetailPost) | **Post** /merchant/invoice/detail | Invoice Detail
+[**InvoiceEditPost**](Invoice.md#InvoiceEditPost) | **Post** /merchant/invoice/edit | Invoice Edit
+[**InvoiceFinishPost**](Invoice.md#InvoiceFinishPost) | **Post** /merchant/invoice/finish | Finish Invoice
+[**InvoiceListGet**](Invoice.md#InvoiceListGet) | **Get** /merchant/invoice/list | Get Invoice List
+[**InvoiceListPost**](Invoice.md#InvoiceListPost) | **Post** /merchant/invoice/list | Get Invoice List
+[**InvoiceMarkRefundPost**](Invoice.md#InvoiceMarkRefundPost) | **Post** /merchant/invoice/mark_refund | Mark Invoice Refund
+[**InvoiceMarkRefundSuccessPost**](Invoice.md#InvoiceMarkRefundSuccessPost) | **Post** /merchant/invoice/mark_refund_success | Mark Invoice Refund As Success
+[**InvoiceMarkWireTransferSuccessPost**](Invoice.md#InvoiceMarkWireTransferSuccessPost) | **Post** /merchant/invoice/mark_wire_transfer_success | Mark Wire Transfer Invoice As Success
+[**InvoiceNewPost**](Invoice.md#InvoiceNewPost) | **Post** /merchant/invoice/new | New Invoice
+[**InvoicePdfGeneratePost**](Invoice.md#InvoicePdfGeneratePost) | **Post** /merchant/invoice/pdf_generate | Generate Invoice PDF
+[**InvoicePdfUpdatePost**](Invoice.md#InvoicePdfUpdatePost) | **Post** /merchant/invoice/pdf_update | Update Invoice PDF
+[**InvoiceReconvertCryptoAndSendEmailPost**](Invoice.md#InvoiceReconvertCryptoAndSendEmailPost) | **Post** /merchant/invoice/reconvert_crypto_and_send_email | Admin Reconvert Crypto Data and Send Invoice Email
+[**InvoiceRefundPost**](Invoice.md#InvoiceRefundPost) | **Post** /merchant/invoice/refund | Create InvoiceRefund
+[**InvoiceSendEmailPost**](Invoice.md#InvoiceSendEmailPost) | **Post** /merchant/invoice/send_email | Send Invoice Email
 
 
 
@@ -28,7 +28,7 @@ Method | HTTP request | Description
 
 > MerchantAuthSsoLoginOTPPost200Response InvoiceCancelPost(ctx).UnibeeApiMerchantInvoiceCancelReq(unibeeApiMerchantInvoiceCancelReq).Execute()
 
-Admin Cancel Invoice Of Processing Status
+Admin Cancel Invoice
 
 ### Example
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -92,7 +92,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response InvoiceDeletePost(ctx).UnibeeApiMerchantInvoiceDeleteReq(unibeeApiMerchantInvoiceDeleteReq).Execute()
 
-DeletePendingInvoice
+Delete Pending Invoice
 
 
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -158,7 +158,7 @@ No authorization required
 
 > MerchantInvoiceDetailGet200Response InvoiceDetailGet(ctx).InvoiceId(invoiceId).Execute()
 
-InvoiceDetail
+Invoice Detail
 
 
 
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -224,7 +224,7 @@ No authorization required
 
 > MerchantInvoiceDetailGet200Response InvoiceDetailPost(ctx).UnibeeApiMerchantInvoiceDetailReq(unibeeApiMerchantInvoiceDetailReq).Execute()
 
-InvoiceDetail
+Invoice Detail
 
 
 
@@ -274,7 +274,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -290,7 +290,7 @@ No authorization required
 
 > MerchantInvoiceEditPost200Response InvoiceEditPost(ctx).UnibeeApiMerchantInvoiceEditReq(unibeeApiMerchantInvoiceEditReq).Execute()
 
-InvoiceEdit
+Invoice Edit
 
 
 
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -356,7 +356,7 @@ No authorization required
 
 > MerchantInvoiceFinishPost200Response InvoiceFinishPost(ctx).UnibeeApiMerchantInvoiceFinishReq(unibeeApiMerchantInvoiceFinishReq).Execute()
 
-FinishInvoice
+Finish Invoice
 
 
 
@@ -406,7 +406,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -422,7 +422,7 @@ No authorization required
 
 > MerchantInvoiceListGet200Response InvoiceListGet(ctx).FirstName(firstName).LastName(lastName).Currency(currency).Status(status).AmountStart(amountStart).AmountEnd(amountEnd).UserId(userId).SendEmail(sendEmail).SortField(sortField).SortType(sortType).DeleteInclude(deleteInclude).Type_(type_).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).ReportTimeStart(reportTimeStart).ReportTimeEnd(reportTimeEnd).Execute()
 
-InvoiceList
+Get Invoice List
 
 
 
@@ -506,7 +506,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -522,7 +522,7 @@ No authorization required
 
 > MerchantInvoiceListGet200Response InvoiceListPost(ctx).UnibeeApiMerchantInvoiceListReq(unibeeApiMerchantInvoiceListReq).Execute()
 
-InvoiceList
+Get Invoice List
 
 
 
@@ -572,7 +572,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -588,7 +588,7 @@ No authorization required
 
 > MerchantInvoiceMarkRefundPost200Response InvoiceMarkRefundPost(ctx).UnibeeApiMerchantInvoiceMarkRefundReq(unibeeApiMerchantInvoiceMarkRefundReq).Execute()
 
-MarkInvoiceRefund
+Mark Invoice Refund
 
 
 
@@ -638,7 +638,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -654,7 +654,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response InvoiceMarkRefundSuccessPost(ctx).UnibeeApiMerchantInvoiceMarkRefundInvoiceSuccessReq(unibeeApiMerchantInvoiceMarkRefundInvoiceSuccessReq).Execute()
 
-MarkInvoiceRefundSuccess
+Mark Invoice Refund As Success
 
 
 
@@ -704,7 +704,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -720,7 +720,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response InvoiceMarkWireTransferSuccessPost(ctx).UnibeeApiMerchantInvoiceMarkWireTransferSuccessReq(unibeeApiMerchantInvoiceMarkWireTransferSuccessReq).Execute()
 
-MarkWireTransferInvoiceSuccess
+Mark Wire Transfer Invoice As Success
 
 
 
@@ -770,7 +770,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -786,7 +786,7 @@ No authorization required
 
 > MerchantInvoiceEditPost200Response InvoiceNewPost(ctx).UnibeeApiMerchantInvoiceNewReq(unibeeApiMerchantInvoiceNewReq).Execute()
 
-NewInvoice
+New Invoice
 
 ### Example
 
@@ -834,7 +834,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -850,7 +850,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response InvoicePdfGeneratePost(ctx).UnibeeApiMerchantInvoicePdfGenerateReq(unibeeApiMerchantInvoicePdfGenerateReq).Execute()
 
-GenerateInvoicePDF
+Generate Invoice PDF
 
 ### Example
 
@@ -898,7 +898,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -914,7 +914,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response InvoicePdfUpdatePost(ctx).UnibeeApiMerchantInvoicePdfUpdateReq(unibeeApiMerchantInvoicePdfUpdateReq).Execute()
 
-UpdateInvoicePDF
+Update Invoice PDF
 
 ### Example
 
@@ -962,7 +962,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -978,7 +978,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response InvoiceReconvertCryptoAndSendEmailPost(ctx).UnibeeApiMerchantInvoiceReconvertCryptoAndSendReq(unibeeApiMerchantInvoiceReconvertCryptoAndSendReq).Execute()
 
-Admin Reconvert Crypto Data and Send Invoice Email to User
+Admin Reconvert Crypto Data and Send Invoice Email
 
 ### Example
 
@@ -1026,7 +1026,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1042,7 +1042,7 @@ No authorization required
 
 > MerchantInvoiceMarkRefundPost200Response InvoiceRefundPost(ctx).UnibeeApiMerchantInvoiceRefundReq(unibeeApiMerchantInvoiceRefundReq).Execute()
 
-CreateInvoiceRefund
+Create InvoiceRefund
 
 
 
@@ -1092,7 +1092,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1108,7 +1108,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response InvoiceSendEmailPost(ctx).UnibeeApiMerchantInvoiceSendEmailReq(unibeeApiMerchantInvoiceSendEmailReq).Execute()
 
-SendInvoiceEmail
+Send Invoice Email
 
 ### Example
 
@@ -1156,7 +1156,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

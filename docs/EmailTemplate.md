@@ -4,12 +4,12 @@ All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**EmailCustomLocalizationTemplateSyncPost**](EmailTemplate.md#EmailCustomLocalizationTemplateSyncPost) | **Post** /merchant/email/custom_localization_template_sync | CustomizeLocalizationTemplateSync
-[**EmailTemplateActivatePost**](EmailTemplate.md#EmailTemplateActivatePost) | **Post** /merchant/email/template_activate | EmailTemplateActivate
-[**EmailTemplateDeactivatePost**](EmailTemplate.md#EmailTemplateDeactivatePost) | **Post** /merchant/email/template_deactivate | EmailTemplateDeactivate
-[**EmailTemplateListGet**](EmailTemplate.md#EmailTemplateListGet) | **Get** /merchant/email/template_list | EmailTemplateList
-[**EmailTemplateSetDefaultPost**](EmailTemplate.md#EmailTemplateSetDefaultPost) | **Post** /merchant/email/template_set_default | EmailTemplateSetDefault
-[**EmailTemplateUpdatePost**](EmailTemplate.md#EmailTemplateUpdatePost) | **Post** /merchant/email/template_update | EmailTemplateUpdate
+[**EmailCustomLocalizationTemplateSyncPost**](EmailTemplate.md#EmailCustomLocalizationTemplateSyncPost) | **Post** /merchant/email/custom_localization_template_sync | Customize Localization Template Sync
+[**EmailTemplateActivatePost**](EmailTemplate.md#EmailTemplateActivatePost) | **Post** /merchant/email/template_activate | Email Template Activate
+[**EmailTemplateDeactivatePost**](EmailTemplate.md#EmailTemplateDeactivatePost) | **Post** /merchant/email/template_deactivate | Email Template Deactivate
+[**EmailTemplateListGet**](EmailTemplate.md#EmailTemplateListGet) | **Get** /merchant/email/template_list | Get Email Template List
+[**EmailTemplateSetDefaultPost**](EmailTemplate.md#EmailTemplateSetDefaultPost) | **Post** /merchant/email/template_set_default | Setup Email Template Default
+[**EmailTemplateUpdatePost**](EmailTemplate.md#EmailTemplateUpdatePost) | **Post** /merchant/email/template_update | Email Template Update
 
 
 
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 > MerchantAuthSsoLoginOTPPost200Response EmailCustomLocalizationTemplateSyncPost(ctx).UnibeeApiMerchantEmailCustomizeLocalizationTemplateSyncReq(unibeeApiMerchantEmailCustomizeLocalizationTemplateSyncReq).Execute()
 
-CustomizeLocalizationTemplateSync
+Customize Localization Template Sync
 
 
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -83,7 +83,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response EmailTemplateActivatePost(ctx).UnibeeApiMerchantEmailTemplateActivateReq(unibeeApiMerchantEmailTemplateActivateReq).Execute()
 
-EmailTemplateActivate
+Email Template Activate
 
 
 
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -149,7 +149,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response EmailTemplateDeactivatePost(ctx).UnibeeApiMerchantEmailTemplateDeactivateReq(unibeeApiMerchantEmailTemplateDeactivateReq).Execute()
 
-EmailTemplateDeactivate
+Email Template Deactivate
 
 
 
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -215,7 +215,7 @@ No authorization required
 
 > MerchantEmailTemplateListGet200Response EmailTemplateListGet(ctx).Execute()
 
-EmailTemplateList
+Get Email Template List
 
 ### Example
 
@@ -258,7 +258,7 @@ Other parameters are passed through a pointer to a apiEmailTemplateListGetReques
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -274,7 +274,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response EmailTemplateSetDefaultPost(ctx).UnibeeApiMerchantEmailTemplateSetDefaultReq(unibeeApiMerchantEmailTemplateSetDefaultReq).Execute()
 
-EmailTemplateSetDefault
+Setup Email Template Default
 
 
 
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -340,7 +340,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response EmailTemplateUpdatePost(ctx).UnibeeApiMerchantEmailTemplateUpdateReq(unibeeApiMerchantEmailTemplateUpdateReq).Execute()
 
-EmailTemplateUpdate
+Email Template Update
 
 
 
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

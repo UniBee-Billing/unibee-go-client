@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ApplyPromoCredit** | Pointer to **bool** | apply promo credit or not | [optional] 
+**ApplyPromoCreditAmount** | Pointer to **int32** | apply promo credit amount, auto compute if not specified | [optional] 
 **CancelUrl** | Pointer to **string** | CancelUrl | [optional] 
 **Discount** | Pointer to [**UnibeeApiBeanExternalDiscountParam**](UnibeeApiBeanExternalDiscountParam.md) |  | [optional] 
 **DiscountCode** | Pointer to **string** | DiscountCode, override subscription discount | [optional] 
@@ -35,6 +37,56 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantSubscriptionRenewReqWithDefaults instantiates a new UnibeeApiMerchantSubscriptionRenewReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetApplyPromoCredit
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) GetApplyPromoCredit() bool`
+
+GetApplyPromoCredit returns the ApplyPromoCredit field if non-nil, zero value otherwise.
+
+### GetApplyPromoCreditOk
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) GetApplyPromoCreditOk() (*bool, bool)`
+
+GetApplyPromoCreditOk returns a tuple with the ApplyPromoCredit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplyPromoCredit
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) SetApplyPromoCredit(v bool)`
+
+SetApplyPromoCredit sets ApplyPromoCredit field to given value.
+
+### HasApplyPromoCredit
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) HasApplyPromoCredit() bool`
+
+HasApplyPromoCredit returns a boolean if a field has been set.
+
+### GetApplyPromoCreditAmount
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) GetApplyPromoCreditAmount() int32`
+
+GetApplyPromoCreditAmount returns the ApplyPromoCreditAmount field if non-nil, zero value otherwise.
+
+### GetApplyPromoCreditAmountOk
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) GetApplyPromoCreditAmountOk() (*int32, bool)`
+
+GetApplyPromoCreditAmountOk returns a tuple with the ApplyPromoCreditAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplyPromoCreditAmount
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) SetApplyPromoCreditAmount(v int32)`
+
+SetApplyPromoCreditAmount sets ApplyPromoCreditAmount field to given value.
+
+### HasApplyPromoCreditAmount
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) HasApplyPromoCreditAmount() bool`
+
+HasApplyPromoCreditAmount returns a boolean if a field has been set.
 
 ### GetCancelUrl
 

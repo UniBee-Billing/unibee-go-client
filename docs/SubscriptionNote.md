@@ -4,9 +4,9 @@ All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SubscriptionAdminNoteListGet**](SubscriptionNote.md#SubscriptionAdminNoteListGet) | **Get** /merchant/subscription/admin_note_list | SubscriptionNoteList
-[**SubscriptionAdminNoteListPost**](SubscriptionNote.md#SubscriptionAdminNoteListPost) | **Post** /merchant/subscription/admin_note_list | SubscriptionNoteList
-[**SubscriptionNewAdminNotePost**](SubscriptionNote.md#SubscriptionNewAdminNotePost) | **Post** /merchant/subscription/new_admin_note | NewSubscriptionNote
+[**SubscriptionAdminNoteListGet**](SubscriptionNote.md#SubscriptionAdminNoteListGet) | **Get** /merchant/subscription/admin_note_list | Get Subscription Note List
+[**SubscriptionAdminNoteListPost**](SubscriptionNote.md#SubscriptionAdminNoteListPost) | **Post** /merchant/subscription/admin_note_list | Get Subscription Note List
+[**SubscriptionNewAdminNotePost**](SubscriptionNote.md#SubscriptionNewAdminNotePost) | **Post** /merchant/subscription/new_admin_note | New Subscription Note
 
 
 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 > MerchantSubscriptionAdminNoteListGet200Response SubscriptionAdminNoteListGet(ctx).SubscriptionId(subscriptionId).Page(page).Count(count).Execute()
 
-SubscriptionNoteList
+Get Subscription Note List
 
 ### Example
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -82,7 +82,7 @@ No authorization required
 
 > MerchantSubscriptionAdminNoteListGet200Response SubscriptionAdminNoteListPost(ctx).UnibeeApiMerchantSubscriptionAdminNoteListReq(unibeeApiMerchantSubscriptionAdminNoteListReq).Execute()
 
-SubscriptionNoteList
+Get Subscription Note List
 
 ### Example
 
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -146,7 +146,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response SubscriptionNewAdminNotePost(ctx).UnibeeApiMerchantSubscriptionNewAdminNoteReq(unibeeApiMerchantSubscriptionNewAdminNoteReq).Execute()
 
-NewSubscriptionNote
+New Subscription Note
 
 ### Example
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

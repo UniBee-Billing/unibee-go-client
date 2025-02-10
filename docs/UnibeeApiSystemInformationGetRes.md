@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BuildVersion** | Pointer to **string** | System Build Version | [optional] 
 **Env** | Pointer to **string** | System Env, em: daily|stage|local|prod | [optional] 
-**Gateway** | Pointer to [**[]UnibeeApiBeanGateway**](UnibeeApiBeanGateway.md) | Support Currency List | [optional] 
+**Gateway** | Pointer to [**[]UnibeeApiBeanDetailGateway**](UnibeeApiBeanDetailGateway.md) | Support Currency List | [optional] 
 **IsProd** | Pointer to **bool** | Check System Env Is Prod, true|false | [optional] 
 **Mode** | Pointer to **string** | System Mode | [optional] 
 **SupportCurrency** | Pointer to [**[]UnibeeApiBeanCurrency**](UnibeeApiBeanCurrency.md) | Support Currency List | [optional] 
@@ -83,20 +83,20 @@ HasEnv returns a boolean if a field has been set.
 
 ### GetGateway
 
-`func (o *UnibeeApiSystemInformationGetRes) GetGateway() []UnibeeApiBeanGateway`
+`func (o *UnibeeApiSystemInformationGetRes) GetGateway() []UnibeeApiBeanDetailGateway`
 
 GetGateway returns the Gateway field if non-nil, zero value otherwise.
 
 ### GetGatewayOk
 
-`func (o *UnibeeApiSystemInformationGetRes) GetGatewayOk() (*[]UnibeeApiBeanGateway, bool)`
+`func (o *UnibeeApiSystemInformationGetRes) GetGatewayOk() (*[]UnibeeApiBeanDetailGateway, bool)`
 
 GetGatewayOk returns a tuple with the Gateway field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGateway
 
-`func (o *UnibeeApiSystemInformationGetRes) SetGateway(v []UnibeeApiBeanGateway)`
+`func (o *UnibeeApiSystemInformationGetRes) SetGateway(v []UnibeeApiBeanDetailGateway)`
 
 SetGateway sets Gateway field to given value.
 

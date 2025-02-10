@@ -4,9 +4,9 @@ All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**EmailEmailSenderSetupPost**](Email.md#EmailEmailSenderSetupPost) | **Post** /merchant/email/email_sender_setup | EmailSenderSetup
-[**EmailGatewaySetupPost**](Email.md#EmailGatewaySetupPost) | **Post** /merchant/email/gateway_setup | EmailGatewaySetup
-[**EmailSendTemplateEmailToUserPost**](Email.md#EmailSendTemplateEmailToUserPost) | **Post** /merchant/email/send_template_email_to_user | SendTemplateEmailToUser
+[**EmailEmailSenderSetupPost**](Email.md#EmailEmailSenderSetupPost) | **Post** /merchant/email/email_sender_setup | Email Sender Setup
+[**EmailGatewaySetupPost**](Email.md#EmailGatewaySetupPost) | **Post** /merchant/email/gateway_setup | Email Gateway Setup
+[**EmailSendTemplateEmailToUserPost**](Email.md#EmailSendTemplateEmailToUserPost) | **Post** /merchant/email/send_template_email_to_user | Send Template Email To User
 
 
 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 > MerchantAuthSsoLoginOTPPost200Response EmailEmailSenderSetupPost(ctx).UnibeeApiMerchantEmailSenderSetupReq(unibeeApiMerchantEmailSenderSetupReq).Execute()
 
-EmailSenderSetup
+Email Sender Setup
 
 ### Example
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -76,9 +76,9 @@ No authorization required
 
 ## EmailGatewaySetupPost
 
-> MerchantAuthSsoLoginOTPPost200Response EmailGatewaySetupPost(ctx).UnibeeApiMerchantEmailGatewaySetupReq(unibeeApiMerchantEmailGatewaySetupReq).Execute()
+> MerchantEmailGatewaySetupPost200Response EmailGatewaySetupPost(ctx).UnibeeApiMerchantEmailGatewaySetupReq(unibeeApiMerchantEmailGatewaySetupReq).Execute()
 
-EmailGatewaySetup
+Email Gateway Setup
 
 ### Example
 
@@ -102,7 +102,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Email.EmailGatewaySetupPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `EmailGatewaySetupPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `EmailGatewaySetupPost`: MerchantEmailGatewaySetupPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Email.EmailGatewaySetupPost`: %v\n", resp)
 }
 ```
@@ -122,11 +122,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantEmailGatewaySetupPost200Response**](MerchantEmailGatewaySetupPost200Response.md)
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -142,7 +142,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response EmailSendTemplateEmailToUserPost(ctx).UnibeeApiMerchantEmailSendTemplateEmailToUserReq(unibeeApiMerchantEmailSendTemplateEmailToUserReq).Execute()
 
-SendTemplateEmailToUser
+Send Template Email To User
 
 ### Example
 
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

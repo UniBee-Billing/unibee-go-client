@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **MerchantId** | Pointer to **int64** | merchantId | [optional] 
 **PaymentId** | Pointer to **string** | payment_id | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
+**Recurring** | Pointer to **int32** | is recurring apply, 0-no, 1-yes | [optional] 
+**Status** | Pointer to **int32** | status, 1-finished, 2-rollback | [optional] 
 **SubscriptionId** | Pointer to **string** | subscription_id | [optional] 
 **User** | Pointer to [**UnibeeApiBeanUserAccount**](UnibeeApiBeanUserAccount.md) |  | [optional] 
 
@@ -259,6 +261,56 @@ SetPlan sets Plan field to given value.
 `func (o *UnibeeApiBeanDetailMerchantUserDiscountCodeDetail) HasPlan() bool`
 
 HasPlan returns a boolean if a field has been set.
+
+### GetRecurring
+
+`func (o *UnibeeApiBeanDetailMerchantUserDiscountCodeDetail) GetRecurring() int32`
+
+GetRecurring returns the Recurring field if non-nil, zero value otherwise.
+
+### GetRecurringOk
+
+`func (o *UnibeeApiBeanDetailMerchantUserDiscountCodeDetail) GetRecurringOk() (*int32, bool)`
+
+GetRecurringOk returns a tuple with the Recurring field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRecurring
+
+`func (o *UnibeeApiBeanDetailMerchantUserDiscountCodeDetail) SetRecurring(v int32)`
+
+SetRecurring sets Recurring field to given value.
+
+### HasRecurring
+
+`func (o *UnibeeApiBeanDetailMerchantUserDiscountCodeDetail) HasRecurring() bool`
+
+HasRecurring returns a boolean if a field has been set.
+
+### GetStatus
+
+`func (o *UnibeeApiBeanDetailMerchantUserDiscountCodeDetail) GetStatus() int32`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *UnibeeApiBeanDetailMerchantUserDiscountCodeDetail) GetStatusOk() (*int32, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *UnibeeApiBeanDetailMerchantUserDiscountCodeDetail) SetStatus(v int32)`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *UnibeeApiBeanDetailMerchantUserDiscountCodeDetail) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 ### GetSubscriptionId
 

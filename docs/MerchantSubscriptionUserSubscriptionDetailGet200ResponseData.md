@@ -5,7 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Addons** | Pointer to [**[]UnibeeApiBeanPlanAddonDetail**](UnibeeApiBeanPlanAddonDetail.md) | Plan Addon | [optional] 
-**Gateway** | Pointer to [**UnibeeApiBeanGateway**](UnibeeApiBeanGateway.md) |  | [optional] 
+**Gateway** | Pointer to [**UnibeeApiBeanDetailGateway**](UnibeeApiBeanDetailGateway.md) |  | [optional] 
+**LatestInvoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
 **Subscription** | Pointer to [**UnibeeApiBeanSubscription**](UnibeeApiBeanSubscription.md) |  | [optional] 
 **UnfinishedSubscriptionPendingUpdate** | Pointer to [**UnibeeApiBeanDetailSubscriptionPendingUpdateDetail**](UnibeeApiBeanDetailSubscriptionPendingUpdateDetail.md) |  | [optional] 
@@ -57,20 +58,20 @@ HasAddons returns a boolean if a field has been set.
 
 ### GetGateway
 
-`func (o *MerchantSubscriptionUserSubscriptionDetailGet200ResponseData) GetGateway() UnibeeApiBeanGateway`
+`func (o *MerchantSubscriptionUserSubscriptionDetailGet200ResponseData) GetGateway() UnibeeApiBeanDetailGateway`
 
 GetGateway returns the Gateway field if non-nil, zero value otherwise.
 
 ### GetGatewayOk
 
-`func (o *MerchantSubscriptionUserSubscriptionDetailGet200ResponseData) GetGatewayOk() (*UnibeeApiBeanGateway, bool)`
+`func (o *MerchantSubscriptionUserSubscriptionDetailGet200ResponseData) GetGatewayOk() (*UnibeeApiBeanDetailGateway, bool)`
 
 GetGatewayOk returns a tuple with the Gateway field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGateway
 
-`func (o *MerchantSubscriptionUserSubscriptionDetailGet200ResponseData) SetGateway(v UnibeeApiBeanGateway)`
+`func (o *MerchantSubscriptionUserSubscriptionDetailGet200ResponseData) SetGateway(v UnibeeApiBeanDetailGateway)`
 
 SetGateway sets Gateway field to given value.
 
@@ -79,6 +80,31 @@ SetGateway sets Gateway field to given value.
 `func (o *MerchantSubscriptionUserSubscriptionDetailGet200ResponseData) HasGateway() bool`
 
 HasGateway returns a boolean if a field has been set.
+
+### GetLatestInvoice
+
+`func (o *MerchantSubscriptionUserSubscriptionDetailGet200ResponseData) GetLatestInvoice() UnibeeApiBeanInvoice`
+
+GetLatestInvoice returns the LatestInvoice field if non-nil, zero value otherwise.
+
+### GetLatestInvoiceOk
+
+`func (o *MerchantSubscriptionUserSubscriptionDetailGet200ResponseData) GetLatestInvoiceOk() (*UnibeeApiBeanInvoice, bool)`
+
+GetLatestInvoiceOk returns a tuple with the LatestInvoice field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLatestInvoice
+
+`func (o *MerchantSubscriptionUserSubscriptionDetailGet200ResponseData) SetLatestInvoice(v UnibeeApiBeanInvoice)`
+
+SetLatestInvoice sets LatestInvoice field to given value.
+
+### HasLatestInvoice
+
+`func (o *MerchantSubscriptionUserSubscriptionDetailGet200ResponseData) HasLatestInvoice() bool`
+
+HasLatestInvoice returns a boolean if a field has been set.
 
 ### GetPlan
 

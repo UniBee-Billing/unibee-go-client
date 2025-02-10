@@ -4,13 +4,13 @@ All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**WebhookDeleteEndpointPost**](Webhook.md#WebhookDeleteEndpointPost) | **Post** /merchant/webhook/delete_endpoint | DeleteWebhookEndpoint
-[**WebhookEndpointListGet**](Webhook.md#WebhookEndpointListGet) | **Get** /merchant/webhook/endpoint_list | WebhookEndpointlist
-[**WebhookEndpointLogListGet**](Webhook.md#WebhookEndpointLogListGet) | **Get** /merchant/webhook/endpoint_log_list | WebhookEndpointLogList
-[**WebhookEventListGet**](Webhook.md#WebhookEventListGet) | **Get** /merchant/webhook/event_list | WebhookEventList
-[**WebhookNewEndpointPost**](Webhook.md#WebhookNewEndpointPost) | **Post** /merchant/webhook/new_endpoint | NewWebhookEndpoint
-[**WebhookResendPost**](Webhook.md#WebhookResendPost) | **Post** /merchant/webhook/resend | ResentWebhook
-[**WebhookUpdateEndpointPost**](Webhook.md#WebhookUpdateEndpointPost) | **Post** /merchant/webhook/update_endpoint | UpdateWebhookEndpoint
+[**WebhookDeleteEndpointPost**](Webhook.md#WebhookDeleteEndpointPost) | **Post** /merchant/webhook/delete_endpoint | Delete Webhook Endpoint
+[**WebhookEndpointListGet**](Webhook.md#WebhookEndpointListGet) | **Get** /merchant/webhook/endpoint_list | Get Webhook Endpoint list
+[**WebhookEndpointLogListGet**](Webhook.md#WebhookEndpointLogListGet) | **Get** /merchant/webhook/endpoint_log_list | Get Webhook Endpoint Log List
+[**WebhookEventListGet**](Webhook.md#WebhookEventListGet) | **Get** /merchant/webhook/event_list | Webhook Event List
+[**WebhookNewEndpointPost**](Webhook.md#WebhookNewEndpointPost) | **Post** /merchant/webhook/new_endpoint | New Webhook Endpoint
+[**WebhookResendPost**](Webhook.md#WebhookResendPost) | **Post** /merchant/webhook/resend | Resent Webhook
+[**WebhookUpdateEndpointPost**](Webhook.md#WebhookUpdateEndpointPost) | **Post** /merchant/webhook/update_endpoint | Update Webhook Endpoint
 
 
 
@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 > MerchantAuthSsoLoginOTPPost200Response WebhookDeleteEndpointPost(ctx).UnibeeApiMerchantWebhookDeleteEndpointReq(unibeeApiMerchantWebhookDeleteEndpointReq).Execute()
 
-DeleteWebhookEndpoint
+Delete Webhook Endpoint
 
 ### Example
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -82,7 +82,7 @@ No authorization required
 
 > MerchantWebhookEndpointListGet200Response WebhookEndpointListGet(ctx).Execute()
 
-WebhookEndpointlist
+Get Webhook Endpoint list
 
 ### Example
 
@@ -125,7 +125,7 @@ Other parameters are passed through a pointer to a apiWebhookEndpointListGetRequ
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -141,7 +141,7 @@ No authorization required
 
 > MerchantWebhookEndpointLogListGet200Response WebhookEndpointLogListGet(ctx).EndpointId(endpointId).Page(page).Count(count).Execute()
 
-WebhookEndpointLogList
+Get Webhook Endpoint Log List
 
 ### Example
 
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -209,7 +209,7 @@ No authorization required
 
 > MerchantWebhookEventListGet200Response WebhookEventListGet(ctx).Execute()
 
-WebhookEventList
+Webhook Event List
 
 ### Example
 
@@ -252,7 +252,7 @@ Other parameters are passed through a pointer to a apiWebhookEventListGetRequest
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -268,7 +268,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response WebhookNewEndpointPost(ctx).UnibeeApiMerchantWebhookNewEndpointReq(unibeeApiMerchantWebhookNewEndpointReq).Execute()
 
-NewWebhookEndpoint
+New Webhook Endpoint
 
 ### Example
 
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -332,7 +332,7 @@ No authorization required
 
 > MerchantWebhookResendPost200Response WebhookResendPost(ctx).UnibeeApiMerchantWebhookResendWebhookReq(unibeeApiMerchantWebhookResendWebhookReq).Execute()
 
-ResentWebhook
+Resent Webhook
 
 ### Example
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -396,7 +396,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response WebhookUpdateEndpointPost(ctx).UnibeeApiMerchantWebhookUpdateEndpointReq(unibeeApiMerchantWebhookUpdateEndpointReq).Execute()
 
-UpdateWebhookEndpoint
+Update Webhook Endpoint
 
 ### Example
 
@@ -444,7 +444,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AuthorizeReason** | Pointer to **string** |  | [optional] 
 **AuthorizeStatus** | Pointer to **int32** | authorize status，0-waiting authorize，1-authorized，2-authorized_request | [optional] 
+**AutoCharge** | Pointer to **bool** |  | [optional] 
 **Automatic** | Pointer to **int32** |  | [optional] 
 **BalanceAmount** | Pointer to **int64** | balance_amount | [optional] 
 **BillingReason** | Pointer to **string** |  | [optional] 
@@ -16,6 +17,7 @@ Name | Type | Description | Notes
 **ExternalPaymentId** | Pointer to **string** | external_payment_id | [optional] 
 **FailureReason** | Pointer to **string** |  | [optional] 
 **GasPayer** | Pointer to **string** | who pay the gas, merchant|user | [optional] 
+**GatewayCurrencyExchange** | Pointer to [**UnibeeApiBeanGatewayCurrencyExchange**](UnibeeApiBeanGatewayCurrencyExchange.md) |  | [optional] 
 **GatewayId** | Pointer to **int64** | gateway_id | [optional] 
 **GatewayPaymentId** | Pointer to **string** | gateway_payment_id | [optional] 
 **InvoiceId** | Pointer to **string** | invoice id | [optional] 
@@ -100,6 +102,31 @@ SetAuthorizeStatus sets AuthorizeStatus field to given value.
 `func (o *UnibeeApiBeanPayment) HasAuthorizeStatus() bool`
 
 HasAuthorizeStatus returns a boolean if a field has been set.
+
+### GetAutoCharge
+
+`func (o *UnibeeApiBeanPayment) GetAutoCharge() bool`
+
+GetAutoCharge returns the AutoCharge field if non-nil, zero value otherwise.
+
+### GetAutoChargeOk
+
+`func (o *UnibeeApiBeanPayment) GetAutoChargeOk() (*bool, bool)`
+
+GetAutoChargeOk returns a tuple with the AutoCharge field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoCharge
+
+`func (o *UnibeeApiBeanPayment) SetAutoCharge(v bool)`
+
+SetAutoCharge sets AutoCharge field to given value.
+
+### HasAutoCharge
+
+`func (o *UnibeeApiBeanPayment) HasAutoCharge() bool`
+
+HasAutoCharge returns a boolean if a field has been set.
 
 ### GetAutomatic
 
@@ -350,6 +377,31 @@ SetGasPayer sets GasPayer field to given value.
 `func (o *UnibeeApiBeanPayment) HasGasPayer() bool`
 
 HasGasPayer returns a boolean if a field has been set.
+
+### GetGatewayCurrencyExchange
+
+`func (o *UnibeeApiBeanPayment) GetGatewayCurrencyExchange() UnibeeApiBeanGatewayCurrencyExchange`
+
+GetGatewayCurrencyExchange returns the GatewayCurrencyExchange field if non-nil, zero value otherwise.
+
+### GetGatewayCurrencyExchangeOk
+
+`func (o *UnibeeApiBeanPayment) GetGatewayCurrencyExchangeOk() (*UnibeeApiBeanGatewayCurrencyExchange, bool)`
+
+GetGatewayCurrencyExchangeOk returns a tuple with the GatewayCurrencyExchange field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayCurrencyExchange
+
+`func (o *UnibeeApiBeanPayment) SetGatewayCurrencyExchange(v UnibeeApiBeanGatewayCurrencyExchange)`
+
+SetGatewayCurrencyExchange sets GatewayCurrencyExchange field to given value.
+
+### HasGatewayCurrencyExchange
+
+`func (o *UnibeeApiBeanPayment) HasGatewayCurrencyExchange() bool`
+
+HasGatewayCurrencyExchange returns a boolean if a field has been set.
 
 ### GetGatewayId
 

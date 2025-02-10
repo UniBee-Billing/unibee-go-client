@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Count** | Pointer to **int32** | Count Of Page | [optional] 
 **Page** | Pointer to **int32** | Page, Start With 0 | [optional] 
-**RoleIds** | Pointer to **[]int64** | The member&#39;s roleId if specified&#39; | [optional] 
+**RoleIds** | Pointer to **[]int64** | The member roleId if specified&#39; | [optional] 
 
 ## Methods
 

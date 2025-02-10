@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Addons** | Pointer to [**[]UnibeeApiBeanPlanAddonDetail**](UnibeeApiBeanPlanAddonDetail.md) | Addon | [optional] 
 **DayLeft** | Pointer to **int32** | DayLeft util the period end, only available for webhook | [optional] 
 **Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCode**](UnibeeApiBeanMerchantDiscountCode.md) |  | [optional] 
-**Gateway** | Pointer to [**UnibeeApiBeanGateway**](UnibeeApiBeanGateway.md) |  | [optional] 
+**Gateway** | Pointer to [**UnibeeApiBeanDetailGateway**](UnibeeApiBeanDetailGateway.md) |  | [optional] 
 **LatestInvoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
 **Subscription** | Pointer to [**UnibeeApiBeanSubscription**](UnibeeApiBeanSubscription.md) |  | [optional] 
@@ -136,20 +136,20 @@ HasDiscount returns a boolean if a field has been set.
 
 ### GetGateway
 
-`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetGateway() UnibeeApiBeanGateway`
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetGateway() UnibeeApiBeanDetailGateway`
 
 GetGateway returns the Gateway field if non-nil, zero value otherwise.
 
 ### GetGatewayOk
 
-`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetGatewayOk() (*UnibeeApiBeanGateway, bool)`
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetGatewayOk() (*UnibeeApiBeanDetailGateway, bool)`
 
 GetGatewayOk returns a tuple with the Gateway field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGateway
 
-`func (o *UnibeeApiBeanDetailSubscriptionDetail) SetGateway(v UnibeeApiBeanGateway)`
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) SetGateway(v UnibeeApiBeanDetailGateway)`
 
 SetGateway sets Gateway field to given value.
 

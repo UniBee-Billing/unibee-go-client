@@ -5,11 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Currency** | Pointer to [**[]UnibeeApiBeanCurrency**](UnibeeApiBeanCurrency.md) | Currency List | [optional] 
-**MemberRoles** | Pointer to [**[]UnibeeApiBeanMerchantRole**](UnibeeApiBeanMerchantRole.md) | The member&#39;s role list&#39; | [optional] 
+**MemberRoles** | Pointer to [**[]UnibeeApiBeanMerchantRole**](UnibeeApiBeanMerchantRole.md) | The member role list&#39; | [optional] 
 **TimeZone** | Pointer to **[]string** | TimeZone List | [optional] 
 **EmailSender** | Pointer to [**UnibeeApiBeanSender**](UnibeeApiBeanSender.md) |  | [optional] 
 **Env** | Pointer to **string** | System Env, em: daily|stage|local|prod | [optional] 
-**Gateways** | Pointer to [**[]UnibeeApiBeanGateway**](UnibeeApiBeanGateway.md) | Gateway List | [optional] 
+**ExchangeRateApiKey** | Pointer to **string** | ExchangeRateApiKey | [optional] 
+**Gateways** | Pointer to [**[]UnibeeApiBeanDetailGateway**](UnibeeApiBeanDetailGateway.md) | Gateway List | [optional] 
 **IsOwner** | Pointer to **bool** | Check Member is Owner | [optional] 
 **IsProd** | Pointer to **bool** | Check System Env Is Prod, true|false | [optional] 
 **Merchant** | Pointer to [**UnibeeApiBeanMerchant**](UnibeeApiBeanMerchant.md) |  | [optional] 
@@ -164,22 +165,47 @@ SetEnv sets Env field to given value.
 
 HasEnv returns a boolean if a field has been set.
 
+### GetExchangeRateApiKey
+
+`func (o *UnibeeApiMerchantProfileGetRes) GetExchangeRateApiKey() string`
+
+GetExchangeRateApiKey returns the ExchangeRateApiKey field if non-nil, zero value otherwise.
+
+### GetExchangeRateApiKeyOk
+
+`func (o *UnibeeApiMerchantProfileGetRes) GetExchangeRateApiKeyOk() (*string, bool)`
+
+GetExchangeRateApiKeyOk returns a tuple with the ExchangeRateApiKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExchangeRateApiKey
+
+`func (o *UnibeeApiMerchantProfileGetRes) SetExchangeRateApiKey(v string)`
+
+SetExchangeRateApiKey sets ExchangeRateApiKey field to given value.
+
+### HasExchangeRateApiKey
+
+`func (o *UnibeeApiMerchantProfileGetRes) HasExchangeRateApiKey() bool`
+
+HasExchangeRateApiKey returns a boolean if a field has been set.
+
 ### GetGateways
 
-`func (o *UnibeeApiMerchantProfileGetRes) GetGateways() []UnibeeApiBeanGateway`
+`func (o *UnibeeApiMerchantProfileGetRes) GetGateways() []UnibeeApiBeanDetailGateway`
 
 GetGateways returns the Gateways field if non-nil, zero value otherwise.
 
 ### GetGatewaysOk
 
-`func (o *UnibeeApiMerchantProfileGetRes) GetGatewaysOk() (*[]UnibeeApiBeanGateway, bool)`
+`func (o *UnibeeApiMerchantProfileGetRes) GetGatewaysOk() (*[]UnibeeApiBeanDetailGateway, bool)`
 
 GetGatewaysOk returns a tuple with the Gateways field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGateways
 
-`func (o *UnibeeApiMerchantProfileGetRes) SetGateways(v []UnibeeApiBeanGateway)`
+`func (o *UnibeeApiMerchantProfileGetRes) SetGateways(v []UnibeeApiBeanDetailGateway)`
 
 SetGateways sets Gateways field to given value.
 

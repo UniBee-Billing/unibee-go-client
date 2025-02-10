@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | addonParams | [optional] 
+**ApplyPromoCredit** | Pointer to **bool** | apply promo credit or not | [optional] 
+**ApplyPromoCreditAmount** | Pointer to **int32** | apply promo credit amount, auto compute if not specified | [optional] 
 **CancelUrl** | Pointer to **string** | CancelUrl | [optional] 
 **ConfirmCurrency** | Pointer to **string** | Currency to verify if provide | [optional] 
 **ConfirmTotalAmount** | Pointer to **int64** | TotalAmount to verify if provide | [optional] 
@@ -66,6 +68,56 @@ SetAddonParams sets AddonParams field to given value.
 `func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasAddonParams() bool`
 
 HasAddonParams returns a boolean if a field has been set.
+
+### GetApplyPromoCredit
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetApplyPromoCredit() bool`
+
+GetApplyPromoCredit returns the ApplyPromoCredit field if non-nil, zero value otherwise.
+
+### GetApplyPromoCreditOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetApplyPromoCreditOk() (*bool, bool)`
+
+GetApplyPromoCreditOk returns a tuple with the ApplyPromoCredit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplyPromoCredit
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetApplyPromoCredit(v bool)`
+
+SetApplyPromoCredit sets ApplyPromoCredit field to given value.
+
+### HasApplyPromoCredit
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasApplyPromoCredit() bool`
+
+HasApplyPromoCredit returns a boolean if a field has been set.
+
+### GetApplyPromoCreditAmount
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetApplyPromoCreditAmount() int32`
+
+GetApplyPromoCreditAmount returns the ApplyPromoCreditAmount field if non-nil, zero value otherwise.
+
+### GetApplyPromoCreditAmountOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetApplyPromoCreditAmountOk() (*int32, bool)`
+
+GetApplyPromoCreditAmountOk returns a tuple with the ApplyPromoCreditAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplyPromoCreditAmount
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetApplyPromoCreditAmount(v int32)`
+
+SetApplyPromoCreditAmount sets ApplyPromoCreditAmount field to given value.
+
+### HasApplyPromoCreditAmount
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasApplyPromoCreditAmount() bool`
+
+HasApplyPromoCreditAmount returns a boolean if a field has been set.
 
 ### GetCancelUrl
 

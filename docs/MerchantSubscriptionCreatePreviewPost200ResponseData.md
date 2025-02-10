@@ -6,12 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) |  | [optional] 
 **Addons** | Pointer to [**[]UnibeeApiBeanPlanAddonDetail**](UnibeeApiBeanPlanAddonDetail.md) |  | [optional] 
+**ApplyPromoCredit** | Pointer to **bool** | apply promo credit or not | [optional] 
 **Currency** | Pointer to **string** |  | [optional] 
 **Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCode**](UnibeeApiBeanMerchantDiscountCode.md) |  | [optional] 
 **DiscountAmount** | Pointer to **int64** |  | [optional] 
 **DiscountMessage** | Pointer to **string** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
-**Gateway** | Pointer to [**UnibeeApiBeanGateway**](UnibeeApiBeanGateway.md) |  | [optional] 
+**Gateway** | Pointer to [**UnibeeApiBeanDetailGateway**](UnibeeApiBeanDetailGateway.md) |  | [optional] 
 **Invoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
 **OriginAmount** | Pointer to **int64** |  | [optional] 
 **OtherActiveSubscriptionId** | Pointer to **string** | other active or incomplete subscription id  | [optional] 
@@ -98,6 +99,31 @@ SetAddons sets Addons field to given value.
 `func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) HasAddons() bool`
 
 HasAddons returns a boolean if a field has been set.
+
+### GetApplyPromoCredit
+
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetApplyPromoCredit() bool`
+
+GetApplyPromoCredit returns the ApplyPromoCredit field if non-nil, zero value otherwise.
+
+### GetApplyPromoCreditOk
+
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetApplyPromoCreditOk() (*bool, bool)`
+
+GetApplyPromoCreditOk returns a tuple with the ApplyPromoCredit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplyPromoCredit
+
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) SetApplyPromoCredit(v bool)`
+
+SetApplyPromoCredit sets ApplyPromoCredit field to given value.
+
+### HasApplyPromoCredit
+
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) HasApplyPromoCredit() bool`
+
+HasApplyPromoCredit returns a boolean if a field has been set.
 
 ### GetCurrency
 
@@ -226,20 +252,20 @@ HasEmail returns a boolean if a field has been set.
 
 ### GetGateway
 
-`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetGateway() UnibeeApiBeanGateway`
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetGateway() UnibeeApiBeanDetailGateway`
 
 GetGateway returns the Gateway field if non-nil, zero value otherwise.
 
 ### GetGatewayOk
 
-`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetGatewayOk() (*UnibeeApiBeanGateway, bool)`
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) GetGatewayOk() (*UnibeeApiBeanDetailGateway, bool)`
 
 GetGatewayOk returns a tuple with the Gateway field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGateway
 
-`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) SetGateway(v UnibeeApiBeanGateway)`
+`func (o *MerchantSubscriptionCreatePreviewPost200ResponseData) SetGateway(v UnibeeApiBeanDetailGateway)`
 
 SetGateway sets Gateway field to given value.
 

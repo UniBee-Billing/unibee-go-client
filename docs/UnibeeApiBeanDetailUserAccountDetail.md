@@ -13,12 +13,13 @@ Name | Type | Description | Notes
 **CountryCode** | Pointer to **string** | country_code | [optional] 
 **CountryName** | Pointer to **string** | country_name | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
+**CreditAccounts** | Pointer to [**[]UnibeeApiBeanCreditAccount**](UnibeeApiBeanCreditAccount.md) | creditAccounts | [optional] 
 **Custom** | Pointer to **string** | custom | [optional] 
 **Email** | Pointer to **string** | email | [optional] 
 **ExternalUserId** | Pointer to **string** | external_user_id | [optional] 
 **Facebook** | Pointer to **string** | facebook | [optional] 
 **FirstName** | Pointer to **string** | first name | [optional] 
-**Gateway** | Pointer to [**UnibeeApiBeanGateway**](UnibeeApiBeanGateway.md) |  | [optional] 
+**Gateway** | Pointer to [**UnibeeApiBeanDetailGateway**](UnibeeApiBeanDetailGateway.md) |  | [optional] 
 **GatewayId** | Pointer to **int64** | gateway_id | [optional] 
 **Gender** | Pointer to **string** | gender | [optional] 
 **Id** | Pointer to **int64** | userId | [optional] 
@@ -36,6 +37,7 @@ Name | Type | Description | Notes
 **Phone** | Pointer to **string** | phone | [optional] 
 **PlanId** | Pointer to **int64** | PlanId | [optional] 
 **Profession** | Pointer to **string** | profession | [optional] 
+**PromoCreditAccounts** | Pointer to [**[]UnibeeApiBeanCreditAccount**](UnibeeApiBeanCreditAccount.md) | promoCreditAccounts | [optional] 
 **ReMark** | Pointer to **string** | note | [optional] 
 **RecurringAmount** | Pointer to **int64** | total recurring amount, cent | [optional] 
 **RegistrationNumber** | Pointer to **string** | RegistrationNumber | [optional] 
@@ -300,6 +302,31 @@ SetCreateTime sets CreateTime field to given value.
 
 HasCreateTime returns a boolean if a field has been set.
 
+### GetCreditAccounts
+
+`func (o *UnibeeApiBeanDetailUserAccountDetail) GetCreditAccounts() []UnibeeApiBeanCreditAccount`
+
+GetCreditAccounts returns the CreditAccounts field if non-nil, zero value otherwise.
+
+### GetCreditAccountsOk
+
+`func (o *UnibeeApiBeanDetailUserAccountDetail) GetCreditAccountsOk() (*[]UnibeeApiBeanCreditAccount, bool)`
+
+GetCreditAccountsOk returns a tuple with the CreditAccounts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreditAccounts
+
+`func (o *UnibeeApiBeanDetailUserAccountDetail) SetCreditAccounts(v []UnibeeApiBeanCreditAccount)`
+
+SetCreditAccounts sets CreditAccounts field to given value.
+
+### HasCreditAccounts
+
+`func (o *UnibeeApiBeanDetailUserAccountDetail) HasCreditAccounts() bool`
+
+HasCreditAccounts returns a boolean if a field has been set.
+
 ### GetCustom
 
 `func (o *UnibeeApiBeanDetailUserAccountDetail) GetCustom() string`
@@ -427,20 +454,20 @@ HasFirstName returns a boolean if a field has been set.
 
 ### GetGateway
 
-`func (o *UnibeeApiBeanDetailUserAccountDetail) GetGateway() UnibeeApiBeanGateway`
+`func (o *UnibeeApiBeanDetailUserAccountDetail) GetGateway() UnibeeApiBeanDetailGateway`
 
 GetGateway returns the Gateway field if non-nil, zero value otherwise.
 
 ### GetGatewayOk
 
-`func (o *UnibeeApiBeanDetailUserAccountDetail) GetGatewayOk() (*UnibeeApiBeanGateway, bool)`
+`func (o *UnibeeApiBeanDetailUserAccountDetail) GetGatewayOk() (*UnibeeApiBeanDetailGateway, bool)`
 
 GetGatewayOk returns a tuple with the Gateway field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGateway
 
-`func (o *UnibeeApiBeanDetailUserAccountDetail) SetGateway(v UnibeeApiBeanGateway)`
+`func (o *UnibeeApiBeanDetailUserAccountDetail) SetGateway(v UnibeeApiBeanDetailGateway)`
 
 SetGateway sets Gateway field to given value.
 
@@ -874,6 +901,31 @@ SetProfession sets Profession field to given value.
 `func (o *UnibeeApiBeanDetailUserAccountDetail) HasProfession() bool`
 
 HasProfession returns a boolean if a field has been set.
+
+### GetPromoCreditAccounts
+
+`func (o *UnibeeApiBeanDetailUserAccountDetail) GetPromoCreditAccounts() []UnibeeApiBeanCreditAccount`
+
+GetPromoCreditAccounts returns the PromoCreditAccounts field if non-nil, zero value otherwise.
+
+### GetPromoCreditAccountsOk
+
+`func (o *UnibeeApiBeanDetailUserAccountDetail) GetPromoCreditAccountsOk() (*[]UnibeeApiBeanCreditAccount, bool)`
+
+GetPromoCreditAccountsOk returns a tuple with the PromoCreditAccounts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPromoCreditAccounts
+
+`func (o *UnibeeApiBeanDetailUserAccountDetail) SetPromoCreditAccounts(v []UnibeeApiBeanCreditAccount)`
+
+SetPromoCreditAccounts sets PromoCreditAccounts field to given value.
+
+### HasPromoCreditAccounts
+
+`func (o *UnibeeApiBeanDetailUserAccountDetail) HasPromoCreditAccounts() bool`
+
+HasPromoCreditAccounts returns a boolean if a field has been set.
 
 ### GetReMark
 

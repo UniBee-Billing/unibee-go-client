@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SubscriptionPendingUpdateDetails** | Pointer to [**[]UnibeeApiBeanDetailSubscriptionPendingUpdateDetail**](UnibeeApiBeanDetailSubscriptionPendingUpdateDetail.md) | SubscriptionPendingUpdateDetails | [optional] 
+**SubscriptionPendingUpdateDetails** | Pointer to [**[]UnibeeApiBeanDetailSubscriptionPendingUpdateDetail**](UnibeeApiBeanDetailSubscriptionPendingUpdateDetail.md) | Subscription Pending Update Details | [optional] 
 **Total** | Pointer to **int32** | Total | [optional] 
 
 ## Methods

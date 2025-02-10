@@ -7,10 +7,13 @@ Name | Type | Description | Notes
 **Count** | Pointer to **int32** | Count Of Per Page | [optional] 
 **CreateTimeEnd** | Pointer to **int64** | CreateTimeEnd | [optional] 
 **CreateTimeStart** | Pointer to **int64** | CreateTimeStart | [optional] 
+**Email** | Pointer to **string** | Filter Email Default All | [optional] 
 **Id** | **int64** | The discount&#39;s Id | 
 **Page** | Pointer to **int32** | Page, Start 0 | [optional] 
+**PlanIds** | Pointer to **[]int64** | Filter PlanIds Default All | [optional] 
 **SortField** | Pointer to **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | [optional] 
 **SortType** | Pointer to **string** | Sort Type，asc|desc，Default desc | [optional] 
+**UserIds** | Pointer to **[]int64** | Filter UserIds Default All | [optional] 
 
 ## Methods
 
@@ -106,6 +109,31 @@ SetCreateTimeStart sets CreateTimeStart field to given value.
 
 HasCreateTimeStart returns a boolean if a field has been set.
 
+### GetEmail
+
+`func (o *UnibeeApiMerchantDiscountUserDiscountListReq) GetEmail() string`
+
+GetEmail returns the Email field if non-nil, zero value otherwise.
+
+### GetEmailOk
+
+`func (o *UnibeeApiMerchantDiscountUserDiscountListReq) GetEmailOk() (*string, bool)`
+
+GetEmailOk returns a tuple with the Email field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmail
+
+`func (o *UnibeeApiMerchantDiscountUserDiscountListReq) SetEmail(v string)`
+
+SetEmail sets Email field to given value.
+
+### HasEmail
+
+`func (o *UnibeeApiMerchantDiscountUserDiscountListReq) HasEmail() bool`
+
+HasEmail returns a boolean if a field has been set.
+
 ### GetId
 
 `func (o *UnibeeApiMerchantDiscountUserDiscountListReq) GetId() int64`
@@ -150,6 +178,31 @@ SetPage sets Page field to given value.
 `func (o *UnibeeApiMerchantDiscountUserDiscountListReq) HasPage() bool`
 
 HasPage returns a boolean if a field has been set.
+
+### GetPlanIds
+
+`func (o *UnibeeApiMerchantDiscountUserDiscountListReq) GetPlanIds() []int64`
+
+GetPlanIds returns the PlanIds field if non-nil, zero value otherwise.
+
+### GetPlanIdsOk
+
+`func (o *UnibeeApiMerchantDiscountUserDiscountListReq) GetPlanIdsOk() (*[]int64, bool)`
+
+GetPlanIdsOk returns a tuple with the PlanIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanIds
+
+`func (o *UnibeeApiMerchantDiscountUserDiscountListReq) SetPlanIds(v []int64)`
+
+SetPlanIds sets PlanIds field to given value.
+
+### HasPlanIds
+
+`func (o *UnibeeApiMerchantDiscountUserDiscountListReq) HasPlanIds() bool`
+
+HasPlanIds returns a boolean if a field has been set.
 
 ### GetSortField
 
@@ -200,6 +253,31 @@ SetSortType sets SortType field to given value.
 `func (o *UnibeeApiMerchantDiscountUserDiscountListReq) HasSortType() bool`
 
 HasSortType returns a boolean if a field has been set.
+
+### GetUserIds
+
+`func (o *UnibeeApiMerchantDiscountUserDiscountListReq) GetUserIds() []int64`
+
+GetUserIds returns the UserIds field if non-nil, zero value otherwise.
+
+### GetUserIdsOk
+
+`func (o *UnibeeApiMerchantDiscountUserDiscountListReq) GetUserIdsOk() (*[]int64, bool)`
+
+GetUserIdsOk returns a tuple with the UserIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserIds
+
+`func (o *UnibeeApiMerchantDiscountUserDiscountListReq) SetUserIds(v []int64)`
+
+SetUserIds sets UserIds field to given value.
+
+### HasUserIds
+
+`func (o *UnibeeApiMerchantDiscountUserDiscountListReq) HasUserIds() bool`
+
+HasUserIds returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

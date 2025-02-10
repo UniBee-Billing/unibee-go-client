@@ -4,8 +4,8 @@ All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SubscriptionTimelineListGet**](SubscriptionTimeline.md#SubscriptionTimelineListGet) | **Get** /merchant/subscription/timeline_list | SubscriptionTimeLineList
-[**SubscriptionTimelineListPost**](SubscriptionTimeline.md#SubscriptionTimelineListPost) | **Post** /merchant/subscription/timeline_list | SubscriptionTimeLineList
+[**SubscriptionTimelineListGet**](SubscriptionTimeline.md#SubscriptionTimelineListGet) | **Get** /merchant/subscription/timeline_list | Get Subscription TimeLine List
+[**SubscriptionTimelineListPost**](SubscriptionTimeline.md#SubscriptionTimelineListPost) | **Post** /merchant/subscription/timeline_list | Get Subscription TimeLine List
 
 
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 > MerchantSubscriptionTimelineListGet200Response SubscriptionTimelineListGet(ctx).UserId(userId).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
 
-SubscriptionTimeLineList
+Get Subscription TimeLine List
 
 ### Example
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -85,7 +85,7 @@ No authorization required
 
 > MerchantSubscriptionTimelineListGet200Response SubscriptionTimelineListPost(ctx).UnibeeApiMerchantSubscriptionTimeLineListReq(unibeeApiMerchantSubscriptionTimeLineListReq).Execute()
 
-SubscriptionTimeLineList
+Get Subscription TimeLine List
 
 ### Example
 
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

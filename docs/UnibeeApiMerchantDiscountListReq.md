@@ -12,9 +12,10 @@ Name | Type | Description | Notes
 **Currency** | Pointer to **string** | Filter Currency | [optional] 
 **DiscountType** | Pointer to **[]int32** | discount_type, 1-percentage, 2-fixed_amount | [optional] 
 **Page** | Pointer to **int32** | Page, Start 0 | [optional] 
+**SearchKey** | Pointer to **string** | Search Key, code or name | [optional] 
 **SortField** | Pointer to **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | [optional] 
 **SortType** | Pointer to **string** | Sort Type，asc|desc，Default desc | [optional] 
-**Status** | Pointer to **[]int32** | status, 1-editable, 2-active, 3-deactive, 4-expire | [optional] 
+**Status** | Pointer to **[]int32** | status, 1-editable, 2-active, 3-deactive, 4-expire, 10-archive | [optional] 
 
 ## Methods
 
@@ -234,6 +235,31 @@ SetPage sets Page field to given value.
 `func (o *UnibeeApiMerchantDiscountListReq) HasPage() bool`
 
 HasPage returns a boolean if a field has been set.
+
+### GetSearchKey
+
+`func (o *UnibeeApiMerchantDiscountListReq) GetSearchKey() string`
+
+GetSearchKey returns the SearchKey field if non-nil, zero value otherwise.
+
+### GetSearchKeyOk
+
+`func (o *UnibeeApiMerchantDiscountListReq) GetSearchKeyOk() (*string, bool)`
+
+GetSearchKeyOk returns a tuple with the SearchKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSearchKey
+
+`func (o *UnibeeApiMerchantDiscountListReq) SetSearchKey(v string)`
+
+SetSearchKey sets SearchKey field to given value.
+
+### HasSearchKey
+
+`func (o *UnibeeApiMerchantDiscountListReq) HasSearchKey() bool`
+
+HasSearchKey returns a boolean if a field has been set.
 
 ### GetSortField
 

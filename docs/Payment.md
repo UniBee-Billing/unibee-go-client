@@ -4,21 +4,21 @@ All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**PaymentCancelPost**](Payment.md#PaymentCancelPost) | **Post** /merchant/payment/cancel | CancelPayment
-[**PaymentCapturePost**](Payment.md#PaymentCapturePost) | **Post** /merchant/payment/capture | CapturePayment
-[**PaymentDetailGet**](Payment.md#PaymentDetailGet) | **Get** /merchant/payment/detail | PaymentDetail
-[**PaymentItemListGet**](Payment.md#PaymentItemListGet) | **Get** /merchant/payment/item/list | OneTimePaymentItemList
-[**PaymentListGet**](Payment.md#PaymentListGet) | **Get** /merchant/payment/list | PaymentList
-[**PaymentMethodDeletePost**](Payment.md#PaymentMethodDeletePost) | **Post** /merchant/payment/method_delete | Delete Payment Method From User
-[**PaymentMethodGetGet**](Payment.md#PaymentMethodGetGet) | **Get** /merchant/payment/method_get | PaymentMethod
-[**PaymentMethodListGet**](Payment.md#PaymentMethodListGet) | **Get** /merchant/payment/method_list | PaymentMethodList
-[**PaymentMethodNewPost**](Payment.md#PaymentMethodNewPost) | **Post** /merchant/payment/method_new | Create New Payment Method And Attach To User
-[**PaymentNewPost**](Payment.md#PaymentNewPost) | **Post** /merchant/payment/new | NewPayment
-[**PaymentRefundCancelPost**](Payment.md#PaymentRefundCancelPost) | **Post** /merchant/payment/refund/cancel | CancelPaymentRefund
-[**PaymentRefundDetailGet**](Payment.md#PaymentRefundDetailGet) | **Get** /merchant/payment/refund/detail | PaymentRefundDetail
-[**PaymentRefundListGet**](Payment.md#PaymentRefundListGet) | **Get** /merchant/payment/refund/list | PaymentRefundList
-[**PaymentRefundNewPost**](Payment.md#PaymentRefundNewPost) | **Post** /merchant/payment/refund/new | NewPaymentRefund
-[**PaymentTimelineListGet**](Payment.md#PaymentTimelineListGet) | **Get** /merchant/payment/timeline/list | PaymentTimeLineList
+[**PaymentCancelPost**](Payment.md#PaymentCancelPost) | **Post** /merchant/payment/cancel | Cancel Payment
+[**PaymentCapturePost**](Payment.md#PaymentCapturePost) | **Post** /merchant/payment/capture | Capture Payment
+[**PaymentDetailGet**](Payment.md#PaymentDetailGet) | **Get** /merchant/payment/detail | Payment Detail
+[**PaymentItemListGet**](Payment.md#PaymentItemListGet) | **Get** /merchant/payment/item/list | Get OneTime Payment Item List
+[**PaymentListGet**](Payment.md#PaymentListGet) | **Get** /merchant/payment/list | Get Payment List
+[**PaymentMethodDeletePost**](Payment.md#PaymentMethodDeletePost) | **Post** /merchant/payment/method_delete | Delete Payment Method
+[**PaymentMethodGetGet**](Payment.md#PaymentMethodGetGet) | **Get** /merchant/payment/method_get | Payment Method
+[**PaymentMethodListGet**](Payment.md#PaymentMethodListGet) | **Get** /merchant/payment/method_list | Payment Method List
+[**PaymentMethodNewPost**](Payment.md#PaymentMethodNewPost) | **Post** /merchant/payment/method_new | Create New Payment Method
+[**PaymentNewPost**](Payment.md#PaymentNewPost) | **Post** /merchant/payment/new | New Payment
+[**PaymentRefundCancelPost**](Payment.md#PaymentRefundCancelPost) | **Post** /merchant/payment/refund/cancel | Cancel Payment Refund
+[**PaymentRefundDetailGet**](Payment.md#PaymentRefundDetailGet) | **Get** /merchant/payment/refund/detail | Payment Refund Detail
+[**PaymentRefundListGet**](Payment.md#PaymentRefundListGet) | **Get** /merchant/payment/refund/list | Get Payment Refund List
+[**PaymentRefundNewPost**](Payment.md#PaymentRefundNewPost) | **Post** /merchant/payment/refund/new | New Payment Refund
+[**PaymentTimelineListGet**](Payment.md#PaymentTimelineListGet) | **Get** /merchant/payment/timeline/list | Get Payment TimeLine List
 
 
 
@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 > MerchantAuthSsoLoginOTPPost200Response PaymentCancelPost(ctx).UnibeeApiMerchantPaymentCancelReq(unibeeApiMerchantPaymentCancelReq).Execute()
 
-CancelPayment
+Cancel Payment
 
 ### Example
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -90,7 +90,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response PaymentCapturePost(ctx).UnibeeApiMerchantPaymentCaptureReq(unibeeApiMerchantPaymentCaptureReq).Execute()
 
-CapturePayment
+Capture Payment
 
 ### Example
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -154,7 +154,7 @@ No authorization required
 
 > MerchantPaymentDetailGet200Response PaymentDetailGet(ctx).PaymentId(paymentId).Execute()
 
-PaymentDetail
+Payment Detail
 
 ### Example
 
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -218,7 +218,7 @@ No authorization required
 
 > MerchantPaymentItemListGet200Response PaymentItemListGet(ctx).UserId(userId).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
 
-OneTimePaymentItemList
+Get OneTime Payment Item List
 
 ### Example
 
@@ -274,7 +274,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -290,7 +290,7 @@ No authorization required
 
 > MerchantPaymentListGet200Response PaymentListGet(ctx).GatewayId(gatewayId).UserId(userId).Email(email).Status(status).Currency(currency).CountryCode(countryCode).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
 
-PaymentList
+Get Payment List
 
 ### Example
 
@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -372,7 +372,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response PaymentMethodDeletePost(ctx).UnibeeApiMerchantPaymentMethodDeleteReq(unibeeApiMerchantPaymentMethodDeleteReq).Execute()
 
-Delete Payment Method From User
+Delete Payment Method
 
 ### Example
 
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -436,7 +436,7 @@ No authorization required
 
 > MerchantPaymentMethodGetGet200Response PaymentMethodGetGet(ctx).GatewayId(gatewayId).UserId(userId).PaymentMethodId(paymentMethodId).Execute()
 
-PaymentMethod
+Payment Method
 
 
 
@@ -490,7 +490,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -506,7 +506,7 @@ No authorization required
 
 > MerchantPaymentMethodListGet200Response PaymentMethodListGet(ctx).GatewayId(gatewayId).UserId(userId).PaymentId(paymentId).Execute()
 
-PaymentMethodList
+Payment Method List
 
 
 
@@ -560,7 +560,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -576,7 +576,7 @@ No authorization required
 
 > MerchantPaymentMethodNewPost200Response PaymentMethodNewPost(ctx).UnibeeApiMerchantPaymentMethodNewReq(unibeeApiMerchantPaymentMethodNewReq).Execute()
 
-Create New Payment Method And Attach To User
+Create New Payment Method
 
 ### Example
 
@@ -624,7 +624,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -640,7 +640,7 @@ No authorization required
 
 > MerchantPaymentNewPost200Response PaymentNewPost(ctx).UnibeeApiMerchantPaymentNewReq(unibeeApiMerchantPaymentNewReq).Execute()
 
-NewPayment
+New Payment
 
 ### Example
 
@@ -688,7 +688,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -704,7 +704,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response PaymentRefundCancelPost(ctx).UnibeeApiMerchantPaymentRefundCancelReq(unibeeApiMerchantPaymentRefundCancelReq).Execute()
 
-CancelPaymentRefund
+Cancel Payment Refund
 
 ### Example
 
@@ -752,7 +752,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -768,7 +768,7 @@ No authorization required
 
 > MerchantPaymentRefundDetailGet200Response PaymentRefundDetailGet(ctx).RefundId(refundId).Execute()
 
-PaymentRefundDetail
+Payment Refund Detail
 
 ### Example
 
@@ -816,7 +816,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -832,7 +832,7 @@ No authorization required
 
 > MerchantPaymentRefundListGet200Response PaymentRefundListGet(ctx).PaymentId(paymentId).Status(status).GatewayId(gatewayId).UserId(userId).Email(email).Currency(currency).Execute()
 
-PaymentRefundList
+Get Payment Refund List
 
 ### Example
 
@@ -890,7 +890,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -906,7 +906,7 @@ No authorization required
 
 > MerchantPaymentRefundNewPost200Response PaymentRefundNewPost(ctx).UnibeeApiMerchantPaymentNewPaymentRefundReq(unibeeApiMerchantPaymentNewPaymentRefundReq).Execute()
 
-NewPaymentRefund
+New Payment Refund
 
 ### Example
 
@@ -954,7 +954,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -970,7 +970,7 @@ No authorization required
 
 > MerchantPaymentTimelineListGet200Response PaymentTimelineListGet(ctx).UserId(userId).AmountStart(amountStart).AmountEnd(amountEnd).Status(status).TimelineTypes(timelineTypes).GatewayIds(gatewayIds).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 
-PaymentTimeLineList
+Get Payment TimeLine List
 
 ### Example
 
@@ -1042,7 +1042,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Currency** | Pointer to **string** | currency | [optional] 
 **ExternalRefundId** | Pointer to **string** | external_refund_id | [optional] 
+**GatewayCurrencyExchange** | Pointer to [**UnibeeApiBeanGatewayCurrencyExchange**](UnibeeApiBeanGatewayCurrencyExchange.md) |  | [optional] 
 **GatewayId** | Pointer to **int64** | gateway_id | [optional] 
 **GatewayRefundId** | Pointer to **string** | gateway refund id | [optional] 
 **InvoiceId** | Pointer to **string** | invoice id | [optional] 
@@ -16,6 +17,7 @@ Name | Type | Description | Notes
 **PaymentId** | Pointer to **string** | relative payment id | [optional] 
 **RefundAmount** | Pointer to **int64** | refund amount, cent | [optional] 
 **RefundComment** | Pointer to **string** | refund comment | [optional] 
+**RefundCommentExplain** | Pointer to **string** | refund comment | [optional] 
 **RefundId** | Pointer to **string** | refund id (system generate) | [optional] 
 **RefundTime** | Pointer to **int64** | refund success time | [optional] 
 **ReturnUrl** | Pointer to **string** | return url after refund success | [optional] 
@@ -142,6 +144,31 @@ SetExternalRefundId sets ExternalRefundId field to given value.
 `func (o *UnibeeApiBeanRefund) HasExternalRefundId() bool`
 
 HasExternalRefundId returns a boolean if a field has been set.
+
+### GetGatewayCurrencyExchange
+
+`func (o *UnibeeApiBeanRefund) GetGatewayCurrencyExchange() UnibeeApiBeanGatewayCurrencyExchange`
+
+GetGatewayCurrencyExchange returns the GatewayCurrencyExchange field if non-nil, zero value otherwise.
+
+### GetGatewayCurrencyExchangeOk
+
+`func (o *UnibeeApiBeanRefund) GetGatewayCurrencyExchangeOk() (*UnibeeApiBeanGatewayCurrencyExchange, bool)`
+
+GetGatewayCurrencyExchangeOk returns a tuple with the GatewayCurrencyExchange field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayCurrencyExchange
+
+`func (o *UnibeeApiBeanRefund) SetGatewayCurrencyExchange(v UnibeeApiBeanGatewayCurrencyExchange)`
+
+SetGatewayCurrencyExchange sets GatewayCurrencyExchange field to given value.
+
+### HasGatewayCurrencyExchange
+
+`func (o *UnibeeApiBeanRefund) HasGatewayCurrencyExchange() bool`
+
+HasGatewayCurrencyExchange returns a boolean if a field has been set.
 
 ### GetGatewayId
 
@@ -342,6 +369,31 @@ SetRefundComment sets RefundComment field to given value.
 `func (o *UnibeeApiBeanRefund) HasRefundComment() bool`
 
 HasRefundComment returns a boolean if a field has been set.
+
+### GetRefundCommentExplain
+
+`func (o *UnibeeApiBeanRefund) GetRefundCommentExplain() string`
+
+GetRefundCommentExplain returns the RefundCommentExplain field if non-nil, zero value otherwise.
+
+### GetRefundCommentExplainOk
+
+`func (o *UnibeeApiBeanRefund) GetRefundCommentExplainOk() (*string, bool)`
+
+GetRefundCommentExplainOk returns a tuple with the RefundCommentExplain field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRefundCommentExplain
+
+`func (o *UnibeeApiBeanRefund) SetRefundCommentExplain(v string)`
+
+SetRefundCommentExplain sets RefundCommentExplain field to given value.
+
+### HasRefundCommentExplain
+
+`func (o *UnibeeApiBeanRefund) HasRefundCommentExplain() bool`
+
+HasRefundCommentExplain returns a boolean if a field has been set.
 
 ### GetRefundId
 

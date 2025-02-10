@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Advance** | Pointer to **bool** | AdvanceConfig, 0-false,1-true, will enable all advance config if set 1 | [optional] 
 **BillingType** | Pointer to **int32** | billing_type, 1-one-time, 2-recurring | [optional] 
 **Code** | Pointer to **string** | code | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
@@ -14,13 +15,22 @@ Name | Type | Description | Notes
 **DiscountType** | Pointer to **int32** | discount_type, 1-percentage, 2-fixed_amount | [optional] 
 **EndTime** | Pointer to **int64** | end of discount available utc time, 0-invalid | [optional] 
 **Id** | Pointer to **int64** | Id | [optional] 
+**IsDeleted** | Pointer to **int32** | 0-UnDeleted，&gt; 0, Deleted, the deleted utc time | [optional] 
+**LiveQuantity** | Pointer to **int64** | the live quantity of code | [optional] 
 **MerchantId** | Pointer to **int64** | merchantId | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
 **Name** | Pointer to **string** | name | [optional] 
+**PlanApplyType** | Pointer to **int32** | plan apply type, 0-apply for all, 1-apply for plans specified, 2-exclude for plans specified | [optional] 
 **PlanIds** | Pointer to **[]int64** | Ids of plan which discount code can effect, default effect all plans if not set | [optional] 
 **Plans** | Pointer to [**[]UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) | plans which discount code can effect, default effect all plans if not set | [optional] 
+**Quantity** | Pointer to **int64** | quantity of code, 0-no limit, will not change | [optional] 
+**QuantityUsed** | Pointer to **int64** | quantity used count of code | [optional] 
 **StartTime** | Pointer to **int64** | start of discount available utc time | [optional] 
-**Status** | Pointer to **int32** | status, 1-editable, 2-active, 3-deactive, 4-expire | [optional] 
+**Status** | Pointer to **int32** | status, 1-editable, 2-active, 3-deactive, 4-expire, 10-archive | [optional] 
+**UpgradeLongerOnly** | Pointer to **bool** | AdvanceConfig, 0-false,1-true, will forbid for all except upgrade to longer plan if set 1 | [optional] 
+**UpgradeOnly** | Pointer to **bool** | AdvanceConfig, 0-false,1-true, will forbid for all except upgrade action if set 1 | [optional] 
+**UserLimit** | Pointer to **int32** | AdvanceConfig, The limit of every customer can apply, the recurring apply not involved, 0-unlimited\&quot; | [optional] 
+**UserScope** | Pointer to **int32** | AdvanceConfig, Apply user scope,0-for all, 1-for only new user, 2-for only renewals, renewals is upgrade&amp;downgrade&amp;renew | [optional] 
 
 ## Methods
 
@@ -40,6 +50,31 @@ will change when the set of required properties is changed
 NewUnibeeApiBeanDetailMerchantDiscountCodeDetailWithDefaults instantiates a new UnibeeApiBeanDetailMerchantDiscountCodeDetail object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAdvance
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetAdvance() bool`
+
+GetAdvance returns the Advance field if non-nil, zero value otherwise.
+
+### GetAdvanceOk
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetAdvanceOk() (*bool, bool)`
+
+GetAdvanceOk returns a tuple with the Advance field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAdvance
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) SetAdvance(v bool)`
+
+SetAdvance sets Advance field to given value.
+
+### HasAdvance
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) HasAdvance() bool`
+
+HasAdvance returns a boolean if a field has been set.
 
 ### GetBillingType
 
@@ -291,6 +326,56 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
+### GetIsDeleted
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetIsDeleted() int32`
+
+GetIsDeleted returns the IsDeleted field if non-nil, zero value otherwise.
+
+### GetIsDeletedOk
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetIsDeletedOk() (*int32, bool)`
+
+GetIsDeletedOk returns a tuple with the IsDeleted field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsDeleted
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) SetIsDeleted(v int32)`
+
+SetIsDeleted sets IsDeleted field to given value.
+
+### HasIsDeleted
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) HasIsDeleted() bool`
+
+HasIsDeleted returns a boolean if a field has been set.
+
+### GetLiveQuantity
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetLiveQuantity() int64`
+
+GetLiveQuantity returns the LiveQuantity field if non-nil, zero value otherwise.
+
+### GetLiveQuantityOk
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetLiveQuantityOk() (*int64, bool)`
+
+GetLiveQuantityOk returns a tuple with the LiveQuantity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLiveQuantity
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) SetLiveQuantity(v int64)`
+
+SetLiveQuantity sets LiveQuantity field to given value.
+
+### HasLiveQuantity
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) HasLiveQuantity() bool`
+
+HasLiveQuantity returns a boolean if a field has been set.
+
 ### GetMerchantId
 
 `func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetMerchantId() int64`
@@ -366,6 +451,31 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
+### GetPlanApplyType
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetPlanApplyType() int32`
+
+GetPlanApplyType returns the PlanApplyType field if non-nil, zero value otherwise.
+
+### GetPlanApplyTypeOk
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetPlanApplyTypeOk() (*int32, bool)`
+
+GetPlanApplyTypeOk returns a tuple with the PlanApplyType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanApplyType
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) SetPlanApplyType(v int32)`
+
+SetPlanApplyType sets PlanApplyType field to given value.
+
+### HasPlanApplyType
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) HasPlanApplyType() bool`
+
+HasPlanApplyType returns a boolean if a field has been set.
+
 ### GetPlanIds
 
 `func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetPlanIds() []int64`
@@ -416,6 +526,56 @@ SetPlans sets Plans field to given value.
 
 HasPlans returns a boolean if a field has been set.
 
+### GetQuantity
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetQuantity() int64`
+
+GetQuantity returns the Quantity field if non-nil, zero value otherwise.
+
+### GetQuantityOk
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetQuantityOk() (*int64, bool)`
+
+GetQuantityOk returns a tuple with the Quantity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuantity
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) SetQuantity(v int64)`
+
+SetQuantity sets Quantity field to given value.
+
+### HasQuantity
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) HasQuantity() bool`
+
+HasQuantity returns a boolean if a field has been set.
+
+### GetQuantityUsed
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetQuantityUsed() int64`
+
+GetQuantityUsed returns the QuantityUsed field if non-nil, zero value otherwise.
+
+### GetQuantityUsedOk
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetQuantityUsedOk() (*int64, bool)`
+
+GetQuantityUsedOk returns a tuple with the QuantityUsed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuantityUsed
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) SetQuantityUsed(v int64)`
+
+SetQuantityUsed sets QuantityUsed field to given value.
+
+### HasQuantityUsed
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) HasQuantityUsed() bool`
+
+HasQuantityUsed returns a boolean if a field has been set.
+
 ### GetStartTime
 
 `func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetStartTime() int64`
@@ -465,6 +625,106 @@ SetStatus sets Status field to given value.
 `func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
+
+### GetUpgradeLongerOnly
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetUpgradeLongerOnly() bool`
+
+GetUpgradeLongerOnly returns the UpgradeLongerOnly field if non-nil, zero value otherwise.
+
+### GetUpgradeLongerOnlyOk
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetUpgradeLongerOnlyOk() (*bool, bool)`
+
+GetUpgradeLongerOnlyOk returns a tuple with the UpgradeLongerOnly field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpgradeLongerOnly
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) SetUpgradeLongerOnly(v bool)`
+
+SetUpgradeLongerOnly sets UpgradeLongerOnly field to given value.
+
+### HasUpgradeLongerOnly
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) HasUpgradeLongerOnly() bool`
+
+HasUpgradeLongerOnly returns a boolean if a field has been set.
+
+### GetUpgradeOnly
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetUpgradeOnly() bool`
+
+GetUpgradeOnly returns the UpgradeOnly field if non-nil, zero value otherwise.
+
+### GetUpgradeOnlyOk
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetUpgradeOnlyOk() (*bool, bool)`
+
+GetUpgradeOnlyOk returns a tuple with the UpgradeOnly field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpgradeOnly
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) SetUpgradeOnly(v bool)`
+
+SetUpgradeOnly sets UpgradeOnly field to given value.
+
+### HasUpgradeOnly
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) HasUpgradeOnly() bool`
+
+HasUpgradeOnly returns a boolean if a field has been set.
+
+### GetUserLimit
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetUserLimit() int32`
+
+GetUserLimit returns the UserLimit field if non-nil, zero value otherwise.
+
+### GetUserLimitOk
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetUserLimitOk() (*int32, bool)`
+
+GetUserLimitOk returns a tuple with the UserLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserLimit
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) SetUserLimit(v int32)`
+
+SetUserLimit sets UserLimit field to given value.
+
+### HasUserLimit
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) HasUserLimit() bool`
+
+HasUserLimit returns a boolean if a field has been set.
+
+### GetUserScope
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetUserScope() int32`
+
+GetUserScope returns the UserScope field if non-nil, zero value otherwise.
+
+### GetUserScopeOk
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetUserScopeOk() (*int32, bool)`
+
+GetUserScopeOk returns a tuple with the UserScope field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserScope
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) SetUserScope(v int32)`
+
+SetUserScope sets UserScope field to given value.
+
+### HasUserScope
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) HasUserScope() bool`
+
+HasUserScope returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

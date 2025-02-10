@@ -4,19 +4,19 @@ All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**PlanActivatePost**](Plan.md#PlanActivatePost) | **Post** /merchant/plan/activate | ActivatePlan
-[**PlanAddonsBindingPost**](Plan.md#PlanAddonsBindingPost) | **Post** /merchant/plan/addons_binding | AddonBinding
-[**PlanCopyPost**](Plan.md#PlanCopyPost) | **Post** /merchant/plan/copy | CopyPlan
-[**PlanDeletePost**](Plan.md#PlanDeletePost) | **Post** /merchant/plan/delete | DeletePlan
-[**PlanDetailGet**](Plan.md#PlanDetailGet) | **Get** /merchant/plan/detail | PlanDetail
-[**PlanDetailPost**](Plan.md#PlanDetailPost) | **Post** /merchant/plan/detail | PlanDetail
-[**PlanEditPost**](Plan.md#PlanEditPost) | **Post** /merchant/plan/edit | EditPlan
-[**PlanExpirePost**](Plan.md#PlanExpirePost) | **Post** /merchant/plan/expire | ExpirePlan
-[**PlanListGet**](Plan.md#PlanListGet) | **Get** /merchant/plan/list | PlanList
-[**PlanListPost**](Plan.md#PlanListPost) | **Post** /merchant/plan/list | PlanList
-[**PlanNewPost**](Plan.md#PlanNewPost) | **Post** /merchant/plan/new | CreatePlan
-[**PlanPublishPost**](Plan.md#PlanPublishPost) | **Post** /merchant/plan/publish | PublishPlan
-[**PlanUnpublishedPost**](Plan.md#PlanUnpublishedPost) | **Post** /merchant/plan/unpublished | UnPublishPlan
+[**PlanActivatePost**](Plan.md#PlanActivatePost) | **Post** /merchant/plan/activate | Activate Plan
+[**PlanAddonsBindingPost**](Plan.md#PlanAddonsBindingPost) | **Post** /merchant/plan/addons_binding | Addon Binding
+[**PlanCopyPost**](Plan.md#PlanCopyPost) | **Post** /merchant/plan/copy | Copy Plan
+[**PlanDeletePost**](Plan.md#PlanDeletePost) | **Post** /merchant/plan/delete | Delete Plan
+[**PlanDetailGet**](Plan.md#PlanDetailGet) | **Get** /merchant/plan/detail | Plan Detail
+[**PlanDetailPost**](Plan.md#PlanDetailPost) | **Post** /merchant/plan/detail | Plan Detail
+[**PlanEditPost**](Plan.md#PlanEditPost) | **Post** /merchant/plan/edit | Edit Plan
+[**PlanExpirePost**](Plan.md#PlanExpirePost) | **Post** /merchant/plan/expire | Expire Plan
+[**PlanListGet**](Plan.md#PlanListGet) | **Get** /merchant/plan/list | Get Plan List
+[**PlanListPost**](Plan.md#PlanListPost) | **Post** /merchant/plan/list | Get Plan List
+[**PlanNewPost**](Plan.md#PlanNewPost) | **Post** /merchant/plan/new | Create Plan
+[**PlanPublishPost**](Plan.md#PlanPublishPost) | **Post** /merchant/plan/publish | Publish Plan
+[**PlanUnpublishedPost**](Plan.md#PlanUnpublishedPost) | **Post** /merchant/plan/unpublished | UnPublish Plan
 
 
 
@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 > MerchantAuthSsoLoginOTPPost200Response PlanActivatePost(ctx).UnibeeApiMerchantPlanActivateReq(unibeeApiMerchantPlanActivateReq).Execute()
 
-ActivatePlan
+Activate Plan
 
 ### Example
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -88,7 +88,7 @@ No authorization required
 
 > MerchantPlanAddonsBindingPost200Response PlanAddonsBindingPost(ctx).UnibeeApiMerchantPlanAddonsBindingReq(unibeeApiMerchantPlanAddonsBindingReq).Execute()
 
-AddonBinding
+Addon Binding
 
 ### Example
 
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -152,7 +152,7 @@ No authorization required
 
 > MerchantPlanAddonsBindingPost200Response PlanCopyPost(ctx).UnibeeApiMerchantPlanCopyReq(unibeeApiMerchantPlanCopyReq).Execute()
 
-CopyPlan
+Copy Plan
 
 ### Example
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -216,7 +216,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response PlanDeletePost(ctx).UnibeeApiMerchantPlanDeleteReq(unibeeApiMerchantPlanDeleteReq).Execute()
 
-DeletePlan
+Delete Plan
 
 ### Example
 
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -280,7 +280,7 @@ No authorization required
 
 > MerchantPlanDetailGet200Response PlanDetailGet(ctx).PlanId(planId).Execute()
 
-PlanDetail
+Plan Detail
 
 ### Example
 
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -344,7 +344,7 @@ No authorization required
 
 > MerchantPlanDetailGet200Response PlanDetailPost(ctx).UnibeeApiMerchantPlanDetailReq(unibeeApiMerchantPlanDetailReq).Execute()
 
-PlanDetail
+Plan Detail
 
 ### Example
 
@@ -392,7 +392,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -408,7 +408,7 @@ No authorization required
 
 > MerchantPlanAddonsBindingPost200Response PlanEditPost(ctx).UnibeeApiMerchantPlanEditReq(unibeeApiMerchantPlanEditReq).Execute()
 
-EditPlan
+Edit Plan
 
 
 
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -474,7 +474,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response PlanExpirePost(ctx).UnibeeApiMerchantPlanExpireReq(unibeeApiMerchantPlanExpireReq).Execute()
 
-ExpirePlan
+Expire Plan
 
 ### Example
 
@@ -522,7 +522,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -536,9 +536,9 @@ No authorization required
 
 ## PlanListGet
 
-> MerchantPlanListGet200Response PlanListGet(ctx).ProductIds(productIds).Type_(type_).Status(status).PublishStatus(publishStatus).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
+> MerchantPlanListGet200Response PlanListGet(ctx).ProductIds(productIds).Type_(type_).Status(status).PublishStatus(publishStatus).Currency(currency).SearchKey(searchKey).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
 
-PlanList
+Get Plan List
 
 ### Example
 
@@ -558,14 +558,15 @@ func main() {
 	status := []int32{int32(123)} // []int32 | Filter, Default All，,Status，1-Editing，2-Active，3-InActive，4-Expired (optional)
 	publishStatus := int32(56) // int32 | Filter, Default All，PublishStatus，1-UnPublished，2-Published (optional)
 	currency := "currency_example" // string | Filter Currency (optional)
-	sortField := "sortField_example" // string | Sort Field，gmt_create|gmt_modify，Default gmt_modify (optional)
+	searchKey := "searchKey_example" // string | Search Key, plan name or description (optional)
+	sortField := "sortField_example" // string | Sort Field，plan_name|gmt_create|gmt_modify，Default gmt_create (optional)
 	sortType := "sortType_example" // string | Sort Type，asc|desc，Default desc (optional)
 	page := int32(56) // int32 | Page, Start 0 (optional)
 	count := int32(56) // int32 | Count Of Per Page (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Plan.PlanListGet(context.Background()).ProductIds(productIds).Type_(type_).Status(status).PublishStatus(publishStatus).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
+	resp, r, err := apiClient.Plan.PlanListGet(context.Background()).ProductIds(productIds).Type_(type_).Status(status).PublishStatus(publishStatus).Currency(currency).SearchKey(searchKey).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Plan.PlanListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -591,7 +592,8 @@ Name | Type | Description  | Notes
  **status** | **[]int32** | Filter, Default All，,Status，1-Editing，2-Active，3-InActive，4-Expired | 
  **publishStatus** | **int32** | Filter, Default All，PublishStatus，1-UnPublished，2-Published | 
  **currency** | **string** | Filter Currency | 
- **sortField** | **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | 
+ **searchKey** | **string** | Search Key, plan name or description | 
+ **sortField** | **string** | Sort Field，plan_name|gmt_create|gmt_modify，Default gmt_create | 
  **sortType** | **string** | Sort Type，asc|desc，Default desc | 
  **page** | **int32** | Page, Start 0 | 
  **count** | **int32** | Count Of Per Page | 
@@ -602,7 +604,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -618,7 +620,7 @@ No authorization required
 
 > MerchantPlanListGet200Response PlanListPost(ctx).UnibeeApiMerchantPlanListReq(unibeeApiMerchantPlanListReq).Execute()
 
-PlanList
+Get Plan List
 
 ### Example
 
@@ -666,7 +668,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -682,7 +684,7 @@ No authorization required
 
 > MerchantPlanAddonsBindingPost200Response PlanNewPost(ctx).UnibeeApiMerchantPlanNewReq(unibeeApiMerchantPlanNewReq).Execute()
 
-CreatePlan
+Create Plan
 
 ### Example
 
@@ -730,7 +732,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -746,7 +748,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response PlanPublishPost(ctx).UnibeeApiMerchantPlanPublishReq(unibeeApiMerchantPlanPublishReq).Execute()
 
-PublishPlan
+Publish Plan
 
 
 
@@ -796,7 +798,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -812,7 +814,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response PlanUnpublishedPost(ctx).UnibeeApiMerchantPlanUnPublishReq(unibeeApiMerchantPlanUnPublishReq).Execute()
 
-UnPublishPlan
+UnPublish Plan
 
 ### Example
 
@@ -860,7 +862,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

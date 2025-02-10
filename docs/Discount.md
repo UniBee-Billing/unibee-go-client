@@ -4,16 +4,16 @@ All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DiscountActivatePost**](Discount.md#DiscountActivatePost) | **Post** /merchant/discount/activate | ActivateDiscountCode
-[**DiscountDeactivatePost**](Discount.md#DiscountDeactivatePost) | **Post** /merchant/discount/deactivate | DeactivateDiscountCode
-[**DiscountDeletePost**](Discount.md#DiscountDeletePost) | **Post** /merchant/discount/delete | DeleteDiscountCode
-[**DiscountDetailGet**](Discount.md#DiscountDetailGet) | **Get** /merchant/discount/detail | Merchant Discount Detail
-[**DiscountDetailPost**](Discount.md#DiscountDetailPost) | **Post** /merchant/discount/detail | Merchant Discount Detail
-[**DiscountEditPost**](Discount.md#DiscountEditPost) | **Post** /merchant/discount/edit | EditDiscountCode
-[**DiscountListGet**](Discount.md#DiscountListGet) | **Get** /merchant/discount/list | DiscountCodeList
-[**DiscountNewPost**](Discount.md#DiscountNewPost) | **Post** /merchant/discount/new | NewDiscountCode
-[**DiscountPlanApplyPreviewPost**](Discount.md#DiscountPlanApplyPreviewPost) | **Post** /merchant/discount/plan_apply_preview | PlanApplyPreview
-[**DiscountUserDiscountListGet**](Discount.md#DiscountUserDiscountListGet) | **Get** /merchant/discount/user_discount_list | UserDiscountCodeList
+[**DiscountActivatePost**](Discount.md#DiscountActivatePost) | **Post** /merchant/discount/activate | Activate Discount Code
+[**DiscountDeactivatePost**](Discount.md#DiscountDeactivatePost) | **Post** /merchant/discount/deactivate | Deactivate Discount Code
+[**DiscountDecreaseQuantityPost**](Discount.md#DiscountDecreaseQuantityPost) | **Post** /merchant/discount/decrease_quantity | Quantity Decrement
+[**DiscountDeletePost**](Discount.md#DiscountDeletePost) | **Post** /merchant/discount/delete | Delete Discount Code
+[**DiscountDetailGet**](Discount.md#DiscountDetailGet) | **Get** /merchant/discount/detail | Get Merchant Discount Detail
+[**DiscountDetailPost**](Discount.md#DiscountDetailPost) | **Post** /merchant/discount/detail | Get Merchant Discount Detail
+[**DiscountEditPost**](Discount.md#DiscountEditPost) | **Post** /merchant/discount/edit | Edit Discount Code
+[**DiscountListGet**](Discount.md#DiscountListGet) | **Get** /merchant/discount/list | Get Discount Code List
+[**DiscountNewPost**](Discount.md#DiscountNewPost) | **Post** /merchant/discount/new | New Discount Code
+[**DiscountQuantityIncrementPost**](Discount.md#DiscountQuantityIncrementPost) | **Post** /merchant/discount/quantity_increment | Quantity Increment
 
 
 
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 > MerchantAuthSsoLoginOTPPost200Response DiscountActivatePost(ctx).UnibeeApiMerchantDiscountActivateReq(unibeeApiMerchantDiscountActivateReq).Execute()
 
-ActivateDiscountCode
+Activate Discount Code
 
 
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -87,7 +87,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response DiscountDeactivatePost(ctx).UnibeeApiMerchantDiscountDeactivateReq(unibeeApiMerchantDiscountDeactivateReq).Execute()
 
-DeactivateDiscountCode
+Deactivate Discount Code
 
 
 
@@ -137,7 +137,73 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DiscountDecreaseQuantityPost
+
+> MerchantDiscountDecreaseQuantityPost200Response DiscountDecreaseQuantityPost(ctx).UnibeeApiMerchantDiscountQuantityDecrementReq(unibeeApiMerchantDiscountQuantityDecrementReq).Execute()
+
+Quantity Decrement
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantDiscountQuantityDecrementReq := *openapiclient.NewUnibeeApiMerchantDiscountQuantityDecrementReq(int64(123)) // UnibeeApiMerchantDiscountQuantityDecrementReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Discount.DiscountDecreaseQuantityPost(context.Background()).UnibeeApiMerchantDiscountQuantityDecrementReq(unibeeApiMerchantDiscountQuantityDecrementReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Discount.DiscountDecreaseQuantityPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `DiscountDecreaseQuantityPost`: MerchantDiscountDecreaseQuantityPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Discount.DiscountDecreaseQuantityPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDiscountDecreaseQuantityPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantDiscountQuantityDecrementReq** | [**UnibeeApiMerchantDiscountQuantityDecrementReq**](UnibeeApiMerchantDiscountQuantityDecrementReq.md) |  | 
+
+### Return type
+
+[**MerchantDiscountDecreaseQuantityPost200Response**](MerchantDiscountDecreaseQuantityPost200Response.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -153,7 +219,7 @@ No authorization required
 
 > MerchantAuthSsoLoginOTPPost200Response DiscountDeletePost(ctx).UnibeeApiMerchantDiscountDeleteReq(unibeeApiMerchantDiscountDeleteReq).Execute()
 
-DeleteDiscountCode
+Delete Discount Code
 
 
 
@@ -203,7 +269,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -219,7 +285,7 @@ No authorization required
 
 > MerchantDiscountDetailGet200Response DiscountDetailGet(ctx).Id(id).Execute()
 
-Merchant Discount Detail
+Get Merchant Discount Detail
 
 ### Example
 
@@ -267,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -283,7 +349,7 @@ No authorization required
 
 > MerchantDiscountDetailGet200Response DiscountDetailPost(ctx).UnibeeApiMerchantDiscountDetailReq(unibeeApiMerchantDiscountDetailReq).Execute()
 
-Merchant Discount Detail
+Get Merchant Discount Detail
 
 ### Example
 
@@ -331,7 +397,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -347,7 +413,7 @@ No authorization required
 
 > MerchantDiscountEditPost200Response DiscountEditPost(ctx).UnibeeApiMerchantDiscountEditReq(unibeeApiMerchantDiscountEditReq).Execute()
 
-EditDiscountCode
+Edit Discount Code
 
 
 
@@ -397,7 +463,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -411,9 +477,9 @@ No authorization required
 
 ## DiscountListGet
 
-> MerchantDiscountListGet200Response DiscountListGet(ctx).DiscountType(discountType).BillingType(billingType).Status(status).Code(code).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+> MerchantDiscountListGet200Response DiscountListGet(ctx).DiscountType(discountType).BillingType(billingType).Status(status).Code(code).SearchKey(searchKey).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 
-DiscountCodeList
+Get Discount Code List
 
 
 
@@ -432,8 +498,9 @@ import (
 func main() {
 	discountType := []int32{int32(123)} // []int32 | discount_type, 1-percentage, 2-fixed_amount (optional)
 	billingType := []int32{int32(123)} // []int32 | billing_type, 1-one-time, 2-recurring (optional)
-	status := []int32{int32(123)} // []int32 | status, 1-editable, 2-active, 3-deactive, 4-expire (optional)
+	status := []int32{int32(123)} // []int32 | status, 1-editable, 2-active, 3-deactive, 4-expire, 10-archive (optional)
 	code := "code_example" // string | Filter Code (optional)
+	searchKey := "searchKey_example" // string | Search Key, code or name (optional)
 	currency := "currency_example" // string | Filter Currency (optional)
 	sortField := "sortField_example" // string | Sort Field，gmt_create|gmt_modify，Default gmt_modify (optional)
 	sortType := "sortType_example" // string | Sort Type，asc|desc，Default desc (optional)
@@ -444,7 +511,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Discount.DiscountListGet(context.Background()).DiscountType(discountType).BillingType(billingType).Status(status).Code(code).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+	resp, r, err := apiClient.Discount.DiscountListGet(context.Background()).DiscountType(discountType).BillingType(billingType).Status(status).Code(code).SearchKey(searchKey).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Discount.DiscountListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -467,8 +534,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **discountType** | **[]int32** | discount_type, 1-percentage, 2-fixed_amount | 
  **billingType** | **[]int32** | billing_type, 1-one-time, 2-recurring | 
- **status** | **[]int32** | status, 1-editable, 2-active, 3-deactive, 4-expire | 
+ **status** | **[]int32** | status, 1-editable, 2-active, 3-deactive, 4-expire, 10-archive | 
  **code** | **string** | Filter Code | 
+ **searchKey** | **string** | Search Key, code or name | 
  **currency** | **string** | Filter Currency | 
  **sortField** | **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | 
  **sortType** | **string** | Sort Type，asc|desc，Default desc | 
@@ -483,7 +551,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -499,7 +567,7 @@ No authorization required
 
 > MerchantDiscountEditPost200Response DiscountNewPost(ctx).UnibeeApiMerchantDiscountNewReq(unibeeApiMerchantDiscountNewReq).Execute()
 
-NewDiscountCode
+New Discount Code
 
 
 
@@ -516,7 +584,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantDiscountNewReq := *openapiclient.NewUnibeeApiMerchantDiscountNewReq(int32(123), "Code_example", int32(123), int64(123), int64(123)) // UnibeeApiMerchantDiscountNewReq | 
+	unibeeApiMerchantDiscountNewReq := *openapiclient.NewUnibeeApiMerchantDiscountNewReq(int32(123), "Code_example", int32(123), int32(123), int32(123)) // UnibeeApiMerchantDiscountNewReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -549,7 +617,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -561,11 +629,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## DiscountPlanApplyPreviewPost
+## DiscountQuantityIncrementPost
 
-> MerchantDiscountPlanApplyPreviewPost200Response DiscountPlanApplyPreviewPost(ctx).UnibeeApiMerchantDiscountPlanApplyPreviewReq(unibeeApiMerchantDiscountPlanApplyPreviewReq).Execute()
+> MerchantDiscountDecreaseQuantityPost200Response DiscountQuantityIncrementPost(ctx).UnibeeApiMerchantDiscountQuantityIncrementReq(unibeeApiMerchantDiscountQuantityIncrementReq).Execute()
 
-PlanApplyPreview
+Quantity Increment
 
 
 
@@ -582,17 +650,17 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantDiscountPlanApplyPreviewReq := *openapiclient.NewUnibeeApiMerchantDiscountPlanApplyPreviewReq("Code_example") // UnibeeApiMerchantDiscountPlanApplyPreviewReq | 
+	unibeeApiMerchantDiscountQuantityIncrementReq := *openapiclient.NewUnibeeApiMerchantDiscountQuantityIncrementReq(int64(123)) // UnibeeApiMerchantDiscountQuantityIncrementReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Discount.DiscountPlanApplyPreviewPost(context.Background()).UnibeeApiMerchantDiscountPlanApplyPreviewReq(unibeeApiMerchantDiscountPlanApplyPreviewReq).Execute()
+	resp, r, err := apiClient.Discount.DiscountQuantityIncrementPost(context.Background()).UnibeeApiMerchantDiscountQuantityIncrementReq(unibeeApiMerchantDiscountQuantityIncrementReq).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `Discount.DiscountPlanApplyPreviewPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `Discount.DiscountQuantityIncrementPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DiscountPlanApplyPreviewPost`: MerchantDiscountPlanApplyPreviewPost200Response
-	fmt.Fprintf(os.Stdout, "Response from `Discount.DiscountPlanApplyPreviewPost`: %v\n", resp)
+	// response from `DiscountQuantityIncrementPost`: MerchantDiscountDecreaseQuantityPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Discount.DiscountQuantityIncrementPost`: %v\n", resp)
 }
 ```
 
@@ -602,102 +670,24 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDiscountPlanApplyPreviewPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDiscountQuantityIncrementPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **unibeeApiMerchantDiscountPlanApplyPreviewReq** | [**UnibeeApiMerchantDiscountPlanApplyPreviewReq**](UnibeeApiMerchantDiscountPlanApplyPreviewReq.md) |  | 
+ **unibeeApiMerchantDiscountQuantityIncrementReq** | [**UnibeeApiMerchantDiscountQuantityIncrementReq**](UnibeeApiMerchantDiscountQuantityIncrementReq.md) |  | 
 
 ### Return type
 
-[**MerchantDiscountPlanApplyPreviewPost200Response**](MerchantDiscountPlanApplyPreviewPost200Response.md)
+[**MerchantDiscountDecreaseQuantityPost200Response**](MerchantDiscountDecreaseQuantityPost200Response.md)
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## DiscountUserDiscountListGet
-
-> MerchantDiscountUserDiscountListGet200Response DiscountUserDiscountListGet(ctx).Id(id).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
-
-UserDiscountCodeList
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/UniBee-Billing/unibee-go-client"
-)
-
-func main() {
-	id := int64(789) // int64 | The discount's Id
-	sortField := "sortField_example" // string | Sort Field，gmt_create|gmt_modify，Default gmt_modify (optional)
-	sortType := "sortType_example" // string | Sort Type，asc|desc，Default desc (optional)
-	page := int32(56) // int32 | Page, Start 0 (optional)
-	count := int32(56) // int32 | Count Of Per Page (optional)
-	createTimeStart := int64(789) // int64 | CreateTimeStart (optional)
-	createTimeEnd := int64(789) // int64 | CreateTimeEnd (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Discount.DiscountUserDiscountListGet(context.Background()).Id(id).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `Discount.DiscountUserDiscountListGet``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `DiscountUserDiscountListGet`: MerchantDiscountUserDiscountListGet200Response
-	fmt.Fprintf(os.Stdout, "Response from `Discount.DiscountUserDiscountListGet`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiDiscountUserDiscountListGetRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int64** | The discount&#39;s Id | 
- **sortField** | **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | 
- **sortType** | **string** | Sort Type，asc|desc，Default desc | 
- **page** | **int32** | Page, Start 0 | 
- **count** | **int32** | Count Of Per Page | 
- **createTimeStart** | **int64** | CreateTimeStart | 
- **createTimeEnd** | **int64** | CreateTimeEnd | 
-
-### Return type
-
-[**MerchantDiscountUserDiscountListGet200Response**](MerchantDiscountUserDiscountListGet200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

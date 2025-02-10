@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DowngradeEffectImmediately** | Pointer to **bool** | DowngradeEffectImmediately, whether subscription update should effect immediately or at period end, default at period end | [optional] 
+**FiatExchangeApiKey** | Pointer to **string** |  | [optional] 
 **GatewayVATRule** | Pointer to **string** |  | [optional] 
 **IncompleteExpireTime** | Pointer to **int64** | IncompleteExpireTime, em.. default 1day for plan of month type | [optional] 
 **InvoiceEmail** | Pointer to **bool** | InvoiceEmail, whether to send invoice email to user, default yes | [optional] 
@@ -56,6 +57,31 @@ SetDowngradeEffectImmediately sets DowngradeEffectImmediately field to given val
 `func (o *UnibeeApiBeanSubscriptionConfig) HasDowngradeEffectImmediately() bool`
 
 HasDowngradeEffectImmediately returns a boolean if a field has been set.
+
+### GetFiatExchangeApiKey
+
+`func (o *UnibeeApiBeanSubscriptionConfig) GetFiatExchangeApiKey() string`
+
+GetFiatExchangeApiKey returns the FiatExchangeApiKey field if non-nil, zero value otherwise.
+
+### GetFiatExchangeApiKeyOk
+
+`func (o *UnibeeApiBeanSubscriptionConfig) GetFiatExchangeApiKeyOk() (*string, bool)`
+
+GetFiatExchangeApiKeyOk returns a tuple with the FiatExchangeApiKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFiatExchangeApiKey
+
+`func (o *UnibeeApiBeanSubscriptionConfig) SetFiatExchangeApiKey(v string)`
+
+SetFiatExchangeApiKey sets FiatExchangeApiKey field to given value.
+
+### HasFiatExchangeApiKey
+
+`func (o *UnibeeApiBeanSubscriptionConfig) HasFiatExchangeApiKey() bool`
+
+HasFiatExchangeApiKey returns a boolean if a field has been set.
 
 ### GetGatewayVATRule
 
