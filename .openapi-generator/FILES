@@ -1158,15 +1158,4 @@ model_unibee_api_system_refund_bulk_channel_sync_req.go
 model_unibee_api_system_subscription_test_clock_walk_req.go
 model_unibee_internal_interface_sub_gateway_config.go
 response.go
-test/api_admin_member_test.go
-test/api_admin_role_test.go
-test/api_credit_test.go
-test/api_member_authentication_test.go
-test/api_merchant_test.go
-test/api_promo_credit_test.go
-test/api_subscription_config_test.go
-test/api_subscription_payment_test.go
-test/api_subscription_update_test.go
-test/api_user_discount_test.go
-test/api_vat_gateway_test.go
 utils.go

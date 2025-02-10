@@ -3,7 +3,7 @@ mv configuration.go configuration.backup
 rm -rf *.go
 rm -rf docs/*.md
 java -jar openapi-generator-cli.jar generate \
--i https://api.unibee.top/api.sdk.generator.json \
+-i https://api.unibee.top/api.sdk.generator.json?hideSecurity=true \
 -g go \
 -o . \
 --git-repo-id unibee-go-client \

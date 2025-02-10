@@ -5,12 +5,10 @@ info:
     name: Apache-2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   title: OpenAPI UniBee
-  version: "daily,buildtime:202502100408"
+  version: "daily,buildtime:202502100809"
 servers:
 - url: https://api.unibee.top
 - url: http://127.0.0.1:8080
-security:
-- Authorization: []
 paths:
   /merchant/auth/sso/login:
     post:
@@ -66783,8 +66781,3 @@ components:
           properties: {}
           type: string
       type: object
-  securitySchemes:
-    Authorization:
-      bearerFormat: JWT
-      scheme: bearer
-      type: http
