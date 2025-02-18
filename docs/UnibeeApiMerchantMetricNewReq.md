@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Code** | **string** | Code | 
 **MetricDescription** | Pointer to **string** | MetricDescription | [optional] 
 **MetricName** | **string** | MetricName | 
+**Type** | Pointer to **int32** | 1-limit_metered，2-charge_metered,3-charge_recurring | [optional] 
 
 ## Methods
 
@@ -143,6 +144,31 @@ and a boolean to check if the value has been set.
 
 SetMetricName sets MetricName field to given value.
 
+
+### GetType
+
+`func (o *UnibeeApiMerchantMetricNewReq) GetType() int32`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *UnibeeApiMerchantMetricNewReq) GetTypeOk() (*int32, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *UnibeeApiMerchantMetricNewReq) SetType(v int32)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *UnibeeApiMerchantMetricNewReq) HasType() bool`
+
+HasType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

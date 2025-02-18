@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **SearchKey** | Pointer to **string** | Search Key, plan name or description | [optional] 
 **SortField** | Pointer to **string** | Sort Field，plan_name|gmt_create|gmt_modify，Default gmt_create | [optional] 
 **SortType** | Pointer to **string** | Sort Type，asc|desc，Default desc | [optional] 
-**Status** | Pointer to **[]int32** | Filter, Default All，,Status，1-Editing，2-Active，3-InActive，4-Expired | [optional] 
+**Status** | Pointer to **[]int32** | Filter, Default All，,Status，1-Editing，2-Active，3-InActive，4-SoftArchive, 5-HardArchive | [optional] 
 **Type** | Pointer to **[]int32** | 1-main plan，2-addon plan | [optional] 
 
 ## Methods

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonIds** | Pointer to **[]int64** | Plan Ids Of Recurring Addon Type | [optional] 
 **Amount** | Pointer to **int32** | CaptureAmount of plan, not editable when plan is active | [optional] 
-**CancelAtTrialEnd** | Pointer to **int32** | whether cancel at subscripiton first trial end，0-false | 1-true, will pass to cancelAtPeriodEnd of subscription | [optional] 
+**CancelAtTrialEnd** | Pointer to **int32** | whether cancel at subscription first trial end，0-false | 1-true, will pass to cancelAtPeriodEnd of subscription | [optional] 
 **Currency** | Pointer to **string** | Currency of plan, not editable when plan is active | [optional] 
 **Description** | Pointer to **string** | Description of plan | [optional] 
 **ExternalPlanId** | Pointer to **string** | ExternalPlanId | [optional] 
@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **IntervalUnit** | Pointer to **string** | Interval unit of plan，em: day|month|year|week, not editable when plan is active | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **MetricLimits** | Pointer to [**[]UnibeeApiBeanBulkMetricLimitPlanBindingParam**](UnibeeApiBeanBulkMetricLimitPlanBindingParam.md) | Plan&#39;s MetricLimit List | [optional] 
+**MetricMeteredCharge** | Pointer to [**[][]UnibeeApiBeanMetricPlanChargeBindingParam**]([]UnibeeApiBeanMetricPlanChargeBindingParam.md) | Plan&#39;s MetricMeteredCharge | [optional] 
+**MetricRecurringCharge** | Pointer to [**[][]UnibeeApiBeanMetricPlanChargeBindingParam**]([]UnibeeApiBeanMetricPlanChargeBindingParam.md) | Plan&#39;s MetricRecurringCharge | [optional] 
 **OnetimeAddonIds** | Pointer to **[]int64** | Plan Ids Of Onetime Addon Type | [optional] 
 **PlanId** | **int64** | Id of plan | 
 **PlanName** | Pointer to **string** | Name of plan | [optional] 
@@ -370,6 +372,56 @@ SetMetricLimits sets MetricLimits field to given value.
 `func (o *UnibeeApiMerchantPlanEditReq) HasMetricLimits() bool`
 
 HasMetricLimits returns a boolean if a field has been set.
+
+### GetMetricMeteredCharge
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetMetricMeteredCharge() [][]UnibeeApiBeanMetricPlanChargeBindingParam`
+
+GetMetricMeteredCharge returns the MetricMeteredCharge field if non-nil, zero value otherwise.
+
+### GetMetricMeteredChargeOk
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetMetricMeteredChargeOk() (*[][]UnibeeApiBeanMetricPlanChargeBindingParam, bool)`
+
+GetMetricMeteredChargeOk returns a tuple with the MetricMeteredCharge field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetricMeteredCharge
+
+`func (o *UnibeeApiMerchantPlanEditReq) SetMetricMeteredCharge(v [][]UnibeeApiBeanMetricPlanChargeBindingParam)`
+
+SetMetricMeteredCharge sets MetricMeteredCharge field to given value.
+
+### HasMetricMeteredCharge
+
+`func (o *UnibeeApiMerchantPlanEditReq) HasMetricMeteredCharge() bool`
+
+HasMetricMeteredCharge returns a boolean if a field has been set.
+
+### GetMetricRecurringCharge
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetMetricRecurringCharge() [][]UnibeeApiBeanMetricPlanChargeBindingParam`
+
+GetMetricRecurringCharge returns the MetricRecurringCharge field if non-nil, zero value otherwise.
+
+### GetMetricRecurringChargeOk
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetMetricRecurringChargeOk() (*[][]UnibeeApiBeanMetricPlanChargeBindingParam, bool)`
+
+GetMetricRecurringChargeOk returns a tuple with the MetricRecurringCharge field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetricRecurringCharge
+
+`func (o *UnibeeApiMerchantPlanEditReq) SetMetricRecurringCharge(v [][]UnibeeApiBeanMetricPlanChargeBindingParam)`
+
+SetMetricRecurringCharge sets MetricRecurringCharge field to given value.
+
+### HasMetricRecurringCharge
+
+`func (o *UnibeeApiMerchantPlanEditReq) HasMetricRecurringCharge() bool`
+
+HasMetricRecurringCharge returns a boolean if a field has been set.
 
 ### GetOnetimeAddonIds
 

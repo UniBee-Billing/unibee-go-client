@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**PaymentRefundListGet**](Payment.md#PaymentRefundListGet) | **Get** /merchant/payment/refund/list | Get Payment Refund List
 [**PaymentRefundNewPost**](Payment.md#PaymentRefundNewPost) | **Post** /merchant/payment/refund/new | New Payment Refund
 [**PaymentTimelineListGet**](Payment.md#PaymentTimelineListGet) | **Get** /merchant/payment/timeline/list | Get Payment TimeLine List
+[**PaymentTimelineListPost**](Payment.md#PaymentTimelineListPost) | **Post** /merchant/payment/timeline/list | Get Payment TimeLine List
 
 
 
@@ -988,7 +989,7 @@ func main() {
 	userId := int64(789) // int64 | Filter UserId, Default All (optional)
 	amountStart := int32(56) // int32 | The filter start amount of timeline (optional)
 	amountEnd := int32(56) // int32 | The filter end amount of timeline (optional)
-	status := []int32{int32(123)} // []int32 | The filter status, 0-pending, 1-success, 2-failure (optional)
+	status := []int32{int32(123)} // []int32 | The filter status, 0-pending, 1-success, 2-failure，3-cancel (optional)
 	timelineTypes := []int32{int32(123)} // []int32 | The filter timelineType, 0-pay, 1-refund (optional)
 	gatewayIds := []int64{int64(123)} // []int64 | The filter ids of gateway (optional)
 	currency := "currency_example" // string | Currency (optional)
@@ -1025,7 +1026,7 @@ Name | Type | Description  | Notes
  **userId** | **int64** | Filter UserId, Default All | 
  **amountStart** | **int32** | The filter start amount of timeline | 
  **amountEnd** | **int32** | The filter end amount of timeline | 
- **status** | **[]int32** | The filter status, 0-pending, 1-success, 2-failure | 
+ **status** | **[]int32** | The filter status, 0-pending, 1-success, 2-failure，3-cancel | 
  **timelineTypes** | **[]int32** | The filter timelineType, 0-pay, 1-refund | 
  **gatewayIds** | **[]int64** | The filter ids of gateway | 
  **currency** | **string** | Currency | 
@@ -1047,6 +1048,70 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PaymentTimelineListPost
+
+> MerchantPaymentTimelineListGet200Response PaymentTimelineListPost(ctx).UnibeeApiMerchantPaymentTimeLineListReq(unibeeApiMerchantPaymentTimeLineListReq).Execute()
+
+Get Payment TimeLine List
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantPaymentTimeLineListReq := *openapiclient.NewUnibeeApiMerchantPaymentTimeLineListReq() // UnibeeApiMerchantPaymentTimeLineListReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Payment.PaymentTimelineListPost(context.Background()).UnibeeApiMerchantPaymentTimeLineListReq(unibeeApiMerchantPaymentTimeLineListReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Payment.PaymentTimelineListPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PaymentTimelineListPost`: MerchantPaymentTimelineListGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `Payment.PaymentTimelineListPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPaymentTimelineListPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantPaymentTimeLineListReq** | [**UnibeeApiMerchantPaymentTimeLineListReq**](UnibeeApiMerchantPaymentTimeLineListReq.md) |  | 
+
+### Return type
+
+[**MerchantPaymentTimelineListGet200Response**](MerchantPaymentTimelineListGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

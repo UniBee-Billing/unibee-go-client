@@ -21,10 +21,12 @@ Name | Type | Description | Notes
 **IntervalUnit** | Pointer to **string** | period unit,day|month|year|week | [optional] 
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**MetricMeteredCharge** | Pointer to [**[]UnibeeApiBeanMetricPlanChargeBindingParam**](UnibeeApiBeanMetricPlanChargeBindingParam.md) | Plan&#39;s MetricMeteredCharge | [optional] 
+**MetricRecurringCharge** | Pointer to [**[]UnibeeApiBeanMetricPlanChargeBindingParam**](UnibeeApiBeanMetricPlanChargeBindingParam.md) | Plan&#39;s MetricRecurringCharge | [optional] 
 **PlanName** | Pointer to **string** | PlanName | [optional] 
 **ProductId** | Pointer to **int64** | product id | [optional] 
 **PublishStatus** | Pointer to **int32** | 1-UnPublish,2-Publish, Use For Display Plan At UserPortal | [optional] 
-**Status** | Pointer to **int32** | status，1-editing，2-active，3-inactive，4-expired | [optional] 
+**Status** | Pointer to **int32** | status，1-editing，2-active，3-inactive，4-soft archive, 5-hard archive | [optional] 
 **TaxPercentage** | Pointer to **int32** | TaxPercentage 1000 &#x3D; 10% | [optional] 
 **TrialAmount** | Pointer to **int64** | price of trial period | [optional] 
 **TrialDemand** | Pointer to **string** |  | [optional] 
@@ -474,6 +476,56 @@ SetMetadata sets Metadata field to given value.
 `func (o *UnibeeApiBeanPlan) HasMetadata() bool`
 
 HasMetadata returns a boolean if a field has been set.
+
+### GetMetricMeteredCharge
+
+`func (o *UnibeeApiBeanPlan) GetMetricMeteredCharge() []UnibeeApiBeanMetricPlanChargeBindingParam`
+
+GetMetricMeteredCharge returns the MetricMeteredCharge field if non-nil, zero value otherwise.
+
+### GetMetricMeteredChargeOk
+
+`func (o *UnibeeApiBeanPlan) GetMetricMeteredChargeOk() (*[]UnibeeApiBeanMetricPlanChargeBindingParam, bool)`
+
+GetMetricMeteredChargeOk returns a tuple with the MetricMeteredCharge field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetricMeteredCharge
+
+`func (o *UnibeeApiBeanPlan) SetMetricMeteredCharge(v []UnibeeApiBeanMetricPlanChargeBindingParam)`
+
+SetMetricMeteredCharge sets MetricMeteredCharge field to given value.
+
+### HasMetricMeteredCharge
+
+`func (o *UnibeeApiBeanPlan) HasMetricMeteredCharge() bool`
+
+HasMetricMeteredCharge returns a boolean if a field has been set.
+
+### GetMetricRecurringCharge
+
+`func (o *UnibeeApiBeanPlan) GetMetricRecurringCharge() []UnibeeApiBeanMetricPlanChargeBindingParam`
+
+GetMetricRecurringCharge returns the MetricRecurringCharge field if non-nil, zero value otherwise.
+
+### GetMetricRecurringChargeOk
+
+`func (o *UnibeeApiBeanPlan) GetMetricRecurringChargeOk() (*[]UnibeeApiBeanMetricPlanChargeBindingParam, bool)`
+
+GetMetricRecurringChargeOk returns a tuple with the MetricRecurringCharge field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetricRecurringCharge
+
+`func (o *UnibeeApiBeanPlan) SetMetricRecurringCharge(v []UnibeeApiBeanMetricPlanChargeBindingParam)`
+
+SetMetricRecurringCharge sets MetricRecurringCharge field to given value.
+
+### HasMetricRecurringCharge
+
+`func (o *UnibeeApiBeanPlan) HasMetricRecurringCharge() bool`
+
+HasMetricRecurringCharge returns a boolean if a field has been set.
 
 ### GetPlanName
 

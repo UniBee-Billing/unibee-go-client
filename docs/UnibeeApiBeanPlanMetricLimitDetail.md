@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **AggregationType** | Pointer to **int32** | 0-count，1-count unique, 2-latest, 3-max, 4-sum | [optional] 
 **Code** | Pointer to **string** | code | [optional] 
 **MetricName** | Pointer to **string** | metric name | [optional] 
-**Type** | Pointer to **int32** | 1-limit_metered，2-charge_metered(come later),3-charge_recurring(come later) | [optional] 
+**Type** | Pointer to **int32** | 1-limit_metered，2-charge_metered,3-charge_recurring | [optional] 
 
 ## Methods
 

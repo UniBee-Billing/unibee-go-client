@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **GatewayId** | **int64** | GatewayId | 
+**GatewayUserId** | Pointer to **string** | GatewayUserId, verify and save GatewayUserId via gateway | [optional] 
 **PaymentMethodId** | Pointer to **string** | PaymentMethodId of gateway, available for card type gateway, payment automatic will enable if set | [optional] 
 **UserId** | **int64** | User Id | 
 
@@ -46,6 +47,31 @@ and a boolean to check if the value has been set.
 
 SetGatewayId sets GatewayId field to given value.
 
+
+### GetGatewayUserId
+
+`func (o *UnibeeApiMerchantUserChangeGatewayReq) GetGatewayUserId() string`
+
+GetGatewayUserId returns the GatewayUserId field if non-nil, zero value otherwise.
+
+### GetGatewayUserIdOk
+
+`func (o *UnibeeApiMerchantUserChangeGatewayReq) GetGatewayUserIdOk() (*string, bool)`
+
+GetGatewayUserIdOk returns a tuple with the GatewayUserId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayUserId
+
+`func (o *UnibeeApiMerchantUserChangeGatewayReq) SetGatewayUserId(v string)`
+
+SetGatewayUserId sets GatewayUserId field to given value.
+
+### HasGatewayUserId
+
+`func (o *UnibeeApiMerchantUserChangeGatewayReq) HasGatewayUserId() bool`
+
+HasGatewayUserId returns a boolean if a field has been set.
 
 ### GetPaymentMethodId
 

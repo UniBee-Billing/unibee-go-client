@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **GmtModify** | Pointer to **int64** | update time | [optional] 
 **Id** | Pointer to **int64** | id | [optional] 
 **MerchantId** | Pointer to **int64** | merchantId | [optional] 
-**MerchantMetricVo** | Pointer to [**UnibeeApiBeanMerchantMetric**](UnibeeApiBeanMerchantMetric.md) |  | [optional] 
+**MerchantMetric** | Pointer to [**UnibeeApiBeanMerchantMetric**](UnibeeApiBeanMerchantMetric.md) |  | [optional] 
 **MetricId** | Pointer to **int64** | metricId | [optional] 
 **MetricLimit** | Pointer to **int64** | plan metric limit | [optional] 
 **PlanId** | Pointer to **int64** | plan_id | [optional] 
@@ -132,30 +132,30 @@ SetMerchantId sets MerchantId field to given value.
 
 HasMerchantId returns a boolean if a field has been set.
 
-### GetMerchantMetricVo
+### GetMerchantMetric
 
-`func (o *UnibeeApiBeanMerchantMetricPlanLimit) GetMerchantMetricVo() UnibeeApiBeanMerchantMetric`
+`func (o *UnibeeApiBeanMerchantMetricPlanLimit) GetMerchantMetric() UnibeeApiBeanMerchantMetric`
 
-GetMerchantMetricVo returns the MerchantMetricVo field if non-nil, zero value otherwise.
+GetMerchantMetric returns the MerchantMetric field if non-nil, zero value otherwise.
 
-### GetMerchantMetricVoOk
+### GetMerchantMetricOk
 
-`func (o *UnibeeApiBeanMerchantMetricPlanLimit) GetMerchantMetricVoOk() (*UnibeeApiBeanMerchantMetric, bool)`
+`func (o *UnibeeApiBeanMerchantMetricPlanLimit) GetMerchantMetricOk() (*UnibeeApiBeanMerchantMetric, bool)`
 
-GetMerchantMetricVoOk returns a tuple with the MerchantMetricVo field if it's non-nil, zero value otherwise
+GetMerchantMetricOk returns a tuple with the MerchantMetric field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMerchantMetricVo
+### SetMerchantMetric
 
-`func (o *UnibeeApiBeanMerchantMetricPlanLimit) SetMerchantMetricVo(v UnibeeApiBeanMerchantMetric)`
+`func (o *UnibeeApiBeanMerchantMetricPlanLimit) SetMerchantMetric(v UnibeeApiBeanMerchantMetric)`
 
-SetMerchantMetricVo sets MerchantMetricVo field to given value.
+SetMerchantMetric sets MerchantMetric field to given value.
 
-### HasMerchantMetricVo
+### HasMerchantMetric
 
-`func (o *UnibeeApiBeanMerchantMetricPlanLimit) HasMerchantMetricVo() bool`
+`func (o *UnibeeApiBeanMerchantMetricPlanLimit) HasMerchantMetric() bool`
 
-HasMerchantMetricVo returns a boolean if a field has been set.
+HasMerchantMetric returns a boolean if a field has been set.
 
 ### GetMetricId
 

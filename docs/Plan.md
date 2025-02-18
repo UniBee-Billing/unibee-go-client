@@ -6,12 +6,12 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**PlanActivatePost**](Plan.md#PlanActivatePost) | **Post** /merchant/plan/activate | Activate Plan
 [**PlanAddonsBindingPost**](Plan.md#PlanAddonsBindingPost) | **Post** /merchant/plan/addons_binding | Addon Binding
+[**PlanArchivePost**](Plan.md#PlanArchivePost) | **Post** /merchant/plan/archive | Archive Plan
 [**PlanCopyPost**](Plan.md#PlanCopyPost) | **Post** /merchant/plan/copy | Copy Plan
 [**PlanDeletePost**](Plan.md#PlanDeletePost) | **Post** /merchant/plan/delete | Delete Plan
 [**PlanDetailGet**](Plan.md#PlanDetailGet) | **Get** /merchant/plan/detail | Plan Detail
 [**PlanDetailPost**](Plan.md#PlanDetailPost) | **Post** /merchant/plan/detail | Plan Detail
 [**PlanEditPost**](Plan.md#PlanEditPost) | **Post** /merchant/plan/edit | Edit Plan
-[**PlanExpirePost**](Plan.md#PlanExpirePost) | **Post** /merchant/plan/expire | Expire Plan
 [**PlanListGet**](Plan.md#PlanListGet) | **Get** /merchant/plan/list | Get Plan List
 [**PlanListPost**](Plan.md#PlanListPost) | **Post** /merchant/plan/list | Get Plan List
 [**PlanNewPost**](Plan.md#PlanNewPost) | **Post** /merchant/plan/new | Create Plan
@@ -133,6 +133,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantPlanAddonsBindingPost200Response**](MerchantPlanAddonsBindingPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PlanArchivePost
+
+> MerchantAuthSsoLoginOTPPost200Response PlanArchivePost(ctx).UnibeeApiMerchantPlanArchiveReq(unibeeApiMerchantPlanArchiveReq).Execute()
+
+Archive Plan
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantPlanArchiveReq := *openapiclient.NewUnibeeApiMerchantPlanArchiveReq(int64(123)) // UnibeeApiMerchantPlanArchiveReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Plan.PlanArchivePost(context.Background()).UnibeeApiMerchantPlanArchiveReq(unibeeApiMerchantPlanArchiveReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Plan.PlanArchivePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PlanArchivePost`: MerchantAuthSsoLoginOTPPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Plan.PlanArchivePost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPlanArchivePostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantPlanArchiveReq** | [**UnibeeApiMerchantPlanArchiveReq**](UnibeeApiMerchantPlanArchiveReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
 
 ### Authorization
 
@@ -470,70 +534,6 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## PlanExpirePost
-
-> MerchantAuthSsoLoginOTPPost200Response PlanExpirePost(ctx).UnibeeApiMerchantPlanExpireReq(unibeeApiMerchantPlanExpireReq).Execute()
-
-Expire Plan
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/UniBee-Billing/unibee-go-client"
-)
-
-func main() {
-	unibeeApiMerchantPlanExpireReq := *openapiclient.NewUnibeeApiMerchantPlanExpireReq(int64(123), int64(123)) // UnibeeApiMerchantPlanExpireReq | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Plan.PlanExpirePost(context.Background()).UnibeeApiMerchantPlanExpireReq(unibeeApiMerchantPlanExpireReq).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `Plan.PlanExpirePost``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `PlanExpirePost`: MerchantAuthSsoLoginOTPPost200Response
-	fmt.Fprintf(os.Stdout, "Response from `Plan.PlanExpirePost`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPlanExpirePostRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **unibeeApiMerchantPlanExpireReq** | [**UnibeeApiMerchantPlanExpireReq**](UnibeeApiMerchantPlanExpireReq.md) |  | 
-
-### Return type
-
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## PlanListGet
 
 > MerchantPlanListGet200Response PlanListGet(ctx).ProductIds(productIds).Type_(type_).Status(status).PublishStatus(publishStatus).Currency(currency).SearchKey(searchKey).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
@@ -555,7 +555,7 @@ import (
 func main() {
 	productIds := []int64{int64(123)} // []int64 | filter id list of product, default all (optional)
 	type_ := []int32{int32(123)} // []int32 | 1-main plan，2-addon plan (optional)
-	status := []int32{int32(123)} // []int32 | Filter, Default All，,Status，1-Editing，2-Active，3-InActive，4-Expired (optional)
+	status := []int32{int32(123)} // []int32 | Filter, Default All，,Status，1-Editing，2-Active，3-InActive，4-SoftArchive, 5-HardArchive (optional)
 	publishStatus := int32(56) // int32 | Filter, Default All，PublishStatus，1-UnPublished，2-Published (optional)
 	currency := "currency_example" // string | Filter Currency (optional)
 	searchKey := "searchKey_example" // string | Search Key, plan name or description (optional)
@@ -589,7 +589,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productIds** | **[]int64** | filter id list of product, default all | 
  **type_** | **[]int32** | 1-main plan，2-addon plan | 
- **status** | **[]int32** | Filter, Default All，,Status，1-Editing，2-Active，3-InActive，4-Expired | 
+ **status** | **[]int32** | Filter, Default All，,Status，1-Editing，2-Active，3-InActive，4-SoftArchive, 5-HardArchive | 
  **publishStatus** | **int32** | Filter, Default All，PublishStatus，1-UnPublished，2-Published | 
  **currency** | **string** | Filter Currency | 
  **searchKey** | **string** | Search Key, plan name or description | 

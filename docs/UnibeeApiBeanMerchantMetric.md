@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **MerchantId** | Pointer to **int64** | merchantId | [optional] 
 **MetricDescription** | Pointer to **string** | metric description | [optional] 
 **MetricName** | Pointer to **string** | metric name | [optional] 
-**Type** | Pointer to **int32** | 1-limit_metered，2-charge_metered(come later),3-charge_recurring(come later) | [optional] 
+**Type** | Pointer to **int32** | 1-limit_metered，2-charge_metered,3-charge_recurring | [optional] 
 
 ## Methods
 
