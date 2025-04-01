@@ -7,7 +7,9 @@ Name | Type | Description | Notes
 **AggregationPropertyData** | Pointer to **string** | aggregation property data (Json) | [optional] 
 **AggregationPropertyInt** | Pointer to **int64** | aggregation property int, use for metric of max|sum type | [optional] 
 **AggregationPropertyString** | Pointer to **string** | aggregation property string, use for metric of count|count_unique type | [optional] 
+**ChargeInvoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
 **ChargeInvoiceId** | Pointer to **string** | charge invoice id | [optional] 
+**ChargeStatus** | Pointer to **int32** | 0-Uncharged，1-charged | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **EventCharge** | Pointer to [**UnibeeApiBeanEventMetricCharge**](UnibeeApiBeanEventMetricCharge.md) |  | [optional] 
 **ExternalEventId** | Pointer to **string** | external_event_id, should be unique | [optional] 
@@ -117,6 +119,31 @@ SetAggregationPropertyString sets AggregationPropertyString field to given value
 
 HasAggregationPropertyString returns a boolean if a field has been set.
 
+### GetChargeInvoice
+
+`func (o *UnibeeApiBeanDetailMerchantMetricEventDetail) GetChargeInvoice() UnibeeApiBeanInvoice`
+
+GetChargeInvoice returns the ChargeInvoice field if non-nil, zero value otherwise.
+
+### GetChargeInvoiceOk
+
+`func (o *UnibeeApiBeanDetailMerchantMetricEventDetail) GetChargeInvoiceOk() (*UnibeeApiBeanInvoice, bool)`
+
+GetChargeInvoiceOk returns a tuple with the ChargeInvoice field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChargeInvoice
+
+`func (o *UnibeeApiBeanDetailMerchantMetricEventDetail) SetChargeInvoice(v UnibeeApiBeanInvoice)`
+
+SetChargeInvoice sets ChargeInvoice field to given value.
+
+### HasChargeInvoice
+
+`func (o *UnibeeApiBeanDetailMerchantMetricEventDetail) HasChargeInvoice() bool`
+
+HasChargeInvoice returns a boolean if a field has been set.
+
 ### GetChargeInvoiceId
 
 `func (o *UnibeeApiBeanDetailMerchantMetricEventDetail) GetChargeInvoiceId() string`
@@ -141,6 +168,31 @@ SetChargeInvoiceId sets ChargeInvoiceId field to given value.
 `func (o *UnibeeApiBeanDetailMerchantMetricEventDetail) HasChargeInvoiceId() bool`
 
 HasChargeInvoiceId returns a boolean if a field has been set.
+
+### GetChargeStatus
+
+`func (o *UnibeeApiBeanDetailMerchantMetricEventDetail) GetChargeStatus() int32`
+
+GetChargeStatus returns the ChargeStatus field if non-nil, zero value otherwise.
+
+### GetChargeStatusOk
+
+`func (o *UnibeeApiBeanDetailMerchantMetricEventDetail) GetChargeStatusOk() (*int32, bool)`
+
+GetChargeStatusOk returns a tuple with the ChargeStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChargeStatus
+
+`func (o *UnibeeApiBeanDetailMerchantMetricEventDetail) SetChargeStatus(v int32)`
+
+SetChargeStatus sets ChargeStatus field to given value.
+
+### HasChargeStatus
+
+`func (o *UnibeeApiBeanDetailMerchantMetricEventDetail) HasChargeStatus() bool`
+
+HasChargeStatus returns a boolean if a field has been set.
 
 ### GetCreateTime
 

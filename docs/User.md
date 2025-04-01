@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**UserChangeEmailPost**](User.md#UserChangeEmailPost) | **Post** /merchant/user/change_email | Change User Email
 [**UserChangeGatewayPost**](User.md#UserChangeGatewayPost) | **Post** /merchant/user/change_gateway | Change User Default Gateway
 [**UserClearAutoChargeMethodPost**](User.md#UserClearAutoChargeMethodPost) | **Post** /merchant/user/clear_auto_charge_method | Clear AutoCharge Method
+[**UserCountGet**](User.md#UserCountGet) | **Get** /merchant/user/count | User Count
 [**UserGetGet**](User.md#UserGetGet) | **Get** /merchant/user/get | Get User Profile
 [**UserListGet**](User.md#UserListGet) | **Get** /merchant/user/list | User List
 [**UserListPost**](User.md#UserListPost) | **Post** /merchant/user/list | User List
@@ -339,6 +340,72 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UserCountGet
+
+> MerchantUserCountGet200Response UserCountGet(ctx).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+
+User Count
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	createTimeStart := int64(789) // int64 | CreateTimeStart (optional)
+	createTimeEnd := int64(789) // int64 | CreateTimeEnd (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.User.UserCountGet(context.Background()).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `User.UserCountGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserCountGet`: MerchantUserCountGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `User.UserCountGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUserCountGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createTimeStart** | **int64** | CreateTimeStart | 
+ **createTimeEnd** | **int64** | CreateTimeEnd | 
+
+### Return type
+
+[**MerchantUserCountGet200Response**](MerchantUserCountGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

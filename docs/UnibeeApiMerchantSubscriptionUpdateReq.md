@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **DiscountCode** | Pointer to **string** | DiscountCode | [optional] 
 **EffectImmediate** | Pointer to **int32** | Force Effect Immediate，1-Immediate，2-Next Period, this api will check upgrade|downgrade automatically | [optional] 
 **GatewayId** | Pointer to **int32** | Id of gateway | [optional] 
+**GatewayPaymentType** | Pointer to **string** | Gateway Payment Type | [optional] 
 **ManualPayment** | Pointer to **bool** | ManualPayment | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **NewPlanId** | **int64** | New PlanId | 
@@ -293,6 +294,31 @@ SetGatewayId sets GatewayId field to given value.
 `func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasGatewayId() bool`
 
 HasGatewayId returns a boolean if a field has been set.
+
+### GetGatewayPaymentType
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetGatewayPaymentType() string`
+
+GetGatewayPaymentType returns the GatewayPaymentType field if non-nil, zero value otherwise.
+
+### GetGatewayPaymentTypeOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetGatewayPaymentTypeOk() (*string, bool)`
+
+GetGatewayPaymentTypeOk returns a tuple with the GatewayPaymentType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayPaymentType
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetGatewayPaymentType(v string)`
+
+SetGatewayPaymentType sets GatewayPaymentType field to given value.
+
+### HasGatewayPaymentType
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasGatewayPaymentType() bool`
+
+HasGatewayPaymentType returns a boolean if a field has been set.
 
 ### GetManualPayment
 

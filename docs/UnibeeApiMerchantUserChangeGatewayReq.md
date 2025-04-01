@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **GatewayId** | **int64** | GatewayId | 
+**GatewayPaymentType** | Pointer to **string** | GatewayPaymentType | [optional] 
 **GatewayUserId** | Pointer to **string** | GatewayUserId, verify and save GatewayUserId via gateway | [optional] 
 **PaymentMethodId** | Pointer to **string** | PaymentMethodId of gateway, available for card type gateway, payment automatic will enable if set | [optional] 
 **UserId** | **int64** | User Id | 
@@ -47,6 +48,31 @@ and a boolean to check if the value has been set.
 
 SetGatewayId sets GatewayId field to given value.
 
+
+### GetGatewayPaymentType
+
+`func (o *UnibeeApiMerchantUserChangeGatewayReq) GetGatewayPaymentType() string`
+
+GetGatewayPaymentType returns the GatewayPaymentType field if non-nil, zero value otherwise.
+
+### GetGatewayPaymentTypeOk
+
+`func (o *UnibeeApiMerchantUserChangeGatewayReq) GetGatewayPaymentTypeOk() (*string, bool)`
+
+GetGatewayPaymentTypeOk returns a tuple with the GatewayPaymentType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayPaymentType
+
+`func (o *UnibeeApiMerchantUserChangeGatewayReq) SetGatewayPaymentType(v string)`
+
+SetGatewayPaymentType sets GatewayPaymentType field to given value.
+
+### HasGatewayPaymentType
+
+`func (o *UnibeeApiMerchantUserChangeGatewayReq) HasGatewayPaymentType() bool`
+
+HasGatewayPaymentType returns a boolean if a field has been set.
 
 ### GetGatewayUserId
 

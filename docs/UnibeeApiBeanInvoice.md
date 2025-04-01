@@ -52,6 +52,7 @@ Name | Type | Description | Notes
 **TotalAmountExcludingTax** | Pointer to **int64** |  | [optional] 
 **TrialEnd** | Pointer to **int64** | trial_end, utc time | [optional] 
 **UserId** | Pointer to **int64** | UserId | [optional] 
+**UserMetricChargeForInvoice** | Pointer to [**UnibeeApiBeanUserMetricChargeInvoiceItemEntity**](UnibeeApiBeanUserMetricChargeInvoiceItemEntity.md) |  | [optional] 
 **VatNumber** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -1272,6 +1273,31 @@ SetUserId sets UserId field to given value.
 `func (o *UnibeeApiBeanInvoice) HasUserId() bool`
 
 HasUserId returns a boolean if a field has been set.
+
+### GetUserMetricChargeForInvoice
+
+`func (o *UnibeeApiBeanInvoice) GetUserMetricChargeForInvoice() UnibeeApiBeanUserMetricChargeInvoiceItemEntity`
+
+GetUserMetricChargeForInvoice returns the UserMetricChargeForInvoice field if non-nil, zero value otherwise.
+
+### GetUserMetricChargeForInvoiceOk
+
+`func (o *UnibeeApiBeanInvoice) GetUserMetricChargeForInvoiceOk() (*UnibeeApiBeanUserMetricChargeInvoiceItemEntity, bool)`
+
+GetUserMetricChargeForInvoiceOk returns a tuple with the UserMetricChargeForInvoice field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserMetricChargeForInvoice
+
+`func (o *UnibeeApiBeanInvoice) SetUserMetricChargeForInvoice(v UnibeeApiBeanUserMetricChargeInvoiceItemEntity)`
+
+SetUserMetricChargeForInvoice sets UserMetricChargeForInvoice field to given value.
+
+### HasUserMetricChargeForInvoice
+
+`func (o *UnibeeApiBeanInvoice) HasUserMetricChargeForInvoice() bool`
+
+HasUserMetricChargeForInvoice returns a boolean if a field has been set.
 
 ### GetVatNumber
 

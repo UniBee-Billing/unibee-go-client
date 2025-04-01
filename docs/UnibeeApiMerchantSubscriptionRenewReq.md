@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Discount** | Pointer to [**UnibeeApiBeanExternalDiscountParam**](UnibeeApiBeanExternalDiscountParam.md) |  | [optional] 
 **DiscountCode** | Pointer to **string** | DiscountCode, override subscription discount | [optional] 
 **GatewayId** | Pointer to **int32** | GatewayId, use subscription&#39;s gateway if not provide | [optional] 
+**GatewayPaymentType** | Pointer to **string** | Gateway Payment Type | [optional] 
 **ManualPayment** | Pointer to **bool** | ManualPayment | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **ProductData** | Pointer to [**UnibeeApiBeanPlanProductParam**](UnibeeApiBeanPlanProductParam.md) |  | [optional] 
@@ -187,6 +188,31 @@ SetGatewayId sets GatewayId field to given value.
 `func (o *UnibeeApiMerchantSubscriptionRenewReq) HasGatewayId() bool`
 
 HasGatewayId returns a boolean if a field has been set.
+
+### GetGatewayPaymentType
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) GetGatewayPaymentType() string`
+
+GetGatewayPaymentType returns the GatewayPaymentType field if non-nil, zero value otherwise.
+
+### GetGatewayPaymentTypeOk
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) GetGatewayPaymentTypeOk() (*string, bool)`
+
+GetGatewayPaymentTypeOk returns a tuple with the GatewayPaymentType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayPaymentType
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) SetGatewayPaymentType(v string)`
+
+SetGatewayPaymentType sets GatewayPaymentType field to given value.
+
+### HasGatewayPaymentType
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) HasGatewayPaymentType() bool`
+
+HasGatewayPaymentType returns a boolean if a field has been set.
 
 ### GetManualPayment
 

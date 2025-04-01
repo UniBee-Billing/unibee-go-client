@@ -20,9 +20,9 @@ Name | Type | Description | Notes
 **FinishTime** | Pointer to **int64** |  | [optional] 
 **Gateway** | Pointer to [**UnibeeApiBeanDetailGateway**](UnibeeApiBeanDetailGateway.md) |  | [optional] 
 **GatewayId** | Pointer to **int64** | Id | [optional] 
-**GatewayInvoiceId** | Pointer to **string** | GatewayInvoiceId | [optional] 
 **GatewayInvoicePdf** | Pointer to **string** | GatewayInvoicePdf pdf | [optional] 
 **GatewayPaymentId** | Pointer to **string** | GatewayPaymentId PaymentId | [optional] 
+**GatewayPaymentType** | Pointer to **string** | GatewayPaymentType | [optional] 
 **GatewayStatus** | Pointer to **string** | GatewayStatus，Stripe：https://stripe.com/docs/api/invoices/object | [optional] 
 **GatewayUserId** | Pointer to **string** | GatewayUserId Id | [optional] 
 **GmtCreate** | Pointer to **string** | GmtCreate | [optional] 
@@ -59,6 +59,7 @@ Name | Type | Description | Notes
 **SubscriptionAmount** | Pointer to **int64** | SubscriptionAmount,Cents | [optional] 
 **SubscriptionAmountExcludingTax** | Pointer to **int64** | SubscriptionAmountExcludingTax,Cents | [optional] 
 **SubscriptionId** | Pointer to **string** | SubscriptionId | [optional] 
+**SubscriptionPendingUpdate** | Pointer to [**UnibeeApiBeanDetailSubscriptionPendingUpdateDetail**](UnibeeApiBeanDetailSubscriptionPendingUpdateDetail.md) |  | [optional] 
 **TaxAmount** | Pointer to **int64** | TaxAmount,Cents | [optional] 
 **TaxPercentage** | Pointer to **int64** | TaxPercentage，1000 &#x3D; 10% | [optional] 
 **TotalAmount** | Pointer to **int64** | TotalAmount,Cents | [optional] 
@@ -67,6 +68,7 @@ Name | Type | Description | Notes
 **UniqueId** | Pointer to **string** | UniqueId | [optional] 
 **UserAccount** | Pointer to [**UnibeeApiBeanUserAccount**](UnibeeApiBeanUserAccount.md) |  | [optional] 
 **UserId** | Pointer to **int64** | UserId | [optional] 
+**UserMetricChargeForInvoice** | Pointer to [**UnibeeApiBeanUserMetricChargeInvoiceItemEntity**](UnibeeApiBeanUserMetricChargeInvoiceItemEntity.md) |  | [optional] 
 **UserSnapshot** | Pointer to [**UnibeeApiBeanUserAccount**](UnibeeApiBeanUserAccount.md) |  | [optional] 
 **VatNumber** | Pointer to **string** |  | [optional] 
 
@@ -489,31 +491,6 @@ SetGatewayId sets GatewayId field to given value.
 
 HasGatewayId returns a boolean if a field has been set.
 
-### GetGatewayInvoiceId
-
-`func (o *UnibeeApiBeanDetailInvoiceDetail) GetGatewayInvoiceId() string`
-
-GetGatewayInvoiceId returns the GatewayInvoiceId field if non-nil, zero value otherwise.
-
-### GetGatewayInvoiceIdOk
-
-`func (o *UnibeeApiBeanDetailInvoiceDetail) GetGatewayInvoiceIdOk() (*string, bool)`
-
-GetGatewayInvoiceIdOk returns a tuple with the GatewayInvoiceId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGatewayInvoiceId
-
-`func (o *UnibeeApiBeanDetailInvoiceDetail) SetGatewayInvoiceId(v string)`
-
-SetGatewayInvoiceId sets GatewayInvoiceId field to given value.
-
-### HasGatewayInvoiceId
-
-`func (o *UnibeeApiBeanDetailInvoiceDetail) HasGatewayInvoiceId() bool`
-
-HasGatewayInvoiceId returns a boolean if a field has been set.
-
 ### GetGatewayInvoicePdf
 
 `func (o *UnibeeApiBeanDetailInvoiceDetail) GetGatewayInvoicePdf() string`
@@ -563,6 +540,31 @@ SetGatewayPaymentId sets GatewayPaymentId field to given value.
 `func (o *UnibeeApiBeanDetailInvoiceDetail) HasGatewayPaymentId() bool`
 
 HasGatewayPaymentId returns a boolean if a field has been set.
+
+### GetGatewayPaymentType
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetGatewayPaymentType() string`
+
+GetGatewayPaymentType returns the GatewayPaymentType field if non-nil, zero value otherwise.
+
+### GetGatewayPaymentTypeOk
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetGatewayPaymentTypeOk() (*string, bool)`
+
+GetGatewayPaymentTypeOk returns a tuple with the GatewayPaymentType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayPaymentType
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetGatewayPaymentType(v string)`
+
+SetGatewayPaymentType sets GatewayPaymentType field to given value.
+
+### HasGatewayPaymentType
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) HasGatewayPaymentType() bool`
+
+HasGatewayPaymentType returns a boolean if a field has been set.
 
 ### GetGatewayStatus
 
@@ -1464,6 +1466,31 @@ SetSubscriptionId sets SubscriptionId field to given value.
 
 HasSubscriptionId returns a boolean if a field has been set.
 
+### GetSubscriptionPendingUpdate
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetSubscriptionPendingUpdate() UnibeeApiBeanDetailSubscriptionPendingUpdateDetail`
+
+GetSubscriptionPendingUpdate returns the SubscriptionPendingUpdate field if non-nil, zero value otherwise.
+
+### GetSubscriptionPendingUpdateOk
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetSubscriptionPendingUpdateOk() (*UnibeeApiBeanDetailSubscriptionPendingUpdateDetail, bool)`
+
+GetSubscriptionPendingUpdateOk returns a tuple with the SubscriptionPendingUpdate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubscriptionPendingUpdate
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetSubscriptionPendingUpdate(v UnibeeApiBeanDetailSubscriptionPendingUpdateDetail)`
+
+SetSubscriptionPendingUpdate sets SubscriptionPendingUpdate field to given value.
+
+### HasSubscriptionPendingUpdate
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) HasSubscriptionPendingUpdate() bool`
+
+HasSubscriptionPendingUpdate returns a boolean if a field has been set.
+
 ### GetTaxAmount
 
 `func (o *UnibeeApiBeanDetailInvoiceDetail) GetTaxAmount() int64`
@@ -1663,6 +1690,31 @@ SetUserId sets UserId field to given value.
 `func (o *UnibeeApiBeanDetailInvoiceDetail) HasUserId() bool`
 
 HasUserId returns a boolean if a field has been set.
+
+### GetUserMetricChargeForInvoice
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetUserMetricChargeForInvoice() UnibeeApiBeanUserMetricChargeInvoiceItemEntity`
+
+GetUserMetricChargeForInvoice returns the UserMetricChargeForInvoice field if non-nil, zero value otherwise.
+
+### GetUserMetricChargeForInvoiceOk
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetUserMetricChargeForInvoiceOk() (*UnibeeApiBeanUserMetricChargeInvoiceItemEntity, bool)`
+
+GetUserMetricChargeForInvoiceOk returns a tuple with the UserMetricChargeForInvoice field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserMetricChargeForInvoice
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetUserMetricChargeForInvoice(v UnibeeApiBeanUserMetricChargeInvoiceItemEntity)`
+
+SetUserMetricChargeForInvoice sets UserMetricChargeForInvoice field to given value.
+
+### HasUserMetricChargeForInvoice
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) HasUserMetricChargeForInvoice() bool`
+
+HasUserMetricChargeForInvoice returns a boolean if a field has been set.
 
 ### GetUserSnapshot
 

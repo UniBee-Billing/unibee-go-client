@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **Email** | Pointer to **string** | Email, one of ExternalUserId&amp;Email, UserId or User needed | [optional] 
 **ExternalUserId** | Pointer to **string** | ExternalUserId, unique, one of ExternalUserId&amp;Email, UserId or User needed | [optional] 
 **GatewayId** | Pointer to **int32** | GatewayId | [optional] 
+**GatewayPaymentType** | Pointer to **string** | Gateway Payment Type | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **PaymentMethodId** | Pointer to **string** | PaymentMethodId | [optional] 
 **PlanId** | **int64** | PlanId | 
@@ -322,6 +323,31 @@ SetGatewayId sets GatewayId field to given value.
 `func (o *UnibeeApiMerchantSubscriptionCreateReq) HasGatewayId() bool`
 
 HasGatewayId returns a boolean if a field has been set.
+
+### GetGatewayPaymentType
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetGatewayPaymentType() string`
+
+GetGatewayPaymentType returns the GatewayPaymentType field if non-nil, zero value otherwise.
+
+### GetGatewayPaymentTypeOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetGatewayPaymentTypeOk() (*string, bool)`
+
+GetGatewayPaymentTypeOk returns a tuple with the GatewayPaymentType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayPaymentType
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) SetGatewayPaymentType(v string)`
+
+SetGatewayPaymentType sets GatewayPaymentType field to given value.
+
+### HasGatewayPaymentType
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) HasGatewayPaymentType() bool`
+
+HasGatewayPaymentType returns a boolean if a field has been set.
 
 ### GetMetadata
 

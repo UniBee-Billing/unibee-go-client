@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AttachInvoiceId** | Pointer to **string** | AttachInvoiceId | [optional] 
 **TemplateName** | **string** | The name of email template | 
 **UserId** | **int64** | UserId | 
 **Variables** | Pointer to **map[string]map[string]interface{}** | Variables，Map | [optional] 
@@ -26,6 +27,31 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantEmailSendTemplateEmailToUserReqWithDefaults instantiates a new UnibeeApiMerchantEmailSendTemplateEmailToUserReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAttachInvoiceId
+
+`func (o *UnibeeApiMerchantEmailSendTemplateEmailToUserReq) GetAttachInvoiceId() string`
+
+GetAttachInvoiceId returns the AttachInvoiceId field if non-nil, zero value otherwise.
+
+### GetAttachInvoiceIdOk
+
+`func (o *UnibeeApiMerchantEmailSendTemplateEmailToUserReq) GetAttachInvoiceIdOk() (*string, bool)`
+
+GetAttachInvoiceIdOk returns a tuple with the AttachInvoiceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttachInvoiceId
+
+`func (o *UnibeeApiMerchantEmailSendTemplateEmailToUserReq) SetAttachInvoiceId(v string)`
+
+SetAttachInvoiceId sets AttachInvoiceId field to given value.
+
+### HasAttachInvoiceId
+
+`func (o *UnibeeApiMerchantEmailSendTemplateEmailToUserReq) HasAttachInvoiceId() bool`
+
+HasAttachInvoiceId returns a boolean if a field has been set.
 
 ### GetTemplateName
 

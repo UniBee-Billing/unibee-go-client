@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EndValue** | Pointer to **int64** | EndValue | [optional] 
-**FlatAmount** | Pointer to **float32** | FlatAmount | [optional] 
-**PerAmount** | Pointer to **float32** | PerAmount | [optional] 
+**EndValue** | Pointer to **int64** | EndValue, -1 &#x3D; infinity value(∞) | [optional] 
+**FlatAmount** | Pointer to **int64** | FlatAmount,cent | [optional] 
+**PerAmount** | Pointer to **int64** | PerAmount,cent | [optional] 
 **StartValue** | Pointer to **int64** | StartValue | [optional] 
 
 ## Methods
@@ -55,20 +55,20 @@ HasEndValue returns a boolean if a field has been set.
 
 ### GetFlatAmount
 
-`func (o *UnibeeApiBeanMetricPlanChargeGraduatedStep) GetFlatAmount() float32`
+`func (o *UnibeeApiBeanMetricPlanChargeGraduatedStep) GetFlatAmount() int64`
 
 GetFlatAmount returns the FlatAmount field if non-nil, zero value otherwise.
 
 ### GetFlatAmountOk
 
-`func (o *UnibeeApiBeanMetricPlanChargeGraduatedStep) GetFlatAmountOk() (*float32, bool)`
+`func (o *UnibeeApiBeanMetricPlanChargeGraduatedStep) GetFlatAmountOk() (*int64, bool)`
 
 GetFlatAmountOk returns a tuple with the FlatAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFlatAmount
 
-`func (o *UnibeeApiBeanMetricPlanChargeGraduatedStep) SetFlatAmount(v float32)`
+`func (o *UnibeeApiBeanMetricPlanChargeGraduatedStep) SetFlatAmount(v int64)`
 
 SetFlatAmount sets FlatAmount field to given value.
 
@@ -80,20 +80,20 @@ HasFlatAmount returns a boolean if a field has been set.
 
 ### GetPerAmount
 
-`func (o *UnibeeApiBeanMetricPlanChargeGraduatedStep) GetPerAmount() float32`
+`func (o *UnibeeApiBeanMetricPlanChargeGraduatedStep) GetPerAmount() int64`
 
 GetPerAmount returns the PerAmount field if non-nil, zero value otherwise.
 
 ### GetPerAmountOk
 
-`func (o *UnibeeApiBeanMetricPlanChargeGraduatedStep) GetPerAmountOk() (*float32, bool)`
+`func (o *UnibeeApiBeanMetricPlanChargeGraduatedStep) GetPerAmountOk() (*int64, bool)`
 
 GetPerAmountOk returns a tuple with the PerAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPerAmount
 
-`func (o *UnibeeApiBeanMetricPlanChargeGraduatedStep) SetPerAmount(v float32)`
+`func (o *UnibeeApiBeanMetricPlanChargeGraduatedStep) SetPerAmount(v int64)`
 
 SetPerAmount sets PerAmount field to given value.
 

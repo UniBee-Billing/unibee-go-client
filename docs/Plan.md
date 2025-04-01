@@ -536,7 +536,7 @@ No authorization required
 
 ## PlanListGet
 
-> MerchantPlanListGet200Response PlanListGet(ctx).ProductIds(productIds).Type_(type_).Status(status).PublishStatus(publishStatus).Currency(currency).SearchKey(searchKey).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
+> MerchantPlanListGet200Response PlanListGet(ctx).PlanIds(planIds).ProductIds(productIds).Type_(type_).Status(status).PublishStatus(publishStatus).Currency(currency).SearchKey(searchKey).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
 
 Get Plan List
 
@@ -553,8 +553,9 @@ import (
 )
 
 func main() {
+	planIds := []int64{int64(123)} // []int64 | filter id list of plan, default all (optional)
 	productIds := []int64{int64(123)} // []int64 | filter id list of product, default all (optional)
-	type_ := []int32{int32(123)} // []int32 | 1-main plan，2-addon plan (optional)
+	type_ := []int32{int32(123)} // []int32 | 1-main plan，2-addon plan,3-onetime (optional)
 	status := []int32{int32(123)} // []int32 | Filter, Default All，,Status，1-Editing，2-Active，3-InActive，4-SoftArchive, 5-HardArchive (optional)
 	publishStatus := int32(56) // int32 | Filter, Default All，PublishStatus，1-UnPublished，2-Published (optional)
 	currency := "currency_example" // string | Filter Currency (optional)
@@ -566,7 +567,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Plan.PlanListGet(context.Background()).ProductIds(productIds).Type_(type_).Status(status).PublishStatus(publishStatus).Currency(currency).SearchKey(searchKey).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
+	resp, r, err := apiClient.Plan.PlanListGet(context.Background()).PlanIds(planIds).ProductIds(productIds).Type_(type_).Status(status).PublishStatus(publishStatus).Currency(currency).SearchKey(searchKey).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Plan.PlanListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -587,8 +588,9 @@ Other parameters are passed through a pointer to a apiPlanListGetRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **planIds** | **[]int64** | filter id list of plan, default all | 
  **productIds** | **[]int64** | filter id list of product, default all | 
- **type_** | **[]int32** | 1-main plan，2-addon plan | 
+ **type_** | **[]int32** | 1-main plan，2-addon plan,3-onetime | 
  **status** | **[]int32** | Filter, Default All，,Status，1-Editing，2-Active，3-InActive，4-SoftArchive, 5-HardArchive | 
  **publishStatus** | **int32** | Filter, Default All，PublishStatus，1-UnPublished，2-Published | 
  **currency** | **string** | Filter Currency | 

@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**MemberResumeMemberPost**](AdminMember.md#MemberResumeMemberPost) | **Post** /merchant/member/resume_member | Resume Member
 [**MemberSuspendMemberPost**](AdminMember.md#MemberSuspendMemberPost) | **Post** /merchant/member/suspend_member | Suspend Member
 [**MemberUpdateMemberRolePost**](AdminMember.md#MemberUpdateMemberRolePost) | **Post** /merchant/member/update_member_role | Update Member Role
+[**MemberUpdatePost**](AdminMember.md#MemberUpdatePost) | **Post** /merchant/member/update | Update Member Profile
 
 
 
@@ -665,6 +666,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## MemberUpdatePost
+
+> MerchantAuthSsoRegisterVerifyPost200Response MemberUpdatePost(ctx).UnibeeApiMerchantMemberUpdateReq(unibeeApiMerchantMemberUpdateReq).Execute()
+
+Update Member Profile
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantMemberUpdateReq := *openapiclient.NewUnibeeApiMerchantMemberUpdateReq() // UnibeeApiMerchantMemberUpdateReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AdminMember.MemberUpdatePost(context.Background()).UnibeeApiMerchantMemberUpdateReq(unibeeApiMerchantMemberUpdateReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AdminMember.MemberUpdatePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MemberUpdatePost`: MerchantAuthSsoRegisterVerifyPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `AdminMember.MemberUpdatePost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiMemberUpdatePostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantMemberUpdateReq** | [**UnibeeApiMerchantMemberUpdateReq**](UnibeeApiMerchantMemberUpdateReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoRegisterVerifyPost200Response**](MerchantAuthSsoRegisterVerifyPost200Response.md)
 
 ### Authorization
 

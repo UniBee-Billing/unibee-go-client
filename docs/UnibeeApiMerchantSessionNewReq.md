@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Address** | Pointer to **string** | Address | [optional] 
+**CancelUrl** | Pointer to **string** | CancelUrl | [optional] 
 **Email** | **string** | Email | 
 **ExternalUserId** | **string** | ExternalUserId | 
 **FirstName** | Pointer to **string** | First Name | [optional] 
@@ -56,6 +57,31 @@ SetAddress sets Address field to given value.
 `func (o *UnibeeApiMerchantSessionNewReq) HasAddress() bool`
 
 HasAddress returns a boolean if a field has been set.
+
+### GetCancelUrl
+
+`func (o *UnibeeApiMerchantSessionNewReq) GetCancelUrl() string`
+
+GetCancelUrl returns the CancelUrl field if non-nil, zero value otherwise.
+
+### GetCancelUrlOk
+
+`func (o *UnibeeApiMerchantSessionNewReq) GetCancelUrlOk() (*string, bool)`
+
+GetCancelUrlOk returns a tuple with the CancelUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCancelUrl
+
+`func (o *UnibeeApiMerchantSessionNewReq) SetCancelUrl(v string)`
+
+SetCancelUrl sets CancelUrl field to given value.
+
+### HasCancelUrl
+
+`func (o *UnibeeApiMerchantSessionNewReq) HasCancelUrl() bool`
+
+HasCancelUrl returns a boolean if a field has been set.
 
 ### GetEmail
 

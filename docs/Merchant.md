@@ -7,6 +7,8 @@ Method | HTTP request | Description
 [**CountryConfigListPost**](Merchant.md#CountryConfigListPost) | **Post** /merchant/country_config_list | Edit Country Config
 [**EditCountryConfigPost**](Merchant.md#EditCountryConfigPost) | **Post** /merchant/edit_country_config | Get Country Config List
 [**GetGet**](Merchant.md#GetGet) | **Get** /merchant/get | Get Profile
+[**GetLicenseGet**](Merchant.md#GetLicenseGet) | **Get** /merchant/get_license | Get License
+[**GetLicenseUpdateUrlGet**](Merchant.md#GetLicenseUpdateUrlGet) | **Get** /merchant/get_license_update_url | Get License Update Url
 [**NewApikeyPost**](Merchant.md#NewApikeyPost) | **Post** /merchant/new_apikey | Generate New APIKey
 [**UpdatePost**](Merchant.md#UpdatePost) | **Post** /merchant/update | Update Profile
 
@@ -184,6 +186,133 @@ Other parameters are passed through a pointer to a apiGetGetRequest struct via t
 ### Return type
 
 [**MerchantGetGet200Response**](MerchantGetGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetLicenseGet
+
+> MerchantGetLicenseGet200Response GetLicenseGet(ctx).Execute()
+
+Get License
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Merchant.GetLicenseGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Merchant.GetLicenseGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetLicenseGet`: MerchantGetLicenseGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `Merchant.GetLicenseGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetLicenseGetRequest struct via the builder pattern
+
+
+### Return type
+
+[**MerchantGetLicenseGet200Response**](MerchantGetLicenseGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetLicenseUpdateUrlGet
+
+> MerchantGetLicenseUpdateUrlGet200Response GetLicenseUpdateUrlGet(ctx).PlanId(planId).ReturnUrl(returnUrl).CancelUrl(cancelUrl).Execute()
+
+Get License Update Url
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	planId := int64(789) // int64 | Id of plan to update (optional)
+	returnUrl := "returnUrl_example" // string | ReturnUrl (optional)
+	cancelUrl := "cancelUrl_example" // string | CancelUrl (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Merchant.GetLicenseUpdateUrlGet(context.Background()).PlanId(planId).ReturnUrl(returnUrl).CancelUrl(cancelUrl).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Merchant.GetLicenseUpdateUrlGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetLicenseUpdateUrlGet`: MerchantGetLicenseUpdateUrlGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `Merchant.GetLicenseUpdateUrlGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetLicenseUpdateUrlGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **planId** | **int64** | Id of plan to update | 
+ **returnUrl** | **string** | ReturnUrl | 
+ **cancelUrl** | **string** | CancelUrl | 
+
+### Return type
+
+[**MerchantGetLicenseUpdateUrlGet200Response**](MerchantGetLicenseUpdateUrlGet200Response.md)
 
 ### Authorization
 

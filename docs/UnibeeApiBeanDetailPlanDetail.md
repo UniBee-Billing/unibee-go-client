@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonIds** | Pointer to **[]int64** | AddonIds | [optional] 
 **Addons** | Pointer to [**[]UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) | Addons | [optional] 
-**MetricMeteredCharge** | Pointer to [**[]UnibeeApiBeanDetailMetricPlanChargeDetail**](UnibeeApiBeanDetailMetricPlanChargeDetail.md) | Plan&#39;s MetricMeteredCharge | [optional] 
-**MetricPlanLimits** | Pointer to [**[]UnibeeApiBeanMerchantMetricPlanLimit**](UnibeeApiBeanMerchantMetricPlanLimit.md) | MetricPlanLimits | [optional] 
-**MetricRecurringCharge** | Pointer to [**[]UnibeeApiBeanDetailMetricPlanChargeDetail**](UnibeeApiBeanDetailMetricPlanChargeDetail.md) | Plan&#39;s MetricRecurringCharge | [optional] 
+**MetricMeteredCharge** | Pointer to [**[]UnibeeApiBeanDetailMerchantMetricPlanChargeDetail**](UnibeeApiBeanDetailMerchantMetricPlanChargeDetail.md) | Plan&#39;s MetricMeteredCharge | [optional] 
+**MetricPlanLimits** | Pointer to [**[]UnibeeApiBeanDetailMerchantMetricPlanLimitDetail**](UnibeeApiBeanDetailMerchantMetricPlanLimitDetail.md) | MetricPlanLimits | [optional] 
+**MetricRecurringCharge** | Pointer to [**[]UnibeeApiBeanDetailMerchantMetricPlanChargeDetail**](UnibeeApiBeanDetailMerchantMetricPlanChargeDetail.md) | Plan&#39;s MetricRecurringCharge | [optional] 
 **OnetimeAddonIds** | Pointer to **[]int64** | OneTimeAddonIds | [optional] 
 **OnetimeAddons** | Pointer to [**[]UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) | OneTimeAddons | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
@@ -85,20 +85,20 @@ HasAddons returns a boolean if a field has been set.
 
 ### GetMetricMeteredCharge
 
-`func (o *UnibeeApiBeanDetailPlanDetail) GetMetricMeteredCharge() []UnibeeApiBeanDetailMetricPlanChargeDetail`
+`func (o *UnibeeApiBeanDetailPlanDetail) GetMetricMeteredCharge() []UnibeeApiBeanDetailMerchantMetricPlanChargeDetail`
 
 GetMetricMeteredCharge returns the MetricMeteredCharge field if non-nil, zero value otherwise.
 
 ### GetMetricMeteredChargeOk
 
-`func (o *UnibeeApiBeanDetailPlanDetail) GetMetricMeteredChargeOk() (*[]UnibeeApiBeanDetailMetricPlanChargeDetail, bool)`
+`func (o *UnibeeApiBeanDetailPlanDetail) GetMetricMeteredChargeOk() (*[]UnibeeApiBeanDetailMerchantMetricPlanChargeDetail, bool)`
 
 GetMetricMeteredChargeOk returns a tuple with the MetricMeteredCharge field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetricMeteredCharge
 
-`func (o *UnibeeApiBeanDetailPlanDetail) SetMetricMeteredCharge(v []UnibeeApiBeanDetailMetricPlanChargeDetail)`
+`func (o *UnibeeApiBeanDetailPlanDetail) SetMetricMeteredCharge(v []UnibeeApiBeanDetailMerchantMetricPlanChargeDetail)`
 
 SetMetricMeteredCharge sets MetricMeteredCharge field to given value.
 
@@ -110,20 +110,20 @@ HasMetricMeteredCharge returns a boolean if a field has been set.
 
 ### GetMetricPlanLimits
 
-`func (o *UnibeeApiBeanDetailPlanDetail) GetMetricPlanLimits() []UnibeeApiBeanMerchantMetricPlanLimit`
+`func (o *UnibeeApiBeanDetailPlanDetail) GetMetricPlanLimits() []UnibeeApiBeanDetailMerchantMetricPlanLimitDetail`
 
 GetMetricPlanLimits returns the MetricPlanLimits field if non-nil, zero value otherwise.
 
 ### GetMetricPlanLimitsOk
 
-`func (o *UnibeeApiBeanDetailPlanDetail) GetMetricPlanLimitsOk() (*[]UnibeeApiBeanMerchantMetricPlanLimit, bool)`
+`func (o *UnibeeApiBeanDetailPlanDetail) GetMetricPlanLimitsOk() (*[]UnibeeApiBeanDetailMerchantMetricPlanLimitDetail, bool)`
 
 GetMetricPlanLimitsOk returns a tuple with the MetricPlanLimits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetricPlanLimits
 
-`func (o *UnibeeApiBeanDetailPlanDetail) SetMetricPlanLimits(v []UnibeeApiBeanMerchantMetricPlanLimit)`
+`func (o *UnibeeApiBeanDetailPlanDetail) SetMetricPlanLimits(v []UnibeeApiBeanDetailMerchantMetricPlanLimitDetail)`
 
 SetMetricPlanLimits sets MetricPlanLimits field to given value.
 
@@ -135,20 +135,20 @@ HasMetricPlanLimits returns a boolean if a field has been set.
 
 ### GetMetricRecurringCharge
 
-`func (o *UnibeeApiBeanDetailPlanDetail) GetMetricRecurringCharge() []UnibeeApiBeanDetailMetricPlanChargeDetail`
+`func (o *UnibeeApiBeanDetailPlanDetail) GetMetricRecurringCharge() []UnibeeApiBeanDetailMerchantMetricPlanChargeDetail`
 
 GetMetricRecurringCharge returns the MetricRecurringCharge field if non-nil, zero value otherwise.
 
 ### GetMetricRecurringChargeOk
 
-`func (o *UnibeeApiBeanDetailPlanDetail) GetMetricRecurringChargeOk() (*[]UnibeeApiBeanDetailMetricPlanChargeDetail, bool)`
+`func (o *UnibeeApiBeanDetailPlanDetail) GetMetricRecurringChargeOk() (*[]UnibeeApiBeanDetailMerchantMetricPlanChargeDetail, bool)`
 
 GetMetricRecurringChargeOk returns a tuple with the MetricRecurringCharge field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetricRecurringCharge
 
-`func (o *UnibeeApiBeanDetailPlanDetail) SetMetricRecurringCharge(v []UnibeeApiBeanDetailMetricPlanChargeDetail)`
+`func (o *UnibeeApiBeanDetailPlanDetail) SetMetricRecurringCharge(v []UnibeeApiBeanDetailMerchantMetricPlanChargeDetail)`
 
 SetMetricRecurringCharge sets MetricRecurringCharge field to given value.
 

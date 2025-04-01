@@ -13,12 +13,13 @@ Name | Type | Description | Notes
 **GasPayer** | Pointer to **string** | who pay the gas for crypto payment, merchant|user | [optional] 
 **HomeUrl** | Pointer to **string** | HomeUrl,Start With: http | [optional] 
 **ImageUrl** | Pointer to **string** | ImageUrl,Start With: http | [optional] 
+**InternalName** | Pointer to **string** |  | [optional] 
 **IntervalCount** | Pointer to **int32** | Number,intervalUnit of plan, not editable when plan is active | [optional] 
 **IntervalUnit** | Pointer to **string** | Interval unit of plan，em: day|month|year|week, not editable when plan is active | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
-**MetricLimits** | Pointer to [**[]UnibeeApiBeanBulkMetricLimitPlanBindingParam**](UnibeeApiBeanBulkMetricLimitPlanBindingParam.md) | Plan&#39;s MetricLimit List | [optional] 
-**MetricMeteredCharge** | Pointer to [**[][]UnibeeApiBeanMetricPlanChargeBindingParam**]([]UnibeeApiBeanMetricPlanChargeBindingParam.md) | Plan&#39;s MetricMeteredCharge | [optional] 
-**MetricRecurringCharge** | Pointer to [**[][]UnibeeApiBeanMetricPlanChargeBindingParam**]([]UnibeeApiBeanMetricPlanChargeBindingParam.md) | Plan&#39;s MetricRecurringCharge | [optional] 
+**MetricLimits** | Pointer to [**[]UnibeeApiBeanPlanMetricLimitParam**](UnibeeApiBeanPlanMetricLimitParam.md) | Plan&#39;s MetricLimit List | [optional] 
+**MetricMeteredCharge** | Pointer to [**[][]UnibeeApiBeanPlanMetricMeteredChargeParam**]([]UnibeeApiBeanPlanMetricMeteredChargeParam.md) | Plan&#39;s MetricMeteredCharge | [optional] 
+**MetricRecurringCharge** | Pointer to [**[][]UnibeeApiBeanPlanMetricMeteredChargeParam**]([]UnibeeApiBeanPlanMetricMeteredChargeParam.md) | Plan&#39;s MetricRecurringCharge | [optional] 
 **OnetimeAddonIds** | Pointer to **[]int64** | Plan Ids Of Onetime Addon Type | [optional] 
 **PlanId** | **int64** | Id of plan | 
 **PlanName** | Pointer to **string** | Name of plan | [optional] 
@@ -273,6 +274,31 @@ SetImageUrl sets ImageUrl field to given value.
 
 HasImageUrl returns a boolean if a field has been set.
 
+### GetInternalName
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetInternalName() string`
+
+GetInternalName returns the InternalName field if non-nil, zero value otherwise.
+
+### GetInternalNameOk
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetInternalNameOk() (*string, bool)`
+
+GetInternalNameOk returns a tuple with the InternalName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInternalName
+
+`func (o *UnibeeApiMerchantPlanEditReq) SetInternalName(v string)`
+
+SetInternalName sets InternalName field to given value.
+
+### HasInternalName
+
+`func (o *UnibeeApiMerchantPlanEditReq) HasInternalName() bool`
+
+HasInternalName returns a boolean if a field has been set.
+
 ### GetIntervalCount
 
 `func (o *UnibeeApiMerchantPlanEditReq) GetIntervalCount() int32`
@@ -350,20 +376,20 @@ HasMetadata returns a boolean if a field has been set.
 
 ### GetMetricLimits
 
-`func (o *UnibeeApiMerchantPlanEditReq) GetMetricLimits() []UnibeeApiBeanBulkMetricLimitPlanBindingParam`
+`func (o *UnibeeApiMerchantPlanEditReq) GetMetricLimits() []UnibeeApiBeanPlanMetricLimitParam`
 
 GetMetricLimits returns the MetricLimits field if non-nil, zero value otherwise.
 
 ### GetMetricLimitsOk
 
-`func (o *UnibeeApiMerchantPlanEditReq) GetMetricLimitsOk() (*[]UnibeeApiBeanBulkMetricLimitPlanBindingParam, bool)`
+`func (o *UnibeeApiMerchantPlanEditReq) GetMetricLimitsOk() (*[]UnibeeApiBeanPlanMetricLimitParam, bool)`
 
 GetMetricLimitsOk returns a tuple with the MetricLimits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetricLimits
 
-`func (o *UnibeeApiMerchantPlanEditReq) SetMetricLimits(v []UnibeeApiBeanBulkMetricLimitPlanBindingParam)`
+`func (o *UnibeeApiMerchantPlanEditReq) SetMetricLimits(v []UnibeeApiBeanPlanMetricLimitParam)`
 
 SetMetricLimits sets MetricLimits field to given value.
 
@@ -375,20 +401,20 @@ HasMetricLimits returns a boolean if a field has been set.
 
 ### GetMetricMeteredCharge
 
-`func (o *UnibeeApiMerchantPlanEditReq) GetMetricMeteredCharge() [][]UnibeeApiBeanMetricPlanChargeBindingParam`
+`func (o *UnibeeApiMerchantPlanEditReq) GetMetricMeteredCharge() [][]UnibeeApiBeanPlanMetricMeteredChargeParam`
 
 GetMetricMeteredCharge returns the MetricMeteredCharge field if non-nil, zero value otherwise.
 
 ### GetMetricMeteredChargeOk
 
-`func (o *UnibeeApiMerchantPlanEditReq) GetMetricMeteredChargeOk() (*[][]UnibeeApiBeanMetricPlanChargeBindingParam, bool)`
+`func (o *UnibeeApiMerchantPlanEditReq) GetMetricMeteredChargeOk() (*[][]UnibeeApiBeanPlanMetricMeteredChargeParam, bool)`
 
 GetMetricMeteredChargeOk returns a tuple with the MetricMeteredCharge field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetricMeteredCharge
 
-`func (o *UnibeeApiMerchantPlanEditReq) SetMetricMeteredCharge(v [][]UnibeeApiBeanMetricPlanChargeBindingParam)`
+`func (o *UnibeeApiMerchantPlanEditReq) SetMetricMeteredCharge(v [][]UnibeeApiBeanPlanMetricMeteredChargeParam)`
 
 SetMetricMeteredCharge sets MetricMeteredCharge field to given value.
 
@@ -400,20 +426,20 @@ HasMetricMeteredCharge returns a boolean if a field has been set.
 
 ### GetMetricRecurringCharge
 
-`func (o *UnibeeApiMerchantPlanEditReq) GetMetricRecurringCharge() [][]UnibeeApiBeanMetricPlanChargeBindingParam`
+`func (o *UnibeeApiMerchantPlanEditReq) GetMetricRecurringCharge() [][]UnibeeApiBeanPlanMetricMeteredChargeParam`
 
 GetMetricRecurringCharge returns the MetricRecurringCharge field if non-nil, zero value otherwise.
 
 ### GetMetricRecurringChargeOk
 
-`func (o *UnibeeApiMerchantPlanEditReq) GetMetricRecurringChargeOk() (*[][]UnibeeApiBeanMetricPlanChargeBindingParam, bool)`
+`func (o *UnibeeApiMerchantPlanEditReq) GetMetricRecurringChargeOk() (*[][]UnibeeApiBeanPlanMetricMeteredChargeParam, bool)`
 
 GetMetricRecurringChargeOk returns a tuple with the MetricRecurringCharge field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetricRecurringCharge
 
-`func (o *UnibeeApiMerchantPlanEditReq) SetMetricRecurringCharge(v [][]UnibeeApiBeanMetricPlanChargeBindingParam)`
+`func (o *UnibeeApiMerchantPlanEditReq) SetMetricRecurringCharge(v [][]UnibeeApiBeanPlanMetricMeteredChargeParam)`
 
 SetMetricRecurringCharge sets MetricRecurringCharge field to given value.
 

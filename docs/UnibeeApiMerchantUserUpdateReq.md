@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **Facebook** | Pointer to **string** | Facebook | [optional] 
 **FirstName** | Pointer to **string** | First name | [optional] 
 **GatewayId** | Pointer to **int32** | GatewayId | [optional] 
+**GatewayPaymentType** | Pointer to **string** | Gateway Payment Type | [optional] 
 **Language** | Pointer to **string** | User Language, en|ru|cn|vi|bp | [optional] 
 **LastName** | Pointer to **string** | Last Name | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
@@ -324,6 +325,31 @@ SetGatewayId sets GatewayId field to given value.
 `func (o *UnibeeApiMerchantUserUpdateReq) HasGatewayId() bool`
 
 HasGatewayId returns a boolean if a field has been set.
+
+### GetGatewayPaymentType
+
+`func (o *UnibeeApiMerchantUserUpdateReq) GetGatewayPaymentType() string`
+
+GetGatewayPaymentType returns the GatewayPaymentType field if non-nil, zero value otherwise.
+
+### GetGatewayPaymentTypeOk
+
+`func (o *UnibeeApiMerchantUserUpdateReq) GetGatewayPaymentTypeOk() (*string, bool)`
+
+GetGatewayPaymentTypeOk returns a tuple with the GatewayPaymentType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayPaymentType
+
+`func (o *UnibeeApiMerchantUserUpdateReq) SetGatewayPaymentType(v string)`
+
+SetGatewayPaymentType sets GatewayPaymentType field to given value.
+
+### HasGatewayPaymentType
+
+`func (o *UnibeeApiMerchantUserUpdateReq) HasGatewayPaymentType() bool`
+
+HasGatewayPaymentType returns a boolean if a field has been set.
 
 ### GetLanguage
 

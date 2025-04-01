@@ -4,17 +4,21 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AggregationUniqueId** | Pointer to **string** | AggregationUniqueId, valid when AggregationType is count unique | [optional] 
+**AggregationValue** | Pointer to **int32** | AggregationValue, valid when AggregationType latest, max or sum | [optional] 
+**Email** | Pointer to **string** | Email， UserId, ExternalUserId, or Email provides one of three options | [optional] [default to "account@unibee.dev"]
 **ExternalEventId** | **string** | ExternalEventId, __unique__ | 
-**ExternalUserId** | **string** | ExternalUserId | 
+**ExternalUserId** | Pointer to **string** | ExternalUserId， UserId, ExternalUserId, or Email provides one of three options | [optional] 
 **MetricCode** | **string** | MetricCode | 
 **MetricProperties** | Pointer to **map[string]interface{}** |  | [optional] 
 **ProductId** | Pointer to **int64** | default product will use if productId not specified and subscriptionId is blank | [optional] 
+**UserId** | Pointer to **int64** | UserId， UserId, ExternalUserId, or Email provides one of three options | [optional] 
 
 ## Methods
 
 ### NewUnibeeApiMerchantMetricNewEventReq
 
-`func NewUnibeeApiMerchantMetricNewEventReq(externalEventId string, externalUserId string, metricCode string, ) *UnibeeApiMerchantMetricNewEventReq`
+`func NewUnibeeApiMerchantMetricNewEventReq(externalEventId string, metricCode string, ) *UnibeeApiMerchantMetricNewEventReq`
 
 NewUnibeeApiMerchantMetricNewEventReq instantiates a new UnibeeApiMerchantMetricNewEventReq object
 This constructor will assign default values to properties that have it defined,
@@ -28,6 +32,81 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantMetricNewEventReqWithDefaults instantiates a new UnibeeApiMerchantMetricNewEventReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAggregationUniqueId
+
+`func (o *UnibeeApiMerchantMetricNewEventReq) GetAggregationUniqueId() string`
+
+GetAggregationUniqueId returns the AggregationUniqueId field if non-nil, zero value otherwise.
+
+### GetAggregationUniqueIdOk
+
+`func (o *UnibeeApiMerchantMetricNewEventReq) GetAggregationUniqueIdOk() (*string, bool)`
+
+GetAggregationUniqueIdOk returns a tuple with the AggregationUniqueId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAggregationUniqueId
+
+`func (o *UnibeeApiMerchantMetricNewEventReq) SetAggregationUniqueId(v string)`
+
+SetAggregationUniqueId sets AggregationUniqueId field to given value.
+
+### HasAggregationUniqueId
+
+`func (o *UnibeeApiMerchantMetricNewEventReq) HasAggregationUniqueId() bool`
+
+HasAggregationUniqueId returns a boolean if a field has been set.
+
+### GetAggregationValue
+
+`func (o *UnibeeApiMerchantMetricNewEventReq) GetAggregationValue() int32`
+
+GetAggregationValue returns the AggregationValue field if non-nil, zero value otherwise.
+
+### GetAggregationValueOk
+
+`func (o *UnibeeApiMerchantMetricNewEventReq) GetAggregationValueOk() (*int32, bool)`
+
+GetAggregationValueOk returns a tuple with the AggregationValue field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAggregationValue
+
+`func (o *UnibeeApiMerchantMetricNewEventReq) SetAggregationValue(v int32)`
+
+SetAggregationValue sets AggregationValue field to given value.
+
+### HasAggregationValue
+
+`func (o *UnibeeApiMerchantMetricNewEventReq) HasAggregationValue() bool`
+
+HasAggregationValue returns a boolean if a field has been set.
+
+### GetEmail
+
+`func (o *UnibeeApiMerchantMetricNewEventReq) GetEmail() string`
+
+GetEmail returns the Email field if non-nil, zero value otherwise.
+
+### GetEmailOk
+
+`func (o *UnibeeApiMerchantMetricNewEventReq) GetEmailOk() (*string, bool)`
+
+GetEmailOk returns a tuple with the Email field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmail
+
+`func (o *UnibeeApiMerchantMetricNewEventReq) SetEmail(v string)`
+
+SetEmail sets Email field to given value.
+
+### HasEmail
+
+`func (o *UnibeeApiMerchantMetricNewEventReq) HasEmail() bool`
+
+HasEmail returns a boolean if a field has been set.
 
 ### GetExternalEventId
 
@@ -68,6 +147,11 @@ and a boolean to check if the value has been set.
 
 SetExternalUserId sets ExternalUserId field to given value.
 
+### HasExternalUserId
+
+`func (o *UnibeeApiMerchantMetricNewEventReq) HasExternalUserId() bool`
+
+HasExternalUserId returns a boolean if a field has been set.
 
 ### GetMetricCode
 
@@ -138,6 +222,31 @@ SetProductId sets ProductId field to given value.
 `func (o *UnibeeApiMerchantMetricNewEventReq) HasProductId() bool`
 
 HasProductId returns a boolean if a field has been set.
+
+### GetUserId
+
+`func (o *UnibeeApiMerchantMetricNewEventReq) GetUserId() int64`
+
+GetUserId returns the UserId field if non-nil, zero value otherwise.
+
+### GetUserIdOk
+
+`func (o *UnibeeApiMerchantMetricNewEventReq) GetUserIdOk() (*int64, bool)`
+
+GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserId
+
+`func (o *UnibeeApiMerchantMetricNewEventReq) SetUserId(v int64)`
+
+SetUserId sets UserId field to given value.
+
+### HasUserId
+
+`func (o *UnibeeApiMerchantMetricNewEventReq) HasUserId() bool`
+
+HasUserId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **GatewayIcons** | Pointer to **[][]string** | The icons of payment gateway | [optional] 
 **GatewayKey** | Pointer to **string** | The key of payment gateway | [optional] 
 **GatewayName** | **string** | The name of payment gateway, stripe|paypal|changelly|unitpay|payssion|cryptadium | 
+**GatewayPaymentTypes** | Pointer to **[]string** | Selected gateway payment types | [optional] 
 **GatewaySecret** | Pointer to **string** | The secret of payment gateway | [optional] 
 **Sort** | Pointer to **int32** | The sort value of payment gateway, The bigger, the closer to the front | [optional] 
 **SubGateway** | Pointer to **string** | The sub gateway of payment gateway | [optional] 
@@ -151,6 +152,31 @@ and a boolean to check if the value has been set.
 
 SetGatewayName sets GatewayName field to given value.
 
+
+### GetGatewayPaymentTypes
+
+`func (o *UnibeeApiMerchantGatewaySetupReq) GetGatewayPaymentTypes() []string`
+
+GetGatewayPaymentTypes returns the GatewayPaymentTypes field if non-nil, zero value otherwise.
+
+### GetGatewayPaymentTypesOk
+
+`func (o *UnibeeApiMerchantGatewaySetupReq) GetGatewayPaymentTypesOk() (*[]string, bool)`
+
+GetGatewayPaymentTypesOk returns a tuple with the GatewayPaymentTypes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayPaymentTypes
+
+`func (o *UnibeeApiMerchantGatewaySetupReq) SetGatewayPaymentTypes(v []string)`
+
+SetGatewayPaymentTypes sets GatewayPaymentTypes field to given value.
+
+### HasGatewayPaymentTypes
+
+`func (o *UnibeeApiMerchantGatewaySetupReq) HasGatewayPaymentTypes() bool`
+
+HasGatewayPaymentTypes returns a boolean if a field has been set.
 
 ### GetGatewaySecret
 

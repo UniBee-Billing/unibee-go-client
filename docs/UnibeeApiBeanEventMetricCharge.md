@@ -4,11 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | Pointer to **int64** | Amount | [optional] 
-**ChargePricing** | Pointer to [**UnibeeApiBeanMetricPlanChargeBindingParam**](UnibeeApiBeanMetricPlanChargeBindingParam.md) |  | [optional] 
+**ChargeAmount** | Pointer to **int64** | ChargeAmount | [optional] 
+**ChargePricing** | Pointer to [**UnibeeApiBeanPlanMetricMeteredChargeParam**](UnibeeApiBeanPlanMetricMeteredChargeParam.md) |  | [optional] 
 **Currency** | Pointer to **string** | Currency | [optional] 
-**CurrentValue** | Pointer to **int64** | CurrentValue | [optional] 
+**CurrentValue** | Pointer to **int64** | CurrentUsedValue | [optional] 
+**GraduatedStep** | Pointer to [**UnibeeApiBeanMetricPlanChargeGraduatedStep**](UnibeeApiBeanMetricPlanChargeGraduatedStep.md) |  | [optional] 
 **PlanId** | Pointer to **int64** | PlanId | [optional] 
+**TotalChargeAmount** | Pointer to **int64** | TotalChargeAmount | [optional] 
+**UnitAmount** | Pointer to **int64** | UnitAmount | [optional] 
 
 ## Methods
 
@@ -29,47 +32,47 @@ NewUnibeeApiBeanEventMetricChargeWithDefaults instantiates a new UnibeeApiBeanEv
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetAmount
+### GetChargeAmount
 
-`func (o *UnibeeApiBeanEventMetricCharge) GetAmount() int64`
+`func (o *UnibeeApiBeanEventMetricCharge) GetChargeAmount() int64`
 
-GetAmount returns the Amount field if non-nil, zero value otherwise.
+GetChargeAmount returns the ChargeAmount field if non-nil, zero value otherwise.
 
-### GetAmountOk
+### GetChargeAmountOk
 
-`func (o *UnibeeApiBeanEventMetricCharge) GetAmountOk() (*int64, bool)`
+`func (o *UnibeeApiBeanEventMetricCharge) GetChargeAmountOk() (*int64, bool)`
 
-GetAmountOk returns a tuple with the Amount field if it's non-nil, zero value otherwise
+GetChargeAmountOk returns a tuple with the ChargeAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAmount
+### SetChargeAmount
 
-`func (o *UnibeeApiBeanEventMetricCharge) SetAmount(v int64)`
+`func (o *UnibeeApiBeanEventMetricCharge) SetChargeAmount(v int64)`
 
-SetAmount sets Amount field to given value.
+SetChargeAmount sets ChargeAmount field to given value.
 
-### HasAmount
+### HasChargeAmount
 
-`func (o *UnibeeApiBeanEventMetricCharge) HasAmount() bool`
+`func (o *UnibeeApiBeanEventMetricCharge) HasChargeAmount() bool`
 
-HasAmount returns a boolean if a field has been set.
+HasChargeAmount returns a boolean if a field has been set.
 
 ### GetChargePricing
 
-`func (o *UnibeeApiBeanEventMetricCharge) GetChargePricing() UnibeeApiBeanMetricPlanChargeBindingParam`
+`func (o *UnibeeApiBeanEventMetricCharge) GetChargePricing() UnibeeApiBeanPlanMetricMeteredChargeParam`
 
 GetChargePricing returns the ChargePricing field if non-nil, zero value otherwise.
 
 ### GetChargePricingOk
 
-`func (o *UnibeeApiBeanEventMetricCharge) GetChargePricingOk() (*UnibeeApiBeanMetricPlanChargeBindingParam, bool)`
+`func (o *UnibeeApiBeanEventMetricCharge) GetChargePricingOk() (*UnibeeApiBeanPlanMetricMeteredChargeParam, bool)`
 
 GetChargePricingOk returns a tuple with the ChargePricing field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChargePricing
 
-`func (o *UnibeeApiBeanEventMetricCharge) SetChargePricing(v UnibeeApiBeanMetricPlanChargeBindingParam)`
+`func (o *UnibeeApiBeanEventMetricCharge) SetChargePricing(v UnibeeApiBeanPlanMetricMeteredChargeParam)`
 
 SetChargePricing sets ChargePricing field to given value.
 
@@ -129,6 +132,31 @@ SetCurrentValue sets CurrentValue field to given value.
 
 HasCurrentValue returns a boolean if a field has been set.
 
+### GetGraduatedStep
+
+`func (o *UnibeeApiBeanEventMetricCharge) GetGraduatedStep() UnibeeApiBeanMetricPlanChargeGraduatedStep`
+
+GetGraduatedStep returns the GraduatedStep field if non-nil, zero value otherwise.
+
+### GetGraduatedStepOk
+
+`func (o *UnibeeApiBeanEventMetricCharge) GetGraduatedStepOk() (*UnibeeApiBeanMetricPlanChargeGraduatedStep, bool)`
+
+GetGraduatedStepOk returns a tuple with the GraduatedStep field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGraduatedStep
+
+`func (o *UnibeeApiBeanEventMetricCharge) SetGraduatedStep(v UnibeeApiBeanMetricPlanChargeGraduatedStep)`
+
+SetGraduatedStep sets GraduatedStep field to given value.
+
+### HasGraduatedStep
+
+`func (o *UnibeeApiBeanEventMetricCharge) HasGraduatedStep() bool`
+
+HasGraduatedStep returns a boolean if a field has been set.
+
 ### GetPlanId
 
 `func (o *UnibeeApiBeanEventMetricCharge) GetPlanId() int64`
@@ -153,6 +181,56 @@ SetPlanId sets PlanId field to given value.
 `func (o *UnibeeApiBeanEventMetricCharge) HasPlanId() bool`
 
 HasPlanId returns a boolean if a field has been set.
+
+### GetTotalChargeAmount
+
+`func (o *UnibeeApiBeanEventMetricCharge) GetTotalChargeAmount() int64`
+
+GetTotalChargeAmount returns the TotalChargeAmount field if non-nil, zero value otherwise.
+
+### GetTotalChargeAmountOk
+
+`func (o *UnibeeApiBeanEventMetricCharge) GetTotalChargeAmountOk() (*int64, bool)`
+
+GetTotalChargeAmountOk returns a tuple with the TotalChargeAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotalChargeAmount
+
+`func (o *UnibeeApiBeanEventMetricCharge) SetTotalChargeAmount(v int64)`
+
+SetTotalChargeAmount sets TotalChargeAmount field to given value.
+
+### HasTotalChargeAmount
+
+`func (o *UnibeeApiBeanEventMetricCharge) HasTotalChargeAmount() bool`
+
+HasTotalChargeAmount returns a boolean if a field has been set.
+
+### GetUnitAmount
+
+`func (o *UnibeeApiBeanEventMetricCharge) GetUnitAmount() int64`
+
+GetUnitAmount returns the UnitAmount field if non-nil, zero value otherwise.
+
+### GetUnitAmountOk
+
+`func (o *UnibeeApiBeanEventMetricCharge) GetUnitAmountOk() (*int64, bool)`
+
+GetUnitAmountOk returns a tuple with the UnitAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUnitAmount
+
+`func (o *UnibeeApiBeanEventMetricCharge) SetUnitAmount(v int64)`
+
+SetUnitAmount sets UnitAmount field to given value.
+
+### HasUnitAmount
+
+`func (o *UnibeeApiBeanEventMetricCharge) HasUnitAmount() bool`
+
+HasUnitAmount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

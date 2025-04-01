@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **IsSetupFinished** | Pointer to **bool** | Whether the gateway finished setup process | [optional] 
 **Archive** | Pointer to **bool** |  | [optional] 
+**AutoChargeEnabled** | Pointer to **bool** |  | [optional] 
 **Bank** | Pointer to [**UnibeeApiBeanDetailGatewayBank**](UnibeeApiBeanDetailGatewayBank.md) |  | [optional] 
 **CountryConfig** | Pointer to **map[string]bool** |  | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
@@ -19,6 +20,7 @@ Name | Type | Description | Notes
 **GatewayKey** | Pointer to **string** |  | [optional] 
 **GatewayLogo** | Pointer to **string** |  | [optional] 
 **GatewayName** | Pointer to **string** | The gateway name, stripe|paypal|changelly|unitpay|payssion|cryptadium | [optional] 
+**GatewayPaymentTypes** | Pointer to [**[]UnibeeInternalInterfaceGatewayPaymentType**](UnibeeInternalInterfaceGatewayPaymentType.md) | gatewayPaymentTypes | [optional] 
 **GatewaySecret** | Pointer to **string** |  | [optional] 
 **GatewayType** | Pointer to **int64** | gateway type，1-Bank Card ｜ 2-Crypto | 3 - Wire Transfer | [optional] 
 **GatewayWebhookIntegrationLink** | Pointer to **string** | The gateway webhook integration guide link, gateway webhook need setup if not blank | [optional] 
@@ -27,9 +29,9 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | The name of gateway | [optional] 
 **PrivateSecretName** | Pointer to **string** |  | [optional] 
 **PublicKeyName** | Pointer to **string** |  | [optional] 
+**SetupGatewayPaymentTypes** | Pointer to [**[]UnibeeInternalInterfaceGatewayPaymentType**](UnibeeInternalInterfaceGatewayPaymentType.md) | The total list of gateway payment types, used for setup | [optional] 
 **Sort** | Pointer to **int64** | The sort value of payment gateway, The bigger, the closer to the front | [optional] 
 **SubGateway** | Pointer to **string** |  | [optional] 
-**SubGatewayConfigs** | Pointer to [**[]UnibeeInternalInterfaceSubGatewayConfig**](UnibeeInternalInterfaceSubGatewayConfig.md) |  | [optional] 
 **SubGatewayName** | Pointer to **string** |  | [optional] 
 **WebhookEndpointUrl** | Pointer to **string** | The endpoint url of gateway webhook  | [optional] 
 **WebhookSecret** | Pointer to **string** | The secret of gateway webhook | [optional] 
@@ -102,6 +104,31 @@ SetArchive sets Archive field to given value.
 `func (o *UnibeeApiBeanDetailGateway) HasArchive() bool`
 
 HasArchive returns a boolean if a field has been set.
+
+### GetAutoChargeEnabled
+
+`func (o *UnibeeApiBeanDetailGateway) GetAutoChargeEnabled() bool`
+
+GetAutoChargeEnabled returns the AutoChargeEnabled field if non-nil, zero value otherwise.
+
+### GetAutoChargeEnabledOk
+
+`func (o *UnibeeApiBeanDetailGateway) GetAutoChargeEnabledOk() (*bool, bool)`
+
+GetAutoChargeEnabledOk returns a tuple with the AutoChargeEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoChargeEnabled
+
+`func (o *UnibeeApiBeanDetailGateway) SetAutoChargeEnabled(v bool)`
+
+SetAutoChargeEnabled sets AutoChargeEnabled field to given value.
+
+### HasAutoChargeEnabled
+
+`func (o *UnibeeApiBeanDetailGateway) HasAutoChargeEnabled() bool`
+
+HasAutoChargeEnabled returns a boolean if a field has been set.
 
 ### GetBank
 
@@ -428,6 +455,31 @@ SetGatewayName sets GatewayName field to given value.
 
 HasGatewayName returns a boolean if a field has been set.
 
+### GetGatewayPaymentTypes
+
+`func (o *UnibeeApiBeanDetailGateway) GetGatewayPaymentTypes() []UnibeeInternalInterfaceGatewayPaymentType`
+
+GetGatewayPaymentTypes returns the GatewayPaymentTypes field if non-nil, zero value otherwise.
+
+### GetGatewayPaymentTypesOk
+
+`func (o *UnibeeApiBeanDetailGateway) GetGatewayPaymentTypesOk() (*[]UnibeeInternalInterfaceGatewayPaymentType, bool)`
+
+GetGatewayPaymentTypesOk returns a tuple with the GatewayPaymentTypes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayPaymentTypes
+
+`func (o *UnibeeApiBeanDetailGateway) SetGatewayPaymentTypes(v []UnibeeInternalInterfaceGatewayPaymentType)`
+
+SetGatewayPaymentTypes sets GatewayPaymentTypes field to given value.
+
+### HasGatewayPaymentTypes
+
+`func (o *UnibeeApiBeanDetailGateway) HasGatewayPaymentTypes() bool`
+
+HasGatewayPaymentTypes returns a boolean if a field has been set.
+
 ### GetGatewaySecret
 
 `func (o *UnibeeApiBeanDetailGateway) GetGatewaySecret() string`
@@ -628,6 +680,31 @@ SetPublicKeyName sets PublicKeyName field to given value.
 
 HasPublicKeyName returns a boolean if a field has been set.
 
+### GetSetupGatewayPaymentTypes
+
+`func (o *UnibeeApiBeanDetailGateway) GetSetupGatewayPaymentTypes() []UnibeeInternalInterfaceGatewayPaymentType`
+
+GetSetupGatewayPaymentTypes returns the SetupGatewayPaymentTypes field if non-nil, zero value otherwise.
+
+### GetSetupGatewayPaymentTypesOk
+
+`func (o *UnibeeApiBeanDetailGateway) GetSetupGatewayPaymentTypesOk() (*[]UnibeeInternalInterfaceGatewayPaymentType, bool)`
+
+GetSetupGatewayPaymentTypesOk returns a tuple with the SetupGatewayPaymentTypes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSetupGatewayPaymentTypes
+
+`func (o *UnibeeApiBeanDetailGateway) SetSetupGatewayPaymentTypes(v []UnibeeInternalInterfaceGatewayPaymentType)`
+
+SetSetupGatewayPaymentTypes sets SetupGatewayPaymentTypes field to given value.
+
+### HasSetupGatewayPaymentTypes
+
+`func (o *UnibeeApiBeanDetailGateway) HasSetupGatewayPaymentTypes() bool`
+
+HasSetupGatewayPaymentTypes returns a boolean if a field has been set.
+
 ### GetSort
 
 `func (o *UnibeeApiBeanDetailGateway) GetSort() int64`
@@ -677,31 +754,6 @@ SetSubGateway sets SubGateway field to given value.
 `func (o *UnibeeApiBeanDetailGateway) HasSubGateway() bool`
 
 HasSubGateway returns a boolean if a field has been set.
-
-### GetSubGatewayConfigs
-
-`func (o *UnibeeApiBeanDetailGateway) GetSubGatewayConfigs() []UnibeeInternalInterfaceSubGatewayConfig`
-
-GetSubGatewayConfigs returns the SubGatewayConfigs field if non-nil, zero value otherwise.
-
-### GetSubGatewayConfigsOk
-
-`func (o *UnibeeApiBeanDetailGateway) GetSubGatewayConfigsOk() (*[]UnibeeInternalInterfaceSubGatewayConfig, bool)`
-
-GetSubGatewayConfigsOk returns a tuple with the SubGatewayConfigs field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSubGatewayConfigs
-
-`func (o *UnibeeApiBeanDetailGateway) SetSubGatewayConfigs(v []UnibeeInternalInterfaceSubGatewayConfig)`
-
-SetSubGatewayConfigs sets SubGatewayConfigs field to given value.
-
-### HasSubGatewayConfigs
-
-`func (o *UnibeeApiBeanDetailGateway) HasSubGatewayConfigs() bool`
-
-HasSubGatewayConfigs returns a boolean if a field has been set.
 
 ### GetSubGatewayName
 

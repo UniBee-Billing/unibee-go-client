@@ -7,10 +7,11 @@ Name | Type | Description | Notes
 **Count** | Pointer to **int32** | Count OF Page | [optional] 
 **CreateTimeEnd** | Pointer to **int64** | CreateTimeEnd | [optional] 
 **CreateTimeStart** | Pointer to **int64** | CreateTimeStart | [optional] 
+**MetricIds** | Pointer to **[]int64** | Filter MetricIds, Default All | [optional] 
 **Page** | Pointer to **int32** | Page,Start 0 | [optional] 
 **SortField** | Pointer to **string** | Sort，user_id|gmt_create，Default gmt_create | [optional] 
 **SortType** | Pointer to **string** | Sort Type，asc|desc，Default desc | [optional] 
-**UserId** | Pointer to **int64** | Filter UserId | [optional] 
+**UserIds** | Pointer to **[]int64** | Filter UserIds, Default All | [optional] 
 
 ## Methods
 
@@ -106,6 +107,31 @@ SetCreateTimeStart sets CreateTimeStart field to given value.
 
 HasCreateTimeStart returns a boolean if a field has been set.
 
+### GetMetricIds
+
+`func (o *UnibeeApiMerchantMetricEventListReq) GetMetricIds() []int64`
+
+GetMetricIds returns the MetricIds field if non-nil, zero value otherwise.
+
+### GetMetricIdsOk
+
+`func (o *UnibeeApiMerchantMetricEventListReq) GetMetricIdsOk() (*[]int64, bool)`
+
+GetMetricIdsOk returns a tuple with the MetricIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetricIds
+
+`func (o *UnibeeApiMerchantMetricEventListReq) SetMetricIds(v []int64)`
+
+SetMetricIds sets MetricIds field to given value.
+
+### HasMetricIds
+
+`func (o *UnibeeApiMerchantMetricEventListReq) HasMetricIds() bool`
+
+HasMetricIds returns a boolean if a field has been set.
+
 ### GetPage
 
 `func (o *UnibeeApiMerchantMetricEventListReq) GetPage() int32`
@@ -181,30 +207,30 @@ SetSortType sets SortType field to given value.
 
 HasSortType returns a boolean if a field has been set.
 
-### GetUserId
+### GetUserIds
 
-`func (o *UnibeeApiMerchantMetricEventListReq) GetUserId() int64`
+`func (o *UnibeeApiMerchantMetricEventListReq) GetUserIds() []int64`
 
-GetUserId returns the UserId field if non-nil, zero value otherwise.
+GetUserIds returns the UserIds field if non-nil, zero value otherwise.
 
-### GetUserIdOk
+### GetUserIdsOk
 
-`func (o *UnibeeApiMerchantMetricEventListReq) GetUserIdOk() (*int64, bool)`
+`func (o *UnibeeApiMerchantMetricEventListReq) GetUserIdsOk() (*[]int64, bool)`
 
-GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
+GetUserIdsOk returns a tuple with the UserIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUserId
+### SetUserIds
 
-`func (o *UnibeeApiMerchantMetricEventListReq) SetUserId(v int64)`
+`func (o *UnibeeApiMerchantMetricEventListReq) SetUserIds(v []int64)`
 
-SetUserId sets UserId field to given value.
+SetUserIds sets UserIds field to given value.
 
-### HasUserId
+### HasUserIds
 
-`func (o *UnibeeApiMerchantMetricEventListReq) HasUserId() bool`
+`func (o *UnibeeApiMerchantMetricEventListReq) HasUserIds() bool`
 
-HasUserId returns a boolean if a field has been set.
+HasUserIds returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

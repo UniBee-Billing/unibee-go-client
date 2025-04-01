@@ -7,13 +7,14 @@ Name | Type | Description | Notes
 **Count** | Pointer to **int32** | Count Of Per Page | [optional] 
 **Currency** | Pointer to **string** | Filter Currency | [optional] 
 **Page** | Pointer to **int32** | Page, Start 0 | [optional] 
+**PlanIds** | Pointer to **[]int64** | filter id list of plan, default all | [optional] 
 **ProductIds** | Pointer to **[]int64** | filter id list of product, default all | [optional] 
 **PublishStatus** | Pointer to **int32** | Filter, Default All，PublishStatus，1-UnPublished，2-Published | [optional] 
 **SearchKey** | Pointer to **string** | Search Key, plan name or description | [optional] 
 **SortField** | Pointer to **string** | Sort Field，plan_name|gmt_create|gmt_modify，Default gmt_create | [optional] 
 **SortType** | Pointer to **string** | Sort Type，asc|desc，Default desc | [optional] 
 **Status** | Pointer to **[]int32** | Filter, Default All，,Status，1-Editing，2-Active，3-InActive，4-SoftArchive, 5-HardArchive | [optional] 
-**Type** | Pointer to **[]int32** | 1-main plan，2-addon plan | [optional] 
+**Type** | Pointer to **[]int32** | 1-main plan，2-addon plan,3-onetime | [optional] 
 
 ## Methods
 
@@ -108,6 +109,31 @@ SetPage sets Page field to given value.
 `func (o *UnibeeApiMerchantPlanListReq) HasPage() bool`
 
 HasPage returns a boolean if a field has been set.
+
+### GetPlanIds
+
+`func (o *UnibeeApiMerchantPlanListReq) GetPlanIds() []int64`
+
+GetPlanIds returns the PlanIds field if non-nil, zero value otherwise.
+
+### GetPlanIdsOk
+
+`func (o *UnibeeApiMerchantPlanListReq) GetPlanIdsOk() (*[]int64, bool)`
+
+GetPlanIdsOk returns a tuple with the PlanIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanIds
+
+`func (o *UnibeeApiMerchantPlanListReq) SetPlanIds(v []int64)`
+
+SetPlanIds sets PlanIds field to given value.
+
+### HasPlanIds
+
+`func (o *UnibeeApiMerchantPlanListReq) HasPlanIds() bool`
+
+HasPlanIds returns a boolean if a field has been set.
 
 ### GetProductIds
 

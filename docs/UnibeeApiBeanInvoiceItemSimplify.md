@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Currency** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **DiscountAmount** | Pointer to **int64** |  | [optional] 
+**MetricCharge** | Pointer to [**UnibeeApiBeanUserMetricChargeInvoiceItem**](UnibeeApiBeanUserMetricChargeInvoiceItem.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **OriginAmount** | Pointer to **int64** |  | [optional] 
 **OriginUnitAmountExcludeTax** | Pointer to **int64** |  | [optional] 
@@ -165,6 +166,31 @@ SetDiscountAmount sets DiscountAmount field to given value.
 `func (o *UnibeeApiBeanInvoiceItemSimplify) HasDiscountAmount() bool`
 
 HasDiscountAmount returns a boolean if a field has been set.
+
+### GetMetricCharge
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetMetricCharge() UnibeeApiBeanUserMetricChargeInvoiceItem`
+
+GetMetricCharge returns the MetricCharge field if non-nil, zero value otherwise.
+
+### GetMetricChargeOk
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetMetricChargeOk() (*UnibeeApiBeanUserMetricChargeInvoiceItem, bool)`
+
+GetMetricChargeOk returns a tuple with the MetricCharge field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetricCharge
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) SetMetricCharge(v UnibeeApiBeanUserMetricChargeInvoiceItem)`
+
+SetMetricCharge sets MetricCharge field to given value.
+
+### HasMetricCharge
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) HasMetricCharge() bool`
+
+HasMetricCharge returns a boolean if a field has been set.
 
 ### GetName
 

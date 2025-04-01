@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **GatewayCurrencyExchange** | Pointer to [**UnibeeApiBeanGatewayCurrencyExchange**](UnibeeApiBeanGatewayCurrencyExchange.md) |  | [optional] 
 **GatewayId** | Pointer to **int64** | gateway_id | [optional] 
 **GatewayPaymentId** | Pointer to **string** | gateway_payment_id | [optional] 
+**GatewayPaymentType** | Pointer to **string** | gateway_payment_type | [optional] 
 **InvoiceId** | Pointer to **string** | invoice id | [optional] 
 **Link** | Pointer to **string** |  | [optional] 
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
@@ -452,6 +453,31 @@ SetGatewayPaymentId sets GatewayPaymentId field to given value.
 `func (o *UnibeeApiBeanPayment) HasGatewayPaymentId() bool`
 
 HasGatewayPaymentId returns a boolean if a field has been set.
+
+### GetGatewayPaymentType
+
+`func (o *UnibeeApiBeanPayment) GetGatewayPaymentType() string`
+
+GetGatewayPaymentType returns the GatewayPaymentType field if non-nil, zero value otherwise.
+
+### GetGatewayPaymentTypeOk
+
+`func (o *UnibeeApiBeanPayment) GetGatewayPaymentTypeOk() (*string, bool)`
+
+GetGatewayPaymentTypeOk returns a tuple with the GatewayPaymentType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayPaymentType
+
+`func (o *UnibeeApiBeanPayment) SetGatewayPaymentType(v string)`
+
+SetGatewayPaymentType sets GatewayPaymentType field to given value.
+
+### HasGatewayPaymentType
+
+`func (o *UnibeeApiBeanPayment) HasGatewayPaymentType() bool`
+
+HasGatewayPaymentType returns a boolean if a field has been set.
 
 ### GetInvoiceId
 

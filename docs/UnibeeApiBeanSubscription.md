@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Currency** | Pointer to **string** | currency | [optional] 
 **CurrentPeriodEnd** | Pointer to **int64** | current_period_end, utc time | [optional] 
+**CurrentPeriodPaid** | Pointer to **int64** | current period paid or not, 1-paid, other-the utc time to expire | [optional] 
 **CurrentPeriodStart** | Pointer to **int64** | current_period_start, utc time | [optional] 
 **DefaultPaymentMethodId** | Pointer to **string** |  | [optional] 
 **DunningTime** | Pointer to **int64** | dunning_time, utc time | [optional] 
@@ -313,6 +314,31 @@ SetCurrentPeriodEnd sets CurrentPeriodEnd field to given value.
 `func (o *UnibeeApiBeanSubscription) HasCurrentPeriodEnd() bool`
 
 HasCurrentPeriodEnd returns a boolean if a field has been set.
+
+### GetCurrentPeriodPaid
+
+`func (o *UnibeeApiBeanSubscription) GetCurrentPeriodPaid() int64`
+
+GetCurrentPeriodPaid returns the CurrentPeriodPaid field if non-nil, zero value otherwise.
+
+### GetCurrentPeriodPaidOk
+
+`func (o *UnibeeApiBeanSubscription) GetCurrentPeriodPaidOk() (*int64, bool)`
+
+GetCurrentPeriodPaidOk returns a tuple with the CurrentPeriodPaid field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrentPeriodPaid
+
+`func (o *UnibeeApiBeanSubscription) SetCurrentPeriodPaid(v int64)`
+
+SetCurrentPeriodPaid sets CurrentPeriodPaid field to given value.
+
+### HasCurrentPeriodPaid
+
+`func (o *UnibeeApiBeanSubscription) HasCurrentPeriodPaid() bool`
+
+HasCurrentPeriodPaid returns a boolean if a field has been set.
 
 ### GetCurrentPeriodStart
 

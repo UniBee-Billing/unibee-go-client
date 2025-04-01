@@ -13,9 +13,11 @@ Name | Type | Description | Notes
 **ExternalUserId** | Pointer to **string** | ExternalUserId, unique, either ExternalUserId&amp;Email or UserId needed | [optional] 
 **GasPayer** | Pointer to **string** | who pay the gas, merchant|user | [optional] 
 **GatewayId** | **int64** | GatewayId | 
+**GatewayPaymentType** | Pointer to **string** | GatewayPaymentType | [optional] 
 **Items** | Pointer to [**[]UnibeeApiMerchantPaymentItem**](UnibeeApiMerchantPaymentItem.md) | Items | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **Name** | Pointer to **string** | Name | [optional] 
+**PaymentType** | Pointer to **string** | Payment Type | [optional] 
 **PlanId** | Pointer to **int64** | PlanId, either TotalAmount&amp;Currency or PlanId needed | [optional] 
 **RedirectUrl** | Pointer to **string** | Redirect Url | [optional] 
 **SendInvoice** | Pointer to **bool** | Whether sen invoice email to customer or not，default false | [optional] [default to false]
@@ -261,6 +263,31 @@ and a boolean to check if the value has been set.
 SetGatewayId sets GatewayId field to given value.
 
 
+### GetGatewayPaymentType
+
+`func (o *UnibeeApiMerchantPaymentNewReq) GetGatewayPaymentType() string`
+
+GetGatewayPaymentType returns the GatewayPaymentType field if non-nil, zero value otherwise.
+
+### GetGatewayPaymentTypeOk
+
+`func (o *UnibeeApiMerchantPaymentNewReq) GetGatewayPaymentTypeOk() (*string, bool)`
+
+GetGatewayPaymentTypeOk returns a tuple with the GatewayPaymentType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayPaymentType
+
+`func (o *UnibeeApiMerchantPaymentNewReq) SetGatewayPaymentType(v string)`
+
+SetGatewayPaymentType sets GatewayPaymentType field to given value.
+
+### HasGatewayPaymentType
+
+`func (o *UnibeeApiMerchantPaymentNewReq) HasGatewayPaymentType() bool`
+
+HasGatewayPaymentType returns a boolean if a field has been set.
+
 ### GetItems
 
 `func (o *UnibeeApiMerchantPaymentNewReq) GetItems() []UnibeeApiMerchantPaymentItem`
@@ -335,6 +362,31 @@ SetName sets Name field to given value.
 `func (o *UnibeeApiMerchantPaymentNewReq) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetPaymentType
+
+`func (o *UnibeeApiMerchantPaymentNewReq) GetPaymentType() string`
+
+GetPaymentType returns the PaymentType field if non-nil, zero value otherwise.
+
+### GetPaymentTypeOk
+
+`func (o *UnibeeApiMerchantPaymentNewReq) GetPaymentTypeOk() (*string, bool)`
+
+GetPaymentTypeOk returns a tuple with the PaymentType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaymentType
+
+`func (o *UnibeeApiMerchantPaymentNewReq) SetPaymentType(v string)`
+
+SetPaymentType sets PaymentType field to given value.
+
+### HasPaymentType
+
+`func (o *UnibeeApiMerchantPaymentNewReq) HasPaymentType() bool`
+
+HasPaymentType returns a boolean if a field has been set.
 
 ### GetPlanId
 

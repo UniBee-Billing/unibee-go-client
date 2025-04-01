@@ -4,6 +4,7 @@ All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**AuthSessionLoginPost**](MemberAuthentication.md#AuthSessionLoginPost) | **Post** /merchant/auth/session_login | Session Login
 [**AuthSsoLoginOTPPost**](MemberAuthentication.md#AuthSsoLoginOTPPost) | **Post** /merchant/auth/sso/loginOTP | OTP Login
 [**AuthSsoLoginOTPVerifyPost**](MemberAuthentication.md#AuthSsoLoginOTPVerifyPost) | **Post** /merchant/auth/sso/loginOTPVerify | OTP Login Code Verification
 [**AuthSsoLoginPost**](MemberAuthentication.md#AuthSsoLoginPost) | **Post** /merchant/auth/sso/login | Password Login
@@ -13,6 +14,72 @@ Method | HTTP request | Description
 [**AuthSsoRegisterPost**](MemberAuthentication.md#AuthSsoRegisterPost) | **Post** /merchant/auth/sso/register | Register
 [**AuthSsoRegisterVerifyPost**](MemberAuthentication.md#AuthSsoRegisterVerifyPost) | **Post** /merchant/auth/sso/registerVerify | Register Verify
 
+
+
+## AuthSessionLoginPost
+
+> MerchantAuthSessionLoginPost200Response AuthSessionLoginPost(ctx).UnibeeApiMerchantAuthSessionReq(unibeeApiMerchantAuthSessionReq).Execute()
+
+Session Login
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantAuthSessionReq := *openapiclient.NewUnibeeApiMerchantAuthSessionReq("Session_example") // UnibeeApiMerchantAuthSessionReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MemberAuthentication.AuthSessionLoginPost(context.Background()).UnibeeApiMerchantAuthSessionReq(unibeeApiMerchantAuthSessionReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MemberAuthentication.AuthSessionLoginPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AuthSessionLoginPost`: MerchantAuthSessionLoginPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `MemberAuthentication.AuthSessionLoginPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAuthSessionLoginPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantAuthSessionReq** | [**UnibeeApiMerchantAuthSessionReq**](UnibeeApiMerchantAuthSessionReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSessionLoginPost200Response**](MerchantAuthSessionLoginPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## AuthSsoLoginOTPPost

@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**SubscriptionDetailPost**](Subscription.md#SubscriptionDetailPost) | **Post** /merchant/subscription/detail | Subscription Detail
 [**SubscriptionListGet**](Subscription.md#SubscriptionListGet) | **Get** /merchant/subscription/list | Get Subscription List
 [**SubscriptionListPost**](Subscription.md#SubscriptionListPost) | **Post** /merchant/subscription/list | Get Subscription List
+[**SubscriptionPreviewSubscriptionNextInvoiceGet**](Subscription.md#SubscriptionPreviewSubscriptionNextInvoiceGet) | **Get** /merchant/subscription/preview_subscription_next_invoice | Subscription Next Invoice Preview
 [**SubscriptionUserPendingCryptoSubscriptionDetailGet**](Subscription.md#SubscriptionUserPendingCryptoSubscriptionDetailGet) | **Get** /merchant/subscription/user_pending_crypto_subscription_detail | User Pending Crypto Subscription Detail
 [**SubscriptionUserPendingCryptoSubscriptionDetailPost**](Subscription.md#SubscriptionUserPendingCryptoSubscriptionDetailPost) | **Post** /merchant/subscription/user_pending_crypto_subscription_detail | User Pending Crypto Subscription Detail
 [**SubscriptionUserSubscriptionDetailGet**](Subscription.md#SubscriptionUserSubscriptionDetailGet) | **Get** /merchant/subscription/user_subscription_detail | User Subscription Detail
@@ -749,6 +750,70 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SubscriptionPreviewSubscriptionNextInvoiceGet
+
+> MerchantSubscriptionPreviewSubscriptionNextInvoiceGet200Response SubscriptionPreviewSubscriptionNextInvoiceGet(ctx).SubscriptionId(subscriptionId).Execute()
+
+Subscription Next Invoice Preview
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	subscriptionId := "subscriptionId_example" // string | SubscriptionId
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Subscription.SubscriptionPreviewSubscriptionNextInvoiceGet(context.Background()).SubscriptionId(subscriptionId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionPreviewSubscriptionNextInvoiceGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SubscriptionPreviewSubscriptionNextInvoiceGet`: MerchantSubscriptionPreviewSubscriptionNextInvoiceGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionPreviewSubscriptionNextInvoiceGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSubscriptionPreviewSubscriptionNextInvoiceGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subscriptionId** | **string** | SubscriptionId | 
+
+### Return type
+
+[**MerchantSubscriptionPreviewSubscriptionNextInvoiceGet200Response**](MerchantSubscriptionPreviewSubscriptionNextInvoiceGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

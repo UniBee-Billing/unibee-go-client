@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **FirstName** | Pointer to **string** | first name | [optional] 
 **Gateway** | Pointer to [**UnibeeApiBeanDetailGateway**](UnibeeApiBeanDetailGateway.md) |  | [optional] 
 **GatewayId** | Pointer to **int64** | gateway_id | [optional] 
+**GatewayPaymentType** | Pointer to **string** |  | [optional] 
 **Gender** | Pointer to **string** | gender | [optional] 
 **Id** | Pointer to **int64** | userId | [optional] 
 **IsRisk** | Pointer to **int32** | is risk account (deperated) | [optional] 
@@ -38,7 +39,6 @@ Name | Type | Description | Notes
 **PlanId** | Pointer to **int64** | PlanId | [optional] 
 **Profession** | Pointer to **string** | profession | [optional] 
 **PromoCreditAccounts** | Pointer to [**[]UnibeeApiBeanCreditAccount**](UnibeeApiBeanCreditAccount.md) | promoCreditAccounts | [optional] 
-**ReMark** | Pointer to **string** | note | [optional] 
 **RecurringAmount** | Pointer to **int64** | total recurring amount, cent | [optional] 
 **RegistrationNumber** | Pointer to **string** | RegistrationNumber | [optional] 
 **School** | Pointer to **string** | school | [optional] 
@@ -502,6 +502,31 @@ SetGatewayId sets GatewayId field to given value.
 
 HasGatewayId returns a boolean if a field has been set.
 
+### GetGatewayPaymentType
+
+`func (o *UnibeeApiBeanDetailUserAccountDetail) GetGatewayPaymentType() string`
+
+GetGatewayPaymentType returns the GatewayPaymentType field if non-nil, zero value otherwise.
+
+### GetGatewayPaymentTypeOk
+
+`func (o *UnibeeApiBeanDetailUserAccountDetail) GetGatewayPaymentTypeOk() (*string, bool)`
+
+GetGatewayPaymentTypeOk returns a tuple with the GatewayPaymentType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayPaymentType
+
+`func (o *UnibeeApiBeanDetailUserAccountDetail) SetGatewayPaymentType(v string)`
+
+SetGatewayPaymentType sets GatewayPaymentType field to given value.
+
+### HasGatewayPaymentType
+
+`func (o *UnibeeApiBeanDetailUserAccountDetail) HasGatewayPaymentType() bool`
+
+HasGatewayPaymentType returns a boolean if a field has been set.
+
 ### GetGender
 
 `func (o *UnibeeApiBeanDetailUserAccountDetail) GetGender() string`
@@ -926,31 +951,6 @@ SetPromoCreditAccounts sets PromoCreditAccounts field to given value.
 `func (o *UnibeeApiBeanDetailUserAccountDetail) HasPromoCreditAccounts() bool`
 
 HasPromoCreditAccounts returns a boolean if a field has been set.
-
-### GetReMark
-
-`func (o *UnibeeApiBeanDetailUserAccountDetail) GetReMark() string`
-
-GetReMark returns the ReMark field if non-nil, zero value otherwise.
-
-### GetReMarkOk
-
-`func (o *UnibeeApiBeanDetailUserAccountDetail) GetReMarkOk() (*string, bool)`
-
-GetReMarkOk returns a tuple with the ReMark field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetReMark
-
-`func (o *UnibeeApiBeanDetailUserAccountDetail) SetReMark(v string)`
-
-SetReMark sets ReMark field to given value.
-
-### HasReMark
-
-`func (o *UnibeeApiBeanDetailUserAccountDetail) HasReMark() bool`
-
-HasReMark returns a boolean if a field has been set.
 
 ### GetRecurringAmount
 

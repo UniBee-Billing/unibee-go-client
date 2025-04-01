@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**MetricDetailPost**](Metric.md#MetricDetailPost) | **Post** /merchant/metric/detail | Merchant Metric Detail
 [**MetricEditPost**](Metric.md#MetricEditPost) | **Post** /merchant/metric/edit | Edit Merchant Metric
 [**MetricListGet**](Metric.md#MetricListGet) | **Get** /merchant/metric/list | Get Merchant Metric list
+[**MetricListPost**](Metric.md#MetricListPost) | **Post** /merchant/metric/list | Get Merchant Metric list
 [**MetricNewPost**](Metric.md#MetricNewPost) | **Post** /merchant/metric/new | New Merchant Metric
 [**MetricPlanLimitDeletePost**](Metric.md#MetricPlanLimitDeletePost) | **Post** /merchant/metric/plan/limit/delete | Delete Merchant Metric Plan TotalLimit
 [**MetricPlanLimitEditPost**](Metric.md#MetricPlanLimitEditPost) | **Post** /merchant/metric/plan/limit/edit | Edit Merchant Metric Plan TotalLimit
@@ -209,7 +210,7 @@ No authorization required
 
 ## MetricListGet
 
-> MerchantMetricListGet200Response MetricListGet(ctx).Execute()
+> MerchantMetricListGet200Response MetricListGet(ctx).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 
 Get Merchant Metric list
 
@@ -226,10 +227,16 @@ import (
 )
 
 func main() {
+	sortField := "sortField_example" // string | Sort，user_id|gmt_create，Default gmt_create (optional)
+	sortType := "sortType_example" // string | Sort Type，asc|desc，Default desc (optional)
+	page := int32(56) // int32 | Page,Start 0 (optional)
+	count := int32(56) // int32 | Count OF Page (optional)
+	createTimeStart := int64(789) // int64 | CreateTimeStart (optional)
+	createTimeEnd := int64(789) // int64 | CreateTimeEnd (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Metric.MetricListGet(context.Background()).Execute()
+	resp, r, err := apiClient.Metric.MetricListGet(context.Background()).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Metric.MetricListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -241,12 +248,21 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiMetricListGetRequest struct via the builder pattern
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sortField** | **string** | Sort，user_id|gmt_create，Default gmt_create | 
+ **sortType** | **string** | Sort Type，asc|desc，Default desc | 
+ **page** | **int32** | Page,Start 0 | 
+ **count** | **int32** | Count OF Page | 
+ **createTimeStart** | **int64** | CreateTimeStart | 
+ **createTimeEnd** | **int64** | CreateTimeEnd | 
 
 ### Return type
 
@@ -259,6 +275,70 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## MetricListPost
+
+> MerchantMetricListGet200Response MetricListPost(ctx).UnibeeApiMerchantMetricListReq(unibeeApiMerchantMetricListReq).Execute()
+
+Get Merchant Metric list
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantMetricListReq := *openapiclient.NewUnibeeApiMerchantMetricListReq() // UnibeeApiMerchantMetricListReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Metric.MetricListPost(context.Background()).UnibeeApiMerchantMetricListReq(unibeeApiMerchantMetricListReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Metric.MetricListPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MetricListPost`: MerchantMetricListGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `Metric.MetricListPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiMetricListPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantMetricListReq** | [**UnibeeApiMerchantMetricListReq**](UnibeeApiMerchantMetricListReq.md) |  | 
+
+### Return type
+
+[**MerchantMetricListGet200Response**](MerchantMetricListGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
