@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Email** | **string** | The merchant member email address | 
 **Password** | **string** | The merchant member password | 
+**TotpCode** | Pointer to **string** | The totp code | [optional] 
 
 ## Methods
 
@@ -65,6 +66,31 @@ and a boolean to check if the value has been set.
 
 SetPassword sets Password field to given value.
 
+
+### GetTotpCode
+
+`func (o *UnibeeApiMerchantAuthLoginReq) GetTotpCode() string`
+
+GetTotpCode returns the TotpCode field if non-nil, zero value otherwise.
+
+### GetTotpCodeOk
+
+`func (o *UnibeeApiMerchantAuthLoginReq) GetTotpCodeOk() (*string, bool)`
+
+GetTotpCodeOk returns a tuple with the TotpCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotpCode
+
+`func (o *UnibeeApiMerchantAuthLoginReq) SetTotpCode(v string)`
+
+SetTotpCode sets TotpCode field to given value.
+
+### HasTotpCode
+
+`func (o *UnibeeApiMerchantAuthLoginReq) HasTotpCode() bool`
+
+HasTotpCode returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

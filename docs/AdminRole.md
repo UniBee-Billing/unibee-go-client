@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## RoleDeletePost
 
-> MerchantAuthSsoLoginOTPPost200Response RoleDeletePost(ctx).UnibeeApiMerchantRoleDeleteReq(unibeeApiMerchantRoleDeleteReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response RoleDeletePost(ctx).UnibeeApiMerchantRoleDeleteReq(unibeeApiMerchantRoleDeleteReq).Execute()
 
 Delete Role
 
@@ -39,7 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AdminRole.RoleDeletePost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `RoleDeletePost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `RoleDeletePost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `AdminRole.RoleDeletePost`: %v\n", resp)
 }
 ```
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -77,7 +77,7 @@ No authorization required
 
 ## RoleEditPost
 
-> MerchantAuthSsoLoginOTPPost200Response RoleEditPost(ctx).UnibeeApiMerchantRoleEditReq(unibeeApiMerchantRoleEditReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response RoleEditPost(ctx).UnibeeApiMerchantRoleEditReq(unibeeApiMerchantRoleEditReq).Execute()
 
 Edit Role
 
@@ -103,7 +103,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AdminRole.RoleEditPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `RoleEditPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `RoleEditPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `AdminRole.RoleEditPost`: %v\n", resp)
 }
 ```
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -200,7 +200,7 @@ No authorization required
 
 ## RoleNewPost
 
-> MerchantAuthSsoLoginOTPPost200Response RoleNewPost(ctx).UnibeeApiMerchantRoleNewReq(unibeeApiMerchantRoleNewReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response RoleNewPost(ctx).UnibeeApiMerchantRoleNewReq(unibeeApiMerchantRoleNewReq).Execute()
 
 New Role
 
@@ -226,7 +226,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AdminRole.RoleNewPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `RoleNewPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `RoleNewPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `AdminRole.RoleNewPost`: %v\n", resp)
 }
 ```
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 

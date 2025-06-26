@@ -137,7 +137,7 @@ No authorization required
 
 ## VatInitDefaultGatewayPost
 
-> MerchantAuthSsoLoginOTPPost200Response VatInitDefaultGatewayPost(ctx).Body(body).Execute()
+> MerchantAuthSsoClearTotpPost200Response VatInitDefaultGatewayPost(ctx).Body(body).Execute()
 
 Init Default Vat Gateway
 
@@ -163,7 +163,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `VatGateway.VatInitDefaultGatewayPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `VatInitDefaultGatewayPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `VatInitDefaultGatewayPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `VatGateway.VatInitDefaultGatewayPost`: %v\n", resp)
 }
 ```
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 

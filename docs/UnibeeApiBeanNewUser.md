@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **LastName** | Pointer to **string** | Last Name | [optional] 
 **Phone** | Pointer to **string** | Phone | [optional] 
 **RegistrationNumber** | Pointer to **string** | RegistrationNumber | [optional] 
+**State** | Pointer to **string** | State | [optional] 
 **Type** | Pointer to **int64** | User type, 1-Individual|2-organization | [optional] 
 **UserName** | Pointer to **string** | UserName | [optional] 
 **VatNumber** | Pointer to **string** | vat number | [optional] 
@@ -308,6 +309,31 @@ SetRegistrationNumber sets RegistrationNumber field to given value.
 `func (o *UnibeeApiBeanNewUser) HasRegistrationNumber() bool`
 
 HasRegistrationNumber returns a boolean if a field has been set.
+
+### GetState
+
+`func (o *UnibeeApiBeanNewUser) GetState() string`
+
+GetState returns the State field if non-nil, zero value otherwise.
+
+### GetStateOk
+
+`func (o *UnibeeApiBeanNewUser) GetStateOk() (*string, bool)`
+
+GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetState
+
+`func (o *UnibeeApiBeanNewUser) SetState(v string)`
+
+SetState sets State field to given value.
+
+### HasState
+
+`func (o *UnibeeApiBeanNewUser) HasState() bool`
+
+HasState returns a boolean if a field has been set.
 
 ### GetType
 

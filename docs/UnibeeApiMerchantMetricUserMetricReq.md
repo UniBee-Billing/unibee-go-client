@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ExternalUserId** | Pointer to **string** | ExternalUserId, One Of UserId|ExternalUserId Needed | [optional] 
 **ProductId** | Pointer to **int64** | default product will use if productId not specified and subscriptionId is blank | [optional] 
+**ReloadCache** | Pointer to **bool** |  | [optional] 
 **UserId** | Pointer to **int64** | UserId, One Of UserId|ExternalUserId Needed | [optional] 
 
 ## Methods
@@ -76,6 +77,31 @@ SetProductId sets ProductId field to given value.
 `func (o *UnibeeApiMerchantMetricUserMetricReq) HasProductId() bool`
 
 HasProductId returns a boolean if a field has been set.
+
+### GetReloadCache
+
+`func (o *UnibeeApiMerchantMetricUserMetricReq) GetReloadCache() bool`
+
+GetReloadCache returns the ReloadCache field if non-nil, zero value otherwise.
+
+### GetReloadCacheOk
+
+`func (o *UnibeeApiMerchantMetricUserMetricReq) GetReloadCacheOk() (*bool, bool)`
+
+GetReloadCacheOk returns a tuple with the ReloadCache field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReloadCache
+
+`func (o *UnibeeApiMerchantMetricUserMetricReq) SetReloadCache(v bool)`
+
+SetReloadCache sets ReloadCache field to given value.
+
+### HasReloadCache
+
+`func (o *UnibeeApiMerchantMetricUserMetricReq) HasReloadCache() bool`
+
+HasReloadCache returns a boolean if a field has been set.
 
 ### GetUserId
 

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Email** | **string** | The email of member | 
 **FirstName** | Pointer to **string** | The firstName of member | [optional] 
 **LastName** | Pointer to **string** | The lastName of member | [optional] 
+**ReturnUrl** | Pointer to **string** | Return url of member | [optional] 
 **RoleIds** | **[]int64** | The id list of role | 
 
 ## Methods
@@ -97,6 +98,31 @@ SetLastName sets LastName field to given value.
 `func (o *UnibeeApiMerchantMemberNewMemberReq) HasLastName() bool`
 
 HasLastName returns a boolean if a field has been set.
+
+### GetReturnUrl
+
+`func (o *UnibeeApiMerchantMemberNewMemberReq) GetReturnUrl() string`
+
+GetReturnUrl returns the ReturnUrl field if non-nil, zero value otherwise.
+
+### GetReturnUrlOk
+
+`func (o *UnibeeApiMerchantMemberNewMemberReq) GetReturnUrlOk() (*string, bool)`
+
+GetReturnUrlOk returns a tuple with the ReturnUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReturnUrl
+
+`func (o *UnibeeApiMerchantMemberNewMemberReq) SetReturnUrl(v string)`
+
+SetReturnUrl sets ReturnUrl field to given value.
+
+### HasReturnUrl
+
+`func (o *UnibeeApiMerchantMemberNewMemberReq) HasReturnUrl() bool`
+
+HasReturnUrl returns a boolean if a field has been set.
 
 ### GetRoleIds
 

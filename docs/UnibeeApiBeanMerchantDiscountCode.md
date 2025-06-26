@@ -19,7 +19,8 @@ Name | Type | Description | Notes
 **MerchantId** | Pointer to **int64** | merchantId | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
 **Name** | Pointer to **string** | name | [optional] 
-**PlanApplyType** | Pointer to **int32** | plan apply type, 0-apply for all, 1-apply for plans specified, 2-exclude for plans specified | [optional] 
+**PlanApplyGroup** | Pointer to [**UnibeeApiBeanGroupPlanSelector**](UnibeeApiBeanGroupPlanSelector.md) |  | [optional] 
+**PlanApplyType** | Pointer to **int32** | plan apply type, 0-apply for all, 1-apply for plans specified, 2-exclude for plans specified, 3-Apply to Plans by Groups(Billing Period Included), 4-Apply to Plans except by Groups(Billing Period Included) | [optional] 
 **PlanIds** | Pointer to **[]int64** | Ids of plan which discount code can effect, default effect all plans if not set | [optional] 
 **Quantity** | Pointer to **int64** | quantity of code, 0-no limit | [optional] 
 **StartTime** | Pointer to **int64** | start of discount available utc time | [optional] 
@@ -422,6 +423,31 @@ SetName sets Name field to given value.
 `func (o *UnibeeApiBeanMerchantDiscountCode) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetPlanApplyGroup
+
+`func (o *UnibeeApiBeanMerchantDiscountCode) GetPlanApplyGroup() UnibeeApiBeanGroupPlanSelector`
+
+GetPlanApplyGroup returns the PlanApplyGroup field if non-nil, zero value otherwise.
+
+### GetPlanApplyGroupOk
+
+`func (o *UnibeeApiBeanMerchantDiscountCode) GetPlanApplyGroupOk() (*UnibeeApiBeanGroupPlanSelector, bool)`
+
+GetPlanApplyGroupOk returns a tuple with the PlanApplyGroup field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanApplyGroup
+
+`func (o *UnibeeApiBeanMerchantDiscountCode) SetPlanApplyGroup(v UnibeeApiBeanGroupPlanSelector)`
+
+SetPlanApplyGroup sets PlanApplyGroup field to given value.
+
+### HasPlanApplyGroup
+
+`func (o *UnibeeApiBeanMerchantDiscountCode) HasPlanApplyGroup() bool`
+
+HasPlanApplyGroup returns a boolean if a field has been set.
 
 ### GetPlanApplyType
 

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## MetricUserMetricGet
 
-> MerchantMetricUserMetricGet200Response MetricUserMetricGet(ctx).UserId(userId).ExternalUserId(externalUserId).ProductId(productId).Execute()
+> MerchantMetricUserMetricGet200Response MetricUserMetricGet(ctx).UserId(userId).ExternalUserId(externalUserId).ProductId(productId).ReloadCache(reloadCache).Execute()
 
 Query User Metric
 
@@ -31,10 +31,11 @@ func main() {
 	userId := int64(789) // int64 | UserId, One Of UserId|ExternalUserId Needed (optional)
 	externalUserId := "externalUserId_example" // string | ExternalUserId, One Of UserId|ExternalUserId Needed (optional)
 	productId := int64(789) // int64 | default product will use if productId not specified and subscriptionId is blank (optional)
+	reloadCache := true // bool |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UserMetric.MetricUserMetricGet(context.Background()).UserId(userId).ExternalUserId(externalUserId).ProductId(productId).Execute()
+	resp, r, err := apiClient.UserMetric.MetricUserMetricGet(context.Background()).UserId(userId).ExternalUserId(externalUserId).ProductId(productId).ReloadCache(reloadCache).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UserMetric.MetricUserMetricGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -58,6 +59,7 @@ Name | Type | Description  | Notes
  **userId** | **int64** | UserId, One Of UserId|ExternalUserId Needed | 
  **externalUserId** | **string** | ExternalUserId, One Of UserId|ExternalUserId Needed | 
  **productId** | **int64** | default product will use if productId not specified and subscriptionId is blank | 
+ **reloadCache** | **bool** |  | 
 
 ### Return type
 

@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 ## PlanActivatePost
 
-> MerchantAuthSsoLoginOTPPost200Response PlanActivatePost(ctx).UnibeeApiMerchantPlanActivateReq(unibeeApiMerchantPlanActivateReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response PlanActivatePost(ctx).UnibeeApiMerchantPlanActivateReq(unibeeApiMerchantPlanActivateReq).Execute()
 
 Activate Plan
 
@@ -39,7 +39,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantPlanActivateReq := *openapiclient.NewUnibeeApiMerchantPlanActivateReq(int64(123)) // UnibeeApiMerchantPlanActivateReq | 
+	unibeeApiMerchantPlanActivateReq := *openapiclient.NewUnibeeApiMerchantPlanActivateReq() // UnibeeApiMerchantPlanActivateReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -48,7 +48,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Plan.PlanActivatePost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PlanActivatePost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `PlanActivatePost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Plan.PlanActivatePost`: %v\n", resp)
 }
 ```
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -150,7 +150,7 @@ No authorization required
 
 ## PlanArchivePost
 
-> MerchantAuthSsoLoginOTPPost200Response PlanArchivePost(ctx).UnibeeApiMerchantPlanArchiveReq(unibeeApiMerchantPlanArchiveReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response PlanArchivePost(ctx).UnibeeApiMerchantPlanArchiveReq(unibeeApiMerchantPlanArchiveReq).Execute()
 
 Archive Plan
 
@@ -167,7 +167,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantPlanArchiveReq := *openapiclient.NewUnibeeApiMerchantPlanArchiveReq(int64(123)) // UnibeeApiMerchantPlanArchiveReq | 
+	unibeeApiMerchantPlanArchiveReq := *openapiclient.NewUnibeeApiMerchantPlanArchiveReq() // UnibeeApiMerchantPlanArchiveReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -176,7 +176,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Plan.PlanArchivePost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PlanArchivePost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `PlanArchivePost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Plan.PlanArchivePost`: %v\n", resp)
 }
 ```
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -231,7 +231,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantPlanCopyReq := *openapiclient.NewUnibeeApiMerchantPlanCopyReq(int64(123)) // UnibeeApiMerchantPlanCopyReq | 
+	unibeeApiMerchantPlanCopyReq := *openapiclient.NewUnibeeApiMerchantPlanCopyReq() // UnibeeApiMerchantPlanCopyReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -278,7 +278,7 @@ No authorization required
 
 ## PlanDeletePost
 
-> MerchantAuthSsoLoginOTPPost200Response PlanDeletePost(ctx).UnibeeApiMerchantPlanDeleteReq(unibeeApiMerchantPlanDeleteReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response PlanDeletePost(ctx).UnibeeApiMerchantPlanDeleteReq(unibeeApiMerchantPlanDeleteReq).Execute()
 
 Delete Plan
 
@@ -295,7 +295,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantPlanDeleteReq := *openapiclient.NewUnibeeApiMerchantPlanDeleteReq(int64(123)) // UnibeeApiMerchantPlanDeleteReq | 
+	unibeeApiMerchantPlanDeleteReq := *openapiclient.NewUnibeeApiMerchantPlanDeleteReq() // UnibeeApiMerchantPlanDeleteReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -304,7 +304,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Plan.PlanDeletePost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PlanDeletePost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `PlanDeletePost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Plan.PlanDeletePost`: %v\n", resp)
 }
 ```
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -342,7 +342,7 @@ No authorization required
 
 ## PlanDetailGet
 
-> MerchantPlanDetailGet200Response PlanDetailGet(ctx).PlanId(planId).Execute()
+> MerchantPlanDetailGet200Response PlanDetailGet(ctx).PlanId(planId).ExternalPlanId(externalPlanId).Execute()
 
 Plan Detail
 
@@ -359,11 +359,12 @@ import (
 )
 
 func main() {
-	planId := int64(789) // int64 | PlanId
+	planId := int64(789) // int64 | The Id of plan, either planId or externalPlanId should be set (optional)
+	externalPlanId := "externalPlanId_example" // string | The ExternalId of plan, either externalPlanId or planId should be set (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Plan.PlanDetailGet(context.Background()).PlanId(planId).Execute()
+	resp, r, err := apiClient.Plan.PlanDetailGet(context.Background()).PlanId(planId).ExternalPlanId(externalPlanId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Plan.PlanDetailGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -384,7 +385,8 @@ Other parameters are passed through a pointer to a apiPlanDetailGetRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **planId** | **int64** | PlanId | 
+ **planId** | **int64** | The Id of plan, either planId or externalPlanId should be set | 
+ **externalPlanId** | **string** | The ExternalId of plan, either externalPlanId or planId should be set | 
 
 ### Return type
 
@@ -423,7 +425,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantPlanDetailReq := *openapiclient.NewUnibeeApiMerchantPlanDetailReq(int64(123)) // UnibeeApiMerchantPlanDetailReq | 
+	unibeeApiMerchantPlanDetailReq := *openapiclient.NewUnibeeApiMerchantPlanDetailReq() // UnibeeApiMerchantPlanDetailReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -748,7 +750,7 @@ No authorization required
 
 ## PlanPublishPost
 
-> MerchantAuthSsoLoginOTPPost200Response PlanPublishPost(ctx).UnibeeApiMerchantPlanPublishReq(unibeeApiMerchantPlanPublishReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response PlanPublishPost(ctx).UnibeeApiMerchantPlanPublishReq(unibeeApiMerchantPlanPublishReq).Execute()
 
 Publish Plan
 
@@ -767,7 +769,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantPlanPublishReq := *openapiclient.NewUnibeeApiMerchantPlanPublishReq(int64(123)) // UnibeeApiMerchantPlanPublishReq | 
+	unibeeApiMerchantPlanPublishReq := *openapiclient.NewUnibeeApiMerchantPlanPublishReq() // UnibeeApiMerchantPlanPublishReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -776,7 +778,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Plan.PlanPublishPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PlanPublishPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `PlanPublishPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Plan.PlanPublishPost`: %v\n", resp)
 }
 ```
@@ -796,7 +798,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -814,7 +816,7 @@ No authorization required
 
 ## PlanUnpublishedPost
 
-> MerchantAuthSsoLoginOTPPost200Response PlanUnpublishedPost(ctx).UnibeeApiMerchantPlanUnPublishReq(unibeeApiMerchantPlanUnPublishReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response PlanUnpublishedPost(ctx).UnibeeApiMerchantPlanUnPublishReq(unibeeApiMerchantPlanUnPublishReq).Execute()
 
 UnPublish Plan
 
@@ -831,7 +833,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantPlanUnPublishReq := *openapiclient.NewUnibeeApiMerchantPlanUnPublishReq(int64(123)) // UnibeeApiMerchantPlanUnPublishReq | 
+	unibeeApiMerchantPlanUnPublishReq := *openapiclient.NewUnibeeApiMerchantPlanUnPublishReq() // UnibeeApiMerchantPlanUnPublishReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -840,7 +842,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Plan.PlanUnpublishedPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PlanUnpublishedPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `PlanUnpublishedPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Plan.PlanUnpublishedPost`: %v\n", resp)
 }
 ```
@@ -860,7 +862,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 

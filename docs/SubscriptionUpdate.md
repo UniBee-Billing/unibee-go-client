@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## SubscriptionActiveTemporarilyPost
 
-> MerchantAuthSsoLoginOTPPost200Response SubscriptionActiveTemporarilyPost(ctx).UnibeeApiMerchantSubscriptionActiveTemporarilyReq(unibeeApiMerchantSubscriptionActiveTemporarilyReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response SubscriptionActiveTemporarilyPost(ctx).UnibeeApiMerchantSubscriptionActiveTemporarilyReq(unibeeApiMerchantSubscriptionActiveTemporarilyReq).Execute()
 
 Subscription Active Temporarily
 
@@ -44,7 +44,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionUpdate.SubscriptionActiveTemporarilyPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SubscriptionActiveTemporarilyPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `SubscriptionActiveTemporarilyPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `SubscriptionUpdate.SubscriptionActiveTemporarilyPost`: %v\n", resp)
 }
 ```
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 

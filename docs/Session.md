@@ -78,7 +78,7 @@ No authorization required
 
 ## SessionUserSubUpdateUrlGet
 
-> MerchantGetLicenseUpdateUrlGet200Response SessionUserSubUpdateUrlGet(ctx).Email(email).UserId(userId).ExternalUserId(externalUserId).ProductId(productId).PlanId(planId).ReturnUrl(returnUrl).CancelUrl(cancelUrl).Execute()
+> MerchantGetLicenseUpdateUrlGet200Response SessionUserSubUpdateUrlGet(ctx).Email(email).UserId(userId).ExternalUserId(externalUserId).ProductId(productId).PlanId(planId).VatCountryCode(vatCountryCode).ReturnUrl(returnUrl).CancelUrl(cancelUrl).Execute()
 
 Get User Subscription Update Page Url
 
@@ -100,12 +100,13 @@ func main() {
 	externalUserId := "externalUserId_example" // string | ExternalUserId, unique, either ExternalUserId&Email or UserId needed (optional)
 	productId := int64(789) // int64 | default product will use if productId not specified (optional)
 	planId := int64(789) // int64 | Id of plan to update (optional)
+	vatCountryCode := "vatCountryCode_example" // string | Vat Country Code (optional)
 	returnUrl := "returnUrl_example" // string | ReturnUrl (optional)
 	cancelUrl := "cancelUrl_example" // string | CancelUrl (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Session.SessionUserSubUpdateUrlGet(context.Background()).Email(email).UserId(userId).ExternalUserId(externalUserId).ProductId(productId).PlanId(planId).ReturnUrl(returnUrl).CancelUrl(cancelUrl).Execute()
+	resp, r, err := apiClient.Session.SessionUserSubUpdateUrlGet(context.Background()).Email(email).UserId(userId).ExternalUserId(externalUserId).ProductId(productId).PlanId(planId).VatCountryCode(vatCountryCode).ReturnUrl(returnUrl).CancelUrl(cancelUrl).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Session.SessionUserSubUpdateUrlGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -131,6 +132,7 @@ Name | Type | Description  | Notes
  **externalUserId** | **string** | ExternalUserId, unique, either ExternalUserId&amp;Email or UserId needed | 
  **productId** | **int64** | default product will use if productId not specified | 
  **planId** | **int64** | Id of plan to update | 
+ **vatCountryCode** | **string** | Vat Country Code | 
  **returnUrl** | **string** | ReturnUrl | 
  **cancelUrl** | **string** | CancelUrl | 
 

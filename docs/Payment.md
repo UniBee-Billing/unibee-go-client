@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 ## PaymentCancelPost
 
-> MerchantAuthSsoLoginOTPPost200Response PaymentCancelPost(ctx).UnibeeApiMerchantPaymentCancelReq(unibeeApiMerchantPaymentCancelReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response PaymentCancelPost(ctx).UnibeeApiMerchantPaymentCancelReq(unibeeApiMerchantPaymentCancelReq).Execute()
 
 Cancel Payment
 
@@ -51,7 +51,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Payment.PaymentCancelPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PaymentCancelPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `PaymentCancelPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Payment.PaymentCancelPost`: %v\n", resp)
 }
 ```
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -89,7 +89,7 @@ No authorization required
 
 ## PaymentCapturePost
 
-> MerchantAuthSsoLoginOTPPost200Response PaymentCapturePost(ctx).UnibeeApiMerchantPaymentCaptureReq(unibeeApiMerchantPaymentCaptureReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response PaymentCapturePost(ctx).UnibeeApiMerchantPaymentCaptureReq(unibeeApiMerchantPaymentCaptureReq).Execute()
 
 Capture Payment
 
@@ -115,7 +115,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Payment.PaymentCapturePost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PaymentCapturePost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `PaymentCapturePost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Payment.PaymentCapturePost`: %v\n", resp)
 }
 ```
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -371,7 +371,7 @@ No authorization required
 
 ## PaymentMethodDeletePost
 
-> MerchantAuthSsoLoginOTPPost200Response PaymentMethodDeletePost(ctx).UnibeeApiMerchantPaymentMethodDeleteReq(unibeeApiMerchantPaymentMethodDeleteReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response PaymentMethodDeletePost(ctx).UnibeeApiMerchantPaymentMethodDeleteReq(unibeeApiMerchantPaymentMethodDeleteReq).Execute()
 
 Delete Payment Method
 
@@ -397,7 +397,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Payment.PaymentMethodDeletePost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PaymentMethodDeletePost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `PaymentMethodDeletePost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Payment.PaymentMethodDeletePost`: %v\n", resp)
 }
 ```
@@ -417,7 +417,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -703,7 +703,7 @@ No authorization required
 
 ## PaymentRefundCancelPost
 
-> MerchantAuthSsoLoginOTPPost200Response PaymentRefundCancelPost(ctx).UnibeeApiMerchantPaymentRefundCancelReq(unibeeApiMerchantPaymentRefundCancelReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response PaymentRefundCancelPost(ctx).UnibeeApiMerchantPaymentRefundCancelReq(unibeeApiMerchantPaymentRefundCancelReq).Execute()
 
 Cancel Payment Refund
 
@@ -729,7 +729,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Payment.PaymentRefundCancelPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PaymentRefundCancelPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `PaymentRefundCancelPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Payment.PaymentRefundCancelPost`: %v\n", resp)
 }
 ```
@@ -749,7 +749,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 

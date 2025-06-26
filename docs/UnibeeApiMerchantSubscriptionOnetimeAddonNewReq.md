@@ -5,15 +5,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonId** | **int64** | AddonId, id of one-time addon, the new payment will created base on the addon&#39;s amount&#39; | 
+**ApplyPromoCredit** | Pointer to **bool** | apply promo credit or not | [optional] 
+**ApplyPromoCreditAmount** | Pointer to **int32** | apply promo credit amount, auto compute if not specified | [optional] 
+**CancelUrl** | Pointer to **string** | CancelUrl, back to cancelUrl if user cancel the payment | [optional] 
 **DiscountAmount** | Pointer to **int32** | Amount of discount | [optional] 
 **DiscountCode** | Pointer to **string** | DiscountCode | [optional] 
-**DiscountPercentage** | Pointer to **int32** | Percentage of discount, 100&#x3D;1%, ignore if discountAmount provide | [optional] 
+**DiscountPercentage** | Pointer to **int32** | Percentage of discount, 100&#x3D;1%, ignore if discountAmount specified | [optional] 
 **GatewayId** | Pointer to **int32** | GatewayId, use user&#39;s gateway if not provide | [optional] 
+**GatewayPaymentType** | Pointer to **string** | Gateway Payment Type | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，custom data | [optional] 
 **Quantity** | **int64** | Quantity, quantity of the new payment which one-time addon purchased | 
 **ReturnUrl** | Pointer to **string** | ReturnUrl, the addon&#39;s payment will redirect based on the returnUrl provided when it&#39;s back from gateway side | [optional] 
 **SubscriptionId** | Pointer to **string** | SubscriptionId, id of subscription which addon will attached, either SubscriptionId or UserId needed, The only one active subscription of userId will attach the addon | [optional] 
-**TaxPercentage** | Pointer to **int32** | TaxPercentage，1000 &#x3D; 10%, use subscription&#39;s taxPercentage if not provide | [optional] 
+**TaxPercentage** | Pointer to **int32** | TaxPercentage，1000 &#x3D; 10%, default user&#39;s taxPercentage if not specified | [optional] 
 **UserId** | Pointer to **int64** | UserId, either SubscriptionId or UserId needed, The only one active subscription will update if userId provide instead of subscriptionId | [optional] 
 
 ## Methods
@@ -54,6 +58,81 @@ and a boolean to check if the value has been set.
 
 SetAddonId sets AddonId field to given value.
 
+
+### GetApplyPromoCredit
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetApplyPromoCredit() bool`
+
+GetApplyPromoCredit returns the ApplyPromoCredit field if non-nil, zero value otherwise.
+
+### GetApplyPromoCreditOk
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetApplyPromoCreditOk() (*bool, bool)`
+
+GetApplyPromoCreditOk returns a tuple with the ApplyPromoCredit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplyPromoCredit
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) SetApplyPromoCredit(v bool)`
+
+SetApplyPromoCredit sets ApplyPromoCredit field to given value.
+
+### HasApplyPromoCredit
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) HasApplyPromoCredit() bool`
+
+HasApplyPromoCredit returns a boolean if a field has been set.
+
+### GetApplyPromoCreditAmount
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetApplyPromoCreditAmount() int32`
+
+GetApplyPromoCreditAmount returns the ApplyPromoCreditAmount field if non-nil, zero value otherwise.
+
+### GetApplyPromoCreditAmountOk
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetApplyPromoCreditAmountOk() (*int32, bool)`
+
+GetApplyPromoCreditAmountOk returns a tuple with the ApplyPromoCreditAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplyPromoCreditAmount
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) SetApplyPromoCreditAmount(v int32)`
+
+SetApplyPromoCreditAmount sets ApplyPromoCreditAmount field to given value.
+
+### HasApplyPromoCreditAmount
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) HasApplyPromoCreditAmount() bool`
+
+HasApplyPromoCreditAmount returns a boolean if a field has been set.
+
+### GetCancelUrl
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetCancelUrl() string`
+
+GetCancelUrl returns the CancelUrl field if non-nil, zero value otherwise.
+
+### GetCancelUrlOk
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetCancelUrlOk() (*string, bool)`
+
+GetCancelUrlOk returns a tuple with the CancelUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCancelUrl
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) SetCancelUrl(v string)`
+
+SetCancelUrl sets CancelUrl field to given value.
+
+### HasCancelUrl
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) HasCancelUrl() bool`
+
+HasCancelUrl returns a boolean if a field has been set.
 
 ### GetDiscountAmount
 
@@ -154,6 +233,31 @@ SetGatewayId sets GatewayId field to given value.
 `func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) HasGatewayId() bool`
 
 HasGatewayId returns a boolean if a field has been set.
+
+### GetGatewayPaymentType
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetGatewayPaymentType() string`
+
+GetGatewayPaymentType returns the GatewayPaymentType field if non-nil, zero value otherwise.
+
+### GetGatewayPaymentTypeOk
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetGatewayPaymentTypeOk() (*string, bool)`
+
+GetGatewayPaymentTypeOk returns a tuple with the GatewayPaymentType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayPaymentType
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) SetGatewayPaymentType(v string)`
+
+SetGatewayPaymentType sets GatewayPaymentType field to given value.
+
+### HasGatewayPaymentType
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) HasGatewayPaymentType() bool`
+
+HasGatewayPaymentType returns a boolean if a field has been set.
 
 ### GetMetadata
 

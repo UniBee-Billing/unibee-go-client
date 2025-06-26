@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | addonParams | [optional] 
 **ApplyPromoCredit** | Pointer to **bool** | apply promo credit or not | [optional] 
 **ApplyPromoCreditAmount** | Pointer to **int32** | apply promo credit amount, auto compute if not specified | [optional] 
-**CancelUrl** | Pointer to **string** | CancelUrl | [optional] 
+**CancelUrl** | Pointer to **string** | CancelUrl, back to cancelUrl if customer cancelled | [optional] 
 **ConfirmCurrency** | Pointer to **string** | Currency to verify if provide | [optional] 
 **ConfirmTotalAmount** | Pointer to **int64** | TotalAmount to verify if provide | [optional] 
 **Discount** | Pointer to [**UnibeeApiBeanExternalDiscountParam**](UnibeeApiBeanExternalDiscountParam.md) |  | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **ProductData** | Pointer to [**UnibeeApiBeanPlanProductParam**](UnibeeApiBeanPlanProductParam.md) |  | [optional] 
 **ProrationDate** | Pointer to **int32** | The utc time to start Proration, default current time | [optional] 
 **Quantity** | **int64** | Quantity | 
-**ReturnUrl** | Pointer to **string** | ReturnUrl | [optional] 
+**ReturnUrl** | Pointer to **string** | ReturnUrl, back to returnUrl if update completed | [optional] 
 **SubscriptionId** | Pointer to **string** | SubscriptionId, either SubscriptionId or UserId needed, The only one active subscription of userId will update | [optional] 
 **TaxPercentage** | Pointer to **int32** | TaxPercentage，1000 &#x3D; 10%, override subscription taxPercentage if provide | [optional] 
 **UserId** | Pointer to **int64** | UserId, either SubscriptionId or UserId needed, The only one active subscription will update if userId provide instead of subscriptionId | [optional] 

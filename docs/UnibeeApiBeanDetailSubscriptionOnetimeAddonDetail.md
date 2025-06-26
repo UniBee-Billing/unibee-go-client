@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **AddonId** | Pointer to **int64** | onetime addonId | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Id** | Pointer to **int64** | id | [optional] 
+**Invoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata | [optional] 
 **Payment** | Pointer to [**UnibeeApiBeanPayment**](UnibeeApiBeanPayment.md) |  | [optional] 
 **Quantity** | Pointer to **int64** | quantity | [optional] 
@@ -133,6 +134,31 @@ SetId sets Id field to given value.
 `func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetInvoice
+
+`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) GetInvoice() UnibeeApiBeanInvoice`
+
+GetInvoice returns the Invoice field if non-nil, zero value otherwise.
+
+### GetInvoiceOk
+
+`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) GetInvoiceOk() (*UnibeeApiBeanInvoice, bool)`
+
+GetInvoiceOk returns a tuple with the Invoice field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInvoice
+
+`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) SetInvoice(v UnibeeApiBeanInvoice)`
+
+SetInvoice sets Invoice field to given value.
+
+### HasInvoice
+
+`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) HasInvoice() bool`
+
+HasInvoice returns a boolean if a field has been set.
 
 ### GetMetadata
 

@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **MemberGroupPermission** | Pointer to [**map[string]UnibeeApiBeanMerchantRolePermission**](UnibeeApiBeanMerchantRolePermission.md) | The member group permission map&#39; | [optional] 
 **MemberRoles** | Pointer to [**[]UnibeeApiBeanMerchantRole**](UnibeeApiBeanMerchantRole.md) | The member role list&#39; | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
+**CurrentDeviceIdentity** | Pointer to **string** | The Current DeviceIdentity&#39; | [optional] 
+**DeviceList** | Pointer to [**[]UnibeeApiBeanMerchantMemberDevice**](UnibeeApiBeanMerchantMemberDevice.md) | The devices list&#39; | [optional] 
 **Email** | Pointer to **string** | email | [optional] 
 **FirstName** | Pointer to **string** | first name | [optional] 
 **Id** | Pointer to **int64** | userId | [optional] 
@@ -16,6 +18,7 @@ Name | Type | Description | Notes
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
 **Mobile** | Pointer to **string** | mobile | [optional] 
 **Status** | Pointer to **int32** | 0-Active, 2-Suspend | [optional] 
+**TotpType** | Pointer to **int32** | 0-Inactive, 1-General, Google Authenticator | 2-Microsoft Authenticator | 3-Authy | 4-1Password | 5-LastPass | 6-FreeOTP | 7-Other TOTP | [optional] 
 
 ## Methods
 
@@ -110,6 +113,56 @@ SetCreateTime sets CreateTime field to given value.
 `func (o *UnibeeApiBeanDetailMerchantMemberDetail) HasCreateTime() bool`
 
 HasCreateTime returns a boolean if a field has been set.
+
+### GetCurrentDeviceIdentity
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetCurrentDeviceIdentity() string`
+
+GetCurrentDeviceIdentity returns the CurrentDeviceIdentity field if non-nil, zero value otherwise.
+
+### GetCurrentDeviceIdentityOk
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetCurrentDeviceIdentityOk() (*string, bool)`
+
+GetCurrentDeviceIdentityOk returns a tuple with the CurrentDeviceIdentity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrentDeviceIdentity
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) SetCurrentDeviceIdentity(v string)`
+
+SetCurrentDeviceIdentity sets CurrentDeviceIdentity field to given value.
+
+### HasCurrentDeviceIdentity
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) HasCurrentDeviceIdentity() bool`
+
+HasCurrentDeviceIdentity returns a boolean if a field has been set.
+
+### GetDeviceList
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetDeviceList() []UnibeeApiBeanMerchantMemberDevice`
+
+GetDeviceList returns the DeviceList field if non-nil, zero value otherwise.
+
+### GetDeviceListOk
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetDeviceListOk() (*[]UnibeeApiBeanMerchantMemberDevice, bool)`
+
+GetDeviceListOk returns a tuple with the DeviceList field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDeviceList
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) SetDeviceList(v []UnibeeApiBeanMerchantMemberDevice)`
+
+SetDeviceList sets DeviceList field to given value.
+
+### HasDeviceList
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) HasDeviceList() bool`
+
+HasDeviceList returns a boolean if a field has been set.
 
 ### GetEmail
 
@@ -335,6 +388,31 @@ SetStatus sets Status field to given value.
 `func (o *UnibeeApiBeanDetailMerchantMemberDetail) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
+
+### GetTotpType
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetTotpType() int32`
+
+GetTotpType returns the TotpType field if non-nil, zero value otherwise.
+
+### GetTotpTypeOk
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetTotpTypeOk() (*int32, bool)`
+
+GetTotpTypeOk returns a tuple with the TotpType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotpType
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) SetTotpType(v int32)`
+
+SetTotpType sets TotpType field to given value.
+
+### HasTotpType
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) HasTotpType() bool`
+
+HasTotpType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

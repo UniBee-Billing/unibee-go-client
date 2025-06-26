@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CountryCode** | Pointer to **string** | Country Code | [optional] 
+**CountryName** | Pointer to **string** | Country Name | [optional] 
 **Email** | **string** | The merchant owner&#39;s email address | 
 **FirstName** | **string** | The merchant owner&#39;s first name | 
 **LastName** | **string** | The merchant owner&#39;s last name | 
@@ -29,6 +31,56 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantAuthRegisterReqWithDefaults instantiates a new UnibeeApiMerchantAuthRegisterReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCountryCode
+
+`func (o *UnibeeApiMerchantAuthRegisterReq) GetCountryCode() string`
+
+GetCountryCode returns the CountryCode field if non-nil, zero value otherwise.
+
+### GetCountryCodeOk
+
+`func (o *UnibeeApiMerchantAuthRegisterReq) GetCountryCodeOk() (*string, bool)`
+
+GetCountryCodeOk returns a tuple with the CountryCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCountryCode
+
+`func (o *UnibeeApiMerchantAuthRegisterReq) SetCountryCode(v string)`
+
+SetCountryCode sets CountryCode field to given value.
+
+### HasCountryCode
+
+`func (o *UnibeeApiMerchantAuthRegisterReq) HasCountryCode() bool`
+
+HasCountryCode returns a boolean if a field has been set.
+
+### GetCountryName
+
+`func (o *UnibeeApiMerchantAuthRegisterReq) GetCountryName() string`
+
+GetCountryName returns the CountryName field if non-nil, zero value otherwise.
+
+### GetCountryNameOk
+
+`func (o *UnibeeApiMerchantAuthRegisterReq) GetCountryNameOk() (*string, bool)`
+
+GetCountryNameOk returns a tuple with the CountryName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCountryName
+
+`func (o *UnibeeApiMerchantAuthRegisterReq) SetCountryName(v string)`
+
+SetCountryName sets CountryName field to given value.
+
+### HasCountryName
+
+`func (o *UnibeeApiMerchantAuthRegisterReq) HasCountryName() bool`
+
+HasCountryName returns a boolean if a field has been set.
 
 ### GetEmail
 

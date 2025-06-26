@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## EmailEmailSenderSetupPost
 
-> MerchantAuthSsoLoginOTPPost200Response EmailEmailSenderSetupPost(ctx).UnibeeApiMerchantEmailSenderSetupReq(unibeeApiMerchantEmailSenderSetupReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response EmailEmailSenderSetupPost(ctx).UnibeeApiMerchantEmailSenderSetupReq(unibeeApiMerchantEmailSenderSetupReq).Execute()
 
 Email Sender Setup
 
@@ -38,7 +38,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Email.EmailEmailSenderSetupPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `EmailEmailSenderSetupPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `EmailEmailSenderSetupPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Email.EmailEmailSenderSetupPost`: %v\n", resp)
 }
 ```
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ No authorization required
 
 ## EmailSendTemplateEmailToUserPost
 
-> MerchantAuthSsoLoginOTPPost200Response EmailSendTemplateEmailToUserPost(ctx).UnibeeApiMerchantEmailSendTemplateEmailToUserReq(unibeeApiMerchantEmailSendTemplateEmailToUserReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response EmailSendTemplateEmailToUserPost(ctx).UnibeeApiMerchantEmailSendTemplateEmailToUserReq(unibeeApiMerchantEmailSendTemplateEmailToUserReq).Execute()
 
 Send Template Email To User
 
@@ -166,7 +166,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Email.EmailSendTemplateEmailToUserPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `EmailSendTemplateEmailToUserPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `EmailSendTemplateEmailToUserPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Email.EmailSendTemplateEmailToUserPost`: %v\n", resp)
 }
 ```
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 

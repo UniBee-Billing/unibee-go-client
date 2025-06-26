@@ -7,13 +7,14 @@ Name | Type | Description | Notes
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | addonParams | [optional] 
 **ApplyPromoCredit** | Pointer to **bool** | apply promo credit or not | [optional] 
 **ApplyPromoCreditAmount** | Pointer to **int32** | apply promo credit amount, auto compute if not specified | [optional] 
-**CancelUrl** | Pointer to **string** | CancelUrl | [optional] 
+**CancelUrl** | Pointer to **string** | CancelUrl, back to cancelUrl if creation cancelled | [optional] 
 **ConfirmCurrency** | Pointer to **string** | Currency to verify if provide | [optional] 
 **ConfirmTotalAmount** | Pointer to **int64** | TotalAmount to verify if provide | [optional] 
 **Discount** | Pointer to [**UnibeeApiBeanExternalDiscountParam**](UnibeeApiBeanExternalDiscountParam.md) |  | [optional] 
 **DiscountCode** | Pointer to **string** | DiscountCode | [optional] 
 **Email** | Pointer to **string** | Email, one of ExternalUserId&amp;Email, UserId or User needed | [optional] 
 **ExternalUserId** | Pointer to **string** | ExternalUserId, unique, one of ExternalUserId&amp;Email, UserId or User needed | [optional] 
+**FreeInInitialPeriod** | Pointer to **bool** | Is free or not for the first period, true or false, high priority higher then trialEnd | [optional] 
 **GatewayId** | Pointer to **int32** | GatewayId | [optional] 
 **GatewayPaymentType** | Pointer to **string** | Gateway Payment Type | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
@@ -21,7 +22,7 @@ Name | Type | Description | Notes
 **PlanId** | **int64** | PlanId | 
 **ProductData** | Pointer to [**UnibeeApiBeanPlanProductParam**](UnibeeApiBeanPlanProductParam.md) |  | [optional] 
 **Quantity** | Pointer to **int64** | Quantity，Default 1 | [optional] 
-**ReturnUrl** | Pointer to **string** | ReturnUrl | [optional] 
+**ReturnUrl** | Pointer to **string** | ReturnUrl, back to returnUrl if creation completed | [optional] 
 **StartIncomplete** | Pointer to **bool** | StartIncomplete, use now pay later, subscription will generate invoice and start with incomplete status if set | [optional] 
 **TaxPercentage** | Pointer to **int32** | TaxPercentage，1000 &#x3D; 10%, override subscription taxPercentage if provide | [optional] 
 **TrialEnd** | Pointer to **int64** | trial_end, utc time | [optional] 
@@ -298,6 +299,31 @@ SetExternalUserId sets ExternalUserId field to given value.
 `func (o *UnibeeApiMerchantSubscriptionCreateReq) HasExternalUserId() bool`
 
 HasExternalUserId returns a boolean if a field has been set.
+
+### GetFreeInInitialPeriod
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetFreeInInitialPeriod() bool`
+
+GetFreeInInitialPeriod returns the FreeInInitialPeriod field if non-nil, zero value otherwise.
+
+### GetFreeInInitialPeriodOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetFreeInInitialPeriodOk() (*bool, bool)`
+
+GetFreeInInitialPeriodOk returns a tuple with the FreeInInitialPeriod field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFreeInInitialPeriod
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) SetFreeInInitialPeriod(v bool)`
+
+SetFreeInInitialPeriod sets FreeInInitialPeriod field to given value.
+
+### HasFreeInInitialPeriod
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) HasFreeInInitialPeriod() bool`
+
+HasFreeInInitialPeriod returns a boolean if a field has been set.
 
 ### GetGatewayId
 

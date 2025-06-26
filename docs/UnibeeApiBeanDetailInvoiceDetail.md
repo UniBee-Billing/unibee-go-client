@@ -39,11 +39,13 @@ Name | Type | Description | Notes
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **OriginAmount** | Pointer to **int64** | OriginAmount,Cents | [optional] 
 **OriginalPaymentInvoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
+**PaidTime** | Pointer to **int64** |  | [optional] 
 **PartialCreditPaidAmount** | Pointer to **int64** | partial credit paid amount | [optional] 
 **Payment** | Pointer to [**UnibeeApiBeanPayment**](UnibeeApiBeanPayment.md) |  | [optional] 
 **PaymentId** | Pointer to **string** | PaymentId | [optional] 
 **PeriodEnd** | Pointer to **int64** | period_end | [optional] 
 **PeriodStart** | Pointer to **int64** | period_start | [optional] 
+**PlanSnapshot** | Pointer to [**UnibeeApiBeanDetailInvoicePlanSnapshot**](UnibeeApiBeanDetailInvoicePlanSnapshot.md) |  | [optional] 
 **ProductName** | Pointer to **string** |  | [optional] 
 **PromoCreditDiscountAmount** | Pointer to **int64** | promo credit discount amount | [optional] 
 **PromoCreditTransaction** | Pointer to [**UnibeeApiBeanCreditTransaction**](UnibeeApiBeanCreditTransaction.md) |  | [optional] 
@@ -966,6 +968,31 @@ SetOriginalPaymentInvoice sets OriginalPaymentInvoice field to given value.
 
 HasOriginalPaymentInvoice returns a boolean if a field has been set.
 
+### GetPaidTime
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetPaidTime() int64`
+
+GetPaidTime returns the PaidTime field if non-nil, zero value otherwise.
+
+### GetPaidTimeOk
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetPaidTimeOk() (*int64, bool)`
+
+GetPaidTimeOk returns a tuple with the PaidTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaidTime
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetPaidTime(v int64)`
+
+SetPaidTime sets PaidTime field to given value.
+
+### HasPaidTime
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) HasPaidTime() bool`
+
+HasPaidTime returns a boolean if a field has been set.
+
 ### GetPartialCreditPaidAmount
 
 `func (o *UnibeeApiBeanDetailInvoiceDetail) GetPartialCreditPaidAmount() int64`
@@ -1090,6 +1117,31 @@ SetPeriodStart sets PeriodStart field to given value.
 `func (o *UnibeeApiBeanDetailInvoiceDetail) HasPeriodStart() bool`
 
 HasPeriodStart returns a boolean if a field has been set.
+
+### GetPlanSnapshot
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetPlanSnapshot() UnibeeApiBeanDetailInvoicePlanSnapshot`
+
+GetPlanSnapshot returns the PlanSnapshot field if non-nil, zero value otherwise.
+
+### GetPlanSnapshotOk
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetPlanSnapshotOk() (*UnibeeApiBeanDetailInvoicePlanSnapshot, bool)`
+
+GetPlanSnapshotOk returns a tuple with the PlanSnapshot field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanSnapshot
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetPlanSnapshot(v UnibeeApiBeanDetailInvoicePlanSnapshot)`
+
+SetPlanSnapshot sets PlanSnapshot field to given value.
+
+### HasPlanSnapshot
+
+`func (o *UnibeeApiBeanDetailInvoiceDetail) HasPlanSnapshot() bool`
+
+HasPlanSnapshot returns a boolean if a field has been set.
 
 ### GetProductName
 

@@ -5,15 +5,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountHolder** | **string** | The AccountHolder of wire transfer  | 
+**AccountNumber** | Pointer to **string** | The Account Number | [optional] 
 **Address** | **string** | The address of wire transfer  | 
-**Bic** | **string** | The BIC of wire transfer  | 
-**Iban** | **string** | The IBAN of wire transfer  | 
+**BankName** | Pointer to **string** | The Bank Name | [optional] 
+**Bic** | Pointer to **string** | The BIC of wire transfer  | [optional] 
+**BsbCode** | Pointer to **string** | The BSB Code | [optional] 
+**Iban** | Pointer to **string** | The IBAN of wire transfer  | [optional] 
+**SwiftCode** | Pointer to **string** | The Swift Code | [optional] 
 
 ## Methods
 
 ### NewUnibeeApiBeanDetailGatewayBank
 
-`func NewUnibeeApiBeanDetailGatewayBank(accountHolder string, address string, bic string, iban string, ) *UnibeeApiBeanDetailGatewayBank`
+`func NewUnibeeApiBeanDetailGatewayBank(accountHolder string, address string, ) *UnibeeApiBeanDetailGatewayBank`
 
 NewUnibeeApiBeanDetailGatewayBank instantiates a new UnibeeApiBeanDetailGatewayBank object
 This constructor will assign default values to properties that have it defined,
@@ -48,6 +52,31 @@ and a boolean to check if the value has been set.
 SetAccountHolder sets AccountHolder field to given value.
 
 
+### GetAccountNumber
+
+`func (o *UnibeeApiBeanDetailGatewayBank) GetAccountNumber() string`
+
+GetAccountNumber returns the AccountNumber field if non-nil, zero value otherwise.
+
+### GetAccountNumberOk
+
+`func (o *UnibeeApiBeanDetailGatewayBank) GetAccountNumberOk() (*string, bool)`
+
+GetAccountNumberOk returns a tuple with the AccountNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccountNumber
+
+`func (o *UnibeeApiBeanDetailGatewayBank) SetAccountNumber(v string)`
+
+SetAccountNumber sets AccountNumber field to given value.
+
+### HasAccountNumber
+
+`func (o *UnibeeApiBeanDetailGatewayBank) HasAccountNumber() bool`
+
+HasAccountNumber returns a boolean if a field has been set.
+
 ### GetAddress
 
 `func (o *UnibeeApiBeanDetailGatewayBank) GetAddress() string`
@@ -68,6 +97,31 @@ and a boolean to check if the value has been set.
 SetAddress sets Address field to given value.
 
 
+### GetBankName
+
+`func (o *UnibeeApiBeanDetailGatewayBank) GetBankName() string`
+
+GetBankName returns the BankName field if non-nil, zero value otherwise.
+
+### GetBankNameOk
+
+`func (o *UnibeeApiBeanDetailGatewayBank) GetBankNameOk() (*string, bool)`
+
+GetBankNameOk returns a tuple with the BankName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBankName
+
+`func (o *UnibeeApiBeanDetailGatewayBank) SetBankName(v string)`
+
+SetBankName sets BankName field to given value.
+
+### HasBankName
+
+`func (o *UnibeeApiBeanDetailGatewayBank) HasBankName() bool`
+
+HasBankName returns a boolean if a field has been set.
+
 ### GetBic
 
 `func (o *UnibeeApiBeanDetailGatewayBank) GetBic() string`
@@ -87,6 +141,36 @@ and a boolean to check if the value has been set.
 
 SetBic sets Bic field to given value.
 
+### HasBic
+
+`func (o *UnibeeApiBeanDetailGatewayBank) HasBic() bool`
+
+HasBic returns a boolean if a field has been set.
+
+### GetBsbCode
+
+`func (o *UnibeeApiBeanDetailGatewayBank) GetBsbCode() string`
+
+GetBsbCode returns the BsbCode field if non-nil, zero value otherwise.
+
+### GetBsbCodeOk
+
+`func (o *UnibeeApiBeanDetailGatewayBank) GetBsbCodeOk() (*string, bool)`
+
+GetBsbCodeOk returns a tuple with the BsbCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBsbCode
+
+`func (o *UnibeeApiBeanDetailGatewayBank) SetBsbCode(v string)`
+
+SetBsbCode sets BsbCode field to given value.
+
+### HasBsbCode
+
+`func (o *UnibeeApiBeanDetailGatewayBank) HasBsbCode() bool`
+
+HasBsbCode returns a boolean if a field has been set.
 
 ### GetIban
 
@@ -107,6 +191,36 @@ and a boolean to check if the value has been set.
 
 SetIban sets Iban field to given value.
 
+### HasIban
+
+`func (o *UnibeeApiBeanDetailGatewayBank) HasIban() bool`
+
+HasIban returns a boolean if a field has been set.
+
+### GetSwiftCode
+
+`func (o *UnibeeApiBeanDetailGatewayBank) GetSwiftCode() string`
+
+GetSwiftCode returns the SwiftCode field if non-nil, zero value otherwise.
+
+### GetSwiftCodeOk
+
+`func (o *UnibeeApiBeanDetailGatewayBank) GetSwiftCodeOk() (*string, bool)`
+
+GetSwiftCodeOk returns a tuple with the SwiftCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSwiftCode
+
+`func (o *UnibeeApiBeanDetailGatewayBank) SetSwiftCode(v string)`
+
+SetSwiftCode sets SwiftCode field to given value.
+
+### HasSwiftCode
+
+`func (o *UnibeeApiBeanDetailGatewayBank) HasSwiftCode() bool`
+
+HasSwiftCode returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

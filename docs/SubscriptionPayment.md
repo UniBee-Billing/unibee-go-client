@@ -5,7 +5,8 @@ All URIs are relative to *https://api.unibee.top*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**SubscriptionNewOnetimeAddonPaymentPost**](SubscriptionPayment.md#SubscriptionNewOnetimeAddonPaymentPost) | **Post** /merchant/subscription/new_onetime_addon_payment | New Subscription Onetime Addon Payment
-[**SubscriptionOnetimeAddonListGet**](SubscriptionPayment.md#SubscriptionOnetimeAddonListGet) | **Get** /merchant/subscription/onetime_addon_list | Get Subscription Onetime Addon List
+[**SubscriptionNewOnetimeAddonPreviewPost**](SubscriptionPayment.md#SubscriptionNewOnetimeAddonPreviewPost) | **Post** /merchant/subscription/new_onetime_addon_preview | New Subscription Onetime Addon Preview
+[**SubscriptionOnetimeAddonPurchaseListGet**](SubscriptionPayment.md#SubscriptionOnetimeAddonPurchaseListGet) | **Get** /merchant/subscription/onetime_addon_purchase_list | Get Subscription Onetime Addon Purchase History List
 [**SubscriptionPaymentNewPost**](SubscriptionPayment.md#SubscriptionPaymentNewPost) | **Post** /merchant/subscription/payment/new | New Subscription Payment
 
 
@@ -76,11 +77,77 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## SubscriptionOnetimeAddonListGet
+## SubscriptionNewOnetimeAddonPreviewPost
 
-> MerchantSubscriptionOnetimeAddonListGet200Response SubscriptionOnetimeAddonListGet(ctx).UserId(userId).Page(page).Count(count).Execute()
+> MerchantSubscriptionNewOnetimeAddonPreviewPost200Response SubscriptionNewOnetimeAddonPreviewPost(ctx).UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq(unibeeApiMerchantSubscriptionOnetimeAddonPreviewReq).Execute()
 
-Get Subscription Onetime Addon List
+New Subscription Onetime Addon Preview
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantSubscriptionOnetimeAddonPreviewReq := *openapiclient.NewUnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq(int64(123), int64(123)) // UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SubscriptionPayment.SubscriptionNewOnetimeAddonPreviewPost(context.Background()).UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq(unibeeApiMerchantSubscriptionOnetimeAddonPreviewReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionPayment.SubscriptionNewOnetimeAddonPreviewPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SubscriptionNewOnetimeAddonPreviewPost`: MerchantSubscriptionNewOnetimeAddonPreviewPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `SubscriptionPayment.SubscriptionNewOnetimeAddonPreviewPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSubscriptionNewOnetimeAddonPreviewPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantSubscriptionOnetimeAddonPreviewReq** | [**UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq**](UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq.md) |  | 
+
+### Return type
+
+[**MerchantSubscriptionNewOnetimeAddonPreviewPost200Response**](MerchantSubscriptionNewOnetimeAddonPreviewPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SubscriptionOnetimeAddonPurchaseListGet
+
+> MerchantSubscriptionOnetimeAddonPurchaseListGet200Response SubscriptionOnetimeAddonPurchaseListGet(ctx).UserId(userId).Page(page).Count(count).Execute()
+
+Get Subscription Onetime Addon Purchase History List
 
 ### Example
 
@@ -97,17 +164,17 @@ import (
 func main() {
 	userId := int64(789) // int64 | UserId
 	page := int32(56) // int32 | Page, Start With 0 (optional)
-	count := int32(56) // int32 | Count Of Page (optional)
+	count := int32(56) // int32 | Count Of Page，Default 100  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SubscriptionPayment.SubscriptionOnetimeAddonListGet(context.Background()).UserId(userId).Page(page).Count(count).Execute()
+	resp, r, err := apiClient.SubscriptionPayment.SubscriptionOnetimeAddonPurchaseListGet(context.Background()).UserId(userId).Page(page).Count(count).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionPayment.SubscriptionOnetimeAddonListGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionPayment.SubscriptionOnetimeAddonPurchaseListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SubscriptionOnetimeAddonListGet`: MerchantSubscriptionOnetimeAddonListGet200Response
-	fmt.Fprintf(os.Stdout, "Response from `SubscriptionPayment.SubscriptionOnetimeAddonListGet`: %v\n", resp)
+	// response from `SubscriptionOnetimeAddonPurchaseListGet`: MerchantSubscriptionOnetimeAddonPurchaseListGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `SubscriptionPayment.SubscriptionOnetimeAddonPurchaseListGet`: %v\n", resp)
 }
 ```
 
@@ -117,18 +184,18 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSubscriptionOnetimeAddonListGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiSubscriptionOnetimeAddonPurchaseListGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int64** | UserId | 
  **page** | **int32** | Page, Start With 0 | 
- **count** | **int32** | Count Of Page | 
+ **count** | **int32** | Count Of Page，Default 100  | 
 
 ### Return type
 
-[**MerchantSubscriptionOnetimeAddonListGet200Response**](MerchantSubscriptionOnetimeAddonListGet200Response.md)
+[**MerchantSubscriptionOnetimeAddonPurchaseListGet200Response**](MerchantSubscriptionOnetimeAddonPurchaseListGet200Response.md)
 
 ### Authorization
 

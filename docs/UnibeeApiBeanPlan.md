@@ -7,10 +7,12 @@ Name | Type | Description | Notes
 **Amount** | Pointer to **int64** | amount, cent, without tax | [optional] 
 **BindingAddonIds** | Pointer to **string** | binded recurring addon planIds，split with , | [optional] 
 **BindingOnetimeAddonIds** | Pointer to **string** | binded onetime addon planIds，split with , | [optional] 
-**CancelAtTrialEnd** | Pointer to **int32** | whether cancel at subscripiton first trial end，0-false | 1-true, will pass to cancelAtPeriodEnd of subscription | [optional] 
+**CancelAtTrialEnd** | Pointer to **int32** | whether cancel at subscription first trial end，0-false | 1-true, will pass to cancelAtPeriodEnd of subscription | [optional] 
+**CheckoutUrl** | Pointer to **string** | CheckoutUrl | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Currency** | Pointer to **string** | currency | [optional] 
 **Description** | Pointer to **string** | description | [optional] 
+**DisableAutoCharge** | Pointer to **int32** | disable auto-charge, 0-false,1-true | [optional] 
 **ExternalPlanId** | Pointer to **string** | external_user_id | [optional] 
 **ExtraMetricData** | Pointer to **string** |  | [optional] 
 **GasPayer** | Pointer to **string** | who pay the gas, merchant|user | [optional] 
@@ -154,6 +156,31 @@ SetCancelAtTrialEnd sets CancelAtTrialEnd field to given value.
 
 HasCancelAtTrialEnd returns a boolean if a field has been set.
 
+### GetCheckoutUrl
+
+`func (o *UnibeeApiBeanPlan) GetCheckoutUrl() string`
+
+GetCheckoutUrl returns the CheckoutUrl field if non-nil, zero value otherwise.
+
+### GetCheckoutUrlOk
+
+`func (o *UnibeeApiBeanPlan) GetCheckoutUrlOk() (*string, bool)`
+
+GetCheckoutUrlOk returns a tuple with the CheckoutUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCheckoutUrl
+
+`func (o *UnibeeApiBeanPlan) SetCheckoutUrl(v string)`
+
+SetCheckoutUrl sets CheckoutUrl field to given value.
+
+### HasCheckoutUrl
+
+`func (o *UnibeeApiBeanPlan) HasCheckoutUrl() bool`
+
+HasCheckoutUrl returns a boolean if a field has been set.
+
 ### GetCreateTime
 
 `func (o *UnibeeApiBeanPlan) GetCreateTime() int64`
@@ -228,6 +255,31 @@ SetDescription sets Description field to given value.
 `func (o *UnibeeApiBeanPlan) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetDisableAutoCharge
+
+`func (o *UnibeeApiBeanPlan) GetDisableAutoCharge() int32`
+
+GetDisableAutoCharge returns the DisableAutoCharge field if non-nil, zero value otherwise.
+
+### GetDisableAutoChargeOk
+
+`func (o *UnibeeApiBeanPlan) GetDisableAutoChargeOk() (*int32, bool)`
+
+GetDisableAutoChargeOk returns a tuple with the DisableAutoCharge field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisableAutoCharge
+
+`func (o *UnibeeApiBeanPlan) SetDisableAutoCharge(v int32)`
+
+SetDisableAutoCharge sets DisableAutoCharge field to given value.
+
+### HasDisableAutoCharge
+
+`func (o *UnibeeApiBeanPlan) HasDisableAutoCharge() bool`
+
+HasDisableAutoCharge returns a boolean if a field has been set.
 
 ### GetExternalPlanId
 

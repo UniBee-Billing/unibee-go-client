@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **GatewayLogo** | Pointer to **[][]string** | The logo of payment gateway | [optional] 
 **GatewayPaymentTypes** | Pointer to **[]string** | Selected gateway payment types | [optional] 
 **GatewaySecret** | Pointer to **string** | The secret of payment gateway | [optional] 
-**Sort** | Pointer to **int32** | The sort value of payment gateway, The bigger, the closer to the front | [optional] 
+**Sort** | Pointer to **int32** | The sort value of payment gateway, The higher the value, the lower the ranking | [optional] 
 **SubGateway** | Pointer to **string** | The sub gateway of payment gateway | [optional] 
 
 ## Methods

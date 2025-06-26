@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **GatewayIcons** | Pointer to **[][]string** | The icons of payment gateway | [optional] 
 **GatewayId** | **int64** | The id of payment gateway | 
 **MinimumAmount** | **int64** | The minimum amount of wire transfer, cents | 
-**Sort** | Pointer to **int32** | The sort value of payment gateway, The bigger, the closer to the front | [optional] 
+**Sort** | Pointer to **int32** | The sort value of payment gateway, The higher the value, the lower the ranking | [optional] 
 
 ## Methods
 

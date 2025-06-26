@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 ## ProductActivatePost
 
-> MerchantAuthSsoLoginOTPPost200Response ProductActivatePost(ctx).UnibeeApiMerchantProductActivateReq(unibeeApiMerchantProductActivateReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response ProductActivatePost(ctx).UnibeeApiMerchantProductActivateReq(unibeeApiMerchantProductActivateReq).Execute()
 
 Activate Product
 
@@ -45,7 +45,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Product.ProductActivatePost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ProductActivatePost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `ProductActivatePost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Product.ProductActivatePost`: %v\n", resp)
 }
 ```
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ No authorization required
 
 ## ProductDeletePost
 
-> MerchantAuthSsoLoginOTPPost200Response ProductDeletePost(ctx).UnibeeApiMerchantProductDeleteReq(unibeeApiMerchantProductDeleteReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response ProductDeletePost(ctx).UnibeeApiMerchantProductDeleteReq(unibeeApiMerchantProductDeleteReq).Execute()
 
 Delete Product
 
@@ -175,7 +175,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Product.ProductDeletePost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ProductDeletePost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `ProductDeletePost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Product.ProductDeletePost`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -407,7 +407,7 @@ No authorization required
 
 ## ProductInactivatePost
 
-> MerchantAuthSsoLoginOTPPost200Response ProductInactivatePost(ctx).UnibeeApiMerchantProductInactiveReq(unibeeApiMerchantProductInactiveReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response ProductInactivatePost(ctx).UnibeeApiMerchantProductInactiveReq(unibeeApiMerchantProductInactiveReq).Execute()
 
 Inactivate Product
 
@@ -433,7 +433,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Product.ProductInactivatePost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ProductInactivatePost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `ProductInactivatePost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Product.ProductInactivatePost`: %v\n", resp)
 }
 ```
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 

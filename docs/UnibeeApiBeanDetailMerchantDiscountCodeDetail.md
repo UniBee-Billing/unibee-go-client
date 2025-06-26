@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **MerchantId** | Pointer to **int64** | merchantId | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
 **Name** | Pointer to **string** | name | [optional] 
+**PlanApplyGroup** | Pointer to [**UnibeeApiBeanGroupPlanSelector**](UnibeeApiBeanGroupPlanSelector.md) |  | [optional] 
 **PlanApplyType** | Pointer to **int32** | plan apply type, 0-apply for all, 1-apply for plans specified, 2-exclude for plans specified | [optional] 
 **PlanIds** | Pointer to **[]int64** | Ids of plan which discount code can effect, default effect all plans if not set | [optional] 
 **Plans** | Pointer to [**[]UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) | plans which discount code can effect, default effect all plans if not set | [optional] 
@@ -450,6 +451,31 @@ SetName sets Name field to given value.
 `func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetPlanApplyGroup
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetPlanApplyGroup() UnibeeApiBeanGroupPlanSelector`
+
+GetPlanApplyGroup returns the PlanApplyGroup field if non-nil, zero value otherwise.
+
+### GetPlanApplyGroupOk
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetPlanApplyGroupOk() (*UnibeeApiBeanGroupPlanSelector, bool)`
+
+GetPlanApplyGroupOk returns a tuple with the PlanApplyGroup field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanApplyGroup
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) SetPlanApplyGroup(v UnibeeApiBeanGroupPlanSelector)`
+
+SetPlanApplyGroup sets PlanApplyGroup field to given value.
+
+### HasPlanApplyGroup
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) HasPlanApplyGroup() bool`
+
+HasPlanApplyGroup returns a boolean if a field has been set.
 
 ### GetPlanApplyType
 

@@ -6,9 +6,11 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CountryConfigListPost**](Merchant.md#CountryConfigListPost) | **Post** /merchant/country_config_list | Edit Country Config
 [**EditCountryConfigPost**](Merchant.md#EditCountryConfigPost) | **Post** /merchant/edit_country_config | Get Country Config List
+[**EditTotpConfigPost**](Merchant.md#EditTotpConfigPost) | **Post** /merchant/edit_totp_config | Admin Edit 2FA Config
 [**GetGet**](Merchant.md#GetGet) | **Get** /merchant/get | Get Profile
 [**GetLicenseGet**](Merchant.md#GetLicenseGet) | **Get** /merchant/get_license | Get License
 [**GetLicenseUpdateUrlGet**](Merchant.md#GetLicenseUpdateUrlGet) | **Get** /merchant/get_license_update_url | Get License Update Url
+[**GetLicenseUpdateUrlPost**](Merchant.md#GetLicenseUpdateUrlPost) | **Post** /merchant/get_license_update_url | Get License Update Url
 [**NewApikeyPost**](Merchant.md#NewApikeyPost) | **Post** /merchant/new_apikey | Generate New APIKey
 [**UpdatePost**](Merchant.md#UpdatePost) | **Post** /merchant/update | Update Profile
 
@@ -80,7 +82,7 @@ No authorization required
 
 ## EditCountryConfigPost
 
-> MerchantAuthSsoLoginOTPPost200Response EditCountryConfigPost(ctx).UnibeeApiMerchantProfileEditCountryConfigReq(unibeeApiMerchantProfileEditCountryConfigReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response EditCountryConfigPost(ctx).UnibeeApiMerchantProfileEditCountryConfigReq(unibeeApiMerchantProfileEditCountryConfigReq).Execute()
 
 Get Country Config List
 
@@ -106,7 +108,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Merchant.EditCountryConfigPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `EditCountryConfigPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `EditCountryConfigPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Merchant.EditCountryConfigPost`: %v\n", resp)
 }
 ```
@@ -126,7 +128,71 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## EditTotpConfigPost
+
+> MerchantAuthSsoClearTotpPost200Response EditTotpConfigPost(ctx).UnibeeApiMerchantProfileEditTotpConfigReq(unibeeApiMerchantProfileEditTotpConfigReq).Execute()
+
+Admin Edit 2FA Config
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantProfileEditTotpConfigReq := *openapiclient.NewUnibeeApiMerchantProfileEditTotpConfigReq() // UnibeeApiMerchantProfileEditTotpConfigReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Merchant.EditTotpConfigPost(context.Background()).UnibeeApiMerchantProfileEditTotpConfigReq(unibeeApiMerchantProfileEditTotpConfigReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Merchant.EditTotpConfigPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `EditTotpConfigPost`: MerchantAuthSsoClearTotpPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Merchant.EditTotpConfigPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiEditTotpConfigPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantProfileEditTotpConfigReq** | [**UnibeeApiMerchantProfileEditTotpConfigReq**](UnibeeApiMerchantProfileEditTotpConfigReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -321,6 +387,70 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetLicenseUpdateUrlPost
+
+> MerchantGetLicenseUpdateUrlGet200Response GetLicenseUpdateUrlPost(ctx).UnibeeApiMerchantProfileGetLicenseUpdateUrlReq(unibeeApiMerchantProfileGetLicenseUpdateUrlReq).Execute()
+
+Get License Update Url
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantProfileGetLicenseUpdateUrlReq := *openapiclient.NewUnibeeApiMerchantProfileGetLicenseUpdateUrlReq() // UnibeeApiMerchantProfileGetLicenseUpdateUrlReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Merchant.GetLicenseUpdateUrlPost(context.Background()).UnibeeApiMerchantProfileGetLicenseUpdateUrlReq(unibeeApiMerchantProfileGetLicenseUpdateUrlReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Merchant.GetLicenseUpdateUrlPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetLicenseUpdateUrlPost`: MerchantGetLicenseUpdateUrlGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `Merchant.GetLicenseUpdateUrlPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetLicenseUpdateUrlPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantProfileGetLicenseUpdateUrlReq** | [**UnibeeApiMerchantProfileGetLicenseUpdateUrlReq**](UnibeeApiMerchantProfileGetLicenseUpdateUrlReq.md) |  | 
+
+### Return type
+
+[**MerchantGetLicenseUpdateUrlGet200Response**](MerchantGetLicenseUpdateUrlGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

@@ -144,7 +144,7 @@ No authorization required
 
 ## SubscriptionNewAdminNotePost
 
-> MerchantAuthSsoLoginOTPPost200Response SubscriptionNewAdminNotePost(ctx).UnibeeApiMerchantSubscriptionNewAdminNoteReq(unibeeApiMerchantSubscriptionNewAdminNoteReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response SubscriptionNewAdminNotePost(ctx).UnibeeApiMerchantSubscriptionNewAdminNoteReq(unibeeApiMerchantSubscriptionNewAdminNoteReq).Execute()
 
 New Subscription Note
 
@@ -170,7 +170,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionNote.SubscriptionNewAdminNotePost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SubscriptionNewAdminNotePost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `SubscriptionNewAdminNotePost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `SubscriptionNote.SubscriptionNewAdminNotePost`: %v\n", resp)
 }
 ```
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 

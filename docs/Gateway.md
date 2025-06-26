@@ -223,7 +223,7 @@ No authorization required
 
 ## GatewayEditCountryConfigPost
 
-> MerchantAuthSsoLoginOTPPost200Response GatewayEditCountryConfigPost(ctx).UnibeeApiMerchantGatewayEditCountryConfigReq(unibeeApiMerchantGatewayEditCountryConfigReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response GatewayEditCountryConfigPost(ctx).UnibeeApiMerchantGatewayEditCountryConfigReq(unibeeApiMerchantGatewayEditCountryConfigReq).Execute()
 
 Payment Gateway Country Config Edit
 
@@ -251,7 +251,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Gateway.GatewayEditCountryConfigPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GatewayEditCountryConfigPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `GatewayEditCountryConfigPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Gateway.GatewayEditCountryConfigPost`: %v\n", resp)
 }
 ```
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -868,7 +868,7 @@ No authorization required
 
 ## TrackSetupSegmentPost
 
-> MerchantAuthSsoLoginOTPPost200Response TrackSetupSegmentPost(ctx).UnibeeApiMerchantTrackSetupSegmentReq(unibeeApiMerchantTrackSetupSegmentReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response TrackSetupSegmentPost(ctx).UnibeeApiMerchantTrackSetupSegmentReq(unibeeApiMerchantTrackSetupSegmentReq).Execute()
 
 Segment Setup
 
@@ -894,7 +894,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Gateway.TrackSetupSegmentPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `TrackSetupSegmentPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `TrackSetupSegmentPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Gateway.TrackSetupSegmentPost`: %v\n", resp)
 }
 ```
@@ -914,7 +914,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 

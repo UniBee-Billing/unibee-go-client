@@ -7,15 +7,20 @@ Name | Type | Description | Notes
 **Currency** | Pointer to [**[]UnibeeApiBeanCurrency**](UnibeeApiBeanCurrency.md) | Currency List | [optional] 
 **MemberRoles** | Pointer to [**[]UnibeeApiBeanMerchantRole**](UnibeeApiBeanMerchantRole.md) | The member role list&#39; | [optional] 
 **TimeZone** | Pointer to **[]string** | TimeZone List | [optional] 
+**AnalyticsHost** | Pointer to **string** | Analytics Host | [optional] 
+**DefaultCurrency** | Pointer to **string** | Default Currency | [optional] 
 **EmailSender** | Pointer to [**UnibeeApiBeanSender**](UnibeeApiBeanSender.md) |  | [optional] 
 **Env** | Pointer to **string** | System Env, em: daily|stage|local|prod | [optional] 
 **ExchangeRateApiKey** | Pointer to **string** | ExchangeRateApiKey | [optional] 
 **Gateways** | Pointer to [**[]UnibeeApiBeanDetailGateway**](UnibeeApiBeanDetailGateway.md) | Gateway List | [optional] 
+**GlobalTOPTEnabled** | Pointer to **bool** | GlobalTOPTEnabled | [optional] 
 **IsOwner** | Pointer to **bool** | Check Member is Owner | [optional] 
 **IsProd** | Pointer to **bool** | Check System Env Is Prod, true|false | [optional] 
 **Merchant** | Pointer to [**UnibeeApiBeanMerchant**](UnibeeApiBeanMerchant.md) |  | [optional] 
 **MerchantMember** | Pointer to [**UnibeeApiBeanDetailMerchantMemberDetail**](UnibeeApiBeanDetailMerchantMemberDetail.md) |  | [optional] 
-**OpenApiKey** | Pointer to **string** | OpenApiKey | [optional] 
+**OpenApiHost** | Pointer to **string** | OpenApi Host | [optional] 
+**OpenApiKey** | Pointer to **string** | OpenAPIKey | [optional] 
+**QuickBooksCompanyName** | Pointer to **string** | QuickBooksCompanyName | [optional] 
 **SegmentServerSideKey** | Pointer to **string** | SegmentServerSideKey | [optional] 
 **SegmentUserPortalKey** | Pointer to **string** | SegmentUserPortalKey | [optional] 
 **SendGridKey** | Pointer to **string** | SendGridKey | [optional] 
@@ -114,6 +119,56 @@ SetTimeZone sets TimeZone field to given value.
 `func (o *MerchantGetGet200ResponseData) HasTimeZone() bool`
 
 HasTimeZone returns a boolean if a field has been set.
+
+### GetAnalyticsHost
+
+`func (o *MerchantGetGet200ResponseData) GetAnalyticsHost() string`
+
+GetAnalyticsHost returns the AnalyticsHost field if non-nil, zero value otherwise.
+
+### GetAnalyticsHostOk
+
+`func (o *MerchantGetGet200ResponseData) GetAnalyticsHostOk() (*string, bool)`
+
+GetAnalyticsHostOk returns a tuple with the AnalyticsHost field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAnalyticsHost
+
+`func (o *MerchantGetGet200ResponseData) SetAnalyticsHost(v string)`
+
+SetAnalyticsHost sets AnalyticsHost field to given value.
+
+### HasAnalyticsHost
+
+`func (o *MerchantGetGet200ResponseData) HasAnalyticsHost() bool`
+
+HasAnalyticsHost returns a boolean if a field has been set.
+
+### GetDefaultCurrency
+
+`func (o *MerchantGetGet200ResponseData) GetDefaultCurrency() string`
+
+GetDefaultCurrency returns the DefaultCurrency field if non-nil, zero value otherwise.
+
+### GetDefaultCurrencyOk
+
+`func (o *MerchantGetGet200ResponseData) GetDefaultCurrencyOk() (*string, bool)`
+
+GetDefaultCurrencyOk returns a tuple with the DefaultCurrency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultCurrency
+
+`func (o *MerchantGetGet200ResponseData) SetDefaultCurrency(v string)`
+
+SetDefaultCurrency sets DefaultCurrency field to given value.
+
+### HasDefaultCurrency
+
+`func (o *MerchantGetGet200ResponseData) HasDefaultCurrency() bool`
+
+HasDefaultCurrency returns a boolean if a field has been set.
 
 ### GetEmailSender
 
@@ -215,6 +270,31 @@ SetGateways sets Gateways field to given value.
 
 HasGateways returns a boolean if a field has been set.
 
+### GetGlobalTOPTEnabled
+
+`func (o *MerchantGetGet200ResponseData) GetGlobalTOPTEnabled() bool`
+
+GetGlobalTOPTEnabled returns the GlobalTOPTEnabled field if non-nil, zero value otherwise.
+
+### GetGlobalTOPTEnabledOk
+
+`func (o *MerchantGetGet200ResponseData) GetGlobalTOPTEnabledOk() (*bool, bool)`
+
+GetGlobalTOPTEnabledOk returns a tuple with the GlobalTOPTEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGlobalTOPTEnabled
+
+`func (o *MerchantGetGet200ResponseData) SetGlobalTOPTEnabled(v bool)`
+
+SetGlobalTOPTEnabled sets GlobalTOPTEnabled field to given value.
+
+### HasGlobalTOPTEnabled
+
+`func (o *MerchantGetGet200ResponseData) HasGlobalTOPTEnabled() bool`
+
+HasGlobalTOPTEnabled returns a boolean if a field has been set.
+
 ### GetIsOwner
 
 `func (o *MerchantGetGet200ResponseData) GetIsOwner() bool`
@@ -315,6 +395,31 @@ SetMerchantMember sets MerchantMember field to given value.
 
 HasMerchantMember returns a boolean if a field has been set.
 
+### GetOpenApiHost
+
+`func (o *MerchantGetGet200ResponseData) GetOpenApiHost() string`
+
+GetOpenApiHost returns the OpenApiHost field if non-nil, zero value otherwise.
+
+### GetOpenApiHostOk
+
+`func (o *MerchantGetGet200ResponseData) GetOpenApiHostOk() (*string, bool)`
+
+GetOpenApiHostOk returns a tuple with the OpenApiHost field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOpenApiHost
+
+`func (o *MerchantGetGet200ResponseData) SetOpenApiHost(v string)`
+
+SetOpenApiHost sets OpenApiHost field to given value.
+
+### HasOpenApiHost
+
+`func (o *MerchantGetGet200ResponseData) HasOpenApiHost() bool`
+
+HasOpenApiHost returns a boolean if a field has been set.
+
 ### GetOpenApiKey
 
 `func (o *MerchantGetGet200ResponseData) GetOpenApiKey() string`
@@ -339,6 +444,31 @@ SetOpenApiKey sets OpenApiKey field to given value.
 `func (o *MerchantGetGet200ResponseData) HasOpenApiKey() bool`
 
 HasOpenApiKey returns a boolean if a field has been set.
+
+### GetQuickBooksCompanyName
+
+`func (o *MerchantGetGet200ResponseData) GetQuickBooksCompanyName() string`
+
+GetQuickBooksCompanyName returns the QuickBooksCompanyName field if non-nil, zero value otherwise.
+
+### GetQuickBooksCompanyNameOk
+
+`func (o *MerchantGetGet200ResponseData) GetQuickBooksCompanyNameOk() (*string, bool)`
+
+GetQuickBooksCompanyNameOk returns a tuple with the QuickBooksCompanyName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuickBooksCompanyName
+
+`func (o *MerchantGetGet200ResponseData) SetQuickBooksCompanyName(v string)`
+
+SetQuickBooksCompanyName sets QuickBooksCompanyName field to given value.
+
+### HasQuickBooksCompanyName
+
+`func (o *MerchantGetGet200ResponseData) HasQuickBooksCompanyName() bool`
+
+HasQuickBooksCompanyName returns a boolean if a field has been set.
 
 ### GetSegmentServerSideKey
 

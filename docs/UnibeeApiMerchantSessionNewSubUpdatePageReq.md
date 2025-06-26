@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **ProductId** | Pointer to **int64** | default product will use if productId not specified | [optional] 
 **ReturnUrl** | Pointer to **string** | ReturnUrl | [optional] 
 **UserId** | Pointer to **int64** | UserId, unique, either ExternalUserId&amp;Email or UserId needed | [optional] 
+**VatCountryCode** | Pointer to **string** | Vat Country Code | [optional] 
 
 ## Methods
 
@@ -205,6 +206,31 @@ SetUserId sets UserId field to given value.
 `func (o *UnibeeApiMerchantSessionNewSubUpdatePageReq) HasUserId() bool`
 
 HasUserId returns a boolean if a field has been set.
+
+### GetVatCountryCode
+
+`func (o *UnibeeApiMerchantSessionNewSubUpdatePageReq) GetVatCountryCode() string`
+
+GetVatCountryCode returns the VatCountryCode field if non-nil, zero value otherwise.
+
+### GetVatCountryCodeOk
+
+`func (o *UnibeeApiMerchantSessionNewSubUpdatePageReq) GetVatCountryCodeOk() (*string, bool)`
+
+GetVatCountryCodeOk returns a tuple with the VatCountryCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVatCountryCode
+
+`func (o *UnibeeApiMerchantSessionNewSubUpdatePageReq) SetVatCountryCode(v string)`
+
+SetVatCountryCode sets VatCountryCode field to given value.
+
+### HasVatCountryCode
+
+`func (o *UnibeeApiMerchantSessionNewSubUpdatePageReq) HasVatCountryCode() bool`
+
+HasVatCountryCode returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

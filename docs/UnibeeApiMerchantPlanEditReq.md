@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **ProductName** | Pointer to **string** | ProductName of plan, Default copy planName | [optional] 
 **TrialAmount** | Pointer to **int32** | price of trial period， not available for addon | [optional] 
 **TrialDemand** | Pointer to **string** | demand of trial, not available for addon, example, paymentMethod, payment method will ask for subscription trial start | [optional] 
-**TrialDurationTime** | Pointer to **int32** | duration of trial， not available for addon | [optional] 
+**TrialDurationTime** | Pointer to **int32** | duration of trial，seconds, not available for addon | [optional] 
 
 ## Methods
 

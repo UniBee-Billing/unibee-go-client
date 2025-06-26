@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Gateway** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **int64** |  | [optional] 
 **IsEU** | Pointer to **bool** |  | [optional] 
+**Mamo** | Pointer to **string** | mamo | [optional] 
 **StandardTaxPercentage** | Pointer to **int64** |  | [optional] 
 **VatSupport** | Pointer to **bool** |  | [optional] 
 
@@ -155,6 +156,31 @@ SetIsEU sets IsEU field to given value.
 `func (o *UnibeeApiBeanVatCountryRate) HasIsEU() bool`
 
 HasIsEU returns a boolean if a field has been set.
+
+### GetMamo
+
+`func (o *UnibeeApiBeanVatCountryRate) GetMamo() string`
+
+GetMamo returns the Mamo field if non-nil, zero value otherwise.
+
+### GetMamoOk
+
+`func (o *UnibeeApiBeanVatCountryRate) GetMamoOk() (*string, bool)`
+
+GetMamoOk returns a tuple with the Mamo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMamo
+
+`func (o *UnibeeApiBeanVatCountryRate) SetMamo(v string)`
+
+SetMamo sets Mamo field to given value.
+
+### HasMamo
+
+`func (o *UnibeeApiBeanVatCountryRate) HasMamo() bool`
+
+HasMamo returns a boolean if a field has been set.
 
 ### GetStandardTaxPercentage
 

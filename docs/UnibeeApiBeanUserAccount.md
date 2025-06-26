@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **CountryCode** | Pointer to **string** | country_code | [optional] 
 **CountryName** | Pointer to **string** | country_name | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
-**Custom** | Pointer to **string** | custom | [optional] 
+**Custom** | Pointer to **string** | Custom | [optional] 
 **Email** | Pointer to **string** | email | [optional] 
 **ExternalUserId** | Pointer to **string** | external_user_id | [optional] 
 **Facebook** | Pointer to **string** | facebook | [optional] 
@@ -38,6 +38,7 @@ Name | Type | Description | Notes
 **RecurringAmount** | Pointer to **int64** | total recurring amount, cent | [optional] 
 **RegistrationNumber** | Pointer to **string** | RegistrationNumber | [optional] 
 **School** | Pointer to **string** | school | [optional] 
+**State** | Pointer to **string** | State | [optional] 
 **Status** | Pointer to **int32** | 0-Active, 2-Suspend | [optional] 
 **SubscriptionId** | Pointer to **string** | subscription id | [optional] 
 **SubscriptionName** | Pointer to **string** | subscription name | [optional] 
@@ -922,6 +923,31 @@ SetSchool sets School field to given value.
 `func (o *UnibeeApiBeanUserAccount) HasSchool() bool`
 
 HasSchool returns a boolean if a field has been set.
+
+### GetState
+
+`func (o *UnibeeApiBeanUserAccount) GetState() string`
+
+GetState returns the State field if non-nil, zero value otherwise.
+
+### GetStateOk
+
+`func (o *UnibeeApiBeanUserAccount) GetStateOk() (*string, bool)`
+
+GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetState
+
+`func (o *UnibeeApiBeanUserAccount) SetState(v string)`
+
+SetState sets State field to given value.
+
+### HasState
+
+`func (o *UnibeeApiBeanUserAccount) HasState() bool`
+
+HasState returns a boolean if a field has been set.
 
 ### GetStatus
 

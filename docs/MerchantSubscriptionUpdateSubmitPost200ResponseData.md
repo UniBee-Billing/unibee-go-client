@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Link** | Pointer to **string** |  | [optional] 
+**Link** | Pointer to **string** | The payment link, need redirect customer to link if paid&#x3D;false | [optional] 
 **Note** | Pointer to **string** | note | [optional] 
-**Paid** | Pointer to **bool** |  | [optional] 
+**Paid** | Pointer to **bool** | Paid or not，true|false | [optional] 
 **SubscriptionPendingUpdate** | Pointer to [**UnibeeApiBeanDetailSubscriptionPendingUpdateDetail**](UnibeeApiBeanDetailSubscriptionPendingUpdateDetail.md) |  | [optional] 
 
 ## Methods

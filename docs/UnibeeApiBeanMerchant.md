@@ -5,15 +5,17 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Address** | Pointer to **string** | address | [optional] 
-**BusinessNum** | Pointer to **string** | business_num | [optional] 
 **CompanyLogo** | Pointer to **string** | company_logo | [optional] 
 **CompanyName** | Pointer to **string** | company_name | [optional] 
+**CompanyRegistryCode** | Pointer to **string** | Country Registry Code | [optional] 
+**CompanyVatNumber** | Pointer to **string** | Country Vat Number | [optional] 
+**CountryCode** | Pointer to **string** | Country Code | [optional] 
+**CountryName** | Pointer to **string** | Country Name | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Email** | Pointer to **string** | email | [optional] 
 **HomeUrl** | Pointer to **string** |  | [optional] 
 **Host** | Pointer to **string** | merchant user portal host | [optional] 
 **Id** | Pointer to **int64** | merchant_id | [optional] 
-**Idcard** | Pointer to **string** | idcard | [optional] 
 **Location** | Pointer to **string** | location | [optional] 
 **Name** | Pointer to **string** | name | [optional] 
 **Phone** | Pointer to **string** | phone | [optional] 
@@ -65,31 +67,6 @@ SetAddress sets Address field to given value.
 
 HasAddress returns a boolean if a field has been set.
 
-### GetBusinessNum
-
-`func (o *UnibeeApiBeanMerchant) GetBusinessNum() string`
-
-GetBusinessNum returns the BusinessNum field if non-nil, zero value otherwise.
-
-### GetBusinessNumOk
-
-`func (o *UnibeeApiBeanMerchant) GetBusinessNumOk() (*string, bool)`
-
-GetBusinessNumOk returns a tuple with the BusinessNum field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBusinessNum
-
-`func (o *UnibeeApiBeanMerchant) SetBusinessNum(v string)`
-
-SetBusinessNum sets BusinessNum field to given value.
-
-### HasBusinessNum
-
-`func (o *UnibeeApiBeanMerchant) HasBusinessNum() bool`
-
-HasBusinessNum returns a boolean if a field has been set.
-
 ### GetCompanyLogo
 
 `func (o *UnibeeApiBeanMerchant) GetCompanyLogo() string`
@@ -139,6 +116,106 @@ SetCompanyName sets CompanyName field to given value.
 `func (o *UnibeeApiBeanMerchant) HasCompanyName() bool`
 
 HasCompanyName returns a boolean if a field has been set.
+
+### GetCompanyRegistryCode
+
+`func (o *UnibeeApiBeanMerchant) GetCompanyRegistryCode() string`
+
+GetCompanyRegistryCode returns the CompanyRegistryCode field if non-nil, zero value otherwise.
+
+### GetCompanyRegistryCodeOk
+
+`func (o *UnibeeApiBeanMerchant) GetCompanyRegistryCodeOk() (*string, bool)`
+
+GetCompanyRegistryCodeOk returns a tuple with the CompanyRegistryCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompanyRegistryCode
+
+`func (o *UnibeeApiBeanMerchant) SetCompanyRegistryCode(v string)`
+
+SetCompanyRegistryCode sets CompanyRegistryCode field to given value.
+
+### HasCompanyRegistryCode
+
+`func (o *UnibeeApiBeanMerchant) HasCompanyRegistryCode() bool`
+
+HasCompanyRegistryCode returns a boolean if a field has been set.
+
+### GetCompanyVatNumber
+
+`func (o *UnibeeApiBeanMerchant) GetCompanyVatNumber() string`
+
+GetCompanyVatNumber returns the CompanyVatNumber field if non-nil, zero value otherwise.
+
+### GetCompanyVatNumberOk
+
+`func (o *UnibeeApiBeanMerchant) GetCompanyVatNumberOk() (*string, bool)`
+
+GetCompanyVatNumberOk returns a tuple with the CompanyVatNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompanyVatNumber
+
+`func (o *UnibeeApiBeanMerchant) SetCompanyVatNumber(v string)`
+
+SetCompanyVatNumber sets CompanyVatNumber field to given value.
+
+### HasCompanyVatNumber
+
+`func (o *UnibeeApiBeanMerchant) HasCompanyVatNumber() bool`
+
+HasCompanyVatNumber returns a boolean if a field has been set.
+
+### GetCountryCode
+
+`func (o *UnibeeApiBeanMerchant) GetCountryCode() string`
+
+GetCountryCode returns the CountryCode field if non-nil, zero value otherwise.
+
+### GetCountryCodeOk
+
+`func (o *UnibeeApiBeanMerchant) GetCountryCodeOk() (*string, bool)`
+
+GetCountryCodeOk returns a tuple with the CountryCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCountryCode
+
+`func (o *UnibeeApiBeanMerchant) SetCountryCode(v string)`
+
+SetCountryCode sets CountryCode field to given value.
+
+### HasCountryCode
+
+`func (o *UnibeeApiBeanMerchant) HasCountryCode() bool`
+
+HasCountryCode returns a boolean if a field has been set.
+
+### GetCountryName
+
+`func (o *UnibeeApiBeanMerchant) GetCountryName() string`
+
+GetCountryName returns the CountryName field if non-nil, zero value otherwise.
+
+### GetCountryNameOk
+
+`func (o *UnibeeApiBeanMerchant) GetCountryNameOk() (*string, bool)`
+
+GetCountryNameOk returns a tuple with the CountryName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCountryName
+
+`func (o *UnibeeApiBeanMerchant) SetCountryName(v string)`
+
+SetCountryName sets CountryName field to given value.
+
+### HasCountryName
+
+`func (o *UnibeeApiBeanMerchant) HasCountryName() bool`
+
+HasCountryName returns a boolean if a field has been set.
 
 ### GetCreateTime
 
@@ -264,31 +341,6 @@ SetId sets Id field to given value.
 `func (o *UnibeeApiBeanMerchant) HasId() bool`
 
 HasId returns a boolean if a field has been set.
-
-### GetIdcard
-
-`func (o *UnibeeApiBeanMerchant) GetIdcard() string`
-
-GetIdcard returns the Idcard field if non-nil, zero value otherwise.
-
-### GetIdcardOk
-
-`func (o *UnibeeApiBeanMerchant) GetIdcardOk() (*string, bool)`
-
-GetIdcardOk returns a tuple with the Idcard field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIdcard
-
-`func (o *UnibeeApiBeanMerchant) SetIdcard(v string)`
-
-SetIdcard sets Idcard field to given value.
-
-### HasIdcard
-
-`func (o *UnibeeApiBeanMerchant) HasIdcard() bool`
-
-HasIdcard returns a boolean if a field has been set.
 
 ### GetLocation
 

@@ -5,6 +5,7 @@ All URIs are relative to *https://api.unibee.top*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**SubscriptionAddNewTrialStartPost**](Subscription.md#SubscriptionAddNewTrialStartPost) | **Post** /merchant/subscription/add_new_trial_start | Append Subscription TrialEnd
+[**SubscriptionApplySubscriptionNextInvoicePost**](Subscription.md#SubscriptionApplySubscriptionNextInvoicePost) | **Post** /merchant/subscription/apply_subscription_next_invoice | Apply Discount Or Premo Credit To Next Invoice
 [**SubscriptionCancelAtPeriodEndPost**](Subscription.md#SubscriptionCancelAtPeriodEndPost) | **Post** /merchant/subscription/cancel_at_period_end | Cancel Subscription At Period End
 [**SubscriptionCancelLastCancelAtPeriodEndPost**](Subscription.md#SubscriptionCancelLastCancelAtPeriodEndPost) | **Post** /merchant/subscription/cancel_last_cancel_at_period_end | Cancel Last Cancel Subscription At Period End
 [**SubscriptionCancelPost**](Subscription.md#SubscriptionCancelPost) | **Post** /merchant/subscription/cancel | Cancel Subscription Immediately
@@ -25,7 +26,7 @@ Method | HTTP request | Description
 
 ## SubscriptionAddNewTrialStartPost
 
-> MerchantAuthSsoLoginOTPPost200Response SubscriptionAddNewTrialStartPost(ctx).UnibeeApiMerchantSubscriptionAddNewTrialStartReq(unibeeApiMerchantSubscriptionAddNewTrialStartReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response SubscriptionAddNewTrialStartPost(ctx).UnibeeApiMerchantSubscriptionAddNewTrialStartReq(unibeeApiMerchantSubscriptionAddNewTrialStartReq).Execute()
 
 Append Subscription TrialEnd
 
@@ -51,7 +52,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionAddNewTrialStartPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SubscriptionAddNewTrialStartPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `SubscriptionAddNewTrialStartPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionAddNewTrialStartPost`: %v\n", resp)
 }
 ```
@@ -71,7 +72,71 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SubscriptionApplySubscriptionNextInvoicePost
+
+> MerchantSubscriptionApplySubscriptionNextInvoicePost200Response SubscriptionApplySubscriptionNextInvoicePost(ctx).UnibeeApiMerchantSubscriptionApplySubscriptionNextInvoiceReq(unibeeApiMerchantSubscriptionApplySubscriptionNextInvoiceReq).Execute()
+
+Apply Discount Or Premo Credit To Next Invoice
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantSubscriptionApplySubscriptionNextInvoiceReq := *openapiclient.NewUnibeeApiMerchantSubscriptionApplySubscriptionNextInvoiceReq() // UnibeeApiMerchantSubscriptionApplySubscriptionNextInvoiceReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Subscription.SubscriptionApplySubscriptionNextInvoicePost(context.Background()).UnibeeApiMerchantSubscriptionApplySubscriptionNextInvoiceReq(unibeeApiMerchantSubscriptionApplySubscriptionNextInvoiceReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionApplySubscriptionNextInvoicePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SubscriptionApplySubscriptionNextInvoicePost`: MerchantSubscriptionApplySubscriptionNextInvoicePost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionApplySubscriptionNextInvoicePost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSubscriptionApplySubscriptionNextInvoicePostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantSubscriptionApplySubscriptionNextInvoiceReq** | [**UnibeeApiMerchantSubscriptionApplySubscriptionNextInvoiceReq**](UnibeeApiMerchantSubscriptionApplySubscriptionNextInvoiceReq.md) |  | 
+
+### Return type
+
+[**MerchantSubscriptionApplySubscriptionNextInvoicePost200Response**](MerchantSubscriptionApplySubscriptionNextInvoicePost200Response.md)
 
 ### Authorization
 
@@ -89,7 +154,7 @@ No authorization required
 
 ## SubscriptionCancelAtPeriodEndPost
 
-> MerchantAuthSsoLoginOTPPost200Response SubscriptionCancelAtPeriodEndPost(ctx).UnibeeApiMerchantSubscriptionCancelAtPeriodEndReq(unibeeApiMerchantSubscriptionCancelAtPeriodEndReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response SubscriptionCancelAtPeriodEndPost(ctx).UnibeeApiMerchantSubscriptionCancelAtPeriodEndReq(unibeeApiMerchantSubscriptionCancelAtPeriodEndReq).Execute()
 
 Cancel Subscription At Period End
 
@@ -117,7 +182,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionCancelAtPeriodEndPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SubscriptionCancelAtPeriodEndPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `SubscriptionCancelAtPeriodEndPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionCancelAtPeriodEndPost`: %v\n", resp)
 }
 ```
@@ -137,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -155,7 +220,7 @@ No authorization required
 
 ## SubscriptionCancelLastCancelAtPeriodEndPost
 
-> MerchantAuthSsoLoginOTPPost200Response SubscriptionCancelLastCancelAtPeriodEndPost(ctx).UnibeeApiMerchantSubscriptionCancelLastCancelAtPeriodEndReq(unibeeApiMerchantSubscriptionCancelLastCancelAtPeriodEndReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response SubscriptionCancelLastCancelAtPeriodEndPost(ctx).UnibeeApiMerchantSubscriptionCancelLastCancelAtPeriodEndReq(unibeeApiMerchantSubscriptionCancelLastCancelAtPeriodEndReq).Execute()
 
 Cancel Last Cancel Subscription At Period End
 
@@ -183,7 +248,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionCancelLastCancelAtPeriodEndPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SubscriptionCancelLastCancelAtPeriodEndPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `SubscriptionCancelLastCancelAtPeriodEndPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionCancelLastCancelAtPeriodEndPost`: %v\n", resp)
 }
 ```
@@ -203,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -221,7 +286,7 @@ No authorization required
 
 ## SubscriptionCancelPost
 
-> MerchantAuthSsoLoginOTPPost200Response SubscriptionCancelPost(ctx).UnibeeApiMerchantSubscriptionCancelReq(unibeeApiMerchantSubscriptionCancelReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response SubscriptionCancelPost(ctx).UnibeeApiMerchantSubscriptionCancelReq(unibeeApiMerchantSubscriptionCancelReq).Execute()
 
 Cancel Subscription Immediately
 
@@ -249,7 +314,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionCancelPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SubscriptionCancelPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `SubscriptionCancelPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionCancelPost`: %v\n", resp)
 }
 ```
@@ -269,7 +334,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -287,7 +352,7 @@ No authorization required
 
 ## SubscriptionChangeGatewayPost
 
-> MerchantAuthSsoLoginOTPPost200Response SubscriptionChangeGatewayPost(ctx).UnibeeApiMerchantSubscriptionChangeGatewayReq(unibeeApiMerchantSubscriptionChangeGatewayReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response SubscriptionChangeGatewayPost(ctx).UnibeeApiMerchantSubscriptionChangeGatewayReq(unibeeApiMerchantSubscriptionChangeGatewayReq).Execute()
 
 Change Subscription Gateway
 
@@ -313,7 +378,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionChangeGatewayPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SubscriptionChangeGatewayPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `SubscriptionChangeGatewayPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionChangeGatewayPost`: %v\n", resp)
 }
 ```
@@ -333,7 +398,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -759,7 +824,7 @@ No authorization required
 
 ## SubscriptionPreviewSubscriptionNextInvoiceGet
 
-> MerchantSubscriptionPreviewSubscriptionNextInvoiceGet200Response SubscriptionPreviewSubscriptionNextInvoiceGet(ctx).SubscriptionId(subscriptionId).Execute()
+> MerchantSubscriptionApplySubscriptionNextInvoicePost200Response SubscriptionPreviewSubscriptionNextInvoiceGet(ctx).UserId(userId).ExternalUserId(externalUserId).ProductId(productId).SubscriptionId(subscriptionId).Execute()
 
 Subscription Next Invoice Preview
 
@@ -776,16 +841,19 @@ import (
 )
 
 func main() {
-	subscriptionId := "subscriptionId_example" // string | SubscriptionId
+	userId := int64(789) // int64 | UserId (optional)
+	externalUserId := "externalUserId_example" // string | ExternalUserId, unique, either ExternalUserId&Email or UserId needed if subscriptionId not specified (optional)
+	productId := int64(789) // int64 | default product will use if productId not specified and subscriptionId is blank (optional)
+	subscriptionId := "subscriptionId_example" // string | SubscriptionId (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Subscription.SubscriptionPreviewSubscriptionNextInvoiceGet(context.Background()).SubscriptionId(subscriptionId).Execute()
+	resp, r, err := apiClient.Subscription.SubscriptionPreviewSubscriptionNextInvoiceGet(context.Background()).UserId(userId).ExternalUserId(externalUserId).ProductId(productId).SubscriptionId(subscriptionId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionPreviewSubscriptionNextInvoiceGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SubscriptionPreviewSubscriptionNextInvoiceGet`: MerchantSubscriptionPreviewSubscriptionNextInvoiceGet200Response
+	// response from `SubscriptionPreviewSubscriptionNextInvoiceGet`: MerchantSubscriptionApplySubscriptionNextInvoicePost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionPreviewSubscriptionNextInvoiceGet`: %v\n", resp)
 }
 ```
@@ -801,11 +869,14 @@ Other parameters are passed through a pointer to a apiSubscriptionPreviewSubscri
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **userId** | **int64** | UserId | 
+ **externalUserId** | **string** | ExternalUserId, unique, either ExternalUserId&amp;Email or UserId needed if subscriptionId not specified | 
+ **productId** | **int64** | default product will use if productId not specified and subscriptionId is blank | 
  **subscriptionId** | **string** | SubscriptionId | 
 
 ### Return type
 
-[**MerchantSubscriptionPreviewSubscriptionNextInvoiceGet200Response**](MerchantSubscriptionPreviewSubscriptionNextInvoiceGet200Response.md)
+[**MerchantSubscriptionApplySubscriptionNextInvoicePost200Response**](MerchantSubscriptionApplySubscriptionNextInvoicePost200Response.md)
 
 ### Authorization
 

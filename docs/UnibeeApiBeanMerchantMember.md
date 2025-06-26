@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **LastName** | Pointer to **string** | last name | [optional] 
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
 **Mobile** | Pointer to **string** | mobile | [optional] 
+**TotpType** | Pointer to **int32** | 0-Inactive, 1-General, Google Authenticator | 2-Microsoft Authenticator | 3-Authy | 4-1Password | 5-LastPass | 6-FreeOTP | 7-Other TOTP | [optional] 
 
 ## Methods
 
@@ -257,6 +258,31 @@ SetMobile sets Mobile field to given value.
 `func (o *UnibeeApiBeanMerchantMember) HasMobile() bool`
 
 HasMobile returns a boolean if a field has been set.
+
+### GetTotpType
+
+`func (o *UnibeeApiBeanMerchantMember) GetTotpType() int32`
+
+GetTotpType returns the TotpType field if non-nil, zero value otherwise.
+
+### GetTotpTypeOk
+
+`func (o *UnibeeApiBeanMerchantMember) GetTotpTypeOk() (*int32, bool)`
+
+GetTotpTypeOk returns a tuple with the TotpType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotpType
+
+`func (o *UnibeeApiBeanMerchantMember) SetTotpType(v int32)`
+
+SetTotpType sets TotpType field to given value.
+
+### HasTotpType
+
+`func (o *UnibeeApiBeanMerchantMember) HasTotpType() bool`
+
+HasTotpType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

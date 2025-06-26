@@ -5,17 +5,17 @@ All URIs are relative to *https://api.unibee.top*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**EmailCustomLocalizationTemplateSyncPost**](EmailTemplate.md#EmailCustomLocalizationTemplateSyncPost) | **Post** /merchant/email/custom_localization_template_sync | Customize Localization Template Sync
-[**EmailTemplateActivatePost**](EmailTemplate.md#EmailTemplateActivatePost) | **Post** /merchant/email/template_activate | Email Template Activate
-[**EmailTemplateDeactivatePost**](EmailTemplate.md#EmailTemplateDeactivatePost) | **Post** /merchant/email/template_deactivate | Email Template Deactivate
+[**EmailTemplateActivateLocalizationVersionPost**](EmailTemplate.md#EmailTemplateActivateLocalizationVersionPost) | **Post** /merchant/email/template_activate_localization_version | Activate Email Template Localization Version
+[**EmailTemplateAddLocalizationVersionPost**](EmailTemplate.md#EmailTemplateAddLocalizationVersionPost) | **Post** /merchant/email/template_add_localization_version | Add Email Template Localization Version
+[**EmailTemplateDeleteLocalizationVersionPost**](EmailTemplate.md#EmailTemplateDeleteLocalizationVersionPost) | **Post** /merchant/email/template_delete_localization_version | Delete Email Template Localization Version
+[**EmailTemplateEditLocalizationVersionPost**](EmailTemplate.md#EmailTemplateEditLocalizationVersionPost) | **Post** /merchant/email/template_edit_localization_version | Edit Email Template Localization Version
 [**EmailTemplateListGet**](EmailTemplate.md#EmailTemplateListGet) | **Get** /merchant/email/template_list | Get Email Template List
-[**EmailTemplateSetDefaultPost**](EmailTemplate.md#EmailTemplateSetDefaultPost) | **Post** /merchant/email/template_set_default | Setup Email Template Default
-[**EmailTemplateUpdatePost**](EmailTemplate.md#EmailTemplateUpdatePost) | **Post** /merchant/email/template_update | Email Template Update
 
 
 
 ## EmailCustomLocalizationTemplateSyncPost
 
-> MerchantAuthSsoLoginOTPPost200Response EmailCustomLocalizationTemplateSyncPost(ctx).UnibeeApiMerchantEmailCustomizeLocalizationTemplateSyncReq(unibeeApiMerchantEmailCustomizeLocalizationTemplateSyncReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response EmailCustomLocalizationTemplateSyncPost(ctx).UnibeeApiMerchantEmailCustomizeLocalizationTemplateSyncReq(unibeeApiMerchantEmailCustomizeLocalizationTemplateSyncReq).Execute()
 
 Customize Localization Template Sync
 
@@ -43,7 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `EmailTemplate.EmailCustomLocalizationTemplateSyncPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `EmailCustomLocalizationTemplateSyncPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `EmailCustomLocalizationTemplateSyncPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `EmailTemplate.EmailCustomLocalizationTemplateSyncPost`: %v\n", resp)
 }
 ```
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -79,13 +79,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## EmailTemplateActivatePost
+## EmailTemplateActivateLocalizationVersionPost
 
-> MerchantAuthSsoLoginOTPPost200Response EmailTemplateActivatePost(ctx).UnibeeApiMerchantEmailTemplateActivateReq(unibeeApiMerchantEmailTemplateActivateReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response EmailTemplateActivateLocalizationVersionPost(ctx).UnibeeApiMerchantEmailActivateLocalizationVersionReq(unibeeApiMerchantEmailActivateLocalizationVersionReq).Execute()
 
-Email Template Activate
-
-
+Activate Email Template Localization Version
 
 ### Example
 
@@ -100,17 +98,17 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantEmailTemplateActivateReq := *openapiclient.NewUnibeeApiMerchantEmailTemplateActivateReq("TemplateName_example") // UnibeeApiMerchantEmailTemplateActivateReq | 
+	unibeeApiMerchantEmailActivateLocalizationVersionReq := *openapiclient.NewUnibeeApiMerchantEmailActivateLocalizationVersionReq() // UnibeeApiMerchantEmailActivateLocalizationVersionReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.EmailTemplate.EmailTemplateActivatePost(context.Background()).UnibeeApiMerchantEmailTemplateActivateReq(unibeeApiMerchantEmailTemplateActivateReq).Execute()
+	resp, r, err := apiClient.EmailTemplate.EmailTemplateActivateLocalizationVersionPost(context.Background()).UnibeeApiMerchantEmailActivateLocalizationVersionReq(unibeeApiMerchantEmailActivateLocalizationVersionReq).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `EmailTemplate.EmailTemplateActivatePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `EmailTemplate.EmailTemplateActivateLocalizationVersionPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `EmailTemplateActivatePost`: MerchantAuthSsoLoginOTPPost200Response
-	fmt.Fprintf(os.Stdout, "Response from `EmailTemplate.EmailTemplateActivatePost`: %v\n", resp)
+	// response from `EmailTemplateActivateLocalizationVersionPost`: MerchantAuthSsoClearTotpPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `EmailTemplate.EmailTemplateActivateLocalizationVersionPost`: %v\n", resp)
 }
 ```
 
@@ -120,16 +118,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiEmailTemplateActivatePostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiEmailTemplateActivateLocalizationVersionPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **unibeeApiMerchantEmailTemplateActivateReq** | [**UnibeeApiMerchantEmailTemplateActivateReq**](UnibeeApiMerchantEmailTemplateActivateReq.md) |  | 
+ **unibeeApiMerchantEmailActivateLocalizationVersionReq** | [**UnibeeApiMerchantEmailActivateLocalizationVersionReq**](UnibeeApiMerchantEmailActivateLocalizationVersionReq.md) |  | 
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -145,13 +143,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## EmailTemplateDeactivatePost
+## EmailTemplateAddLocalizationVersionPost
 
-> MerchantAuthSsoLoginOTPPost200Response EmailTemplateDeactivatePost(ctx).UnibeeApiMerchantEmailTemplateDeactivateReq(unibeeApiMerchantEmailTemplateDeactivateReq).Execute()
+> MerchantEmailTemplateAddLocalizationVersionPost200Response EmailTemplateAddLocalizationVersionPost(ctx).UnibeeApiMerchantEmailAddLocalizationVersionReq(unibeeApiMerchantEmailAddLocalizationVersionReq).Execute()
 
-Email Template Deactivate
-
-
+Add Email Template Localization Version
 
 ### Example
 
@@ -166,17 +162,17 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantEmailTemplateDeactivateReq := *openapiclient.NewUnibeeApiMerchantEmailTemplateDeactivateReq("TemplateName_example") // UnibeeApiMerchantEmailTemplateDeactivateReq | 
+	unibeeApiMerchantEmailAddLocalizationVersionReq := *openapiclient.NewUnibeeApiMerchantEmailAddLocalizationVersionReq() // UnibeeApiMerchantEmailAddLocalizationVersionReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.EmailTemplate.EmailTemplateDeactivatePost(context.Background()).UnibeeApiMerchantEmailTemplateDeactivateReq(unibeeApiMerchantEmailTemplateDeactivateReq).Execute()
+	resp, r, err := apiClient.EmailTemplate.EmailTemplateAddLocalizationVersionPost(context.Background()).UnibeeApiMerchantEmailAddLocalizationVersionReq(unibeeApiMerchantEmailAddLocalizationVersionReq).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `EmailTemplate.EmailTemplateDeactivatePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `EmailTemplate.EmailTemplateAddLocalizationVersionPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `EmailTemplateDeactivatePost`: MerchantAuthSsoLoginOTPPost200Response
-	fmt.Fprintf(os.Stdout, "Response from `EmailTemplate.EmailTemplateDeactivatePost`: %v\n", resp)
+	// response from `EmailTemplateAddLocalizationVersionPost`: MerchantEmailTemplateAddLocalizationVersionPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `EmailTemplate.EmailTemplateAddLocalizationVersionPost`: %v\n", resp)
 }
 ```
 
@@ -186,16 +182,144 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiEmailTemplateDeactivatePostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiEmailTemplateAddLocalizationVersionPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **unibeeApiMerchantEmailTemplateDeactivateReq** | [**UnibeeApiMerchantEmailTemplateDeactivateReq**](UnibeeApiMerchantEmailTemplateDeactivateReq.md) |  | 
+ **unibeeApiMerchantEmailAddLocalizationVersionReq** | [**UnibeeApiMerchantEmailAddLocalizationVersionReq**](UnibeeApiMerchantEmailAddLocalizationVersionReq.md) |  | 
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantEmailTemplateAddLocalizationVersionPost200Response**](MerchantEmailTemplateAddLocalizationVersionPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## EmailTemplateDeleteLocalizationVersionPost
+
+> MerchantAuthSsoClearTotpPost200Response EmailTemplateDeleteLocalizationVersionPost(ctx).UnibeeApiMerchantEmailDeleteLocalizationVersionReq(unibeeApiMerchantEmailDeleteLocalizationVersionReq).Execute()
+
+Delete Email Template Localization Version
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantEmailDeleteLocalizationVersionReq := *openapiclient.NewUnibeeApiMerchantEmailDeleteLocalizationVersionReq() // UnibeeApiMerchantEmailDeleteLocalizationVersionReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.EmailTemplate.EmailTemplateDeleteLocalizationVersionPost(context.Background()).UnibeeApiMerchantEmailDeleteLocalizationVersionReq(unibeeApiMerchantEmailDeleteLocalizationVersionReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `EmailTemplate.EmailTemplateDeleteLocalizationVersionPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `EmailTemplateDeleteLocalizationVersionPost`: MerchantAuthSsoClearTotpPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `EmailTemplate.EmailTemplateDeleteLocalizationVersionPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiEmailTemplateDeleteLocalizationVersionPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantEmailDeleteLocalizationVersionReq** | [**UnibeeApiMerchantEmailDeleteLocalizationVersionReq**](UnibeeApiMerchantEmailDeleteLocalizationVersionReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## EmailTemplateEditLocalizationVersionPost
+
+> MerchantEmailTemplateAddLocalizationVersionPost200Response EmailTemplateEditLocalizationVersionPost(ctx).UnibeeApiMerchantEmailEditLocalizationVersionReq(unibeeApiMerchantEmailEditLocalizationVersionReq).Execute()
+
+Edit Email Template Localization Version
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantEmailEditLocalizationVersionReq := *openapiclient.NewUnibeeApiMerchantEmailEditLocalizationVersionReq() // UnibeeApiMerchantEmailEditLocalizationVersionReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.EmailTemplate.EmailTemplateEditLocalizationVersionPost(context.Background()).UnibeeApiMerchantEmailEditLocalizationVersionReq(unibeeApiMerchantEmailEditLocalizationVersionReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `EmailTemplate.EmailTemplateEditLocalizationVersionPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `EmailTemplateEditLocalizationVersionPost`: MerchantEmailTemplateAddLocalizationVersionPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `EmailTemplate.EmailTemplateEditLocalizationVersionPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiEmailTemplateEditLocalizationVersionPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantEmailEditLocalizationVersionReq** | [**UnibeeApiMerchantEmailEditLocalizationVersionReq**](UnibeeApiMerchantEmailEditLocalizationVersionReq.md) |  | 
+
+### Return type
+
+[**MerchantEmailTemplateAddLocalizationVersionPost200Response**](MerchantEmailTemplateAddLocalizationVersionPost200Response.md)
 
 ### Authorization
 
@@ -263,138 +387,6 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## EmailTemplateSetDefaultPost
-
-> MerchantAuthSsoLoginOTPPost200Response EmailTemplateSetDefaultPost(ctx).UnibeeApiMerchantEmailTemplateSetDefaultReq(unibeeApiMerchantEmailTemplateSetDefaultReq).Execute()
-
-Setup Email Template Default
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/UniBee-Billing/unibee-go-client"
-)
-
-func main() {
-	unibeeApiMerchantEmailTemplateSetDefaultReq := *openapiclient.NewUnibeeApiMerchantEmailTemplateSetDefaultReq("TemplateName_example") // UnibeeApiMerchantEmailTemplateSetDefaultReq | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.EmailTemplate.EmailTemplateSetDefaultPost(context.Background()).UnibeeApiMerchantEmailTemplateSetDefaultReq(unibeeApiMerchantEmailTemplateSetDefaultReq).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `EmailTemplate.EmailTemplateSetDefaultPost``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `EmailTemplateSetDefaultPost`: MerchantAuthSsoLoginOTPPost200Response
-	fmt.Fprintf(os.Stdout, "Response from `EmailTemplate.EmailTemplateSetDefaultPost`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiEmailTemplateSetDefaultPostRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **unibeeApiMerchantEmailTemplateSetDefaultReq** | [**UnibeeApiMerchantEmailTemplateSetDefaultReq**](UnibeeApiMerchantEmailTemplateSetDefaultReq.md) |  | 
-
-### Return type
-
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## EmailTemplateUpdatePost
-
-> MerchantAuthSsoLoginOTPPost200Response EmailTemplateUpdatePost(ctx).UnibeeApiMerchantEmailTemplateUpdateReq(unibeeApiMerchantEmailTemplateUpdateReq).Execute()
-
-Email Template Update
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/UniBee-Billing/unibee-go-client"
-)
-
-func main() {
-	unibeeApiMerchantEmailTemplateUpdateReq := *openapiclient.NewUnibeeApiMerchantEmailTemplateUpdateReq("TemplateContent_example", "TemplateName_example", "TemplateTitle_example") // UnibeeApiMerchantEmailTemplateUpdateReq | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.EmailTemplate.EmailTemplateUpdatePost(context.Background()).UnibeeApiMerchantEmailTemplateUpdateReq(unibeeApiMerchantEmailTemplateUpdateReq).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `EmailTemplate.EmailTemplateUpdatePost``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `EmailTemplateUpdatePost`: MerchantAuthSsoLoginOTPPost200Response
-	fmt.Fprintf(os.Stdout, "Response from `EmailTemplate.EmailTemplateUpdatePost`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiEmailTemplateUpdatePostRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **unibeeApiMerchantEmailTemplateUpdateReq** | [**UnibeeApiMerchantEmailTemplateUpdateReq**](UnibeeApiMerchantEmailTemplateUpdateReq.md) |  | 
-
-### Return type
-
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

@@ -7,6 +7,10 @@ Name | Type | Description | Notes
 **Address** | Pointer to **string** | address | [optional] 
 **CompanyLogo** | Pointer to **string** | company_logo | [optional] 
 **CompanyName** | Pointer to **string** | company_name | [optional] 
+**CompanyRegistryCode** | Pointer to **string** | Country Registry Code | [optional] 
+**CompanyVatNumber** | Pointer to **string** | Country Vat Number | [optional] 
+**CountryCode** | Pointer to **string** | Country Code | [optional] 
+**CountryName** | Pointer to **string** | Country Name | [optional] 
 **Email** | Pointer to **string** | email | [optional] 
 **Host** | Pointer to **string** | User Portal Host | [optional] 
 **Phone** | Pointer to **string** | phone | [optional] 
@@ -105,6 +109,106 @@ SetCompanyName sets CompanyName field to given value.
 `func (o *UnibeeApiMerchantProfileUpdateReq) HasCompanyName() bool`
 
 HasCompanyName returns a boolean if a field has been set.
+
+### GetCompanyRegistryCode
+
+`func (o *UnibeeApiMerchantProfileUpdateReq) GetCompanyRegistryCode() string`
+
+GetCompanyRegistryCode returns the CompanyRegistryCode field if non-nil, zero value otherwise.
+
+### GetCompanyRegistryCodeOk
+
+`func (o *UnibeeApiMerchantProfileUpdateReq) GetCompanyRegistryCodeOk() (*string, bool)`
+
+GetCompanyRegistryCodeOk returns a tuple with the CompanyRegistryCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompanyRegistryCode
+
+`func (o *UnibeeApiMerchantProfileUpdateReq) SetCompanyRegistryCode(v string)`
+
+SetCompanyRegistryCode sets CompanyRegistryCode field to given value.
+
+### HasCompanyRegistryCode
+
+`func (o *UnibeeApiMerchantProfileUpdateReq) HasCompanyRegistryCode() bool`
+
+HasCompanyRegistryCode returns a boolean if a field has been set.
+
+### GetCompanyVatNumber
+
+`func (o *UnibeeApiMerchantProfileUpdateReq) GetCompanyVatNumber() string`
+
+GetCompanyVatNumber returns the CompanyVatNumber field if non-nil, zero value otherwise.
+
+### GetCompanyVatNumberOk
+
+`func (o *UnibeeApiMerchantProfileUpdateReq) GetCompanyVatNumberOk() (*string, bool)`
+
+GetCompanyVatNumberOk returns a tuple with the CompanyVatNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompanyVatNumber
+
+`func (o *UnibeeApiMerchantProfileUpdateReq) SetCompanyVatNumber(v string)`
+
+SetCompanyVatNumber sets CompanyVatNumber field to given value.
+
+### HasCompanyVatNumber
+
+`func (o *UnibeeApiMerchantProfileUpdateReq) HasCompanyVatNumber() bool`
+
+HasCompanyVatNumber returns a boolean if a field has been set.
+
+### GetCountryCode
+
+`func (o *UnibeeApiMerchantProfileUpdateReq) GetCountryCode() string`
+
+GetCountryCode returns the CountryCode field if non-nil, zero value otherwise.
+
+### GetCountryCodeOk
+
+`func (o *UnibeeApiMerchantProfileUpdateReq) GetCountryCodeOk() (*string, bool)`
+
+GetCountryCodeOk returns a tuple with the CountryCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCountryCode
+
+`func (o *UnibeeApiMerchantProfileUpdateReq) SetCountryCode(v string)`
+
+SetCountryCode sets CountryCode field to given value.
+
+### HasCountryCode
+
+`func (o *UnibeeApiMerchantProfileUpdateReq) HasCountryCode() bool`
+
+HasCountryCode returns a boolean if a field has been set.
+
+### GetCountryName
+
+`func (o *UnibeeApiMerchantProfileUpdateReq) GetCountryName() string`
+
+GetCountryName returns the CountryName field if non-nil, zero value otherwise.
+
+### GetCountryNameOk
+
+`func (o *UnibeeApiMerchantProfileUpdateReq) GetCountryNameOk() (*string, bool)`
+
+GetCountryNameOk returns a tuple with the CountryName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCountryName
+
+`func (o *UnibeeApiMerchantProfileUpdateReq) SetCountryName(v string)`
+
+SetCountryName sets CountryName field to given value.
+
+### HasCountryName
+
+`func (o *UnibeeApiMerchantProfileUpdateReq) HasCountryName() bool`
+
+HasCountryName returns a boolean if a field has been set.
 
 ### GetEmail
 

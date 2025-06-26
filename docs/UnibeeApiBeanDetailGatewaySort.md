@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **GatewayId** | Pointer to **int64** | The gateway id | [optional] 
 **GatewayName** | Pointer to **string** | Required, The gateway name, stripe|paypal|changelly|unitpay|payssion|cryptadium | [optional] 
-**Sort** | Pointer to **int64** | Required, The sort value of payment gateway, should greater than 0, The bigger, the closer to the front | [optional] 
+**Sort** | Pointer to **int64** | Required, The sort value of payment gateway, should greater than 0, The higher the value, the lower the ranking | [optional] 
 
 ## Methods
 

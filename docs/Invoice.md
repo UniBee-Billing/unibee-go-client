@@ -5,6 +5,7 @@ All URIs are relative to *https://api.unibee.top*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**InvoiceCancelPost**](Invoice.md#InvoiceCancelPost) | **Post** /merchant/invoice/cancel | Admin Cancel Invoice
+[**InvoiceClearPaymentPost**](Invoice.md#InvoiceClearPaymentPost) | **Post** /merchant/invoice/clearPayment | Admin Clear Invoice Current Pending Payment
 [**InvoiceDeletePost**](Invoice.md#InvoiceDeletePost) | **Post** /merchant/invoice/delete | Delete Pending Invoice
 [**InvoiceDetailGet**](Invoice.md#InvoiceDetailGet) | **Get** /merchant/invoice/detail | Invoice Detail
 [**InvoiceDetailPost**](Invoice.md#InvoiceDetailPost) | **Post** /merchant/invoice/detail | Invoice Detail
@@ -26,7 +27,7 @@ Method | HTTP request | Description
 
 ## InvoiceCancelPost
 
-> MerchantAuthSsoLoginOTPPost200Response InvoiceCancelPost(ctx).UnibeeApiMerchantInvoiceCancelReq(unibeeApiMerchantInvoiceCancelReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response InvoiceCancelPost(ctx).UnibeeApiMerchantInvoiceCancelReq(unibeeApiMerchantInvoiceCancelReq).Execute()
 
 Admin Cancel Invoice
 
@@ -52,7 +53,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceCancelPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `InvoiceCancelPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `InvoiceCancelPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceCancelPost`: %v\n", resp)
 }
 ```
@@ -72,7 +73,71 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## InvoiceClearPaymentPost
+
+> MerchantAuthSsoClearTotpPost200Response InvoiceClearPaymentPost(ctx).UnibeeApiMerchantInvoiceClearPaymentReq(unibeeApiMerchantInvoiceClearPaymentReq).Execute()
+
+Admin Clear Invoice Current Pending Payment
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantInvoiceClearPaymentReq := *openapiclient.NewUnibeeApiMerchantInvoiceClearPaymentReq("InvoiceId_example") // UnibeeApiMerchantInvoiceClearPaymentReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Invoice.InvoiceClearPaymentPost(context.Background()).UnibeeApiMerchantInvoiceClearPaymentReq(unibeeApiMerchantInvoiceClearPaymentReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceClearPaymentPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `InvoiceClearPaymentPost`: MerchantAuthSsoClearTotpPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceClearPaymentPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiInvoiceClearPaymentPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantInvoiceClearPaymentReq** | [**UnibeeApiMerchantInvoiceClearPaymentReq**](UnibeeApiMerchantInvoiceClearPaymentReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -90,7 +155,7 @@ No authorization required
 
 ## InvoiceDeletePost
 
-> MerchantAuthSsoLoginOTPPost200Response InvoiceDeletePost(ctx).UnibeeApiMerchantInvoiceDeleteReq(unibeeApiMerchantInvoiceDeleteReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response InvoiceDeletePost(ctx).UnibeeApiMerchantInvoiceDeleteReq(unibeeApiMerchantInvoiceDeleteReq).Execute()
 
 Delete Pending Invoice
 
@@ -118,7 +183,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceDeletePost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `InvoiceDeletePost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `InvoiceDeletePost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceDeletePost`: %v\n", resp)
 }
 ```
@@ -138,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -652,7 +717,7 @@ No authorization required
 
 ## InvoiceMarkRefundSuccessPost
 
-> MerchantAuthSsoLoginOTPPost200Response InvoiceMarkRefundSuccessPost(ctx).UnibeeApiMerchantInvoiceMarkRefundInvoiceSuccessReq(unibeeApiMerchantInvoiceMarkRefundInvoiceSuccessReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response InvoiceMarkRefundSuccessPost(ctx).UnibeeApiMerchantInvoiceMarkRefundInvoiceSuccessReq(unibeeApiMerchantInvoiceMarkRefundInvoiceSuccessReq).Execute()
 
 Mark Invoice Refund As Success
 
@@ -680,7 +745,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceMarkRefundSuccessPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `InvoiceMarkRefundSuccessPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `InvoiceMarkRefundSuccessPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceMarkRefundSuccessPost`: %v\n", resp)
 }
 ```
@@ -700,7 +765,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -718,7 +783,7 @@ No authorization required
 
 ## InvoiceMarkWireTransferSuccessPost
 
-> MerchantAuthSsoLoginOTPPost200Response InvoiceMarkWireTransferSuccessPost(ctx).UnibeeApiMerchantInvoiceMarkWireTransferSuccessReq(unibeeApiMerchantInvoiceMarkWireTransferSuccessReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response InvoiceMarkWireTransferSuccessPost(ctx).UnibeeApiMerchantInvoiceMarkWireTransferSuccessReq(unibeeApiMerchantInvoiceMarkWireTransferSuccessReq).Execute()
 
 Mark Wire Transfer Invoice As Success
 
@@ -746,7 +811,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceMarkWireTransferSuccessPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `InvoiceMarkWireTransferSuccessPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `InvoiceMarkWireTransferSuccessPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceMarkWireTransferSuccessPost`: %v\n", resp)
 }
 ```
@@ -766,7 +831,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -848,7 +913,7 @@ No authorization required
 
 ## InvoicePdfGeneratePost
 
-> MerchantAuthSsoLoginOTPPost200Response InvoicePdfGeneratePost(ctx).UnibeeApiMerchantInvoicePdfGenerateReq(unibeeApiMerchantInvoicePdfGenerateReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response InvoicePdfGeneratePost(ctx).UnibeeApiMerchantInvoicePdfGenerateReq(unibeeApiMerchantInvoicePdfGenerateReq).Execute()
 
 Generate Invoice PDF
 
@@ -874,7 +939,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoicePdfGeneratePost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `InvoicePdfGeneratePost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `InvoicePdfGeneratePost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoicePdfGeneratePost`: %v\n", resp)
 }
 ```
@@ -894,7 +959,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -912,7 +977,7 @@ No authorization required
 
 ## InvoicePdfUpdatePost
 
-> MerchantAuthSsoLoginOTPPost200Response InvoicePdfUpdatePost(ctx).UnibeeApiMerchantInvoicePdfUpdateReq(unibeeApiMerchantInvoicePdfUpdateReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response InvoicePdfUpdatePost(ctx).UnibeeApiMerchantInvoicePdfUpdateReq(unibeeApiMerchantInvoicePdfUpdateReq).Execute()
 
 Update Invoice PDF
 
@@ -938,7 +1003,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoicePdfUpdatePost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `InvoicePdfUpdatePost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `InvoicePdfUpdatePost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoicePdfUpdatePost`: %v\n", resp)
 }
 ```
@@ -958,7 +1023,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -976,7 +1041,7 @@ No authorization required
 
 ## InvoiceReconvertCryptoAndSendEmailPost
 
-> MerchantAuthSsoLoginOTPPost200Response InvoiceReconvertCryptoAndSendEmailPost(ctx).UnibeeApiMerchantInvoiceReconvertCryptoAndSendReq(unibeeApiMerchantInvoiceReconvertCryptoAndSendReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response InvoiceReconvertCryptoAndSendEmailPost(ctx).UnibeeApiMerchantInvoiceReconvertCryptoAndSendReq(unibeeApiMerchantInvoiceReconvertCryptoAndSendReq).Execute()
 
 Admin Reconvert Crypto Data and Send Invoice Email
 
@@ -1002,7 +1067,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceReconvertCryptoAndSendEmailPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `InvoiceReconvertCryptoAndSendEmailPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `InvoiceReconvertCryptoAndSendEmailPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceReconvertCryptoAndSendEmailPost`: %v\n", resp)
 }
 ```
@@ -1022,7 +1087,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -1106,7 +1171,7 @@ No authorization required
 
 ## InvoiceSendEmailPost
 
-> MerchantAuthSsoLoginOTPPost200Response InvoiceSendEmailPost(ctx).UnibeeApiMerchantInvoiceSendEmailReq(unibeeApiMerchantInvoiceSendEmailReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response InvoiceSendEmailPost(ctx).UnibeeApiMerchantInvoiceSendEmailReq(unibeeApiMerchantInvoiceSendEmailReq).Execute()
 
 Send Invoice Email
 
@@ -1132,7 +1197,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceSendEmailPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `InvoiceSendEmailPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `InvoiceSendEmailPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceSendEmailPost`: %v\n", resp)
 }
 ```
@@ -1152,7 +1217,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **DiscountCode** | Pointer to **string** | DiscountCode | [optional] 
 **Email** | Pointer to **string** | Email, either ExternalUserId&amp;Email or UserId needed | [optional] 
 **ExternalUserId** | Pointer to **string** | ExternalUserId, unique, either ExternalUserId&amp;Email or UserId needed | [optional] 
+**FreeInInitialPeriod** | Pointer to **bool** | Is free or not for the first period, true or false | [optional] 
 **GatewayId** | Pointer to **int32** | GatewayId | [optional] 
 **GatewayPaymentType** | Pointer to **string** | Gateway Payment Type | [optional] 
 **PlanId** | **int64** | PlanId | 
@@ -189,6 +190,31 @@ SetExternalUserId sets ExternalUserId field to given value.
 `func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) HasExternalUserId() bool`
 
 HasExternalUserId returns a boolean if a field has been set.
+
+### GetFreeInInitialPeriod
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) GetFreeInInitialPeriod() bool`
+
+GetFreeInInitialPeriod returns the FreeInInitialPeriod field if non-nil, zero value otherwise.
+
+### GetFreeInInitialPeriodOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) GetFreeInInitialPeriodOk() (*bool, bool)`
+
+GetFreeInInitialPeriodOk returns a tuple with the FreeInInitialPeriod field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFreeInInitialPeriod
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) SetFreeInInitialPeriod(v bool)`
+
+SetFreeInInitialPeriod sets FreeInInitialPeriod field to given value.
+
+### HasFreeInInitialPeriod
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) HasFreeInInitialPeriod() bool`
+
+HasFreeInInitialPeriod returns a boolean if a field has been set.
 
 ### GetGatewayId
 

@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**PaymentMethodId** | Pointer to **string** |  | [optional] 
 **AutoCharge** | Pointer to **bool** |  | [optional] 
 **BillingCycleAnchor** | Pointer to **int64** | billing_cycle_anchor | [optional] 
 **BizType** | Pointer to **int32** | biz type from payment 1-onetime payment, 3-subscription | [optional] 
@@ -30,6 +31,7 @@ Name | Type | Description | Notes
 **PartialCreditPaidAmount** | Pointer to **int64** | partial credit paid amount | [optional] 
 **PaymentId** | Pointer to **string** | paymentId | [optional] 
 **PaymentLink** | Pointer to **string** | invoice payment link | [optional] 
+**PaymentType** | Pointer to **string** |  | [optional] 
 **PeriodEnd** | Pointer to **int64** |  | [optional] 
 **PeriodStart** | Pointer to **int64** |  | [optional] 
 **ProductName** | Pointer to **string** |  | [optional] 
@@ -73,6 +75,31 @@ will change when the set of required properties is changed
 NewUnibeeApiBeanInvoiceWithDefaults instantiates a new UnibeeApiBeanInvoice object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetPaymentMethodId
+
+`func (o *UnibeeApiBeanInvoice) GetPaymentMethodId() string`
+
+GetPaymentMethodId returns the PaymentMethodId field if non-nil, zero value otherwise.
+
+### GetPaymentMethodIdOk
+
+`func (o *UnibeeApiBeanInvoice) GetPaymentMethodIdOk() (*string, bool)`
+
+GetPaymentMethodIdOk returns a tuple with the PaymentMethodId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaymentMethodId
+
+`func (o *UnibeeApiBeanInvoice) SetPaymentMethodId(v string)`
+
+SetPaymentMethodId sets PaymentMethodId field to given value.
+
+### HasPaymentMethodId
+
+`func (o *UnibeeApiBeanInvoice) HasPaymentMethodId() bool`
+
+HasPaymentMethodId returns a boolean if a field has been set.
 
 ### GetAutoCharge
 
@@ -723,6 +750,31 @@ SetPaymentLink sets PaymentLink field to given value.
 `func (o *UnibeeApiBeanInvoice) HasPaymentLink() bool`
 
 HasPaymentLink returns a boolean if a field has been set.
+
+### GetPaymentType
+
+`func (o *UnibeeApiBeanInvoice) GetPaymentType() string`
+
+GetPaymentType returns the PaymentType field if non-nil, zero value otherwise.
+
+### GetPaymentTypeOk
+
+`func (o *UnibeeApiBeanInvoice) GetPaymentTypeOk() (*string, bool)`
+
+GetPaymentTypeOk returns a tuple with the PaymentType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaymentType
+
+`func (o *UnibeeApiBeanInvoice) SetPaymentType(v string)`
+
+SetPaymentType sets PaymentType field to given value.
+
+### HasPaymentType
+
+`func (o *UnibeeApiBeanInvoice) HasPaymentType() bool`
+
+HasPaymentType returns a boolean if a field has been set.
 
 ### GetPeriodEnd
 

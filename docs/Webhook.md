@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**WebhookEndpointListGet**](Webhook.md#WebhookEndpointListGet) | **Get** /merchant/webhook/endpoint_list | Get Webhook Endpoint list
 [**WebhookEndpointLogListGet**](Webhook.md#WebhookEndpointLogListGet) | **Get** /merchant/webhook/endpoint_log_list | Get Webhook Endpoint Log List
 [**WebhookEventListGet**](Webhook.md#WebhookEventListGet) | **Get** /merchant/webhook/event_list | Webhook Event List
+[**WebhookGetWebhookSecretGet**](Webhook.md#WebhookGetWebhookSecretGet) | **Get** /merchant/webhook/get_webhook_secret | Get Webhook Secret
 [**WebhookNewEndpointPost**](Webhook.md#WebhookNewEndpointPost) | **Post** /merchant/webhook/new_endpoint | New Webhook Endpoint
 [**WebhookResendPost**](Webhook.md#WebhookResendPost) | **Post** /merchant/webhook/resend | Resent Webhook
 [**WebhookUpdateEndpointPost**](Webhook.md#WebhookUpdateEndpointPost) | **Post** /merchant/webhook/update_endpoint | Update Webhook Endpoint
@@ -16,7 +17,7 @@ Method | HTTP request | Description
 
 ## WebhookDeleteEndpointPost
 
-> MerchantAuthSsoLoginOTPPost200Response WebhookDeleteEndpointPost(ctx).UnibeeApiMerchantWebhookDeleteEndpointReq(unibeeApiMerchantWebhookDeleteEndpointReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response WebhookDeleteEndpointPost(ctx).UnibeeApiMerchantWebhookDeleteEndpointReq(unibeeApiMerchantWebhookDeleteEndpointReq).Execute()
 
 Delete Webhook Endpoint
 
@@ -42,7 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Webhook.WebhookDeleteEndpointPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `WebhookDeleteEndpointPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `WebhookDeleteEndpointPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Webhook.WebhookDeleteEndpointPost`: %v\n", resp)
 }
 ```
@@ -62,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -264,9 +265,68 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## WebhookGetWebhookSecretGet
+
+> MerchantWebhookGetWebhookSecretGet200Response WebhookGetWebhookSecretGet(ctx).Execute()
+
+Get Webhook Secret
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Webhook.WebhookGetWebhookSecretGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Webhook.WebhookGetWebhookSecretGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `WebhookGetWebhookSecretGet`: MerchantWebhookGetWebhookSecretGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `Webhook.WebhookGetWebhookSecretGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiWebhookGetWebhookSecretGetRequest struct via the builder pattern
+
+
+### Return type
+
+[**MerchantWebhookGetWebhookSecretGet200Response**](MerchantWebhookGetWebhookSecretGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## WebhookNewEndpointPost
 
-> MerchantAuthSsoLoginOTPPost200Response WebhookNewEndpointPost(ctx).UnibeeApiMerchantWebhookNewEndpointReq(unibeeApiMerchantWebhookNewEndpointReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response WebhookNewEndpointPost(ctx).UnibeeApiMerchantWebhookNewEndpointReq(unibeeApiMerchantWebhookNewEndpointReq).Execute()
 
 New Webhook Endpoint
 
@@ -292,7 +352,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Webhook.WebhookNewEndpointPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `WebhookNewEndpointPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `WebhookNewEndpointPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Webhook.WebhookNewEndpointPost`: %v\n", resp)
 }
 ```
@@ -312,7 +372,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -394,7 +454,7 @@ No authorization required
 
 ## WebhookUpdateEndpointPost
 
-> MerchantAuthSsoLoginOTPPost200Response WebhookUpdateEndpointPost(ctx).UnibeeApiMerchantWebhookUpdateEndpointReq(unibeeApiMerchantWebhookUpdateEndpointReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response WebhookUpdateEndpointPost(ctx).UnibeeApiMerchantWebhookUpdateEndpointReq(unibeeApiMerchantWebhookUpdateEndpointReq).Execute()
 
 Update Webhook Endpoint
 
@@ -420,7 +480,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Webhook.WebhookUpdateEndpointPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `WebhookUpdateEndpointPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `WebhookUpdateEndpointPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Webhook.WebhookUpdateEndpointPost`: %v\n", resp)
 }
 ```
@@ -440,7 +500,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 

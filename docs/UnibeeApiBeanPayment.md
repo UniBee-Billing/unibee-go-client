@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AuthorizeComment** | Pointer to **string** |  | [optional] 
 **AuthorizeReason** | Pointer to **string** |  | [optional] 
 **AuthorizeStatus** | Pointer to **int32** | authorize status，0-waiting authorize，1-authorized，2-authorized_request | [optional] 
 **AutoCharge** | Pointer to **bool** |  | [optional] 
@@ -22,6 +23,7 @@ Name | Type | Description | Notes
 **GatewayPaymentId** | Pointer to **string** | gateway_payment_id | [optional] 
 **GatewayPaymentType** | Pointer to **string** | gateway_payment_type | [optional] 
 **InvoiceId** | Pointer to **string** | invoice id | [optional] 
+**LastError** | Pointer to **string** | last error | [optional] 
 **Link** | Pointer to **string** |  | [optional] 
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
@@ -53,6 +55,31 @@ will change when the set of required properties is changed
 NewUnibeeApiBeanPaymentWithDefaults instantiates a new UnibeeApiBeanPayment object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAuthorizeComment
+
+`func (o *UnibeeApiBeanPayment) GetAuthorizeComment() string`
+
+GetAuthorizeComment returns the AuthorizeComment field if non-nil, zero value otherwise.
+
+### GetAuthorizeCommentOk
+
+`func (o *UnibeeApiBeanPayment) GetAuthorizeCommentOk() (*string, bool)`
+
+GetAuthorizeCommentOk returns a tuple with the AuthorizeComment field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuthorizeComment
+
+`func (o *UnibeeApiBeanPayment) SetAuthorizeComment(v string)`
+
+SetAuthorizeComment sets AuthorizeComment field to given value.
+
+### HasAuthorizeComment
+
+`func (o *UnibeeApiBeanPayment) HasAuthorizeComment() bool`
+
+HasAuthorizeComment returns a boolean if a field has been set.
 
 ### GetAuthorizeReason
 
@@ -503,6 +530,31 @@ SetInvoiceId sets InvoiceId field to given value.
 `func (o *UnibeeApiBeanPayment) HasInvoiceId() bool`
 
 HasInvoiceId returns a boolean if a field has been set.
+
+### GetLastError
+
+`func (o *UnibeeApiBeanPayment) GetLastError() string`
+
+GetLastError returns the LastError field if non-nil, zero value otherwise.
+
+### GetLastErrorOk
+
+`func (o *UnibeeApiBeanPayment) GetLastErrorOk() (*string, bool)`
+
+GetLastErrorOk returns a tuple with the LastError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastError
+
+`func (o *UnibeeApiBeanPayment) SetLastError(v string)`
+
+SetLastError sets LastError field to given value.
+
+### HasLastError
+
+`func (o *UnibeeApiBeanPayment) HasLastError() bool`
+
+HasLastError returns a boolean if a field has been set.
 
 ### GetLink
 

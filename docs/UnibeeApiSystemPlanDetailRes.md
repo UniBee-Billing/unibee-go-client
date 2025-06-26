@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Merchant** | Pointer to [**UnibeeApiBeanMerchant**](UnibeeApiBeanMerchant.md) |  | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanDetailPlanDetail**](UnibeeApiBeanDetailPlanDetail.md) |  | [optional] 
 
 ## Methods
@@ -24,6 +25,31 @@ will change when the set of required properties is changed
 NewUnibeeApiSystemPlanDetailResWithDefaults instantiates a new UnibeeApiSystemPlanDetailRes object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetMerchant
+
+`func (o *UnibeeApiSystemPlanDetailRes) GetMerchant() UnibeeApiBeanMerchant`
+
+GetMerchant returns the Merchant field if non-nil, zero value otherwise.
+
+### GetMerchantOk
+
+`func (o *UnibeeApiSystemPlanDetailRes) GetMerchantOk() (*UnibeeApiBeanMerchant, bool)`
+
+GetMerchantOk returns a tuple with the Merchant field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMerchant
+
+`func (o *UnibeeApiSystemPlanDetailRes) SetMerchant(v UnibeeApiBeanMerchant)`
+
+SetMerchant sets Merchant field to given value.
+
+### HasMerchant
+
+`func (o *UnibeeApiSystemPlanDetailRes) HasMerchant() bool`
+
+HasMerchant returns a boolean if a field has been set.
 
 ### GetPlan
 

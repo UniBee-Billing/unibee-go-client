@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 ## DiscountActivatePost
 
-> MerchantAuthSsoLoginOTPPost200Response DiscountActivatePost(ctx).UnibeeApiMerchantDiscountActivateReq(unibeeApiMerchantDiscountActivateReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response DiscountActivatePost(ctx).UnibeeApiMerchantDiscountActivateReq(unibeeApiMerchantDiscountActivateReq).Execute()
 
 Activate Discount Code
 
@@ -47,7 +47,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Discount.DiscountActivatePost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DiscountActivatePost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `DiscountActivatePost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Discount.DiscountActivatePost`: %v\n", resp)
 }
 ```
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -85,7 +85,7 @@ No authorization required
 
 ## DiscountDeactivatePost
 
-> MerchantAuthSsoLoginOTPPost200Response DiscountDeactivatePost(ctx).UnibeeApiMerchantDiscountDeactivateReq(unibeeApiMerchantDiscountDeactivateReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response DiscountDeactivatePost(ctx).UnibeeApiMerchantDiscountDeactivateReq(unibeeApiMerchantDiscountDeactivateReq).Execute()
 
 Deactivate Discount Code
 
@@ -113,7 +113,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Discount.DiscountDeactivatePost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DiscountDeactivatePost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `DiscountDeactivatePost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Discount.DiscountDeactivatePost`: %v\n", resp)
 }
 ```
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -217,7 +217,7 @@ No authorization required
 
 ## DiscountDeletePost
 
-> MerchantAuthSsoLoginOTPPost200Response DiscountDeletePost(ctx).UnibeeApiMerchantDiscountDeleteReq(unibeeApiMerchantDiscountDeleteReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response DiscountDeletePost(ctx).UnibeeApiMerchantDiscountDeleteReq(unibeeApiMerchantDiscountDeleteReq).Execute()
 
 Delete Discount Code
 
@@ -245,7 +245,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Discount.DiscountDeletePost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DiscountDeletePost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `DiscountDeletePost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Discount.DiscountDeletePost`: %v\n", resp)
 }
 ```
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 

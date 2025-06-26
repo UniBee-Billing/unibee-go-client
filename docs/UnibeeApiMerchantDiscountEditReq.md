@@ -15,7 +15,8 @@ Name | Type | Description | Notes
 **Id** | **int64** | The discount&#39;s Id | 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **Name** | Pointer to **string** | The discount&#39;s name | [optional] 
-**PlanApplyType** | Pointer to **int32** | plan apply type, 0-apply for all, 1-apply for plans specified, 2-exclude for plans specified | [optional] 
+**PlanApplyGroup** | Pointer to [**UnibeeApiBeanGroupPlanSelector**](UnibeeApiBeanGroupPlanSelector.md) |  | [optional] 
+**PlanApplyType** | Pointer to **int32** | plan apply type, 0-apply for all, 1-apply for plans specified, 2-exclude for plans specified, 3-Apply to Plans by Groups(Billing Period Included), 4-Apply to Plans except by Groups(Billing Period Included) | [optional] 
 **PlanIds** | Pointer to **[]int64** | Ids of plan which discount code can effect, default effect all plans if not set | [optional] 
 **Quantity** | Pointer to **int32** | Quantity of code, default 0, set 0 to disable quantity management | [optional] 
 **StartTime** | Pointer to **int32** | The start time of discount code can effect, editable after activate, utc time | [optional] 
@@ -312,6 +313,31 @@ SetName sets Name field to given value.
 `func (o *UnibeeApiMerchantDiscountEditReq) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetPlanApplyGroup
+
+`func (o *UnibeeApiMerchantDiscountEditReq) GetPlanApplyGroup() UnibeeApiBeanGroupPlanSelector`
+
+GetPlanApplyGroup returns the PlanApplyGroup field if non-nil, zero value otherwise.
+
+### GetPlanApplyGroupOk
+
+`func (o *UnibeeApiMerchantDiscountEditReq) GetPlanApplyGroupOk() (*UnibeeApiBeanGroupPlanSelector, bool)`
+
+GetPlanApplyGroupOk returns a tuple with the PlanApplyGroup field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanApplyGroup
+
+`func (o *UnibeeApiMerchantDiscountEditReq) SetPlanApplyGroup(v UnibeeApiBeanGroupPlanSelector)`
+
+SetPlanApplyGroup sets PlanApplyGroup field to given value.
+
+### HasPlanApplyGroup
+
+`func (o *UnibeeApiMerchantDiscountEditReq) HasPlanApplyGroup() bool`
+
+HasPlanApplyGroup returns a boolean if a field has been set.
 
 ### GetPlanApplyType
 

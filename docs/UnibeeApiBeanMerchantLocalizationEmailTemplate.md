@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Activate** | Pointer to **bool** |  | [optional] 
 **Attach** | Pointer to **string** |  | [optional] 
 **Localizations** | Pointer to [**[]UnibeeApiBeanEmailLocalizationTemplate**](UnibeeApiBeanEmailLocalizationTemplate.md) |  | [optional] 
 **TemplateDescription** | Pointer to **string** |  | [optional] 
@@ -27,6 +28,31 @@ will change when the set of required properties is changed
 NewUnibeeApiBeanMerchantLocalizationEmailTemplateWithDefaults instantiates a new UnibeeApiBeanMerchantLocalizationEmailTemplate object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetActivate
+
+`func (o *UnibeeApiBeanMerchantLocalizationEmailTemplate) GetActivate() bool`
+
+GetActivate returns the Activate field if non-nil, zero value otherwise.
+
+### GetActivateOk
+
+`func (o *UnibeeApiBeanMerchantLocalizationEmailTemplate) GetActivateOk() (*bool, bool)`
+
+GetActivateOk returns a tuple with the Activate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetActivate
+
+`func (o *UnibeeApiBeanMerchantLocalizationEmailTemplate) SetActivate(v bool)`
+
+SetActivate sets Activate field to given value.
+
+### HasActivate
+
+`func (o *UnibeeApiBeanMerchantLocalizationEmailTemplate) HasActivate() bool`
+
+HasActivate returns a boolean if a field has been set.
 
 ### GetAttach
 

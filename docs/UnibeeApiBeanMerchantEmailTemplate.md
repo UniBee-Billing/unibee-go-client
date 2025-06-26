@@ -7,7 +7,8 @@ Name | Type | Description | Notes
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **GatewayTemplateId** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **int64** |  | [optional] 
-**LanguageData** | Pointer to **string** |  | [optional] 
+**LanguageData** | Pointer to [**[]UnibeeApiBeanEmailLocalizationTemplate**](UnibeeApiBeanEmailLocalizationTemplate.md) |  | [optional] 
+**LocalizationVersions** | Pointer to [**[]UnibeeApiBeanMerchantLocalizationVersion**](UnibeeApiBeanMerchantLocalizationVersion.md) |  | [optional] 
 **MerchantId** | Pointer to **int64** |  | [optional] 
 **Status** | Pointer to **string** |  | [optional] 
 **TemplateAttachName** | Pointer to **string** |  | [optional] 
@@ -113,20 +114,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetLanguageData
 
-`func (o *UnibeeApiBeanMerchantEmailTemplate) GetLanguageData() string`
+`func (o *UnibeeApiBeanMerchantEmailTemplate) GetLanguageData() []UnibeeApiBeanEmailLocalizationTemplate`
 
 GetLanguageData returns the LanguageData field if non-nil, zero value otherwise.
 
 ### GetLanguageDataOk
 
-`func (o *UnibeeApiBeanMerchantEmailTemplate) GetLanguageDataOk() (*string, bool)`
+`func (o *UnibeeApiBeanMerchantEmailTemplate) GetLanguageDataOk() (*[]UnibeeApiBeanEmailLocalizationTemplate, bool)`
 
 GetLanguageDataOk returns a tuple with the LanguageData field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLanguageData
 
-`func (o *UnibeeApiBeanMerchantEmailTemplate) SetLanguageData(v string)`
+`func (o *UnibeeApiBeanMerchantEmailTemplate) SetLanguageData(v []UnibeeApiBeanEmailLocalizationTemplate)`
 
 SetLanguageData sets LanguageData field to given value.
 
@@ -135,6 +136,31 @@ SetLanguageData sets LanguageData field to given value.
 `func (o *UnibeeApiBeanMerchantEmailTemplate) HasLanguageData() bool`
 
 HasLanguageData returns a boolean if a field has been set.
+
+### GetLocalizationVersions
+
+`func (o *UnibeeApiBeanMerchantEmailTemplate) GetLocalizationVersions() []UnibeeApiBeanMerchantLocalizationVersion`
+
+GetLocalizationVersions returns the LocalizationVersions field if non-nil, zero value otherwise.
+
+### GetLocalizationVersionsOk
+
+`func (o *UnibeeApiBeanMerchantEmailTemplate) GetLocalizationVersionsOk() (*[]UnibeeApiBeanMerchantLocalizationVersion, bool)`
+
+GetLocalizationVersionsOk returns a tuple with the LocalizationVersions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLocalizationVersions
+
+`func (o *UnibeeApiBeanMerchantEmailTemplate) SetLocalizationVersions(v []UnibeeApiBeanMerchantLocalizationVersion)`
+
+SetLocalizationVersions sets LocalizationVersions field to given value.
+
+### HasLocalizationVersions
+
+`func (o *UnibeeApiBeanMerchantEmailTemplate) HasLocalizationVersions() bool`
+
+HasLocalizationVersions returns a boolean if a field has been set.
 
 ### GetMerchantId
 

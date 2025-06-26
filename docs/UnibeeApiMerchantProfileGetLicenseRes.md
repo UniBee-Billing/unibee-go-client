@@ -4,7 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**License** | Pointer to [**UnibeeInternalLogicMiddlewareLicense**](UnibeeInternalLogicMiddlewareLicense.md) |  | [optional] 
+**APIRateLimit** | Pointer to **int32** | APIRateLimit | [optional] 
+**CurrentMemberCount** | Pointer to **int32** | CurrentMemberCount | [optional] 
+**License** | Pointer to [**UnibeeInternalLogicMiddlewareLicenseLicense**](UnibeeInternalLogicMiddlewareLicenseLicense.md) |  | [optional] 
+**MemberLimit** | Pointer to **int32** | MemberLimit, -1&#x3D;Unlimited | [optional] 
 **Merchant** | Pointer to [**UnibeeApiBeanMerchant**](UnibeeApiBeanMerchant.md) |  | [optional] 
 
 ## Methods
@@ -26,22 +29,72 @@ NewUnibeeApiMerchantProfileGetLicenseResWithDefaults instantiates a new UnibeeAp
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
+### GetAPIRateLimit
+
+`func (o *UnibeeApiMerchantProfileGetLicenseRes) GetAPIRateLimit() int32`
+
+GetAPIRateLimit returns the APIRateLimit field if non-nil, zero value otherwise.
+
+### GetAPIRateLimitOk
+
+`func (o *UnibeeApiMerchantProfileGetLicenseRes) GetAPIRateLimitOk() (*int32, bool)`
+
+GetAPIRateLimitOk returns a tuple with the APIRateLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAPIRateLimit
+
+`func (o *UnibeeApiMerchantProfileGetLicenseRes) SetAPIRateLimit(v int32)`
+
+SetAPIRateLimit sets APIRateLimit field to given value.
+
+### HasAPIRateLimit
+
+`func (o *UnibeeApiMerchantProfileGetLicenseRes) HasAPIRateLimit() bool`
+
+HasAPIRateLimit returns a boolean if a field has been set.
+
+### GetCurrentMemberCount
+
+`func (o *UnibeeApiMerchantProfileGetLicenseRes) GetCurrentMemberCount() int32`
+
+GetCurrentMemberCount returns the CurrentMemberCount field if non-nil, zero value otherwise.
+
+### GetCurrentMemberCountOk
+
+`func (o *UnibeeApiMerchantProfileGetLicenseRes) GetCurrentMemberCountOk() (*int32, bool)`
+
+GetCurrentMemberCountOk returns a tuple with the CurrentMemberCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrentMemberCount
+
+`func (o *UnibeeApiMerchantProfileGetLicenseRes) SetCurrentMemberCount(v int32)`
+
+SetCurrentMemberCount sets CurrentMemberCount field to given value.
+
+### HasCurrentMemberCount
+
+`func (o *UnibeeApiMerchantProfileGetLicenseRes) HasCurrentMemberCount() bool`
+
+HasCurrentMemberCount returns a boolean if a field has been set.
+
 ### GetLicense
 
-`func (o *UnibeeApiMerchantProfileGetLicenseRes) GetLicense() UnibeeInternalLogicMiddlewareLicense`
+`func (o *UnibeeApiMerchantProfileGetLicenseRes) GetLicense() UnibeeInternalLogicMiddlewareLicenseLicense`
 
 GetLicense returns the License field if non-nil, zero value otherwise.
 
 ### GetLicenseOk
 
-`func (o *UnibeeApiMerchantProfileGetLicenseRes) GetLicenseOk() (*UnibeeInternalLogicMiddlewareLicense, bool)`
+`func (o *UnibeeApiMerchantProfileGetLicenseRes) GetLicenseOk() (*UnibeeInternalLogicMiddlewareLicenseLicense, bool)`
 
 GetLicenseOk returns a tuple with the License field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLicense
 
-`func (o *UnibeeApiMerchantProfileGetLicenseRes) SetLicense(v UnibeeInternalLogicMiddlewareLicense)`
+`func (o *UnibeeApiMerchantProfileGetLicenseRes) SetLicense(v UnibeeInternalLogicMiddlewareLicenseLicense)`
 
 SetLicense sets License field to given value.
 
@@ -50,6 +103,31 @@ SetLicense sets License field to given value.
 `func (o *UnibeeApiMerchantProfileGetLicenseRes) HasLicense() bool`
 
 HasLicense returns a boolean if a field has been set.
+
+### GetMemberLimit
+
+`func (o *UnibeeApiMerchantProfileGetLicenseRes) GetMemberLimit() int32`
+
+GetMemberLimit returns the MemberLimit field if non-nil, zero value otherwise.
+
+### GetMemberLimitOk
+
+`func (o *UnibeeApiMerchantProfileGetLicenseRes) GetMemberLimitOk() (*int32, bool)`
+
+GetMemberLimitOk returns a tuple with the MemberLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMemberLimit
+
+`func (o *UnibeeApiMerchantProfileGetLicenseRes) SetMemberLimit(v int32)`
+
+SetMemberLimit sets MemberLimit field to given value.
+
+### HasMemberLimit
+
+`func (o *UnibeeApiMerchantProfileGetLicenseRes) HasMemberLimit() bool`
+
+HasMemberLimit returns a boolean if a field has been set.
 
 ### GetMerchant
 

@@ -5,11 +5,13 @@ All URIs are relative to *https://api.unibee.top*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AuthSessionLoginPost**](MemberAuthentication.md#AuthSessionLoginPost) | **Post** /merchant/auth/session_login | Session Login
+[**AuthSsoClearTotpPost**](MemberAuthentication.md#AuthSsoClearTotpPost) | **Post** /merchant/auth/sso/clear_totp | Admin Member Clear Member 2FA Key With ResumeCode
 [**AuthSsoLoginOTPPost**](MemberAuthentication.md#AuthSsoLoginOTPPost) | **Post** /merchant/auth/sso/loginOTP | OTP Login
 [**AuthSsoLoginOTPVerifyPost**](MemberAuthentication.md#AuthSsoLoginOTPVerifyPost) | **Post** /merchant/auth/sso/loginOTPVerify | OTP Login Code Verification
 [**AuthSsoLoginPost**](MemberAuthentication.md#AuthSsoLoginPost) | **Post** /merchant/auth/sso/login | Password Login
 [**AuthSsoPasswordForgetOTPPost**](MemberAuthentication.md#AuthSsoPasswordForgetOTPPost) | **Post** /merchant/auth/sso/passwordForgetOTP | OTP Password Forget
 [**AuthSsoPasswordForgetOTPVerifyPost**](MemberAuthentication.md#AuthSsoPasswordForgetOTPVerifyPost) | **Post** /merchant/auth/sso/passwordForgetOTPVerify | OTP Password Forget Code Verification
+[**AuthSsoPasswordForgetTotpVerifyPost**](MemberAuthentication.md#AuthSsoPasswordForgetTotpVerifyPost) | **Post** /merchant/auth/sso/passwordForgetTotpVerify | 2FA Password Forget Code Verification
 [**AuthSsoPasswordSetupPost**](MemberAuthentication.md#AuthSsoPasswordSetupPost) | **Post** /merchant/auth/sso/passwordSetup | Password Setup
 [**AuthSsoRegisterPost**](MemberAuthentication.md#AuthSsoRegisterPost) | **Post** /merchant/auth/sso/register | Register
 [**AuthSsoRegisterVerifyPost**](MemberAuthentication.md#AuthSsoRegisterVerifyPost) | **Post** /merchant/auth/sso/registerVerify | Register Verify
@@ -82,9 +84,73 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## AuthSsoClearTotpPost
+
+> MerchantAuthSsoClearTotpPost200Response AuthSsoClearTotpPost(ctx).UnibeeApiMerchantAuthClearTotpReq(unibeeApiMerchantAuthClearTotpReq).Execute()
+
+Admin Member Clear Member 2FA Key With ResumeCode
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantAuthClearTotpReq := *openapiclient.NewUnibeeApiMerchantAuthClearTotpReq("Email_example", "TotpResumeCode_example") // UnibeeApiMerchantAuthClearTotpReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MemberAuthentication.AuthSsoClearTotpPost(context.Background()).UnibeeApiMerchantAuthClearTotpReq(unibeeApiMerchantAuthClearTotpReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MemberAuthentication.AuthSsoClearTotpPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AuthSsoClearTotpPost`: MerchantAuthSsoClearTotpPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `MemberAuthentication.AuthSsoClearTotpPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAuthSsoClearTotpPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantAuthClearTotpReq** | [**UnibeeApiMerchantAuthClearTotpReq**](UnibeeApiMerchantAuthClearTotpReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## AuthSsoLoginOTPPost
 
-> MerchantAuthSsoLoginOTPPost200Response AuthSsoLoginOTPPost(ctx).UnibeeApiMerchantAuthLoginOtpReq(unibeeApiMerchantAuthLoginOtpReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response AuthSsoLoginOTPPost(ctx).UnibeeApiMerchantAuthLoginOtpReq(unibeeApiMerchantAuthLoginOtpReq).Execute()
 
 OTP Login
 
@@ -112,7 +178,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MemberAuthentication.AuthSsoLoginOTPPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `AuthSsoLoginOTPPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `AuthSsoLoginOTPPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `MemberAuthentication.AuthSsoLoginOTPPost`: %v\n", resp)
 }
 ```
@@ -132,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -282,7 +348,7 @@ No authorization required
 
 ## AuthSsoPasswordForgetOTPPost
 
-> MerchantAuthSsoLoginOTPPost200Response AuthSsoPasswordForgetOTPPost(ctx).UnibeeApiMerchantAuthPasswordForgetOtpReq(unibeeApiMerchantAuthPasswordForgetOtpReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response AuthSsoPasswordForgetOTPPost(ctx).UnibeeApiMerchantAuthPasswordForgetOtpReq(unibeeApiMerchantAuthPasswordForgetOtpReq).Execute()
 
 OTP Password Forget
 
@@ -310,7 +376,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MemberAuthentication.AuthSsoPasswordForgetOTPPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `AuthSsoPasswordForgetOTPPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `AuthSsoPasswordForgetOTPPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `MemberAuthentication.AuthSsoPasswordForgetOTPPost`: %v\n", resp)
 }
 ```
@@ -330,7 +396,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -348,7 +414,7 @@ No authorization required
 
 ## AuthSsoPasswordForgetOTPVerifyPost
 
-> MerchantAuthSsoLoginOTPPost200Response AuthSsoPasswordForgetOTPVerifyPost(ctx).UnibeeApiMerchantAuthPasswordForgetOtpVerifyReq(unibeeApiMerchantAuthPasswordForgetOtpVerifyReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response AuthSsoPasswordForgetOTPVerifyPost(ctx).UnibeeApiMerchantAuthPasswordForgetOtpVerifyReq(unibeeApiMerchantAuthPasswordForgetOtpVerifyReq).Execute()
 
 OTP Password Forget Code Verification
 
@@ -376,7 +442,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MemberAuthentication.AuthSsoPasswordForgetOTPVerifyPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `AuthSsoPasswordForgetOTPVerifyPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `AuthSsoPasswordForgetOTPVerifyPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `MemberAuthentication.AuthSsoPasswordForgetOTPVerifyPost`: %v\n", resp)
 }
 ```
@@ -396,7 +462,73 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## AuthSsoPasswordForgetTotpVerifyPost
+
+> MerchantAuthSsoClearTotpPost200Response AuthSsoPasswordForgetTotpVerifyPost(ctx).UnibeeApiMerchantAuthPasswordForgetTotpVerifyReq(unibeeApiMerchantAuthPasswordForgetTotpVerifyReq).Execute()
+
+2FA Password Forget Code Verification
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantAuthPasswordForgetTotpVerifyReq := *openapiclient.NewUnibeeApiMerchantAuthPasswordForgetTotpVerifyReq("Email_example", "NewPassword_example", "TotpCode_example") // UnibeeApiMerchantAuthPasswordForgetTotpVerifyReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MemberAuthentication.AuthSsoPasswordForgetTotpVerifyPost(context.Background()).UnibeeApiMerchantAuthPasswordForgetTotpVerifyReq(unibeeApiMerchantAuthPasswordForgetTotpVerifyReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MemberAuthentication.AuthSsoPasswordForgetTotpVerifyPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AuthSsoPasswordForgetTotpVerifyPost`: MerchantAuthSsoClearTotpPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `MemberAuthentication.AuthSsoPasswordForgetTotpVerifyPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAuthSsoPasswordForgetTotpVerifyPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantAuthPasswordForgetTotpVerifyReq** | [**UnibeeApiMerchantAuthPasswordForgetTotpVerifyReq**](UnibeeApiMerchantAuthPasswordForgetTotpVerifyReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -414,7 +546,7 @@ No authorization required
 
 ## AuthSsoPasswordSetupPost
 
-> MerchantAuthSsoLoginOTPPost200Response AuthSsoPasswordSetupPost(ctx).UnibeeApiMerchantAuthPasswordSetupOtpReq(unibeeApiMerchantAuthPasswordSetupOtpReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response AuthSsoPasswordSetupPost(ctx).UnibeeApiMerchantAuthPasswordSetupOtpReq(unibeeApiMerchantAuthPasswordSetupOtpReq).Execute()
 
 Password Setup
 
@@ -442,7 +574,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MemberAuthentication.AuthSsoPasswordSetupPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `AuthSsoPasswordSetupPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `AuthSsoPasswordSetupPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `MemberAuthentication.AuthSsoPasswordSetupPost`: %v\n", resp)
 }
 ```
@@ -462,7 +594,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -480,7 +612,7 @@ No authorization required
 
 ## AuthSsoRegisterPost
 
-> MerchantAuthSsoLoginOTPPost200Response AuthSsoRegisterPost(ctx).UnibeeApiMerchantAuthRegisterReq(unibeeApiMerchantAuthRegisterReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response AuthSsoRegisterPost(ctx).UnibeeApiMerchantAuthRegisterReq(unibeeApiMerchantAuthRegisterReq).Execute()
 
 Register
 
@@ -508,7 +640,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MemberAuthentication.AuthSsoRegisterPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `AuthSsoRegisterPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `AuthSsoRegisterPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `MemberAuthentication.AuthSsoRegisterPost`: %v\n", resp)
 }
 ```
@@ -528,7 +660,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 

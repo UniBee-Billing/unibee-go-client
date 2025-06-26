@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **PrivateSecretName** | Pointer to **string** |  | [optional] 
 **PublicKeyName** | Pointer to **string** |  | [optional] 
 **SetupGatewayPaymentTypes** | Pointer to [**[]UnibeeInternalInterfaceGatewayPaymentType**](UnibeeInternalInterfaceGatewayPaymentType.md) | The total list of gateway payment types, used for setup | [optional] 
-**Sort** | Pointer to **int64** | The sort value of payment gateway, The bigger, the closer to the front | [optional] 
+**Sort** | Pointer to **int64** | The sort value of payment gateway, The higher the value, the lower the ranking | [optional] 
 **SubGateway** | Pointer to **string** |  | [optional] 
 **SubGatewayName** | Pointer to **string** |  | [optional] 
 **WebhookEndpointUrl** | Pointer to **string** | The endpoint url of gateway webhook  | [optional] 

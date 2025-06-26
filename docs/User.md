@@ -157,7 +157,7 @@ No authorization required
 
 ## UserChangeEmailPost
 
-> MerchantAuthSsoLoginOTPPost200Response UserChangeEmailPost(ctx).UnibeeApiMerchantUserChangeEmailReq(unibeeApiMerchantUserChangeEmailReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response UserChangeEmailPost(ctx).UnibeeApiMerchantUserChangeEmailReq(unibeeApiMerchantUserChangeEmailReq).Execute()
 
 Change User Email
 
@@ -183,7 +183,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `User.UserChangeEmailPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UserChangeEmailPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `UserChangeEmailPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `User.UserChangeEmailPost`: %v\n", resp)
 }
 ```
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -221,7 +221,7 @@ No authorization required
 
 ## UserChangeGatewayPost
 
-> MerchantAuthSsoLoginOTPPost200Response UserChangeGatewayPost(ctx).UnibeeApiMerchantUserChangeGatewayReq(unibeeApiMerchantUserChangeGatewayReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response UserChangeGatewayPost(ctx).UnibeeApiMerchantUserChangeGatewayReq(unibeeApiMerchantUserChangeGatewayReq).Execute()
 
 Change User Default Gateway
 
@@ -247,7 +247,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `User.UserChangeGatewayPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UserChangeGatewayPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `UserChangeGatewayPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `User.UserChangeGatewayPost`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ No authorization required
 
 ## UserClearAutoChargeMethodPost
 
-> MerchantAuthSsoLoginOTPPost200Response UserClearAutoChargeMethodPost(ctx).UnibeeApiMerchantUserClearAutoChargeMethodReq(unibeeApiMerchantUserClearAutoChargeMethodReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response UserClearAutoChargeMethodPost(ctx).UnibeeApiMerchantUserClearAutoChargeMethodReq(unibeeApiMerchantUserClearAutoChargeMethodReq).Execute()
 
 Clear AutoCharge Method
 
@@ -311,7 +311,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `User.UserClearAutoChargeMethodPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UserClearAutoChargeMethodPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `UserClearAutoChargeMethodPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `User.UserClearAutoChargeMethodPost`: %v\n", resp)
 }
 ```
@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -432,7 +432,7 @@ import (
 )
 
 func main() {
-	userId := int64(789) // int64 | UserId (optional)
+	userId := int64(789) // int64 | UserId
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -635,7 +635,7 @@ No authorization required
 
 ## UserNewAdminNotePost
 
-> MerchantAuthSsoLoginOTPPost200Response UserNewAdminNotePost(ctx).UnibeeApiMerchantUserNewAdminNoteReq(unibeeApiMerchantUserNewAdminNoteReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response UserNewAdminNotePost(ctx).UnibeeApiMerchantUserNewAdminNoteReq(unibeeApiMerchantUserNewAdminNoteReq).Execute()
 
 New Admin Note
 
@@ -661,7 +661,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `User.UserNewAdminNotePost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UserNewAdminNotePost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `UserNewAdminNotePost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `User.UserNewAdminNotePost`: %v\n", resp)
 }
 ```
@@ -681,7 +681,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -765,7 +765,7 @@ No authorization required
 
 ## UserResumeUserPost
 
-> MerchantAuthSsoLoginOTPPost200Response UserResumeUserPost(ctx).UnibeeApiMerchantUserReleaseReq(unibeeApiMerchantUserReleaseReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response UserResumeUserPost(ctx).UnibeeApiMerchantUserReleaseReq(unibeeApiMerchantUserReleaseReq).Execute()
 
 Resume User
 
@@ -791,7 +791,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `User.UserResumeUserPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UserResumeUserPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `UserResumeUserPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `User.UserResumeUserPost`: %v\n", resp)
 }
 ```
@@ -811,7 +811,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -957,7 +957,7 @@ No authorization required
 
 ## UserSuspendUserPost
 
-> MerchantAuthSsoLoginOTPPost200Response UserSuspendUserPost(ctx).UnibeeApiMerchantUserFrozenReq(unibeeApiMerchantUserFrozenReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response UserSuspendUserPost(ctx).UnibeeApiMerchantUserFrozenReq(unibeeApiMerchantUserFrozenReq).Execute()
 
 Suspend User
 
@@ -983,7 +983,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `User.UserSuspendUserPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UserSuspendUserPost`: MerchantAuthSsoLoginOTPPost200Response
+	// response from `UserSuspendUserPost`: MerchantAuthSsoClearTotpPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `User.UserSuspendUserPost`: %v\n", resp)
 }
 ```
@@ -1003,7 +1003,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoLoginOTPPost200Response**](MerchantAuthSsoLoginOTPPost200Response.md)
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
