@@ -17,6 +17,18 @@ import (
 	"testing"
 )
 
+func TestGetGatewayList(t *testing.T) {
+	openapiclient.ApiKey = "EUXAgwv3Vcr1PFWt2SgBumMHXn3ImBqM"
+	openapiclient.Host = "http://127.0.0.1:8080"
+	ctx := context.Background()
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	gatewayListRes, httpRes, err := apiClient.Gateway.GatewayListGet(ctx).Execute()
+	require.Nil(t, err)
+	require.NotNil(t, gatewayListRes.Data)
+	assert.Equal(t, 200, httpRes.StatusCode)
+}
+
 func Test_unibee_GatewayService(t *testing.T) {
 	openapiclient.ApiKey = "EUXAgwv3Vcr1PFWt2SgBumMHXn3ImBqM"
 	openapiclient.Host = "http://api.unibee.top"

@@ -22,11 +22,11 @@ func Test_unibee_EmailTemplateService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test EmailTemplateService EmailTemplateActivatePost", func(t *testing.T) {
+	t.Run("Test EmailTemplateService EmailCustomLocalizationTemplateSyncPost", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.EmailTemplate.EmailTemplateActivatePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.EmailTemplate.EmailCustomLocalizationTemplateSyncPost(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,11 +34,47 @@ func Test_unibee_EmailTemplateService(t *testing.T) {
 
 	})
 
-	t.Run("Test EmailTemplateService EmailTemplateDeactivatePost", func(t *testing.T) {
+	t.Run("Test EmailTemplateService EmailTemplateActivateLocalizationVersionPost", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.EmailTemplate.EmailTemplateDeactivatePost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.EmailTemplate.EmailTemplateActivateLocalizationVersionPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test EmailTemplateService EmailTemplateAddLocalizationVersionPost", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.EmailTemplate.EmailTemplateAddLocalizationVersionPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test EmailTemplateService EmailTemplateDeleteLocalizationVersionPost", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.EmailTemplate.EmailTemplateDeleteLocalizationVersionPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test EmailTemplateService EmailTemplateEditLocalizationVersionPost", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.EmailTemplate.EmailTemplateEditLocalizationVersionPost(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -51,30 +87,6 @@ func Test_unibee_EmailTemplateService(t *testing.T) {
 		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.EmailTemplate.EmailTemplateListGet(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test EmailTemplateService EmailTemplateSetDefaultPost", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.EmailTemplate.EmailTemplateSetDefaultPost(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test EmailTemplateService EmailTemplateUpdatePost", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.EmailTemplate.EmailTemplateUpdatePost(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

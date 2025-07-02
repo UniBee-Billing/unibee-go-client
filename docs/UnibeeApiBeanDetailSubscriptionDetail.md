@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCode**](UnibeeApiBeanMerchantDiscountCode.md) |  | [optional] 
 **Gateway** | Pointer to [**UnibeeApiBeanDetailGateway**](UnibeeApiBeanDetailGateway.md) |  | [optional] 
 **LatestInvoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
+**Note** | Pointer to **string** | note | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
 **Subscription** | Pointer to [**UnibeeApiBeanSubscription**](UnibeeApiBeanSubscription.md) |  | [optional] 
 **UnfinishedSubscriptionPendingUpdate** | Pointer to [**UnibeeApiBeanDetailSubscriptionPendingUpdateDetail**](UnibeeApiBeanDetailSubscriptionPendingUpdateDetail.md) |  | [optional] 
@@ -183,6 +184,31 @@ SetLatestInvoice sets LatestInvoice field to given value.
 `func (o *UnibeeApiBeanDetailSubscriptionDetail) HasLatestInvoice() bool`
 
 HasLatestInvoice returns a boolean if a field has been set.
+
+### GetNote
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetNote() string`
+
+GetNote returns the Note field if non-nil, zero value otherwise.
+
+### GetNoteOk
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetNoteOk() (*string, bool)`
+
+GetNoteOk returns a tuple with the Note field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNote
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) SetNote(v string)`
+
+SetNote sets Note field to given value.
+
+### HasNote
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) HasNote() bool`
+
+HasNote returns a boolean if a field has been set.
 
 ### GetPlan
 

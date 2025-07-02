@@ -118,35 +118,11 @@ func Test_unibee_SubscriptionService(t *testing.T) {
 
 	})
 
-	t.Run("Test SubscriptionService SubscriptionResumePost", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.Subscription.SubscriptionResumePost(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test SubscriptionService SubscriptionSuspendPost", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.Subscription.SubscriptionSuspendPost(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test SubscriptionService SubscriptionUpdatePreviewPost", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.Subscription.SubscriptionUpdatePreviewPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.SubscriptionUpdate.SubscriptionUpdatePreviewPost(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -158,7 +134,7 @@ func Test_unibee_SubscriptionService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.Subscription.SubscriptionUpdateSubmitPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.SubscriptionUpdate.SubscriptionUpdateSubmitPost(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

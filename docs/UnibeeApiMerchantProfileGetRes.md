@@ -21,6 +21,8 @@ Name | Type | Description | Notes
 **OpenApiHost** | Pointer to **string** | OpenApi Host | [optional] 
 **OpenApiKey** | Pointer to **string** | OpenAPIKey | [optional] 
 **QuickBooksCompanyName** | Pointer to **string** | QuickBooksCompanyName | [optional] 
+**QuickBooksLastSyncError** | Pointer to **string** | QuickBooksLastSyncError | [optional] 
+**QuickBooksLastSynchronized** | Pointer to **string** | QuickBooksLastSynchronized | [optional] 
 **SegmentServerSideKey** | Pointer to **string** | SegmentServerSideKey | [optional] 
 **SegmentUserPortalKey** | Pointer to **string** | SegmentUserPortalKey | [optional] 
 **SendGridKey** | Pointer to **string** | SendGridKey | [optional] 
@@ -469,6 +471,56 @@ SetQuickBooksCompanyName sets QuickBooksCompanyName field to given value.
 `func (o *UnibeeApiMerchantProfileGetRes) HasQuickBooksCompanyName() bool`
 
 HasQuickBooksCompanyName returns a boolean if a field has been set.
+
+### GetQuickBooksLastSyncError
+
+`func (o *UnibeeApiMerchantProfileGetRes) GetQuickBooksLastSyncError() string`
+
+GetQuickBooksLastSyncError returns the QuickBooksLastSyncError field if non-nil, zero value otherwise.
+
+### GetQuickBooksLastSyncErrorOk
+
+`func (o *UnibeeApiMerchantProfileGetRes) GetQuickBooksLastSyncErrorOk() (*string, bool)`
+
+GetQuickBooksLastSyncErrorOk returns a tuple with the QuickBooksLastSyncError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuickBooksLastSyncError
+
+`func (o *UnibeeApiMerchantProfileGetRes) SetQuickBooksLastSyncError(v string)`
+
+SetQuickBooksLastSyncError sets QuickBooksLastSyncError field to given value.
+
+### HasQuickBooksLastSyncError
+
+`func (o *UnibeeApiMerchantProfileGetRes) HasQuickBooksLastSyncError() bool`
+
+HasQuickBooksLastSyncError returns a boolean if a field has been set.
+
+### GetQuickBooksLastSynchronized
+
+`func (o *UnibeeApiMerchantProfileGetRes) GetQuickBooksLastSynchronized() string`
+
+GetQuickBooksLastSynchronized returns the QuickBooksLastSynchronized field if non-nil, zero value otherwise.
+
+### GetQuickBooksLastSynchronizedOk
+
+`func (o *UnibeeApiMerchantProfileGetRes) GetQuickBooksLastSynchronizedOk() (*string, bool)`
+
+GetQuickBooksLastSynchronizedOk returns a tuple with the QuickBooksLastSynchronized field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuickBooksLastSynchronized
+
+`func (o *UnibeeApiMerchantProfileGetRes) SetQuickBooksLastSynchronized(v string)`
+
+SetQuickBooksLastSynchronized sets QuickBooksLastSynchronized field to given value.
+
+### HasQuickBooksLastSynchronized
+
+`func (o *UnibeeApiMerchantProfileGetRes) HasQuickBooksLastSynchronized() bool`
+
+HasQuickBooksLastSynchronized returns a boolean if a field has been set.
 
 ### GetSegmentServerSideKey
 

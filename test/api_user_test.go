@@ -22,18 +22,6 @@ func Test_unibee_UserService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test UserService UserFrozenUserPost", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.User.UserFrozenUserPost(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test UserService UserGetGet", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -63,18 +51,6 @@ func Test_unibee_UserService(t *testing.T) {
 		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.User.UserListPost(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test UserService UserReleaseUserPost", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.User.UserReleaseUserPost(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

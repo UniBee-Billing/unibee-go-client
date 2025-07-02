@@ -21,6 +21,8 @@ Name | Type | Description | Notes
 **OpenApiHost** | Pointer to **string** | OpenApi Host | [optional] 
 **OpenApiKey** | Pointer to **string** | OpenAPIKey | [optional] 
 **QuickBooksCompanyName** | Pointer to **string** | QuickBooksCompanyName | [optional] 
+**QuickBooksLastSyncError** | Pointer to **string** | QuickBooksLastSyncError | [optional] 
+**QuickBooksLastSynchronized** | Pointer to **string** | QuickBooksLastSynchronized | [optional] 
 **SegmentServerSideKey** | Pointer to **string** | SegmentServerSideKey | [optional] 
 **SegmentUserPortalKey** | Pointer to **string** | SegmentUserPortalKey | [optional] 
 **SendGridKey** | Pointer to **string** | SendGridKey | [optional] 
@@ -469,6 +471,56 @@ SetQuickBooksCompanyName sets QuickBooksCompanyName field to given value.
 `func (o *MerchantGetGet200ResponseData) HasQuickBooksCompanyName() bool`
 
 HasQuickBooksCompanyName returns a boolean if a field has been set.
+
+### GetQuickBooksLastSyncError
+
+`func (o *MerchantGetGet200ResponseData) GetQuickBooksLastSyncError() string`
+
+GetQuickBooksLastSyncError returns the QuickBooksLastSyncError field if non-nil, zero value otherwise.
+
+### GetQuickBooksLastSyncErrorOk
+
+`func (o *MerchantGetGet200ResponseData) GetQuickBooksLastSyncErrorOk() (*string, bool)`
+
+GetQuickBooksLastSyncErrorOk returns a tuple with the QuickBooksLastSyncError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuickBooksLastSyncError
+
+`func (o *MerchantGetGet200ResponseData) SetQuickBooksLastSyncError(v string)`
+
+SetQuickBooksLastSyncError sets QuickBooksLastSyncError field to given value.
+
+### HasQuickBooksLastSyncError
+
+`func (o *MerchantGetGet200ResponseData) HasQuickBooksLastSyncError() bool`
+
+HasQuickBooksLastSyncError returns a boolean if a field has been set.
+
+### GetQuickBooksLastSynchronized
+
+`func (o *MerchantGetGet200ResponseData) GetQuickBooksLastSynchronized() string`
+
+GetQuickBooksLastSynchronized returns the QuickBooksLastSynchronized field if non-nil, zero value otherwise.
+
+### GetQuickBooksLastSynchronizedOk
+
+`func (o *MerchantGetGet200ResponseData) GetQuickBooksLastSynchronizedOk() (*string, bool)`
+
+GetQuickBooksLastSynchronizedOk returns a tuple with the QuickBooksLastSynchronized field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuickBooksLastSynchronized
+
+`func (o *MerchantGetGet200ResponseData) SetQuickBooksLastSynchronized(v string)`
+
+SetQuickBooksLastSynchronized sets QuickBooksLastSynchronized field to given value.
+
+### HasQuickBooksLastSynchronized
+
+`func (o *MerchantGetGet200ResponseData) HasQuickBooksLastSynchronized() bool`
+
+HasQuickBooksLastSynchronized returns a boolean if a field has been set.
 
 ### GetSegmentServerSideKey
 

@@ -27,7 +27,7 @@ func Test_unibee_VatService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.Vat.VatCountryListGet(context.Background()).Execute()
+		resp, httpRes, err := apiClient.VatGateway.VatCountryListGet(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -39,7 +39,7 @@ func Test_unibee_VatService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.Vat.VatCountryListPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.VatGateway.VatCountryListPost(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -51,7 +51,7 @@ func Test_unibee_VatService(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
 
-		resp, httpRes, err := apiClient.Vat.VatSetupGatewayPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.VatGateway.VatSetupGatewayPost(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -61,7 +61,7 @@ func Test_unibee_VatService(t *testing.T) {
 
 	t.Run("Test VatService VatInitGatewayPost", func(t *testing.T) {
 
-		resp, httpRes, err := apiClient.Vat.VatInitDefaultGatewayPost(context.Background()).Body(nil).Execute()
+		resp, httpRes, err := apiClient.VatGateway.VatInitDefaultGatewayPost(context.Background()).Body(nil).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

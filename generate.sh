@@ -14,3 +14,8 @@ mv unibee.backup unibee.go
 rm configuration.go
 mv configuration.backup configuration.go
 sed -i '' 's/map\[string\]map\[string\]interface/map\[string\]interface/g' *.go
+
+# 删除所有 Go 文件中的 decoder.DisallowUnknownFields() 行
+echo "正在删除 decoder.DisallowUnknownFields() 行..."
+find . -name "*.go" -type f -exec sed -i '' '/decoder\.DisallowUnknownFields()/d' {} \;
+echo "decoder.DisallowUnknownFields() 行删除完成"

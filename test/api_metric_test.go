@@ -58,30 +58,6 @@ func Test_unibee_MetricService(t *testing.T) {
 
 	})
 
-	t.Run("Test MetricService MetricEventDeletePost", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.Metric.MetricEventDeletePost(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test MetricService MetricEventNewPost", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.Metric.MetricEventNewPost(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test MetricService MetricListGet", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test

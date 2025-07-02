@@ -94,18 +94,6 @@ func Test_unibee_PlanService(t *testing.T) {
 
 	})
 
-	t.Run("Test PlanService PlanExpirePost", func(t *testing.T) {
-
-		t.Skip("skip test") // remove to run test
-
-		resp, httpRes, err := apiClient.Plan.PlanExpirePost(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test PlanService PlanListGet", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
