@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **TemplateName** | Pointer to **string** | Template Name | [optional] 
-**VersionId** | Pointer to **string** |  | [optional] 
+**VersionId** | Pointer to **string** | activate default if not specified | [optional] 
 
 ## Methods
 

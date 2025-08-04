@@ -485,7 +485,7 @@ No authorization required
 
 ## InvoiceListGet
 
-> MerchantInvoiceListGet200Response InvoiceListGet(ctx).FirstName(firstName).LastName(lastName).Currency(currency).Status(status).AmountStart(amountStart).AmountEnd(amountEnd).UserId(userId).SendEmail(sendEmail).SortField(sortField).SortType(sortType).DeleteInclude(deleteInclude).Type_(type_).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).ReportTimeStart(reportTimeStart).ReportTimeEnd(reportTimeEnd).Execute()
+> MerchantInvoiceListGet200Response InvoiceListGet(ctx).FirstName(firstName).LastName(lastName).Currency(currency).Status(status).AmountStart(amountStart).AmountEnd(amountEnd).UserId(userId).GatewayIds(gatewayIds).SendEmail(sendEmail).SortField(sortField).SortType(sortType).DeleteInclude(deleteInclude).Type_(type_).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).ReportTimeStart(reportTimeStart).ReportTimeEnd(reportTimeEnd).Execute()
 
 Get Invoice List
 
@@ -511,6 +511,7 @@ func main() {
 	amountStart := int32(56) // int32 | The filter start amount of invoice (optional)
 	amountEnd := int32(56) // int32 | The filter end amount of invoice (optional)
 	userId := int64(789) // int64 | The filter userid of invoice (optional)
+	gatewayIds := []int64{int64(123)} // []int64 | GatewayIds, Search Filter GatewayIds (optional)
 	sendEmail := "sendEmail_example" // string | The filter email of invoice (optional)
 	sortField := "sortField_example" // string | Filter，em. invoice_id|gmt_create|gmt_modify|period_end|total_amount，Default gmt_modify (optional)
 	sortType := "sortType_example" // string | Sort，asc|desc，Default desc (optional)
@@ -525,7 +526,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Invoice.InvoiceListGet(context.Background()).FirstName(firstName).LastName(lastName).Currency(currency).Status(status).AmountStart(amountStart).AmountEnd(amountEnd).UserId(userId).SendEmail(sendEmail).SortField(sortField).SortType(sortType).DeleteInclude(deleteInclude).Type_(type_).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).ReportTimeStart(reportTimeStart).ReportTimeEnd(reportTimeEnd).Execute()
+	resp, r, err := apiClient.Invoice.InvoiceListGet(context.Background()).FirstName(firstName).LastName(lastName).Currency(currency).Status(status).AmountStart(amountStart).AmountEnd(amountEnd).UserId(userId).GatewayIds(gatewayIds).SendEmail(sendEmail).SortField(sortField).SortType(sortType).DeleteInclude(deleteInclude).Type_(type_).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).ReportTimeStart(reportTimeStart).ReportTimeEnd(reportTimeEnd).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -553,6 +554,7 @@ Name | Type | Description  | Notes
  **amountStart** | **int32** | The filter start amount of invoice | 
  **amountEnd** | **int32** | The filter end amount of invoice | 
  **userId** | **int64** | The filter userid of invoice | 
+ **gatewayIds** | **[]int64** | GatewayIds, Search Filter GatewayIds | 
  **sendEmail** | **string** | The filter email of invoice | 
  **sortField** | **string** | Filter，em. invoice_id|gmt_create|gmt_modify|period_end|total_amount，Default gmt_modify | 
  **sortType** | **string** | Sort，asc|desc，Default desc | 

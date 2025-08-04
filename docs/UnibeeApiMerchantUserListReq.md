@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **DeleteInclude** | Pointer to **bool** | Deleted Involved，Need Admin | [optional] 
 **Email** | Pointer to **string** | Search Filter Email | [optional] 
 **FirstName** | Pointer to **string** | Search FirstName | [optional] 
+**GatewayIds** | Pointer to **[]int64** | GatewayIds, Search Filter GatewayIds | [optional] 
 **LastName** | Pointer to **string** | Search LastName | [optional] 
 **Page** | Pointer to **int32** | Page,Start 0 | [optional] 
 **PlanIds** | Pointer to **[]int32** | PlanIds, Search Filter PlanIds | [optional] 
@@ -188,6 +189,31 @@ SetFirstName sets FirstName field to given value.
 `func (o *UnibeeApiMerchantUserListReq) HasFirstName() bool`
 
 HasFirstName returns a boolean if a field has been set.
+
+### GetGatewayIds
+
+`func (o *UnibeeApiMerchantUserListReq) GetGatewayIds() []int64`
+
+GetGatewayIds returns the GatewayIds field if non-nil, zero value otherwise.
+
+### GetGatewayIdsOk
+
+`func (o *UnibeeApiMerchantUserListReq) GetGatewayIdsOk() (*[]int64, bool)`
+
+GetGatewayIdsOk returns a tuple with the GatewayIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayIds
+
+`func (o *UnibeeApiMerchantUserListReq) SetGatewayIds(v []int64)`
+
+SetGatewayIds sets GatewayIds field to given value.
+
+### HasGatewayIds
+
+`func (o *UnibeeApiMerchantUserListReq) HasGatewayIds() bool`
+
+HasGatewayIds returns a boolean if a field has been set.
 
 ### GetLastName
 

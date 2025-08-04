@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**EmailTemplateDeleteLocalizationVersionPost**](EmailTemplate.md#EmailTemplateDeleteLocalizationVersionPost) | **Post** /merchant/email/template_delete_localization_version | Delete Email Template Localization Version
 [**EmailTemplateEditLocalizationVersionPost**](EmailTemplate.md#EmailTemplateEditLocalizationVersionPost) | **Post** /merchant/email/template_edit_localization_version | Edit Email Template Localization Version
 [**EmailTemplateListGet**](EmailTemplate.md#EmailTemplateListGet) | **Get** /merchant/email/template_list | Get Email Template List
+[**EmailTemplateTestLocalizationVersionPost**](EmailTemplate.md#EmailTemplateTestLocalizationVersionPost) | **Post** /merchant/email/template_test_localization_version | Test Email Template Localization Version
 
 
 
@@ -387,6 +388,70 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## EmailTemplateTestLocalizationVersionPost
+
+> MerchantAuthSsoClearTotpPost200Response EmailTemplateTestLocalizationVersionPost(ctx).UnibeeApiMerchantEmailTestLocalizationVersionReq(unibeeApiMerchantEmailTestLocalizationVersionReq).Execute()
+
+Test Email Template Localization Version
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantEmailTestLocalizationVersionReq := *openapiclient.NewUnibeeApiMerchantEmailTestLocalizationVersionReq() // UnibeeApiMerchantEmailTestLocalizationVersionReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.EmailTemplate.EmailTemplateTestLocalizationVersionPost(context.Background()).UnibeeApiMerchantEmailTestLocalizationVersionReq(unibeeApiMerchantEmailTestLocalizationVersionReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `EmailTemplate.EmailTemplateTestLocalizationVersionPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `EmailTemplateTestLocalizationVersionPost`: MerchantAuthSsoClearTotpPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `EmailTemplate.EmailTemplateTestLocalizationVersionPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiEmailTemplateTestLocalizationVersionPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantEmailTestLocalizationVersionReq** | [**UnibeeApiMerchantEmailTestLocalizationVersionReq**](UnibeeApiMerchantEmailTestLocalizationVersionReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **LatestInvoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
 **Note** | Pointer to **string** | note | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
+**Source** | Pointer to **string** | Source | [optional] 
 **Subscription** | Pointer to [**UnibeeApiBeanSubscription**](UnibeeApiBeanSubscription.md) |  | [optional] 
 **UnfinishedSubscriptionPendingUpdate** | Pointer to [**UnibeeApiBeanDetailSubscriptionPendingUpdateDetail**](UnibeeApiBeanDetailSubscriptionPendingUpdateDetail.md) |  | [optional] 
 **User** | Pointer to [**UnibeeApiBeanUserAccount**](UnibeeApiBeanUserAccount.md) |  | [optional] 
@@ -234,6 +235,31 @@ SetPlan sets Plan field to given value.
 `func (o *UnibeeApiBeanDetailSubscriptionDetail) HasPlan() bool`
 
 HasPlan returns a boolean if a field has been set.
+
+### GetSource
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetSource() string`
+
+GetSource returns the Source field if non-nil, zero value otherwise.
+
+### GetSourceOk
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetSourceOk() (*string, bool)`
+
+GetSourceOk returns a tuple with the Source field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSource
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) SetSource(v string)`
+
+SetSource sets Source field to given value.
+
+### HasSource
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) HasSource() bool`
+
+HasSource returns a boolean if a field has been set.
 
 ### GetSubscription
 

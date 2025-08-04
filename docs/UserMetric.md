@@ -81,7 +81,7 @@ No authorization required
 
 ## MetricUserSubMetricGet
 
-> MerchantMetricUserMetricGet200Response MetricUserSubMetricGet(ctx).SubscriptionId(subscriptionId).Execute()
+> MerchantMetricUserMetricGet200Response MetricUserSubMetricGet(ctx).SubscriptionId(subscriptionId).ReloadCache(reloadCache).Execute()
 
 Query User Metric By Subscription
 
@@ -99,10 +99,11 @@ import (
 
 func main() {
 	subscriptionId := "subscriptionId_example" // string | SubscriptionId (optional)
+	reloadCache := true // bool |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UserMetric.MetricUserSubMetricGet(context.Background()).SubscriptionId(subscriptionId).Execute()
+	resp, r, err := apiClient.UserMetric.MetricUserSubMetricGet(context.Background()).SubscriptionId(subscriptionId).ReloadCache(reloadCache).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UserMetric.MetricUserSubMetricGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -124,6 +125,7 @@ Other parameters are passed through a pointer to a apiMetricUserSubMetricGetRequ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscriptionId** | **string** | SubscriptionId | 
+ **reloadCache** | **bool** |  | 
 
 ### Return type
 

@@ -6,10 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BuildVersion** | Pointer to **string** | System Build Version | [optional] 
 **Env** | Pointer to **string** | System Env, em: daily|stage|local|prod | [optional] 
-**Gateway** | Pointer to [**[]UnibeeApiBeanDetailGateway**](UnibeeApiBeanDetailGateway.md) | Support Currency List | [optional] 
+**Gateway** | Pointer to [**[]UnibeeApiBeanDetailGateway**](UnibeeApiBeanDetailGateway.md) | Support Gateway List | [optional] 
 **IsProd** | Pointer to **bool** | Check System Env Is Prod, true|false | [optional] 
 **Mode** | Pointer to **string** | System Mode | [optional] 
+**Oauth** | Pointer to [**UnibeeApiSystemInformationOAuthConfig**](UnibeeApiSystemInformationOAuthConfig.md) |  | [optional] 
+**SupportCountryCode** | Pointer to **[]string** | Support Country Code List (ISO 3166-1 alpha-2) | [optional] 
 **SupportCurrency** | Pointer to [**[]UnibeeApiBeanCurrency**](UnibeeApiBeanCurrency.md) | Support Currency List | [optional] 
+**SupportLanguage** | Pointer to [**[]UnibeeApiSystemInformationLanguage**](UnibeeApiSystemInformationLanguage.md) | Support Language List | [optional] 
 **SupportTimeZone** | Pointer to **[]string** | Support TimeZone List | [optional] 
 
 ## Methods
@@ -156,6 +159,56 @@ SetMode sets Mode field to given value.
 
 HasMode returns a boolean if a field has been set.
 
+### GetOauth
+
+`func (o *UnibeeApiSystemInformationGetRes) GetOauth() UnibeeApiSystemInformationOAuthConfig`
+
+GetOauth returns the Oauth field if non-nil, zero value otherwise.
+
+### GetOauthOk
+
+`func (o *UnibeeApiSystemInformationGetRes) GetOauthOk() (*UnibeeApiSystemInformationOAuthConfig, bool)`
+
+GetOauthOk returns a tuple with the Oauth field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOauth
+
+`func (o *UnibeeApiSystemInformationGetRes) SetOauth(v UnibeeApiSystemInformationOAuthConfig)`
+
+SetOauth sets Oauth field to given value.
+
+### HasOauth
+
+`func (o *UnibeeApiSystemInformationGetRes) HasOauth() bool`
+
+HasOauth returns a boolean if a field has been set.
+
+### GetSupportCountryCode
+
+`func (o *UnibeeApiSystemInformationGetRes) GetSupportCountryCode() []string`
+
+GetSupportCountryCode returns the SupportCountryCode field if non-nil, zero value otherwise.
+
+### GetSupportCountryCodeOk
+
+`func (o *UnibeeApiSystemInformationGetRes) GetSupportCountryCodeOk() (*[]string, bool)`
+
+GetSupportCountryCodeOk returns a tuple with the SupportCountryCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportCountryCode
+
+`func (o *UnibeeApiSystemInformationGetRes) SetSupportCountryCode(v []string)`
+
+SetSupportCountryCode sets SupportCountryCode field to given value.
+
+### HasSupportCountryCode
+
+`func (o *UnibeeApiSystemInformationGetRes) HasSupportCountryCode() bool`
+
+HasSupportCountryCode returns a boolean if a field has been set.
+
 ### GetSupportCurrency
 
 `func (o *UnibeeApiSystemInformationGetRes) GetSupportCurrency() []UnibeeApiBeanCurrency`
@@ -180,6 +233,31 @@ SetSupportCurrency sets SupportCurrency field to given value.
 `func (o *UnibeeApiSystemInformationGetRes) HasSupportCurrency() bool`
 
 HasSupportCurrency returns a boolean if a field has been set.
+
+### GetSupportLanguage
+
+`func (o *UnibeeApiSystemInformationGetRes) GetSupportLanguage() []UnibeeApiSystemInformationLanguage`
+
+GetSupportLanguage returns the SupportLanguage field if non-nil, zero value otherwise.
+
+### GetSupportLanguageOk
+
+`func (o *UnibeeApiSystemInformationGetRes) GetSupportLanguageOk() (*[]UnibeeApiSystemInformationLanguage, bool)`
+
+GetSupportLanguageOk returns a tuple with the SupportLanguage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportLanguage
+
+`func (o *UnibeeApiSystemInformationGetRes) SetSupportLanguage(v []UnibeeApiSystemInformationLanguage)`
+
+SetSupportLanguage sets SupportLanguage field to given value.
+
+### HasSupportLanguage
+
+`func (o *UnibeeApiSystemInformationGetRes) HasSupportLanguage() bool`
+
+HasSupportLanguage returns a boolean if a field has been set.
 
 ### GetSupportTimeZone
 

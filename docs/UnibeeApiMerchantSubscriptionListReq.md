@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Email** | Pointer to **string** | The filter email of subscription user | [optional] 
 **AmountEnd** | Pointer to **int32** | The filter end amount of subscription | [optional] 
 **AmountStart** | Pointer to **int32** | The filter start amount of subscription | [optional] 
 **Count** | Pointer to **int32** | Count Of Page | [optional] 
@@ -36,6 +37,31 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantSubscriptionListReqWithDefaults instantiates a new UnibeeApiMerchantSubscriptionListReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetEmail
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) GetEmail() string`
+
+GetEmail returns the Email field if non-nil, zero value otherwise.
+
+### GetEmailOk
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) GetEmailOk() (*string, bool)`
+
+GetEmailOk returns a tuple with the Email field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmail
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) SetEmail(v string)`
+
+SetEmail sets Email field to given value.
+
+### HasEmail
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) HasEmail() bool`
+
+HasEmail returns a boolean if a field has been set.
 
 ### GetAmountEnd
 

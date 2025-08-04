@@ -45,7 +45,7 @@ Name | Type | Description | Notes
 **PaymentId** | Pointer to **string** | PaymentId | [optional] 
 **PeriodEnd** | Pointer to **int64** | period_end | [optional] 
 **PeriodStart** | Pointer to **int64** | period_start | [optional] 
-**PlanSnapshot** | Pointer to [**UnibeeApiBeanDetailInvoicePlanSnapshot**](UnibeeApiBeanDetailInvoicePlanSnapshot.md) |  | [optional] 
+**PlanSnapshot** | Pointer to [**UnibeeApiBeanInvoicePlanSnapshot**](UnibeeApiBeanInvoicePlanSnapshot.md) |  | [optional] 
 **ProductName** | Pointer to **string** |  | [optional] 
 **PromoCreditDiscountAmount** | Pointer to **int64** | promo credit discount amount | [optional] 
 **PromoCreditTransaction** | Pointer to [**UnibeeApiBeanCreditTransaction**](UnibeeApiBeanCreditTransaction.md) |  | [optional] 
@@ -1120,20 +1120,20 @@ HasPeriodStart returns a boolean if a field has been set.
 
 ### GetPlanSnapshot
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) GetPlanSnapshot() UnibeeApiBeanDetailInvoicePlanSnapshot`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetPlanSnapshot() UnibeeApiBeanInvoicePlanSnapshot`
 
 GetPlanSnapshot returns the PlanSnapshot field if non-nil, zero value otherwise.
 
 ### GetPlanSnapshotOk
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) GetPlanSnapshotOk() (*UnibeeApiBeanDetailInvoicePlanSnapshot, bool)`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) GetPlanSnapshotOk() (*UnibeeApiBeanInvoicePlanSnapshot, bool)`
 
 GetPlanSnapshotOk returns a tuple with the PlanSnapshot field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlanSnapshot
 
-`func (o *UnibeeApiBeanDetailInvoiceDetail) SetPlanSnapshot(v UnibeeApiBeanDetailInvoicePlanSnapshot)`
+`func (o *UnibeeApiBeanDetailInvoiceDetail) SetPlanSnapshot(v UnibeeApiBeanInvoicePlanSnapshot)`
 
 SetPlanSnapshot sets PlanSnapshot field to given value.
 

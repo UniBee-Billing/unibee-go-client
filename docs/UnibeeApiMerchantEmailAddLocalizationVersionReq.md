@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Localizations** | Pointer to [**[]UnibeeApiBeanEmailLocalizationTemplate**](UnibeeApiBeanEmailLocalizationTemplate.md) |  | [optional] 
 **TemplateName** | Pointer to **string** | Template Name | [optional] 
+**VersionName** | Pointer to **string** | Versioin Name | [optional] 
 
 ## Methods
 
@@ -75,6 +76,31 @@ SetTemplateName sets TemplateName field to given value.
 `func (o *UnibeeApiMerchantEmailAddLocalizationVersionReq) HasTemplateName() bool`
 
 HasTemplateName returns a boolean if a field has been set.
+
+### GetVersionName
+
+`func (o *UnibeeApiMerchantEmailAddLocalizationVersionReq) GetVersionName() string`
+
+GetVersionName returns the VersionName field if non-nil, zero value otherwise.
+
+### GetVersionNameOk
+
+`func (o *UnibeeApiMerchantEmailAddLocalizationVersionReq) GetVersionNameOk() (*string, bool)`
+
+GetVersionNameOk returns a tuple with the VersionName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersionName
+
+`func (o *UnibeeApiMerchantEmailAddLocalizationVersionReq) SetVersionName(v string)`
+
+SetVersionName sets VersionName field to given value.
+
+### HasVersionName
+
+`func (o *UnibeeApiMerchantEmailAddLocalizationVersionReq) HasVersionName() bool`
+
+HasVersionName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

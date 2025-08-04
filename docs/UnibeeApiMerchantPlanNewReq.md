@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonIds** | Pointer to **[]int64** | Plan Ids Of Recurring Addon Type | [optional] 
-**Amount** | **int64** | Plan CaptureAmount | 
+**Amount** | **int64** | Plan Amount | 
 **CancelAtTrialEnd** | Pointer to **int32** | whether cancel at subscription first trial end，0-false | 1-true, will pass to cancelAtPeriodEnd of subscription | [optional] 
 **Currency** | **string** | Plan Currency | 
 **Description** | Pointer to **string** | Description | [optional] 

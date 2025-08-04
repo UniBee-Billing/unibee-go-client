@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**MemberResumeMemberPost**](AdminMember.md#MemberResumeMemberPost) | **Post** /merchant/member/resume_member | Resume Member
 [**MemberSuspendMemberPost**](AdminMember.md#MemberSuspendMemberPost) | **Post** /merchant/member/suspend_member | Suspend Member
 [**MemberUpdateMemberRolePost**](AdminMember.md#MemberUpdateMemberRolePost) | **Post** /merchant/member/update_member_role | Update Member Role
+[**MemberUpdateOauthPost**](AdminMember.md#MemberUpdateOauthPost) | **Post** /merchant/member/update_oauth | Update Member OAuth Account
 [**MemberUpdatePost**](AdminMember.md#MemberUpdatePost) | **Post** /merchant/member/update | Update Member Profile
 
 
@@ -987,6 +988,70 @@ Other parameters are passed through a pointer to a apiMemberUpdateMemberRolePost
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **unibeeApiMerchantMemberUpdateMemberRoleReq** | [**UnibeeApiMerchantMemberUpdateMemberRoleReq**](UnibeeApiMerchantMemberUpdateMemberRoleReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## MemberUpdateOauthPost
+
+> MerchantAuthSsoClearTotpPost200Response MemberUpdateOauthPost(ctx).UnibeeApiMerchantMemberUpdateOAuthReq(unibeeApiMerchantMemberUpdateOAuthReq).Execute()
+
+Update Member OAuth Account
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantMemberUpdateOAuthReq := *openapiclient.NewUnibeeApiMerchantMemberUpdateOAuthReq("Provider_example", "ProviderId_example") // UnibeeApiMerchantMemberUpdateOAuthReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AdminMember.MemberUpdateOauthPost(context.Background()).UnibeeApiMerchantMemberUpdateOAuthReq(unibeeApiMerchantMemberUpdateOAuthReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AdminMember.MemberUpdateOauthPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MemberUpdateOauthPost`: MerchantAuthSsoClearTotpPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `AdminMember.MemberUpdateOauthPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiMemberUpdateOauthPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantMemberUpdateOAuthReq** | [**UnibeeApiMerchantMemberUpdateOAuthReq**](UnibeeApiMerchantMemberUpdateOAuthReq.md) |  | 
 
 ### Return type
 

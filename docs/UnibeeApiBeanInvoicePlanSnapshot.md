@@ -1,4 +1,4 @@
-# UnibeeApiBeanDetailInvoicePlanSnapshot
+# UnibeeApiBeanInvoicePlanSnapshot
 
 ## Properties
 
@@ -13,170 +13,170 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewUnibeeApiBeanDetailInvoicePlanSnapshot
+### NewUnibeeApiBeanInvoicePlanSnapshot
 
-`func NewUnibeeApiBeanDetailInvoicePlanSnapshot() *UnibeeApiBeanDetailInvoicePlanSnapshot`
+`func NewUnibeeApiBeanInvoicePlanSnapshot() *UnibeeApiBeanInvoicePlanSnapshot`
 
-NewUnibeeApiBeanDetailInvoicePlanSnapshot instantiates a new UnibeeApiBeanDetailInvoicePlanSnapshot object
+NewUnibeeApiBeanInvoicePlanSnapshot instantiates a new UnibeeApiBeanInvoicePlanSnapshot object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUnibeeApiBeanDetailInvoicePlanSnapshotWithDefaults
+### NewUnibeeApiBeanInvoicePlanSnapshotWithDefaults
 
-`func NewUnibeeApiBeanDetailInvoicePlanSnapshotWithDefaults() *UnibeeApiBeanDetailInvoicePlanSnapshot`
+`func NewUnibeeApiBeanInvoicePlanSnapshotWithDefaults() *UnibeeApiBeanInvoicePlanSnapshot`
 
-NewUnibeeApiBeanDetailInvoicePlanSnapshotWithDefaults instantiates a new UnibeeApiBeanDetailInvoicePlanSnapshot object
+NewUnibeeApiBeanInvoicePlanSnapshotWithDefaults instantiates a new UnibeeApiBeanInvoicePlanSnapshot object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetAddons
 
-`func (o *UnibeeApiBeanDetailInvoicePlanSnapshot) GetAddons() []UnibeeApiBeanPlanAddonDetail`
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) GetAddons() []UnibeeApiBeanPlanAddonDetail`
 
 GetAddons returns the Addons field if non-nil, zero value otherwise.
 
 ### GetAddonsOk
 
-`func (o *UnibeeApiBeanDetailInvoicePlanSnapshot) GetAddonsOk() (*[]UnibeeApiBeanPlanAddonDetail, bool)`
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) GetAddonsOk() (*[]UnibeeApiBeanPlanAddonDetail, bool)`
 
 GetAddonsOk returns a tuple with the Addons field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddons
 
-`func (o *UnibeeApiBeanDetailInvoicePlanSnapshot) SetAddons(v []UnibeeApiBeanPlanAddonDetail)`
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) SetAddons(v []UnibeeApiBeanPlanAddonDetail)`
 
 SetAddons sets Addons field to given value.
 
 ### HasAddons
 
-`func (o *UnibeeApiBeanDetailInvoicePlanSnapshot) HasAddons() bool`
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) HasAddons() bool`
 
 HasAddons returns a boolean if a field has been set.
 
 ### GetAutoCharge
 
-`func (o *UnibeeApiBeanDetailInvoicePlanSnapshot) GetAutoCharge() bool`
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) GetAutoCharge() bool`
 
 GetAutoCharge returns the AutoCharge field if non-nil, zero value otherwise.
 
 ### GetAutoChargeOk
 
-`func (o *UnibeeApiBeanDetailInvoicePlanSnapshot) GetAutoChargeOk() (*bool, bool)`
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) GetAutoChargeOk() (*bool, bool)`
 
 GetAutoChargeOk returns a tuple with the AutoCharge field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAutoCharge
 
-`func (o *UnibeeApiBeanDetailInvoicePlanSnapshot) SetAutoCharge(v bool)`
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) SetAutoCharge(v bool)`
 
 SetAutoCharge sets AutoCharge field to given value.
 
 ### HasAutoCharge
 
-`func (o *UnibeeApiBeanDetailInvoicePlanSnapshot) HasAutoCharge() bool`
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) HasAutoCharge() bool`
 
 HasAutoCharge returns a boolean if a field has been set.
 
 ### GetChargeType
 
-`func (o *UnibeeApiBeanDetailInvoicePlanSnapshot) GetChargeType() int32`
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) GetChargeType() int32`
 
 GetChargeType returns the ChargeType field if non-nil, zero value otherwise.
 
 ### GetChargeTypeOk
 
-`func (o *UnibeeApiBeanDetailInvoicePlanSnapshot) GetChargeTypeOk() (*int32, bool)`
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) GetChargeTypeOk() (*int32, bool)`
 
 GetChargeTypeOk returns a tuple with the ChargeType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChargeType
 
-`func (o *UnibeeApiBeanDetailInvoicePlanSnapshot) SetChargeType(v int32)`
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) SetChargeType(v int32)`
 
 SetChargeType sets ChargeType field to given value.
 
 ### HasChargeType
 
-`func (o *UnibeeApiBeanDetailInvoicePlanSnapshot) HasChargeType() bool`
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) HasChargeType() bool`
 
 HasChargeType returns a boolean if a field has been set.
 
 ### GetPlan
 
-`func (o *UnibeeApiBeanDetailInvoicePlanSnapshot) GetPlan() UnibeeApiBeanPlan`
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) GetPlan() UnibeeApiBeanPlan`
 
 GetPlan returns the Plan field if non-nil, zero value otherwise.
 
 ### GetPlanOk
 
-`func (o *UnibeeApiBeanDetailInvoicePlanSnapshot) GetPlanOk() (*UnibeeApiBeanPlan, bool)`
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) GetPlanOk() (*UnibeeApiBeanPlan, bool)`
 
 GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlan
 
-`func (o *UnibeeApiBeanDetailInvoicePlanSnapshot) SetPlan(v UnibeeApiBeanPlan)`
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) SetPlan(v UnibeeApiBeanPlan)`
 
 SetPlan sets Plan field to given value.
 
 ### HasPlan
 
-`func (o *UnibeeApiBeanDetailInvoicePlanSnapshot) HasPlan() bool`
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) HasPlan() bool`
 
 HasPlan returns a boolean if a field has been set.
 
 ### GetPreviousAddons
 
-`func (o *UnibeeApiBeanDetailInvoicePlanSnapshot) GetPreviousAddons() []UnibeeApiBeanPlanAddonDetail`
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) GetPreviousAddons() []UnibeeApiBeanPlanAddonDetail`
 
 GetPreviousAddons returns the PreviousAddons field if non-nil, zero value otherwise.
 
 ### GetPreviousAddonsOk
 
-`func (o *UnibeeApiBeanDetailInvoicePlanSnapshot) GetPreviousAddonsOk() (*[]UnibeeApiBeanPlanAddonDetail, bool)`
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) GetPreviousAddonsOk() (*[]UnibeeApiBeanPlanAddonDetail, bool)`
 
 GetPreviousAddonsOk returns a tuple with the PreviousAddons field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPreviousAddons
 
-`func (o *UnibeeApiBeanDetailInvoicePlanSnapshot) SetPreviousAddons(v []UnibeeApiBeanPlanAddonDetail)`
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) SetPreviousAddons(v []UnibeeApiBeanPlanAddonDetail)`
 
 SetPreviousAddons sets PreviousAddons field to given value.
 
 ### HasPreviousAddons
 
-`func (o *UnibeeApiBeanDetailInvoicePlanSnapshot) HasPreviousAddons() bool`
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) HasPreviousAddons() bool`
 
 HasPreviousAddons returns a boolean if a field has been set.
 
 ### GetPreviousPlan
 
-`func (o *UnibeeApiBeanDetailInvoicePlanSnapshot) GetPreviousPlan() UnibeeApiBeanPlan`
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) GetPreviousPlan() UnibeeApiBeanPlan`
 
 GetPreviousPlan returns the PreviousPlan field if non-nil, zero value otherwise.
 
 ### GetPreviousPlanOk
 
-`func (o *UnibeeApiBeanDetailInvoicePlanSnapshot) GetPreviousPlanOk() (*UnibeeApiBeanPlan, bool)`
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) GetPreviousPlanOk() (*UnibeeApiBeanPlan, bool)`
 
 GetPreviousPlanOk returns a tuple with the PreviousPlan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPreviousPlan
 
-`func (o *UnibeeApiBeanDetailInvoicePlanSnapshot) SetPreviousPlan(v UnibeeApiBeanPlan)`
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) SetPreviousPlan(v UnibeeApiBeanPlan)`
 
 SetPreviousPlan sets PreviousPlan field to given value.
 
 ### HasPreviousPlan
 
-`func (o *UnibeeApiBeanDetailInvoicePlanSnapshot) HasPreviousPlan() bool`
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) HasPreviousPlan() bool`
 
 HasPreviousPlan returns a boolean if a field has been set.
 

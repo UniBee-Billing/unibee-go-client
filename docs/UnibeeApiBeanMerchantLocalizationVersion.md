@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Activate** | Pointer to **bool** |  | [optional] 
 **Localizations** | Pointer to [**[]UnibeeApiBeanEmailLocalizationTemplate**](UnibeeApiBeanEmailLocalizationTemplate.md) |  | [optional] 
 **VersionId** | Pointer to **string** |  | [optional] 
+**VersionName** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -101,6 +102,31 @@ SetVersionId sets VersionId field to given value.
 `func (o *UnibeeApiBeanMerchantLocalizationVersion) HasVersionId() bool`
 
 HasVersionId returns a boolean if a field has been set.
+
+### GetVersionName
+
+`func (o *UnibeeApiBeanMerchantLocalizationVersion) GetVersionName() string`
+
+GetVersionName returns the VersionName field if non-nil, zero value otherwise.
+
+### GetVersionNameOk
+
+`func (o *UnibeeApiBeanMerchantLocalizationVersion) GetVersionNameOk() (*string, bool)`
+
+GetVersionNameOk returns a tuple with the VersionName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersionName
+
+`func (o *UnibeeApiBeanMerchantLocalizationVersion) SetVersionName(v string)`
+
+SetVersionName sets VersionName field to given value.
+
+### HasVersionName
+
+`func (o *UnibeeApiBeanMerchantLocalizationVersion) HasVersionName() bool`
+
+HasVersionName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

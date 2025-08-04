@@ -9,6 +9,9 @@ Method | HTTP request | Description
 [**AuthSsoLoginOTPPost**](MemberAuthentication.md#AuthSsoLoginOTPPost) | **Post** /merchant/auth/sso/loginOTP | OTP Login
 [**AuthSsoLoginOTPVerifyPost**](MemberAuthentication.md#AuthSsoLoginOTPVerifyPost) | **Post** /merchant/auth/sso/loginOTPVerify | OTP Login Code Verification
 [**AuthSsoLoginPost**](MemberAuthentication.md#AuthSsoLoginPost) | **Post** /merchant/auth/sso/login | Password Login
+[**AuthSsoOauthLoginPost**](MemberAuthentication.md#AuthSsoOauthLoginPost) | **Post** /merchant/auth/sso/oauth/login | OAuth Login
+[**AuthSsoOauthRegisterPost**](MemberAuthentication.md#AuthSsoOauthRegisterPost) | **Post** /merchant/auth/sso/oauth/register | Register OAuth
+[**AuthSsoOauthSetupPost**](MemberAuthentication.md#AuthSsoOauthSetupPost) | **Post** /merchant/auth/sso/oauth/setup | OAuth Setup
 [**AuthSsoPasswordForgetOTPPost**](MemberAuthentication.md#AuthSsoPasswordForgetOTPPost) | **Post** /merchant/auth/sso/passwordForgetOTP | OTP Password Forget
 [**AuthSsoPasswordForgetOTPVerifyPost**](MemberAuthentication.md#AuthSsoPasswordForgetOTPVerifyPost) | **Post** /merchant/auth/sso/passwordForgetOTPVerify | OTP Password Forget Code Verification
 [**AuthSsoPasswordForgetTotpVerifyPost**](MemberAuthentication.md#AuthSsoPasswordForgetTotpVerifyPost) | **Post** /merchant/auth/sso/passwordForgetTotpVerify | 2FA Password Forget Code Verification
@@ -346,6 +349,204 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## AuthSsoOauthLoginPost
+
+> MerchantAuthSsoLoginPost200Response AuthSsoOauthLoginPost(ctx).UnibeeApiMerchantAuthLoginOAuthReq(unibeeApiMerchantAuthLoginOAuthReq).Execute()
+
+OAuth Login
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantAuthLoginOAuthReq := *openapiclient.NewUnibeeApiMerchantAuthLoginOAuthReq("Email_example", "Provider_example", "ProviderId_example") // UnibeeApiMerchantAuthLoginOAuthReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MemberAuthentication.AuthSsoOauthLoginPost(context.Background()).UnibeeApiMerchantAuthLoginOAuthReq(unibeeApiMerchantAuthLoginOAuthReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MemberAuthentication.AuthSsoOauthLoginPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AuthSsoOauthLoginPost`: MerchantAuthSsoLoginPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `MemberAuthentication.AuthSsoOauthLoginPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAuthSsoOauthLoginPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantAuthLoginOAuthReq** | [**UnibeeApiMerchantAuthLoginOAuthReq**](UnibeeApiMerchantAuthLoginOAuthReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoLoginPost200Response**](MerchantAuthSsoLoginPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## AuthSsoOauthRegisterPost
+
+> MerchantAuthSsoLoginPost200Response AuthSsoOauthRegisterPost(ctx).UnibeeApiMerchantAuthRegisterOAuthReq(unibeeApiMerchantAuthRegisterOAuthReq).Execute()
+
+Register OAuth
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantAuthRegisterOAuthReq := *openapiclient.NewUnibeeApiMerchantAuthRegisterOAuthReq("Email_example", "Provider_example", "ProviderId_example") // UnibeeApiMerchantAuthRegisterOAuthReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MemberAuthentication.AuthSsoOauthRegisterPost(context.Background()).UnibeeApiMerchantAuthRegisterOAuthReq(unibeeApiMerchantAuthRegisterOAuthReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MemberAuthentication.AuthSsoOauthRegisterPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AuthSsoOauthRegisterPost`: MerchantAuthSsoLoginPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `MemberAuthentication.AuthSsoOauthRegisterPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAuthSsoOauthRegisterPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantAuthRegisterOAuthReq** | [**UnibeeApiMerchantAuthRegisterOAuthReq**](UnibeeApiMerchantAuthRegisterOAuthReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoLoginPost200Response**](MerchantAuthSsoLoginPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## AuthSsoOauthSetupPost
+
+> MerchantAuthSsoLoginPost200Response AuthSsoOauthSetupPost(ctx).UnibeeApiMerchantAuthSetupOAuthReq(unibeeApiMerchantAuthSetupOAuthReq).Execute()
+
+OAuth Setup
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantAuthSetupOAuthReq := *openapiclient.NewUnibeeApiMerchantAuthSetupOAuthReq("Email_example", "SetupToken_example") // UnibeeApiMerchantAuthSetupOAuthReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MemberAuthentication.AuthSsoOauthSetupPost(context.Background()).UnibeeApiMerchantAuthSetupOAuthReq(unibeeApiMerchantAuthSetupOAuthReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MemberAuthentication.AuthSsoOauthSetupPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AuthSsoOauthSetupPost`: MerchantAuthSsoLoginPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `MemberAuthentication.AuthSsoOauthSetupPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAuthSsoOauthSetupPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantAuthSetupOAuthReq** | [**UnibeeApiMerchantAuthSetupOAuthReq**](UnibeeApiMerchantAuthSetupOAuthReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoLoginPost200Response**](MerchantAuthSsoLoginPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## AuthSsoPasswordForgetOTPPost
 
 > MerchantAuthSsoClearTotpPost200Response AuthSsoPasswordForgetOTPPost(ctx).UnibeeApiMerchantAuthPasswordForgetOtpReq(unibeeApiMerchantAuthPasswordForgetOtpReq).Execute()
@@ -546,7 +747,7 @@ No authorization required
 
 ## AuthSsoPasswordSetupPost
 
-> MerchantAuthSsoClearTotpPost200Response AuthSsoPasswordSetupPost(ctx).UnibeeApiMerchantAuthPasswordSetupOtpReq(unibeeApiMerchantAuthPasswordSetupOtpReq).Execute()
+> MerchantAuthSsoLoginPost200Response AuthSsoPasswordSetupPost(ctx).UnibeeApiMerchantAuthPasswordSetupOtpReq(unibeeApiMerchantAuthPasswordSetupOtpReq).Execute()
 
 Password Setup
 
@@ -574,7 +775,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MemberAuthentication.AuthSsoPasswordSetupPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `AuthSsoPasswordSetupPost`: MerchantAuthSsoClearTotpPost200Response
+	// response from `AuthSsoPasswordSetupPost`: MerchantAuthSsoLoginPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `MemberAuthentication.AuthSsoPasswordSetupPost`: %v\n", resp)
 }
 ```
@@ -594,7 +795,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+[**MerchantAuthSsoLoginPost200Response**](MerchantAuthSsoLoginPost200Response.md)
 
 ### Authorization
 

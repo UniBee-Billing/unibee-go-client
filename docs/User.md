@@ -479,7 +479,7 @@ No authorization required
 
 ## UserListGet
 
-> MerchantUserListGet200Response UserListGet(ctx).UserId(userId).FirstName(firstName).LastName(lastName).Email(email).PlanIds(planIds).SubscriptionId(subscriptionId).SubStatus(subStatus).Status(status).DeleteInclude(deleteInclude).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+> MerchantUserListGet200Response UserListGet(ctx).UserId(userId).FirstName(firstName).LastName(lastName).Email(email).PlanIds(planIds).GatewayIds(gatewayIds).SubscriptionId(subscriptionId).SubStatus(subStatus).Status(status).DeleteInclude(deleteInclude).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 
 User List
 
@@ -501,6 +501,7 @@ func main() {
 	lastName := "lastName_example" // string | Search LastName (optional)
 	email := "email_example" // string | Search Filter Email (optional)
 	planIds := []int32{int32(123)} // []int32 | PlanIds, Search Filter PlanIds (optional)
+	gatewayIds := []int64{int64(123)} // []int64 | GatewayIds, Search Filter GatewayIds (optional)
 	subscriptionId := "subscriptionId_example" // string | Search Filter SubscriptionId (optional)
 	subStatus := []int32{int32(123)} // []int32 | Filter, Default All，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | 9-Failed (optional)
 	status := []int32{int32(123)} // []int32 | Status, 0-Active｜2-Frozen (optional)
@@ -514,7 +515,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.User.UserListGet(context.Background()).UserId(userId).FirstName(firstName).LastName(lastName).Email(email).PlanIds(planIds).SubscriptionId(subscriptionId).SubStatus(subStatus).Status(status).DeleteInclude(deleteInclude).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+	resp, r, err := apiClient.User.UserListGet(context.Background()).UserId(userId).FirstName(firstName).LastName(lastName).Email(email).PlanIds(planIds).GatewayIds(gatewayIds).SubscriptionId(subscriptionId).SubStatus(subStatus).Status(status).DeleteInclude(deleteInclude).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `User.UserListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -540,6 +541,7 @@ Name | Type | Description  | Notes
  **lastName** | **string** | Search LastName | 
  **email** | **string** | Search Filter Email | 
  **planIds** | **[]int32** | PlanIds, Search Filter PlanIds | 
+ **gatewayIds** | **[]int64** | GatewayIds, Search Filter GatewayIds | 
  **subscriptionId** | **string** | Search Filter SubscriptionId | 
  **subStatus** | **[]int32** | Filter, Default All，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | 9-Failed | 
  **status** | **[]int32** | Status, 0-Active｜2-Frozen | 

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **MerchantId** | Pointer to **int64** | merchant_id | [optional] 
 **Name** | Pointer to **string** | name | [optional] 
 **Payload** | Pointer to **map[string]map[string]interface{}** | Payload | [optional] 
-**Task** | Pointer to **string** | Task,InvoiceExport|UserExport|SubscriptionExport|TransactionExport|DiscountExport|UserDiscountExport | [optional] 
+**Task** | Pointer to **string** | Task,InvoiceExport|UserExport|SubscriptionExport|TransactionExport|DiscountExport|UserDiscountExport|PlanExport | [optional] 
 **TemplateId** | Pointer to **int64** | templateId | [optional] 
 
 ## Methods

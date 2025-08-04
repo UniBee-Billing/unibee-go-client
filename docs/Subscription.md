@@ -672,7 +672,7 @@ No authorization required
 
 ## SubscriptionListGet
 
-> MerchantSubscriptionListGet200Response SubscriptionListGet(ctx).UserId(userId).Status(status).Currency(currency).PlanIds(planIds).ProductIds(productIds).AmountStart(amountStart).AmountEnd(amountEnd).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+> MerchantSubscriptionListGet200Response SubscriptionListGet(ctx).UserId(userId).Email(email).Status(status).Currency(currency).PlanIds(planIds).ProductIds(productIds).AmountStart(amountStart).AmountEnd(amountEnd).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 
 Get Subscription List
 
@@ -690,6 +690,7 @@ import (
 
 func main() {
 	userId := int64(789) // int64 | UserId (optional)
+	email := "email_example" // string | The filter email of subscription user (optional)
 	status := []int32{int32(123)} // []int32 | Filter, Default All，Status，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | 9-Failed (optional)
 	currency := "currency_example" // string | The currency of subscription (optional)
 	planIds := []int64{int64(123)} // []int64 | The filter ids of plan (optional)
@@ -705,7 +706,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Subscription.SubscriptionListGet(context.Background()).UserId(userId).Status(status).Currency(currency).PlanIds(planIds).ProductIds(productIds).AmountStart(amountStart).AmountEnd(amountEnd).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+	resp, r, err := apiClient.Subscription.SubscriptionListGet(context.Background()).UserId(userId).Email(email).Status(status).Currency(currency).PlanIds(planIds).ProductIds(productIds).AmountStart(amountStart).AmountEnd(amountEnd).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -727,6 +728,7 @@ Other parameters are passed through a pointer to a apiSubscriptionListGetRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int64** | UserId | 
+ **email** | **string** | The filter email of subscription user | 
  **status** | **[]int32** | Filter, Default All，Status，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | 9-Failed | 
  **currency** | **string** | The currency of subscription | 
  **planIds** | **[]int64** | The filter ids of plan | 
@@ -894,7 +896,7 @@ No authorization required
 
 ## SubscriptionUserPendingCryptoSubscriptionDetailGet
 
-> MerchantSubscriptionUserPendingCryptoSubscriptionDetailGet200Response SubscriptionUserPendingCryptoSubscriptionDetailGet(ctx).UserId(userId).ExternalUserId(externalUserId).ProductId(productId).Execute()
+> MerchantSubscriptionActiveSubscriptionImportGet200Response SubscriptionUserPendingCryptoSubscriptionDetailGet(ctx).UserId(userId).ExternalUserId(externalUserId).ProductId(productId).Execute()
 
 User Pending Crypto Subscription Detail
 
@@ -922,7 +924,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionUserPendingCryptoSubscriptionDetailGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SubscriptionUserPendingCryptoSubscriptionDetailGet`: MerchantSubscriptionUserPendingCryptoSubscriptionDetailGet200Response
+	// response from `SubscriptionUserPendingCryptoSubscriptionDetailGet`: MerchantSubscriptionActiveSubscriptionImportGet200Response
 	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionUserPendingCryptoSubscriptionDetailGet`: %v\n", resp)
 }
 ```
@@ -944,7 +946,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantSubscriptionUserPendingCryptoSubscriptionDetailGet200Response**](MerchantSubscriptionUserPendingCryptoSubscriptionDetailGet200Response.md)
+[**MerchantSubscriptionActiveSubscriptionImportGet200Response**](MerchantSubscriptionActiveSubscriptionImportGet200Response.md)
 
 ### Authorization
 
@@ -962,7 +964,7 @@ No authorization required
 
 ## SubscriptionUserPendingCryptoSubscriptionDetailPost
 
-> MerchantSubscriptionUserPendingCryptoSubscriptionDetailGet200Response SubscriptionUserPendingCryptoSubscriptionDetailPost(ctx).UnibeeApiMerchantSubscriptionUserPendingCryptoSubscriptionDetailReq(unibeeApiMerchantSubscriptionUserPendingCryptoSubscriptionDetailReq).Execute()
+> MerchantSubscriptionActiveSubscriptionImportGet200Response SubscriptionUserPendingCryptoSubscriptionDetailPost(ctx).UnibeeApiMerchantSubscriptionUserPendingCryptoSubscriptionDetailReq(unibeeApiMerchantSubscriptionUserPendingCryptoSubscriptionDetailReq).Execute()
 
 User Pending Crypto Subscription Detail
 
@@ -988,7 +990,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionUserPendingCryptoSubscriptionDetailPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SubscriptionUserPendingCryptoSubscriptionDetailPost`: MerchantSubscriptionUserPendingCryptoSubscriptionDetailGet200Response
+	// response from `SubscriptionUserPendingCryptoSubscriptionDetailPost`: MerchantSubscriptionActiveSubscriptionImportGet200Response
 	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionUserPendingCryptoSubscriptionDetailPost`: %v\n", resp)
 }
 ```
@@ -1008,7 +1010,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantSubscriptionUserPendingCryptoSubscriptionDetailGet200Response**](MerchantSubscriptionUserPendingCryptoSubscriptionDetailGet200Response.md)
+[**MerchantSubscriptionActiveSubscriptionImportGet200Response**](MerchantSubscriptionActiveSubscriptionImportGet200Response.md)
 
 ### Authorization
 

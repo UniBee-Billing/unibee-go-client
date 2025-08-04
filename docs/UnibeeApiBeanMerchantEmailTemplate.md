@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**VariableGroups** | Pointer to [**[]UnibeeApiBeanTemplateVariableGroup**](UnibeeApiBeanTemplateVariableGroup.md) |  | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **GatewayTemplateId** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **int64** |  | [optional] 
@@ -36,6 +37,31 @@ will change when the set of required properties is changed
 NewUnibeeApiBeanMerchantEmailTemplateWithDefaults instantiates a new UnibeeApiBeanMerchantEmailTemplate object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetVariableGroups
+
+`func (o *UnibeeApiBeanMerchantEmailTemplate) GetVariableGroups() []UnibeeApiBeanTemplateVariableGroup`
+
+GetVariableGroups returns the VariableGroups field if non-nil, zero value otherwise.
+
+### GetVariableGroupsOk
+
+`func (o *UnibeeApiBeanMerchantEmailTemplate) GetVariableGroupsOk() (*[]UnibeeApiBeanTemplateVariableGroup, bool)`
+
+GetVariableGroupsOk returns a tuple with the VariableGroups field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVariableGroups
+
+`func (o *UnibeeApiBeanMerchantEmailTemplate) SetVariableGroups(v []UnibeeApiBeanTemplateVariableGroup)`
+
+SetVariableGroups sets VariableGroups field to given value.
+
+### HasVariableGroups
+
+`func (o *UnibeeApiBeanMerchantEmailTemplate) HasVariableGroups() bool`
+
+HasVariableGroups returns a boolean if a field has been set.
 
 ### GetCreateTime
 
