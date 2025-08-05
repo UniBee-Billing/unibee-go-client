@@ -11,14 +11,15 @@ Name | Type | Description | Notes
 **CurrentPeriodStart** | Pointer to **string** | Required, UTC time, the current period start time of subscription, format &#39;2006-01-02 15:04:05&#39; | [optional] 
 **Email** | Pointer to **string** | The email of user, one of Email or ExternalUserId is required | [optional] 
 **ExpectedTotalAmount** | Pointer to **int64** | Optional. Unit: cents. If greater than 0, the system will verify the calculated total amount against this value | [optional] 
-**ExternalPlanId** | Pointer to **string** | The external id of plan, plan should created at UniBee at first | [optional] 
+**ExternalPlanId** | Pointer to **string** | The external id of plan, one of planId or ExternalPlanId is required, plan should created at UniBee at first | [optional] 
 **ExternalSubscriptionId** | Pointer to **string** | Required, The external id of subscription | [optional] 
 **ExternalUserId** | Pointer to **string** | The external id of user, one of Email or ExternalUserId is required  | [optional] 
 **Features** | Pointer to **string** | In json format, additional features data of subscription, will join user&#39;s metric data in user api if provided&#39; | [optional] 
 **FirstPaidTime** | Pointer to **string** | UTC time, the first payment success time of subscription, format &#39;2006-01-02 15:04:05&#39; | [optional] 
 **Gateway** | Pointer to **string** | Required, should one of stripe|paypal|wire_transfer|changelly  | [optional] 
+**PlanId** | Pointer to **int64** | The id of plan, one of planId or ExternalPlanId is required, plan should created at UniBee at first  | [optional] 
 **Quantity** | Pointer to **int64** | the quantity of plan, default 1 if not provided  | [optional] 
-**TaxPercentage** | Pointer to **int64** | The TaxPercentage of user, valid when system vat gateway enabled, ，1000 &#x3D; 10% | [optional] 
+**TaxPercentage** | Pointer to **int64** | The tax percentage. Only applicable when the system VAT gateway not setup. Value is in thousandths (e.g., 1000 &#x3D; 10%). | [optional] 
 **VatNumber** | Pointer to **string** | The Vat Number of user | [optional] 
 
 ## Methods
@@ -364,6 +365,31 @@ SetGateway sets Gateway field to given value.
 `func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) HasGateway() bool`
 
 HasGateway returns a boolean if a field has been set.
+
+### GetPlanId
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) GetPlanId() int64`
+
+GetPlanId returns the PlanId field if non-nil, zero value otherwise.
+
+### GetPlanIdOk
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) GetPlanIdOk() (*int64, bool)`
+
+GetPlanIdOk returns a tuple with the PlanId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanId
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) SetPlanId(v int64)`
+
+SetPlanId sets PlanId field to given value.
+
+### HasPlanId
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) HasPlanId() bool`
+
+HasPlanId returns a boolean if a field has been set.
 
 ### GetQuantity
 

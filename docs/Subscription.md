@@ -896,7 +896,7 @@ No authorization required
 
 ## SubscriptionUserPendingCryptoSubscriptionDetailGet
 
-> MerchantSubscriptionActiveSubscriptionImportGet200Response SubscriptionUserPendingCryptoSubscriptionDetailGet(ctx).UserId(userId).ExternalUserId(externalUserId).ProductId(productId).Execute()
+> MerchantSubscriptionActiveSubscriptionImportPost200Response SubscriptionUserPendingCryptoSubscriptionDetailGet(ctx).UserId(userId).ExternalUserId(externalUserId).ProductId(productId).Execute()
 
 User Pending Crypto Subscription Detail
 
@@ -924,7 +924,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionUserPendingCryptoSubscriptionDetailGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SubscriptionUserPendingCryptoSubscriptionDetailGet`: MerchantSubscriptionActiveSubscriptionImportGet200Response
+	// response from `SubscriptionUserPendingCryptoSubscriptionDetailGet`: MerchantSubscriptionActiveSubscriptionImportPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionUserPendingCryptoSubscriptionDetailGet`: %v\n", resp)
 }
 ```
@@ -946,7 +946,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantSubscriptionActiveSubscriptionImportGet200Response**](MerchantSubscriptionActiveSubscriptionImportGet200Response.md)
+[**MerchantSubscriptionActiveSubscriptionImportPost200Response**](MerchantSubscriptionActiveSubscriptionImportPost200Response.md)
 
 ### Authorization
 
@@ -964,7 +964,7 @@ No authorization required
 
 ## SubscriptionUserPendingCryptoSubscriptionDetailPost
 
-> MerchantSubscriptionActiveSubscriptionImportGet200Response SubscriptionUserPendingCryptoSubscriptionDetailPost(ctx).UnibeeApiMerchantSubscriptionUserPendingCryptoSubscriptionDetailReq(unibeeApiMerchantSubscriptionUserPendingCryptoSubscriptionDetailReq).Execute()
+> MerchantSubscriptionActiveSubscriptionImportPost200Response SubscriptionUserPendingCryptoSubscriptionDetailPost(ctx).UnibeeApiMerchantSubscriptionUserPendingCryptoSubscriptionDetailReq(unibeeApiMerchantSubscriptionUserPendingCryptoSubscriptionDetailReq).Execute()
 
 User Pending Crypto Subscription Detail
 
@@ -990,7 +990,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionUserPendingCryptoSubscriptionDetailPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SubscriptionUserPendingCryptoSubscriptionDetailPost`: MerchantSubscriptionActiveSubscriptionImportGet200Response
+	// response from `SubscriptionUserPendingCryptoSubscriptionDetailPost`: MerchantSubscriptionActiveSubscriptionImportPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionUserPendingCryptoSubscriptionDetailPost`: %v\n", resp)
 }
 ```
@@ -1010,7 +1010,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantSubscriptionActiveSubscriptionImportGet200Response**](MerchantSubscriptionActiveSubscriptionImportGet200Response.md)
+[**MerchantSubscriptionActiveSubscriptionImportPost200Response**](MerchantSubscriptionActiveSubscriptionImportPost200Response.md)
 
 ### Authorization
 

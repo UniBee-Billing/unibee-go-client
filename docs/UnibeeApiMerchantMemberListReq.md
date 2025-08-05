@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Count** | Pointer to **int32** | Count Of Page | [optional] 
+**Email** | Pointer to **string** | Search Filter Email | [optional] 
 **Page** | Pointer to **int32** | Page, Start With 0 | [optional] 
 **RoleIds** | Pointer to **[]int64** | The member roleId if specified&#39; | [optional] 
 
@@ -51,6 +52,31 @@ SetCount sets Count field to given value.
 `func (o *UnibeeApiMerchantMemberListReq) HasCount() bool`
 
 HasCount returns a boolean if a field has been set.
+
+### GetEmail
+
+`func (o *UnibeeApiMerchantMemberListReq) GetEmail() string`
+
+GetEmail returns the Email field if non-nil, zero value otherwise.
+
+### GetEmailOk
+
+`func (o *UnibeeApiMerchantMemberListReq) GetEmailOk() (*string, bool)`
+
+GetEmailOk returns a tuple with the Email field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmail
+
+`func (o *UnibeeApiMerchantMemberListReq) SetEmail(v string)`
+
+SetEmail sets Email field to given value.
+
+### HasEmail
+
+`func (o *UnibeeApiMerchantMemberListReq) HasEmail() bool`
+
+HasEmail returns a boolean if a field has been set.
 
 ### GetPage
 

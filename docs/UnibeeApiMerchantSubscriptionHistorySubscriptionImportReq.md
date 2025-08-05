@@ -8,12 +8,13 @@ Name | Type | Description | Notes
 **CurrentPeriodEnd** | Pointer to **string** | Required, UTC time, the current period end time of subscription, format &#39;2006-01-02 15:04:05&#39; | [optional] 
 **CurrentPeriodStart** | Pointer to **string** | Required, UTC time, the current period start time of subscription, format &#39;2006-01-02 15:04:05&#39; | [optional] 
 **Email** | Pointer to **string** | The email of user, one of Email or ExternalUserId is required | [optional] 
-**ExternalPlanId** | Pointer to **string** | The external id of plan, plan should created at first | [optional] 
+**ExternalPlanId** | Pointer to **string** | The external id of plan, one of planId or ExternalPlanId is required, plan should created at UniBee at first | [optional] 
 **ExternalSubscriptionId** | Pointer to **string** | Required, The external id of subscription | [optional] 
 **ExternalUserId** | Pointer to **string** | The external id of user, one of Email or ExternalUserId is required  | [optional] 
 **Gateway** | Pointer to **string** | Required, should one of stripe|paypal|wire_transfer|changelly  | [optional] 
+**PlanId** | Pointer to **int64** | The id of plan, one of planId or ExternalPlanId is required, plan should created at UniBee at first  | [optional] 
 **Quantity** | Pointer to **int64** | the quantity of plan, default 1 if not provided  | [optional] 
-**TaxPercentage** | Pointer to **int64** | The TaxPercentage of subscription, valid when system vat gateway enabled, 1000 &#x3D; 10% | [optional] 
+**TaxPercentage** | Pointer to **int64** | The TaxPercentage of subscription, Only applicable when the system VAT gateway not setup, 1000 &#x3D; 10% | [optional] 
 **TotalAmount** | Pointer to **int64** | Required. Unit: cents. | [optional] 
 
 ## Methods
@@ -234,6 +235,31 @@ SetGateway sets Gateway field to given value.
 `func (o *UnibeeApiMerchantSubscriptionHistorySubscriptionImportReq) HasGateway() bool`
 
 HasGateway returns a boolean if a field has been set.
+
+### GetPlanId
+
+`func (o *UnibeeApiMerchantSubscriptionHistorySubscriptionImportReq) GetPlanId() int64`
+
+GetPlanId returns the PlanId field if non-nil, zero value otherwise.
+
+### GetPlanIdOk
+
+`func (o *UnibeeApiMerchantSubscriptionHistorySubscriptionImportReq) GetPlanIdOk() (*int64, bool)`
+
+GetPlanIdOk returns a tuple with the PlanId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanId
+
+`func (o *UnibeeApiMerchantSubscriptionHistorySubscriptionImportReq) SetPlanId(v int64)`
+
+SetPlanId sets PlanId field to given value.
+
+### HasPlanId
+
+`func (o *UnibeeApiMerchantSubscriptionHistorySubscriptionImportReq) HasPlanId() bool`
+
+HasPlanId returns a boolean if a field has been set.
 
 ### GetQuantity
 
