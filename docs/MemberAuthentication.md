@@ -9,7 +9,10 @@ Method | HTTP request | Description
 [**AuthSsoLoginOTPPost**](MemberAuthentication.md#AuthSsoLoginOTPPost) | **Post** /merchant/auth/sso/loginOTP | OTP Login
 [**AuthSsoLoginOTPVerifyPost**](MemberAuthentication.md#AuthSsoLoginOTPVerifyPost) | **Post** /merchant/auth/sso/loginOTPVerify | OTP Login Code Verification
 [**AuthSsoLoginPost**](MemberAuthentication.md#AuthSsoLoginPost) | **Post** /merchant/auth/sso/login | Password Login
+[**AuthSsoOauthGithubGet**](MemberAuthentication.md#AuthSsoOauthGithubGet) | **Get** /merchant/auth/sso/oauth/github | Get Oauth Github
+[**AuthSsoOauthGoogleGet**](MemberAuthentication.md#AuthSsoOauthGoogleGet) | **Get** /merchant/auth/sso/oauth/google | Get Oauth Google
 [**AuthSsoOauthLoginPost**](MemberAuthentication.md#AuthSsoOauthLoginPost) | **Post** /merchant/auth/sso/oauth/login | OAuth Login
+[**AuthSsoOauthMembersGet**](MemberAuthentication.md#AuthSsoOauthMembersGet) | **Get** /merchant/auth/sso/oauth/members | Get Oauth Members
 [**AuthSsoOauthRegisterPost**](MemberAuthentication.md#AuthSsoOauthRegisterPost) | **Post** /merchant/auth/sso/oauth/register | Register OAuth
 [**AuthSsoOauthSetupPost**](MemberAuthentication.md#AuthSsoOauthSetupPost) | **Post** /merchant/auth/sso/oauth/setup | OAuth Setup
 [**AuthSsoPasswordForgetOTPPost**](MemberAuthentication.md#AuthSsoPasswordForgetOTPPost) | **Post** /merchant/auth/sso/passwordForgetOTP | OTP Password Forget
@@ -349,6 +352,140 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## AuthSsoOauthGithubGet
+
+> MerchantAuthSsoOauthGithubGet200Response AuthSsoOauthGithubGet(ctx).GithubCode(githubCode).Execute()
+
+Get Oauth Github
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	githubCode := "githubCode_example" // string | Github Code (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MemberAuthentication.AuthSsoOauthGithubGet(context.Background()).GithubCode(githubCode).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MemberAuthentication.AuthSsoOauthGithubGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AuthSsoOauthGithubGet`: MerchantAuthSsoOauthGithubGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `MemberAuthentication.AuthSsoOauthGithubGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAuthSsoOauthGithubGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **githubCode** | **string** | Github Code | 
+
+### Return type
+
+[**MerchantAuthSsoOauthGithubGet200Response**](MerchantAuthSsoOauthGithubGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## AuthSsoOauthGoogleGet
+
+> MerchantAuthSsoOauthGoogleGet200Response AuthSsoOauthGoogleGet(ctx).GoogleCode(googleCode).RedirectUri(redirectUri).Execute()
+
+Get Oauth Google
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	googleCode := "googleCode_example" // string | Google Code (optional)
+	redirectUri := "redirectUri_example" // string | The Google Redirect Uri (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MemberAuthentication.AuthSsoOauthGoogleGet(context.Background()).GoogleCode(googleCode).RedirectUri(redirectUri).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MemberAuthentication.AuthSsoOauthGoogleGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AuthSsoOauthGoogleGet`: MerchantAuthSsoOauthGoogleGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `MemberAuthentication.AuthSsoOauthGoogleGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAuthSsoOauthGoogleGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **googleCode** | **string** | Google Code | 
+ **redirectUri** | **string** | The Google Redirect Uri | 
+
+### Return type
+
+[**MerchantAuthSsoOauthGoogleGet200Response**](MerchantAuthSsoOauthGoogleGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## AuthSsoOauthLoginPost
 
 > MerchantAuthSsoLoginPost200Response AuthSsoOauthLoginPost(ctx).UnibeeApiMerchantAuthLoginOAuthReq(unibeeApiMerchantAuthLoginOAuthReq).Execute()
@@ -370,7 +507,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantAuthLoginOAuthReq := *openapiclient.NewUnibeeApiMerchantAuthLoginOAuthReq("Email_example", "Provider_example", "ProviderId_example") // UnibeeApiMerchantAuthLoginOAuthReq | 
+	unibeeApiMerchantAuthLoginOAuthReq := *openapiclient.NewUnibeeApiMerchantAuthLoginOAuthReq("Email_example") // UnibeeApiMerchantAuthLoginOAuthReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -415,6 +552,67 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## AuthSsoOauthMembersGet
+
+> MerchantAuthSsoOauthMembersGet200Response AuthSsoOauthMembersGet(ctx).Execute()
+
+Get Oauth Members
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MemberAuthentication.AuthSsoOauthMembersGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MemberAuthentication.AuthSsoOauthMembersGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AuthSsoOauthMembersGet`: MerchantAuthSsoOauthMembersGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `MemberAuthentication.AuthSsoOauthMembersGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAuthSsoOauthMembersGetRequest struct via the builder pattern
+
+
+### Return type
+
+[**MerchantAuthSsoOauthMembersGet200Response**](MerchantAuthSsoOauthMembersGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## AuthSsoOauthRegisterPost
 
 > MerchantAuthSsoLoginPost200Response AuthSsoOauthRegisterPost(ctx).UnibeeApiMerchantAuthRegisterOAuthReq(unibeeApiMerchantAuthRegisterOAuthReq).Execute()
@@ -436,7 +634,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantAuthRegisterOAuthReq := *openapiclient.NewUnibeeApiMerchantAuthRegisterOAuthReq("Email_example", "Provider_example", "ProviderId_example") // UnibeeApiMerchantAuthRegisterOAuthReq | 
+	unibeeApiMerchantAuthRegisterOAuthReq := *openapiclient.NewUnibeeApiMerchantAuthRegisterOAuthReq("Email_example") // UnibeeApiMerchantAuthRegisterOAuthReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

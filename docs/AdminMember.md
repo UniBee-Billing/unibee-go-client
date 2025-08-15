@@ -5,6 +5,7 @@ All URIs are relative to *https://api.unibee.top*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**MemberClearMemberTotpPost**](AdminMember.md#MemberClearMemberTotpPost) | **Post** /merchant/member/clear_member_totp | Admin Owner Clear Member 2FA Key
+[**MemberClearOauthPost**](AdminMember.md#MemberClearOauthPost) | **Post** /merchant/member/clear_oauth | Clear Member OAuth Account
 [**MemberConfirmTotpKeyPost**](AdminMember.md#MemberConfirmTotpKeyPost) | **Post** /merchant/member/confirm_totp_key | Admin Member Confirm 2FA Key
 [**MemberDeleteTotpDevicePost**](AdminMember.md#MemberDeleteTotpDevicePost) | **Post** /merchant/member/delete_totp_device | Admin Owner Or Admin Delete Own&#39;s&#39; 2FA Device
 [**MemberGetTotpKeyPost**](AdminMember.md#MemberGetTotpKeyPost) | **Post** /merchant/member/get_totp_key | Admin Member Get 2FA Key
@@ -69,6 +70,70 @@ Other parameters are passed through a pointer to a apiMemberClearMemberTotpPostR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **unibeeApiMerchantMemberClearTotpReq** | [**UnibeeApiMerchantMemberClearTotpReq**](UnibeeApiMerchantMemberClearTotpReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## MemberClearOauthPost
+
+> MerchantAuthSsoClearTotpPost200Response MemberClearOauthPost(ctx).UnibeeApiMerchantMemberClearOAuthReq(unibeeApiMerchantMemberClearOAuthReq).Execute()
+
+Clear Member OAuth Account
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantMemberClearOAuthReq := *openapiclient.NewUnibeeApiMerchantMemberClearOAuthReq("Provider_example") // UnibeeApiMerchantMemberClearOAuthReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AdminMember.MemberClearOauthPost(context.Background()).UnibeeApiMerchantMemberClearOAuthReq(unibeeApiMerchantMemberClearOAuthReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AdminMember.MemberClearOauthPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MemberClearOauthPost`: MerchantAuthSsoClearTotpPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `AdminMember.MemberClearOauthPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiMemberClearOauthPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantMemberClearOAuthReq** | [**UnibeeApiMerchantMemberClearOAuthReq**](UnibeeApiMerchantMemberClearOAuthReq.md) |  | 
 
 ### Return type
 
@@ -1011,9 +1076,11 @@ No authorization required
 
 ## MemberUpdateOauthPost
 
-> MerchantAuthSsoClearTotpPost200Response MemberUpdateOauthPost(ctx).UnibeeApiMerchantMemberUpdateOAuthReq(unibeeApiMerchantMemberUpdateOAuthReq).Execute()
+> MerchantAuthSsoClearTotpPost200Response MemberUpdateOauthPost(ctx).Body(body).Execute()
 
 Update Member OAuth Account
+
+
 
 ### Example
 
@@ -1028,11 +1095,11 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantMemberUpdateOAuthReq := *openapiclient.NewUnibeeApiMerchantMemberUpdateOAuthReq("Provider_example", "ProviderId_example") // UnibeeApiMerchantMemberUpdateOAuthReq | 
+	body := map[string]interface{}{ ... } // map[string]interface{} | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AdminMember.MemberUpdateOauthPost(context.Background()).UnibeeApiMerchantMemberUpdateOAuthReq(unibeeApiMerchantMemberUpdateOAuthReq).Execute()
+	resp, r, err := apiClient.AdminMember.MemberUpdateOauthPost(context.Background()).Body(body).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AdminMember.MemberUpdateOauthPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1053,7 +1120,7 @@ Other parameters are passed through a pointer to a apiMemberUpdateOauthPostReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **unibeeApiMerchantMemberUpdateOAuthReq** | [**UnibeeApiMerchantMemberUpdateOAuthReq**](UnibeeApiMerchantMemberUpdateOAuthReq.md) |  | 
+ **body** | **map[string]interface{}** |  | 
 
 ### Return type
 

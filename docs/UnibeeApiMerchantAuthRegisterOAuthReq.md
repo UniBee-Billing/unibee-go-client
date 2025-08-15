@@ -9,16 +9,15 @@ Name | Type | Description | Notes
 **Email** | **string** | The merchant member email address | 
 **FirstName** | Pointer to **string** | The merchant owner&#39;s first name | [optional] 
 **LastName** | Pointer to **string** | The merchant owner&#39;s last name | [optional] 
+**Password** | Pointer to **string** | The owner&#39;s password | [optional] 
 **Phone** | Pointer to **string** | The owner&#39;s Phone | [optional] 
-**Provider** | **string** | OAuth provider | 
-**ProviderId** | **string** | Provider user ID | 
 **UserName** | Pointer to **string** | The owner&#39;s UserName | [optional] 
 
 ## Methods
 
 ### NewUnibeeApiMerchantAuthRegisterOAuthReq
 
-`func NewUnibeeApiMerchantAuthRegisterOAuthReq(email string, provider string, providerId string, ) *UnibeeApiMerchantAuthRegisterOAuthReq`
+`func NewUnibeeApiMerchantAuthRegisterOAuthReq(email string, ) *UnibeeApiMerchantAuthRegisterOAuthReq`
 
 NewUnibeeApiMerchantAuthRegisterOAuthReq instantiates a new UnibeeApiMerchantAuthRegisterOAuthReq object
 This constructor will assign default values to properties that have it defined,
@@ -153,6 +152,31 @@ SetLastName sets LastName field to given value.
 
 HasLastName returns a boolean if a field has been set.
 
+### GetPassword
+
+`func (o *UnibeeApiMerchantAuthRegisterOAuthReq) GetPassword() string`
+
+GetPassword returns the Password field if non-nil, zero value otherwise.
+
+### GetPasswordOk
+
+`func (o *UnibeeApiMerchantAuthRegisterOAuthReq) GetPasswordOk() (*string, bool)`
+
+GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPassword
+
+`func (o *UnibeeApiMerchantAuthRegisterOAuthReq) SetPassword(v string)`
+
+SetPassword sets Password field to given value.
+
+### HasPassword
+
+`func (o *UnibeeApiMerchantAuthRegisterOAuthReq) HasPassword() bool`
+
+HasPassword returns a boolean if a field has been set.
+
 ### GetPhone
 
 `func (o *UnibeeApiMerchantAuthRegisterOAuthReq) GetPhone() string`
@@ -177,46 +201,6 @@ SetPhone sets Phone field to given value.
 `func (o *UnibeeApiMerchantAuthRegisterOAuthReq) HasPhone() bool`
 
 HasPhone returns a boolean if a field has been set.
-
-### GetProvider
-
-`func (o *UnibeeApiMerchantAuthRegisterOAuthReq) GetProvider() string`
-
-GetProvider returns the Provider field if non-nil, zero value otherwise.
-
-### GetProviderOk
-
-`func (o *UnibeeApiMerchantAuthRegisterOAuthReq) GetProviderOk() (*string, bool)`
-
-GetProviderOk returns a tuple with the Provider field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProvider
-
-`func (o *UnibeeApiMerchantAuthRegisterOAuthReq) SetProvider(v string)`
-
-SetProvider sets Provider field to given value.
-
-
-### GetProviderId
-
-`func (o *UnibeeApiMerchantAuthRegisterOAuthReq) GetProviderId() string`
-
-GetProviderId returns the ProviderId field if non-nil, zero value otherwise.
-
-### GetProviderIdOk
-
-`func (o *UnibeeApiMerchantAuthRegisterOAuthReq) GetProviderIdOk() (*string, bool)`
-
-GetProviderIdOk returns a tuple with the ProviderId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProviderId
-
-`func (o *UnibeeApiMerchantAuthRegisterOAuthReq) SetProviderId(v string)`
-
-SetProviderId sets ProviderId field to given value.
-
 
 ### GetUserName
 

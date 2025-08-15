@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **GatewayPaymentType** | Pointer to **string** | Gateway Payment Type | [optional] 
 **ManualPayment** | Pointer to **bool** | ManualPayment | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
+**PaymentUIMode** | Pointer to **string** | The checkout UI Mode, hosted|embedded|custom | [optional] 
 **ProductData** | Pointer to [**UnibeeApiBeanPlanProductParam**](UnibeeApiBeanPlanProductParam.md) |  | [optional] 
 **ProductId** | Pointer to **int64** | default product will use if not specified | [optional] 
 **ReturnUrl** | Pointer to **string** | ReturnUrl, back to returnUrl if renew completed | [optional] 
@@ -263,6 +264,31 @@ SetMetadata sets Metadata field to given value.
 `func (o *UnibeeApiMerchantSubscriptionRenewReq) HasMetadata() bool`
 
 HasMetadata returns a boolean if a field has been set.
+
+### GetPaymentUIMode
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) GetPaymentUIMode() string`
+
+GetPaymentUIMode returns the PaymentUIMode field if non-nil, zero value otherwise.
+
+### GetPaymentUIModeOk
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) GetPaymentUIModeOk() (*string, bool)`
+
+GetPaymentUIModeOk returns a tuple with the PaymentUIMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaymentUIMode
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) SetPaymentUIMode(v string)`
+
+SetPaymentUIMode sets PaymentUIMode field to given value.
+
+### HasPaymentUIMode
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) HasPaymentUIMode() bool`
+
+HasPaymentUIMode returns a boolean if a field has been set.
 
 ### GetProductData
 

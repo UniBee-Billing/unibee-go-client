@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **LastName** | Pointer to **string** | last name | [optional] 
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
 **Mobile** | Pointer to **string** | mobile | [optional] 
+**OauthAccounts** | Pointer to [**[]UnibeeApiBeanOauth**](UnibeeApiBeanOauth.md) | List of connected OAuth accounts | [optional] 
 **Status** | Pointer to **int32** | 0-Active, 2-Suspend | [optional] 
 **TotpType** | Pointer to **int32** | 0-Inactive, 1-General, Google Authenticator | 2-Microsoft Authenticator | 3-Authy | 4-1Password | 5-LastPass | 6-FreeOTP | 7-Other TOTP | [optional] 
 
@@ -363,6 +364,31 @@ SetMobile sets Mobile field to given value.
 `func (o *UnibeeApiBeanDetailMerchantMemberDetail) HasMobile() bool`
 
 HasMobile returns a boolean if a field has been set.
+
+### GetOauthAccounts
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetOauthAccounts() []UnibeeApiBeanOauth`
+
+GetOauthAccounts returns the OauthAccounts field if non-nil, zero value otherwise.
+
+### GetOauthAccountsOk
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) GetOauthAccountsOk() (*[]UnibeeApiBeanOauth, bool)`
+
+GetOauthAccountsOk returns a tuple with the OauthAccounts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOauthAccounts
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) SetOauthAccounts(v []UnibeeApiBeanOauth)`
+
+SetOauthAccounts sets OauthAccounts field to given value.
+
+### HasOauthAccounts
+
+`func (o *UnibeeApiBeanDetailMerchantMemberDetail) HasOauthAccounts() bool`
+
+HasOauthAccounts returns a boolean if a field has been set.
 
 ### GetStatus
 

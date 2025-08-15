@@ -4,9 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Action** | Pointer to **map[string]interface{}** |  | [optional] 
+**InvoiceId** | Pointer to **string** | The unique id of invoice | [optional] 
 **Link** | Pointer to **string** |  | [optional] 
 **OtherPendingCryptoSubscription** | Pointer to [**UnibeeApiBeanDetailSubscriptionDetail**](UnibeeApiBeanDetailSubscriptionDetail.md) |  | [optional] 
 **Paid** | Pointer to **bool** |  | [optional] 
+**PaymentId** | Pointer to **string** | The unique id of payment | [optional] 
 **Subscription** | Pointer to [**UnibeeApiBeanSubscription**](UnibeeApiBeanSubscription.md) |  | [optional] 
 **Token** | Pointer to **string** | token | [optional] 
 **User** | Pointer to [**UnibeeApiBeanUserAccount**](UnibeeApiBeanUserAccount.md) |  | [optional] 
@@ -29,6 +32,56 @@ will change when the set of required properties is changed
 NewMerchantSubscriptionCreateSubmitPost200ResponseDataWithDefaults instantiates a new MerchantSubscriptionCreateSubmitPost200ResponseData object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAction
+
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) GetAction() map[string]interface{}`
+
+GetAction returns the Action field if non-nil, zero value otherwise.
+
+### GetActionOk
+
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) GetActionOk() (*map[string]interface{}, bool)`
+
+GetActionOk returns a tuple with the Action field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAction
+
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) SetAction(v map[string]interface{})`
+
+SetAction sets Action field to given value.
+
+### HasAction
+
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) HasAction() bool`
+
+HasAction returns a boolean if a field has been set.
+
+### GetInvoiceId
+
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) GetInvoiceId() string`
+
+GetInvoiceId returns the InvoiceId field if non-nil, zero value otherwise.
+
+### GetInvoiceIdOk
+
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) GetInvoiceIdOk() (*string, bool)`
+
+GetInvoiceIdOk returns a tuple with the InvoiceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInvoiceId
+
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) SetInvoiceId(v string)`
+
+SetInvoiceId sets InvoiceId field to given value.
+
+### HasInvoiceId
+
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) HasInvoiceId() bool`
+
+HasInvoiceId returns a boolean if a field has been set.
 
 ### GetLink
 
@@ -104,6 +157,31 @@ SetPaid sets Paid field to given value.
 `func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) HasPaid() bool`
 
 HasPaid returns a boolean if a field has been set.
+
+### GetPaymentId
+
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) GetPaymentId() string`
+
+GetPaymentId returns the PaymentId field if non-nil, zero value otherwise.
+
+### GetPaymentIdOk
+
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) GetPaymentIdOk() (*string, bool)`
+
+GetPaymentIdOk returns a tuple with the PaymentId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaymentId
+
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) SetPaymentId(v string)`
+
+SetPaymentId sets PaymentId field to given value.
+
+### HasPaymentId
+
+`func (o *MerchantSubscriptionCreateSubmitPost200ResponseData) HasPaymentId() bool`
+
+HasPaymentId returns a boolean if a field has been set.
 
 ### GetSubscription
 

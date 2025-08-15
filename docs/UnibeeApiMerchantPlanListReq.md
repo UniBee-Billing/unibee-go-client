@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **Currency** | Pointer to **string** | Filter Currency | [optional] 
 **Page** | Pointer to **int32** | Page, Start 0 | [optional] 
 **PlanIds** | Pointer to **[]int64** | filter id list of plan, default all | [optional] 
-**ProductIds** | Pointer to **[]int64** | filter id list of product, default all | [optional] 
+**ProductIds** | Pointer to **[]int64** | filter id list of product, default product(0) used if not specified | [optional] 
 **PublishStatus** | Pointer to **int32** | Filter, Default All，PublishStatus，1-UnPublished，2-Published | [optional] 
 **SearchKey** | Pointer to **string** | Search Key, plan name or description | [optional] 
 **SortField** | Pointer to **string** | Sort Field，plan_name|gmt_create|gmt_modify，Default gmt_create | [optional] 
 **SortType** | Pointer to **string** | Sort Type，asc|desc，Default desc | [optional] 
 **Status** | Pointer to **[]int32** | Filter, Default All，,Status，1-Editing，2-Active，3-InActive，4-SoftArchive, 5-HardArchive | [optional] 
-**Type** | Pointer to **[]int32** | 1-main plan，2-addon plan,3-onetime | [optional] 
+**Tqype** | Pointer to **[]int32** | 1-main plan，2-addon plan,3-onetime | [optional] 
 
 ## Methods
 
@@ -285,30 +285,30 @@ SetStatus sets Status field to given value.
 
 HasStatus returns a boolean if a field has been set.
 
-### GetType
+### GetTqype
 
-`func (o *UnibeeApiMerchantPlanListReq) GetType() []int32`
+`func (o *UnibeeApiMerchantPlanListReq) GetTqype() []int32`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetTqype returns the Tqype field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetTqypeOk
 
-`func (o *UnibeeApiMerchantPlanListReq) GetTypeOk() (*[]int32, bool)`
+`func (o *UnibeeApiMerchantPlanListReq) GetTqypeOk() (*[]int32, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetTqypeOk returns a tuple with the Tqype field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetTqype
 
-`func (o *UnibeeApiMerchantPlanListReq) SetType(v []int32)`
+`func (o *UnibeeApiMerchantPlanListReq) SetTqype(v []int32)`
 
-SetType sets Type field to given value.
+SetTqype sets Tqype field to given value.
 
-### HasType
+### HasTqype
 
-`func (o *UnibeeApiMerchantPlanListReq) HasType() bool`
+`func (o *UnibeeApiMerchantPlanListReq) HasTqype() bool`
 
-HasType returns a boolean if a field has been set.
+HasTqype returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

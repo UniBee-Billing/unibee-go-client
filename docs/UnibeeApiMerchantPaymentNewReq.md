@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **Name** | Pointer to **string** | Name | [optional] 
 **PaymentType** | Pointer to **string** | Payment Type | [optional] 
+**PaymentUIMode** | Pointer to **string** | The checkout UI Mode, hosted|embedded|custom | [optional] 
 **PlanId** | Pointer to **int64** | PlanId, either TotalAmount&amp;Currency or PlanId needed | [optional] 
 **RedirectUrl** | Pointer to **string** | Redirect Url | [optional] 
 **SendInvoice** | Pointer to **bool** | Whether sen invoice email to customer or not，default false | [optional] [default to false]
@@ -387,6 +388,31 @@ SetPaymentType sets PaymentType field to given value.
 `func (o *UnibeeApiMerchantPaymentNewReq) HasPaymentType() bool`
 
 HasPaymentType returns a boolean if a field has been set.
+
+### GetPaymentUIMode
+
+`func (o *UnibeeApiMerchantPaymentNewReq) GetPaymentUIMode() string`
+
+GetPaymentUIMode returns the PaymentUIMode field if non-nil, zero value otherwise.
+
+### GetPaymentUIModeOk
+
+`func (o *UnibeeApiMerchantPaymentNewReq) GetPaymentUIModeOk() (*string, bool)`
+
+GetPaymentUIModeOk returns a tuple with the PaymentUIMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaymentUIMode
+
+`func (o *UnibeeApiMerchantPaymentNewReq) SetPaymentUIMode(v string)`
+
+SetPaymentUIMode sets PaymentUIMode field to given value.
+
+### HasPaymentUIMode
+
+`func (o *UnibeeApiMerchantPaymentNewReq) HasPaymentUIMode() bool`
+
+HasPaymentUIMode returns a boolean if a field has been set.
 
 ### GetPlanId
 

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Action** | Pointer to **map[string]interface{}** |  | [optional] 
 **ExternalPaymentId** | Pointer to **string** | The external unique id of payment | [optional] 
+**InvoiceId** | Pointer to **string** | The unique id of invoice | [optional] 
 **Link** | Pointer to **string** |  | [optional] 
 **PaymentId** | Pointer to **string** | The unique id of payment | [optional] 
 **Status** | Pointer to **int32** | Status, 10-Created|20-Success|30-Failed|40-Cancelled | [optional] 
@@ -78,6 +79,31 @@ SetExternalPaymentId sets ExternalPaymentId field to given value.
 `func (o *UnibeeApiMerchantPaymentNewRes) HasExternalPaymentId() bool`
 
 HasExternalPaymentId returns a boolean if a field has been set.
+
+### GetInvoiceId
+
+`func (o *UnibeeApiMerchantPaymentNewRes) GetInvoiceId() string`
+
+GetInvoiceId returns the InvoiceId field if non-nil, zero value otherwise.
+
+### GetInvoiceIdOk
+
+`func (o *UnibeeApiMerchantPaymentNewRes) GetInvoiceIdOk() (*string, bool)`
+
+GetInvoiceIdOk returns a tuple with the InvoiceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInvoiceId
+
+`func (o *UnibeeApiMerchantPaymentNewRes) SetInvoiceId(v string)`
+
+SetInvoiceId sets InvoiceId field to given value.
+
+### HasInvoiceId
+
+`func (o *UnibeeApiMerchantPaymentNewRes) HasInvoiceId() bool`
+
+HasInvoiceId returns a boolean if a field has been set.
 
 ### GetLink
 

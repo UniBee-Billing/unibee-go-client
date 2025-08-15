@@ -213,7 +213,7 @@ No authorization required
 
 ## SubscriptionPaymentNewPost
 
-> MerchantPaymentNewPost200Response SubscriptionPaymentNewPost(ctx).UnibeeApiMerchantSubscriptionNewPaymentReq(unibeeApiMerchantSubscriptionNewPaymentReq).Execute()
+> MerchantSubscriptionPaymentNewPost200Response SubscriptionPaymentNewPost(ctx).UnibeeApiMerchantSubscriptionNewPaymentReq(unibeeApiMerchantSubscriptionNewPaymentReq).Execute()
 
 New Subscription Payment
 
@@ -239,7 +239,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionPayment.SubscriptionPaymentNewPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SubscriptionPaymentNewPost`: MerchantPaymentNewPost200Response
+	// response from `SubscriptionPaymentNewPost`: MerchantSubscriptionPaymentNewPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `SubscriptionPayment.SubscriptionPaymentNewPost`: %v\n", resp)
 }
 ```
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantPaymentNewPost200Response**](MerchantPaymentNewPost200Response.md)
+[**MerchantSubscriptionPaymentNewPost200Response**](MerchantSubscriptionPaymentNewPost200Response.md)
 
 ### Authorization
 

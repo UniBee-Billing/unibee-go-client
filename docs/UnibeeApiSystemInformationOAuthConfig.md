@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **GithubClientId** | Pointer to **string** | GitHub OAuth client ID | [optional] 
-**GithubClientSecret** | Pointer to **string** | GitHub OAuth client secret | [optional] 
 **GoogleClientId** | Pointer to **string** | Google OAuth client ID | [optional] 
 **GoogleClientSecret** | Pointer to **string** | Google OAuth client secret | [optional] 
 **TokenSecret** | Pointer to **string** | OAuth token secret | [optional] 
@@ -53,31 +52,6 @@ SetGithubClientId sets GithubClientId field to given value.
 `func (o *UnibeeApiSystemInformationOAuthConfig) HasGithubClientId() bool`
 
 HasGithubClientId returns a boolean if a field has been set.
-
-### GetGithubClientSecret
-
-`func (o *UnibeeApiSystemInformationOAuthConfig) GetGithubClientSecret() string`
-
-GetGithubClientSecret returns the GithubClientSecret field if non-nil, zero value otherwise.
-
-### GetGithubClientSecretOk
-
-`func (o *UnibeeApiSystemInformationOAuthConfig) GetGithubClientSecretOk() (*string, bool)`
-
-GetGithubClientSecretOk returns a tuple with the GithubClientSecret field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGithubClientSecret
-
-`func (o *UnibeeApiSystemInformationOAuthConfig) SetGithubClientSecret(v string)`
-
-SetGithubClientSecret sets GithubClientSecret field to given value.
-
-### HasGithubClientSecret
-
-`func (o *UnibeeApiSystemInformationOAuthConfig) HasGithubClientSecret() bool`
-
-HasGithubClientSecret returns a boolean if a field has been set.
 
 ### GetGoogleClientId
 

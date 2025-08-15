@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Email** | **string** | The merchant member email address | 
+**NewPassword** | Pointer to **string** | The new password | [optional] 
 **SetupToken** | **string** | The merchant member password setup token | 
 
 ## Methods
@@ -45,6 +46,31 @@ and a boolean to check if the value has been set.
 
 SetEmail sets Email field to given value.
 
+
+### GetNewPassword
+
+`func (o *UnibeeApiMerchantAuthSetupOAuthReq) GetNewPassword() string`
+
+GetNewPassword returns the NewPassword field if non-nil, zero value otherwise.
+
+### GetNewPasswordOk
+
+`func (o *UnibeeApiMerchantAuthSetupOAuthReq) GetNewPasswordOk() (*string, bool)`
+
+GetNewPasswordOk returns a tuple with the NewPassword field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNewPassword
+
+`func (o *UnibeeApiMerchantAuthSetupOAuthReq) SetNewPassword(v string)`
+
+SetNewPassword sets NewPassword field to given value.
+
+### HasNewPassword
+
+`func (o *UnibeeApiMerchantAuthSetupOAuthReq) HasNewPassword() bool`
+
+HasNewPassword returns a boolean if a field has been set.
 
 ### GetSetupToken
 

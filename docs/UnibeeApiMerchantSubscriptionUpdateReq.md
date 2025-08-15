@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **ManualPayment** | Pointer to **bool** | ManualPayment | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **NewPlanId** | **int64** | New PlanId | 
+**PaymentUIMode** | Pointer to **string** | The checkout UI Mode, hosted|embedded|custom | [optional] 
 **ProductData** | Pointer to [**UnibeeApiBeanPlanProductParam**](UnibeeApiBeanPlanProductParam.md) |  | [optional] 
 **ProrationDate** | Pointer to **int32** | The utc time to start Proration, default current time | [optional] 
 **Quantity** | **int64** | Quantity | 
@@ -389,6 +390,31 @@ and a boolean to check if the value has been set.
 
 SetNewPlanId sets NewPlanId field to given value.
 
+
+### GetPaymentUIMode
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetPaymentUIMode() string`
+
+GetPaymentUIMode returns the PaymentUIMode field if non-nil, zero value otherwise.
+
+### GetPaymentUIModeOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetPaymentUIModeOk() (*string, bool)`
+
+GetPaymentUIModeOk returns a tuple with the PaymentUIMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaymentUIMode
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetPaymentUIMode(v string)`
+
+SetPaymentUIMode sets PaymentUIMode field to given value.
+
+### HasPaymentUIMode
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasPaymentUIMode() bool`
+
+HasPaymentUIMode returns a boolean if a field has been set.
 
 ### GetProductData
 

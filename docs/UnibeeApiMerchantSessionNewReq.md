@@ -5,20 +5,20 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Address** | Pointer to **string** | Address | [optional] 
-**CancelUrl** | Pointer to **string** | CancelUrl | [optional] 
+**CancelUrl** | Pointer to **string** | CancelUrl, back to cancelUrl if checkout cancelled | [optional] 
 **Email** | **string** | Email | 
-**ExternalUserId** | **string** | ExternalUserId | 
+**ExternalUserId** | Pointer to **string** | ExternalUserId | [optional] 
 **FirstName** | Pointer to **string** | First Name | [optional] 
 **LastName** | Pointer to **string** | Last Name | [optional] 
 **Password** | Pointer to **string** | Password | [optional] 
 **Phone** | Pointer to **string** | Phone | [optional] 
-**ReturnUrl** | Pointer to **string** | ReturnUrl | [optional] 
+**ReturnUrl** | Pointer to **string** | ReturnUrl, back to returnUrl if checkout completed | [optional] 
 
 ## Methods
 
 ### NewUnibeeApiMerchantSessionNewReq
 
-`func NewUnibeeApiMerchantSessionNewReq(email string, externalUserId string, ) *UnibeeApiMerchantSessionNewReq`
+`func NewUnibeeApiMerchantSessionNewReq(email string, ) *UnibeeApiMerchantSessionNewReq`
 
 NewUnibeeApiMerchantSessionNewReq instantiates a new UnibeeApiMerchantSessionNewReq object
 This constructor will assign default values to properties that have it defined,
@@ -122,6 +122,11 @@ and a boolean to check if the value has been set.
 
 SetExternalUserId sets ExternalUserId field to given value.
 
+### HasExternalUserId
+
+`func (o *UnibeeApiMerchantSessionNewReq) HasExternalUserId() bool`
+
+HasExternalUserId returns a boolean if a field has been set.
 
 ### GetFirstName
 

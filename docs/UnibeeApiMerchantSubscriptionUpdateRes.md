@@ -4,9 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Action** | Pointer to **map[string]interface{}** |  | [optional] 
+**InvoiceId** | Pointer to **string** | The unique id of invoice | [optional] 
 **Link** | Pointer to **string** | The payment link, need redirect customer to link if paid&#x3D;false | [optional] 
 **Note** | Pointer to **string** | note | [optional] 
 **Paid** | Pointer to **bool** | Paid or not，true|false | [optional] 
+**PaymentId** | Pointer to **string** | The unique id of payment | [optional] 
 **SubscriptionPendingUpdate** | Pointer to [**UnibeeApiBeanDetailSubscriptionPendingUpdateDetail**](UnibeeApiBeanDetailSubscriptionPendingUpdateDetail.md) |  | [optional] 
 
 ## Methods
@@ -27,6 +30,56 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantSubscriptionUpdateResWithDefaults instantiates a new UnibeeApiMerchantSubscriptionUpdateRes object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAction
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) GetAction() map[string]interface{}`
+
+GetAction returns the Action field if non-nil, zero value otherwise.
+
+### GetActionOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) GetActionOk() (*map[string]interface{}, bool)`
+
+GetActionOk returns a tuple with the Action field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAction
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) SetAction(v map[string]interface{})`
+
+SetAction sets Action field to given value.
+
+### HasAction
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) HasAction() bool`
+
+HasAction returns a boolean if a field has been set.
+
+### GetInvoiceId
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) GetInvoiceId() string`
+
+GetInvoiceId returns the InvoiceId field if non-nil, zero value otherwise.
+
+### GetInvoiceIdOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) GetInvoiceIdOk() (*string, bool)`
+
+GetInvoiceIdOk returns a tuple with the InvoiceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInvoiceId
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) SetInvoiceId(v string)`
+
+SetInvoiceId sets InvoiceId field to given value.
+
+### HasInvoiceId
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) HasInvoiceId() bool`
+
+HasInvoiceId returns a boolean if a field has been set.
 
 ### GetLink
 
@@ -102,6 +155,31 @@ SetPaid sets Paid field to given value.
 `func (o *UnibeeApiMerchantSubscriptionUpdateRes) HasPaid() bool`
 
 HasPaid returns a boolean if a field has been set.
+
+### GetPaymentId
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) GetPaymentId() string`
+
+GetPaymentId returns the PaymentId field if non-nil, zero value otherwise.
+
+### GetPaymentIdOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) GetPaymentIdOk() (*string, bool)`
+
+GetPaymentIdOk returns a tuple with the PaymentId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaymentId
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) SetPaymentId(v string)`
+
+SetPaymentId sets PaymentId field to given value.
+
+### HasPaymentId
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateRes) HasPaymentId() bool`
+
+HasPaymentId returns a boolean if a field has been set.
 
 ### GetSubscriptionPendingUpdate
 

@@ -4,7 +4,7 @@ All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SessionNewSessionPost**](Session.md#SessionNewSessionPost) | **Post** /merchant/session/new_session | New User Portal Session
+[**SessionNewSessionPost**](Session.md#SessionNewSessionPost) | **Post** /merchant/session/new_session | New Checkout Session
 [**SessionUserSubUpdateUrlGet**](Session.md#SessionUserSubUpdateUrlGet) | **Get** /merchant/session/user_sub_update_url | Get User Subscription Update Page Url
 [**SessionUserSubUpdateUrlPost**](Session.md#SessionUserSubUpdateUrlPost) | **Post** /merchant/session/user_sub_update_url | Get User Subscription Update Page Url
 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 > MerchantSessionNewSessionPost200Response SessionNewSessionPost(ctx).UnibeeApiMerchantSessionNewReq(unibeeApiMerchantSessionNewReq).Execute()
 
-New User Portal Session
+New Checkout Session
 
 
 
@@ -31,7 +31,7 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantSessionNewReq := *openapiclient.NewUnibeeApiMerchantSessionNewReq("Email_example", "ExternalUserId_example") // UnibeeApiMerchantSessionNewReq | 
+	unibeeApiMerchantSessionNewReq := *openapiclient.NewUnibeeApiMerchantSessionNewReq("Email_example") // UnibeeApiMerchantSessionNewReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
