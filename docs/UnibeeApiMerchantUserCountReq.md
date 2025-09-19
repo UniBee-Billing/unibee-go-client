@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CreateTimeEnd** | Pointer to **int64** | CreateTimeEnd | [optional] 
-**CreateTimeStart** | Pointer to **int64** | CreateTimeStart | [optional] 
+**CreateTimeEnd** | Pointer to **int64** | CreateTimeEnd，UTC timestamp，seconds | [optional] 
+**CreateTimeStart** | Pointer to **int64** | CreateTimeStart，UTC timestamp，seconds | [optional] 
 
 ## Methods
 

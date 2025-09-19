@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Action** | Pointer to **map[string]interface{}** |  | [optional] 
 **AuthorizeComment** | Pointer to **string** |  | [optional] 
 **AuthorizeReason** | Pointer to **string** |  | [optional] 
 **AuthorizeStatus** | Pointer to **int32** | authorize status，0-waiting authorize，1-authorized，2-authorized_request | [optional] 
@@ -14,6 +15,8 @@ Name | Type | Description | Notes
 **CancelTime** | Pointer to **int64** | cancel time, utc time | [optional] 
 **CountryCode** | Pointer to **string** | country code | [optional] 
 **CreateTime** | Pointer to **int64** | create time, utc time | [optional] 
+**CryptoAmount** | Pointer to **int64** | crypto_amount, cent | [optional] 
+**CryptoCurrency** | Pointer to **string** | crypto_currency | [optional] 
 **Currency** | Pointer to **string** | currency，“SGD” “MYR” “PHP” “IDR” “THB” | [optional] 
 **ExternalPaymentId** | Pointer to **string** | external_payment_id | [optional] 
 **FailureReason** | Pointer to **string** |  | [optional] 
@@ -55,6 +58,31 @@ will change when the set of required properties is changed
 NewUnibeeApiBeanPaymentWithDefaults instantiates a new UnibeeApiBeanPayment object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAction
+
+`func (o *UnibeeApiBeanPayment) GetAction() map[string]interface{}`
+
+GetAction returns the Action field if non-nil, zero value otherwise.
+
+### GetActionOk
+
+`func (o *UnibeeApiBeanPayment) GetActionOk() (*map[string]interface{}, bool)`
+
+GetActionOk returns a tuple with the Action field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAction
+
+`func (o *UnibeeApiBeanPayment) SetAction(v map[string]interface{})`
+
+SetAction sets Action field to given value.
+
+### HasAction
+
+`func (o *UnibeeApiBeanPayment) HasAction() bool`
+
+HasAction returns a boolean if a field has been set.
 
 ### GetAuthorizeComment
 
@@ -305,6 +333,56 @@ SetCreateTime sets CreateTime field to given value.
 `func (o *UnibeeApiBeanPayment) HasCreateTime() bool`
 
 HasCreateTime returns a boolean if a field has been set.
+
+### GetCryptoAmount
+
+`func (o *UnibeeApiBeanPayment) GetCryptoAmount() int64`
+
+GetCryptoAmount returns the CryptoAmount field if non-nil, zero value otherwise.
+
+### GetCryptoAmountOk
+
+`func (o *UnibeeApiBeanPayment) GetCryptoAmountOk() (*int64, bool)`
+
+GetCryptoAmountOk returns a tuple with the CryptoAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCryptoAmount
+
+`func (o *UnibeeApiBeanPayment) SetCryptoAmount(v int64)`
+
+SetCryptoAmount sets CryptoAmount field to given value.
+
+### HasCryptoAmount
+
+`func (o *UnibeeApiBeanPayment) HasCryptoAmount() bool`
+
+HasCryptoAmount returns a boolean if a field has been set.
+
+### GetCryptoCurrency
+
+`func (o *UnibeeApiBeanPayment) GetCryptoCurrency() string`
+
+GetCryptoCurrency returns the CryptoCurrency field if non-nil, zero value otherwise.
+
+### GetCryptoCurrencyOk
+
+`func (o *UnibeeApiBeanPayment) GetCryptoCurrencyOk() (*string, bool)`
+
+GetCryptoCurrencyOk returns a tuple with the CryptoCurrency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCryptoCurrency
+
+`func (o *UnibeeApiBeanPayment) SetCryptoCurrency(v string)`
+
+SetCryptoCurrency sets CryptoCurrency field to given value.
+
+### HasCryptoCurrency
+
+`func (o *UnibeeApiBeanPayment) HasCryptoCurrency() bool`
+
+HasCryptoCurrency returns a boolean if a field has been set.
 
 ### GetCurrency
 

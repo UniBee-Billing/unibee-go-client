@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **IsProd** | Pointer to **bool** | Check System Env Is Prod, true|false | [optional] 
 **Merchant** | Pointer to [**UnibeeApiBeanMerchant**](UnibeeApiBeanMerchant.md) |  | [optional] 
 **MerchantMember** | Pointer to [**UnibeeApiBeanDetailMerchantMemberDetail**](UnibeeApiBeanDetailMerchantMemberDetail.md) |  | [optional] 
+**MultiCurrencyConfigs** | Pointer to [**[]UnibeeApiBeanMerchantMultiCurrencyConfig**](UnibeeApiBeanMerchantMultiCurrencyConfig.md) | Merchant&#39;s MultiCurrency Configs | [optional] 
 **OpenApiHost** | Pointer to **string** | OpenApi Host | [optional] 
 **OpenApiKey** | Pointer to **string** | OpenAPIKey | [optional] 
 **QuickBooksCompanyName** | Pointer to **string** | QuickBooksCompanyName | [optional] 
@@ -396,6 +397,31 @@ SetMerchantMember sets MerchantMember field to given value.
 `func (o *UnibeeApiMerchantProfileGetRes) HasMerchantMember() bool`
 
 HasMerchantMember returns a boolean if a field has been set.
+
+### GetMultiCurrencyConfigs
+
+`func (o *UnibeeApiMerchantProfileGetRes) GetMultiCurrencyConfigs() []UnibeeApiBeanMerchantMultiCurrencyConfig`
+
+GetMultiCurrencyConfigs returns the MultiCurrencyConfigs field if non-nil, zero value otherwise.
+
+### GetMultiCurrencyConfigsOk
+
+`func (o *UnibeeApiMerchantProfileGetRes) GetMultiCurrencyConfigsOk() (*[]UnibeeApiBeanMerchantMultiCurrencyConfig, bool)`
+
+GetMultiCurrencyConfigsOk returns a tuple with the MultiCurrencyConfigs field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMultiCurrencyConfigs
+
+`func (o *UnibeeApiMerchantProfileGetRes) SetMultiCurrencyConfigs(v []UnibeeApiBeanMerchantMultiCurrencyConfig)`
+
+SetMultiCurrencyConfigs sets MultiCurrencyConfigs field to given value.
+
+### HasMultiCurrencyConfigs
+
+`func (o *UnibeeApiMerchantProfileGetRes) HasMultiCurrencyConfigs() bool`
+
+HasMultiCurrencyConfigs returns a boolean if a field has been set.
 
 ### GetOpenApiHost
 

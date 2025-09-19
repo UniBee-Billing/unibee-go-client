@@ -4,11 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CompanyName** | Pointer to **string** | Company Name | [optional] 
 **CountryCode** | Pointer to **string** | Country Code | [optional] 
 **CountryName** | Pointer to **string** | Country Name | [optional] 
 **Email** | **string** | The merchant owner&#39;s email address | 
 **FirstName** | **string** | The merchant owner&#39;s first name | 
 **LastName** | **string** | The merchant owner&#39;s last name | 
+**Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **Password** | **string** | The owner&#39;s password | 
 **Phone** | Pointer to **string** | The owner&#39;s Phone | [optional] 
 **UserName** | Pointer to **string** | The owner&#39;s UserName | [optional] 
@@ -31,6 +33,31 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantAuthRegisterReqWithDefaults instantiates a new UnibeeApiMerchantAuthRegisterReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCompanyName
+
+`func (o *UnibeeApiMerchantAuthRegisterReq) GetCompanyName() string`
+
+GetCompanyName returns the CompanyName field if non-nil, zero value otherwise.
+
+### GetCompanyNameOk
+
+`func (o *UnibeeApiMerchantAuthRegisterReq) GetCompanyNameOk() (*string, bool)`
+
+GetCompanyNameOk returns a tuple with the CompanyName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompanyName
+
+`func (o *UnibeeApiMerchantAuthRegisterReq) SetCompanyName(v string)`
+
+SetCompanyName sets CompanyName field to given value.
+
+### HasCompanyName
+
+`func (o *UnibeeApiMerchantAuthRegisterReq) HasCompanyName() bool`
+
+HasCompanyName returns a boolean if a field has been set.
 
 ### GetCountryCode
 
@@ -141,6 +168,31 @@ and a boolean to check if the value has been set.
 
 SetLastName sets LastName field to given value.
 
+
+### GetMetadata
+
+`func (o *UnibeeApiMerchantAuthRegisterReq) GetMetadata() map[string]map[string]interface{}`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *UnibeeApiMerchantAuthRegisterReq) GetMetadataOk() (*map[string]map[string]interface{}, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *UnibeeApiMerchantAuthRegisterReq) SetMetadata(v map[string]map[string]interface{})`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *UnibeeApiMerchantAuthRegisterReq) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
 
 ### GetPassword
 

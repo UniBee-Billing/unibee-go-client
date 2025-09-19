@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Count** | Pointer to **int32** | Count Of Per Page | [optional] 
-**CreateTimeEnd** | Pointer to **int64** | CreateTimeEnd | [optional] 
-**CreateTimeStart** | Pointer to **int64** | CreateTimeStart | [optional] 
+**CreateTimeEnd** | Pointer to **int64** | CreateTimeEnd，UTC timestamp，seconds | [optional] 
+**CreateTimeStart** | Pointer to **int64** | CreateTimeStart，UTC timestamp，seconds | [optional] 
 **Email** | Pointer to **string** | Filter Email Default All | [optional] 
 **Id** | **int64** | The discount&#39;s Id | 
 **Page** | Pointer to **int32** | Page, Start 0 | [optional] 

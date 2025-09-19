@@ -18,8 +18,9 @@ Name | Type | Description | Notes
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **Name** | Pointer to **string** | Name | [optional] 
 **PaymentType** | Pointer to **string** | Payment Type | [optional] 
-**PaymentUIMode** | Pointer to **string** | The checkout UI Mode, hosted|embedded|custom | [optional] 
+**PaymentUIMode** | Pointer to **string** | The checkout UI Mode, hosted|embedded|custom, default hosted | [optional] 
 **PlanId** | Pointer to **int64** | PlanId, either TotalAmount&amp;Currency or PlanId needed | [optional] 
+**Quantity** | Pointer to **int64** | Quantity，used when planId not null, Default 1 | [optional] 
 **RedirectUrl** | Pointer to **string** | Redirect Url | [optional] 
 **SendInvoice** | Pointer to **bool** | Whether sen invoice email to customer or not，default false | [optional] [default to false]
 **TotalAmount** | Pointer to **int64** | Total PaymentAmount, Cent, either TotalAmount&amp;Currency or PlanId needed | [optional] 
@@ -438,6 +439,31 @@ SetPlanId sets PlanId field to given value.
 `func (o *UnibeeApiMerchantPaymentNewReq) HasPlanId() bool`
 
 HasPlanId returns a boolean if a field has been set.
+
+### GetQuantity
+
+`func (o *UnibeeApiMerchantPaymentNewReq) GetQuantity() int64`
+
+GetQuantity returns the Quantity field if non-nil, zero value otherwise.
+
+### GetQuantityOk
+
+`func (o *UnibeeApiMerchantPaymentNewReq) GetQuantityOk() (*int64, bool)`
+
+GetQuantityOk returns a tuple with the Quantity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuantity
+
+`func (o *UnibeeApiMerchantPaymentNewReq) SetQuantity(v int64)`
+
+SetQuantity sets Quantity field to given value.
+
+### HasQuantity
+
+`func (o *UnibeeApiMerchantPaymentNewReq) HasQuantity() bool`
+
+HasQuantity returns a boolean if a field has been set.
 
 ### GetRedirectUrl
 

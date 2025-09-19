@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **GatewayType** | Pointer to **int64** | gateway type，1-Bank Card ｜ 2-Crypto | 3 - Wire Transfer | [optional] 
 **GatewayWebhookIntegrationLink** | Pointer to **string** | The gateway webhook integration guide link, gateway webhook need setup if not blank | [optional] 
 **GatewayWebsiteLink** | Pointer to **string** | The gateway website link | [optional] 
+**IsDefault** | Pointer to **bool** |  | [optional] 
 **MinimumAmount** | Pointer to **int64** | The minimum amount of wire transfer | [optional] 
 **Name** | Pointer to **string** | The name of gateway | [optional] 
 **PrivateSecretName** | Pointer to **string** |  | [optional] 
@@ -579,6 +580,31 @@ SetGatewayWebsiteLink sets GatewayWebsiteLink field to given value.
 `func (o *UnibeeApiBeanDetailGateway) HasGatewayWebsiteLink() bool`
 
 HasGatewayWebsiteLink returns a boolean if a field has been set.
+
+### GetIsDefault
+
+`func (o *UnibeeApiBeanDetailGateway) GetIsDefault() bool`
+
+GetIsDefault returns the IsDefault field if non-nil, zero value otherwise.
+
+### GetIsDefaultOk
+
+`func (o *UnibeeApiBeanDetailGateway) GetIsDefaultOk() (*bool, bool)`
+
+GetIsDefaultOk returns a tuple with the IsDefault field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsDefault
+
+`func (o *UnibeeApiBeanDetailGateway) SetIsDefault(v bool)`
+
+SetIsDefault sets IsDefault field to given value.
+
+### HasIsDefault
+
+`func (o *UnibeeApiBeanDetailGateway) HasIsDefault() bool`
+
+HasIsDefault returns a boolean if a field has been set.
 
 ### GetMinimumAmount
 

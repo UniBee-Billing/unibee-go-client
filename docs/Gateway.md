@@ -11,6 +11,8 @@ Method | HTTP request | Description
 [**GatewayEditPost**](Gateway.md#GatewayEditPost) | **Post** /merchant/gateway/edit | Payment Gateway Edit
 [**GatewayEditSortPost**](Gateway.md#GatewayEditSortPost) | **Post** /merchant/gateway/edit_sort | Edit Payment Gateway Sort
 [**GatewayListGet**](Gateway.md#GatewayListGet) | **Get** /merchant/gateway/list | Get Payment Gateway List
+[**GatewayRestorePost**](Gateway.md#GatewayRestorePost) | **Post** /merchant/gateway/restore | Payment Gateway Restore
+[**GatewaySetDefaultPost**](Gateway.md#GatewaySetDefaultPost) | **Post** /merchant/gateway/set_default | Payment Gateway Set Default
 [**GatewaySetupExchangeRateApiPost**](Gateway.md#GatewaySetupExchangeRateApiPost) | **Post** /merchant/gateway/setup_exchange_rate_api | Exchange Rate Api Setup
 [**GatewaySetupListGet**](Gateway.md#GatewaySetupListGet) | **Get** /merchant/gateway/setup_list | Get Payment Gateway Setup List
 [**GatewaySetupPost**](Gateway.md#GatewaySetupPost) | **Post** /merchant/gateway/setup | Payment Gateway Setup
@@ -108,8 +110,8 @@ import (
 )
 
 func main() {
-	gatewayId := int32(56) // int32 | The id of payment gateway, either gatewayId or gatewayName (optional)
-	gatewayName := "gatewayName_example" // string | The name of payment gateway, , either gatewayId or gatewayName, stripe|paypal|changelly|unitpay|payssion|cryptadium (optional)
+	gatewayId := int32(56) // int32 | The id of payment gateway, either gatewayId or gatewayName should provided (optional)
+	gatewayName := "gatewayName_example" // string | The specified name of payment gateway, either gatewayId or gatewayName should provided, stripe|paypal|changelly|unitpay|payssion|cryptadium, return default gateway if provided (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -134,8 +136,8 @@ Other parameters are passed through a pointer to a apiGatewayDetailGetRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **gatewayId** | **int32** | The id of payment gateway, either gatewayId or gatewayName | 
- **gatewayName** | **string** | The name of payment gateway, , either gatewayId or gatewayName, stripe|paypal|changelly|unitpay|payssion|cryptadium | 
+ **gatewayId** | **int32** | The id of payment gateway, either gatewayId or gatewayName should provided | 
+ **gatewayName** | **string** | The specified name of payment gateway, either gatewayId or gatewayName should provided, stripe|paypal|changelly|unitpay|payssion|cryptadium, return default gateway if provided | 
 
 ### Return type
 
@@ -474,6 +476,138 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GatewayRestorePost
+
+> MerchantGatewayArchivePost200Response GatewayRestorePost(ctx).UnibeeApiMerchantGatewayRestoreReq(unibeeApiMerchantGatewayRestoreReq).Execute()
+
+Payment Gateway Restore
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantGatewayRestoreReq := *openapiclient.NewUnibeeApiMerchantGatewayRestoreReq(int64(123)) // UnibeeApiMerchantGatewayRestoreReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Gateway.GatewayRestorePost(context.Background()).UnibeeApiMerchantGatewayRestoreReq(unibeeApiMerchantGatewayRestoreReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Gateway.GatewayRestorePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GatewayRestorePost`: MerchantGatewayArchivePost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Gateway.GatewayRestorePost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGatewayRestorePostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantGatewayRestoreReq** | [**UnibeeApiMerchantGatewayRestoreReq**](UnibeeApiMerchantGatewayRestoreReq.md) |  | 
+
+### Return type
+
+[**MerchantGatewayArchivePost200Response**](MerchantGatewayArchivePost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GatewaySetDefaultPost
+
+> MerchantGatewayArchivePost200Response GatewaySetDefaultPost(ctx).UnibeeApiMerchantGatewaySetDefaultReq(unibeeApiMerchantGatewaySetDefaultReq).Execute()
+
+Payment Gateway Set Default
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantGatewaySetDefaultReq := *openapiclient.NewUnibeeApiMerchantGatewaySetDefaultReq(int64(123)) // UnibeeApiMerchantGatewaySetDefaultReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Gateway.GatewaySetDefaultPost(context.Background()).UnibeeApiMerchantGatewaySetDefaultReq(unibeeApiMerchantGatewaySetDefaultReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Gateway.GatewaySetDefaultPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GatewaySetDefaultPost`: MerchantGatewayArchivePost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Gateway.GatewaySetDefaultPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGatewaySetDefaultPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantGatewaySetDefaultReq** | [**UnibeeApiMerchantGatewaySetDefaultReq**](UnibeeApiMerchantGatewaySetDefaultReq.md) |  | 
+
+### Return type
+
+[**MerchantGatewayArchivePost200Response**](MerchantGatewayArchivePost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

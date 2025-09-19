@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **CancelUrl** | Pointer to **string** | CancelUrl, back to cancelUrl if creation cancelled | [optional] 
 **ConfirmCurrency** | Pointer to **string** | Currency to verify if provide | [optional] 
 **ConfirmTotalAmount** | Pointer to **int64** | TotalAmount to verify if provide | [optional] 
+**Currency** | Pointer to **string** | The currency of payment | [optional] 
 **Discount** | Pointer to [**UnibeeApiBeanExternalDiscountParam**](UnibeeApiBeanExternalDiscountParam.md) |  | [optional] 
 **DiscountCode** | Pointer to **string** | DiscountCode | [optional] 
 **Email** | Pointer to **string** | Email, one of ExternalUserId&amp;Email, UserId or User needed | [optional] 
@@ -19,7 +20,7 @@ Name | Type | Description | Notes
 **GatewayPaymentType** | Pointer to **string** | Gateway Payment Type | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **PaymentMethodId** | Pointer to **string** | PaymentMethodId | [optional] 
-**PaymentUIMode** | Pointer to **string** | The checkout UI Mode, hosted|embedded|custom | [optional] 
+**PaymentUIMode** | Pointer to **string** | The checkout UI Mode, hosted|embedded|custom, default hosted | [optional] 
 **PlanId** | **int64** | PlanId | 
 **ProductData** | Pointer to [**UnibeeApiBeanPlanProductParam**](UnibeeApiBeanPlanProductParam.md) |  | [optional] 
 **Quantity** | Pointer to **int64** | Quantity，Default 1 | [optional] 
@@ -200,6 +201,31 @@ SetConfirmTotalAmount sets ConfirmTotalAmount field to given value.
 `func (o *UnibeeApiMerchantSubscriptionCreateReq) HasConfirmTotalAmount() bool`
 
 HasConfirmTotalAmount returns a boolean if a field has been set.
+
+### GetCurrency
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetCurrency() string`
+
+GetCurrency returns the Currency field if non-nil, zero value otherwise.
+
+### GetCurrencyOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetCurrencyOk() (*string, bool)`
+
+GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrency
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) SetCurrency(v string)`
+
+SetCurrency sets Currency field to given value.
+
+### HasCurrency
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) HasCurrency() bool`
+
+HasCurrency returns a boolean if a field has been set.
 
 ### GetDiscount
 

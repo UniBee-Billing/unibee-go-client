@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **GatewayPaymentType** | Pointer to **string** | Gateway Payment Type | [optional] 
 **ManualPayment** | Pointer to **bool** | ManualPayment | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
-**PaymentUIMode** | Pointer to **string** | The checkout UI Mode, hosted|embedded|custom | [optional] 
+**PaymentUIMode** | Pointer to **string** | The checkout UI Mode, hosted|embedded|custom, default hosted | [optional] 
 **ProductData** | Pointer to [**UnibeeApiBeanPlanProductParam**](UnibeeApiBeanPlanProductParam.md) |  | [optional] 
 **ProductId** | Pointer to **int64** | default product will use if not specified | [optional] 
 **ReturnUrl** | Pointer to **string** | ReturnUrl, back to returnUrl if renew completed | [optional] 

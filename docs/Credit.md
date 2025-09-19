@@ -175,8 +175,8 @@ func main() {
 	sortType := "sortType_example" // string | Sort Type，asc|desc，Default desc (optional)
 	page := int32(56) // int32 | Page, Start 0 (optional)
 	count := int32(56) // int32 | Count Of Per Page (optional)
-	createTimeStart := int64(789) // int64 | CreateTimeStart (optional)
-	createTimeEnd := int64(789) // int64 | CreateTimeEnd (optional)
+	createTimeStart := int64(789) // int64 | CreateTimeStart，UTC timestamp，seconds (optional)
+	createTimeEnd := int64(789) // int64 | CreateTimeEnd，UTC timestamp，seconds (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -207,8 +207,8 @@ Name | Type | Description  | Notes
  **sortType** | **string** | Sort Type，asc|desc，Default desc | 
  **page** | **int32** | Page, Start 0 | 
  **count** | **int32** | Count Of Per Page | 
- **createTimeStart** | **int64** | CreateTimeStart | 
- **createTimeEnd** | **int64** | CreateTimeEnd | 
+ **createTimeStart** | **int64** | CreateTimeStart，UTC timestamp，seconds | 
+ **createTimeEnd** | **int64** | CreateTimeEnd，UTC timestamp，seconds | 
 
 ### Return type
 
@@ -258,8 +258,8 @@ func main() {
 	transactionTypes := []int32{int32(123)} // []int32 | transaction type。1-recharge income，2-payment out，3-refund income，4-withdraw out，5-withdraw failed income, 6-admin change，7-recharge refund out (optional)
 	page := int32(56) // int32 | Page, Start 0 (optional)
 	count := int32(56) // int32 | Count Of Per Page (optional)
-	createTimeStart := int64(789) // int64 | CreateTimeStart (optional)
-	createTimeEnd := int64(789) // int64 | CreateTimeEnd (optional)
+	createTimeStart := int64(789) // int64 | CreateTimeStart，UTC timestamp，seconds (optional)
+	createTimeEnd := int64(789) // int64 | CreateTimeEnd，UTC timestamp，seconds (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -293,8 +293,8 @@ Name | Type | Description  | Notes
  **transactionTypes** | **[]int32** | transaction type。1-recharge income，2-payment out，3-refund income，4-withdraw out，5-withdraw failed income, 6-admin change，7-recharge refund out | 
  **page** | **int32** | Page, Start 0 | 
  **count** | **int32** | Count Of Per Page | 
- **createTimeStart** | **int64** | CreateTimeStart | 
- **createTimeEnd** | **int64** | CreateTimeEnd | 
+ **createTimeStart** | **int64** | CreateTimeStart，UTC timestamp，seconds | 
+ **createTimeEnd** | **int64** | CreateTimeEnd，UTC timestamp，seconds | 
 
 ### Return type
 

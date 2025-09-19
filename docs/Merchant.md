@@ -4,6 +4,7 @@ All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**AmountMultiCurrenciesExchangePost**](Merchant.md#AmountMultiCurrenciesExchangePost) | **Post** /merchant/amount_multi_currencies_exchange | Amount Multi Currencies Exchange
 [**CountryConfigListPost**](Merchant.md#CountryConfigListPost) | **Post** /merchant/country_config_list | Edit Country Config
 [**EditCountryConfigPost**](Merchant.md#EditCountryConfigPost) | **Post** /merchant/edit_country_config | Get Country Config List
 [**EditTotpConfigPost**](Merchant.md#EditTotpConfigPost) | **Post** /merchant/edit_totp_config | Admin Edit 2FA Config
@@ -12,8 +13,73 @@ Method | HTTP request | Description
 [**GetLicenseUpdateUrlGet**](Merchant.md#GetLicenseUpdateUrlGet) | **Get** /merchant/get_license_update_url | Get License Update Url
 [**GetLicenseUpdateUrlPost**](Merchant.md#GetLicenseUpdateUrlPost) | **Post** /merchant/get_license_update_url | Get License Update Url
 [**NewApikeyPost**](Merchant.md#NewApikeyPost) | **Post** /merchant/new_apikey | Generate New APIKey
+[**SetupMultiCurrenciesPost**](Merchant.md#SetupMultiCurrenciesPost) | **Post** /merchant/setup_multi_currencies | Multi Currencies Setup
 [**UpdatePost**](Merchant.md#UpdatePost) | **Post** /merchant/update | Update Profile
 
+
+
+## AmountMultiCurrenciesExchangePost
+
+> MerchantAmountMultiCurrenciesExchangePost200Response AmountMultiCurrenciesExchangePost(ctx).UnibeeApiMerchantProfileAmountMultiCurrenciesExchangeReq(unibeeApiMerchantProfileAmountMultiCurrenciesExchangeReq).Execute()
+
+Amount Multi Currencies Exchange
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantProfileAmountMultiCurrenciesExchangeReq := *openapiclient.NewUnibeeApiMerchantProfileAmountMultiCurrenciesExchangeReq(int64(123), "Currency_example") // UnibeeApiMerchantProfileAmountMultiCurrenciesExchangeReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Merchant.AmountMultiCurrenciesExchangePost(context.Background()).UnibeeApiMerchantProfileAmountMultiCurrenciesExchangeReq(unibeeApiMerchantProfileAmountMultiCurrenciesExchangeReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Merchant.AmountMultiCurrenciesExchangePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AmountMultiCurrenciesExchangePost`: MerchantAmountMultiCurrenciesExchangePost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Merchant.AmountMultiCurrenciesExchangePost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAmountMultiCurrenciesExchangePostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantProfileAmountMultiCurrenciesExchangeReq** | [**UnibeeApiMerchantProfileAmountMultiCurrenciesExchangeReq**](UnibeeApiMerchantProfileAmountMultiCurrenciesExchangeReq.md) |  | 
+
+### Return type
+
+[**MerchantAmountMultiCurrenciesExchangePost200Response**](MerchantAmountMultiCurrenciesExchangePost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## CountryConfigListPost
@@ -509,6 +575,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantNewApikeyPost200Response**](MerchantNewApikeyPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SetupMultiCurrenciesPost
+
+> MerchantSetupMultiCurrenciesPost200Response SetupMultiCurrenciesPost(ctx).UnibeeApiMerchantProfileSetupMultiCurrenciesReq(unibeeApiMerchantProfileSetupMultiCurrenciesReq).Execute()
+
+Multi Currencies Setup
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantProfileSetupMultiCurrenciesReq := *openapiclient.NewUnibeeApiMerchantProfileSetupMultiCurrenciesReq() // UnibeeApiMerchantProfileSetupMultiCurrenciesReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Merchant.SetupMultiCurrenciesPost(context.Background()).UnibeeApiMerchantProfileSetupMultiCurrenciesReq(unibeeApiMerchantProfileSetupMultiCurrenciesReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Merchant.SetupMultiCurrenciesPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SetupMultiCurrenciesPost`: MerchantSetupMultiCurrenciesPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Merchant.SetupMultiCurrenciesPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSetupMultiCurrenciesPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantProfileSetupMultiCurrenciesReq** | [**UnibeeApiMerchantProfileSetupMultiCurrenciesReq**](UnibeeApiMerchantProfileSetupMultiCurrenciesReq.md) |  | 
+
+### Return type
+
+[**MerchantSetupMultiCurrenciesPost200Response**](MerchantSetupMultiCurrenciesPost200Response.md)
 
 ### Authorization
 

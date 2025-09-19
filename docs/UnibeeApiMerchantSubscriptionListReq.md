@@ -8,12 +8,13 @@ Name | Type | Description | Notes
 **AmountEnd** | Pointer to **int32** | The filter end amount of subscription | [optional] 
 **AmountStart** | Pointer to **int32** | The filter start amount of subscription | [optional] 
 **Count** | Pointer to **int32** | Count Of Page | [optional] 
-**CreateTimeEnd** | Pointer to **int64** | CreateTimeEnd | [optional] 
-**CreateTimeStart** | Pointer to **int64** | CreateTimeStart | [optional] 
+**CreateTimeEnd** | Pointer to **int64** | CreateTimeEnd，UTC timestamp，seconds | [optional] 
+**CreateTimeStart** | Pointer to **int64** | CreateTimeStart，UTC timestamp，seconds | [optional] 
 **Currency** | Pointer to **string** | The currency of subscription | [optional] 
+**ExternalUserId** | Pointer to **string** | ExternalUserId | [optional] 
 **Page** | Pointer to **int32** | Page, Start With 0 | [optional] 
 **PlanIds** | Pointer to **[]int64** | The filter ids of plan | [optional] 
-**ProductIds** | Pointer to **[]int64** | The filter ids of product | [optional] 
+**ProductIds** | Pointer to **[]int64** | The filter ids of product, invalid if planIds is provided | [optional] 
 **SortField** | Pointer to **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | [optional] 
 **SortType** | Pointer to **string** | Sort Type，asc|desc，Default desc | [optional] 
 **Status** | Pointer to **[]int32** | Filter, Default All，Status，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | 9-Failed | [optional] 
@@ -212,6 +213,31 @@ SetCurrency sets Currency field to given value.
 `func (o *UnibeeApiMerchantSubscriptionListReq) HasCurrency() bool`
 
 HasCurrency returns a boolean if a field has been set.
+
+### GetExternalUserId
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) GetExternalUserId() string`
+
+GetExternalUserId returns the ExternalUserId field if non-nil, zero value otherwise.
+
+### GetExternalUserIdOk
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) GetExternalUserIdOk() (*string, bool)`
+
+GetExternalUserIdOk returns a tuple with the ExternalUserId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalUserId
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) SetExternalUserId(v string)`
+
+SetExternalUserId sets ExternalUserId field to given value.
+
+### HasExternalUserId
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) HasExternalUserId() bool`
+
+HasExternalUserId returns a boolean if a field has been set.
 
 ### GetPage
 

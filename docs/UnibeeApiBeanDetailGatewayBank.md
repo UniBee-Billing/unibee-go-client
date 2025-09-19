@@ -4,6 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ABARoutingNumber** | Pointer to **string** | The ABARoutingNumber of wire transfer  | [optional] 
+**CNAPS** | Pointer to **string** | The CNAPS of wire transfer  | [optional] 
+**Remarks** | Pointer to **string** | The Remarks additional content  | [optional] 
 **AccountHolder** | **string** | The AccountHolder of wire transfer  | 
 **AccountNumber** | Pointer to **string** | The Account Number | [optional] 
 **Address** | **string** | The address of wire transfer  | 
@@ -31,6 +34,81 @@ will change when the set of required properties is changed
 NewUnibeeApiBeanDetailGatewayBankWithDefaults instantiates a new UnibeeApiBeanDetailGatewayBank object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetABARoutingNumber
+
+`func (o *UnibeeApiBeanDetailGatewayBank) GetABARoutingNumber() string`
+
+GetABARoutingNumber returns the ABARoutingNumber field if non-nil, zero value otherwise.
+
+### GetABARoutingNumberOk
+
+`func (o *UnibeeApiBeanDetailGatewayBank) GetABARoutingNumberOk() (*string, bool)`
+
+GetABARoutingNumberOk returns a tuple with the ABARoutingNumber field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetABARoutingNumber
+
+`func (o *UnibeeApiBeanDetailGatewayBank) SetABARoutingNumber(v string)`
+
+SetABARoutingNumber sets ABARoutingNumber field to given value.
+
+### HasABARoutingNumber
+
+`func (o *UnibeeApiBeanDetailGatewayBank) HasABARoutingNumber() bool`
+
+HasABARoutingNumber returns a boolean if a field has been set.
+
+### GetCNAPS
+
+`func (o *UnibeeApiBeanDetailGatewayBank) GetCNAPS() string`
+
+GetCNAPS returns the CNAPS field if non-nil, zero value otherwise.
+
+### GetCNAPSOk
+
+`func (o *UnibeeApiBeanDetailGatewayBank) GetCNAPSOk() (*string, bool)`
+
+GetCNAPSOk returns a tuple with the CNAPS field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCNAPS
+
+`func (o *UnibeeApiBeanDetailGatewayBank) SetCNAPS(v string)`
+
+SetCNAPS sets CNAPS field to given value.
+
+### HasCNAPS
+
+`func (o *UnibeeApiBeanDetailGatewayBank) HasCNAPS() bool`
+
+HasCNAPS returns a boolean if a field has been set.
+
+### GetRemarks
+
+`func (o *UnibeeApiBeanDetailGatewayBank) GetRemarks() string`
+
+GetRemarks returns the Remarks field if non-nil, zero value otherwise.
+
+### GetRemarksOk
+
+`func (o *UnibeeApiBeanDetailGatewayBank) GetRemarksOk() (*string, bool)`
+
+GetRemarksOk returns a tuple with the Remarks field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRemarks
+
+`func (o *UnibeeApiBeanDetailGatewayBank) SetRemarks(v string)`
+
+SetRemarks sets Remarks field to given value.
+
+### HasRemarks
+
+`func (o *UnibeeApiBeanDetailGatewayBank) HasRemarks() bool`
+
+HasRemarks returns a boolean if a field has been set.
 
 ### GetAccountHolder
 

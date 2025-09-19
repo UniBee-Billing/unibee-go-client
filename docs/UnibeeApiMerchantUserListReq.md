@@ -5,10 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Count** | Pointer to **int32** | Count OF Page | [optional] 
-**CreateTimeEnd** | Pointer to **int64** | CreateTimeEnd | [optional] 
-**CreateTimeStart** | Pointer to **int64** | CreateTimeStart | [optional] 
+**CreateTimeEnd** | Pointer to **int64** | CreateTimeEnd，UTC timestamp，seconds | [optional] 
+**CreateTimeStart** | Pointer to **int64** | CreateTimeStart，UTC timestamp，seconds | [optional] 
 **DeleteInclude** | Pointer to **bool** | Deleted Involved，Need Admin | [optional] 
 **Email** | Pointer to **string** | Search Filter Email | [optional] 
+**ExternalUserId** | Pointer to **string** | ExternalUserId | [optional] 
 **FirstName** | Pointer to **string** | Search FirstName | [optional] 
 **GatewayIds** | Pointer to **[]int64** | GatewayIds, Search Filter GatewayIds | [optional] 
 **LastName** | Pointer to **string** | Search LastName | [optional] 
@@ -164,6 +165,31 @@ SetEmail sets Email field to given value.
 `func (o *UnibeeApiMerchantUserListReq) HasEmail() bool`
 
 HasEmail returns a boolean if a field has been set.
+
+### GetExternalUserId
+
+`func (o *UnibeeApiMerchantUserListReq) GetExternalUserId() string`
+
+GetExternalUserId returns the ExternalUserId field if non-nil, zero value otherwise.
+
+### GetExternalUserIdOk
+
+`func (o *UnibeeApiMerchantUserListReq) GetExternalUserIdOk() (*string, bool)`
+
+GetExternalUserIdOk returns a tuple with the ExternalUserId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalUserId
+
+`func (o *UnibeeApiMerchantUserListReq) SetExternalUserId(v string)`
+
+SetExternalUserId sets ExternalUserId field to given value.
+
+### HasExternalUserId
+
+`func (o *UnibeeApiMerchantUserListReq) HasExternalUserId() bool`
+
+HasExternalUserId returns a boolean if a field has been set.
 
 ### GetFirstName
 

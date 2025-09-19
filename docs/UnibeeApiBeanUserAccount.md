@@ -47,7 +47,7 @@ Name | Type | Description | Notes
 **Telegram** | Pointer to **string** | telegram | [optional] 
 **TikTok** | Pointer to **string** | tictok | [optional] 
 **TimeZone** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to **int64** | User type, 1-Individual|2-organization | [optional] 
+**Type** | Pointer to **int64** | User type, 1-Individual|2-Business | [optional] 
 **UserName** | Pointer to **string** | user name | [optional] 
 **VATNumber** | Pointer to **string** | vat number | [optional] 
 **Version** | Pointer to **int32** | version | [optional] 

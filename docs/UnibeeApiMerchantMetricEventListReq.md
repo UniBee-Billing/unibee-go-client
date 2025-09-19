@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Count** | Pointer to **int32** | Count OF Page | [optional] 
-**CreateTimeEnd** | Pointer to **int64** | CreateTimeEnd | [optional] 
-**CreateTimeStart** | Pointer to **int64** | CreateTimeStart | [optional] 
+**CreateTimeEnd** | Pointer to **int64** | CreateTimeEnd，UTC timestamp，seconds | [optional] 
+**CreateTimeStart** | Pointer to **int64** | CreateTimeStart，UTC timestamp，seconds | [optional] 
 **MetricIds** | Pointer to **[]int64** | Filter MetricIds, Default All | [optional] 
 **Page** | Pointer to **int32** | Page,Start 0 | [optional] 
 **SortField** | Pointer to **string** | Sort，user_id|gmt_create，Default gmt_create | [optional] 

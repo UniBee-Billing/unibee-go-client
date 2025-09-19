@@ -366,8 +366,8 @@ import (
 )
 
 func main() {
-	createTimeStart := int64(789) // int64 | CreateTimeStart (optional)
-	createTimeEnd := int64(789) // int64 | CreateTimeEnd (optional)
+	createTimeStart := int64(789) // int64 | CreateTimeStart，UTC timestamp，seconds (optional)
+	createTimeEnd := int64(789) // int64 | CreateTimeEnd，UTC timestamp，seconds (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -392,8 +392,8 @@ Other parameters are passed through a pointer to a apiUserCountGetRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createTimeStart** | **int64** | CreateTimeStart | 
- **createTimeEnd** | **int64** | CreateTimeEnd | 
+ **createTimeStart** | **int64** | CreateTimeStart，UTC timestamp，seconds | 
+ **createTimeEnd** | **int64** | CreateTimeEnd，UTC timestamp，seconds | 
 
 ### Return type
 
@@ -479,7 +479,7 @@ No authorization required
 
 ## UserListGet
 
-> MerchantUserListGet200Response UserListGet(ctx).UserId(userId).FirstName(firstName).LastName(lastName).Email(email).PlanIds(planIds).GatewayIds(gatewayIds).SubscriptionId(subscriptionId).SubStatus(subStatus).Status(status).DeleteInclude(deleteInclude).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+> MerchantUserListGet200Response UserListGet(ctx).UserId(userId).ExternalUserId(externalUserId).FirstName(firstName).LastName(lastName).Email(email).PlanIds(planIds).GatewayIds(gatewayIds).SubscriptionId(subscriptionId).SubStatus(subStatus).Status(status).DeleteInclude(deleteInclude).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 
 User List
 
@@ -497,6 +497,7 @@ import (
 
 func main() {
 	userId := int64(789) // int64 | Filter UserId (optional)
+	externalUserId := "externalUserId_example" // string | ExternalUserId (optional)
 	firstName := "firstName_example" // string | Search FirstName (optional)
 	lastName := "lastName_example" // string | Search LastName (optional)
 	email := "email_example" // string | Search Filter Email (optional)
@@ -510,12 +511,12 @@ func main() {
 	sortType := "sortType_example" // string | Sort Type，asc|desc，Default desc (optional)
 	page := int32(56) // int32 | Page,Start 0 (optional)
 	count := int32(56) // int32 | Count OF Page (optional)
-	createTimeStart := int64(789) // int64 | CreateTimeStart (optional)
-	createTimeEnd := int64(789) // int64 | CreateTimeEnd (optional)
+	createTimeStart := int64(789) // int64 | CreateTimeStart，UTC timestamp，seconds (optional)
+	createTimeEnd := int64(789) // int64 | CreateTimeEnd，UTC timestamp，seconds (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.User.UserListGet(context.Background()).UserId(userId).FirstName(firstName).LastName(lastName).Email(email).PlanIds(planIds).GatewayIds(gatewayIds).SubscriptionId(subscriptionId).SubStatus(subStatus).Status(status).DeleteInclude(deleteInclude).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+	resp, r, err := apiClient.User.UserListGet(context.Background()).UserId(userId).ExternalUserId(externalUserId).FirstName(firstName).LastName(lastName).Email(email).PlanIds(planIds).GatewayIds(gatewayIds).SubscriptionId(subscriptionId).SubStatus(subStatus).Status(status).DeleteInclude(deleteInclude).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `User.UserListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -537,6 +538,7 @@ Other parameters are passed through a pointer to a apiUserListGetRequest struct 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int64** | Filter UserId | 
+ **externalUserId** | **string** | ExternalUserId | 
  **firstName** | **string** | Search FirstName | 
  **lastName** | **string** | Search LastName | 
  **email** | **string** | Search Filter Email | 
@@ -550,8 +552,8 @@ Name | Type | Description  | Notes
  **sortType** | **string** | Sort Type，asc|desc，Default desc | 
  **page** | **int32** | Page,Start 0 | 
  **count** | **int32** | Count OF Page | 
- **createTimeStart** | **int64** | CreateTimeStart | 
- **createTimeEnd** | **int64** | CreateTimeEnd | 
+ **createTimeStart** | **int64** | CreateTimeStart，UTC timestamp，seconds | 
+ **createTimeEnd** | **int64** | CreateTimeEnd，UTC timestamp，seconds | 
 
 ### Return type
 

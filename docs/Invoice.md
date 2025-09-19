@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**InvoiceCancelPost**](Invoice.md#InvoiceCancelPost) | **Post** /merchant/invoice/cancel | Admin Cancel Invoice
 [**InvoiceClearPaymentPost**](Invoice.md#InvoiceClearPaymentPost) | **Post** /merchant/invoice/clearPayment | Admin Clear Invoice Current Pending Payment
+[**InvoiceCreditNoteListPost**](Invoice.md#InvoiceCreditNoteListPost) | **Post** /merchant/invoice/credit_note/list | Bulk CreditNote(Refund Invoice) Invoice List
 [**InvoiceDeletePost**](Invoice.md#InvoiceDeletePost) | **Post** /merchant/invoice/delete | Delete Pending Invoice
 [**InvoiceDetailGet**](Invoice.md#InvoiceDetailGet) | **Get** /merchant/invoice/detail | Invoice Detail
 [**InvoiceDetailPost**](Invoice.md#InvoiceDetailPost) | **Post** /merchant/invoice/detail | Invoice Detail
@@ -138,6 +139,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## InvoiceCreditNoteListPost
+
+> MerchantInvoiceCreditNoteListPost200Response InvoiceCreditNoteListPost(ctx).UnibeeApiMerchantInvoiceCreditNoteListReq(unibeeApiMerchantInvoiceCreditNoteListReq).Execute()
+
+Bulk CreditNote(Refund Invoice) Invoice List
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantInvoiceCreditNoteListReq := *openapiclient.NewUnibeeApiMerchantInvoiceCreditNoteListReq() // UnibeeApiMerchantInvoiceCreditNoteListReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Invoice.InvoiceCreditNoteListPost(context.Background()).UnibeeApiMerchantInvoiceCreditNoteListReq(unibeeApiMerchantInvoiceCreditNoteListReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceCreditNoteListPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `InvoiceCreditNoteListPost`: MerchantInvoiceCreditNoteListPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceCreditNoteListPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiInvoiceCreditNoteListPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantInvoiceCreditNoteListReq** | [**UnibeeApiMerchantInvoiceCreditNoteListReq**](UnibeeApiMerchantInvoiceCreditNoteListReq.md) |  | 
+
+### Return type
+
+[**MerchantInvoiceCreditNoteListPost200Response**](MerchantInvoiceCreditNoteListPost200Response.md)
 
 ### Authorization
 
@@ -519,10 +586,10 @@ func main() {
 	type_ := int32(56) // int32 | invoice Type, 0-payment, 1-refund (optional)
 	page := int32(56) // int32 | Page, Start 0 (optional)
 	count := int32(56) // int32 | Count By Page (optional)
-	createTimeStart := int64(789) // int64 | CreateTimeStart (optional)
-	createTimeEnd := int64(789) // int64 | CreateTimeEnd (optional)
-	reportTimeStart := int64(789) // int64 | ReportTimeStart (optional)
-	reportTimeEnd := int64(789) // int64 | ReportTimeEnd (optional)
+	createTimeStart := int64(789) // int64 | CreateTimeStart，UTC timestamp，seconds (optional)
+	createTimeEnd := int64(789) // int64 | CreateTimeEnd，UTC timestamp，seconds (optional)
+	reportTimeStart := int64(789) // int64 | ReportTimeStart，UTC timestamp，seconds (optional)
+	reportTimeEnd := int64(789) // int64 | ReportTimeEnd，UTC timestamp，seconds (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -562,10 +629,10 @@ Name | Type | Description  | Notes
  **type_** | **int32** | invoice Type, 0-payment, 1-refund | 
  **page** | **int32** | Page, Start 0 | 
  **count** | **int32** | Count By Page | 
- **createTimeStart** | **int64** | CreateTimeStart | 
- **createTimeEnd** | **int64** | CreateTimeEnd | 
- **reportTimeStart** | **int64** | ReportTimeStart | 
- **reportTimeEnd** | **int64** | ReportTimeEnd | 
+ **createTimeStart** | **int64** | CreateTimeStart，UTC timestamp，seconds | 
+ **createTimeEnd** | **int64** | CreateTimeEnd，UTC timestamp，seconds | 
+ **reportTimeStart** | **int64** | ReportTimeStart，UTC timestamp，seconds | 
+ **reportTimeEnd** | **int64** | ReportTimeEnd，UTC timestamp，seconds | 
 
 ### Return type
 

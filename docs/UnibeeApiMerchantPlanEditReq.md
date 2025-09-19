@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **MetricLimits** | Pointer to [**[]UnibeeApiBeanPlanMetricLimitParam**](UnibeeApiBeanPlanMetricLimitParam.md) | Plan&#39;s MetricLimit List | [optional] 
 **MetricMeteredCharge** | Pointer to [**[][]UnibeeApiBeanPlanMetricMeteredChargeParam**]([]UnibeeApiBeanPlanMetricMeteredChargeParam.md) | Plan&#39;s MetricMeteredCharge | [optional] 
 **MetricRecurringCharge** | Pointer to [**[][]UnibeeApiBeanPlanMetricMeteredChargeParam**]([]UnibeeApiBeanPlanMetricMeteredChargeParam.md) | Plan&#39;s MetricRecurringCharge | [optional] 
+**MultiCurrencies** | Pointer to [**[][]UnibeeApiBeanPlanMultiCurrency**]([]UnibeeApiBeanPlanMultiCurrency.md) | Plan&#39;s MultiCurrencies | [optional] 
 **OnetimeAddonIds** | Pointer to **[]int64** | Plan Ids Of Onetime Addon Type | [optional] 
 **PlanId** | **int64** | Id of plan | 
 **PlanName** | Pointer to **string** | Name of plan | [optional] 
@@ -448,6 +449,31 @@ SetMetricRecurringCharge sets MetricRecurringCharge field to given value.
 `func (o *UnibeeApiMerchantPlanEditReq) HasMetricRecurringCharge() bool`
 
 HasMetricRecurringCharge returns a boolean if a field has been set.
+
+### GetMultiCurrencies
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetMultiCurrencies() [][]UnibeeApiBeanPlanMultiCurrency`
+
+GetMultiCurrencies returns the MultiCurrencies field if non-nil, zero value otherwise.
+
+### GetMultiCurrenciesOk
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetMultiCurrenciesOk() (*[][]UnibeeApiBeanPlanMultiCurrency, bool)`
+
+GetMultiCurrenciesOk returns a tuple with the MultiCurrencies field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMultiCurrencies
+
+`func (o *UnibeeApiMerchantPlanEditReq) SetMultiCurrencies(v [][]UnibeeApiBeanPlanMultiCurrency)`
+
+SetMultiCurrencies sets MultiCurrencies field to given value.
+
+### HasMultiCurrencies
+
+`func (o *UnibeeApiMerchantPlanEditReq) HasMultiCurrencies() bool`
+
+HasMultiCurrencies returns a boolean if a field has been set.
 
 ### GetOnetimeAddonIds
 

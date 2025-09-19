@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ChargeType** | Pointer to **int32** | ChargeType,0-standard pricing 1-graduated pricing | [optional] 
 **GraduatedAmounts** | Pointer to [**[]UnibeeApiBeanMetricPlanChargeGraduatedStep**](UnibeeApiBeanMetricPlanChargeGraduatedStep.md) | GraduatedAmounts, used for graduated pricing | [optional] 
 **MetricId** | Pointer to **int64** | MetricId | [optional] 
-**StandardAmount** | Pointer to **int64** | StandardAmount, used for standard pricing,cent | [optional] 
+**StandardAmount** | Pointer to **int64** | StandardAmount, cent, used for standard pricing,cent | [optional] 
 **StandardStartValue** | Pointer to **int64** | StandardStartValue, used for standard pricing | [optional] 
 
 ## Methods

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AddonId** | **int64** | AddonId, id of one-time addon, the new payment will created base on the addon&#39;s amount&#39; | 
 **ApplyPromoCredit** | Pointer to **bool** | apply promo credit or not | [optional] 
 **ApplyPromoCreditAmount** | Pointer to **int32** | apply promo credit amount, auto compute if not specified | [optional] 
+**Currency** | Pointer to **string** | The currency of payment | [optional] 
 **DiscountAmount** | Pointer to **int32** | Amount of discount | [optional] 
 **DiscountCode** | Pointer to **string** | DiscountCode | [optional] 
 **DiscountPercentage** | Pointer to **int32** | Percentage of discount, 100&#x3D;1%, ignore if discountAmount specified | [optional] 
@@ -106,6 +107,31 @@ SetApplyPromoCreditAmount sets ApplyPromoCreditAmount field to given value.
 `func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) HasApplyPromoCreditAmount() bool`
 
 HasApplyPromoCreditAmount returns a boolean if a field has been set.
+
+### GetCurrency
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) GetCurrency() string`
+
+GetCurrency returns the Currency field if non-nil, zero value otherwise.
+
+### GetCurrencyOk
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) GetCurrencyOk() (*string, bool)`
+
+GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrency
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) SetCurrency(v string)`
+
+SetCurrency sets Currency field to given value.
+
+### HasCurrency
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) HasCurrency() bool`
+
+HasCurrency returns a boolean if a field has been set.
 
 ### GetDiscountAmount
 

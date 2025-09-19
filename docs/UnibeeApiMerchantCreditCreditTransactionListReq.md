@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountType** | **int32** | filter type of account, 1-main account, 2-promo credit account | 
 **Count** | Pointer to **int32** | Count Of Per Page | [optional] 
-**CreateTimeEnd** | Pointer to **int64** | CreateTimeEnd | [optional] 
-**CreateTimeStart** | Pointer to **int64** | CreateTimeStart | [optional] 
+**CreateTimeEnd** | Pointer to **int64** | CreateTimeEnd，UTC timestamp，seconds | [optional] 
+**CreateTimeStart** | Pointer to **int64** | CreateTimeStart，UTC timestamp，seconds | [optional] 
 **Currency** | Pointer to **string** | filter currency of account | [optional] 
 **Email** | Pointer to **string** | filter email of user | [optional] 
 **Page** | Pointer to **int32** | Page, Start 0 | [optional] 

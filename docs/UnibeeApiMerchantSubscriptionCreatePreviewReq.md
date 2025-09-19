@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | addonParams | [optional] 
 **ApplyPromoCredit** | Pointer to **bool** | apply promo credit or not | [optional] 
 **ApplyPromoCreditAmount** | Pointer to **int32** | apply promo credit amount, auto compute if not specified | [optional] 
+**Currency** | Pointer to **string** | The currency of payment | [optional] 
 **DiscountCode** | Pointer to **string** | DiscountCode | [optional] 
 **Email** | Pointer to **string** | Email, either ExternalUserId&amp;Email or UserId needed | [optional] 
 **ExternalUserId** | Pointer to **string** | ExternalUserId, unique, either ExternalUserId&amp;Email or UserId needed | [optional] 
@@ -115,6 +116,31 @@ SetApplyPromoCreditAmount sets ApplyPromoCreditAmount field to given value.
 `func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) HasApplyPromoCreditAmount() bool`
 
 HasApplyPromoCreditAmount returns a boolean if a field has been set.
+
+### GetCurrency
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) GetCurrency() string`
+
+GetCurrency returns the Currency field if non-nil, zero value otherwise.
+
+### GetCurrencyOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) GetCurrencyOk() (*string, bool)`
+
+GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrency
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) SetCurrency(v string)`
+
+SetCurrency sets Currency field to given value.
+
+### HasCurrency
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) HasCurrency() bool`
+
+HasCurrency returns a boolean if a field has been set.
 
 ### GetDiscountCode
 

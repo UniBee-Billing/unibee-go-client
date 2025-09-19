@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **ExternalSubscriptionId** | Pointer to **string** | Required, The external id of subscription | [optional] 
 **ExternalUserId** | Pointer to **string** | The external id of user, one of Email or ExternalUserId is required  | [optional] 
 **Gateway** | Pointer to **string** | Required, should one of stripe|paypal|wire_transfer|changelly  | [optional] 
+**Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **PlanId** | Pointer to **int64** | The id of plan, one of planId or ExternalPlanId is required, plan should created at UniBee at first  | [optional] 
 **Quantity** | Pointer to **int64** | the quantity of plan, default 1 if not provided  | [optional] 
 **TaxPercentage** | Pointer to **int64** | The TaxPercentage of subscription, Only applicable when the system VAT gateway not setup, 1000 &#x3D; 10% | [optional] 
@@ -235,6 +236,31 @@ SetGateway sets Gateway field to given value.
 `func (o *UnibeeApiMerchantSubscriptionHistorySubscriptionImportReq) HasGateway() bool`
 
 HasGateway returns a boolean if a field has been set.
+
+### GetMetadata
+
+`func (o *UnibeeApiMerchantSubscriptionHistorySubscriptionImportReq) GetMetadata() map[string]map[string]interface{}`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *UnibeeApiMerchantSubscriptionHistorySubscriptionImportReq) GetMetadataOk() (*map[string]map[string]interface{}, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *UnibeeApiMerchantSubscriptionHistorySubscriptionImportReq) SetMetadata(v map[string]map[string]interface{})`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *UnibeeApiMerchantSubscriptionHistorySubscriptionImportReq) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
 
 ### GetPlanId
 

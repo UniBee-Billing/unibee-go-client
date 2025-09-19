@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**AuthSsoPasswordForgetOTPVerifyPost**](MemberAuthentication.md#AuthSsoPasswordForgetOTPVerifyPost) | **Post** /merchant/auth/sso/passwordForgetOTPVerify | OTP Password Forget Code Verification
 [**AuthSsoPasswordForgetTotpVerifyPost**](MemberAuthentication.md#AuthSsoPasswordForgetTotpVerifyPost) | **Post** /merchant/auth/sso/passwordForgetTotpVerify | 2FA Password Forget Code Verification
 [**AuthSsoPasswordSetupPost**](MemberAuthentication.md#AuthSsoPasswordSetupPost) | **Post** /merchant/auth/sso/passwordSetup | Password Setup
+[**AuthSsoRegisterEmailCheckPost**](MemberAuthentication.md#AuthSsoRegisterEmailCheckPost) | **Post** /merchant/auth/sso/register_email_check | Register Email Check
 [**AuthSsoRegisterPost**](MemberAuthentication.md#AuthSsoRegisterPost) | **Post** /merchant/auth/sso/register | Register
 [**AuthSsoRegisterVerifyPost**](MemberAuthentication.md#AuthSsoRegisterVerifyPost) | **Post** /merchant/auth/sso/registerVerify | Register Verify
 
@@ -1009,6 +1010,72 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## AuthSsoRegisterEmailCheckPost
+
+> MerchantAuthSsoRegisterEmailCheckPost200Response AuthSsoRegisterEmailCheckPost(ctx).UnibeeApiMerchantAuthRegisterEmailCheckReq(unibeeApiMerchantAuthRegisterEmailCheckReq).Execute()
+
+Register Email Check
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantAuthRegisterEmailCheckReq := *openapiclient.NewUnibeeApiMerchantAuthRegisterEmailCheckReq("Email_example") // UnibeeApiMerchantAuthRegisterEmailCheckReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MemberAuthentication.AuthSsoRegisterEmailCheckPost(context.Background()).UnibeeApiMerchantAuthRegisterEmailCheckReq(unibeeApiMerchantAuthRegisterEmailCheckReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MemberAuthentication.AuthSsoRegisterEmailCheckPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AuthSsoRegisterEmailCheckPost`: MerchantAuthSsoRegisterEmailCheckPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `MemberAuthentication.AuthSsoRegisterEmailCheckPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAuthSsoRegisterEmailCheckPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantAuthRegisterEmailCheckReq** | [**UnibeeApiMerchantAuthRegisterEmailCheckReq**](UnibeeApiMerchantAuthRegisterEmailCheckReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoRegisterEmailCheckPost200Response**](MerchantAuthSsoRegisterEmailCheckPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## AuthSsoRegisterPost
 
 > MerchantAuthSsoClearTotpPost200Response AuthSsoRegisterPost(ctx).UnibeeApiMerchantAuthRegisterReq(unibeeApiMerchantAuthRegisterReq).Execute()
@@ -1077,7 +1144,7 @@ No authorization required
 
 ## AuthSsoRegisterVerifyPost
 
-> MerchantAuthSsoRegisterVerifyPost200Response AuthSsoRegisterVerifyPost(ctx).UnibeeApiMerchantAuthRegisterVerifyReq(unibeeApiMerchantAuthRegisterVerifyReq).Execute()
+> MerchantAuthSsoLoginPost200Response AuthSsoRegisterVerifyPost(ctx).UnibeeApiMerchantAuthRegisterVerifyReq(unibeeApiMerchantAuthRegisterVerifyReq).Execute()
 
 Register Verify
 
@@ -1105,7 +1172,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MemberAuthentication.AuthSsoRegisterVerifyPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `AuthSsoRegisterVerifyPost`: MerchantAuthSsoRegisterVerifyPost200Response
+	// response from `AuthSsoRegisterVerifyPost`: MerchantAuthSsoLoginPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `MemberAuthentication.AuthSsoRegisterVerifyPost`: %v\n", resp)
 }
 ```
@@ -1125,7 +1192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoRegisterVerifyPost200Response**](MerchantAuthSsoRegisterVerifyPost200Response.md)
+[**MerchantAuthSsoLoginPost200Response**](MerchantAuthSsoLoginPost200Response.md)
 
 ### Authorization
 

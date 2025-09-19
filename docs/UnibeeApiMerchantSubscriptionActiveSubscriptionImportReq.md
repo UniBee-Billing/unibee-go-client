@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **Features** | Pointer to **string** | In json format, additional features data of subscription, will join user&#39;s metric data in user api if provided&#39; | [optional] 
 **FirstPaidTime** | Pointer to **string** | UTC time, the first payment success time of subscription, format &#39;2006-01-02 15:04:05&#39; | [optional] 
 **Gateway** | Pointer to **string** | Required, should one of stripe|paypal|wire_transfer|changelly  | [optional] 
+**Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **PlanId** | Pointer to **int64** | The id of plan, one of planId or ExternalPlanId is required, plan should created at UniBee at first  | [optional] 
 **Quantity** | Pointer to **int64** | the quantity of plan, default 1 if not provided  | [optional] 
 **TaxPercentage** | Pointer to **int64** | The tax percentage. Only applicable when the system VAT gateway not setup. Value is in thousandths (e.g., 1000 &#x3D; 10%). | [optional] 
@@ -365,6 +366,31 @@ SetGateway sets Gateway field to given value.
 `func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) HasGateway() bool`
 
 HasGateway returns a boolean if a field has been set.
+
+### GetMetadata
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) GetMetadata() map[string]map[string]interface{}`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) GetMetadataOk() (*map[string]map[string]interface{}, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) SetMetadata(v map[string]map[string]interface{})`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
 
 ### GetPlanId
 

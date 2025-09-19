@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **IsOwner** | Pointer to **bool** | Check Member is Owner | [optional] 
 **LastName** | Pointer to **string** | last name | [optional] 
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
+**Metadata** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
 **Mobile** | Pointer to **string** | mobile | [optional] 
 **OauthAccounts** | Pointer to [**[]UnibeeApiBeanOauth**](UnibeeApiBeanOauth.md) | List of connected OAuth accounts | [optional] 
 **TotpType** | Pointer to **int32** | 0-Inactive, 1-General, Google Authenticator | 2-Microsoft Authenticator | 3-Authy | 4-1Password | 5-LastPass | 6-FreeOTP | 7-Other TOTP | [optional] 
@@ -234,6 +235,31 @@ SetMerchantId sets MerchantId field to given value.
 `func (o *UnibeeApiBeanMerchantMember) HasMerchantId() bool`
 
 HasMerchantId returns a boolean if a field has been set.
+
+### GetMetadata
+
+`func (o *UnibeeApiBeanMerchantMember) GetMetadata() map[string]map[string]interface{}`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *UnibeeApiBeanMerchantMember) GetMetadataOk() (*map[string]map[string]interface{}, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *UnibeeApiBeanMerchantMember) SetMetadata(v map[string]map[string]interface{})`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *UnibeeApiBeanMerchantMember) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
 
 ### GetMobile
 

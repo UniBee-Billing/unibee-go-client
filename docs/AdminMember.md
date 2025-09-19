@@ -761,7 +761,7 @@ No authorization required
 
 ## MemberProfileGet
 
-> MerchantAuthSsoRegisterVerifyPost200Response MemberProfileGet(ctx).Execute()
+> MerchantMemberProfileGet200Response MemberProfileGet(ctx).Execute()
 
 Get Member Profile
 
@@ -786,7 +786,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AdminMember.MemberProfileGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `MemberProfileGet`: MerchantAuthSsoRegisterVerifyPost200Response
+	// response from `MemberProfileGet`: MerchantMemberProfileGet200Response
 	fmt.Fprintf(os.Stdout, "Response from `AdminMember.MemberProfileGet`: %v\n", resp)
 }
 ```
@@ -802,7 +802,7 @@ Other parameters are passed through a pointer to a apiMemberProfileGetRequest st
 
 ### Return type
 
-[**MerchantAuthSsoRegisterVerifyPost200Response**](MerchantAuthSsoRegisterVerifyPost200Response.md)
+[**MerchantMemberProfileGet200Response**](MerchantMemberProfileGet200Response.md)
 
 ### Authorization
 
@@ -820,7 +820,7 @@ No authorization required
 
 ## MemberResetTotpPost
 
-> MerchantAuthSsoRegisterVerifyPost200Response MemberResetTotpPost(ctx).UnibeeApiMerchantMemberResetTotpReq(unibeeApiMerchantMemberResetTotpReq).Execute()
+> MerchantMemberProfileGet200Response MemberResetTotpPost(ctx).UnibeeApiMerchantMemberResetTotpReq(unibeeApiMerchantMemberResetTotpReq).Execute()
 
 Admin Member Reset Member 2FA Key
 
@@ -846,7 +846,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AdminMember.MemberResetTotpPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `MemberResetTotpPost`: MerchantAuthSsoRegisterVerifyPost200Response
+	// response from `MemberResetTotpPost`: MerchantMemberProfileGet200Response
 	fmt.Fprintf(os.Stdout, "Response from `AdminMember.MemberResetTotpPost`: %v\n", resp)
 }
 ```
@@ -866,7 +866,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoRegisterVerifyPost200Response**](MerchantAuthSsoRegisterVerifyPost200Response.md)
+[**MerchantMemberProfileGet200Response**](MerchantMemberProfileGet200Response.md)
 
 ### Authorization
 
@@ -1142,7 +1142,7 @@ No authorization required
 
 ## MemberUpdatePost
 
-> MerchantAuthSsoRegisterVerifyPost200Response MemberUpdatePost(ctx).UnibeeApiMerchantMemberUpdateReq(unibeeApiMerchantMemberUpdateReq).Execute()
+> MerchantMemberProfileGet200Response MemberUpdatePost(ctx).UnibeeApiMerchantMemberUpdateReq(unibeeApiMerchantMemberUpdateReq).Execute()
 
 Update Member Profile
 
@@ -1168,7 +1168,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AdminMember.MemberUpdatePost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `MemberUpdatePost`: MerchantAuthSsoRegisterVerifyPost200Response
+	// response from `MemberUpdatePost`: MerchantMemberProfileGet200Response
 	fmt.Fprintf(os.Stdout, "Response from `AdminMember.MemberUpdatePost`: %v\n", resp)
 }
 ```
@@ -1188,7 +1188,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoRegisterVerifyPost200Response**](MerchantAuthSsoRegisterVerifyPost200Response.md)
+[**MerchantMemberProfileGet200Response**](MerchantMemberProfileGet200Response.md)
 
 ### Authorization
 

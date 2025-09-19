@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**GatewayId** | Pointer to **int32** | The id of payment gateway, either gatewayId or gatewayName | [optional] 
-**GatewayName** | Pointer to **string** | The name of payment gateway, , either gatewayId or gatewayName, stripe|paypal|changelly|unitpay|payssion|cryptadium | [optional] 
+**GatewayId** | Pointer to **int32** | The id of payment gateway, either gatewayId or gatewayName should provided | [optional] 
+**GatewayName** | Pointer to **string** | The specified name of payment gateway, either gatewayId or gatewayName should provided, stripe|paypal|changelly|unitpay|payssion|cryptadium, return default gateway if provided | [optional] 
 
 ## Methods
 

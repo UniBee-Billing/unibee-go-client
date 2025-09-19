@@ -672,7 +672,7 @@ No authorization required
 
 ## SubscriptionListGet
 
-> MerchantSubscriptionListGet200Response SubscriptionListGet(ctx).UserId(userId).Email(email).Status(status).Currency(currency).PlanIds(planIds).ProductIds(productIds).AmountStart(amountStart).AmountEnd(amountEnd).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+> MerchantSubscriptionListGet200Response SubscriptionListGet(ctx).UserId(userId).ExternalUserId(externalUserId).Email(email).Status(status).Currency(currency).PlanIds(planIds).ProductIds(productIds).AmountStart(amountStart).AmountEnd(amountEnd).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 
 Get Subscription List
 
@@ -690,23 +690,24 @@ import (
 
 func main() {
 	userId := int64(789) // int64 | UserId (optional)
+	externalUserId := "externalUserId_example" // string | ExternalUserId (optional)
 	email := "email_example" // string | The filter email of subscription user (optional)
 	status := []int32{int32(123)} // []int32 | Filter, Default All，Status，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | 9-Failed (optional)
 	currency := "currency_example" // string | The currency of subscription (optional)
 	planIds := []int64{int64(123)} // []int64 | The filter ids of plan (optional)
-	productIds := []int64{int64(123)} // []int64 | The filter ids of product (optional)
+	productIds := []int64{int64(123)} // []int64 | The filter ids of product, invalid if planIds is provided (optional)
 	amountStart := int32(56) // int32 | The filter start amount of subscription (optional)
 	amountEnd := int32(56) // int32 | The filter end amount of subscription (optional)
 	sortField := "sortField_example" // string | Sort Field，gmt_create|gmt_modify，Default gmt_modify (optional)
 	sortType := "sortType_example" // string | Sort Type，asc|desc，Default desc (optional)
 	page := int32(56) // int32 | Page, Start With 0 (optional)
 	count := int32(56) // int32 | Count Of Page (optional)
-	createTimeStart := int64(789) // int64 | CreateTimeStart (optional)
-	createTimeEnd := int64(789) // int64 | CreateTimeEnd (optional)
+	createTimeStart := int64(789) // int64 | CreateTimeStart，UTC timestamp，seconds (optional)
+	createTimeEnd := int64(789) // int64 | CreateTimeEnd，UTC timestamp，seconds (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Subscription.SubscriptionListGet(context.Background()).UserId(userId).Email(email).Status(status).Currency(currency).PlanIds(planIds).ProductIds(productIds).AmountStart(amountStart).AmountEnd(amountEnd).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+	resp, r, err := apiClient.Subscription.SubscriptionListGet(context.Background()).UserId(userId).ExternalUserId(externalUserId).Email(email).Status(status).Currency(currency).PlanIds(planIds).ProductIds(productIds).AmountStart(amountStart).AmountEnd(amountEnd).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -728,19 +729,20 @@ Other parameters are passed through a pointer to a apiSubscriptionListGetRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int64** | UserId | 
+ **externalUserId** | **string** | ExternalUserId | 
  **email** | **string** | The filter email of subscription user | 
  **status** | **[]int32** | Filter, Default All，Status，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | 9-Failed | 
  **currency** | **string** | The currency of subscription | 
  **planIds** | **[]int64** | The filter ids of plan | 
- **productIds** | **[]int64** | The filter ids of product | 
+ **productIds** | **[]int64** | The filter ids of product, invalid if planIds is provided | 
  **amountStart** | **int32** | The filter start amount of subscription | 
  **amountEnd** | **int32** | The filter end amount of subscription | 
  **sortField** | **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | 
  **sortType** | **string** | Sort Type，asc|desc，Default desc | 
  **page** | **int32** | Page, Start With 0 | 
  **count** | **int32** | Count Of Page | 
- **createTimeStart** | **int64** | CreateTimeStart | 
- **createTimeEnd** | **int64** | CreateTimeEnd | 
+ **createTimeStart** | **int64** | CreateTimeStart，UTC timestamp，seconds | 
+ **createTimeEnd** | **int64** | CreateTimeEnd，UTC timestamp，seconds | 
 
 ### Return type
 

@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **MetricLimits** | Pointer to [**[]UnibeeApiBeanPlanMetricLimitParam**](UnibeeApiBeanPlanMetricLimitParam.md) | Plan&#39;s MetricLimit List | [optional] 
 **MetricMeteredCharge** | Pointer to [**[]UnibeeApiBeanPlanMetricMeteredChargeParam**](UnibeeApiBeanPlanMetricMeteredChargeParam.md) | Plan&#39;s MetricMeteredCharge | [optional] 
 **MetricRecurringCharge** | Pointer to [**[]UnibeeApiBeanPlanMetricMeteredChargeParam**](UnibeeApiBeanPlanMetricMeteredChargeParam.md) | Plan&#39;s MetricRecurringCharge | [optional] 
+**MultiCurrencies** | Pointer to [**[]UnibeeApiBeanPlanMultiCurrency**](UnibeeApiBeanPlanMultiCurrency.md) | Plan&#39;s MultiCurrencies | [optional] 
 **PlanName** | Pointer to **string** | PlanName | [optional] 
 **ProductId** | Pointer to **int64** | product id | [optional] 
 **PublishStatus** | Pointer to **int32** | 1-UnPublish,2-Publish, Use For Display Plan At UserPortal | [optional] 
@@ -630,6 +631,31 @@ SetMetricRecurringCharge sets MetricRecurringCharge field to given value.
 `func (o *UnibeeApiBeanPlan) HasMetricRecurringCharge() bool`
 
 HasMetricRecurringCharge returns a boolean if a field has been set.
+
+### GetMultiCurrencies
+
+`func (o *UnibeeApiBeanPlan) GetMultiCurrencies() []UnibeeApiBeanPlanMultiCurrency`
+
+GetMultiCurrencies returns the MultiCurrencies field if non-nil, zero value otherwise.
+
+### GetMultiCurrenciesOk
+
+`func (o *UnibeeApiBeanPlan) GetMultiCurrenciesOk() (*[]UnibeeApiBeanPlanMultiCurrency, bool)`
+
+GetMultiCurrenciesOk returns a tuple with the MultiCurrencies field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMultiCurrencies
+
+`func (o *UnibeeApiBeanPlan) SetMultiCurrencies(v []UnibeeApiBeanPlanMultiCurrency)`
+
+SetMultiCurrencies sets MultiCurrencies field to given value.
+
+### HasMultiCurrencies
+
+`func (o *UnibeeApiBeanPlan) HasMultiCurrencies() bool`
+
+HasMultiCurrencies returns a boolean if a field has been set.
 
 ### GetPlanName
 

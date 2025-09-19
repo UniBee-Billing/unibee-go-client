@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **Phone** | Pointer to **string** | Phone | [optional] 
 **RegistrationNumber** | Pointer to **string** | RegistrationNumber | [optional] 
 **State** | Pointer to **string** | State | [optional] 
-**Type** | Pointer to **int64** | User type, 1-Individual|2-organization | [optional] 
+**Type** | Pointer to **int64** | User type, 1-Individual|2-Business | [optional] 
 **UserName** | Pointer to **string** | UserName | [optional] 
 **VatNumber** | Pointer to **string** | vat number | [optional] 
 **ZipCode** | Pointer to **string** | zip_code | [optional] 

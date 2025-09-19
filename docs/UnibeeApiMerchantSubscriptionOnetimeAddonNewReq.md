@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **ApplyPromoCredit** | Pointer to **bool** | apply promo credit or not | [optional] 
 **ApplyPromoCreditAmount** | Pointer to **int32** | apply promo credit amount, auto compute if not specified | [optional] 
 **CancelUrl** | Pointer to **string** | CancelUrl, back to cancelUrl if user cancel the payment | [optional] 
+**Currency** | Pointer to **string** | The currency of payment | [optional] 
 **DiscountAmount** | Pointer to **int32** | Amount of discount | [optional] 
 **DiscountCode** | Pointer to **string** | DiscountCode | [optional] 
 **DiscountPercentage** | Pointer to **int32** | Percentage of discount, 100&#x3D;1%, ignore if discountAmount specified | [optional] 
@@ -133,6 +134,31 @@ SetCancelUrl sets CancelUrl field to given value.
 `func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) HasCancelUrl() bool`
 
 HasCancelUrl returns a boolean if a field has been set.
+
+### GetCurrency
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetCurrency() string`
+
+GetCurrency returns the Currency field if non-nil, zero value otherwise.
+
+### GetCurrencyOk
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) GetCurrencyOk() (*string, bool)`
+
+GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrency
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) SetCurrency(v string)`
+
+SetCurrency sets Currency field to given value.
+
+### HasCurrency
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonNewReq) HasCurrency() bool`
+
+HasCurrency returns a boolean if a field has been set.
 
 ### GetDiscountAmount
 

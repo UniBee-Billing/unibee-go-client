@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **RegistrationNumber** | Pointer to **string** | RegistrationNumber | [optional] 
 **Telegram** | Pointer to **string** | Telegram | [optional] 
 **Tiktok** | Pointer to **string** | Tiktok | [optional] 
-**Type** | Pointer to **int32** | User type, 1-Individual|2-organization | [optional] 
+**Type** | Pointer to **int32** | User type, 1-Individual|2-Business | [optional] 
 **UserId** | Pointer to **int32** | The id of user, either Email or UserId needed | [optional] 
 **VATNumber** | Pointer to **string** | VAT Number | [optional] 
 **WeChat** | Pointer to **string** | WeChat | [optional] 
