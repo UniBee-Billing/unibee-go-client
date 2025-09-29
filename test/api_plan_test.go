@@ -11,10 +11,10 @@ package unibee
 
 import (
 	"context"
-	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func Test_unibee_PlanService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_unibee_PlanService(t *testing.T) {
 
 	t.Run("Test PlanService PlanActivatePost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Plan.PlanActivatePost(context.Background()).Execute()
 
@@ -36,7 +36,7 @@ func Test_unibee_PlanService(t *testing.T) {
 
 	t.Run("Test PlanService PlanAddonsBindingPost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Plan.PlanAddonsBindingPost(context.Background()).Execute()
 
@@ -46,9 +46,33 @@ func Test_unibee_PlanService(t *testing.T) {
 
 	})
 
+	t.Run("Test PlanService PlanArchivePost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Plan.PlanArchivePost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test PlanService PlanCopyPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Plan.PlanCopyPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test PlanService PlanDeletePost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Plan.PlanDeletePost(context.Background()).Execute()
 
@@ -60,7 +84,7 @@ func Test_unibee_PlanService(t *testing.T) {
 
 	t.Run("Test PlanService PlanDetailGet", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Plan.PlanDetailGet(context.Background()).Execute()
 
@@ -72,7 +96,7 @@ func Test_unibee_PlanService(t *testing.T) {
 
 	t.Run("Test PlanService PlanDetailPost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Plan.PlanDetailPost(context.Background()).Execute()
 
@@ -84,7 +108,7 @@ func Test_unibee_PlanService(t *testing.T) {
 
 	t.Run("Test PlanService PlanEditPost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Plan.PlanEditPost(context.Background()).Execute()
 
@@ -96,7 +120,7 @@ func Test_unibee_PlanService(t *testing.T) {
 
 	t.Run("Test PlanService PlanListGet", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Plan.PlanListGet(context.Background()).Execute()
 
@@ -108,7 +132,7 @@ func Test_unibee_PlanService(t *testing.T) {
 
 	t.Run("Test PlanService PlanListPost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Plan.PlanListPost(context.Background()).Execute()
 
@@ -120,7 +144,7 @@ func Test_unibee_PlanService(t *testing.T) {
 
 	t.Run("Test PlanService PlanNewPost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Plan.PlanNewPost(context.Background()).Execute()
 
@@ -132,7 +156,7 @@ func Test_unibee_PlanService(t *testing.T) {
 
 	t.Run("Test PlanService PlanPublishPost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Plan.PlanPublishPost(context.Background()).Execute()
 
@@ -144,7 +168,7 @@ func Test_unibee_PlanService(t *testing.T) {
 
 	t.Run("Test PlanService PlanUnpublishedPost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Plan.PlanUnpublishedPost(context.Background()).Execute()
 

@@ -11,10 +11,10 @@ package unibee
 
 import (
 	"context"
-	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func Test_unibee_SubscriptionService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_unibee_SubscriptionService(t *testing.T) {
 
 	t.Run("Test SubscriptionService SubscriptionAddNewTrialStartPost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Subscription.SubscriptionAddNewTrialStartPost(context.Background()).Execute()
 
@@ -34,9 +34,21 @@ func Test_unibee_SubscriptionService(t *testing.T) {
 
 	})
 
+	t.Run("Test SubscriptionService SubscriptionApplySubscriptionNextInvoicePost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Subscription.SubscriptionApplySubscriptionNextInvoicePost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SubscriptionService SubscriptionCancelAtPeriodEndPost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Subscription.SubscriptionCancelAtPeriodEndPost(context.Background()).Execute()
 
@@ -48,7 +60,7 @@ func Test_unibee_SubscriptionService(t *testing.T) {
 
 	t.Run("Test SubscriptionService SubscriptionCancelLastCancelAtPeriodEndPost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Subscription.SubscriptionCancelLastCancelAtPeriodEndPost(context.Background()).Execute()
 
@@ -60,7 +72,7 @@ func Test_unibee_SubscriptionService(t *testing.T) {
 
 	t.Run("Test SubscriptionService SubscriptionCancelPost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Subscription.SubscriptionCancelPost(context.Background()).Execute()
 
@@ -70,9 +82,45 @@ func Test_unibee_SubscriptionService(t *testing.T) {
 
 	})
 
+	t.Run("Test SubscriptionService SubscriptionChangeGatewayPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Subscription.SubscriptionChangeGatewayPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SubscriptionService SubscriptionCreatePreviewPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Subscription.SubscriptionCreatePreviewPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SubscriptionService SubscriptionCreateSubmitPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Subscription.SubscriptionCreateSubmitPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SubscriptionService SubscriptionDetailGet", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Subscription.SubscriptionDetailGet(context.Background()).Execute()
 
@@ -84,7 +132,7 @@ func Test_unibee_SubscriptionService(t *testing.T) {
 
 	t.Run("Test SubscriptionService SubscriptionDetailPost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Subscription.SubscriptionDetailPost(context.Background()).Execute()
 
@@ -96,7 +144,7 @@ func Test_unibee_SubscriptionService(t *testing.T) {
 
 	t.Run("Test SubscriptionService SubscriptionListGet", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Subscription.SubscriptionListGet(context.Background()).Execute()
 
@@ -108,7 +156,7 @@ func Test_unibee_SubscriptionService(t *testing.T) {
 
 	t.Run("Test SubscriptionService SubscriptionListPost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Subscription.SubscriptionListPost(context.Background()).Execute()
 
@@ -118,11 +166,11 @@ func Test_unibee_SubscriptionService(t *testing.T) {
 
 	})
 
-	t.Run("Test SubscriptionService SubscriptionUpdatePreviewPost", func(t *testing.T) {
+	t.Run("Test SubscriptionService SubscriptionPreviewSubscriptionNextInvoiceGet", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.SubscriptionUpdate.SubscriptionUpdatePreviewPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.Subscription.SubscriptionPreviewSubscriptionNextInvoiceGet(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -130,11 +178,23 @@ func Test_unibee_SubscriptionService(t *testing.T) {
 
 	})
 
-	t.Run("Test SubscriptionService SubscriptionUpdateSubmitPost", func(t *testing.T) {
+	t.Run("Test SubscriptionService SubscriptionUserPendingCryptoSubscriptionDetailGet", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.SubscriptionUpdate.SubscriptionUpdateSubmitPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.Subscription.SubscriptionUserPendingCryptoSubscriptionDetailGet(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SubscriptionService SubscriptionUserPendingCryptoSubscriptionDetailPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Subscription.SubscriptionUserPendingCryptoSubscriptionDetailPost(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -144,7 +204,7 @@ func Test_unibee_SubscriptionService(t *testing.T) {
 
 	t.Run("Test SubscriptionService SubscriptionUserSubscriptionDetailGet", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Subscription.SubscriptionUserSubscriptionDetailGet(context.Background()).Execute()
 
@@ -156,7 +216,7 @@ func Test_unibee_SubscriptionService(t *testing.T) {
 
 	t.Run("Test SubscriptionService SubscriptionUserSubscriptionDetailPost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Subscription.SubscriptionUserSubscriptionDetailPost(context.Background()).Execute()
 

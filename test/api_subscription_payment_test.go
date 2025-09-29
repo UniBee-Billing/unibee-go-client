@@ -11,10 +11,10 @@ package unibee
 
 import (
 	"context"
-	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func Test_unibee_SubscriptionPaymentService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_unibee_SubscriptionPaymentService(t *testing.T) {
 
 	t.Run("Test SubscriptionPaymentService SubscriptionNewOnetimeAddonPaymentPost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.SubscriptionPayment.SubscriptionNewOnetimeAddonPaymentPost(context.Background()).Execute()
 
@@ -34,9 +34,33 @@ func Test_unibee_SubscriptionPaymentService(t *testing.T) {
 
 	})
 
+	t.Run("Test SubscriptionPaymentService SubscriptionNewOnetimeAddonPreviewPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.SubscriptionPayment.SubscriptionNewOnetimeAddonPreviewPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SubscriptionPaymentService SubscriptionOnetimeAddonPurchaseListGet", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.SubscriptionPayment.SubscriptionOnetimeAddonPurchaseListGet(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SubscriptionPaymentService SubscriptionPaymentNewPost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.SubscriptionPayment.SubscriptionPaymentNewPost(context.Background()).Execute()
 

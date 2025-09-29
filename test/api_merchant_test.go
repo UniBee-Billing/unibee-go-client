@@ -22,6 +22,18 @@ func Test_unibee_MerchantService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
+	t.Run("Test MerchantService AmountMultiCurrenciesExchangePost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Merchant.AmountMultiCurrenciesExchangePost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test MerchantService CountryConfigListPost", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -46,6 +58,18 @@ func Test_unibee_MerchantService(t *testing.T) {
 
 	})
 
+	t.Run("Test MerchantService EditTotpConfigPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Merchant.EditTotpConfigPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test MerchantService GetGet", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -58,11 +82,59 @@ func Test_unibee_MerchantService(t *testing.T) {
 
 	})
 
+	t.Run("Test MerchantService GetLicenseGet", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Merchant.GetLicenseGet(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test MerchantService GetLicenseUpdateUrlGet", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Merchant.GetLicenseUpdateUrlGet(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test MerchantService GetLicenseUpdateUrlPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Merchant.GetLicenseUpdateUrlPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test MerchantService NewApikeyPost", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Merchant.NewApikeyPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test MerchantService SetupMultiCurrenciesPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Merchant.SetupMultiCurrenciesPost(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

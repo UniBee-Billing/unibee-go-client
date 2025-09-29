@@ -22,6 +22,30 @@ func Test_unibee_MemberAuthenticationService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
+	t.Run("Test MemberAuthenticationService AuthSessionLoginPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.MemberAuthentication.AuthSessionLoginPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test MemberAuthenticationService AuthSsoClearTotpPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.MemberAuthentication.AuthSsoClearTotpPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test MemberAuthenticationService AuthSsoLoginOTPPost", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -58,6 +82,78 @@ func Test_unibee_MemberAuthenticationService(t *testing.T) {
 
 	})
 
+	t.Run("Test MemberAuthenticationService AuthSsoOauthGithubGet", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.MemberAuthentication.AuthSsoOauthGithubGet(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test MemberAuthenticationService AuthSsoOauthGoogleGet", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.MemberAuthentication.AuthSsoOauthGoogleGet(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test MemberAuthenticationService AuthSsoOauthLoginPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.MemberAuthentication.AuthSsoOauthLoginPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test MemberAuthenticationService AuthSsoOauthMembersGet", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.MemberAuthentication.AuthSsoOauthMembersGet(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test MemberAuthenticationService AuthSsoOauthRegisterPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.MemberAuthentication.AuthSsoOauthRegisterPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test MemberAuthenticationService AuthSsoOauthSetupPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.MemberAuthentication.AuthSsoOauthSetupPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test MemberAuthenticationService AuthSsoPasswordForgetOTPPost", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -82,11 +178,35 @@ func Test_unibee_MemberAuthenticationService(t *testing.T) {
 
 	})
 
+	t.Run("Test MemberAuthenticationService AuthSsoPasswordForgetTotpVerifyPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.MemberAuthentication.AuthSsoPasswordForgetTotpVerifyPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test MemberAuthenticationService AuthSsoPasswordSetupPost", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.MemberAuthentication.AuthSsoPasswordSetupPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test MemberAuthenticationService AuthSsoRegisterEmailCheckPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.MemberAuthentication.AuthSsoRegisterEmailCheckPost(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

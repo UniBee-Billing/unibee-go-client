@@ -11,10 +11,10 @@ package unibee
 
 import (
 	"context"
-	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func Test_unibee_SubscriptionNoteService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_unibee_SubscriptionNoteService(t *testing.T) {
 
 	t.Run("Test SubscriptionNoteService SubscriptionAdminNoteListGet", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.SubscriptionNote.SubscriptionAdminNoteListGet(context.Background()).Execute()
 
@@ -36,7 +36,7 @@ func Test_unibee_SubscriptionNoteService(t *testing.T) {
 
 	t.Run("Test SubscriptionNoteService SubscriptionAdminNoteListPost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.SubscriptionNote.SubscriptionAdminNoteListPost(context.Background()).Execute()
 
@@ -48,7 +48,7 @@ func Test_unibee_SubscriptionNoteService(t *testing.T) {
 
 	t.Run("Test SubscriptionNoteService SubscriptionNewAdminNotePost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.SubscriptionNote.SubscriptionNewAdminNotePost(context.Background()).Execute()
 

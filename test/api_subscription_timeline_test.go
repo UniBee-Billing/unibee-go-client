@@ -11,10 +11,10 @@ package unibee
 
 import (
 	"context"
-	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func Test_unibee_SubscriptionTimelineService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_unibee_SubscriptionTimelineService(t *testing.T) {
 
 	t.Run("Test SubscriptionTimelineService SubscriptionTimelineListGet", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.SubscriptionTimeline.SubscriptionTimelineListGet(context.Background()).Execute()
 
@@ -36,7 +36,7 @@ func Test_unibee_SubscriptionTimelineService(t *testing.T) {
 
 	t.Run("Test SubscriptionTimelineService SubscriptionTimelineListPost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.SubscriptionTimeline.SubscriptionTimelineListPost(context.Background()).Execute()
 

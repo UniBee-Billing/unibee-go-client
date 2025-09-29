@@ -11,10 +11,10 @@ package unibee
 
 import (
 	"context"
-	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func Test_unibee_MetricService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_unibee_MetricService(t *testing.T) {
 
 	t.Run("Test MetricService MetricDeletePost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Metric.MetricDeletePost(context.Background()).Execute()
 
@@ -36,7 +36,7 @@ func Test_unibee_MetricService(t *testing.T) {
 
 	t.Run("Test MetricService MetricDetailPost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Metric.MetricDetailPost(context.Background()).Execute()
 
@@ -48,7 +48,7 @@ func Test_unibee_MetricService(t *testing.T) {
 
 	t.Run("Test MetricService MetricEditPost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Metric.MetricEditPost(context.Background()).Execute()
 
@@ -60,7 +60,7 @@ func Test_unibee_MetricService(t *testing.T) {
 
 	t.Run("Test MetricService MetricListGet", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Metric.MetricListGet(context.Background()).Execute()
 
@@ -70,9 +70,21 @@ func Test_unibee_MetricService(t *testing.T) {
 
 	})
 
+	t.Run("Test MetricService MetricListPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Metric.MetricListPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test MetricService MetricNewPost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Metric.MetricNewPost(context.Background()).Execute()
 
@@ -84,7 +96,7 @@ func Test_unibee_MetricService(t *testing.T) {
 
 	t.Run("Test MetricService MetricPlanLimitDeletePost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Metric.MetricPlanLimitDeletePost(context.Background()).Execute()
 
@@ -96,7 +108,7 @@ func Test_unibee_MetricService(t *testing.T) {
 
 	t.Run("Test MetricService MetricPlanLimitEditPost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Metric.MetricPlanLimitEditPost(context.Background()).Execute()
 
@@ -108,7 +120,7 @@ func Test_unibee_MetricService(t *testing.T) {
 
 	t.Run("Test MetricService MetricPlanLimitNewPost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Metric.MetricPlanLimitNewPost(context.Background()).Execute()
 

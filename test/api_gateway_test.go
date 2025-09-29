@@ -11,33 +11,68 @@ package unibee
 
 import (
 	"context"
-	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
-func TestGetGatewayList(t *testing.T) {
-	openapiclient.ApiKey = "EUXAgwv3Vcr1PFWt2SgBumMHXn3ImBqM"
-	openapiclient.Host = "http://127.0.0.1:8080"
-	ctx := context.Background()
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	gatewayListRes, httpRes, err := apiClient.Gateway.GatewayListGet(ctx).Execute()
-	require.Nil(t, err)
-	require.NotNil(t, gatewayListRes.Data)
-	assert.Equal(t, 200, httpRes.StatusCode)
-}
-
 func Test_unibee_GatewayService(t *testing.T) {
-	openapiclient.ApiKey = "EUXAgwv3Vcr1PFWt2SgBumMHXn3ImBqM"
-	openapiclient.Host = "http://api.unibee.top"
+
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
+
+	t.Run("Test GatewayService GatewayArchivePost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Gateway.GatewayArchivePost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test GatewayService GatewayDetailGet", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Gateway.GatewayDetailGet(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test GatewayService GatewayDetailPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Gateway.GatewayDetailPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test GatewayService GatewayEditCountryConfigPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Gateway.GatewayEditCountryConfigPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
 
 	t.Run("Test GatewayService GatewayEditPost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Gateway.GatewayEditPost(context.Background()).Execute()
 
@@ -47,7 +82,21 @@ func Test_unibee_GatewayService(t *testing.T) {
 
 	})
 
+	t.Run("Test GatewayService GatewayEditSortPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Gateway.GatewayEditSortPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test GatewayService GatewayListGet", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Gateway.GatewayListGet(context.Background()).Execute()
 
@@ -57,13 +106,59 @@ func Test_unibee_GatewayService(t *testing.T) {
 
 	})
 
+	t.Run("Test GatewayService GatewayRestorePost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Gateway.GatewayRestorePost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test GatewayService GatewaySetDefaultPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Gateway.GatewaySetDefaultPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test GatewayService GatewaySetupExchangeRateApiPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Gateway.GatewaySetupExchangeRateApiPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test GatewayService GatewaySetupListGet", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Gateway.GatewaySetupListGet(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test GatewayService GatewaySetupPost", func(t *testing.T) {
 
-		resp, httpRes, err := apiClient.Gateway.GatewaySetupPost(context.Background()).UnibeeApiMerchantGatewaySetupReq(openapiclient.UnibeeApiMerchantGatewaySetupReq{
-			GatewayKey:    openapiclient.String("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA8YuovMfDFdsvGsELypMEL1Iv9tJ1uZN7ddOJYr7cGM0ScAJG6kCIwYpzyYm4TuvVqUmTAgscB73HkCrVdlqrLPJl6/tgQ7vl9lIXeTpNEVCEOH2Fsl78nEt5rR6nY9mD/Wj+29oaLBiyUc1pNvfAQaBtVYcQ+o8Wa2QSp9Slc92jdwoB/kzY6GkgpwlOHbV5MxI8kRJ0qvkoiBrt0HULXF4UDA3BntPa7Ye+e3eGk3Xh+X2gjJFfFmvUfi+vkLWvn3Tp0I4gAts5G92Z8vSaPu74KlGfcQ1HxHwl+vrl8keXvuKohQO9l7osaQ6icmdbeRytmoAVuhqAqyD2+FuhxwIDAQAB"),
-			GatewayName:   "changelly",
-			GatewaySecret: openapiclient.String("MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDxi6i8x8MV2y8awQvKkwQvUi/20nW5k3t104livtwYzRJwAkbqQIjBinPJibhO69WpSZMCCxwHvceQKtV2Wqss8mXr+2BDu+X2Uhd5Ok0RUIQ4fYWyXvycS3mtHqdj2YP9aP7b2hosGLJRzWk298BBoG1VhxD6jxZrZBKn1KVz3aN3CgH+TNjoaSCnCU4dtXkzEjyREnSq+SiIGu3QdQtcXhQMDcGe09rth757d4aTdeH5faCMkV8Wa9R+L6+Qta+fdOnQjiAC2zkb3Zny9Jo+7vgqUZ9xDUfEfCX6+uXyR5e+4qiFA72XuixpDqJyZ1t5HK2agBW6GoCrIPb4W6HHAgMBAAECggEAV/rVsEVWwpw+cRFFuTiJeq8F93I7HSgh/Q3a6dO5GXOAtrmtmN9+sHg8qnj2YBC4l1vMJx9iy1MN4G4pqF1oIgv8odLDAojrPygxkp9wuNDKCEV4MDs26br4C92xfMYatG/M/MlZZRxtvywBmdrt9Tl4+YEj5w+9S8p8nRLwXN312NZMuRz+FNokuiR7mMqf+khFXYxQGqmY/68Uy12t17A8CEtfZRk+IeHsv7kioEKPInY2dcAkftqVKUR/igOlU10SFzgffvtF0npcXHDW5emt9v1/TDsUSTqIsi9TiLsHUJ634cIMda4A8iJtxNT+uUcbHaCTIwqPDH4/eOI/WQKBgQD/TYC5jHtCrWAffypMAwV/hq9gDnt+BDgVT/AXt4a0BhK/qcTVrqoE+rzlLHgECs6vwU+pduI1NqGEpxVgZkkoXpO6pBUzgWshrerqtW9UiZO9DYa5xo9/PTpdvnI7S++K6BmRXRniVcqjEE/3mJySgcEN0exXJLAcI3Pw6CrjuwKBgQDyNImvO5FFZHX1EP5xp9Ph/AAzlS2qS2hgwM4OIIpKtewOz0WL+5E3MfJ9Z6/K1/UX5BujXwK2yqmdANWvu43VmuqroFBmVSjfnLQ6VjSvqtGjqtTCqi0hhq4GADLaiz+Q6aN0FnHAqggWphAkGNUIEK4JSAnzSXrivmuYVKhLZQKBgGgO1uDJ+ZN7xyoPUtYYhS0tYF3uiTcb0SAerOV90FGgCBRGxguyXWoaKNPgBCrhnMzWJfoUkq7NzZeb4oKgLkFeCyiPqHSN03SuxolT2kTCrozn7nnaDLL36co7zaONl90uLP2qzNoLzcQY6f8pHOg6Ks3POl1qfr15VdBjUNfxAoGBAK8YUBkARSsXTzcVS/y6STDrzvF7fQHJdfHMMKqB17ffAIJMUYi7GuX+E8GY/br0mFjnLRvUCdA/fpLkEZbzTbwIPHJKeRUhp2TQknJB8+Cy6s8ZJqp8ABhmltP7vMfFNvT6EpJPz3hq82H8N1sBILCt7kMDcz4P9uiIpJwBR5EJAoGBALL4uNQR8CxVhDQKff91M84xekknOOJB7x9iu6Ybt8qAhPCLd3gD9b7UqUpPtrrq3hVK5HMWrdK7Wbfv8KtpTwNSE96wvB8eo3UY0n7Ay6waKWNgsjEJh8C9fcCYtKOh79NvC9Nwm2/FiUU83+2NtIsG1TuEcsO5+/FoCLg9hpqe"),
-		}).Execute()
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Gateway.GatewaySetupPost(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -73,9 +168,45 @@ func Test_unibee_GatewayService(t *testing.T) {
 
 	t.Run("Test GatewayService GatewaySetupWebhookPost", func(t *testing.T) {
 
-		t.Skip("skip test") // remove to run test
+		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.Gateway.GatewaySetupWebhookPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test GatewayService GatewayWireTransferEditPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Gateway.GatewayWireTransferEditPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test GatewayService GatewayWireTransferSetupPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Gateway.GatewayWireTransferSetupPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test GatewayService TrackSetupSegmentPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.Gateway.TrackSetupSegmentPost(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
