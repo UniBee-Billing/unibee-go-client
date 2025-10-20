@@ -4,10 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**MetaData** | Pointer to **map[string]map[string]interface{}** | meta_data(json) | [optional] 
 **MetricDescription** | Pointer to **string** | MetricDescription | [optional] 
 **MetricId** | **int64** | MetricId | 
 **MetricName** | **string** | MetricName | 
 **Type** | Pointer to **int32** | 1-limit_metered，2-charge_metered,3-charge_recurring | [optional] 
+**Unit** | Pointer to **string** | unit | [optional] 
 
 ## Methods
 
@@ -27,6 +29,31 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantMetricEditReqWithDefaults instantiates a new UnibeeApiMerchantMetricEditReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetMetaData
+
+`func (o *UnibeeApiMerchantMetricEditReq) GetMetaData() map[string]map[string]interface{}`
+
+GetMetaData returns the MetaData field if non-nil, zero value otherwise.
+
+### GetMetaDataOk
+
+`func (o *UnibeeApiMerchantMetricEditReq) GetMetaDataOk() (*map[string]map[string]interface{}, bool)`
+
+GetMetaDataOk returns a tuple with the MetaData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetaData
+
+`func (o *UnibeeApiMerchantMetricEditReq) SetMetaData(v map[string]map[string]interface{})`
+
+SetMetaData sets MetaData field to given value.
+
+### HasMetaData
+
+`func (o *UnibeeApiMerchantMetricEditReq) HasMetaData() bool`
+
+HasMetaData returns a boolean if a field has been set.
 
 ### GetMetricDescription
 
@@ -117,6 +144,31 @@ SetType sets Type field to given value.
 `func (o *UnibeeApiMerchantMetricEditReq) HasType() bool`
 
 HasType returns a boolean if a field has been set.
+
+### GetUnit
+
+`func (o *UnibeeApiMerchantMetricEditReq) GetUnit() string`
+
+GetUnit returns the Unit field if non-nil, zero value otherwise.
+
+### GetUnitOk
+
+`func (o *UnibeeApiMerchantMetricEditReq) GetUnitOk() (*string, bool)`
+
+GetUnitOk returns a tuple with the Unit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUnit
+
+`func (o *UnibeeApiMerchantMetricEditReq) SetUnit(v string)`
+
+SetUnit sets Unit field to given value.
+
+### HasUnit
+
+`func (o *UnibeeApiMerchantMetricEditReq) HasUnit() bool`
+
+HasUnit returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

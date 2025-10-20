@@ -8,6 +8,9 @@ Method | HTTP request | Description
 [**VatCountryListPost**](VatGateway.md#VatCountryListPost) | **Post** /merchant/vat/country_list | Get Vat Country List
 [**VatInitDefaultGatewayPost**](VatGateway.md#VatInitDefaultGatewayPost) | **Post** /merchant/vat/init_default_gateway | Init Default Vat Gateway
 [**VatSetupGatewayPost**](VatGateway.md#VatSetupGatewayPost) | **Post** /merchant/vat/setup_gateway | Vat Gateway Setup
+[**VatVatNumberValidateHistoryActivatePost**](VatGateway.md#VatVatNumberValidateHistoryActivatePost) | **Post** /merchant/vat/vat_number_validate_history_activate | Vat Number Validation History Activate
+[**VatVatNumberValidateHistoryDeactivatePost**](VatGateway.md#VatVatNumberValidateHistoryDeactivatePost) | **Post** /merchant/vat/vat_number_validate_history_deactivate | Vat Number Validation History Deactivate
+[**VatVatNumberValidateHistoryPost**](VatGateway.md#VatVatNumberValidateHistoryPost) | **Post** /merchant/vat/vat_number_validate_history | Vat Number Validation History
 [**VatVatNumberValidatePost**](VatGateway.md#VatVatNumberValidatePost) | **Post** /merchant/vat/vat_number_validate | Vat Number Validation
 
 
@@ -248,6 +251,198 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantEmailGatewaySetupPost200Response**](MerchantEmailGatewaySetupPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VatVatNumberValidateHistoryActivatePost
+
+> MerchantAuthSsoClearTotpPost200Response VatVatNumberValidateHistoryActivatePost(ctx).UnibeeApiMerchantVatNumberValidateHistoryActivateReq(unibeeApiMerchantVatNumberValidateHistoryActivateReq).Execute()
+
+Vat Number Validation History Activate
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantVatNumberValidateHistoryActivateReq := *openapiclient.NewUnibeeApiMerchantVatNumberValidateHistoryActivateReq() // UnibeeApiMerchantVatNumberValidateHistoryActivateReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VatGateway.VatVatNumberValidateHistoryActivatePost(context.Background()).UnibeeApiMerchantVatNumberValidateHistoryActivateReq(unibeeApiMerchantVatNumberValidateHistoryActivateReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VatGateway.VatVatNumberValidateHistoryActivatePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VatVatNumberValidateHistoryActivatePost`: MerchantAuthSsoClearTotpPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `VatGateway.VatVatNumberValidateHistoryActivatePost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVatVatNumberValidateHistoryActivatePostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantVatNumberValidateHistoryActivateReq** | [**UnibeeApiMerchantVatNumberValidateHistoryActivateReq**](UnibeeApiMerchantVatNumberValidateHistoryActivateReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VatVatNumberValidateHistoryDeactivatePost
+
+> MerchantAuthSsoClearTotpPost200Response VatVatNumberValidateHistoryDeactivatePost(ctx).UnibeeApiMerchantVatNumberValidateHistoryDeactivateReq(unibeeApiMerchantVatNumberValidateHistoryDeactivateReq).Execute()
+
+Vat Number Validation History Deactivate
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantVatNumberValidateHistoryDeactivateReq := *openapiclient.NewUnibeeApiMerchantVatNumberValidateHistoryDeactivateReq() // UnibeeApiMerchantVatNumberValidateHistoryDeactivateReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VatGateway.VatVatNumberValidateHistoryDeactivatePost(context.Background()).UnibeeApiMerchantVatNumberValidateHistoryDeactivateReq(unibeeApiMerchantVatNumberValidateHistoryDeactivateReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VatGateway.VatVatNumberValidateHistoryDeactivatePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VatVatNumberValidateHistoryDeactivatePost`: MerchantAuthSsoClearTotpPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `VatGateway.VatVatNumberValidateHistoryDeactivatePost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVatVatNumberValidateHistoryDeactivatePostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantVatNumberValidateHistoryDeactivateReq** | [**UnibeeApiMerchantVatNumberValidateHistoryDeactivateReq**](UnibeeApiMerchantVatNumberValidateHistoryDeactivateReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VatVatNumberValidateHistoryPost
+
+> MerchantVatVatNumberValidateHistoryPost200Response VatVatNumberValidateHistoryPost(ctx).UnibeeApiMerchantVatNumberValidateHistoryReq(unibeeApiMerchantVatNumberValidateHistoryReq).Execute()
+
+Vat Number Validation History
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantVatNumberValidateHistoryReq := *openapiclient.NewUnibeeApiMerchantVatNumberValidateHistoryReq() // UnibeeApiMerchantVatNumberValidateHistoryReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VatGateway.VatVatNumberValidateHistoryPost(context.Background()).UnibeeApiMerchantVatNumberValidateHistoryReq(unibeeApiMerchantVatNumberValidateHistoryReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VatGateway.VatVatNumberValidateHistoryPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VatVatNumberValidateHistoryPost`: MerchantVatVatNumberValidateHistoryPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `VatGateway.VatVatNumberValidateHistoryPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVatVatNumberValidateHistoryPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantVatNumberValidateHistoryReq** | [**UnibeeApiMerchantVatNumberValidateHistoryReq**](UnibeeApiMerchantVatNumberValidateHistoryReq.md) |  | 
+
+### Return type
+
+[**MerchantVatVatNumberValidateHistoryPost200Response**](MerchantVatVatNumberValidateHistoryPost200Response.md)
 
 ### Authorization
 

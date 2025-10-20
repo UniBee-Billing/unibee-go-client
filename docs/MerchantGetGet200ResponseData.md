@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **MemberRoles** | Pointer to [**[]UnibeeApiBeanMerchantRole**](UnibeeApiBeanMerchantRole.md) | The member role list&#39; | [optional] 
 **TimeZone** | Pointer to **[]string** | TimeZone List | [optional] 
 **AnalyticsHost** | Pointer to **string** | Analytics Host | [optional] 
+**CloudFeatureAnalyticsEnabled** | Pointer to **bool** | Analytics Feature Enabled For Cloud Version | [optional] 
 **DefaultCurrency** | Pointer to **string** | Default Currency | [optional] 
 **EmailSender** | Pointer to [**UnibeeApiBeanSender**](UnibeeApiBeanSender.md) |  | [optional] 
 **Env** | Pointer to **string** | System Env, em: daily|stage|local|prod | [optional] 
@@ -147,6 +148,31 @@ SetAnalyticsHost sets AnalyticsHost field to given value.
 `func (o *MerchantGetGet200ResponseData) HasAnalyticsHost() bool`
 
 HasAnalyticsHost returns a boolean if a field has been set.
+
+### GetCloudFeatureAnalyticsEnabled
+
+`func (o *MerchantGetGet200ResponseData) GetCloudFeatureAnalyticsEnabled() bool`
+
+GetCloudFeatureAnalyticsEnabled returns the CloudFeatureAnalyticsEnabled field if non-nil, zero value otherwise.
+
+### GetCloudFeatureAnalyticsEnabledOk
+
+`func (o *MerchantGetGet200ResponseData) GetCloudFeatureAnalyticsEnabledOk() (*bool, bool)`
+
+GetCloudFeatureAnalyticsEnabledOk returns a tuple with the CloudFeatureAnalyticsEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCloudFeatureAnalyticsEnabled
+
+`func (o *MerchantGetGet200ResponseData) SetCloudFeatureAnalyticsEnabled(v bool)`
+
+SetCloudFeatureAnalyticsEnabled sets CloudFeatureAnalyticsEnabled field to given value.
+
+### HasCloudFeatureAnalyticsEnabled
+
+`func (o *MerchantGetGet200ResponseData) HasCloudFeatureAnalyticsEnabled() bool`
+
+HasCloudFeatureAnalyticsEnabled returns a boolean if a field has been set.
 
 ### GetDefaultCurrency
 

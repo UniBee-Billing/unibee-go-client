@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**EmailEmailSenderSetupPost**](Email.md#EmailEmailSenderSetupPost) | **Post** /merchant/email/email_sender_setup | Email Sender Setup
 [**EmailGatewaySetupPost**](Email.md#EmailGatewaySetupPost) | **Post** /merchant/email/gateway_setup | Email Gateway Setup
 [**EmailHistoryListGet**](Email.md#EmailHistoryListGet) | **Get** /merchant/email/history_list | Get Email History List
+[**EmailSendEmailToUserPost**](Email.md#EmailSendEmailToUserPost) | **Post** /merchant/email/send_email_to_user | Send Email To User
 [**EmailSendTemplateEmailToUserPost**](Email.md#EmailSendTemplateEmailToUserPost) | **Post** /merchant/email/send_template_email_to_user | Send Template Email To User
 
 
@@ -141,7 +142,7 @@ No authorization required
 
 ## EmailHistoryListGet
 
-> MerchantEmailHistoryListGet200Response EmailHistoryListGet(ctx).SearchKey(searchKey).Email(email).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+> MerchantEmailHistoryListGet200Response EmailHistoryListGet(ctx).SearchKey(searchKey).Email(email).Status(status).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 
 Get Email History List
 
@@ -162,6 +163,7 @@ import (
 func main() {
 	searchKey := "searchKey_example" // string | Search Key, email or title (optional)
 	email := "email_example" // string | Filter Email (optional)
+	status := []int32{int32(123)} // []int32 | status, 0-pending, 1-success, 2-failure (optional)
 	sortField := "sortField_example" // string | Sort Field，gmt_create|gmt_modify，Default gmt_modify (optional)
 	sortType := "sortType_example" // string | Sort Type，asc|desc，Default desc (optional)
 	page := int32(56) // int32 | Page, Start 0 (optional)
@@ -171,7 +173,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Email.EmailHistoryListGet(context.Background()).SearchKey(searchKey).Email(email).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+	resp, r, err := apiClient.Email.EmailHistoryListGet(context.Background()).SearchKey(searchKey).Email(email).Status(status).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Email.EmailHistoryListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -194,6 +196,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **searchKey** | **string** | Search Key, email or title | 
  **email** | **string** | Filter Email | 
+ **status** | **[]int32** | status, 0-pending, 1-success, 2-failure | 
  **sortField** | **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | 
  **sortType** | **string** | Sort Type，asc|desc，Default desc | 
  **page** | **int32** | Page, Start 0 | 
@@ -212,6 +215,70 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## EmailSendEmailToUserPost
+
+> MerchantAuthSsoClearTotpPost200Response EmailSendEmailToUserPost(ctx).UnibeeApiMerchantEmailSendEmailToUserReq(unibeeApiMerchantEmailSendEmailToUserReq).Execute()
+
+Send Email To User
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantEmailSendEmailToUserReq := *openapiclient.NewUnibeeApiMerchantEmailSendEmailToUserReq("Email_example") // UnibeeApiMerchantEmailSendEmailToUserReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Email.EmailSendEmailToUserPost(context.Background()).UnibeeApiMerchantEmailSendEmailToUserReq(unibeeApiMerchantEmailSendEmailToUserReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Email.EmailSendEmailToUserPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `EmailSendEmailToUserPost`: MerchantAuthSsoClearTotpPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Email.EmailSendEmailToUserPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiEmailSendEmailToUserPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantEmailSendEmailToUserReq** | [**UnibeeApiMerchantEmailSendEmailToUserReq**](UnibeeApiMerchantEmailSendEmailToUserReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

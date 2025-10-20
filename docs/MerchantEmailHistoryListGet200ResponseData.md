@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **EmailHistories** | Pointer to [**[]UnibeeApiBeanDetailMerchantEmailHistoryDetail**](UnibeeApiBeanDetailMerchantEmailHistoryDetail.md) | Email History Object List | [optional] 
+**EmailHistoryStatistics** | Pointer to [**UnibeeApiBeanDetailMerchantEmailHistoryStatistics**](UnibeeApiBeanDetailMerchantEmailHistoryStatistics.md) |  | [optional] 
 **Total** | Pointer to **int32** | Total | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetEmailHistories sets EmailHistories field to given value.
 `func (o *MerchantEmailHistoryListGet200ResponseData) HasEmailHistories() bool`
 
 HasEmailHistories returns a boolean if a field has been set.
+
+### GetEmailHistoryStatistics
+
+`func (o *MerchantEmailHistoryListGet200ResponseData) GetEmailHistoryStatistics() UnibeeApiBeanDetailMerchantEmailHistoryStatistics`
+
+GetEmailHistoryStatistics returns the EmailHistoryStatistics field if non-nil, zero value otherwise.
+
+### GetEmailHistoryStatisticsOk
+
+`func (o *MerchantEmailHistoryListGet200ResponseData) GetEmailHistoryStatisticsOk() (*UnibeeApiBeanDetailMerchantEmailHistoryStatistics, bool)`
+
+GetEmailHistoryStatisticsOk returns a tuple with the EmailHistoryStatistics field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmailHistoryStatistics
+
+`func (o *MerchantEmailHistoryListGet200ResponseData) SetEmailHistoryStatistics(v UnibeeApiBeanDetailMerchantEmailHistoryStatistics)`
+
+SetEmailHistoryStatistics sets EmailHistoryStatistics field to given value.
+
+### HasEmailHistoryStatistics
+
+`func (o *MerchantEmailHistoryListGet200ResponseData) HasEmailHistoryStatistics() bool`
+
+HasEmailHistoryStatistics returns a boolean if a field has been set.
 
 ### GetTotal
 

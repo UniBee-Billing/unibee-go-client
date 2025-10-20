@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** | Id | [optional] 
 **MerchantId** | Pointer to **int64** | merchantId | [optional] 
 **Response** | Pointer to **string** | Email response | [optional] 
-**Success** | Pointer to **bool** | Email send success | [optional] 
+**Status** | Pointer to **int32** | 0-pending,1-success,2-failure | [optional] 
 **Title** | Pointer to **string** | Email title | [optional] 
 
 ## Methods
@@ -208,30 +208,30 @@ SetResponse sets Response field to given value.
 
 HasResponse returns a boolean if a field has been set.
 
-### GetSuccess
+### GetStatus
 
-`func (o *UnibeeApiBeanDetailMerchantEmailHistoryDetail) GetSuccess() bool`
+`func (o *UnibeeApiBeanDetailMerchantEmailHistoryDetail) GetStatus() int32`
 
-GetSuccess returns the Success field if non-nil, zero value otherwise.
+GetStatus returns the Status field if non-nil, zero value otherwise.
 
-### GetSuccessOk
+### GetStatusOk
 
-`func (o *UnibeeApiBeanDetailMerchantEmailHistoryDetail) GetSuccessOk() (*bool, bool)`
+`func (o *UnibeeApiBeanDetailMerchantEmailHistoryDetail) GetStatusOk() (*int32, bool)`
 
-GetSuccessOk returns a tuple with the Success field if it's non-nil, zero value otherwise
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSuccess
+### SetStatus
 
-`func (o *UnibeeApiBeanDetailMerchantEmailHistoryDetail) SetSuccess(v bool)`
+`func (o *UnibeeApiBeanDetailMerchantEmailHistoryDetail) SetStatus(v int32)`
 
-SetSuccess sets Success field to given value.
+SetStatus sets Status field to given value.
 
-### HasSuccess
+### HasStatus
 
-`func (o *UnibeeApiBeanDetailMerchantEmailHistoryDetail) HasSuccess() bool`
+`func (o *UnibeeApiBeanDetailMerchantEmailHistoryDetail) HasStatus() bool`
 
-HasSuccess returns a boolean if a field has been set.
+HasStatus returns a boolean if a field has been set.
 
 ### GetTitle
 

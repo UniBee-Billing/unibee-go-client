@@ -7,9 +7,11 @@ Name | Type | Description | Notes
 **AggregationProperty** | Pointer to **string** | AggregationProperty, Will Needed When AggregationType !&#x3D; count | [optional] 
 **AggregationType** | Pointer to **int32** | AggregationType,1-count，2-count unique, 3-latest, 4-max, 5-sum | [optional] 
 **Code** | **string** | Code | 
+**MetaData** | Pointer to **map[string]map[string]interface{}** | meta_data(json) | [optional] 
 **MetricDescription** | Pointer to **string** | MetricDescription | [optional] 
 **MetricName** | **string** | MetricName | 
 **Type** | Pointer to **int32** | 1-limit_metered，2-charge_metered,3-charge_recurring | [optional] 
+**Unit** | Pointer to **string** | unit | [optional] 
 
 ## Methods
 
@@ -100,6 +102,31 @@ and a boolean to check if the value has been set.
 SetCode sets Code field to given value.
 
 
+### GetMetaData
+
+`func (o *UnibeeApiMerchantMetricNewReq) GetMetaData() map[string]map[string]interface{}`
+
+GetMetaData returns the MetaData field if non-nil, zero value otherwise.
+
+### GetMetaDataOk
+
+`func (o *UnibeeApiMerchantMetricNewReq) GetMetaDataOk() (*map[string]map[string]interface{}, bool)`
+
+GetMetaDataOk returns a tuple with the MetaData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetaData
+
+`func (o *UnibeeApiMerchantMetricNewReq) SetMetaData(v map[string]map[string]interface{})`
+
+SetMetaData sets MetaData field to given value.
+
+### HasMetaData
+
+`func (o *UnibeeApiMerchantMetricNewReq) HasMetaData() bool`
+
+HasMetaData returns a boolean if a field has been set.
+
 ### GetMetricDescription
 
 `func (o *UnibeeApiMerchantMetricNewReq) GetMetricDescription() string`
@@ -169,6 +196,31 @@ SetType sets Type field to given value.
 `func (o *UnibeeApiMerchantMetricNewReq) HasType() bool`
 
 HasType returns a boolean if a field has been set.
+
+### GetUnit
+
+`func (o *UnibeeApiMerchantMetricNewReq) GetUnit() string`
+
+GetUnit returns the Unit field if non-nil, zero value otherwise.
+
+### GetUnitOk
+
+`func (o *UnibeeApiMerchantMetricNewReq) GetUnitOk() (*string, bool)`
+
+GetUnitOk returns a tuple with the Unit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUnit
+
+`func (o *UnibeeApiMerchantMetricNewReq) SetUnit(v string)`
+
+SetUnit sets Unit field to given value.
+
+### HasUnit
+
+`func (o *UnibeeApiMerchantMetricNewReq) HasUnit() bool`
+
+HasUnit returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
