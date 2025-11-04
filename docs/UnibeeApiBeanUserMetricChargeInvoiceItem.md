@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **CurrentUsedValue** | Pointer to **int64** | CurrentUsedValue | [optional] 
 **ChargePricing** | Pointer to [**UnibeeApiBeanPlanMetricMeteredChargeParam**](UnibeeApiBeanPlanMetricMeteredChargeParam.md) |  | [optional] 
 **Description** | Pointer to **string** | Description | [optional] 
+**Lines** | Pointer to [**[]UnibeeApiBeanMetricPlanChargeLine**](UnibeeApiBeanMetricPlanChargeLine.md) | Lines | [optional] 
 **MaxEventId** | Pointer to **int64** |  | [optional] 
 **MetricId** | **int64** | MetricId | 
 **MinEventId** | Pointer to **int64** |  | [optional] 
@@ -106,6 +107,31 @@ SetDescription sets Description field to given value.
 `func (o *UnibeeApiBeanUserMetricChargeInvoiceItem) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetLines
+
+`func (o *UnibeeApiBeanUserMetricChargeInvoiceItem) GetLines() []UnibeeApiBeanMetricPlanChargeLine`
+
+GetLines returns the Lines field if non-nil, zero value otherwise.
+
+### GetLinesOk
+
+`func (o *UnibeeApiBeanUserMetricChargeInvoiceItem) GetLinesOk() (*[]UnibeeApiBeanMetricPlanChargeLine, bool)`
+
+GetLinesOk returns a tuple with the Lines field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLines
+
+`func (o *UnibeeApiBeanUserMetricChargeInvoiceItem) SetLines(v []UnibeeApiBeanMetricPlanChargeLine)`
+
+SetLines sets Lines field to given value.
+
+### HasLines
+
+`func (o *UnibeeApiBeanUserMetricChargeInvoiceItem) HasLines() bool`
+
+HasLines returns a boolean if a field has been set.
 
 ### GetMaxEventId
 

@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CompanyIssuer** | Pointer to [**UnibeeApiBeanDetailGatewayCompanyIssuer**](UnibeeApiBeanDetailGatewayCompanyIssuer.md) |  | [optional] 
 **CurrencyExchange** | Pointer to [**[]UnibeeApiBeanDetailGatewayCurrencyExchange**](UnibeeApiBeanDetailGatewayCurrencyExchange.md) | The currency exchange for gateway payment, effect at start of payment creation when currency matched | [optional] 
 **DisplayName** | Pointer to **string** | The displayName of payment gateway | [optional] 
 **GatewayId** | **int64** | The id of payment gateway | 
@@ -11,6 +12,7 @@ Name | Type | Description | Notes
 **GatewayLogo** | Pointer to **[][]string** | The logo of payment gateway | [optional] 
 **GatewayPaymentTypes** | Pointer to **[]string** | Selected gateway payment types | [optional] 
 **GatewaySecret** | Pointer to **string** | The secret of payment gateway | [optional] 
+**Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **Sort** | Pointer to **int32** | The sort value of payment gateway, The higher the value, the lower the ranking | [optional] 
 **SubGateway** | Pointer to **string** | The sub gateway of payment gateway | [optional] 
 
@@ -32,6 +34,31 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantGatewayEditReqWithDefaults instantiates a new UnibeeApiMerchantGatewayEditReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCompanyIssuer
+
+`func (o *UnibeeApiMerchantGatewayEditReq) GetCompanyIssuer() UnibeeApiBeanDetailGatewayCompanyIssuer`
+
+GetCompanyIssuer returns the CompanyIssuer field if non-nil, zero value otherwise.
+
+### GetCompanyIssuerOk
+
+`func (o *UnibeeApiMerchantGatewayEditReq) GetCompanyIssuerOk() (*UnibeeApiBeanDetailGatewayCompanyIssuer, bool)`
+
+GetCompanyIssuerOk returns a tuple with the CompanyIssuer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompanyIssuer
+
+`func (o *UnibeeApiMerchantGatewayEditReq) SetCompanyIssuer(v UnibeeApiBeanDetailGatewayCompanyIssuer)`
+
+SetCompanyIssuer sets CompanyIssuer field to given value.
+
+### HasCompanyIssuer
+
+`func (o *UnibeeApiMerchantGatewayEditReq) HasCompanyIssuer() bool`
+
+HasCompanyIssuer returns a boolean if a field has been set.
 
 ### GetCurrencyExchange
 
@@ -202,6 +229,31 @@ SetGatewaySecret sets GatewaySecret field to given value.
 `func (o *UnibeeApiMerchantGatewayEditReq) HasGatewaySecret() bool`
 
 HasGatewaySecret returns a boolean if a field has been set.
+
+### GetMetadata
+
+`func (o *UnibeeApiMerchantGatewayEditReq) GetMetadata() map[string]map[string]interface{}`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *UnibeeApiMerchantGatewayEditReq) GetMetadataOk() (*map[string]map[string]interface{}, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *UnibeeApiMerchantGatewayEditReq) SetMetadata(v map[string]map[string]interface{})`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *UnibeeApiMerchantGatewayEditReq) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
 
 ### GetSort
 

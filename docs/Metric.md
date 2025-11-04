@@ -210,7 +210,7 @@ No authorization required
 
 ## MetricListGet
 
-> MerchantMetricListGet200Response MetricListGet(ctx).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+> MerchantMetricListGet200Response MetricListGet(ctx).SearchKey(searchKey).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 
 Get Merchant Metric list
 
@@ -227,6 +227,7 @@ import (
 )
 
 func main() {
+	searchKey := "searchKey_example" // string | Search Key, code or name (optional)
 	sortField := "sortField_example" // string | Sort，user_id|gmt_create，Default gmt_create (optional)
 	sortType := "sortType_example" // string | Sort Type，asc|desc，Default desc (optional)
 	page := int32(56) // int32 | Page,Start 0 (optional)
@@ -236,7 +237,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Metric.MetricListGet(context.Background()).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+	resp, r, err := apiClient.Metric.MetricListGet(context.Background()).SearchKey(searchKey).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Metric.MetricListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -257,6 +258,7 @@ Other parameters are passed through a pointer to a apiMetricListGetRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **searchKey** | **string** | Search Key, code or name | 
  **sortField** | **string** | Sort，user_id|gmt_create，Default gmt_create | 
  **sortType** | **string** | Sort Type，asc|desc，Default desc | 
  **page** | **int32** | Page,Start 0 | 

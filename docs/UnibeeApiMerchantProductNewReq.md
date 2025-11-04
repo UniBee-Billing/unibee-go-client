@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **ProductName** | Pointer to **string** | ProductName | [optional] 
 **Status** | Pointer to **int32** | status，1-active，2-inactive, default active | [optional] 
+**UsVATConfig** | Pointer to [**UnibeeApiBeanUSVATConfig**](UnibeeApiBeanUSVATConfig.md) |  | [optional] 
 
 ## Methods
 
@@ -179,6 +180,31 @@ SetStatus sets Status field to given value.
 `func (o *UnibeeApiMerchantProductNewReq) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
+
+### GetUsVATConfig
+
+`func (o *UnibeeApiMerchantProductNewReq) GetUsVATConfig() UnibeeApiBeanUSVATConfig`
+
+GetUsVATConfig returns the UsVATConfig field if non-nil, zero value otherwise.
+
+### GetUsVATConfigOk
+
+`func (o *UnibeeApiMerchantProductNewReq) GetUsVATConfigOk() (*UnibeeApiBeanUSVATConfig, bool)`
+
+GetUsVATConfigOk returns a tuple with the UsVATConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsVATConfig
+
+`func (o *UnibeeApiMerchantProductNewReq) SetUsVATConfig(v UnibeeApiBeanUSVATConfig)`
+
+SetUsVATConfig sets UsVATConfig field to given value.
+
+### HasUsVATConfig
+
+`func (o *UnibeeApiMerchantProductNewReq) HasUsVATConfig() bool`
+
+HasUsVATConfig returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

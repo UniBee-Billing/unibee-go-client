@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**StripePaymentMethod** | Pointer to **string** |  | [optional] 
+**StripeUserId** | Pointer to **string** |  | [optional] 
 **BillingCycleAnchor** | Pointer to **string** | Required, UTC time, The reference point that aligns future billing cycle dates. It sets the day of week for week intervals, the day of month for month and year intervals, and the month of year for year intervals, format &#39;2006-01-02 15:04:05&#39; | [optional] 
 **CountryCode** | Pointer to **string** | Required. Specifies the ISO 3166-1 alpha-2 country code for the subscription (e.g., EE, RU). This code determines the applicable tax rules for the subscription. | [optional] 
 **CreateTime** | Pointer to **string** | Required, UTC time, the creation time of subscription, format &#39;2006-01-02 15:04:05&#39; | [optional] 
@@ -17,6 +19,7 @@ Name | Type | Description | Notes
 **Features** | Pointer to **string** | In json format, additional features data of subscription, will join user&#39;s metric data in user api if provided&#39; | [optional] 
 **FirstPaidTime** | Pointer to **string** | UTC time, the first payment success time of subscription, format &#39;2006-01-02 15:04:05&#39; | [optional] 
 **Gateway** | Pointer to **string** | Required, should one of stripe|paypal|wire_transfer|changelly  | [optional] 
+**GatewayPaymentType** | Pointer to **string** |  | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **PlanId** | Pointer to **int64** | The id of plan, one of planId or ExternalPlanId is required, plan should created at UniBee at first  | [optional] 
 **Quantity** | Pointer to **int64** | the quantity of plan, default 1 if not provided  | [optional] 
@@ -41,6 +44,56 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantSubscriptionActiveSubscriptionImportReqWithDefaults instantiates a new UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetStripePaymentMethod
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) GetStripePaymentMethod() string`
+
+GetStripePaymentMethod returns the StripePaymentMethod field if non-nil, zero value otherwise.
+
+### GetStripePaymentMethodOk
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) GetStripePaymentMethodOk() (*string, bool)`
+
+GetStripePaymentMethodOk returns a tuple with the StripePaymentMethod field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStripePaymentMethod
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) SetStripePaymentMethod(v string)`
+
+SetStripePaymentMethod sets StripePaymentMethod field to given value.
+
+### HasStripePaymentMethod
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) HasStripePaymentMethod() bool`
+
+HasStripePaymentMethod returns a boolean if a field has been set.
+
+### GetStripeUserId
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) GetStripeUserId() string`
+
+GetStripeUserId returns the StripeUserId field if non-nil, zero value otherwise.
+
+### GetStripeUserIdOk
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) GetStripeUserIdOk() (*string, bool)`
+
+GetStripeUserIdOk returns a tuple with the StripeUserId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStripeUserId
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) SetStripeUserId(v string)`
+
+SetStripeUserId sets StripeUserId field to given value.
+
+### HasStripeUserId
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) HasStripeUserId() bool`
+
+HasStripeUserId returns a boolean if a field has been set.
 
 ### GetBillingCycleAnchor
 
@@ -366,6 +419,31 @@ SetGateway sets Gateway field to given value.
 `func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) HasGateway() bool`
 
 HasGateway returns a boolean if a field has been set.
+
+### GetGatewayPaymentType
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) GetGatewayPaymentType() string`
+
+GetGatewayPaymentType returns the GatewayPaymentType field if non-nil, zero value otherwise.
+
+### GetGatewayPaymentTypeOk
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) GetGatewayPaymentTypeOk() (*string, bool)`
+
+GetGatewayPaymentTypeOk returns a tuple with the GatewayPaymentType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayPaymentType
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) SetGatewayPaymentType(v string)`
+
+SetGatewayPaymentType sets GatewayPaymentType field to given value.
+
+### HasGatewayPaymentType
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) HasGatewayPaymentType() bool`
+
+HasGatewayPaymentType returns a boolean if a field has been set.
 
 ### GetMetadata
 

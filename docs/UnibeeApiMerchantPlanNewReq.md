@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **TrialDemand** | Pointer to **string** | demand of trial， not available for addon, example, paymentMethod, payment method will ask for subscription trial start | [optional] 
 **TrialDurationTime** | Pointer to **int64** | duration of trial， not available for addon | [optional] 
 **Type** | Pointer to **int32** | The type of plan, 1-main plan，2-addon plan, 3-onetime plan, default main plan | [optional] [default to 1]
+**UsVATConfig** | Pointer to [**UnibeeApiBeanUSVATConfig**](UnibeeApiBeanUSVATConfig.md) |  | [optional] 
 
 ## Methods
 
@@ -684,6 +685,31 @@ SetType sets Type field to given value.
 `func (o *UnibeeApiMerchantPlanNewReq) HasType() bool`
 
 HasType returns a boolean if a field has been set.
+
+### GetUsVATConfig
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetUsVATConfig() UnibeeApiBeanUSVATConfig`
+
+GetUsVATConfig returns the UsVATConfig field if non-nil, zero value otherwise.
+
+### GetUsVATConfigOk
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetUsVATConfigOk() (*UnibeeApiBeanUSVATConfig, bool)`
+
+GetUsVATConfigOk returns a tuple with the UsVATConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsVATConfig
+
+`func (o *UnibeeApiMerchantPlanNewReq) SetUsVATConfig(v UnibeeApiBeanUSVATConfig)`
+
+SetUsVATConfig sets UsVATConfig field to given value.
+
+### HasUsVATConfig
+
+`func (o *UnibeeApiMerchantPlanNewReq) HasUsVATConfig() bool`
+
+HasUsVATConfig returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

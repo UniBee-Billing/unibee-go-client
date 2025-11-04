@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Currency** | Pointer to **string** | Currency | [optional] 
 **GatewayIds** | Pointer to **[]int64** | The filter ids of gateway | [optional] 
 **Page** | Pointer to **int32** | Page,Start 0 | [optional] 
+**SearchKey** | Pointer to **string** | Search SubscriptionId|InvoiceId|PaymentId|UserId | [optional] 
 **SortField** | Pointer to **string** | Sort，invoice_id|gmt_create|gmt_modify|period_end|total_amount，Default gmt_modify | [optional] 
 **SortType** | Pointer to **string** | Sort Type，asc|desc，Default desc | [optional] 
 **Status** | Pointer to **[]int32** | The filter status, 0-pending, 1-success, 2-failure，3-cancel | [optional] 
@@ -236,6 +237,31 @@ SetPage sets Page field to given value.
 `func (o *UnibeeApiMerchantPaymentTimeLineListReq) HasPage() bool`
 
 HasPage returns a boolean if a field has been set.
+
+### GetSearchKey
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetSearchKey() string`
+
+GetSearchKey returns the SearchKey field if non-nil, zero value otherwise.
+
+### GetSearchKeyOk
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetSearchKeyOk() (*string, bool)`
+
+GetSearchKeyOk returns a tuple with the SearchKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSearchKey
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) SetSearchKey(v string)`
+
+SetSearchKey sets SearchKey field to given value.
+
+### HasSearchKey
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) HasSearchKey() bool`
+
+HasSearchKey returns a boolean if a field has been set.
 
 ### GetSortField
 

@@ -37,6 +37,7 @@ Name | Type | Description | Notes
 **TrialDemand** | Pointer to **string** |  | [optional] 
 **TrialDurationTime** | Pointer to **int64** | duration of trial | [optional] 
 **Type** | Pointer to **int32** | type，1-main plan，2-addon plan | [optional] 
+**UsVATConfig** | Pointer to [**UnibeeApiBeanUSVATConfig**](UnibeeApiBeanUSVATConfig.md) |  | [optional] 
 
 ## Methods
 
@@ -881,6 +882,31 @@ SetType sets Type field to given value.
 `func (o *UnibeeApiBeanPlan) HasType() bool`
 
 HasType returns a boolean if a field has been set.
+
+### GetUsVATConfig
+
+`func (o *UnibeeApiBeanPlan) GetUsVATConfig() UnibeeApiBeanUSVATConfig`
+
+GetUsVATConfig returns the UsVATConfig field if non-nil, zero value otherwise.
+
+### GetUsVATConfigOk
+
+`func (o *UnibeeApiBeanPlan) GetUsVATConfigOk() (*UnibeeApiBeanUSVATConfig, bool)`
+
+GetUsVATConfigOk returns a tuple with the UsVATConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsVATConfig
+
+`func (o *UnibeeApiBeanPlan) SetUsVATConfig(v UnibeeApiBeanUSVATConfig)`
+
+SetUsVATConfig sets UsVATConfig field to given value.
+
+### HasUsVATConfig
+
+`func (o *UnibeeApiBeanPlan) HasUsVATConfig() bool`
+
+HasUsVATConfig returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

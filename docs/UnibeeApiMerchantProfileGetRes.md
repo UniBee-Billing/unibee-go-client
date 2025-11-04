@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **ExchangeRateApiKey** | Pointer to **string** | ExchangeRateApiKey | [optional] 
 **Gateways** | Pointer to [**[]UnibeeApiBeanDetailGateway**](UnibeeApiBeanDetailGateway.md) | Gateway List | [optional] 
 **GlobalTOPTEnabled** | Pointer to **bool** | GlobalTOPTEnabled | [optional] 
+**GlobalUSVATConfig** | Pointer to [**UnibeeApiBeanUSVATConfig**](UnibeeApiBeanUSVATConfig.md) |  | [optional] 
 **IsOwner** | Pointer to **bool** | Check Member is Owner | [optional] 
 **IsProd** | Pointer to **bool** | Check System Env Is Prod, true|false | [optional] 
 **Merchant** | Pointer to [**UnibeeApiBeanMerchant**](UnibeeApiBeanMerchant.md) |  | [optional] 
@@ -28,6 +29,7 @@ Name | Type | Description | Notes
 **SegmentServerSideKey** | Pointer to **string** | SegmentServerSideKey | [optional] 
 **SegmentUserPortalKey** | Pointer to **string** | SegmentUserPortalKey | [optional] 
 **SendGridKey** | Pointer to **string** | SendGridKey | [optional] 
+**TaxJarApiKeys** | Pointer to [**UnibeeApiBeanUSVATGatewayConnectionAPIKeys**](UnibeeApiBeanUSVATGatewayConnectionAPIKeys.md) |  | [optional] 
 **VatSenseKey** | Pointer to **string** | VatSenseKey | [optional] 
 
 ## Methods
@@ -323,6 +325,31 @@ SetGlobalTOPTEnabled sets GlobalTOPTEnabled field to given value.
 `func (o *UnibeeApiMerchantProfileGetRes) HasGlobalTOPTEnabled() bool`
 
 HasGlobalTOPTEnabled returns a boolean if a field has been set.
+
+### GetGlobalUSVATConfig
+
+`func (o *UnibeeApiMerchantProfileGetRes) GetGlobalUSVATConfig() UnibeeApiBeanUSVATConfig`
+
+GetGlobalUSVATConfig returns the GlobalUSVATConfig field if non-nil, zero value otherwise.
+
+### GetGlobalUSVATConfigOk
+
+`func (o *UnibeeApiMerchantProfileGetRes) GetGlobalUSVATConfigOk() (*UnibeeApiBeanUSVATConfig, bool)`
+
+GetGlobalUSVATConfigOk returns a tuple with the GlobalUSVATConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGlobalUSVATConfig
+
+`func (o *UnibeeApiMerchantProfileGetRes) SetGlobalUSVATConfig(v UnibeeApiBeanUSVATConfig)`
+
+SetGlobalUSVATConfig sets GlobalUSVATConfig field to given value.
+
+### HasGlobalUSVATConfig
+
+`func (o *UnibeeApiMerchantProfileGetRes) HasGlobalUSVATConfig() bool`
+
+HasGlobalUSVATConfig returns a boolean if a field has been set.
 
 ### GetIsOwner
 
@@ -648,6 +675,31 @@ SetSendGridKey sets SendGridKey field to given value.
 `func (o *UnibeeApiMerchantProfileGetRes) HasSendGridKey() bool`
 
 HasSendGridKey returns a boolean if a field has been set.
+
+### GetTaxJarApiKeys
+
+`func (o *UnibeeApiMerchantProfileGetRes) GetTaxJarApiKeys() UnibeeApiBeanUSVATGatewayConnectionAPIKeys`
+
+GetTaxJarApiKeys returns the TaxJarApiKeys field if non-nil, zero value otherwise.
+
+### GetTaxJarApiKeysOk
+
+`func (o *UnibeeApiMerchantProfileGetRes) GetTaxJarApiKeysOk() (*UnibeeApiBeanUSVATGatewayConnectionAPIKeys, bool)`
+
+GetTaxJarApiKeysOk returns a tuple with the TaxJarApiKeys field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTaxJarApiKeys
+
+`func (o *UnibeeApiMerchantProfileGetRes) SetTaxJarApiKeys(v UnibeeApiBeanUSVATGatewayConnectionAPIKeys)`
+
+SetTaxJarApiKeys sets TaxJarApiKeys field to given value.
+
+### HasTaxJarApiKeys
+
+`func (o *UnibeeApiMerchantProfileGetRes) HasTaxJarApiKeys() bool`
+
+HasTaxJarApiKeys returns a boolean if a field has been set.
 
 ### GetVatSenseKey
 

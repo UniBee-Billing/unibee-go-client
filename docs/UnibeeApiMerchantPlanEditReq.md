@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **TrialAmount** | Pointer to **int32** | price of trial period， not available for addon | [optional] 
 **TrialDemand** | Pointer to **string** | demand of trial, not available for addon, example, paymentMethod, payment method will ask for subscription trial start | [optional] 
 **TrialDurationTime** | Pointer to **int32** | duration of trial，seconds, not available for addon | [optional] 
+**UsVATConfig** | Pointer to [**UnibeeApiBeanUSVATConfig**](UnibeeApiBeanUSVATConfig.md) |  | [optional] 
 
 ## Methods
 
@@ -694,6 +695,31 @@ SetTrialDurationTime sets TrialDurationTime field to given value.
 `func (o *UnibeeApiMerchantPlanEditReq) HasTrialDurationTime() bool`
 
 HasTrialDurationTime returns a boolean if a field has been set.
+
+### GetUsVATConfig
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetUsVATConfig() UnibeeApiBeanUSVATConfig`
+
+GetUsVATConfig returns the UsVATConfig field if non-nil, zero value otherwise.
+
+### GetUsVATConfigOk
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetUsVATConfigOk() (*UnibeeApiBeanUSVATConfig, bool)`
+
+GetUsVATConfigOk returns a tuple with the UsVATConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsVATConfig
+
+`func (o *UnibeeApiMerchantPlanEditReq) SetUsVATConfig(v UnibeeApiBeanUSVATConfig)`
+
+SetUsVATConfig sets UsVATConfig field to given value.
+
+### HasUsVATConfig
+
+`func (o *UnibeeApiMerchantPlanEditReq) HasUsVATConfig() bool`
+
+HasUsVATConfig returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

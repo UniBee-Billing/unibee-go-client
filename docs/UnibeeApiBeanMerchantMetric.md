@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AggregationProperty** | Pointer to **string** | aggregation property | [optional] 
 **AggregationType** | Pointer to **int32** | 1-count，2-count unique, 3-latest, 4-max, 5-sum | [optional] 
+**Archived** | Pointer to **bool** | archived | [optional] 
 **Code** | Pointer to **string** | code | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **GmtModify** | Pointer to **int64** | update time | [optional] 
@@ -85,6 +86,31 @@ SetAggregationType sets AggregationType field to given value.
 `func (o *UnibeeApiBeanMerchantMetric) HasAggregationType() bool`
 
 HasAggregationType returns a boolean if a field has been set.
+
+### GetArchived
+
+`func (o *UnibeeApiBeanMerchantMetric) GetArchived() bool`
+
+GetArchived returns the Archived field if non-nil, zero value otherwise.
+
+### GetArchivedOk
+
+`func (o *UnibeeApiBeanMerchantMetric) GetArchivedOk() (*bool, bool)`
+
+GetArchivedOk returns a tuple with the Archived field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetArchived
+
+`func (o *UnibeeApiBeanMerchantMetric) SetArchived(v bool)`
+
+SetArchived sets Archived field to given value.
+
+### HasArchived
+
+`func (o *UnibeeApiBeanMerchantMetric) HasArchived() bool`
+
+HasArchived returns a boolean if a field has been set.
 
 ### GetCode
 

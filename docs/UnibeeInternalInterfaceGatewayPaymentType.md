@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **CountryName** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **PaymentType** | Pointer to **string** |  | [optional] 
+**SupportCurrencies** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
@@ -153,6 +154,31 @@ SetPaymentType sets PaymentType field to given value.
 `func (o *UnibeeInternalInterfaceGatewayPaymentType) HasPaymentType() bool`
 
 HasPaymentType returns a boolean if a field has been set.
+
+### GetSupportCurrencies
+
+`func (o *UnibeeInternalInterfaceGatewayPaymentType) GetSupportCurrencies() []string`
+
+GetSupportCurrencies returns the SupportCurrencies field if non-nil, zero value otherwise.
+
+### GetSupportCurrenciesOk
+
+`func (o *UnibeeInternalInterfaceGatewayPaymentType) GetSupportCurrenciesOk() (*[]string, bool)`
+
+GetSupportCurrenciesOk returns a tuple with the SupportCurrencies field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportCurrencies
+
+`func (o *UnibeeInternalInterfaceGatewayPaymentType) SetSupportCurrencies(v []string)`
+
+SetSupportCurrencies sets SupportCurrencies field to given value.
+
+### HasSupportCurrencies
+
+`func (o *UnibeeInternalInterfaceGatewayPaymentType) HasSupportCurrencies() bool`
+
+HasSupportCurrencies returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

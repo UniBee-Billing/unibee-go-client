@@ -5,9 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Count** | Pointer to **int32** | Count Of Page | [optional] 
+**CreateTimeEnd** | Pointer to **int64** | CreateTimeEnd，UTC timestamp，seconds | [optional] 
+**CreateTimeStart** | Pointer to **int64** | CreateTimeStart，UTC timestamp，seconds | [optional] 
 **Email** | Pointer to **string** | Search Filter Email | [optional] 
 **Page** | Pointer to **int32** | Page, Start With 0 | [optional] 
 **RoleIds** | Pointer to **[]int64** | The member roleId if specified&#39; | [optional] 
+**SearchKey** | Pointer to **string** | Search Key, FirstName,LastName or Email | [optional] 
 
 ## Methods
 
@@ -52,6 +55,56 @@ SetCount sets Count field to given value.
 `func (o *UnibeeApiMerchantMemberListReq) HasCount() bool`
 
 HasCount returns a boolean if a field has been set.
+
+### GetCreateTimeEnd
+
+`func (o *UnibeeApiMerchantMemberListReq) GetCreateTimeEnd() int64`
+
+GetCreateTimeEnd returns the CreateTimeEnd field if non-nil, zero value otherwise.
+
+### GetCreateTimeEndOk
+
+`func (o *UnibeeApiMerchantMemberListReq) GetCreateTimeEndOk() (*int64, bool)`
+
+GetCreateTimeEndOk returns a tuple with the CreateTimeEnd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateTimeEnd
+
+`func (o *UnibeeApiMerchantMemberListReq) SetCreateTimeEnd(v int64)`
+
+SetCreateTimeEnd sets CreateTimeEnd field to given value.
+
+### HasCreateTimeEnd
+
+`func (o *UnibeeApiMerchantMemberListReq) HasCreateTimeEnd() bool`
+
+HasCreateTimeEnd returns a boolean if a field has been set.
+
+### GetCreateTimeStart
+
+`func (o *UnibeeApiMerchantMemberListReq) GetCreateTimeStart() int64`
+
+GetCreateTimeStart returns the CreateTimeStart field if non-nil, zero value otherwise.
+
+### GetCreateTimeStartOk
+
+`func (o *UnibeeApiMerchantMemberListReq) GetCreateTimeStartOk() (*int64, bool)`
+
+GetCreateTimeStartOk returns a tuple with the CreateTimeStart field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreateTimeStart
+
+`func (o *UnibeeApiMerchantMemberListReq) SetCreateTimeStart(v int64)`
+
+SetCreateTimeStart sets CreateTimeStart field to given value.
+
+### HasCreateTimeStart
+
+`func (o *UnibeeApiMerchantMemberListReq) HasCreateTimeStart() bool`
+
+HasCreateTimeStart returns a boolean if a field has been set.
 
 ### GetEmail
 
@@ -127,6 +180,31 @@ SetRoleIds sets RoleIds field to given value.
 `func (o *UnibeeApiMerchantMemberListReq) HasRoleIds() bool`
 
 HasRoleIds returns a boolean if a field has been set.
+
+### GetSearchKey
+
+`func (o *UnibeeApiMerchantMemberListReq) GetSearchKey() string`
+
+GetSearchKey returns the SearchKey field if non-nil, zero value otherwise.
+
+### GetSearchKeyOk
+
+`func (o *UnibeeApiMerchantMemberListReq) GetSearchKeyOk() (*string, bool)`
+
+GetSearchKeyOk returns a tuple with the SearchKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSearchKey
+
+`func (o *UnibeeApiMerchantMemberListReq) SetSearchKey(v string)`
+
+SetSearchKey sets SearchKey field to given value.
+
+### HasSearchKey
+
+`func (o *UnibeeApiMerchantMemberListReq) HasSearchKey() bool`
+
+HasSearchKey returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

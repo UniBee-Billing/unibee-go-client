@@ -4,11 +4,76 @@ All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**MetricEventCurrentValuePost**](MetricEvent.md#MetricEventCurrentValuePost) | **Post** /merchant/metric/event/current_value | Merchant Metric Event Current Value
 [**MetricEventDeletePost**](MetricEvent.md#MetricEventDeletePost) | **Post** /merchant/metric/event/delete | Del Merchant Metric Event
 [**MetricEventListGet**](MetricEvent.md#MetricEventListGet) | **Get** /merchant/metric/event_list | Metric Event List
 [**MetricEventListPost**](MetricEvent.md#MetricEventListPost) | **Post** /merchant/metric/event_list | Metric Event List
 [**MetricEventNewPost**](MetricEvent.md#MetricEventNewPost) | **Post** /merchant/metric/event/new | New Merchant Metric Event
 
+
+
+## MetricEventCurrentValuePost
+
+> MerchantMetricEventCurrentValuePost200Response MetricEventCurrentValuePost(ctx).UnibeeApiMerchantMetricEventCurrentValueReq(unibeeApiMerchantMetricEventCurrentValueReq).Execute()
+
+Merchant Metric Event Current Value
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantMetricEventCurrentValueReq := *openapiclient.NewUnibeeApiMerchantMetricEventCurrentValueReq("MetricCode_example") // UnibeeApiMerchantMetricEventCurrentValueReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MetricEvent.MetricEventCurrentValuePost(context.Background()).UnibeeApiMerchantMetricEventCurrentValueReq(unibeeApiMerchantMetricEventCurrentValueReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetricEvent.MetricEventCurrentValuePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MetricEventCurrentValuePost`: MerchantMetricEventCurrentValuePost200Response
+	fmt.Fprintf(os.Stdout, "Response from `MetricEvent.MetricEventCurrentValuePost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiMetricEventCurrentValuePostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantMetricEventCurrentValueReq** | [**UnibeeApiMerchantMetricEventCurrentValueReq**](UnibeeApiMerchantMetricEventCurrentValueReq.md) |  | 
+
+### Return type
+
+[**MerchantMetricEventCurrentValuePost200Response**](MerchantMetricEventCurrentValuePost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## MetricEventDeletePost

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **MetaData** | Pointer to **string** | meta_data(json) | [optional] 
 **ProductName** | Pointer to **string** | PlanName | [optional] 
 **Status** | Pointer to **int32** | status，1-active，2-inactive, default active | [optional] 
+**UsVATConfig** | Pointer to [**UnibeeApiBeanUSVATConfig**](UnibeeApiBeanUSVATConfig.md) |  | [optional] 
 
 ## Methods
 
@@ -283,6 +284,31 @@ SetStatus sets Status field to given value.
 `func (o *UnibeeApiBeanProduct) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
+
+### GetUsVATConfig
+
+`func (o *UnibeeApiBeanProduct) GetUsVATConfig() UnibeeApiBeanUSVATConfig`
+
+GetUsVATConfig returns the UsVATConfig field if non-nil, zero value otherwise.
+
+### GetUsVATConfigOk
+
+`func (o *UnibeeApiBeanProduct) GetUsVATConfigOk() (*UnibeeApiBeanUSVATConfig, bool)`
+
+GetUsVATConfigOk returns a tuple with the UsVATConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsVATConfig
+
+`func (o *UnibeeApiBeanProduct) SetUsVATConfig(v UnibeeApiBeanUSVATConfig)`
+
+SetUsVATConfig sets UsVATConfig field to given value.
+
+### HasUsVATConfig
+
+`func (o *UnibeeApiBeanProduct) HasUsVATConfig() bool`
+
+HasUsVATConfig returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

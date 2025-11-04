@@ -8,11 +8,13 @@ Name | Type | Description | Notes
 **Archive** | Pointer to **bool** |  | [optional] 
 **AutoChargeEnabled** | Pointer to **bool** |  | [optional] 
 **Bank** | Pointer to [**UnibeeApiBeanDetailGatewayBank**](UnibeeApiBeanDetailGatewayBank.md) |  | [optional] 
+**CompanyIssuer** | Pointer to [**UnibeeApiBeanDetailGatewayCompanyIssuer**](UnibeeApiBeanDetailGatewayCompanyIssuer.md) |  | [optional] 
 **CountryConfig** | Pointer to **map[string]bool** |  | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Currency** | Pointer to **string** | The currency of wire transfer  | [optional] 
 **CurrencyExchange** | Pointer to [**[]UnibeeApiBeanDetailGatewayCurrencyExchange**](UnibeeApiBeanDetailGatewayCurrencyExchange.md) | The currency exchange for gateway payment, effect at start of payment creation when currency matched | [optional] 
 **CurrencyExchangeEnabled** | Pointer to **bool** | whether to enable currency exchange | [optional] 
+**DefaultGatewayPaymentType** | Pointer to [**UnibeeInternalInterfaceGatewayPaymentType**](UnibeeInternalInterfaceGatewayPaymentType.md) |  | [optional] 
 **Description** | Pointer to **string** | The description of gateway | [optional] 
 **DisplayName** | Pointer to **string** | The gateway display name, used at user portal | [optional] 
 **GatewayIcons** | Pointer to **[]string** | The gateway display name, used at user portal | [optional] 
@@ -26,6 +28,7 @@ Name | Type | Description | Notes
 **GatewayWebhookIntegrationLink** | Pointer to **string** | The gateway webhook integration guide link, gateway webhook need setup if not blank | [optional] 
 **GatewayWebsiteLink** | Pointer to **string** | The gateway website link | [optional] 
 **IsDefault** | Pointer to **bool** |  | [optional] 
+**Metadata** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
 **MinimumAmount** | Pointer to **int64** | The minimum amount of wire transfer | [optional] 
 **Name** | Pointer to **string** | The name of gateway | [optional] 
 **PrivateSecretName** | Pointer to **string** |  | [optional] 
@@ -156,6 +159,31 @@ SetBank sets Bank field to given value.
 
 HasBank returns a boolean if a field has been set.
 
+### GetCompanyIssuer
+
+`func (o *UnibeeApiBeanDetailGateway) GetCompanyIssuer() UnibeeApiBeanDetailGatewayCompanyIssuer`
+
+GetCompanyIssuer returns the CompanyIssuer field if non-nil, zero value otherwise.
+
+### GetCompanyIssuerOk
+
+`func (o *UnibeeApiBeanDetailGateway) GetCompanyIssuerOk() (*UnibeeApiBeanDetailGatewayCompanyIssuer, bool)`
+
+GetCompanyIssuerOk returns a tuple with the CompanyIssuer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompanyIssuer
+
+`func (o *UnibeeApiBeanDetailGateway) SetCompanyIssuer(v UnibeeApiBeanDetailGatewayCompanyIssuer)`
+
+SetCompanyIssuer sets CompanyIssuer field to given value.
+
+### HasCompanyIssuer
+
+`func (o *UnibeeApiBeanDetailGateway) HasCompanyIssuer() bool`
+
+HasCompanyIssuer returns a boolean if a field has been set.
+
 ### GetCountryConfig
 
 `func (o *UnibeeApiBeanDetailGateway) GetCountryConfig() map[string]bool`
@@ -280,6 +308,31 @@ SetCurrencyExchangeEnabled sets CurrencyExchangeEnabled field to given value.
 `func (o *UnibeeApiBeanDetailGateway) HasCurrencyExchangeEnabled() bool`
 
 HasCurrencyExchangeEnabled returns a boolean if a field has been set.
+
+### GetDefaultGatewayPaymentType
+
+`func (o *UnibeeApiBeanDetailGateway) GetDefaultGatewayPaymentType() UnibeeInternalInterfaceGatewayPaymentType`
+
+GetDefaultGatewayPaymentType returns the DefaultGatewayPaymentType field if non-nil, zero value otherwise.
+
+### GetDefaultGatewayPaymentTypeOk
+
+`func (o *UnibeeApiBeanDetailGateway) GetDefaultGatewayPaymentTypeOk() (*UnibeeInternalInterfaceGatewayPaymentType, bool)`
+
+GetDefaultGatewayPaymentTypeOk returns a tuple with the DefaultGatewayPaymentType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultGatewayPaymentType
+
+`func (o *UnibeeApiBeanDetailGateway) SetDefaultGatewayPaymentType(v UnibeeInternalInterfaceGatewayPaymentType)`
+
+SetDefaultGatewayPaymentType sets DefaultGatewayPaymentType field to given value.
+
+### HasDefaultGatewayPaymentType
+
+`func (o *UnibeeApiBeanDetailGateway) HasDefaultGatewayPaymentType() bool`
+
+HasDefaultGatewayPaymentType returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -605,6 +658,31 @@ SetIsDefault sets IsDefault field to given value.
 `func (o *UnibeeApiBeanDetailGateway) HasIsDefault() bool`
 
 HasIsDefault returns a boolean if a field has been set.
+
+### GetMetadata
+
+`func (o *UnibeeApiBeanDetailGateway) GetMetadata() map[string]map[string]interface{}`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *UnibeeApiBeanDetailGateway) GetMetadataOk() (*map[string]map[string]interface{}, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *UnibeeApiBeanDetailGateway) SetMetadata(v map[string]map[string]interface{})`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *UnibeeApiBeanDetailGateway) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
 
 ### GetMinimumAmount
 

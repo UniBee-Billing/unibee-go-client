@@ -479,7 +479,7 @@ No authorization required
 
 ## UserListGet
 
-> MerchantUserListGet200Response UserListGet(ctx).UserId(userId).ExternalUserId(externalUserId).FirstName(firstName).LastName(lastName).Email(email).PlanIds(planIds).GatewayIds(gatewayIds).SubscriptionId(subscriptionId).SubStatus(subStatus).Status(status).DeleteInclude(deleteInclude).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+> MerchantUserListGet200Response UserListGet(ctx).UserId(userId).ExternalUserId(externalUserId).FirstName(firstName).LastName(lastName).Email(email).SearchKey(searchKey).PlanIds(planIds).GatewayIds(gatewayIds).SubscriptionId(subscriptionId).SubStatus(subStatus).Status(status).DeleteInclude(deleteInclude).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 
 User List
 
@@ -501,6 +501,7 @@ func main() {
 	firstName := "firstName_example" // string | Search FirstName (optional)
 	lastName := "lastName_example" // string | Search LastName (optional)
 	email := "email_example" // string | Search Filter Email (optional)
+	searchKey := "searchKey_example" // string | Search FirstName|LastName|Email|Phone|Address|ExternalUserId (optional)
 	planIds := []int32{int32(123)} // []int32 | PlanIds, Search Filter PlanIds (optional)
 	gatewayIds := []int64{int64(123)} // []int64 | GatewayIds, Search Filter GatewayIds (optional)
 	subscriptionId := "subscriptionId_example" // string | Search Filter SubscriptionId (optional)
@@ -516,7 +517,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.User.UserListGet(context.Background()).UserId(userId).ExternalUserId(externalUserId).FirstName(firstName).LastName(lastName).Email(email).PlanIds(planIds).GatewayIds(gatewayIds).SubscriptionId(subscriptionId).SubStatus(subStatus).Status(status).DeleteInclude(deleteInclude).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+	resp, r, err := apiClient.User.UserListGet(context.Background()).UserId(userId).ExternalUserId(externalUserId).FirstName(firstName).LastName(lastName).Email(email).SearchKey(searchKey).PlanIds(planIds).GatewayIds(gatewayIds).SubscriptionId(subscriptionId).SubStatus(subStatus).Status(status).DeleteInclude(deleteInclude).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `User.UserListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -542,6 +543,7 @@ Name | Type | Description  | Notes
  **firstName** | **string** | Search FirstName | 
  **lastName** | **string** | Search LastName | 
  **email** | **string** | Search Filter Email | 
+ **searchKey** | **string** | Search FirstName|LastName|Email|Phone|Address|ExternalUserId | 
  **planIds** | **[]int32** | PlanIds, Search Filter PlanIds | 
  **gatewayIds** | **[]int64** | GatewayIds, Search Filter GatewayIds | 
  **subscriptionId** | **string** | Search Filter SubscriptionId | 

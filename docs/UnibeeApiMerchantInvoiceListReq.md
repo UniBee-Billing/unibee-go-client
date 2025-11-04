@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **Page** | Pointer to **int32** | Page, Start 0 | [optional] 
 **ReportTimeEnd** | Pointer to **int64** | ReportTimeEnd，UTC timestamp，seconds | [optional] 
 **ReportTimeStart** | Pointer to **int64** | ReportTimeStart，UTC timestamp，seconds | [optional] 
+**SearchKey** | Pointer to **string** | Search InvoiceName|Email|ProductName | [optional] 
 **SendEmail** | Pointer to **string** | The filter email of invoice | [optional] 
 **SortField** | Pointer to **string** | Filter，em. invoice_id|gmt_create|gmt_modify|period_end|total_amount，Default gmt_modify | [optional] 
 **SortType** | Pointer to **string** | Sort，asc|desc，Default desc | [optional] 
@@ -367,6 +368,31 @@ SetReportTimeStart sets ReportTimeStart field to given value.
 `func (o *UnibeeApiMerchantInvoiceListReq) HasReportTimeStart() bool`
 
 HasReportTimeStart returns a boolean if a field has been set.
+
+### GetSearchKey
+
+`func (o *UnibeeApiMerchantInvoiceListReq) GetSearchKey() string`
+
+GetSearchKey returns the SearchKey field if non-nil, zero value otherwise.
+
+### GetSearchKeyOk
+
+`func (o *UnibeeApiMerchantInvoiceListReq) GetSearchKeyOk() (*string, bool)`
+
+GetSearchKeyOk returns a tuple with the SearchKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSearchKey
+
+`func (o *UnibeeApiMerchantInvoiceListReq) SetSearchKey(v string)`
+
+SetSearchKey sets SearchKey field to given value.
+
+### HasSearchKey
+
+`func (o *UnibeeApiMerchantInvoiceListReq) HasSearchKey() bool`
+
+HasSearchKey returns a boolean if a field has been set.
 
 ### GetSendEmail
 

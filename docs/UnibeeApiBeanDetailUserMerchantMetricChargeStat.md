@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **CurrentUsedValue** | Pointer to **int64** | CurrentUsedValue | [optional] 
 **ChargePricing** | Pointer to [**UnibeeApiBeanPlanMetricMeteredChargeParam**](UnibeeApiBeanPlanMetricMeteredChargeParam.md) |  | [optional] 
 **GraduatedStep** | Pointer to [**UnibeeApiBeanMetricPlanChargeGraduatedStep**](UnibeeApiBeanMetricPlanChargeGraduatedStep.md) |  | [optional] 
+**Lines** | Pointer to [**[]UnibeeApiBeanMetricPlanChargeLine**](UnibeeApiBeanMetricPlanChargeLine.md) | Lines | [optional] 
 **MaxEventId** | Pointer to **int64** |  | [optional] 
 **MerchantMetric** | Pointer to [**UnibeeApiBeanMerchantMetric**](UnibeeApiBeanMerchantMetric.md) |  | [optional] 
 **MetricId** | **int64** | MetricId | 
@@ -106,6 +107,31 @@ SetGraduatedStep sets GraduatedStep field to given value.
 `func (o *UnibeeApiBeanDetailUserMerchantMetricChargeStat) HasGraduatedStep() bool`
 
 HasGraduatedStep returns a boolean if a field has been set.
+
+### GetLines
+
+`func (o *UnibeeApiBeanDetailUserMerchantMetricChargeStat) GetLines() []UnibeeApiBeanMetricPlanChargeLine`
+
+GetLines returns the Lines field if non-nil, zero value otherwise.
+
+### GetLinesOk
+
+`func (o *UnibeeApiBeanDetailUserMerchantMetricChargeStat) GetLinesOk() (*[]UnibeeApiBeanMetricPlanChargeLine, bool)`
+
+GetLinesOk returns a tuple with the Lines field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLines
+
+`func (o *UnibeeApiBeanDetailUserMerchantMetricChargeStat) SetLines(v []UnibeeApiBeanMetricPlanChargeLine)`
+
+SetLines sets Lines field to given value.
+
+### HasLines
+
+`func (o *UnibeeApiBeanDetailUserMerchantMetricChargeStat) HasLines() bool`
+
+HasLines returns a boolean if a field has been set.
 
 ### GetMaxEventId
 

@@ -8,6 +8,9 @@ Method | HTTP request | Description
 [**VatCountryListPost**](VatGateway.md#VatCountryListPost) | **Post** /merchant/vat/country_list | Get Vat Country List
 [**VatInitDefaultGatewayPost**](VatGateway.md#VatInitDefaultGatewayPost) | **Post** /merchant/vat/init_default_gateway | Init Default Vat Gateway
 [**VatSetupGatewayPost**](VatGateway.md#VatSetupGatewayPost) | **Post** /merchant/vat/setup_gateway | Vat Gateway Setup
+[**VatSetupGlobalUsVatConfigPost**](VatGateway.md#VatSetupGlobalUsVatConfigPost) | **Post** /merchant/vat/setup_global_us_vat_config | US Vat Config Setup
+[**VatSetupUsVatGatewayPost**](VatGateway.md#VatSetupUsVatGatewayPost) | **Post** /merchant/vat/setup_us_vat_gateway | US Vat Gateway Setup
+[**VatUsVatCategoryListGet**](VatGateway.md#VatUsVatCategoryListGet) | **Get** /merchant/vat/us_vat_category_list | Get US Vat Category List
 [**VatVatNumberValidateHistoryActivatePost**](VatGateway.md#VatVatNumberValidateHistoryActivatePost) | **Post** /merchant/vat/vat_number_validate_history_activate | Vat Number Validation History Activate
 [**VatVatNumberValidateHistoryDeactivatePost**](VatGateway.md#VatVatNumberValidateHistoryDeactivatePost) | **Post** /merchant/vat/vat_number_validate_history_deactivate | Vat Number Validation History Deactivate
 [**VatVatNumberValidateHistoryPost**](VatGateway.md#VatVatNumberValidateHistoryPost) | **Post** /merchant/vat/vat_number_validate_history | Vat Number Validation History
@@ -259,6 +262,193 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VatSetupGlobalUsVatConfigPost
+
+> MerchantAuthSsoClearTotpPost200Response VatSetupGlobalUsVatConfigPost(ctx).UnibeeApiMerchantVatSetupGlobalUSVATConfigReq(unibeeApiMerchantVatSetupGlobalUSVATConfigReq).Execute()
+
+US Vat Config Setup
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantVatSetupGlobalUSVATConfigReq := *openapiclient.NewUnibeeApiMerchantVatSetupGlobalUSVATConfigReq() // UnibeeApiMerchantVatSetupGlobalUSVATConfigReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VatGateway.VatSetupGlobalUsVatConfigPost(context.Background()).UnibeeApiMerchantVatSetupGlobalUSVATConfigReq(unibeeApiMerchantVatSetupGlobalUSVATConfigReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VatGateway.VatSetupGlobalUsVatConfigPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VatSetupGlobalUsVatConfigPost`: MerchantAuthSsoClearTotpPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `VatGateway.VatSetupGlobalUsVatConfigPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVatSetupGlobalUsVatConfigPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantVatSetupGlobalUSVATConfigReq** | [**UnibeeApiMerchantVatSetupGlobalUSVATConfigReq**](UnibeeApiMerchantVatSetupGlobalUSVATConfigReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VatSetupUsVatGatewayPost
+
+> MerchantAuthSsoClearTotpPost200Response VatSetupUsVatGatewayPost(ctx).UnibeeApiMerchantVatSetupUSVATGatewayReq(unibeeApiMerchantVatSetupUSVATGatewayReq).Execute()
+
+US Vat Gateway Setup
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantVatSetupUSVATGatewayReq := *openapiclient.NewUnibeeApiMerchantVatSetupUSVATGatewayReq("GatewayName_example") // UnibeeApiMerchantVatSetupUSVATGatewayReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VatGateway.VatSetupUsVatGatewayPost(context.Background()).UnibeeApiMerchantVatSetupUSVATGatewayReq(unibeeApiMerchantVatSetupUSVATGatewayReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VatGateway.VatSetupUsVatGatewayPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VatSetupUsVatGatewayPost`: MerchantAuthSsoClearTotpPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `VatGateway.VatSetupUsVatGatewayPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVatSetupUsVatGatewayPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantVatSetupUSVATGatewayReq** | [**UnibeeApiMerchantVatSetupUSVATGatewayReq**](UnibeeApiMerchantVatSetupUSVATGatewayReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VatUsVatCategoryListGet
+
+> MerchantVatUsVatCategoryListGet200Response VatUsVatCategoryListGet(ctx).Execute()
+
+Get US Vat Category List
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VatGateway.VatUsVatCategoryListGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VatGateway.VatUsVatCategoryListGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VatUsVatCategoryListGet`: MerchantVatUsVatCategoryListGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `VatGateway.VatUsVatCategoryListGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVatUsVatCategoryListGetRequest struct via the builder pattern
+
+
+### Return type
+
+[**MerchantVatUsVatCategoryListGet200Response**](MerchantVatUsVatCategoryListGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

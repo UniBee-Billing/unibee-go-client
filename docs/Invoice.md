@@ -552,7 +552,7 @@ No authorization required
 
 ## InvoiceListGet
 
-> MerchantInvoiceListGet200Response InvoiceListGet(ctx).FirstName(firstName).LastName(lastName).Currency(currency).Status(status).AmountStart(amountStart).AmountEnd(amountEnd).UserId(userId).GatewayIds(gatewayIds).SendEmail(sendEmail).SortField(sortField).SortType(sortType).DeleteInclude(deleteInclude).Type_(type_).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).ReportTimeStart(reportTimeStart).ReportTimeEnd(reportTimeEnd).Execute()
+> MerchantInvoiceListGet200Response InvoiceListGet(ctx).FirstName(firstName).LastName(lastName).SearchKey(searchKey).Currency(currency).Status(status).AmountStart(amountStart).AmountEnd(amountEnd).UserId(userId).GatewayIds(gatewayIds).SendEmail(sendEmail).SortField(sortField).SortType(sortType).DeleteInclude(deleteInclude).Type_(type_).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).ReportTimeStart(reportTimeStart).ReportTimeEnd(reportTimeEnd).Execute()
 
 Get Invoice List
 
@@ -573,6 +573,7 @@ import (
 func main() {
 	firstName := "firstName_example" // string | The firstName of invoice (optional)
 	lastName := "lastName_example" // string | The lastName of invoice (optional)
+	searchKey := "searchKey_example" // string | Search InvoiceName|Email|ProductName (optional)
 	currency := "currency_example" // string | The currency of invoice (optional)
 	status := []int32{int32(123)} // []int32 | The status of invoice, 1-pending｜2-processing｜3-paid | 4-failed | 5-cancelled (optional)
 	amountStart := int32(56) // int32 | The filter start amount of invoice (optional)
@@ -593,7 +594,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Invoice.InvoiceListGet(context.Background()).FirstName(firstName).LastName(lastName).Currency(currency).Status(status).AmountStart(amountStart).AmountEnd(amountEnd).UserId(userId).GatewayIds(gatewayIds).SendEmail(sendEmail).SortField(sortField).SortType(sortType).DeleteInclude(deleteInclude).Type_(type_).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).ReportTimeStart(reportTimeStart).ReportTimeEnd(reportTimeEnd).Execute()
+	resp, r, err := apiClient.Invoice.InvoiceListGet(context.Background()).FirstName(firstName).LastName(lastName).SearchKey(searchKey).Currency(currency).Status(status).AmountStart(amountStart).AmountEnd(amountEnd).UserId(userId).GatewayIds(gatewayIds).SendEmail(sendEmail).SortField(sortField).SortType(sortType).DeleteInclude(deleteInclude).Type_(type_).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).ReportTimeStart(reportTimeStart).ReportTimeEnd(reportTimeEnd).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -616,6 +617,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **firstName** | **string** | The firstName of invoice | 
  **lastName** | **string** | The lastName of invoice | 
+ **searchKey** | **string** | Search InvoiceName|Email|ProductName | 
  **currency** | **string** | The currency of invoice | 
  **status** | **[]int32** | The status of invoice, 1-pending｜2-processing｜3-paid | 4-failed | 5-cancelled | 
  **amountStart** | **int32** | The filter start amount of invoice | 

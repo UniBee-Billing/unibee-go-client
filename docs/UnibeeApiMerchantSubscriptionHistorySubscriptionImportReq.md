@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **ExternalSubscriptionId** | Pointer to **string** | Required, The external id of subscription | [optional] 
 **ExternalUserId** | Pointer to **string** | The external id of user, one of Email or ExternalUserId is required  | [optional] 
 **Gateway** | Pointer to **string** | Required, should one of stripe|paypal|wire_transfer|changelly  | [optional] 
+**GatewayPaymentType** | Pointer to **string** |  | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **PlanId** | Pointer to **int64** | The id of plan, one of planId or ExternalPlanId is required, plan should created at UniBee at first  | [optional] 
 **Quantity** | Pointer to **int64** | the quantity of plan, default 1 if not provided  | [optional] 
@@ -236,6 +237,31 @@ SetGateway sets Gateway field to given value.
 `func (o *UnibeeApiMerchantSubscriptionHistorySubscriptionImportReq) HasGateway() bool`
 
 HasGateway returns a boolean if a field has been set.
+
+### GetGatewayPaymentType
+
+`func (o *UnibeeApiMerchantSubscriptionHistorySubscriptionImportReq) GetGatewayPaymentType() string`
+
+GetGatewayPaymentType returns the GatewayPaymentType field if non-nil, zero value otherwise.
+
+### GetGatewayPaymentTypeOk
+
+`func (o *UnibeeApiMerchantSubscriptionHistorySubscriptionImportReq) GetGatewayPaymentTypeOk() (*string, bool)`
+
+GetGatewayPaymentTypeOk returns a tuple with the GatewayPaymentType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayPaymentType
+
+`func (o *UnibeeApiMerchantSubscriptionHistorySubscriptionImportReq) SetGatewayPaymentType(v string)`
+
+SetGatewayPaymentType sets GatewayPaymentType field to given value.
+
+### HasGatewayPaymentType
+
+`func (o *UnibeeApiMerchantSubscriptionHistorySubscriptionImportReq) HasGatewayPaymentType() bool`
+
+HasGatewayPaymentType returns a boolean if a field has been set.
 
 ### GetMetadata
 

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **CreateTimeEnd** | Pointer to **int64** | CreateTimeEnd，UTC timestamp，seconds | [optional] 
 **CreateTimeStart** | Pointer to **int64** | CreateTimeStart，UTC timestamp，seconds | [optional] 
 **Page** | Pointer to **int32** | Page,Start 0 | [optional] 
+**SearchKey** | Pointer to **string** | Search Key, code or name | [optional] 
 **SortField** | Pointer to **string** | Sort，user_id|gmt_create，Default gmt_create | [optional] 
 **SortType** | Pointer to **string** | Sort Type，asc|desc，Default desc | [optional] 
 
@@ -129,6 +130,31 @@ SetPage sets Page field to given value.
 `func (o *UnibeeApiMerchantMetricListReq) HasPage() bool`
 
 HasPage returns a boolean if a field has been set.
+
+### GetSearchKey
+
+`func (o *UnibeeApiMerchantMetricListReq) GetSearchKey() string`
+
+GetSearchKey returns the SearchKey field if non-nil, zero value otherwise.
+
+### GetSearchKeyOk
+
+`func (o *UnibeeApiMerchantMetricListReq) GetSearchKeyOk() (*string, bool)`
+
+GetSearchKeyOk returns a tuple with the SearchKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSearchKey
+
+`func (o *UnibeeApiMerchantMetricListReq) SetSearchKey(v string)`
+
+SetSearchKey sets SearchKey field to given value.
+
+### HasSearchKey
+
+`func (o *UnibeeApiMerchantMetricListReq) HasSearchKey() bool`
+
+HasSearchKey returns a boolean if a field has been set.
 
 ### GetSortField
 

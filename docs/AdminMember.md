@@ -347,7 +347,7 @@ No authorization required
 
 ## MemberListGet
 
-> MerchantMemberListGet200Response MemberListGet(ctx).Email(email).RoleIds(roleIds).Page(page).Count(count).Execute()
+> MerchantMemberListGet200Response MemberListGet(ctx).SearchKey(searchKey).Email(email).RoleIds(roleIds).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 
 Get Member List
 
@@ -364,14 +364,17 @@ import (
 )
 
 func main() {
+	searchKey := "searchKey_example" // string | Search Key, FirstName,LastName or Email (optional)
 	email := "email_example" // string | Search Filter Email (optional)
 	roleIds := []int64{int64(123)} // []int64 | The member roleId if specified' (optional)
 	page := int32(56) // int32 | Page, Start With 0 (optional)
 	count := int32(56) // int32 | Count Of Page (optional)
+	createTimeStart := int64(789) // int64 | CreateTimeStart，UTC timestamp，seconds (optional)
+	createTimeEnd := int64(789) // int64 | CreateTimeEnd，UTC timestamp，seconds (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AdminMember.MemberListGet(context.Background()).Email(email).RoleIds(roleIds).Page(page).Count(count).Execute()
+	resp, r, err := apiClient.AdminMember.MemberListGet(context.Background()).SearchKey(searchKey).Email(email).RoleIds(roleIds).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AdminMember.MemberListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -392,10 +395,13 @@ Other parameters are passed through a pointer to a apiMemberListGetRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **searchKey** | **string** | Search Key, FirstName,LastName or Email | 
  **email** | **string** | Search Filter Email | 
  **roleIds** | **[]int64** | The member roleId if specified&#39; | 
  **page** | **int32** | Page, Start With 0 | 
  **count** | **int32** | Count Of Page | 
+ **createTimeStart** | **int64** | CreateTimeStart，UTC timestamp，seconds | 
+ **createTimeEnd** | **int64** | CreateTimeEnd，UTC timestamp，seconds | 
 
 ### Return type
 

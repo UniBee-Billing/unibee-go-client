@@ -969,7 +969,7 @@ No authorization required
 
 ## PaymentTimelineListGet
 
-> MerchantPaymentTimelineListGet200Response PaymentTimelineListGet(ctx).UserId(userId).AmountStart(amountStart).AmountEnd(amountEnd).Status(status).TimelineTypes(timelineTypes).GatewayIds(gatewayIds).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+> MerchantPaymentTimelineListGet200Response PaymentTimelineListGet(ctx).UserId(userId).AmountStart(amountStart).AmountEnd(amountEnd).SearchKey(searchKey).Status(status).TimelineTypes(timelineTypes).GatewayIds(gatewayIds).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 
 Get Payment TimeLine List
 
@@ -989,6 +989,7 @@ func main() {
 	userId := int64(789) // int64 | Filter UserId, Default All (optional)
 	amountStart := int32(56) // int32 | The filter start amount of timeline (optional)
 	amountEnd := int32(56) // int32 | The filter end amount of timeline (optional)
+	searchKey := "searchKey_example" // string | Search SubscriptionId|InvoiceId|PaymentId|UserId (optional)
 	status := []int32{int32(123)} // []int32 | The filter status, 0-pending, 1-success, 2-failure，3-cancel (optional)
 	timelineTypes := []int32{int32(123)} // []int32 | The filter timelineType, 0-pay, 1-refund (optional)
 	gatewayIds := []int64{int64(123)} // []int64 | The filter ids of gateway (optional)
@@ -1002,7 +1003,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Payment.PaymentTimelineListGet(context.Background()).UserId(userId).AmountStart(amountStart).AmountEnd(amountEnd).Status(status).TimelineTypes(timelineTypes).GatewayIds(gatewayIds).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+	resp, r, err := apiClient.Payment.PaymentTimelineListGet(context.Background()).UserId(userId).AmountStart(amountStart).AmountEnd(amountEnd).SearchKey(searchKey).Status(status).TimelineTypes(timelineTypes).GatewayIds(gatewayIds).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Payment.PaymentTimelineListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1026,6 +1027,7 @@ Name | Type | Description  | Notes
  **userId** | **int64** | Filter UserId, Default All | 
  **amountStart** | **int32** | The filter start amount of timeline | 
  **amountEnd** | **int32** | The filter end amount of timeline | 
+ **searchKey** | **string** | Search SubscriptionId|InvoiceId|PaymentId|UserId | 
  **status** | **[]int32** | The filter status, 0-pending, 1-success, 2-failure，3-cancel | 
  **timelineTypes** | **[]int32** | The filter timelineType, 0-pay, 1-refund | 
  **gatewayIds** | **[]int64** | The filter ids of gateway | 
