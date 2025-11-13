@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **Currency** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **DiscountAmount** | Pointer to **int64** |  | [optional] 
+**FromAddress** | Pointer to [**UnibeeApiBeanUSAddress**](UnibeeApiBeanUSAddress.md) |  | [optional] 
+**LineId** | Pointer to **string** |  | [optional] 
 **MetricCharge** | Pointer to [**UnibeeApiBeanUserMetricChargeInvoiceItem**](UnibeeApiBeanUserMetricChargeInvoiceItem.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **OriginAmount** | Pointer to **int64** |  | [optional] 
@@ -17,10 +19,13 @@ Name | Type | Description | Notes
 **PeriodEnd** | Pointer to **int64** |  | [optional] 
 **PeriodStart** | Pointer to **int64** |  | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
+**PromoCreditDiscountAmount** | Pointer to **int64** | promo credit discount amount | [optional] 
 **Proration** | Pointer to **bool** |  | [optional] 
 **Quantity** | Pointer to **int64** |  | [optional] 
 **Tax** | Pointer to **int64** |  | [optional] 
+**TaxCode** | Pointer to **string** |  | [optional] 
 **TaxPercentage** | Pointer to **int64** | Tax Percentage，1000 &#x3D; 10% | [optional] 
+**ToAddress** | Pointer to [**UnibeeApiBeanUSAddress**](UnibeeApiBeanUSAddress.md) |  | [optional] 
 **UnitAmountExcludingTax** | Pointer to **int64** |  | [optional] 
 
 ## Methods
@@ -166,6 +171,56 @@ SetDiscountAmount sets DiscountAmount field to given value.
 `func (o *UnibeeApiBeanInvoiceItemSimplify) HasDiscountAmount() bool`
 
 HasDiscountAmount returns a boolean if a field has been set.
+
+### GetFromAddress
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetFromAddress() UnibeeApiBeanUSAddress`
+
+GetFromAddress returns the FromAddress field if non-nil, zero value otherwise.
+
+### GetFromAddressOk
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetFromAddressOk() (*UnibeeApiBeanUSAddress, bool)`
+
+GetFromAddressOk returns a tuple with the FromAddress field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFromAddress
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) SetFromAddress(v UnibeeApiBeanUSAddress)`
+
+SetFromAddress sets FromAddress field to given value.
+
+### HasFromAddress
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) HasFromAddress() bool`
+
+HasFromAddress returns a boolean if a field has been set.
+
+### GetLineId
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetLineId() string`
+
+GetLineId returns the LineId field if non-nil, zero value otherwise.
+
+### GetLineIdOk
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetLineIdOk() (*string, bool)`
+
+GetLineIdOk returns a tuple with the LineId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLineId
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) SetLineId(v string)`
+
+SetLineId sets LineId field to given value.
+
+### HasLineId
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) HasLineId() bool`
+
+HasLineId returns a boolean if a field has been set.
 
 ### GetMetricCharge
 
@@ -367,6 +422,31 @@ SetPlan sets Plan field to given value.
 
 HasPlan returns a boolean if a field has been set.
 
+### GetPromoCreditDiscountAmount
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetPromoCreditDiscountAmount() int64`
+
+GetPromoCreditDiscountAmount returns the PromoCreditDiscountAmount field if non-nil, zero value otherwise.
+
+### GetPromoCreditDiscountAmountOk
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetPromoCreditDiscountAmountOk() (*int64, bool)`
+
+GetPromoCreditDiscountAmountOk returns a tuple with the PromoCreditDiscountAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPromoCreditDiscountAmount
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) SetPromoCreditDiscountAmount(v int64)`
+
+SetPromoCreditDiscountAmount sets PromoCreditDiscountAmount field to given value.
+
+### HasPromoCreditDiscountAmount
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) HasPromoCreditDiscountAmount() bool`
+
+HasPromoCreditDiscountAmount returns a boolean if a field has been set.
+
 ### GetProration
 
 `func (o *UnibeeApiBeanInvoiceItemSimplify) GetProration() bool`
@@ -442,6 +522,31 @@ SetTax sets Tax field to given value.
 
 HasTax returns a boolean if a field has been set.
 
+### GetTaxCode
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetTaxCode() string`
+
+GetTaxCode returns the TaxCode field if non-nil, zero value otherwise.
+
+### GetTaxCodeOk
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetTaxCodeOk() (*string, bool)`
+
+GetTaxCodeOk returns a tuple with the TaxCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTaxCode
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) SetTaxCode(v string)`
+
+SetTaxCode sets TaxCode field to given value.
+
+### HasTaxCode
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) HasTaxCode() bool`
+
+HasTaxCode returns a boolean if a field has been set.
+
 ### GetTaxPercentage
 
 `func (o *UnibeeApiBeanInvoiceItemSimplify) GetTaxPercentage() int64`
@@ -466,6 +571,31 @@ SetTaxPercentage sets TaxPercentage field to given value.
 `func (o *UnibeeApiBeanInvoiceItemSimplify) HasTaxPercentage() bool`
 
 HasTaxPercentage returns a boolean if a field has been set.
+
+### GetToAddress
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetToAddress() UnibeeApiBeanUSAddress`
+
+GetToAddress returns the ToAddress field if non-nil, zero value otherwise.
+
+### GetToAddressOk
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetToAddressOk() (*UnibeeApiBeanUSAddress, bool)`
+
+GetToAddressOk returns a tuple with the ToAddress field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetToAddress
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) SetToAddress(v UnibeeApiBeanUSAddress)`
+
+SetToAddress sets ToAddress field to given value.
+
+### HasToAddress
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) HasToAddress() bool`
+
+HasToAddress returns a boolean if a field has been set.
 
 ### GetUnitAmountExcludingTax
 

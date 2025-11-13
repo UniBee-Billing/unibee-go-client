@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StripePaymentMethod** | Pointer to **string** |  | [optional] 
-**StripeUserId** | Pointer to **string** |  | [optional] 
+**StripePaymentMethod** | Pointer to **string** | The stripe payment method id which user attached, get from stripe, required if stripe auto-charge needed | [optional] 
+**StripeUserId** | Pointer to **string** | The stripe customer id of user get from stripe, required if stripe auto-charge needed | [optional] 
 **BillingCycleAnchor** | Pointer to **string** | Required, UTC time, The reference point that aligns future billing cycle dates. It sets the day of week for week intervals, the day of month for month and year intervals, and the month of year for year intervals, format &#39;2006-01-02 15:04:05&#39; | [optional] 
 **CountryCode** | Pointer to **string** | Required. Specifies the ISO 3166-1 alpha-2 country code for the subscription (e.g., EE, RU). This code determines the applicable tax rules for the subscription. | [optional] 
 **CreateTime** | Pointer to **string** | Required, UTC time, the creation time of subscription, format &#39;2006-01-02 15:04:05&#39; | [optional] 
@@ -21,6 +21,8 @@ Name | Type | Description | Notes
 **Gateway** | Pointer to **string** | Required, should one of stripe|paypal|wire_transfer|changelly  | [optional] 
 **GatewayPaymentType** | Pointer to **string** |  | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
+**PaypalAgreementToken** | Pointer to **string** | The billing agreement token of user payment method while billing agreement reference transaction enabled, required if paypal auto-charge needed | [optional] 
+**PaypalVaultId** | Pointer to **string** | The paypal vault id of user payment method, get from paypal while vault permission enabled, required if paypal auto-charge needed | [optional] 
 **PlanId** | Pointer to **int64** | The id of plan, one of planId or ExternalPlanId is required, plan should created at UniBee at first  | [optional] 
 **Quantity** | Pointer to **int64** | the quantity of plan, default 1 if not provided  | [optional] 
 **TaxPercentage** | Pointer to **int64** | The tax percentage. Only applicable when the system VAT gateway not setup. Value is in thousandths (e.g., 1000 &#x3D; 10%). | [optional] 
@@ -469,6 +471,56 @@ SetMetadata sets Metadata field to given value.
 `func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) HasMetadata() bool`
 
 HasMetadata returns a boolean if a field has been set.
+
+### GetPaypalAgreementToken
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) GetPaypalAgreementToken() string`
+
+GetPaypalAgreementToken returns the PaypalAgreementToken field if non-nil, zero value otherwise.
+
+### GetPaypalAgreementTokenOk
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) GetPaypalAgreementTokenOk() (*string, bool)`
+
+GetPaypalAgreementTokenOk returns a tuple with the PaypalAgreementToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaypalAgreementToken
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) SetPaypalAgreementToken(v string)`
+
+SetPaypalAgreementToken sets PaypalAgreementToken field to given value.
+
+### HasPaypalAgreementToken
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) HasPaypalAgreementToken() bool`
+
+HasPaypalAgreementToken returns a boolean if a field has been set.
+
+### GetPaypalVaultId
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) GetPaypalVaultId() string`
+
+GetPaypalVaultId returns the PaypalVaultId field if non-nil, zero value otherwise.
+
+### GetPaypalVaultIdOk
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) GetPaypalVaultIdOk() (*string, bool)`
+
+GetPaypalVaultIdOk returns a tuple with the PaypalVaultId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaypalVaultId
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) SetPaypalVaultId(v string)`
+
+SetPaypalVaultId sets PaypalVaultId field to given value.
+
+### HasPaypalVaultId
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) HasPaypalVaultId() bool`
+
+HasPaypalVaultId returns a boolean if a field has been set.
 
 ### GetPlanId
 

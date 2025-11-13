@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **ExchangeRateApiKey** | Pointer to **string** | ExchangeRateApiKey | [optional] 
 **Gateways** | Pointer to [**[]UnibeeApiBeanDetailGateway**](UnibeeApiBeanDetailGateway.md) | Gateway List | [optional] 
 **GlobalTOPTEnabled** | Pointer to **bool** | GlobalTOPTEnabled | [optional] 
-**GlobalUSVATConfig** | Pointer to [**UnibeeApiBeanUSVATConfig**](UnibeeApiBeanUSVATConfig.md) |  | [optional] 
+**GlobalUSVATConfig** | Pointer to [**UnibeeApiBeanUSVATGlobalConfig**](UnibeeApiBeanUSVATGlobalConfig.md) |  | [optional] 
 **IsOwner** | Pointer to **bool** | Check Member is Owner | [optional] 
 **IsProd** | Pointer to **bool** | Check System Env Is Prod, true|false | [optional] 
 **Merchant** | Pointer to [**UnibeeApiBeanMerchant**](UnibeeApiBeanMerchant.md) |  | [optional] 
@@ -328,20 +328,20 @@ HasGlobalTOPTEnabled returns a boolean if a field has been set.
 
 ### GetGlobalUSVATConfig
 
-`func (o *UnibeeApiMerchantProfileGetRes) GetGlobalUSVATConfig() UnibeeApiBeanUSVATConfig`
+`func (o *UnibeeApiMerchantProfileGetRes) GetGlobalUSVATConfig() UnibeeApiBeanUSVATGlobalConfig`
 
 GetGlobalUSVATConfig returns the GlobalUSVATConfig field if non-nil, zero value otherwise.
 
 ### GetGlobalUSVATConfigOk
 
-`func (o *UnibeeApiMerchantProfileGetRes) GetGlobalUSVATConfigOk() (*UnibeeApiBeanUSVATConfig, bool)`
+`func (o *UnibeeApiMerchantProfileGetRes) GetGlobalUSVATConfigOk() (*UnibeeApiBeanUSVATGlobalConfig, bool)`
 
 GetGlobalUSVATConfigOk returns a tuple with the GlobalUSVATConfig field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGlobalUSVATConfig
 
-`func (o *UnibeeApiMerchantProfileGetRes) SetGlobalUSVATConfig(v UnibeeApiBeanUSVATConfig)`
+`func (o *UnibeeApiMerchantProfileGetRes) SetGlobalUSVATConfig(v UnibeeApiBeanUSVATGlobalConfig)`
 
 SetGlobalUSVATConfig sets GlobalUSVATConfig field to given value.
 

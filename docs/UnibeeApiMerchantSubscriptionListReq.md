@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **Page** | Pointer to **int32** | Page, Start With 0 | [optional] 
 **PlanIds** | Pointer to **[]int64** | The filter ids of plan | [optional] 
 **ProductIds** | Pointer to **[]int64** | The filter ids of product, invalid if planIds is provided | [optional] 
+**SearchKey** | Pointer to **string** | Search SubscriptionId|Email | [optional] 
 **SortField** | Pointer to **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | [optional] 
 **SortType** | Pointer to **string** | Sort Type，asc|desc，Default desc | [optional] 
 **Status** | Pointer to **[]int32** | Filter, Default All，Status，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | 9-Failed | [optional] 
@@ -313,6 +314,31 @@ SetProductIds sets ProductIds field to given value.
 `func (o *UnibeeApiMerchantSubscriptionListReq) HasProductIds() bool`
 
 HasProductIds returns a boolean if a field has been set.
+
+### GetSearchKey
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) GetSearchKey() string`
+
+GetSearchKey returns the SearchKey field if non-nil, zero value otherwise.
+
+### GetSearchKeyOk
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) GetSearchKeyOk() (*string, bool)`
+
+GetSearchKeyOk returns a tuple with the SearchKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSearchKey
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) SetSearchKey(v string)`
+
+SetSearchKey sets SearchKey field to given value.
+
+### HasSearchKey
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) HasSearchKey() bool`
+
+HasSearchKey returns a boolean if a field has been set.
 
 ### GetSortField
 

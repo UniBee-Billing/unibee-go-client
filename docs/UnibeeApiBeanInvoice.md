@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **DiscountAmount** | Pointer to **int64** |  | [optional] 
 **DiscountCode** | Pointer to **string** |  | [optional] 
 **FinishTime** | Pointer to **int64** |  | [optional] 
+**GatewayId** | Pointer to **int64** |  | [optional] 
 **Id** | Pointer to **int64** |  | [optional] 
 **InvoiceId** | Pointer to **string** |  | [optional] 
 **InvoiceName** | Pointer to **string** |  | [optional] 
@@ -501,6 +502,31 @@ SetFinishTime sets FinishTime field to given value.
 `func (o *UnibeeApiBeanInvoice) HasFinishTime() bool`
 
 HasFinishTime returns a boolean if a field has been set.
+
+### GetGatewayId
+
+`func (o *UnibeeApiBeanInvoice) GetGatewayId() int64`
+
+GetGatewayId returns the GatewayId field if non-nil, zero value otherwise.
+
+### GetGatewayIdOk
+
+`func (o *UnibeeApiBeanInvoice) GetGatewayIdOk() (*int64, bool)`
+
+GetGatewayIdOk returns a tuple with the GatewayId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayId
+
+`func (o *UnibeeApiBeanInvoice) SetGatewayId(v int64)`
+
+SetGatewayId sets GatewayId field to given value.
+
+### HasGatewayId
+
+`func (o *UnibeeApiBeanInvoice) HasGatewayId() bool`
+
+HasGatewayId returns a boolean if a field has been set.
 
 ### GetId
 

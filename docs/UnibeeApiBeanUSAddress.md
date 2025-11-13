@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **City** | Pointer to **string** |  | [optional] 
 **CountryCode** | Pointer to **string** |  | [optional] 
 **State** | Pointer to **string** |  | [optional] 
+**Verified** | Pointer to **bool** |  | [optional] 
 **ZipCode** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -128,6 +129,31 @@ SetState sets State field to given value.
 `func (o *UnibeeApiBeanUSAddress) HasState() bool`
 
 HasState returns a boolean if a field has been set.
+
+### GetVerified
+
+`func (o *UnibeeApiBeanUSAddress) GetVerified() bool`
+
+GetVerified returns the Verified field if non-nil, zero value otherwise.
+
+### GetVerifiedOk
+
+`func (o *UnibeeApiBeanUSAddress) GetVerifiedOk() (*bool, bool)`
+
+GetVerifiedOk returns a tuple with the Verified field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVerified
+
+`func (o *UnibeeApiBeanUSAddress) SetVerified(v bool)`
+
+SetVerified sets Verified field to given value.
+
+### HasVerified
+
+`func (o *UnibeeApiBeanUSAddress) HasVerified() bool`
+
+HasVerified returns a boolean if a field has been set.
 
 ### GetZipCode
 

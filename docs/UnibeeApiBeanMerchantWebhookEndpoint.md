@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **GmtModify** | Pointer to **int64** | update time | [optional] 
 **Id** | Pointer to **int64** | id | [optional] 
 **MerchantId** | Pointer to **int64** | webhook url | [optional] 
+**Type** | Pointer to **int32** | webhook type,0-Webhook,1-zapier | [optional] 
 **WebhookEvents** | Pointer to **[]string** | webhook_events,split dot | [optional] 
 **WebhookUrl** | Pointer to **string** | webhook url | [optional] 
 
@@ -129,6 +130,31 @@ SetMerchantId sets MerchantId field to given value.
 `func (o *UnibeeApiBeanMerchantWebhookEndpoint) HasMerchantId() bool`
 
 HasMerchantId returns a boolean if a field has been set.
+
+### GetType
+
+`func (o *UnibeeApiBeanMerchantWebhookEndpoint) GetType() int32`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *UnibeeApiBeanMerchantWebhookEndpoint) GetTypeOk() (*int32, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *UnibeeApiBeanMerchantWebhookEndpoint) SetType(v int32)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *UnibeeApiBeanMerchantWebhookEndpoint) HasType() bool`
+
+HasType returns a boolean if a field has been set.
 
 ### GetWebhookEvents
 

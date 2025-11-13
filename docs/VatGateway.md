@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**VatSetupGlobalUsVatConfigPost**](VatGateway.md#VatSetupGlobalUsVatConfigPost) | **Post** /merchant/vat/setup_global_us_vat_config | US Vat Config Setup
 [**VatSetupUsVatGatewayPost**](VatGateway.md#VatSetupUsVatGatewayPost) | **Post** /merchant/vat/setup_us_vat_gateway | US Vat Gateway Setup
 [**VatUsVatCategoryListGet**](VatGateway.md#VatUsVatCategoryListGet) | **Get** /merchant/vat/us_vat_category_list | Get US Vat Category List
+[**VatUsVatValidateAddressPost**](VatGateway.md#VatUsVatValidateAddressPost) | **Post** /merchant/vat/us_vat_validate_address | Validate US Vat Address
 [**VatVatNumberValidateHistoryActivatePost**](VatGateway.md#VatVatNumberValidateHistoryActivatePost) | **Post** /merchant/vat/vat_number_validate_history_activate | Vat Number Validation History Activate
 [**VatVatNumberValidateHistoryDeactivatePost**](VatGateway.md#VatVatNumberValidateHistoryDeactivatePost) | **Post** /merchant/vat/vat_number_validate_history_deactivate | Vat Number Validation History Deactivate
 [**VatVatNumberValidateHistoryPost**](VatGateway.md#VatVatNumberValidateHistoryPost) | **Post** /merchant/vat/vat_number_validate_history | Vat Number Validation History
@@ -449,6 +450,70 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## VatUsVatValidateAddressPost
+
+> MerchantVatUsVatValidateAddressPost200Response VatUsVatValidateAddressPost(ctx).UnibeeApiMerchantVatUSVATValidateAddressReq(unibeeApiMerchantVatUSVATValidateAddressReq).Execute()
+
+Validate US Vat Address
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantVatUSVATValidateAddressReq := *openapiclient.NewUnibeeApiMerchantVatUSVATValidateAddressReq() // UnibeeApiMerchantVatUSVATValidateAddressReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VatGateway.VatUsVatValidateAddressPost(context.Background()).UnibeeApiMerchantVatUSVATValidateAddressReq(unibeeApiMerchantVatUSVATValidateAddressReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VatGateway.VatUsVatValidateAddressPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VatUsVatValidateAddressPost`: MerchantVatUsVatValidateAddressPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `VatGateway.VatUsVatValidateAddressPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVatUsVatValidateAddressPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantVatUSVATValidateAddressReq** | [**UnibeeApiMerchantVatUSVATValidateAddressReq**](UnibeeApiMerchantVatUSVATValidateAddressReq.md) |  | 
+
+### Return type
+
+[**MerchantVatUsVatValidateAddressPost200Response**](MerchantVatUsVatValidateAddressPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

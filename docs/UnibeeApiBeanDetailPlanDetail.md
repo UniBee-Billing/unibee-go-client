@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **OnetimeAddons** | Pointer to [**[]UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) | OneTimeAddons | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
 **Product** | Pointer to [**UnibeeApiBeanProduct**](UnibeeApiBeanProduct.md) |  | [optional] 
+**SellOnUSOnly** | Pointer to **bool** | SellOnUSOnly, customer must select US Country And provider US Address when its true | [optional] 
 
 ## Methods
 
@@ -257,6 +258,31 @@ SetProduct sets Product field to given value.
 `func (o *UnibeeApiBeanDetailPlanDetail) HasProduct() bool`
 
 HasProduct returns a boolean if a field has been set.
+
+### GetSellOnUSOnly
+
+`func (o *UnibeeApiBeanDetailPlanDetail) GetSellOnUSOnly() bool`
+
+GetSellOnUSOnly returns the SellOnUSOnly field if non-nil, zero value otherwise.
+
+### GetSellOnUSOnlyOk
+
+`func (o *UnibeeApiBeanDetailPlanDetail) GetSellOnUSOnlyOk() (*bool, bool)`
+
+GetSellOnUSOnlyOk returns a tuple with the SellOnUSOnly field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSellOnUSOnly
+
+`func (o *UnibeeApiBeanDetailPlanDetail) SetSellOnUSOnly(v bool)`
+
+SetSellOnUSOnly sets SellOnUSOnly field to given value.
+
+### HasSellOnUSOnly
+
+`func (o *UnibeeApiBeanDetailPlanDetail) HasSellOnUSOnly() bool`
+
+HasSellOnUSOnly returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -34,7 +34,6 @@ Name | Type | Description | Notes
 **OtherSocialInfo** | Pointer to **string** |  | [optional] 
 **PaymentMethod** | Pointer to **string** |  | [optional] 
 **Phone** | Pointer to **string** | phone | [optional] 
-**Profession** | Pointer to **string** | profession | [optional] 
 **RecurringAmount** | Pointer to **int64** | total recurring amount, cent | [optional] 
 **RegistrationNumber** | Pointer to **string** | RegistrationNumber | [optional] 
 **School** | Pointer to **string** | school | [optional] 
@@ -823,31 +822,6 @@ SetPhone sets Phone field to given value.
 `func (o *UnibeeApiBeanUserAccount) HasPhone() bool`
 
 HasPhone returns a boolean if a field has been set.
-
-### GetProfession
-
-`func (o *UnibeeApiBeanUserAccount) GetProfession() string`
-
-GetProfession returns the Profession field if non-nil, zero value otherwise.
-
-### GetProfessionOk
-
-`func (o *UnibeeApiBeanUserAccount) GetProfessionOk() (*string, bool)`
-
-GetProfessionOk returns a tuple with the Profession field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProfession
-
-`func (o *UnibeeApiBeanUserAccount) SetProfession(v string)`
-
-SetProfession sets Profession field to given value.
-
-### HasProfession
-
-`func (o *UnibeeApiBeanUserAccount) HasProfession() bool`
-
-HasProfession returns a boolean if a field has been set.
 
 ### GetRecurringAmount
 

@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**CreditGetPromoConfigStatisticsPost**](PromoCredit.md#CreditGetPromoConfigStatisticsPost) | **Post** /merchant/credit/get_promo_config_statistics | Get Promo Credit Config Statistics
 [**CreditPromoCreditDecrementPost**](PromoCredit.md#CreditPromoCreditDecrementPost) | **Post** /merchant/credit/promo_credit_decrement | Promo Credit Decrement
 [**CreditPromoCreditIncrementPost**](PromoCredit.md#CreditPromoCreditIncrementPost) | **Post** /merchant/credit/promo_credit_increment | Promo Credit Increment
+[**CreditPromoCreditRefundFromInvoicePost**](PromoCredit.md#CreditPromoCreditRefundFromInvoicePost) | **Post** /merchant/credit/promo_credit_refund_from_invoice | Promo Credit Refund
 
 
 
@@ -451,6 +452,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantCreditPromoCreditDecrementPost200Response**](MerchantCreditPromoCreditDecrementPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreditPromoCreditRefundFromInvoicePost
+
+> MerchantAuthSsoClearTotpPost200Response CreditPromoCreditRefundFromInvoicePost(ctx).UnibeeApiMerchantCreditPromoCreditRefundFromInvoiceReq(unibeeApiMerchantCreditPromoCreditRefundFromInvoiceReq).Execute()
+
+Promo Credit Refund
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantCreditPromoCreditRefundFromInvoiceReq := *openapiclient.NewUnibeeApiMerchantCreditPromoCreditRefundFromInvoiceReq("InvoiceId_example") // UnibeeApiMerchantCreditPromoCreditRefundFromInvoiceReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PromoCredit.CreditPromoCreditRefundFromInvoicePost(context.Background()).UnibeeApiMerchantCreditPromoCreditRefundFromInvoiceReq(unibeeApiMerchantCreditPromoCreditRefundFromInvoiceReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PromoCredit.CreditPromoCreditRefundFromInvoicePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreditPromoCreditRefundFromInvoicePost`: MerchantAuthSsoClearTotpPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `PromoCredit.CreditPromoCreditRefundFromInvoicePost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreditPromoCreditRefundFromInvoicePostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantCreditPromoCreditRefundFromInvoiceReq** | [**UnibeeApiMerchantCreditPromoCreditRefundFromInvoiceReq**](UnibeeApiMerchantCreditPromoCreditRefundFromInvoiceReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 

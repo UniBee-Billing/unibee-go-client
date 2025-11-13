@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Active** | Pointer to **bool** |  | [optional] 
 **FromAddress** | Pointer to [**UnibeeApiBeanUSAddress**](UnibeeApiBeanUSAddress.md) |  | [optional] 
 **NexusAddresses** | Pointer to [**[]UnibeeApiBeanUSAddress**](UnibeeApiBeanUSAddress.md) |  | [optional] 
+**SellOnUSOnly** | Pointer to **bool** |  | [optional] 
 **TaxCode** | Pointer to **string** |  | [optional] 
 **ToAddress** | Pointer to [**UnibeeApiBeanUSAddress**](UnibeeApiBeanUSAddress.md) |  | [optional] 
 
@@ -103,6 +104,31 @@ SetNexusAddresses sets NexusAddresses field to given value.
 `func (o *UnibeeApiBeanUSVATConfig) HasNexusAddresses() bool`
 
 HasNexusAddresses returns a boolean if a field has been set.
+
+### GetSellOnUSOnly
+
+`func (o *UnibeeApiBeanUSVATConfig) GetSellOnUSOnly() bool`
+
+GetSellOnUSOnly returns the SellOnUSOnly field if non-nil, zero value otherwise.
+
+### GetSellOnUSOnlyOk
+
+`func (o *UnibeeApiBeanUSVATConfig) GetSellOnUSOnlyOk() (*bool, bool)`
+
+GetSellOnUSOnlyOk returns a tuple with the SellOnUSOnly field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSellOnUSOnly
+
+`func (o *UnibeeApiBeanUSVATConfig) SetSellOnUSOnly(v bool)`
+
+SetSellOnUSOnly sets SellOnUSOnly field to given value.
+
+### HasSellOnUSOnly
+
+`func (o *UnibeeApiBeanUSVATConfig) HasSellOnUSOnly() bool`
+
+HasSellOnUSOnly returns a boolean if a field has been set.
 
 ### GetTaxCode
 

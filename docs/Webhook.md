@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**WebhookNewEndpointPost**](Webhook.md#WebhookNewEndpointPost) | **Post** /merchant/webhook/new_endpoint | New Webhook Endpoint
 [**WebhookResendPost**](Webhook.md#WebhookResendPost) | **Post** /merchant/webhook/resend | Resent Webhook
 [**WebhookUpdateEndpointPost**](Webhook.md#WebhookUpdateEndpointPost) | **Post** /merchant/webhook/update_endpoint | Update Webhook Endpoint
+[**WebhookWebhookZapierOauthUrlPost**](Webhook.md#WebhookWebhookZapierOauthUrlPost) | **Post** /merchant/webhook/webhook_zapier_oauth_url | Get Webhook Zapier Oauth Url
 
 
 
@@ -501,6 +502,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## WebhookWebhookZapierOauthUrlPost
+
+> MerchantWebhookWebhookZapierOauthUrlPost200Response WebhookWebhookZapierOauthUrlPost(ctx).UnibeeApiMerchantWebhookGetWebhookZapierOauthUrlReq(unibeeApiMerchantWebhookGetWebhookZapierOauthUrlReq).Execute()
+
+Get Webhook Zapier Oauth Url
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantWebhookGetWebhookZapierOauthUrlReq := *openapiclient.NewUnibeeApiMerchantWebhookGetWebhookZapierOauthUrlReq() // UnibeeApiMerchantWebhookGetWebhookZapierOauthUrlReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Webhook.WebhookWebhookZapierOauthUrlPost(context.Background()).UnibeeApiMerchantWebhookGetWebhookZapierOauthUrlReq(unibeeApiMerchantWebhookGetWebhookZapierOauthUrlReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Webhook.WebhookWebhookZapierOauthUrlPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `WebhookWebhookZapierOauthUrlPost`: MerchantWebhookWebhookZapierOauthUrlPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Webhook.WebhookWebhookZapierOauthUrlPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiWebhookWebhookZapierOauthUrlPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantWebhookGetWebhookZapierOauthUrlReq** | [**UnibeeApiMerchantWebhookGetWebhookZapierOauthUrlReq**](UnibeeApiMerchantWebhookGetWebhookZapierOauthUrlReq.md) |  | 
+
+### Return type
+
+[**MerchantWebhookWebhookZapierOauthUrlPost200Response**](MerchantWebhookWebhookZapierOauthUrlPost200Response.md)
 
 ### Authorization
 

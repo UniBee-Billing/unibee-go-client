@@ -672,7 +672,7 @@ No authorization required
 
 ## SubscriptionListGet
 
-> MerchantSubscriptionListGet200Response SubscriptionListGet(ctx).UserId(userId).ExternalUserId(externalUserId).Email(email).Status(status).Currency(currency).PlanIds(planIds).ProductIds(productIds).AmountStart(amountStart).AmountEnd(amountEnd).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+> MerchantSubscriptionListGet200Response SubscriptionListGet(ctx).UserId(userId).ExternalUserId(externalUserId).SearchKey(searchKey).Email(email).Status(status).Currency(currency).PlanIds(planIds).ProductIds(productIds).AmountStart(amountStart).AmountEnd(amountEnd).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 
 Get Subscription List
 
@@ -691,6 +691,7 @@ import (
 func main() {
 	userId := int64(789) // int64 | UserId (optional)
 	externalUserId := "externalUserId_example" // string | ExternalUserId (optional)
+	searchKey := "searchKey_example" // string | Search SubscriptionId|Email (optional)
 	email := "email_example" // string | The filter email of subscription user (optional)
 	status := []int32{int32(123)} // []int32 | Filter, Default All，Status，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | 9-Failed (optional)
 	currency := "currency_example" // string | The currency of subscription (optional)
@@ -707,7 +708,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Subscription.SubscriptionListGet(context.Background()).UserId(userId).ExternalUserId(externalUserId).Email(email).Status(status).Currency(currency).PlanIds(planIds).ProductIds(productIds).AmountStart(amountStart).AmountEnd(amountEnd).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+	resp, r, err := apiClient.Subscription.SubscriptionListGet(context.Background()).UserId(userId).ExternalUserId(externalUserId).SearchKey(searchKey).Email(email).Status(status).Currency(currency).PlanIds(planIds).ProductIds(productIds).AmountStart(amountStart).AmountEnd(amountEnd).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -730,6 +731,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int64** | UserId | 
  **externalUserId** | **string** | ExternalUserId | 
+ **searchKey** | **string** | Search SubscriptionId|Email | 
  **email** | **string** | The filter email of subscription user | 
  **status** | **[]int32** | Filter, Default All，Status，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | 9-Failed | 
  **currency** | **string** | The currency of subscription | 

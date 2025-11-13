@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**GlobalUsVatConfig** | Pointer to [**UnibeeApiBeanUSVATConfig**](UnibeeApiBeanUSVATConfig.md) |  | [optional] 
+**GlobalUsVatConfig** | Pointer to [**UnibeeApiBeanUSVATGlobalConfig**](UnibeeApiBeanUSVATGlobalConfig.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetGlobalUsVatConfig
 
-`func (o *UnibeeApiMerchantVatSetupGlobalUSVATConfigReq) GetGlobalUsVatConfig() UnibeeApiBeanUSVATConfig`
+`func (o *UnibeeApiMerchantVatSetupGlobalUSVATConfigReq) GetGlobalUsVatConfig() UnibeeApiBeanUSVATGlobalConfig`
 
 GetGlobalUsVatConfig returns the GlobalUsVatConfig field if non-nil, zero value otherwise.
 
 ### GetGlobalUsVatConfigOk
 
-`func (o *UnibeeApiMerchantVatSetupGlobalUSVATConfigReq) GetGlobalUsVatConfigOk() (*UnibeeApiBeanUSVATConfig, bool)`
+`func (o *UnibeeApiMerchantVatSetupGlobalUSVATConfigReq) GetGlobalUsVatConfigOk() (*UnibeeApiBeanUSVATGlobalConfig, bool)`
 
 GetGlobalUsVatConfigOk returns a tuple with the GlobalUsVatConfig field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGlobalUsVatConfig
 
-`func (o *UnibeeApiMerchantVatSetupGlobalUSVATConfigReq) SetGlobalUsVatConfig(v UnibeeApiBeanUSVATConfig)`
+`func (o *UnibeeApiMerchantVatSetupGlobalUSVATConfigReq) SetGlobalUsVatConfig(v UnibeeApiBeanUSVATGlobalConfig)`
 
 SetGlobalUsVatConfig sets GlobalUsVatConfig field to given value.
 
