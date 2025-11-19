@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AggregationUniqueId** | Pointer to **string** | AggregationUniqueId, valid when AggregationType is count unique | [optional] 
-**AggregationValue** | Pointer to **int32** | AggregationValue, valid when AggregationType latest, max or sum | [optional] 
+**AggregationUniqueId** | Pointer to **string** | AggregationUniqueId, valid when AggregationType is count unique. If provided, it has higher priority and will override the value in MetricProperties for the AggregationProperty field | [optional] 
+**AggregationValue** | Pointer to **int32** | AggregationValue, valid when AggregationType is latest, max or sum. If provided, it has higher priority and will override the value in MetricProperties for the AggregationProperty field | [optional] 
 **Email** | Pointer to **string** | Email， UserId, ExternalUserId, or Email provides one of three options | [optional] [default to "account@unibee.dev"]
 **ExternalEventId** | **string** | ExternalEventId, __unique__ | 
 **ExternalUserId** | Pointer to **string** | ExternalUserId， UserId, ExternalUserId, or Email provides one of three options | [optional] 
 **MetricCode** | **string** | MetricCode | 
 **MetricProperties** | Pointer to **map[string]interface{}** |  | [optional] 
-**ProductId** | Pointer to **int64** | default product will use if productId not specified and subscriptionId is blank | [optional] 
+**ProductId** | Pointer to **int64** | Id of product. Default product will use if productId not specified and subscriptionId is blank | [optional] 
 **UserId** | Pointer to **int64** | UserId， UserId, ExternalUserId, or Email provides one of three options | [optional] 
 
 ## Methods

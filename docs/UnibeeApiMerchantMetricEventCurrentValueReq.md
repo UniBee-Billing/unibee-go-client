@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Email** | Pointer to **string** | Email， UserId, ExternalUserId, or Email provides one of three options | [optional] [default to "account@unibee.dev"]
 **ExternalUserId** | Pointer to **string** | ExternalUserId， UserId, ExternalUserId, or Email provides one of three options | [optional] 
 **MetricCode** | **string** | MetricCode | 
-**ProductId** | Pointer to **int64** | default product will use if productId not specified and subscriptionId is blank | [optional] 
+**ProductId** | Pointer to **int64** | Id of product. Default product will use if productId not specified and subscriptionId is blank | [optional] 
 **UserId** | Pointer to **int64** | UserId， UserId, ExternalUserId, or Email provides one of three options | [optional] 
 
 ## Methods

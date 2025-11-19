@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Active** | Pointer to **bool** |  | [optional] 
-**AvailableGatewayNames** | Pointer to **[]string** |  | [optional] 
+**AvailableGatewayNames** | Pointer to **[]string** | Used for response | [optional] 
 **CheckAddressViaGateway** | Pointer to **bool** |  | [optional] 
 **DefaultGatewayName** | Pointer to **string** |  | [optional] 
 **FromAddress** | Pointer to [**UnibeeApiBeanUSAddress**](UnibeeApiBeanUSAddress.md) |  | [optional] 

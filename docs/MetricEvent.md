@@ -4,7 +4,7 @@ All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**MetricEventCurrentValuePost**](MetricEvent.md#MetricEventCurrentValuePost) | **Post** /merchant/metric/event/current_value | Merchant Metric Event Current Value
+[**MetricEventCurrentValuePost**](MetricEvent.md#MetricEventCurrentValuePost) | **Post** /merchant/metric/event/current_value | Get Merchant Metric Event Current Value
 [**MetricEventDeletePost**](MetricEvent.md#MetricEventDeletePost) | **Post** /merchant/metric/event/delete | Del Merchant Metric Event
 [**MetricEventListGet**](MetricEvent.md#MetricEventListGet) | **Get** /merchant/metric/event_list | Metric Event List
 [**MetricEventListPost**](MetricEvent.md#MetricEventListPost) | **Post** /merchant/metric/event_list | Metric Event List
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 > MerchantMetricEventCurrentValuePost200Response MetricEventCurrentValuePost(ctx).UnibeeApiMerchantMetricEventCurrentValueReq(unibeeApiMerchantMetricEventCurrentValueReq).Execute()
 
-Merchant Metric Event Current Value
+Get Merchant Metric Event Current Value
 
 ### Example
 

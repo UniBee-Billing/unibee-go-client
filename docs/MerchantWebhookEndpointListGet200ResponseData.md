@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **EndpointList** | Pointer to [**[]UnibeeApiBeanMerchantWebhookEndpoint**](UnibeeApiBeanMerchantWebhookEndpoint.md) | EndpointList | [optional] 
+**ZapierCredential** | Pointer to [**UnibeeApiBeanMerchantZapierCredential**](UnibeeApiBeanMerchantZapierCredential.md) |  | [optional] 
 
 ## Methods
 
@@ -49,6 +50,31 @@ SetEndpointList sets EndpointList field to given value.
 `func (o *MerchantWebhookEndpointListGet200ResponseData) HasEndpointList() bool`
 
 HasEndpointList returns a boolean if a field has been set.
+
+### GetZapierCredential
+
+`func (o *MerchantWebhookEndpointListGet200ResponseData) GetZapierCredential() UnibeeApiBeanMerchantZapierCredential`
+
+GetZapierCredential returns the ZapierCredential field if non-nil, zero value otherwise.
+
+### GetZapierCredentialOk
+
+`func (o *MerchantWebhookEndpointListGet200ResponseData) GetZapierCredentialOk() (*UnibeeApiBeanMerchantZapierCredential, bool)`
+
+GetZapierCredentialOk returns a tuple with the ZapierCredential field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetZapierCredential
+
+`func (o *MerchantWebhookEndpointListGet200ResponseData) SetZapierCredential(v UnibeeApiBeanMerchantZapierCredential)`
+
+SetZapierCredential sets ZapierCredential field to given value.
+
+### HasZapierCredential
+
+`func (o *MerchantWebhookEndpointListGet200ResponseData) HasZapierCredential() bool`
+
+HasZapierCredential returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**WebhookEventListGet**](Webhook.md#WebhookEventListGet) | **Get** /merchant/webhook/event_list | Webhook Event List
 [**WebhookGetWebhookSecretGet**](Webhook.md#WebhookGetWebhookSecretGet) | **Get** /merchant/webhook/get_webhook_secret | Get Webhook Secret
 [**WebhookNewEndpointPost**](Webhook.md#WebhookNewEndpointPost) | **Post** /merchant/webhook/new_endpoint | New Webhook Endpoint
+[**WebhookRemoveWebhookZapierOauthPost**](Webhook.md#WebhookRemoveWebhookZapierOauthPost) | **Post** /merchant/webhook/remove_webhook_zapier_oauth | Remove Webhook Zapier Oauth
 [**WebhookResendPost**](Webhook.md#WebhookResendPost) | **Post** /merchant/webhook/resend | Resent Webhook
 [**WebhookUpdateEndpointPost**](Webhook.md#WebhookUpdateEndpointPost) | **Post** /merchant/webhook/update_endpoint | Update Webhook Endpoint
 [**WebhookWebhookZapierOauthUrlPost**](Webhook.md#WebhookWebhookZapierOauthUrlPost) | **Post** /merchant/webhook/webhook_zapier_oauth_url | Get Webhook Zapier Oauth Url
@@ -370,6 +371,70 @@ Other parameters are passed through a pointer to a apiWebhookNewEndpointPostRequ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **unibeeApiMerchantWebhookNewEndpointReq** | [**UnibeeApiMerchantWebhookNewEndpointReq**](UnibeeApiMerchantWebhookNewEndpointReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## WebhookRemoveWebhookZapierOauthPost
+
+> MerchantAuthSsoClearTotpPost200Response WebhookRemoveWebhookZapierOauthPost(ctx).Body(body).Execute()
+
+Remove Webhook Zapier Oauth
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	body := map[string]interface{}{ ... } // map[string]interface{} | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Webhook.WebhookRemoveWebhookZapierOauthPost(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Webhook.WebhookRemoveWebhookZapierOauthPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `WebhookRemoveWebhookZapierOauthPost`: MerchantAuthSsoClearTotpPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Webhook.WebhookRemoveWebhookZapierOauthPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiWebhookRemoveWebhookZapierOauthPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **map[string]interface{}** |  | 
 
 ### Return type
 
