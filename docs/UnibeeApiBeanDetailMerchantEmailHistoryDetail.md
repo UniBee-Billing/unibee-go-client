@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Content** | Pointer to **string** | Email content | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Email** | Pointer to **string** | Email address | [optional] 
+**GatewayName** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **int64** | Id | [optional] 
 **MerchantId** | Pointer to **int64** | merchantId | [optional] 
 **Response** | Pointer to **string** | Email response | [optional] 
@@ -132,6 +133,31 @@ SetEmail sets Email field to given value.
 `func (o *UnibeeApiBeanDetailMerchantEmailHistoryDetail) HasEmail() bool`
 
 HasEmail returns a boolean if a field has been set.
+
+### GetGatewayName
+
+`func (o *UnibeeApiBeanDetailMerchantEmailHistoryDetail) GetGatewayName() string`
+
+GetGatewayName returns the GatewayName field if non-nil, zero value otherwise.
+
+### GetGatewayNameOk
+
+`func (o *UnibeeApiBeanDetailMerchantEmailHistoryDetail) GetGatewayNameOk() (*string, bool)`
+
+GetGatewayNameOk returns a tuple with the GatewayName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayName
+
+`func (o *UnibeeApiBeanDetailMerchantEmailHistoryDetail) SetGatewayName(v string)`
+
+SetGatewayName sets GatewayName field to given value.
+
+### HasGatewayName
+
+`func (o *UnibeeApiBeanDetailMerchantEmailHistoryDetail) HasGatewayName() bool`
+
+HasGatewayName returns a boolean if a field has been set.
 
 ### GetId
 

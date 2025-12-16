@@ -23,6 +23,8 @@ Method | HTTP request | Description
 [**InvoiceReconvertCryptoAndSendEmailPost**](Invoice.md#InvoiceReconvertCryptoAndSendEmailPost) | **Post** /merchant/invoice/reconvert_crypto_and_send_email | Admin Reconvert Crypto Data and Send Invoice Email
 [**InvoiceRefundPost**](Invoice.md#InvoiceRefundPost) | **Post** /merchant/invoice/refund | Create InvoiceRefund
 [**InvoiceSendEmailPost**](Invoice.md#InvoiceSendEmailPost) | **Post** /merchant/invoice/send_email | Send Invoice Email
+[**InvoiceSplitPaymentsGet**](Invoice.md#InvoiceSplitPaymentsGet) | **Get** /merchant/invoice/split_payments | Get Split Payments
+[**InvoiceSplitPaymentsPost**](Invoice.md#InvoiceSplitPaymentsPost) | **Post** /merchant/invoice/split_payments | Get Split Payments
 
 
 
@@ -1289,6 +1291,138 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## InvoiceSplitPaymentsGet
+
+> MerchantInvoiceSplitPaymentsGet200Response InvoiceSplitPaymentsGet(ctx).InvoiceId(invoiceId).Execute()
+
+Get Split Payments
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	invoiceId := "invoiceId_example" // string | The invoice id
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Invoice.InvoiceSplitPaymentsGet(context.Background()).InvoiceId(invoiceId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceSplitPaymentsGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `InvoiceSplitPaymentsGet`: MerchantInvoiceSplitPaymentsGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceSplitPaymentsGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiInvoiceSplitPaymentsGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **invoiceId** | **string** | The invoice id | 
+
+### Return type
+
+[**MerchantInvoiceSplitPaymentsGet200Response**](MerchantInvoiceSplitPaymentsGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## InvoiceSplitPaymentsPost
+
+> MerchantInvoiceSplitPaymentsGet200Response InvoiceSplitPaymentsPost(ctx).UnibeeApiMerchantInvoiceGetSplitPaymentsReq(unibeeApiMerchantInvoiceGetSplitPaymentsReq).Execute()
+
+Get Split Payments
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantInvoiceGetSplitPaymentsReq := *openapiclient.NewUnibeeApiMerchantInvoiceGetSplitPaymentsReq("InvoiceId_example") // UnibeeApiMerchantInvoiceGetSplitPaymentsReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Invoice.InvoiceSplitPaymentsPost(context.Background()).UnibeeApiMerchantInvoiceGetSplitPaymentsReq(unibeeApiMerchantInvoiceGetSplitPaymentsReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceSplitPaymentsPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `InvoiceSplitPaymentsPost`: MerchantInvoiceSplitPaymentsGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceSplitPaymentsPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiInvoiceSplitPaymentsPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantInvoiceGetSplitPaymentsReq** | [**UnibeeApiMerchantInvoiceGetSplitPaymentsReq**](UnibeeApiMerchantInvoiceGetSplitPaymentsReq.md) |  | 
+
+### Return type
+
+[**MerchantInvoiceSplitPaymentsGet200Response**](MerchantInvoiceSplitPaymentsGet200Response.md)
 
 ### Authorization
 

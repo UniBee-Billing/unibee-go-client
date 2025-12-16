@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 **PaymentId** | Pointer to **string** | payment id | [optional] 
 **RefundAmount** | Pointer to **int64** | total refund amount | [optional] 
 **ReturnUrl** | Pointer to **string** | return url | [optional] 
+**SplitSequence** | Pointer to **int32** | split payment sequence，start from 1，0 &#x3D; not spilit payment。The serial number is determined by the time of successful payment. The first one to successfully make the payment will be assigned serial number 1. | [optional] 
 **Status** | Pointer to **int32** | status  10-pending，20-success，30-failure, 40-cancel | [optional] 
 **SubscriptionId** | Pointer to **string** | subscription id | [optional] 
 **TotalAmount** | Pointer to **int64** | total amount | [optional] 
@@ -833,6 +834,31 @@ SetReturnUrl sets ReturnUrl field to given value.
 `func (o *UnibeeApiBeanPayment) HasReturnUrl() bool`
 
 HasReturnUrl returns a boolean if a field has been set.
+
+### GetSplitSequence
+
+`func (o *UnibeeApiBeanPayment) GetSplitSequence() int32`
+
+GetSplitSequence returns the SplitSequence field if non-nil, zero value otherwise.
+
+### GetSplitSequenceOk
+
+`func (o *UnibeeApiBeanPayment) GetSplitSequenceOk() (*int32, bool)`
+
+GetSplitSequenceOk returns a tuple with the SplitSequence field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSplitSequence
+
+`func (o *UnibeeApiBeanPayment) SetSplitSequence(v int32)`
+
+SetSplitSequence sets SplitSequence field to given value.
+
+### HasSplitSequence
+
+`func (o *UnibeeApiBeanPayment) HasSplitSequence() bool`
+
+HasSplitSequence returns a boolean if a field has been set.
 
 ### GetStatus
 

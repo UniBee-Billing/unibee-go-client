@@ -13,20 +13,23 @@ Name | Type | Description | Notes
 **LineId** | Pointer to **string** |  | [optional] 
 **MetricCharge** | Pointer to [**UnibeeApiBeanUserMetricChargeInvoiceItem**](UnibeeApiBeanUserMetricChargeInvoiceItem.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**NexusAddresses** | Pointer to [**[]UnibeeApiBeanUSAddress**](UnibeeApiBeanUSAddress.md) |  | [optional] 
 **OriginAmount** | Pointer to **int64** |  | [optional] 
 **OriginUnitAmountExcludeTax** | Pointer to **int64** |  | [optional] 
 **PdfDescription** | Pointer to **string** |  | [optional] 
 **PeriodEnd** | Pointer to **int64** |  | [optional] 
 **PeriodStart** | Pointer to **int64** |  | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
-**PromoCreditDiscountAmount** | Pointer to **int64** | promo credit discount amount | [optional] 
 **Proration** | Pointer to **bool** |  | [optional] 
+**ProrationDate** | Pointer to **int64** |  | [optional] 
+**ProrationScale** | Pointer to **int64** |  | [optional] 
 **Quantity** | Pointer to **int64** |  | [optional] 
 **Tax** | Pointer to **int64** |  | [optional] 
 **TaxCode** | Pointer to **string** |  | [optional] 
 **TaxPercentage** | Pointer to **int64** | Tax Percentage，1000 &#x3D; 10% | [optional] 
 **ToAddress** | Pointer to [**UnibeeApiBeanUSAddress**](UnibeeApiBeanUSAddress.md) |  | [optional] 
 **UnitAmountExcludingTax** | Pointer to **int64** |  | [optional] 
+**UstaxAlert** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -272,6 +275,31 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
+### GetNexusAddresses
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetNexusAddresses() []UnibeeApiBeanUSAddress`
+
+GetNexusAddresses returns the NexusAddresses field if non-nil, zero value otherwise.
+
+### GetNexusAddressesOk
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetNexusAddressesOk() (*[]UnibeeApiBeanUSAddress, bool)`
+
+GetNexusAddressesOk returns a tuple with the NexusAddresses field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNexusAddresses
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) SetNexusAddresses(v []UnibeeApiBeanUSAddress)`
+
+SetNexusAddresses sets NexusAddresses field to given value.
+
+### HasNexusAddresses
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) HasNexusAddresses() bool`
+
+HasNexusAddresses returns a boolean if a field has been set.
+
 ### GetOriginAmount
 
 `func (o *UnibeeApiBeanInvoiceItemSimplify) GetOriginAmount() int64`
@@ -422,31 +450,6 @@ SetPlan sets Plan field to given value.
 
 HasPlan returns a boolean if a field has been set.
 
-### GetPromoCreditDiscountAmount
-
-`func (o *UnibeeApiBeanInvoiceItemSimplify) GetPromoCreditDiscountAmount() int64`
-
-GetPromoCreditDiscountAmount returns the PromoCreditDiscountAmount field if non-nil, zero value otherwise.
-
-### GetPromoCreditDiscountAmountOk
-
-`func (o *UnibeeApiBeanInvoiceItemSimplify) GetPromoCreditDiscountAmountOk() (*int64, bool)`
-
-GetPromoCreditDiscountAmountOk returns a tuple with the PromoCreditDiscountAmount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPromoCreditDiscountAmount
-
-`func (o *UnibeeApiBeanInvoiceItemSimplify) SetPromoCreditDiscountAmount(v int64)`
-
-SetPromoCreditDiscountAmount sets PromoCreditDiscountAmount field to given value.
-
-### HasPromoCreditDiscountAmount
-
-`func (o *UnibeeApiBeanInvoiceItemSimplify) HasPromoCreditDiscountAmount() bool`
-
-HasPromoCreditDiscountAmount returns a boolean if a field has been set.
-
 ### GetProration
 
 `func (o *UnibeeApiBeanInvoiceItemSimplify) GetProration() bool`
@@ -471,6 +474,56 @@ SetProration sets Proration field to given value.
 `func (o *UnibeeApiBeanInvoiceItemSimplify) HasProration() bool`
 
 HasProration returns a boolean if a field has been set.
+
+### GetProrationDate
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetProrationDate() int64`
+
+GetProrationDate returns the ProrationDate field if non-nil, zero value otherwise.
+
+### GetProrationDateOk
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetProrationDateOk() (*int64, bool)`
+
+GetProrationDateOk returns a tuple with the ProrationDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProrationDate
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) SetProrationDate(v int64)`
+
+SetProrationDate sets ProrationDate field to given value.
+
+### HasProrationDate
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) HasProrationDate() bool`
+
+HasProrationDate returns a boolean if a field has been set.
+
+### GetProrationScale
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetProrationScale() int64`
+
+GetProrationScale returns the ProrationScale field if non-nil, zero value otherwise.
+
+### GetProrationScaleOk
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetProrationScaleOk() (*int64, bool)`
+
+GetProrationScaleOk returns a tuple with the ProrationScale field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProrationScale
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) SetProrationScale(v int64)`
+
+SetProrationScale sets ProrationScale field to given value.
+
+### HasProrationScale
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) HasProrationScale() bool`
+
+HasProrationScale returns a boolean if a field has been set.
 
 ### GetQuantity
 
@@ -621,6 +674,31 @@ SetUnitAmountExcludingTax sets UnitAmountExcludingTax field to given value.
 `func (o *UnibeeApiBeanInvoiceItemSimplify) HasUnitAmountExcludingTax() bool`
 
 HasUnitAmountExcludingTax returns a boolean if a field has been set.
+
+### GetUstaxAlert
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetUstaxAlert() string`
+
+GetUstaxAlert returns the UstaxAlert field if non-nil, zero value otherwise.
+
+### GetUstaxAlertOk
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetUstaxAlertOk() (*string, bool)`
+
+GetUstaxAlertOk returns a tuple with the UstaxAlert field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUstaxAlert
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) SetUstaxAlert(v string)`
+
+SetUstaxAlert sets UstaxAlert field to given value.
+
+### HasUstaxAlert
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) HasUstaxAlert() bool`
+
+HasUstaxAlert returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

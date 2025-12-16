@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DowngradeEffectImmediately** | Pointer to **bool** | DowngradeEffectImmediately, whether subscription update should effect immediately or at period end, default at period end | [optional] 
+**DowngradeNonImmediatelyEffectBeforePeriodEnd** | Pointer to **int64** | DowngradeNonImmediatelyEffectBeforePeriodEnd, for non-immediate downgrade, can take effect before period end (in seconds), default 30 minutes (1800) | [optional] 
 **FiatExchangeApiKey** | Pointer to **string** |  | [optional] 
 **GatewayVATRule** | Pointer to **string** |  | [optional] 
 **IncompleteExpireTime** | Pointer to **int64** | IncompleteExpireTime, em.. default 1day for plan of month type | [optional] 
@@ -57,6 +58,31 @@ SetDowngradeEffectImmediately sets DowngradeEffectImmediately field to given val
 `func (o *UnibeeApiBeanSubscriptionConfig) HasDowngradeEffectImmediately() bool`
 
 HasDowngradeEffectImmediately returns a boolean if a field has been set.
+
+### GetDowngradeNonImmediatelyEffectBeforePeriodEnd
+
+`func (o *UnibeeApiBeanSubscriptionConfig) GetDowngradeNonImmediatelyEffectBeforePeriodEnd() int64`
+
+GetDowngradeNonImmediatelyEffectBeforePeriodEnd returns the DowngradeNonImmediatelyEffectBeforePeriodEnd field if non-nil, zero value otherwise.
+
+### GetDowngradeNonImmediatelyEffectBeforePeriodEndOk
+
+`func (o *UnibeeApiBeanSubscriptionConfig) GetDowngradeNonImmediatelyEffectBeforePeriodEndOk() (*int64, bool)`
+
+GetDowngradeNonImmediatelyEffectBeforePeriodEndOk returns a tuple with the DowngradeNonImmediatelyEffectBeforePeriodEnd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDowngradeNonImmediatelyEffectBeforePeriodEnd
+
+`func (o *UnibeeApiBeanSubscriptionConfig) SetDowngradeNonImmediatelyEffectBeforePeriodEnd(v int64)`
+
+SetDowngradeNonImmediatelyEffectBeforePeriodEnd sets DowngradeNonImmediatelyEffectBeforePeriodEnd field to given value.
+
+### HasDowngradeNonImmediatelyEffectBeforePeriodEnd
+
+`func (o *UnibeeApiBeanSubscriptionConfig) HasDowngradeNonImmediatelyEffectBeforePeriodEnd() bool`
+
+HasDowngradeNonImmediatelyEffectBeforePeriodEnd returns a boolean if a field has been set.
 
 ### GetFiatExchangeApiKey
 

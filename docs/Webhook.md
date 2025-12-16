@@ -4,17 +4,90 @@ All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**VatUsVatUploadHistoryListGet**](Webhook.md#VatUsVatUploadHistoryListGet) | **Get** /merchant/vat/us_vat_upload_history_list | Get US VAT Upload History List
 [**WebhookDeleteEndpointPost**](Webhook.md#WebhookDeleteEndpointPost) | **Post** /merchant/webhook/delete_endpoint | Delete Webhook Endpoint
 [**WebhookEndpointListGet**](Webhook.md#WebhookEndpointListGet) | **Get** /merchant/webhook/endpoint_list | Get Webhook Endpoint list
 [**WebhookEndpointLogListGet**](Webhook.md#WebhookEndpointLogListGet) | **Get** /merchant/webhook/endpoint_log_list | Get Webhook Endpoint Log List
 [**WebhookEventListGet**](Webhook.md#WebhookEventListGet) | **Get** /merchant/webhook/event_list | Webhook Event List
 [**WebhookGetWebhookSecretGet**](Webhook.md#WebhookGetWebhookSecretGet) | **Get** /merchant/webhook/get_webhook_secret | Get Webhook Secret
 [**WebhookNewEndpointPost**](Webhook.md#WebhookNewEndpointPost) | **Post** /merchant/webhook/new_endpoint | New Webhook Endpoint
-[**WebhookRemoveWebhookZapierOauthPost**](Webhook.md#WebhookRemoveWebhookZapierOauthPost) | **Post** /merchant/webhook/remove_webhook_zapier_oauth | Remove Webhook Zapier Oauth
+[**WebhookRemoveWebhookZapierConnectPost**](Webhook.md#WebhookRemoveWebhookZapierConnectPost) | **Post** /merchant/webhook/remove_webhook_zapier_connect | Remove Webhook Zapier Connnect
 [**WebhookResendPost**](Webhook.md#WebhookResendPost) | **Post** /merchant/webhook/resend | Resent Webhook
 [**WebhookUpdateEndpointPost**](Webhook.md#WebhookUpdateEndpointPost) | **Post** /merchant/webhook/update_endpoint | Update Webhook Endpoint
-[**WebhookWebhookZapierOauthUrlPost**](Webhook.md#WebhookWebhookZapierOauthUrlPost) | **Post** /merchant/webhook/webhook_zapier_oauth_url | Get Webhook Zapier Oauth Url
+[**WebhookWebhookZapierConnectUrlPost**](Webhook.md#WebhookWebhookZapierConnectUrlPost) | **Post** /merchant/webhook/webhook_zapier_connect_url | Get Webhook Zapier Connect Url
 
+
+
+## VatUsVatUploadHistoryListGet
+
+> MerchantVatUsVatUploadHistoryListGet200Response VatUsVatUploadHistoryListGet(ctx).InvoiceId(invoiceId).GatewayName(gatewayName).UploadType(uploadType).Page(page).Count(count).Execute()
+
+Get US VAT Upload History List
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	invoiceId := "invoiceId_example" // string | Invoice Id (optional)
+	gatewayName := "gatewayName_example" // string | GatewayName, em. TaxJar (optional)
+	uploadType := []string{"Inner_example"} // []string | UploadType, PaymentUpload or RefundUpload, default both (optional)
+	page := int32(56) // int32 | Page, Start With 0 (optional)
+	count := int32(56) // int32 | Count Of Page (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Webhook.VatUsVatUploadHistoryListGet(context.Background()).InvoiceId(invoiceId).GatewayName(gatewayName).UploadType(uploadType).Page(page).Count(count).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Webhook.VatUsVatUploadHistoryListGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `VatUsVatUploadHistoryListGet`: MerchantVatUsVatUploadHistoryListGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `Webhook.VatUsVatUploadHistoryListGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiVatUsVatUploadHistoryListGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **invoiceId** | **string** | Invoice Id | 
+ **gatewayName** | **string** | GatewayName, em. TaxJar | 
+ **uploadType** | **[]string** | UploadType, PaymentUpload or RefundUpload, default both | 
+ **page** | **int32** | Page, Start With 0 | 
+ **count** | **int32** | Count Of Page | 
+
+### Return type
+
+[**MerchantVatUsVatUploadHistoryListGet200Response**](MerchantVatUsVatUploadHistoryListGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## WebhookDeleteEndpointPost
@@ -390,11 +463,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## WebhookRemoveWebhookZapierOauthPost
+## WebhookRemoveWebhookZapierConnectPost
 
-> MerchantAuthSsoClearTotpPost200Response WebhookRemoveWebhookZapierOauthPost(ctx).Body(body).Execute()
+> MerchantAuthSsoClearTotpPost200Response WebhookRemoveWebhookZapierConnectPost(ctx).Body(body).Execute()
 
-Remove Webhook Zapier Oauth
+Remove Webhook Zapier Connnect
 
 ### Example
 
@@ -413,13 +486,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Webhook.WebhookRemoveWebhookZapierOauthPost(context.Background()).Body(body).Execute()
+	resp, r, err := apiClient.Webhook.WebhookRemoveWebhookZapierConnectPost(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `Webhook.WebhookRemoveWebhookZapierOauthPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `Webhook.WebhookRemoveWebhookZapierConnectPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `WebhookRemoveWebhookZapierOauthPost`: MerchantAuthSsoClearTotpPost200Response
-	fmt.Fprintf(os.Stdout, "Response from `Webhook.WebhookRemoveWebhookZapierOauthPost`: %v\n", resp)
+	// response from `WebhookRemoveWebhookZapierConnectPost`: MerchantAuthSsoClearTotpPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Webhook.WebhookRemoveWebhookZapierConnectPost`: %v\n", resp)
 }
 ```
 
@@ -429,7 +502,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiWebhookRemoveWebhookZapierOauthPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiWebhookRemoveWebhookZapierConnectPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -582,11 +655,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## WebhookWebhookZapierOauthUrlPost
+## WebhookWebhookZapierConnectUrlPost
 
-> MerchantWebhookWebhookZapierOauthUrlPost200Response WebhookWebhookZapierOauthUrlPost(ctx).UnibeeApiMerchantWebhookGetWebhookZapierOauthUrlReq(unibeeApiMerchantWebhookGetWebhookZapierOauthUrlReq).Execute()
+> MerchantWebhookWebhookZapierConnectUrlPost200Response WebhookWebhookZapierConnectUrlPost(ctx).UnibeeApiMerchantWebhookGetWebhookZapierConnectURLReq(unibeeApiMerchantWebhookGetWebhookZapierConnectURLReq).Execute()
 
-Get Webhook Zapier Oauth Url
+Get Webhook Zapier Connect Url
 
 ### Example
 
@@ -601,17 +674,17 @@ import (
 )
 
 func main() {
-	unibeeApiMerchantWebhookGetWebhookZapierOauthUrlReq := *openapiclient.NewUnibeeApiMerchantWebhookGetWebhookZapierOauthUrlReq() // UnibeeApiMerchantWebhookGetWebhookZapierOauthUrlReq | 
+	unibeeApiMerchantWebhookGetWebhookZapierConnectURLReq := *openapiclient.NewUnibeeApiMerchantWebhookGetWebhookZapierConnectURLReq() // UnibeeApiMerchantWebhookGetWebhookZapierConnectURLReq | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Webhook.WebhookWebhookZapierOauthUrlPost(context.Background()).UnibeeApiMerchantWebhookGetWebhookZapierOauthUrlReq(unibeeApiMerchantWebhookGetWebhookZapierOauthUrlReq).Execute()
+	resp, r, err := apiClient.Webhook.WebhookWebhookZapierConnectUrlPost(context.Background()).UnibeeApiMerchantWebhookGetWebhookZapierConnectURLReq(unibeeApiMerchantWebhookGetWebhookZapierConnectURLReq).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `Webhook.WebhookWebhookZapierOauthUrlPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `Webhook.WebhookWebhookZapierConnectUrlPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `WebhookWebhookZapierOauthUrlPost`: MerchantWebhookWebhookZapierOauthUrlPost200Response
-	fmt.Fprintf(os.Stdout, "Response from `Webhook.WebhookWebhookZapierOauthUrlPost`: %v\n", resp)
+	// response from `WebhookWebhookZapierConnectUrlPost`: MerchantWebhookWebhookZapierConnectUrlPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Webhook.WebhookWebhookZapierConnectUrlPost`: %v\n", resp)
 }
 ```
 
@@ -621,16 +694,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiWebhookWebhookZapierOauthUrlPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiWebhookWebhookZapierConnectUrlPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **unibeeApiMerchantWebhookGetWebhookZapierOauthUrlReq** | [**UnibeeApiMerchantWebhookGetWebhookZapierOauthUrlReq**](UnibeeApiMerchantWebhookGetWebhookZapierOauthUrlReq.md) |  | 
+ **unibeeApiMerchantWebhookGetWebhookZapierConnectURLReq** | [**UnibeeApiMerchantWebhookGetWebhookZapierConnectURLReq**](UnibeeApiMerchantWebhookGetWebhookZapierConnectURLReq.md) |  | 
 
 ### Return type
 
-[**MerchantWebhookWebhookZapierOauthUrlPost200Response**](MerchantWebhookWebhookZapierOauthUrlPost200Response.md)
+[**MerchantWebhookWebhookZapierConnectUrlPost200Response**](MerchantWebhookWebhookZapierConnectUrlPost200Response.md)
 
 ### Authorization
 

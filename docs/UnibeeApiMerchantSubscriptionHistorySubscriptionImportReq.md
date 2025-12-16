@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **PlanId** | Pointer to **int64** | The id of plan, one of planId or ExternalPlanId is required, plan should created at UniBee at first  | [optional] 
 **Quantity** | Pointer to **int64** | the quantity of plan, default 1 if not provided  | [optional] 
 **TaxPercentage** | Pointer to **int64** | The TaxPercentage of subscription, Only applicable when the system VAT gateway not setup, 1000 &#x3D; 10% | [optional] 
-**TotalAmount** | Pointer to **int64** | Required. Unit: cents. | [optional] 
+**TotalAmount** | Pointer to **int64** | Required. The total subscription amount including tax, unit in cents. Recommendation: Please provide the original price (amount with tax before any discounts) to maintain data consistency. Note: The system will not validate this amount against the plan price, as external billing systems may have different calculation logic. | [optional] 
 
 ## Methods
 

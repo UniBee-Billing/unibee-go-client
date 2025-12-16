@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **IsDefault** | Pointer to **bool** | Whether setup the gateway as default or not, default is true | [optional] [default to true]
 **Data** | **string** | The setup data of email gateway | 
-**GatewayName** | **string** | The name of email gateway, &#39;sendgrid&#39; or other for future updates | 
+**GatewayName** | **string** | The name of email gateway, available for sendgrid | 
 
 ## Methods
 

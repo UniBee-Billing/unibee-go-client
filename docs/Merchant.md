@@ -14,6 +14,8 @@ Method | HTTP request | Description
 [**GetLicenseUpdateUrlPost**](Merchant.md#GetLicenseUpdateUrlPost) | **Post** /merchant/get_license_update_url | Get License Update Url
 [**NewApikeyPost**](Merchant.md#NewApikeyPost) | **Post** /merchant/new_apikey | Generate New APIKey
 [**SetupMultiCurrenciesPost**](Merchant.md#SetupMultiCurrenciesPost) | **Post** /merchant/setup_multi_currencies | Multi Currencies Setup
+[**UpdateCnameDomainPost**](Merchant.md#UpdateCnameDomainPost) | **Post** /merchant/update_cname_domain | Update Merchant CNAME Domain
+[**UpdatePortalHostDomainPost**](Merchant.md#UpdatePortalHostDomainPost) | **Post** /merchant/update_portal_host_domain | Update Profile Portal Host Domain
 [**UpdatePost**](Merchant.md#UpdatePost) | **Post** /merchant/update | Update Profile
 
 
@@ -639,6 +641,134 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantSetupMultiCurrenciesPost200Response**](MerchantSetupMultiCurrenciesPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateCnameDomainPost
+
+> MerchantAuthSsoClearTotpPost200Response UpdateCnameDomainPost(ctx).UnibeeApiMerchantProfileUpdateCnameDomainReq(unibeeApiMerchantProfileUpdateCnameDomainReq).Execute()
+
+Update Merchant CNAME Domain
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantProfileUpdateCnameDomainReq := *openapiclient.NewUnibeeApiMerchantProfileUpdateCnameDomainReq("Domain_example") // UnibeeApiMerchantProfileUpdateCnameDomainReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Merchant.UpdateCnameDomainPost(context.Background()).UnibeeApiMerchantProfileUpdateCnameDomainReq(unibeeApiMerchantProfileUpdateCnameDomainReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Merchant.UpdateCnameDomainPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateCnameDomainPost`: MerchantAuthSsoClearTotpPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Merchant.UpdateCnameDomainPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateCnameDomainPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantProfileUpdateCnameDomainReq** | [**UnibeeApiMerchantProfileUpdateCnameDomainReq**](UnibeeApiMerchantProfileUpdateCnameDomainReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdatePortalHostDomainPost
+
+> MerchantAuthSsoClearTotpPost200Response UpdatePortalHostDomainPost(ctx).UnibeeApiMerchantProfileUpdatePortalHostReq(unibeeApiMerchantProfileUpdatePortalHostReq).Execute()
+
+Update Profile Portal Host Domain
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantProfileUpdatePortalHostReq := *openapiclient.NewUnibeeApiMerchantProfileUpdatePortalHostReq("Domain_example") // UnibeeApiMerchantProfileUpdatePortalHostReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Merchant.UpdatePortalHostDomainPost(context.Background()).UnibeeApiMerchantProfileUpdatePortalHostReq(unibeeApiMerchantProfileUpdatePortalHostReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Merchant.UpdatePortalHostDomainPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdatePortalHostDomainPost`: MerchantAuthSsoClearTotpPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Merchant.UpdatePortalHostDomainPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdatePortalHostDomainPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantProfileUpdatePortalHostReq** | [**UnibeeApiMerchantProfileUpdatePortalHostReq**](UnibeeApiMerchantProfileUpdatePortalHostReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 

@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **PaymentMethodId** | Pointer to **string** | PaymentMethodId of gateway, available for card type gateway, payment automatic will enable if set | [optional] 
 **Phone** | Pointer to **string** | Phone | [optional] 
 **RegistrationNumber** | Pointer to **string** | RegistrationNumber | [optional] 
+**State** | Pointer to **string** | State | [optional] 
 **Telegram** | Pointer to **string** | Telegram | [optional] 
 **Tiktok** | Pointer to **string** | Tiktok | [optional] 
 **Type** | Pointer to **int32** | User type, 1-Individual|2-Business | [optional] 
@@ -525,6 +526,31 @@ SetRegistrationNumber sets RegistrationNumber field to given value.
 `func (o *UnibeeApiMerchantUserUpdateReq) HasRegistrationNumber() bool`
 
 HasRegistrationNumber returns a boolean if a field has been set.
+
+### GetState
+
+`func (o *UnibeeApiMerchantUserUpdateReq) GetState() string`
+
+GetState returns the State field if non-nil, zero value otherwise.
+
+### GetStateOk
+
+`func (o *UnibeeApiMerchantUserUpdateReq) GetStateOk() (*string, bool)`
+
+GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetState
+
+`func (o *UnibeeApiMerchantUserUpdateReq) SetState(v string)`
+
+SetState sets State field to given value.
+
+### HasState
+
+`func (o *UnibeeApiMerchantUserUpdateReq) HasState() bool`
+
+HasState returns a boolean if a field has been set.
 
 ### GetTelegram
 

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**AuthSsoClearTotpPost**](MemberAuthentication.md#AuthSsoClearTotpPost) | **Post** /merchant/auth/sso/clear_totp | Admin Member Clear Member 2FA Key With ResumeCode
 [**AuthSsoLoginOTPPost**](MemberAuthentication.md#AuthSsoLoginOTPPost) | **Post** /merchant/auth/sso/loginOTP | OTP Login
 [**AuthSsoLoginOTPVerifyPost**](MemberAuthentication.md#AuthSsoLoginOTPVerifyPost) | **Post** /merchant/auth/sso/loginOTPVerify | OTP Login Code Verification
-[**AuthSsoLoginPost**](MemberAuthentication.md#AuthSsoLoginPost) | **Post** /merchant/auth/sso/login | Password Login
+[**AuthSsoLoginPost**](MemberAuthentication.md#AuthSsoLoginPost) | **Post** /merchant/auth/sso/login | Merchant Password Login
 [**AuthSsoOauthGithubGet**](MemberAuthentication.md#AuthSsoOauthGithubGet) | **Get** /merchant/auth/sso/oauth/github | Get Oauth Github
 [**AuthSsoOauthGoogleGet**](MemberAuthentication.md#AuthSsoOauthGoogleGet) | **Get** /merchant/auth/sso/oauth/google | Get Oauth Google
 [**AuthSsoOauthLoginPost**](MemberAuthentication.md#AuthSsoOauthLoginPost) | **Post** /merchant/auth/sso/oauth/login | OAuth Login
@@ -22,6 +22,7 @@ Method | HTTP request | Description
 [**AuthSsoRegisterEmailCheckPost**](MemberAuthentication.md#AuthSsoRegisterEmailCheckPost) | **Post** /merchant/auth/sso/register_email_check | Register Email Check
 [**AuthSsoRegisterPost**](MemberAuthentication.md#AuthSsoRegisterPost) | **Post** /merchant/auth/sso/register | Register
 [**AuthSsoRegisterVerifyPost**](MemberAuthentication.md#AuthSsoRegisterVerifyPost) | **Post** /merchant/auth/sso/registerVerify | Register Verify
+[**AuthSsoRegisterWithoutVerificationPost**](MemberAuthentication.md#AuthSsoRegisterWithoutVerificationPost) | **Post** /merchant/auth/sso/register_without_verification | RegisterWithoutCode
 
 
 
@@ -291,7 +292,7 @@ No authorization required
 
 > MerchantAuthSsoLoginPost200Response AuthSsoLoginPost(ctx).UnibeeApiMerchantAuthLoginReq(unibeeApiMerchantAuthLoginReq).Execute()
 
-Password Login
+Merchant Password Login
 
 
 
@@ -1189,6 +1190,72 @@ Other parameters are passed through a pointer to a apiAuthSsoRegisterVerifyPostR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **unibeeApiMerchantAuthRegisterVerifyReq** | [**UnibeeApiMerchantAuthRegisterVerifyReq**](UnibeeApiMerchantAuthRegisterVerifyReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoLoginPost200Response**](MerchantAuthSsoLoginPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## AuthSsoRegisterWithoutVerificationPost
+
+> MerchantAuthSsoLoginPost200Response AuthSsoRegisterWithoutVerificationPost(ctx).UnibeeApiMerchantAuthRegisterWithoutVerificationReq(unibeeApiMerchantAuthRegisterWithoutVerificationReq).Execute()
+
+RegisterWithoutCode
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantAuthRegisterWithoutVerificationReq := *openapiclient.NewUnibeeApiMerchantAuthRegisterWithoutVerificationReq("Email_example", "FirstName_example", "LastName_example", "Password_example") // UnibeeApiMerchantAuthRegisterWithoutVerificationReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MemberAuthentication.AuthSsoRegisterWithoutVerificationPost(context.Background()).UnibeeApiMerchantAuthRegisterWithoutVerificationReq(unibeeApiMerchantAuthRegisterWithoutVerificationReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MemberAuthentication.AuthSsoRegisterWithoutVerificationPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `AuthSsoRegisterWithoutVerificationPost`: MerchantAuthSsoLoginPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `MemberAuthentication.AuthSsoRegisterWithoutVerificationPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAuthSsoRegisterWithoutVerificationPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantAuthRegisterWithoutVerificationReq** | [**UnibeeApiMerchantAuthRegisterWithoutVerificationReq**](UnibeeApiMerchantAuthRegisterWithoutVerificationReq.md) |  | 
 
 ### Return type
 

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CurrentValue** | Pointer to **int64** |  | [optional] 
+**MetricLimit** | Pointer to [**UnibeeApiBeanDetailPlanMetricLimitDetail**](UnibeeApiBeanDetailPlanMetricLimitDetail.md) |  | [optional] 
 **TotalLimit** | Pointer to **int64** | Total limit for the metric. Returns -1 if metric is not limit type. | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetCurrentValue sets CurrentValue field to given value.
 `func (o *MerchantMetricEventCurrentValuePost200ResponseData) HasCurrentValue() bool`
 
 HasCurrentValue returns a boolean if a field has been set.
+
+### GetMetricLimit
+
+`func (o *MerchantMetricEventCurrentValuePost200ResponseData) GetMetricLimit() UnibeeApiBeanDetailPlanMetricLimitDetail`
+
+GetMetricLimit returns the MetricLimit field if non-nil, zero value otherwise.
+
+### GetMetricLimitOk
+
+`func (o *MerchantMetricEventCurrentValuePost200ResponseData) GetMetricLimitOk() (*UnibeeApiBeanDetailPlanMetricLimitDetail, bool)`
+
+GetMetricLimitOk returns a tuple with the MetricLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetricLimit
+
+`func (o *MerchantMetricEventCurrentValuePost200ResponseData) SetMetricLimit(v UnibeeApiBeanDetailPlanMetricLimitDetail)`
+
+SetMetricLimit sets MetricLimit field to given value.
+
+### HasMetricLimit
+
+`func (o *MerchantMetricEventCurrentValuePost200ResponseData) HasMetricLimit() bool`
+
+HasMetricLimit returns a boolean if a field has been set.
 
 ### GetTotalLimit
 

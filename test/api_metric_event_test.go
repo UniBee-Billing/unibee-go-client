@@ -11,10 +11,11 @@ package unibee
 
 import (
 	"context"
+	"testing"
+
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/UniBee-Billing/unibee-go-client"
 )
 
 func Test_unibee_MetricEventService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_unibee_MetricEventService(t *testing.T) {
 
 	t.Run("Test MetricEventService MetricEventDeletePost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.MetricEvent.MetricEventDeletePost(context.Background()).Execute()
 
@@ -36,7 +37,7 @@ func Test_unibee_MetricEventService(t *testing.T) {
 
 	t.Run("Test MetricEventService MetricEventListGet", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.MetricEvent.MetricEventListGet(context.Background()).Execute()
 
@@ -48,7 +49,7 @@ func Test_unibee_MetricEventService(t *testing.T) {
 
 	t.Run("Test MetricEventService MetricEventListPost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.MetricEvent.MetricEventListPost(context.Background()).Execute()
 
@@ -60,7 +61,7 @@ func Test_unibee_MetricEventService(t *testing.T) {
 
 	t.Run("Test MetricEventService MetricEventNewPost", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.MetricEvent.MetricEventNewPost(context.Background()).Execute()
 

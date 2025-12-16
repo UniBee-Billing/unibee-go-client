@@ -13,7 +13,8 @@ Name | Type | Description | Notes
 **AggregationType** | Pointer to **int32** | 0-count，1-count unique, 2-latest, 3-max, 4-sum | [optional] 
 **Code** | Pointer to **string** | code | [optional] 
 **MetricName** | Pointer to **string** | metric name | [optional] 
-**Type** | Pointer to **int32** | 1-limit_metered，2-charge_metered,3-charge_recurring | [optional] 
+**QuotaAdjustments** | Pointer to [**[]UnibeeApiBeanDetailMetricLimitQuotaDetail**](UnibeeApiBeanDetailMetricLimitQuotaDetail.md) | Quota adjustments (carryover + manual) | [optional] 
+**Type** | Pointer to **int32** | 1-limit_metered，2-charge_metered,3-charge_recurring,4-limit_recurring | [optional] 
 
 ## Methods
 
@@ -258,6 +259,31 @@ SetMetricName sets MetricName field to given value.
 `func (o *UnibeeApiBeanDetailPlanMetricLimitDetail) HasMetricName() bool`
 
 HasMetricName returns a boolean if a field has been set.
+
+### GetQuotaAdjustments
+
+`func (o *UnibeeApiBeanDetailPlanMetricLimitDetail) GetQuotaAdjustments() []UnibeeApiBeanDetailMetricLimitQuotaDetail`
+
+GetQuotaAdjustments returns the QuotaAdjustments field if non-nil, zero value otherwise.
+
+### GetQuotaAdjustmentsOk
+
+`func (o *UnibeeApiBeanDetailPlanMetricLimitDetail) GetQuotaAdjustmentsOk() (*[]UnibeeApiBeanDetailMetricLimitQuotaDetail, bool)`
+
+GetQuotaAdjustmentsOk returns a tuple with the QuotaAdjustments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuotaAdjustments
+
+`func (o *UnibeeApiBeanDetailPlanMetricLimitDetail) SetQuotaAdjustments(v []UnibeeApiBeanDetailMetricLimitQuotaDetail)`
+
+SetQuotaAdjustments sets QuotaAdjustments field to given value.
+
+### HasQuotaAdjustments
+
+`func (o *UnibeeApiBeanDetailPlanMetricLimitDetail) HasQuotaAdjustments() bool`
+
+HasQuotaAdjustments returns a boolean if a field has been set.
 
 ### GetType
 

@@ -9,7 +9,11 @@ Name | Type | Description | Notes
 **TimeZone** | Pointer to **[]string** | TimeZone List | [optional] 
 **AnalyticsHost** | Pointer to **string** | Analytics Host | [optional] 
 **CloudFeatureAnalyticsEnabled** | Pointer to **bool** | Analytics Feature Enabled For Cloud Version | [optional] 
+**Cname** | Pointer to **string** | CNAME value for merchant to configure | [optional] 
+**CnameDomain** | Pointer to **string** | Merchant CNAME Domain | [optional] 
 **DefaultCurrency** | Pointer to **string** | Default Currency | [optional] 
+**DefaultEmailGateway** | Pointer to **string** | Default Email Gateway | [optional] 
+**EmailGateways** | Pointer to [**map[string]UnibeeApiBeanEmailGatewayConnectionAPIKeys**](UnibeeApiBeanEmailGatewayConnectionAPIKeys.md) | Email Gateway Map | [optional] 
 **EmailSender** | Pointer to [**UnibeeApiBeanSender**](UnibeeApiBeanSender.md) |  | [optional] 
 **Env** | Pointer to **string** | System Env, em: daily|stage|local|prod | [optional] 
 **ExchangeRateApiKey** | Pointer to **string** | ExchangeRateApiKey | [optional] 
@@ -176,6 +180,56 @@ SetCloudFeatureAnalyticsEnabled sets CloudFeatureAnalyticsEnabled field to given
 
 HasCloudFeatureAnalyticsEnabled returns a boolean if a field has been set.
 
+### GetCname
+
+`func (o *UnibeeApiMerchantProfileGetRes) GetCname() string`
+
+GetCname returns the Cname field if non-nil, zero value otherwise.
+
+### GetCnameOk
+
+`func (o *UnibeeApiMerchantProfileGetRes) GetCnameOk() (*string, bool)`
+
+GetCnameOk returns a tuple with the Cname field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCname
+
+`func (o *UnibeeApiMerchantProfileGetRes) SetCname(v string)`
+
+SetCname sets Cname field to given value.
+
+### HasCname
+
+`func (o *UnibeeApiMerchantProfileGetRes) HasCname() bool`
+
+HasCname returns a boolean if a field has been set.
+
+### GetCnameDomain
+
+`func (o *UnibeeApiMerchantProfileGetRes) GetCnameDomain() string`
+
+GetCnameDomain returns the CnameDomain field if non-nil, zero value otherwise.
+
+### GetCnameDomainOk
+
+`func (o *UnibeeApiMerchantProfileGetRes) GetCnameDomainOk() (*string, bool)`
+
+GetCnameDomainOk returns a tuple with the CnameDomain field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCnameDomain
+
+`func (o *UnibeeApiMerchantProfileGetRes) SetCnameDomain(v string)`
+
+SetCnameDomain sets CnameDomain field to given value.
+
+### HasCnameDomain
+
+`func (o *UnibeeApiMerchantProfileGetRes) HasCnameDomain() bool`
+
+HasCnameDomain returns a boolean if a field has been set.
+
 ### GetDefaultCurrency
 
 `func (o *UnibeeApiMerchantProfileGetRes) GetDefaultCurrency() string`
@@ -200,6 +254,56 @@ SetDefaultCurrency sets DefaultCurrency field to given value.
 `func (o *UnibeeApiMerchantProfileGetRes) HasDefaultCurrency() bool`
 
 HasDefaultCurrency returns a boolean if a field has been set.
+
+### GetDefaultEmailGateway
+
+`func (o *UnibeeApiMerchantProfileGetRes) GetDefaultEmailGateway() string`
+
+GetDefaultEmailGateway returns the DefaultEmailGateway field if non-nil, zero value otherwise.
+
+### GetDefaultEmailGatewayOk
+
+`func (o *UnibeeApiMerchantProfileGetRes) GetDefaultEmailGatewayOk() (*string, bool)`
+
+GetDefaultEmailGatewayOk returns a tuple with the DefaultEmailGateway field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultEmailGateway
+
+`func (o *UnibeeApiMerchantProfileGetRes) SetDefaultEmailGateway(v string)`
+
+SetDefaultEmailGateway sets DefaultEmailGateway field to given value.
+
+### HasDefaultEmailGateway
+
+`func (o *UnibeeApiMerchantProfileGetRes) HasDefaultEmailGateway() bool`
+
+HasDefaultEmailGateway returns a boolean if a field has been set.
+
+### GetEmailGateways
+
+`func (o *UnibeeApiMerchantProfileGetRes) GetEmailGateways() map[string]UnibeeApiBeanEmailGatewayConnectionAPIKeys`
+
+GetEmailGateways returns the EmailGateways field if non-nil, zero value otherwise.
+
+### GetEmailGatewaysOk
+
+`func (o *UnibeeApiMerchantProfileGetRes) GetEmailGatewaysOk() (*map[string]UnibeeApiBeanEmailGatewayConnectionAPIKeys, bool)`
+
+GetEmailGatewaysOk returns a tuple with the EmailGateways field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmailGateways
+
+`func (o *UnibeeApiMerchantProfileGetRes) SetEmailGateways(v map[string]UnibeeApiBeanEmailGatewayConnectionAPIKeys)`
+
+SetEmailGateways sets EmailGateways field to given value.
+
+### HasEmailGateways
+
+`func (o *UnibeeApiMerchantProfileGetRes) HasEmailGateways() bool`
+
+HasEmailGateways returns a boolean if a field has been set.
 
 ### GetEmailSender
 

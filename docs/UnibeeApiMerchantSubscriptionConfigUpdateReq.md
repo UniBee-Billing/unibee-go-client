@@ -5,8 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DowngradeEffectImmediately** | Pointer to **bool** | DowngradeEffectImmediately, Immediate Downgrade (by default, the downgrades takes effect at the end of the period ） | [optional] 
+**DowngradeNonImmediatelyEffectBeforePeriodEnd** | Pointer to **int32** | DowngradeNonImmediatelyEffectBeforePeriodEnd, seconds, For non-immediate downgrade, can take effect before period end (default 30 minutes, 1800 seconds) | [optional] 
 **GatewayVATRule** | Pointer to [**[]UnibeeApiBeanMerchantVatRule**](UnibeeApiBeanMerchantVatRule.md) |  | [optional] 
-**IncompleteExpireTime** | Pointer to **int32** | IncompleteExpireTime, seconds, Incomplete Status Duration(The period during which subscription remains in “incomplete”) | [optional] 
+**IncompleteExpireTime** | Pointer to **int32** | IncompleteExpireTime, seconds, Incomplete Status Duration(The period during which subscription remains in  | [optional] 
 **InvoiceEmail** | Pointer to **bool** | InvoiceEmail, Enable Invoice Email (Toggle to send invoice email to customers) | [optional] 
 **ShowZeroInvoice** | Pointer to **bool** | ShowZeroInvoice, Display Invoices With Zero Amount (Invoice With Zero Amount will hidden in list by default) | [optional] 
 **TryAutomaticPaymentBeforePeriodEnd** | Pointer to **int32** | TryAutomaticPaymentBeforePeriodEnd, Auto-charge Start Before Period End （Time Difference for Auto-Payment Activation Before Period End） | [optional] 
@@ -55,6 +56,31 @@ SetDowngradeEffectImmediately sets DowngradeEffectImmediately field to given val
 `func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) HasDowngradeEffectImmediately() bool`
 
 HasDowngradeEffectImmediately returns a boolean if a field has been set.
+
+### GetDowngradeNonImmediatelyEffectBeforePeriodEnd
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) GetDowngradeNonImmediatelyEffectBeforePeriodEnd() int32`
+
+GetDowngradeNonImmediatelyEffectBeforePeriodEnd returns the DowngradeNonImmediatelyEffectBeforePeriodEnd field if non-nil, zero value otherwise.
+
+### GetDowngradeNonImmediatelyEffectBeforePeriodEndOk
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) GetDowngradeNonImmediatelyEffectBeforePeriodEndOk() (*int32, bool)`
+
+GetDowngradeNonImmediatelyEffectBeforePeriodEndOk returns a tuple with the DowngradeNonImmediatelyEffectBeforePeriodEnd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDowngradeNonImmediatelyEffectBeforePeriodEnd
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) SetDowngradeNonImmediatelyEffectBeforePeriodEnd(v int32)`
+
+SetDowngradeNonImmediatelyEffectBeforePeriodEnd sets DowngradeNonImmediatelyEffectBeforePeriodEnd field to given value.
+
+### HasDowngradeNonImmediatelyEffectBeforePeriodEnd
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) HasDowngradeNonImmediatelyEffectBeforePeriodEnd() bool`
+
+HasDowngradeNonImmediatelyEffectBeforePeriodEnd returns a boolean if a field has been set.
 
 ### GetGatewayVATRule
 

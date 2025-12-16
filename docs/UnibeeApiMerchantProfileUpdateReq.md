@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **CountryCode** | Pointer to **string** | Country Code | [optional] 
 **CountryName** | Pointer to **string** | Country Name | [optional] 
 **Email** | Pointer to **string** | email | [optional] 
-**Host** | Pointer to **string** | User Portal Host | [optional] 
 **Phone** | Pointer to **string** | phone | [optional] 
 **TimeZone** | Pointer to **string** | User TimeZone | [optional] 
 
@@ -234,31 +233,6 @@ SetEmail sets Email field to given value.
 `func (o *UnibeeApiMerchantProfileUpdateReq) HasEmail() bool`
 
 HasEmail returns a boolean if a field has been set.
-
-### GetHost
-
-`func (o *UnibeeApiMerchantProfileUpdateReq) GetHost() string`
-
-GetHost returns the Host field if non-nil, zero value otherwise.
-
-### GetHostOk
-
-`func (o *UnibeeApiMerchantProfileUpdateReq) GetHostOk() (*string, bool)`
-
-GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHost
-
-`func (o *UnibeeApiMerchantProfileUpdateReq) SetHost(v string)`
-
-SetHost sets Host field to given value.
-
-### HasHost
-
-`func (o *UnibeeApiMerchantProfileUpdateReq) HasHost() bool`
-
-HasHost returns a boolean if a field has been set.
 
 ### GetPhone
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Address** | **string** | The address of email sender, like &#39;no-reply@unibee.dev&#39; | 
-**Name** | **string** | The name of email sender, like &#39;no-reply&#39; | 
+**Name** | **string** | The name of email sender, like &#39;UniBee&#39; | 
 
 ## Methods
 

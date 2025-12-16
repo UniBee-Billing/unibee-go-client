@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **InvoiceId** | **string** | The unique id of invoice | 
+**PaymentId** | Pointer to **string** | The payment id to refund (required for split payment invoices, optional for single payment invoices) | [optional] 
 **Reason** | **string** | The reason of refund | 
 **RefundAmount** | **int64** | The amount of refund | 
 **RefundNo** | Pointer to **string** | The out refund number | [optional] 
@@ -47,6 +48,31 @@ and a boolean to check if the value has been set.
 
 SetInvoiceId sets InvoiceId field to given value.
 
+
+### GetPaymentId
+
+`func (o *UnibeeApiMerchantInvoiceRefundReq) GetPaymentId() string`
+
+GetPaymentId returns the PaymentId field if non-nil, zero value otherwise.
+
+### GetPaymentIdOk
+
+`func (o *UnibeeApiMerchantInvoiceRefundReq) GetPaymentIdOk() (*string, bool)`
+
+GetPaymentIdOk returns a tuple with the PaymentId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaymentId
+
+`func (o *UnibeeApiMerchantInvoiceRefundReq) SetPaymentId(v string)`
+
+SetPaymentId sets PaymentId field to given value.
+
+### HasPaymentId
+
+`func (o *UnibeeApiMerchantInvoiceRefundReq) HasPaymentId() bool`
+
+HasPaymentId returns a boolean if a field has been set.
 
 ### GetReason
 

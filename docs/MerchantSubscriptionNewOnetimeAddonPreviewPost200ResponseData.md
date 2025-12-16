@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Currency** | Pointer to **string** |  | [optional] 
 **Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCode**](UnibeeApiBeanMerchantDiscountCode.md) |  | [optional] 
 **DiscountAmount** | Pointer to **int64** |  | [optional] 
+**DiscountMessage** | Pointer to **string** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
 **Invoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
 **OriginAmount** | Pointer to **int64** |  | [optional] 
@@ -162,6 +163,31 @@ SetDiscountAmount sets DiscountAmount field to given value.
 `func (o *MerchantSubscriptionNewOnetimeAddonPreviewPost200ResponseData) HasDiscountAmount() bool`
 
 HasDiscountAmount returns a boolean if a field has been set.
+
+### GetDiscountMessage
+
+`func (o *MerchantSubscriptionNewOnetimeAddonPreviewPost200ResponseData) GetDiscountMessage() string`
+
+GetDiscountMessage returns the DiscountMessage field if non-nil, zero value otherwise.
+
+### GetDiscountMessageOk
+
+`func (o *MerchantSubscriptionNewOnetimeAddonPreviewPost200ResponseData) GetDiscountMessageOk() (*string, bool)`
+
+GetDiscountMessageOk returns a tuple with the DiscountMessage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscountMessage
+
+`func (o *MerchantSubscriptionNewOnetimeAddonPreviewPost200ResponseData) SetDiscountMessage(v string)`
+
+SetDiscountMessage sets DiscountMessage field to given value.
+
+### HasDiscountMessage
+
+`func (o *MerchantSubscriptionNewOnetimeAddonPreviewPost200ResponseData) HasDiscountMessage() bool`
+
+HasDiscountMessage returns a boolean if a field has been set.
 
 ### GetEmail
 

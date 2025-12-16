@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BuildVersion** | Pointer to **string** | System Build Version | [optional] 
+**CountryCodeToName** | Pointer to **map[string]string** | Country Code to Name mapping (ISO 3166-1 alpha-2) | [optional] 
 **Env** | Pointer to **string** | System Env, em: daily|stage|local|prod | [optional] 
 **Gateway** | Pointer to [**[]UnibeeApiBeanDetailGateway**](UnibeeApiBeanDetailGateway.md) | Support Gateway List | [optional] 
 **IsProd** | Pointer to **bool** | Check System Env Is Prod, true|false | [optional] 
@@ -14,6 +15,7 @@ Name | Type | Description | Notes
 **SupportCurrency** | Pointer to [**[]UnibeeApiBeanCurrency**](UnibeeApiBeanCurrency.md) | Support Currency List | [optional] 
 **SupportLanguage** | Pointer to [**[]UnibeeApiSystemInformationLanguage**](UnibeeApiSystemInformationLanguage.md) | Support Language List | [optional] 
 **SupportTimeZone** | Pointer to **[]string** | Support TimeZone List | [optional] 
+**UsStateCodeToName** | Pointer to **map[string]string** | US State Code to Name mapping (USPS 2-letter codes) | [optional] 
 
 ## Methods
 
@@ -58,6 +60,31 @@ SetBuildVersion sets BuildVersion field to given value.
 `func (o *UnibeeApiSystemInformationGetRes) HasBuildVersion() bool`
 
 HasBuildVersion returns a boolean if a field has been set.
+
+### GetCountryCodeToName
+
+`func (o *UnibeeApiSystemInformationGetRes) GetCountryCodeToName() map[string]string`
+
+GetCountryCodeToName returns the CountryCodeToName field if non-nil, zero value otherwise.
+
+### GetCountryCodeToNameOk
+
+`func (o *UnibeeApiSystemInformationGetRes) GetCountryCodeToNameOk() (*map[string]string, bool)`
+
+GetCountryCodeToNameOk returns a tuple with the CountryCodeToName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCountryCodeToName
+
+`func (o *UnibeeApiSystemInformationGetRes) SetCountryCodeToName(v map[string]string)`
+
+SetCountryCodeToName sets CountryCodeToName field to given value.
+
+### HasCountryCodeToName
+
+`func (o *UnibeeApiSystemInformationGetRes) HasCountryCodeToName() bool`
+
+HasCountryCodeToName returns a boolean if a field has been set.
 
 ### GetEnv
 
@@ -283,6 +310,31 @@ SetSupportTimeZone sets SupportTimeZone field to given value.
 `func (o *UnibeeApiSystemInformationGetRes) HasSupportTimeZone() bool`
 
 HasSupportTimeZone returns a boolean if a field has been set.
+
+### GetUsStateCodeToName
+
+`func (o *UnibeeApiSystemInformationGetRes) GetUsStateCodeToName() map[string]string`
+
+GetUsStateCodeToName returns the UsStateCodeToName field if non-nil, zero value otherwise.
+
+### GetUsStateCodeToNameOk
+
+`func (o *UnibeeApiSystemInformationGetRes) GetUsStateCodeToNameOk() (*map[string]string, bool)`
+
+GetUsStateCodeToNameOk returns a tuple with the UsStateCodeToName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsStateCodeToName
+
+`func (o *UnibeeApiSystemInformationGetRes) SetUsStateCodeToName(v map[string]string)`
+
+SetUsStateCodeToName sets UsStateCodeToName field to given value.
+
+### HasUsStateCodeToName
+
+`func (o *UnibeeApiSystemInformationGetRes) HasUsStateCodeToName() bool`
+
+HasUsStateCodeToName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

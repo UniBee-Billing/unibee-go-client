@@ -5,9 +5,12 @@ All URIs are relative to *https://api.unibee.top*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**EmailEmailSenderSetupPost**](Email.md#EmailEmailSenderSetupPost) | **Post** /merchant/email/email_sender_setup | Email Sender Setup
-[**EmailGatewaySetupPost**](Email.md#EmailGatewaySetupPost) | **Post** /merchant/email/gateway_setup | Email Gateway Setup
+[**EmailGatewaySetDefaultPost**](Email.md#EmailGatewaySetDefaultPost) | **Post** /merchant/email/gateway_set_default | Email Gateway Set Default
+[**EmailGatewaySetupPost**](Email.md#EmailGatewaySetupPost) | **Post** /merchant/email/gateway_setup | Email Gateway Setup(Sendgrid)
+[**EmailGatewaySetupV2Post**](Email.md#EmailGatewaySetupV2Post) | **Post** /merchant/email/gateway_setup_v2 | Email Gateway Setup V2(Sendgrid|smtp)
 [**EmailHistoryListGet**](Email.md#EmailHistoryListGet) | **Get** /merchant/email/history_list | Get Email History List
 [**EmailSendEmailToUserPost**](Email.md#EmailSendEmailToUserPost) | **Post** /merchant/email/send_email_to_user | Send Email To User
+[**EmailSendEmailViaApiCredentialPost**](Email.md#EmailSendEmailViaApiCredentialPost) | **Post** /merchant/email/send_email_via_api_credential | Send Email Via API Credential
 [**EmailSendTemplateEmailToUserPost**](Email.md#EmailSendTemplateEmailToUserPost) | **Post** /merchant/email/send_template_email_to_user | Send Template Email To User
 
 
@@ -76,11 +79,75 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## EmailGatewaySetDefaultPost
+
+> MerchantAuthSsoClearTotpPost200Response EmailGatewaySetDefaultPost(ctx).UnibeeApiMerchantEmailGatewaySetDefaultReq(unibeeApiMerchantEmailGatewaySetDefaultReq).Execute()
+
+Email Gateway Set Default
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantEmailGatewaySetDefaultReq := *openapiclient.NewUnibeeApiMerchantEmailGatewaySetDefaultReq("GatewayName_example") // UnibeeApiMerchantEmailGatewaySetDefaultReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Email.EmailGatewaySetDefaultPost(context.Background()).UnibeeApiMerchantEmailGatewaySetDefaultReq(unibeeApiMerchantEmailGatewaySetDefaultReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Email.EmailGatewaySetDefaultPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `EmailGatewaySetDefaultPost`: MerchantAuthSsoClearTotpPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Email.EmailGatewaySetDefaultPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiEmailGatewaySetDefaultPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantEmailGatewaySetDefaultReq** | [**UnibeeApiMerchantEmailGatewaySetDefaultReq**](UnibeeApiMerchantEmailGatewaySetDefaultReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## EmailGatewaySetupPost
 
 > MerchantEmailGatewaySetupPost200Response EmailGatewaySetupPost(ctx).UnibeeApiMerchantEmailGatewaySetupReq(unibeeApiMerchantEmailGatewaySetupReq).Execute()
 
-Email Gateway Setup
+Email Gateway Setup(Sendgrid)
 
 ### Example
 
@@ -125,6 +192,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantEmailGatewaySetupPost200Response**](MerchantEmailGatewaySetupPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## EmailGatewaySetupV2Post
+
+> MerchantAuthSsoClearTotpPost200Response EmailGatewaySetupV2Post(ctx).UnibeeApiMerchantEmailGatewaySetupV2Req(unibeeApiMerchantEmailGatewaySetupV2Req).Execute()
+
+Email Gateway Setup V2(Sendgrid|smtp)
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantEmailGatewaySetupV2Req := *openapiclient.NewUnibeeApiMerchantEmailGatewaySetupV2Req("GatewayName_example") // UnibeeApiMerchantEmailGatewaySetupV2Req | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Email.EmailGatewaySetupV2Post(context.Background()).UnibeeApiMerchantEmailGatewaySetupV2Req(unibeeApiMerchantEmailGatewaySetupV2Req).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Email.EmailGatewaySetupV2Post``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `EmailGatewaySetupV2Post`: MerchantAuthSsoClearTotpPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Email.EmailGatewaySetupV2Post`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiEmailGatewaySetupV2PostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantEmailGatewaySetupV2Req** | [**UnibeeApiMerchantEmailGatewaySetupV2Req**](UnibeeApiMerchantEmailGatewaySetupV2Req.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
 
 ### Authorization
 
@@ -267,6 +398,70 @@ Other parameters are passed through a pointer to a apiEmailSendEmailToUserPostRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **unibeeApiMerchantEmailSendEmailToUserReq** | [**UnibeeApiMerchantEmailSendEmailToUserReq**](UnibeeApiMerchantEmailSendEmailToUserReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## EmailSendEmailViaApiCredentialPost
+
+> MerchantAuthSsoClearTotpPost200Response EmailSendEmailViaApiCredentialPost(ctx).UnibeeApiMerchantEmailSendEmailViaAPICredentialReq(unibeeApiMerchantEmailSendEmailViaAPICredentialReq).Execute()
+
+Send Email Via API Credential
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantEmailSendEmailViaAPICredentialReq := *openapiclient.NewUnibeeApiMerchantEmailSendEmailViaAPICredentialReq("Email_example", "GatewayName_example") // UnibeeApiMerchantEmailSendEmailViaAPICredentialReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Email.EmailSendEmailViaApiCredentialPost(context.Background()).UnibeeApiMerchantEmailSendEmailViaAPICredentialReq(unibeeApiMerchantEmailSendEmailViaAPICredentialReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Email.EmailSendEmailViaApiCredentialPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `EmailSendEmailViaApiCredentialPost`: MerchantAuthSsoClearTotpPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Email.EmailSendEmailViaApiCredentialPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiEmailSendEmailViaApiCredentialPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantEmailSendEmailViaAPICredentialReq** | [**UnibeeApiMerchantEmailSendEmailViaAPICredentialReq**](UnibeeApiMerchantEmailSendEmailViaAPICredentialReq.md) |  | 
 
 ### Return type
 

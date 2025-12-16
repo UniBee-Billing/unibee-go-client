@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonIds** | Pointer to **[]int64** | AddonIds | [optional] 
 **Addons** | Pointer to [**[]UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) | Addons | [optional] 
+**CheckAddressViaGateway** | Pointer to **bool** |  | [optional] 
+**GlobalUSVATActive** | Pointer to **bool** |  | [optional] 
 **MetricMeteredCharge** | Pointer to [**[]UnibeeApiBeanDetailMerchantMetricPlanChargeDetail**](UnibeeApiBeanDetailMerchantMetricPlanChargeDetail.md) | Plan&#39;s MetricMeteredCharge | [optional] 
 **MetricPlanLimits** | Pointer to [**[]UnibeeApiBeanDetailMerchantMetricPlanLimitDetail**](UnibeeApiBeanDetailMerchantMetricPlanLimitDetail.md) | MetricPlanLimits | [optional] 
 **MetricRecurringCharge** | Pointer to [**[]UnibeeApiBeanDetailMerchantMetricPlanChargeDetail**](UnibeeApiBeanDetailMerchantMetricPlanChargeDetail.md) | Plan&#39;s MetricRecurringCharge | [optional] 
@@ -83,6 +85,56 @@ SetAddons sets Addons field to given value.
 `func (o *UnibeeApiBeanDetailPlanDetail) HasAddons() bool`
 
 HasAddons returns a boolean if a field has been set.
+
+### GetCheckAddressViaGateway
+
+`func (o *UnibeeApiBeanDetailPlanDetail) GetCheckAddressViaGateway() bool`
+
+GetCheckAddressViaGateway returns the CheckAddressViaGateway field if non-nil, zero value otherwise.
+
+### GetCheckAddressViaGatewayOk
+
+`func (o *UnibeeApiBeanDetailPlanDetail) GetCheckAddressViaGatewayOk() (*bool, bool)`
+
+GetCheckAddressViaGatewayOk returns a tuple with the CheckAddressViaGateway field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCheckAddressViaGateway
+
+`func (o *UnibeeApiBeanDetailPlanDetail) SetCheckAddressViaGateway(v bool)`
+
+SetCheckAddressViaGateway sets CheckAddressViaGateway field to given value.
+
+### HasCheckAddressViaGateway
+
+`func (o *UnibeeApiBeanDetailPlanDetail) HasCheckAddressViaGateway() bool`
+
+HasCheckAddressViaGateway returns a boolean if a field has been set.
+
+### GetGlobalUSVATActive
+
+`func (o *UnibeeApiBeanDetailPlanDetail) GetGlobalUSVATActive() bool`
+
+GetGlobalUSVATActive returns the GlobalUSVATActive field if non-nil, zero value otherwise.
+
+### GetGlobalUSVATActiveOk
+
+`func (o *UnibeeApiBeanDetailPlanDetail) GetGlobalUSVATActiveOk() (*bool, bool)`
+
+GetGlobalUSVATActiveOk returns a tuple with the GlobalUSVATActive field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGlobalUSVATActive
+
+`func (o *UnibeeApiBeanDetailPlanDetail) SetGlobalUSVATActive(v bool)`
+
+SetGlobalUSVATActive sets GlobalUSVATActive field to given value.
+
+### HasGlobalUSVATActive
+
+`func (o *UnibeeApiBeanDetailPlanDetail) HasGlobalUSVATActive() bool`
+
+HasGlobalUSVATActive returns a boolean if a field has been set.
 
 ### GetMetricMeteredCharge
 

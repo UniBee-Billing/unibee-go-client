@@ -7,10 +7,12 @@ Name | Type | Description | Notes
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | addonParams | [optional] 
 **ApplyPromoCredit** | Pointer to **bool** | apply promo credit or not | [optional] 
 **ApplyPromoCreditAmount** | Pointer to **int32** | apply promo credit amount, auto compute if not specified | [optional] 
+**Currency** | Pointer to **string** | The currency, if not provided, use subscription currency | [optional] 
 **DiscountCode** | Pointer to **string** | DiscountCode | [optional] 
 **EffectImmediate** | Pointer to **int32** | Effect Immediate，1-Immediate，2-Next Period | [optional] 
 **GatewayId** | Pointer to **int64** | Id | [optional] 
 **NewPlanId** | **int64** | New PlanId | 
+**ProrationDate** | Pointer to **int32** | The utc time to start Proration, default current time | [optional] 
 **Quantity** | Pointer to **int64** | Quantity，Default 1 | [optional] 
 **SubscriptionId** | **string** | SubscriptionId | 
 
@@ -108,6 +110,31 @@ SetApplyPromoCreditAmount sets ApplyPromoCreditAmount field to given value.
 
 HasApplyPromoCreditAmount returns a boolean if a field has been set.
 
+### GetCurrency
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetCurrency() string`
+
+GetCurrency returns the Currency field if non-nil, zero value otherwise.
+
+### GetCurrencyOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetCurrencyOk() (*string, bool)`
+
+GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrency
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) SetCurrency(v string)`
+
+SetCurrency sets Currency field to given value.
+
+### HasCurrency
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) HasCurrency() bool`
+
+HasCurrency returns a boolean if a field has been set.
+
 ### GetDiscountCode
 
 `func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetDiscountCode() string`
@@ -202,6 +229,31 @@ and a boolean to check if the value has been set.
 
 SetNewPlanId sets NewPlanId field to given value.
 
+
+### GetProrationDate
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetProrationDate() int32`
+
+GetProrationDate returns the ProrationDate field if non-nil, zero value otherwise.
+
+### GetProrationDateOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetProrationDateOk() (*int32, bool)`
+
+GetProrationDateOk returns a tuple with the ProrationDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProrationDate
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) SetProrationDate(v int32)`
+
+SetProrationDate sets ProrationDate field to given value.
+
+### HasProrationDate
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) HasProrationDate() bool`
+
+HasProrationDate returns a boolean if a field has been set.
 
 ### GetQuantity
 

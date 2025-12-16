@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **ProductData** | Pointer to [**UnibeeApiBeanPlanProductParam**](UnibeeApiBeanPlanProductParam.md) |  | [optional] 
 **Quantity** | Pointer to **int64** | Quantity，Default 1 | [optional] 
 **ReturnUrl** | Pointer to **string** | ReturnUrl, back to returnUrl if creation completed | [optional] 
+**SplitPayment** | Pointer to **bool** | Split Payment, default false | [optional] 
 **StartIncomplete** | Pointer to **bool** | StartIncomplete, use now pay later, subscription will generate invoice and start with incomplete status if set | [optional] 
 **TaxPercentage** | Pointer to **int32** | TaxPercentage，1000 &#x3D; 10%, override subscription taxPercentage if provide | [optional] 
 **TrialEnd** | Pointer to **int64** | trial_end, utc time | [optional] 
@@ -571,6 +572,31 @@ SetReturnUrl sets ReturnUrl field to given value.
 `func (o *UnibeeApiMerchantSubscriptionCreateReq) HasReturnUrl() bool`
 
 HasReturnUrl returns a boolean if a field has been set.
+
+### GetSplitPayment
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetSplitPayment() bool`
+
+GetSplitPayment returns the SplitPayment field if non-nil, zero value otherwise.
+
+### GetSplitPaymentOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) GetSplitPaymentOk() (*bool, bool)`
+
+GetSplitPaymentOk returns a tuple with the SplitPayment field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSplitPayment
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) SetSplitPayment(v bool)`
+
+SetSplitPayment sets SplitPayment field to given value.
+
+### HasSplitPayment
+
+`func (o *UnibeeApiMerchantSubscriptionCreateReq) HasSplitPayment() bool`
+
+HasSplitPayment returns a boolean if a field has been set.
 
 ### GetStartIncomplete
 

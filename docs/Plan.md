@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**PlanEditPost**](Plan.md#PlanEditPost) | **Post** /merchant/plan/edit | Edit Plan
 [**PlanListGet**](Plan.md#PlanListGet) | **Get** /merchant/plan/list | Get Plan List
 [**PlanListPost**](Plan.md#PlanListPost) | **Post** /merchant/plan/list | Get Plan List
+[**PlanMetricLimitOverridePost**](Plan.md#PlanMetricLimitOverridePost) | **Post** /merchant/plan/metric_limit_override | Override Metric Limits Of Plan
 [**PlanNewPost**](Plan.md#PlanNewPost) | **Post** /merchant/plan/new | Create Plan
 [**PlanPublishPost**](Plan.md#PlanPublishPost) | **Post** /merchant/plan/publish | Publish Plan
 [**PlanUnpublishedPost**](Plan.md#PlanUnpublishedPost) | **Post** /merchant/plan/unpublished | UnPublish Plan
@@ -669,6 +670,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantPlanListGet200Response**](MerchantPlanListGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PlanMetricLimitOverridePost
+
+> MerchantPlanMetricLimitOverridePost200Response PlanMetricLimitOverridePost(ctx).UnibeeApiMerchantPlanMetricLimitOverrideReq(unibeeApiMerchantPlanMetricLimitOverrideReq).Execute()
+
+Override Metric Limits Of Plan
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantPlanMetricLimitOverrideReq := *openapiclient.NewUnibeeApiMerchantPlanMetricLimitOverrideReq(int64(123)) // UnibeeApiMerchantPlanMetricLimitOverrideReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Plan.PlanMetricLimitOverridePost(context.Background()).UnibeeApiMerchantPlanMetricLimitOverrideReq(unibeeApiMerchantPlanMetricLimitOverrideReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Plan.PlanMetricLimitOverridePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PlanMetricLimitOverridePost`: MerchantPlanMetricLimitOverridePost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Plan.PlanMetricLimitOverridePost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPlanMetricLimitOverridePostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantPlanMetricLimitOverrideReq** | [**UnibeeApiMerchantPlanMetricLimitOverrideReq**](UnibeeApiMerchantPlanMetricLimitOverrideReq.md) |  | 
+
+### Return type
+
+[**MerchantPlanMetricLimitOverridePost200Response**](MerchantPlanMetricLimitOverridePost200Response.md)
 
 ### Authorization
 

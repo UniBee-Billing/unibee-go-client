@@ -7,7 +7,9 @@ Name | Type | Description | Notes
 **AttachInvoiceId** | Pointer to **string** | AttachInvoiceId | [optional] 
 **Content** | Pointer to **string** |  | [optional] 
 **Email** | **string** | Email | 
+**GatewayName** | Pointer to **string** | The name of email gateway, available for sendgrid|smtp, default gateway will use if not provide | [optional] 
 **GatewayTemplateId** | Pointer to **string** | GatewayTemplateId | [optional] 
+**Language** | Pointer to **string** | Language | [optional] 
 **Subject** | Pointer to **string** |  | [optional] 
 **Variables** | Pointer to **map[string]map[string]interface{}** | Variables，Map | [optional] 
 
@@ -100,6 +102,31 @@ and a boolean to check if the value has been set.
 SetEmail sets Email field to given value.
 
 
+### GetGatewayName
+
+`func (o *UnibeeApiMerchantEmailSendEmailToUserReq) GetGatewayName() string`
+
+GetGatewayName returns the GatewayName field if non-nil, zero value otherwise.
+
+### GetGatewayNameOk
+
+`func (o *UnibeeApiMerchantEmailSendEmailToUserReq) GetGatewayNameOk() (*string, bool)`
+
+GetGatewayNameOk returns a tuple with the GatewayName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayName
+
+`func (o *UnibeeApiMerchantEmailSendEmailToUserReq) SetGatewayName(v string)`
+
+SetGatewayName sets GatewayName field to given value.
+
+### HasGatewayName
+
+`func (o *UnibeeApiMerchantEmailSendEmailToUserReq) HasGatewayName() bool`
+
+HasGatewayName returns a boolean if a field has been set.
+
 ### GetGatewayTemplateId
 
 `func (o *UnibeeApiMerchantEmailSendEmailToUserReq) GetGatewayTemplateId() string`
@@ -124,6 +151,31 @@ SetGatewayTemplateId sets GatewayTemplateId field to given value.
 `func (o *UnibeeApiMerchantEmailSendEmailToUserReq) HasGatewayTemplateId() bool`
 
 HasGatewayTemplateId returns a boolean if a field has been set.
+
+### GetLanguage
+
+`func (o *UnibeeApiMerchantEmailSendEmailToUserReq) GetLanguage() string`
+
+GetLanguage returns the Language field if non-nil, zero value otherwise.
+
+### GetLanguageOk
+
+`func (o *UnibeeApiMerchantEmailSendEmailToUserReq) GetLanguageOk() (*string, bool)`
+
+GetLanguageOk returns a tuple with the Language field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLanguage
+
+`func (o *UnibeeApiMerchantEmailSendEmailToUserReq) SetLanguage(v string)`
+
+SetLanguage sets Language field to given value.
+
+### HasLanguage
+
+`func (o *UnibeeApiMerchantEmailSendEmailToUserReq) HasLanguage() bool`
+
+HasLanguage returns a boolean if a field has been set.
 
 ### GetSubject
 

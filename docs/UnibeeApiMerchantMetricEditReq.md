@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **MetricDescription** | Pointer to **string** | MetricDescription | [optional] 
 **MetricId** | **int64** | MetricId | 
 **MetricName** | **string** | MetricName | 
-**Type** | Pointer to **int32** | 1-limit_metered，2-charge_metered,3-charge_recurring | [optional] 
+**Type** | Pointer to **int32** | 1-limit_metered，2-charge_metered，3-charge_recurring，4-limit_recurring | [optional] 
 **Unit** | Pointer to **string** | unit | [optional] 
 
 ## Methods
