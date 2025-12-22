@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ChildCode** | Pointer to **string** | Filter Child Code (fuzzy search), only available when Id is batch template ID | [optional] 
 **Count** | Pointer to **int32** | Count Of Per Page | [optional] 
 **CreateTimeEnd** | Pointer to **int64** | CreateTimeEnd，UTC timestamp，seconds | [optional] 
 **CreateTimeStart** | Pointer to **int64** | CreateTimeStart，UTC timestamp，seconds | [optional] 
@@ -13,6 +14,8 @@ Name | Type | Description | Notes
 **PlanIds** | Pointer to **[]int64** | Filter PlanIds Default All | [optional] 
 **SortField** | Pointer to **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | [optional] 
 **SortType** | Pointer to **string** | Sort Type，asc|desc，Default desc | [optional] 
+**Status** | Pointer to **[]int32** | Filter Status Default All, 1-normal, 2-rollback | [optional] 
+**SubscriptionIds** | Pointer to **[]string** | Filter SubscriptionIds Default All | [optional] 
 **UserIds** | Pointer to **[]int64** | Filter UserIds Default All | [optional] 
 
 ## Methods
@@ -33,6 +36,31 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantDiscountUserDiscountListReqWithDefaults instantiates a new UnibeeApiMerchantDiscountUserDiscountListReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetChildCode
+
+`func (o *UnibeeApiMerchantDiscountUserDiscountListReq) GetChildCode() string`
+
+GetChildCode returns the ChildCode field if non-nil, zero value otherwise.
+
+### GetChildCodeOk
+
+`func (o *UnibeeApiMerchantDiscountUserDiscountListReq) GetChildCodeOk() (*string, bool)`
+
+GetChildCodeOk returns a tuple with the ChildCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChildCode
+
+`func (o *UnibeeApiMerchantDiscountUserDiscountListReq) SetChildCode(v string)`
+
+SetChildCode sets ChildCode field to given value.
+
+### HasChildCode
+
+`func (o *UnibeeApiMerchantDiscountUserDiscountListReq) HasChildCode() bool`
+
+HasChildCode returns a boolean if a field has been set.
 
 ### GetCount
 
@@ -253,6 +281,56 @@ SetSortType sets SortType field to given value.
 `func (o *UnibeeApiMerchantDiscountUserDiscountListReq) HasSortType() bool`
 
 HasSortType returns a boolean if a field has been set.
+
+### GetStatus
+
+`func (o *UnibeeApiMerchantDiscountUserDiscountListReq) GetStatus() []int32`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *UnibeeApiMerchantDiscountUserDiscountListReq) GetStatusOk() (*[]int32, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *UnibeeApiMerchantDiscountUserDiscountListReq) SetStatus(v []int32)`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *UnibeeApiMerchantDiscountUserDiscountListReq) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
+
+### GetSubscriptionIds
+
+`func (o *UnibeeApiMerchantDiscountUserDiscountListReq) GetSubscriptionIds() []string`
+
+GetSubscriptionIds returns the SubscriptionIds field if non-nil, zero value otherwise.
+
+### GetSubscriptionIdsOk
+
+`func (o *UnibeeApiMerchantDiscountUserDiscountListReq) GetSubscriptionIdsOk() (*[]string, bool)`
+
+GetSubscriptionIdsOk returns a tuple with the SubscriptionIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubscriptionIds
+
+`func (o *UnibeeApiMerchantDiscountUserDiscountListReq) SetSubscriptionIds(v []string)`
+
+SetSubscriptionIds sets SubscriptionIds field to given value.
+
+### HasSubscriptionIds
+
+`func (o *UnibeeApiMerchantDiscountUserDiscountListReq) HasSubscriptionIds() bool`
+
+HasSubscriptionIds returns a boolean if a field has been set.
 
 ### GetUserIds
 

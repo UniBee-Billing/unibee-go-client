@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MetricId** | **int64** | MetricId | 
-**MetricLimit** | **int64** | MetricLimit | 
+**MetricId** | Pointer to **int64** | MetricId | [optional] 
+**MetricLimit** | Pointer to **int64** | MetricLimit | [optional] 
 
 ## Methods
 
 ### NewUnibeeApiBeanPlanMetricLimitParam
 
-`func NewUnibeeApiBeanPlanMetricLimitParam(metricId int64, metricLimit int64, ) *UnibeeApiBeanPlanMetricLimitParam`
+`func NewUnibeeApiBeanPlanMetricLimitParam() *UnibeeApiBeanPlanMetricLimitParam`
 
 NewUnibeeApiBeanPlanMetricLimitParam instantiates a new UnibeeApiBeanPlanMetricLimitParam object
 This constructor will assign default values to properties that have it defined,
@@ -45,6 +45,11 @@ and a boolean to check if the value has been set.
 
 SetMetricId sets MetricId field to given value.
 
+### HasMetricId
+
+`func (o *UnibeeApiBeanPlanMetricLimitParam) HasMetricId() bool`
+
+HasMetricId returns a boolean if a field has been set.
 
 ### GetMetricLimit
 
@@ -65,6 +70,11 @@ and a boolean to check if the value has been set.
 
 SetMetricLimit sets MetricLimit field to given value.
 
+### HasMetricLimit
+
+`func (o *UnibeeApiBeanPlanMetricLimitParam) HasMetricLimit() bool`
+
+HasMetricLimit returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

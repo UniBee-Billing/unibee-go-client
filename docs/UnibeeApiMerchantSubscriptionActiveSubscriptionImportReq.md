@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **CreateTime** | Pointer to **string** | Required, UTC time, the creation time of subscription, format &#39;2006-01-02 15:04:05&#39; | [optional] 
 **CurrentPeriodEnd** | Pointer to **string** | Required, UTC time, the current period end time of subscription, format &#39;2006-01-02 15:04:05&#39; | [optional] 
 **CurrentPeriodStart** | Pointer to **string** | Required, UTC time, the current period start time of subscription, format &#39;2006-01-02 15:04:05&#39; | [optional] 
+**Discount** | Pointer to [**UnibeeApiBeanExternalDiscountParam**](UnibeeApiBeanExternalDiscountParam.md) |  | [optional] 
 **Email** | Pointer to **string** | The email of user, one of Email or ExternalUserId is required | [optional] 
 **ExpectedTotalAmount** | Pointer to **int64** | Optional. Unit: cents. If greater than 0, the system will verify the calculated total amount against this value | [optional] 
 **ExternalPlanId** | Pointer to **string** | The external id of plan, one of planId or ExternalPlanId is required, plan should created at UniBee at first | [optional] 
@@ -221,6 +222,31 @@ SetCurrentPeriodStart sets CurrentPeriodStart field to given value.
 `func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) HasCurrentPeriodStart() bool`
 
 HasCurrentPeriodStart returns a boolean if a field has been set.
+
+### GetDiscount
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) GetDiscount() UnibeeApiBeanExternalDiscountParam`
+
+GetDiscount returns the Discount field if non-nil, zero value otherwise.
+
+### GetDiscountOk
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) GetDiscountOk() (*UnibeeApiBeanExternalDiscountParam, bool)`
+
+GetDiscountOk returns a tuple with the Discount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscount
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) SetDiscount(v UnibeeApiBeanExternalDiscountParam)`
+
+SetDiscount sets Discount field to given value.
+
+### HasDiscount
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) HasDiscount() bool`
+
+HasDiscount returns a boolean if a field has been set.
 
 ### GetEmail
 

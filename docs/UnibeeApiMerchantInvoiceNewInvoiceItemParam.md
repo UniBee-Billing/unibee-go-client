@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**PlanId** | Pointer to **int64** | The plan id to use for pricing, if set, plan price will override unitAmountExcludingTax | [optional] 
 **Quantity** | Pointer to **int64** |  | [optional] 
 **UnitAmountExcludingTax** | Pointer to **int64** |  | [optional] 
 
@@ -77,6 +78,31 @@ SetName sets Name field to given value.
 `func (o *UnibeeApiMerchantInvoiceNewInvoiceItemParam) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetPlanId
+
+`func (o *UnibeeApiMerchantInvoiceNewInvoiceItemParam) GetPlanId() int64`
+
+GetPlanId returns the PlanId field if non-nil, zero value otherwise.
+
+### GetPlanIdOk
+
+`func (o *UnibeeApiMerchantInvoiceNewInvoiceItemParam) GetPlanIdOk() (*int64, bool)`
+
+GetPlanIdOk returns a tuple with the PlanId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanId
+
+`func (o *UnibeeApiMerchantInvoiceNewInvoiceItemParam) SetPlanId(v int64)`
+
+SetPlanId sets PlanId field to given value.
+
+### HasPlanId
+
+`func (o *UnibeeApiMerchantInvoiceNewInvoiceItemParam) HasPlanId() bool`
+
+HasPlanId returns a boolean if a field has been set.
 
 ### GetQuantity
 

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Advance** | Pointer to **bool** | AdvanceConfig, 0-false,1-true, will enable all advance config if set true | [optional] 
 **BillingType** | Pointer to **int32** | billing_type, 1-one-time, 2-recurring | [optional] 
+**ChildCodeCount** | Pointer to **int64** | Number of generated child codes | [optional] 
 **Code** | Pointer to **string** | code | [optional] 
 **CodePrefix** | Pointer to **string** | codePrefix | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
@@ -26,7 +27,9 @@ Name | Type | Description | Notes
 **PaymentId** | Pointer to **string** | Payment ID where the code was used | [optional] 
 **PlanApplyGroup** | Pointer to [**UnibeeApiBeanGroupPlanSelector**](UnibeeApiBeanGroupPlanSelector.md) |  | [optional] 
 **PlanApplyType** | Pointer to **int32** | plan apply type, 0-apply for all, 1-apply for plans specified, 2-exclude for plans specified, 3-Apply to Plans by Groups(Billing Period Included), 4-Apply to Plans except by Groups(Billing Period Included) | [optional] 
+**PlanId** | Pointer to **int64** | Plan ID from subscription where this code was used | [optional] 
 **PlanIds** | Pointer to **[]int64** | Ids of plan which discount code can effect, default effect all plans if not set | [optional] 
+**PlanName** | Pointer to **string** | Plan name from subscription where this code was used | [optional] 
 **Quantity** | Pointer to **int64** | quantity of code, 0-no limit | [optional] 
 **RedeemedAt** | Pointer to **int64** | UTC timestamp when code was redeemed, 0 if not redeemed | [optional] 
 **RedeemedByEmail** | Pointer to **string** | Email of user who redeemed the code | [optional] 
@@ -36,6 +39,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **int32** | type, 1-external discount code, 2-batch code template, 3-batch code | [optional] 
 **UpgradeLongerOnly** | Pointer to **bool** | AdvanceConfig, 0-false,1-true, will forbid for all except upgrade to longer plan if set true | [optional] 
 **UpgradeOnly** | Pointer to **bool** | AdvanceConfig, 0-false,1-true, will forbid for all except same interval upgrade action if set true | [optional] 
+**UsedChildCodeCount** | Pointer to **int64** | Number of used child codes | [optional] 
 **UserLimit** | Pointer to **int32** | AdvanceConfig, The limit of every customer can apply, the recurring apply not involved, 0-unlimited | [optional] 
 **UserScope** | Pointer to **int32** | AdvanceConfig, Apply user scope,0-for all, 1-for only new user, 2-for only renewals, renewals is upgrade&amp;downgrade&amp;renew | [optional] 
 
@@ -107,6 +111,31 @@ SetBillingType sets BillingType field to given value.
 `func (o *UnibeeApiBeanMerchantBatchDiscountCode) HasBillingType() bool`
 
 HasBillingType returns a boolean if a field has been set.
+
+### GetChildCodeCount
+
+`func (o *UnibeeApiBeanMerchantBatchDiscountCode) GetChildCodeCount() int64`
+
+GetChildCodeCount returns the ChildCodeCount field if non-nil, zero value otherwise.
+
+### GetChildCodeCountOk
+
+`func (o *UnibeeApiBeanMerchantBatchDiscountCode) GetChildCodeCountOk() (*int64, bool)`
+
+GetChildCodeCountOk returns a tuple with the ChildCodeCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChildCodeCount
+
+`func (o *UnibeeApiBeanMerchantBatchDiscountCode) SetChildCodeCount(v int64)`
+
+SetChildCodeCount sets ChildCodeCount field to given value.
+
+### HasChildCodeCount
+
+`func (o *UnibeeApiBeanMerchantBatchDiscountCode) HasChildCodeCount() bool`
+
+HasChildCodeCount returns a boolean if a field has been set.
 
 ### GetCode
 
@@ -608,6 +637,31 @@ SetPlanApplyType sets PlanApplyType field to given value.
 
 HasPlanApplyType returns a boolean if a field has been set.
 
+### GetPlanId
+
+`func (o *UnibeeApiBeanMerchantBatchDiscountCode) GetPlanId() int64`
+
+GetPlanId returns the PlanId field if non-nil, zero value otherwise.
+
+### GetPlanIdOk
+
+`func (o *UnibeeApiBeanMerchantBatchDiscountCode) GetPlanIdOk() (*int64, bool)`
+
+GetPlanIdOk returns a tuple with the PlanId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanId
+
+`func (o *UnibeeApiBeanMerchantBatchDiscountCode) SetPlanId(v int64)`
+
+SetPlanId sets PlanId field to given value.
+
+### HasPlanId
+
+`func (o *UnibeeApiBeanMerchantBatchDiscountCode) HasPlanId() bool`
+
+HasPlanId returns a boolean if a field has been set.
+
 ### GetPlanIds
 
 `func (o *UnibeeApiBeanMerchantBatchDiscountCode) GetPlanIds() []int64`
@@ -632,6 +686,31 @@ SetPlanIds sets PlanIds field to given value.
 `func (o *UnibeeApiBeanMerchantBatchDiscountCode) HasPlanIds() bool`
 
 HasPlanIds returns a boolean if a field has been set.
+
+### GetPlanName
+
+`func (o *UnibeeApiBeanMerchantBatchDiscountCode) GetPlanName() string`
+
+GetPlanName returns the PlanName field if non-nil, zero value otherwise.
+
+### GetPlanNameOk
+
+`func (o *UnibeeApiBeanMerchantBatchDiscountCode) GetPlanNameOk() (*string, bool)`
+
+GetPlanNameOk returns a tuple with the PlanName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanName
+
+`func (o *UnibeeApiBeanMerchantBatchDiscountCode) SetPlanName(v string)`
+
+SetPlanName sets PlanName field to given value.
+
+### HasPlanName
+
+`func (o *UnibeeApiBeanMerchantBatchDiscountCode) HasPlanName() bool`
+
+HasPlanName returns a boolean if a field has been set.
 
 ### GetQuantity
 
@@ -857,6 +936,31 @@ SetUpgradeOnly sets UpgradeOnly field to given value.
 `func (o *UnibeeApiBeanMerchantBatchDiscountCode) HasUpgradeOnly() bool`
 
 HasUpgradeOnly returns a boolean if a field has been set.
+
+### GetUsedChildCodeCount
+
+`func (o *UnibeeApiBeanMerchantBatchDiscountCode) GetUsedChildCodeCount() int64`
+
+GetUsedChildCodeCount returns the UsedChildCodeCount field if non-nil, zero value otherwise.
+
+### GetUsedChildCodeCountOk
+
+`func (o *UnibeeApiBeanMerchantBatchDiscountCode) GetUsedChildCodeCountOk() (*int64, bool)`
+
+GetUsedChildCodeCountOk returns a tuple with the UsedChildCodeCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsedChildCodeCount
+
+`func (o *UnibeeApiBeanMerchantBatchDiscountCode) SetUsedChildCodeCount(v int64)`
+
+SetUsedChildCodeCount sets UsedChildCodeCount field to given value.
+
+### HasUsedChildCodeCount
+
+`func (o *UnibeeApiBeanMerchantBatchDiscountCode) HasUsedChildCodeCount() bool`
+
+HasUsedChildCodeCount returns a boolean if a field has been set.
 
 ### GetUserLimit
 

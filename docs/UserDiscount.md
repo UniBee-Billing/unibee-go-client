@@ -77,7 +77,7 @@ No authorization required
 
 ## DiscountUserDiscountListGet
 
-> MerchantDiscountUserDiscountListGet200Response DiscountUserDiscountListGet(ctx).Id(id).UserIds(userIds).Email(email).PlanIds(planIds).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+> MerchantDiscountUserDiscountListGet200Response DiscountUserDiscountListGet(ctx).Id(id).UserIds(userIds).Email(email).PlanIds(planIds).SubscriptionIds(subscriptionIds).Status(status).ChildCode(childCode).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 
 Get User Discount Code List
 
@@ -100,6 +100,9 @@ func main() {
 	userIds := []int64{int64(123)} // []int64 | Filter UserIds Default All (optional)
 	email := "email_example" // string | Filter Email Default All (optional)
 	planIds := []int64{int64(123)} // []int64 | Filter PlanIds Default All (optional)
+	subscriptionIds := []string{"Inner_example"} // []string | Filter SubscriptionIds Default All (optional)
+	status := []int32{int32(123)} // []int32 | Filter Status Default All, 1-normal, 2-rollback (optional)
+	childCode := "childCode_example" // string | Filter Child Code (fuzzy search), only available when Id is batch template ID (optional)
 	sortField := "sortField_example" // string | Sort Field，gmt_create|gmt_modify，Default gmt_modify (optional)
 	sortType := "sortType_example" // string | Sort Type，asc|desc，Default desc (optional)
 	page := int32(56) // int32 | Page, Start 0 (optional)
@@ -109,7 +112,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UserDiscount.DiscountUserDiscountListGet(context.Background()).Id(id).UserIds(userIds).Email(email).PlanIds(planIds).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+	resp, r, err := apiClient.UserDiscount.DiscountUserDiscountListGet(context.Background()).Id(id).UserIds(userIds).Email(email).PlanIds(planIds).SubscriptionIds(subscriptionIds).Status(status).ChildCode(childCode).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UserDiscount.DiscountUserDiscountListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -134,6 +137,9 @@ Name | Type | Description  | Notes
  **userIds** | **[]int64** | Filter UserIds Default All | 
  **email** | **string** | Filter Email Default All | 
  **planIds** | **[]int64** | Filter PlanIds Default All | 
+ **subscriptionIds** | **[]string** | Filter SubscriptionIds Default All | 
+ **status** | **[]int32** | Filter Status Default All, 1-normal, 2-rollback | 
+ **childCode** | **string** | Filter Child Code (fuzzy search), only available when Id is batch template ID | 
  **sortField** | **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | 
  **sortType** | **string** | Sort Type，asc|desc，Default desc | 
  **page** | **int32** | Page, Start 0 | 

@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **IntervalCount** | Pointer to **int32** | Number,intervalUnit of plan, not editable when plan is active | [optional] 
 **IntervalUnit** | Pointer to **string** | Interval unit of plan，em: day|month|year|week, not editable when plan is active | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
-**MetricLimits** | Pointer to [**[]UnibeeApiBeanPlanMetricLimitParam**](UnibeeApiBeanPlanMetricLimitParam.md) | Plan&#39;s MetricLimit List | [optional] 
+**MetricLimits** | Pointer to [**[][]UnibeeApiBeanPlanMetricLimitParam**]([]UnibeeApiBeanPlanMetricLimitParam.md) | Plan&#39;s MetricLimit List, nil means no change, empty array means delete all, array with data means full replace | [optional] 
 **MetricMeteredCharge** | Pointer to [**[][]UnibeeApiBeanPlanMetricMeteredChargeParam**]([]UnibeeApiBeanPlanMetricMeteredChargeParam.md) | Plan&#39;s MetricMeteredCharge | [optional] 
 **MetricRecurringCharge** | Pointer to [**[][]UnibeeApiBeanPlanMetricMeteredChargeParam**]([]UnibeeApiBeanPlanMetricMeteredChargeParam.md) | Plan&#39;s MetricRecurringCharge | [optional] 
 **MultiCurrencies** | Pointer to [**[][]UnibeeApiBeanPlanMultiCurrency**]([]UnibeeApiBeanPlanMultiCurrency.md) | Plan&#39;s MultiCurrencies | [optional] 
@@ -378,20 +378,20 @@ HasMetadata returns a boolean if a field has been set.
 
 ### GetMetricLimits
 
-`func (o *UnibeeApiMerchantPlanEditReq) GetMetricLimits() []UnibeeApiBeanPlanMetricLimitParam`
+`func (o *UnibeeApiMerchantPlanEditReq) GetMetricLimits() [][]UnibeeApiBeanPlanMetricLimitParam`
 
 GetMetricLimits returns the MetricLimits field if non-nil, zero value otherwise.
 
 ### GetMetricLimitsOk
 
-`func (o *UnibeeApiMerchantPlanEditReq) GetMetricLimitsOk() (*[]UnibeeApiBeanPlanMetricLimitParam, bool)`
+`func (o *UnibeeApiMerchantPlanEditReq) GetMetricLimitsOk() (*[][]UnibeeApiBeanPlanMetricLimitParam, bool)`
 
 GetMetricLimitsOk returns a tuple with the MetricLimits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetricLimits
 
-`func (o *UnibeeApiMerchantPlanEditReq) SetMetricLimits(v []UnibeeApiBeanPlanMetricLimitParam)`
+`func (o *UnibeeApiMerchantPlanEditReq) SetMetricLimits(v [][]UnibeeApiBeanPlanMetricLimitParam)`
 
 SetMetricLimits sets MetricLimits field to given value.
 

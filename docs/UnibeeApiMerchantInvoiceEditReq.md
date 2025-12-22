@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ApplyPromoCredit** | Pointer to **bool** | Whether to apply promo credit | [optional] 
+**ApplyPromoCreditAmount** | Pointer to **int32** | Specific promo credit amount to apply (optional) | [optional] 
 **Currency** | Pointer to **string** | The currency of invoice | [optional] 
 **Finish** | Pointer to **bool** |  | [optional] 
 **GatewayId** | Pointer to **int64** | The gateway id of invoice | [optional] 
@@ -30,6 +32,56 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantInvoiceEditReqWithDefaults instantiates a new UnibeeApiMerchantInvoiceEditReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetApplyPromoCredit
+
+`func (o *UnibeeApiMerchantInvoiceEditReq) GetApplyPromoCredit() bool`
+
+GetApplyPromoCredit returns the ApplyPromoCredit field if non-nil, zero value otherwise.
+
+### GetApplyPromoCreditOk
+
+`func (o *UnibeeApiMerchantInvoiceEditReq) GetApplyPromoCreditOk() (*bool, bool)`
+
+GetApplyPromoCreditOk returns a tuple with the ApplyPromoCredit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplyPromoCredit
+
+`func (o *UnibeeApiMerchantInvoiceEditReq) SetApplyPromoCredit(v bool)`
+
+SetApplyPromoCredit sets ApplyPromoCredit field to given value.
+
+### HasApplyPromoCredit
+
+`func (o *UnibeeApiMerchantInvoiceEditReq) HasApplyPromoCredit() bool`
+
+HasApplyPromoCredit returns a boolean if a field has been set.
+
+### GetApplyPromoCreditAmount
+
+`func (o *UnibeeApiMerchantInvoiceEditReq) GetApplyPromoCreditAmount() int32`
+
+GetApplyPromoCreditAmount returns the ApplyPromoCreditAmount field if non-nil, zero value otherwise.
+
+### GetApplyPromoCreditAmountOk
+
+`func (o *UnibeeApiMerchantInvoiceEditReq) GetApplyPromoCreditAmountOk() (*int32, bool)`
+
+GetApplyPromoCreditAmountOk returns a tuple with the ApplyPromoCreditAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplyPromoCreditAmount
+
+`func (o *UnibeeApiMerchantInvoiceEditReq) SetApplyPromoCreditAmount(v int32)`
+
+SetApplyPromoCreditAmount sets ApplyPromoCreditAmount field to given value.
+
+### HasApplyPromoCreditAmount
+
+`func (o *UnibeeApiMerchantInvoiceEditReq) HasApplyPromoCreditAmount() bool`
+
+HasApplyPromoCreditAmount returns a boolean if a field has been set.
 
 ### GetCurrency
 
