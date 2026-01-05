@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Page** | Pointer to **int32** | Page,Start 0 | [optional] 
 **SortField** | Pointer to **string** | Sort，user_id|gmt_create，Default gmt_create | [optional] 
 **SortType** | Pointer to **string** | Sort Type，asc|desc，Default desc | [optional] 
+**SubscriptionIds** | Pointer to **[]string** | Filter SubscriptionIds, Default All | [optional] 
 **UserIds** | Pointer to **[]int64** | Filter UserIds, Default All | [optional] 
 
 ## Methods
@@ -206,6 +207,31 @@ SetSortType sets SortType field to given value.
 `func (o *UnibeeApiMerchantMetricEventListReq) HasSortType() bool`
 
 HasSortType returns a boolean if a field has been set.
+
+### GetSubscriptionIds
+
+`func (o *UnibeeApiMerchantMetricEventListReq) GetSubscriptionIds() []string`
+
+GetSubscriptionIds returns the SubscriptionIds field if non-nil, zero value otherwise.
+
+### GetSubscriptionIdsOk
+
+`func (o *UnibeeApiMerchantMetricEventListReq) GetSubscriptionIdsOk() (*[]string, bool)`
+
+GetSubscriptionIdsOk returns a tuple with the SubscriptionIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubscriptionIds
+
+`func (o *UnibeeApiMerchantMetricEventListReq) SetSubscriptionIds(v []string)`
+
+SetSubscriptionIds sets SubscriptionIds field to given value.
+
+### HasSubscriptionIds
+
+`func (o *UnibeeApiMerchantMetricEventListReq) HasSubscriptionIds() bool`
+
+HasSubscriptionIds returns a boolean if a field has been set.
 
 ### GetUserIds
 

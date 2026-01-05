@@ -142,7 +142,7 @@ No authorization required
 
 ## MetricEventListGet
 
-> MerchantMetricEventListGet200Response MetricEventListGet(ctx).UserIds(userIds).MetricIds(metricIds).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+> MerchantMetricEventListGet200Response MetricEventListGet(ctx).UserIds(userIds).MetricIds(metricIds).SubscriptionIds(subscriptionIds).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 
 Metric Event List
 
@@ -161,6 +161,7 @@ import (
 func main() {
 	userIds := []int64{int64(123)} // []int64 | Filter UserIds, Default All (optional)
 	metricIds := []int64{int64(123)} // []int64 | Filter MetricIds, Default All (optional)
+	subscriptionIds := []string{"Inner_example"} // []string | Filter SubscriptionIds, Default All (optional)
 	sortField := "sortField_example" // string | Sort，user_id|gmt_create，Default gmt_create (optional)
 	sortType := "sortType_example" // string | Sort Type，asc|desc，Default desc (optional)
 	page := int32(56) // int32 | Page,Start 0 (optional)
@@ -170,7 +171,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetricEvent.MetricEventListGet(context.Background()).UserIds(userIds).MetricIds(metricIds).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+	resp, r, err := apiClient.MetricEvent.MetricEventListGet(context.Background()).UserIds(userIds).MetricIds(metricIds).SubscriptionIds(subscriptionIds).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetricEvent.MetricEventListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -193,6 +194,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userIds** | **[]int64** | Filter UserIds, Default All | 
  **metricIds** | **[]int64** | Filter MetricIds, Default All | 
+ **subscriptionIds** | **[]string** | Filter SubscriptionIds, Default All | 
  **sortField** | **string** | Sort，user_id|gmt_create，Default gmt_create | 
  **sortType** | **string** | Sort Type，asc|desc，Default desc | 
  **page** | **int32** | Page,Start 0 | 

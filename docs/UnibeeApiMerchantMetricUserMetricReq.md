@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Email** | Pointer to **string** | Email, One Of UserId|Email|ExternalUserId Needed | [optional] 
 **ExternalUserId** | Pointer to **string** | ExternalUserId, One Of UserId|Email|ExternalUserId Needed | [optional] 
-**ProductId** | Pointer to **int64** | default product will use if productId not specified and subscriptionId is blank | [optional] 
+**ProductId** | Pointer to **int64** | Id of product, default product will use if productId not specified and subscriptionId is blank | [optional] 
 **ReloadCache** | Pointer to **bool** |  | [optional] 
 **UserId** | Pointer to **int64** | UserId, One Of UserId|Email|ExternalUserId Needed | [optional] 
 

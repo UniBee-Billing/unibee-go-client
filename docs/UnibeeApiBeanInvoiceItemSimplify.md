@@ -20,6 +20,8 @@ Name | Type | Description | Notes
 **PeriodEnd** | Pointer to **int64** |  | [optional] 
 **PeriodStart** | Pointer to **int64** |  | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
+**PlanMetricChargeConfigs** | Pointer to [**[]UnibeeApiBeanInvoiceMetricCharge**](UnibeeApiBeanInvoiceMetricCharge.md) | Metric charge configurations bound to this plan/addon | [optional] 
+**PlanMetricLimitConfigs** | Pointer to [**[]UnibeeApiBeanInvoiceMetricLimit**](UnibeeApiBeanInvoiceMetricLimit.md) | Metric limit configurations bound to this plan/addon | [optional] 
 **Proration** | Pointer to **bool** |  | [optional] 
 **ProrationDate** | Pointer to **int64** |  | [optional] 
 **ProrationScale** | Pointer to **int64** |  | [optional] 
@@ -449,6 +451,56 @@ SetPlan sets Plan field to given value.
 `func (o *UnibeeApiBeanInvoiceItemSimplify) HasPlan() bool`
 
 HasPlan returns a boolean if a field has been set.
+
+### GetPlanMetricChargeConfigs
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetPlanMetricChargeConfigs() []UnibeeApiBeanInvoiceMetricCharge`
+
+GetPlanMetricChargeConfigs returns the PlanMetricChargeConfigs field if non-nil, zero value otherwise.
+
+### GetPlanMetricChargeConfigsOk
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetPlanMetricChargeConfigsOk() (*[]UnibeeApiBeanInvoiceMetricCharge, bool)`
+
+GetPlanMetricChargeConfigsOk returns a tuple with the PlanMetricChargeConfigs field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanMetricChargeConfigs
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) SetPlanMetricChargeConfigs(v []UnibeeApiBeanInvoiceMetricCharge)`
+
+SetPlanMetricChargeConfigs sets PlanMetricChargeConfigs field to given value.
+
+### HasPlanMetricChargeConfigs
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) HasPlanMetricChargeConfigs() bool`
+
+HasPlanMetricChargeConfigs returns a boolean if a field has been set.
+
+### GetPlanMetricLimitConfigs
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetPlanMetricLimitConfigs() []UnibeeApiBeanInvoiceMetricLimit`
+
+GetPlanMetricLimitConfigs returns the PlanMetricLimitConfigs field if non-nil, zero value otherwise.
+
+### GetPlanMetricLimitConfigsOk
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetPlanMetricLimitConfigsOk() (*[]UnibeeApiBeanInvoiceMetricLimit, bool)`
+
+GetPlanMetricLimitConfigsOk returns a tuple with the PlanMetricLimitConfigs field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanMetricLimitConfigs
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) SetPlanMetricLimitConfigs(v []UnibeeApiBeanInvoiceMetricLimit)`
+
+SetPlanMetricLimitConfigs sets PlanMetricLimitConfigs field to given value.
+
+### HasPlanMetricLimitConfigs
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) HasPlanMetricLimitConfigs() bool`
+
+HasPlanMetricLimitConfigs returns a boolean if a field has been set.
 
 ### GetProration
 
