@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**GetLicenseUpdateUrlGet**](Merchant.md#GetLicenseUpdateUrlGet) | **Get** /merchant/get_license_update_url | Get License Update Url
 [**GetLicenseUpdateUrlPost**](Merchant.md#GetLicenseUpdateUrlPost) | **Post** /merchant/get_license_update_url | Get License Update Url
 [**NewApikeyPost**](Merchant.md#NewApikeyPost) | **Post** /merchant/new_apikey | Generate New APIKey
+[**OverviewStatisticsGet**](Merchant.md#OverviewStatisticsGet) | **Get** /merchant/overview_statistics | Get Merchant Overview Statistics
 [**SetupMultiCurrenciesPost**](Merchant.md#SetupMultiCurrenciesPost) | **Post** /merchant/setup_multi_currencies | Multi Currencies Setup
 [**UpdateCnameDomainPost**](Merchant.md#UpdateCnameDomainPost) | **Post** /merchant/update_cname_domain | Update Merchant CNAME Domain
 [**UpdatePortalHostDomainPost**](Merchant.md#UpdatePortalHostDomainPost) | **Post** /merchant/update_portal_host_domain | Update Profile Portal Host Domain
@@ -585,6 +586,65 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## OverviewStatisticsGet
+
+> MerchantOverviewStatisticsGet200Response OverviewStatisticsGet(ctx).Execute()
+
+Get Merchant Overview Statistics
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Merchant.OverviewStatisticsGet(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Merchant.OverviewStatisticsGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `OverviewStatisticsGet`: MerchantOverviewStatisticsGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `Merchant.OverviewStatisticsGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiOverviewStatisticsGetRequest struct via the builder pattern
+
+
+### Return type
+
+[**MerchantOverviewStatisticsGet200Response**](MerchantOverviewStatisticsGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

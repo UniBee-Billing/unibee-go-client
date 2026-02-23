@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**SubscriptionCancelAtPeriodEndPost**](Subscription.md#SubscriptionCancelAtPeriodEndPost) | **Post** /merchant/subscription/cancel_at_period_end | Cancel Subscription At Period End
 [**SubscriptionCancelLastCancelAtPeriodEndPost**](Subscription.md#SubscriptionCancelLastCancelAtPeriodEndPost) | **Post** /merchant/subscription/cancel_last_cancel_at_period_end | Cancel Last Cancel Subscription At Period End
 [**SubscriptionCancelPost**](Subscription.md#SubscriptionCancelPost) | **Post** /merchant/subscription/cancel | Cancel Subscription Immediately
+[**SubscriptionChangeCurrencyPost**](Subscription.md#SubscriptionChangeCurrencyPost) | **Post** /merchant/subscription/change_currency | Change Subscription Currency
 [**SubscriptionChangeDueDayPost**](Subscription.md#SubscriptionChangeDueDayPost) | **Post** /merchant/subscription/change_due_day | Change Subscription Due Day
 [**SubscriptionChangeGatewayPost**](Subscription.md#SubscriptionChangeGatewayPost) | **Post** /merchant/subscription/change_gateway | Change Subscription Gateway
 [**SubscriptionCreatePreviewPost**](Subscription.md#SubscriptionCreatePreviewPost) | **Post** /merchant/subscription/create_preview | Create Subscription Preview
@@ -332,6 +333,72 @@ Other parameters are passed through a pointer to a apiSubscriptionCancelPostRequ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **unibeeApiMerchantSubscriptionCancelReq** | [**UnibeeApiMerchantSubscriptionCancelReq**](UnibeeApiMerchantSubscriptionCancelReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SubscriptionChangeCurrencyPost
+
+> MerchantAuthSsoClearTotpPost200Response SubscriptionChangeCurrencyPost(ctx).UnibeeApiMerchantSubscriptionChangeCurrencyReq(unibeeApiMerchantSubscriptionChangeCurrencyReq).Execute()
+
+Change Subscription Currency
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantSubscriptionChangeCurrencyReq := *openapiclient.NewUnibeeApiMerchantSubscriptionChangeCurrencyReq("Currency_example", "SubscriptionId_example") // UnibeeApiMerchantSubscriptionChangeCurrencyReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Subscription.SubscriptionChangeCurrencyPost(context.Background()).UnibeeApiMerchantSubscriptionChangeCurrencyReq(unibeeApiMerchantSubscriptionChangeCurrencyReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionChangeCurrencyPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SubscriptionChangeCurrencyPost`: MerchantAuthSsoClearTotpPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionChangeCurrencyPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSubscriptionChangeCurrencyPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantSubscriptionChangeCurrencyReq** | [**UnibeeApiMerchantSubscriptionChangeCurrencyReq**](UnibeeApiMerchantSubscriptionChangeCurrencyReq.md) |  | 
 
 ### Return type
 

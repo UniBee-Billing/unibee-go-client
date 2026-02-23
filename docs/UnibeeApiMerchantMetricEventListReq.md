@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Count** | Pointer to **int32** | Count OF Page | [optional] 
 **CreateTimeEnd** | Pointer to **int64** | CreateTimeEnd，UTC timestamp，seconds | [optional] 
 **CreateTimeStart** | Pointer to **int64** | CreateTimeStart，UTC timestamp，seconds | [optional] 
+**InvoiceId** | Pointer to **string** | When set, list events for this invoice period (match subscription_period_start/end with invoice PeriodStart/PeriodEnd); overrides CreateTimeStart/CreateTimeEnd for period scope | [optional] 
 **MetricIds** | Pointer to **[]int64** | Filter MetricIds, Default All | [optional] 
 **Page** | Pointer to **int32** | Page,Start 0 | [optional] 
 **SortField** | Pointer to **string** | Sort，user_id|gmt_create，Default gmt_create | [optional] 
@@ -107,6 +108,31 @@ SetCreateTimeStart sets CreateTimeStart field to given value.
 `func (o *UnibeeApiMerchantMetricEventListReq) HasCreateTimeStart() bool`
 
 HasCreateTimeStart returns a boolean if a field has been set.
+
+### GetInvoiceId
+
+`func (o *UnibeeApiMerchantMetricEventListReq) GetInvoiceId() string`
+
+GetInvoiceId returns the InvoiceId field if non-nil, zero value otherwise.
+
+### GetInvoiceIdOk
+
+`func (o *UnibeeApiMerchantMetricEventListReq) GetInvoiceIdOk() (*string, bool)`
+
+GetInvoiceIdOk returns a tuple with the InvoiceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInvoiceId
+
+`func (o *UnibeeApiMerchantMetricEventListReq) SetInvoiceId(v string)`
+
+SetInvoiceId sets InvoiceId field to given value.
+
+### HasInvoiceId
+
+`func (o *UnibeeApiMerchantMetricEventListReq) HasInvoiceId() bool`
+
+HasInvoiceId returns a boolean if a field has been set.
 
 ### GetMetricIds
 

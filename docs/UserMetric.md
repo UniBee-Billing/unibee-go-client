@@ -4,11 +4,82 @@ All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**MetricUserHistoryInvoicesMetricQueryableGet**](UserMetric.md#MetricUserHistoryInvoicesMetricQueryableGet) | **Get** /merchant/metric/user/history/invoices_metric_queryable | List invoices that can be used for metric_by_invoice (paid, subscription cycle only)
 [**MetricUserHistoryMetricByInvoiceGet**](UserMetric.md#MetricUserHistoryMetricByInvoiceGet) | **Get** /merchant/metric/user/history/metric_by_invoice | Query User History Limit Metric By Invoice (History Query Mode, limit_metered and limit_recurring only)
 [**MetricUserHistoryMetricBySubscriptionGet**](UserMetric.md#MetricUserHistoryMetricBySubscriptionGet) | **Get** /merchant/metric/user/history/metric_by_subscription | Query User History Limit Metric By Subscription (History Query Mode, limit_metered and limit_recurring only, non-active subscription only)
 [**MetricUserMetricGet**](UserMetric.md#MetricUserMetricGet) | **Get** /merchant/metric/user/metric | Query User Metric
 [**MetricUserSubMetricGet**](UserMetric.md#MetricUserSubMetricGet) | **Get** /merchant/metric/user/sub/metric | Query User Metric By Subscription
 
+
+
+## MetricUserHistoryInvoicesMetricQueryableGet
+
+> MerchantInvoiceListGet200Response MetricUserHistoryInvoicesMetricQueryableGet(ctx).UserId(userId).SubscriptionId(subscriptionId).Page(page).Count(count).Execute()
+
+List invoices that can be used for metric_by_invoice (paid, subscription cycle only)
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	userId := int64(789) // int64 | UserId
+	subscriptionId := "subscriptionId_example" // string | Optional subscription id to filter by subscription (optional)
+	page := int32(56) // int32 | Page, start 0 (optional)
+	count := int32(56) // int32 | Count per page (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.UserMetric.MetricUserHistoryInvoicesMetricQueryableGet(context.Background()).UserId(userId).SubscriptionId(subscriptionId).Page(page).Count(count).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UserMetric.MetricUserHistoryInvoicesMetricQueryableGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MetricUserHistoryInvoicesMetricQueryableGet`: MerchantInvoiceListGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `UserMetric.MetricUserHistoryInvoicesMetricQueryableGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiMetricUserHistoryInvoicesMetricQueryableGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **int64** | UserId | 
+ **subscriptionId** | **string** | Optional subscription id to filter by subscription | 
+ **page** | **int32** | Page, start 0 | 
+ **count** | **int32** | Count per page | 
+
+### Return type
+
+[**MerchantInvoiceListGet200Response**](MerchantInvoiceListGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## MetricUserHistoryMetricByInvoiceGet
@@ -77,7 +148,7 @@ No authorization required
 
 ## MetricUserHistoryMetricBySubscriptionGet
 
-> MerchantMetricUserHistoryMetricByInvoiceGet200Response MetricUserHistoryMetricBySubscriptionGet(ctx).SubscriptionId(subscriptionId).Execute()
+> MerchantMetricUserHistoryMetricBySubscriptionGet200Response MetricUserHistoryMetricBySubscriptionGet(ctx).SubscriptionId(subscriptionId).Execute()
 
 Query User History Limit Metric By Subscription (History Query Mode, limit_metered and limit_recurring only, non-active subscription only)
 
@@ -103,7 +174,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `UserMetric.MetricUserHistoryMetricBySubscriptionGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `MetricUserHistoryMetricBySubscriptionGet`: MerchantMetricUserHistoryMetricByInvoiceGet200Response
+	// response from `MetricUserHistoryMetricBySubscriptionGet`: MerchantMetricUserHistoryMetricBySubscriptionGet200Response
 	fmt.Fprintf(os.Stdout, "Response from `UserMetric.MetricUserHistoryMetricBySubscriptionGet`: %v\n", resp)
 }
 ```
@@ -123,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantMetricUserHistoryMetricByInvoiceGet200Response**](MerchantMetricUserHistoryMetricByInvoiceGet200Response.md)
+[**MerchantMetricUserHistoryMetricBySubscriptionGet200Response**](MerchantMetricUserHistoryMetricBySubscriptionGet200Response.md)
 
 ### Authorization
 

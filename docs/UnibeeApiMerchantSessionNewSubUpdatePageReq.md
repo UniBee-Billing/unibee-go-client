@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Email** | Pointer to **string** | Email, unique, either ExternalUserId&amp;Email or UserId needed | [optional] 
 **ExternalUserId** | Pointer to **string** | ExternalUserId, unique, either ExternalUserId&amp;Email or UserId needed | [optional] 
 **PlanId** | Pointer to **int64** | Id of plan to update | [optional] 
-**ProductId** | Pointer to **int64** | default product will use if productId not specified | [optional] 
+**ProductId** | Pointer to **int64** | Id of product,default product will use if productId not specified | [optional] 
 **ReturnUrl** | Pointer to **string** | ReturnUrl | [optional] 
 **UserId** | Pointer to **int64** | UserId, unique, either ExternalUserId&amp;Email or UserId needed | [optional] 
 **VatCountryCode** | Pointer to **string** | Vat Country Code | [optional] 

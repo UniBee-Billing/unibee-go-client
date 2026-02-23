@@ -142,7 +142,7 @@ No authorization required
 
 ## MetricEventListGet
 
-> MerchantMetricEventListGet200Response MetricEventListGet(ctx).UserIds(userIds).MetricIds(metricIds).SubscriptionIds(subscriptionIds).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+> MerchantMetricEventListGet200Response MetricEventListGet(ctx).UserIds(userIds).MetricIds(metricIds).SubscriptionIds(subscriptionIds).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).InvoiceId(invoiceId).Execute()
 
 Metric Event List
 
@@ -168,10 +168,11 @@ func main() {
 	count := int32(56) // int32 | Count OF Page (optional)
 	createTimeStart := int64(789) // int64 | CreateTimeStart，UTC timestamp，seconds (optional)
 	createTimeEnd := int64(789) // int64 | CreateTimeEnd，UTC timestamp，seconds (optional)
+	invoiceId := "invoiceId_example" // string | When set, list events for this invoice period (match subscription_period_start/end with invoice PeriodStart/PeriodEnd); overrides CreateTimeStart/CreateTimeEnd for period scope (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetricEvent.MetricEventListGet(context.Background()).UserIds(userIds).MetricIds(metricIds).SubscriptionIds(subscriptionIds).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+	resp, r, err := apiClient.MetricEvent.MetricEventListGet(context.Background()).UserIds(userIds).MetricIds(metricIds).SubscriptionIds(subscriptionIds).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).InvoiceId(invoiceId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetricEvent.MetricEventListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -201,6 +202,7 @@ Name | Type | Description  | Notes
  **count** | **int32** | Count OF Page | 
  **createTimeStart** | **int64** | CreateTimeStart，UTC timestamp，seconds | 
  **createTimeEnd** | **int64** | CreateTimeEnd，UTC timestamp，seconds | 
+ **invoiceId** | **string** | When set, list events for this invoice period (match subscription_period_start/end with invoice PeriodStart/PeriodEnd); overrides CreateTimeStart/CreateTimeEnd for period scope | 
 
 ### Return type
 

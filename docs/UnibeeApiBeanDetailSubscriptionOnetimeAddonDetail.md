@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **Invoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata | [optional] 
 **Payment** | Pointer to [**UnibeeApiBeanPayment**](UnibeeApiBeanPayment.md) |  | [optional] 
+**PeriodEnd** | Pointer to **int64** | period_end utc time | [optional] 
+**PeriodStart** | Pointer to **int64** | period_start, utc time | [optional] 
 **Quantity** | Pointer to **int64** | quantity | [optional] 
 **Status** | Pointer to **int32** | status, 1-create, 2-paid, 3-cancel, 4-expired | [optional] 
 **SubscriptionId** | Pointer to **string** | subscription_id | [optional] 
@@ -209,6 +211,56 @@ SetPayment sets Payment field to given value.
 `func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) HasPayment() bool`
 
 HasPayment returns a boolean if a field has been set.
+
+### GetPeriodEnd
+
+`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) GetPeriodEnd() int64`
+
+GetPeriodEnd returns the PeriodEnd field if non-nil, zero value otherwise.
+
+### GetPeriodEndOk
+
+`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) GetPeriodEndOk() (*int64, bool)`
+
+GetPeriodEndOk returns a tuple with the PeriodEnd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPeriodEnd
+
+`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) SetPeriodEnd(v int64)`
+
+SetPeriodEnd sets PeriodEnd field to given value.
+
+### HasPeriodEnd
+
+`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) HasPeriodEnd() bool`
+
+HasPeriodEnd returns a boolean if a field has been set.
+
+### GetPeriodStart
+
+`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) GetPeriodStart() int64`
+
+GetPeriodStart returns the PeriodStart field if non-nil, zero value otherwise.
+
+### GetPeriodStartOk
+
+`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) GetPeriodStartOk() (*int64, bool)`
+
+GetPeriodStartOk returns a tuple with the PeriodStart field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPeriodStart
+
+`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) SetPeriodStart(v int64)`
+
+SetPeriodStart sets PeriodStart field to given value.
+
+### HasPeriodStart
+
+`func (o *UnibeeApiBeanDetailSubscriptionOnetimeAddonDetail) HasPeriodStart() bool`
+
+HasPeriodStart returns a boolean if a field has been set.
 
 ### GetQuantity
 

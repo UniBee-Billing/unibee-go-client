@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**UserChangeGatewayPost**](User.md#UserChangeGatewayPost) | **Post** /merchant/user/change_gateway | Change User Default Gateway
 [**UserClearAutoChargeMethodPost**](User.md#UserClearAutoChargeMethodPost) | **Post** /merchant/user/clear_auto_charge_method | Clear AutoCharge Method
 [**UserCountGet**](User.md#UserCountGet) | **Get** /merchant/user/count | User Count
+[**UserDeletePost**](User.md#UserDeletePost) | **Post** /merchant/user/delete | Delete User
 [**UserGetGet**](User.md#UserGetGet) | **Get** /merchant/user/get | Get User Profile
 [**UserListGet**](User.md#UserListGet) | **Get** /merchant/user/list | User List
 [**UserListPost**](User.md#UserListPost) | **Post** /merchant/user/list | User List
@@ -406,6 +407,70 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UserDeletePost
+
+> MerchantAuthSsoClearTotpPost200Response UserDeletePost(ctx).UnibeeApiMerchantUserDeleteReq(unibeeApiMerchantUserDeleteReq).Execute()
+
+Delete User
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantUserDeleteReq := *openapiclient.NewUnibeeApiMerchantUserDeleteReq(int64(123)) // UnibeeApiMerchantUserDeleteReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.User.UserDeletePost(context.Background()).UnibeeApiMerchantUserDeleteReq(unibeeApiMerchantUserDeleteReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `User.UserDeletePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserDeletePost`: MerchantAuthSsoClearTotpPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `User.UserDeletePost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUserDeletePostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantUserDeleteReq** | [**UnibeeApiMerchantUserDeleteReq**](UnibeeApiMerchantUserDeleteReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

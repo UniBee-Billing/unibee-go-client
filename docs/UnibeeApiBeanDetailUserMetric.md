@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **IsPaid** | Pointer to **bool** | IsPaid | [optional] 
 **LimitStats** | Pointer to [**[]UnibeeApiBeanDetailUserMerchantMetricLimitStat**](UnibeeApiBeanDetailUserMerchantMetricLimitStat.md) | LimitStats | [optional] 
 **MeteredChargeStats** | Pointer to [**[]UnibeeApiBeanDetailUserMerchantMetricChargeStat**](UnibeeApiBeanDetailUserMerchantMetricChargeStat.md) | MeteredChargeStats | [optional] 
+**OnetimeAddons** | Pointer to [**[]UnibeeApiBeanDetailUserOnetimeAddonDetail**](UnibeeApiBeanDetailUserOnetimeAddonDetail.md) | OnetimeAddons | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
 **Product** | Pointer to [**UnibeeApiBeanProduct**](UnibeeApiBeanProduct.md) |  | [optional] 
 **RecurringChargeStats** | Pointer to [**[]UnibeeApiBeanDetailUserMerchantMetricChargeStat**](UnibeeApiBeanDetailUserMerchantMetricChargeStat.md) | RecurringChargeStats | [optional] 
@@ -158,6 +159,31 @@ SetMeteredChargeStats sets MeteredChargeStats field to given value.
 `func (o *UnibeeApiBeanDetailUserMetric) HasMeteredChargeStats() bool`
 
 HasMeteredChargeStats returns a boolean if a field has been set.
+
+### GetOnetimeAddons
+
+`func (o *UnibeeApiBeanDetailUserMetric) GetOnetimeAddons() []UnibeeApiBeanDetailUserOnetimeAddonDetail`
+
+GetOnetimeAddons returns the OnetimeAddons field if non-nil, zero value otherwise.
+
+### GetOnetimeAddonsOk
+
+`func (o *UnibeeApiBeanDetailUserMetric) GetOnetimeAddonsOk() (*[]UnibeeApiBeanDetailUserOnetimeAddonDetail, bool)`
+
+GetOnetimeAddonsOk returns a tuple with the OnetimeAddons field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnetimeAddons
+
+`func (o *UnibeeApiBeanDetailUserMetric) SetOnetimeAddons(v []UnibeeApiBeanDetailUserOnetimeAddonDetail)`
+
+SetOnetimeAddons sets OnetimeAddons field to given value.
+
+### HasOnetimeAddons
+
+`func (o *UnibeeApiBeanDetailUserMetric) HasOnetimeAddons() bool`
+
+HasOnetimeAddons returns a boolean if a field has been set.
 
 ### GetPlan
 

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Code** | Pointer to **int32** |  | [optional] 
 **Data** | Pointer to [**MerchantWebhookGetWebhookSecretGet200ResponseData**](MerchantWebhookGetWebhookSecretGet200ResponseData.md) |  | [optional] 
+**MerchantId** | Pointer to **int64** |  | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
 **Redirect** | Pointer to **string** |  | [optional] 
 **RequestId** | Pointer to **string** |  | [optional] 
@@ -78,6 +79,31 @@ SetData sets Data field to given value.
 `func (o *MerchantWebhookGetWebhookSecretGet200Response) HasData() bool`
 
 HasData returns a boolean if a field has been set.
+
+### GetMerchantId
+
+`func (o *MerchantWebhookGetWebhookSecretGet200Response) GetMerchantId() int64`
+
+GetMerchantId returns the MerchantId field if non-nil, zero value otherwise.
+
+### GetMerchantIdOk
+
+`func (o *MerchantWebhookGetWebhookSecretGet200Response) GetMerchantIdOk() (*int64, bool)`
+
+GetMerchantIdOk returns a tuple with the MerchantId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMerchantId
+
+`func (o *MerchantWebhookGetWebhookSecretGet200Response) SetMerchantId(v int64)`
+
+SetMerchantId sets MerchantId field to given value.
+
+### HasMerchantId
+
+`func (o *MerchantWebhookGetWebhookSecretGet200Response) HasMerchantId() bool`
+
+HasMerchantId returns a boolean if a field has been set.
 
 ### GetMessage
 

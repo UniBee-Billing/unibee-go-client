@@ -145,7 +145,7 @@ No authorization required
 
 ## SubscriptionOnetimeAddonPurchaseListGet
 
-> MerchantSubscriptionOnetimeAddonPurchaseListGet200Response SubscriptionOnetimeAddonPurchaseListGet(ctx).UserId(userId).Page(page).Count(count).Execute()
+> MerchantSubscriptionOnetimeAddonPurchaseListGet200Response SubscriptionOnetimeAddonPurchaseListGet(ctx).UserId(userId).SubscriptionIds(subscriptionIds).AddonIds(addonIds).Status(status).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).PeriodStart(periodStart).PeriodEnd(periodEnd).Page(page).Count(count).Execute()
 
 Get Subscription Onetime Addon Purchase History List
 
@@ -163,12 +163,19 @@ import (
 
 func main() {
 	userId := int64(789) // int64 | UserId
+	subscriptionIds := []string{"Inner_example"} // []string | Filter SubscriptionIds, Default All (optional)
+	addonIds := []int64{int64(123)} // []int64 | Filter AddonIds, Default All (optional)
+	status := []int32{int32(123)} // []int32 | Filter Status, Default All，1-Create｜2-Paid｜3-Cancel｜4-Expired (optional)
+	createTimeStart := int64(789) // int64 | CreateTimeStart，UTC timestamp，seconds (optional)
+	createTimeEnd := int64(789) // int64 | CreateTimeEnd，UTC timestamp，seconds (optional)
+	periodStart := int64(789) // int64 | PeriodStart，addon effective period start，UTC timestamp，seconds (optional)
+	periodEnd := int64(789) // int64 | PeriodEnd，addon effective period end，UTC timestamp，seconds (optional)
 	page := int32(56) // int32 | Page, Start With 0 (optional)
-	count := int32(56) // int32 | Count Of Page，Default 100  (optional)
+	count := int32(56) // int32 | Count Of Page (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SubscriptionPayment.SubscriptionOnetimeAddonPurchaseListGet(context.Background()).UserId(userId).Page(page).Count(count).Execute()
+	resp, r, err := apiClient.SubscriptionPayment.SubscriptionOnetimeAddonPurchaseListGet(context.Background()).UserId(userId).SubscriptionIds(subscriptionIds).AddonIds(addonIds).Status(status).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).PeriodStart(periodStart).PeriodEnd(periodEnd).Page(page).Count(count).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionPayment.SubscriptionOnetimeAddonPurchaseListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -190,8 +197,15 @@ Other parameters are passed through a pointer to a apiSubscriptionOnetimeAddonPu
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int64** | UserId | 
+ **subscriptionIds** | **[]string** | Filter SubscriptionIds, Default All | 
+ **addonIds** | **[]int64** | Filter AddonIds, Default All | 
+ **status** | **[]int32** | Filter Status, Default All，1-Create｜2-Paid｜3-Cancel｜4-Expired | 
+ **createTimeStart** | **int64** | CreateTimeStart，UTC timestamp，seconds | 
+ **createTimeEnd** | **int64** | CreateTimeEnd，UTC timestamp，seconds | 
+ **periodStart** | **int64** | PeriodStart，addon effective period start，UTC timestamp，seconds | 
+ **periodEnd** | **int64** | PeriodEnd，addon effective period end，UTC timestamp，seconds | 
  **page** | **int32** | Page, Start With 0 | 
- **count** | **int32** | Count Of Page，Default 100  | 
+ **count** | **int32** | Count Of Page | 
 
 ### Return type
 
