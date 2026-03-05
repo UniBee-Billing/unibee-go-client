@@ -4,24 +4,25 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | addonParams | [optional] 
-**ApplyPromoCredit** | Pointer to **bool** | apply promo credit or not | [optional] 
-**ApplyPromoCreditAmount** | Pointer to **int32** | apply promo credit amount, auto compute if not specified | [optional] 
-**Currency** | Pointer to **string** | The currency of payment | [optional] 
-**DiscountCode** | Pointer to **string** | DiscountCode | [optional] 
-**Email** | Pointer to **string** | Email, either ExternalUserId&amp;Email or UserId needed | [optional] 
-**ExternalUserId** | Pointer to **string** | ExternalUserId, unique, either ExternalUserId&amp;Email or UserId needed | [optional] 
-**FreeInInitialPeriod** | Pointer to **bool** | Is free or not for the first period, true or false | [optional] 
-**GatewayId** | Pointer to **int32** | GatewayId | [optional] 
-**GatewayPaymentType** | Pointer to **string** | Gateway Payment Type | [optional] 
-**PlanId** | **int64** | PlanId | 
-**Quantity** | Pointer to **int64** | Quantity | [optional] 
-**TaxPercentage** | Pointer to **int32** | TaxPercentage，1000 &#x3D; 10% | [optional] 
-**TrialEnd** | Pointer to **int64** | trial_end, utc time | [optional] 
+**AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | Optional. List of addon plan parameters to be attached to this subscription. | [optional] 
+**ApplyPromoCredit** | Pointer to **bool** | Optional. Whether to apply available promo credit to this preview calculation. | [optional] 
+**ApplyPromoCreditAmount** | Pointer to **int32** | Optional. Maximum promo credit amount to apply. If omitted and applyPromoCredit is true, the system auto-computes the usable amount. | [optional] 
+**Currency** | Pointer to **string** | Optional. Currency code for pricing (e.g. USD, EUR). If empty, plan default currency is used. | [optional] 
+**DiscountCode** | Pointer to **string** | Optional. Discount or coupon code applied to this preview. | [optional] 
+**Email** | Pointer to **string** | Optional. End-user email. Required when creating a new user via ExternalUserId&amp;Email if userId is not provided. | [optional] 
+**ExternalUserId** | Pointer to **string** | Optional. Merchant-side unique user identifier. Use together with email when userId is not provided. | [optional] 
+**FreeInInitialPeriod** | Pointer to **bool** | Optional. If true, the first billing period is treated as free or trial, taking precedence over trialEnd. | [optional] 
+**FreeTimeEnd** | Pointer to **int32** | Optional. Custom free period end time when freeInInitialPeriod is true, as UTC timestamp (seconds). Can shorten or extend the default first-period-free behavior. | [optional] 
+**GatewayId** | Pointer to **int32** | Optional. Payment gateway ID to be used for this subscription preview. If omitted, default gateway selection rules apply. | [optional] 
+**GatewayPaymentType** | Pointer to **string** | Optional. Payment type for the selected gateway, such as card, wallet, etc. | [optional] 
+**PlanId** | **int64** | Required. ID of the subscription plan to be purchased. | 
+**Quantity** | Pointer to **int64** | Optional. Number of units for the plan. Defaults to 1 if not specified. | [optional] 
+**TaxPercentage** | Pointer to **int32** | Optional. External tax percentage override, in basis points (e.g. 1000 &#x3D; 10%%). Only available for OpenAPI calls. | [optional] 
+**TrialEnd** | Pointer to **int64** | Optional. Custom trial end time as UTC timestamp (seconds). Overrides plan default trial configuration when greater than now. | [optional] 
 **User** | Pointer to [**UnibeeApiBeanNewUser**](UnibeeApiBeanNewUser.md) |  | [optional] 
-**UserId** | Pointer to **int64** | UserId | [optional] 
-**VatCountryCode** | Pointer to **string** | VatCountryCode, CountryName | [optional] 
-**VatNumber** | Pointer to **string** | VatNumber | [optional] 
+**UserId** | Pointer to **int64** | Optional. Internal user ID in UniBee. If provided, it must match the email/user object when they are also provided. | [optional] 
+**VatCountryCode** | Pointer to **string** | Optional. ISO country code for VAT calculation. If provided together with vatNumber, they must be consistent. | [optional] 
+**VatNumber** | Pointer to **string** | Optional. Customer VAT number used for VAT validation and tax calculation. | [optional] 
 
 ## Methods
 
@@ -241,6 +242,31 @@ SetFreeInInitialPeriod sets FreeInInitialPeriod field to given value.
 `func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) HasFreeInInitialPeriod() bool`
 
 HasFreeInInitialPeriod returns a boolean if a field has been set.
+
+### GetFreeTimeEnd
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) GetFreeTimeEnd() int32`
+
+GetFreeTimeEnd returns the FreeTimeEnd field if non-nil, zero value otherwise.
+
+### GetFreeTimeEndOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) GetFreeTimeEndOk() (*int32, bool)`
+
+GetFreeTimeEndOk returns a tuple with the FreeTimeEnd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFreeTimeEnd
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) SetFreeTimeEnd(v int32)`
+
+SetFreeTimeEnd sets FreeTimeEnd field to given value.
+
+### HasFreeTimeEnd
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) HasFreeTimeEnd() bool`
+
+HasFreeTimeEnd returns a boolean if a field has been set.
 
 ### GetGatewayId
 

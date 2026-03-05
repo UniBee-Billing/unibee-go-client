@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Currency** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **DiscountAmount** | Pointer to **int64** |  | [optional] 
+**DiscountCode** | Pointer to **string** |  | [optional] 
 **FromAddress** | Pointer to [**UnibeeApiBeanUSAddress**](UnibeeApiBeanUSAddress.md) |  | [optional] 
 **LineId** | Pointer to **string** |  | [optional] 
 **MetricCharge** | Pointer to [**UnibeeApiBeanUserMetricChargeInvoiceItem**](UnibeeApiBeanUserMetricChargeInvoiceItem.md) |  | [optional] 
@@ -176,6 +177,31 @@ SetDiscountAmount sets DiscountAmount field to given value.
 `func (o *UnibeeApiBeanInvoiceItemSimplify) HasDiscountAmount() bool`
 
 HasDiscountAmount returns a boolean if a field has been set.
+
+### GetDiscountCode
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetDiscountCode() string`
+
+GetDiscountCode returns the DiscountCode field if non-nil, zero value otherwise.
+
+### GetDiscountCodeOk
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) GetDiscountCodeOk() (*string, bool)`
+
+GetDiscountCodeOk returns a tuple with the DiscountCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscountCode
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) SetDiscountCode(v string)`
+
+SetDiscountCode sets DiscountCode field to given value.
+
+### HasDiscountCode
+
+`func (o *UnibeeApiBeanInvoiceItemSimplify) HasDiscountCode() bool`
+
+HasDiscountCode returns a boolean if a field has been set.
 
 ### GetFromAddress
 

@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | Addon list with quantity, align with subscription create preview | [optional] 
 **Code** | **string** | The discount&#39;s unique code, customize by merchant | 
 **Currency** | Pointer to **string** | The currency of plan which code to apply | [optional] 
 **Email** | Pointer to **string** | Email | [optional] 
@@ -12,6 +13,7 @@ Name | Type | Description | Notes
 **IsChangeToSameIntervalPlan** | Pointer to **bool** | IsChangeToSameIntervalPlan | [optional] 
 **IsUpgrade** | Pointer to **bool** | IsUpgrade | [optional] 
 **PlanId** | Pointer to **int64** | The id of plan which code to apply, either planId or externalPlanId is needed | [optional] 
+**Quantity** | Pointer to **int64** | Main plan quantity, default 1; align with subscription create preview | [optional] 
 
 ## Methods
 
@@ -31,6 +33,31 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantDiscountPlanApplyPreviewReqWithDefaults instantiates a new UnibeeApiMerchantDiscountPlanApplyPreviewReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAddonParams
+
+`func (o *UnibeeApiMerchantDiscountPlanApplyPreviewReq) GetAddonParams() []UnibeeApiBeanPlanAddonParam`
+
+GetAddonParams returns the AddonParams field if non-nil, zero value otherwise.
+
+### GetAddonParamsOk
+
+`func (o *UnibeeApiMerchantDiscountPlanApplyPreviewReq) GetAddonParamsOk() (*[]UnibeeApiBeanPlanAddonParam, bool)`
+
+GetAddonParamsOk returns a tuple with the AddonParams field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAddonParams
+
+`func (o *UnibeeApiMerchantDiscountPlanApplyPreviewReq) SetAddonParams(v []UnibeeApiBeanPlanAddonParam)`
+
+SetAddonParams sets AddonParams field to given value.
+
+### HasAddonParams
+
+`func (o *UnibeeApiMerchantDiscountPlanApplyPreviewReq) HasAddonParams() bool`
+
+HasAddonParams returns a boolean if a field has been set.
 
 ### GetCode
 
@@ -226,6 +253,31 @@ SetPlanId sets PlanId field to given value.
 `func (o *UnibeeApiMerchantDiscountPlanApplyPreviewReq) HasPlanId() bool`
 
 HasPlanId returns a boolean if a field has been set.
+
+### GetQuantity
+
+`func (o *UnibeeApiMerchantDiscountPlanApplyPreviewReq) GetQuantity() int64`
+
+GetQuantity returns the Quantity field if non-nil, zero value otherwise.
+
+### GetQuantityOk
+
+`func (o *UnibeeApiMerchantDiscountPlanApplyPreviewReq) GetQuantityOk() (*int64, bool)`
+
+GetQuantityOk returns a tuple with the Quantity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuantity
+
+`func (o *UnibeeApiMerchantDiscountPlanApplyPreviewReq) SetQuantity(v int64)`
+
+SetQuantity sets Quantity field to given value.
+
+### HasQuantity
+
+`func (o *UnibeeApiMerchantDiscountPlanApplyPreviewReq) HasQuantity() bool`
+
+HasQuantity returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

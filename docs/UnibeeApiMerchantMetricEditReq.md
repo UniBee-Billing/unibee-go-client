@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CarryoverProrationEnabled** | Pointer to **bool** | Enable carryover proration for this metric (default: false when not set) | [optional] 
 **MetaData** | Pointer to **map[string]map[string]interface{}** | meta_data(json) | [optional] 
 **MetricDescription** | Pointer to **string** | MetricDescription | [optional] 
 **MetricId** | **int64** | MetricId | 
@@ -29,6 +30,31 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantMetricEditReqWithDefaults instantiates a new UnibeeApiMerchantMetricEditReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCarryoverProrationEnabled
+
+`func (o *UnibeeApiMerchantMetricEditReq) GetCarryoverProrationEnabled() bool`
+
+GetCarryoverProrationEnabled returns the CarryoverProrationEnabled field if non-nil, zero value otherwise.
+
+### GetCarryoverProrationEnabledOk
+
+`func (o *UnibeeApiMerchantMetricEditReq) GetCarryoverProrationEnabledOk() (*bool, bool)`
+
+GetCarryoverProrationEnabledOk returns a tuple with the CarryoverProrationEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCarryoverProrationEnabled
+
+`func (o *UnibeeApiMerchantMetricEditReq) SetCarryoverProrationEnabled(v bool)`
+
+SetCarryoverProrationEnabled sets CarryoverProrationEnabled field to given value.
+
+### HasCarryoverProrationEnabled
+
+`func (o *UnibeeApiMerchantMetricEditReq) HasCarryoverProrationEnabled() bool`
+
+HasCarryoverProrationEnabled returns a boolean if a field has been set.
 
 ### GetMetaData
 

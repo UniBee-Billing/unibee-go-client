@@ -6,17 +6,20 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**InvoiceCancelPost**](Invoice.md#InvoiceCancelPost) | **Post** /merchant/invoice/cancel | Admin Cancel Invoice
 [**InvoiceClearPaymentPost**](Invoice.md#InvoiceClearPaymentPost) | **Post** /merchant/invoice/clearPayment | Admin Clear Invoice Current Pending Payment
+[**InvoiceCreateMarkRefundPost**](Invoice.md#InvoiceCreateMarkRefundPost) | **Post** /merchant/invoice/create_mark_refund | Create And Mark Manual Refund (Crypto/WireTransfer/External)
 [**InvoiceCreditNoteListPost**](Invoice.md#InvoiceCreditNoteListPost) | **Post** /merchant/invoice/credit_note/list | Bulk CreditNote(Refund Invoice) Invoice List
 [**InvoiceDeletePost**](Invoice.md#InvoiceDeletePost) | **Post** /merchant/invoice/delete | Delete Pending Invoice
 [**InvoiceDetailGet**](Invoice.md#InvoiceDetailGet) | **Get** /merchant/invoice/detail | Invoice Detail
 [**InvoiceDetailPost**](Invoice.md#InvoiceDetailPost) | **Post** /merchant/invoice/detail | Invoice Detail
 [**InvoiceEditPost**](Invoice.md#InvoiceEditPost) | **Post** /merchant/invoice/edit | Invoice Edit
+[**InvoiceExternalGatewayInvoiceMarkPaidPost**](Invoice.md#InvoiceExternalGatewayInvoiceMarkPaidPost) | **Post** /merchant/invoice/external_gateway_invoice/mark_paid | Mark External Gateway Invoice As Paid
+[**InvoiceExternalGatewayInvoiceMarkRefundedPost**](Invoice.md#InvoiceExternalGatewayInvoiceMarkRefundedPost) | **Post** /merchant/invoice/external_gateway_invoice/mark_refunded | Mark External Gateway Invoice As Refunded
+[**InvoiceExternalGatewayInvoiceUpdatePaymentLinkPost**](Invoice.md#InvoiceExternalGatewayInvoiceUpdatePaymentLinkPost) | **Post** /merchant/invoice/external_gateway_invoice/update_payment_link | Update External Gateway Invoice Payment Link
 [**InvoiceFinishPost**](Invoice.md#InvoiceFinishPost) | **Post** /merchant/invoice/finish | Finish Invoice
 [**InvoiceListGet**](Invoice.md#InvoiceListGet) | **Get** /merchant/invoice/list | Get Invoice List
 [**InvoiceListPost**](Invoice.md#InvoiceListPost) | **Post** /merchant/invoice/list | Get Invoice List
-[**InvoiceMarkRefundPost**](Invoice.md#InvoiceMarkRefundPost) | **Post** /merchant/invoice/mark_refund | Mark Invoice Refund
-[**InvoiceMarkRefundSuccessPost**](Invoice.md#InvoiceMarkRefundSuccessPost) | **Post** /merchant/invoice/mark_refund_success | Mark Invoice Refund As Success
-[**InvoiceMarkWireTransferSuccessPost**](Invoice.md#InvoiceMarkWireTransferSuccessPost) | **Post** /merchant/invoice/mark_wire_transfer_success | Mark Wire Transfer Invoice As Success
+[**InvoiceMarkRefundSuccessPost**](Invoice.md#InvoiceMarkRefundSuccessPost) | **Post** /merchant/invoice/mark_refund_success | Mark Manual Invoice Refund As Success
+[**InvoiceMarkWireTransferSuccessPost**](Invoice.md#InvoiceMarkWireTransferSuccessPost) | **Post** /merchant/invoice/mark_wire_transfer_success | Mark Wire Transfer Invoice As Paid (Manual)
 [**InvoiceNewPost**](Invoice.md#InvoiceNewPost) | **Post** /merchant/invoice/new | New Invoice
 [**InvoicePdfGeneratePost**](Invoice.md#InvoicePdfGeneratePost) | **Post** /merchant/invoice/pdf_generate | Generate Invoice PDF
 [**InvoicePdfUpdatePost**](Invoice.md#InvoicePdfUpdatePost) | **Post** /merchant/invoice/pdf_update | Update Invoice PDF
@@ -25,6 +28,7 @@ Method | HTTP request | Description
 [**InvoiceSendEmailPost**](Invoice.md#InvoiceSendEmailPost) | **Post** /merchant/invoice/send_email | Send Invoice Email
 [**InvoiceSplitPaymentsGet**](Invoice.md#InvoiceSplitPaymentsGet) | **Get** /merchant/invoice/split_payments | Get Split Payments
 [**InvoiceSplitPaymentsPost**](Invoice.md#InvoiceSplitPaymentsPost) | **Post** /merchant/invoice/split_payments | Get Split Payments
+[**InvoiceSyncUserSnapshotPost**](Invoice.md#InvoiceSyncUserSnapshotPost) | **Post** /merchant/invoice/sync_user_snapshot | Sync Invoice User Snapshot With Latest User Info
 
 
 
@@ -141,6 +145,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## InvoiceCreateMarkRefundPost
+
+> MerchantInvoiceCreateMarkRefundPost200Response InvoiceCreateMarkRefundPost(ctx).UnibeeApiMerchantInvoiceCreateMarkRefundReq(unibeeApiMerchantInvoiceCreateMarkRefundReq).Execute()
+
+Create And Mark Manual Refund (Crypto/WireTransfer/External)
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantInvoiceCreateMarkRefundReq := *openapiclient.NewUnibeeApiMerchantInvoiceCreateMarkRefundReq("InvoiceId_example", "Reason_example", int64(123)) // UnibeeApiMerchantInvoiceCreateMarkRefundReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Invoice.InvoiceCreateMarkRefundPost(context.Background()).UnibeeApiMerchantInvoiceCreateMarkRefundReq(unibeeApiMerchantInvoiceCreateMarkRefundReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceCreateMarkRefundPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `InvoiceCreateMarkRefundPost`: MerchantInvoiceCreateMarkRefundPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceCreateMarkRefundPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiInvoiceCreateMarkRefundPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantInvoiceCreateMarkRefundReq** | [**UnibeeApiMerchantInvoiceCreateMarkRefundReq**](UnibeeApiMerchantInvoiceCreateMarkRefundReq.md) |  | 
+
+### Return type
+
+[**MerchantInvoiceCreateMarkRefundPost200Response**](MerchantInvoiceCreateMarkRefundPost200Response.md)
 
 ### Authorization
 
@@ -486,6 +556,204 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## InvoiceExternalGatewayInvoiceMarkPaidPost
+
+> MerchantInvoiceExternalGatewayInvoiceMarkPaidPost200Response InvoiceExternalGatewayInvoiceMarkPaidPost(ctx).UnibeeApiMerchantInvoiceMarkExternalGatewayInvoiceAsPaidReq(unibeeApiMerchantInvoiceMarkExternalGatewayInvoiceAsPaidReq).Execute()
+
+Mark External Gateway Invoice As Paid
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantInvoiceMarkExternalGatewayInvoiceAsPaidReq := *openapiclient.NewUnibeeApiMerchantInvoiceMarkExternalGatewayInvoiceAsPaidReq("ExternalTransactionId_example", "InvoiceId_example", "Signature_example", int64(123)) // UnibeeApiMerchantInvoiceMarkExternalGatewayInvoiceAsPaidReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Invoice.InvoiceExternalGatewayInvoiceMarkPaidPost(context.Background()).UnibeeApiMerchantInvoiceMarkExternalGatewayInvoiceAsPaidReq(unibeeApiMerchantInvoiceMarkExternalGatewayInvoiceAsPaidReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceExternalGatewayInvoiceMarkPaidPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `InvoiceExternalGatewayInvoiceMarkPaidPost`: MerchantInvoiceExternalGatewayInvoiceMarkPaidPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceExternalGatewayInvoiceMarkPaidPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiInvoiceExternalGatewayInvoiceMarkPaidPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantInvoiceMarkExternalGatewayInvoiceAsPaidReq** | [**UnibeeApiMerchantInvoiceMarkExternalGatewayInvoiceAsPaidReq**](UnibeeApiMerchantInvoiceMarkExternalGatewayInvoiceAsPaidReq.md) |  | 
+
+### Return type
+
+[**MerchantInvoiceExternalGatewayInvoiceMarkPaidPost200Response**](MerchantInvoiceExternalGatewayInvoiceMarkPaidPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## InvoiceExternalGatewayInvoiceMarkRefundedPost
+
+> MerchantInvoiceExternalGatewayInvoiceMarkRefundedPost200Response InvoiceExternalGatewayInvoiceMarkRefundedPost(ctx).UnibeeApiMerchantInvoiceMarkExternalGatewayInvoiceAsRefundedReq(unibeeApiMerchantInvoiceMarkExternalGatewayInvoiceAsRefundedReq).Execute()
+
+Mark External Gateway Invoice As Refunded
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantInvoiceMarkExternalGatewayInvoiceAsRefundedReq := *openapiclient.NewUnibeeApiMerchantInvoiceMarkExternalGatewayInvoiceAsRefundedReq("ExternalTransactionId_example", "InvoiceId_example", "Signature_example", int64(123)) // UnibeeApiMerchantInvoiceMarkExternalGatewayInvoiceAsRefundedReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Invoice.InvoiceExternalGatewayInvoiceMarkRefundedPost(context.Background()).UnibeeApiMerchantInvoiceMarkExternalGatewayInvoiceAsRefundedReq(unibeeApiMerchantInvoiceMarkExternalGatewayInvoiceAsRefundedReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceExternalGatewayInvoiceMarkRefundedPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `InvoiceExternalGatewayInvoiceMarkRefundedPost`: MerchantInvoiceExternalGatewayInvoiceMarkRefundedPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceExternalGatewayInvoiceMarkRefundedPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiInvoiceExternalGatewayInvoiceMarkRefundedPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantInvoiceMarkExternalGatewayInvoiceAsRefundedReq** | [**UnibeeApiMerchantInvoiceMarkExternalGatewayInvoiceAsRefundedReq**](UnibeeApiMerchantInvoiceMarkExternalGatewayInvoiceAsRefundedReq.md) |  | 
+
+### Return type
+
+[**MerchantInvoiceExternalGatewayInvoiceMarkRefundedPost200Response**](MerchantInvoiceExternalGatewayInvoiceMarkRefundedPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## InvoiceExternalGatewayInvoiceUpdatePaymentLinkPost
+
+> MerchantInvoiceExternalGatewayInvoiceUpdatePaymentLinkPost200Response InvoiceExternalGatewayInvoiceUpdatePaymentLinkPost(ctx).UnibeeApiMerchantInvoiceUpdateExternalGatewayInvoicePaymentLinkReq(unibeeApiMerchantInvoiceUpdateExternalGatewayInvoicePaymentLinkReq).Execute()
+
+Update External Gateway Invoice Payment Link
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantInvoiceUpdateExternalGatewayInvoicePaymentLinkReq := *openapiclient.NewUnibeeApiMerchantInvoiceUpdateExternalGatewayInvoicePaymentLinkReq("ExternalTransactionId_example", "InvoiceId_example", "PaymentLink_example", "Signature_example", int64(123)) // UnibeeApiMerchantInvoiceUpdateExternalGatewayInvoicePaymentLinkReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Invoice.InvoiceExternalGatewayInvoiceUpdatePaymentLinkPost(context.Background()).UnibeeApiMerchantInvoiceUpdateExternalGatewayInvoicePaymentLinkReq(unibeeApiMerchantInvoiceUpdateExternalGatewayInvoicePaymentLinkReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceExternalGatewayInvoiceUpdatePaymentLinkPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `InvoiceExternalGatewayInvoiceUpdatePaymentLinkPost`: MerchantInvoiceExternalGatewayInvoiceUpdatePaymentLinkPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceExternalGatewayInvoiceUpdatePaymentLinkPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiInvoiceExternalGatewayInvoiceUpdatePaymentLinkPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantInvoiceUpdateExternalGatewayInvoicePaymentLinkReq** | [**UnibeeApiMerchantInvoiceUpdateExternalGatewayInvoicePaymentLinkReq**](UnibeeApiMerchantInvoiceUpdateExternalGatewayInvoicePaymentLinkReq.md) |  | 
+
+### Return type
+
+[**MerchantInvoiceExternalGatewayInvoiceUpdatePaymentLinkPost200Response**](MerchantInvoiceExternalGatewayInvoiceUpdatePaymentLinkPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## InvoiceFinishPost
 
 > MerchantInvoiceFinishPost200Response InvoiceFinishPost(ctx).UnibeeApiMerchantInvoiceFinishReq(unibeeApiMerchantInvoiceFinishReq).Execute()
@@ -722,77 +990,11 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## InvoiceMarkRefundPost
-
-> MerchantInvoiceMarkRefundPost200Response InvoiceMarkRefundPost(ctx).UnibeeApiMerchantInvoiceMarkRefundReq(unibeeApiMerchantInvoiceMarkRefundReq).Execute()
-
-Mark Invoice Refund
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/UniBee-Billing/unibee-go-client"
-)
-
-func main() {
-	unibeeApiMerchantInvoiceMarkRefundReq := *openapiclient.NewUnibeeApiMerchantInvoiceMarkRefundReq("InvoiceId_example", "Reason_example", int64(123)) // UnibeeApiMerchantInvoiceMarkRefundReq | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Invoice.InvoiceMarkRefundPost(context.Background()).UnibeeApiMerchantInvoiceMarkRefundReq(unibeeApiMerchantInvoiceMarkRefundReq).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceMarkRefundPost``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `InvoiceMarkRefundPost`: MerchantInvoiceMarkRefundPost200Response
-	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceMarkRefundPost`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiInvoiceMarkRefundPostRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **unibeeApiMerchantInvoiceMarkRefundReq** | [**UnibeeApiMerchantInvoiceMarkRefundReq**](UnibeeApiMerchantInvoiceMarkRefundReq.md) |  | 
-
-### Return type
-
-[**MerchantInvoiceMarkRefundPost200Response**](MerchantInvoiceMarkRefundPost200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## InvoiceMarkRefundSuccessPost
 
 > MerchantAuthSsoClearTotpPost200Response InvoiceMarkRefundSuccessPost(ctx).UnibeeApiMerchantInvoiceMarkRefundInvoiceSuccessReq(unibeeApiMerchantInvoiceMarkRefundInvoiceSuccessReq).Execute()
 
-Mark Invoice Refund As Success
+Mark Manual Invoice Refund As Success
 
 
 
@@ -858,7 +1060,7 @@ No authorization required
 
 > MerchantAuthSsoClearTotpPost200Response InvoiceMarkWireTransferSuccessPost(ctx).UnibeeApiMerchantInvoiceMarkWireTransferSuccessReq(unibeeApiMerchantInvoiceMarkWireTransferSuccessReq).Execute()
 
-Mark Wire Transfer Invoice As Success
+Mark Wire Transfer Invoice As Paid (Manual)
 
 
 
@@ -1178,7 +1380,7 @@ No authorization required
 
 ## InvoiceRefundPost
 
-> MerchantInvoiceMarkRefundPost200Response InvoiceRefundPost(ctx).UnibeeApiMerchantInvoiceRefundReq(unibeeApiMerchantInvoiceRefundReq).Execute()
+> MerchantInvoiceCreateMarkRefundPost200Response InvoiceRefundPost(ctx).UnibeeApiMerchantInvoiceRefundReq(unibeeApiMerchantInvoiceRefundReq).Execute()
 
 Create InvoiceRefund
 
@@ -1206,7 +1408,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceRefundPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `InvoiceRefundPost`: MerchantInvoiceMarkRefundPost200Response
+	// response from `InvoiceRefundPost`: MerchantInvoiceCreateMarkRefundPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceRefundPost`: %v\n", resp)
 }
 ```
@@ -1226,7 +1428,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantInvoiceMarkRefundPost200Response**](MerchantInvoiceMarkRefundPost200Response.md)
+[**MerchantInvoiceCreateMarkRefundPost200Response**](MerchantInvoiceCreateMarkRefundPost200Response.md)
 
 ### Authorization
 
@@ -1423,6 +1625,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantInvoiceSplitPaymentsGet200Response**](MerchantInvoiceSplitPaymentsGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## InvoiceSyncUserSnapshotPost
+
+> MerchantInvoiceEditPost200Response InvoiceSyncUserSnapshotPost(ctx).UnibeeApiMerchantInvoiceSyncUserSnapshotReq(unibeeApiMerchantInvoiceSyncUserSnapshotReq).Execute()
+
+Sync Invoice User Snapshot With Latest User Info
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantInvoiceSyncUserSnapshotReq := *openapiclient.NewUnibeeApiMerchantInvoiceSyncUserSnapshotReq("InvoiceId_example") // UnibeeApiMerchantInvoiceSyncUserSnapshotReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Invoice.InvoiceSyncUserSnapshotPost(context.Background()).UnibeeApiMerchantInvoiceSyncUserSnapshotReq(unibeeApiMerchantInvoiceSyncUserSnapshotReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceSyncUserSnapshotPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `InvoiceSyncUserSnapshotPost`: MerchantInvoiceEditPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceSyncUserSnapshotPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiInvoiceSyncUserSnapshotPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantInvoiceSyncUserSnapshotReq** | [**UnibeeApiMerchantInvoiceSyncUserSnapshotReq**](UnibeeApiMerchantInvoiceSyncUserSnapshotReq.md) |  | 
+
+### Return type
+
+[**MerchantInvoiceEditPost200Response**](MerchantInvoiceEditPost200Response.md)
 
 ### Authorization
 

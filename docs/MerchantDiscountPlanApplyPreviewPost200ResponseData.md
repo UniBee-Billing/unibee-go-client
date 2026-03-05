@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AllPlansAllowed** | Pointer to **bool** | True &#x3D; discount applies to all plans in cart; false &#x3D; only to allowedPlanIds | [optional] 
+**AllowedPlanIds** | Pointer to **[]int64** | Plan ids that get this discount (when partial apply); empty or same as main+addons when all plans allowed | [optional] 
 **DiscountAmount** | Pointer to **int64** | The discount amount can apply to plan | [optional] 
 **DiscountCode** | Pointer to [**UnibeeApiBeanMerchantDiscountCode**](UnibeeApiBeanMerchantDiscountCode.md) |  | [optional] 
 **FailureReason** | Pointer to **string** | The apply preview failure reason | [optional] 
@@ -27,6 +29,56 @@ will change when the set of required properties is changed
 NewMerchantDiscountPlanApplyPreviewPost200ResponseDataWithDefaults instantiates a new MerchantDiscountPlanApplyPreviewPost200ResponseData object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAllPlansAllowed
+
+`func (o *MerchantDiscountPlanApplyPreviewPost200ResponseData) GetAllPlansAllowed() bool`
+
+GetAllPlansAllowed returns the AllPlansAllowed field if non-nil, zero value otherwise.
+
+### GetAllPlansAllowedOk
+
+`func (o *MerchantDiscountPlanApplyPreviewPost200ResponseData) GetAllPlansAllowedOk() (*bool, bool)`
+
+GetAllPlansAllowedOk returns a tuple with the AllPlansAllowed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllPlansAllowed
+
+`func (o *MerchantDiscountPlanApplyPreviewPost200ResponseData) SetAllPlansAllowed(v bool)`
+
+SetAllPlansAllowed sets AllPlansAllowed field to given value.
+
+### HasAllPlansAllowed
+
+`func (o *MerchantDiscountPlanApplyPreviewPost200ResponseData) HasAllPlansAllowed() bool`
+
+HasAllPlansAllowed returns a boolean if a field has been set.
+
+### GetAllowedPlanIds
+
+`func (o *MerchantDiscountPlanApplyPreviewPost200ResponseData) GetAllowedPlanIds() []int64`
+
+GetAllowedPlanIds returns the AllowedPlanIds field if non-nil, zero value otherwise.
+
+### GetAllowedPlanIdsOk
+
+`func (o *MerchantDiscountPlanApplyPreviewPost200ResponseData) GetAllowedPlanIdsOk() (*[]int64, bool)`
+
+GetAllowedPlanIdsOk returns a tuple with the AllowedPlanIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowedPlanIds
+
+`func (o *MerchantDiscountPlanApplyPreviewPost200ResponseData) SetAllowedPlanIds(v []int64)`
+
+SetAllowedPlanIds sets AllowedPlanIds field to given value.
+
+### HasAllowedPlanIds
+
+`func (o *MerchantDiscountPlanApplyPreviewPost200ResponseData) HasAllowedPlanIds() bool`
+
+HasAllowedPlanIds returns a boolean if a field has been set.
 
 ### GetDiscountAmount
 

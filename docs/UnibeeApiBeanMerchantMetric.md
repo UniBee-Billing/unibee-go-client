@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AggregationProperty** | Pointer to **string** | aggregation property | [optional] 
 **AggregationType** | Pointer to **int32** | 1-count，2-count unique, 3-latest, 4-max, 5-sum | [optional] 
 **Archived** | Pointer to **bool** | archived | [optional] 
+**CarryoverProrationEnabled** | Pointer to **bool** | Enable carryover proration for this metric (false when not set) | [optional] 
 **Code** | Pointer to **string** | code | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **GmtModify** | Pointer to **int64** | update time | [optional] 
@@ -111,6 +112,31 @@ SetArchived sets Archived field to given value.
 `func (o *UnibeeApiBeanMerchantMetric) HasArchived() bool`
 
 HasArchived returns a boolean if a field has been set.
+
+### GetCarryoverProrationEnabled
+
+`func (o *UnibeeApiBeanMerchantMetric) GetCarryoverProrationEnabled() bool`
+
+GetCarryoverProrationEnabled returns the CarryoverProrationEnabled field if non-nil, zero value otherwise.
+
+### GetCarryoverProrationEnabledOk
+
+`func (o *UnibeeApiBeanMerchantMetric) GetCarryoverProrationEnabledOk() (*bool, bool)`
+
+GetCarryoverProrationEnabledOk returns a tuple with the CarryoverProrationEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCarryoverProrationEnabled
+
+`func (o *UnibeeApiBeanMerchantMetric) SetCarryoverProrationEnabled(v bool)`
+
+SetCarryoverProrationEnabled sets CarryoverProrationEnabled field to given value.
+
+### HasCarryoverProrationEnabled
+
+`func (o *UnibeeApiBeanMerchantMetric) HasCarryoverProrationEnabled() bool`
+
+HasCarryoverProrationEnabled returns a boolean if a field has been set.
 
 ### GetCode
 

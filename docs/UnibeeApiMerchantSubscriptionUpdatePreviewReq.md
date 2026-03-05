@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | addonParams | [optional] 
-**ApplyPromoCredit** | Pointer to **bool** | apply promo credit or not | [optional] 
-**ApplyPromoCreditAmount** | Pointer to **int32** | apply promo credit amount, auto compute if not specified | [optional] 
-**Currency** | Pointer to **string** | The currency, if not provided, use subscription currency | [optional] 
-**DiscountCode** | Pointer to **string** | DiscountCode | [optional] 
-**EffectImmediate** | Pointer to **int32** | Effect Immediate，1-Immediate，2-Next Period | [optional] 
-**GatewayId** | Pointer to **int64** | Id | [optional] 
-**NewPlanId** | **int64** | New PlanId | 
-**ProrationDate** | Pointer to **int32** | The utc time to start Proration, default current time | [optional] 
-**Quantity** | Pointer to **int64** | Quantity，Default 1 | [optional] 
-**SubscriptionId** | **string** | SubscriptionId | 
+**AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | Optional. Target addon configuration after the update. | [optional] 
+**ApplyPromoCredit** | Pointer to **bool** | Optional. Whether to apply available promo credit to the update preview. | [optional] 
+**ApplyPromoCreditAmount** | Pointer to **int32** | Optional. Maximum promo credit amount to apply in preview. If omitted and applyPromoCredit is true, the system auto-computes the usable amount. | [optional] 
+**Currency** | Pointer to **string** | Optional. Target currency for the updated subscription. If not provided, use current subscription currency. Currency change may be restricted when proration is required. | [optional] 
+**DiscountCode** | Pointer to **string** | Optional. Discount code applied to the update preview. | [optional] 
+**EffectImmediate** | Pointer to **int32** | Optional. When to apply the plan change: 1 &#x3D; immediate (current period, proration will be computed), 2 &#x3D; at next period (no proration in current period). | [optional] 
+**GatewayId** | Pointer to **int64** | Optional. Gateway ID for previewing payment routing. If not provided, the subscription&#39;s current gateway is used for preview. | [optional] 
+**NewPlanId** | **int64** | Required. Target plan ID to switch the subscription to. | 
+**ProrationDate** | Pointer to **int32** | Optional. UTC timestamp at which proration should start when effectImmediate &#x3D; 1. Defaults to current time if not provided. | [optional] 
+**Quantity** | Pointer to **int64** | Optional. Target quantity for the subscription. If &lt;&#x3D; 0, it defaults to 1. | [optional] 
+**SubscriptionId** | **string** | Required. SubscriptionId to be upgraded or downgraded. | 
 
 ## Methods
 

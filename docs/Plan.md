@@ -5,6 +5,8 @@ All URIs are relative to *https://api.unibee.top*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**PlanActivatePost**](Plan.md#PlanActivatePost) | **Post** /merchant/plan/activate | Activate Plan
+[**PlanActivePriceChangeConfirmPost**](Plan.md#PlanActivePriceChangeConfirmPost) | **Post** /merchant/plan/active_price_change/confirm | Confirm Active Plan Price Change
+[**PlanActivePriceChangePreviewPost**](Plan.md#PlanActivePriceChangePreviewPost) | **Post** /merchant/plan/active_price_change/preview | Preview Active Plan Price Change
 [**PlanAddonsBindingPost**](Plan.md#PlanAddonsBindingPost) | **Post** /merchant/plan/addons_binding | Addon Binding
 [**PlanArchivePost**](Plan.md#PlanArchivePost) | **Post** /merchant/plan/archive | Archive Plan
 [**PlanCopyPost**](Plan.md#PlanCopyPost) | **Post** /merchant/plan/copy | Copy Plan
@@ -70,6 +72,138 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PlanActivePriceChangeConfirmPost
+
+> MerchantPlanActivePriceChangeConfirmPost200Response PlanActivePriceChangeConfirmPost(ctx).UnibeeApiMerchantPlanActivePriceChangeConfirmReq(unibeeApiMerchantPlanActivePriceChangeConfirmReq).Execute()
+
+Confirm Active Plan Price Change
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantPlanActivePriceChangeConfirmReq := *openapiclient.NewUnibeeApiMerchantPlanActivePriceChangeConfirmReq(int64(123), int64(123), int64(123)) // UnibeeApiMerchantPlanActivePriceChangeConfirmReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Plan.PlanActivePriceChangeConfirmPost(context.Background()).UnibeeApiMerchantPlanActivePriceChangeConfirmReq(unibeeApiMerchantPlanActivePriceChangeConfirmReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Plan.PlanActivePriceChangeConfirmPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PlanActivePriceChangeConfirmPost`: MerchantPlanActivePriceChangeConfirmPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Plan.PlanActivePriceChangeConfirmPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPlanActivePriceChangeConfirmPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantPlanActivePriceChangeConfirmReq** | [**UnibeeApiMerchantPlanActivePriceChangeConfirmReq**](UnibeeApiMerchantPlanActivePriceChangeConfirmReq.md) |  | 
+
+### Return type
+
+[**MerchantPlanActivePriceChangeConfirmPost200Response**](MerchantPlanActivePriceChangeConfirmPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PlanActivePriceChangePreviewPost
+
+> MerchantPlanActivePriceChangePreviewPost200Response PlanActivePriceChangePreviewPost(ctx).UnibeeApiMerchantPlanActivePriceChangePreviewReq(unibeeApiMerchantPlanActivePriceChangePreviewReq).Execute()
+
+Preview Active Plan Price Change
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantPlanActivePriceChangePreviewReq := *openapiclient.NewUnibeeApiMerchantPlanActivePriceChangePreviewReq(int64(123), int64(123)) // UnibeeApiMerchantPlanActivePriceChangePreviewReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Plan.PlanActivePriceChangePreviewPost(context.Background()).UnibeeApiMerchantPlanActivePriceChangePreviewReq(unibeeApiMerchantPlanActivePriceChangePreviewReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Plan.PlanActivePriceChangePreviewPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PlanActivePriceChangePreviewPost`: MerchantPlanActivePriceChangePreviewPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Plan.PlanActivePriceChangePreviewPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPlanActivePriceChangePreviewPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantPlanActivePriceChangePreviewReq** | [**UnibeeApiMerchantPlanActivePriceChangePreviewReq**](UnibeeApiMerchantPlanActivePriceChangePreviewReq.md) |  | 
+
+### Return type
+
+[**MerchantPlanActivePriceChangePreviewPost200Response**](MerchantPlanActivePriceChangePreviewPost200Response.md)
 
 ### Authorization
 

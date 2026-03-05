@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**SubscriptionPendingUpdateListGet**](SubscriptionUpdate.md#SubscriptionPendingUpdateListGet) | **Get** /merchant/subscription/pending_update_list | Get Subscription Pending Update List
 [**SubscriptionPendingUpdateListPost**](SubscriptionUpdate.md#SubscriptionPendingUpdateListPost) | **Post** /merchant/subscription/pending_update_list | Get Subscription Pending Update List
 [**SubscriptionRenewPost**](SubscriptionUpdate.md#SubscriptionRenewPost) | **Post** /merchant/subscription/renew | Renew Subscription
+[**SubscriptionRenewPreviewPost**](SubscriptionUpdate.md#SubscriptionRenewPreviewPost) | **Post** /merchant/subscription/renew_preview | Renew Subscription Preview
 [**SubscriptionUpdatePreviewPost**](SubscriptionUpdate.md#SubscriptionUpdatePreviewPost) | **Post** /merchant/subscription/update_preview | Update Subscription Preview
 [**SubscriptionUpdateSubmitPost**](SubscriptionUpdate.md#SubscriptionUpdateSubmitPost) | **Post** /merchant/subscription/update_submit | Update Subscription
 
@@ -396,6 +397,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantSubscriptionRenewPost200Response**](MerchantSubscriptionRenewPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SubscriptionRenewPreviewPost
+
+> MerchantSubscriptionRenewPreviewPost200Response SubscriptionRenewPreviewPost(ctx).UnibeeApiMerchantSubscriptionRenewPreviewReq(unibeeApiMerchantSubscriptionRenewPreviewReq).Execute()
+
+Renew Subscription Preview
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantSubscriptionRenewPreviewReq := *openapiclient.NewUnibeeApiMerchantSubscriptionRenewPreviewReq() // UnibeeApiMerchantSubscriptionRenewPreviewReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.SubscriptionUpdate.SubscriptionRenewPreviewPost(context.Background()).UnibeeApiMerchantSubscriptionRenewPreviewReq(unibeeApiMerchantSubscriptionRenewPreviewReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionUpdate.SubscriptionRenewPreviewPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SubscriptionRenewPreviewPost`: MerchantSubscriptionRenewPreviewPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `SubscriptionUpdate.SubscriptionRenewPreviewPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSubscriptionRenewPreviewPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantSubscriptionRenewPreviewReq** | [**UnibeeApiMerchantSubscriptionRenewPreviewReq**](UnibeeApiMerchantSubscriptionRenewPreviewReq.md) |  | 
+
+### Return type
+
+[**MerchantSubscriptionRenewPreviewPost200Response**](MerchantSubscriptionRenewPreviewPost200Response.md)
 
 ### Authorization
 

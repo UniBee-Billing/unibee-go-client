@@ -4,22 +4,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ApplyPromoCredit** | Pointer to **bool** | apply promo credit or not | [optional] 
-**ApplyPromoCreditAmount** | Pointer to **int32** | apply promo credit amount, auto compute if not specified | [optional] 
-**CancelUrl** | Pointer to **string** | CancelUrl, back to cancelUrl if renew cancelled | [optional] 
+**ApplyPromoCredit** | Pointer to **bool** | Optional. Whether to apply available promo credit to this renewal invoice. | [optional] 
+**ApplyPromoCreditAmount** | Pointer to **int32** | Optional. Maximum promo credit amount to apply. If omitted and applyPromoCredit is true, the system auto-computes the usable amount. | [optional] 
+**CancelUrl** | Pointer to **string** | Optional. URL to redirect the customer to when the renewal payment is cancelled or fails. | [optional] 
 **Discount** | Pointer to [**UnibeeApiBeanExternalDiscountParam**](UnibeeApiBeanExternalDiscountParam.md) |  | [optional] 
-**DiscountCode** | Pointer to **string** | DiscountCode, override subscription discount | [optional] 
-**GatewayId** | Pointer to **int32** | GatewayId, use subscription&#39;s gateway if not provide | [optional] 
-**GatewayPaymentType** | Pointer to **string** | Gateway Payment Type | [optional] 
-**ManualPayment** | Pointer to **bool** | ManualPayment | [optional] 
-**Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
-**PaymentUIMode** | Pointer to **string** | The checkout UI Mode, hosted|embedded|custom, default hosted | [optional] 
+**DiscountCode** | Pointer to **string** | Optional. Discount or coupon code applied only to this renewal. Overrides the subscription&#39;s recurring discount for this invoice. | [optional] 
+**GatewayId** | Pointer to **int32** | Optional. Payment gateway ID used for the renewal invoice. If omitted, the subscription&#39;s original gateway configuration is used. | [optional] 
+**GatewayPaymentType** | Pointer to **string** | Optional. Payment type for the selected gateway, such as card, wallet, etc. | [optional] 
+**ManualPayment** | Pointer to **bool** | Optional. If true, do not create an automatic payment for the renewal invoice; the invoice will be created in open status for manual collection. | [optional] 
+**Metadata** | Pointer to **map[string]map[string]interface{}** | Optional. Custom metadata map that will be stored on the renewal invoice and subscription timeline. | [optional] 
+**PaymentUIMode** | Pointer to **string** | Optional. Checkout UI mode: hosted | embedded | custom. Default is hosted. | [optional] 
 **ProductData** | Pointer to [**UnibeeApiBeanPlanProductParam**](UnibeeApiBeanPlanProductParam.md) |  | [optional] 
-**ProductId** | Pointer to **int64** | default product will use if not specified | [optional] 
-**ReturnUrl** | Pointer to **string** | ReturnUrl, back to returnUrl if renew completed | [optional] 
-**SubscriptionId** | Pointer to **string** | SubscriptionId, id of subscription which addon will attached, either SubscriptionId or UserId needed, The only one active subscription or latest subscription will renew if userId provide instead of subscriptionId | [optional] 
-**TaxPercentage** | Pointer to **int32** | TaxPercentage，1000 &#x3D; 10%, override subscription taxPercentage if provide | [optional] 
-**UserId** | Pointer to **int64** | UserId, either SubscriptionId or UserId needed, The only one active subscription or latest cancel|expire subscription will renew if userId provide instead of subscriptionId | [optional] 
+**ProductId** | Pointer to **int64** | Optional. Product ID used together with userId when subscriptionId is not specified, to narrow down which subscription to renew. If 0, the system uses its default product selection rules. | [optional] 
+**ReturnUrl** | Pointer to **string** | Optional. URL to redirect the customer to after successful renewal or payment completion. | [optional] 
+**SubscriptionId** | Pointer to **string** | Optional. SubscriptionId to be renewed. Either subscriptionId or userId must be provided. When subscriptionId is omitted, the system first tries to find the latest active or incomplete subscription for the user (and productId if provided), otherwise falls back to the latest subscription. | [optional] 
+**TaxPercentage** | Pointer to **int32** | Optional. External tax percentage override for the renewal invoice, in basis points (e.g. 1000 &#x3D; 10%%). Overrides the subscription taxPercentage when provided. | [optional] 
+**UserId** | Pointer to **int64** | Optional. UserId associated with the subscription to renew. Either subscriptionId or userId must be provided. Used to locate the target subscription when subscriptionId is not provided. | [optional] 
 
 ## Methods
 

@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Action** | Pointer to **map[string]interface{}** |  | [optional] 
-**InvoiceId** | Pointer to **string** | The unique id of invoice | [optional] 
-**Link** | Pointer to **string** |  | [optional] 
+**InvoiceId** | Pointer to **string** | ID of the first invoice generated for this subscription. | [optional] 
+**Link** | Pointer to **string** | Hosted payment or invoice link. When paid&#x3D;false, redirect the customer to this link to complete payment. | [optional] 
 **OtherPendingCryptoSubscription** | Pointer to [**UnibeeApiBeanDetailSubscriptionDetail**](UnibeeApiBeanDetailSubscriptionDetail.md) |  | [optional] 
-**Paid** | Pointer to **bool** |  | [optional] 
-**PaymentId** | Pointer to **string** | The unique id of payment | [optional] 
+**Paid** | Pointer to **bool** | Whether the first invoice has been successfully paid at the time of response. | [optional] 
+**PaymentId** | Pointer to **string** | ID of the payment created for the first invoice, if any. | [optional] 
 **Subscription** | Pointer to [**UnibeeApiBeanSubscription**](UnibeeApiBeanSubscription.md) |  | [optional] 
-**Token** | Pointer to **string** | token | [optional] 
+**Token** | Pointer to **string** | Portal authentication token for the user, used by admin portal flows. | [optional] 
 **User** | Pointer to [**UnibeeApiBeanUserAccount**](UnibeeApiBeanUserAccount.md) |  | [optional] 
 
 ## Methods

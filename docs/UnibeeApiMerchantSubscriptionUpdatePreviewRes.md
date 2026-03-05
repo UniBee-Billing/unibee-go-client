@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ApplyPromoCredit** | Pointer to **bool** | apply promo credit or not | [optional] 
-**Currency** | Pointer to **string** |  | [optional] 
+**ApplyPromoCredit** | Pointer to **bool** | Whether promo credit is effectively applied in this update preview. | [optional] 
+**Currency** | Pointer to **string** | Currency used for the update preview. | [optional] 
 **Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCode**](UnibeeApiBeanMerchantDiscountCode.md) |  | [optional] 
-**DiscountAmount** | Pointer to **int64** |  | [optional] 
-**DiscountMessage** | Pointer to **string** |  | [optional] 
+**DiscountAmount** | Pointer to **int64** | Total discount amount applied to the update invoice, including promo credit if applicable. | [optional] 
+**DiscountMessage** | Pointer to **string** | Human-readable message describing discount application result for the update. | [optional] 
 **Invoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
 **NextPeriodInvoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
-**OriginAmount** | Pointer to **int64** |  | [optional] 
-**ProrationDate** | Pointer to **int64** |  | [optional] 
-**TotalAmount** | Pointer to **int64** |  | [optional] 
+**OriginAmount** | Pointer to **int64** | Original invoice amount before discounts and promo credit for the update, in minor units. | [optional] 
+**ProrationDate** | Pointer to **int64** | Effective proration start time used in this preview, as UTC timestamp (seconds). | [optional] 
+**TotalAmount** | Pointer to **int64** | Final payable amount for the update invoice, including tax and after discounts, in minor units. | [optional] 
 
 ## Methods
 

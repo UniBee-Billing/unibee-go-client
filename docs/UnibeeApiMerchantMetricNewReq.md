@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AggregationProperty** | Pointer to **string** | AggregationProperty, Will Needed When AggregationType !&#x3D; count | [optional] 
 **AggregationType** | Pointer to **int32** | AggregationType,1-count，2-count unique, 3-latest, 4-max, 5-sum | [optional] 
+**CarryoverProrationEnabled** | Pointer to **bool** | Enable carryover proration for this metric (default: false when not set) | [optional] 
 **Code** | **string** | Code | 
 **MetaData** | Pointer to **map[string]map[string]interface{}** | meta_data(json) | [optional] 
 **MetricDescription** | Pointer to **string** | MetricDescription | [optional] 
@@ -81,6 +82,31 @@ SetAggregationType sets AggregationType field to given value.
 `func (o *UnibeeApiMerchantMetricNewReq) HasAggregationType() bool`
 
 HasAggregationType returns a boolean if a field has been set.
+
+### GetCarryoverProrationEnabled
+
+`func (o *UnibeeApiMerchantMetricNewReq) GetCarryoverProrationEnabled() bool`
+
+GetCarryoverProrationEnabled returns the CarryoverProrationEnabled field if non-nil, zero value otherwise.
+
+### GetCarryoverProrationEnabledOk
+
+`func (o *UnibeeApiMerchantMetricNewReq) GetCarryoverProrationEnabledOk() (*bool, bool)`
+
+GetCarryoverProrationEnabledOk returns a tuple with the CarryoverProrationEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCarryoverProrationEnabled
+
+`func (o *UnibeeApiMerchantMetricNewReq) SetCarryoverProrationEnabled(v bool)`
+
+SetCarryoverProrationEnabled sets CarryoverProrationEnabled field to given value.
+
+### HasCarryoverProrationEnabled
+
+`func (o *UnibeeApiMerchantMetricNewReq) HasCarryoverProrationEnabled() bool`
+
+HasCarryoverProrationEnabled returns a boolean if a field has been set.
 
 ### GetCode
 
