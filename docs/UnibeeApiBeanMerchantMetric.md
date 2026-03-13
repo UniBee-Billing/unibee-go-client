@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **MetaData** | Pointer to **map[string]map[string]interface{}** | meta_data(json) | [optional] 
 **MetricDescription** | Pointer to **string** | metric description | [optional] 
 **MetricName** | Pointer to **string** | metric name | [optional] 
+**ProrationRefundEnabled** | Pointer to **bool** | Enable proration refund for this metric, i.e. reclaim metric limit on upgrade (false when not set) | [optional] 
 **Type** | Pointer to **int32** | 1-limit_metered，2-charge_metered,3-charge_recurring | [optional] 
 **Unit** | Pointer to **string** | unit | [optional] 
 
@@ -337,6 +338,31 @@ SetMetricName sets MetricName field to given value.
 `func (o *UnibeeApiBeanMerchantMetric) HasMetricName() bool`
 
 HasMetricName returns a boolean if a field has been set.
+
+### GetProrationRefundEnabled
+
+`func (o *UnibeeApiBeanMerchantMetric) GetProrationRefundEnabled() bool`
+
+GetProrationRefundEnabled returns the ProrationRefundEnabled field if non-nil, zero value otherwise.
+
+### GetProrationRefundEnabledOk
+
+`func (o *UnibeeApiBeanMerchantMetric) GetProrationRefundEnabledOk() (*bool, bool)`
+
+GetProrationRefundEnabledOk returns a tuple with the ProrationRefundEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProrationRefundEnabled
+
+`func (o *UnibeeApiBeanMerchantMetric) SetProrationRefundEnabled(v bool)`
+
+SetProrationRefundEnabled sets ProrationRefundEnabled field to given value.
+
+### HasProrationRefundEnabled
+
+`func (o *UnibeeApiBeanMerchantMetric) HasProrationRefundEnabled() bool`
+
+HasProrationRefundEnabled returns a boolean if a field has been set.
 
 ### GetType
 

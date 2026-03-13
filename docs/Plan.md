@@ -673,7 +673,7 @@ No authorization required
 
 ## PlanListGet
 
-> MerchantPlanListGet200Response PlanListGet(ctx).PlanIds(planIds).ProductIds(productIds).Type_(type_).Status(status).PublishStatus(publishStatus).Currency(currency).SearchKey(searchKey).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
+> MerchantPlanListGet200Response PlanListGet(ctx).PlanIds(planIds).ProductIds(productIds).Type_(type_).Status(status).PublishStatus(publishStatus).Currency(currency).IntervalUnits(intervalUnits).IntervalCounts(intervalCounts).BillingIntervalMin(billingIntervalMin).SearchKey(searchKey).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
 
 Get Plan List
 
@@ -696,6 +696,9 @@ func main() {
 	status := []int32{int32(123)} // []int32 | Filter, Default All，,Status，1-Editing，2-Active，3-InActive，4-SoftArchive, 5-HardArchive (optional)
 	publishStatus := int32(56) // int32 | Filter, Default All，PublishStatus，1-UnPublished，2-Published (optional)
 	currency := "currency_example" // string | Filter Currency (optional)
+	intervalUnits := []string{"Inner_example"} // []string | Filter by interval unit (day|week|month|year); ignored when billingIntervalMin is provided (optional)
+	intervalCounts := []int32{int32(123)} // []int32 | Filter by interval count; ignored when billingIntervalMin is provided (optional)
+	billingIntervalMin := "billingIntervalMin_example" // string | Minimum billing interval in ISO 8601 duration (date part only, Y/M/W/D), e.g. P1M, P6M, P1Y, P2W, P10D (optional)
 	searchKey := "searchKey_example" // string | Search Key, plan name or description (optional)
 	sortField := "sortField_example" // string | Sort Field，plan_name|gmt_create|gmt_modify，Default gmt_create (optional)
 	sortType := "sortType_example" // string | Sort Type，asc|desc，Default desc (optional)
@@ -704,7 +707,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Plan.PlanListGet(context.Background()).PlanIds(planIds).ProductIds(productIds).Type_(type_).Status(status).PublishStatus(publishStatus).Currency(currency).SearchKey(searchKey).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
+	resp, r, err := apiClient.Plan.PlanListGet(context.Background()).PlanIds(planIds).ProductIds(productIds).Type_(type_).Status(status).PublishStatus(publishStatus).Currency(currency).IntervalUnits(intervalUnits).IntervalCounts(intervalCounts).BillingIntervalMin(billingIntervalMin).SearchKey(searchKey).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Plan.PlanListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -731,6 +734,9 @@ Name | Type | Description  | Notes
  **status** | **[]int32** | Filter, Default All，,Status，1-Editing，2-Active，3-InActive，4-SoftArchive, 5-HardArchive | 
  **publishStatus** | **int32** | Filter, Default All，PublishStatus，1-UnPublished，2-Published | 
  **currency** | **string** | Filter Currency | 
+ **intervalUnits** | **[]string** | Filter by interval unit (day|week|month|year); ignored when billingIntervalMin is provided | 
+ **intervalCounts** | **[]int32** | Filter by interval count; ignored when billingIntervalMin is provided | 
+ **billingIntervalMin** | **string** | Minimum billing interval in ISO 8601 duration (date part only, Y/M/W/D), e.g. P1M, P6M, P1Y, P2W, P10D | 
  **searchKey** | **string** | Search Key, plan name or description | 
  **sortField** | **string** | Sort Field，plan_name|gmt_create|gmt_modify，Default gmt_create | 
  **sortType** | **string** | Sort Type，asc|desc，Default desc | 

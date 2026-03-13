@@ -4,8 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BillingIntervalMin** | Pointer to **string** | Minimum billing interval in ISO 8601 duration (date part only, Y/M/W/D), e.g. P1M, P6M, P1Y, P2W, P10D | [optional] 
 **Count** | Pointer to **int32** | Count Of Per Page, Default 100 | [optional] 
 **Currency** | Pointer to **string** | Filter Currency | [optional] 
+**IntervalCounts** | Pointer to **[]int32** | Filter by interval count; ignored when billingIntervalMin is provided | [optional] 
+**IntervalUnits** | Pointer to **[]string** | Filter by interval unit (day|week|month|year); ignored when billingIntervalMin is provided | [optional] 
 **Page** | Pointer to **int32** | Page, Start 0 | [optional] 
 **PlanIds** | Pointer to **[]int64** | filter id list of plan, default all | [optional] 
 **ProductIds** | Pointer to **[]int64** | filter id list of product, default all product(0) used if not specified | [optional] 
@@ -34,6 +37,31 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantPlanListReqWithDefaults instantiates a new UnibeeApiMerchantPlanListReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBillingIntervalMin
+
+`func (o *UnibeeApiMerchantPlanListReq) GetBillingIntervalMin() string`
+
+GetBillingIntervalMin returns the BillingIntervalMin field if non-nil, zero value otherwise.
+
+### GetBillingIntervalMinOk
+
+`func (o *UnibeeApiMerchantPlanListReq) GetBillingIntervalMinOk() (*string, bool)`
+
+GetBillingIntervalMinOk returns a tuple with the BillingIntervalMin field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBillingIntervalMin
+
+`func (o *UnibeeApiMerchantPlanListReq) SetBillingIntervalMin(v string)`
+
+SetBillingIntervalMin sets BillingIntervalMin field to given value.
+
+### HasBillingIntervalMin
+
+`func (o *UnibeeApiMerchantPlanListReq) HasBillingIntervalMin() bool`
+
+HasBillingIntervalMin returns a boolean if a field has been set.
 
 ### GetCount
 
@@ -84,6 +112,56 @@ SetCurrency sets Currency field to given value.
 `func (o *UnibeeApiMerchantPlanListReq) HasCurrency() bool`
 
 HasCurrency returns a boolean if a field has been set.
+
+### GetIntervalCounts
+
+`func (o *UnibeeApiMerchantPlanListReq) GetIntervalCounts() []int32`
+
+GetIntervalCounts returns the IntervalCounts field if non-nil, zero value otherwise.
+
+### GetIntervalCountsOk
+
+`func (o *UnibeeApiMerchantPlanListReq) GetIntervalCountsOk() (*[]int32, bool)`
+
+GetIntervalCountsOk returns a tuple with the IntervalCounts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIntervalCounts
+
+`func (o *UnibeeApiMerchantPlanListReq) SetIntervalCounts(v []int32)`
+
+SetIntervalCounts sets IntervalCounts field to given value.
+
+### HasIntervalCounts
+
+`func (o *UnibeeApiMerchantPlanListReq) HasIntervalCounts() bool`
+
+HasIntervalCounts returns a boolean if a field has been set.
+
+### GetIntervalUnits
+
+`func (o *UnibeeApiMerchantPlanListReq) GetIntervalUnits() []string`
+
+GetIntervalUnits returns the IntervalUnits field if non-nil, zero value otherwise.
+
+### GetIntervalUnitsOk
+
+`func (o *UnibeeApiMerchantPlanListReq) GetIntervalUnitsOk() (*[]string, bool)`
+
+GetIntervalUnitsOk returns a tuple with the IntervalUnits field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIntervalUnits
+
+`func (o *UnibeeApiMerchantPlanListReq) SetIntervalUnits(v []string)`
+
+SetIntervalUnits sets IntervalUnits field to given value.
+
+### HasIntervalUnits
+
+`func (o *UnibeeApiMerchantPlanListReq) HasIntervalUnits() bool`
+
+HasIntervalUnits returns a boolean if a field has been set.
 
 ### GetPage
 

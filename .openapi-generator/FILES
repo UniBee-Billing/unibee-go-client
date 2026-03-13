@@ -1896,5 +1896,4 @@ model_unibee_internal_logic_middleware_license_license.go
 model_unibee_internal_logic_middleware_license_merchant_version.go
 model_unibee_internal_logic_middleware_license_plan.go
 response.go
-test/api_invoice_import_test.go
 utils.go
