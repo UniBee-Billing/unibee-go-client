@@ -7,6 +7,11 @@ Method | HTTP request | Description
 [**PaymentCancelPost**](Payment.md#PaymentCancelPost) | **Post** /merchant/payment/cancel | Cancel Payment
 [**PaymentCapturePost**](Payment.md#PaymentCapturePost) | **Post** /merchant/payment/capture | Capture Payment
 [**PaymentDetailGet**](Payment.md#PaymentDetailGet) | **Get** /merchant/payment/detail | Payment Detail
+[**PaymentExternalGatewayPaymentMarkFailedPost**](Payment.md#PaymentExternalGatewayPaymentMarkFailedPost) | **Post** /merchant/payment/external_gateway_payment/mark_failed | Mark External Gateway Payment As Failed
+[**PaymentExternalGatewayPaymentMarkPaidPost**](Payment.md#PaymentExternalGatewayPaymentMarkPaidPost) | **Post** /merchant/payment/external_gateway_payment/mark_paid | Mark External Gateway Payment As Paid
+[**PaymentExternalGatewayPaymentUpdateLinkPost**](Payment.md#PaymentExternalGatewayPaymentUpdateLinkPost) | **Post** /merchant/payment/external_gateway_payment/update_link | Update External Gateway Payment Link
+[**PaymentExternalGatewayRefundMarkFailedPost**](Payment.md#PaymentExternalGatewayRefundMarkFailedPost) | **Post** /merchant/payment/external_gateway_refund/mark_failed | Mark External Gateway Refund As Failed
+[**PaymentExternalGatewayRefundMarkSuccessPost**](Payment.md#PaymentExternalGatewayRefundMarkSuccessPost) | **Post** /merchant/payment/external_gateway_refund/mark_success | Mark External Gateway Refund As Success
 [**PaymentItemListGet**](Payment.md#PaymentItemListGet) | **Get** /merchant/payment/item/list | Get OneTime Payment Item List
 [**PaymentListGet**](Payment.md#PaymentListGet) | **Get** /merchant/payment/list | Get Payment List
 [**PaymentMethodDeletePost**](Payment.md#PaymentMethodDeletePost) | **Post** /merchant/payment/method_delete | Delete Payment Method
@@ -208,6 +213,336 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PaymentExternalGatewayPaymentMarkFailedPost
+
+> MerchantPaymentExternalGatewayPaymentMarkFailedPost200Response PaymentExternalGatewayPaymentMarkFailedPost(ctx).UnibeeApiMerchantPaymentExternalGatewayPaymentMarkFailedReq(unibeeApiMerchantPaymentExternalGatewayPaymentMarkFailedReq).Execute()
+
+Mark External Gateway Payment As Failed
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantPaymentExternalGatewayPaymentMarkFailedReq := *openapiclient.NewUnibeeApiMerchantPaymentExternalGatewayPaymentMarkFailedReq("ExternalTransactionId_example", "PaymentId_example", "Signature_example", int64(123)) // UnibeeApiMerchantPaymentExternalGatewayPaymentMarkFailedReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Payment.PaymentExternalGatewayPaymentMarkFailedPost(context.Background()).UnibeeApiMerchantPaymentExternalGatewayPaymentMarkFailedReq(unibeeApiMerchantPaymentExternalGatewayPaymentMarkFailedReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Payment.PaymentExternalGatewayPaymentMarkFailedPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PaymentExternalGatewayPaymentMarkFailedPost`: MerchantPaymentExternalGatewayPaymentMarkFailedPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Payment.PaymentExternalGatewayPaymentMarkFailedPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPaymentExternalGatewayPaymentMarkFailedPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantPaymentExternalGatewayPaymentMarkFailedReq** | [**UnibeeApiMerchantPaymentExternalGatewayPaymentMarkFailedReq**](UnibeeApiMerchantPaymentExternalGatewayPaymentMarkFailedReq.md) |  | 
+
+### Return type
+
+[**MerchantPaymentExternalGatewayPaymentMarkFailedPost200Response**](MerchantPaymentExternalGatewayPaymentMarkFailedPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PaymentExternalGatewayPaymentMarkPaidPost
+
+> MerchantPaymentExternalGatewayPaymentMarkPaidPost200Response PaymentExternalGatewayPaymentMarkPaidPost(ctx).UnibeeApiMerchantPaymentExternalGatewayPaymentMarkPaidReq(unibeeApiMerchantPaymentExternalGatewayPaymentMarkPaidReq).Execute()
+
+Mark External Gateway Payment As Paid
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantPaymentExternalGatewayPaymentMarkPaidReq := *openapiclient.NewUnibeeApiMerchantPaymentExternalGatewayPaymentMarkPaidReq("ExternalTransactionId_example", "PaymentId_example", "Signature_example", int64(123)) // UnibeeApiMerchantPaymentExternalGatewayPaymentMarkPaidReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Payment.PaymentExternalGatewayPaymentMarkPaidPost(context.Background()).UnibeeApiMerchantPaymentExternalGatewayPaymentMarkPaidReq(unibeeApiMerchantPaymentExternalGatewayPaymentMarkPaidReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Payment.PaymentExternalGatewayPaymentMarkPaidPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PaymentExternalGatewayPaymentMarkPaidPost`: MerchantPaymentExternalGatewayPaymentMarkPaidPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Payment.PaymentExternalGatewayPaymentMarkPaidPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPaymentExternalGatewayPaymentMarkPaidPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantPaymentExternalGatewayPaymentMarkPaidReq** | [**UnibeeApiMerchantPaymentExternalGatewayPaymentMarkPaidReq**](UnibeeApiMerchantPaymentExternalGatewayPaymentMarkPaidReq.md) |  | 
+
+### Return type
+
+[**MerchantPaymentExternalGatewayPaymentMarkPaidPost200Response**](MerchantPaymentExternalGatewayPaymentMarkPaidPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PaymentExternalGatewayPaymentUpdateLinkPost
+
+> MerchantPaymentExternalGatewayPaymentUpdateLinkPost200Response PaymentExternalGatewayPaymentUpdateLinkPost(ctx).UnibeeApiMerchantPaymentExternalGatewayPaymentUpdateLinkReq(unibeeApiMerchantPaymentExternalGatewayPaymentUpdateLinkReq).Execute()
+
+Update External Gateway Payment Link
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantPaymentExternalGatewayPaymentUpdateLinkReq := *openapiclient.NewUnibeeApiMerchantPaymentExternalGatewayPaymentUpdateLinkReq("ExternalTransactionId_example", "PaymentId_example", "PaymentLink_example", "Signature_example", int64(123)) // UnibeeApiMerchantPaymentExternalGatewayPaymentUpdateLinkReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Payment.PaymentExternalGatewayPaymentUpdateLinkPost(context.Background()).UnibeeApiMerchantPaymentExternalGatewayPaymentUpdateLinkReq(unibeeApiMerchantPaymentExternalGatewayPaymentUpdateLinkReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Payment.PaymentExternalGatewayPaymentUpdateLinkPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PaymentExternalGatewayPaymentUpdateLinkPost`: MerchantPaymentExternalGatewayPaymentUpdateLinkPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Payment.PaymentExternalGatewayPaymentUpdateLinkPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPaymentExternalGatewayPaymentUpdateLinkPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantPaymentExternalGatewayPaymentUpdateLinkReq** | [**UnibeeApiMerchantPaymentExternalGatewayPaymentUpdateLinkReq**](UnibeeApiMerchantPaymentExternalGatewayPaymentUpdateLinkReq.md) |  | 
+
+### Return type
+
+[**MerchantPaymentExternalGatewayPaymentUpdateLinkPost200Response**](MerchantPaymentExternalGatewayPaymentUpdateLinkPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PaymentExternalGatewayRefundMarkFailedPost
+
+> MerchantPaymentExternalGatewayRefundMarkFailedPost200Response PaymentExternalGatewayRefundMarkFailedPost(ctx).UnibeeApiMerchantPaymentExternalGatewayRefundMarkFailedReq(unibeeApiMerchantPaymentExternalGatewayRefundMarkFailedReq).Execute()
+
+Mark External Gateway Refund As Failed
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantPaymentExternalGatewayRefundMarkFailedReq := *openapiclient.NewUnibeeApiMerchantPaymentExternalGatewayRefundMarkFailedReq("ExternalRefundId_example", "FailureReason_example", "RefundId_example", "Signature_example", int64(123)) // UnibeeApiMerchantPaymentExternalGatewayRefundMarkFailedReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Payment.PaymentExternalGatewayRefundMarkFailedPost(context.Background()).UnibeeApiMerchantPaymentExternalGatewayRefundMarkFailedReq(unibeeApiMerchantPaymentExternalGatewayRefundMarkFailedReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Payment.PaymentExternalGatewayRefundMarkFailedPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PaymentExternalGatewayRefundMarkFailedPost`: MerchantPaymentExternalGatewayRefundMarkFailedPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Payment.PaymentExternalGatewayRefundMarkFailedPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPaymentExternalGatewayRefundMarkFailedPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantPaymentExternalGatewayRefundMarkFailedReq** | [**UnibeeApiMerchantPaymentExternalGatewayRefundMarkFailedReq**](UnibeeApiMerchantPaymentExternalGatewayRefundMarkFailedReq.md) |  | 
+
+### Return type
+
+[**MerchantPaymentExternalGatewayRefundMarkFailedPost200Response**](MerchantPaymentExternalGatewayRefundMarkFailedPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PaymentExternalGatewayRefundMarkSuccessPost
+
+> MerchantPaymentExternalGatewayRefundMarkSuccessPost200Response PaymentExternalGatewayRefundMarkSuccessPost(ctx).UnibeeApiMerchantPaymentExternalGatewayRefundMarkSuccessReq(unibeeApiMerchantPaymentExternalGatewayRefundMarkSuccessReq).Execute()
+
+Mark External Gateway Refund As Success
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantPaymentExternalGatewayRefundMarkSuccessReq := *openapiclient.NewUnibeeApiMerchantPaymentExternalGatewayRefundMarkSuccessReq("ExternalRefundId_example", "RefundId_example", "Signature_example", int64(123)) // UnibeeApiMerchantPaymentExternalGatewayRefundMarkSuccessReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Payment.PaymentExternalGatewayRefundMarkSuccessPost(context.Background()).UnibeeApiMerchantPaymentExternalGatewayRefundMarkSuccessReq(unibeeApiMerchantPaymentExternalGatewayRefundMarkSuccessReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Payment.PaymentExternalGatewayRefundMarkSuccessPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PaymentExternalGatewayRefundMarkSuccessPost`: MerchantPaymentExternalGatewayRefundMarkSuccessPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Payment.PaymentExternalGatewayRefundMarkSuccessPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPaymentExternalGatewayRefundMarkSuccessPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantPaymentExternalGatewayRefundMarkSuccessReq** | [**UnibeeApiMerchantPaymentExternalGatewayRefundMarkSuccessReq**](UnibeeApiMerchantPaymentExternalGatewayRefundMarkSuccessReq.md) |  | 
+
+### Return type
+
+[**MerchantPaymentExternalGatewayRefundMarkSuccessPost200Response**](MerchantPaymentExternalGatewayRefundMarkSuccessPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

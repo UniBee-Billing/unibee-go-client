@@ -12,9 +12,9 @@ Method | HTTP request | Description
 [**InvoiceDetailGet**](Invoice.md#InvoiceDetailGet) | **Get** /merchant/invoice/detail | Invoice Detail
 [**InvoiceDetailPost**](Invoice.md#InvoiceDetailPost) | **Post** /merchant/invoice/detail | Invoice Detail
 [**InvoiceEditPost**](Invoice.md#InvoiceEditPost) | **Post** /merchant/invoice/edit | Invoice Edit
-[**InvoiceExternalGatewayInvoiceMarkPaidPost**](Invoice.md#InvoiceExternalGatewayInvoiceMarkPaidPost) | **Post** /merchant/invoice/external_gateway_invoice/mark_paid | Mark External Gateway Invoice As Paid
-[**InvoiceExternalGatewayInvoiceMarkRefundedPost**](Invoice.md#InvoiceExternalGatewayInvoiceMarkRefundedPost) | **Post** /merchant/invoice/external_gateway_invoice/mark_refunded | Mark External Gateway Invoice As Refunded
-[**InvoiceExternalGatewayInvoiceUpdatePaymentLinkPost**](Invoice.md#InvoiceExternalGatewayInvoiceUpdatePaymentLinkPost) | **Post** /merchant/invoice/external_gateway_invoice/update_payment_link | Update External Gateway Invoice Payment Link
+[**InvoiceExternalGatewayInvoiceMarkPaidPost**](Invoice.md#InvoiceExternalGatewayInvoiceMarkPaidPost) | **Post** /merchant/invoice/external_gateway_invoice/mark_paid | [Deprecated] Mark External Gateway Invoice As Paid
+[**InvoiceExternalGatewayInvoiceMarkRefundedPost**](Invoice.md#InvoiceExternalGatewayInvoiceMarkRefundedPost) | **Post** /merchant/invoice/external_gateway_invoice/mark_refunded | [Deprecated] Mark External Gateway Invoice As Refunded
+[**InvoiceExternalGatewayInvoiceUpdatePaymentLinkPost**](Invoice.md#InvoiceExternalGatewayInvoiceUpdatePaymentLinkPost) | **Post** /merchant/invoice/external_gateway_invoice/update_payment_link | [Deprecated] Update External Gateway Invoice Payment Link
 [**InvoiceFinishPost**](Invoice.md#InvoiceFinishPost) | **Post** /merchant/invoice/finish | Finish Invoice
 [**InvoiceListGet**](Invoice.md#InvoiceListGet) | **Get** /merchant/invoice/list | Get Invoice List
 [**InvoiceListPost**](Invoice.md#InvoiceListPost) | **Post** /merchant/invoice/list | Get Invoice List
@@ -560,7 +560,7 @@ No authorization required
 
 > MerchantInvoiceExternalGatewayInvoiceMarkPaidPost200Response InvoiceExternalGatewayInvoiceMarkPaidPost(ctx).UnibeeApiMerchantInvoiceMarkExternalGatewayInvoiceAsPaidReq(unibeeApiMerchantInvoiceMarkExternalGatewayInvoiceAsPaidReq).Execute()
 
-Mark External Gateway Invoice As Paid
+[Deprecated] Mark External Gateway Invoice As Paid
 
 
 
@@ -626,7 +626,7 @@ No authorization required
 
 > MerchantInvoiceExternalGatewayInvoiceMarkRefundedPost200Response InvoiceExternalGatewayInvoiceMarkRefundedPost(ctx).UnibeeApiMerchantInvoiceMarkExternalGatewayInvoiceAsRefundedReq(unibeeApiMerchantInvoiceMarkExternalGatewayInvoiceAsRefundedReq).Execute()
 
-Mark External Gateway Invoice As Refunded
+[Deprecated] Mark External Gateway Invoice As Refunded
 
 
 
@@ -692,7 +692,7 @@ No authorization required
 
 > MerchantInvoiceExternalGatewayInvoiceUpdatePaymentLinkPost200Response InvoiceExternalGatewayInvoiceUpdatePaymentLinkPost(ctx).UnibeeApiMerchantInvoiceUpdateExternalGatewayInvoicePaymentLinkReq(unibeeApiMerchantInvoiceUpdateExternalGatewayInvoicePaymentLinkReq).Execute()
 
-Update External Gateway Invoice Payment Link
+[Deprecated] Update External Gateway Invoice Payment Link
 
 
 

@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **GatewayName** | Pointer to **string** | The gateway name, stripe|paypal|changelly|unitpay|payssion|cryptadium | [optional] 
 **GatewayPaymentTypes** | Pointer to [**[]UnibeeInternalInterfaceGatewayPaymentType**](UnibeeInternalInterfaceGatewayPaymentType.md) | gatewayPaymentTypes | [optional] 
 **GatewaySecret** | Pointer to **string** |  | [optional] 
-**GatewayType** | Pointer to **int64** | gateway type，1-Bank Card ｜ 2-Crypto | 3 - Wire Transfer | [optional] 
+**GatewayType** | Pointer to **int64** | gateway type: 1-Card | 2-Crypto | 3-Wire Transfer | 4-PayPal | 5-Credit | 6-Alipay+ | 7-Hyperswitch | 8-External | [optional] 
 **GatewayWebhookIntegrationLink** | Pointer to **string** | The gateway webhook integration guide link, gateway webhook need setup if not blank | [optional] 
 **GatewayWebsiteLink** | Pointer to **string** | The gateway website link | [optional] 
 **IsDefault** | Pointer to **bool** |  | [optional] 
