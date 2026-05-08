@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **CompanyAddress** | Pointer to **string** |  | [optional] 
 **CompanyName** | Pointer to **string** |  | [optional] 
 **CountryCode** | Pointer to **string** |  | [optional] 
+**UnderMaintenance** | Pointer to **bool** |  | [optional] 
 **Valid** | Pointer to **bool** |  | [optional] 
 **ValidateMessage** | Pointer to **string** |  | [optional] 
 **VatNumber** | Pointer to **string** |  | [optional] 
@@ -104,6 +105,31 @@ SetCountryCode sets CountryCode field to given value.
 `func (o *UnibeeApiBeanValidResult) HasCountryCode() bool`
 
 HasCountryCode returns a boolean if a field has been set.
+
+### GetUnderMaintenance
+
+`func (o *UnibeeApiBeanValidResult) GetUnderMaintenance() bool`
+
+GetUnderMaintenance returns the UnderMaintenance field if non-nil, zero value otherwise.
+
+### GetUnderMaintenanceOk
+
+`func (o *UnibeeApiBeanValidResult) GetUnderMaintenanceOk() (*bool, bool)`
+
+GetUnderMaintenanceOk returns a tuple with the UnderMaintenance field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUnderMaintenance
+
+`func (o *UnibeeApiBeanValidResult) SetUnderMaintenance(v bool)`
+
+SetUnderMaintenance sets UnderMaintenance field to given value.
+
+### HasUnderMaintenance
+
+`func (o *UnibeeApiBeanValidResult) HasUnderMaintenance() bool`
+
+HasUnderMaintenance returns a boolean if a field has been set.
 
 ### GetValid
 

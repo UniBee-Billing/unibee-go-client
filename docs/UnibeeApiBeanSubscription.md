@@ -27,9 +27,9 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **LastUpdateTime** | Pointer to **int64** |  | [optional] 
 **LatestInvoiceId** | Pointer to **string** | latest_invoice_id | [optional] 
-**Link** | Pointer to **string** |  | [optional] 
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**MultiTrial** | Pointer to [**UnibeeApiBeanSubscriptionMultiTrial**](UnibeeApiBeanSubscriptionMultiTrial.md) |  | [optional] 
 **OriginalPeriodEnd** | Pointer to **int64** | original_period_end, utc time | [optional] 
 **PendingUpdateId** | Pointer to **string** |  | [optional] 
 **PlanId** | Pointer to **int64** | plan id | [optional] 
@@ -640,31 +640,6 @@ SetLatestInvoiceId sets LatestInvoiceId field to given value.
 
 HasLatestInvoiceId returns a boolean if a field has been set.
 
-### GetLink
-
-`func (o *UnibeeApiBeanSubscription) GetLink() string`
-
-GetLink returns the Link field if non-nil, zero value otherwise.
-
-### GetLinkOk
-
-`func (o *UnibeeApiBeanSubscription) GetLinkOk() (*string, bool)`
-
-GetLinkOk returns a tuple with the Link field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLink
-
-`func (o *UnibeeApiBeanSubscription) SetLink(v string)`
-
-SetLink sets Link field to given value.
-
-### HasLink
-
-`func (o *UnibeeApiBeanSubscription) HasLink() bool`
-
-HasLink returns a boolean if a field has been set.
-
 ### GetMerchantId
 
 `func (o *UnibeeApiBeanSubscription) GetMerchantId() int64`
@@ -714,6 +689,31 @@ SetMetadata sets Metadata field to given value.
 `func (o *UnibeeApiBeanSubscription) HasMetadata() bool`
 
 HasMetadata returns a boolean if a field has been set.
+
+### GetMultiTrial
+
+`func (o *UnibeeApiBeanSubscription) GetMultiTrial() UnibeeApiBeanSubscriptionMultiTrial`
+
+GetMultiTrial returns the MultiTrial field if non-nil, zero value otherwise.
+
+### GetMultiTrialOk
+
+`func (o *UnibeeApiBeanSubscription) GetMultiTrialOk() (*UnibeeApiBeanSubscriptionMultiTrial, bool)`
+
+GetMultiTrialOk returns a tuple with the MultiTrial field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMultiTrial
+
+`func (o *UnibeeApiBeanSubscription) SetMultiTrial(v UnibeeApiBeanSubscriptionMultiTrial)`
+
+SetMultiTrial sets MultiTrial field to given value.
+
+### HasMultiTrial
+
+`func (o *UnibeeApiBeanSubscription) HasMultiTrial() bool`
+
+HasMultiTrial returns a boolean if a field has been set.
 
 ### GetOriginalPeriodEnd
 

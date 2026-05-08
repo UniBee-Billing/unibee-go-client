@@ -6,9 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonIds** | Pointer to **[]int64** | Plan Ids Of Recurring Addon Type | [optional] 
 **Amount** | **int64** | Plan Amount | 
+**AutoUpgradePlanId** | Pointer to **int64** | Target plan id stored in additional settings when &gt;0; independent of disableAutoCharge | [optional] 
 **CancelAtTrialEnd** | Pointer to **int32** | whether cancel at subscription first trial end，0-false | 1-true, will pass to cancelAtPeriodEnd of subscription | [optional] 
+**CheckoutTemplateId** | Pointer to **int64** | Checkout template id, used to build checkoutUrl; stored in plan additional settings | [optional] 
+**CompareAtAmount** | Pointer to **int64** | optional strikethrough/compare-at price for regular plan amount (minor units, plan currency); UI only; stored in additional settings JSON with multiTrials; omit or 0 to leave unset | [optional] 
 **Currency** | **string** | Plan Currency | 
 **Description** | Pointer to **string** | Description | [optional] 
+**DisableAutoCharge** | Pointer to **int32** | Stored: 0&#x3D;allow subscription auto-charge, 1&#x3D;disable(single-cycle) — only applies to main recurring plans (type&#x3D;1) with amount&gt;0. For addon, onetime, or amount 0, you may still send 0/1; responses always return disableAutoCharge 1 and subscriptions never use auto-charge for those plans. | [optional] 
 **ExternalPlanId** | Pointer to **string** | ExternalPlanId | [optional] 
 **GasPayer** | Pointer to **string** | who pay the gas for crypto payment, merchant|user | [optional] 
 **HomeUrl** | Pointer to **string** | HomeUrl,Start With: http | [optional] 
@@ -21,14 +25,15 @@ Name | Type | Description | Notes
 **MetricMeteredCharge** | Pointer to [**[]UnibeeApiBeanPlanMetricMeteredChargeParam**](UnibeeApiBeanPlanMetricMeteredChargeParam.md) | Plan&#39;s MetricMeteredCharge | [optional] 
 **MetricRecurringCharge** | Pointer to [**[]UnibeeApiBeanPlanMetricMeteredChargeParam**](UnibeeApiBeanPlanMetricMeteredChargeParam.md) | Plan&#39;s MetricRecurringCharge | [optional] 
 **MultiCurrencies** | Pointer to [**[]UnibeeApiBeanPlanMultiCurrency**](UnibeeApiBeanPlanMultiCurrency.md) | Plan&#39;s MultiCurrencies | [optional] 
+**MultiTrials** | Pointer to [**[]UnibeeApiBeanPlanMultiTrial**](UnibeeApiBeanPlanMultiTrial.md) | multi-step trials for this plan; when set, the first item will override trialAmount &amp; trialDurationTime | [optional] 
 **OnetimeAddonIds** | Pointer to **[]int64** | Plan Ids Of Onetime Addon Type | [optional] 
 **PlanName** | **string** | Plan Name | 
 **ProductDescription** | Pointer to **string** | Default Copy Description | [optional] 
 **ProductId** | Pointer to **int64** | Id of product which plan to linked | [optional] 
 **ProductName** | Pointer to **string** | Default Copy PlanName | [optional] 
-**TrialAmount** | Pointer to **int64** | price of trial period， not available for addon | [optional] 
+**TrialAmount** | Pointer to **int64** | price of trial period， not available for addon; overridden by multiTrials[0].trialPrice when multiTrials is set | [optional] 
 **TrialDemand** | Pointer to **string** | demand of trial， not available for addon, example, paymentMethod, payment method will ask for subscription trial start | [optional] 
-**TrialDurationTime** | Pointer to **int64** | duration of trial， not available for addon | [optional] 
+**TrialDurationTime** | Pointer to **int64** | duration of trial (seconds)， not available for addon; overridden by multiTrials[0].trialDuration when multiTrials is set | [optional] 
 **Type** | Pointer to **int32** | The type of plan, 1-main plan，2-addon plan, 3-onetime plan, default main plan | [optional] [default to 1]
 **UsVATConfig** | Pointer to [**UnibeeApiBeanUSVATConfig**](UnibeeApiBeanUSVATConfig.md) |  | [optional] 
 
@@ -96,6 +101,31 @@ and a boolean to check if the value has been set.
 SetAmount sets Amount field to given value.
 
 
+### GetAutoUpgradePlanId
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetAutoUpgradePlanId() int64`
+
+GetAutoUpgradePlanId returns the AutoUpgradePlanId field if non-nil, zero value otherwise.
+
+### GetAutoUpgradePlanIdOk
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetAutoUpgradePlanIdOk() (*int64, bool)`
+
+GetAutoUpgradePlanIdOk returns a tuple with the AutoUpgradePlanId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoUpgradePlanId
+
+`func (o *UnibeeApiMerchantPlanNewReq) SetAutoUpgradePlanId(v int64)`
+
+SetAutoUpgradePlanId sets AutoUpgradePlanId field to given value.
+
+### HasAutoUpgradePlanId
+
+`func (o *UnibeeApiMerchantPlanNewReq) HasAutoUpgradePlanId() bool`
+
+HasAutoUpgradePlanId returns a boolean if a field has been set.
+
 ### GetCancelAtTrialEnd
 
 `func (o *UnibeeApiMerchantPlanNewReq) GetCancelAtTrialEnd() int32`
@@ -120,6 +150,56 @@ SetCancelAtTrialEnd sets CancelAtTrialEnd field to given value.
 `func (o *UnibeeApiMerchantPlanNewReq) HasCancelAtTrialEnd() bool`
 
 HasCancelAtTrialEnd returns a boolean if a field has been set.
+
+### GetCheckoutTemplateId
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetCheckoutTemplateId() int64`
+
+GetCheckoutTemplateId returns the CheckoutTemplateId field if non-nil, zero value otherwise.
+
+### GetCheckoutTemplateIdOk
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetCheckoutTemplateIdOk() (*int64, bool)`
+
+GetCheckoutTemplateIdOk returns a tuple with the CheckoutTemplateId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCheckoutTemplateId
+
+`func (o *UnibeeApiMerchantPlanNewReq) SetCheckoutTemplateId(v int64)`
+
+SetCheckoutTemplateId sets CheckoutTemplateId field to given value.
+
+### HasCheckoutTemplateId
+
+`func (o *UnibeeApiMerchantPlanNewReq) HasCheckoutTemplateId() bool`
+
+HasCheckoutTemplateId returns a boolean if a field has been set.
+
+### GetCompareAtAmount
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetCompareAtAmount() int64`
+
+GetCompareAtAmount returns the CompareAtAmount field if non-nil, zero value otherwise.
+
+### GetCompareAtAmountOk
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetCompareAtAmountOk() (*int64, bool)`
+
+GetCompareAtAmountOk returns a tuple with the CompareAtAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompareAtAmount
+
+`func (o *UnibeeApiMerchantPlanNewReq) SetCompareAtAmount(v int64)`
+
+SetCompareAtAmount sets CompareAtAmount field to given value.
+
+### HasCompareAtAmount
+
+`func (o *UnibeeApiMerchantPlanNewReq) HasCompareAtAmount() bool`
+
+HasCompareAtAmount returns a boolean if a field has been set.
 
 ### GetCurrency
 
@@ -165,6 +245,31 @@ SetDescription sets Description field to given value.
 `func (o *UnibeeApiMerchantPlanNewReq) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetDisableAutoCharge
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetDisableAutoCharge() int32`
+
+GetDisableAutoCharge returns the DisableAutoCharge field if non-nil, zero value otherwise.
+
+### GetDisableAutoChargeOk
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetDisableAutoChargeOk() (*int32, bool)`
+
+GetDisableAutoChargeOk returns a tuple with the DisableAutoCharge field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisableAutoCharge
+
+`func (o *UnibeeApiMerchantPlanNewReq) SetDisableAutoCharge(v int32)`
+
+SetDisableAutoCharge sets DisableAutoCharge field to given value.
+
+### HasDisableAutoCharge
+
+`func (o *UnibeeApiMerchantPlanNewReq) HasDisableAutoCharge() bool`
+
+HasDisableAutoCharge returns a boolean if a field has been set.
 
 ### GetExternalPlanId
 
@@ -465,6 +570,31 @@ SetMultiCurrencies sets MultiCurrencies field to given value.
 `func (o *UnibeeApiMerchantPlanNewReq) HasMultiCurrencies() bool`
 
 HasMultiCurrencies returns a boolean if a field has been set.
+
+### GetMultiTrials
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetMultiTrials() []UnibeeApiBeanPlanMultiTrial`
+
+GetMultiTrials returns the MultiTrials field if non-nil, zero value otherwise.
+
+### GetMultiTrialsOk
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetMultiTrialsOk() (*[]UnibeeApiBeanPlanMultiTrial, bool)`
+
+GetMultiTrialsOk returns a tuple with the MultiTrials field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMultiTrials
+
+`func (o *UnibeeApiMerchantPlanNewReq) SetMultiTrials(v []UnibeeApiBeanPlanMultiTrial)`
+
+SetMultiTrials sets MultiTrials field to given value.
+
+### HasMultiTrials
+
+`func (o *UnibeeApiMerchantPlanNewReq) HasMultiTrials() bool`
+
+HasMultiTrials returns a boolean if a field has been set.
 
 ### GetOnetimeAddonIds
 

@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**InvoiceDeletePost**](Invoice.md#InvoiceDeletePost) | **Post** /merchant/invoice/delete | Delete Pending Invoice
 [**InvoiceDetailGet**](Invoice.md#InvoiceDetailGet) | **Get** /merchant/invoice/detail | Invoice Detail
 [**InvoiceDetailPost**](Invoice.md#InvoiceDetailPost) | **Post** /merchant/invoice/detail | Invoice Detail
+[**InvoiceEditPaidInvoiceBillingDetailsPost**](Invoice.md#InvoiceEditPaidInvoiceBillingDetailsPost) | **Post** /merchant/invoice/edit_paid_invoice_billing_details | Edit Paid Invoice Billing Details (Exception)
 [**InvoiceEditPost**](Invoice.md#InvoiceEditPost) | **Post** /merchant/invoice/edit | Invoice Edit
 [**InvoiceExternalGatewayInvoiceMarkPaidPost**](Invoice.md#InvoiceExternalGatewayInvoiceMarkPaidPost) | **Post** /merchant/invoice/external_gateway_invoice/mark_paid | [Deprecated] Mark External Gateway Invoice As Paid
 [**InvoiceExternalGatewayInvoiceMarkRefundedPost**](Invoice.md#InvoiceExternalGatewayInvoiceMarkRefundedPost) | **Post** /merchant/invoice/external_gateway_invoice/mark_refunded | [Deprecated] Mark External Gateway Invoice As Refunded
@@ -28,6 +29,7 @@ Method | HTTP request | Description
 [**InvoiceSendEmailPost**](Invoice.md#InvoiceSendEmailPost) | **Post** /merchant/invoice/send_email | Send Invoice Email
 [**InvoiceSplitPaymentsGet**](Invoice.md#InvoiceSplitPaymentsGet) | **Get** /merchant/invoice/split_payments | Get Split Payments
 [**InvoiceSplitPaymentsPost**](Invoice.md#InvoiceSplitPaymentsPost) | **Post** /merchant/invoice/split_payments | Get Split Payments
+[**InvoiceSyncPaidInvoiceBillingDetailsPost**](Invoice.md#InvoiceSyncPaidInvoiceBillingDetailsPost) | **Post** /merchant/invoice/sync_paid_invoice_billing_details | Sync Paid Invoice Billing Details From Latest User Profile (Exception)
 [**InvoiceSyncUserSnapshotPost**](Invoice.md#InvoiceSyncUserSnapshotPost) | **Post** /merchant/invoice/sync_user_snapshot | Sync Invoice User Snapshot With Latest User Info
 
 
@@ -475,6 +477,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantInvoiceDetailGet200Response**](MerchantInvoiceDetailGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## InvoiceEditPaidInvoiceBillingDetailsPost
+
+> MerchantInvoiceEditPost200Response InvoiceEditPaidInvoiceBillingDetailsPost(ctx).UnibeeApiMerchantInvoiceEditPaidInvoiceBillingDetailsReq(unibeeApiMerchantInvoiceEditPaidInvoiceBillingDetailsReq).Execute()
+
+Edit Paid Invoice Billing Details (Exception)
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantInvoiceEditPaidInvoiceBillingDetailsReq := *openapiclient.NewUnibeeApiMerchantInvoiceEditPaidInvoiceBillingDetailsReq("InvoiceId_example") // UnibeeApiMerchantInvoiceEditPaidInvoiceBillingDetailsReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Invoice.InvoiceEditPaidInvoiceBillingDetailsPost(context.Background()).UnibeeApiMerchantInvoiceEditPaidInvoiceBillingDetailsReq(unibeeApiMerchantInvoiceEditPaidInvoiceBillingDetailsReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceEditPaidInvoiceBillingDetailsPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `InvoiceEditPaidInvoiceBillingDetailsPost`: MerchantInvoiceEditPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceEditPaidInvoiceBillingDetailsPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiInvoiceEditPaidInvoiceBillingDetailsPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantInvoiceEditPaidInvoiceBillingDetailsReq** | [**UnibeeApiMerchantInvoiceEditPaidInvoiceBillingDetailsReq**](UnibeeApiMerchantInvoiceEditPaidInvoiceBillingDetailsReq.md) |  | 
+
+### Return type
+
+[**MerchantInvoiceEditPost200Response**](MerchantInvoiceEditPost200Response.md)
 
 ### Authorization
 
@@ -1625,6 +1691,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantInvoiceSplitPaymentsGet200Response**](MerchantInvoiceSplitPaymentsGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## InvoiceSyncPaidInvoiceBillingDetailsPost
+
+> MerchantInvoiceEditPost200Response InvoiceSyncPaidInvoiceBillingDetailsPost(ctx).UnibeeApiMerchantInvoiceSyncPaidInvoiceBillingDetailsReq(unibeeApiMerchantInvoiceSyncPaidInvoiceBillingDetailsReq).Execute()
+
+Sync Paid Invoice Billing Details From Latest User Profile (Exception)
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantInvoiceSyncPaidInvoiceBillingDetailsReq := *openapiclient.NewUnibeeApiMerchantInvoiceSyncPaidInvoiceBillingDetailsReq("InvoiceId_example") // UnibeeApiMerchantInvoiceSyncPaidInvoiceBillingDetailsReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Invoice.InvoiceSyncPaidInvoiceBillingDetailsPost(context.Background()).UnibeeApiMerchantInvoiceSyncPaidInvoiceBillingDetailsReq(unibeeApiMerchantInvoiceSyncPaidInvoiceBillingDetailsReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceSyncPaidInvoiceBillingDetailsPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `InvoiceSyncPaidInvoiceBillingDetailsPost`: MerchantInvoiceEditPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceSyncPaidInvoiceBillingDetailsPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiInvoiceSyncPaidInvoiceBillingDetailsPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantInvoiceSyncPaidInvoiceBillingDetailsReq** | [**UnibeeApiMerchantInvoiceSyncPaidInvoiceBillingDetailsReq**](UnibeeApiMerchantInvoiceSyncPaidInvoiceBillingDetailsReq.md) |  | 
+
+### Return type
+
+[**MerchantInvoiceEditPost200Response**](MerchantInvoiceEditPost200Response.md)
 
 ### Authorization
 

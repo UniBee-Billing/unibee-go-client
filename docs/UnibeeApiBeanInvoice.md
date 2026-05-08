@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PaymentMethodId** | Pointer to **string** |  | [optional] 
-**AutoCharge** | Pointer to **bool** |  | [optional] 
+**AutoCharge** | Pointer to **bool** | Invoice auto-charge source flag. True means this invoice was created by system auto-renew/auto-billing flow (createFrom&#x3D;AutoRenew). It does NOT guarantee the invoice was finally paid by system auto-charge. | [optional] 
 **BillingCycleAnchor** | Pointer to **int64** | billing_cycle_anchor | [optional] 
 **BizType** | Pointer to **int32** | biz type from payment 1-onetime payment, 3-subscription | [optional] 
 **CountryCode** | Pointer to **string** |  | [optional] 

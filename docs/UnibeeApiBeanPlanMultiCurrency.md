@@ -4,11 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | Pointer to **int64** | the amount of exchange rate | [optional] 
-**AutoExchange** | Pointer to **bool** | using https://app.exchangerate-api.com/ to update exchange rate if true, the exchange APIKey need setup first | [optional] 
+**Amount** | Pointer to **int64** | exchanged amount preview for this plan &amp; currency; plan-level override not available in billing logic | [optional] 
+**AutoExchange** | Pointer to **bool** | using https://app.exchangerate-api.com/ to update exchange rate if true, the exchange APIKey need setup first; plan-level override not available | [optional] 
 **Currency** | Pointer to **string** | target currency | [optional] 
-**Disable** | Pointer to **bool** | disable currency exchange | [optional] 
-**ExchangeRate** | Pointer to **float32** | exchange rate, no setup required if AutoExchange is true | [optional] 
+**Disable** | Pointer to **bool** | disable currency exchange for this plan &amp; currency | [optional] 
+**ExchangeRate** | Pointer to **float32** | exchange rate; plan-level override not available, real billing FX always comes from merchant&#39;s multi-currency config | [optional] 
+**FixedAmount** | Pointer to **int64** | locked billing amount for this plan &amp; currency; when &gt; 0, locks the main plan price only | [optional] 
 
 ## Methods
 
@@ -153,6 +154,31 @@ SetExchangeRate sets ExchangeRate field to given value.
 `func (o *UnibeeApiBeanPlanMultiCurrency) HasExchangeRate() bool`
 
 HasExchangeRate returns a boolean if a field has been set.
+
+### GetFixedAmount
+
+`func (o *UnibeeApiBeanPlanMultiCurrency) GetFixedAmount() int64`
+
+GetFixedAmount returns the FixedAmount field if non-nil, zero value otherwise.
+
+### GetFixedAmountOk
+
+`func (o *UnibeeApiBeanPlanMultiCurrency) GetFixedAmountOk() (*int64, bool)`
+
+GetFixedAmountOk returns a tuple with the FixedAmount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFixedAmount
+
+`func (o *UnibeeApiBeanPlanMultiCurrency) SetFixedAmount(v int64)`
+
+SetFixedAmount sets FixedAmount field to given value.
+
+### HasFixedAmount
+
+`func (o *UnibeeApiBeanPlanMultiCurrency) HasFixedAmount() bool`
+
+HasFixedAmount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **AuthorizeComment** | Pointer to **string** |  | [optional] 
 **AuthorizeReason** | Pointer to **string** |  | [optional] 
 **AuthorizeStatus** | Pointer to **int32** | authorize status，0-waiting authorize，1-authorized，2-authorized_request | [optional] 
-**AutoCharge** | Pointer to **bool** |  | [optional] 
+**AutoCharge** | Pointer to **bool** | Final system auto-charge result flag for this payment. True only when: automatic&#x3D;1, gatewayPaymentMethod not empty, and no hosted payment link visit evidence (meta_data.plCount&#x3D;&#x3D;0). | [optional] 
 **Automatic** | Pointer to **int32** |  | [optional] 
 **BalanceAmount** | Pointer to **int64** | balance_amount | [optional] 
 **BillingReason** | Pointer to **string** |  | [optional] 

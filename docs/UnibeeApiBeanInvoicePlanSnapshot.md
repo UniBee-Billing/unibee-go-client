@@ -5,8 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Addons** | Pointer to [**[]UnibeeApiBeanPlanAddonDetail**](UnibeeApiBeanPlanAddonDetail.md) | Addons associated with the current plan. | [optional] 
-**AutoCharge** | Pointer to **bool** | Billing charge | [optional] 
+**AutoCharge** | Pointer to **bool** | Invoice source flag. True means the invoice snapshot comes from system auto-renew/auto-billing flow (createFrom&#x3D;AutoRenew), not the final payment result. | [optional] 
 **ChargeType** | Pointer to **int32** | Billing charge type. 0: One-time, 1: New Subscription, 2: Upgrade, 3: Downgrade, 4: Renewal, 5: Billing Cycle Charge. | [optional] 
+**MultiCurrencySnapshot** | Pointer to [**UnibeeApiBeanPlanMultiCurrencySnapshot**](UnibeeApiBeanPlanMultiCurrencySnapshot.md) |  | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
 **PreviousAddons** | Pointer to [**[]UnibeeApiBeanPlanAddonDetail**](UnibeeApiBeanPlanAddonDetail.md) | Addons from the previous plan, relevant for upgrade or downgrade (paidType &#x3D; 2 or 3). | [optional] 
 **PreviousPlan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
@@ -104,6 +105,31 @@ SetChargeType sets ChargeType field to given value.
 `func (o *UnibeeApiBeanInvoicePlanSnapshot) HasChargeType() bool`
 
 HasChargeType returns a boolean if a field has been set.
+
+### GetMultiCurrencySnapshot
+
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) GetMultiCurrencySnapshot() UnibeeApiBeanPlanMultiCurrencySnapshot`
+
+GetMultiCurrencySnapshot returns the MultiCurrencySnapshot field if non-nil, zero value otherwise.
+
+### GetMultiCurrencySnapshotOk
+
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) GetMultiCurrencySnapshotOk() (*UnibeeApiBeanPlanMultiCurrencySnapshot, bool)`
+
+GetMultiCurrencySnapshotOk returns a tuple with the MultiCurrencySnapshot field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMultiCurrencySnapshot
+
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) SetMultiCurrencySnapshot(v UnibeeApiBeanPlanMultiCurrencySnapshot)`
+
+SetMultiCurrencySnapshot sets MultiCurrencySnapshot field to given value.
+
+### HasMultiCurrencySnapshot
+
+`func (o *UnibeeApiBeanInvoicePlanSnapshot) HasMultiCurrencySnapshot() bool`
+
+HasMultiCurrencySnapshot returns a boolean if a field has been set.
 
 ### GetPlan
 

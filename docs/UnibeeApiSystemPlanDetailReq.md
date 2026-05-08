@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Currency** | Pointer to **string** | Optional. When set and supported by merchant multi-currency config, plan amount, currency, and multi-trial prices are returned in this currency; otherwise default behavior | [optional] 
 **PlanId** | **int64** | PlanId | 
 
 ## Methods
@@ -24,6 +25,31 @@ will change when the set of required properties is changed
 NewUnibeeApiSystemPlanDetailReqWithDefaults instantiates a new UnibeeApiSystemPlanDetailReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCurrency
+
+`func (o *UnibeeApiSystemPlanDetailReq) GetCurrency() string`
+
+GetCurrency returns the Currency field if non-nil, zero value otherwise.
+
+### GetCurrencyOk
+
+`func (o *UnibeeApiSystemPlanDetailReq) GetCurrencyOk() (*string, bool)`
+
+GetCurrencyOk returns a tuple with the Currency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrency
+
+`func (o *UnibeeApiSystemPlanDetailReq) SetCurrency(v string)`
+
+SetCurrency sets Currency field to given value.
+
+### HasCurrency
+
+`func (o *UnibeeApiSystemPlanDetailReq) HasCurrency() bool`
+
+HasCurrency returns a boolean if a field has been set.
 
 ### GetPlanId
 

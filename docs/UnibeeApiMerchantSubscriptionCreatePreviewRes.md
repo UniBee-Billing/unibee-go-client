@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **OtherPendingCryptoSubscription** | Pointer to [**UnibeeApiBeanDetailSubscriptionDetail**](UnibeeApiBeanDetailSubscriptionDetail.md) |  | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
 **Quantity** | Pointer to **int64** | Quantity of the plan used in preview. | [optional] 
+**RecurringDiscountCode** | Pointer to **string** | Discount code persisted for later billing cycles (e.g. after trial), when applicable. | [optional] 
 **SubscriptionAmountExcludingTax** | Pointer to **int64** | Total subscription amount excluding tax for the previewed invoice, in minor units. | [optional] 
 **TaxAmount** | Pointer to **int64** | Total tax amount for the previewed invoice, in minor units. | [optional] 
 **TaxPercentage** | Pointer to **int64** | Effective tax percentage applied in this preview, in basis points (e.g. 1000 &#x3D; 10%%). | [optional] 
@@ -424,6 +425,31 @@ SetQuantity sets Quantity field to given value.
 `func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) HasQuantity() bool`
 
 HasQuantity returns a boolean if a field has been set.
+
+### GetRecurringDiscountCode
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) GetRecurringDiscountCode() string`
+
+GetRecurringDiscountCode returns the RecurringDiscountCode field if non-nil, zero value otherwise.
+
+### GetRecurringDiscountCodeOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) GetRecurringDiscountCodeOk() (*string, bool)`
+
+GetRecurringDiscountCodeOk returns a tuple with the RecurringDiscountCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRecurringDiscountCode
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) SetRecurringDiscountCode(v string)`
+
+SetRecurringDiscountCode sets RecurringDiscountCode field to given value.
+
+### HasRecurringDiscountCode
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewRes) HasRecurringDiscountCode() bool`
+
+HasRecurringDiscountCode returns a boolean if a field has been set.
 
 ### GetSubscriptionAmountExcludingTax
 

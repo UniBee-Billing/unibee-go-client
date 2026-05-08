@@ -4,10 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AutoCharge** | Pointer to **bool** |  | [optional] 
+**AutoCharge** | Pointer to **bool** | Final system auto-charge result flag for this payment. True only when: automatic&#x3D;1, gatewayPaymentMethod not empty, and no hosted payment link visit evidence (meta_data.plCount&#x3D;&#x3D;0). | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Currency** | Pointer to **string** | currency | [optional] 
 **ExternalTransactionId** | Pointer to **string** | ExternalTransactionId | [optional] 
+**FailureReason** | Pointer to **string** | failure reason for this timeline item, from payment or refund | [optional] 
 **FullRefund** | Pointer to **int32** | 0-no, 1-yes | [optional] 
 **GatewayId** | Pointer to **int64** | gateway id | [optional] 
 **Id** | Pointer to **int64** |  | [optional] 
@@ -142,6 +143,31 @@ SetExternalTransactionId sets ExternalTransactionId field to given value.
 `func (o *UnibeeApiBeanDetailPaymentTimelineDetail) HasExternalTransactionId() bool`
 
 HasExternalTransactionId returns a boolean if a field has been set.
+
+### GetFailureReason
+
+`func (o *UnibeeApiBeanDetailPaymentTimelineDetail) GetFailureReason() string`
+
+GetFailureReason returns the FailureReason field if non-nil, zero value otherwise.
+
+### GetFailureReasonOk
+
+`func (o *UnibeeApiBeanDetailPaymentTimelineDetail) GetFailureReasonOk() (*string, bool)`
+
+GetFailureReasonOk returns a tuple with the FailureReason field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFailureReason
+
+`func (o *UnibeeApiBeanDetailPaymentTimelineDetail) SetFailureReason(v string)`
+
+SetFailureReason sets FailureReason field to given value.
+
+### HasFailureReason
+
+`func (o *UnibeeApiBeanDetailPaymentTimelineDetail) HasFailureReason() bool`
+
+HasFailureReason returns a boolean if a field has been set.
 
 ### GetFullRefund
 

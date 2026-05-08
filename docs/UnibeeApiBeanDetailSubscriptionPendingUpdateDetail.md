@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **MerchantId** | Pointer to **int64** | MerchantId | [optional] 
 **MerchantMember** | Pointer to [**UnibeeApiBeanDetailMerchantMemberDetail**](UnibeeApiBeanDetailMerchantMemberDetail.md) |  | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**Name** | Pointer to **string** | Pending update invoice-name intent (mirrors DB column name) | [optional] 
 **Note** | Pointer to **string** | Update Note | [optional] 
 **Paid** | Pointer to **int32** | Paid | [optional] 
 **PendingUpdateId** | Pointer to **string** | PendingUpdateId | [optional] 
@@ -404,6 +405,31 @@ SetMetadata sets Metadata field to given value.
 `func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasMetadata() bool`
 
 HasMetadata returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *UnibeeApiBeanDetailSubscriptionPendingUpdateDetail) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetNote
 

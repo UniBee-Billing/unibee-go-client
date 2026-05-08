@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**UserSearchGet**](User.md#UserSearchGet) | **Get** /merchant/user/search | User Search
 [**UserSearchPost**](User.md#UserSearchPost) | **Post** /merchant/user/search | User Search
 [**UserSuspendUserPost**](User.md#UserSuspendUserPost) | **Post** /merchant/user/suspend_user | Suspend User
+[**UserUpdateExternalUserIdPost**](User.md#UserUpdateExternalUserIdPost) | **Post** /merchant/user/update_external_user_id | Update User ExternalUserId
 [**UserUpdatePost**](User.md#UserUpdatePost) | **Post** /merchant/user/update | Update User Profile
 
 
@@ -1075,6 +1076,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UserUpdateExternalUserIdPost
+
+> MerchantUserGetGet200Response UserUpdateExternalUserIdPost(ctx).UnibeeApiMerchantUserUpdateExternalUserIdReq(unibeeApiMerchantUserUpdateExternalUserIdReq).Execute()
+
+Update User ExternalUserId
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantUserUpdateExternalUserIdReq := *openapiclient.NewUnibeeApiMerchantUserUpdateExternalUserIdReq("ExternalUserId_example") // UnibeeApiMerchantUserUpdateExternalUserIdReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.User.UserUpdateExternalUserIdPost(context.Background()).UnibeeApiMerchantUserUpdateExternalUserIdReq(unibeeApiMerchantUserUpdateExternalUserIdReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `User.UserUpdateExternalUserIdPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserUpdateExternalUserIdPost`: MerchantUserGetGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `User.UserUpdateExternalUserIdPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUserUpdateExternalUserIdPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantUserUpdateExternalUserIdReq** | [**UnibeeApiMerchantUserUpdateExternalUserIdReq**](UnibeeApiMerchantUserUpdateExternalUserIdReq.md) |  | 
+
+### Return type
+
+[**MerchantUserGetGet200Response**](MerchantUserGetGet200Response.md)
 
 ### Authorization
 

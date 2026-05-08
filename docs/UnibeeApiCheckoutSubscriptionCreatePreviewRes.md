@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **OtherPendingCryptoSubscription** | Pointer to [**UnibeeApiBeanDetailSubscriptionDetail**](UnibeeApiBeanDetailSubscriptionDetail.md) |  | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
 **Quantity** | Pointer to **int64** |  | [optional] 
+**RecurringDiscountCode** | Pointer to **string** | Discount code persisted for later billing cycles (e.g. after trial), when applicable. | [optional] 
 **SignIn** | Pointer to [**UnibeeApiBeanCheckoutSignIn**](UnibeeApiBeanCheckoutSignIn.md) |  | [optional] 
 **SubscriptionAmountExcludingTax** | Pointer to **int64** |  | [optional] 
 **TaxAmount** | Pointer to **int64** |  | [optional] 
@@ -425,6 +426,31 @@ SetQuantity sets Quantity field to given value.
 `func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) HasQuantity() bool`
 
 HasQuantity returns a boolean if a field has been set.
+
+### GetRecurringDiscountCode
+
+`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetRecurringDiscountCode() string`
+
+GetRecurringDiscountCode returns the RecurringDiscountCode field if non-nil, zero value otherwise.
+
+### GetRecurringDiscountCodeOk
+
+`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetRecurringDiscountCodeOk() (*string, bool)`
+
+GetRecurringDiscountCodeOk returns a tuple with the RecurringDiscountCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRecurringDiscountCode
+
+`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) SetRecurringDiscountCode(v string)`
+
+SetRecurringDiscountCode sets RecurringDiscountCode field to given value.
+
+### HasRecurringDiscountCode
+
+`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) HasRecurringDiscountCode() bool`
+
+HasRecurringDiscountCode returns a boolean if a field has been set.
 
 ### GetSignIn
 
