@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **LatestInvoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
 **Note** | Pointer to **string** | note | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
+**PreviousStatus** | Pointer to **int32** | Previous subscription status before this subscription status transition | [optional] 
 **Source** | Pointer to **string** | Source | [optional] 
 **Subscription** | Pointer to [**UnibeeApiBeanSubscription**](UnibeeApiBeanSubscription.md) |  | [optional] 
 **UnfinishedSubscriptionPendingUpdate** | Pointer to [**UnibeeApiBeanDetailSubscriptionPendingUpdateDetail**](UnibeeApiBeanDetailSubscriptionPendingUpdateDetail.md) |  | [optional] 
@@ -235,6 +236,31 @@ SetPlan sets Plan field to given value.
 `func (o *UnibeeApiBeanDetailSubscriptionDetail) HasPlan() bool`
 
 HasPlan returns a boolean if a field has been set.
+
+### GetPreviousStatus
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetPreviousStatus() int32`
+
+GetPreviousStatus returns the PreviousStatus field if non-nil, zero value otherwise.
+
+### GetPreviousStatusOk
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetPreviousStatusOk() (*int32, bool)`
+
+GetPreviousStatusOk returns a tuple with the PreviousStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreviousStatus
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) SetPreviousStatus(v int32)`
+
+SetPreviousStatus sets PreviousStatus field to given value.
+
+### HasPreviousStatus
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) HasPreviousStatus() bool`
+
+HasPreviousStatus returns a boolean if a field has been set.
 
 ### GetSource
 

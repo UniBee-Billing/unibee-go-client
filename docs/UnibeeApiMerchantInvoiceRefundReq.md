@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CancelSubscription** | Pointer to **bool** | Whether cancel related subscription after refund request is accepted | [optional] [default to false]
 **InvoiceId** | **string** | The unique id of invoice | 
 **PaymentId** | Pointer to **string** | The payment id to refund (required for split payment invoices, optional for single payment invoices) | [optional] 
 **Reason** | **string** | The reason of refund | 
@@ -28,6 +29,31 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantInvoiceRefundReqWithDefaults instantiates a new UnibeeApiMerchantInvoiceRefundReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCancelSubscription
+
+`func (o *UnibeeApiMerchantInvoiceRefundReq) GetCancelSubscription() bool`
+
+GetCancelSubscription returns the CancelSubscription field if non-nil, zero value otherwise.
+
+### GetCancelSubscriptionOk
+
+`func (o *UnibeeApiMerchantInvoiceRefundReq) GetCancelSubscriptionOk() (*bool, bool)`
+
+GetCancelSubscriptionOk returns a tuple with the CancelSubscription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCancelSubscription
+
+`func (o *UnibeeApiMerchantInvoiceRefundReq) SetCancelSubscription(v bool)`
+
+SetCancelSubscription sets CancelSubscription field to given value.
+
+### HasCancelSubscription
+
+`func (o *UnibeeApiMerchantInvoiceRefundReq) HasCancelSubscription() bool`
+
+HasCancelSubscription returns a boolean if a field has been set.
 
 ### GetInvoiceId
 

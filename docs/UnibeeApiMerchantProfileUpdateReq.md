@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **CompanyVatNumber** | Pointer to **string** | Country Vat Number | [optional] 
 **CountryCode** | Pointer to **string** | Country Code | [optional] 
 **CountryName** | Pointer to **string** | Country Name | [optional] 
+**DefaultCurrency** | Pointer to **string** | Merchant default currency, empty string clears explicit setting | [optional] 
 **Email** | Pointer to **string** | email | [optional] 
 **Phone** | Pointer to **string** | phone | [optional] 
 **TimeZone** | Pointer to **string** | User TimeZone | [optional] 
@@ -208,6 +209,31 @@ SetCountryName sets CountryName field to given value.
 `func (o *UnibeeApiMerchantProfileUpdateReq) HasCountryName() bool`
 
 HasCountryName returns a boolean if a field has been set.
+
+### GetDefaultCurrency
+
+`func (o *UnibeeApiMerchantProfileUpdateReq) GetDefaultCurrency() string`
+
+GetDefaultCurrency returns the DefaultCurrency field if non-nil, zero value otherwise.
+
+### GetDefaultCurrencyOk
+
+`func (o *UnibeeApiMerchantProfileUpdateReq) GetDefaultCurrencyOk() (*string, bool)`
+
+GetDefaultCurrencyOk returns a tuple with the DefaultCurrency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultCurrency
+
+`func (o *UnibeeApiMerchantProfileUpdateReq) SetDefaultCurrency(v string)`
+
+SetDefaultCurrency sets DefaultCurrency field to given value.
+
+### HasDefaultCurrency
+
+`func (o *UnibeeApiMerchantProfileUpdateReq) HasDefaultCurrency() bool`
+
+HasDefaultCurrency returns a boolean if a field has been set.
 
 ### GetEmail
 

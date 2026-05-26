@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**CountryConfigListPost**](Merchant.md#CountryConfigListPost) | **Post** /merchant/country_config_list | Edit Country Config
 [**EditCountryConfigPost**](Merchant.md#EditCountryConfigPost) | **Post** /merchant/edit_country_config | Get Country Config List
 [**EditTotpConfigPost**](Merchant.md#EditTotpConfigPost) | **Post** /merchant/edit_totp_config | Admin Edit 2FA Config
+[**GetExchangeRatePost**](Merchant.md#GetExchangeRatePost) | **Post** /merchant/get_exchange_rate | Get Exchange Rate
 [**GetGet**](Merchant.md#GetGet) | **Get** /merchant/get | Get Profile
 [**GetLicenseGet**](Merchant.md#GetLicenseGet) | **Get** /merchant/get_license | Get License
 [**GetLicenseUpdateUrlGet**](Merchant.md#GetLicenseUpdateUrlGet) | **Get** /merchant/get_license_update_url | Get License Update Url
@@ -262,6 +263,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetExchangeRatePost
+
+> MerchantGetExchangeRatePost200Response GetExchangeRatePost(ctx).UnibeeApiMerchantProfileGetExchangeRateReq(unibeeApiMerchantProfileGetExchangeRateReq).Execute()
+
+Get Exchange Rate
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantProfileGetExchangeRateReq := *openapiclient.NewUnibeeApiMerchantProfileGetExchangeRateReq("FromCurrency_example", "ToCurrency_example") // UnibeeApiMerchantProfileGetExchangeRateReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Merchant.GetExchangeRatePost(context.Background()).UnibeeApiMerchantProfileGetExchangeRateReq(unibeeApiMerchantProfileGetExchangeRateReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Merchant.GetExchangeRatePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetExchangeRatePost`: MerchantGetExchangeRatePost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Merchant.GetExchangeRatePost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetExchangeRatePostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantProfileGetExchangeRateReq** | [**UnibeeApiMerchantProfileGetExchangeRateReq**](UnibeeApiMerchantProfileGetExchangeRateReq.md) |  | 
+
+### Return type
+
+[**MerchantGetExchangeRatePost200Response**](MerchantGetExchangeRatePost200Response.md)
 
 ### Authorization
 
