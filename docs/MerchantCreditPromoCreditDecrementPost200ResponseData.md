@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **UserPromoCreditAccount** | Pointer to [**UnibeeApiBeanCreditAccount**](UnibeeApiBeanCreditAccount.md) |  | [optional] 
+**CreditTransaction** | Pointer to [**UnibeeApiBeanCreditTransaction**](UnibeeApiBeanCreditTransaction.md) |  | [optional] 
 
 ## Methods
 
@@ -49,6 +50,31 @@ SetUserPromoCreditAccount sets UserPromoCreditAccount field to given value.
 `func (o *MerchantCreditPromoCreditDecrementPost200ResponseData) HasUserPromoCreditAccount() bool`
 
 HasUserPromoCreditAccount returns a boolean if a field has been set.
+
+### GetCreditTransaction
+
+`func (o *MerchantCreditPromoCreditDecrementPost200ResponseData) GetCreditTransaction() UnibeeApiBeanCreditTransaction`
+
+GetCreditTransaction returns the CreditTransaction field if non-nil, zero value otherwise.
+
+### GetCreditTransactionOk
+
+`func (o *MerchantCreditPromoCreditDecrementPost200ResponseData) GetCreditTransactionOk() (*UnibeeApiBeanCreditTransaction, bool)`
+
+GetCreditTransactionOk returns a tuple with the CreditTransaction field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreditTransaction
+
+`func (o *MerchantCreditPromoCreditDecrementPost200ResponseData) SetCreditTransaction(v UnibeeApiBeanCreditTransaction)`
+
+SetCreditTransaction sets CreditTransaction field to given value.
+
+### HasCreditTransaction
+
+`func (o *MerchantCreditPromoCreditDecrementPost200ResponseData) HasCreditTransaction() bool`
+
+HasCreditTransaction returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
