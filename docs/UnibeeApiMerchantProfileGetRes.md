@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **GlobalUSVATConfig** | Pointer to [**UnibeeApiBeanUSVATGlobalConfig**](UnibeeApiBeanUSVATGlobalConfig.md) |  | [optional] 
 **IsOwner** | Pointer to **bool** | Check Member is Owner | [optional] 
 **IsProd** | Pointer to **bool** | Check System Env Is Prod, true|false | [optional] 
-**Merchant** | Pointer to [**UnibeeApiBeanMerchant**](UnibeeApiBeanMerchant.md) |  | [optional] 
+**Merchant** | Pointer to [**UnibeeApiBeanMerchantProfile**](UnibeeApiBeanMerchantProfile.md) |  | [optional] 
 **MerchantMember** | Pointer to [**UnibeeApiBeanDetailMerchantMemberDetail**](UnibeeApiBeanDetailMerchantMemberDetail.md) |  | [optional] 
 **MultiCurrencyConfigs** | Pointer to [**[]UnibeeApiBeanMerchantMultiCurrencyConfig**](UnibeeApiBeanMerchantMultiCurrencyConfig.md) | Merchant&#39;s MultiCurrency Configs | [optional] 
 **OpenApiHost** | Pointer to **string** | OpenApi Host | [optional] 
@@ -507,20 +507,20 @@ HasIsProd returns a boolean if a field has been set.
 
 ### GetMerchant
 
-`func (o *UnibeeApiMerchantProfileGetRes) GetMerchant() UnibeeApiBeanMerchant`
+`func (o *UnibeeApiMerchantProfileGetRes) GetMerchant() UnibeeApiBeanMerchantProfile`
 
 GetMerchant returns the Merchant field if non-nil, zero value otherwise.
 
 ### GetMerchantOk
 
-`func (o *UnibeeApiMerchantProfileGetRes) GetMerchantOk() (*UnibeeApiBeanMerchant, bool)`
+`func (o *UnibeeApiMerchantProfileGetRes) GetMerchantOk() (*UnibeeApiBeanMerchantProfile, bool)`
 
 GetMerchantOk returns a tuple with the Merchant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchant
 
-`func (o *UnibeeApiMerchantProfileGetRes) SetMerchant(v UnibeeApiBeanMerchant)`
+`func (o *UnibeeApiMerchantProfileGetRes) SetMerchant(v UnibeeApiBeanMerchantProfile)`
 
 SetMerchant sets Merchant field to given value.
 

@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AdminMemberId** | Pointer to **int64** | admin member id who initiated refund | [optional] 
 **CountryCode** | Pointer to **string** | country code | [optional] 
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
 **Currency** | Pointer to **string** | currency | [optional] 
@@ -44,6 +45,31 @@ will change when the set of required properties is changed
 NewUnibeeApiBeanRefundWithDefaults instantiates a new UnibeeApiBeanRefund object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAdminMemberId
+
+`func (o *UnibeeApiBeanRefund) GetAdminMemberId() int64`
+
+GetAdminMemberId returns the AdminMemberId field if non-nil, zero value otherwise.
+
+### GetAdminMemberIdOk
+
+`func (o *UnibeeApiBeanRefund) GetAdminMemberIdOk() (*int64, bool)`
+
+GetAdminMemberIdOk returns a tuple with the AdminMemberId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAdminMemberId
+
+`func (o *UnibeeApiBeanRefund) SetAdminMemberId(v int64)`
+
+SetAdminMemberId sets AdminMemberId field to given value.
+
+### HasAdminMemberId
+
+`func (o *UnibeeApiBeanRefund) HasAdminMemberId() bool`
+
+HasAdminMemberId returns a boolean if a field has been set.
 
 ### GetCountryCode
 

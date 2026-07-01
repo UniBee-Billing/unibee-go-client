@@ -21,7 +21,6 @@ Name | Type | Description | Notes
 **FinishTime** | Pointer to **int64** |  | [optional] 
 **Gateway** | Pointer to [**UnibeeApiBeanDetailGateway**](UnibeeApiBeanDetailGateway.md) |  | [optional] 
 **GatewayId** | Pointer to **int64** | Id | [optional] 
-**GatewayInvoicePdf** | Pointer to **string** | GatewayInvoicePdf pdf | [optional] 
 **GatewayPaymentId** | Pointer to **string** | GatewayPaymentId PaymentId | [optional] 
 **GatewayPaymentType** | Pointer to **string** | GatewayPaymentType | [optional] 
 **GatewayStatus** | Pointer to **string** | GatewayStatus，Stripe：https://stripe.com/docs/api/invoices/object | [optional] 
@@ -56,7 +55,7 @@ Name | Type | Description | Notes
 **RefundId** | Pointer to **string** | refundId | [optional] 
 **SendEmail** | Pointer to **string** | SendEmail | [optional] 
 **SendNote** | Pointer to **string** | SendNote | [optional] 
-**SendPdf** | Pointer to **string** | SendPdf | [optional] 
+**SendPdf** | Pointer to **string** | UniBee-generated invoice PDF URL; use this for download/preview | [optional] 
 **SendStatus** | Pointer to **int32** | SendStatus，0-No | 1- YES | [optional] 
 **Status** | Pointer to **int32** | Status，1-pending｜2-processing｜3-paid | 4-failed | 5-cancelled | [optional] 
 **Subscription** | Pointer to [**UnibeeApiBeanSubscription**](UnibeeApiBeanSubscription.md) |  | [optional] 
@@ -519,31 +518,6 @@ SetGatewayId sets GatewayId field to given value.
 `func (o *UnibeeApiBeanDetailInvoiceDetail) HasGatewayId() bool`
 
 HasGatewayId returns a boolean if a field has been set.
-
-### GetGatewayInvoicePdf
-
-`func (o *UnibeeApiBeanDetailInvoiceDetail) GetGatewayInvoicePdf() string`
-
-GetGatewayInvoicePdf returns the GatewayInvoicePdf field if non-nil, zero value otherwise.
-
-### GetGatewayInvoicePdfOk
-
-`func (o *UnibeeApiBeanDetailInvoiceDetail) GetGatewayInvoicePdfOk() (*string, bool)`
-
-GetGatewayInvoicePdfOk returns a tuple with the GatewayInvoicePdf field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGatewayInvoicePdf
-
-`func (o *UnibeeApiBeanDetailInvoiceDetail) SetGatewayInvoicePdf(v string)`
-
-SetGatewayInvoicePdf sets GatewayInvoicePdf field to given value.
-
-### HasGatewayInvoicePdf
-
-`func (o *UnibeeApiBeanDetailInvoiceDetail) HasGatewayInvoicePdf() bool`
-
-HasGatewayInvoicePdf returns a boolean if a field has been set.
 
 ### GetGatewayPaymentId
 

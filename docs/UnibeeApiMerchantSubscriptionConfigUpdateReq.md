@@ -4,14 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AutoChargeMaxRetryCount** | Pointer to **int32** | AutoChargeMaxRetryCount, max automatic-charge attempts for one invoice including the first automatic attempt; 0 &#x3D; unlimited (current behavior). Omit to leave unchanged. | [optional] 
+**AutoChargeRetryInterval** | Pointer to **int32** | AutoChargeRetryInterval, seconds to wait before retrying a failed auto-charge within the window (default 12h). Omit to leave unchanged. | [optional] 
 **DowngradeEffectImmediately** | Pointer to **bool** | DowngradeEffectImmediately, Immediate Downgrade (by default, the downgrades takes effect at the end of the period ） | [optional] 
 **DowngradeNonImmediatelyEffectBeforePeriodEnd** | Pointer to **int32** | DowngradeNonImmediatelyEffectBeforePeriodEnd, seconds, For non-immediate downgrade, can take effect before period end (default 30 minutes, 1800 seconds) | [optional] 
 **GatewayVATRule** | Pointer to [**[]UnibeeApiBeanMerchantVatRule**](UnibeeApiBeanMerchantVatRule.md) |  | [optional] 
-**IncompleteExpireTime** | Pointer to **int32** | IncompleteExpireTime, seconds, Incomplete Status Duration(The period during which subscription remains in  | [optional] 
+**IncompleteExpireTime** | Pointer to **int32** | IncompleteExpireTime, seconds, Incomplete Status Duration(The period during which subscription remains in &#39;incomplete&#39;) | [optional] 
 **InvoiceEmail** | Pointer to **bool** | InvoiceEmail, Enable Invoice Email (Toggle to send invoice email to customers) | [optional] 
 **ShowZeroInvoice** | Pointer to **bool** | ShowZeroInvoice, Display Invoices With Zero Amount (Invoice With Zero Amount will hidden in list by default) | [optional] 
 **TryAutomaticPaymentBeforePeriodEnd** | Pointer to **int32** | TryAutomaticPaymentBeforePeriodEnd, Auto-charge Start Before Period End （Time Difference for Auto-Payment Activation Before Period End） | [optional] 
 **UpgradeProration** | Pointer to **bool** | UpgradeProration, Prorated Upgrade Invoices(Upgrades will generate prorated invoice by default) | [optional] 
+**UpgradeResetBillingCycle** | Pointer to **bool** | UpgradeResetBillingCycle, same-interval upgrades only: full new-plan cycle from upgrade time and reset due day when true (default); legacy fixed-end proration when false. Omit on update to leave unchanged. | [optional] 
 
 ## Methods
 
@@ -31,6 +34,56 @@ will change when the set of required properties is changed
 NewUnibeeApiMerchantSubscriptionConfigUpdateReqWithDefaults instantiates a new UnibeeApiMerchantSubscriptionConfigUpdateReq object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAutoChargeMaxRetryCount
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) GetAutoChargeMaxRetryCount() int32`
+
+GetAutoChargeMaxRetryCount returns the AutoChargeMaxRetryCount field if non-nil, zero value otherwise.
+
+### GetAutoChargeMaxRetryCountOk
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) GetAutoChargeMaxRetryCountOk() (*int32, bool)`
+
+GetAutoChargeMaxRetryCountOk returns a tuple with the AutoChargeMaxRetryCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoChargeMaxRetryCount
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) SetAutoChargeMaxRetryCount(v int32)`
+
+SetAutoChargeMaxRetryCount sets AutoChargeMaxRetryCount field to given value.
+
+### HasAutoChargeMaxRetryCount
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) HasAutoChargeMaxRetryCount() bool`
+
+HasAutoChargeMaxRetryCount returns a boolean if a field has been set.
+
+### GetAutoChargeRetryInterval
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) GetAutoChargeRetryInterval() int32`
+
+GetAutoChargeRetryInterval returns the AutoChargeRetryInterval field if non-nil, zero value otherwise.
+
+### GetAutoChargeRetryIntervalOk
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) GetAutoChargeRetryIntervalOk() (*int32, bool)`
+
+GetAutoChargeRetryIntervalOk returns a tuple with the AutoChargeRetryInterval field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoChargeRetryInterval
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) SetAutoChargeRetryInterval(v int32)`
+
+SetAutoChargeRetryInterval sets AutoChargeRetryInterval field to given value.
+
+### HasAutoChargeRetryInterval
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) HasAutoChargeRetryInterval() bool`
+
+HasAutoChargeRetryInterval returns a boolean if a field has been set.
 
 ### GetDowngradeEffectImmediately
 
@@ -231,6 +284,31 @@ SetUpgradeProration sets UpgradeProration field to given value.
 `func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) HasUpgradeProration() bool`
 
 HasUpgradeProration returns a boolean if a field has been set.
+
+### GetUpgradeResetBillingCycle
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) GetUpgradeResetBillingCycle() bool`
+
+GetUpgradeResetBillingCycle returns the UpgradeResetBillingCycle field if non-nil, zero value otherwise.
+
+### GetUpgradeResetBillingCycleOk
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) GetUpgradeResetBillingCycleOk() (*bool, bool)`
+
+GetUpgradeResetBillingCycleOk returns a tuple with the UpgradeResetBillingCycle field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpgradeResetBillingCycle
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) SetUpgradeResetBillingCycle(v bool)`
+
+SetUpgradeResetBillingCycle sets UpgradeResetBillingCycle field to given value.
+
+### HasUpgradeResetBillingCycle
+
+`func (o *UnibeeApiMerchantSubscriptionConfigUpdateReq) HasUpgradeResetBillingCycle() bool`
+
+HasUpgradeResetBillingCycle returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **FirstPaidTime** | Pointer to **string** | UTC time, the first payment success time of subscription, format &#39;2006-01-02 15:04:05&#39; | [optional] 
 **Gateway** | Pointer to **string** | Required, should one of stripe|paypal|wire_transfer|changelly  | [optional] 
 **GatewayPaymentType** | Pointer to **string** |  | [optional] 
+**ImportProrationBase** | Pointer to [**UnibeeApiBeanImportProrationBase**](UnibeeApiBeanImportProrationBase.md) |  | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **PaypalAgreementToken** | Pointer to **string** | The billing agreement token of user payment method while billing agreement reference transaction enabled, required if paypal auto-charge needed | [optional] 
 **PaypalVaultId** | Pointer to **string** | The paypal vault id of user payment method, get from paypal while vault permission enabled, required if paypal auto-charge needed | [optional] 
@@ -472,6 +473,31 @@ SetGatewayPaymentType sets GatewayPaymentType field to given value.
 `func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) HasGatewayPaymentType() bool`
 
 HasGatewayPaymentType returns a boolean if a field has been set.
+
+### GetImportProrationBase
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) GetImportProrationBase() UnibeeApiBeanImportProrationBase`
+
+GetImportProrationBase returns the ImportProrationBase field if non-nil, zero value otherwise.
+
+### GetImportProrationBaseOk
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) GetImportProrationBaseOk() (*UnibeeApiBeanImportProrationBase, bool)`
+
+GetImportProrationBaseOk returns a tuple with the ImportProrationBase field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImportProrationBase
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) SetImportProrationBase(v UnibeeApiBeanImportProrationBase)`
+
+SetImportProrationBase sets ImportProrationBase field to given value.
+
+### HasImportProrationBase
+
+`func (o *UnibeeApiMerchantSubscriptionActiveSubscriptionImportReq) HasImportProrationBase() bool`
+
+HasImportProrationBase returns a boolean if a field has been set.
 
 ### GetMetadata
 

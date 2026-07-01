@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Merchant** | Pointer to [**UnibeeApiBeanMerchant**](UnibeeApiBeanMerchant.md) |  | [optional] 
-**Plan** | Pointer to [**UnibeeApiBeanDetailPlanDetail**](UnibeeApiBeanDetailPlanDetail.md) |  | [optional] 
+**Merchant** | Pointer to [**UnibeeApiBeanPublicMerchant**](UnibeeApiBeanPublicMerchant.md) |  | [optional] 
+**Plan** | Pointer to [**UnibeeApiBeanDetailPublicPlanDetail**](UnibeeApiBeanDetailPublicPlanDetail.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMerchant
 
-`func (o *UnibeeApiSystemPlanDetailRes) GetMerchant() UnibeeApiBeanMerchant`
+`func (o *UnibeeApiSystemPlanDetailRes) GetMerchant() UnibeeApiBeanPublicMerchant`
 
 GetMerchant returns the Merchant field if non-nil, zero value otherwise.
 
 ### GetMerchantOk
 
-`func (o *UnibeeApiSystemPlanDetailRes) GetMerchantOk() (*UnibeeApiBeanMerchant, bool)`
+`func (o *UnibeeApiSystemPlanDetailRes) GetMerchantOk() (*UnibeeApiBeanPublicMerchant, bool)`
 
 GetMerchantOk returns a tuple with the Merchant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchant
 
-`func (o *UnibeeApiSystemPlanDetailRes) SetMerchant(v UnibeeApiBeanMerchant)`
+`func (o *UnibeeApiSystemPlanDetailRes) SetMerchant(v UnibeeApiBeanPublicMerchant)`
 
 SetMerchant sets Merchant field to given value.
 
@@ -53,20 +53,20 @@ HasMerchant returns a boolean if a field has been set.
 
 ### GetPlan
 
-`func (o *UnibeeApiSystemPlanDetailRes) GetPlan() UnibeeApiBeanDetailPlanDetail`
+`func (o *UnibeeApiSystemPlanDetailRes) GetPlan() UnibeeApiBeanDetailPublicPlanDetail`
 
 GetPlan returns the Plan field if non-nil, zero value otherwise.
 
 ### GetPlanOk
 
-`func (o *UnibeeApiSystemPlanDetailRes) GetPlanOk() (*UnibeeApiBeanDetailPlanDetail, bool)`
+`func (o *UnibeeApiSystemPlanDetailRes) GetPlanOk() (*UnibeeApiBeanDetailPublicPlanDetail, bool)`
 
 GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlan
 
-`func (o *UnibeeApiSystemPlanDetailRes) SetPlan(v UnibeeApiBeanDetailPlanDetail)`
+`func (o *UnibeeApiSystemPlanDetailRes) SetPlan(v UnibeeApiBeanDetailPublicPlanDetail)`
 
 SetPlan sets Plan field to given value.
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **DiscountCode** | Pointer to **string** | discount_code | [optional] 
 **Id** | Pointer to **int64** | id | [optional] 
 **InvoiceId** | Pointer to **string** | invoice id | [optional] 
-**Member** | Pointer to [**UnibeeApiBeanDetailMerchantMemberDetail**](UnibeeApiBeanDetailMerchantMemberDetail.md) |  | [optional] 
+**Member** | Pointer to [**UnibeeApiBeanMerchantMember**](UnibeeApiBeanMerchantMember.md) |  | [optional] 
 **MemberId** | Pointer to **int64** | member_id | [optional] 
 **MerchantId** | Pointer to **int64** | merchant Id | [optional] 
 **OptAccount** | Pointer to **string** | operation Account | [optional] 
@@ -141,20 +141,20 @@ HasInvoiceId returns a boolean if a field has been set.
 
 ### GetMember
 
-`func (o *UnibeeApiBeanDetailMerchantOperationLogDetail) GetMember() UnibeeApiBeanDetailMerchantMemberDetail`
+`func (o *UnibeeApiBeanDetailMerchantOperationLogDetail) GetMember() UnibeeApiBeanMerchantMember`
 
 GetMember returns the Member field if non-nil, zero value otherwise.
 
 ### GetMemberOk
 
-`func (o *UnibeeApiBeanDetailMerchantOperationLogDetail) GetMemberOk() (*UnibeeApiBeanDetailMerchantMemberDetail, bool)`
+`func (o *UnibeeApiBeanDetailMerchantOperationLogDetail) GetMemberOk() (*UnibeeApiBeanMerchantMember, bool)`
 
 GetMemberOk returns a tuple with the Member field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMember
 
-`func (o *UnibeeApiBeanDetailMerchantOperationLogDetail) SetMember(v UnibeeApiBeanDetailMerchantMemberDetail)`
+`func (o *UnibeeApiBeanDetailMerchantOperationLogDetail) SetMember(v UnibeeApiBeanMerchantMember)`
 
 SetMember sets Member field to given value.
 

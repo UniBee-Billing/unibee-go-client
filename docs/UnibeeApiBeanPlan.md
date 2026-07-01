@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Amount** | Pointer to **int64** | amount, cent, without tax | [optional] 
+**AutoChargeConfig** | Pointer to [**UnibeeApiBeanAutoChargeConfig**](UnibeeApiBeanAutoChargeConfig.md) |  | [optional] 
 **AutoUpgradePlanId** | Pointer to **int64** | Target plan id for auto-upgrade; stored in additional settings JSON; 0 if unset | [optional] 
 **BindingAddonIds** | Pointer to **string** | binded recurring addon planIds，split with , | [optional] 
 **BindingOnetimeAddonIds** | Pointer to **string** | binded onetime addon planIds，split with , | [optional] 
@@ -86,6 +87,31 @@ SetAmount sets Amount field to given value.
 `func (o *UnibeeApiBeanPlan) HasAmount() bool`
 
 HasAmount returns a boolean if a field has been set.
+
+### GetAutoChargeConfig
+
+`func (o *UnibeeApiBeanPlan) GetAutoChargeConfig() UnibeeApiBeanAutoChargeConfig`
+
+GetAutoChargeConfig returns the AutoChargeConfig field if non-nil, zero value otherwise.
+
+### GetAutoChargeConfigOk
+
+`func (o *UnibeeApiBeanPlan) GetAutoChargeConfigOk() (*UnibeeApiBeanAutoChargeConfig, bool)`
+
+GetAutoChargeConfigOk returns a tuple with the AutoChargeConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoChargeConfig
+
+`func (o *UnibeeApiBeanPlan) SetAutoChargeConfig(v UnibeeApiBeanAutoChargeConfig)`
+
+SetAutoChargeConfig sets AutoChargeConfig field to given value.
+
+### HasAutoChargeConfig
+
+`func (o *UnibeeApiBeanPlan) HasAutoChargeConfig() bool`
+
+HasAutoChargeConfig returns a boolean if a field has been set.
 
 ### GetAutoUpgradePlanId
 

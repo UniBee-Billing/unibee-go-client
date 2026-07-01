@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **UpgradeLongerOnly** | Pointer to **bool** | AdvanceConfig, 0-false,1-true, will forbid for all except upgrade to longer plan if set true | [optional] 
 **UpgradeOnly** | Pointer to **bool** | AdvanceConfig, 0-false,1-true, will forbid for all except same interval upgrade action if set true | [optional] 
 **UsedChildCodeCount** | Pointer to **int64** | Number of used child codes | [optional] 
+**UserIds** | Pointer to **[]int64** | Ids of user which discount code can effect, default effect all users if not set | [optional] 
 **UserLimit** | Pointer to **int32** | AdvanceConfig, The limit of every customer can apply, the recurring apply not involved, 0-unlimited | [optional] 
 **UserScope** | Pointer to **int32** | AdvanceConfig, Apply user scope,0-for all, 1-for only new user, 2-for only renewals, renewals is upgrade&amp;downgrade&amp;renew | [optional] 
 
@@ -727,6 +728,31 @@ SetUsedChildCodeCount sets UsedChildCodeCount field to given value.
 `func (o *UnibeeApiBeanMerchantBatchDiscountCodeTemplate) HasUsedChildCodeCount() bool`
 
 HasUsedChildCodeCount returns a boolean if a field has been set.
+
+### GetUserIds
+
+`func (o *UnibeeApiBeanMerchantBatchDiscountCodeTemplate) GetUserIds() []int64`
+
+GetUserIds returns the UserIds field if non-nil, zero value otherwise.
+
+### GetUserIdsOk
+
+`func (o *UnibeeApiBeanMerchantBatchDiscountCodeTemplate) GetUserIdsOk() (*[]int64, bool)`
+
+GetUserIdsOk returns a tuple with the UserIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserIds
+
+`func (o *UnibeeApiBeanMerchantBatchDiscountCodeTemplate) SetUserIds(v []int64)`
+
+SetUserIds sets UserIds field to given value.
+
+### HasUserIds
+
+`func (o *UnibeeApiBeanMerchantBatchDiscountCodeTemplate) HasUserIds() bool`
+
+HasUserIds returns a boolean if a field has been set.
 
 ### GetUserLimit
 

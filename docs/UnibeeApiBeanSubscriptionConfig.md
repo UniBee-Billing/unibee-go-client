@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AutoChargeMaxRetryCount** | Pointer to **int64** | AutoChargeMaxRetryCount, max automatic-charge attempts for one invoice including the first automatic attempt; 0 &#x3D; unlimited (current behavior) | [optional] 
+**AutoChargeRetryInterval** | Pointer to **int64** | AutoChargeRetryInterval, seconds to wait before retrying a failed auto-charge within the window, default 12h (43200) | [optional] 
 **DowngradeEffectImmediately** | Pointer to **bool** | DowngradeEffectImmediately, whether subscription update should effect immediately or at period end, default at period end | [optional] 
 **DowngradeNonImmediatelyEffectBeforePeriodEnd** | Pointer to **int64** | DowngradeNonImmediatelyEffectBeforePeriodEnd, for non-immediate downgrade, can take effect before period end (in seconds), default 30 minutes (1800) | [optional] 
 **FiatExchangeApiKey** | Pointer to **string** |  | [optional] 
@@ -14,6 +16,7 @@ Name | Type | Description | Notes
 **ShowZeroInvoice** | Pointer to **bool** | ShowZeroInvoice, show zero invoice or not, default no | [optional] 
 **TryAutomaticPaymentBeforePeriodEnd** | Pointer to **int64** | TryAutomaticPaymentBeforePeriodEnd, default 30 min | [optional] 
 **UpgradeProration** | Pointer to **bool** | UpgradeProration, whether subscription update generation proration invoice or not, default yes | [optional] 
+**UpgradeResetBillingCycle** | Pointer to **bool** | UpgradeResetBillingCycle, for same-interval upgrades only: when true (default), credit unused old plan, charge full new plan cycle from upgrade time and reset billing anchor; when false, prorate new plan to current period end (legacy fixed-end). No effect when billing interval changes. | [optional] 
 
 ## Methods
 
@@ -33,6 +36,56 @@ will change when the set of required properties is changed
 NewUnibeeApiBeanSubscriptionConfigWithDefaults instantiates a new UnibeeApiBeanSubscriptionConfig object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAutoChargeMaxRetryCount
+
+`func (o *UnibeeApiBeanSubscriptionConfig) GetAutoChargeMaxRetryCount() int64`
+
+GetAutoChargeMaxRetryCount returns the AutoChargeMaxRetryCount field if non-nil, zero value otherwise.
+
+### GetAutoChargeMaxRetryCountOk
+
+`func (o *UnibeeApiBeanSubscriptionConfig) GetAutoChargeMaxRetryCountOk() (*int64, bool)`
+
+GetAutoChargeMaxRetryCountOk returns a tuple with the AutoChargeMaxRetryCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoChargeMaxRetryCount
+
+`func (o *UnibeeApiBeanSubscriptionConfig) SetAutoChargeMaxRetryCount(v int64)`
+
+SetAutoChargeMaxRetryCount sets AutoChargeMaxRetryCount field to given value.
+
+### HasAutoChargeMaxRetryCount
+
+`func (o *UnibeeApiBeanSubscriptionConfig) HasAutoChargeMaxRetryCount() bool`
+
+HasAutoChargeMaxRetryCount returns a boolean if a field has been set.
+
+### GetAutoChargeRetryInterval
+
+`func (o *UnibeeApiBeanSubscriptionConfig) GetAutoChargeRetryInterval() int64`
+
+GetAutoChargeRetryInterval returns the AutoChargeRetryInterval field if non-nil, zero value otherwise.
+
+### GetAutoChargeRetryIntervalOk
+
+`func (o *UnibeeApiBeanSubscriptionConfig) GetAutoChargeRetryIntervalOk() (*int64, bool)`
+
+GetAutoChargeRetryIntervalOk returns a tuple with the AutoChargeRetryInterval field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoChargeRetryInterval
+
+`func (o *UnibeeApiBeanSubscriptionConfig) SetAutoChargeRetryInterval(v int64)`
+
+SetAutoChargeRetryInterval sets AutoChargeRetryInterval field to given value.
+
+### HasAutoChargeRetryInterval
+
+`func (o *UnibeeApiBeanSubscriptionConfig) HasAutoChargeRetryInterval() bool`
+
+HasAutoChargeRetryInterval returns a boolean if a field has been set.
 
 ### GetDowngradeEffectImmediately
 
@@ -283,6 +336,31 @@ SetUpgradeProration sets UpgradeProration field to given value.
 `func (o *UnibeeApiBeanSubscriptionConfig) HasUpgradeProration() bool`
 
 HasUpgradeProration returns a boolean if a field has been set.
+
+### GetUpgradeResetBillingCycle
+
+`func (o *UnibeeApiBeanSubscriptionConfig) GetUpgradeResetBillingCycle() bool`
+
+GetUpgradeResetBillingCycle returns the UpgradeResetBillingCycle field if non-nil, zero value otherwise.
+
+### GetUpgradeResetBillingCycleOk
+
+`func (o *UnibeeApiBeanSubscriptionConfig) GetUpgradeResetBillingCycleOk() (*bool, bool)`
+
+GetUpgradeResetBillingCycleOk returns a tuple with the UpgradeResetBillingCycle field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpgradeResetBillingCycle
+
+`func (o *UnibeeApiBeanSubscriptionConfig) SetUpgradeResetBillingCycle(v bool)`
+
+SetUpgradeResetBillingCycle sets UpgradeResetBillingCycle field to given value.
+
+### HasUpgradeResetBillingCycle
+
+`func (o *UnibeeApiBeanSubscriptionConfig) HasUpgradeResetBillingCycle() bool`
+
+HasUpgradeResetBillingCycle returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

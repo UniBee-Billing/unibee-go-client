@@ -5,14 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Action** | Pointer to **map[string]interface{}** |  | [optional] 
+**HasOtherPendingCryptoSubscription** | Pointer to **bool** | Whether the user already has another pending crypto subscription for the same product (checkout-only flag; no subscription details disclosed). | [optional] 
 **InvoiceId** | Pointer to **string** | The unique id of invoice | [optional] 
 **Link** | Pointer to **string** |  | [optional] 
-**OtherPendingCryptoSubscription** | Pointer to [**UnibeeApiBeanDetailSubscriptionDetail**](UnibeeApiBeanDetailSubscriptionDetail.md) |  | [optional] 
 **Paid** | Pointer to **bool** |  | [optional] 
 **PaymentId** | Pointer to **string** | The unique id of payment | [optional] 
-**Subscription** | Pointer to [**UnibeeApiBeanSubscription**](UnibeeApiBeanSubscription.md) |  | [optional] 
-**Token** | Pointer to **string** | token | [optional] 
-**User** | Pointer to [**UnibeeApiBeanUserAccount**](UnibeeApiBeanUserAccount.md) |  | [optional] 
+**Subscription** | Pointer to [**UnibeeApiCheckoutSubscriptionCheckoutCreateSubscription**](UnibeeApiCheckoutSubscriptionCheckoutCreateSubscription.md) |  | [optional] 
+**User** | Pointer to [**UnibeeApiCheckoutSubscriptionCheckoutCreateUser**](UnibeeApiCheckoutSubscriptionCheckoutCreateUser.md) |  | [optional] 
 
 ## Methods
 
@@ -57,6 +56,31 @@ SetAction sets Action field to given value.
 `func (o *UnibeeApiCheckoutSubscriptionCreateRes) HasAction() bool`
 
 HasAction returns a boolean if a field has been set.
+
+### GetHasOtherPendingCryptoSubscription
+
+`func (o *UnibeeApiCheckoutSubscriptionCreateRes) GetHasOtherPendingCryptoSubscription() bool`
+
+GetHasOtherPendingCryptoSubscription returns the HasOtherPendingCryptoSubscription field if non-nil, zero value otherwise.
+
+### GetHasOtherPendingCryptoSubscriptionOk
+
+`func (o *UnibeeApiCheckoutSubscriptionCreateRes) GetHasOtherPendingCryptoSubscriptionOk() (*bool, bool)`
+
+GetHasOtherPendingCryptoSubscriptionOk returns a tuple with the HasOtherPendingCryptoSubscription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasOtherPendingCryptoSubscription
+
+`func (o *UnibeeApiCheckoutSubscriptionCreateRes) SetHasOtherPendingCryptoSubscription(v bool)`
+
+SetHasOtherPendingCryptoSubscription sets HasOtherPendingCryptoSubscription field to given value.
+
+### HasHasOtherPendingCryptoSubscription
+
+`func (o *UnibeeApiCheckoutSubscriptionCreateRes) HasHasOtherPendingCryptoSubscription() bool`
+
+HasHasOtherPendingCryptoSubscription returns a boolean if a field has been set.
 
 ### GetInvoiceId
 
@@ -107,31 +131,6 @@ SetLink sets Link field to given value.
 `func (o *UnibeeApiCheckoutSubscriptionCreateRes) HasLink() bool`
 
 HasLink returns a boolean if a field has been set.
-
-### GetOtherPendingCryptoSubscription
-
-`func (o *UnibeeApiCheckoutSubscriptionCreateRes) GetOtherPendingCryptoSubscription() UnibeeApiBeanDetailSubscriptionDetail`
-
-GetOtherPendingCryptoSubscription returns the OtherPendingCryptoSubscription field if non-nil, zero value otherwise.
-
-### GetOtherPendingCryptoSubscriptionOk
-
-`func (o *UnibeeApiCheckoutSubscriptionCreateRes) GetOtherPendingCryptoSubscriptionOk() (*UnibeeApiBeanDetailSubscriptionDetail, bool)`
-
-GetOtherPendingCryptoSubscriptionOk returns a tuple with the OtherPendingCryptoSubscription field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOtherPendingCryptoSubscription
-
-`func (o *UnibeeApiCheckoutSubscriptionCreateRes) SetOtherPendingCryptoSubscription(v UnibeeApiBeanDetailSubscriptionDetail)`
-
-SetOtherPendingCryptoSubscription sets OtherPendingCryptoSubscription field to given value.
-
-### HasOtherPendingCryptoSubscription
-
-`func (o *UnibeeApiCheckoutSubscriptionCreateRes) HasOtherPendingCryptoSubscription() bool`
-
-HasOtherPendingCryptoSubscription returns a boolean if a field has been set.
 
 ### GetPaid
 
@@ -185,20 +184,20 @@ HasPaymentId returns a boolean if a field has been set.
 
 ### GetSubscription
 
-`func (o *UnibeeApiCheckoutSubscriptionCreateRes) GetSubscription() UnibeeApiBeanSubscription`
+`func (o *UnibeeApiCheckoutSubscriptionCreateRes) GetSubscription() UnibeeApiCheckoutSubscriptionCheckoutCreateSubscription`
 
 GetSubscription returns the Subscription field if non-nil, zero value otherwise.
 
 ### GetSubscriptionOk
 
-`func (o *UnibeeApiCheckoutSubscriptionCreateRes) GetSubscriptionOk() (*UnibeeApiBeanSubscription, bool)`
+`func (o *UnibeeApiCheckoutSubscriptionCreateRes) GetSubscriptionOk() (*UnibeeApiCheckoutSubscriptionCheckoutCreateSubscription, bool)`
 
 GetSubscriptionOk returns a tuple with the Subscription field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubscription
 
-`func (o *UnibeeApiCheckoutSubscriptionCreateRes) SetSubscription(v UnibeeApiBeanSubscription)`
+`func (o *UnibeeApiCheckoutSubscriptionCreateRes) SetSubscription(v UnibeeApiCheckoutSubscriptionCheckoutCreateSubscription)`
 
 SetSubscription sets Subscription field to given value.
 
@@ -208,47 +207,22 @@ SetSubscription sets Subscription field to given value.
 
 HasSubscription returns a boolean if a field has been set.
 
-### GetToken
-
-`func (o *UnibeeApiCheckoutSubscriptionCreateRes) GetToken() string`
-
-GetToken returns the Token field if non-nil, zero value otherwise.
-
-### GetTokenOk
-
-`func (o *UnibeeApiCheckoutSubscriptionCreateRes) GetTokenOk() (*string, bool)`
-
-GetTokenOk returns a tuple with the Token field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetToken
-
-`func (o *UnibeeApiCheckoutSubscriptionCreateRes) SetToken(v string)`
-
-SetToken sets Token field to given value.
-
-### HasToken
-
-`func (o *UnibeeApiCheckoutSubscriptionCreateRes) HasToken() bool`
-
-HasToken returns a boolean if a field has been set.
-
 ### GetUser
 
-`func (o *UnibeeApiCheckoutSubscriptionCreateRes) GetUser() UnibeeApiBeanUserAccount`
+`func (o *UnibeeApiCheckoutSubscriptionCreateRes) GetUser() UnibeeApiCheckoutSubscriptionCheckoutCreateUser`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *UnibeeApiCheckoutSubscriptionCreateRes) GetUserOk() (*UnibeeApiBeanUserAccount, bool)`
+`func (o *UnibeeApiCheckoutSubscriptionCreateRes) GetUserOk() (*UnibeeApiCheckoutSubscriptionCheckoutCreateUser, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *UnibeeApiCheckoutSubscriptionCreateRes) SetUser(v UnibeeApiBeanUserAccount)`
+`func (o *UnibeeApiCheckoutSubscriptionCreateRes) SetUser(v UnibeeApiCheckoutSubscriptionCheckoutCreateUser)`
 
 SetUser sets User field to given value.
 

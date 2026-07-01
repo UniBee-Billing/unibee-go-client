@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreateTime** | Pointer to **int64** | CreateTime, UTC Time | [optional] 
 **Id** | Pointer to **int64** | Id | [optional] 
-**MerchantMember** | Pointer to [**UnibeeApiBeanDetailMerchantMemberDetail**](UnibeeApiBeanDetailMerchantMemberDetail.md) |  | [optional] 
+**MerchantMember** | Pointer to [**UnibeeApiBeanMerchantMember**](UnibeeApiBeanMerchantMember.md) |  | [optional] 
 **MerchantMemberId** | Pointer to **int64** | merchant_user_id | [optional] 
 **Note** | Pointer to **string** | note | [optional] 
 **UserAccount** | Pointer to [**UnibeeApiBeanUserAccount**](UnibeeApiBeanUserAccount.md) |  | [optional] 
@@ -83,20 +83,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetMerchantMember
 
-`func (o *UnibeeApiBeanDetailUserAdminNoteDetail) GetMerchantMember() UnibeeApiBeanDetailMerchantMemberDetail`
+`func (o *UnibeeApiBeanDetailUserAdminNoteDetail) GetMerchantMember() UnibeeApiBeanMerchantMember`
 
 GetMerchantMember returns the MerchantMember field if non-nil, zero value otherwise.
 
 ### GetMerchantMemberOk
 
-`func (o *UnibeeApiBeanDetailUserAdminNoteDetail) GetMerchantMemberOk() (*UnibeeApiBeanDetailMerchantMemberDetail, bool)`
+`func (o *UnibeeApiBeanDetailUserAdminNoteDetail) GetMerchantMemberOk() (*UnibeeApiBeanMerchantMember, bool)`
 
 GetMerchantMemberOk returns a tuple with the MerchantMember field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchantMember
 
-`func (o *UnibeeApiBeanDetailUserAdminNoteDetail) SetMerchantMember(v UnibeeApiBeanDetailMerchantMemberDetail)`
+`func (o *UnibeeApiBeanDetailUserAdminNoteDetail) SetMerchantMember(v UnibeeApiBeanMerchantMember)`
 
 SetMerchantMember sets MerchantMember field to given value.
 

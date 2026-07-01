@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonIds** | Pointer to **[]int64** | Plan Ids Of Recurring Addon Type | [optional] 
 **Amount** | **int64** | Plan Amount | 
+**AutoChargeConfig** | Pointer to [**UnibeeApiBeanAutoChargeConfig**](UnibeeApiBeanAutoChargeConfig.md) |  | [optional] 
 **AutoUpgradePlanId** | Pointer to **int64** | Target plan id stored in additional settings when &gt;0; independent of disableAutoCharge | [optional] 
 **CancelAtTrialEnd** | Pointer to **int32** | whether cancel at subscription first trial end，0-false | 1-true, will pass to cancelAtPeriodEnd of subscription | [optional] 
 **CheckoutTemplateId** | Pointer to **int64** | Checkout template id, used to build checkoutUrl; stored in plan additional settings | [optional] 
@@ -100,6 +101,31 @@ and a boolean to check if the value has been set.
 
 SetAmount sets Amount field to given value.
 
+
+### GetAutoChargeConfig
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetAutoChargeConfig() UnibeeApiBeanAutoChargeConfig`
+
+GetAutoChargeConfig returns the AutoChargeConfig field if non-nil, zero value otherwise.
+
+### GetAutoChargeConfigOk
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetAutoChargeConfigOk() (*UnibeeApiBeanAutoChargeConfig, bool)`
+
+GetAutoChargeConfigOk returns a tuple with the AutoChargeConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoChargeConfig
+
+`func (o *UnibeeApiMerchantPlanNewReq) SetAutoChargeConfig(v UnibeeApiBeanAutoChargeConfig)`
+
+SetAutoChargeConfig sets AutoChargeConfig field to given value.
+
+### HasAutoChargeConfig
+
+`func (o *UnibeeApiMerchantPlanNewReq) HasAutoChargeConfig() bool`
+
+HasAutoChargeConfig returns a boolean if a field has been set.
 
 ### GetAutoUpgradePlanId
 

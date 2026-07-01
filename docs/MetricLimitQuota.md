@@ -5,6 +5,7 @@ All URIs are relative to *https://api.unibee.top*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**MetricCarryoverReprocessPost**](MetricLimitQuota.md#MetricCarryoverReprocessPost) | **Post** /merchant/metric/carryover/reprocess | Reprocess Metric Carry Over (Admin Tool)
+[**MetricLimitAdjustBatchPost**](MetricLimitQuota.md#MetricLimitAdjustBatchPost) | **Post** /merchant/metric/limit_adjust_batch | Batch Manual Adjust Metric Limit
 [**MetricLimitAdjustPost**](MetricLimitQuota.md#MetricLimitAdjustPost) | **Post** /merchant/metric/limit_adjust | Manual Adjust Metric Limit
 
 
@@ -58,6 +59,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantMetricCarryoverReprocessPost200Response**](MerchantMetricCarryoverReprocessPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## MetricLimitAdjustBatchPost
+
+> MerchantMetricLimitAdjustBatchPost200Response MetricLimitAdjustBatchPost(ctx).UnibeeApiMerchantMetricMetricLimitAdjustBatchReq(unibeeApiMerchantMetricMetricLimitAdjustBatchReq).Execute()
+
+Batch Manual Adjust Metric Limit
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantMetricMetricLimitAdjustBatchReq := *openapiclient.NewUnibeeApiMerchantMetricMetricLimitAdjustBatchReq([]openapiclient.UnibeeApiMerchantMetricMetricLimitAdjustBatchItem{*openapiclient.NewUnibeeApiMerchantMetricMetricLimitAdjustBatchItem()}, "RequestId_example") // UnibeeApiMerchantMetricMetricLimitAdjustBatchReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MetricLimitQuota.MetricLimitAdjustBatchPost(context.Background()).UnibeeApiMerchantMetricMetricLimitAdjustBatchReq(unibeeApiMerchantMetricMetricLimitAdjustBatchReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetricLimitQuota.MetricLimitAdjustBatchPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MetricLimitAdjustBatchPost`: MerchantMetricLimitAdjustBatchPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `MetricLimitQuota.MetricLimitAdjustBatchPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiMetricLimitAdjustBatchPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantMetricMetricLimitAdjustBatchReq** | [**UnibeeApiMerchantMetricMetricLimitAdjustBatchReq**](UnibeeApiMerchantMetricMetricLimitAdjustBatchReq.md) |  | 
+
+### Return type
+
+[**MerchantMetricLimitAdjustBatchPost200Response**](MerchantMetricLimitAdjustBatchPost200Response.md)
 
 ### Authorization
 

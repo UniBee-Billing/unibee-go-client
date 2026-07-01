@@ -11,10 +11,13 @@ Name | Type | Description | Notes
 **CreateTimeStart** | Pointer to **int64** | CreateTimeStart，UTC timestamp，seconds | [optional] 
 **Currency** | Pointer to **string** | The currency of invoice | [optional] 
 **DeleteInclude** | Pointer to **bool** | Deleted Involved，Need Admin Permission | [optional] 
+**DiscountCode** | Pointer to **string** | Filter by exact discount code (case-insensitive) | [optional] 
 **FirstName** | Pointer to **string** | The firstName of invoice | [optional] 
 **GatewayIds** | Pointer to **[]int64** | GatewayIds, Search Filter GatewayIds | [optional] 
+**HasDiscountCode** | Pointer to **bool** | Filter by whether discount_code is set | [optional] 
 **LastName** | Pointer to **string** | The lastName of invoice | [optional] 
 **Page** | Pointer to **int32** | Page, Start 0 | [optional] 
+**PlanIds** | Pointer to **[]int64** | Filter invoices that include any of these plan IDs (OR) | [optional] 
 **ReportTimeEnd** | Pointer to **int64** | ReportTimeEnd，UTC timestamp，seconds | [optional] 
 **ReportTimeStart** | Pointer to **int64** | ReportTimeStart，UTC timestamp，seconds | [optional] 
 **SearchKey** | Pointer to **string** | Search InvoiceName|Email|ProductName | [optional] 
@@ -219,6 +222,31 @@ SetDeleteInclude sets DeleteInclude field to given value.
 
 HasDeleteInclude returns a boolean if a field has been set.
 
+### GetDiscountCode
+
+`func (o *UnibeeApiMerchantInvoiceListReq) GetDiscountCode() string`
+
+GetDiscountCode returns the DiscountCode field if non-nil, zero value otherwise.
+
+### GetDiscountCodeOk
+
+`func (o *UnibeeApiMerchantInvoiceListReq) GetDiscountCodeOk() (*string, bool)`
+
+GetDiscountCodeOk returns a tuple with the DiscountCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscountCode
+
+`func (o *UnibeeApiMerchantInvoiceListReq) SetDiscountCode(v string)`
+
+SetDiscountCode sets DiscountCode field to given value.
+
+### HasDiscountCode
+
+`func (o *UnibeeApiMerchantInvoiceListReq) HasDiscountCode() bool`
+
+HasDiscountCode returns a boolean if a field has been set.
+
 ### GetFirstName
 
 `func (o *UnibeeApiMerchantInvoiceListReq) GetFirstName() string`
@@ -269,6 +297,31 @@ SetGatewayIds sets GatewayIds field to given value.
 
 HasGatewayIds returns a boolean if a field has been set.
 
+### GetHasDiscountCode
+
+`func (o *UnibeeApiMerchantInvoiceListReq) GetHasDiscountCode() bool`
+
+GetHasDiscountCode returns the HasDiscountCode field if non-nil, zero value otherwise.
+
+### GetHasDiscountCodeOk
+
+`func (o *UnibeeApiMerchantInvoiceListReq) GetHasDiscountCodeOk() (*bool, bool)`
+
+GetHasDiscountCodeOk returns a tuple with the HasDiscountCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasDiscountCode
+
+`func (o *UnibeeApiMerchantInvoiceListReq) SetHasDiscountCode(v bool)`
+
+SetHasDiscountCode sets HasDiscountCode field to given value.
+
+### HasHasDiscountCode
+
+`func (o *UnibeeApiMerchantInvoiceListReq) HasHasDiscountCode() bool`
+
+HasHasDiscountCode returns a boolean if a field has been set.
+
 ### GetLastName
 
 `func (o *UnibeeApiMerchantInvoiceListReq) GetLastName() string`
@@ -318,6 +371,31 @@ SetPage sets Page field to given value.
 `func (o *UnibeeApiMerchantInvoiceListReq) HasPage() bool`
 
 HasPage returns a boolean if a field has been set.
+
+### GetPlanIds
+
+`func (o *UnibeeApiMerchantInvoiceListReq) GetPlanIds() []int64`
+
+GetPlanIds returns the PlanIds field if non-nil, zero value otherwise.
+
+### GetPlanIdsOk
+
+`func (o *UnibeeApiMerchantInvoiceListReq) GetPlanIdsOk() (*[]int64, bool)`
+
+GetPlanIdsOk returns a tuple with the PlanIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanIds
+
+`func (o *UnibeeApiMerchantInvoiceListReq) SetPlanIds(v []int64)`
+
+SetPlanIds sets PlanIds field to given value.
+
+### HasPlanIds
+
+`func (o *UnibeeApiMerchantInvoiceListReq) HasPlanIds() bool`
+
+HasPlanIds returns a boolean if a field has been set.
 
 ### GetReportTimeEnd
 

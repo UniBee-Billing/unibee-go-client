@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Amount** | **int64** | Adjustment amount (positive to increase, negative to decrease, cannot be 0) | 
+**IdempotencyKey** | Pointer to **string** | Optional idempotency key, max 256 chars. Retrying the same key with the same adjustment returns success without applying twice. | [optional] 
 **MetricCode** | **string** | Metric Code | 
 **ProductId** | Pointer to **int64** | Product ID, default 0 for default product | [optional] 
 **Reason** | **string** | Reason for adjustment | 
@@ -49,6 +50,31 @@ and a boolean to check if the value has been set.
 
 SetAmount sets Amount field to given value.
 
+
+### GetIdempotencyKey
+
+`func (o *UnibeeApiMerchantMetricMetricLimitAdjustReq) GetIdempotencyKey() string`
+
+GetIdempotencyKey returns the IdempotencyKey field if non-nil, zero value otherwise.
+
+### GetIdempotencyKeyOk
+
+`func (o *UnibeeApiMerchantMetricMetricLimitAdjustReq) GetIdempotencyKeyOk() (*string, bool)`
+
+GetIdempotencyKeyOk returns a tuple with the IdempotencyKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIdempotencyKey
+
+`func (o *UnibeeApiMerchantMetricMetricLimitAdjustReq) SetIdempotencyKey(v string)`
+
+SetIdempotencyKey sets IdempotencyKey field to given value.
+
+### HasIdempotencyKey
+
+`func (o *UnibeeApiMerchantMetricMetricLimitAdjustReq) HasIdempotencyKey() bool`
+
+HasIdempotencyKey returns a boolean if a field has been set.
 
 ### GetMetricCode
 

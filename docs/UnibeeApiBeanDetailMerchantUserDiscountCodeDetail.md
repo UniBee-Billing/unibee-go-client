@@ -10,11 +10,12 @@ Name | Type | Description | Notes
 **Currency** | Pointer to **string** | currency | [optional] 
 **Id** | Pointer to **int64** | ID | [optional] 
 **InvoiceId** | Pointer to **string** | invoice_id | [optional] 
+**InvoiceStatus** | Pointer to **int32** | invoice status, 0-unknown, 1-pending, 2-processing, 3-paid, 4-failed, 5-cancelled, 6-reversed | [optional] 
 **MerchantId** | Pointer to **int64** | merchantId | [optional] 
 **PaymentId** | Pointer to **string** | payment_id | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
 **Recurring** | Pointer to **int32** | is recurring apply, 0-no, 1-yes | [optional] 
-**Status** | Pointer to **int32** | status, 1-finished, 2-rollback | [optional] 
+**Status** | Pointer to **int32** | status, 1-used, 2-rollback | [optional] 
 **SubscriptionId** | Pointer to **string** | subscription_id | [optional] 
 **User** | Pointer to [**UnibeeApiBeanUserAccount**](UnibeeApiBeanUserAccount.md) |  | [optional] 
 
@@ -186,6 +187,31 @@ SetInvoiceId sets InvoiceId field to given value.
 `func (o *UnibeeApiBeanDetailMerchantUserDiscountCodeDetail) HasInvoiceId() bool`
 
 HasInvoiceId returns a boolean if a field has been set.
+
+### GetInvoiceStatus
+
+`func (o *UnibeeApiBeanDetailMerchantUserDiscountCodeDetail) GetInvoiceStatus() int32`
+
+GetInvoiceStatus returns the InvoiceStatus field if non-nil, zero value otherwise.
+
+### GetInvoiceStatusOk
+
+`func (o *UnibeeApiBeanDetailMerchantUserDiscountCodeDetail) GetInvoiceStatusOk() (*int32, bool)`
+
+GetInvoiceStatusOk returns a tuple with the InvoiceStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInvoiceStatus
+
+`func (o *UnibeeApiBeanDetailMerchantUserDiscountCodeDetail) SetInvoiceStatus(v int32)`
+
+SetInvoiceStatus sets InvoiceStatus field to given value.
+
+### HasInvoiceStatus
+
+`func (o *UnibeeApiBeanDetailMerchantUserDiscountCodeDetail) HasInvoiceStatus() bool`
+
+HasInvoiceStatus returns a boolean if a field has been set.
 
 ### GetMerchantId
 

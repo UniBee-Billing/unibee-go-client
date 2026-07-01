@@ -5,19 +5,18 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) |  | [optional] 
-**Addons** | Pointer to [**[]UnibeeApiBeanPlanAddonDetail**](UnibeeApiBeanPlanAddonDetail.md) |  | [optional] 
+**Addons** | Pointer to [**[]UnibeeApiBeanPublicPlanAddonDetail**](UnibeeApiBeanPublicPlanAddonDetail.md) |  | [optional] 
 **ApplyPromoCredit** | Pointer to **bool** |  | [optional] 
 **Currency** | Pointer to **string** |  | [optional] 
-**Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCode**](UnibeeApiBeanMerchantDiscountCode.md) |  | [optional] 
+**Discount** | Pointer to [**UnibeeApiBeanPublicDiscount**](UnibeeApiBeanPublicDiscount.md) |  | [optional] 
 **DiscountAmount** | Pointer to **int64** |  | [optional] 
 **DiscountMessage** | Pointer to **string** |  | [optional] 
-**Email** | Pointer to **string** |  | [optional] 
-**Gateway** | Pointer to [**UnibeeApiBeanDetailGateway**](UnibeeApiBeanDetailGateway.md) |  | [optional] 
-**Invoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
+**Gateway** | Pointer to [**UnibeeApiBeanDetailPublicGateway**](UnibeeApiBeanDetailPublicGateway.md) |  | [optional] 
+**HasOtherPendingCryptoSubscription** | Pointer to **bool** | Whether the user already has another pending crypto subscription for the same product (checkout-only flag; no subscription details disclosed). | [optional] 
+**Invoice** | Pointer to [**UnibeeApiCheckoutSubscriptionCheckoutPreviewInvoice**](UnibeeApiCheckoutSubscriptionCheckoutPreviewInvoice.md) |  | [optional] 
 **OriginAmount** | Pointer to **int64** |  | [optional] 
 **OtherActiveSubscriptionId** | Pointer to **string** | other active or incomplete subscription id  | [optional] 
-**OtherPendingCryptoSubscription** | Pointer to [**UnibeeApiBeanDetailSubscriptionDetail**](UnibeeApiBeanDetailSubscriptionDetail.md) |  | [optional] 
-**Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
+**Plan** | Pointer to [**UnibeeApiBeanPublicPlan**](UnibeeApiBeanPublicPlan.md) |  | [optional] 
 **Quantity** | Pointer to **int64** |  | [optional] 
 **RecurringDiscountCode** | Pointer to **string** | Discount code persisted for later billing cycles (e.g. after trial), when applicable. | [optional] 
 **SignIn** | Pointer to [**UnibeeApiBeanCheckoutSignIn**](UnibeeApiBeanCheckoutSignIn.md) |  | [optional] 
@@ -79,20 +78,20 @@ HasAddonParams returns a boolean if a field has been set.
 
 ### GetAddons
 
-`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetAddons() []UnibeeApiBeanPlanAddonDetail`
+`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetAddons() []UnibeeApiBeanPublicPlanAddonDetail`
 
 GetAddons returns the Addons field if non-nil, zero value otherwise.
 
 ### GetAddonsOk
 
-`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetAddonsOk() (*[]UnibeeApiBeanPlanAddonDetail, bool)`
+`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetAddonsOk() (*[]UnibeeApiBeanPublicPlanAddonDetail, bool)`
 
 GetAddonsOk returns a tuple with the Addons field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddons
 
-`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) SetAddons(v []UnibeeApiBeanPlanAddonDetail)`
+`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) SetAddons(v []UnibeeApiBeanPublicPlanAddonDetail)`
 
 SetAddons sets Addons field to given value.
 
@@ -154,20 +153,20 @@ HasCurrency returns a boolean if a field has been set.
 
 ### GetDiscount
 
-`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetDiscount() UnibeeApiBeanMerchantDiscountCode`
+`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetDiscount() UnibeeApiBeanPublicDiscount`
 
 GetDiscount returns the Discount field if non-nil, zero value otherwise.
 
 ### GetDiscountOk
 
-`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetDiscountOk() (*UnibeeApiBeanMerchantDiscountCode, bool)`
+`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetDiscountOk() (*UnibeeApiBeanPublicDiscount, bool)`
 
 GetDiscountOk returns a tuple with the Discount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDiscount
 
-`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) SetDiscount(v UnibeeApiBeanMerchantDiscountCode)`
+`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) SetDiscount(v UnibeeApiBeanPublicDiscount)`
 
 SetDiscount sets Discount field to given value.
 
@@ -227,47 +226,22 @@ SetDiscountMessage sets DiscountMessage field to given value.
 
 HasDiscountMessage returns a boolean if a field has been set.
 
-### GetEmail
-
-`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetEmail() string`
-
-GetEmail returns the Email field if non-nil, zero value otherwise.
-
-### GetEmailOk
-
-`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetEmailOk() (*string, bool)`
-
-GetEmailOk returns a tuple with the Email field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEmail
-
-`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) SetEmail(v string)`
-
-SetEmail sets Email field to given value.
-
-### HasEmail
-
-`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) HasEmail() bool`
-
-HasEmail returns a boolean if a field has been set.
-
 ### GetGateway
 
-`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetGateway() UnibeeApiBeanDetailGateway`
+`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetGateway() UnibeeApiBeanDetailPublicGateway`
 
 GetGateway returns the Gateway field if non-nil, zero value otherwise.
 
 ### GetGatewayOk
 
-`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetGatewayOk() (*UnibeeApiBeanDetailGateway, bool)`
+`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetGatewayOk() (*UnibeeApiBeanDetailPublicGateway, bool)`
 
 GetGatewayOk returns a tuple with the Gateway field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGateway
 
-`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) SetGateway(v UnibeeApiBeanDetailGateway)`
+`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) SetGateway(v UnibeeApiBeanDetailPublicGateway)`
 
 SetGateway sets Gateway field to given value.
 
@@ -277,22 +251,47 @@ SetGateway sets Gateway field to given value.
 
 HasGateway returns a boolean if a field has been set.
 
+### GetHasOtherPendingCryptoSubscription
+
+`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetHasOtherPendingCryptoSubscription() bool`
+
+GetHasOtherPendingCryptoSubscription returns the HasOtherPendingCryptoSubscription field if non-nil, zero value otherwise.
+
+### GetHasOtherPendingCryptoSubscriptionOk
+
+`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetHasOtherPendingCryptoSubscriptionOk() (*bool, bool)`
+
+GetHasOtherPendingCryptoSubscriptionOk returns a tuple with the HasOtherPendingCryptoSubscription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasOtherPendingCryptoSubscription
+
+`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) SetHasOtherPendingCryptoSubscription(v bool)`
+
+SetHasOtherPendingCryptoSubscription sets HasOtherPendingCryptoSubscription field to given value.
+
+### HasHasOtherPendingCryptoSubscription
+
+`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) HasHasOtherPendingCryptoSubscription() bool`
+
+HasHasOtherPendingCryptoSubscription returns a boolean if a field has been set.
+
 ### GetInvoice
 
-`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetInvoice() UnibeeApiBeanInvoice`
+`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetInvoice() UnibeeApiCheckoutSubscriptionCheckoutPreviewInvoice`
 
 GetInvoice returns the Invoice field if non-nil, zero value otherwise.
 
 ### GetInvoiceOk
 
-`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetInvoiceOk() (*UnibeeApiBeanInvoice, bool)`
+`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetInvoiceOk() (*UnibeeApiCheckoutSubscriptionCheckoutPreviewInvoice, bool)`
 
 GetInvoiceOk returns a tuple with the Invoice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInvoice
 
-`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) SetInvoice(v UnibeeApiBeanInvoice)`
+`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) SetInvoice(v UnibeeApiCheckoutSubscriptionCheckoutPreviewInvoice)`
 
 SetInvoice sets Invoice field to given value.
 
@@ -352,47 +351,22 @@ SetOtherActiveSubscriptionId sets OtherActiveSubscriptionId field to given value
 
 HasOtherActiveSubscriptionId returns a boolean if a field has been set.
 
-### GetOtherPendingCryptoSubscription
-
-`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetOtherPendingCryptoSubscription() UnibeeApiBeanDetailSubscriptionDetail`
-
-GetOtherPendingCryptoSubscription returns the OtherPendingCryptoSubscription field if non-nil, zero value otherwise.
-
-### GetOtherPendingCryptoSubscriptionOk
-
-`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetOtherPendingCryptoSubscriptionOk() (*UnibeeApiBeanDetailSubscriptionDetail, bool)`
-
-GetOtherPendingCryptoSubscriptionOk returns a tuple with the OtherPendingCryptoSubscription field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOtherPendingCryptoSubscription
-
-`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) SetOtherPendingCryptoSubscription(v UnibeeApiBeanDetailSubscriptionDetail)`
-
-SetOtherPendingCryptoSubscription sets OtherPendingCryptoSubscription field to given value.
-
-### HasOtherPendingCryptoSubscription
-
-`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) HasOtherPendingCryptoSubscription() bool`
-
-HasOtherPendingCryptoSubscription returns a boolean if a field has been set.
-
 ### GetPlan
 
-`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetPlan() UnibeeApiBeanPlan`
+`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetPlan() UnibeeApiBeanPublicPlan`
 
 GetPlan returns the Plan field if non-nil, zero value otherwise.
 
 ### GetPlanOk
 
-`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetPlanOk() (*UnibeeApiBeanPlan, bool)`
+`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) GetPlanOk() (*UnibeeApiBeanPublicPlan, bool)`
 
 GetPlanOk returns a tuple with the Plan field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlan
 
-`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) SetPlan(v UnibeeApiBeanPlan)`
+`func (o *UnibeeApiCheckoutSubscriptionCreatePreviewRes) SetPlan(v UnibeeApiBeanPublicPlan)`
 
 SetPlan sets Plan field to given value.
 

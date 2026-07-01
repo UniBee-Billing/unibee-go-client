@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **Status** | Pointer to **int32** | status, 1-editable, 2-active, 3-deactive, 4-expire, 10-archive | [optional] 
 **UpgradeLongerOnly** | Pointer to **bool** | AdvanceConfig, 0-false,1-true, will forbid for all except upgrade to longer plan if set 1 | [optional] 
 **UpgradeOnly** | Pointer to **bool** | AdvanceConfig, 0-false,1-true, will forbid for all except upgrade action if set 1 | [optional] 
+**UserIds** | Pointer to **[]int64** | Ids of user which discount code can effect, default effect all users if not set | [optional] 
 **UserLimit** | Pointer to **int32** | AdvanceConfig, The limit of every customer can apply, the recurring apply not involved, 0-unlimited\&quot; | [optional] 
 **UserScope** | Pointer to **int32** | AdvanceConfig, Apply user scope,0-for all, 1-for only new user, 2-for only renewals, renewals is upgrade&amp;downgrade&amp;renew | [optional] 
 
@@ -701,6 +702,31 @@ SetUpgradeOnly sets UpgradeOnly field to given value.
 `func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) HasUpgradeOnly() bool`
 
 HasUpgradeOnly returns a boolean if a field has been set.
+
+### GetUserIds
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetUserIds() []int64`
+
+GetUserIds returns the UserIds field if non-nil, zero value otherwise.
+
+### GetUserIdsOk
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) GetUserIdsOk() (*[]int64, bool)`
+
+GetUserIdsOk returns a tuple with the UserIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserIds
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) SetUserIds(v []int64)`
+
+SetUserIds sets UserIds field to given value.
+
+### HasUserIds
+
+`func (o *UnibeeApiBeanDetailMerchantDiscountCodeDetail) HasUserIds() bool`
+
+HasUserIds returns a boolean if a field has been set.
 
 ### GetUserLimit
 

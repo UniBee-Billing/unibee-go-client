@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **PlanIds** | Pointer to **[]int64** | Filter PlanIds Default All | [optional] 
 **SortField** | Pointer to **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | [optional] 
 **SortType** | Pointer to **string** | Sort Type，asc|desc，Default desc | [optional] 
-**Status** | Pointer to **[]int32** | Filter Status Default All, 1-normal, 2-rollback | [optional] 
+**Status** | Pointer to **[]int32** | Filter Status Default All, 1-used, 2-rollback | [optional] 
 **SubscriptionIds** | Pointer to **[]string** | Filter SubscriptionIds Default All | [optional] 
 **UserIds** | Pointer to **[]int64** | Filter UserIds Default All | [optional] 
 

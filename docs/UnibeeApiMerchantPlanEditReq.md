@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonIds** | Pointer to **[]int64** | Plan Ids Of Recurring Addon Type | [optional] 
 **Amount** | Pointer to **int32** | CaptureAmount of plan, not editable when plan is active | [optional] 
+**AutoChargeConfig** | Pointer to [**UnibeeApiBeanAutoChargeConfig**](UnibeeApiBeanAutoChargeConfig.md) |  | [optional] 
 **AutoUpgradePlanId** | Pointer to **int32** | omit &#x3D; no change; 0 clears stored value, &gt;0 sets target plan id; independent of disableAutoCharge | [optional] 
 **CancelAtTrialEnd** | Pointer to **int32** | whether cancel at subscription first trial end，0-false | 1-true, will pass to cancelAtPeriodEnd of subscription | [optional] 
 **CheckoutTemplateId** | Pointer to **int32** | Checkout template id, used to build checkoutUrl; stored in plan additional settings | [optional] 
@@ -30,7 +31,6 @@ Name | Type | Description | Notes
 **PlanId** | **int64** | Id of plan | 
 **PlanName** | Pointer to **string** | Name of plan | [optional] 
 **ProductDescription** | Pointer to **string** | ProductDescription of plan, Default copy description | [optional] 
-**ProductId** | Pointer to **int32** | Id of product which plan to linked | [optional] 
 **ProductName** | Pointer to **string** | ProductName of plan, Default copy planName | [optional] 
 **TrialAmount** | Pointer to **int32** | price of trial period， not available for addon; overridden by multiTrials[0].trialPrice when multiTrials is set | [optional] 
 **TrialDemand** | Pointer to **string** | demand of trial, not available for addon, example, paymentMethod, payment method will ask for subscription trial start | [optional] 
@@ -105,6 +105,31 @@ SetAmount sets Amount field to given value.
 `func (o *UnibeeApiMerchantPlanEditReq) HasAmount() bool`
 
 HasAmount returns a boolean if a field has been set.
+
+### GetAutoChargeConfig
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetAutoChargeConfig() UnibeeApiBeanAutoChargeConfig`
+
+GetAutoChargeConfig returns the AutoChargeConfig field if non-nil, zero value otherwise.
+
+### GetAutoChargeConfigOk
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetAutoChargeConfigOk() (*UnibeeApiBeanAutoChargeConfig, bool)`
+
+GetAutoChargeConfigOk returns a tuple with the AutoChargeConfig field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoChargeConfig
+
+`func (o *UnibeeApiMerchantPlanEditReq) SetAutoChargeConfig(v UnibeeApiBeanAutoChargeConfig)`
+
+SetAutoChargeConfig sets AutoChargeConfig field to given value.
+
+### HasAutoChargeConfig
+
+`func (o *UnibeeApiMerchantPlanEditReq) HasAutoChargeConfig() bool`
+
+HasAutoChargeConfig returns a boolean if a field has been set.
 
 ### GetAutoUpgradePlanId
 
@@ -700,31 +725,6 @@ SetProductDescription sets ProductDescription field to given value.
 `func (o *UnibeeApiMerchantPlanEditReq) HasProductDescription() bool`
 
 HasProductDescription returns a boolean if a field has been set.
-
-### GetProductId
-
-`func (o *UnibeeApiMerchantPlanEditReq) GetProductId() int32`
-
-GetProductId returns the ProductId field if non-nil, zero value otherwise.
-
-### GetProductIdOk
-
-`func (o *UnibeeApiMerchantPlanEditReq) GetProductIdOk() (*int32, bool)`
-
-GetProductIdOk returns a tuple with the ProductId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetProductId
-
-`func (o *UnibeeApiMerchantPlanEditReq) SetProductId(v int32)`
-
-SetProductId sets ProductId field to given value.
-
-### HasProductId
-
-`func (o *UnibeeApiMerchantPlanEditReq) HasProductId() bool`
-
-HasProductId returns a boolean if a field has been set.
 
 ### GetProductName
 

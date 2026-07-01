@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | Optional. List of addon plan parameters to be attached to this subscription. | [optional] 
+**AllowMultipleActiveSubscription** | Pointer to **bool** | Optional. If true, skip the &#39;one active subscription per user per product&#39; check, allowing the user to hold multiple active subscriptions under the same product. Merchant is responsible for billing in this case. | [optional] 
 **ApplyPromoCredit** | Pointer to **bool** | Optional. Whether to apply available promo credit to this preview calculation. | [optional] 
 **ApplyPromoCreditAmount** | Pointer to **int32** | Optional. Maximum promo credit amount to apply. If omitted and applyPromoCredit is true, the system auto-computes the usable amount. | [optional] 
 **Currency** | Pointer to **string** | Optional. Currency code for pricing (e.g. USD, EUR). If empty, plan default currency is used. | [optional] 
@@ -67,6 +68,31 @@ SetAddonParams sets AddonParams field to given value.
 `func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) HasAddonParams() bool`
 
 HasAddonParams returns a boolean if a field has been set.
+
+### GetAllowMultipleActiveSubscription
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) GetAllowMultipleActiveSubscription() bool`
+
+GetAllowMultipleActiveSubscription returns the AllowMultipleActiveSubscription field if non-nil, zero value otherwise.
+
+### GetAllowMultipleActiveSubscriptionOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) GetAllowMultipleActiveSubscriptionOk() (*bool, bool)`
+
+GetAllowMultipleActiveSubscriptionOk returns a tuple with the AllowMultipleActiveSubscription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowMultipleActiveSubscription
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) SetAllowMultipleActiveSubscription(v bool)`
+
+SetAllowMultipleActiveSubscription sets AllowMultipleActiveSubscription field to given value.
+
+### HasAllowMultipleActiveSubscription
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) HasAllowMultipleActiveSubscription() bool`
+
+HasAllowMultipleActiveSubscription returns a boolean if a field has been set.
 
 ### GetApplyPromoCredit
 

@@ -101,7 +101,7 @@ func main() {
 	email := "email_example" // string | Filter Email Default All (optional)
 	planIds := []int64{int64(123)} // []int64 | Filter PlanIds Default All (optional)
 	subscriptionIds := []string{"Inner_example"} // []string | Filter SubscriptionIds Default All (optional)
-	status := []int32{int32(123)} // []int32 | Filter Status Default All, 1-normal, 2-rollback (optional)
+	status := []int32{int32(123)} // []int32 | Filter Status Default All, 1-used, 2-rollback (optional)
 	childCode := "childCode_example" // string | Filter Child Code (fuzzy search), only available when Id is batch template ID (optional)
 	sortField := "sortField_example" // string | Sort Field，gmt_create|gmt_modify，Default gmt_modify (optional)
 	sortType := "sortType_example" // string | Sort Type，asc|desc，Default desc (optional)
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
  **email** | **string** | Filter Email Default All | 
  **planIds** | **[]int64** | Filter PlanIds Default All | 
  **subscriptionIds** | **[]string** | Filter SubscriptionIds Default All | 
- **status** | **[]int32** | Filter Status Default All, 1-normal, 2-rollback | 
+ **status** | **[]int32** | Filter Status Default All, 1-used, 2-rollback | 
  **childCode** | **string** | Filter Child Code (fuzzy search), only available when Id is batch template ID | 
  **sortField** | **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | 
  **sortType** | **string** | Sort Type，asc|desc，Default desc | 

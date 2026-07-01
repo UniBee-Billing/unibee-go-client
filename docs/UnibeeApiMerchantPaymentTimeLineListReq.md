@@ -10,8 +10,11 @@ Name | Type | Description | Notes
 **CreateTimeEnd** | Pointer to **int64** | CreateTimeEnd，UTC timestamp，seconds | [optional] 
 **CreateTimeStart** | Pointer to **int64** | CreateTimeStart，UTC timestamp，seconds | [optional] 
 **Currency** | Pointer to **string** | Currency | [optional] 
+**DiscountCode** | Pointer to **string** | Filter by exact invoice discount code (case-insensitive) | [optional] 
 **GatewayIds** | Pointer to **[]int64** | The filter ids of gateway | [optional] 
+**HasDiscountCode** | Pointer to **bool** | Filter by whether invoice discount_code is set | [optional] 
 **Page** | Pointer to **int32** | Page,Start 0 | [optional] 
+**PlanIds** | Pointer to **[]int64** | Filter timelines whose invoice includes any of these plan IDs (OR) | [optional] 
 **SearchKey** | Pointer to **string** | Search SubscriptionId|InvoiceId|PaymentId|UserId | [optional] 
 **SortField** | Pointer to **string** | Sort，invoice_id|gmt_create|gmt_modify|period_end|total_amount，Default gmt_modify | [optional] 
 **SortType** | Pointer to **string** | Sort Type，asc|desc，Default desc | [optional] 
@@ -188,6 +191,31 @@ SetCurrency sets Currency field to given value.
 
 HasCurrency returns a boolean if a field has been set.
 
+### GetDiscountCode
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetDiscountCode() string`
+
+GetDiscountCode returns the DiscountCode field if non-nil, zero value otherwise.
+
+### GetDiscountCodeOk
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetDiscountCodeOk() (*string, bool)`
+
+GetDiscountCodeOk returns a tuple with the DiscountCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscountCode
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) SetDiscountCode(v string)`
+
+SetDiscountCode sets DiscountCode field to given value.
+
+### HasDiscountCode
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) HasDiscountCode() bool`
+
+HasDiscountCode returns a boolean if a field has been set.
+
 ### GetGatewayIds
 
 `func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetGatewayIds() []int64`
@@ -213,6 +241,31 @@ SetGatewayIds sets GatewayIds field to given value.
 
 HasGatewayIds returns a boolean if a field has been set.
 
+### GetHasDiscountCode
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetHasDiscountCode() bool`
+
+GetHasDiscountCode returns the HasDiscountCode field if non-nil, zero value otherwise.
+
+### GetHasDiscountCodeOk
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetHasDiscountCodeOk() (*bool, bool)`
+
+GetHasDiscountCodeOk returns a tuple with the HasDiscountCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasDiscountCode
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) SetHasDiscountCode(v bool)`
+
+SetHasDiscountCode sets HasDiscountCode field to given value.
+
+### HasHasDiscountCode
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) HasHasDiscountCode() bool`
+
+HasHasDiscountCode returns a boolean if a field has been set.
+
 ### GetPage
 
 `func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetPage() int32`
@@ -237,6 +290,31 @@ SetPage sets Page field to given value.
 `func (o *UnibeeApiMerchantPaymentTimeLineListReq) HasPage() bool`
 
 HasPage returns a boolean if a field has been set.
+
+### GetPlanIds
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetPlanIds() []int64`
+
+GetPlanIds returns the PlanIds field if non-nil, zero value otherwise.
+
+### GetPlanIdsOk
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetPlanIdsOk() (*[]int64, bool)`
+
+GetPlanIdsOk returns a tuple with the PlanIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanIds
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) SetPlanIds(v []int64)`
+
+SetPlanIds sets PlanIds field to given value.
+
+### HasPlanIds
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) HasPlanIds() bool`
+
+HasPlanIds returns a boolean if a field has been set.
 
 ### GetSearchKey
 

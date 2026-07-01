@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AdminMember** | Pointer to [**UnibeeApiBeanMerchantMember**](UnibeeApiBeanMerchantMember.md) |  | [optional] 
 **BizType** | Pointer to **int32** |  | [optional] 
 **CountryCode** | Pointer to **string** |  | [optional] 
 **CreateFrom** | Pointer to **string** | create from | [optional] 
@@ -37,6 +38,7 @@ Name | Type | Description | Notes
 **PromoCreditTransaction** | Pointer to [**UnibeeApiBeanCreditTransaction**](UnibeeApiBeanCreditTransaction.md) |  | [optional] 
 **Refund** | Pointer to [**UnibeeApiBeanRefund**](UnibeeApiBeanRefund.md) |  | [optional] 
 **RefundId** | Pointer to **string** | refundId | [optional] 
+**RefundSource** | Pointer to [**UnibeeApiBeanDetailRefundSource**](UnibeeApiBeanDetailRefundSource.md) |  | [optional] 
 **Status** | Pointer to **int32** | Status，1-pending｜2-processing｜3-paid | 4-failed | 5-cancelled | [optional] 
 **Subscription** | Pointer to [**UnibeeApiBeanSubscription**](UnibeeApiBeanSubscription.md) |  | [optional] 
 **SubscriptionAmount** | Pointer to **int64** | SubscriptionAmount,Cents | [optional] 
@@ -68,6 +70,31 @@ will change when the set of required properties is changed
 NewUnibeeApiBeanDetailCreditNoteDetailWithDefaults instantiates a new UnibeeApiBeanDetailCreditNoteDetail object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAdminMember
+
+`func (o *UnibeeApiBeanDetailCreditNoteDetail) GetAdminMember() UnibeeApiBeanMerchantMember`
+
+GetAdminMember returns the AdminMember field if non-nil, zero value otherwise.
+
+### GetAdminMemberOk
+
+`func (o *UnibeeApiBeanDetailCreditNoteDetail) GetAdminMemberOk() (*UnibeeApiBeanMerchantMember, bool)`
+
+GetAdminMemberOk returns a tuple with the AdminMember field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAdminMember
+
+`func (o *UnibeeApiBeanDetailCreditNoteDetail) SetAdminMember(v UnibeeApiBeanMerchantMember)`
+
+SetAdminMember sets AdminMember field to given value.
+
+### HasAdminMember
+
+`func (o *UnibeeApiBeanDetailCreditNoteDetail) HasAdminMember() bool`
+
+HasAdminMember returns a boolean if a field has been set.
 
 ### GetBizType
 
@@ -893,6 +920,31 @@ SetRefundId sets RefundId field to given value.
 `func (o *UnibeeApiBeanDetailCreditNoteDetail) HasRefundId() bool`
 
 HasRefundId returns a boolean if a field has been set.
+
+### GetRefundSource
+
+`func (o *UnibeeApiBeanDetailCreditNoteDetail) GetRefundSource() UnibeeApiBeanDetailRefundSource`
+
+GetRefundSource returns the RefundSource field if non-nil, zero value otherwise.
+
+### GetRefundSourceOk
+
+`func (o *UnibeeApiBeanDetailCreditNoteDetail) GetRefundSourceOk() (*UnibeeApiBeanDetailRefundSource, bool)`
+
+GetRefundSourceOk returns a tuple with the RefundSource field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRefundSource
+
+`func (o *UnibeeApiBeanDetailCreditNoteDetail) SetRefundSource(v UnibeeApiBeanDetailRefundSource)`
+
+SetRefundSource sets RefundSource field to given value.
+
+### HasRefundSource
+
+`func (o *UnibeeApiBeanDetailCreditNoteDetail) HasRefundSource() bool`
+
+HasRefundSource returns a boolean if a field has been set.
 
 ### GetStatus
 

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Optional. Custom metadata map that will be stored on the renewal invoice and subscription timeline. | [optional] 
 **ProductData** | Pointer to [**UnibeeApiBeanPlanProductParam**](UnibeeApiBeanPlanProductParam.md) |  | [optional] 
 **ProductId** | Pointer to **int64** | Optional. Product ID used together with userId when subscriptionId is not specified, to narrow down which subscription to renew. If 0, the system uses its default product selection rules. | [optional] 
+**RenewMode** | Pointer to **string** | Optional. Renewal period mode: next_period (default, start from the current period/trial end when renewing early) or reset_now (start a fresh cycle from now). | [optional] 
 **SubscriptionId** | Pointer to **string** | Optional. SubscriptionId to be renewed. Either subscriptionId or userId must be provided. When subscriptionId is omitted, the system first tries to find the latest active or incomplete subscription for the user (and productId if provided), otherwise falls back to the latest subscription. | [optional] 
 **TaxPercentage** | Pointer to **int32** | Optional. External tax percentage override for the renewal invoice, in basis points (e.g. 1000 &#x3D; 10%%). Overrides the subscription taxPercentage when provided. | [optional] 
 **UserId** | Pointer to **int64** | Optional. UserId associated with the subscription to renew. Either subscriptionId or userId must be provided. Used to locate the target subscription when subscriptionId is not provided. | [optional] 
@@ -260,6 +261,31 @@ SetProductId sets ProductId field to given value.
 `func (o *UnibeeApiMerchantSubscriptionRenewPreviewReq) HasProductId() bool`
 
 HasProductId returns a boolean if a field has been set.
+
+### GetRenewMode
+
+`func (o *UnibeeApiMerchantSubscriptionRenewPreviewReq) GetRenewMode() string`
+
+GetRenewMode returns the RenewMode field if non-nil, zero value otherwise.
+
+### GetRenewModeOk
+
+`func (o *UnibeeApiMerchantSubscriptionRenewPreviewReq) GetRenewModeOk() (*string, bool)`
+
+GetRenewModeOk returns a tuple with the RenewMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRenewMode
+
+`func (o *UnibeeApiMerchantSubscriptionRenewPreviewReq) SetRenewMode(v string)`
+
+SetRenewMode sets RenewMode field to given value.
+
+### HasRenewMode
+
+`func (o *UnibeeApiMerchantSubscriptionRenewPreviewReq) HasRenewMode() bool`
+
+HasRenewMode returns a boolean if a field has been set.
 
 ### GetSubscriptionId
 

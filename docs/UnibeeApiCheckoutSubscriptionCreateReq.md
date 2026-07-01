@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | addonParams | [optional] 
+**AllowMultipleActiveSubscription** | Pointer to **bool** | Optional. If true, skip the &#39;one active subscription per user per product&#39; check, allowing the user to hold multiple active subscriptions under the same product. | [optional] 
 **ApplyPromoCredit** | Pointer to **bool** | apply promo credit or not | [optional] 
 **ApplyPromoCreditAmount** | Pointer to **int32** | apply promo credit amount, auto compute if not specified | [optional] 
 **CancelUrl** | Pointer to **string** | CancelUrl, back to cancelUrl if checkout cancelled | [optional] 
@@ -75,6 +76,31 @@ SetAddonParams sets AddonParams field to given value.
 `func (o *UnibeeApiCheckoutSubscriptionCreateReq) HasAddonParams() bool`
 
 HasAddonParams returns a boolean if a field has been set.
+
+### GetAllowMultipleActiveSubscription
+
+`func (o *UnibeeApiCheckoutSubscriptionCreateReq) GetAllowMultipleActiveSubscription() bool`
+
+GetAllowMultipleActiveSubscription returns the AllowMultipleActiveSubscription field if non-nil, zero value otherwise.
+
+### GetAllowMultipleActiveSubscriptionOk
+
+`func (o *UnibeeApiCheckoutSubscriptionCreateReq) GetAllowMultipleActiveSubscriptionOk() (*bool, bool)`
+
+GetAllowMultipleActiveSubscriptionOk returns a tuple with the AllowMultipleActiveSubscription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowMultipleActiveSubscription
+
+`func (o *UnibeeApiCheckoutSubscriptionCreateReq) SetAllowMultipleActiveSubscription(v bool)`
+
+SetAllowMultipleActiveSubscription sets AllowMultipleActiveSubscription field to given value.
+
+### HasAllowMultipleActiveSubscription
+
+`func (o *UnibeeApiCheckoutSubscriptionCreateReq) HasAllowMultipleActiveSubscription() bool`
+
+HasAllowMultipleActiveSubscription returns a boolean if a field has been set.
 
 ### GetApplyPromoCredit
 

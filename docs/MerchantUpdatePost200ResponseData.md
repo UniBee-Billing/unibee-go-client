@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Merchant** | Pointer to [**UnibeeApiBeanMerchant**](UnibeeApiBeanMerchant.md) |  | [optional] 
+**Merchant** | Pointer to [**UnibeeApiBeanMerchantProfile**](UnibeeApiBeanMerchantProfile.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMerchant
 
-`func (o *MerchantUpdatePost200ResponseData) GetMerchant() UnibeeApiBeanMerchant`
+`func (o *MerchantUpdatePost200ResponseData) GetMerchant() UnibeeApiBeanMerchantProfile`
 
 GetMerchant returns the Merchant field if non-nil, zero value otherwise.
 
 ### GetMerchantOk
 
-`func (o *MerchantUpdatePost200ResponseData) GetMerchantOk() (*UnibeeApiBeanMerchant, bool)`
+`func (o *MerchantUpdatePost200ResponseData) GetMerchantOk() (*UnibeeApiBeanMerchantProfile, bool)`
 
 GetMerchantOk returns a tuple with the Merchant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchant
 
-`func (o *MerchantUpdatePost200ResponseData) SetMerchant(v UnibeeApiBeanMerchant)`
+`func (o *MerchantUpdatePost200ResponseData) SetMerchant(v UnibeeApiBeanMerchantProfile)`
 
 SetMerchant sets Merchant field to given value.
 

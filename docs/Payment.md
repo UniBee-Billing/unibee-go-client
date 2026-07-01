@@ -1304,7 +1304,7 @@ No authorization required
 
 ## PaymentTimelineListGet
 
-> MerchantPaymentTimelineListGet200Response PaymentTimelineListGet(ctx).UserId(userId).AmountStart(amountStart).AmountEnd(amountEnd).SearchKey(searchKey).Status(status).TimelineTypes(timelineTypes).GatewayIds(gatewayIds).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+> MerchantPaymentTimelineListGet200Response PaymentTimelineListGet(ctx).UserId(userId).AmountStart(amountStart).AmountEnd(amountEnd).SearchKey(searchKey).Status(status).TimelineTypes(timelineTypes).GatewayIds(gatewayIds).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).PlanIds(planIds).HasDiscountCode(hasDiscountCode).DiscountCode(discountCode).Execute()
 
 Get Payment TimeLine List
 
@@ -1335,10 +1335,13 @@ func main() {
 	count := int32(56) // int32 | Count Of Page (optional)
 	createTimeStart := int64(789) // int64 | CreateTimeStart，UTC timestamp，seconds (optional)
 	createTimeEnd := int64(789) // int64 | CreateTimeEnd，UTC timestamp，seconds (optional)
+	planIds := []int64{int64(123)} // []int64 | Filter timelines whose invoice includes any of these plan IDs (OR) (optional)
+	hasDiscountCode := true // bool | Filter by whether invoice discount_code is set (optional)
+	discountCode := "discountCode_example" // string | Filter by exact invoice discount code (case-insensitive) (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Payment.PaymentTimelineListGet(context.Background()).UserId(userId).AmountStart(amountStart).AmountEnd(amountEnd).SearchKey(searchKey).Status(status).TimelineTypes(timelineTypes).GatewayIds(gatewayIds).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+	resp, r, err := apiClient.Payment.PaymentTimelineListGet(context.Background()).UserId(userId).AmountStart(amountStart).AmountEnd(amountEnd).SearchKey(searchKey).Status(status).TimelineTypes(timelineTypes).GatewayIds(gatewayIds).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).PlanIds(planIds).HasDiscountCode(hasDiscountCode).DiscountCode(discountCode).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Payment.PaymentTimelineListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1373,6 +1376,9 @@ Name | Type | Description  | Notes
  **count** | **int32** | Count Of Page | 
  **createTimeStart** | **int64** | CreateTimeStart，UTC timestamp，seconds | 
  **createTimeEnd** | **int64** | CreateTimeEnd，UTC timestamp，seconds | 
+ **planIds** | **[]int64** | Filter timelines whose invoice includes any of these plan IDs (OR) | 
+ **hasDiscountCode** | **bool** | Filter by whether invoice discount_code is set | 
+ **discountCode** | **string** | Filter by exact invoice discount code (case-insensitive) | 
 
 ### Return type
 

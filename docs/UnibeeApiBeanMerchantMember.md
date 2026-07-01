@@ -8,14 +8,9 @@ Name | Type | Description | Notes
 **Email** | Pointer to **string** | email | [optional] 
 **FirstName** | Pointer to **string** | first name | [optional] 
 **Id** | Pointer to **int64** | userId | [optional] 
-**IsBlankPasswd** | Pointer to **bool** | is blank password | [optional] 
 **IsOwner** | Pointer to **bool** | Check Member is Owner | [optional] 
 **LastName** | Pointer to **string** | last name | [optional] 
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
-**Metadata** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
-**Mobile** | Pointer to **string** | mobile | [optional] 
-**OauthAccounts** | Pointer to [**[]UnibeeApiBeanOauth**](UnibeeApiBeanOauth.md) | List of connected OAuth accounts | [optional] 
-**TotpType** | Pointer to **int32** | 0-Inactive, 1-General, Google Authenticator | 2-Microsoft Authenticator | 3-Authy | 4-1Password | 5-LastPass | 6-FreeOTP | 7-Other TOTP | [optional] 
 
 ## Methods
 
@@ -136,31 +131,6 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
-### GetIsBlankPasswd
-
-`func (o *UnibeeApiBeanMerchantMember) GetIsBlankPasswd() bool`
-
-GetIsBlankPasswd returns the IsBlankPasswd field if non-nil, zero value otherwise.
-
-### GetIsBlankPasswdOk
-
-`func (o *UnibeeApiBeanMerchantMember) GetIsBlankPasswdOk() (*bool, bool)`
-
-GetIsBlankPasswdOk returns a tuple with the IsBlankPasswd field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsBlankPasswd
-
-`func (o *UnibeeApiBeanMerchantMember) SetIsBlankPasswd(v bool)`
-
-SetIsBlankPasswd sets IsBlankPasswd field to given value.
-
-### HasIsBlankPasswd
-
-`func (o *UnibeeApiBeanMerchantMember) HasIsBlankPasswd() bool`
-
-HasIsBlankPasswd returns a boolean if a field has been set.
-
 ### GetIsOwner
 
 `func (o *UnibeeApiBeanMerchantMember) GetIsOwner() bool`
@@ -235,106 +205,6 @@ SetMerchantId sets MerchantId field to given value.
 `func (o *UnibeeApiBeanMerchantMember) HasMerchantId() bool`
 
 HasMerchantId returns a boolean if a field has been set.
-
-### GetMetadata
-
-`func (o *UnibeeApiBeanMerchantMember) GetMetadata() map[string]map[string]interface{}`
-
-GetMetadata returns the Metadata field if non-nil, zero value otherwise.
-
-### GetMetadataOk
-
-`func (o *UnibeeApiBeanMerchantMember) GetMetadataOk() (*map[string]map[string]interface{}, bool)`
-
-GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMetadata
-
-`func (o *UnibeeApiBeanMerchantMember) SetMetadata(v map[string]map[string]interface{})`
-
-SetMetadata sets Metadata field to given value.
-
-### HasMetadata
-
-`func (o *UnibeeApiBeanMerchantMember) HasMetadata() bool`
-
-HasMetadata returns a boolean if a field has been set.
-
-### GetMobile
-
-`func (o *UnibeeApiBeanMerchantMember) GetMobile() string`
-
-GetMobile returns the Mobile field if non-nil, zero value otherwise.
-
-### GetMobileOk
-
-`func (o *UnibeeApiBeanMerchantMember) GetMobileOk() (*string, bool)`
-
-GetMobileOk returns a tuple with the Mobile field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMobile
-
-`func (o *UnibeeApiBeanMerchantMember) SetMobile(v string)`
-
-SetMobile sets Mobile field to given value.
-
-### HasMobile
-
-`func (o *UnibeeApiBeanMerchantMember) HasMobile() bool`
-
-HasMobile returns a boolean if a field has been set.
-
-### GetOauthAccounts
-
-`func (o *UnibeeApiBeanMerchantMember) GetOauthAccounts() []UnibeeApiBeanOauth`
-
-GetOauthAccounts returns the OauthAccounts field if non-nil, zero value otherwise.
-
-### GetOauthAccountsOk
-
-`func (o *UnibeeApiBeanMerchantMember) GetOauthAccountsOk() (*[]UnibeeApiBeanOauth, bool)`
-
-GetOauthAccountsOk returns a tuple with the OauthAccounts field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOauthAccounts
-
-`func (o *UnibeeApiBeanMerchantMember) SetOauthAccounts(v []UnibeeApiBeanOauth)`
-
-SetOauthAccounts sets OauthAccounts field to given value.
-
-### HasOauthAccounts
-
-`func (o *UnibeeApiBeanMerchantMember) HasOauthAccounts() bool`
-
-HasOauthAccounts returns a boolean if a field has been set.
-
-### GetTotpType
-
-`func (o *UnibeeApiBeanMerchantMember) GetTotpType() int32`
-
-GetTotpType returns the TotpType field if non-nil, zero value otherwise.
-
-### GetTotpTypeOk
-
-`func (o *UnibeeApiBeanMerchantMember) GetTotpTypeOk() (*int32, bool)`
-
-GetTotpTypeOk returns a tuple with the TotpType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTotpType
-
-`func (o *UnibeeApiBeanMerchantMember) SetTotpType(v int32)`
-
-SetTotpType sets TotpType field to given value.
-
-### HasTotpType
-
-`func (o *UnibeeApiBeanMerchantMember) HasTotpType() bool`
-
-HasTotpType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

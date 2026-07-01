@@ -19,6 +19,9 @@ Method | HTTP request | Description
 [**SubscriptionListGet**](Subscription.md#SubscriptionListGet) | **Get** /merchant/subscription/list | Get Subscription List
 [**SubscriptionListPost**](Subscription.md#SubscriptionListPost) | **Post** /merchant/subscription/list | Get Subscription List
 [**SubscriptionPreviewSubscriptionNextInvoiceGet**](Subscription.md#SubscriptionPreviewSubscriptionNextInvoiceGet) | **Get** /merchant/subscription/preview_subscription_next_invoice | Subscription Next Invoice Preview
+[**SubscriptionRegenerateBillingCycleInvoicePost**](Subscription.md#SubscriptionRegenerateBillingCycleInvoicePost) | **Post** /merchant/subscription/regenerate_billing_cycle_invoice | Regenerate Billing Cycle Invoice
+[**SubscriptionRegenerateBillingCycleInvoicePreviewGet**](Subscription.md#SubscriptionRegenerateBillingCycleInvoicePreviewGet) | **Get** /merchant/subscription/regenerate_billing_cycle_invoice_preview | Preview Regenerate Billing Cycle Invoice
+[**SubscriptionRegenerateBillingCycleInvoicePreviewPost**](Subscription.md#SubscriptionRegenerateBillingCycleInvoicePreviewPost) | **Post** /merchant/subscription/regenerate_billing_cycle_invoice_preview | Preview Regenerate Billing Cycle Invoice
 [**SubscriptionUserPendingCryptoSubscriptionDetailGet**](Subscription.md#SubscriptionUserPendingCryptoSubscriptionDetailGet) | **Get** /merchant/subscription/user_pending_crypto_subscription_detail | User Pending Crypto Subscription Detail
 [**SubscriptionUserPendingCryptoSubscriptionDetailPost**](Subscription.md#SubscriptionUserPendingCryptoSubscriptionDetailPost) | **Post** /merchant/subscription/user_pending_crypto_subscription_detail | User Pending Crypto Subscription Detail
 [**SubscriptionUserSubscriptionDetailGet**](Subscription.md#SubscriptionUserSubscriptionDetailGet) | **Get** /merchant/subscription/user_subscription_detail | User Subscription Detail
@@ -1025,6 +1028,200 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SubscriptionRegenerateBillingCycleInvoicePost
+
+> MerchantSubscriptionRegenerateBillingCycleInvoicePost200Response SubscriptionRegenerateBillingCycleInvoicePost(ctx).UnibeeApiMerchantSubscriptionRegenerateBillingCycleInvoiceReq(unibeeApiMerchantSubscriptionRegenerateBillingCycleInvoiceReq).Execute()
+
+Regenerate Billing Cycle Invoice
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantSubscriptionRegenerateBillingCycleInvoiceReq := *openapiclient.NewUnibeeApiMerchantSubscriptionRegenerateBillingCycleInvoiceReq("Reason_example", "SubscriptionId_example") // UnibeeApiMerchantSubscriptionRegenerateBillingCycleInvoiceReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Subscription.SubscriptionRegenerateBillingCycleInvoicePost(context.Background()).UnibeeApiMerchantSubscriptionRegenerateBillingCycleInvoiceReq(unibeeApiMerchantSubscriptionRegenerateBillingCycleInvoiceReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionRegenerateBillingCycleInvoicePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SubscriptionRegenerateBillingCycleInvoicePost`: MerchantSubscriptionRegenerateBillingCycleInvoicePost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionRegenerateBillingCycleInvoicePost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSubscriptionRegenerateBillingCycleInvoicePostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantSubscriptionRegenerateBillingCycleInvoiceReq** | [**UnibeeApiMerchantSubscriptionRegenerateBillingCycleInvoiceReq**](UnibeeApiMerchantSubscriptionRegenerateBillingCycleInvoiceReq.md) |  | 
+
+### Return type
+
+[**MerchantSubscriptionRegenerateBillingCycleInvoicePost200Response**](MerchantSubscriptionRegenerateBillingCycleInvoicePost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SubscriptionRegenerateBillingCycleInvoicePreviewGet
+
+> MerchantSubscriptionRegenerateBillingCycleInvoicePost200Response SubscriptionRegenerateBillingCycleInvoicePreviewGet(ctx).SubscriptionId(subscriptionId).InvoiceId(invoiceId).Execute()
+
+Preview Regenerate Billing Cycle Invoice
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	subscriptionId := "subscriptionId_example" // string | SubscriptionId
+	invoiceId := "invoiceId_example" // string | InvoiceId to regenerate, defaults to subscription latest invoice (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Subscription.SubscriptionRegenerateBillingCycleInvoicePreviewGet(context.Background()).SubscriptionId(subscriptionId).InvoiceId(invoiceId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionRegenerateBillingCycleInvoicePreviewGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SubscriptionRegenerateBillingCycleInvoicePreviewGet`: MerchantSubscriptionRegenerateBillingCycleInvoicePost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionRegenerateBillingCycleInvoicePreviewGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSubscriptionRegenerateBillingCycleInvoicePreviewGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subscriptionId** | **string** | SubscriptionId | 
+ **invoiceId** | **string** | InvoiceId to regenerate, defaults to subscription latest invoice | 
+
+### Return type
+
+[**MerchantSubscriptionRegenerateBillingCycleInvoicePost200Response**](MerchantSubscriptionRegenerateBillingCycleInvoicePost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SubscriptionRegenerateBillingCycleInvoicePreviewPost
+
+> MerchantSubscriptionRegenerateBillingCycleInvoicePost200Response SubscriptionRegenerateBillingCycleInvoicePreviewPost(ctx).UnibeeApiMerchantSubscriptionRegenerateBillingCycleInvoicePreviewReq(unibeeApiMerchantSubscriptionRegenerateBillingCycleInvoicePreviewReq).Execute()
+
+Preview Regenerate Billing Cycle Invoice
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantSubscriptionRegenerateBillingCycleInvoicePreviewReq := *openapiclient.NewUnibeeApiMerchantSubscriptionRegenerateBillingCycleInvoicePreviewReq("SubscriptionId_example") // UnibeeApiMerchantSubscriptionRegenerateBillingCycleInvoicePreviewReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Subscription.SubscriptionRegenerateBillingCycleInvoicePreviewPost(context.Background()).UnibeeApiMerchantSubscriptionRegenerateBillingCycleInvoicePreviewReq(unibeeApiMerchantSubscriptionRegenerateBillingCycleInvoicePreviewReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionRegenerateBillingCycleInvoicePreviewPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SubscriptionRegenerateBillingCycleInvoicePreviewPost`: MerchantSubscriptionRegenerateBillingCycleInvoicePost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionRegenerateBillingCycleInvoicePreviewPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSubscriptionRegenerateBillingCycleInvoicePreviewPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantSubscriptionRegenerateBillingCycleInvoicePreviewReq** | [**UnibeeApiMerchantSubscriptionRegenerateBillingCycleInvoicePreviewReq**](UnibeeApiMerchantSubscriptionRegenerateBillingCycleInvoicePreviewReq.md) |  | 
+
+### Return type
+
+[**MerchantSubscriptionRegenerateBillingCycleInvoicePost200Response**](MerchantSubscriptionRegenerateBillingCycleInvoicePost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
