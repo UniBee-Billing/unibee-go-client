@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Invoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
 **Link** | Pointer to **string** | if automatic payment is false, Gateway Link will provided that manual payment needed | [optional] 
-**Paid** | Pointer to **bool** | true|false,automatic payment is default behavior for one-time addon purchased, payment will create attach to the purchase, when payment is success, return false, otherwise false | [optional] 
+**Paid** | Pointer to **bool** | true if payment is already successful, false if user still needs to complete gateway payment | [optional] 
 **SubscriptionOnetimeAddon** | Pointer to [**UnibeeApiBeanSubscriptionOnetimeAddon**](UnibeeApiBeanSubscriptionOnetimeAddon.md) |  | [optional] 
 
 ## Methods

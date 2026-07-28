@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **CompanyIssuer** | Pointer to [**UnibeeApiBeanDetailGatewayCompanyIssuer**](UnibeeApiBeanDetailGatewayCompanyIssuer.md) |  | [optional] 
 **CurrencyExchange** | Pointer to [**[]UnibeeApiBeanDetailGatewayCurrencyExchange**](UnibeeApiBeanDetailGatewayCurrencyExchange.md) | The currency exchange for gateway payment, effect at start of payment creation when currency matched | [optional] 
 **DisplayName** | Pointer to **string** | The displayName of payment gateway | [optional] 
-**GatewayIcons** | Pointer to **[][]string** | The icons of payment gateway | [optional] 
+**GatewayIcons** | Pointer to **[]string** | The icons of payment gateway | [optional] 
 **GatewayKey** | Pointer to **string** | The key of payment gateway | [optional] 
 **GatewayName** | **string** | The name of payment gateway, stripe|paypal|changelly|unitpay|payssion|cryptadium | 
 **GatewayPaymentTypes** | Pointer to **[]string** | Selected gateway payment types | [optional] 
@@ -112,20 +112,20 @@ HasDisplayName returns a boolean if a field has been set.
 
 ### GetGatewayIcons
 
-`func (o *UnibeeApiMerchantGatewaySetupReq) GetGatewayIcons() [][]string`
+`func (o *UnibeeApiMerchantGatewaySetupReq) GetGatewayIcons() []string`
 
 GetGatewayIcons returns the GatewayIcons field if non-nil, zero value otherwise.
 
 ### GetGatewayIconsOk
 
-`func (o *UnibeeApiMerchantGatewaySetupReq) GetGatewayIconsOk() (*[][]string, bool)`
+`func (o *UnibeeApiMerchantGatewaySetupReq) GetGatewayIconsOk() (*[]string, bool)`
 
 GetGatewayIconsOk returns a tuple with the GatewayIcons field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGatewayIcons
 
-`func (o *UnibeeApiMerchantGatewaySetupReq) SetGatewayIcons(v [][]string)`
+`func (o *UnibeeApiMerchantGatewaySetupReq) SetGatewayIcons(v []string)`
 
 SetGatewayIcons sets GatewayIcons field to given value.
 

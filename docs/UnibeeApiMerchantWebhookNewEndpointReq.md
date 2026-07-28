@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Events** | Pointer to **[]string** | Events | [optional] 
+**ProductIds** | Pointer to **[]int64** | Optional product ids filter, empty means all products, 0 means default product | [optional] 
 **Url** | **string** | Url | 
 
 ## Methods
@@ -50,6 +51,31 @@ SetEvents sets Events field to given value.
 `func (o *UnibeeApiMerchantWebhookNewEndpointReq) HasEvents() bool`
 
 HasEvents returns a boolean if a field has been set.
+
+### GetProductIds
+
+`func (o *UnibeeApiMerchantWebhookNewEndpointReq) GetProductIds() []int64`
+
+GetProductIds returns the ProductIds field if non-nil, zero value otherwise.
+
+### GetProductIdsOk
+
+`func (o *UnibeeApiMerchantWebhookNewEndpointReq) GetProductIdsOk() (*[]int64, bool)`
+
+GetProductIdsOk returns a tuple with the ProductIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProductIds
+
+`func (o *UnibeeApiMerchantWebhookNewEndpointReq) SetProductIds(v []int64)`
+
+SetProductIds sets ProductIds field to given value.
+
+### HasProductIds
+
+`func (o *UnibeeApiMerchantWebhookNewEndpointReq) HasProductIds() bool`
+
+HasProductIds returns a boolean if a field has been set.
 
 ### GetUrl
 

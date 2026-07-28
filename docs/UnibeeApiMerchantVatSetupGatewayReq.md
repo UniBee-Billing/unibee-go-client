@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IsDefault** | Pointer to **bool** | IsDefault, default is true | [optional] [default to true]
+**IsDefault** | Pointer to **bool** | IsDefault, default is true | [optional] 
 **Data** | **string** | Data | 
 **GatewayName** | **string** | GatewayName, em. vatsense | 
 

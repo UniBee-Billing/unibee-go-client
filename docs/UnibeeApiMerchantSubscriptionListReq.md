@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **ExternalUserId** | Pointer to **string** | ExternalUserId | [optional] 
 **Page** | Pointer to **int32** | Page, Start With 0 | [optional] 
 **PlanIds** | Pointer to **[]int64** | The filter ids of plan | [optional] 
+**PlanTagFilter** | Pointer to [**UnibeeApiBeanPlanTagFilter**](UnibeeApiBeanPlanTagFilter.md) |  | [optional] 
 **ProductIds** | Pointer to **[]int64** | The filter ids of product, invalid if planIds is provided | [optional] 
 **SearchKey** | Pointer to **string** | Search SubscriptionId|Email | [optional] 
 **SortField** | Pointer to **string** | Sort Field，gmt_create|gmt_modify，Default gmt_modify | [optional] 
@@ -289,6 +290,31 @@ SetPlanIds sets PlanIds field to given value.
 `func (o *UnibeeApiMerchantSubscriptionListReq) HasPlanIds() bool`
 
 HasPlanIds returns a boolean if a field has been set.
+
+### GetPlanTagFilter
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) GetPlanTagFilter() UnibeeApiBeanPlanTagFilter`
+
+GetPlanTagFilter returns the PlanTagFilter field if non-nil, zero value otherwise.
+
+### GetPlanTagFilterOk
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) GetPlanTagFilterOk() (*UnibeeApiBeanPlanTagFilter, bool)`
+
+GetPlanTagFilterOk returns a tuple with the PlanTagFilter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanTagFilter
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) SetPlanTagFilter(v UnibeeApiBeanPlanTagFilter)`
+
+SetPlanTagFilter sets PlanTagFilter field to given value.
+
+### HasPlanTagFilter
+
+`func (o *UnibeeApiMerchantSubscriptionListReq) HasPlanTagFilter() bool`
+
+HasPlanTagFilter returns a boolean if a field has been set.
 
 ### GetProductIds
 

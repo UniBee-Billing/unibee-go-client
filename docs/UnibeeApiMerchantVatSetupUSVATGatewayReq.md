@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ApiKeys** | Pointer to [**UnibeeApiBeanUSVATGatewayConnectionAPIKeys**](UnibeeApiBeanUSVATGatewayConnectionAPIKeys.md) |  | [optional] 
 **GatewayName** | **string** | GatewayName, em. TaxJar | 
-**IsDefault** | Pointer to **bool** | IsDefault, default is true | [optional] [default to true]
+**IsDefault** | Pointer to **bool** | IsDefault, default is true | [optional] 
 
 ## Methods
 

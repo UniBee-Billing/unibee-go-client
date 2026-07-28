@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**PlanActivePriceChangePreviewPost**](Plan.md#PlanActivePriceChangePreviewPost) | **Post** /merchant/plan/active_price_change/preview | Preview Active Plan Price Change
 [**PlanAddonsBindingPost**](Plan.md#PlanAddonsBindingPost) | **Post** /merchant/plan/addons_binding | Addon Binding
 [**PlanArchivePost**](Plan.md#PlanArchivePost) | **Post** /merchant/plan/archive | Archive Plan
+[**PlanBatchTagBindPost**](Plan.md#PlanBatchTagBindPost) | **Post** /merchant/plan/batch_tag_bind | Batch Bind Tags To Plans
 [**PlanCopyPost**](Plan.md#PlanCopyPost) | **Post** /merchant/plan/copy | Copy Plan
 [**PlanDeletePost**](Plan.md#PlanDeletePost) | **Post** /merchant/plan/delete | Delete Plan
 [**PlanDetailGet**](Plan.md#PlanDetailGet) | **Get** /merchant/plan/detail | Plan Detail
@@ -347,6 +348,70 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## PlanBatchTagBindPost
+
+> MerchantAuthSsoClearTotpPost200Response PlanBatchTagBindPost(ctx).UnibeeApiMerchantPlanBatchTagBindReq(unibeeApiMerchantPlanBatchTagBindReq).Execute()
+
+Batch Bind Tags To Plans
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantPlanBatchTagBindReq := *openapiclient.NewUnibeeApiMerchantPlanBatchTagBindReq([]int64{int64(123)}, []int64{int64(123)}) // UnibeeApiMerchantPlanBatchTagBindReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Plan.PlanBatchTagBindPost(context.Background()).UnibeeApiMerchantPlanBatchTagBindReq(unibeeApiMerchantPlanBatchTagBindReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Plan.PlanBatchTagBindPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PlanBatchTagBindPost`: MerchantAuthSsoClearTotpPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `Plan.PlanBatchTagBindPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPlanBatchTagBindPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantPlanBatchTagBindReq** | [**UnibeeApiMerchantPlanBatchTagBindReq**](UnibeeApiMerchantPlanBatchTagBindReq.md) |  | 
+
+### Return type
+
+[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## PlanCopyPost
 
 > MerchantPlanAddonsBindingPost200Response PlanCopyPost(ctx).UnibeeApiMerchantPlanCopyReq(unibeeApiMerchantPlanCopyReq).Execute()
@@ -607,7 +672,7 @@ No authorization required
 
 ## PlanEditPost
 
-> MerchantPlanAddonsBindingPost200Response PlanEditPost(ctx).UnibeeApiMerchantPlanEditReq(unibeeApiMerchantPlanEditReq).Execute()
+> MerchantPlanEditPost200Response PlanEditPost(ctx).UnibeeApiMerchantPlanEditReq(unibeeApiMerchantPlanEditReq).Execute()
 
 Edit Plan
 
@@ -635,7 +700,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Plan.PlanEditPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PlanEditPost`: MerchantPlanAddonsBindingPost200Response
+	// response from `PlanEditPost`: MerchantPlanEditPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Plan.PlanEditPost`: %v\n", resp)
 }
 ```
@@ -655,7 +720,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantPlanAddonsBindingPost200Response**](MerchantPlanAddonsBindingPost200Response.md)
+[**MerchantPlanEditPost200Response**](MerchantPlanEditPost200Response.md)
 
 ### Authorization
 
@@ -673,7 +738,7 @@ No authorization required
 
 ## PlanListGet
 
-> MerchantPlanListGet200Response PlanListGet(ctx).PlanIds(planIds).ProductIds(productIds).Type_(type_).Status(status).PublishStatus(publishStatus).Currency(currency).IntervalUnits(intervalUnits).IntervalCounts(intervalCounts).BillingIntervalMin(billingIntervalMin).SearchKey(searchKey).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
+> MerchantPlanListGet200Response PlanListGet(ctx).PlanIds(planIds).ProductIds(productIds).Type_(type_).Status(status).PublishStatus(publishStatus).Currency(currency).IntervalUnits(intervalUnits).IntervalCounts(intervalCounts).BillingIntervalMin(billingIntervalMin).SearchKey(searchKey).SortField(sortField).SortType(sortType).Page(page).Count(count).PlanTagFilter(planTagFilter).Execute()
 
 Get Plan List
 
@@ -704,10 +769,11 @@ func main() {
 	sortType := "sortType_example" // string | Sort Type，asc|desc，Default desc (optional)
 	page := int32(56) // int32 | Page, Start 0 (optional)
 	count := int32(56) // int32 | Count Of Per Page, Default 100 (optional)
+	planTagFilter := *openapiclient.NewUnibeeApiBeanPlanTagFilter() // UnibeeApiBeanPlanTagFilter | Filter plans by plan tags. Omit or empty tagIds = no tag filter. When planIds is also set, results use union OR. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Plan.PlanListGet(context.Background()).PlanIds(planIds).ProductIds(productIds).Type_(type_).Status(status).PublishStatus(publishStatus).Currency(currency).IntervalUnits(intervalUnits).IntervalCounts(intervalCounts).BillingIntervalMin(billingIntervalMin).SearchKey(searchKey).SortField(sortField).SortType(sortType).Page(page).Count(count).Execute()
+	resp, r, err := apiClient.Plan.PlanListGet(context.Background()).PlanIds(planIds).ProductIds(productIds).Type_(type_).Status(status).PublishStatus(publishStatus).Currency(currency).IntervalUnits(intervalUnits).IntervalCounts(intervalCounts).BillingIntervalMin(billingIntervalMin).SearchKey(searchKey).SortField(sortField).SortType(sortType).Page(page).Count(count).PlanTagFilter(planTagFilter).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Plan.PlanListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -742,6 +808,7 @@ Name | Type | Description  | Notes
  **sortType** | **string** | Sort Type，asc|desc，Default desc | 
  **page** | **int32** | Page, Start 0 | 
  **count** | **int32** | Count Of Per Page, Default 100 | 
+ **planTagFilter** | [**UnibeeApiBeanPlanTagFilter**](UnibeeApiBeanPlanTagFilter.md) | Filter plans by plan tags. Omit or empty tagIds &#x3D; no tag filter. When planIds is also set, results use union OR. | 
 
 ### Return type
 
@@ -893,7 +960,7 @@ No authorization required
 
 ## PlanNewPost
 
-> MerchantPlanAddonsBindingPost200Response PlanNewPost(ctx).UnibeeApiMerchantPlanNewReq(unibeeApiMerchantPlanNewReq).Execute()
+> MerchantPlanEditPost200Response PlanNewPost(ctx).UnibeeApiMerchantPlanNewReq(unibeeApiMerchantPlanNewReq).Execute()
 
 Create Plan
 
@@ -919,7 +986,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Plan.PlanNewPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PlanNewPost`: MerchantPlanAddonsBindingPost200Response
+	// response from `PlanNewPost`: MerchantPlanEditPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Plan.PlanNewPost`: %v\n", resp)
 }
 ```
@@ -939,7 +1006,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantPlanAddonsBindingPost200Response**](MerchantPlanAddonsBindingPost200Response.md)
+[**MerchantPlanEditPost200Response**](MerchantPlanEditPost200Response.md)
 
 ### Authorization
 

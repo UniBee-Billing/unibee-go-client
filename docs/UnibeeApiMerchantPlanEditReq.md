@@ -22,16 +22,17 @@ Name | Type | Description | Notes
 **IntervalCount** | Pointer to **int32** | Number,intervalUnit of plan, not editable when plan is active | [optional] 
 **IntervalUnit** | Pointer to **string** | Interval unit of plan，em: day|month|year|week, not editable when plan is active | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
-**MetricLimits** | Pointer to [**[][]UnibeeApiBeanPlanMetricLimitParam**]([]UnibeeApiBeanPlanMetricLimitParam.md) | Plan&#39;s MetricLimit List, nil means no change, empty array means delete all, array with data means full replace | [optional] 
-**MetricMeteredCharge** | Pointer to [**[][]UnibeeApiBeanPlanMetricMeteredChargeParam**]([]UnibeeApiBeanPlanMetricMeteredChargeParam.md) | Plan&#39;s MetricMeteredCharge | [optional] 
-**MetricRecurringCharge** | Pointer to [**[][]UnibeeApiBeanPlanMetricMeteredChargeParam**]([]UnibeeApiBeanPlanMetricMeteredChargeParam.md) | Plan&#39;s MetricRecurringCharge | [optional] 
-**MultiCurrencies** | Pointer to [**[][]UnibeeApiBeanPlanMultiCurrency**]([]UnibeeApiBeanPlanMultiCurrency.md) | Plan&#39;s MultiCurrencies | [optional] 
-**MultiTrials** | Pointer to [**[][]UnibeeApiBeanPlanMultiTrial**]([]UnibeeApiBeanPlanMultiTrial.md) | multi-step trials for this plan; when set, the first item will override trialAmount &amp; trialDurationTime | [optional] 
+**MetricLimits** | Pointer to [**[]UnibeeApiBeanPlanMetricLimitParam**](UnibeeApiBeanPlanMetricLimitParam.md) | Plan&#39;s MetricLimit List, nil means no change, empty array means delete all, array with data means full replace | [optional] 
+**MetricMeteredCharge** | Pointer to [**[]UnibeeApiBeanPlanMetricMeteredChargeParam**](UnibeeApiBeanPlanMetricMeteredChargeParam.md) | Plan&#39;s MetricMeteredCharge | [optional] 
+**MetricRecurringCharge** | Pointer to [**[]UnibeeApiBeanPlanMetricMeteredChargeParam**](UnibeeApiBeanPlanMetricMeteredChargeParam.md) | Plan&#39;s MetricRecurringCharge | [optional] 
+**MultiCurrencies** | Pointer to [**[]UnibeeApiBeanPlanMultiCurrency**](UnibeeApiBeanPlanMultiCurrency.md) | Plan&#39;s MultiCurrencies | [optional] 
+**MultiTrials** | Pointer to [**[]UnibeeApiBeanPlanMultiTrial**](UnibeeApiBeanPlanMultiTrial.md) | multi-step trials for this plan; when set, the first item will override trialAmount &amp; trialDurationTime | [optional] 
 **OnetimeAddonIds** | Pointer to **[]int64** | Plan Ids Of Onetime Addon Type | [optional] 
 **PlanId** | **int64** | Id of plan | 
 **PlanName** | Pointer to **string** | Name of plan | [optional] 
 **ProductDescription** | Pointer to **string** | ProductDescription of plan, Default copy description | [optional] 
 **ProductName** | Pointer to **string** | ProductName of plan, Default copy planName | [optional] 
+**TagIds** | Pointer to **[]int64** | Plan tag ids. Omit &#x3D; no tag change; [] &#x3D; clear all tags; non-empty &#x3D; full replace. Binding is best-effort. | [optional] 
 **TrialAmount** | Pointer to **int32** | price of trial period， not available for addon; overridden by multiTrials[0].trialPrice when multiTrials is set | [optional] 
 **TrialDemand** | Pointer to **string** | demand of trial, not available for addon, example, paymentMethod, payment method will ask for subscription trial start | [optional] 
 **TrialDurationTime** | Pointer to **int32** | duration of trial，seconds, not available for addon; overridden by multiTrials[0].trialDuration when multiTrials is set | [optional] 
@@ -508,20 +509,20 @@ HasMetadata returns a boolean if a field has been set.
 
 ### GetMetricLimits
 
-`func (o *UnibeeApiMerchantPlanEditReq) GetMetricLimits() [][]UnibeeApiBeanPlanMetricLimitParam`
+`func (o *UnibeeApiMerchantPlanEditReq) GetMetricLimits() []UnibeeApiBeanPlanMetricLimitParam`
 
 GetMetricLimits returns the MetricLimits field if non-nil, zero value otherwise.
 
 ### GetMetricLimitsOk
 
-`func (o *UnibeeApiMerchantPlanEditReq) GetMetricLimitsOk() (*[][]UnibeeApiBeanPlanMetricLimitParam, bool)`
+`func (o *UnibeeApiMerchantPlanEditReq) GetMetricLimitsOk() (*[]UnibeeApiBeanPlanMetricLimitParam, bool)`
 
 GetMetricLimitsOk returns a tuple with the MetricLimits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetricLimits
 
-`func (o *UnibeeApiMerchantPlanEditReq) SetMetricLimits(v [][]UnibeeApiBeanPlanMetricLimitParam)`
+`func (o *UnibeeApiMerchantPlanEditReq) SetMetricLimits(v []UnibeeApiBeanPlanMetricLimitParam)`
 
 SetMetricLimits sets MetricLimits field to given value.
 
@@ -533,20 +534,20 @@ HasMetricLimits returns a boolean if a field has been set.
 
 ### GetMetricMeteredCharge
 
-`func (o *UnibeeApiMerchantPlanEditReq) GetMetricMeteredCharge() [][]UnibeeApiBeanPlanMetricMeteredChargeParam`
+`func (o *UnibeeApiMerchantPlanEditReq) GetMetricMeteredCharge() []UnibeeApiBeanPlanMetricMeteredChargeParam`
 
 GetMetricMeteredCharge returns the MetricMeteredCharge field if non-nil, zero value otherwise.
 
 ### GetMetricMeteredChargeOk
 
-`func (o *UnibeeApiMerchantPlanEditReq) GetMetricMeteredChargeOk() (*[][]UnibeeApiBeanPlanMetricMeteredChargeParam, bool)`
+`func (o *UnibeeApiMerchantPlanEditReq) GetMetricMeteredChargeOk() (*[]UnibeeApiBeanPlanMetricMeteredChargeParam, bool)`
 
 GetMetricMeteredChargeOk returns a tuple with the MetricMeteredCharge field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetricMeteredCharge
 
-`func (o *UnibeeApiMerchantPlanEditReq) SetMetricMeteredCharge(v [][]UnibeeApiBeanPlanMetricMeteredChargeParam)`
+`func (o *UnibeeApiMerchantPlanEditReq) SetMetricMeteredCharge(v []UnibeeApiBeanPlanMetricMeteredChargeParam)`
 
 SetMetricMeteredCharge sets MetricMeteredCharge field to given value.
 
@@ -558,20 +559,20 @@ HasMetricMeteredCharge returns a boolean if a field has been set.
 
 ### GetMetricRecurringCharge
 
-`func (o *UnibeeApiMerchantPlanEditReq) GetMetricRecurringCharge() [][]UnibeeApiBeanPlanMetricMeteredChargeParam`
+`func (o *UnibeeApiMerchantPlanEditReq) GetMetricRecurringCharge() []UnibeeApiBeanPlanMetricMeteredChargeParam`
 
 GetMetricRecurringCharge returns the MetricRecurringCharge field if non-nil, zero value otherwise.
 
 ### GetMetricRecurringChargeOk
 
-`func (o *UnibeeApiMerchantPlanEditReq) GetMetricRecurringChargeOk() (*[][]UnibeeApiBeanPlanMetricMeteredChargeParam, bool)`
+`func (o *UnibeeApiMerchantPlanEditReq) GetMetricRecurringChargeOk() (*[]UnibeeApiBeanPlanMetricMeteredChargeParam, bool)`
 
 GetMetricRecurringChargeOk returns a tuple with the MetricRecurringCharge field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetricRecurringCharge
 
-`func (o *UnibeeApiMerchantPlanEditReq) SetMetricRecurringCharge(v [][]UnibeeApiBeanPlanMetricMeteredChargeParam)`
+`func (o *UnibeeApiMerchantPlanEditReq) SetMetricRecurringCharge(v []UnibeeApiBeanPlanMetricMeteredChargeParam)`
 
 SetMetricRecurringCharge sets MetricRecurringCharge field to given value.
 
@@ -583,20 +584,20 @@ HasMetricRecurringCharge returns a boolean if a field has been set.
 
 ### GetMultiCurrencies
 
-`func (o *UnibeeApiMerchantPlanEditReq) GetMultiCurrencies() [][]UnibeeApiBeanPlanMultiCurrency`
+`func (o *UnibeeApiMerchantPlanEditReq) GetMultiCurrencies() []UnibeeApiBeanPlanMultiCurrency`
 
 GetMultiCurrencies returns the MultiCurrencies field if non-nil, zero value otherwise.
 
 ### GetMultiCurrenciesOk
 
-`func (o *UnibeeApiMerchantPlanEditReq) GetMultiCurrenciesOk() (*[][]UnibeeApiBeanPlanMultiCurrency, bool)`
+`func (o *UnibeeApiMerchantPlanEditReq) GetMultiCurrenciesOk() (*[]UnibeeApiBeanPlanMultiCurrency, bool)`
 
 GetMultiCurrenciesOk returns a tuple with the MultiCurrencies field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMultiCurrencies
 
-`func (o *UnibeeApiMerchantPlanEditReq) SetMultiCurrencies(v [][]UnibeeApiBeanPlanMultiCurrency)`
+`func (o *UnibeeApiMerchantPlanEditReq) SetMultiCurrencies(v []UnibeeApiBeanPlanMultiCurrency)`
 
 SetMultiCurrencies sets MultiCurrencies field to given value.
 
@@ -608,20 +609,20 @@ HasMultiCurrencies returns a boolean if a field has been set.
 
 ### GetMultiTrials
 
-`func (o *UnibeeApiMerchantPlanEditReq) GetMultiTrials() [][]UnibeeApiBeanPlanMultiTrial`
+`func (o *UnibeeApiMerchantPlanEditReq) GetMultiTrials() []UnibeeApiBeanPlanMultiTrial`
 
 GetMultiTrials returns the MultiTrials field if non-nil, zero value otherwise.
 
 ### GetMultiTrialsOk
 
-`func (o *UnibeeApiMerchantPlanEditReq) GetMultiTrialsOk() (*[][]UnibeeApiBeanPlanMultiTrial, bool)`
+`func (o *UnibeeApiMerchantPlanEditReq) GetMultiTrialsOk() (*[]UnibeeApiBeanPlanMultiTrial, bool)`
 
 GetMultiTrialsOk returns a tuple with the MultiTrials field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMultiTrials
 
-`func (o *UnibeeApiMerchantPlanEditReq) SetMultiTrials(v [][]UnibeeApiBeanPlanMultiTrial)`
+`func (o *UnibeeApiMerchantPlanEditReq) SetMultiTrials(v []UnibeeApiBeanPlanMultiTrial)`
 
 SetMultiTrials sets MultiTrials field to given value.
 
@@ -750,6 +751,31 @@ SetProductName sets ProductName field to given value.
 `func (o *UnibeeApiMerchantPlanEditReq) HasProductName() bool`
 
 HasProductName returns a boolean if a field has been set.
+
+### GetTagIds
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetTagIds() []int64`
+
+GetTagIds returns the TagIds field if non-nil, zero value otherwise.
+
+### GetTagIdsOk
+
+`func (o *UnibeeApiMerchantPlanEditReq) GetTagIdsOk() (*[]int64, bool)`
+
+GetTagIdsOk returns a tuple with the TagIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTagIds
+
+`func (o *UnibeeApiMerchantPlanEditReq) SetTagIds(v []int64)`
+
+SetTagIds sets TagIds field to given value.
+
+### HasTagIds
+
+`func (o *UnibeeApiMerchantPlanEditReq) HasTagIds() bool`
+
+HasTagIds returns a boolean if a field has been set.
 
 ### GetTrialAmount
 

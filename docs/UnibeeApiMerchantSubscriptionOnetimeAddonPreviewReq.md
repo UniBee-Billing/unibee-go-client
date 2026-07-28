@@ -4,20 +4,25 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AddonId** | **int64** | AddonId, id of one-time addon, the new payment will created base on the addon&#39;s amount&#39; | 
+**AddonId** | **int64** | AddonId, id of one-time addon plan. The new payment amount is calculated from the addon amount and quantity | 
 **ApplyPromoCredit** | Pointer to **bool** | apply promo credit or not | [optional] 
 **ApplyPromoCreditAmount** | Pointer to **int32** | apply promo credit amount, auto compute if not specified | [optional] 
+**BypassSubCheck** | Pointer to **bool** | When SubscriptionId is blank, allow purchase even if no active/incomplete subscription is found. If a subscription is found, the addon still attaches to it | [optional] 
 **Currency** | Pointer to **string** | The currency of payment | [optional] 
+**Description** | Pointer to **string** | Custom product description for payment gateway and invoice line display | [optional] 
 **DiscountAmount** | Pointer to **int32** | Amount of discount | [optional] 
 **DiscountCode** | Pointer to **string** | DiscountCode | [optional] 
 **DiscountPercentage** | Pointer to **int32** | Percentage of discount, 100&#x3D;1%, ignore if discountAmount specified | [optional] 
+**Email** | Pointer to **string** | Email. Used with ExternalUserId when SubscriptionId is blank and UserId is not provided | [optional] 
+**ExternalUserId** | Pointer to **string** | ExternalUserId, unique. Used with Email when SubscriptionId is blank and UserId is not provided | [optional] 
 **GatewayId** | Pointer to **int32** | GatewayId, use user&#39;s gateway if not provide | [optional] 
 **GatewayPaymentType** | Pointer to **string** | Gateway Payment Type | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，custom data | [optional] 
+**Name** | Pointer to **string** | Custom product name for payment gateway and invoice line display. Does not change InvoiceName | [optional] 
 **Quantity** | **int64** | Quantity, quantity of the new payment which one-time addon purchased | 
-**SubscriptionId** | Pointer to **string** | SubscriptionId, id of subscription which addon will attached, either SubscriptionId or UserId needed, The only one active subscription of userId will attach the addon | [optional] 
+**SubscriptionId** | Pointer to **string** | SubscriptionId, id of subscription which addon will attach to. If blank, UserId or ExternalUserId&amp;Email is required | [optional] 
 **TaxPercentage** | Pointer to **int32** | TaxPercentage，1000 &#x3D; 10%, default user&#39;s taxPercentage if not specified | [optional] 
-**UserId** | Pointer to **int64** | UserId, either SubscriptionId or UserId needed, The only one active subscription will update if userId provide instead of subscriptionId | [optional] 
+**UserId** | Pointer to **int64** | UserId. Required when SubscriptionId is blank unless ExternalUserId&amp;Email is provided | [optional] 
 
 ## Methods
 
@@ -108,6 +113,31 @@ SetApplyPromoCreditAmount sets ApplyPromoCreditAmount field to given value.
 
 HasApplyPromoCreditAmount returns a boolean if a field has been set.
 
+### GetBypassSubCheck
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) GetBypassSubCheck() bool`
+
+GetBypassSubCheck returns the BypassSubCheck field if non-nil, zero value otherwise.
+
+### GetBypassSubCheckOk
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) GetBypassSubCheckOk() (*bool, bool)`
+
+GetBypassSubCheckOk returns a tuple with the BypassSubCheck field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBypassSubCheck
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) SetBypassSubCheck(v bool)`
+
+SetBypassSubCheck sets BypassSubCheck field to given value.
+
+### HasBypassSubCheck
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) HasBypassSubCheck() bool`
+
+HasBypassSubCheck returns a boolean if a field has been set.
+
 ### GetCurrency
 
 `func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) GetCurrency() string`
@@ -132,6 +162,31 @@ SetCurrency sets Currency field to given value.
 `func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) HasCurrency() bool`
 
 HasCurrency returns a boolean if a field has been set.
+
+### GetDescription
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
 
 ### GetDiscountAmount
 
@@ -208,6 +263,56 @@ SetDiscountPercentage sets DiscountPercentage field to given value.
 
 HasDiscountPercentage returns a boolean if a field has been set.
 
+### GetEmail
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) GetEmail() string`
+
+GetEmail returns the Email field if non-nil, zero value otherwise.
+
+### GetEmailOk
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) GetEmailOk() (*string, bool)`
+
+GetEmailOk returns a tuple with the Email field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmail
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) SetEmail(v string)`
+
+SetEmail sets Email field to given value.
+
+### HasEmail
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) HasEmail() bool`
+
+HasEmail returns a boolean if a field has been set.
+
+### GetExternalUserId
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) GetExternalUserId() string`
+
+GetExternalUserId returns the ExternalUserId field if non-nil, zero value otherwise.
+
+### GetExternalUserIdOk
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) GetExternalUserIdOk() (*string, bool)`
+
+GetExternalUserIdOk returns a tuple with the ExternalUserId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalUserId
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) SetExternalUserId(v string)`
+
+SetExternalUserId sets ExternalUserId field to given value.
+
+### HasExternalUserId
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) HasExternalUserId() bool`
+
+HasExternalUserId returns a boolean if a field has been set.
+
 ### GetGatewayId
 
 `func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) GetGatewayId() int32`
@@ -282,6 +387,31 @@ SetMetadata sets Metadata field to given value.
 `func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) HasMetadata() bool`
 
 HasMetadata returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *UnibeeApiMerchantSubscriptionOnetimeAddonPreviewReq) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetQuantity
 

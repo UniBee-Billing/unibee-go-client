@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **MetricDescription** | Pointer to **string** | metric description | [optional] 
 **MetricName** | Pointer to **string** | metric name | [optional] 
 **ProrationRefundEnabled** | Pointer to **bool** | Enable proration refund for this metric, i.e. reclaim metric limit on upgrade (false when not set) | [optional] 
-**Type** | Pointer to **int32** | 1-limit_metered，2-charge_metered,3-charge_recurring | [optional] 
+**Type** | Pointer to **int32** | 1-limit_metered，2-charge_metered，3-charge_recurring，4-limit_recurring | [optional] 
 **Unit** | Pointer to **string** | unit | [optional] 
 
 ## Methods

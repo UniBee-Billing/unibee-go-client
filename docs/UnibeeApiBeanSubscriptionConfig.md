@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AutoChargeMaxRetryCount** | Pointer to **int64** | AutoChargeMaxRetryCount, max automatic-charge attempts for one invoice including the first automatic attempt; 0 &#x3D; unlimited (current behavior) | [optional] 
 **AutoChargeRetryInterval** | Pointer to **int64** | AutoChargeRetryInterval, seconds to wait before retrying a failed auto-charge within the window, default 12h (43200) | [optional] 
+**DiscountNewUserIgnoreFreeZeroInvoice** | Pointer to **bool** | DiscountNewUserIgnoreFreeZeroInvoice, when true ignore only true free-plan zero invoices (no discount code / discount amount / promo credit) for new-user discount scope; default false (legacy: any paid subscription invoice counts as not new) | [optional] 
 **DowngradeEffectImmediately** | Pointer to **bool** | DowngradeEffectImmediately, whether subscription update should effect immediately or at period end, default at period end | [optional] 
 **DowngradeNonImmediatelyEffectBeforePeriodEnd** | Pointer to **int64** | DowngradeNonImmediatelyEffectBeforePeriodEnd, for non-immediate downgrade, can take effect before period end (in seconds), default 30 minutes (1800) | [optional] 
 **FiatExchangeApiKey** | Pointer to **string** |  | [optional] 
@@ -86,6 +87,31 @@ SetAutoChargeRetryInterval sets AutoChargeRetryInterval field to given value.
 `func (o *UnibeeApiBeanSubscriptionConfig) HasAutoChargeRetryInterval() bool`
 
 HasAutoChargeRetryInterval returns a boolean if a field has been set.
+
+### GetDiscountNewUserIgnoreFreeZeroInvoice
+
+`func (o *UnibeeApiBeanSubscriptionConfig) GetDiscountNewUserIgnoreFreeZeroInvoice() bool`
+
+GetDiscountNewUserIgnoreFreeZeroInvoice returns the DiscountNewUserIgnoreFreeZeroInvoice field if non-nil, zero value otherwise.
+
+### GetDiscountNewUserIgnoreFreeZeroInvoiceOk
+
+`func (o *UnibeeApiBeanSubscriptionConfig) GetDiscountNewUserIgnoreFreeZeroInvoiceOk() (*bool, bool)`
+
+GetDiscountNewUserIgnoreFreeZeroInvoiceOk returns a tuple with the DiscountNewUserIgnoreFreeZeroInvoice field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscountNewUserIgnoreFreeZeroInvoice
+
+`func (o *UnibeeApiBeanSubscriptionConfig) SetDiscountNewUserIgnoreFreeZeroInvoice(v bool)`
+
+SetDiscountNewUserIgnoreFreeZeroInvoice sets DiscountNewUserIgnoreFreeZeroInvoice field to given value.
+
+### HasDiscountNewUserIgnoreFreeZeroInvoice
+
+`func (o *UnibeeApiBeanSubscriptionConfig) HasDiscountNewUserIgnoreFreeZeroInvoice() bool`
+
+HasDiscountNewUserIgnoreFreeZeroInvoice returns a boolean if a field has been set.
 
 ### GetDowngradeEffectImmediately
 

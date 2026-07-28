@@ -1304,7 +1304,7 @@ No authorization required
 
 ## PaymentTimelineListGet
 
-> MerchantPaymentTimelineListGet200Response PaymentTimelineListGet(ctx).UserId(userId).AmountStart(amountStart).AmountEnd(amountEnd).SearchKey(searchKey).Status(status).TimelineTypes(timelineTypes).GatewayIds(gatewayIds).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).PlanIds(planIds).HasDiscountCode(hasDiscountCode).DiscountCode(discountCode).Execute()
+> MerchantPaymentTimelineListGet200Response PaymentTimelineListGet(ctx).UserId(userId).AmountStart(amountStart).AmountEnd(amountEnd).SearchKey(searchKey).Status(status).TimelineTypes(timelineTypes).GatewayIds(gatewayIds).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).PlanIds(planIds).PlanTagFilter(planTagFilter).HasDiscountCode(hasDiscountCode).DiscountCode(discountCode).Execute()
 
 Get Payment TimeLine List
 
@@ -1336,12 +1336,13 @@ func main() {
 	createTimeStart := int64(789) // int64 | CreateTimeStart，UTC timestamp，seconds (optional)
 	createTimeEnd := int64(789) // int64 | CreateTimeEnd，UTC timestamp，seconds (optional)
 	planIds := []int64{int64(123)} // []int64 | Filter timelines whose invoice includes any of these plan IDs (OR) (optional)
+	planTagFilter := *openapiclient.NewUnibeeApiBeanPlanTagFilter() // UnibeeApiBeanPlanTagFilter | Filter by plan tags. Omit or empty tagIds = no tag filter. When planIds is also set, results use union OR. (optional)
 	hasDiscountCode := true // bool | Filter by whether invoice discount_code is set (optional)
 	discountCode := "discountCode_example" // string | Filter by exact invoice discount code (case-insensitive) (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Payment.PaymentTimelineListGet(context.Background()).UserId(userId).AmountStart(amountStart).AmountEnd(amountEnd).SearchKey(searchKey).Status(status).TimelineTypes(timelineTypes).GatewayIds(gatewayIds).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).PlanIds(planIds).HasDiscountCode(hasDiscountCode).DiscountCode(discountCode).Execute()
+	resp, r, err := apiClient.Payment.PaymentTimelineListGet(context.Background()).UserId(userId).AmountStart(amountStart).AmountEnd(amountEnd).SearchKey(searchKey).Status(status).TimelineTypes(timelineTypes).GatewayIds(gatewayIds).Currency(currency).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).PlanIds(planIds).PlanTagFilter(planTagFilter).HasDiscountCode(hasDiscountCode).DiscountCode(discountCode).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Payment.PaymentTimelineListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1377,6 +1378,7 @@ Name | Type | Description  | Notes
  **createTimeStart** | **int64** | CreateTimeStart，UTC timestamp，seconds | 
  **createTimeEnd** | **int64** | CreateTimeEnd，UTC timestamp，seconds | 
  **planIds** | **[]int64** | Filter timelines whose invoice includes any of these plan IDs (OR) | 
+ **planTagFilter** | [**UnibeeApiBeanPlanTagFilter**](UnibeeApiBeanPlanTagFilter.md) | Filter by plan tags. Omit or empty tagIds &#x3D; no tag filter. When planIds is also set, results use union OR. | 
  **hasDiscountCode** | **bool** | Filter by whether invoice discount_code is set | 
  **discountCode** | **string** | Filter by exact invoice discount code (case-insensitive) | 
 

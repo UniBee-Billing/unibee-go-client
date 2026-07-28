@@ -888,7 +888,7 @@ No authorization required
 
 ## InvoiceListGet
 
-> MerchantInvoiceListGet200Response InvoiceListGet(ctx).FirstName(firstName).LastName(lastName).SearchKey(searchKey).Currency(currency).Status(status).AmountStart(amountStart).AmountEnd(amountEnd).UserId(userId).GatewayIds(gatewayIds).PlanIds(planIds).HasDiscountCode(hasDiscountCode).DiscountCode(discountCode).SendEmail(sendEmail).SortField(sortField).SortType(sortType).DeleteInclude(deleteInclude).Type_(type_).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).ReportTimeStart(reportTimeStart).ReportTimeEnd(reportTimeEnd).Execute()
+> MerchantInvoiceListGet200Response InvoiceListGet(ctx).FirstName(firstName).LastName(lastName).SearchKey(searchKey).Currency(currency).Status(status).AmountStart(amountStart).AmountEnd(amountEnd).UserId(userId).GatewayIds(gatewayIds).PlanIds(planIds).PlanTagFilter(planTagFilter).HasDiscountCode(hasDiscountCode).DiscountCode(discountCode).SendEmail(sendEmail).SortField(sortField).SortType(sortType).DeleteInclude(deleteInclude).Type_(type_).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).ReportTimeStart(reportTimeStart).ReportTimeEnd(reportTimeEnd).Execute()
 
 Get Invoice List
 
@@ -917,6 +917,7 @@ func main() {
 	userId := int64(789) // int64 | The filter userid of invoice (optional)
 	gatewayIds := []int64{int64(123)} // []int64 | GatewayIds, Search Filter GatewayIds (optional)
 	planIds := []int64{int64(123)} // []int64 | Filter invoices that include any of these plan IDs (OR) (optional)
+	planTagFilter := *openapiclient.NewUnibeeApiBeanPlanTagFilter() // UnibeeApiBeanPlanTagFilter | Filter by plan tags. Omit or empty tagIds = no tag filter. When planIds is also set, results use union OR. (optional)
 	hasDiscountCode := true // bool | Filter by whether discount_code is set (optional)
 	discountCode := "discountCode_example" // string | Filter by exact discount code (case-insensitive) (optional)
 	sendEmail := "sendEmail_example" // string | The filter email of invoice (optional)
@@ -933,7 +934,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Invoice.InvoiceListGet(context.Background()).FirstName(firstName).LastName(lastName).SearchKey(searchKey).Currency(currency).Status(status).AmountStart(amountStart).AmountEnd(amountEnd).UserId(userId).GatewayIds(gatewayIds).PlanIds(planIds).HasDiscountCode(hasDiscountCode).DiscountCode(discountCode).SendEmail(sendEmail).SortField(sortField).SortType(sortType).DeleteInclude(deleteInclude).Type_(type_).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).ReportTimeStart(reportTimeStart).ReportTimeEnd(reportTimeEnd).Execute()
+	resp, r, err := apiClient.Invoice.InvoiceListGet(context.Background()).FirstName(firstName).LastName(lastName).SearchKey(searchKey).Currency(currency).Status(status).AmountStart(amountStart).AmountEnd(amountEnd).UserId(userId).GatewayIds(gatewayIds).PlanIds(planIds).PlanTagFilter(planTagFilter).HasDiscountCode(hasDiscountCode).DiscountCode(discountCode).SendEmail(sendEmail).SortField(sortField).SortType(sortType).DeleteInclude(deleteInclude).Type_(type_).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).ReportTimeStart(reportTimeStart).ReportTimeEnd(reportTimeEnd).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -964,6 +965,7 @@ Name | Type | Description  | Notes
  **userId** | **int64** | The filter userid of invoice | 
  **gatewayIds** | **[]int64** | GatewayIds, Search Filter GatewayIds | 
  **planIds** | **[]int64** | Filter invoices that include any of these plan IDs (OR) | 
+ **planTagFilter** | [**UnibeeApiBeanPlanTagFilter**](UnibeeApiBeanPlanTagFilter.md) | Filter by plan tags. Omit or empty tagIds &#x3D; no tag filter. When planIds is also set, results use union OR. | 
  **hasDiscountCode** | **bool** | Filter by whether discount_code is set | 
  **discountCode** | **string** | Filter by exact discount code (case-insensitive) | 
  **sendEmail** | **string** | The filter email of invoice | 

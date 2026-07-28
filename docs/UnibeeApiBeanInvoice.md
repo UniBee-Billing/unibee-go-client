@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **Link** | Pointer to **string** | invoice link | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **OriginAmount** | Pointer to **int64** |  | [optional] 
+**PaidTime** | Pointer to **int64** | settlement utc time (seconds) | [optional] 
 **PartialCreditPaidAmount** | Pointer to **int64** | partial credit paid amount | [optional] 
 **PaymentId** | Pointer to **string** | paymentId | [optional] 
 **PaymentLink** | Pointer to **string** | invoice payment link | [optional] 
@@ -702,6 +703,31 @@ SetOriginAmount sets OriginAmount field to given value.
 `func (o *UnibeeApiBeanInvoice) HasOriginAmount() bool`
 
 HasOriginAmount returns a boolean if a field has been set.
+
+### GetPaidTime
+
+`func (o *UnibeeApiBeanInvoice) GetPaidTime() int64`
+
+GetPaidTime returns the PaidTime field if non-nil, zero value otherwise.
+
+### GetPaidTimeOk
+
+`func (o *UnibeeApiBeanInvoice) GetPaidTimeOk() (*int64, bool)`
+
+GetPaidTimeOk returns a tuple with the PaidTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaidTime
+
+`func (o *UnibeeApiBeanInvoice) SetPaidTime(v int64)`
+
+SetPaidTime sets PaidTime field to given value.
+
+### HasPaidTime
+
+`func (o *UnibeeApiBeanInvoice) HasPaidTime() bool`
+
+HasPaidTime returns a boolean if a field has been set.
 
 ### GetPartialCreditPaidAmount
 

@@ -19,3 +19,14 @@ sed -i '' 's/map\[string\]map\[string\]interface/map\[string\]interface/g' *.go
 echo "正在删除 decoder.DisallowUnknownFields() 行..."
 find . -name "*.go" -type f -exec sed -i '' '/decoder\.DisallowUnknownFields()/d' {} \;
 echo "decoder.DisallowUnknownFields() 行删除完成"
+
+# 修复 openapi-generator 生成的命名冲突：
+# hasDiscountCode 字段会与 DiscountCode 的 HasDiscountCode() 方法冲突。
+# 仅重命名 Go 字段标识符，保留 json tag: `hasDiscountCode` 不变。
+echo "正在修复 hasDiscountCode 命名冲突..."
+for f in model_unibee_api_merchant_invoice_list_req.go model_unibee_api_merchant_payment_time_line_list_req.go; do
+  if [ -f "$f" ]; then
+    perl -0777 -i -pe 's/\bHasDiscountCode\s+\*bool\s+`json:"hasDiscountCode,omitempty"`/HasDiscountCodeFilter *bool `json:"hasDiscountCode,omitempty"`/g; s/\bo\.HasDiscountCode\b/o.HasDiscountCodeFilter/g' "$f"
+  fi
+done
+echo "hasDiscountCode 命名冲突修复完成"

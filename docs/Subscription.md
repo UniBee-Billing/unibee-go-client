@@ -809,7 +809,7 @@ No authorization required
 
 ## SubscriptionListGet
 
-> MerchantSubscriptionListGet200Response SubscriptionListGet(ctx).UserId(userId).ExternalUserId(externalUserId).SearchKey(searchKey).Email(email).Status(status).Currency(currency).PlanIds(planIds).ProductIds(productIds).AmountStart(amountStart).AmountEnd(amountEnd).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+> MerchantSubscriptionListGet200Response SubscriptionListGet(ctx).UserId(userId).ExternalUserId(externalUserId).SearchKey(searchKey).Email(email).Status(status).Currency(currency).PlanIds(planIds).PlanTagFilter(planTagFilter).ProductIds(productIds).AmountStart(amountStart).AmountEnd(amountEnd).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 
 Get Subscription List
 
@@ -833,6 +833,7 @@ func main() {
 	status := []int32{int32(123)} // []int32 | Filter, Default All，Status，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | 9-Failed (optional)
 	currency := "currency_example" // string | The currency of subscription (optional)
 	planIds := []int64{int64(123)} // []int64 | The filter ids of plan (optional)
+	planTagFilter := *openapiclient.NewUnibeeApiBeanPlanTagFilter() // UnibeeApiBeanPlanTagFilter | Filter by plan tags. Omit or empty tagIds = no tag filter. When planIds is also set, results use union OR. (optional)
 	productIds := []int64{int64(123)} // []int64 | The filter ids of product, invalid if planIds is provided (optional)
 	amountStart := int32(56) // int32 | The filter start amount of subscription (optional)
 	amountEnd := int32(56) // int32 | The filter end amount of subscription (optional)
@@ -845,7 +846,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.Subscription.SubscriptionListGet(context.Background()).UserId(userId).ExternalUserId(externalUserId).SearchKey(searchKey).Email(email).Status(status).Currency(currency).PlanIds(planIds).ProductIds(productIds).AmountStart(amountStart).AmountEnd(amountEnd).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
+	resp, r, err := apiClient.Subscription.SubscriptionListGet(context.Background()).UserId(userId).ExternalUserId(externalUserId).SearchKey(searchKey).Email(email).Status(status).Currency(currency).PlanIds(planIds).PlanTagFilter(planTagFilter).ProductIds(productIds).AmountStart(amountStart).AmountEnd(amountEnd).SortField(sortField).SortType(sortType).Page(page).Count(count).CreateTimeStart(createTimeStart).CreateTimeEnd(createTimeEnd).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionListGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -873,6 +874,7 @@ Name | Type | Description  | Notes
  **status** | **[]int32** | Filter, Default All，Status，1-Pending｜2-Active｜3-Suspend | 4-Cancel | 5-Expire | 6- Suspend| 7-Incomplete | 8-Processing | 9-Failed | 
  **currency** | **string** | The currency of subscription | 
  **planIds** | **[]int64** | The filter ids of plan | 
+ **planTagFilter** | [**UnibeeApiBeanPlanTagFilter**](UnibeeApiBeanPlanTagFilter.md) | Filter by plan tags. Omit or empty tagIds &#x3D; no tag filter. When planIds is also set, results use union OR. | 
  **productIds** | **[]int64** | The filter ids of product, invalid if planIds is provided | 
  **amountStart** | **int32** | The filter start amount of subscription | 
  **amountEnd** | **int32** | The filter end amount of subscription | 

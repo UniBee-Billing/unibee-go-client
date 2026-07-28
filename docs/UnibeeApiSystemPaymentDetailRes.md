@@ -5,6 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CancelUrl** | Pointer to **string** |  | [optional] 
+**InvoiceHostedLink** | Pointer to **string** | Hosted invoice page URL without automatic payment creation | [optional] 
+**Language** | Pointer to **string** | Display language | [optional] 
+**Merchant** | Pointer to [**UnibeeApiBeanPublicMerchant**](UnibeeApiBeanPublicMerchant.md) |  | [optional] 
 **Payment** | Pointer to [**UnibeeApiBeanPayment**](UnibeeApiBeanPayment.md) |  | [optional] 
 **PaymentStatus** | Pointer to **int32** | Payment Status，10-pending，20-success，30-failure, 40-cancel | [optional] 
 **ReturnUrl** | Pointer to **string** |  | [optional] 
@@ -52,6 +55,81 @@ SetCancelUrl sets CancelUrl field to given value.
 `func (o *UnibeeApiSystemPaymentDetailRes) HasCancelUrl() bool`
 
 HasCancelUrl returns a boolean if a field has been set.
+
+### GetInvoiceHostedLink
+
+`func (o *UnibeeApiSystemPaymentDetailRes) GetInvoiceHostedLink() string`
+
+GetInvoiceHostedLink returns the InvoiceHostedLink field if non-nil, zero value otherwise.
+
+### GetInvoiceHostedLinkOk
+
+`func (o *UnibeeApiSystemPaymentDetailRes) GetInvoiceHostedLinkOk() (*string, bool)`
+
+GetInvoiceHostedLinkOk returns a tuple with the InvoiceHostedLink field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInvoiceHostedLink
+
+`func (o *UnibeeApiSystemPaymentDetailRes) SetInvoiceHostedLink(v string)`
+
+SetInvoiceHostedLink sets InvoiceHostedLink field to given value.
+
+### HasInvoiceHostedLink
+
+`func (o *UnibeeApiSystemPaymentDetailRes) HasInvoiceHostedLink() bool`
+
+HasInvoiceHostedLink returns a boolean if a field has been set.
+
+### GetLanguage
+
+`func (o *UnibeeApiSystemPaymentDetailRes) GetLanguage() string`
+
+GetLanguage returns the Language field if non-nil, zero value otherwise.
+
+### GetLanguageOk
+
+`func (o *UnibeeApiSystemPaymentDetailRes) GetLanguageOk() (*string, bool)`
+
+GetLanguageOk returns a tuple with the Language field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLanguage
+
+`func (o *UnibeeApiSystemPaymentDetailRes) SetLanguage(v string)`
+
+SetLanguage sets Language field to given value.
+
+### HasLanguage
+
+`func (o *UnibeeApiSystemPaymentDetailRes) HasLanguage() bool`
+
+HasLanguage returns a boolean if a field has been set.
+
+### GetMerchant
+
+`func (o *UnibeeApiSystemPaymentDetailRes) GetMerchant() UnibeeApiBeanPublicMerchant`
+
+GetMerchant returns the Merchant field if non-nil, zero value otherwise.
+
+### GetMerchantOk
+
+`func (o *UnibeeApiSystemPaymentDetailRes) GetMerchantOk() (*UnibeeApiBeanPublicMerchant, bool)`
+
+GetMerchantOk returns a tuple with the Merchant field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMerchant
+
+`func (o *UnibeeApiSystemPaymentDetailRes) SetMerchant(v UnibeeApiBeanPublicMerchant)`
+
+SetMerchant sets Merchant field to given value.
+
+### HasMerchant
+
+`func (o *UnibeeApiSystemPaymentDetailRes) HasMerchant() bool`
+
+HasMerchant returns a boolean if a field has been set.
 
 ### GetPayment
 

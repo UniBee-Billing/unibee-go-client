@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **HasDiscountCode** | Pointer to **bool** | Filter by whether invoice discount_code is set | [optional] 
 **Page** | Pointer to **int32** | Page,Start 0 | [optional] 
 **PlanIds** | Pointer to **[]int64** | Filter timelines whose invoice includes any of these plan IDs (OR) | [optional] 
+**PlanTagFilter** | Pointer to [**UnibeeApiBeanPlanTagFilter**](UnibeeApiBeanPlanTagFilter.md) |  | [optional] 
 **SearchKey** | Pointer to **string** | Search SubscriptionId|InvoiceId|PaymentId|UserId | [optional] 
 **SortField** | Pointer to **string** | Sort，invoice_id|gmt_create|gmt_modify|period_end|total_amount，Default gmt_modify | [optional] 
 **SortType** | Pointer to **string** | Sort Type，asc|desc，Default desc | [optional] 
@@ -315,6 +316,31 @@ SetPlanIds sets PlanIds field to given value.
 `func (o *UnibeeApiMerchantPaymentTimeLineListReq) HasPlanIds() bool`
 
 HasPlanIds returns a boolean if a field has been set.
+
+### GetPlanTagFilter
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetPlanTagFilter() UnibeeApiBeanPlanTagFilter`
+
+GetPlanTagFilter returns the PlanTagFilter field if non-nil, zero value otherwise.
+
+### GetPlanTagFilterOk
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) GetPlanTagFilterOk() (*UnibeeApiBeanPlanTagFilter, bool)`
+
+GetPlanTagFilterOk returns a tuple with the PlanTagFilter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanTagFilter
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) SetPlanTagFilter(v UnibeeApiBeanPlanTagFilter)`
+
+SetPlanTagFilter sets PlanTagFilter field to given value.
+
+### HasPlanTagFilter
+
+`func (o *UnibeeApiMerchantPaymentTimeLineListReq) HasPlanTagFilter() bool`
+
+HasPlanTagFilter returns a boolean if a field has been set.
 
 ### GetSearchKey
 

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **IntervalUnits** | Pointer to **[]string** | Filter by interval unit (day|week|month|year); ignored when billingIntervalMin is provided | [optional] 
 **Page** | Pointer to **int32** | Page, Start 0 | [optional] 
 **PlanIds** | Pointer to **[]int64** | filter id list of plan, default all | [optional] 
+**PlanTagFilter** | Pointer to [**UnibeeApiBeanPlanTagFilter**](UnibeeApiBeanPlanTagFilter.md) |  | [optional] 
 **ProductIds** | Pointer to **[]int64** | filter id list of product, default all product(0) used if not specified | [optional] 
 **PublishStatus** | Pointer to **int32** | Filter, Default All，PublishStatus，1-UnPublished，2-Published | [optional] 
 **SearchKey** | Pointer to **string** | Search Key, plan name or description | [optional] 
@@ -212,6 +213,31 @@ SetPlanIds sets PlanIds field to given value.
 `func (o *UnibeeApiMerchantPlanListReq) HasPlanIds() bool`
 
 HasPlanIds returns a boolean if a field has been set.
+
+### GetPlanTagFilter
+
+`func (o *UnibeeApiMerchantPlanListReq) GetPlanTagFilter() UnibeeApiBeanPlanTagFilter`
+
+GetPlanTagFilter returns the PlanTagFilter field if non-nil, zero value otherwise.
+
+### GetPlanTagFilterOk
+
+`func (o *UnibeeApiMerchantPlanListReq) GetPlanTagFilterOk() (*UnibeeApiBeanPlanTagFilter, bool)`
+
+GetPlanTagFilterOk returns a tuple with the PlanTagFilter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanTagFilter
+
+`func (o *UnibeeApiMerchantPlanListReq) SetPlanTagFilter(v UnibeeApiBeanPlanTagFilter)`
+
+SetPlanTagFilter sets PlanTagFilter field to given value.
+
+### HasPlanTagFilter
+
+`func (o *UnibeeApiMerchantPlanListReq) HasPlanTagFilter() bool`
+
+HasPlanTagFilter returns a boolean if a field has been set.
 
 ### GetProductIds
 

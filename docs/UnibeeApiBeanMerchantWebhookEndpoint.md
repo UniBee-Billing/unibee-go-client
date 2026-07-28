@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **GmtModify** | Pointer to **int64** | update time | [optional] 
 **Id** | Pointer to **int64** | id | [optional] 
 **MerchantId** | Pointer to **int64** | webhook url | [optional] 
+**ProductIds** | Pointer to **[]int64** | product id filter, empty means all products, 0 means default product | [optional] 
 **Type** | Pointer to **int32** | webhook type,0-Webhook,1-zapier | [optional] 
 **WebhookEvents** | Pointer to **[]string** | webhook_events,split dot | [optional] 
 **WebhookUrl** | Pointer to **string** | webhook url | [optional] 
@@ -130,6 +131,31 @@ SetMerchantId sets MerchantId field to given value.
 `func (o *UnibeeApiBeanMerchantWebhookEndpoint) HasMerchantId() bool`
 
 HasMerchantId returns a boolean if a field has been set.
+
+### GetProductIds
+
+`func (o *UnibeeApiBeanMerchantWebhookEndpoint) GetProductIds() []int64`
+
+GetProductIds returns the ProductIds field if non-nil, zero value otherwise.
+
+### GetProductIdsOk
+
+`func (o *UnibeeApiBeanMerchantWebhookEndpoint) GetProductIdsOk() (*[]int64, bool)`
+
+GetProductIdsOk returns a tuple with the ProductIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProductIds
+
+`func (o *UnibeeApiBeanMerchantWebhookEndpoint) SetProductIds(v []int64)`
+
+SetProductIds sets ProductIds field to given value.
+
+### HasProductIds
+
+`func (o *UnibeeApiBeanMerchantWebhookEndpoint) HasProductIds() bool`
+
+HasProductIds returns a boolean if a field has been set.
 
 ### GetType
 

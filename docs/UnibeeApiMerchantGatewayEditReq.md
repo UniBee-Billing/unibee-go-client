@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **DisplayName** | Pointer to **string** | The displayName of payment gateway | [optional] 
 **GatewayId** | **int64** | The id of payment gateway | 
 **GatewayKey** | Pointer to **string** | The key of payment gateway | [optional] 
-**GatewayLogo** | Pointer to **[][]string** | The logo of payment gateway | [optional] 
+**GatewayLogo** | Pointer to **[]string** | The logo of payment gateway | [optional] 
 **GatewayPaymentTypes** | Pointer to **[]string** | Selected gateway payment types | [optional] 
 **GatewaySecret** | Pointer to **string** | The secret of payment gateway | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
@@ -157,20 +157,20 @@ HasGatewayKey returns a boolean if a field has been set.
 
 ### GetGatewayLogo
 
-`func (o *UnibeeApiMerchantGatewayEditReq) GetGatewayLogo() [][]string`
+`func (o *UnibeeApiMerchantGatewayEditReq) GetGatewayLogo() []string`
 
 GetGatewayLogo returns the GatewayLogo field if non-nil, zero value otherwise.
 
 ### GetGatewayLogoOk
 
-`func (o *UnibeeApiMerchantGatewayEditReq) GetGatewayLogoOk() (*[][]string, bool)`
+`func (o *UnibeeApiMerchantGatewayEditReq) GetGatewayLogoOk() (*[]string, bool)`
 
 GetGatewayLogoOk returns a tuple with the GatewayLogo field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGatewayLogo
 
-`func (o *UnibeeApiMerchantGatewayEditReq) SetGatewayLogo(v [][]string)`
+`func (o *UnibeeApiMerchantGatewayEditReq) SetGatewayLogo(v []string)`
 
 SetGatewayLogo sets GatewayLogo field to given value.
 

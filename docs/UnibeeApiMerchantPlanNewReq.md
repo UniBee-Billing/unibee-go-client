@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **ProductDescription** | Pointer to **string** | Default Copy Description | [optional] 
 **ProductId** | Pointer to **int64** | Id of product which plan to linked | [optional] 
 **ProductName** | Pointer to **string** | Default Copy PlanName | [optional] 
+**TagIds** | Pointer to **[]int64** | Plan tag ids to bind after create. Omit or [] &#x3D; no tags. Binding is best-effort; retry with edit or batch_tag_bind if needed. | [optional] 
 **TrialAmount** | Pointer to **int64** | price of trial period， not available for addon; overridden by multiTrials[0].trialPrice when multiTrials is set | [optional] 
 **TrialDemand** | Pointer to **string** | demand of trial， not available for addon, example, paymentMethod, payment method will ask for subscription trial start | [optional] 
 **TrialDurationTime** | Pointer to **int64** | duration of trial (seconds)， not available for addon; overridden by multiTrials[0].trialDuration when multiTrials is set | [optional] 
@@ -741,6 +742,31 @@ SetProductName sets ProductName field to given value.
 `func (o *UnibeeApiMerchantPlanNewReq) HasProductName() bool`
 
 HasProductName returns a boolean if a field has been set.
+
+### GetTagIds
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetTagIds() []int64`
+
+GetTagIds returns the TagIds field if non-nil, zero value otherwise.
+
+### GetTagIdsOk
+
+`func (o *UnibeeApiMerchantPlanNewReq) GetTagIdsOk() (*[]int64, bool)`
+
+GetTagIdsOk returns a tuple with the TagIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTagIds
+
+`func (o *UnibeeApiMerchantPlanNewReq) SetTagIds(v []int64)`
+
+SetTagIds sets TagIds field to given value.
+
+### HasTagIds
+
+`func (o *UnibeeApiMerchantPlanNewReq) HasTagIds() bool`
+
+HasTagIds returns a boolean if a field has been set.
 
 ### GetTrialAmount
 

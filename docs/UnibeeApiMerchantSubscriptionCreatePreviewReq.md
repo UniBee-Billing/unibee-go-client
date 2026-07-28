@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **GatewayPaymentType** | Pointer to **string** | Optional. Payment type for the selected gateway, such as card, wallet, etc. | [optional] 
 **PlanId** | **int64** | Required. ID of the subscription plan to be purchased. | 
 **Quantity** | Pointer to **int64** | Optional. Number of units for the plan. Defaults to 1 if not specified. | [optional] 
+**SubscriptionStartTime** | Pointer to **int64** | Optional. Custom subscription first period start time as UTC timestamp (seconds). If set, the first billing period starts from this time instead of current time. Not supported with trial, free initial period or multi-trial plans. | [optional] 
 **TaxPercentage** | Pointer to **int32** | Optional. External tax percentage override, in basis points (e.g. 1000 &#x3D; 10%%). Only available for OpenAPI calls. | [optional] 
 **TrialEnd** | Pointer to **int64** | Optional. Custom trial end time as UTC timestamp (seconds). Overrides plan default trial configuration when greater than now. | [optional] 
 **User** | Pointer to [**UnibeeApiBeanNewUser**](UnibeeApiBeanNewUser.md) |  | [optional] 
@@ -388,6 +389,31 @@ SetQuantity sets Quantity field to given value.
 `func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) HasQuantity() bool`
 
 HasQuantity returns a boolean if a field has been set.
+
+### GetSubscriptionStartTime
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) GetSubscriptionStartTime() int64`
+
+GetSubscriptionStartTime returns the SubscriptionStartTime field if non-nil, zero value otherwise.
+
+### GetSubscriptionStartTimeOk
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) GetSubscriptionStartTimeOk() (*int64, bool)`
+
+GetSubscriptionStartTimeOk returns a tuple with the SubscriptionStartTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubscriptionStartTime
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) SetSubscriptionStartTime(v int64)`
+
+SetSubscriptionStartTime sets SubscriptionStartTime field to given value.
+
+### HasSubscriptionStartTime
+
+`func (o *UnibeeApiMerchantSubscriptionCreatePreviewReq) HasSubscriptionStartTime() bool`
+
+HasSubscriptionStartTime returns a boolean if a field has been set.
 
 ### GetTaxPercentage
 

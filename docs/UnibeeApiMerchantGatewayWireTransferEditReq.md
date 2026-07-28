@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Bank** | Pointer to [**UnibeeApiBeanDetailGatewayBank**](UnibeeApiBeanDetailGatewayBank.md) |  | [optional] 
 **Currency** | **string** | The currency of wire transfer  | 
 **DisplayName** | Pointer to **string** | The displayName of payment gateway | [optional] 
-**GatewayIcons** | Pointer to **[][]string** | The icons of payment gateway | [optional] 
+**GatewayIcons** | Pointer to **[]string** | The icons of payment gateway | [optional] 
 **GatewayId** | **int64** | The id of payment gateway | 
 **MinimumAmount** | **int64** | The minimum amount of wire transfer, cents | 
 **Sort** | Pointer to **int32** | The sort value of payment gateway, The higher the value, the lower the ranking | [optional] 
@@ -103,20 +103,20 @@ HasDisplayName returns a boolean if a field has been set.
 
 ### GetGatewayIcons
 
-`func (o *UnibeeApiMerchantGatewayWireTransferEditReq) GetGatewayIcons() [][]string`
+`func (o *UnibeeApiMerchantGatewayWireTransferEditReq) GetGatewayIcons() []string`
 
 GetGatewayIcons returns the GatewayIcons field if non-nil, zero value otherwise.
 
 ### GetGatewayIconsOk
 
-`func (o *UnibeeApiMerchantGatewayWireTransferEditReq) GetGatewayIconsOk() (*[][]string, bool)`
+`func (o *UnibeeApiMerchantGatewayWireTransferEditReq) GetGatewayIconsOk() (*[]string, bool)`
 
 GetGatewayIconsOk returns a tuple with the GatewayIcons field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGatewayIcons
 
-`func (o *UnibeeApiMerchantGatewayWireTransferEditReq) SetGatewayIcons(v [][]string)`
+`func (o *UnibeeApiMerchantGatewayWireTransferEditReq) SetGatewayIcons(v []string)`
 
 SetGatewayIcons sets GatewayIcons field to given value.
 

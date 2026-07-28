@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
 **Payment** | Pointer to [**UnibeeApiBeanPayment**](UnibeeApiBeanPayment.md) |  | [optional] 
 **PaymentId** | Pointer to **string** | PaymentId | [optional] 
+**PlanSnapshot** | Pointer to [**UnibeeApiBeanInvoicePlanSnapshot**](UnibeeApiBeanInvoicePlanSnapshot.md) |  | [optional] 
 **Refund** | Pointer to [**UnibeeApiBeanRefund**](UnibeeApiBeanRefund.md) |  | [optional] 
 **RefundId** | Pointer to **string** | refund id | [optional] 
 **Status** | Pointer to **int32** | 0-pending, 1-success, 2-failure，3-cancel | [optional] 
@@ -343,6 +344,31 @@ SetPaymentId sets PaymentId field to given value.
 `func (o *UnibeeApiBeanDetailPaymentTimelineDetail) HasPaymentId() bool`
 
 HasPaymentId returns a boolean if a field has been set.
+
+### GetPlanSnapshot
+
+`func (o *UnibeeApiBeanDetailPaymentTimelineDetail) GetPlanSnapshot() UnibeeApiBeanInvoicePlanSnapshot`
+
+GetPlanSnapshot returns the PlanSnapshot field if non-nil, zero value otherwise.
+
+### GetPlanSnapshotOk
+
+`func (o *UnibeeApiBeanDetailPaymentTimelineDetail) GetPlanSnapshotOk() (*UnibeeApiBeanInvoicePlanSnapshot, bool)`
+
+GetPlanSnapshotOk returns a tuple with the PlanSnapshot field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanSnapshot
+
+`func (o *UnibeeApiBeanDetailPaymentTimelineDetail) SetPlanSnapshot(v UnibeeApiBeanInvoicePlanSnapshot)`
+
+SetPlanSnapshot sets PlanSnapshot field to given value.
+
+### HasPlanSnapshot
+
+`func (o *UnibeeApiBeanDetailPaymentTimelineDetail) HasPlanSnapshot() bool`
+
+HasPlanSnapshot returns a boolean if a field has been set.
 
 ### GetRefund
 
