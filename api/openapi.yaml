@@ -5,7 +5,7 @@ info:
     name: Apache-2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   title: OpenAPI UniBee
-  version: "daily,buildtime:202607310328"
+  version: "daily,buildtime:202607310402"
 servers:
 - url: https://api.unibee.top
 - url: http://127.0.0.1:8080
@@ -61888,10 +61888,14 @@ components:
             $ref: '#/components/schemas/unibee.api.bean.PlanAddonDetail'
           properties: {}
           type: array
+        discount:
+          $ref: '#/components/schemas/unibee.api.bean.MerchantDiscountCode'
         gateway:
           $ref: '#/components/schemas/unibee.api.bean.detail.Gateway'
         latestInvoice:
           $ref: '#/components/schemas/unibee.api.bean.Invoice'
+        nextInvoiceApply:
+          $ref: '#/components/schemas/unibee.api.bean.detail.SubscriptionNextInvoiceApply'
         plan:
           $ref: '#/components/schemas/unibee.api.bean.Plan'
         subscription:
@@ -63653,10 +63657,14 @@ components:
             $ref: '#/components/schemas/unibee.api.bean.PlanAddonDetail'
           properties: {}
           type: array
+        discount:
+          $ref: '#/components/schemas/unibee.api.bean.MerchantDiscountCode'
         gateway:
           $ref: '#/components/schemas/unibee.api.bean.detail.Gateway'
         latestInvoice:
           $ref: '#/components/schemas/unibee.api.bean.Invoice'
+        nextInvoiceApply:
+          $ref: '#/components/schemas/unibee.api.bean.detail.SubscriptionNextInvoiceApply'
         plan:
           $ref: '#/components/schemas/unibee.api.bean.Plan'
         subscription:
@@ -263732,6 +263740,94 @@ components:
                 perAmount: 7
                 startValue: 9
             status: 4
+        discount:
+          planIds:
+          - 0
+          - 0
+          metadata:
+            key: {}
+          code: code
+          userScope: 7
+          discountAmount: 6
+          planApplyGroup:
+            groupPlanIntervalSelector:
+            - intervalCount: 3
+              intervalUnit: intervalUnit
+            - intervalCount: 3
+              intervalUnit: intervalUnit
+            currency:
+            - currency
+            - currency
+            type:
+            - 3
+            - 3
+          advance: true
+          discountPercentage: 1
+          isDeleted: 5
+          upgradeLongerOnly: true
+          billingType: 9
+          merchantId: 6
+          userIds:
+          - 4
+          - 4
+          currency: currency
+          discountType: 2
+          startTime: 6
+          cycleLimit: 3
+          id: 6
+          userLimit: 8
+          quantity: 7
+          upgradeOnly: true
+          planApplyType: 7
+          createTime: 6
+          name: name
+          endTime: 6
+          status: 0
+        nextInvoiceApply:
+          discount:
+            planIds:
+            - 0
+            - 0
+            metadata:
+              key: {}
+            code: code
+            userScope: 7
+            discountAmount: 6
+            planApplyGroup:
+              groupPlanIntervalSelector:
+              - intervalCount: 3
+                intervalUnit: intervalUnit
+              - intervalCount: 3
+                intervalUnit: intervalUnit
+              currency:
+              - currency
+              - currency
+              type:
+              - 3
+              - 3
+            advance: true
+            discountPercentage: 1
+            isDeleted: 5
+            upgradeLongerOnly: true
+            billingType: 9
+            merchantId: 6
+            userIds:
+            - 4
+            - 4
+            currency: currency
+            discountType: 2
+            startTime: 6
+            cycleLimit: 3
+            id: 6
+            userLimit: 8
+            quantity: 7
+            upgradeOnly: true
+            planApplyType: 7
+            createTime: 6
+            name: name
+            endTime: 6
+            status: 0
+          applyPromoCreditAmount: 5
         subscription:
           metadata:
             key: {}
@@ -264126,10 +264222,14 @@ components:
             $ref: '#/components/schemas/unibee.api.bean.PlanAddonDetail'
           properties: {}
           type: array
+        discount:
+          $ref: '#/components/schemas/unibee.api.bean.MerchantDiscountCode'
         gateway:
           $ref: '#/components/schemas/unibee.api.bean.detail.Gateway'
         latestInvoice:
           $ref: '#/components/schemas/unibee.api.bean.Invoice'
+        nextInvoiceApply:
+          $ref: '#/components/schemas/unibee.api.bean.detail.SubscriptionNextInvoiceApply'
         plan:
           $ref: '#/components/schemas/unibee.api.bean.Plan'
         subscription:
@@ -267250,6 +267350,94 @@ components:
                   perAmount: 7
                   startValue: 9
               status: 4
+          discount:
+            planIds:
+            - 0
+            - 0
+            metadata:
+              key: {}
+            code: code
+            userScope: 7
+            discountAmount: 6
+            planApplyGroup:
+              groupPlanIntervalSelector:
+              - intervalCount: 3
+                intervalUnit: intervalUnit
+              - intervalCount: 3
+                intervalUnit: intervalUnit
+              currency:
+              - currency
+              - currency
+              type:
+              - 3
+              - 3
+            advance: true
+            discountPercentage: 1
+            isDeleted: 5
+            upgradeLongerOnly: true
+            billingType: 9
+            merchantId: 6
+            userIds:
+            - 4
+            - 4
+            currency: currency
+            discountType: 2
+            startTime: 6
+            cycleLimit: 3
+            id: 6
+            userLimit: 8
+            quantity: 7
+            upgradeOnly: true
+            planApplyType: 7
+            createTime: 6
+            name: name
+            endTime: 6
+            status: 0
+          nextInvoiceApply:
+            discount:
+              planIds:
+              - 0
+              - 0
+              metadata:
+                key: {}
+              code: code
+              userScope: 7
+              discountAmount: 6
+              planApplyGroup:
+                groupPlanIntervalSelector:
+                - intervalCount: 3
+                  intervalUnit: intervalUnit
+                - intervalCount: 3
+                  intervalUnit: intervalUnit
+                currency:
+                - currency
+                - currency
+                type:
+                - 3
+                - 3
+              advance: true
+              discountPercentage: 1
+              isDeleted: 5
+              upgradeLongerOnly: true
+              billingType: 9
+              merchantId: 6
+              userIds:
+              - 4
+              - 4
+              currency: currency
+              discountType: 2
+              startTime: 6
+              cycleLimit: 3
+              id: 6
+              userLimit: 8
+              quantity: 7
+              upgradeOnly: true
+              planApplyType: 7
+              createTime: 6
+              name: name
+              endTime: 6
+              status: 0
+            applyPromoCreditAmount: 5
           subscription:
             metadata:
               key: {}
@@ -333593,6 +333781,94 @@ components:
                 perAmount: 7
                 startValue: 9
             status: 4
+        discount:
+          planIds:
+          - 0
+          - 0
+          metadata:
+            key: {}
+          code: code
+          userScope: 7
+          discountAmount: 6
+          planApplyGroup:
+            groupPlanIntervalSelector:
+            - intervalCount: 3
+              intervalUnit: intervalUnit
+            - intervalCount: 3
+              intervalUnit: intervalUnit
+            currency:
+            - currency
+            - currency
+            type:
+            - 3
+            - 3
+          advance: true
+          discountPercentage: 1
+          isDeleted: 5
+          upgradeLongerOnly: true
+          billingType: 9
+          merchantId: 6
+          userIds:
+          - 4
+          - 4
+          currency: currency
+          discountType: 2
+          startTime: 6
+          cycleLimit: 3
+          id: 6
+          userLimit: 8
+          quantity: 7
+          upgradeOnly: true
+          planApplyType: 7
+          createTime: 6
+          name: name
+          endTime: 6
+          status: 0
+        nextInvoiceApply:
+          discount:
+            planIds:
+            - 0
+            - 0
+            metadata:
+              key: {}
+            code: code
+            userScope: 7
+            discountAmount: 6
+            planApplyGroup:
+              groupPlanIntervalSelector:
+              - intervalCount: 3
+                intervalUnit: intervalUnit
+              - intervalCount: 3
+                intervalUnit: intervalUnit
+              currency:
+              - currency
+              - currency
+              type:
+              - 3
+              - 3
+            advance: true
+            discountPercentage: 1
+            isDeleted: 5
+            upgradeLongerOnly: true
+            billingType: 9
+            merchantId: 6
+            userIds:
+            - 4
+            - 4
+            currency: currency
+            discountType: 2
+            startTime: 6
+            cycleLimit: 3
+            id: 6
+            userLimit: 8
+            quantity: 7
+            upgradeOnly: true
+            planApplyType: 7
+            createTime: 6
+            name: name
+            endTime: 6
+            status: 0
+          applyPromoCreditAmount: 5
         subscription:
           metadata:
             key: {}
@@ -333980,10 +334256,14 @@ components:
             $ref: '#/components/schemas/unibee.api.bean.PlanAddonDetail'
           properties: {}
           type: array
+        discount:
+          $ref: '#/components/schemas/unibee.api.bean.MerchantDiscountCode'
         gateway:
           $ref: '#/components/schemas/unibee.api.bean.detail.Gateway'
         latestInvoice:
           $ref: '#/components/schemas/unibee.api.bean.Invoice'
+        nextInvoiceApply:
+          $ref: '#/components/schemas/unibee.api.bean.detail.SubscriptionNextInvoiceApply'
         plan:
           $ref: '#/components/schemas/unibee.api.bean.Plan'
         subscription:
@@ -337099,6 +337379,94 @@ components:
                   perAmount: 7
                   startValue: 9
               status: 4
+          discount:
+            planIds:
+            - 0
+            - 0
+            metadata:
+              key: {}
+            code: code
+            userScope: 7
+            discountAmount: 6
+            planApplyGroup:
+              groupPlanIntervalSelector:
+              - intervalCount: 3
+                intervalUnit: intervalUnit
+              - intervalCount: 3
+                intervalUnit: intervalUnit
+              currency:
+              - currency
+              - currency
+              type:
+              - 3
+              - 3
+            advance: true
+            discountPercentage: 1
+            isDeleted: 5
+            upgradeLongerOnly: true
+            billingType: 9
+            merchantId: 6
+            userIds:
+            - 4
+            - 4
+            currency: currency
+            discountType: 2
+            startTime: 6
+            cycleLimit: 3
+            id: 6
+            userLimit: 8
+            quantity: 7
+            upgradeOnly: true
+            planApplyType: 7
+            createTime: 6
+            name: name
+            endTime: 6
+            status: 0
+          nextInvoiceApply:
+            discount:
+              planIds:
+              - 0
+              - 0
+              metadata:
+                key: {}
+              code: code
+              userScope: 7
+              discountAmount: 6
+              planApplyGroup:
+                groupPlanIntervalSelector:
+                - intervalCount: 3
+                  intervalUnit: intervalUnit
+                - intervalCount: 3
+                  intervalUnit: intervalUnit
+                currency:
+                - currency
+                - currency
+                type:
+                - 3
+                - 3
+              advance: true
+              discountPercentage: 1
+              isDeleted: 5
+              upgradeLongerOnly: true
+              billingType: 9
+              merchantId: 6
+              userIds:
+              - 4
+              - 4
+              currency: currency
+              discountType: 2
+              startTime: 6
+              cycleLimit: 3
+              id: 6
+              userLimit: 8
+              quantity: 7
+              upgradeOnly: true
+              planApplyType: 7
+              createTime: 6
+              name: name
+              endTime: 6
+              status: 0
+            applyPromoCreditAmount: 5
           subscription:
             metadata:
               key: {}

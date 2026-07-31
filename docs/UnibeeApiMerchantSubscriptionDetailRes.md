@@ -6,8 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | AddonParams | [optional] 
 **Addons** | Pointer to [**[]UnibeeApiBeanPlanAddonDetail**](UnibeeApiBeanPlanAddonDetail.md) | Plan Addon | [optional] 
+**Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCode**](UnibeeApiBeanMerchantDiscountCode.md) |  | [optional] 
 **Gateway** | Pointer to [**UnibeeApiBeanDetailGateway**](UnibeeApiBeanDetailGateway.md) |  | [optional] 
 **LatestInvoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
+**NextInvoiceApply** | Pointer to [**UnibeeApiBeanDetailSubscriptionNextInvoiceApply**](UnibeeApiBeanDetailSubscriptionNextInvoiceApply.md) |  | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
 **Subscription** | Pointer to [**UnibeeApiBeanSubscription**](UnibeeApiBeanSubscription.md) |  | [optional] 
 **UnfinishedSubscriptionPendingUpdate** | Pointer to [**UnibeeApiBeanDetailSubscriptionPendingUpdateDetail**](UnibeeApiBeanDetailSubscriptionPendingUpdateDetail.md) |  | [optional] 
@@ -82,6 +84,31 @@ SetAddons sets Addons field to given value.
 
 HasAddons returns a boolean if a field has been set.
 
+### GetDiscount
+
+`func (o *UnibeeApiMerchantSubscriptionDetailRes) GetDiscount() UnibeeApiBeanMerchantDiscountCode`
+
+GetDiscount returns the Discount field if non-nil, zero value otherwise.
+
+### GetDiscountOk
+
+`func (o *UnibeeApiMerchantSubscriptionDetailRes) GetDiscountOk() (*UnibeeApiBeanMerchantDiscountCode, bool)`
+
+GetDiscountOk returns a tuple with the Discount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscount
+
+`func (o *UnibeeApiMerchantSubscriptionDetailRes) SetDiscount(v UnibeeApiBeanMerchantDiscountCode)`
+
+SetDiscount sets Discount field to given value.
+
+### HasDiscount
+
+`func (o *UnibeeApiMerchantSubscriptionDetailRes) HasDiscount() bool`
+
+HasDiscount returns a boolean if a field has been set.
+
 ### GetGateway
 
 `func (o *UnibeeApiMerchantSubscriptionDetailRes) GetGateway() UnibeeApiBeanDetailGateway`
@@ -131,6 +158,31 @@ SetLatestInvoice sets LatestInvoice field to given value.
 `func (o *UnibeeApiMerchantSubscriptionDetailRes) HasLatestInvoice() bool`
 
 HasLatestInvoice returns a boolean if a field has been set.
+
+### GetNextInvoiceApply
+
+`func (o *UnibeeApiMerchantSubscriptionDetailRes) GetNextInvoiceApply() UnibeeApiBeanDetailSubscriptionNextInvoiceApply`
+
+GetNextInvoiceApply returns the NextInvoiceApply field if non-nil, zero value otherwise.
+
+### GetNextInvoiceApplyOk
+
+`func (o *UnibeeApiMerchantSubscriptionDetailRes) GetNextInvoiceApplyOk() (*UnibeeApiBeanDetailSubscriptionNextInvoiceApply, bool)`
+
+GetNextInvoiceApplyOk returns a tuple with the NextInvoiceApply field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNextInvoiceApply
+
+`func (o *UnibeeApiMerchantSubscriptionDetailRes) SetNextInvoiceApply(v UnibeeApiBeanDetailSubscriptionNextInvoiceApply)`
+
+SetNextInvoiceApply sets NextInvoiceApply field to given value.
+
+### HasNextInvoiceApply
+
+`func (o *UnibeeApiMerchantSubscriptionDetailRes) HasNextInvoiceApply() bool`
+
+HasNextInvoiceApply returns a boolean if a field has been set.
 
 ### GetPlan
 
