@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Discount** | Pointer to [**UnibeeApiBeanMerchantDiscountCode**](UnibeeApiBeanMerchantDiscountCode.md) |  | [optional] 
 **Gateway** | Pointer to [**UnibeeApiBeanDetailGateway**](UnibeeApiBeanDetailGateway.md) |  | [optional] 
 **LatestInvoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
+**NextInvoiceApply** | Pointer to [**UnibeeApiBeanDetailSubscriptionNextInvoiceApply**](UnibeeApiBeanDetailSubscriptionNextInvoiceApply.md) |  | [optional] 
 **Note** | Pointer to **string** | note | [optional] 
 **Plan** | Pointer to [**UnibeeApiBeanPlan**](UnibeeApiBeanPlan.md) |  | [optional] 
 **PreviousStatus** | Pointer to **int32** | Previous subscription status before this subscription status transition | [optional] 
@@ -186,6 +187,31 @@ SetLatestInvoice sets LatestInvoice field to given value.
 `func (o *UnibeeApiBeanDetailSubscriptionDetail) HasLatestInvoice() bool`
 
 HasLatestInvoice returns a boolean if a field has been set.
+
+### GetNextInvoiceApply
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetNextInvoiceApply() UnibeeApiBeanDetailSubscriptionNextInvoiceApply`
+
+GetNextInvoiceApply returns the NextInvoiceApply field if non-nil, zero value otherwise.
+
+### GetNextInvoiceApplyOk
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) GetNextInvoiceApplyOk() (*UnibeeApiBeanDetailSubscriptionNextInvoiceApply, bool)`
+
+GetNextInvoiceApplyOk returns a tuple with the NextInvoiceApply field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNextInvoiceApply
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) SetNextInvoiceApply(v UnibeeApiBeanDetailSubscriptionNextInvoiceApply)`
+
+SetNextInvoiceApply sets NextInvoiceApply field to given value.
+
+### HasNextInvoiceApply
+
+`func (o *UnibeeApiBeanDetailSubscriptionDetail) HasNextInvoiceApply() bool`
+
+HasNextInvoiceApply returns a boolean if a field has been set.
 
 ### GetNote
 

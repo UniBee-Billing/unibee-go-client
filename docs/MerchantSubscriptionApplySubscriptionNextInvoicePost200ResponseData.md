@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Invoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
+**NextPeriodInvoice** | Pointer to [**UnibeeApiBeanInvoice**](UnibeeApiBeanInvoice.md) |  | [optional] 
 **Subscription** | Pointer to [**UnibeeApiBeanSubscription**](UnibeeApiBeanSubscription.md) |  | [optional] 
 **SubscriptionPendingUpdate** | Pointer to [**UnibeeApiBeanDetailSubscriptionPendingUpdateDetail**](UnibeeApiBeanDetailSubscriptionPendingUpdateDetail.md) |  | [optional] 
 
@@ -51,6 +52,31 @@ SetInvoice sets Invoice field to given value.
 `func (o *MerchantSubscriptionApplySubscriptionNextInvoicePost200ResponseData) HasInvoice() bool`
 
 HasInvoice returns a boolean if a field has been set.
+
+### GetNextPeriodInvoice
+
+`func (o *MerchantSubscriptionApplySubscriptionNextInvoicePost200ResponseData) GetNextPeriodInvoice() UnibeeApiBeanInvoice`
+
+GetNextPeriodInvoice returns the NextPeriodInvoice field if non-nil, zero value otherwise.
+
+### GetNextPeriodInvoiceOk
+
+`func (o *MerchantSubscriptionApplySubscriptionNextInvoicePost200ResponseData) GetNextPeriodInvoiceOk() (*UnibeeApiBeanInvoice, bool)`
+
+GetNextPeriodInvoiceOk returns a tuple with the NextPeriodInvoice field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNextPeriodInvoice
+
+`func (o *MerchantSubscriptionApplySubscriptionNextInvoicePost200ResponseData) SetNextPeriodInvoice(v UnibeeApiBeanInvoice)`
+
+SetNextPeriodInvoice sets NextPeriodInvoice field to given value.
+
+### HasNextPeriodInvoice
+
+`func (o *MerchantSubscriptionApplySubscriptionNextInvoicePost200ResponseData) HasNextPeriodInvoice() bool`
+
+HasNextPeriodInvoice returns a boolean if a field has been set.
 
 ### GetSubscription
 

@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Activate** | Pointer to **bool** | activate 2FA for all members, all members need 2FA while login if activate, otherwise not | [optional] 
+**Activate** | Pointer to **bool** | activate 2FA for all members, all members need 2FA while login if activate, otherwise not; omit to keep unchanged | [optional] 
+**TotpDeviceTrustDays** | Pointer to **int32** | Trusted device days without re-entering TOTP, 0&#x3D;always require, default 30, max 365; omit to keep unchanged | [optional] 
 
 ## Methods
 
@@ -49,6 +50,31 @@ SetActivate sets Activate field to given value.
 `func (o *UnibeeApiMerchantProfileEditTotpConfigReq) HasActivate() bool`
 
 HasActivate returns a boolean if a field has been set.
+
+### GetTotpDeviceTrustDays
+
+`func (o *UnibeeApiMerchantProfileEditTotpConfigReq) GetTotpDeviceTrustDays() int32`
+
+GetTotpDeviceTrustDays returns the TotpDeviceTrustDays field if non-nil, zero value otherwise.
+
+### GetTotpDeviceTrustDaysOk
+
+`func (o *UnibeeApiMerchantProfileEditTotpConfigReq) GetTotpDeviceTrustDaysOk() (*int32, bool)`
+
+GetTotpDeviceTrustDaysOk returns a tuple with the TotpDeviceTrustDays field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotpDeviceTrustDays
+
+`func (o *UnibeeApiMerchantProfileEditTotpConfigReq) SetTotpDeviceTrustDays(v int32)`
+
+SetTotpDeviceTrustDays sets TotpDeviceTrustDays field to given value.
+
+### HasTotpDeviceTrustDays
+
+`func (o *UnibeeApiMerchantProfileEditTotpConfigReq) HasTotpDeviceTrustDays() bool`
+
+HasTotpDeviceTrustDays returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

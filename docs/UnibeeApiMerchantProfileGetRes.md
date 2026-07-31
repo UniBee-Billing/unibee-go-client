@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **Env** | Pointer to **string** | System Env, em: daily|stage|local|prod | [optional] 
 **ExchangeRateApiKey** | Pointer to **string** | ExchangeRateApiKey | [optional] 
 **Gateways** | Pointer to [**[]UnibeeApiBeanDetailGateway**](UnibeeApiBeanDetailGateway.md) | Gateway List | [optional] 
-**GlobalTOPTEnabled** | Pointer to **bool** | GlobalTOPTEnabled | [optional] 
+**GlobalTOTPEnabled** | Pointer to **bool** | Global TOTP mandatory switch | [optional] 
 **GlobalUSVATConfig** | Pointer to [**UnibeeApiBeanUSVATGlobalConfig**](UnibeeApiBeanUSVATGlobalConfig.md) |  | [optional] 
 **IsOwner** | Pointer to **bool** | Check Member is Owner | [optional] 
 **IsProd** | Pointer to **bool** | Check System Env Is Prod, true|false | [optional] 
@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **SegmentUserPortalKey** | Pointer to **string** | SegmentUserPortalKey | [optional] 
 **SendGridKey** | Pointer to **string** | SendGridKey | [optional] 
 **TaxJarApiKeys** | Pointer to [**UnibeeApiBeanUSVATGatewayConnectionAPIKeys**](UnibeeApiBeanUSVATGatewayConnectionAPIKeys.md) |  | [optional] 
+**TotpDeviceTrustDays** | Pointer to **int32** | Trusted device days without re-entering TOTP, 0&#x3D;always require, default 30, max 365 | [optional] 
 **VatSenseKey** | Pointer to **string** | VatSenseKey | [optional] 
 
 ## Methods
@@ -405,30 +406,30 @@ SetGateways sets Gateways field to given value.
 
 HasGateways returns a boolean if a field has been set.
 
-### GetGlobalTOPTEnabled
+### GetGlobalTOTPEnabled
 
-`func (o *UnibeeApiMerchantProfileGetRes) GetGlobalTOPTEnabled() bool`
+`func (o *UnibeeApiMerchantProfileGetRes) GetGlobalTOTPEnabled() bool`
 
-GetGlobalTOPTEnabled returns the GlobalTOPTEnabled field if non-nil, zero value otherwise.
+GetGlobalTOTPEnabled returns the GlobalTOTPEnabled field if non-nil, zero value otherwise.
 
-### GetGlobalTOPTEnabledOk
+### GetGlobalTOTPEnabledOk
 
-`func (o *UnibeeApiMerchantProfileGetRes) GetGlobalTOPTEnabledOk() (*bool, bool)`
+`func (o *UnibeeApiMerchantProfileGetRes) GetGlobalTOTPEnabledOk() (*bool, bool)`
 
-GetGlobalTOPTEnabledOk returns a tuple with the GlobalTOPTEnabled field if it's non-nil, zero value otherwise
+GetGlobalTOTPEnabledOk returns a tuple with the GlobalTOTPEnabled field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetGlobalTOPTEnabled
+### SetGlobalTOTPEnabled
 
-`func (o *UnibeeApiMerchantProfileGetRes) SetGlobalTOPTEnabled(v bool)`
+`func (o *UnibeeApiMerchantProfileGetRes) SetGlobalTOTPEnabled(v bool)`
 
-SetGlobalTOPTEnabled sets GlobalTOPTEnabled field to given value.
+SetGlobalTOTPEnabled sets GlobalTOTPEnabled field to given value.
 
-### HasGlobalTOPTEnabled
+### HasGlobalTOTPEnabled
 
-`func (o *UnibeeApiMerchantProfileGetRes) HasGlobalTOPTEnabled() bool`
+`func (o *UnibeeApiMerchantProfileGetRes) HasGlobalTOTPEnabled() bool`
 
-HasGlobalTOPTEnabled returns a boolean if a field has been set.
+HasGlobalTOTPEnabled returns a boolean if a field has been set.
 
 ### GetGlobalUSVATConfig
 
@@ -804,6 +805,31 @@ SetTaxJarApiKeys sets TaxJarApiKeys field to given value.
 `func (o *UnibeeApiMerchantProfileGetRes) HasTaxJarApiKeys() bool`
 
 HasTaxJarApiKeys returns a boolean if a field has been set.
+
+### GetTotpDeviceTrustDays
+
+`func (o *UnibeeApiMerchantProfileGetRes) GetTotpDeviceTrustDays() int32`
+
+GetTotpDeviceTrustDays returns the TotpDeviceTrustDays field if non-nil, zero value otherwise.
+
+### GetTotpDeviceTrustDaysOk
+
+`func (o *UnibeeApiMerchantProfileGetRes) GetTotpDeviceTrustDaysOk() (*int32, bool)`
+
+GetTotpDeviceTrustDaysOk returns a tuple with the TotpDeviceTrustDays field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotpDeviceTrustDays
+
+`func (o *UnibeeApiMerchantProfileGetRes) SetTotpDeviceTrustDays(v int32)`
+
+SetTotpDeviceTrustDays sets TotpDeviceTrustDays field to given value.
+
+### HasTotpDeviceTrustDays
+
+`func (o *UnibeeApiMerchantProfileGetRes) HasTotpDeviceTrustDays() bool`
+
+HasTotpDeviceTrustDays returns a boolean if a field has been set.
 
 ### GetVatSenseKey
 
