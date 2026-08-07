@@ -5,7 +5,7 @@ info:
     name: Apache-2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   title: OpenAPI UniBee
-  version: "daily,buildtime:202607310402"
+  version: "daily,buildtime:202608072140"
 servers:
 - url: https://api.unibee.top
 - url: http://127.0.0.1:8080
@@ -3815,6 +3815,150 @@ paths:
                 $ref: '#/components/schemas/_merchant_invoice_split_payments_get_200_response'
           description: ""
       summary: Get Split Payments
+      tags:
+      - Invoice
+  /merchant/invoice/summary_list:
+    get:
+      description: Get a lightweight invoice list without related-object preload or
+        detail conversion
+      parameters:
+      - description: Filter by user ID
+        explode: true
+        in: query
+        name: userId
+        required: false
+        schema:
+          description: Filter by user ID
+          format: int64
+          properties: {}
+          type: integer
+        style: form
+      - description: Filter by exact invoice ID
+        explode: true
+        in: query
+        name: invoiceId
+        required: false
+        schema:
+          description: Filter by exact invoice ID
+          format: string
+          properties: {}
+          type: string
+        style: form
+      - description: Filter by exact subscription ID
+        explode: true
+        in: query
+        name: subscriptionId
+        required: false
+        schema:
+          description: Filter by exact subscription ID
+          format: string
+          properties: {}
+          type: string
+        style: form
+      - description: "Invoice status: 0-init | 1-pending | 2-processing | 3-paid |\
+          \ 4-failed | 5-cancelled"
+        explode: true
+        in: query
+        name: status
+        required: false
+        schema:
+          description: "Invoice status: 0-init | 1-pending | 2-processing | 3-paid\
+            \ | 4-failed | 5-cancelled"
+          format: "[]int"
+          items:
+            format: int
+            properties: {}
+            type: integer
+          properties: {}
+          type: array
+        style: form
+      - description: "Sort field: gmt_create or id"
+        explode: true
+        in: query
+        name: sortField
+        required: false
+        schema:
+          default: gmt_create
+          description: "Sort field: gmt_create or id"
+          format: string
+          properties: {}
+          type: string
+        style: form
+      - description: "Sort direction: asc or desc"
+        explode: true
+        in: query
+        name: sortType
+        required: false
+        schema:
+          default: desc
+          description: "Sort direction: asc or desc"
+          format: string
+          properties: {}
+          type: string
+        style: form
+      - description: "Page number, starting from 0"
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 0
+          description: "Page number, starting from 0"
+          format: int
+          properties: {}
+          type: integer
+        style: form
+      - description: "Page size, maximum 100"
+        explode: true
+        in: query
+        name: count
+        required: false
+        schema:
+          default: 20
+          description: "Page size, maximum 100"
+          format: int
+          properties: {}
+          type: integer
+        style: form
+      - description: Whether to include invoice metadata
+        explode: true
+        in: query
+        name: includeMetadata
+        required: false
+        schema:
+          default: false
+          description: Whether to include invoice metadata
+          format: bool
+          properties: {}
+          type: boolean
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_invoice_summary_list_get_200_response'
+          description: ""
+      summary: Get Invoice Summary List
+      tags:
+      - Invoice
+    post:
+      description: Get a lightweight invoice list without related-object preload or
+        detail conversion
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/unibee.api.merchant.invoice.SummaryListReq'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_invoice_summary_list_get_200_response'
+          description: ""
+      summary: Get Invoice Summary List
       tags:
       - Invoice
   /merchant/invoice/sync_paid_invoice_billing_details:
@@ -8296,6 +8440,156 @@ paths:
       summary: Renew Subscription Preview
       tags:
       - Subscription Update
+  /merchant/subscription/summary_list:
+    get:
+      description: Get a lightweight subscription list without related-object preload
+        or detail conversion
+      parameters:
+      - description: Filter by user ID
+        explode: true
+        in: query
+        name: userId
+        required: false
+        schema:
+          description: Filter by user ID
+          format: int64
+          properties: {}
+          type: integer
+        style: form
+      - description: Filter by exact subscription ID
+        explode: true
+        in: query
+        name: subscriptionId
+        required: false
+        schema:
+          description: Filter by exact subscription ID
+          format: string
+          properties: {}
+          type: string
+        style: form
+      - description: Filter by plan IDs
+        explode: true
+        in: query
+        name: planIds
+        required: false
+        schema:
+          description: Filter by plan IDs
+          format: "[]int64"
+          items:
+            format: int64
+            properties: {}
+            type: integer
+          properties: {}
+          type: array
+        style: form
+      - description: "Subscription status: 0-init | 1-pending | 2-active | 3-pending\
+          \ inactive | 4-cancelled | 5-expired | 6-suspended | 7-incomplete | 8-processing\
+          \ | 9-failed"
+        explode: true
+        in: query
+        name: status
+        required: false
+        schema:
+          description: "Subscription status: 0-init | 1-pending | 2-active | 3-pending\
+            \ inactive | 4-cancelled | 5-expired | 6-suspended | 7-incomplete | 8-processing\
+            \ | 9-failed"
+          format: "[]int"
+          items:
+            format: int
+            properties: {}
+            type: integer
+          properties: {}
+          type: array
+        style: form
+      - description: "Sort field: gmt_create or id"
+        explode: true
+        in: query
+        name: sortField
+        required: false
+        schema:
+          default: gmt_create
+          description: "Sort field: gmt_create or id"
+          format: string
+          properties: {}
+          type: string
+        style: form
+      - description: "Sort direction: asc or desc"
+        explode: true
+        in: query
+        name: sortType
+        required: false
+        schema:
+          default: desc
+          description: "Sort direction: asc or desc"
+          format: string
+          properties: {}
+          type: string
+        style: form
+      - description: "Page number, starting from 0"
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 0
+          description: "Page number, starting from 0"
+          format: int
+          properties: {}
+          type: integer
+        style: form
+      - description: "Page size, maximum 100"
+        explode: true
+        in: query
+        name: count
+        required: false
+        schema:
+          default: 20
+          description: "Page size, maximum 100"
+          format: int
+          properties: {}
+          type: integer
+        style: form
+      - description: Whether to include subscription metadata
+        explode: true
+        in: query
+        name: includeMetadata
+        required: false
+        schema:
+          default: false
+          description: Whether to include subscription metadata
+          format: bool
+          properties: {}
+          type: boolean
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_subscription_summary_list_get_200_response'
+          description: ""
+      summary: Get Subscription Summary List
+      tags:
+      - Subscription
+    post:
+      description: Get a lightweight subscription list without related-object preload
+        or detail conversion
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/unibee.api.merchant.subscription.SummaryListReq'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_merchant_subscription_summary_list_get_200_response'
+          description: ""
+      summary: Get Subscription Summary List
+      tags:
+      - Subscription
   /merchant/subscription/timeline_list:
     get:
       parameters:
@@ -18601,8 +18895,8 @@ components:
           properties: {}
           type: string
         incompleteExpireTime:
-          description: "IncompleteExpireTime, em.. default 1day for plan of month\
-            \ type"
+          description: "IncompleteExpireTime, grace period in seconds after period/trial\
+            \ end; default 0 (no grace period)"
           format: int64
           properties: {}
           type: integer
@@ -18624,7 +18918,8 @@ components:
           properties: {}
           type: boolean
         tryAutomaticPaymentBeforePeriodEnd:
-          description: "TryAutomaticPaymentBeforePeriodEnd, default 30 min"
+          description: "TryAutomaticPaymentBeforePeriodEnd, auto-charge lead time\
+            \ before period end in seconds, default 6 hours (21600)"
           format: int64
           properties: {}
           type: integer
@@ -55840,6 +56135,83 @@ components:
         invoice:
           $ref: '#/components/schemas/unibee.api.bean.detail.InvoiceDetail'
       type: object
+    unibee.api.merchant.invoice.InvoiceSummary:
+      example:
+        finishTime: 5
+        metadata:
+          key: {}
+        bizType: 6
+        invoiceName: invoiceName
+        paidTime: 2
+        userId: 3
+        totalAmount: 9
+        sendEmail: sendEmail
+        createTime: 1
+        currency: currency
+        invoiceId: invoiceId
+        id: 5
+        subscriptionId: subscriptionId
+        status: 7
+      properties:
+        bizType:
+          format: int
+          properties: {}
+          type: integer
+        createTime:
+          format: int64
+          properties: {}
+          type: integer
+        currency:
+          format: string
+          properties: {}
+          type: string
+        finishTime:
+          format: int64
+          properties: {}
+          type: integer
+        id:
+          format: int64
+          properties: {}
+          type: integer
+        invoiceId:
+          format: string
+          properties: {}
+          type: string
+        invoiceName:
+          format: string
+          properties: {}
+          type: string
+        metadata:
+          additionalProperties:
+            $ref: '#/components/schemas/interface'
+          format: "map[string]interface {}"
+          properties: {}
+          type: object
+        paidTime:
+          format: int64
+          properties: {}
+          type: integer
+        sendEmail:
+          format: string
+          properties: {}
+          type: string
+        status:
+          format: int
+          properties: {}
+          type: integer
+        subscriptionId:
+          format: string
+          properties: {}
+          type: string
+        totalAmount:
+          format: int64
+          properties: {}
+          type: integer
+        userId:
+          format: int64
+          properties: {}
+          type: integer
+      type: object
     unibee.api.merchant.invoice.ListReq:
       description: Get invoice list
       properties:
@@ -56413,6 +56785,79 @@ components:
       type: object
     unibee.api.merchant.invoice.SendEmailRes:
       properties: {}
+      type: object
+    unibee.api.merchant.invoice.SummaryListReq:
+      description: Get a lightweight invoice list without related-object preload or
+        detail conversion
+      properties:
+        count:
+          default: 20
+          description: "Page size, maximum 100"
+          format: int
+          properties: {}
+          type: integer
+        includeMetadata:
+          default: false
+          description: Whether to include invoice metadata
+          format: bool
+          properties: {}
+          type: boolean
+        invoiceId:
+          description: Filter by exact invoice ID
+          format: string
+          properties: {}
+          type: string
+        page:
+          default: 0
+          description: "Page number, starting from 0"
+          format: int
+          properties: {}
+          type: integer
+        sortField:
+          default: gmt_create
+          description: "Sort field: gmt_create or id"
+          format: string
+          properties: {}
+          type: string
+        sortType:
+          default: desc
+          description: "Sort direction: asc or desc"
+          format: string
+          properties: {}
+          type: string
+        status:
+          description: "Invoice status: 0-init | 1-pending | 2-processing | 3-paid\
+            \ | 4-failed | 5-cancelled"
+          format: "[]int"
+          items:
+            format: int
+            properties: {}
+            type: integer
+          properties: {}
+          type: array
+        subscriptionId:
+          description: Filter by exact subscription ID
+          format: string
+          properties: {}
+          type: string
+        userId:
+          description: Filter by user ID
+          format: int64
+          properties: {}
+          type: integer
+      type: object
+    unibee.api.merchant.invoice.SummaryListRes:
+      properties:
+        hasMore:
+          format: bool
+          properties: {}
+          type: boolean
+        invoices:
+          format: "[]*invoice.InvoiceSummary"
+          items:
+            $ref: '#/components/schemas/unibee.api.merchant.invoice.InvoiceSummary'
+          properties: {}
+          type: array
       type: object
     unibee.api.merchant.invoice.SyncPaidInvoiceBillingDetailsReq:
       properties:
@@ -61336,9 +61781,9 @@ components:
           properties: {}
           type: boolean
         tryAutomaticPaymentBeforePeriodEnd:
-          description: "TryAutomaticPaymentBeforePeriodEnd, Auto-charge Start Before\
-            \ Period End （Time Difference for Auto-Payment Activation Before Period\
-            \ End）"
+          description: "TryAutomaticPaymentBeforePeriodEnd, seconds before period\
+            \ end to start auto-charge (system default 6 hours, 21600 seconds). Omit\
+            \ to leave unchanged."
           format: '*int64'
           properties: {}
           type: integer
@@ -63231,6 +63676,196 @@ components:
           type: string
         subscription:
           $ref: '#/components/schemas/unibee.api.bean.Subscription'
+      type: object
+    unibee.api.merchant.subscription.SubscriptionSummary:
+      example:
+        currentPeriodStart: 7
+        trialEnd: 1
+        amount: 6
+        metadata:
+          key: {}
+        quantity: 7
+        currentPeriodEnd: 5
+        type: 1
+        userId: 6
+        firstPaidTime: 9
+        currentPeriodPaid: 2
+        createTime: 5
+        latestInvoiceId: latestInvoiceId
+        cancelAtPeriodEnd: 1
+        currency: currency
+        planId: 4
+        externalSubscriptionId: externalSubscriptionId
+        id: 2
+        subscriptionId: subscriptionId
+        gatewayId: 3
+        pendingUpdateId: pendingUpdateId
+        status: 1
+      properties:
+        amount:
+          format: int64
+          properties: {}
+          type: integer
+        cancelAtPeriodEnd:
+          format: int
+          properties: {}
+          type: integer
+        createTime:
+          format: int64
+          properties: {}
+          type: integer
+        currency:
+          format: string
+          properties: {}
+          type: string
+        currentPeriodEnd:
+          format: int64
+          properties: {}
+          type: integer
+        currentPeriodPaid:
+          format: int64
+          properties: {}
+          type: integer
+        currentPeriodStart:
+          format: int64
+          properties: {}
+          type: integer
+        externalSubscriptionId:
+          format: string
+          properties: {}
+          type: string
+        firstPaidTime:
+          format: int64
+          properties: {}
+          type: integer
+        gatewayId:
+          format: int64
+          properties: {}
+          type: integer
+        id:
+          format: int64
+          properties: {}
+          type: integer
+        latestInvoiceId:
+          format: string
+          properties: {}
+          type: string
+        metadata:
+          additionalProperties:
+            $ref: '#/components/schemas/interface'
+          format: "map[string]interface {}"
+          properties: {}
+          type: object
+        pendingUpdateId:
+          format: string
+          properties: {}
+          type: string
+        planId:
+          format: int64
+          properties: {}
+          type: integer
+        quantity:
+          format: int64
+          properties: {}
+          type: integer
+        status:
+          format: int
+          properties: {}
+          type: integer
+        subscriptionId:
+          format: string
+          properties: {}
+          type: string
+        trialEnd:
+          format: int64
+          properties: {}
+          type: integer
+        type:
+          format: int
+          properties: {}
+          type: integer
+        userId:
+          format: int64
+          properties: {}
+          type: integer
+      type: object
+    unibee.api.merchant.subscription.SummaryListReq:
+      description: Get a lightweight subscription list without related-object preload
+        or detail conversion
+      properties:
+        count:
+          default: 20
+          description: "Page size, maximum 100"
+          format: int
+          properties: {}
+          type: integer
+        includeMetadata:
+          default: false
+          description: Whether to include subscription metadata
+          format: bool
+          properties: {}
+          type: boolean
+        page:
+          default: 0
+          description: "Page number, starting from 0"
+          format: int
+          properties: {}
+          type: integer
+        planIds:
+          description: Filter by plan IDs
+          format: "[]int64"
+          items:
+            format: int64
+            properties: {}
+            type: integer
+          properties: {}
+          type: array
+        sortField:
+          default: gmt_create
+          description: "Sort field: gmt_create or id"
+          format: string
+          properties: {}
+          type: string
+        sortType:
+          default: desc
+          description: "Sort direction: asc or desc"
+          format: string
+          properties: {}
+          type: string
+        status:
+          description: "Subscription status: 0-init | 1-pending | 2-active | 3-pending\
+            \ inactive | 4-cancelled | 5-expired | 6-suspended | 7-incomplete | 8-processing\
+            \ | 9-failed"
+          format: "[]int"
+          items:
+            format: int
+            properties: {}
+            type: integer
+          properties: {}
+          type: array
+        subscriptionId:
+          description: Filter by exact subscription ID
+          format: string
+          properties: {}
+          type: string
+        userId:
+          description: Filter by user ID
+          format: int64
+          properties: {}
+          type: integer
+      type: object
+    unibee.api.merchant.subscription.SummaryListRes:
+      properties:
+        hasMore:
+          format: bool
+          properties: {}
+          type: boolean
+        subscriptions:
+          format: "[]*subscription.SubscriptionSummary"
+          items:
+            $ref: '#/components/schemas/unibee.api.merchant.subscription.SubscriptionSummary'
+          properties: {}
+          type: array
       type: object
     unibee.api.merchant.subscription.TimeLineListReq:
       properties:
@@ -159128,6 +159763,116 @@ components:
           type: integer
         data:
           $ref: '#/components/schemas/_merchant_invoice_split_payments_get_200_response_data'
+        merchantId:
+          format: int64
+          properties: {}
+          type: integer
+        message:
+          format: string
+          properties: {}
+          type: string
+        redirect:
+          format: string
+          properties: {}
+          type: string
+        requestId:
+          format: string
+          properties: {}
+          type: string
+      type: object
+    _merchant_invoice_summary_list_get_200_response_data:
+      example:
+        invoices:
+        - finishTime: 5
+          metadata:
+            key: {}
+          bizType: 6
+          invoiceName: invoiceName
+          paidTime: 2
+          userId: 3
+          totalAmount: 9
+          sendEmail: sendEmail
+          createTime: 1
+          currency: currency
+          invoiceId: invoiceId
+          id: 5
+          subscriptionId: subscriptionId
+          status: 7
+        - finishTime: 5
+          metadata:
+            key: {}
+          bizType: 6
+          invoiceName: invoiceName
+          paidTime: 2
+          userId: 3
+          totalAmount: 9
+          sendEmail: sendEmail
+          createTime: 1
+          currency: currency
+          invoiceId: invoiceId
+          id: 5
+          subscriptionId: subscriptionId
+          status: 7
+        hasMore: true
+      properties:
+        hasMore:
+          format: bool
+          properties: {}
+          type: boolean
+        invoices:
+          format: "[]*invoice.InvoiceSummary"
+          items:
+            $ref: '#/components/schemas/unibee.api.merchant.invoice.InvoiceSummary'
+          properties: {}
+          type: array
+      type: object
+    _merchant_invoice_summary_list_get_200_response:
+      example:
+        redirect: redirect
+        code: 0
+        data:
+          invoices:
+          - finishTime: 5
+            metadata:
+              key: {}
+            bizType: 6
+            invoiceName: invoiceName
+            paidTime: 2
+            userId: 3
+            totalAmount: 9
+            sendEmail: sendEmail
+            createTime: 1
+            currency: currency
+            invoiceId: invoiceId
+            id: 5
+            subscriptionId: subscriptionId
+            status: 7
+          - finishTime: 5
+            metadata:
+              key: {}
+            bizType: 6
+            invoiceName: invoiceName
+            paidTime: 2
+            userId: 3
+            totalAmount: 9
+            sendEmail: sendEmail
+            createTime: 1
+            currency: currency
+            invoiceId: invoiceId
+            id: 5
+            subscriptionId: subscriptionId
+            status: 7
+          hasMore: true
+        merchantId: 2
+        requestId: requestId
+        message: message
+      properties:
+        code:
+          format: int
+          properties: {}
+          type: integer
+        data:
+          $ref: '#/components/schemas/_merchant_invoice_summary_list_get_200_response_data'
         merchantId:
           format: int64
           properties: {}
@@ -315666,6 +316411,144 @@ components:
           type: integer
         data:
           $ref: '#/components/schemas/_merchant_subscription_renew_preview_post_200_response_data'
+        merchantId:
+          format: int64
+          properties: {}
+          type: integer
+        message:
+          format: string
+          properties: {}
+          type: string
+        redirect:
+          format: string
+          properties: {}
+          type: string
+        requestId:
+          format: string
+          properties: {}
+          type: string
+      type: object
+    _merchant_subscription_summary_list_get_200_response_data:
+      example:
+        subscriptions:
+        - currentPeriodStart: 7
+          trialEnd: 1
+          amount: 6
+          metadata:
+            key: {}
+          quantity: 7
+          currentPeriodEnd: 5
+          type: 1
+          userId: 6
+          firstPaidTime: 9
+          currentPeriodPaid: 2
+          createTime: 5
+          latestInvoiceId: latestInvoiceId
+          cancelAtPeriodEnd: 1
+          currency: currency
+          planId: 4
+          externalSubscriptionId: externalSubscriptionId
+          id: 2
+          subscriptionId: subscriptionId
+          gatewayId: 3
+          pendingUpdateId: pendingUpdateId
+          status: 1
+        - currentPeriodStart: 7
+          trialEnd: 1
+          amount: 6
+          metadata:
+            key: {}
+          quantity: 7
+          currentPeriodEnd: 5
+          type: 1
+          userId: 6
+          firstPaidTime: 9
+          currentPeriodPaid: 2
+          createTime: 5
+          latestInvoiceId: latestInvoiceId
+          cancelAtPeriodEnd: 1
+          currency: currency
+          planId: 4
+          externalSubscriptionId: externalSubscriptionId
+          id: 2
+          subscriptionId: subscriptionId
+          gatewayId: 3
+          pendingUpdateId: pendingUpdateId
+          status: 1
+        hasMore: true
+      properties:
+        hasMore:
+          format: bool
+          properties: {}
+          type: boolean
+        subscriptions:
+          format: "[]*subscription.SubscriptionSummary"
+          items:
+            $ref: '#/components/schemas/unibee.api.merchant.subscription.SubscriptionSummary'
+          properties: {}
+          type: array
+      type: object
+    _merchant_subscription_summary_list_get_200_response:
+      example:
+        redirect: redirect
+        code: 0
+        data:
+          subscriptions:
+          - currentPeriodStart: 7
+            trialEnd: 1
+            amount: 6
+            metadata:
+              key: {}
+            quantity: 7
+            currentPeriodEnd: 5
+            type: 1
+            userId: 6
+            firstPaidTime: 9
+            currentPeriodPaid: 2
+            createTime: 5
+            latestInvoiceId: latestInvoiceId
+            cancelAtPeriodEnd: 1
+            currency: currency
+            planId: 4
+            externalSubscriptionId: externalSubscriptionId
+            id: 2
+            subscriptionId: subscriptionId
+            gatewayId: 3
+            pendingUpdateId: pendingUpdateId
+            status: 1
+          - currentPeriodStart: 7
+            trialEnd: 1
+            amount: 6
+            metadata:
+              key: {}
+            quantity: 7
+            currentPeriodEnd: 5
+            type: 1
+            userId: 6
+            firstPaidTime: 9
+            currentPeriodPaid: 2
+            createTime: 5
+            latestInvoiceId: latestInvoiceId
+            cancelAtPeriodEnd: 1
+            currency: currency
+            planId: 4
+            externalSubscriptionId: externalSubscriptionId
+            id: 2
+            subscriptionId: subscriptionId
+            gatewayId: 3
+            pendingUpdateId: pendingUpdateId
+            status: 1
+          hasMore: true
+        merchantId: 7
+        requestId: requestId
+        message: message
+      properties:
+        code:
+          format: int
+          properties: {}
+          type: integer
+        data:
+          $ref: '#/components/schemas/_merchant_subscription_summary_list_get_200_response_data'
         merchantId:
           format: int64
           properties: {}

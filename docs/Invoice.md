@@ -29,6 +29,8 @@ Method | HTTP request | Description
 [**InvoiceSendEmailPost**](Invoice.md#InvoiceSendEmailPost) | **Post** /merchant/invoice/send_email | Send Invoice Email
 [**InvoiceSplitPaymentsGet**](Invoice.md#InvoiceSplitPaymentsGet) | **Get** /merchant/invoice/split_payments | Get Split Payments
 [**InvoiceSplitPaymentsPost**](Invoice.md#InvoiceSplitPaymentsPost) | **Post** /merchant/invoice/split_payments | Get Split Payments
+[**InvoiceSummaryListGet**](Invoice.md#InvoiceSummaryListGet) | **Get** /merchant/invoice/summary_list | Get Invoice Summary List
+[**InvoiceSummaryListPost**](Invoice.md#InvoiceSummaryListPost) | **Post** /merchant/invoice/summary_list | Get Invoice Summary List
 [**InvoiceSyncPaidInvoiceBillingDetailsPost**](Invoice.md#InvoiceSyncPaidInvoiceBillingDetailsPost) | **Post** /merchant/invoice/sync_paid_invoice_billing_details | Sync Paid Invoice Billing Details From Latest User Profile (Exception)
 [**InvoiceSyncUserSnapshotPost**](Invoice.md#InvoiceSyncUserSnapshotPost) | **Post** /merchant/invoice/sync_user_snapshot | Sync Invoice User Snapshot With Latest User Info
 
@@ -1699,6 +1701,154 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantInvoiceSplitPaymentsGet200Response**](MerchantInvoiceSplitPaymentsGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## InvoiceSummaryListGet
+
+> MerchantInvoiceSummaryListGet200Response InvoiceSummaryListGet(ctx).UserId(userId).InvoiceId(invoiceId).SubscriptionId(subscriptionId).Status(status).SortField(sortField).SortType(sortType).Page(page).Count(count).IncludeMetadata(includeMetadata).Execute()
+
+Get Invoice Summary List
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	userId := int64(789) // int64 | Filter by user ID (optional)
+	invoiceId := "invoiceId_example" // string | Filter by exact invoice ID (optional)
+	subscriptionId := "subscriptionId_example" // string | Filter by exact subscription ID (optional)
+	status := []int32{int32(123)} // []int32 | Invoice status: 0-init | 1-pending | 2-processing | 3-paid | 4-failed | 5-cancelled (optional)
+	sortField := "sortField_example" // string | Sort field: gmt_create or id (optional) (default to "gmt_create")
+	sortType := "sortType_example" // string | Sort direction: asc or desc (optional) (default to "desc")
+	page := int32(56) // int32 | Page number, starting from 0 (optional) (default to 0)
+	count := int32(56) // int32 | Page size, maximum 100 (optional) (default to 20)
+	includeMetadata := true // bool | Whether to include invoice metadata (optional) (default to false)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Invoice.InvoiceSummaryListGet(context.Background()).UserId(userId).InvoiceId(invoiceId).SubscriptionId(subscriptionId).Status(status).SortField(sortField).SortType(sortType).Page(page).Count(count).IncludeMetadata(includeMetadata).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceSummaryListGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `InvoiceSummaryListGet`: MerchantInvoiceSummaryListGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceSummaryListGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiInvoiceSummaryListGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **int64** | Filter by user ID | 
+ **invoiceId** | **string** | Filter by exact invoice ID | 
+ **subscriptionId** | **string** | Filter by exact subscription ID | 
+ **status** | **[]int32** | Invoice status: 0-init | 1-pending | 2-processing | 3-paid | 4-failed | 5-cancelled | 
+ **sortField** | **string** | Sort field: gmt_create or id | [default to &quot;gmt_create&quot;]
+ **sortType** | **string** | Sort direction: asc or desc | [default to &quot;desc&quot;]
+ **page** | **int32** | Page number, starting from 0 | [default to 0]
+ **count** | **int32** | Page size, maximum 100 | [default to 20]
+ **includeMetadata** | **bool** | Whether to include invoice metadata | [default to false]
+
+### Return type
+
+[**MerchantInvoiceSummaryListGet200Response**](MerchantInvoiceSummaryListGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## InvoiceSummaryListPost
+
+> MerchantInvoiceSummaryListGet200Response InvoiceSummaryListPost(ctx).UnibeeApiMerchantInvoiceSummaryListReq(unibeeApiMerchantInvoiceSummaryListReq).Execute()
+
+Get Invoice Summary List
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantInvoiceSummaryListReq := *openapiclient.NewUnibeeApiMerchantInvoiceSummaryListReq() // UnibeeApiMerchantInvoiceSummaryListReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Invoice.InvoiceSummaryListPost(context.Background()).UnibeeApiMerchantInvoiceSummaryListReq(unibeeApiMerchantInvoiceSummaryListReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Invoice.InvoiceSummaryListPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `InvoiceSummaryListPost`: MerchantInvoiceSummaryListGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `Invoice.InvoiceSummaryListPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiInvoiceSummaryListPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantInvoiceSummaryListReq** | [**UnibeeApiMerchantInvoiceSummaryListReq**](UnibeeApiMerchantInvoiceSummaryListReq.md) |  | 
+
+### Return type
+
+[**MerchantInvoiceSummaryListGet200Response**](MerchantInvoiceSummaryListGet200Response.md)
 
 ### Authorization
 

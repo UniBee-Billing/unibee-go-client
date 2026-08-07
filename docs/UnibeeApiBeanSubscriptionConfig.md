@@ -11,11 +11,11 @@ Name | Type | Description | Notes
 **DowngradeNonImmediatelyEffectBeforePeriodEnd** | Pointer to **int64** | DowngradeNonImmediatelyEffectBeforePeriodEnd, for non-immediate downgrade, can take effect before period end (in seconds), default 30 minutes (1800) | [optional] 
 **FiatExchangeApiKey** | Pointer to **string** |  | [optional] 
 **GatewayVATRule** | Pointer to **string** |  | [optional] 
-**IncompleteExpireTime** | Pointer to **int64** | IncompleteExpireTime, em.. default 1day for plan of month type | [optional] 
+**IncompleteExpireTime** | Pointer to **int64** | IncompleteExpireTime, grace period in seconds after period/trial end; default 0 (no grace period) | [optional] 
 **InvoiceEmail** | Pointer to **bool** | InvoiceEmail, whether to send invoice email to user, default yes | [optional] 
 **InvoicePdfGenerate** | Pointer to **bool** | InvoicePdfGenerate, whether to generate invoice pdf to user, default yes | [optional] 
 **ShowZeroInvoice** | Pointer to **bool** | ShowZeroInvoice, show zero invoice or not, default no | [optional] 
-**TryAutomaticPaymentBeforePeriodEnd** | Pointer to **int64** | TryAutomaticPaymentBeforePeriodEnd, default 30 min | [optional] 
+**TryAutomaticPaymentBeforePeriodEnd** | Pointer to **int64** | TryAutomaticPaymentBeforePeriodEnd, auto-charge lead time before period end in seconds, default 6 hours (21600) | [optional] 
 **UpgradeProration** | Pointer to **bool** | UpgradeProration, whether subscription update generation proration invoice or not, default yes | [optional] 
 **UpgradeResetBillingCycle** | Pointer to **bool** | UpgradeResetBillingCycle, for same-interval upgrades only: when true (default), credit unused old plan, charge full new plan cycle from upgrade time and reset billing anchor; when false, prorate new plan to current period end (legacy fixed-end). No effect when billing interval changes. | [optional] 
 

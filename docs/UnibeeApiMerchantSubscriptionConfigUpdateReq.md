@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **IncompleteExpireTime** | Pointer to **int32** | IncompleteExpireTime, seconds, Incomplete Status Duration(The period during which subscription remains in &#39;incomplete&#39;) | [optional] 
 **InvoiceEmail** | Pointer to **bool** | InvoiceEmail, Enable Invoice Email (Toggle to send invoice email to customers) | [optional] 
 **ShowZeroInvoice** | Pointer to **bool** | ShowZeroInvoice, Display Invoices With Zero Amount (Invoice With Zero Amount will hidden in list by default) | [optional] 
-**TryAutomaticPaymentBeforePeriodEnd** | Pointer to **int32** | TryAutomaticPaymentBeforePeriodEnd, Auto-charge Start Before Period End （Time Difference for Auto-Payment Activation Before Period End） | [optional] 
+**TryAutomaticPaymentBeforePeriodEnd** | Pointer to **int32** | TryAutomaticPaymentBeforePeriodEnd, seconds before period end to start auto-charge (system default 6 hours, 21600 seconds). Omit to leave unchanged. | [optional] 
 **UpgradeProration** | Pointer to **bool** | UpgradeProration, Prorated Upgrade Invoices(Upgrades will generate prorated invoice by default) | [optional] 
 **UpgradeResetBillingCycle** | Pointer to **bool** | UpgradeResetBillingCycle, same-interval upgrades only: full new-plan cycle from upgrade time and reset due day when true (default); legacy fixed-end proration when false. Omit on update to leave unchanged. | [optional] 
 

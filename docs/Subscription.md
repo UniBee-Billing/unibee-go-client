@@ -22,6 +22,8 @@ Method | HTTP request | Description
 [**SubscriptionRegenerateBillingCycleInvoicePost**](Subscription.md#SubscriptionRegenerateBillingCycleInvoicePost) | **Post** /merchant/subscription/regenerate_billing_cycle_invoice | Regenerate Billing Cycle Invoice
 [**SubscriptionRegenerateBillingCycleInvoicePreviewGet**](Subscription.md#SubscriptionRegenerateBillingCycleInvoicePreviewGet) | **Get** /merchant/subscription/regenerate_billing_cycle_invoice_preview | Preview Regenerate Billing Cycle Invoice
 [**SubscriptionRegenerateBillingCycleInvoicePreviewPost**](Subscription.md#SubscriptionRegenerateBillingCycleInvoicePreviewPost) | **Post** /merchant/subscription/regenerate_billing_cycle_invoice_preview | Preview Regenerate Billing Cycle Invoice
+[**SubscriptionSummaryListGet**](Subscription.md#SubscriptionSummaryListGet) | **Get** /merchant/subscription/summary_list | Get Subscription Summary List
+[**SubscriptionSummaryListPost**](Subscription.md#SubscriptionSummaryListPost) | **Post** /merchant/subscription/summary_list | Get Subscription Summary List
 [**SubscriptionUserPendingCryptoSubscriptionDetailGet**](Subscription.md#SubscriptionUserPendingCryptoSubscriptionDetailGet) | **Get** /merchant/subscription/user_pending_crypto_subscription_detail | User Pending Crypto Subscription Detail
 [**SubscriptionUserPendingCryptoSubscriptionDetailPost**](Subscription.md#SubscriptionUserPendingCryptoSubscriptionDetailPost) | **Post** /merchant/subscription/user_pending_crypto_subscription_detail | User Pending Crypto Subscription Detail
 [**SubscriptionUserSubscriptionDetailGet**](Subscription.md#SubscriptionUserSubscriptionDetailGet) | **Get** /merchant/subscription/user_subscription_detail | User Subscription Detail
@@ -1216,6 +1218,154 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantSubscriptionRegenerateBillingCycleInvoicePost200Response**](MerchantSubscriptionRegenerateBillingCycleInvoicePost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SubscriptionSummaryListGet
+
+> MerchantSubscriptionSummaryListGet200Response SubscriptionSummaryListGet(ctx).UserId(userId).SubscriptionId(subscriptionId).PlanIds(planIds).Status(status).SortField(sortField).SortType(sortType).Page(page).Count(count).IncludeMetadata(includeMetadata).Execute()
+
+Get Subscription Summary List
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	userId := int64(789) // int64 | Filter by user ID (optional)
+	subscriptionId := "subscriptionId_example" // string | Filter by exact subscription ID (optional)
+	planIds := []int64{int64(123)} // []int64 | Filter by plan IDs (optional)
+	status := []int32{int32(123)} // []int32 | Subscription status: 0-init | 1-pending | 2-active | 3-pending inactive | 4-cancelled | 5-expired | 6-suspended | 7-incomplete | 8-processing | 9-failed (optional)
+	sortField := "sortField_example" // string | Sort field: gmt_create or id (optional) (default to "gmt_create")
+	sortType := "sortType_example" // string | Sort direction: asc or desc (optional) (default to "desc")
+	page := int32(56) // int32 | Page number, starting from 0 (optional) (default to 0)
+	count := int32(56) // int32 | Page size, maximum 100 (optional) (default to 20)
+	includeMetadata := true // bool | Whether to include subscription metadata (optional) (default to false)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Subscription.SubscriptionSummaryListGet(context.Background()).UserId(userId).SubscriptionId(subscriptionId).PlanIds(planIds).Status(status).SortField(sortField).SortType(sortType).Page(page).Count(count).IncludeMetadata(includeMetadata).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionSummaryListGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SubscriptionSummaryListGet`: MerchantSubscriptionSummaryListGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionSummaryListGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSubscriptionSummaryListGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **int64** | Filter by user ID | 
+ **subscriptionId** | **string** | Filter by exact subscription ID | 
+ **planIds** | **[]int64** | Filter by plan IDs | 
+ **status** | **[]int32** | Subscription status: 0-init | 1-pending | 2-active | 3-pending inactive | 4-cancelled | 5-expired | 6-suspended | 7-incomplete | 8-processing | 9-failed | 
+ **sortField** | **string** | Sort field: gmt_create or id | [default to &quot;gmt_create&quot;]
+ **sortType** | **string** | Sort direction: asc or desc | [default to &quot;desc&quot;]
+ **page** | **int32** | Page number, starting from 0 | [default to 0]
+ **count** | **int32** | Page size, maximum 100 | [default to 20]
+ **includeMetadata** | **bool** | Whether to include subscription metadata | [default to false]
+
+### Return type
+
+[**MerchantSubscriptionSummaryListGet200Response**](MerchantSubscriptionSummaryListGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SubscriptionSummaryListPost
+
+> MerchantSubscriptionSummaryListGet200Response SubscriptionSummaryListPost(ctx).UnibeeApiMerchantSubscriptionSummaryListReq(unibeeApiMerchantSubscriptionSummaryListReq).Execute()
+
+Get Subscription Summary List
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantSubscriptionSummaryListReq := *openapiclient.NewUnibeeApiMerchantSubscriptionSummaryListReq() // UnibeeApiMerchantSubscriptionSummaryListReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Subscription.SubscriptionSummaryListPost(context.Background()).UnibeeApiMerchantSubscriptionSummaryListReq(unibeeApiMerchantSubscriptionSummaryListReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Subscription.SubscriptionSummaryListPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SubscriptionSummaryListPost`: MerchantSubscriptionSummaryListGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `Subscription.SubscriptionSummaryListPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSubscriptionSummaryListPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantSubscriptionSummaryListReq** | [**UnibeeApiMerchantSubscriptionSummaryListReq**](UnibeeApiMerchantSubscriptionSummaryListReq.md) |  | 
+
+### Return type
+
+[**MerchantSubscriptionSummaryListGet200Response**](MerchantSubscriptionSummaryListGet200Response.md)
 
 ### Authorization
 
