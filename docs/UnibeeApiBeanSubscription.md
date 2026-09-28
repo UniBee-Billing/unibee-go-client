@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **GatewayId** | Pointer to **int64** | gateway_id | [optional] 
 **GatewayStatus** | Pointer to **string** | gateway status，Stripe：https://stripe.com/docs/billing/subscriptions/webhooks  Paypal：https://developer.paypal.com/docs/api/subscriptions/v1/#subscriptions_get | [optional] 
 **Id** | Pointer to **int64** |  | [optional] 
+**IsForever** | Pointer to **bool** | Lifetime plan; currentPeriodEnd&#x3D;4102444800 is the permanent sentinel, trials retain their actual end | [optional] 
 **LastUpdateTime** | Pointer to **int64** |  | [optional] 
 **LatestInvoiceId** | Pointer to **string** | latest_invoice_id | [optional] 
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
@@ -589,6 +590,31 @@ SetId sets Id field to given value.
 `func (o *UnibeeApiBeanSubscription) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetIsForever
+
+`func (o *UnibeeApiBeanSubscription) GetIsForever() bool`
+
+GetIsForever returns the IsForever field if non-nil, zero value otherwise.
+
+### GetIsForeverOk
+
+`func (o *UnibeeApiBeanSubscription) GetIsForeverOk() (*bool, bool)`
+
+GetIsForeverOk returns a tuple with the IsForever field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsForever
+
+`func (o *UnibeeApiBeanSubscription) SetIsForever(v bool)`
+
+SetIsForever sets IsForever field to given value.
+
+### HasIsForever
+
+`func (o *UnibeeApiBeanSubscription) HasIsForever() bool`
+
+HasIsForever returns a boolean if a field has been set.
 
 ### GetLastUpdateTime
 

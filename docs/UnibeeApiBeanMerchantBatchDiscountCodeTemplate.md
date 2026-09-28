@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **Status** | Pointer to **int32** | status, 1-editable, 2-active, 3-deactivate, 4-expire, 10-archive | [optional] 
 **Type** | Pointer to **int32** | type, 1-external discount code, 2-batch code template, 3-batch code | [optional] 
 **UpgradeLongerOnly** | Pointer to **bool** | AdvanceConfig, 0-false,1-true, will forbid for all except upgrade to longer plan if set true | [optional] 
-**UpgradeOnly** | Pointer to **bool** | AdvanceConfig, 0-false,1-true, will forbid for all except same interval upgrade action if set true | [optional] 
+**UpgradeOnly** | Pointer to **bool** | AdvanceConfig, 0-false,1-true, apply only for first purchases and upgrades if set true | [optional] 
 **UsedChildCodeCount** | Pointer to **int64** | Number of used child codes | [optional] 
 **UserIds** | Pointer to **[]int64** | Ids of user which discount code can effect, default effect all users if not set | [optional] 
 **UserLimit** | Pointer to **int32** | AdvanceConfig, The limit of every customer can apply, the recurring apply not involved, 0-unlimited | [optional] 

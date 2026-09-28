@@ -8,7 +8,8 @@ Name | Type | Description | Notes
 **ApplyPromoCreditAmount** | Pointer to **int32** | Specific promo credit amount to apply (optional) | [optional] 
 **Currency** | **string** | The currency of invoice | 
 **Finish** | Pointer to **bool** |  | [optional] 
-**GatewayId** | Pointer to **int64** | The gateway id of invoice | [optional] 
+**GatewayId** | Pointer to **int64** | The gateway id of invoice. Admin portal: omit to default to merchant wire if available, otherwise user&#39;s default gateway. OpenAPI: omit to use the user&#39;s default gateway. | [optional] 
+**GatewayPaymentType** | Pointer to **string** | Optional. Payment type for the selected gateway, such as card, wallet, etc. | [optional] 
 **Lines** | Pointer to [**[]UnibeeApiMerchantInvoiceNewInvoiceItemParam**](UnibeeApiMerchantInvoiceNewInvoiceItemParam.md) |  | [optional] 
 **Name** | Pointer to **string** | The name of invoice | [optional] 
 **TaxPercentage** | **int64** | The tax percentage of invoice，1000&#x3D;10% | 
@@ -152,6 +153,31 @@ SetGatewayId sets GatewayId field to given value.
 `func (o *UnibeeApiMerchantInvoiceNewReq) HasGatewayId() bool`
 
 HasGatewayId returns a boolean if a field has been set.
+
+### GetGatewayPaymentType
+
+`func (o *UnibeeApiMerchantInvoiceNewReq) GetGatewayPaymentType() string`
+
+GetGatewayPaymentType returns the GatewayPaymentType field if non-nil, zero value otherwise.
+
+### GetGatewayPaymentTypeOk
+
+`func (o *UnibeeApiMerchantInvoiceNewReq) GetGatewayPaymentTypeOk() (*string, bool)`
+
+GetGatewayPaymentTypeOk returns a tuple with the GatewayPaymentType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGatewayPaymentType
+
+`func (o *UnibeeApiMerchantInvoiceNewReq) SetGatewayPaymentType(v string)`
+
+SetGatewayPaymentType sets GatewayPaymentType field to given value.
+
+### HasGatewayPaymentType
+
+`func (o *UnibeeApiMerchantInvoiceNewReq) HasGatewayPaymentType() bool`
+
+HasGatewayPaymentType returns a boolean if a field has been set.
 
 ### GetLines
 

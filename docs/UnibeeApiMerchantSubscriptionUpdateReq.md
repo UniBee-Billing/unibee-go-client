@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **CancelUrl** | Pointer to **string** | Optional. URL to redirect the customer to when the customer cancels or the update payment fails. | [optional] 
 **ConfirmCurrency** | Pointer to **string** | Optional. When provided, represents the expected currency code for the update invoice and must match the value returned from update_preview, otherwise the request is rejected. | [optional] 
 **ConfirmTotalAmount** | Pointer to **int64** | Optional. When provided, represents the expected total amount (in minor units) for the update invoice and must match the value returned from update_preview, otherwise the request is rejected. | [optional] 
+**CountryCode** | Pointer to **string** | Optional. ISO 3166-1 alpha-2 country code. Omit to keep the user&#39;s current country. After the preview amount is confirmed, submit stores it on the user and the subscription. A VAT number for a different country, or an invalid VAT number, is cleared instead of rejecting the update. | [optional] 
 **Currency** | Pointer to **string** | Optional. Target currency for the updated subscription. If not provided, use current subscription currency. Currency change is not allowed when a proration invoice is required. | [optional] 
 **Discount** | Pointer to [**UnibeeApiBeanExternalDiscountParam**](UnibeeApiBeanExternalDiscountParam.md) |  | [optional] 
 **DiscountCode** | Pointer to **string** | Optional. Discount or coupon code applied to this update. Overrides the subscription&#39;s recurring discount for this invoice. | [optional] 
@@ -196,6 +197,31 @@ SetConfirmTotalAmount sets ConfirmTotalAmount field to given value.
 `func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasConfirmTotalAmount() bool`
 
 HasConfirmTotalAmount returns a boolean if a field has been set.
+
+### GetCountryCode
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetCountryCode() string`
+
+GetCountryCode returns the CountryCode field if non-nil, zero value otherwise.
+
+### GetCountryCodeOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) GetCountryCodeOk() (*string, bool)`
+
+GetCountryCodeOk returns a tuple with the CountryCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCountryCode
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) SetCountryCode(v string)`
+
+SetCountryCode sets CountryCode field to given value.
+
+### HasCountryCode
+
+`func (o *UnibeeApiMerchantSubscriptionUpdateReq) HasCountryCode() bool`
+
+HasCountryCode returns a boolean if a field has been set.
 
 ### GetCurrency
 

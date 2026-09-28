@@ -25,12 +25,14 @@ Name | Type | Description | Notes
 **ImageUrl** | Pointer to **string** | image_url | [optional] 
 **InternalName** | Pointer to **string** | PlanInternalName | [optional] 
 **IntervalCount** | Pointer to **int32** | period unit count | [optional] 
-**IntervalUnit** | Pointer to **string** | period unit,day|month|year|week | [optional] 
+**IntervalUnit** | Pointer to **string** | period unit,day|month|year|week|forever | [optional] 
+**IsForever** | Pointer to **bool** | Non-renewing lifetime plan; intervalCount is ignored | [optional] 
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
 **MetricLimits** | Pointer to [**[]UnibeeApiBeanPlanMetricLimitParam**](UnibeeApiBeanPlanMetricLimitParam.md) | Plan&#39;s MetricLimit List | [optional] 
 **MetricMeteredCharge** | Pointer to [**[]UnibeeApiBeanPlanMetricMeteredChargeParam**](UnibeeApiBeanPlanMetricMeteredChargeParam.md) | Plan&#39;s MetricMeteredCharge | [optional] 
 **MetricRecurringCharge** | Pointer to [**[]UnibeeApiBeanPlanMetricMeteredChargeParam**](UnibeeApiBeanPlanMetricMeteredChargeParam.md) | Plan&#39;s MetricRecurringCharge | [optional] 
+**MigrationPlanId** | Pointer to **int64** | Target plan id for hard-archive subscription migration; stored in additional settings JSON (separate from autoUpgradePlanId); 0 if unset | [optional] 
 **MultiCurrencies** | Pointer to [**[]UnibeeApiBeanPlanMultiCurrency**](UnibeeApiBeanPlanMultiCurrency.md) | Plan&#39;s MultiCurrencies | [optional] 
 **MultiTrials** | Pointer to [**[]UnibeeApiBeanPlanMultiTrial**](UnibeeApiBeanPlanMultiTrial.md) | multi-step trials for this plan; when non-empty, the first item also defines the effective trialAmount &amp; trialDurationTime | [optional] 
 **PlanName** | Pointer to **string** | PlanName | [optional] 
@@ -613,6 +615,31 @@ SetIntervalUnit sets IntervalUnit field to given value.
 
 HasIntervalUnit returns a boolean if a field has been set.
 
+### GetIsForever
+
+`func (o *UnibeeApiBeanPlan) GetIsForever() bool`
+
+GetIsForever returns the IsForever field if non-nil, zero value otherwise.
+
+### GetIsForeverOk
+
+`func (o *UnibeeApiBeanPlan) GetIsForeverOk() (*bool, bool)`
+
+GetIsForeverOk returns a tuple with the IsForever field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsForever
+
+`func (o *UnibeeApiBeanPlan) SetIsForever(v bool)`
+
+SetIsForever sets IsForever field to given value.
+
+### HasIsForever
+
+`func (o *UnibeeApiBeanPlan) HasIsForever() bool`
+
+HasIsForever returns a boolean if a field has been set.
+
 ### GetMerchantId
 
 `func (o *UnibeeApiBeanPlan) GetMerchantId() int64`
@@ -737,6 +764,31 @@ SetMetricRecurringCharge sets MetricRecurringCharge field to given value.
 `func (o *UnibeeApiBeanPlan) HasMetricRecurringCharge() bool`
 
 HasMetricRecurringCharge returns a boolean if a field has been set.
+
+### GetMigrationPlanId
+
+`func (o *UnibeeApiBeanPlan) GetMigrationPlanId() int64`
+
+GetMigrationPlanId returns the MigrationPlanId field if non-nil, zero value otherwise.
+
+### GetMigrationPlanIdOk
+
+`func (o *UnibeeApiBeanPlan) GetMigrationPlanIdOk() (*int64, bool)`
+
+GetMigrationPlanIdOk returns a tuple with the MigrationPlanId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMigrationPlanId
+
+`func (o *UnibeeApiBeanPlan) SetMigrationPlanId(v int64)`
+
+SetMigrationPlanId sets MigrationPlanId field to given value.
+
+### HasMigrationPlanId
+
+`func (o *UnibeeApiBeanPlan) HasMigrationPlanId() bool`
+
+HasMigrationPlanId returns a boolean if a field has been set.
 
 ### GetMultiCurrencies
 

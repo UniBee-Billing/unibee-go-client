@@ -286,7 +286,7 @@ No authorization required
 
 ## PlanArchivePost
 
-> MerchantAuthSsoClearTotpPost200Response PlanArchivePost(ctx).UnibeeApiMerchantPlanArchiveReq(unibeeApiMerchantPlanArchiveReq).Execute()
+> MerchantPlanAddonsBindingPost200Response PlanArchivePost(ctx).UnibeeApiMerchantPlanArchiveReq(unibeeApiMerchantPlanArchiveReq).Execute()
 
 Archive Plan
 
@@ -312,7 +312,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `Plan.PlanArchivePost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PlanArchivePost`: MerchantAuthSsoClearTotpPost200Response
+	// response from `PlanArchivePost`: MerchantPlanAddonsBindingPost200Response
 	fmt.Fprintf(os.Stdout, "Response from `Plan.PlanArchivePost`: %v\n", resp)
 }
 ```
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MerchantAuthSsoClearTotpPost200Response**](MerchantAuthSsoClearTotpPost200Response.md)
+[**MerchantPlanAddonsBindingPost200Response**](MerchantPlanAddonsBindingPost200Response.md)
 
 ### Authorization
 

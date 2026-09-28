@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **ImageUrl** | Pointer to **string** | ImageUrl,Start With: http | [optional] 
 **InternalName** | Pointer to **string** |  | [optional] 
 **IntervalCount** | Pointer to **int32** | Number,intervalUnit of plan, not editable when plan is active | [optional] 
-**IntervalUnit** | Pointer to **string** | Interval unit of plan，em: day|month|year|week, not editable when plan is active | [optional] 
+**IntervalUnit** | Pointer to **string** | Interval unit of plan，em: day|month|year|week|forever, not editable when plan is active | [optional] 
 **Metadata** | Pointer to **map[string]map[string]interface{}** | Metadata，Map | [optional] 
 **MetricLimits** | Pointer to [**[]UnibeeApiBeanPlanMetricLimitParam**](UnibeeApiBeanPlanMetricLimitParam.md) | Plan&#39;s MetricLimit List, nil means no change, empty array means delete all, array with data means full replace | [optional] 
 **MetricMeteredCharge** | Pointer to [**[]UnibeeApiBeanPlanMetricMeteredChargeParam**](UnibeeApiBeanPlanMetricMeteredChargeParam.md) | Plan&#39;s MetricMeteredCharge | [optional] 

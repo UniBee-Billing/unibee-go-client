@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **StartTime** | Pointer to **int32** | The start time, editable after activate, utc timestamp in seconds | [optional] 
 **SubscriptionLimit** | Pointer to **int32** | The limit of every subscription apply, 0-unlimited | [optional] 
 **UpgradeLongPlanOnly** | Pointer to **bool** | AdvanceConfig, true-only for upgrade to longer plan | [optional] 
-**UpgradeOnly** | Pointer to **bool** | AdvanceConfig, true-only for same interval upgrade | [optional] 
+**UpgradeOnly** | Pointer to **bool** | AdvanceConfig, true-only for first purchases and upgrades | [optional] 
 **UserLimit** | Pointer to **int32** | AdvanceConfig, Per customer limit, 0-unlimited | [optional] 
 **UserScope** | Pointer to **int32** | AdvanceConfig, Apply user scope, 0-all, 1-new user, 2-renewals | [optional] 
 

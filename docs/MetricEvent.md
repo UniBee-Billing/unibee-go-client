@@ -4,12 +4,142 @@ All URIs are relative to *https://api.unibee.top*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**MetricEventCurrentValueLiteBatchPost**](MetricEvent.md#MetricEventCurrentValueLiteBatchPost) | **Post** /merchant/metric/event/current_value_lite_batch | Batch Get Merchant Metric Current Value (lite)
+[**MetricEventCurrentValueLitePost**](MetricEvent.md#MetricEventCurrentValueLitePost) | **Post** /merchant/metric/event/current_value_lite | Get Merchant Metric Current Value (lite, without metricLimit)
 [**MetricEventCurrentValuePost**](MetricEvent.md#MetricEventCurrentValuePost) | **Post** /merchant/metric/event/current_value | Get Merchant Metric Event Current Value
 [**MetricEventDeletePost**](MetricEvent.md#MetricEventDeletePost) | **Post** /merchant/metric/event/delete | Del Merchant Metric Event
 [**MetricEventListGet**](MetricEvent.md#MetricEventListGet) | **Get** /merchant/metric/event_list | Metric Event List
 [**MetricEventListPost**](MetricEvent.md#MetricEventListPost) | **Post** /merchant/metric/event_list | Metric Event List
 [**MetricEventNewPost**](MetricEvent.md#MetricEventNewPost) | **Post** /merchant/metric/event/new | New Merchant Metric Event
 
+
+
+## MetricEventCurrentValueLiteBatchPost
+
+> MerchantMetricEventCurrentValueLiteBatchPost200Response MetricEventCurrentValueLiteBatchPost(ctx).UnibeeApiMerchantMetricEventCurrentValueLiteBatchReq(unibeeApiMerchantMetricEventCurrentValueLiteBatchReq).Execute()
+
+Batch Get Merchant Metric Current Value (lite)
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantMetricEventCurrentValueLiteBatchReq := *openapiclient.NewUnibeeApiMerchantMetricEventCurrentValueLiteBatchReq("MetricCode_example") // UnibeeApiMerchantMetricEventCurrentValueLiteBatchReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MetricEvent.MetricEventCurrentValueLiteBatchPost(context.Background()).UnibeeApiMerchantMetricEventCurrentValueLiteBatchReq(unibeeApiMerchantMetricEventCurrentValueLiteBatchReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetricEvent.MetricEventCurrentValueLiteBatchPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MetricEventCurrentValueLiteBatchPost`: MerchantMetricEventCurrentValueLiteBatchPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `MetricEvent.MetricEventCurrentValueLiteBatchPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiMetricEventCurrentValueLiteBatchPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantMetricEventCurrentValueLiteBatchReq** | [**UnibeeApiMerchantMetricEventCurrentValueLiteBatchReq**](UnibeeApiMerchantMetricEventCurrentValueLiteBatchReq.md) |  | 
+
+### Return type
+
+[**MerchantMetricEventCurrentValueLiteBatchPost200Response**](MerchantMetricEventCurrentValueLiteBatchPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## MetricEventCurrentValueLitePost
+
+> MerchantMetricEventCurrentValueLitePost200Response MetricEventCurrentValueLitePost(ctx).UnibeeApiMerchantMetricEventCurrentValueLiteReq(unibeeApiMerchantMetricEventCurrentValueLiteReq).Execute()
+
+Get Merchant Metric Current Value (lite, without metricLimit)
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantMetricEventCurrentValueLiteReq := *openapiclient.NewUnibeeApiMerchantMetricEventCurrentValueLiteReq("MetricCode_example") // UnibeeApiMerchantMetricEventCurrentValueLiteReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MetricEvent.MetricEventCurrentValueLitePost(context.Background()).UnibeeApiMerchantMetricEventCurrentValueLiteReq(unibeeApiMerchantMetricEventCurrentValueLiteReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetricEvent.MetricEventCurrentValueLitePost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `MetricEventCurrentValueLitePost`: MerchantMetricEventCurrentValueLitePost200Response
+	fmt.Fprintf(os.Stdout, "Response from `MetricEvent.MetricEventCurrentValueLitePost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiMetricEventCurrentValueLitePostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantMetricEventCurrentValueLiteReq** | [**UnibeeApiMerchantMetricEventCurrentValueLiteReq**](UnibeeApiMerchantMetricEventCurrentValueLiteReq.md) |  | 
+
+### Return type
+
+[**MerchantMetricEventCurrentValueLitePost200Response**](MerchantMetricEventCurrentValueLitePost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## MetricEventCurrentValuePost

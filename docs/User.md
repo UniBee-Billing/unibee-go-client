@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**UserAdminNoteListGet**](User.md#UserAdminNoteListGet) | **Get** /merchant/user/admin_note_list | Get User Admin Note List
 [**UserAdminNoteListPost**](User.md#UserAdminNoteListPost) | **Post** /merchant/user/admin_note_list | Get User Admin Note List
+[**UserBatchSuspendUserPost**](User.md#UserBatchSuspendUserPost) | **Post** /merchant/user/batch_suspend_user | Batch Suspend User
 [**UserChangeEmailPost**](User.md#UserChangeEmailPost) | **Post** /merchant/user/change_email | Change User Email
 [**UserChangeGatewayPost**](User.md#UserChangeGatewayPost) | **Post** /merchant/user/change_gateway | Change User Default Gateway
 [**UserClearAutoChargeMethodPost**](User.md#UserClearAutoChargeMethodPost) | **Post** /merchant/user/clear_auto_charge_method | Clear AutoCharge Method
@@ -142,6 +143,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MerchantUserAdminNoteListGet200Response**](MerchantUserAdminNoteListGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UserBatchSuspendUserPost
+
+> MerchantUserBatchSuspendUserPost200Response UserBatchSuspendUserPost(ctx).UnibeeApiMerchantUserFrozenBatchReq(unibeeApiMerchantUserFrozenBatchReq).Execute()
+
+Batch Suspend User
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantUserFrozenBatchReq := *openapiclient.NewUnibeeApiMerchantUserFrozenBatchReq() // UnibeeApiMerchantUserFrozenBatchReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.User.UserBatchSuspendUserPost(context.Background()).UnibeeApiMerchantUserFrozenBatchReq(unibeeApiMerchantUserFrozenBatchReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `User.UserBatchSuspendUserPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UserBatchSuspendUserPost`: MerchantUserBatchSuspendUserPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `User.UserBatchSuspendUserPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUserBatchSuspendUserPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantUserFrozenBatchReq** | [**UnibeeApiMerchantUserFrozenBatchReq**](UnibeeApiMerchantUserFrozenBatchReq.md) |  | 
+
+### Return type
+
+[**MerchantUserBatchSuspendUserPost200Response**](MerchantUserBatchSuspendUserPost200Response.md)
 
 ### Authorization
 

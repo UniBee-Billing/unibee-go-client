@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **ApplyPromoCredit** | Pointer to **bool** | Optional. Whether to apply available promo credit to this renewal invoice. | [optional] 
 **ApplyPromoCreditAmount** | Pointer to **int32** | Optional. Maximum promo credit amount to apply. If omitted and applyPromoCredit is true, the system auto-computes the usable amount. | [optional] 
 **CancelUrl** | Pointer to **string** | Optional. URL to redirect the customer to when the renewal payment is cancelled or fails. | [optional] 
+**CountryCode** | Pointer to **string** | Optional. ISO 3166-1 alpha-2 country code. Omit to keep the user&#39;s current country. When renew creates a new invoice, it stores this country on the user and the subscription. A VAT number for a different country, or an invalid VAT number, is cleared instead of rejecting the renewal. Returning an existing paid or processing invoice does not change the country. | [optional] 
 **Discount** | Pointer to [**UnibeeApiBeanExternalDiscountParam**](UnibeeApiBeanExternalDiscountParam.md) |  | [optional] 
 **DiscountCode** | Pointer to **string** | Optional. Discount or coupon code applied only to this renewal. Overrides the subscription&#39;s recurring discount for this invoice. | [optional] 
 **GatewayId** | Pointer to **int32** | Optional. Payment gateway ID used for the renewal invoice. If omitted, the subscription&#39;s original gateway configuration is used. | [optional] 
@@ -115,6 +116,31 @@ SetCancelUrl sets CancelUrl field to given value.
 `func (o *UnibeeApiMerchantSubscriptionRenewReq) HasCancelUrl() bool`
 
 HasCancelUrl returns a boolean if a field has been set.
+
+### GetCountryCode
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) GetCountryCode() string`
+
+GetCountryCode returns the CountryCode field if non-nil, zero value otherwise.
+
+### GetCountryCodeOk
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) GetCountryCodeOk() (*string, bool)`
+
+GetCountryCodeOk returns a tuple with the CountryCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCountryCode
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) SetCountryCode(v string)`
+
+SetCountryCode sets CountryCode field to given value.
+
+### HasCountryCode
+
+`func (o *UnibeeApiMerchantSubscriptionRenewReq) HasCountryCode() bool`
+
+HasCountryCode returns a boolean if a field has been set.
 
 ### GetDiscount
 

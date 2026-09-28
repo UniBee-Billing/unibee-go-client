@@ -7,6 +7,8 @@ Method | HTTP request | Description
 [**PaymentCancelPost**](Payment.md#PaymentCancelPost) | **Post** /merchant/payment/cancel | Cancel Payment
 [**PaymentCapturePost**](Payment.md#PaymentCapturePost) | **Post** /merchant/payment/capture | Capture Payment
 [**PaymentDetailGet**](Payment.md#PaymentDetailGet) | **Get** /merchant/payment/detail | Payment Detail
+[**PaymentExpiringCardUserListGet**](Payment.md#PaymentExpiringCardUserListGet) | **Get** /merchant/payment/expiring_card_user_list | List users with auto-charge cards expiring in N days
+[**PaymentExpiringCardUserListPost**](Payment.md#PaymentExpiringCardUserListPost) | **Post** /merchant/payment/expiring_card_user_list | List users with auto-charge cards expiring in N days
 [**PaymentExternalGatewayPaymentMarkFailedPost**](Payment.md#PaymentExternalGatewayPaymentMarkFailedPost) | **Post** /merchant/payment/external_gateway_payment/mark_failed | Mark External Gateway Payment As Failed
 [**PaymentExternalGatewayPaymentMarkPaidPost**](Payment.md#PaymentExternalGatewayPaymentMarkPaidPost) | **Post** /merchant/payment/external_gateway_payment/mark_paid | Mark External Gateway Payment As Paid
 [**PaymentExternalGatewayPaymentUpdateLinkPost**](Payment.md#PaymentExternalGatewayPaymentUpdateLinkPost) | **Post** /merchant/payment/external_gateway_payment/update_link | Update External Gateway Payment Link
@@ -213,6 +215,148 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PaymentExpiringCardUserListGet
+
+> MerchantPaymentExpiringCardUserListGet200Response PaymentExpiringCardUserListGet(ctx).ExpireInDays(expireInDays).ExpireDateStart(expireDateStart).ExpireDateEnd(expireDateEnd).GatewayId(gatewayId).Page(page).Count(count).Execute()
+
+List users with auto-charge cards expiring in N days
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	expireInDays := int32(56) // int32 | Exact remaining days, e.g. 14|7|3 (optional)
+	expireDateStart := "expireDateStart_example" // string | UTC YYYY-MM-DD inclusive, cannot be before today (optional)
+	expireDateEnd := "expireDateEnd_example" // string | UTC YYYY-MM-DD inclusive (optional)
+	gatewayId := int64(789) // int64 | Optional Stripe gateway id; default all Stripe gateways of this merchant (optional)
+	page := int32(56) // int32 | Page, start 0 (optional)
+	count := int32(56) // int32 | Count of page (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Payment.PaymentExpiringCardUserListGet(context.Background()).ExpireInDays(expireInDays).ExpireDateStart(expireDateStart).ExpireDateEnd(expireDateEnd).GatewayId(gatewayId).Page(page).Count(count).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Payment.PaymentExpiringCardUserListGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PaymentExpiringCardUserListGet`: MerchantPaymentExpiringCardUserListGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `Payment.PaymentExpiringCardUserListGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPaymentExpiringCardUserListGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **expireInDays** | **int32** | Exact remaining days, e.g. 14|7|3 | 
+ **expireDateStart** | **string** | UTC YYYY-MM-DD inclusive, cannot be before today | 
+ **expireDateEnd** | **string** | UTC YYYY-MM-DD inclusive | 
+ **gatewayId** | **int64** | Optional Stripe gateway id; default all Stripe gateways of this merchant | 
+ **page** | **int32** | Page, start 0 | 
+ **count** | **int32** | Count of page | 
+
+### Return type
+
+[**MerchantPaymentExpiringCardUserListGet200Response**](MerchantPaymentExpiringCardUserListGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PaymentExpiringCardUserListPost
+
+> MerchantPaymentExpiringCardUserListGet200Response PaymentExpiringCardUserListPost(ctx).UnibeeApiMerchantPaymentExpiringCardUserListReq(unibeeApiMerchantPaymentExpiringCardUserListReq).Execute()
+
+List users with auto-charge cards expiring in N days
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/UniBee-Billing/unibee-go-client"
+)
+
+func main() {
+	unibeeApiMerchantPaymentExpiringCardUserListReq := *openapiclient.NewUnibeeApiMerchantPaymentExpiringCardUserListReq() // UnibeeApiMerchantPaymentExpiringCardUserListReq | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.Payment.PaymentExpiringCardUserListPost(context.Background()).UnibeeApiMerchantPaymentExpiringCardUserListReq(unibeeApiMerchantPaymentExpiringCardUserListReq).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `Payment.PaymentExpiringCardUserListPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `PaymentExpiringCardUserListPost`: MerchantPaymentExpiringCardUserListGet200Response
+	fmt.Fprintf(os.Stdout, "Response from `Payment.PaymentExpiringCardUserListPost`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPaymentExpiringCardUserListPostRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **unibeeApiMerchantPaymentExpiringCardUserListReq** | [**UnibeeApiMerchantPaymentExpiringCardUserListReq**](UnibeeApiMerchantPaymentExpiringCardUserListReq.md) |  | 
+
+### Return type
+
+[**MerchantPaymentExpiringCardUserListGet200Response**](MerchantPaymentExpiringCardUserListGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -1324,7 +1468,7 @@ func main() {
 	userId := int64(789) // int64 | Filter UserId, Default All (optional)
 	amountStart := int32(56) // int32 | The filter start amount of timeline (optional)
 	amountEnd := int32(56) // int32 | The filter end amount of timeline (optional)
-	searchKey := "searchKey_example" // string | Search SubscriptionId|InvoiceId|PaymentId|UserId (optional)
+	searchKey := "searchKey_example" // string | Search SubscriptionId|InvoiceId|PaymentId|ExternalTransactionId|UserId (optional)
 	status := []int32{int32(123)} // []int32 | The filter status, 0-pending, 1-success, 2-failure，3-cancel (optional)
 	timelineTypes := []int32{int32(123)} // []int32 | The filter timelineType, 0-pay, 1-refund (optional)
 	gatewayIds := []int64{int64(123)} // []int64 | The filter ids of gateway (optional)
@@ -1366,7 +1510,7 @@ Name | Type | Description  | Notes
  **userId** | **int64** | Filter UserId, Default All | 
  **amountStart** | **int32** | The filter start amount of timeline | 
  **amountEnd** | **int32** | The filter end amount of timeline | 
- **searchKey** | **string** | Search SubscriptionId|InvoiceId|PaymentId|UserId | 
+ **searchKey** | **string** | Search SubscriptionId|InvoiceId|PaymentId|ExternalTransactionId|UserId | 
  **status** | **[]int32** | The filter status, 0-pending, 1-success, 2-failure，3-cancel | 
  **timelineTypes** | **[]int32** | The filter timelineType, 0-pay, 1-refund | 
  **gatewayIds** | **[]int64** | The filter ids of gateway | 

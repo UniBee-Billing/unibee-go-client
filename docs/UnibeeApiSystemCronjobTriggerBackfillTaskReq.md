@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TaskName** | **string** | Backfill task name: TaskBackfillInvoicePlanIds | TaskBackfillInvoicePaidTime | TaskBackfillRefundAdminMemberId | 
+**TaskName** | **string** | Backfill task name: TaskBackfillInvoicePlanIds | TaskBackfillInvoicePaidTime | TaskBackfillRefundAdminMemberId | TaskForUserChurnHistoryBackfill | TaskForUserTagHistoryBackfill | TaskForUserPaymentMethodBackfill | 
 
 ## Methods
 

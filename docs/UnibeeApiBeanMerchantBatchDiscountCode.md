@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 **SubscriptionId** | Pointer to **string** | Subscription ID where the code was used | [optional] 
 **Type** | Pointer to **int32** | type, 1-external discount code, 2-batch code template, 3-batch code | [optional] 
 **UpgradeLongerOnly** | Pointer to **bool** | AdvanceConfig, 0-false,1-true, will forbid for all except upgrade to longer plan if set true | [optional] 
-**UpgradeOnly** | Pointer to **bool** | AdvanceConfig, 0-false,1-true, will forbid for all except same interval upgrade action if set true | [optional] 
+**UpgradeOnly** | Pointer to **bool** | AdvanceConfig, 0-false,1-true, apply only for first purchases and upgrades if set true | [optional] 
 **UsedChildCodeCount** | Pointer to **int64** | Number of used child codes | [optional] 
 **UserEmail** | Pointer to **string** | Email of the user this child code is bound to, empty if no restriction | [optional] 
 **UserId** | Pointer to **int64** | Id of user this child code is bound to (user restriction), 0 if no restriction | [optional] 

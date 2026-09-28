@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Email** | **string** | The merchant member email address | 
+**TotpCode** | Pointer to **string** | The totp code | [optional] 
 **VerificationCode** | **string** | OTP Code, received from email | 
 
 ## Methods
@@ -45,6 +46,31 @@ and a boolean to check if the value has been set.
 
 SetEmail sets Email field to given value.
 
+
+### GetTotpCode
+
+`func (o *UnibeeApiMerchantAuthLoginOtpVerifyReq) GetTotpCode() string`
+
+GetTotpCode returns the TotpCode field if non-nil, zero value otherwise.
+
+### GetTotpCodeOk
+
+`func (o *UnibeeApiMerchantAuthLoginOtpVerifyReq) GetTotpCodeOk() (*string, bool)`
+
+GetTotpCodeOk returns a tuple with the TotpCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotpCode
+
+`func (o *UnibeeApiMerchantAuthLoginOtpVerifyReq) SetTotpCode(v string)`
+
+SetTotpCode sets TotpCode field to given value.
+
+### HasTotpCode
+
+`func (o *UnibeeApiMerchantAuthLoginOtpVerifyReq) HasTotpCode() bool`
+
+HasTotpCode returns a boolean if a field has been set.
 
 ### GetVerificationCode
 

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **NewAmount** | **int64** | New amount (in smallest currency unit, e.g. cents) | 
+**NewCurrency** | Pointer to **string** | Proposed default currency. Omit to keep current. Changing it resets plan multi-currency overrides. | [optional] 
 **PlanId** | **int64** | Target planId, must be active | 
 
 ## Methods
@@ -45,6 +46,31 @@ and a boolean to check if the value has been set.
 
 SetNewAmount sets NewAmount field to given value.
 
+
+### GetNewCurrency
+
+`func (o *UnibeeApiMerchantPlanActivePriceChangePreviewReq) GetNewCurrency() string`
+
+GetNewCurrency returns the NewCurrency field if non-nil, zero value otherwise.
+
+### GetNewCurrencyOk
+
+`func (o *UnibeeApiMerchantPlanActivePriceChangePreviewReq) GetNewCurrencyOk() (*string, bool)`
+
+GetNewCurrencyOk returns a tuple with the NewCurrency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNewCurrency
+
+`func (o *UnibeeApiMerchantPlanActivePriceChangePreviewReq) SetNewCurrency(v string)`
+
+SetNewCurrency sets NewCurrency field to given value.
+
+### HasNewCurrency
+
+`func (o *UnibeeApiMerchantPlanActivePriceChangePreviewReq) HasNewCurrency() bool`
+
+HasNewCurrency returns a boolean if a field has been set.
 
 ### GetPlanId
 

@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **Page** | Pointer to **int32** | Page,Start 0 | [optional] 
 **PlanIds** | Pointer to **[]int64** | Filter timelines whose invoice includes any of these plan IDs (OR) | [optional] 
 **PlanTagFilter** | Pointer to [**UnibeeApiBeanPlanTagFilter**](UnibeeApiBeanPlanTagFilter.md) |  | [optional] 
-**SearchKey** | Pointer to **string** | Search SubscriptionId|InvoiceId|PaymentId|UserId | [optional] 
+**SearchKey** | Pointer to **string** | Search SubscriptionId|InvoiceId|PaymentId|ExternalTransactionId|UserId | [optional] 
 **SortField** | Pointer to **string** | Sort，invoice_id|gmt_create|gmt_modify|period_end|total_amount，Default gmt_modify | [optional] 
 **SortType** | Pointer to **string** | Sort Type，asc|desc，Default desc | [optional] 
 **Status** | Pointer to **[]int32** | The filter status, 0-pending, 1-success, 2-failure，3-cancel | [optional] 

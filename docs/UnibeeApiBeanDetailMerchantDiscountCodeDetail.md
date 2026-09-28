@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **StartTime** | Pointer to **int64** | start of discount available utc time | [optional] 
 **Status** | Pointer to **int32** | status, 1-editable, 2-active, 3-deactive, 4-expire, 10-archive | [optional] 
 **UpgradeLongerOnly** | Pointer to **bool** | AdvanceConfig, 0-false,1-true, will forbid for all except upgrade to longer plan if set 1 | [optional] 
-**UpgradeOnly** | Pointer to **bool** | AdvanceConfig, 0-false,1-true, will forbid for all except upgrade action if set 1 | [optional] 
+**UpgradeOnly** | Pointer to **bool** | AdvanceConfig, 0-false,1-true, apply only for first purchases and upgrades if set 1 | [optional] 
 **UserIds** | Pointer to **[]int64** | Ids of user which discount code can effect, default effect all users if not set | [optional] 
 **UserLimit** | Pointer to **int32** | AdvanceConfig, The limit of every customer can apply, the recurring apply not involved, 0-unlimited\&quot; | [optional] 
 **UserScope** | Pointer to **int32** | AdvanceConfig, Apply user scope,0-for all, 1-for only new user, 2-for only renewals, renewals is upgrade&amp;downgrade&amp;renew | [optional] 

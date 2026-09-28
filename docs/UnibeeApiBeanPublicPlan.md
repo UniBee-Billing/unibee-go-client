@@ -17,7 +17,8 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int64** |  | [optional] 
 **ImageUrl** | Pointer to **string** | image_url | [optional] 
 **IntervalCount** | Pointer to **int32** | period unit count | [optional] 
-**IntervalUnit** | Pointer to **string** | period unit,day|month|year|week | [optional] 
+**IntervalUnit** | Pointer to **string** | period unit,day|month|year|week|forever | [optional] 
+**IsForever** | Pointer to **bool** | Non-renewing lifetime plan | [optional] 
 **MerchantId** | Pointer to **int64** | merchant id | [optional] 
 **MultiCurrencies** | Pointer to [**[]UnibeeApiBeanPublicPlanMultiCurrency**](UnibeeApiBeanPublicPlanMultiCurrency.md) | Plan&#39;s public MultiCurrencies | [optional] 
 **MultiTrials** | Pointer to [**[]UnibeeApiBeanPublicPlanMultiTrial**](UnibeeApiBeanPublicPlanMultiTrial.md) | multi-step trials for this plan; metadata intentionally omitted | [optional] 
@@ -399,6 +400,31 @@ SetIntervalUnit sets IntervalUnit field to given value.
 `func (o *UnibeeApiBeanPublicPlan) HasIntervalUnit() bool`
 
 HasIntervalUnit returns a boolean if a field has been set.
+
+### GetIsForever
+
+`func (o *UnibeeApiBeanPublicPlan) GetIsForever() bool`
+
+GetIsForever returns the IsForever field if non-nil, zero value otherwise.
+
+### GetIsForeverOk
+
+`func (o *UnibeeApiBeanPublicPlan) GetIsForeverOk() (*bool, bool)`
+
+GetIsForeverOk returns a tuple with the IsForever field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsForever
+
+`func (o *UnibeeApiBeanPublicPlan) SetIsForever(v bool)`
+
+SetIsForever sets IsForever field to given value.
+
+### HasIsForever
+
+`func (o *UnibeeApiBeanPublicPlan) HasIsForever() bool`
+
+HasIsForever returns a boolean if a field has been set.
 
 ### GetMerchantId
 

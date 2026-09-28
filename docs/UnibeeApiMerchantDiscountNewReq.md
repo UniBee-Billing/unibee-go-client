@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **Quantity** | Pointer to **int32** | Quantity of code, default 0, set 0 to disable quantity management | [optional] 
 **StartTime** | **int32** | The start time of discount code can effect, utc time | 
 **UpgradeLongPlanOnly** | Pointer to **bool** | AdvanceConfig, true or false, will forbid for all except upgrade to longer plan if set true | [optional] 
-**UpgradeOnly** | Pointer to **bool** | AdvanceConfig, true or false, will forbid for all except same interval upgrade action if set true | [optional] 
+**UpgradeOnly** | Pointer to **bool** | AdvanceConfig, true or false, apply only for first purchases and upgrades if set true | [optional] 
 **UserIds** | Pointer to **[]int64** | Ids of user which discount code can effect, default effect all users if not set | [optional] 
 **UserLimit** | Pointer to **int32** | AdvanceConfig, The limit of every customer can apply, the recurring apply not involved, 0-unlimited | [optional] 
 **UserScope** | Pointer to **int32** | AdvanceConfig, Apply user scope,0-for all, 1-for only new user, 2-for only renewals, renewals is upgrade&amp;downgrade&amp;renew | [optional] 

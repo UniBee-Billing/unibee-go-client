@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Merchant** | Pointer to [**UnibeeApiBeanPublicMerchant**](UnibeeApiBeanPublicMerchant.md) |  | [optional] 
 **Payment** | Pointer to [**UnibeeApiBeanPayment**](UnibeeApiBeanPayment.md) |  | [optional] 
 **PaymentStatus** | Pointer to **int32** | Payment Status，10-pending，20-success，30-failure, 40-cancel | [optional] 
+**RetryFullPayment** | Pointer to **bool** | When true, PaymentChecker should retry a full-amount payment instead of opening hosted invoice split UI | [optional] 
 **ReturnUrl** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -180,6 +181,31 @@ SetPaymentStatus sets PaymentStatus field to given value.
 `func (o *UnibeeApiSystemPaymentDetailRes) HasPaymentStatus() bool`
 
 HasPaymentStatus returns a boolean if a field has been set.
+
+### GetRetryFullPayment
+
+`func (o *UnibeeApiSystemPaymentDetailRes) GetRetryFullPayment() bool`
+
+GetRetryFullPayment returns the RetryFullPayment field if non-nil, zero value otherwise.
+
+### GetRetryFullPaymentOk
+
+`func (o *UnibeeApiSystemPaymentDetailRes) GetRetryFullPaymentOk() (*bool, bool)`
+
+GetRetryFullPaymentOk returns a tuple with the RetryFullPayment field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRetryFullPayment
+
+`func (o *UnibeeApiSystemPaymentDetailRes) SetRetryFullPayment(v bool)`
+
+SetRetryFullPayment sets RetryFullPayment field to given value.
+
+### HasRetryFullPayment
+
+`func (o *UnibeeApiSystemPaymentDetailRes) HasRetryFullPayment() bool`
+
+HasRetryFullPayment returns a boolean if a field has been set.
 
 ### GetReturnUrl
 

@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **GatewayPaymentType** | Pointer to **string** |  | [optional] 
 **Gender** | Pointer to **string** | gender | [optional] 
 **Id** | Pointer to **int64** | userId | [optional] 
-**IsRisk** | Pointer to **int32** | is risk account (deperated) | [optional] 
+**IsRisk** | Pointer to **int32** | 0-normal | 1-resumed | &gt;&#x3D;2 not normal (2-flagged by create_submit deny rules) | [optional] 
 **IsSpecial** | Pointer to **int32** | is special account（0.no，1.yes）- deperated | [optional] 
 **Language** | Pointer to **string** | User Language, en|ru|cn|vi|bp | [optional] 
 **LastLoginAt** | Pointer to **int64** | last login time, utc time | [optional] 

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **MetricCode** | **string** | MetricCode | 
 **ProductId** | Pointer to **int64** | Id of product. Default product will use if productId not specified and subscriptionId is blank | [optional] 
 **UserId** | Pointer to **int64** | UserId， UserId, ExternalUserId, or Email provides one of three options | [optional] 
+**ValueVersion** | Pointer to **string** | Optional current value implementation override. v1 forces legacy, v2 forces projection; empty uses env metric.current_value.provider (v1|shadow|v2, default v2). | [optional] 
 
 ## Methods
 
@@ -148,6 +149,31 @@ SetUserId sets UserId field to given value.
 `func (o *UnibeeApiMerchantMetricEventCurrentValueReq) HasUserId() bool`
 
 HasUserId returns a boolean if a field has been set.
+
+### GetValueVersion
+
+`func (o *UnibeeApiMerchantMetricEventCurrentValueReq) GetValueVersion() string`
+
+GetValueVersion returns the ValueVersion field if non-nil, zero value otherwise.
+
+### GetValueVersionOk
+
+`func (o *UnibeeApiMerchantMetricEventCurrentValueReq) GetValueVersionOk() (*string, bool)`
+
+GetValueVersionOk returns a tuple with the ValueVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetValueVersion
+
+`func (o *UnibeeApiMerchantMetricEventCurrentValueReq) SetValueVersion(v string)`
+
+SetValueVersion sets ValueVersion field to given value.
+
+### HasValueVersion
+
+`func (o *UnibeeApiMerchantMetricEventCurrentValueReq) HasValueVersion() bool`
+
+HasValueVersion returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

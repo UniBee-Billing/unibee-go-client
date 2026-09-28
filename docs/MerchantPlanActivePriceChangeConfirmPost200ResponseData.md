@@ -6,7 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ActiveAffectedSubscriptions** | Pointer to **int64** | Active/processing subscriptions whose future billing will be affected | [optional] 
 **NewAmount** | Pointer to **int64** | New amount after change | [optional] 
+**NewCurrency** | Pointer to **string** |  | [optional] 
 **OldAmount** | Pointer to **int64** | Old amount before change | [optional] 
+**OldCurrency** | Pointer to **string** |  | [optional] 
 **PlanId** | Pointer to **int64** | Target planId | [optional] 
 **TotalAffectedSubscriptions** | Pointer to **int64** | Total subscriptions that have used or are using this plan (by status set) | [optional] 
 
@@ -79,6 +81,31 @@ SetNewAmount sets NewAmount field to given value.
 
 HasNewAmount returns a boolean if a field has been set.
 
+### GetNewCurrency
+
+`func (o *MerchantPlanActivePriceChangeConfirmPost200ResponseData) GetNewCurrency() string`
+
+GetNewCurrency returns the NewCurrency field if non-nil, zero value otherwise.
+
+### GetNewCurrencyOk
+
+`func (o *MerchantPlanActivePriceChangeConfirmPost200ResponseData) GetNewCurrencyOk() (*string, bool)`
+
+GetNewCurrencyOk returns a tuple with the NewCurrency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNewCurrency
+
+`func (o *MerchantPlanActivePriceChangeConfirmPost200ResponseData) SetNewCurrency(v string)`
+
+SetNewCurrency sets NewCurrency field to given value.
+
+### HasNewCurrency
+
+`func (o *MerchantPlanActivePriceChangeConfirmPost200ResponseData) HasNewCurrency() bool`
+
+HasNewCurrency returns a boolean if a field has been set.
+
 ### GetOldAmount
 
 `func (o *MerchantPlanActivePriceChangeConfirmPost200ResponseData) GetOldAmount() int64`
@@ -103,6 +130,31 @@ SetOldAmount sets OldAmount field to given value.
 `func (o *MerchantPlanActivePriceChangeConfirmPost200ResponseData) HasOldAmount() bool`
 
 HasOldAmount returns a boolean if a field has been set.
+
+### GetOldCurrency
+
+`func (o *MerchantPlanActivePriceChangeConfirmPost200ResponseData) GetOldCurrency() string`
+
+GetOldCurrency returns the OldCurrency field if non-nil, zero value otherwise.
+
+### GetOldCurrencyOk
+
+`func (o *MerchantPlanActivePriceChangeConfirmPost200ResponseData) GetOldCurrencyOk() (*string, bool)`
+
+GetOldCurrencyOk returns a tuple with the OldCurrency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOldCurrency
+
+`func (o *MerchantPlanActivePriceChangeConfirmPost200ResponseData) SetOldCurrency(v string)`
+
+SetOldCurrency sets OldCurrency field to given value.
+
+### HasOldCurrency
+
+`func (o *MerchantPlanActivePriceChangeConfirmPost200ResponseData) HasOldCurrency() bool`
+
+HasOldCurrency returns a boolean if a field has been set.
 
 ### GetPlanId
 

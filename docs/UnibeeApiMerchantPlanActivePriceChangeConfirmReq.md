@@ -5,7 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ConfirmOldAmount** | **int64** | Old amount expected by caller, used for optimistic locking | 
+**ConfirmOldCurrency** | Pointer to **string** | Old currency from preview. Required when changing default currency | [optional] 
 **NewAmount** | **int64** | New amount (in smallest currency unit, e.g. cents) | 
+**NewCurrency** | Pointer to **string** | Proposed default currency. Omit to keep current. Changing it resets plan multi-currency overrides. | [optional] 
 **PlanId** | **int64** | Target planId, must be active | 
 **Reason** | Pointer to **string** | Reason or note for this price change | [optional] 
 
@@ -48,6 +50,31 @@ and a boolean to check if the value has been set.
 SetConfirmOldAmount sets ConfirmOldAmount field to given value.
 
 
+### GetConfirmOldCurrency
+
+`func (o *UnibeeApiMerchantPlanActivePriceChangeConfirmReq) GetConfirmOldCurrency() string`
+
+GetConfirmOldCurrency returns the ConfirmOldCurrency field if non-nil, zero value otherwise.
+
+### GetConfirmOldCurrencyOk
+
+`func (o *UnibeeApiMerchantPlanActivePriceChangeConfirmReq) GetConfirmOldCurrencyOk() (*string, bool)`
+
+GetConfirmOldCurrencyOk returns a tuple with the ConfirmOldCurrency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfirmOldCurrency
+
+`func (o *UnibeeApiMerchantPlanActivePriceChangeConfirmReq) SetConfirmOldCurrency(v string)`
+
+SetConfirmOldCurrency sets ConfirmOldCurrency field to given value.
+
+### HasConfirmOldCurrency
+
+`func (o *UnibeeApiMerchantPlanActivePriceChangeConfirmReq) HasConfirmOldCurrency() bool`
+
+HasConfirmOldCurrency returns a boolean if a field has been set.
+
 ### GetNewAmount
 
 `func (o *UnibeeApiMerchantPlanActivePriceChangeConfirmReq) GetNewAmount() int64`
@@ -67,6 +94,31 @@ and a boolean to check if the value has been set.
 
 SetNewAmount sets NewAmount field to given value.
 
+
+### GetNewCurrency
+
+`func (o *UnibeeApiMerchantPlanActivePriceChangeConfirmReq) GetNewCurrency() string`
+
+GetNewCurrency returns the NewCurrency field if non-nil, zero value otherwise.
+
+### GetNewCurrencyOk
+
+`func (o *UnibeeApiMerchantPlanActivePriceChangeConfirmReq) GetNewCurrencyOk() (*string, bool)`
+
+GetNewCurrencyOk returns a tuple with the NewCurrency field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNewCurrency
+
+`func (o *UnibeeApiMerchantPlanActivePriceChangeConfirmReq) SetNewCurrency(v string)`
+
+SetNewCurrency sets NewCurrency field to given value.
+
+### HasNewCurrency
+
+`func (o *UnibeeApiMerchantPlanActivePriceChangeConfirmReq) HasNewCurrency() bool`
+
+HasNewCurrency returns a boolean if a field has been set.
 
 ### GetPlanId
 

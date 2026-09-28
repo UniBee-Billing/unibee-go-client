@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreateTime** | Pointer to **int64** | create utc time | [optional] 
-**DownloadUrl** | Pointer to **string** | download_file_url | [optional] 
+**DownloadUrl** | Pointer to **string** | download_file_url; GET with Authorization Bearer portal token or merchant API key (API key only for memberId&#x3D;0 tasks) | [optional] 
 **FailureReason** | Pointer to **string** | reason of failure | [optional] 
 **FinishTime** | Pointer to **int64** | task_finish_time | [optional] 
 **Format** | Pointer to **string** | format of file | [optional] 
 **Id** | Pointer to **int64** | id | [optional] 
 **LastUpdateTime** | Pointer to **int64** | last update utc time | [optional] 
-**MemberId** | Pointer to **int64** | member_id | [optional] 
+**MemberId** | Pointer to **int64** | member_id; 0 means created by merchant API key | [optional] 
 **MerchantId** | Pointer to **int64** | merchant_id | [optional] 
 **Payload** | Pointer to **string** | payload(json) | [optional] 
 **StartTime** | Pointer to **int64** | task_start_time | [optional] 

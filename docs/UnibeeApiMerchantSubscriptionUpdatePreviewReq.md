@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AddonParams** | Pointer to [**[]UnibeeApiBeanPlanAddonParam**](UnibeeApiBeanPlanAddonParam.md) | Optional. Target addon configuration after the update. | [optional] 
 **ApplyPromoCredit** | Pointer to **bool** | Optional. Whether to apply available promo credit to the update preview. | [optional] 
 **ApplyPromoCreditAmount** | Pointer to **int32** | Optional. Maximum promo credit amount to apply in preview. If omitted and applyPromoCredit is true, the system auto-computes the usable amount. | [optional] 
+**CountryCode** | Pointer to **string** | Optional. ISO 3166-1 alpha-2 country code used to price this preview. Omit to keep the user&#39;s current country. Preview does not save it. A VAT number for a different country is priced as cleared and is removed only by update_submit. | [optional] 
 **Currency** | Pointer to **string** | Optional. Target currency for the updated subscription. If not provided, use current subscription currency. Currency change may be restricted when proration is required. | [optional] 
 **DiscountCode** | Pointer to **string** | Optional. Discount code applied to the update preview. | [optional] 
 **EffectImmediate** | Pointer to **int32** | Optional. When to apply the plan change: 1 &#x3D; immediate (current period, proration will be computed), 2 &#x3D; at next period (no proration in current period). | [optional] 
@@ -109,6 +110,31 @@ SetApplyPromoCreditAmount sets ApplyPromoCreditAmount field to given value.
 `func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) HasApplyPromoCreditAmount() bool`
 
 HasApplyPromoCreditAmount returns a boolean if a field has been set.
+
+### GetCountryCode
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetCountryCode() string`
+
+GetCountryCode returns the CountryCode field if non-nil, zero value otherwise.
+
+### GetCountryCodeOk
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) GetCountryCodeOk() (*string, bool)`
+
+GetCountryCodeOk returns a tuple with the CountryCode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCountryCode
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) SetCountryCode(v string)`
+
+SetCountryCode sets CountryCode field to given value.
+
+### HasCountryCode
+
+`func (o *UnibeeApiMerchantSubscriptionUpdatePreviewReq) HasCountryCode() bool`
+
+HasCountryCode returns a boolean if a field has been set.
 
 ### GetCurrency
 

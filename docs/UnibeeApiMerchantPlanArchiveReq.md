@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ExternalPlanId** | Pointer to **string** | The ExternalId of plan, either externalPlanId or planId should be set | [optional] 
 **HardArchive** | Pointer to **bool** | Hard Archive | [optional] 
+**MigrationPlanId** | Pointer to **int64** | Optional. Hard archive only: persist a target main plan id for later subscription migration. Stored in plan additional settings JSON (same place as autoUpgradePlanId, separate key). 0 or omit &#x3D; no migration target. Does not migrate subscriptions in this request. | [optional] 
 **PlanId** | Pointer to **int64** | The Id of plan, either planId or externalPlanId should be set | [optional] 
 
 ## Methods
@@ -76,6 +77,31 @@ SetHardArchive sets HardArchive field to given value.
 `func (o *UnibeeApiMerchantPlanArchiveReq) HasHardArchive() bool`
 
 HasHardArchive returns a boolean if a field has been set.
+
+### GetMigrationPlanId
+
+`func (o *UnibeeApiMerchantPlanArchiveReq) GetMigrationPlanId() int64`
+
+GetMigrationPlanId returns the MigrationPlanId field if non-nil, zero value otherwise.
+
+### GetMigrationPlanIdOk
+
+`func (o *UnibeeApiMerchantPlanArchiveReq) GetMigrationPlanIdOk() (*int64, bool)`
+
+GetMigrationPlanIdOk returns a tuple with the MigrationPlanId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMigrationPlanId
+
+`func (o *UnibeeApiMerchantPlanArchiveReq) SetMigrationPlanId(v int64)`
+
+SetMigrationPlanId sets MigrationPlanId field to given value.
+
+### HasMigrationPlanId
+
+`func (o *UnibeeApiMerchantPlanArchiveReq) HasMigrationPlanId() bool`
+
+HasMigrationPlanId returns a boolean if a field has been set.
 
 ### GetPlanId
 

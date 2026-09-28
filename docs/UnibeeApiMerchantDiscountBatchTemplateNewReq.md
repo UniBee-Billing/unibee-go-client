@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **StartTime** | **int32** | The start time of discount code can effect, utc timestamp in seconds | 
 **SubscriptionLimit** | Pointer to **int32** | The limit of every subscription apply, 0-unlimited | [optional] 
 **UpgradeLongPlanOnly** | Pointer to **bool** | AdvanceConfig, true-forbid for all except upgrade to longer plan | [optional] 
-**UpgradeOnly** | Pointer to **bool** | AdvanceConfig, true-forbid for all except same interval upgrade action | [optional] 
+**UpgradeOnly** | Pointer to **bool** | AdvanceConfig, true-apply only for first purchases and upgrades | [optional] 
 **UserLimit** | Pointer to **int32** | AdvanceConfig, The limit of every customer can apply, 0-unlimited | [optional] 
 **UserScope** | Pointer to **int32** | AdvanceConfig, Apply user scope, 0-for all, 1-for only new user, 2-for only renewals | [optional] 
 
